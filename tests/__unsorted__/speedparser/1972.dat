@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<?xml-stylesheet href="http://d.hatena.ne.jp/ninoseki/rssxsl" type="text/xsl" media="screen"?>
+
+
+<rdf:RDF
+	xmlns="http://purl.org/rss/1.0/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xml:lang="ja">
+<channel rdf:about="http://d.hatena.ne.jp/ninoseki/rss">
+	<title>ニノ日記</title>
+	<link>http://d.hatena.ne.jp/ninoseki/</link>
+	<description>ニノ日記</description>
+	
+	<dc:creator>ninoseki</dc:creator>
+	<dc:date>2011-10-03T22:54:29+09:00</dc:date>
+	<items>
+	<rdf:Seq>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/ninoseki/20111003/1317650033"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/ninoseki/20110927/1317125648"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/ninoseki/20110922/1316702858"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/ninoseki/20110917/1316258109"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/ninoseki/20110826/1314324371"/>
+	</rdf:Seq>
+	</items>
+</channel>
+
+
+
+<item rdf:about="http://d.hatena.ne.jp/ninoseki/20111003/1317650033">
+	<title>[testing]5分でわかるWatir</title>
+	<link>http://d.hatena.ne.jp/ninoseki/20111003/1317650033</link>
+	<description>  以下の文章は&#x017d;eljko Filipinによる”Watir in five minutes”の翻訳です。*1    (中略)  僕が初めてWatirを仕事で使った時、すごく驚いたことを今でも覚えている。インストールしてから数時間で、僕はテスト中のWebアプリケーション用のスクリプトを書けるようになっていた。この本を読めば、数時間もかからずにWebサイトをテストできるようになるはずだ。  もしRubyに親しんでいるのなら、IRBがRubyライブラリを勉強するための最良のツールの1つだってこ ...</description>
+	<dc:creator>ninoseki</dc:creator>
+	<dc:date>2011-10-03T22:53:53+09:00</dc:date>
+	<dc:subject>testing</dc:subject>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/ninoseki/20110927/1317125648">
+	<title>[python]PILでHalftonみたいなの</title>
+	<link>http://d.hatena.ne.jp/ninoseki/20110927/1317125648</link>
+	<description>  こんな感じですか？わかりません＞＜。  Before   After    # -*- coding: utf-8 -*- from PIL import Image, ImageDraw def collect(img, h, w, y, x, interval): y2 = (y + interval) if (y + interval) &#60; h else h - 1 x2 = (x + interval) if (x + interval) &#60; w else w - 1 r = 0  ...</description>
+	<dc:creator>ninoseki</dc:creator>
+	<dc:date>2011-09-27T21:14:08+09:00</dc:date>
+	<dc:subject>python</dc:subject>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/ninoseki/20110922/1316702858">
+	<title>[javascript]Javascriptで画象をグリッチ</title>
+	<link>http://d.hatena.ne.jp/ninoseki/20110922/1316702858</link>
+	<description>   Canvasの勉強がてらにJavascriptで画象をグリッチするアプリをつくってみた。 http://glitched-canvas.heroku.com/ ソースコード: https://github.com/ninoseki/glitched-canvas  Canvas要素にはピクセル単位でアクセスできるので、何でもできそうですね。      参考   glitchicon  HTML Canvas JavaScript FileReader      </description>
+	<dc:creator>ninoseki</dc:creator>
+	<dc:date>2011-09-22T23:47:38+09:00</dc:date>
+	<dc:subject>javascript</dc:subject>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/ninoseki/20110917/1316258109">
+	<title>[php][codeigniter]Javascript・CSSを圧縮・結合するCodeIgniterライブラリ「Simple assets」</title>
+	<link>http://d.hatena.ne.jp/ninoseki/20110917/1316258109</link>
+	<description>  CodeIgniterでJavascript・CSSを圧縮・結合するライブラリ「Simple assets」が便利だったので紹介してみる。 https://github.com/bstrahija/assets   導入 GitHubからダウンロードし、config、helpers、librariesをapplication配下に配置する。 ※すでにapplication/config/autocload.phpが初期状態でない場合は上書きせず、追記すること。   設定 デフォルトの設定では以下のよう ...</description>
+	<dc:creator>ninoseki</dc:creator>
+	<dc:date>2011-09-17T20:15:09+09:00</dc:date>
+	<dc:subject>php</dc:subject>
+	<dc:subject>codeigniter</dc:subject>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/ninoseki/20110826/1314324371">
+	<title>[php][codeigniter]コントローラー経由でファイルを出力する</title>
+	<link>http://d.hatena.ne.jp/ninoseki/20110826/1314324371</link>
+	<description>  すごく単純なことだけど、これまでやったことがなかったのでメモ。 ファイル名はContent-Dispositionヘッダーを使って指定するんすね。今まで知らんかった。  &#60;?php class Test extends CI_Controller { public function files($name) { $this-&#62;load-&#62;helper(’file’); $this-&#62;load-&#62;library(’upload’); // ファイルを読み込んで出力 $pat ...</description>
+	<dc:creator>ninoseki</dc:creator>
+	<dc:date>2011-08-26T11:06:11+09:00</dc:date>
+	<dc:subject>php</dc:subject>
+	<dc:subject>codeigniter</dc:subject>
+</item>
+</rdf:RDF>

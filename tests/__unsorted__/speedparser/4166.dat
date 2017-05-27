@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>CodeMac</title>
+<link href="http://codemac.net/index.html"/>
+<link href="http://codemac.net/index.atom" rel="self"/>
+<author>
+
+ <name>CodeMac</name>
+
+</author>
+
+ 
+
+<id>http://codemac.net/index.html</id>
+<subtitle type="html">CodeMac</subtitle>
+<generator uri="http://ikiwiki.info/" version="2.46">ikiwiki</generator>
+<updated>2008-06-23T22:52:29Z</updated>
+<entry>
+	<title>Paperless Nirvana</title>
+	<id>http://codemac.net/blog/23/</id>
+	<link href="http://codemac.net/blog/23/"/>
+	
+	
+	 
+	
+	
+	 
+	  <category term="gtd" />
+	 
+	  <category term="life" />
+	 
+	  <category term="linux" />
+	 
+	
+	<updated>2008-06-23T22:52:29Z</updated>
+	<published>2008-06-23T22:52:29Z</published>
+	
+	 <content type="xhtml" xml:lang="en">
+	  <div xmlns="http://www.w3.org/1999/xhtml">
+	  <h2>Paperless Nirvana!</h2>
+
+<p>On a single night recently, I read an <a href="http://www.linuxjournal.com/article/6652">article</a> that explains how
+to set up the <a href="http://swish-e.org" title="May not load, the server may be down">swish-e</a> XML document indexer, <a href="http://kevincupp.com">Kevin Cupp</a>'s
+<a href="http://blog.kevincupp.com/2008/06/three_weeks_with_my_drobo.php">review</a> of the ready-made raid box drobo, and a linux.com
+<a href="http://www.linux.com/articles/61826?theme=print">article</a> about turning a networked computer into a pdf making
+machine.  You can see where my mind was headed.</p>
+
+<p>I've decided it would be an awesome thing to have a "paperless"
+office.  Now I'm not going to throw out my printer, or anything silly
+like that.  Having a digital filing cabinet instead of a paper filing
+cabinet just appears to be advantageous.  So what all do I plan to do?
+Well first there is the issue of what I actually need out of this
+project.</p>
+
+<h3>Storage</h3>
+
+<p>I plan to store everything on <a href="http://en.wikipedia.org/wiki/RAID">Raid</a> 1, 5, or maybe even 6.  I plan
+to use these drives ONLY for document storage.  No music, no movies.
+I hope to have a seperate set up for Raid 1 with MythTV for my music
+and movies.  More on the DVR project later...</p>
+
+<h3>Physical Input</h3>
+
+<p>I need a way to get physical bills, letters, etc into digital storage.
+The solution is obviously a scanner of some kind.  I might need two
+scanners though, one flatbed for things that cannot be spooled, and
+another one for the letter/A4 sized papers.  Any suggestions on either
+scanner I should be looking for would be great.</p>
+
+<h3>Physical Output</h3>
+
+<p>Getting things out of digital storage into the physical world is just
+as important.  I have a printer, problem solved.  I imagine I would
+have this printer shared on the network so any computer can print from
+the same printer.</p>
+
+<h3>Digital Input</h3>
+
+<p>Setting up <a href="http://www.cups-pdf.de/">CUPS-PDF</a> seems like the obvious choice.  I could
+hit print on any page I want and just choose the CUPS-PDF printer.
+Then I could have a process that runs every 5 minutes to look at
+recently created documents and indexes them, and does any cleaning I
+deem necessary.</p>
+
+<h3>Digital Output</h3>
+
+<p>And finally what I would consider the most important part of this
+little project, getting digital output of the documents I have
+stored.  I would need remote and local access to my documents, and
+have some way to easily search them.</p>
+
+<p>My ideal interface for this would be a nice web interface that I could
+log into, and access/search/download any of my files stored on the
+machine.  Then I could use the same interface for these documents no
+matter the machine or the location.  I'd probably also have ssh/nfs
+access set up as well, but that is a simple and no-fun set up.</p>
+
+<p>I still don't have a good idea of the best document indexing service
+to set up.</p>
+
+<h3>Final Thoughts</h3>
+
+<p>The more I think about this, the more I can see myself setting up a
+quick <a href="http://www.djangoproject.com/">django</a>/<a href="http://merbivore.com/">merb</a>/<a href="http://code.macournoyer.com/thin/">thin</a> interface for the server, and
+having it be accessible from anywhere.  Most likely it'd end up being
+django so I could just use the admin interface for a quick solution.
+Ideally I'd also be able to upload files from any computer to the
+document server as well.</p>
+
+<p>This is going to be a fun project, and I'll keep you updated!  Email
+me if you have any suggestions for indexing services, names for the
+project, or possibly projects that all ready do most things describe.</p>
+
+	  </div>
+	 </content>
+	
+</entry>
+<entry>
+	<title>project</title>
+	<id>http://codemac.net/project/</id>
+	<link href="http://codemac.net/project/"/>
+	
+	
+	 
+	
+	
+	<updated>2008-06-15T05:11:59Z</updated>
+	<published>2008-06-15T05:11:59Z</published>
+	
+	 <content type="xhtml" xml:lang="en">
+	  <div xmlns="http://www.w3.org/1999/xhtml">
+	  <p>My projects!</p>
+
+<h2>Active</h2>
+
+<ul>
+<li><a href="http://archlinux.org">Archlinux</a> -- The Archlinux Distribution</li>
+<li><a href="http://codemac.net/project/hriki/">Hriki</a> -- The Happily Ruby Ikiwiki Clone</li>
+</ul>
+
+<h2>Inactive</h2>
+
+<ul>
+<li>Everything Else</li>
+</ul>
+
+	  </div>
+	 </content>
+	
+</entry>
+<entry>
+	<title>Hriki</title>
+	<id>http://codemac.net/project/hriki/</id>
+	<link href="http://codemac.net/project/hriki/"/>
+	
+	
+	 
+	
+	
+	<updated>2008-06-15T05:11:59Z</updated>
+	<published>2008-06-15T05:11:59Z</published>
+	
+	 <content type="xhtml" xml:lang="en">
+	  <div xmlns="http://www.w3.org/1999/xhtml">
+	  <h2>Hriki : The Happily Ruby Ikiwiki Clone</h2>
+
+<p>I felt bad when I started this project.  <a href="http://ikiwiki.info">IkiWiki</a> is a great
+piece of software and my goal is not to compete with ikiwiki
+directly.</p>
+
+<h2>But let's get real</h2>
+
+<p>I suck at perl.  In fact I suck really really hard at it.  So one of
+my first attempts at hacking ikiwiki failed within 2 minutes.  I
+didn't try the hardest.. but I didn't want to.</p>
+
+<p>So now we're left with the option of rewriting the same type of
+program in a language I would like to hack.  <a href="http://ruby-lang.org">Ruby</a> it is.</p>
+
+<h2>So let's see it!</h2>
+
+<p><a href="http://github.com/codemac/hriki">Go get 'em</a>.  It's not done yet, in fact I can't guarantee it
+does anything useful.</p>
+
+	  </div>
+	 </content>
+	
+</entry>
+<entry>
+	<title>Wealth And Success</title>
+	<id>http://codemac.net/blog/22/</id>
+	<link href="http://codemac.net/blog/22/"/>
+	
+	
+	 
+	
+	
+	 
+	  <category term="life" />
+	 
+	
+	<updated>2008-06-13T07:35:57Z</updated>
+	<published>2008-06-13T07:35:57Z</published>
+	
+	 <content type="xhtml" xml:lang="en">
+	  <div xmlns="http://www.w3.org/1999/xhtml">
+	  <p>I am of a very small percent of the world, probably less than one
+percent, that live a wealthy and privileged lifestyle.  I consider
+myself extremely lucky, and I try as hard as I can to not take it for
+granted.  Obviously I do take my wealth for granted some, because I
+have a blog, extra clothes, extra food, extra toys, extra rooms, and
+basically extra wealth.</p>
+
+<p>This lifestyle can be sickening when I truly evaluate it.  Though
+truly evaluating something you live in is difficult.  Either way, my
+recognition of my exceeding wealth is an important step for me.  I
+have to use my conscience as a mechanism to keep me grounded.  Living
+the good life is enjoyable, but achieving the sublime is a goal worth
+suffering for.</p>
+
+<p>So to define my personal wealth, I must throw out my check book.  I
+have to erase the societal definition of what I have.</p>
+
+<p>I don't think I know I how to do that.</p>
+
+<p>Yet even so, look out world. I'm coming for you.  My personal wealth
+and my personal success as top priorities.</p>
+
+	  </div>
+	 </content>
+	
+</entry>
+<entry>
+	<title>Anywise Props</title>
+	<id>http://codemac.net/blog/21/</id>
+	<link href="http://codemac.net/blog/21/"/>
+	
+	
+	 
+	
+	
+	 
+	  <category term="jabber" />
+	 
+	
+	<updated>2008-05-23T18:17:16Z</updated>
+	<published>2008-05-23T18:17:16Z</published>
+	
+	 <content type="xhtml" xml:lang="en">
+	  <div xmlns="http://www.w3.org/1999/xhtml">
+	  <p>I sent the following email to Anywise after my account at xmpp.us kept
+disconnecting.</p>
+
+<blockquote>
+  <p>Date: Fri, 23 May 2008 01:44:10 -0400 <br />
+  From: "Jeff Mickey" <a href="mailto:j@codemac.net">&#106;&#64;&#99;o&#100;&#101;&#x6D;&#97;&#99;&#46;&#110;&#101;&#x74;</a> <br />
+  To: info@anywise.eu <br />
+  Subject: xmpp.us: Short Write()  </p>
+  
+  <p>Several times a day for the past couple days, my xmpp.us jabber
+  account has been disconnected and wont be able to reconnect for a good
+  while with the error "jabber - Logged out: Short write() to server".
+  I know you guys just recently merged the xmpp.us server over, but I
+  was curious what was going on.</p>
+  
+  <p>Thanks for the great service,</p>
+  
+  <p>jeff</p>
+  
+  <p>. : [ + carpe diem totus tuus + ] : .</p>
+</blockquote>
+
+<p>And this is the response I get.</p>
+
+<blockquote>
+  <p>Date: Fri, 23 May 2008 08:00:20 +0200 <br />
+  To: "Jeff Mickey" <a href="mailto:j@codemac.net">&#106;&#64;c&#111;&#100;&#x65;&#x6D;&#x61;&#x63;&#x2E;&#110;&#x65;&#x74;</a> <br />
+  Subject: Re: xmpp.us: Short Write()  </p>
+  
+  <p>Hi Jeff,</p>
+  
+  <p>After the migration we see more crashes than ever. This is very
+  annoying of course. We now know what the cause of the crashes is. One
+  of the developers of ejabberd helped us to find. Now, we are working
+  to fix this. You may see some disconnects for a couple of days but I
+  hope this is fixed over the weekend.</p>
+  
+  <p>Jeroen</p>
+</blockquote>
+
+<p>If you know your timezones, you'll notice that this message was sent
+16 minutes and 10 seconds after my mail was sent.  I honestly don't
+even care about the crashes anymore.  I want to stick with a jabber
+server service that replies so quickly with a couple key things:</p>
+
+<ul>
+<li>They admit there is a problem, I'm not crazy.</li>
+<li>They know what the problem is.</li>
+<li>They mentioned the jabber server software they are using.</li>
+<li>They gave me an estimated time frame for when it will be fixed.</li>
+</ul>
+
+<p>Now I know that I'll wait until next week sometime before I complain
+about this again.  Thank you <a href="http://www.anywise.eu/">Anywise</a>!</p>
+
+	  </div>
+	 </content>
+	
+</entry>
+<entry>
+	<title>jabber</title>
+	<id>http://codemac.net/tag/jabber/</id>
+	<link href="http://codemac.net/tag/jabber/"/>
+	
+	
+	 
+	
+	
+	<updated>2008-05-23T18:17:16Z</updated>
+	<published>2008-05-23T18:17:16Z</published>
+	
+	 <content type="xhtml" xml:lang="en">
+	  <div xmlns="http://www.w3.org/1999/xhtml">
+	  <div class="inline" id="0"></div>
+
+	  </div>
+	 </content>
+	
+</entry>
+<entry>
+	<title>elisp</title>
+	<id>http://codemac.net/tag/elisp/</id>
+	<link href="http://codemac.net/tag/elisp/"/>
+	
+	
+	 
+	
+	
+	<updated>2008-05-21T20:40:43Z</updated>
+	<published>2008-05-21T20:40:43Z</published>
+	
+	 <content type="xhtml" xml:lang="en">
+	  <div xmlns="http://www.w3.org/1999/xhtml">
+	  <div class="inline" id="1"></div>
+
+	  </div>
+	 </content>
+	
+</entry>
+<entry>
+	<title>hack</title>
+	<id>http://codemac.net/tag/hack/</id>
+	<link href="http://codemac.net/tag/hack/"/>
+	
+	
+	 
+	
+	
+	<updated>2008-05-21T20:40:43Z</updated>
+	<published>2008-05-21T20:40:43Z</published>
+	
+	 <content type="xhtml" xml:lang="en">
+	  <div xmlns="http://www.w3.org/1999/xhtml">
+	  <div class="inline" id="2"></div>
+
+	  </div>
+	 </content>
+	
+</entry>
+<entry>
+	<title>More Fun With Emacs</title>
+	<id>http://codemac.net/blog/20/</id>
+	<link href="http://codemac.net/blog/20/"/>
+	
+	
+	 
+	
+	
+	 
+	  <category term="elisp" />
+	 
+	  <category term="emacs" />
+	 
+	  <category term="hack" />
+	 
+	  <category term="linux" />
+	 
+	
+	<updated>2008-05-21T20:47:33Z</updated>
+	<published>2008-05-21T20:38:47Z</published>
+	
+	 <content type="xhtml" xml:lang="en">
+	  <div xmlns="http://www.w3.org/1999/xhtml">
+	  <p>While working on this ikiwiki, I just added a fun little function to
+my init.el.  It finds the next file that I am going to write for the
+blog and adds some meta stuff at the top.</p>
+
+<pre><code>;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; bloggin
+;; This should create a new file with the next numerical value
+;; and add some boilerplate
+
+(defun blog-insert-meta ()
+  (interactive)
+  (insert "[[!meta  title=\"\"]]\n")
+  (insert "[[!tag  ]]\n")
+  (insert "\n")
+)
+</code></pre>
+
+<p>The blog-insert-meta function just inserts the title and tag stub so I
+remember to tag and add a title to my blog post.</p>
+
+<pre><code>(defun blog-find-next ()
+  (interactive)
+  (let ((wiki-dir "~/www/wiki/blog/"))
+    (find-file 
+     (concat wiki-dir 
+         (number-to-string (1+ (apply 'max (mapcar 'string-to-number 
+         (mapcar '(lambda (a) (substring a 0 -5)) 
+                     (directory-files wiki-dir nil "[0-9]*\\.mdwn" t))))))
+         ".mdwn")))
+)
+</code></pre>
+
+<p>The blog-find-next function finds all the numbered blog posts, and
+opens a new emacs buffer with the next numbered file.</p>
+
+<pre><code>(defun blog-next ()
+  (interactive)
+  (blog-find-next)
+  (end-of-buffer)
+  (blog-insert-meta)
+)
+
+;;
+</code></pre>
+
+<p>The blog-next function just puts these all together and gives it a
+nice short name for me to run.</p>
+
+<p>You can find more of my emacs shenanigans in my <a href="http://dev.codemac.net/config.git?p=config.git;a=tree;f=emacs.d;hb=HEAD">config repo</a>.</p>
+
+	  </div>
+	 </content>
+	
+</entry>
+<entry>
+	<title>The Switch to Ikiwiki</title>
+	<id>http://codemac.net/blog/19/</id>
+	<link href="http://codemac.net/blog/19/"/>
+	
+	
+	 
+	
+	
+	<updated>2008-05-20T01:52:37Z</updated>
+	<published>2008-05-20T01:52:37Z</published>
+	
+	 <content type="xhtml" xml:lang="en">
+	  <div xmlns="http://www.w3.org/1999/xhtml">
+	  <p>This is the first post I have written with the new <a href="http://ikiwiki.info">ikiwiki</a>
+backend, and I like it a lot.  Some of you may have known that I was
+writing a git backended blog/wiki.  Well I gave up.  Not because it
+wasn't going well, or anything of the sort, it was merely a design
+choice.  I decided that it would be better to create a blog/wiki
+generator.  Dynamically serving up each page used more computation
+than just compiling and spitting out the pages once a week.  So, I
+went the noble route and looked online at what other people have done
+with the wiki generator idea.</p>
+
+<p><a href="http://ikiwiki.info">Ikiwiki</a> was a complete and working solution that all ready
+could use git as a backend for the wiki.  Why fight it?  So I migrated
+my posts (which I was all ready storing in <a href="http://daringfireball.net/projects/markdown/">markdown</a>) to ikiwiki (which
+uses <a href="http://daringfireball.net/projects/markdown/">markdown</a>).  I haven't solved the problem of comments...  I
+haven't ported them out of the old database yet, and I'm not sure if I
+care.  There were plenty of decent comments, but none that really
+changed anything in the article.  Though, I might place them on the
+old posts?  I've also thought about incorporating <a href="http://disqus.com/">disqus</a> into the
+blog, but I haven't figured out how to do it in a way that I like
+yet.  I enjoy the idea of outsourcing my comments, but I dislike the
+idea of having to manually place the javascript into each blog page so
+it only appears on them, and THEN figuring out a way to get the old
+comments into disqus.</p>
+
+<p>We'll see.  But I figure I should get this all online.  If you have
+any comments or fixes, feel free to email me at <a href="mailto:j@codemac.net">&#x6A;&#64;&#99;&#111;&#x64;e&#109;&#x61;c&#x2E;&#110;&#x65;&#116;</a>.</p>
+
+	  </div>
+	 </content>
+	
+</entry>
+
+</feed>

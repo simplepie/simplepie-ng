@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>note.</title>
+	<atom:link href="http://artclick.jp/blog/feed" rel="self" type="application/rss+xml" />
+	<link>http://artclick.jp/blog</link>
+	<description>Design Company artclickのアートディレクター森本のブログです</description>
+	<lastBuildDate>Mon, 26 Sep 2011 08:37:07 +0000</lastBuildDate>
+	<language>ja</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.1.2</generator>
+		<item>
+		<title>CSSだけでマウスオーバー時に画像を透過させる</title>
+		<link>http://artclick.jp/blog/archives/1333</link>
+		<comments>http://artclick.jp/blog/archives/1333#comments</comments>
+		<pubDate>Mon, 26 Sep 2011 08:37:07 +0000</pubDate>
+		<dc:creator>artclick</dc:creator>
+				<category><![CDATA[CSS]]></category>
+		<category><![CDATA[HP]]></category>
+
+		<guid isPermaLink="false">http://artclick.jp/blog/?p=1333</guid>
+		<description><![CDATA[cssでロールオーバー時に画像透過をさせ簡単にロールオーバーを表現する方法。 div#hoge a:hover img { opacity:0.8; filter: alpha(opacity=80); -ms-filt [...]]]></description>
+			<content:encoded><![CDATA[<p>
+cssでロールオーバー時に画像透過をさせ簡単にロールオーバーを表現する方法。<br />
+<br />
+div#hoge a:hover img<br />
+{<br />
+opacity:0.8;<br />
+filter: alpha(opacity=80);<br />
+-ms-filter: &#8220;alpha( opacity:0.6 )&#8221;;<br />
+background: #fff;<br />
+}</p>
+]]></content:encoded>
+			<wfw:commentRss>http://artclick.jp/blog/archives/1333/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Mac Blu-ray Playe</title>
+		<link>http://artclick.jp/blog/archives/1329</link>
+		<comments>http://artclick.jp/blog/archives/1329#comments</comments>
+		<pubDate>Mon, 26 Sep 2011 06:07:45 +0000</pubDate>
+		<dc:creator>artclick</dc:creator>
+				<category><![CDATA[application]]></category>
+		<category><![CDATA[mac]]></category>
+		<category><![CDATA[win]]></category>
+
+		<guid isPermaLink="false">http://artclick.jp/blog/?p=1329</guid>
+		<description><![CDATA[MacでBlu-rayを再生するプレイヤーをダウンロードしてみる。 10月1日で無料配布が終了らしいです。（winでも使えるようです。） ダウンロードはこちら]]></description>
+			<content:encoded><![CDATA[<p>
+<a href="http://artclick.jp/blog/wp/wp-content/uploads/2011/09/page1_img1.png" class="liimagelink"><img src="http://artclick.jp/blog/wp/wp-content/uploads/2011/09/page1_img1-150x150.png" alt="" title="page1_img1" width="150" height="150" class="alignnone size-thumbnail wp-image-1330" /></a><br />
+<br />
+MacでBlu-rayを再生するプレイヤーをダウンロードしてみる。<br />
+<br />
+10月1日で無料配布が終了らしいです。（winでも使えるようです。）<br />
+<a href="http://jp.macblurayplayer.com/index.htm" class="liexternal">ダウンロードはこちら</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://artclick.jp/blog/archives/1329/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>htmlでphpを動作させるhtaccessの記述</title>
+		<link>http://artclick.jp/blog/archives/1327</link>
+		<comments>http://artclick.jp/blog/archives/1327#comments</comments>
+		<pubDate>Wed, 14 Sep 2011 00:35:14 +0000</pubDate>
+		<dc:creator>artclick</dc:creator>
+				<category><![CDATA[HP]]></category>
+		<category><![CDATA[PHP]]></category>
+
+		<guid isPermaLink="false">http://artclick.jp/blog/?p=1327</guid>
+		<description><![CDATA[.htaccessに下記を記述する。 AddType application/x-httpd-php .htm .html]]></description>
+			<content:encoded><![CDATA[<p>
+.htaccessに下記を記述する。<br />
+<br />
+AddType application/x-httpd-php .htm .html</p>
+]]></content:encoded>
+			<wfw:commentRss>http://artclick.jp/blog/archives/1327/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>kentメールフォームの送信元へ控え (CC) を送るの問題</title>
+		<link>http://artclick.jp/blog/archives/1324</link>
+		<comments>http://artclick.jp/blog/archives/1324#comments</comments>
+		<pubDate>Mon, 12 Sep 2011 10:55:01 +0000</pubDate>
+		<dc:creator>artclick</dc:creator>
+				<category><![CDATA[CGI]]></category>
+		<category><![CDATA[HP]]></category>
+
+		<guid isPermaLink="false">http://artclick.jp/blog/?p=1324</guid>
+		<description><![CDATA[覚え書き kentメールフォームのCGIでメールフォームを作成し、 テスト送信してみるとなぜか送信元にメールが帰って来ない。 いろいろ調べて見ると メールのnameはemailとしておかないとダメなんですね。]]></description>
+			<content:encoded><![CDATA[<p>
+覚え書き<br />
+<br />
+kentメールフォームのCGIでメールフォームを作成し、<br />
+テスト送信してみるとなぜか送信元にメールが帰って来ない。<br />
+<br />
+いろいろ調べて見ると<br />
+メールのnameは<strong>email</strong>としておかないとダメなんですね。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://artclick.jp/blog/archives/1324/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>.noteページの不具合をメンテナンス</title>
+		<link>http://artclick.jp/blog/archives/1322</link>
+		<comments>http://artclick.jp/blog/archives/1322#comments</comments>
+		<pubDate>Fri, 02 Sep 2011 06:47:44 +0000</pubDate>
+		<dc:creator>artclick</dc:creator>
+				<category><![CDATA[note]]></category>
+
+		<guid isPermaLink="false">http://artclick.jp/blog/?p=1322</guid>
+		<description><![CDATA[仕事が忙しく自分のサイトのメンテナンスが出来ていなかったんですが ようやく修正。 見た目は変わっているように見えませんが。。。]]></description>
+			<content:encoded><![CDATA[<p>
+仕事が忙しく自分のサイトのメンテナンスが出来ていなかったんですが<br />
+ようやく修正。<br />
+<br />
+見た目は変わっているように見えませんが。。。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://artclick.jp/blog/archives/1322/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Blu-rayドライブ</title>
+		<link>http://artclick.jp/blog/archives/1317</link>
+		<comments>http://artclick.jp/blog/archives/1317#comments</comments>
+		<pubDate>Mon, 15 Aug 2011 06:33:28 +0000</pubDate>
+		<dc:creator>artclick</dc:creator>
+				<category><![CDATA[memo]]></category>
+		<category><![CDATA[note]]></category>
+
+		<guid isPermaLink="false">http://artclick.jp/blog/?p=1317</guid>
+		<description><![CDATA[グラフィックやウェブの仕事が多いのですが たまに映像編集などの仕事もしている私です。 そこで最近困るのがBlu-ray問題。 DVDの規格で納品すると、「画像が荒いんですが」 というクレーム？がたまにやってくる。 画質の [...]]]></description>
+			<content:encoded><![CDATA[<p>
+<a href="http://artclick.jp/blog/wp/wp-content/uploads/2011/08/35ee3593f09fad3f25b18de73a5a2e18.jpg" class="liimagelink"><img src="http://artclick.jp/blog/wp/wp-content/uploads/2011/08/35ee3593f09fad3f25b18de73a5a2e18-150x150.jpg" alt="" title="41+HZZQNIKL._SL500_AA300_" width="150" height="150" class="alignnone size-thumbnail wp-image-1318" /></a><br />
+<br />
+グラフィックやウェブの仕事が多いのですが<br />
+たまに映像編集などの仕事もしている私です。<br />
+<br />
+そこで最近困るのがBlu-ray問題。<br />
+DVDの規格で納品すると、「画像が荒いんですが」<br />
+というクレーム？がたまにやってくる。<br />
+<br />
+画質の問題はそもそも規格の問題だから<br />
+どうしようもないわけですが<br />
+じゃあ、Blu-rayで納品して下さいというような流れになる。。。<br />
+<br />
+そんなわけで、Blu-rayドライブを購入しようか迷ってます。<br />
+I-O DATAさんが出してるBRD-U8DM<br />
+なんかがよさそう。<br />
+<br />
+Macでも認識するという話だし買ってみるか。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://artclick.jp/blog/archives/1317/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Dragon Dictation</title>
+		<link>http://artclick.jp/blog/archives/1311</link>
+		<comments>http://artclick.jp/blog/archives/1311#comments</comments>
+		<pubDate>Sun, 24 Jul 2011 17:23:53 +0000</pubDate>
+		<dc:creator>artclick</dc:creator>
+				<category><![CDATA[application]]></category>
+		<category><![CDATA[iPhone]]></category>
+
+		<guid isPermaLink="false">http://artclick.jp/blog/?p=1311</guid>
+		<description><![CDATA[iPhone用アプリ Dragon Dictationをインストール。 無料の音声認識アプリです！]]></description>
+			<content:encoded><![CDATA[<p>
+<a href="http://artclick.jp/blog/wp/wp-content/uploads/2011/07/15a1ad5a16c4206dcca220e85cae4812.png" class="liimagelink"><img src="http://artclick.jp/blog/wp/wp-content/uploads/2011/07/15a1ad5a16c4206dcca220e85cae4812-150x150.png" alt="" title="スクリーンショット（2011-07-25 2.19.41）" width="150" height="150" class="alignnone size-thumbnail wp-image-1315" /></a><br />
+<br />
+iPhone用アプリ<br />
+Dragon Dictationをインストール。<br />
+<br />
+無料の音声認識アプリです！<br />
+<br />
+</p>
+]]></content:encoded>
+			<wfw:commentRss>http://artclick.jp/blog/archives/1311/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Chuck</title>
+		<link>http://artclick.jp/blog/archives/1306</link>
+		<comments>http://artclick.jp/blog/archives/1306#comments</comments>
+		<pubDate>Sun, 24 Jul 2011 17:15:19 +0000</pubDate>
+		<dc:creator>artclick</dc:creator>
+				<category><![CDATA[application]]></category>
+		<category><![CDATA[mac]]></category>
+
+		<guid isPermaLink="false">http://artclick.jp/blog/?p=1306</guid>
+		<description><![CDATA[ランチャー Chuckをインストール。 以前はQuicksilverを使っていたけど、 機能性よりも、サクサク動くChuckの乗り換えです。]]></description>
+			<content:encoded><![CDATA[<p>
+<a href="http://artclick.jp/blog/wp/wp-content/uploads/2011/07/Chuck1.gif" class="liimagelink"><img src="http://artclick.jp/blog/wp/wp-content/uploads/2011/07/Chuck1.gif" alt="" title="Chuck" width="100" height="100" class="alignnone size-full wp-image-1308" /></a><br />
+<br />
+ランチャー Chuckをインストール。<br />
+以前はQuicksilverを使っていたけど、<br />
+機能性よりも、サクサク動くChuckの乗り換えです。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://artclick.jp/blog/archives/1306/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>iPad2かAirか。。。</title>
+		<link>http://artclick.jp/blog/archives/1298</link>
+		<comments>http://artclick.jp/blog/archives/1298#comments</comments>
+		<pubDate>Sun, 15 May 2011 17:10:15 +0000</pubDate>
+		<dc:creator>artclick</dc:creator>
+				<category><![CDATA[note]]></category>
+
+		<guid isPermaLink="false">http://artclick.jp/blog/?p=1298</guid>
+		<description><![CDATA[最近、忙しいせいか物欲が激しい。 iPad2を購入するかどうかを本気で考えたりしている。 しかし本気で購入を考えはじめると、Airを買った方が使えるんじゃないか、という気にもなってくる。 迷いながら物欲がおさまるのを待つ [...]]]></description>
+			<content:encoded><![CDATA[<p>
+最近、忙しいせいか物欲が激しい。<br />
+<br />
+iPad2を購入するかどうかを本気で考えたりしている。<br />
+しかし本気で購入を考えはじめると、Airを買った方が使えるんじゃないか、という気にもなってくる。<br />
+迷いながら物欲がおさまるのを待つか。。。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://artclick.jp/blog/archives/1298/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>イチゴ会議</title>
+		<link>http://artclick.jp/blog/archives/1295</link>
+		<comments>http://artclick.jp/blog/archives/1295#comments</comments>
+		<pubDate>Sun, 17 Apr 2011 12:21:24 +0000</pubDate>
+		<dc:creator>artclick</dc:creator>
+				<category><![CDATA[note]]></category>
+
+		<guid isPermaLink="false">http://artclick.jp/blog/?p=1295</guid>
+		<description><![CDATA[先週、スタッフのご機嫌取りのため イチゴを購入。 「森本が買ってきたイチゴですので 皆さん遠慮なく食べて下さい」 と、念押ししながら配りました。]]></description>
+			<content:encoded><![CDATA[<p>
+<a href="http://artclick.jp/blog/wp/wp-content/uploads/2011/04/37e3808047553cedb34daa9b1d7ab2a31.jpg" class="liimagelink"><img src="http://artclick.jp/blog/wp/wp-content/uploads/2011/04/37e3808047553cedb34daa9b1d7ab2a31-300x224.jpg" alt="" title="写真" width="300" height="224" class="alignnone size-medium wp-image-1296" /></a><br />
+<br />
+先週、スタッフのご機嫌取りのため<br />
+イチゴを購入。<br />
+<br />
+「森本が買ってきたイチゴですので<br />
+皆さん遠慮なく食べて下さい」<br />
+と、念押ししながら配りました。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://artclick.jp/blog/archives/1295/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

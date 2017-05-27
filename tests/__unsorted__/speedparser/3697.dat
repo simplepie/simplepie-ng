@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>IanLunn.co.uk</title>
+	
+	<link>http://www.ianlunn.co.uk/blog</link>
+	<description>Web Design &amp; Development</description>
+	<lastBuildDate>Thu, 29 Sep 2011 13:14:02 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.4</generator>
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/Ianlunn" /><feedburner:info uri="ianlunn" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><feedburner:browserFriendly></feedburner:browserFriendly><item>
+		<title>JavaScript Parallax Effects: A Deeper Look</title>
+		<link>http://www.ianlunn.co.uk/blog/code-tutorials/javascript-parallax-effects-a-deeper-look/</link>
+		<comments>http://www.ianlunn.co.uk/blog/code-tutorials/javascript-parallax-effects-a-deeper-look/#comments</comments>
+		<pubDate>Mon, 12 Sep 2011 15:57:31 +0000</pubDate>
+		<dc:creator>Ian Lunn</dc:creator>
+				<category><![CDATA[Code Tutorials]]></category>
+
+		<guid isPermaLink="false">http://www.ianlunn.co.uk/blog/?p=2685</guid>
+		<description><![CDATA[Earlier this year, I wrote a tutorial explaining how the Nike Better World website was created and how you could use jQuery to create that effect on your own website. Since the launch of Nike Better World, the web has &#8230; <a href="http://www.ianlunn.co.uk/blog/code-tutorials/javascript-parallax-effects-a-deeper-look/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Earlier this year, I wrote a <a title="Nikebetterworld Parallax Effect Demo" href="http://www.ianlunn.co.uk/blog/code-tutorials/recreate-nikebetterworld-parallax/">tutorial explaining how the Nike Better World website was created</a> and how you could use jQuery to create that effect on your own website. Since the launch of Nike Better World, the web has gone parallax crazy with many websites trying their own hand at the effect.</p>
+<p>Having seen many-a-site using the effect and having worked on a few too, I think it&#8217;s time to dig deeper and take a closer look at some of the issues around using the JavaScript parallax effect, as well as answering some overdue questions from my original tutorial.</p>
+<p><span id="more-2685"></span></p>
+<a name="performance"></a><h2>Performance</h2>
+
+
+<p>The biggest problem with the JavaScript based parallax effect is that it is very performance heavy. The creators of Nike Better World stated in their interview with <a title="Behind The Scenes Of Nike Better World" href="http://www.smashingmagazine.com/2011/07/12/behind-the-scenes-of-nike-better-world/">Smashing Magazine</a>: &#8220;<em>Our primary focus was on creating a great interactive storytelling experience</em>&#8220;. It seems that some implementors of the effect have lost sight of the purpose of the parallax effect &#8212; &#8220;experience&#8221;, instead opting simply to use the effect as a way to make their site look impressive, without considering performance.</p>
+<h3>Issues</h3>
+<p>To create the parallax effect, JavaScript is used to manipulate the position of an element in relation to a web page&#8217;s scrollbar (<a title="Nikebetterworld Parallax Effect Demo" href="http://www.ianlunn.co.uk/blog/code-tutorials/recreate-nikebetterworld-parallax/">see my original tutorial for the full explanation</a>). It sounds simple enough but the problem is, this calculation needs to be carried out for every single pixel a web page is scrolled. The calculation could quite possibly be carried out 100s of times per second, depending on how fast the user is scrolling. On top of that, you&#8217;ll need to manipulate multiple elements to create the effect. Too many of these calculations and the effect will &#8220;stutter&#8221;, effecting the scrolling of the web page and the users overall experience, potentially frustrating the user enough to make them leave.</p>
+<p>Surprisingly, such a new and impressive effect only makes use of older technologies (JavaScript, HTML4 and CSS2) and can even run perfectly well in old browsers such as Internet Explorer 6. However, there is one exception&#8230;Firefox.</p>
+<p>When viewing the effect in Firefox, the performance issues are multiplied. I believe this to be a fundamental issue with how Firefox deals with page scrolling and can&#8217;t be avoided using a nifty work-around or hack (if you know better, <a href="http://www.ianlunn.co.uk/contact.php">let me know</a>). With Firefox churning out new updates on a regular basis now, the effect has performed better than the last with each new iteration, but in my opinion, Firefox 6 &#8212; even on a high end machine &#8212; still struggles to calculate the effect without &#8220;stuttering&#8221;.</p>
+<p>One final issue I&#8217;d like to point out for the pixel perfectionists&#8230;many browsers throttle the scrolling of a page to increase performance. This means, if you&#8217;re scrolling quickly up/down a page, the browser won&#8217;t trigger events for every pixel you scroll; it won&#8217;t redraw the page every pixel and neither will it trigger the JavaScript to create the parallax effect every single pixel. This not only leads to more &#8220;Stuttering&#8221; but also a loss of synchronization between the elements being manipulated and the scrollbar.</p>
+<div class="advertisement"><a href="http://membership.thinkvitamin.com/?aid=142&amp;utm_source=aff"><br />
+<img src="https://membership.thinkvitamin.com/images/affiliates/banners/468x60/javascript.gif?1315829261" alt="Javascript" width="468" height="60" /><br />
+</a></div>
+<h3>Improvements</h3>
+<p>So, now we know the issues, how can we avoid them?</p>
+<p>The obvious solution is to keep the number of media elements being manipulated to a minimum. However, this doesn&#8217;t mean you can only have x number of manipulated elements per page. You could potentially have 100s of elements on the page, providing there are only one or two (my recommendation) being manipulated in the viewport at any one time.</p>
+<p>This &#8220;selective&#8221; manipulation can be achieved by using a script that determines when an element is or is not within the viewport (and being seen by the user).</p>
+<p>My original demo uses <a title="Inview plugin" href="http://remysharp.com/2009/01/26/element-in-view-event-plugin/">Remy Sharp&#8217;s Inview plugin</a> but that, unfortunately, is no longer supported and doesn&#8217;t work with the latest versions of jQuery. There are plenty more of these plugins available though.<a title="jQuery Inview Plugin" href="http://protonet.info/post/2516624585/jquery-inview-plugin"> Take a look here</a> for example.</p>
+<p>Further to this, remember to always test on a mid-level machine to make sure your web page will work for the majority of users. As Firefox seems to &#8220;stutter&#8221; the most, I&#8217;d recommend you benchmark test using that.</p>
+<a name="mobile-support"></a><h2>Mobile Support</h2>
+
+
+<p>Since posting my original tutorial, I got quite a few people asking me how could they get the effect working on mobile devices. Quite simply, you can&#8217;t! At least not for iOS devices (I haven&#8217;t tested on other devices so if my next point is true for other smart phones/tablets, <a title="Contact Ian Lunn" href="http://www.ianlunn.co.uk/contact.php">please let me know</a>).</p>
+<p>Much like the aforementioned desktop browser throttling when scrolling, mobile devices take this one step further to improve performance. When scrolling in a mobile browser, no events are triggered until you&#8217;ve stopped scrolling &#8212; not even redrawing of the page. So, with the JavaScript parallax effect enabled on a mobile web page, when a user scrolls, nothing will move until the user stops scrolling. An element that <em>should</em> be manipulated will simply go from position A &#8211; Z without any transition in between.</p>
+<p>So, the solution is to use JavaScript to detect what type of device the web page is being viewed on. If it&#8217;s a desktop, allow the JavaScript to go ahead manipulating elements, if it&#8217;s a mobile device, don&#8217;t. The Nike Better World site uses this code to detect a mobile device:</p>
+<pre class="brush: plain; title: ;">
+$.Mobile = ($.Body.hasClass('webkit-mobile') || (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)))
+</pre>
+<p>Then later tests whether $.Mobile is true or not and activates/ignores the parallax effect JavaScript based on the outcome:</p>
+<pre class="brush: plain; title: ;">
+if($.Mobile){
+    //code for mobile device
+}else{
+    //code not for mobile device
+}
+</pre>
+<a name="conclusion"></a><h2>Conclusion</h2>
+
+
+<p>In my opinion, the parallax effect and attaching events to a users scrolling offer lots of ways to make a website experiential and unique. With the above tips, hopefully your implementation of the effect can be more efficient and a great experience for your users, just like <a title="Nike Better World" href="nikebetterworld.com">Nike Better World</a> is.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.ianlunn.co.uk/blog/code-tutorials/javascript-parallax-effects-a-deeper-look/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>jQuery Deck Shuffle</title>
+		<link>http://www.ianlunn.co.uk/blog/code-tutorials/jquery-deck-shuffle/</link>
+		<comments>http://www.ianlunn.co.uk/blog/code-tutorials/jquery-deck-shuffle/#comments</comments>
+		<pubDate>Mon, 28 Mar 2011 15:41:09 +0000</pubDate>
+		<dc:creator>Ian Lunn</dc:creator>
+				<category><![CDATA[Code Tutorials]]></category>
+		<category><![CDATA[jQuery]]></category>
+
+		<guid isPermaLink="false">http://www.ianlunn.co.uk/blog/?p=2656</guid>
+		<description><![CDATA[In today&#8217;s tutorial we&#8217;re going to develop a small script that allows a user to switch between product cards. It&#8217;s not the usual jQuery slider script though! In this demo we&#8217;ll use CSS to carefully make the three cards look &#8230; <a href="http://www.ianlunn.co.uk/blog/code-tutorials/jquery-deck-shuffle/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>In today&#8217;s tutorial we&#8217;re going to develop a small script that allows a user to switch between product cards. It&#8217;s not the usual jQuery slider script though! In this demo we&#8217;ll use CSS to carefully make the three cards look as though they are lined up behind each other, the further into the distance they go, the smaller they will get. When a user hovers over a background layer, we&#8217;ll use jQuery to animate that layer, bringing it to the front of the deck whilst moving the other cards into the background.</p>
+<p><span id="more-2656"></span>Let&#8217;s get to it! If you&#8217;d like the files to follow along with the tutorial, grab the <a title="jQuery Deck Shuffle" href="http://www.ianlunn.co.uk/demos/jquery-deck-shuffle/jquery-deck-shuffle.zip">jQuery Deck Shuffle script here</a>.</p>
+<a name="the-html"></a><h2>The HTML</h2>
+
+
+<p>Our HTML is straight forward and simple. We begin with a container for the layers that make up the deck:</p>
+<pre class="brush: plain; title: ;">
+&lt;div id=&quot;container&quot;&gt;
+</pre>
+<p>The purpose of the container is so we can position the deck where we want it on the page. Further to that, we&#8217;ll need to know in the jQuery when the cursor leaves the container, but we&#8217;ll come to that shortly.</p>
+<p>On to the HTML for each layer:</p>
+<pre class="brush: plain; title: ;">
+&lt;div id=&quot;one&quot; class=&quot;top&quot;&gt;
+    &lt;h2&gt;Product 1&lt;/h2&gt;
+    &lt;p&gt;layer content&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Feature 1&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;a href=&quot;#&quot; title=&quot;&quot;&gt;&lt;img class=&quot;order&quot; src=&quot;images/bt-order.png&quot; alt=&quot;Order&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+<p>This is the layer that initially sits at the top of our deck. It has an ID of &#8220;one&#8221;, which in a live website, should be renamed to something more meaningful. It has a class of &#8220;top&#8221; which will change to &#8220;middle&#8221; and/or &#8220;bottom&#8221; as the user interacts with the deck.</p>
+<div id="attachment_2666" class="wp-caption aligncenter" style="width: 290px"><img class="size-full wp-image-2666" title="Layer" src="http://www.ianlunn.co.uk/blog/wp-content/uploads/2011/03/bg-card.jpg" alt="One of the deck layers with text, product features and an order button" width="280" height="360" /><p class="wp-caption-text">One of the deck layers</p></div>
+<p>Inside of that div, we have the content of the layer. For the purpose of the demo, I&#8217;ve given the layer a title, some dummy text, a list of features and a big order button. The script can be amended so the layer includes whatever content you want though.</p>
+<p>And that&#8217;s it! The same code above is used to make more layers, simply by giving the next layer an ID of &#8220;two&#8221; and class of &#8220;middle&#8221; and so on.</p>
+<a name="the-css"></a><h2>The CSS</h2>
+
+
+<p>Now to make each layer look a little nicer, we&#8217;ll apply the following settings:</p>
+<pre class="brush: plain; title: ;">
+#one, #two, #three{
+	background: url(../images/bg-card.png) repeat;
+	border: solid 2px #CCC;
+	border-radius: 5%;
+	font-size: 100%;
+	padding: 3%;
+	position: absolute;
+}
+</pre>
+<p>Here we give each layer a repeating background, a grey and rounded corner border, along with some padding and a font-size of 100%. Why all of the percentage values? When each layer moves into the background/foreground, the elements within the layer will shrink/grow relative to the layer to appear as though they are moving into the background. Using the percentage values allows the browser to work this out itself, without our need for specifying the exact pixel values.</p>
+<p>Giving each layer a position value of &#8220;absolute&#8221; means they&#8217;ll sit behind/infront of each other based on the z-index value we specify next:</p>
+<pre class="brush: plain; title: ;">
+#one{
+	height: 360px;
+	width: 280px;
+	z-index: 3;
+}
+</pre>
+<p>Although we&#8217;ve already specified some CSS for the layer with the ID of &#8220;one&#8221;, we actually applied that to all three layers. This above code now applies CSS to the initial top layer only. It gives that layer a height and width and also a z-index of 3, meaning it should sit above the other layers that we will give a z-index of 2 and 1 in the exact same way:</p>
+<pre class="brush: plain; title: ;">
+#two{
+	height: 288px;
+	left: 100px;
+	top: 52px;
+	width: 224px;
+	z-index: 2;
+}
+</pre>
+<p>Further to the height, width and z-index for the initial second layer, we&#8217;ve specified a left and top value too. These will position the layer further to the left and further down the page in comparison to the top layer. It&#8217;ll give the impression of the second layer sitting behind the first layer, almost like it&#8217;s in the distance.</p>
+<pre class="brush: plain; title: ;">
+#three{
+	height: 216px;
+	left: 185px;
+	top: 95px;
+	width: 168px;
+	z-index: 1;
+}
+</pre>
+<p>We do exactly the same with the third layer, giving it a bigger value for the left and top positions.</p>
+<pre class="brush: plain; title: ;">
+#two p, #two ul, #two h2{
+	font-size: 80%;
+}
+
+#three p, #three ul, #three h2{
+	font-size: 60%;
+}
+</pre>
+<p>The rest of the CSS (aside from a Reset that is required to get the script working consistently across all browsers), sets up the child elements of the layers to make them shrink/grow when the layers get moved back and forth.</p>
+<div class="advertisement"><a href="http://membership.thinkvitamin.com/?aid=142&#038;utm_source=aff"><br />
+  <img alt="Css3" height="60" src="https://membership.thinkvitamin.com/images/affiliates/banners/468x60/css3.gif?1313702238" width="468"><br />
+</a></div>
+<a name="the-jquery"></a><h2>The jQuery</h2>
+
+
+<p>I&#8217;m going to jump straight to line 64 of the jQuery and explain the code in the order it&#8217;s triggered. We start with our good friend, document ready:</p>
+<pre class="brush: plain; title: ;">
+$(document).ready(function(){
+</pre>
+<p>Document ready contains the jQuery events and won&#8217;t trigger them until the browser has finished rendering the page.</p>
+<p>Inside of the document ready function, we&#8217;ve got two listeners. One that waits for the cursor to leave the &#8220;#container&#8221; element and the other that waits for the cursor to hover over a layer in the deck.</p>
+<p>As mentioned on the demo page, the script uses a jQuery plugin called <a title="Visit the HoverIntent website" href="http://cherne.net/brian/resources/jquery.hoverIntent.html">HoverIntent</a>. HoverIntent replaces jQuery&#8217;s inbuilt hover function to give us functionality more useful for real world applications. Let&#8217;s take a look at the code and then we&#8217;ll take a look at the difference between hover() and hoverIntent():</p>
+<pre class="brush: plain; title: ;">
+$('#one, #two, #three').hoverIntent(swap, out);
+</pre>
+<p>The hover listener is attached to our three layers that make up the deck. Whenever a user hovers over any of those layers, we trigger a function called &#8220;swap&#8221;. HoverIntent also takes an additional function for when the user moves the cursor out of one of those layers. We won&#8217;t be using this event but it needs to be included for HoverIntent to work.</p>
+<div id="attachment_2668" class="wp-caption aligncenter" style="width: 410px"><img class="size-full wp-image-2668" title="Deck of Layers" src="http://www.ianlunn.co.uk/blog/wp-content/uploads/2011/03/deck.jpg" alt="Three layers making up the deck" width="400" height="396" /><p class="wp-caption-text">The middle layer is difficult to get to without triggering an event on another layer</p></div>
+<p>So how does hoverIntent() differ from hover()? With hover(), when a user hovers over one of our selected layers, the event we&#8217;ve attached to it will trigger immediately. For this particularly script, that is far from ideal. Take a look at the second layer for example, it sits in between two other layers. If a user wants to bring that second layer to the top of the deck, should the cursor hover over the other layers to get there, the hover event for those layers will instantly trigger causing the unwanted layer to move and lots of confusion for the user.</p>
+<p>HoverIntent anticipates the users intentions by calculating how quickly the cursor is moving. If the cursor moves too quicky over one of those outer layers that we don&#8217;t want triggered, the hover event won&#8217;t initiate. But when the cursor stops over the second layer, it&#8217;s clear the user is interested in that layer and the function is clever enough to know that and triggers the event.</p>
+<p>So, now we know what HoverIntent does, let&#8217;s assume the event has been triggered and take a look at the swap() function on line 52:</p>
+<pre class="brush: plain; title: ;">
+function swap(){
+	zindex = $(this).css('z-index');
+	if(previous != zindex &amp;&amp; zindex != 3 &amp;&amp; active != true){
+		moveTop(this);
+	}
+	previous = zindex;
+}
+</pre>
+<p>Firstly, the swap() function gets the z-index of the layer the user hovered over. We then do an if statement to determine if the layer should be moved or not.</p>
+<p>The if statement has three conditionals that checks whether:</p>
+<ul>
+<li>The last layer to move is the same as the one the user has hovered over</li>
+<li>The hovered layer is on top of the deck</li>
+<li>The deck animation is active</li>
+</ul>
+<p>All of these conditionals need to be false to begin moving the deck around. Why? Because:</p>
+<ul>
+<li>If the last layer to move is the same as the one the user is hovering over, the hovering will cause an infinite animation.</li>
+<li>If the hovered layer is already on top of the deck, it doesn&#8217;t need to move anywhere</li>
+<li>If the layers are currently being animated, we don&#8217;t want any hovering to trigger more animation until the original animation completes</li>
+</ul>
+<p>So, providing all of those conditionals are false, the script moves on to the moveTop() function. Before we look at what that does, let&#8217;s pretend that function is already complete because the swap() function contains one last line of code:</p>
+<pre class="brush: plain; title: ;">
+previous = zindex;
+</pre>
+<p>This simply makes note of what the last layer was to move, and as we just covered, it&#8217;s used in the if statement to stop the same layer from animating and getting stuck in an infinite loop.</p>
+<p>Now onto the moveTop() function:</p>
+<pre class="brush: plain; title: ;">
+function moveTop(el){
+</pre>
+<p>Firstly, note that the function takes an argument. We feed the element the id of the layer the user is currently hovering over. Let&#8217;s continue to assume it&#8217;s the second layer.</p>
+<pre class="brush: plain; title: ;">
+active = true;
+</pre>
+<p>We set our global variable of &#8220;active&#8221; to true to let the script know that the animation is active (well, it is about to be!). This was used in the conditional statement too.</p>
+<pre class="brush: plain; title: ;">
+$(el).animate({'left': '310px', 'height': '360px', 'width': '280px', 'top': '0px'}, 200, function(){
+</pre>
+<p>We animate the layer that is hovered, moving it out of the deck and leave it there for the time being.</p>
+<pre class="brush: plain; title: ;">
+$(el).css(&quot;z-index&quot;, 3);
+    if(zindex == 2){
+	moveMiddle('.top');
+	$('.top').attr(&quot;class&quot;, &quot;middle&quot;);
+	$(el).attr(&quot;class&quot;, &quot;top&quot;);
+    }else if(zindex == 1){
+	moveMiddle('.top');
+	moveBottom('.middle');
+	$('.middle').attr(&quot;class&quot;, &quot;bottom&quot;);
+	$('.top').attr(&quot;class&quot;, &quot;middle&quot;);
+	$(el).attr(&quot;class&quot;, &quot;top&quot;);
+    }
+</pre>
+<p>Now we give that layer a z-index of 3, meaning it will now sit on top of the other layers. We run two more if statments at this point, to see at what position the hovered layer was at. If it was the middle layer, then we move the top layer down using the moveMiddle() function. The layer that <em>was</em> at the top, we now give the class of &#8220;middle&#8221; and set the hovered element&#8217;s class to &#8220;top&#8221;. If the user hovered over the bottom layer, the middle layer will also be moved to the bottom using moveBottom() and it&#8217;s class will be set to &#8220;bottom&#8221;.</p>
+<p>MoveMiddle() and moveBottom() are functions set up toward the top of the script that we&#8217;ll cover shortly, but for now, let&#8217;s continue following the flow of the script:</p>
+<pre class="brush: plain; title: ;">
+$(el).animate({'left': '0px'}, 200, function(){
+	active = false;
+});
+</pre>
+<p>We now move the hovered element back over to the left of the deck so it appears as if it&#8217;s sitting above the other two layers that we moved down. Once that animation is complete, we can change the global variable &#8220;active&#8221; back to false so that conditional statement we ran earlier knows it is now safe to run any animations again.</p>
+<p>Now finally, let&#8217;s take a look at those two functions we skipped over, moveMiddle() and moveBottom():</p>
+<pre class="brush: plain; title: ;">
+function moveMiddle(el){
+	$(el).animate({'left': '100px', 'height': '288px', 'width': '224px', 'top': '52px'}, {duration: 200,queue: false});
+	$(el).children('h2, p, ul').animate({'font-size': '80%'}, {duration: 200,queue: false});
+	$(el).children('.order').animate({'width': '80%'}, {duration: 200,queue: false});
+	$(el).css({'z-index': '2'});
+}
+</pre>
+<p>We animate the layer to be moved to the middle, moving it to the left, slightly down the page as well as reducing it&#8217;s over all size. We also animate the shrinking of the child elements (the text and order button) and finally change it&#8217;s z-index to 2 so it sits in the middle of the deck.</p>
+<p>MoveBottom() works in exactly the same way, except the values are slightly different to make the layer smaller.</p>
+<div class="advertisement"><a href="http://membership.thinkvitamin.com/?aid=142&amp;utm_source=aff"><br />
+<img src="https://membership.thinkvitamin.com/images/affiliates/banners/468x60/jquery.gif?1313702238" alt="Jquery" width="468" height="60" /><br />
+</a></div>
+<a name="graceful-degradation"></a><h2>Graceful Degradation</h2>
+
+
+<p>In this demo, the CSS makes enough measures to ensure the experience is unbroken for the user in case JavaScript is disabled. The deck simply won&#8217;t animate without JavaScript. If the user does click on a layer, they will simply be taken to a page where they can get more information regarding that layer.</p>
+<a name="conclusion"></a><h2>Conclusion</h2>
+
+
+<p>The jQuery Deck Shuffle script is a handy way to present information without taking up too much space. The script has plenty of measures to make sure only one layer is moved at a time so as not to confuse the user.</p>
+<p>The script could be furthered to make the animations move without the user needing to hover but instead, based on a timer where the bottom layer is moved to the top every few seconds. You could even incorporate icons that change to let you click between the layers instead of having to hover over them &#8212; much like a jQuery slider but with a 3D twist!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.ianlunn.co.uk/blog/code-tutorials/jquery-deck-shuffle/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Nikebetterworld Parallax Effect Demo</title>
+		<link>http://www.ianlunn.co.uk/blog/code-tutorials/recreate-nikebetterworld-parallax/</link>
+		<comments>http://www.ianlunn.co.uk/blog/code-tutorials/recreate-nikebetterworld-parallax/#comments</comments>
+		<pubDate>Wed, 23 Feb 2011 16:20:20 +0000</pubDate>
+		<dc:creator>Ian Lunn</dc:creator>
+				<category><![CDATA[Code Tutorials]]></category>
+		<category><![CDATA[jQuery]]></category>
+		<category><![CDATA[Parallax]]></category>
+
+		<guid isPermaLink="false">http://www.ianlunn.co.uk/blog/?p=2638</guid>
+		<description><![CDATA[A couple of months ago, I created a jQuery Vertical Parallax Demo that manipulated CSS to make multiple backgrounds move at different speeds relative to the users movement of the scroll bar. This type of effect is slowly appearing across &#8230; <a href="http://www.ianlunn.co.uk/blog/code-tutorials/recreate-nikebetterworld-parallax/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>A couple of months ago, I created a <a title="jQuery Vertical Parallax Background Demo" href="http://www.ianlunn.co.uk/blog/code-tutorials/jquery-vertical-parallax-background/">jQuery Vertical Parallax Demo</a> that manipulated CSS to make multiple backgrounds move at different speeds relative to the users movement of the scroll bar. This type of effect is slowly appearing across various websites on the web, achieved using many different techniques. <a title="Nikebetterworld" href="http://www.nikebetterworld.com/">Nikebetterworld</a> took the idea to a new level.</p>
+<p>In today&#8217;s tutorial, we&#8217;re going to take the original<a title="jQuery Vertical Parallax Demo" href="http://www.ianlunn.co.uk/blog/code-tutorials/jquery-vertical-parallax-background/"> jQuery Parallax script</a> I wrote and recreate a webpage similar to Nikebetterworld.</p>
+<p><span id="more-2638"></span></p>
+<p>If you&#8217;d like to see what we&#8217;ll be creating, go <a title="Nikebetterworld jQuery Parallax Demo" href="http://www.ianlunn.co.uk/demos/recreate-nikebetterworld-parallax/">check out the demo</a> or <a title="Download the Demo" href="http://www.ianlunn.co.uk/demos/recreate-nikebetterworld-parallax/recreate-nikebetterworld-parallax.zip">download the files</a>.</p>
+<a name="the-html"></a><h2>The HTML</h2>
+
+
+<p>Our page will consist of 6 sections: header, footer and 4 articles. On the right, we&#8217;ll place an unordered list that links between the articles and remains fixed on the page so it doesn&#8217;t move.</p>
+<pre class="brush: plain; title: ;">
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;scripts/nbw-parallax.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;scripts/jquery.localscroll-1.2.7-min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;scripts/jquery.scrollTo-1.4.2-min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;scripts/jquery.inview.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+	$('#nav').localScroll();
+})
+&lt;/script&gt;
+</pre>
+<p>To start, at the top of the page, we&#8217;ll reference all of the JavaScript files we&#8217;ll use to make the effect work. The scripts we&#8217;re using are:</p>
+<ul>
+<li><a title="jQuery 1.4.4" href="http://api.jquery.com/category/version/1.4.4/">jQuery 1.4.4</a></li>
+<li>The script I wrote (which we&#8217;ll cover shortly)</li>
+<li><a title="jQuery localscroll" href="http://www.flesler.blogspot.com/2007/10/jquerylocalscroll-10.html">jQuery localscroll</a> (which smoothly scrolls between articles)</li>
+<li><a title="jQuery scrollTo" href="http://www.flesler.blogspot.com/2007/10/jqueryscrollto.html">jQuery scrollTo</a> (also needed for smooth scrolling)</li>
+<li><a title="jQuery In View" href="http://remysharp.com/2009/01/26/element-in-view-event-plugin/">jQuery Inview</a> (determines whether a particular article is in view)</li>
+</ul>
+<p>We also need to initiate the localScroll function on the unordered list of article links that are fixed to the right of the page.</p>
+<pre class="brush: plain; title: ;">
+&lt;ul id=&quot;nav&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#intro&quot; title=&quot;Next Section&quot;&gt;&lt;img src=&quot;images/dot.png&quot; alt=&quot;Link&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#second&quot; title=&quot;Next Section&quot;&gt;&lt;img src=&quot;images/dot.png&quot; alt=&quot;Link&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#third&quot; title=&quot;Next Section&quot;&gt;&lt;img src=&quot;images/dot.png&quot; alt=&quot;Link&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#fourth&quot; title=&quot;Next Section&quot;&gt;&lt;img src=&quot;images/dot.png&quot; alt=&quot;Link&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#fifth&quot; title=&quot;Next Section&quot;&gt;&lt;img src=&quot;images/dot.png&quot; alt=&quot;Link&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>Inside of our  body tag, we begin with the unordered list that provides a quick link to each section. Without JavaScript, these links will act as anchors that simply jump to what ever article the user clicks on. With the use of jQuery though, we&#8217;ve already set each link up to smoothly scroll to it&#8217;s respective article. The smooth scrolling will help showcase the parallax effect we&#8217;re about to set up.</p>
+<pre class="brush: plain; title: ;">
+&lt;div id=&quot;intro&quot;&gt;
+	&lt;div class=&quot;story&quot;&gt;
+		Article content here
+    &lt;/div&gt; &lt;!--.story--&gt;
+&lt;/div&gt; &lt;!--#intro--&gt;
+</pre>
+<p>Finally, for our HTML, we have the containers that make up each article.</p>
+<a name="the-css"></a><h2>The CSS</h2>
+
+
+<p>I won&#8217;t cover what all of the CSS does, just that which is relevant to the working of the effect. Let&#8217;s take a look at the CSS for the HTML container I just mentioned above:</p>
+<pre class="brush: plain; title: ;">
+#intro{
+background:url(images/firstBG.jpg) 50% 0 no-repeat fixed;
+color: white;
+height: 600px;
+margin: 0;
+padding: 160px 0 0 0;
+}
+</pre>
+<p>The first article (#intro), will have one background image and a height of 600px. The width isn&#8217;t defined so it will stretch to 100% of the window. Each background image used for the articles I have made 1900px so the majority of monitors will have a full image background. Anything over 1900px will see a white border.</p>
+<pre class="brush: plain; title: ;">
+.story{
+margin: 0 auto;
+min-width: 980px;
+width: 980px;
+}
+</pre>
+<p>Inside of the #intro container, we have .story which is present in every article container. This purely keeps each article centered in the browser and with a width of 980px, almost every monitor will see the website without the need for horizontal scroll bars.</p>
+<h3>Multiple Backgrounds</h3>
+<p>Some of the articles have multiple backgrounds. Nikebetterworld achieved this using extra HTML in the article container which is exactly what I&#8217;ve done for the &#8220;Multiple Backgrounds&#8221; article, just like this:</p>
+<pre class="brush: plain; title: ;">
+&lt;div id=&quot;second&quot;&gt;
+	&lt;div class=&quot;story&quot;&gt;
+            &lt;div class=&quot;bg&quot;&gt;&lt;/div&gt;
+            Article content here
+    &lt;/div&gt; &lt;!--.story--&gt;
+&lt;/div&gt; &lt;!--#second--&gt;
+</pre>
+<p>The div with the class of &#8220;bg&#8221; has it&#8217;s own background:</p>
+<pre class="brush: plain; title: ;">
+#second .bg{
+	background: url(images/trainers.png) 50% 0 no-repeat fixed;
+	...
+	position: absolute;
+	...
+	z-index: 200;
+}
+</pre>
+<p>This div is also given an absolute position and a high z-index to make sure it appears above everything else.</p>
+<p><strong>However</strong>, although this is the best way to achieve support across all browsers for multiple backgrounds, it&#8217;s also possible to use CSS3 multiple backgrounds, which I demonstrate in the fourth article in the demo &#8220;Empty Containers vs CSS3 Multiple Backgrounds&#8221;.</p>
+<div class="advertisement"><a href="http://membership.thinkvitamin.com/?aid=142&#038;utm_source=aff"><br />
+  <img alt="Css3" height="60" src="https://membership.thinkvitamin.com/images/affiliates/banners/468x60/css3.gif?1313702238" width="468"><br />
+</a></div>
+<p>Using CSS3 means we don&#8217;t have to place empty containers in the markup and leave the styling to CSS which is how things should (and one day will) be. So, let&#8217;s look at the CSS for the fourth article container:</p>
+<pre class="brush: plain; title: ;">
+#fourth{
+	background: url(images/bubbles2.png), url(images/bubbles2.png), url(images/bubbles1.png), url(images/fourthBG.jpg);
+	background-position: 50% 0, 50% 0, 50% 0, 50% 0;
+	background-color: #036;
+	background-attachment: fixed;
+	background-repeat: repeat, repeat, repeat ,no-repeat;
+}
+</pre>
+<p>As you can see, I&#8217;ve used CSS3 to give one element multiple backgrounds. I&#8217;ve also given each of those backgrounds their own position values. We&#8217;ll be manipulating these values in jQuery shortly.</p>
+<p>Note: <em>In my original jQuery Parallax Demo, I used shorthand CSS to define all of the backgrounds values which is what I did in this demo to begin with too. However, because I used shorthand, when I started manipulating the background positions via jQuery, it meant not only were the background positions being changed, but so too were the background urls and this made the jQuery very heavy. Infact, only Chrome is able to cope with running that original script smoothly at this time, but I do plan to take what I&#8217;ve learnt in this demo and optimize the code in the hope it will run smoothly across all browsers too.</em></p>
+<p>So, it is entirely up to you which method you use to create multiple backgrounds. Extra markup means the effect will work across all browsers but if you&#8217;re just trying this demo for fun, I recommend CSS3 because you can achieve much more with it.</p>
+<a name="the-jquery"></a><h2>The jQuery</h2>
+
+
+<p>Now we get to the meat of this tutorial! First thing&#8217;s first, optimization! As mentioned above, my original jQuery Parallax Demo was quite a difficult script for browsers to deal with because it was asking them to do a lot. This script is much lighter thanks to the above mentioned CSS along with a good amount of jQuery optimization:</p>
+<pre class="brush: plain; title: ;">
+	var $window = $(window);
+	var $firstBG = $('#intro');
+	var $secondBG = $('#second');
+	var $thirdBG = $('#third');
+	var $fourthBG = $('#fourth');
+	var trainers = $(&quot;#second .bg&quot;);
+</pre>
+<p>We start by turning our selectors into variables for referencing in the script later on.</p>
+<p>We will need the height of the browser window on a few occasions so we&#8217;ll put that into a variable too:</p>
+<pre class="brush: plain; title: ;">
+var windowHeight = $window.height();
+</pre>
+<p>Next up, comes our &#8216;inview&#8217; event which uses the<a title="jQuery Element 'in view' Event Plugin" href="http://remysharp.com/2009/01/26/element-in-view-event-plugin/"> jQuery Element &#8216;in view&#8217; Event Plugin</a>:</p>
+<pre class="brush: plain; title: ;">
+$('#intro, #second, #third, #fourth').bind('inview', function (event, visible) {
+	if (visible == true) {
+	    $(this).addClass(&quot;inview&quot;);
+	} else {
+	    $(this).removeClass(&quot;inview&quot;);
+	}
+});
+</pre>
+<p>I&#8217;m using this plugin for optimisation reasons too. Quite simply, it determines whether a particular element is &#8216;in view&#8217; or not. I&#8217;ve coded it so that if one of the articles is &#8216;in view&#8217;, then it applies a class of &#8220;inview&#8221; to that article. Later on in the script, we run an &#8220;if statement&#8221; to determine whether an article is &#8216;in view&#8217; before manipulating the position of it&#8217;s background image. By doing this, it means only the background images the user can see will be moved, thus saving the script from moving all background images at the same time.</p>
+<p>Next, we have three functions which will be called at three separate occasions. Firstly, the positioning of the unordered list I mentioned, that is fixed to the right of the window:</p>
+<pre class="brush: plain; title: ;">
+function RepositionNav(){
+		var windowHeight = $window.height();
+		var navHeight = $('#nav').height() / 2;
+		var windowCenter = (windowHeight / 2);
+		var newtop = windowCenter - navHeight;
+		$('#nav').css({&quot;top&quot;: newtop});
+	}
+</pre>
+<p>We want the unordered list to always remain vertically in the centre of the browser window. The code above takes the height of the list and divides it by two to find it&#8217;s centre. Then it finds the centre of the window in the same way. It subtracts one value from the other to find the new top position of the unordered list and finally applies it.</p>
+<p>Our second function is where the magic happens. It&#8217;s the little bit of code that works out how to move each background image respective to the position of the scrollbar:</p>
+<pre class="brush: plain; title: ;">
+function newPos(x, windowHeight, pos, adjuster, inertia){
+	return x + &quot;% &quot; + (-((windowHeight + pos) - adjuster) * inertia)  + &quot;px&quot;;
+}
+</pre>
+<p>When we call the function further in the script, we&#8217;ll provide it five different arguments, which are much like settings that make each call to that function unique. They are as follows:</p>
+<ul>
+<li>x = the horizontal position of the image</li>
+<li>windowHeight = the height of the window</li>
+<li>pos = The position of the scrollbar</li>
+<li>adjuster = A value that moves the background image into a position we want</li>
+<li>inertia = The speed at which the background image moves in relation to the scrollbar</li>
+</ul>
+<div class="advertisement"><a href="http://membership.thinkvitamin.com/?aid=142&#038;utm_source=aff"><br />
+  <img alt="Jquery" height="60" src="https://membership.thinkvitamin.com/images/affiliates/banners/468x60/jquery.gif?1313702238" width="468"><br />
+</a></div>
+<p>The function then uses these arguments we&#8217;ve fed it to return one property that changes the CSS property, &#8216;background-position&#8217; of whichever article we request. An example output would be:</p>
+<p>50% -400px</p>
+<p>That value is yet to be applied though. That&#8217;s where our final function comes in.</p>
+<pre class="brush: plain; title: ;">
+function Move(){
+	var pos = $window.scrollTop();
+...
+</pre>
+<p>Move() is to be called whenever the user moves the scrollbar window or resizes the browser. It starts by working out the position of the scrollbar.</p>
+<p>Then, we have several &#8220;if statements&#8221; that check to see if an article is &#8220;in view&#8221;:</p>
+<pre class="brush: plain; title: ;">
+if($firstBG.hasClass(&quot;inview&quot;)){
+	$firstBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 900, 0.3)});
+}
+</pre>
+<p>In this &#8220;if statement&#8221;, we check to see if the first article has the class of &#8220;inview&#8221;. Remember, our &#8220;in view&#8221; check earlier on applied this class for us. If the article is &#8220;in view&#8221;, we change the CSS property, &#8216;backgroundPosition&#8217; using the newPos function as explained above.</p>
+<p>The function continues to test if each article has the class of &#8220;inview&#8221; and if so, it changes the &#8220;backgroundPosition&#8221; property.</p>
+<p>You will notice in this demo, the second article has two lines of code that each change a different &#8220;backgroundPosition&#8221;. One is for the full background of the second article, the other changes the background of the extra bit of markup:</p>
+<pre class="brush: plain; title: ;">
+&lt;div class=&quot;bg&quot;&gt;&lt;/div&gt;
+</pre>
+<p>As I mentioned, in the fourth article I used CSS3 multiple backgrounds so when the function tests the fourth article to see if it has the class of &#8220;inview&#8221; and it does, the following code is used:</p>
+<pre class="brush: plain; title: ;">
+$fourthBG.css({'backgroundPosition': newPos(0, windowHeight, pos, 200, 0.9) + &quot;, &quot; + newPos(50, windowHeight, pos, 0, 0.7) + &quot;, &quot; + newPos(50, windowHeight, pos, 0, 0.5) + &quot;, &quot; + newPos(50, windowHeight, pos, 700, 0.3)});
+</pre>
+<p>The newPos function is simply called multiple times to work out the position of each background image.</p>
+<p>One final piece of code for this function:</p>
+<pre class="brush: plain; title: ;">
+$('#pixels').html(pos);
+</pre>
+<p>At the bottom of the Nikebetterworld website, they show you how many pixels you&#8217;ve scrolled to reach the bottom of the page. I included this in the demo and the code above replicates that.</p>
+<p>Whew, that&#8217;s it right? Almost!</p>
+<p>Up to now, all of that code hasn&#8217;t actually done anything. We&#8217;ve simply set up lots of code to be activated when we need it. We just need a few events now to allow us to utilise all of those functions.</p>
+<p>Immediately after the last function, I&#8217;ve called the function &#8216;RepositionNav()&#8217;. This is triggered immediately after the script loads to make sure the unordered list of links is vertically positioned in the window.</p>
+<p>Next up is a window resize event:</p>
+<pre class="brush: plain; title: ;">
+$window.resize(function(){
+	Move();
+	RepositionNav();
+});
+</pre>
+<p>When a user resizes the browser, we call the Move() and RepositionNav() functions. These both make sure that the demo works well regardless of the window size.</p>
+<pre class="brush: plain; title: ;">
+$window.bind('scroll', function(){
+	Move();
+});
+</pre>
+<p>And finally, the scroll event. When a user scrolls, call the Move() function to move the background images relative to the position of the scrollbar.</p>
+<a name="conclusion"></a><h2>Conclusion</h2>
+
+
+<p>Having saw the Nikebetterworld website I was blown away but a little disappointed too. I didn&#8217;t get the chance to put my jQuery Parallax Demo into good use &#8212; it just existed as a demo. Having tried to replicate the Nikebetterworld website though, I have a lot of respect for whomever it was that developed it. Not only did they create a truly awesome effect, they made the website cross browser compatible too. They also used other cutting edge technologies such as HTML5 and font replacement to make a truly amazing experience.</p>
+<p>Parallax effects are slowly being used across more and more sites. Having made this demo and learnt a lot along the way, I still have a lot of ideas for making the demo code better but also for taking the script in new directions and achieving even more amazing effects with it. Keep your eye on my blog for more techniques, or if you beat me to it, <a title="Contact Ian" href="http://www.ianlunn.co.uk/contact.php">give me a shout</a> because I&#8217;d love to see what you&#8217;ve made.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.ianlunn.co.uk/blog/code-tutorials/recreate-nikebetterworld-parallax/feed/</wfw:commentRss>
+		<slash:comments>82</slash:comments>
+		</item>
+		<item>
+		<title>jQuery Rich Media Dropdown Menu</title>
+		<link>http://www.ianlunn.co.uk/blog/code-tutorials/jquery-rich-media-dropdown-menu/</link>
+		<comments>http://www.ianlunn.co.uk/blog/code-tutorials/jquery-rich-media-dropdown-menu/#comments</comments>
+		<pubDate>Wed, 09 Feb 2011 16:15:51 +0000</pubDate>
+		<dc:creator>Ian Lunn</dc:creator>
+				<category><![CDATA[Code Tutorials]]></category>
+
+		<guid isPermaLink="false">http://www.ianlunn.co.uk/blog/?p=2604</guid>
+		<description><![CDATA[Today&#8217;s tutorial combines two good friends, jQuery and dropdown menus! &#8220;That boring old combination&#8221;, I hear you cry. But wait, this is a dropdown menu with a difference! It takes away all menus from your website, except for one easy &#8230; <a href="http://www.ianlunn.co.uk/blog/code-tutorials/jquery-rich-media-dropdown-menu/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Today&#8217;s tutorial combines two good friends, jQuery and dropdown menus! &#8220;That boring old combination&#8221;, I hear you cry. But wait, this is a dropdown menu with a difference! It takes away all menus from your website, except for one easy to navigate list of top level links, with one dropdown menu for each, containing as menu child categories and as much rich media as you want!  Don&#8217;t take my word for it, go and try the <a title="jQuery Rich Media Dropdown Menu" href="http://www.ianlunn.co.uk/demos/jquery-rich-media-drop-down-menu/">demo</a> yourself.</p>
+<p><span id="more-2604"></span></p>
+<a name="the-plan"></a><h2>The Plan</h2>
+
+
+<p>The jQuery rich media dropdown menu is going to take away the usual clutter of menus we are used to seeing on ecommerce websites and allow products the space they deserve. In this tutorial, we will write a script that does just that, making sure it is cross browser compatible, easy to navigate and degrades gracefully in the absence of JavaScript or CSS. Go <a title="jQuery Rich Media Dropdown Menu" href="http://www.ianlunn.co.uk/demos/jquery-rich-media-drop-down-menu/jquery-rich-media-drop-down-menu.zip">nab the demo to tinker with yourself</a> if you haven&#8217;t already or carry on reading to find out what all of that code means! If you want to skip all of that, <a title="jQuery Rich Media Dropdown Menu" href="http://www.ianlunn.co.uk/demos/jquery-rich-media-drop-down-menu/">shoot straight to the demo</a>.</p>
+<a name="the-html"></a><h2>The HTML</h2>
+
+
+<p>The HTML is rather simple (as HTML should be!). Infact, it&#8217;s just a big unordered list with a couple of classes thrown in for good measure. We&#8217;ll get to those classes later on, for now, here&#8217;s a snippet of the HTML:</p>
+<pre class="brush: plain; title: ;">
+&lt;ul id=&quot;nav&quot;&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;DVD&lt;/a&gt;
+    	&lt;ul&gt;
+        	&lt;li&gt;&lt;span&gt;Shop By Category&lt;/span&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Family&lt;/a&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Comedy&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Cartoons&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Interactive&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Drama&lt;/a&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Period&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Modern&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/li&gt;
+        	&lt;li&gt;&lt;span&gt;Browse DVD&lt;/span&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;A-Z&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Now Available&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Top Sellers&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Coming Soon&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Pre-Order Chart&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Special Offers&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;span&gt;Latest Releases&lt;/span&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Titanic&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Alien Vs Predator&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Terminator 2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Meet the Parents&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;span&gt;Hottest Title&lt;/span&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/dvd.jpg&quot; width=&quot;123&quot; alt=&quot;DVD&quot; /&gt;DVD&lt;/a&gt;&lt;span class=&quot;price&quot;&gt;£1.99&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>Let&#8217;s take a look at what that code means:</p>
+<pre class="brush: plain; title: ;">
+&lt;ul id=&quot;nav&quot;&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;DVD&lt;/a&gt;
+    	&lt;ul&gt;
+</pre>
+<div id="attachment_2627" class="wp-caption aligncenter" style="width: 430px"><img class="size-full wp-image-2627" title="Level of links" src="http://www.ianlunn.co.uk/blog/wp-content/uploads/2011/02/level-of-links.jpg" alt="Level of links" width="420" height="247" /><p class="wp-caption-text">Level of links</p></div>
+<p>We begin with an unordered list that contains top level links for our websites categories. The &#8216;Home&#8217; link doesn&#8217;t have any sub categories but the &#8216;DVD&#8217; link does, so we nest another unordered list inside of it.</p>
+<pre class="brush: plain; title: ;">
+
+&lt;li&gt;&lt;span&gt;Shop By Category&lt;/span&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Family&lt;/a&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Comedy&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Cartoons&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Interactive&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Drama&lt;/a&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Period&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Modern&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/li&gt;
+        	&lt;li&gt;&lt;span&gt;Browse DVD&lt;/span&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;A-Z&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Now Available&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Top Sellers&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Coming Soon&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Pre-Order Chart&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Special Offers&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+</pre>
+<p>Inside of <em>that</em> unordered list, we have various ways to browse the DVD section, ie, &#8220;Shop by Category&#8221;, &#8220;Browse DVD&#8221; etc.</p>
+<div id="attachment_2624" class="wp-caption aligncenter" style="width: 410px"><img class="size-full wp-image-2624" title="Rich media" src="http://www.ianlunn.co.uk/blog/wp-content/uploads/2011/02/rich-media.jpg" alt="Rich media" width="400" height="270" /><p class="wp-caption-text">Images in the dropdown menu</p></div>
+<p>We can also include in the dropdown menu media such as images:</p>
+<pre class="brush: plain; title: ;">
+&lt;li&gt;&lt;span&gt;Hottest Title&lt;/span&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/dvd.jpg&quot; width=&quot;123&quot; alt=&quot;DVD&quot; /&gt;DVD&lt;/a&gt;&lt;span class=&quot;price&quot;&gt;£1.99&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/li&gt;
+</pre>
+<p>Above we have another unordered list inside the DVD category, with it&#8217;s own unordered list that contains images for the &#8220;Hottest Title&#8221;.</p>
+<a name="the-jquery"></a><h2>The jQuery</h2>
+
+
+<p>Firstly, as with all jQuery scripts, we&#8217;ll reference the script itself in the HTML document as well as the jQuery library:</p>
+<pre class="brush: plain; title: ;">
+&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;dropdown-menu.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+</pre>
+<p>Now, let&#8217;s take a look at dropdown-menu.js. We begin the script unfortunately, having to fix Internet Explorer 6&#8242;s (IE6) shortcomings:</p>
+<pre class="brush: plain; title: ;">
+$(&quot;#nav &gt; li&quot;).css({&quot;display&quot;: &quot;inline&quot;, &quot;background-color&quot;: &quot;#ececec&quot;, &quot;margin&quot;: &quot;0 10px&quot;});
+$(&quot;#nav &gt; li &gt; ul&quot;).css({&quot;padding&quot;: &quot;5px&quot;, &quot;position&quot;: &quot;absolute&quot;, &quot;width&quot;: &quot;auto&quot;});
+$(&quot;#nav &gt; li &gt; ul &gt; li&quot;).css({&quot;color&quot;: &quot;black&quot;, &quot;height&quot;: &quot;100%&quot;, &quot;padding&quot;: &quot;0 0 0 5px&quot;, &quot;width&quot;: &quot;175px&quot;});
+</pre>
+<p>Our script relies on child selectors in the CSS which IE6 doesn&#8217;t support. Simply by applying that CSS via jQuery though, we can step around that issue. If IE6 doesn&#8217;t have JavaScript enabled, we don&#8217;t need this particular CSS anyway so all is good.</p>
+<p>The CSS is setup to make the navigation usable in case JavaScript is disabled. If it is enabled though, we want to use different CSS to create the styling for our dropdown menus. We simply do that as follows:</p>
+<pre class="brush: plain; title: ;">
+$(&quot;#nav li &gt; ul&quot;).css({&quot;background&quot;: &quot;white&quot;, &quot;border&quot;: &quot;#ccc solid 2px&quot;});
+$(&quot;#nav ul ul&quot;).css({&quot;background&quot;: &quot;none&quot;, &quot;border&quot;: &quot;none&quot;});
+$(&quot;#nav li &gt; ul&quot;).css({&quot;color&quot;: &quot;#999&quot;, &quot;display&quot;: &quot;block&quot;, &quot;float&quot;: &quot;left&quot;, &quot;margin&quot;: 0, &quot;padding&quot;: &quot;10px&quot;, &quot;left&quot;: &quot;auto&quot;});
+$(&quot;span&quot;).css(&quot;display&quot;,&quot;block&quot;);
+$(&quot;#nav li&quot;).css({&quot;display&quot;: &quot;inline&quot;});
+$(&quot;li li&quot;).css({&quot;float&quot;: &quot;left&quot;, &quot;margin&quot;: &quot;0&quot;, &quot;font-size&quot;: &quot;12px&quot;});
+$(&quot;.show ul li ul&quot;).css({&quot;display&quot;:&quot;block&quot;});
+
+$(function() {
+	$('#nav &gt; li').hover( function(){
+	$(this).css('background-color', '#ccc');
+},
+function(){
+	$(this).css('background-color', '#ececec');
+});
+});
+</pre>
+<p>Lines 1 &#8211; 7 simply apply the CSS required to style the dropdown menus. Lines 9 &#8211; 16 are a hover event that changes the background colours of our top level links when the user hovers over them.</p>
+<pre class="brush: plain; title: ;">
+$(&quot;#nav &gt; li&quot;).children(&quot;ul&quot;).css(&quot;display&quot;, &quot;none&quot;);
+</pre>
+<p>Finally, for the CSS, we hide all of the dropdown menus (because we don&#8217;t want them to appear until the user hovers over a link).</p>
+<p>Now we get down to adding some functionality to the script. Firstly, an important variable that determines the vertical position of where each dropdown menu should appear:</p>
+<pre class="brush: plain; title: ;">
+var top = $(&quot;#nav &gt; li&quot;).position().top + $(&quot;#nav &gt; li&quot;).height();
+</pre>
+<p>We want each dropdown menu to appear directly below its respective navigation link. We can find that position by getting the position of the navigation link relative to the top of the document and then find the height of that link and add the two values together.</p>
+<p>Once we&#8217;ve worked out where to position each dropdown menu, we create a hover event that triggers when a user hovers over any of the navigation links:</p>
+<pre class="brush: plain; title: ;">
+$(&quot;#nav &gt; li&quot;).hover(
+  	function () {
+</pre>
+<p>This sets up the event to wait for the user to hover over a link. When the event is triggered we must work out the left position of where we want to place the dropdown menu, as well as determining if the dropdown menu will be too wide for the page:</p>
+<pre class="brush: plain; title: ;">
+var left = $(this).position().left;
+var offset = $(this).offset().left;
+var width = $(this).children(&quot;ul&quot;).width();
+var over = (left + width) - 940;
+</pre>
+<p>The first line gets the left position of the navigation link that the user is hovering over (relative it&#8217;s parent, the &lt;body&gt; ).</p>
+<p>The second line gets the left position of that same link but this time, relative to the overall document.</p>
+<p>The third line gets the width of that navigation link&#8217;s respective dropdown menu.</p>
+<p>Finally, the fourth line works out how much the dropdown menu will overhang the &lt;body&gt; of the page. If there is an overhang, we&#8217;ll need to adjust the left position to keep it ontop of the webpage, as opposed to disappearing off the screen.</p>
+<pre class="brush: plain; title: ;">
+if(left + width &gt; 940){
+</pre>
+<p>Our next line checks to see if indeed, the dropdown menu is going to be wider than the website. In that case we need to do the following:</p>
+<pre class="brush: plain; title: ;">
+$(this).children(&quot;ul&quot;).css(&quot;display&quot;, &quot;block&quot;);
+$(this).children(&quot;ul&quot;).css({left:left-over, top:top});
+</pre>
+<p>We begin by showing the dropdown menu. We then set it&#8217;s position using the variables we&#8217;ve already determined. Because we know the dropdown menu is going to overhang the page, we take that amount of overhang from it&#8217;s left position, meaning it gets nudged to the left a little and sits flush with the right of the page.</p>
+<p><em>A note about Internet Explorer here: Internet Explorer has terrible support for jQuery&#8217;s .offset method so instead, I&#8217;ve used .css. There is a bug in Internet Explorer 8 which means the .offset or .css methods won&#8217;t work without a &#8216;top&#8217; value specified. Hence, the extra bit of coding to find that out. The .css method is also more cross browser compatible too (the values you give it work the same in all browsers).</em></p>
+<p>Once we&#8217;ve dealt with a dropdown menu that overhangs, well deal with dropdown menus that won&#8217;t overhang:</p>
+<pre class="brush: plain; title: ;">
+}else{
+    $(this).children(&quot;ul&quot;).css(&quot;display&quot;, &quot;block&quot;);
+    $(this).children(&quot;ul&quot;).css({left:left, top:top});
+}
+</pre>
+<p>As you can see, this is almost the same as the overhang version. The only difference is we don&#8217;t need to adjust the left position of the dropdown menu because it fits nicely into the webpage.</p>
+<p>Our final piece of jQuery is an event for when the user moves their mouse out of the dropdown menu:</p>
+<pre class="brush: plain; title: ;">
+function () {
+    $(this).children(&quot;ul&quot;).css(&quot;display&quot;, &quot;none&quot;);
+}
+</pre>
+<p>This simply hides the dropdown menu when the user moves their mouse outside of it. That&#8217;s it!</p>
+<a name="graceful-degradation"></a><h2>Graceful Degradation</h2>
+
+
+<p>With any script, it&#8217;s important to make sure it offers a working version if JavaScript is disabled. As stated earlier on, the CSS of the script is setup to act as if the JavaScript is disabled but if it isn&#8217;t, the JavaScript overwrites that CSS so it can get its jiggy on regardless.</p>
+<p>Without the JavaScript, we can&#8217;t have fancy hover events or dropdown menus, so instead, we&#8217;ll return to a more traditional navigation menu, simply listing the top level navigation links as well as the second level links for whatever page the user is on.</p>
+<div id="attachment_2622" class="wp-caption aligncenter" style="width: 609px"><img class="size-full wp-image-2622" title="Graceful Degradation" src="http://www.ianlunn.co.uk/blog/wp-content/uploads/2011/02/graceful-degradation.jpg" alt="Graceful Degradation" width="599" height="65" /><p class="wp-caption-text">How the menu looks without JavaScript enabled</p></div>
+<p>This is where we use a few extra classes in the HTML to let the browser know which child links we want to display.</p>
+<p>Let&#8217;s say for example, the user is on the &#8220;Clothing&#8221; page, as demonstrated in the image above. We need to make that tab a different colour and show just one child list of links (remember there&#8217;s more than one list of child links). We can do that using the classes &#8220;active&#8221; and &#8220;show&#8221;:</p>
+<pre class="brush: plain; title: ;">
+&lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Clothing&lt;/a&gt;
+    	&lt;ul&gt;
+        	&lt;li class=&quot;show&quot;&gt;&lt;span&gt;Shop By Category&lt;/span&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Mens&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Womens&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Shirts&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Ties&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Shoes&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Fancy Dress&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;span&gt;Browse Clothing&lt;/span&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Mens&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Womens&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Top Sellers&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Coming Soon&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Special Offers&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+</pre>
+<p>class=&#8221;active&#8221; is the current page the user is on. It changes the colour of the tab to signify where the user is amongst those links.</p>
+<p>class=&#8221;show&#8221; will display the child list of the &#8220;active&#8221; tab as a second level menu. It makes the most sense to display a list of categories as the second level menu but the script will allow you to choose whatever second level you want, simply by moving class=&#8221;show&#8221;.</p>
+<p>What about the &lt;span&gt; <span>tags, you say? We don&#8217;t want the title of the second level list to show in the absence of JavaScript, so in the CSS we have made anything in a &lt;span&gt; tag display: none. Amazing, huh?</span></p>
+<a name="the-conclusion"></a><h2>The Conclusion</h2>
+
+
+<p>The script is a great way to remove all of that hefty navigation from the page, letting your products do the talking. At the same time, the website is still accessible with semantic and W3C valid HTML. If you were to use this in a live website, the classes &#8220;show&#8221; and &#8220;active&#8221; could be applied dynamically.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.ianlunn.co.uk/blog/code-tutorials/jquery-rich-media-dropdown-menu/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Going Freelance: Getting into a Stride</title>
+		<link>http://www.ianlunn.co.uk/blog/freelance-diary/getting-into-a-stride/</link>
+		<comments>http://www.ianlunn.co.uk/blog/freelance-diary/getting-into-a-stride/#comments</comments>
+		<pubDate>Wed, 02 Feb 2011 11:11:18 +0000</pubDate>
+		<dc:creator>Ian Lunn</dc:creator>
+				<category><![CDATA[Freelance Diary]]></category>
+
+		<guid isPermaLink="false">http://www.ianlunn.co.uk/blog/?p=2579</guid>
+		<description><![CDATA[This month, I feel I&#8217;m in my stride and my future as a self employed web designer is much clearer and more determined. A lot of my initial plans however, don&#8217;t seem to be coming to fruition &#8212; whether that &#8230; <a href="http://www.ianlunn.co.uk/blog/freelance-diary/getting-into-a-stride/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>This month, I feel I&#8217;m in my stride and my future as a self employed web designer is much clearer and more determined. A lot of my initial plans however, don&#8217;t seem to be coming to fruition &#8212; whether that be because things just take time or because they weren&#8217;t what I thought they&#8217;d be.</p>
+<p><span id="more-2579"></span></p>
+<a name="what-i-ve-been-doing-this-month"></a><h2>What I&#8217;ve Been Doing this Month</h2>
+
+
+<h3>Getting Work</h3>
+<p>I&#8217;ve come to realise this month that life as a freelance web designer is definetly not all about designing websites and writing code, you only get to do that when you have work, and a lot of your time will be spent trying to get that work.</p>
+<p>I&#8217;ve been very suprised to get the most work this month from networking. Not online, but just by talking to people. I met quite a few people in the business workshops that I mentioned in previous entries, of which I&#8217;ve had a suprising amount of calls from. Out of all my efforts, networking is by far the thing I&#8217;ve put the least amount of time into yet it has gotten me the most enquiries as well as setting me up with some outsource work for a couple of companies in the future. I&#8217;ve also built a good size list of web professionals that offer services that may be useful to me and my clients in the future which will definetly be handy.</p>
+<p>To add to this, I&#8217;ve made sure what contact I&#8217;ve made is always followed up and it really makes the difference &#8212; just a quick call the day after or an email saying thanks really keeps communication going and may have opened some doors for me this month that may have closed, so to speak. With the amount of web professionals offering similar services nowadays, all it takes is that follow up to put you ahead of the competition.</p>
+<p><img class="aligncenter size-full wp-image-2593" title="Handing out business cards whilst shopping" src="http://www.ianlunn.co.uk/blog/wp-content/uploads/2011/02/shopping.jpg" alt="Handing out business cards whilst shopping" width="500" height="250" /></p>
+<p>By no means am I the greatest at networking but it&#8217;s something I aim to continue and improve. I&#8217;ve started to mention my services and hand over my business card just when out shopping. I&#8217;m yet to start telling people I offer a percentage for any work reffered which I think should help to keep the word of my services going.</p>
+<h3>Advertising</h3>
+<p>When I started my business plan, I thought I&#8217;d be able to get the majority of my work online. Whilst I have been getting work online, it&#8217;s only really been outsource work and nothing I can put in my portfolio. I think the bigger projects will come from the local area so I&#8217;ve decided to advertise with Thomson Local in the hope to get more work locally.</p>
+<p>Last month I mentioned they offered me their online and printed book package for £300. They offered me the same this month for £250 so I went with it. I won&#8217;t get into the local directory until July but I have a promoted position on their website right now.</p>
+<p>That said, I haven&#8217;t been particularly happy with their service so far. It seems I can&#8217;t upload images to my promoted listing just yet and having spoken to them on the phone several times they keep telling me it&#8217;s being fixed, but it&#8217;s yet to happen. Regardless, the aim is to get business from it, it will only take one client to make what they&#8217;re charging me pay off and with my company in their listings for 18 months online and 12 months in the paper directory, surely that must happen.</p>
+<p><img class="aligncenter size-full wp-image-2594" title="Advertising in theatre programme" src="http://www.ianlunn.co.uk/blog/wp-content/uploads/2011/02/theatre.jpg" alt="Advertising in theatre programme" width="500" height="250" /></p>
+<p>I&#8217;ve also decided to advertise in my local town&#8217;s theatre brochure. Having been dragged to the theatre for a Christmas panto, I noticed the programme had some advertising space for a very small price. Whether that will get me any work I don&#8217;t know but it was so cheap I thought I&#8217;d give it a go. I like the idea of supporting the local community, infact, I am considering doing a free website for a local company just to try and get my name out there a little more.</p>
+<a name="feelings-toward-the-month"></a><h2>Feelings Toward the Month</h2>
+
+
+<p>Now I feel more settled into the freelance life, I&#8217;m starting to form my own opinions on how best to achieve things. I put a lot of research into what I should do to succeed as well as taking a look at what others have done that are already succeeding but I am now questioning what I thought was the right approach.</p>
+<p>I think a lot of what I have done so far isn&#8217;t paying off. As I said earlier, networking has been the best way for me to get work, yet it&#8217;s the thing I&#8217;ve put least amount of effort into. Blogging &#8212; whilst I am starting to find my feet and realise what type of posts are and are not working for me &#8212; is yet to get me a sniff of work. This isn&#8217;t a problem for me as blogging is about setting myself new projects to be able to further my knowledge as much as it is about getting work. However, there are a lot of people recommending you blog to get noticed, they also suggest giving out free content. I agree these are both good ways to get your name out there but I think I have been approaching them in the wrong way.</p>
+<p>Writing or giving out freebies to get yourself noticed is kind of a contradiction. You need to have an audience for that writing or freebie to be noticed by anyone. I think if you are going to try to get noticed, do it on a big platform that already has an audience, ie, don&#8217;t write on your own blog that nobody knows, write as a guest for a big named blog.</p>
+<p>This has been the thing that&#8217;s bugged me a lot this month. I am putting a lot of time into my own blog at the moment. I can definetly see in the stats that people are finding my content useful &#8212; it&#8217;s great to see people spending 30 mins on my site reading a couple of pages &#8212; but I am probably not using the time I put into it effectively. I&#8217;m still juggling ideas as how best to utilise my blog but I definetly know I need to make a change.</p>
+<h3>Pleased About</h3>
+<p><img class="aligncenter size-full wp-image-2599" title="Task Management" src="http://www.ianlunn.co.uk/blog/wp-content/uploads/2011/02/todo.jpg" alt="Task Management" width="500" height="250" /></p>
+<p>I&#8217;m really glad to be in my stride. I&#8217;m using a very nifty app on my desktop and iPhone called <a title="WunderList" href="http://www.6wunderkinder.com/wunderlist">Wunderlist</a> that&#8217;s making my working life nice and productive. I tend to set up my todo list for a day the night before. It means when I hit my desk in the morning, my day is planned out for me so I can just get straight to work.</p>
+<p>Before becoming self employed, I&#8217;d only ever worked as an employee for various companies. A cool thing about self employment is that you see payment for projects as soon as it arrives in your companies account, there&#8217;s no waiting until the end of the month to get a figure that&#8217;s the same each month. It makes work feel more like an achievement and there&#8217;s more incentive to work your socks off &#8212; if you do more work, you can pay yourself more too!</p>
+<h3>Regrets</h3>
+<p>This month I only managed to get one blog post done (aside from this diary entry). I decided last month, to write fewer posts but really make what I do write shine. I would have liked to have written 3 posts still but I haven&#8217;t quite got my plans for the blog nailed. Lots of thinking to do regarding blogging&#8230;</p>
+<a name="what-i-ve-learnt"></a><h2>What I&#8217;ve Learnt</h2>
+
+
+<p><strong>Don&#8217;t Miss a Chance to Business Card Bomb</strong><br />
+When you send a letter, drop your business card in the envelope. When you buy milk, give your business card with the money. When somebody tells you they just got a website, hand over your business card anyway!</p>
+<p><strong>Offer a Referrers Percentage</strong><br />
+If you&#8217;re business card bombing like crazy, a lot of people aren&#8217;t going to need your services and your card stops with them. If you tell them you offer x% for any referral, those 100 people that have your card will tell the 100 people they know and you have 10000 people that know about your services.</p>
+<p><strong>PayPal Sucks</strong><br />
+Much like eBay, there&#8217;s not much else to use. Aside from the fees and ridiculously long processing times, PayPal can also be tricky because it lumps all of your transactions into one, making it a nightmare to explain when it comes to your accounts. I recommend if your PayPal balance consists of multiple payments, withdraw each payment separately so it makes your book keeping easier.</p>
+<a name="plans-for-the-following-month"></a><h2>Plans for the Following Month</h2>
+
+
+<ul>
+<li>Search engine optimize website</li>
+<li>Improve online presence and make it simpler</li>
+<li>Release first WordPress theme on ThemeForrest</li>
+</ul>
+<a name="you-get-your-say-too"></a><h2>You get Your Say too!</h2>
+
+
+<p>Remember, you get your say too! Whilst my diary is purely about what I’ve been doing to become a successful freelance web designer, I’d like to hear your experiences too. Maybe you’ve been in a similar situation to myself but took a slightly different path or made a different decision. <a title="Contact Me" rel="nofollow" href="http://www.ianlunn.co.uk/blog/freelance-diary/contact.php">Let me know!</a> I’d also like to hear your comments and questions that I may feature in future entries too.<br />
+Don’t forget about my new ‘<a title="Going Freelance: A Web Designer's Diary" href="http://www.ianlunn.tumblr.com/">live notepad</a>‘ too, where I post shorter but more up to date entries that eventually make up each months diary entry.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.ianlunn.co.uk/blog/freelance-diary/getting-into-a-stride/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

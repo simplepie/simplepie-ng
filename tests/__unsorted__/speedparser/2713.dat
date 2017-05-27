@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Boxks</title>
+	<atom:link href="http://blog.boxks.com/feed" rel="self" type="application/rss+xml" />
+	<link>http://blog.boxks.com</link>
+	<description>Boxes+books=boxks</description>
+	<lastBuildDate>Sun, 29 May 2011 17:31:31 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.2.1</generator>
+		<item>
+		<title>icon &#8211; Android</title>
+		<link>http://blog.boxks.com/2011/05/icon-android.htm</link>
+		<comments>http://blog.boxks.com/2011/05/icon-android.htm#comments</comments>
+		<pubDate>Sun, 29 May 2011 16:52:43 +0000</pubDate>
+		<dc:creator>Kaiyuan Xie</dc:creator>
+				<category><![CDATA[Design]]></category>
+		<category><![CDATA[android]]></category>
+		<category><![CDATA[icon]]></category>
+
+		<guid isPermaLink="false">http://blog.boxks.com/?p=576</guid>
+		<description><![CDATA[这是原本准备参加 MIUI 主题设计比赛的,但是画到一般就没心情画下去了. 现在只完成一半. 有很多想法的icon都还没画出来.以后有空再画后面的. 其实有很多想法自己都很喜欢,但是现在不怎么想画. &#160; Download]]></description>
+		<wfw:commentRss>http://blog.boxks.com/2011/05/icon-android.htm/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>夜空</title>
+		<link>http://blog.boxks.com/2010/07/moon.htm</link>
+		<comments>http://blog.boxks.com/2010/07/moon.htm#comments</comments>
+		<pubDate>Tue, 06 Jul 2010 05:13:04 +0000</pubDate>
+		<dc:creator>Kaiyuan Xie</dc:creator>
+				<category><![CDATA[Design]]></category>
+		<category><![CDATA[jparallax]]></category>
+		<category><![CDATA[jquery]]></category>
+		<category><![CDATA[moon]]></category>
+		<category><![CDATA[视觉差]]></category>
+
+		<guid isPermaLink="false">http://blog.boxks.com/?p=559</guid>
+		<description><![CDATA[// 夜空.其实系用一个插件做唧. http://webdev.stephband.info/parallax.html 个插件系做一D视觉差唧效果. 定义一个DIV,ID="parallax" CSS就定义 #parallax { position:relative; overflow:hidden; height: 300px; width: 580px; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; background-color: #333; } 连接 Jquery同网站上面个插件. 在写一个页面唧JS jQuery(document).ready(function(){   jQuery('#parallax').jparallax({xtravel: '120px'},{xtravel: '15px'},{xtravel: '60px'},{ytravel: '100px'},{ytravel: '10px'},{ytravel: '40px'});   }); 不过jquery一定要系1.3.2.min 其他版本系唔得唧.点解我都唔知.距就系唔得. 下面系我做唧所有文档.]]></description>
+		<wfw:commentRss>http://blog.boxks.com/2010/07/moon.htm/feed</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Soundation玩</title>
+		<link>http://blog.boxks.com/2010/05/soundation.htm</link>
+		<comments>http://blog.boxks.com/2010/05/soundation.htm#comments</comments>
+		<pubDate>Thu, 27 May 2010 18:08:39 +0000</pubDate>
+		<dc:creator>Kaiyuan Xie</dc:creator>
+				<category><![CDATA[Share]]></category>
+		<category><![CDATA[soundation]]></category>
+		<category><![CDATA[剪接]]></category>
+		<category><![CDATA[音乐]]></category>
+
+		<guid isPermaLink="false">http://blog.boxks.com/?p=555</guid>
+		<description><![CDATA[系showeb20上面见到篇文章介绍一个唔错唧在线服务. showeb20上介绍: Soundation 是一款基于浏览器的在线混音编辑器，可以将一段段的音乐片段混搭成一曲富有节奏感的完整音乐。 Soundation 是一款酷似Cooledit 但完全基于浏览器的在线混音编辑器，它可以帮助那些对音乐节奏十分敏感的人轻松在线实现音乐创作的想法，方便他们将一些不着调的音乐素材或者音乐碎片在线混搭（Mixing、Mushup）成一支独立的音乐作品。Soundation 免费用户只能从官方所提供的2000+曲库中选择一定数量的素材进行组合和混搭，如果你需要上传自己的音乐素材，则需要支付一定数额的费用购买官方开发的AudioLocker 去同步和上传本地音乐文件到服务器上以便再编辑。 下面系我接唧一段音乐,只系随便接. link]]></description>
+		<wfw:commentRss>http://blog.boxks.com/2010/05/soundation.htm/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Morning GZ</title>
+		<link>http://blog.boxks.com/2010/05/guangzhou_morning.htm</link>
+		<comments>http://blog.boxks.com/2010/05/guangzhou_morning.htm#comments</comments>
+		<pubDate>Tue, 11 May 2010 17:42:36 +0000</pubDate>
+		<dc:creator>Kaiyuan Xie</dc:creator>
+				<category><![CDATA[iBook]]></category>
+		<category><![CDATA[morning]]></category>
+		<category><![CDATA[广州]]></category>
+		<category><![CDATA[日出]]></category>
+		<category><![CDATA[早上]]></category>
+
+		<guid isPermaLink="false">http://blog.boxks.com/?p=552</guid>
+		<description><![CDATA[前几天的早晨. 最近经常都是通宵. 其实唔咩做.但系就系唔想训. 已经学紧PHP. 但系又唔想搞. 都系想办法搞掂个blog主题先. 其实经常都可以睇到日出都唔错. 而且早上D光线好特别.]]></description>
+		<wfw:commentRss>http://blog.boxks.com/2010/05/guangzhou_morning.htm/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>DEMO 一个</title>
+		<link>http://blog.boxks.com/2010/04/demo_the_one.htm</link>
+		<comments>http://blog.boxks.com/2010/04/demo_the_one.htm#comments</comments>
+		<pubDate>Wed, 21 Apr 2010 09:34:36 +0000</pubDate>
+		<dc:creator>Kaiyuan Xie</dc:creator>
+				<category><![CDATA[Design]]></category>
+		<category><![CDATA[demo]]></category>
+		<category><![CDATA[flash]]></category>
+		<category><![CDATA[动画]]></category>
+		<category><![CDATA[片头]]></category>
+
+		<guid isPermaLink="false">http://blog.boxks.com/?p=548</guid>
+		<description><![CDATA[Deom 其实是无聊时候做的. 算个半成品吧,以后有空再继续做后面的.]]></description>
+		<wfw:commentRss>http://blog.boxks.com/2010/04/demo_the_one.htm/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Send me an Email</title>
+		<link>http://blog.boxks.com/2010/03/send_me_email.htm</link>
+		<comments>http://blog.boxks.com/2010/03/send_me_email.htm#comments</comments>
+		<pubDate>Thu, 11 Mar 2010 09:35:13 +0000</pubDate>
+		<dc:creator>Kaiyuan Xie</dc:creator>
+				<category><![CDATA[iBook]]></category>
+		<category><![CDATA[email]]></category>
+		<category><![CDATA[gmail]]></category>
+		<category><![CDATA[hotmail]]></category>
+		<category><![CDATA[qqmail]]></category>
+		<category><![CDATA[邮件]]></category>
+
+		<guid isPermaLink="false">http://blog.boxks.com/?p=539</guid>
+		<description><![CDATA[大家多点Send email 吧. 其实我很喜欢Email这个通信方式,因为可以吧信息存在服务器上. 其实我喜欢的就是手机也能收发Email,我觉得Email 好,就是因为,短信,彩信都是手机对手机的,现在有了飞信,可以手机和电脑互发了,但是只限于中国移动的号码间. 而Email 就只要你有一个可接入网络的设备就可以收发.也可以发送任意格式的附件. 现在很多手机都支持收发Email 的,只要我们设置下服务器就可以了. 虽然Email 没有短信那么迅速,但是他可以把信息存储在服务器上这点很有用,就算你在手机上删除了,信息还存在服务器上. 不过我喜欢的值任意一台电脑和手机间的通信这一点. 而我之前的博文也说过几个较多人用的邮箱服务的服务器,大家可以参照一下.至于各种手机是如何设置邮件收发,网上有很多说明,也可以登录到你手机的官方网站中查找. 要是大家有兴趣的话,可以推荐你的朋友多Send Email 的啊.]]></description>
+		<wfw:commentRss>http://blog.boxks.com/2010/03/send_me_email.htm/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Pogo-Digitalism</title>
+		<link>http://blog.boxks.com/2010/02/pogo-digitalism.htm</link>
+		<comments>http://blog.boxks.com/2010/02/pogo-digitalism.htm#comments</comments>
+		<pubDate>Thu, 11 Feb 2010 07:41:38 +0000</pubDate>
+		<dc:creator>Kaiyuan Xie</dc:creator>
+				<category><![CDATA[iBook]]></category>
+		<category><![CDATA[Digitalism]]></category>
+		<category><![CDATA[mp3]]></category>
+		<category><![CDATA[music]]></category>
+		<category><![CDATA[pogo]]></category>
+
+		<guid isPermaLink="false">http://blog.boxks.com/?p=496</guid>
+		<description><![CDATA[今天在一个wordpress 的mp3播放插件的网站上听到的一首演时歌曲. 虽然是我很讨厌的嘈杂音乐,但是我还是觉得比较特别的. Pogo Digitalism 音乐的详细我不怎么了解过,不过感觉还不错. 也看过了MV. 下面来听听吧. 下面的是背乐 演示的那个页面]]></description>
+		<wfw:commentRss>http://blog.boxks.com/2010/02/pogo-digitalism.htm/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+<enclosure url="http://www.danceism.com/audio/Pogo.mp3" length="5448875" type="audio/mpeg" />
+<enclosure url="http://www.ihopeyourearsbleed.com/wp-content/uploads/2009/04/01-pogo-digitalisms-pogo-robotic-remix.mp3" length="8741919" type="audio/mpeg" />
+		</item>
+		<item>
+		<title>Nexus One cell phone</title>
+		<link>http://blog.boxks.com/2010/01/nexus-one-cell-phone.htm</link>
+		<comments>http://blog.boxks.com/2010/01/nexus-one-cell-phone.htm#comments</comments>
+		<pubDate>Wed, 06 Jan 2010 04:09:07 +0000</pubDate>
+		<dc:creator>Kaiyuan Xie</dc:creator>
+				<category><![CDATA[iBook]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[Nexus One]]></category>
+		<category><![CDATA[手机]]></category>
+		<category><![CDATA[谷歌]]></category>
+
+		<guid isPermaLink="false">http://sealour.com/?p=467</guid>
+		<description><![CDATA[Google 发布自己品牌的手机Nexus One cell phone了! 我很喜欢这样简约的设计! 零售价是530美元（约3618元人民币）不知道进到国内的水货会卖多小钱呢? 其实我不知道为什么人们都说他的外型一般! 但是我比较喜欢这样的简约设计! 可以的话我想他后面也是纯色一片! 屏幕占据了绝大部分的位置.屏幕边缘没太多多月边框是最好的! 下面是视频. 下面是在谷奥上面看到的3段官方介绍]]></description>
+		<wfw:commentRss>http://blog.boxks.com/2010/01/nexus-one-cell-phone.htm/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

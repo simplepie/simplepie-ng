@@ -1,0 +1,18 @@
+<rss>
+<channel>
+<title>My weblog &mdash; tech news & stuff</title>
+</channel>
+
+<item>
+<title>Layoffs in BT & H</title>
+<link>http://example.com/news/3</link>
+<description>BT & H has laid off more people as the recession only gets worse.  Note the ampersands in both title and description.</description>
+</item>
+
+<item>
+<title>Mozilla Project Hurt by Apple's Decision to use KH</title>
+<link>http://developers.slashdot.org/article.pl?sid=03/01/14/1514205&mode=nested&tid=154&threshold=3</link>
+<description>It's generally best to read Slashdot at a +3 comments threshhold.  Note undefined entities in the link (due to unescaped ampersands).</description>
+</item>
+
+</rss>

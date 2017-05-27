@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns="http://purl.org/rss/1.0/"
+ xmlns:content="http://purl.org/rss/1.0/modules/content/"
+ xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+ xmlns:admin="http://webns.net/mvcb/"
+>
+<channel rdf:about="http://jsdo.it/tenkao">
+ <title>tenkao recent actions</title>
+ <link>http://jsdo.it/tenkao</link>
+ <description>tenkao recent actions @ http://jsdo.it/</description>
+ <items>
+  <rdf:Seq>
+   <rdf:li rdf:resource="http://jsdo.it/tsmallfield/datauriplayground2#259088" />
+   <rdf:li rdf:resource="http://jsdo.it/tenkao/d0JN#244479" />
+   <rdf:li rdf:resource="http://jsdo.it/tenkao/3mjh#154337" />
+   <rdf:li rdf:resource="http://jsdo.it/tenkao/3mjh#152860" />
+   <rdf:li rdf:resource="http://jsdo.it/tsmallfield/css3_speed_meter#152733" />
+   <rdf:li rdf:resource="http://jsdo.it/tenkao/3mjh#152503" />
+   <rdf:li rdf:resource="http://jsdo.it/tenkao/3mjh#152423" />
+   <rdf:li rdf:resource="http://jsdo.it/tenkao/3mjh#151971" />
+   <rdf:li rdf:resource="http://jsdo.it/tenkao/3mjh#151842" />
+   <rdf:li rdf:resource="http://jsdo.it/norahiko/m1WT#151740" />
+   <rdf:li rdf:resource="http://jsdo.it/tenkao/3mjh#151307" />
+   <rdf:li rdf:resource="http://jsdo.it/tenkao/3mjh#151225" />
+   <rdf:li rdf:resource="http://jsdo.it/sugyan/jstagram#138906" />
+   <rdf:li rdf:resource="http://jsdo.it/meso/2311#129997" />
+   <rdf:li rdf:resource="http://jsdo.it/yuuki_n/lace_generator#111849" />
+   <rdf:li rdf:resource="http://jsdo.it/Akiyah/uPDQ#talk_unit_378" />
+   <rdf:li rdf:resource="http://jsdo.it/tenkao/ve5v#talk_unit_377" />
+   <rdf:li rdf:resource="http://jsdo.it/tenkao/ve5v#108890" />
+   <rdf:li rdf:resource="http://jsdo.it/tenkao/ve5v#talk_unit_373" />
+  </rdf:Seq>
+ </items>
+</channel>
+
+<item rdf:about="http://jsdo.it/tsmallfield/datauriplayground2#259088">
+ <title>tenkao added to favorites: [] - "DATA URI Playground2 (jsdo.itエディタ対応DATA-URI生成)"</title>
+ <link>http://jsdo.it/tsmallfield/datauriplayground2#259088</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-07-05T11:38:28+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">added to <a href="http://jsdo.it/tenkao#code_favorites">favorites</a>:</span>
+    <span class="favorite_comment"></span><span class="code_thumbnail">
+  <a href="http://jsdo.it/tsmallfield/datauriplayground2" title="DATA URI Playground2 (jsdo.itエディタ対応DATA-URI生成)"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/i/X/n/iXnS.jpg?t=1303445217" alt="thumbnail" title="DATA URI Playground2 (jsdo.itエディタ対応DATA-URI生成)" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tsmallfield/datauriplayground2" title="DATA URI Playground2 (jsdo.itエディタ対応DATA-URI生成)">DATA URI Playground2 (jsdo.itエディタ対応DATA-URI生成)</a>
+</span>
+    <span class="code_date">at 2011-07-05 11:38:28</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tenkao/d0JN#244479">
+ <title>tenkao modified "Google WebFont tester"</title>
+ <link>http://jsdo.it/tenkao/d0JN#244479</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-06-24T00:40:09+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">modified</span><span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/d0JN" title="Google WebFont tester"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/d/0/J/d0JN.jpg?t=1308848179" alt="thumbnail" title="Google WebFont tester" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/d0JN" title="Google WebFont tester">Google WebFont tester</a>
+</span>
+    <span>forked from</span><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span>'s</span>
+<span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/b3Lp" title="Web safe font tester"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/b/3/L/b3Lp.jpg?t=1278678204" alt="thumbnail" title="Web safe font tester" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/b3Lp" title="Web safe font tester">Web safe font tester</a>
+</span>
+    <span class="code_date">at 2011-06-24 00:40:09</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tenkao/3mjh#154337">
+ <title>tenkao modified "Google 避難所名簿共有サービス　アルバム・写真リスト "</title>
+ <link>http://jsdo.it/tenkao/3mjh#154337</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-03-20T21:30:07+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">modified</span><span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト "><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/3/m/j/3mjh.jpg?t=1300626298" alt="thumbnail" title="Google 避難所名簿共有サービス　アルバム・写真リスト " width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト ">Google 避難所名簿共有サービス　アルバム・写真リスト </a>
+</span>
+    <span class="code_date">at 2011-03-20 21:30:07</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tenkao/3mjh#152860">
+ <title>tenkao modified "Google 避難所名簿共有サービス　アルバム・写真リスト "</title>
+ <link>http://jsdo.it/tenkao/3mjh#152860</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-03-18T10:14:25+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">modified</span><span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト "><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/3/m/j/3mjh.jpg?t=1300626298" alt="thumbnail" title="Google 避難所名簿共有サービス　アルバム・写真リスト " width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト ">Google 避難所名簿共有サービス　アルバム・写真リスト </a>
+</span>
+    <span class="code_date">at 2011-03-18 10:14:25</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tsmallfield/css3_speed_meter#152733">
+ <title>tenkao added to favorites: [] - "CSS3でスピードメーター"</title>
+ <link>http://jsdo.it/tsmallfield/css3_speed_meter#152733</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-03-18T01:29:15+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">added to <a href="http://jsdo.it/tenkao#code_favorites">favorites</a>:</span>
+    <span class="favorite_comment"></span><span class="code_thumbnail">
+  <a href="http://jsdo.it/tsmallfield/css3_speed_meter" title="CSS3でスピードメーター"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/j/9/X/j9XB.jpg?t=1300372857" alt="thumbnail" title="CSS3でスピードメーター" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tsmallfield/css3_speed_meter" title="CSS3でスピードメーター">CSS3でスピードメーター</a>
+</span>
+    <span class="code_date">at 2011-03-18 01:29:15</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tenkao/3mjh#152503">
+ <title>tenkao modified "Google 避難所名簿共有サービス　アルバム・写真リスト "</title>
+ <link>http://jsdo.it/tenkao/3mjh#152503</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-03-17T20:56:40+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">modified</span><span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト "><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/3/m/j/3mjh.jpg?t=1300626298" alt="thumbnail" title="Google 避難所名簿共有サービス　アルバム・写真リスト " width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト ">Google 避難所名簿共有サービス　アルバム・写真リスト </a>
+</span>
+    <span class="code_date">at 2011-03-17 20:56:40</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tenkao/3mjh#152423">
+ <title>tenkao modified "Google 避難所名簿共有サービス　アルバム・写真リスト "</title>
+ <link>http://jsdo.it/tenkao/3mjh#152423</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-03-17T16:46:10+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">modified</span><span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト "><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/3/m/j/3mjh.jpg?t=1300626298" alt="thumbnail" title="Google 避難所名簿共有サービス　アルバム・写真リスト " width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト ">Google 避難所名簿共有サービス　アルバム・写真リスト </a>
+</span>
+    <span class="code_date">at 2011-03-17 16:46:10</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tenkao/3mjh#151971">
+ <title>tenkao modified "Google 避難所名簿共有サービス　アルバム・写真リスト "</title>
+ <link>http://jsdo.it/tenkao/3mjh#151971</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-03-16T20:09:24+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">modified</span><span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト "><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/3/m/j/3mjh.jpg?t=1300626298" alt="thumbnail" title="Google 避難所名簿共有サービス　アルバム・写真リスト " width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト ">Google 避難所名簿共有サービス　アルバム・写真リスト </a>
+</span>
+    <span class="code_date">at 2011-03-16 20:09:24</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tenkao/3mjh#151842">
+ <title>tenkao modified "Google 避難所名簿共有サービス　アルバム・写真リスト "</title>
+ <link>http://jsdo.it/tenkao/3mjh#151842</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-03-16T17:05:30+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">modified</span><span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト "><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/3/m/j/3mjh.jpg?t=1300626298" alt="thumbnail" title="Google 避難所名簿共有サービス　アルバム・写真リスト " width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト ">Google 避難所名簿共有サービス　アルバム・写真リスト </a>
+</span>
+    <span class="code_date">at 2011-03-16 17:05:30</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/norahiko/m1WT#151740">
+ <title>tenkao added to favorites: [] - "CSSでキュウべえ(FULL)を描いてみた"</title>
+ <link>http://jsdo.it/norahiko/m1WT#151740</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-03-16T13:48:00+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">added to <a href="http://jsdo.it/tenkao#code_favorites">favorites</a>:</span>
+    <span class="favorite_comment"></span><span class="code_thumbnail">
+  <a href="http://jsdo.it/norahiko/m1WT" title="CSSでキュウべえ(FULL)を描いてみた"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/m/1/W/m1WT.jpg?t=1314708873" alt="thumbnail" title="CSSでキュウべえ(FULL)を描いてみた" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/norahiko/m1WT" title="CSSでキュウべえ(FULL)を描いてみた">CSSでキュウべえ(FULL)を描いてみた</a>
+</span>
+    <span class="code_date">at 2011-03-16 13:48:00</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tenkao/3mjh#151307">
+ <title>tenkao modified "Google 避難所名簿共有サービス　アルバム・写真リスト "</title>
+ <link>http://jsdo.it/tenkao/3mjh#151307</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-03-15T22:35:29+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">modified</span><span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト "><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/3/m/j/3mjh.jpg?t=1300626298" alt="thumbnail" title="Google 避難所名簿共有サービス　アルバム・写真リスト " width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト ">Google 避難所名簿共有サービス　アルバム・写真リスト </a>
+</span>
+    <span class="code_date">at 2011-03-15 22:35:29</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tenkao/3mjh#151225">
+  <title>tenkao created "Google 避難所名簿共有サービス　アルバム・写真リスト "</title>
+ <link>http://jsdo.it/tenkao/3mjh#151225</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-03-15T19:14:33+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">created</span><span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト "><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/3/m/j/3mjh.jpg?t=1300626298" alt="thumbnail" title="Google 避難所名簿共有サービス　アルバム・写真リスト " width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/3mjh" title="Google 避難所名簿共有サービス　アルバム・写真リスト ">Google 避難所名簿共有サービス　アルバム・写真リスト </a>
+</span>
+    <span class="code_date">at 2011-03-15 19:14:33</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/sugyan/jstagram#138906">
+ <title>tenkao added to favorites: [] - "JStagram"</title>
+ <link>http://jsdo.it/sugyan/jstagram#138906</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-03-02T16:58:10+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">added to <a href="http://jsdo.it/tenkao#code_favorites">favorites</a>:</span>
+    <span class="favorite_comment"></span><span class="code_thumbnail">
+  <a href="http://jsdo.it/sugyan/jstagram" title="JStagram"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/3/e/3/3e3Q.jpg?t=1298936826" alt="thumbnail" title="JStagram" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/sugyan/jstagram" title="JStagram">JStagram</a>
+</span>
+    <span class="code_date">at 2011-03-02 16:58:10</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/meso/2311#129997">
+ <title>tenkao added to favorites: [] - "WebSocket(Socket.IO)を使ったチャットサンプル"</title>
+ <link>http://jsdo.it/meso/2311#129997</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-02-22T00:46:15+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">added to <a href="http://jsdo.it/tenkao#code_favorites">favorites</a>:</span>
+    <span class="favorite_comment"></span><span class="code_thumbnail">
+  <a href="http://jsdo.it/meso/2311" title="WebSocket(Socket.IO)を使ったチャットサンプル"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/2/3/1/2311.jpg?t=1298914929" alt="thumbnail" title="WebSocket(Socket.IO)を使ったチャットサンプル" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/meso/2311" title="WebSocket(Socket.IO)を使ったチャットサンプル">WebSocket(Socket.IO)を使ったチャットサンプル</a>
+</span>
+    <span class="code_date">at 2011-02-22 00:46:15</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/yuuki_n/lace_generator#111849">
+ <title>tenkao added to favorites: [] - "レースジェネレーター"</title>
+ <link>http://jsdo.it/yuuki_n/lace_generator#111849</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-02-06T23:24:20+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">added to <a href="http://jsdo.it/tenkao#code_favorites">favorites</a>:</span>
+    <span class="favorite_comment"></span><span class="code_thumbnail">
+  <a href="http://jsdo.it/yuuki_n/lace_generator" title="レースジェネレーター"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/9/X/E/9XEY.jpg?t=1297187137" alt="thumbnail" title="レースジェネレーター" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/yuuki_n/lace_generator" title="レースジェネレーター">レースジェネレーター</a>
+</span>
+    <span class="code_date">at 2011-02-06 23:24:20</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/Akiyah/uPDQ#talk_unit_378">
+ <title>tenkao posted a comment on: SNBinderを試したよ！</title>
+ <link>http://jsdo.it/Akiyah/uPDQ#talk_unit_378</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-02-03T02:46:26+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    posted a comment on: <span class="code_thumbnail">
+  <a href="http://jsdo.it/Akiyah/uPDQ" title="SNBinderを試したよ！"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/u/P/D/uPDQ.jpg?t=1295943848" alt="thumbnail" title="SNBinderを試したよ！" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/Akiyah/uPDQ" title="SNBinderを試したよ！">SNBinderを試したよ！</a>
+</span>
+  </div>
+   ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tenkao/ve5v#talk_unit_377">
+ <title>tenkao posted a comment on: forked from: SNBinderを試したよ！</title>
+ <link>http://jsdo.it/tenkao/ve5v#talk_unit_377</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-02-03T02:38:00+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    posted a comment on: <span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/ve5v" title="forked from: SNBinderを試したよ！"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/v/e/5/ve5v.jpg?t=1296667830" alt="thumbnail" title="forked from: SNBinderを試したよ！" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/ve5v" title="forked from: SNBinderを試したよ！">forked from: SNBinderを試したよ！</a>
+</span>
+  </div>
+   ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tenkao/ve5v#108890">
+ <title>tenkao modified "forked from: SNBinderを試したよ！"</title>
+ <link>http://jsdo.it/tenkao/ve5v#108890</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-02-03T02:26:31+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    <span class="action.type">modified</span><span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/ve5v" title="forked from: SNBinderを試したよ！"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/v/e/5/ve5v.jpg?t=1296667830" alt="thumbnail" title="forked from: SNBinderを試したよ！" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/ve5v" title="forked from: SNBinderを試したよ！">forked from: SNBinderを試したよ！</a>
+</span>
+    <span>forked from</span><a href="http://jsdo.it/Akiyah">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/e/d/0/7/ed0737230c35f3d8802cdcf51647d4900e9af1db_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/Akiyah">Akiyah</a>
+    <span>'s</span>
+<span class="code_thumbnail">
+  <a href="http://jsdo.it/Akiyah/uPDQ" title="SNBinderを試したよ！"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/u/P/D/uPDQ.jpg?t=1295943848" alt="thumbnail" title="SNBinderを試したよ！" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/Akiyah/uPDQ" title="SNBinderを試したよ！">SNBinderを試したよ！</a>
+</span>
+    <span class="code_date">at 2011-02-03 02:26:31</span>
+  </div>
+ ]]>
+ </description>
+</item>
+<item rdf:about="http://jsdo.it/tenkao/ve5v#talk_unit_373">
+ <title>tenkao posted a comment on: forked from: SNBinderを試したよ！</title>
+ <link>http://jsdo.it/tenkao/ve5v#talk_unit_373</link>
+ <dc:creator>tenkao</dc:creator>
+ <dc:date>2011-02-02T12:33:23+09:00</dc:date>
+ <description>
+  <![CDATA[<br/>
+  <div><a href="http://jsdo.it/tenkao">
+  <img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/icon/4/f/f/c/4ffc8720e8850372e1b1c17289d8a5efaf3f7a81_100.jpg" width="30" height="30" />
+</a>
+<a href="http://jsdo.it/tenkao">tenkao</a>
+    posted a comment on: <span class="code_thumbnail">
+  <a href="http://jsdo.it/tenkao/ve5v" title="forked from: SNBinderを試したよ！"><img src="http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/v/e/5/ve5v.jpg?t=1296667830" alt="thumbnail" title="forked from: SNBinderを試したよ！" width="30" height="30" /></a>
+</span>
+<span class="code_title">
+  <a href="http://jsdo.it/tenkao/ve5v" title="forked from: SNBinderを試したよ！">forked from: SNBinderを試したよ！</a>
+</span>
+  </div>
+   ]]>
+ </description>
+</item>
+</rdf:RDF>

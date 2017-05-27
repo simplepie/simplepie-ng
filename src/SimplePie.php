@@ -8,16 +8,20 @@
 
 namespace SimplePie;
 
+use GuzzleHttp\Promise\Promise;
+use GuzzleHttp\Promise\RejectedPromise;
 use Interop\Container\ContainerInterface;
+use Psr\Http\Message\MessageInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\StreamInterface;
+use SimplePie\Mixin\ContainerTrait;
+use SimplePie\Mixin\LoggerTrait;
+use SimplePie\Util\Negotiation;
 
 class SimplePie
 {
-    /**
-     * The PSR-11 dependency injection container.
-     *
-     * @var Interop\Container\ContainerInterface
-     */
-    protected $container;
+    use ContainerTrait;
+    use LoggerTrait;
 
     /**
      * Constructs a new instance of this class.
@@ -31,12 +35,25 @@ class SimplePie
     }
 
     /**
-     * Retrieves the PSR-11 dependency injection container object.
+     * Parses a PSR-7 message to determine information about the data.
      *
-     * @return [type] [description]
+     * @param  MessageInterface $message     A PSR-7 message, which responds to the `MessageInterface` interface.
+     * @param  string|null      $contentType The Content-Type that you want the data to be force-processed as. The
+     *                                       default value is `null`, which will trigger an introspection of the message
+     *                                       for this data.
+     * @param  string|null      $charset     The character set that you want the data to be force-processed as. The
+     *                                       default value is `null`, which will trigger an introspection of the message
+     *                                       for this data.
+     *
+     * @return [type]                        [description]
      */
-    public function getContainer(): ContainerInterface
+    public function parsePsr7Message(MessageInterface $message, ?string $contentType = null, ?string $charset = null)
     {
-        return $this->container;
+        return $this->parsePsr7Stream($message->getBody(), $contentType, $charset);
+    }
+
+    public function parsePsr7Stream(StreamInterface $stream, ?string $contentType = null, ?string $charset = null)
+    {
+        return $stream->getContents();
     }
 }

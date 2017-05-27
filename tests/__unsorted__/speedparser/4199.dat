@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet href="/templates/default/atom.css" type="text/css" ?>
+
+<feed 
+   xmlns="http://www.w3.org/2005/Atom"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:admin="http://webns.net/mvcb/"
+   xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+   xmlns:wfw="http://wellformedweb.org/CommentAPI/">
+    
+    <link href="http://marcus.bointon.com/feeds/atom10.xml" rel="self" title="Pet Pixels" type="application/atom+xml" />
+    <link href="http://marcus.bointon.com/"                        rel="alternate"    title="Pet Pixels" type="text/html" />
+    <link href="http://marcus.bointon.com/rss.php?version=2.0"     rel="alternate"    title="Pet Pixels" type="application/rss+xml" />
+    <title type="html">Pet Pixels</title>
+    <subtitle type="html">Skiing, Baking, Biking, PHP, Email, Music, in variable order</subtitle>
+    <icon>http://marcus.bointon.com/templates/square/img/s9y_banner_small.png</icon>
+    <id>http://marcus.bointon.com/</id>
+    <updated>2011-08-17T00:37:06Z</updated>
+    <generator uri="http://www.s9y.org/" version="1.5.5">Serendipity 1.5.5 - http://www.s9y.org/</generator>
+    <dc:language>en</dc:language>
+    <admin:errorReportsTo rdf:resource="mailto:marcusblog@bointon.com" />
+
+    <entry>
+        <link href="http://marcus.bointon.com/archives/92-PHP-Base-62-encoding.html" rel="alternate" title="PHP Base-62 encoding" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2011-08-10T15:31:20Z</published>
+        <updated>2011-08-17T00:37:06Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=92</wfw:comment>
+    
+        <slash:comments>10</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=92</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/1-PHP" label="PHP" term="PHP" />
+            <category scheme="http://marcus.bointon.com/categories/4-Techie" label="Techie" term="Techie" />
+    
+        <id>http://marcus.bointon.com/archives/92-guid.html</id>
+        <title type="html">PHP Base-62 encoding</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <p>There's a really horrible bug (they won't call it that, but I can't think of any use case for the default broken behaviour!) in Apache's mod_rewrite that means that urlencoded inputs in rewrites get unescaped in their transformation to output patterns. The underlying 'bug' remains unfixed even in 2.3, though a workaround in the form of the <a href="http://httpd.apache.org/docs/current/rewrite/flags.html#flag_b">'B' flag</a> first appeared in Apache 2.2.7, but was broken until 2.2.12 (which wasn't all that long ago). Put it like this: if you're not using the B flag in your mod_rewrite rules, your site is probably only working due to blind luck.</p>
+<p>With that in mind, several years ago I spent ages looking for a base-62 encoder/decoder for PHP to replace mod_rewrite's broken urlencoding handling. Nobody seemed to have the slightest interest in writing one. Base-62 is interesting as it can be made safe for use in URLs, DNS, email addresses and pathnames, unlike any available encoding of base-64, as it only includes [0-9A-Za-z]. As a workaround for the above bug, I was interested in base-62 encoding URLs for embedding in redirects. At the time <a href="http://www.experts-exchange.com/Web_Development/Web_Languages-Standards/PHP/Q_21980473.html">I wrote something using bc_math</a>, but it was very slow (and weirdly got <a href="http://www.wtfnix.com/2008/05/base-62-encoding-php/" rel="nofollow">ripped off</a> by some dickhead and passed off as his own, despite that fact that I said it was crap!). I eventually gave up on that and switched to base-64, which led to occasional URL corruption. If you include hashes in URLs, keeping them in the default hex representation is quite wasteful, and can contribute to issues with line length in email. Having hashes in base-62 is a nice way of reducing their size.</p>
+<p>There are a few posts on base-62 in PHP, notably <a href="http://programanddesign.com/php/base62-encode/">this one</a> and <a href="http://snipplr.com/view/22246/">this one</a>, but they make the assumption that you're talking about a numeric value, and while a hash is a numeric value, it's way too big for PHP to handle as an integer. Othres take the multiprecision artithmetic route, which treats the input binary as a single very large, and calculates its representation in another base; that works, but it's horribly slow.</p>
+<p>Since then, the gmp and bc_math extensions were improved in PHP 5.3.2, and now they handle (usefully) up to base-62. So here's a simple function for getting a hash in base-62:</p>
+<div class="php geshi" style="text-align: left"><span style="color: #000000; font-weight: bold;">function</span> base62hash<span style="color: #009900;">&#40;</span><span style="color: #000088;">$source</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />&#160; &#160; &#160; &#160; <span style="color: #b1b100;">return</span> <a href="http://www.php.net/gmp_strval"><span style="color: #990000;">gmp_strval</span></a><span style="color: #009900;">&#40;</span><a href="http://www.php.net/gmp_init"><span style="color: #990000;">gmp_init</span></a><span style="color: #009900;">&#40;</span><a href="http://www.php.net/md5"><span style="color: #990000;">md5</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$source</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> 16<span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> 62<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br /><span style="color: #009900;">&#125;</span></div>
+<p>and for converting to and from base-16 hashes:</p>
+<div class="php geshi" style="text-align: left"><span style="color: #000000; font-weight: bold;">function</span> hash16to62<span style="color: #009900;">&#40;</span><span style="color: #000088;">$hash</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />&#160; &#160; &#160; &#160; <span style="color: #b1b100;">return</span> <a href="http://www.php.net/gmp_strval"><span style="color: #990000;">gmp_strval</span></a><span style="color: #009900;">&#40;</span><a href="http://www.php.net/gmp_init"><span style="color: #990000;">gmp_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$hash</span><span style="color: #339933;">,</span> 16<span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> 62<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br /><span style="color: #009900;">&#125;</span><br /><br /><span style="color: #000000; font-weight: bold;">function</span> hash62to16<span style="color: #009900;">&#40;</span><span style="color: #000088;">$hash</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />&#160; &#160; &#160; &#160; <span style="color: #b1b100;">return</span> <a href="http://www.php.net/gmp_strval"><span style="color: #990000;">gmp_strval</span></a><span style="color: #009900;">&#40;</span><a href="http://www.php.net/gmp_init"><span style="color: #990000;">gmp_init</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$hash</span><span style="color: #339933;">,</span> 62<span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> 16<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br /><span style="color: #009900;">&#125;</span></div>
+<p>I could still use a proper base-62 encoder for longer arbitrary strings, but at least now it should be simpler to write something iterative now that these extensions have (ahem) their bases covered.</p>
+<p><strong>Update</strong>: I've written a sufficiently usable PHP base-62 encoder for arbitrary-length binary strings that's not too slow. You can find it on github in <a href="https://gist.github.com/1139429">this gist</a>. Let me know if you find it useful</p>
+<p>Incidentally I discovered that the gmp functions use [0-9a-f] up to base 16, but [0-9A-Za-z] (i.e. upper case first) from bases 17 to 62. This differs from most of the base-62 implementations I've found that tend to use lower case first.</p>
+<p>This is all slightly academic now as the apache B-flag workaround works, so standard urlencoding works properly and I don't need to use a different encoding any more, however, there were so many examples of slow encoders, I thought the world could do with a usable one.</p>
+<p><strong>Update</strong>Something else worth mentioning is that if you use the apache B flag, you most likely need to turn the <a href="http://httpd.apache.org/docs/current/mod/core.html#allowencodedslashes">AllowEncodedSlashes</a> directive on too, as otherwise you'll get mysterious 404s. I posted <a href="https://issues.apache.org/bugzilla/show_bug.cgi?id=51669">a bug report</a> against the apache docs to make this clearer.</p> 
+            </div>
+        </content>
+        
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/91-Updating-PERC-6i-RAID-BIOS-on-Ubuntu.html" rel="alternate" title="Updating PERC 6/i RAID BIOS on Ubuntu" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2011-06-14T13:51:34Z</published>
+        <updated>2011-06-14T15:28:42Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=91</wfw:comment>
+    
+        <slash:comments>0</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=91</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/4-Techie" label="Techie" term="Techie" />
+    
+        <id>http://marcus.bointon.com/archives/91-guid.html</id>
+        <title type="html">Updating PERC 6/i RAID BIOS on Ubuntu</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                </p>Dell's meagre Ubuntu support doesn't make firmware updates easy. Their monstrous OMSA doesn't do it, and their RedHat packages are pretty hideous even on RedHat! Here's a solution running on Ubuntu Lucid 10.04.</p> <br /><a href="http://marcus.bointon.com/archives/91-Updating-PERC-6i-RAID-BIOS-on-Ubuntu.html#extended">Continue reading "Updating PERC 6/i RAID BIOS on Ubuntu"</a>
+            </div>
+        </content>
+        
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/89-Case-study-how-not-to-handle-unsubscribes.html" rel="alternate" title="Case study: how not to handle unsubscribes" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2010-05-04T07:17:00Z</published>
+        <updated>2010-05-04T08:41:42Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=89</wfw:comment>
+    
+        <slash:comments>0</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=89</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/4-Techie" label="Techie" term="Techie" />
+    
+        <id>http://marcus.bointon.com/archives/89-guid.html</id>
+        <title type="html">Case study: how not to handle unsubscribes</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <p>Generally I don't like to publicly point the finger in cases like this, but this time I will: <a href="http://www.tescocompare.com/" rel="nofollow">Tesco Compare</a>, it's your turn.</p>
+<p>I last used Tesco Compare a couple of years ago while looking for car insurance. About a year ago they began sending me promotional email, clearly realising they had a list they had not been using. I've moved to France and I'm really not interested in UK car insurance any more, so I wanted to unsubscribe.</p>
+<p>The message they sent me shows they are handling my data correctly to some extent - they have my email address right, they addressed me by name. It also contains an unsubscribe link. That's the good bit over - It all goes downhill from there.</p> <br /><a href="http://marcus.bointon.com/archives/89-Case-study-how-not-to-handle-unsubscribes.html#extended">Continue reading "Case study: how not to handle unsubscribes"</a>
+            </div>
+        </content>
+        <dc:subject>critique</dc:subject>
+<dc:subject>email</dc:subject>
+<dc:subject>email marketing</dc:subject>
+<dc:subject>tesco</dc:subject>
+<dc:subject>unsubscribe</dc:subject>
+
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/90-Basic-Linux-HA-heartbeat-and-pound-config.html" rel="alternate" title="Basic Linux-HA heartbeat and pound config" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2009-12-02T17:05:36Z</published>
+        <updated>2009-12-07T03:09:45Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=90</wfw:comment>
+    
+        <slash:comments>0</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=90</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/4-Techie" label="Techie" term="Techie" />
+    
+        <id>http://marcus.bointon.com/archives/90-guid.html</id>
+        <title type="html">Basic Linux-HA heartbeat and pound config</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <p>I've had trouble in the past setting up <a href="http://www.linux-ha.org/">Linux-HA</a> a.k.a heartbeat to create a redundant front-end for a web service. The HA documentation is quite thorough and detailed, but it's lacking realistic examples to get a working system up and running. This is a quick guide to creating a 2-way cluster with one or more floating IP addresses and automatic failover on <a href="http://www.ubuntu.com/">Ubuntu</a> 9.04. I also include a quick config for <a href="http://www.apsis.ch/pound/">pound</a>, a reverse proxy / load balancer.</p> <br /><a href="http://marcus.bointon.com/archives/90-Basic-Linux-HA-heartbeat-and-pound-config.html#extended">Continue reading "Basic Linux-HA heartbeat and pound config"</a>
+            </div>
+        </content>
+        <dc:subject>failover</dc:subject>
+<dc:subject>heartbeat</dc:subject>
+<dc:subject>ip</dc:subject>
+<dc:subject>linux</dc:subject>
+<dc:subject>load balancer</dc:subject>
+<dc:subject>pound</dc:subject>
+<dc:subject>redundancy</dc:subject>
+<dc:subject>scalability</dc:subject>
+<dc:subject>ubuntu</dc:subject>
+
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/87-MySQL-backups-with-Perconas-XtraBackup.html" rel="alternate" title="MySQL backups with Percona's XtraBackup" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2009-09-11T11:18:00Z</published>
+        <updated>2009-12-15T08:21:38Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=87</wfw:comment>
+    
+        <slash:comments>5</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=87</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/1-PHP" label="PHP" term="PHP" />
+            <category scheme="http://marcus.bointon.com/categories/4-Techie" label="Techie" term="Techie" />
+    
+        <id>http://marcus.bointon.com/archives/87-guid.html</id>
+        <title type="html">MySQL backups with Percona's XtraBackup</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                MySQL backup is sometimes very hard to do effectively. MySQL provides <a href="http://dev.mysql.com/doc/refman/5.0/en/backup.html" title="MySQL backup docs">various options for backup</a>, but many of them are simply unsuitable for large systems, particularly if they need to remain active during backups. <a href="http://www.percona.com/">Percona's</a> <a href="https://launchpad.net/percona-xtrabackup/">XtraBackup</a> is an open-source clone of InnoBase's <a href="http://www.innodb.com/products/hot-backup/">InnoDB Hot Backup</a> utility. So what makes XtraBackup a better solution, and how does it work?
+<p><strong>Update:</strong> on December 10th 2009, <a href="http://www.mysqlperformanceblog.com/2009/12/09/xtrabackup-1-0/">Percona released Xtrabackup 1.0</a>.</p> <br /><a href="http://marcus.bointon.com/archives/87-MySQL-backups-with-Perconas-XtraBackup.html#extended">Continue reading "MySQL backups with Percona's XtraBackup"</a>
+            </div>
+        </content>
+        <dc:subject>backup</dc:subject>
+<dc:subject>innodb</dc:subject>
+<dc:subject>mysql</dc:subject>
+<dc:subject>percona</dc:subject>
+<dc:subject>xtrabackup</dc:subject>
+
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/88-Google-Charts-API-Simple-and-Extended-Encoders-in-PHP.html" rel="alternate" title="Google Charts API Simple and Extended Encoders in PHP" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2009-08-14T08:34:27Z</published>
+        <updated>2011-09-26T23:53:46Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=88</wfw:comment>
+    
+        <slash:comments>5</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=88</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/1-PHP" label="PHP" term="PHP" />
+            <category scheme="http://marcus.bointon.com/categories/4-Techie" label="Techie" term="Techie" />
+    
+        <id>http://marcus.bointon.com/archives/88-guid.html</id>
+        <title type="html">Google Charts API Simple and Extended Encoders in PHP</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                Google's charting API has been around for quite a while now, but I've only just needed to actually look at it. It became immediately obvious that I needed a PHP encoding function, so off to google I went. Though I found several implementations, they were all incomplete or deficient in one way or another (and it didn't help that there was an error in google's extended encoding docs), so I've written my own based on several different ones. Both simple and extended encoders support automatic scaling, inflated maximum and lower-bound truncation, so you can pretty much stuff whatever data you like in, with no particular regard for pre-scaling and you'll get a usable result out. They have an identical interface, so you can use either encoding interchangeably according to the output resolution you need (contrary to popular belief, the encoding to use has very little to do with the range of values you need to graph). By default, the full range of possible values is used as it just seems silly not to. I deliberately omit the 's:' and 'e:' prefixes so that you can call these functions for multiple data series, and I include a function that does just that. You still need to generate your own URLs and other formatting, but that's a different problem. Read on for the code... <br /><a href="http://marcus.bointon.com/archives/88-Google-Charts-API-Simple-and-Extended-Encoders-in-PHP.html#extended">Continue reading "Google Charts API Simple and Extended Encoders in PHP"</a>
+            </div>
+        </content>
+        <dc:subject>api</dc:subject>
+<dc:subject>charts</dc:subject>
+<dc:subject>encoding</dc:subject>
+<dc:subject>google</dc:subject>
+<dc:subject>php</dc:subject>
+
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/86-Why-isnt-UK-voting-anonymous.html" rel="alternate" title="Why isn't UK voting anonymous?" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2009-06-04T09:59:27Z</published>
+        <updated>2009-06-04T09:59:27Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=86</wfw:comment>
+    
+        <slash:comments>1</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=86</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/2-Personal" label="Personal" term="Personal" />
+    
+        <id>http://marcus.bointon.com/archives/86-guid.html</id>
+        <title type="html">Why isn't UK voting anonymous?</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                I voted in the European election today. I was pre-registered and had received my voting card. I went to the polling station where they looked at my card, checked it against my name on the electroal roll, crossed it out, and <em>noted its number on a list next to the unique ID of the ballot paper</em>. I made my choice and put the slip in the ballot box.
+
+Much of this process is necessary in order to combat fraud and ballot rigging, however, it's clearly not anonymous - a simple reference back from the paper's ID to my voting card ID means that the government knows what I voted. Knowing what I voted gives no anti-fraud advantage I can see, and means that the collected data is <em>way</em> more sensitive than it needs to be. The simple fact that this knowledge exists is likely to distort voting patterns - people might be afraid of their political leanings being exposed. I'm not particularly worried about that personally, but those with more extreme views (like those that vote for the BNP) might not want this known, and it undermines the absolute right to freedom of association. Political affiliation is regarded as the highest form of 'personal data' under the data protection act, along with ethnicity, sexual preference, medical records etc, and the best way to avoid problems with this kind of data is not to keep it in the first place, as the numerous leaks/losses/exposures of government information have highlighted. So why is it done? Aren't elections meant to be done by secret ballot? Did I miss something? Why aren't more people disturbed by this? 
+            </div>
+        </content>
+        <dc:subject>ballot</dc:subject>
+<dc:subject>elections</dc:subject>
+<dc:subject>eu</dc:subject>
+<dc:subject>fraud</dc:subject>
+<dc:subject>politics</dc:subject>
+<dc:subject>voting</dc:subject>
+
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/85-Subversion-1.5-repository-upgrade-on-SourceForge.html" rel="alternate" title="Subversion 1.5 repository upgrade on SourceForge" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2009-05-05T10:19:04Z</published>
+        <updated>2009-05-05T10:19:04Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=85</wfw:comment>
+    
+        <slash:comments>0</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=85</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/1-PHP" label="PHP" term="PHP" />
+            <category scheme="http://marcus.bointon.com/categories/4-Techie" label="Techie" term="Techie" />
+    
+        <id>http://marcus.bointon.com/archives/85-guid.html</id>
+        <title type="html">Subversion 1.5 repository upgrade on SourceForge</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                I've just had a slightly tricky time upgrading a subversion repository on sourceforge. They have recently added support for subversion 1.5 at the server end. 1.5 brings major new features for merging, but as it's not backward compatible with older subversion clients, the upgrade is not done automatically. SF have also done a major rearrangement of their documentation while transferring everything to Trac, and it's not always easy to get the right info. Normally to upgrade a subversion repo, you just run the 'svnadmin upgrade /path/to/repo', however, it's not quite so simple on sourceforge as you don't have direct access to the repo, and <a href="http://apps.sourceforge.net/trac/sourceforge/wiki/Subversion%20import%20instructions">the instructions</a> they give are <a href="http://apps.sourceforge.net/trac/sourceforge/ticket/467">slightly wrong at the time of writing</a>. You're likely to get an error like this (it's not obvious that this is a fatal error) when you reload a dump file:
+<blockquote>svnadmin: File already exists: filesystem '/svnroot/projectname/db', transaction '443-0', path 'tags'
+     \* adding path : tags ...</blockquote>
+This is because load is intended to add files to an existing repo, not to replace those that are already there, so you need to wipe the repo and start from scratch.
+
+So, here is a working command sequence that needs to be run from a project login shell on sourceforge (it applies to the project you're logged in through, substitute your project's name for projectname):
+<blockquote>adminrepo --checkout svn
+svnadmin dump /svnroot/projectname > svn.dump
+rm -rf /svnroot/projectname/\*
+svnadmin create /svnroot/projectname
+svnadmin load /svnroot/projectname < svn.dump
+adminrepo --save svn</blockquote>
+Yes, you do need to delete the whole thing and re-import it, but it's quick and easy, and you have a backup in the dump file you take at the start. After the upgrade, make sure you get a new checkout of your project to ensure that you're using 1.5 all the way through. Now you'll find that commands like 'svn merge --reintegrate' work. 
+            </div>
+        </content>
+        <dc:subject>project</dc:subject>
+<dc:subject>repository</dc:subject>
+<dc:subject>shell</dc:subject>
+<dc:subject>sourceforge</dc:subject>
+<dc:subject>subversion</dc:subject>
+<dc:subject>upgrade</dc:subject>
+
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/84-Speaker-room-calibration.html" rel="alternate" title="Speaker &amp; room calibration" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2009-03-20T18:45:54Z</published>
+        <updated>2009-03-20T21:58:40Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=84</wfw:comment>
+    
+        <slash:comments>0</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=84</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/5-Music" label="Music" term="Music" />
+            <category scheme="http://marcus.bointon.com/categories/4-Techie" label="Techie" term="Techie" />
+    
+        <id>http://marcus.bointon.com/archives/84-guid.html</id>
+        <title type="html">Speaker &amp; room calibration</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                I was lucky enough to pick up a <a href="http://www.behringer.com/EN/Products/DSP8024.aspx">Behringer Ultracurve Pro DSP8024</a> for a mere £50 on eBay recently. It turned out to have a buggy OS version (1.2), and Behringer very kindly sent me a replacement EPROM with a new 1.3 OS on it, which works just fine. I now have it installed between my Soundcraft mixer and my Wharfedale active monitors. I used its "Auto-Q" calibration routine and put up with some quite loud pink noise to calculate a room correction curve. Because it knows the spectrum it's generating, it assumes that what it gets back has been altered by the combination of speakers, room and microphone, so it can calculate an eq map to compensate for it. It's quite fun to watch as it has a nice big LCD screen to display the 31 1/3 octave bands - the initial spectrum is fairly peaky, but as it iteratively applies corrections you see (and hear) it flattening out. It's also very obvious that my monitors don't put out much below 50Hz (it analyses down to 20Hz), but that's to be expected from a moderately sized box with a 6.5" driver. The results are really pretty good, sounds lovely and smooth, but the real surprise is when you've been listening to it for a while and you switch out the EQ - it's really quite a shock to hear the uncorrected version. Lots of purists don't like room correction by EQ, saying it's better to fix the room in the first place, and also that EQ calculated like this is highly dependent on the listening position (which it is). I have a lots of bookshelves facing my speakers; they make fantastic diffusers, and I have some <a href="http://www.universal-acoustics.com/">Universal Acoustics</a> absorber tiles on the sloping ceiling above my listening position. The longest room mode will be fairly undamped (I'm not about to start hanging duvets around the walls!), but the resulting EQ is below 6db in either direction across the whole range - I've heard of rooms with 24db peaks! Anyway, after all that, it sounds lovely, and I'm happy! 
+            </div>
+        </content>
+        <dc:subject>acoustics</dc:subject>
+<dc:subject>behringer</dc:subject>
+<dc:subject>dsp8024</dc:subject>
+<dc:subject>eq</dc:subject>
+<dc:subject>music</dc:subject>
+<dc:subject>tiles</dc:subject>
+<dc:subject>universal acoustics</dc:subject>
+
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/83-The-web-developers-holy-vhost-trinity.html" rel="alternate" title="The web developer's holy vhost trinity" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2009-03-20T12:11:12Z</published>
+        <updated>1970-01-01T00:00:00Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=83</wfw:comment>
+    
+        <slash:comments>3</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=83</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/1-PHP" label="PHP" term="PHP" />
+            <category scheme="http://marcus.bointon.com/categories/4-Techie" label="Techie" term="Techie" />
+    
+        <id>http://marcus.bointon.com/archives/83-guid.html</id>
+        <title type="html">The web developer's holy vhost trinity</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                When you're developing web stuff, working with projects in path names (i.e. not at the top level of a domain) can be difficult (gets in the way of absolute links, rewrite rules etc), so you often need to set up a local apache virtual host, stick an entry in DNS and create an SSL certificate before you can get on with the serious business of doing some real work. This can get to be a drag when you do it a lot, but there is an extremely elegant solution that means you'll never have to do it again...
+ <br /><a href="http://marcus.bointon.com/archives/83-The-web-developers-holy-vhost-trinity.html#extended">Continue reading "The web developer's holy vhost trinity"</a>
+            </div>
+        </content>
+        <dc:subject>apache</dc:subject>
+<dc:subject>developer</dc:subject>
+<dc:subject>php</dc:subject>
+<dc:subject>ssl</dc:subject>
+<dc:subject>web</dc:subject>
+<dc:subject>wildcard</dc:subject>
+
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/82-Ginger-and-Honey-Snaps.html" rel="alternate" title="Ginger and Honey Snaps" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2009-03-09T13:50:15Z</published>
+        <updated>2009-03-09T14:24:34Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=82</wfw:comment>
+    
+        <slash:comments>0</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=82</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/6-Baking" label="Baking" term="Baking" />
+    
+        <id>http://marcus.bointon.com/archives/82-guid.html</id>
+        <title type="html">Ginger and Honey Snaps</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <!-- s9ymdb:32 --><img class="serendipity_image_left" width="110" height="83" style="float: left; border: 0px; padding-left: 5px; padding-right: 5px;" src="http://marcus.bointon.com/uploads/ginger3.serendipityThumb.jpg" alt="" />I had this peculiarly specific desire to make some biscuits that were crunchy rather than chewy. Nigella didn't seem to have anything that fitted the bill, but I found this recipe in Rachel Allen's "Bake" book that I got for Christmas, and have had good results with so far. <!-- s9ymdb:30 --><img class="serendipity_image_left" width="110" height="83" style="float: left; border: 0px; padding-left: 5px; padding-right: 5px;" src="http://marcus.bointon.com/uploads/ginger1.serendipityThumb.jpg" alt="" />When rolling out the biscuits (definitely the best part) I thought they looked oddly like small potatoes. Next time I won't squash them quite so much so that they stay a bit rounder. While I was baking there was an enormous rainstorm, really quite spectacular and unexpected as it had been quite sunny all day. <!-- s9ymdb:33 --><img class="serendipity_image_left" width="110" height="83" style="float: left; border: 0px; padding-left: 5px; padding-right: 5px;" src="http://marcus.bointon.com/uploads/ginger4.serendipityThumb.jpg" alt="" /> They came out brilliantly (if I say so myself), a lovely crisp mixture of sweet and spicy, exactly what I was after. As usual, the main problem with making biscuits is that I eat them, which isn't terribly good for me. I did send some round to Sandeep and Pam though, and they are proving handy for bribing Zoë. 
+            </div>
+        </content>
+        
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/81-Changing-MacBook-Bezel.html" rel="alternate" title="Changing MacBook Bezel" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2009-03-09T13:15:11Z</published>
+        <updated>2009-03-09T13:15:11Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=81</wfw:comment>
+    
+        <slash:comments>0</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=81</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/4-Techie" label="Techie" term="Techie" />
+    
+        <id>http://marcus.bointon.com/archives/81-guid.html</id>
+        <title type="html">Changing MacBook Bezel</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                I recently had cause to change the bezel on my rev A 13" MacBook.  If you follow <a href="http://www.ifixit.com/Guide/Repair/MacBook-Core-Duo-Front-Bezel/306/1#top">the guide</a> on MacFixit, it is a long and complicated procedure, involving dismantling nearly everything. Luckily, most of it is unnecessary - it's really quite easy to simply remove the bezel without dismantling anything; just <a href="http://www.ifixit.com/Guide/Repair/MacBook-Core-Duo-Front-Bezel/306/12#s1209">jump straight to step 35</a> and carry on from there. 
+            </div>
+        </content>
+        
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/80-Web-Hooks,-Callbacks-and-Distributed-Observers.html" rel="alternate" title="Web Hooks, Callbacks and Distributed Observers" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2009-03-04T14:44:37Z</published>
+        <updated>2009-03-04T15:19:07Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=80</wfw:comment>
+    
+        <slash:comments>0</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=80</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/1-PHP" label="PHP" term="PHP" />
+            <category scheme="http://marcus.bointon.com/categories/4-Techie" label="Techie" term="Techie" />
+    
+        <id>http://marcus.bointon.com/archives/80-guid.html</id>
+        <title type="html">Web Hooks, Callbacks and Distributed Observers</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                Someone at <a href="http://www.amee.com/">AMEE</a> pointed out to me that there's been a <a href="http://webhooks.pbwiki.com/">flurry</a> of <a href="http://blog.webhooks.org/">activity</a> around so-called "Web Hooks" when I referred to the concept. This is quite heartening as I thought of this a couple of years ago and implemented this in <a href="https://www.smartmessages.net/">Smartmessages</a> early last year! I call them callbacks, but the idea is the same - it's essentially a distributed observer pattern. I couldn't figure out why nobody seemed to understand what I was on about... When I get some interesting event (e.g. a message open, mailshot completion, clickthrough etc), I ping a user-supplied URL with the appropriate event data, pretty much the one-liner that Jeff alludes to. The reason we do it is that sync with external systems (usually CRM) is something that were always running into, and there seems to be no sensible, generic way of dealing with it other than this, so I'm surprised it has not been discussed in this context before.
+There's one downside as far as I can see - it is highly dependent on the receiver to be able to handle the event in a timely fashion. This isn't an issue if you're connecting say, Yahoo! to Google, but it could be a big problem if you connect Google to your Wordpress blog... My experience of CRM systems is that they are simply too slow to cope with the high rates of traffic that we are likely to generate, for example, if we point a stream of ~200 events per second at a CRM system, it will probably just bog down and fail (I'm thinking of the SalesForce API here which typically takes 1-2 sec to deal with a single SOAP API call). Retrying will only make this worse. I have two solutions for this: limit events to those that don't happen so often (kind of lame!), or alternatively, use an outbound message queue to rate-limit the sending (<a href="http://aws.amazon.com/sqs/">Amazon SQS </a>and <a href="http://memcachedb.org/memcacheq/">Memcacheq</a> spring to mind). Queueing works, but you lose some of the real-time aspect. Ideally clients would implement their own incoming queue in order to allow them to process events at their leisure, but this is mostly beyond the vast majority of web authors (or at least those that host the CRM systems that we hear from!).
+Anyway, it's nice to know that I'm not completely barking... 
+            </div>
+        </content>
+        <dc:subject>callbacks</dc:subject>
+<dc:subject>crm</dc:subject>
+<dc:subject>php</dc:subject>
+<dc:subject>smartmessages</dc:subject>
+<dc:subject>web hooks</dc:subject>
+
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/79-PHP-London-Conference-2009.html" rel="alternate" title="PHP London Conference 2009" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2009-03-02T15:58:36Z</published>
+        <updated>2009-03-02T15:58:36Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=79</wfw:comment>
+    
+        <slash:comments>0</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=79</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/1-PHP" label="PHP" term="PHP" />
+    
+        <id>http://marcus.bointon.com/archives/79-guid.html</id>
+        <title type="html">PHP London Conference 2009</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                From this <a href="http://www.phpconference.co.uk/">truly excellent conference</a>, I took away some good memories, some new ideas and a nasty bout of conference flu. There's nothing quite like being in close proximity to a few hundred people to really spread things around...
+Highlight for me was <a href="http://aralbalkan.com/">Aral Balkan</a>'s keynote. It's always nice to see someone showing plain enthusiasm, and I couldn't agree more with him about the "lost magic" of computing. Had a chat with him afterwards about <a href="http://www.amee.com/">AMEE</a> and other things. He also seems to have put together some odd but dull things that I had noticed a need for - EU VAT codings and ISO language references as web services!
+I didn't really enjoy David Soria Parra's talk on sharding. It all came across as very negative and many of the ways of doing it and coping with the fallout were not really discussed. No mention of <a href="http://dev.mysql.com/doc/refman/5.1/en/partitioning.html">MySQL 5.1's partitioning</a> (which is limited, but is at least a start), or more radical approaches like <a href="http://www.continuent.com/community/sequoia">Sequoia</a>.
+David Axmark's talk on <a href="https://launchpad.net/drizzle">Drizzle</a> was more interesting than I expected, nice to see effort being put into this direction.
+Microsoft really does seem to be trying a bit harder these days - their CSS test suite for IE8 is very welcome, and the effort they are putting into PHP, apache and other projects benefits many people. It has to be said that while it's not a mainstream product, <a href="http://www.microsoft.com/SURFACE/index.html">Surface</a> is really pretty cool to play with.
+Chris Shiflett's talk was excellent too; his demos and examples were particularly good, and entertaining.
+The post-conference social was great fun, I met lots of nice new people. After our move to France I suspect it will be harder to get to events like this, so I should make the most of them while I can!
+I've had several ideas for talks that I'd like to do (I get sick of email sometimes!), so I guess I need to get a bit more proactive on actually submitting them to a call for papers. 
+            </div>
+        </content>
+        <dc:subject>aral balkan</dc:subject>
+<dc:subject>conference</dc:subject>
+<dc:subject>mysql</dc:subject>
+<dc:subject>php</dc:subject>
+<dc:subject>phplondon</dc:subject>
+<dc:subject>phpuk2009</dc:subject>
+<dc:subject>sequoia</dc:subject>
+<dc:subject>surface</dc:subject>
+
+    </entry>
+    <entry>
+        <link href="http://marcus.bointon.com/archives/78-Scalable-irony.html" rel="alternate" title="Scalable irony" />
+        <author>
+            <name>Marcus Bointon</name>
+            <email>marcus@bointon.com</email>        </author>
+    
+        <published>2009-03-02T15:52:13Z</published>
+        <updated>2009-03-02T15:52:13Z</updated>
+        <wfw:comment>http://marcus.bointon.com/wfwcomment.php?cid=78</wfw:comment>
+    
+        <slash:comments>0</slash:comments>
+        <wfw:commentRss>http://marcus.bointon.com/rss.php?version=atom1.0&amp;type=comments&amp;cid=78</wfw:commentRss>
+    
+            <category scheme="http://marcus.bointon.com/categories/1-PHP" label="PHP" term="PHP" />
+            <category scheme="http://marcus.bointon.com/categories/4-Techie" label="Techie" term="Techie" />
+    
+        <id>http://marcus.bointon.com/archives/78-guid.html</id>
+        <title type="html">Scalable irony</title>
+        <content type="xhtml" xml:base="http://marcus.bointon.com/">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <a href="http://highscalability.com/scaling-digg-and-other-web-applications">This article</a> on highscalability.com is a really excellent rundown of some of the options available for scaling a site to the heights of Digg. Ironically enough, at the time of writing the highscalabilitycom web server shows this error:
+<blockquote>Unable to connect to database server
+The MySQL error was: User highscal_admin already has more than 'max_user_connections' active connections. </blockquote>I can point them at this really good article on how to avoid problems like this... oh, wait... 
+            </div>
+        </content>
+        
+    </entry>
+
+</feed>

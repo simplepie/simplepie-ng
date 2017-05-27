@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<rss version="2.0">
+
+    <channel>
+
+        <title>robotic thoughts...</title>
+        <link>http://claytron.com/blog</link>
+        <description></description>
+
+        <generator>basesyndication</generator>
+        <!-- TODO
+        <lastBuildDate>Mon, 30 Sep 2002 11:00:00 GMT</lastBuildDate>
+        <copyright>Copyright 1997-2002 Dave Winer</copyright>
+        <docs>http://backend.userland.com/rss</docs>
+        <category domain="Syndic8">1765</category>
+        <managingEditor>dave@userland.com</managingEditor>
+        <webMaster>dave@userland.com</webMaster>
+        -->
+
+        <!-- TODO: Should there be an individual image associatable with each
+        Weblog object?  I think so... -->
+        <image>
+            <title>robotic thoughts...</title>
+            <url>http://claytron.com/logo.png</url>
+            <link>http://claytron.com/blog</link>
+        </image>
+
+        
+            <item>
+                <title>Presentation Software Options</title>
+                <guid>http://claytron.com/blog/2010/05/24/presentation-software-options</guid>
+                <link>http://claytron.com/blog/2010/05/24/presentation-software-options</link>
+                <description>&lt;p&gt;I have been exploring alternate presentation software options for a little while now. My mission is to find a way to write my slides in a simple plain text markup. There are several reasons that I would want to do this.
+&lt;/p&gt;
+&lt;p&gt;My talks are generally on a technical subject, so I want to be able to add syntax highlighting inside my slides. There are ways to do this with Keynote, but it is a pain to manage. I just want to write the code directly in the slide and have the output transform it for me.
+&lt;/p&gt;
+&lt;p&gt;If I can write slides in a plain text markup, that means I can check my changes in to a version control repository. I write code most of the day, and writing my presentation in a similar manner just makes sense to me. I would be able to write a single section or group of slides, get to a stopping point and then check in my changes. This means I could later see a diff of what I had done and even quickly revert back to a previous version. Another benefit is that I can check in my changes, switch to another machine or another operating system, and still be able to work on my presentation with no change in workflow.
+&lt;/p&gt;
+&lt;p&gt;Aside from the management of the slides, I would be able to collaborate with another person or a group of people. I've actually done this once in practice and it was a rewarding experience. We were able to work on different sections of the presentation at the same time. Then once we wanted to see what the other person had written so far, it was just a matter of updating the code!
+&lt;/p&gt;
+&lt;p&gt;The other big advantage is that I don't have to rely on any GUI software to write my slides. I can use vim (my editor of choice) to write my slides on any platform I choose. So far I have been writing my slides in Markdown and have been enjoying the ease of use.
+&lt;/p&gt;
+&lt;p&gt;The biggest disadvantage is that you can't get too fancy with your slides. If you want to place text in 10 different places on one slide, then you are really better off using something like Keynote, Powerpoint or OpenOffice Impress.
+&lt;/p&gt;
+&lt;p&gt;Here is a roundup of the options that I have used so far.
+&lt;/p&gt;
+
+&lt;h2&gt;Slideshow and S9&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://slideshow.rubyforge.org/"&gt;Slideshow&lt;/a&gt; was the first plain text based system that I tried. It works fairly well but has quite a few downsides to it. The biggest disappointment for me was the weak syntax highlighting support. This system requires Ruby 1.8 because of the use of a deprecated library. This threw me off at first, but after that it was pretty straight forward to install.
+&lt;/p&gt;
+
+&lt;h3&gt;PROS&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Use Markdown or Textile to write slides
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Can be version controlled
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Nice support for themes
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Open source
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;CONS&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Bases slides on headers, no way to have a slide without a header
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Default style is quite horrific
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Adding images to a presentation is a pain
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     No PDF export option natively
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     No way to easily preview changes (requires HTML generation)
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     No way to link to a specific slide
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Syntax highlighter supports a limited set of languages
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Syntax highlighting inclusion is dirty
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Syntax highlighting default styles are no good 
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     No fancy transitions
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     No presenter display
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     No active development at the moment
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Showoff&lt;/h2&gt;
+&lt;p&gt;I first saw &lt;a href="http://github.com/schacon/showoff"&gt;Showoff&lt;/a&gt; in use while watching Scott Chacon's "&lt;a href="http://github.com/schacon/pycon-hg-git"&gt;Hg and Git; Can't we all just get along?&lt;/a&gt;" talk at Pycon. He wrote this presentation software with bigger goals in mind.  Right now it is fairly basic compared to the lofty goals that he has set. Out of the box the look of this software is much easier on the eyes than Slideshow.
+&lt;/p&gt;
+&lt;p&gt;I thought that this might be exactly what I was looking for, but it fell short in its ability to output the presentation in PDF and HTML formats with my custom theme.
+&lt;/p&gt;
+&lt;p&gt;This software also suffered from the same Ruby 1.8 support issue as Slideshow. Neither of the authors warn their users of this fact.
+&lt;/p&gt;
+
+&lt;h3&gt;PROS&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Uses markdown
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Bases slides on &lt;code&gt;!SLIDE&lt;/code&gt; notation which makes it more flexible
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Can be version controlled
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Easy syntax highlighting
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Command line demo mode
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Server based for easy updates
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     PDF export
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Nice default style
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Default style is bound to a 1024 x 768 box, the typical projector
+       resolution
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Nice set of transitions using jQuery Cycle plugin
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Open source
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Actively being developed on
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;CONS&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Applying a theme is not manageable across many presentations
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     No way to link to a specific slide
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     PDF export requires commercial software
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     PDF export breaks easily with custom style
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     PDF and HTML export have too many bugs at the moment to be useful
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     No presenter display
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Keynote&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.apple.com/iwork/keynote/"&gt;Keynote&lt;/a&gt; is the software I've used the most so far. Keynote is very easy to use and has a nice UI that goes along with it.
+&lt;/p&gt;
+&lt;p&gt;The biggest gain from using Keynote is the fact that it has a presenter display. None of the HTML based solutions have come up with a solid presenter display. When I'm giving a talk/training to my co-workers, this isn't an issue. When I'm standing in front of a couple hundred people, it is nice to have a visual guide there with you. You can customize the presenter display to show the information you want and in the layout that you prefer. This is really a killer feature.
+&lt;/p&gt;
+&lt;p&gt;Keynote also gives you a way to export to PDF or HTML. This is important to me because I want to share my presentation on a site like &lt;a href="http://slideshare.net"&gt;Slideshare&lt;/a&gt; or in a non-Flash friendly way using HTML.
+&lt;/p&gt;
+
+&lt;h3&gt;PROS&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Easy to use
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Nice UI
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Fancy transitions
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Nice built-in themes
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Presenter display
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;CONS&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Requires OS X
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Syntax highlighting is a pain
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     HTML export is available, but just generates images
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Not open source
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;For my next presentation I was going to try and use Showoff. It was looking quite promising until I tried to generate the PDF and accompanying HTML. The support for my custom theme and image handling in the PDF export failed for me. So for now, I'm going to stick with Keynote. My presentation will contain quite a few code snippets so I will be using Pygments to &lt;a href="http://nubyonrails.com/articles/improve-your-technical-slides"&gt;render them into rich text files&lt;/a&gt;, then pasting that into Keynote. Hopefully this won't drive me crazy!
+&lt;/p&gt;
+&lt;p&gt;Do you know of any other alternatives? Let me know in the comments.
+&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>markdown</category>
+                
+                
+                    <category>presentation</category>
+                
+                
+                    <category>software</category>
+                
+
+                <pubDate>Mon, 24 May 2010 11:00:00 -0400</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>Avert Your Eyes, I'm Naked</title>
+                <guid>http://claytron.com/blog/2010/04/09/avert-your-eyes-im-naked</guid>
+                <link>http://claytron.com/blog/2010/04/09/avert-your-eyes-im-naked</link>
+                <description>&lt;p&gt;If you happened to find your way on to my site today (April 9th), you might have noticed something a bit odd. That's because today is &lt;a href="http://naked.dustindiaz.com/"&gt;CSS Naked day&lt;/a&gt;. This is the fifth year for the event which aims to promote web standards through semantic markup. I've known about it for a couple of years but have never participated. This year I decided to give it a go.
+&lt;/p&gt;
+&lt;p&gt;My site is Plone powered, so I was able to quickly make all the necessary changes through the web. I had planned on making a quick product, but laziness prevailed and the time had already arrived. With that premise, I just used the evil custom folder and friends to go naked.
+&lt;/p&gt;
+&lt;p&gt;First I added a quick &lt;code&gt;(script) Python&lt;/code&gt; into my custom folder named &lt;code&gt;isNakedDay&lt;/code&gt;. Zope's &lt;code&gt;DateTime&lt;/code&gt; module makes this pretty easy:
+&lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;pre&gt;
+   &lt;span class="c"&gt;# The current time in GMT&lt;/span&gt;
+   &lt;span class="n"&gt;now&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;DateTime&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;toZone&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;GMT&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="c"&gt;# Dynamically get the year so this would work next year as well&lt;/span&gt;
+   &lt;span class="n"&gt;this_year&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+   &lt;span class="n"&gt;naked_date&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;DateTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;/04/09 0:01 GMT&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;this_year&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="c"&gt;# CSS naked day starts 12 hours before GMT&lt;/span&gt;
+   &lt;span class="n"&gt;naked_start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;naked_date&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;
+   &lt;span class="c"&gt;# CSS naked day ends 36 hours after GMT&lt;/span&gt;
+   &lt;span class="n"&gt;naked_end&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;naked_date&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mf"&gt;1.5&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;naked_start&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;now&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;naked_end&lt;/span&gt;
+   &lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;As the website points out, CSS Naked Day is actually two full days once you take into account all the time zones. The code above handles this with some date math.
+&lt;/p&gt;
+&lt;p&gt;In Plone's CSS registry, you can add conditions on each of the CSS files. In all the public facing CSS entries I added the following TALES expression:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;   not:portal/isNakedDay
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I also added a warning at the top of the page so people don't think my site is broken. This was achieved quite simply by throwing the &lt;code&gt;main_template&lt;/code&gt; into the custom folder then adding the following just above the &lt;code&gt;visual-portal-wrapper&lt;/code&gt;:
+&lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;pre&gt;
+   &lt;span class="nt"&gt;&amp;lt;tal:naked&lt;/span&gt; &lt;span class="na"&gt;define=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;portal context/@@plone_portal_state/portal&amp;quot;&lt;/span&gt;
+              &lt;span class="na"&gt;condition=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;portal/isNakedDay&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+     &lt;span class="nt"&gt;&amp;lt;hr&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+     &lt;span class="nt"&gt;&amp;lt;h3&amp;gt;&lt;/span&gt;What happened to the design?&lt;span class="nt"&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+     &lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;To know more about why styles are disabled on this website visit the
+     &lt;span class="nt"&gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://naked.dustindiaz.com&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;title=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Web Standards Naked Day Host Website&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+     Annual CSS Naked Day&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; website for more information.&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+     &lt;span class="nt"&gt;&amp;lt;hr&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;/tal:naked&amp;gt;&lt;/span&gt;
+   &lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;Now the site is properly naked. Since the &lt;code&gt;isNakedDay&lt;/code&gt; script will run a bunch of times on each page load, I added it into the &lt;code&gt;RAMCache&lt;/code&gt; via the &lt;code&gt;Cache&lt;/code&gt; tab on the script object. The &lt;code&gt;RAMCache&lt;/code&gt; defaults to one hour, so that works out perfectly. Plone FTW!
+&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>CSS Naked Day</category>
+                
+                
+                    <category>plone</category>
+                
+
+                <pubDate>Fri, 09 Apr 2010 08:00:00 -0400</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>MacBook Pro Triple Boot With Arch Linux, XP and OS X</title>
+                <guid>http://claytron.com/blog/2009/09/20/macbook-pro-triple-boot-with-arch-linux-xp-and-os-x</guid>
+                <link>http://claytron.com/blog/2009/09/20/macbook-pro-triple-boot-with-arch-linux-xp-and-os-x</link>
+                <description>&lt;p&gt;We just hired some new people at &lt;a href="http://sixfeetup.com"&gt;Six Feet Up&lt;/a&gt; which means we had to buy new laptops. Every once in a while I will assert my seniority and upgrade to the latest and greatest Apple hardware and pass mine on down the line. This time around the hardware I couldn't resist was the unibody MacBook Pro. I love the look and the feel of it. I had been putting off re-installing and upgrading the hard drive in my old MBP for a while. Procrastination pays off again! Installing the 320GB drive in the unibody MBP took all of fifteen minutes.
+&lt;/p&gt;
+&lt;p&gt;The reason for the HD upgrade was two-fold, one was a slight bump in performance (7200 RPM) and the other was obviously storage size. Recently I have become less impressed with OS X as a development platform and have been wanting to try another OS. We have a few people at the office that are running &lt;a href="http://archlinux.org"&gt;Arch Linux&lt;/a&gt; and our summer intern showed me some pretty cool features of the OS. I liked the Arch philosophy and it looked like a good candidate for a dev platform.
+&lt;/p&gt;
+&lt;p&gt;Now this is where the 320GB HD comes in handy :)
+&lt;/p&gt;
+
+&lt;h2&gt;The Triple Threat&lt;/h2&gt;
+&lt;p&gt;I had seen my fellow colleagues dual booting into OS X and Arch Linux. They were using &lt;a href="http://refit.sourceforge.net/"&gt;reFit&lt;/a&gt; as a boot loader and I was pretty impressed with the set up. Having been a long time Parallels user, I also remembered that it could take a bootcamp partition and use it as a VM in OS X. Thus the dream was born, the triple boot: OS X, Arch Linux and Windows XP.
+&lt;/p&gt;
+&lt;p&gt;Having just received a copy of Snow Leopard I decided it was finally time to re-install and give my OS X installation a breath of fresh air. So first things first, I created a clone of my drive with &lt;a href="http://www.bombich.com/software/index.html"&gt;Carbon Copy Cloner&lt;/a&gt; and proceeded to google around a bit to find some hints on how to install all three OSes on my MBP.
+&lt;/p&gt;
+&lt;p&gt;I ended up using several different sources to get started. First was a &lt;a href="http://blog.gnist.org/article.php?story=Triple-Boot-OSX-Ubuntu-Vista"&gt;blog entry&lt;/a&gt; that covered the most of the information that I needed. Of course it was aimed at using Vista and Ubuntu so I had to interpret it slightly. Looking back at it, there is still one thing I need to do, set up a swap file.
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; I found a &lt;a href="http://www.xenotime.net/linux/doc/swap-mini-howto.txt"&gt;nice how-to&lt;/a&gt; about how to set up swap space on linux (quite old but still relevant it seems). Here is the gist of what I ended up doing:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo mkdir /work
+## make a 1GB swapfile
+$ sudo dd bs=1024 count=1M if=/dev/zero of=/work/swapfile.1
+$ sudo mkswap /work/swapfile.1
+$ sudo swapon /work/swapfile.1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then add the entry at the end of your &lt;code&gt;/etc/fstab&lt;/code&gt; so that it gets created on boot.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo vim /etc/fstab
+...
+## here is the swap file entry
+/work/swapfile.1 none swap pri=5,defaults 0 0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can add more swap as needed by adding more &lt;code&gt;swapfile.n&lt;/code&gt; files. I had to go in later and add a total of 6GB (double my RAM). &lt;strong&gt;end update&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p&gt;Second I used the AchWiki page dedicated to the &lt;a href="http://wiki.archlinux.org/index.php/MacBook"&gt;MacBook&lt;/a&gt; to setup the Arch Linux side of things. The ArchWiki is quite impressive and is loaded with useful information. Sometimes you have to use several pages to really figure out what is going on, but overall it's pretty concise. One handy tip was to change the UID and GID of your OS X account before using it so you can line it up with the same IDs in Arch Linux, thus making sharing home directories easier. One extra step that was needed was to create a new 'group' in the 'Accounts' preference pane in OS X so that my group showed up with a name and not just a GID.
+&lt;/p&gt;
+
+&lt;h2&gt;Live and Learn&lt;/h2&gt;
+&lt;p&gt;I learned a few valuable lessons while installing everything. The first lesson was realizing I should have read the bootcamp docs before I started. There is some helpful info in there including the fact that you have to use XP SP2 or higher to install. All I had lying around was an original XP Pro install disc. I attempted the first install with that disc and ended up nuking my OS X install since only one partition was showing. Common sense should have prevailed here, but I was in a hurry. A download of SP3 and a re-install of OS X later and I was back on track.
+&lt;/p&gt;
+
+&lt;h3&gt;GRUB&lt;/h3&gt;
+&lt;p&gt;The biggest pain I had while installing the three OSes was accidentally installing GRUB directly onto &lt;code&gt;/dev/sda&lt;/code&gt;. Both the tutorials I was using told me NOT to do this, but apparently I was in opposite day mode. The GRUB install had the immediate effect of not allowing me to boot into Windows but still but still able to boot OS X. I was still able to boot into Arch Linux via the GRUB screen. As an interim fix, I added windows to the GRUB config file. Arch Linux sets up a windows partition example, I just had to change the partition number.
+&lt;/p&gt;
+&lt;p&gt;I finally got around to backing up my OS X partition so I was able to try fixing the situation (and potentially borking all the installs). First thing I tried was to use the XP install CD. Which included following these steps:
+&lt;/p&gt;
+&lt;ol&gt;
+ &lt;li&gt;
+     Boot up with the Windows install CD
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Go into recovery mode
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Select windows install (usually number 1)
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Run the FIXMBR program from the prompt: &lt;code&gt;C:\&amp;gt; FIXMBR&lt;/code&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This didn't quite fix the issue, Windows would now just boot up to a black screen and Linux wasn't an option from reFit anymore. After some more googling around I was able to find a &lt;a href="http://discussions.apple.com/message.jspa?messageID=6146576"&gt;post with a potential fix&lt;/a&gt; on the Apple support forums.
+&lt;/p&gt;
+&lt;p&gt;I booted up into single user mode to fix the master boot record.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# fdisk -u /dev/rdisk0
+new MBR [y/n]: y
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This fixed it, now I was able to boot into OS X and XP! I'm not sure if the &lt;code&gt;FIXMBR&lt;/code&gt; was required or not, YMMV. Next I just had to re-install GRUB on the linux partition. I used the steps on the Arch Linux wiki about &lt;a href="http://wiki.archlinux.org/index.php/Reinstalling_GRUB"&gt;re-installing GRUB&lt;/a&gt; and installed it into the same partition as my Linux install (&lt;code&gt;/dev/sda3&lt;/code&gt;).
+&lt;/p&gt;
+&lt;p&gt;Now reFit shows and boots into all three OSes properly. Success!
+&lt;/p&gt;
+
+&lt;h2&gt;Bootcamp and Parallels&lt;/h2&gt;
+&lt;p&gt;Next objective was to get the bootcamp partition working with Parallels. I chose to use NTFS for my XP install. Snow Leopard can read this by default, but it doesn't read and write by default. I found a little snippet on a MacFUSE forum somewhere that showed how to turn on the native read write support in Snow Leopard.  Here is what I had to do.
+&lt;/p&gt;
+&lt;p&gt;Get the UUID of the partition with Windows installed on it (my XP install is on the fourth partition)
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ echo `sudo /System/Library/Filesystems/ntfs.fs/ntfs.util -k disk0s4`
+6369b368-57d8-46e6-80c6-e6ac095fb604
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Use your favorite editor to modify the fstab.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo vim /etc/fstab
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then add the following (replacing your HDs UUID)
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# bootcamp partition in read/write
+UUID=6369b368-57d8-46e6-80c6-e6ac095fb604 none ntfs rw
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Next time you boot up you will have an NTFS partition that is read write in OS X. The rest of the Parallels install was straight forward. Now I can use my XP boot partition as a VM in OS X!
+&lt;/p&gt;
+
+&lt;h2&gt;Final remarks&lt;/h2&gt;
+&lt;p&gt;I'm quite excited to have three bootable OSes on my laptop giving me the best of all worlds! I learned a lot about boot loaders during this exercise as well. Though I'm still a bit hazy on how this works with reFit. Whatever you do, DO NOT install GRUB into &lt;code&gt;/dev/sda&lt;/code&gt;! This set me back a couple days since I was using the laptop for work purposes as well.
+&lt;/p&gt;
+&lt;p&gt;Next step for me is to get OS X to recognize the ext3 partition and for Arch Linux to use HFS+ read write. None of the MacFUSE modules and ext3 helpers seem to work on Snow Leopard at the moment. Anyone know of any working solutions out there for Snow Leopard?
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; I was able to mount the ext3 filesystem with &lt;a href="http://alperakcan.org/?open=projects&amp;amp;project=fuse-ext2"&gt;fuse-ext2&lt;/a&gt; using the following commands.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mkdir /Volumes/ARCHIE
+$ sudo fuse-ext2 /dev/disk0s3 /Volumes/ARCHIE -o force,allow_other,volname=ARCHIE
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This mounts the FS at the &lt;code&gt;/Volumes/ARCHIE&lt;/code&gt; folder with read write capability and names the volume &lt;code&gt;ARCHIE&lt;/code&gt;. One last thing that I haven't figures out is how to get this to work properly in &lt;code&gt;/etc/fstab&lt;/code&gt; in Snow Leopard. &lt;strong&gt;end update&lt;/strong&gt;
+&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>windows</category>
+                
+                
+                    <category>osx</category>
+                
+                
+                    <category>archlinux</category>
+                
+                
+                    <category>apple</category>
+                
+
+                <pubDate>Sun, 20 Sep 2009 16:40:00 -0400</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>Launcher Showdown: Quicksilver vs LaunchBar</title>
+                <guid>http://claytron.com/blog/2009/06/10/launcher-showdown-quicksilver-vs-launchbar</guid>
+                <link>http://claytron.com/blog/2009/06/10/launcher-showdown-quicksilver-vs-launchbar</link>
+                <description>&lt;p&gt;A good app launcher makes all the difference in the world to me.  It is really painful when there isn't one available, "How the hell do I open an application?!?!".  On OS X there is always the Spotlight functionality, but that has never satisfied my needs.  I need to be able to manipulate the item from the launcher, not just open it.  I guess "launcher" is a really bad term for it, in reality it's a "do a bunch of awesome stuff thingamajig", but that's not easy to say.
+&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blacktree.com/"&gt;Quicksilver&lt;/a&gt; has been my "launcher" of choice for quite some time now and before that I was using &lt;a href="http://www.manytricks.com/butler/"&gt;Butler&lt;/a&gt;, which I originally tried out because of its clipboard implementation.  Quicksilver was recently open sourced, since the lead developer now works for Google and their launcher product called &lt;a href="http://code.google.com/p/qsb-mac/"&gt;Google Quick Search Box&lt;/a&gt;.  This was pretty much the beginning of the end for QS.  While there are still some folks working on the &lt;a href="http://code.google.com/p/blacktree-alchemy/"&gt;open source version&lt;/a&gt;, it has been a slow process.
+&lt;/p&gt;
+&lt;p&gt;I recently overheard Andi Zeidler talking about LaunchBar on &lt;a href="http://twitter.com/witsch/status/1695346820"&gt;Twitter&lt;/a&gt;, so I decided to give it a try.  That has turned out to be an excellent choice.  Quicksilver has been plagued with some really strange issues for quite some time.  Most of them are bearable, but sometimes it can be &lt;strong&gt;really&lt;/strong&gt; annoying when you are trying to get something done fast.  In the week and a half that I've been using it, the program has really exceeded all my expectations.  So what makes it better?
+&lt;/p&gt;
+
+&lt;h2&gt;LaunchBar Pros&lt;/h2&gt;
+&lt;p&gt;There are a lot of really nice features in LaunchBar.  Here is a rundown of some of the features that make it one of the best I've used.
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     Web searches are quoted properly, you can search for "Bob Marley &amp;amp; the Wailers" and get the proper results
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Setup of LaunchBar is orders of magnitude easier than Quicksilver.  If you've ever set up the clipboard and shelf in Quicksilver then you know what I'm talking about.
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     The default setup of LaunchBar makes much more sense, which is helpful for n00bs
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     The clipboard in LaunchBar is really nice
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     It doesn't assume that everything with a dot in it is a URL
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     You can access each line of a copied item from a sub menu
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     The clipboard menu tells you where the item was copied, and how many characters and lines it contains
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     You can merge multiple clippings into one by using the ClipMerge functionality
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Using the OS X services menu items in LaunchBar actually works.  This makes things like &lt;a href="http://www.devon-technologies.com/products/freeware/services.html"&gt;WordService&lt;/a&gt; useful again!
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     LaunchBar is really fast compared to Quicksilver
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     LaunchBar doesn't randomly forget its settings like Quicksilver would with the actions sometimes
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;LaunchBar Cons&lt;/h2&gt;
+&lt;p&gt;While it has been an overall positive experience, there are still some things LaunchBar could learn from Quicksilver.
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     No custom triggers.  This was one of my favorite things about Quicksilver.  You could assign a keyboard shortcut to any "subject, verb" action.  LaunchBar does not have this concept.  It has "abbreviations", but it's not the same.  I liked to be able to type "ctrl + option + cmd + l" and go to the login window.  You can still do this in LaunchBar, but it takes more keystrokes.
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     No social bookmarking support.  Quicksilver has a nice delicious integration that allows for the indexing of all your bookmarks and their corresponding tags.  I used this feature A LOT.  My brain is on the web, Quicksilver helped me query it very quickly.
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     LaunchBar doesn't have the concept of plugins like Quicksilver does.  If it isn't there, then your only option is Applescript.  Applescript sucks.
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     LaunchBar doesn't have the concept of a persistent clipboard or shelf.  This is another feature from Quicksilver that I use A LOT.
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Running unix executables from LaunchBar requires an open terminal window.  Quicksilver can do these tasks in the background.  LaunchBar has the ability for these scripts to be placed in the "Actions" folder.  However, you have to have a property list file next to it that tells LaunchBar to run it in the background.  This is less than optimal, especially for pre-existing executables.
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     LaunchBar doesn't have the same "comma trick" as Quicksilver does.  I rarely use this feature, so it's not a big deal for me.  You might be able to exchange some of the behavior by using the ClipMerge facility in LaunchBar.
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     With LaunchBar, you really need to read the docs to get the most out of it.  There are a a lot of hidden gems in the form of keyboard combos.  With Quicksilver it was usually pretty self-explanatory how to do things.  Luckily the LaunchBar docs are very informative.
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     You can't start entering text like you could with Quicksilver by presssing "." and typing some text.  LaunchBar has an "Enter Text" action that allows you to do something similar.  Someone in the forums suggested that you assign "," to the "Enter Text" action.  This works out well.
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     Performing "actions" on the "subject" are not as easy in LaunchBar.  For instance, there are usually some actions hidden in the context menu of the item, you can right click or use a keyboard combo to open it up, but that's kind of a pain
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;In my humble opinion, LaunchBar is the best launcher out there right now.  It could still stand to learn a few things from Quicksilver.  But overall LaunchBar is the superior application.  Hopefully there are devs watching the &lt;a href="http://forums.obdev.at"&gt;LaunchBar forums&lt;/a&gt; that will implement my requests :)  While I wait for them to be implemented, I'm using a stripped down Quicksilver that just contains the delicious and shelf plugins to fill in for that missing functionality of LaunchBar.
+&lt;/p&gt;
+&lt;p&gt;If you haven't given a try yet, I strongly recommend you download a trial of &lt;a href="http://www.obdev.at/products/launchbar/download.html"&gt;LaunchBar 5&lt;/a&gt; and take it for a spin.
+&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>launcher</category>
+                
+                
+                    <category>Quicksilver</category>
+                
+                
+                    <category>LaunchBar</category>
+                
+                
+                    <category>apple</category>
+                
+
+                <pubDate>Thu, 11 Jun 2009 03:30:00 +0000</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>LaCie 1TB Big Disk Drive Failure....Or Not</title>
+                <guid>http://claytron.com/blog/2009/04/18/lacie-big-disk-fail</guid>
+                <link>http://claytron.com/blog/2009/04/18/lacie-big-disk-fail</link>
+                <description>&lt;p&gt;There are days when you just have to say, "I fuckin' love the internets!!", more on that in a minute.  I bought a LaCie 1TB Big Disk a couple of years ago and it slowly became my "everything disk".  The only problem with this external drive is that it is setup in a &lt;a href="http://en.wikipedia.org/wiki/RAID_0#RAID_0"&gt;RAID 0&lt;/a&gt;.  This means that the data is 'striped' across two 500GB drives for performance.  But, if one drive fails then you lose &lt;strong&gt;all&lt;/strong&gt; your data!
+&lt;/p&gt;
+&lt;p&gt;Very recently the drive decided to start making some strange noises while struggling to start up.  The drive would also emit a loud hissing noise while running.  This started to freak me out since I had nowhere to back up 1TB.  I debated a while and then bought a &lt;a href="http://www.drobo.com/"&gt;Drobo&lt;/a&gt; last week!  Now I have 4TB usable on the local network :)
+&lt;/p&gt;
+&lt;p&gt;After playing around with the Drobo I decided it was time to fire up the LaCie and back it up.  Sure enough the LaCie drive failed to mount.  It sounded like it really wanted to but it just couldn't.  Sadness!
+&lt;/p&gt;
+&lt;p&gt;My first google on the subject was "lacie big disk extreme sucks" (realizing later mine was not 'extreme').  The third hit was a blog post entitled &lt;a href="http://www.darcynorman.net/2006/01/24/lacie-big-disk-extreme-failure/"&gt;LaCie Big Disk Extreme Failure&lt;/a&gt;.  Now this is where the love of the internet comes into play.  The post had around 100 comments on it.  Two of them described what was happening to my drive perfectly.  The first describing the startup woes:
+&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;problems included; bad booting up, clicking noises, freezes and a complete failure to mount (&lt;a href="http://www.darcynorman.net/2006/01/24/lacie-big-disk-extreme-failure/comment-page-2/#comment-175486"&gt;link&lt;/a&gt;)
+&lt;/p&gt;
+&lt;/blockquote&gt;&lt;p&gt;And the second:
+&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;The power supply adapter a made high pitch sound (not very noticeable unless up close) and upon opening the board had burnt brown areas and the capacitors where bulging out the tops. (&lt;a href="http://www.darcynorman.net/2006/01/24/lacie-big-disk-extreme-failure/comment-page-2/#comment-178400"&gt;link&lt;/a&gt;)
+&lt;/p&gt;
+&lt;/blockquote&gt;&lt;p&gt;I had not noticed this noise coming from the power adapter, but low and behold mine was making the same sound.  So what was the solution in the end?  A new &lt;a href="http://www.unityelectronics.com/product-product_id/4624"&gt;power adapter&lt;/a&gt;.  WTF!  Internets FTW!  I decided that I'd shell out the $30 on the chance that it might work.  Power supply arrived yesterday, and now my drive is fully functional and backed up to my Drobo!!!  Happiness!
+&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>hardware</category>
+                
+                
+                    <category>drobo</category>
+                
+                
+                    <category>lacie</category>
+                
+
+                <pubDate>Sat, 18 Apr 2009 14:10:00 +0000</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>A Comic For Those Who Run Buildout Regularly</title>
+                <guid>http://claytron.com/blog/2009/02/25/running-buildout-comic</guid>
+                <link>http://claytron.com/blog/2009/02/25/running-buildout-comic</link>
+                <description>&lt;p&gt;If you're a geek of any sort then you have probably run across the wonderful comic &lt;a href="http://xkcd.com"&gt;xkcd&lt;/a&gt;. It's one of the few comics that I read on a regular basis. There was a comic that ran a while back about &lt;a href="http://xkcd.com/303"&gt;compiling code&lt;/a&gt; that doesn't quite relate to us Plone developers.  Since the comic is released under a Creative Commons license, here is the re-mixed buildout version :)
+&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://xkcd.com/303"&gt;&lt;img src="pics/running_buildout.png" alt="Running Buildout" title="'Are you stealing those LCDs?' 'Yeah, but I'm doing it while my buildout is running.'" /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Now there's no reason to be ashamed of surfing the net or sword fighting in the halls while your buildout is running!
+&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>comics</category>
+                
+                
+                    <category>xkcd</category>
+                
+
+                <pubDate>Wed, 25 Feb 2009 13:50:00 -0500</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>Taming My $SHELL</title>
+                <guid>http://claytron.com/blog/2009/02/11/taming-my-shell</guid>
+                <link>http://claytron.com/blog/2009/02/11/taming-my-shell</link>
+                <description>&lt;p&gt;I've been using the command line in various ways for a long time.  Back in the DOS days it was the only way.  Then windows came along, but there was still the need for a little 'cmd' action every once in a while.  It wasn't until I started working at &lt;a href="http://sixfeetup.com"&gt;Six Feet Up&lt;/a&gt; that I re-kindled my love affair with the command line.  This time around it was with unix and primarily ZSH.
+&lt;/p&gt;
+&lt;p&gt;I started out at Six Feet Up doing customer support and systems administration.  This required learning a new skill set, the command line.  As I made the transition from sysadmin to web developer this skill set transferred over quite nicely.  It took me a little while to realize that all the things I was doing on the command line could be turned into shortcuts.  My first run in with aliases involved the 'ls' command.  Normal 'ls' output leaves a lot to be desired (especially for a n00b).
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd
+$ ls
+Applications Desktop Documents foo.txt Library runme
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ok, so foo.txt must be a file, but what the hell are all those other things?  This is easily solved with some extra options that denote the type of item and color code things.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ ls -GF
+Applications/ Desktop/ Documents/ foo.txt Library/ runme*
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now it's clear that foo.txt is a file, runme is an executable and everything else is a directory.  But who wants to type that every time?  Not me.  So what do we do?  The solution is to modify your shell's startup files.  In my case I would just add an alias to my &lt;code&gt;.zshrc&lt;/code&gt;.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alias ls="ls -GF"
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now when I type 'ls', it automatically adds the options in for me.  This is old hat for a lot of command line hackers out there.  For n00bs like I once was, this was a gold mine.  I just recently published all &lt;a href="http://github.com/claytron/dotfiles/tree/master"&gt;my configuration files on github&lt;/a&gt; for mass consumption.  This is the culmination of years of tweaking and prodding.
+&lt;/p&gt;
+&lt;p&gt;Once you get used to the comforts of a well defined set of user conf files you can never go back.  This became a problem for me when Six Feet Up's hosting business started to really take off.  Suddenly instead of five machines, we had ten, then twenty and more on the way.  The obvious problem here is keeping all your shell customizations in sync.  Luckily we have subversion configured on most of the machines.
+&lt;/p&gt;
+&lt;p&gt;At some point I had the bright idea to put all my confs into subversion.  This made it really easy to get set up on a new machine.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ ssh some-machine
+
+Welcome to Some Machine!
+$ svn co https://svn.example.com/svn/claytron/dotfiles .dotfiles
+$ ln -s .dotfiles/.zshrc .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now I could have the same &lt;code&gt;.zshrc&lt;/code&gt; file on all the servers fairly easily.  With this setup, if I modified the conf on one server, then I could get the updates on the others.  This worked well for a while.  Then I started adding all my other confs into the mix.  Settings for vim, screen and readline got added in.  Now I had to go to each machine, update the checkout and symlink any new confs into my home directory.  The solution for this slowly evolved into a shell script.&lt;br /&gt;
+&lt;a href="http://github.com/claytron/dotfiles/blob/ba28bf1779fddc4a7de2a0114e414fda33223bf3/create_links.sh"&gt;The current version&lt;/a&gt; has advanced in many ways since the original and has taught me a lot about shell scripting.  This has solved the symlinking issue for me.
+&lt;/p&gt;
+&lt;p&gt;The only other problem is keeping up to date.  I would log into a machine and never even think about updating the &lt;code&gt;.dotfiles&lt;/code&gt; dir to get the latest settings until something was missing.  Then another lightbulb went off.  Why not update them automagically?  This is when I decided to put some code in to run an &lt;code&gt;svn up&lt;/code&gt; on the &lt;code&gt;.dotfiles&lt;/code&gt; dir each time I logged in.  Here is what the &lt;a href="http://github.com/claytron/dotfiles/blob/ba28bf1779fddc4a7de2a0114e414fda33223bf3/.commonprofile#L12"&gt;current code looks like&lt;/a&gt;.  It works like a charm for me in our environment.
+&lt;/p&gt;
+&lt;p&gt;The confs that are &lt;a href="http://github.com/claytron/dotfiles/tree/master"&gt;up on github now&lt;/a&gt; reflect all these trials and tribulations.  They also blend bash and zsh together for me.  I figure at a minimum most machines will have bash installed.  So I went through and put all the 'common' elements into common files and put all the zsh or bash specific stuff into the respective startup files.  Github also allows for an easy way to download my files in a tarball if I don't have access to svn or git.  Github has continually impressed me since I started using it.
+&lt;/p&gt;
+&lt;p&gt;Now I'm ready to take over the world on almost any machine I log into :)
+&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>unix</category>
+                
+                
+                    <category>shell</category>
+                
+
+                <pubDate>Thu, 12 Feb 2009 04:07:29 -0500</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>AppleScript + Party Shuffle Pt. II</title>
+                <guid>http://claytron.com/blog/2009/01/24/applescript-party-shuffle-part-two</guid>
+                <link>http://claytron.com/blog/2009/01/24/applescript-party-shuffle-part-two</link>
+                <description>&lt;p&gt;We're back for another round of AppleScript and Party Shuffle.  Last month I wrote about &lt;a href="http://www.claytron.com/blog/2008/12/11/applescripting-missing-itunes-party-shuffle-features"&gt;adding missing party shuffle features&lt;/a&gt; using AppleScript.  I noticed that there was one issue with the scripts.  If you selected an album that had multiple discs then it would add all the discs to the party shuffle ordered by track number.  So for example, you have an album that has two discs with three tracks a piece.  Then you would get this:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Disc One Track 1
+Disc Two Track 1
+Disc One Track 2
+Disc Two Track 2
+Disc One Track 3
+Disc Two Track 3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This is obviously not what we wanted.  I spent a little time today updating the scripts so that they behave correctly.  Now if you select the same album as our example above this is what you will get:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Disc One Track 1
+Disc One Track 2
+Disc One Track 3
+Disc Two Track 1
+Disc Two Track 2
+Disc Two Track 3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This of course assumes that you have properly set up the disc number and disc count for your tracks.  I'm pretty anal about this kind of stuff, so my library has them all set (even Disc 1 of 1).  If the disc count is not set then the script will assume that there is only one disc and won't go through the disc sorting routine.  You can get the latest scripts here:
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+     &lt;a href="http://www.claytron.com/applescripts/PlayAlbum(s)NextInPartyShuffle.scpt"&gt;Play Album(s) Next In Party Shuffle.scpt&lt;/a&gt;
+ &lt;/li&gt;
+
+ &lt;li&gt;
+     &lt;a href="http://www.claytron.com/applescripts/AddAlbum(s)toPartyShuffle.scpt"&gt;Add Album(s) to Party Shuffle.scpt&lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>AppleScript</category>
+                
+                
+                    <category>music</category>
+                
+                
+                    <category>apple</category>
+                
+
+                <pubDate>Sat, 24 Jan 2009 20:45:39 -0500</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>Naptown Roller Girls Third Season Begins</title>
+                <guid>http://claytron.com/blog/2009/01/12/naptown-roller-girls-third-season-begins</guid>
+                <link>http://claytron.com/blog/2009/01/12/naptown-roller-girls-third-season-begins</link>
+                <description>&lt;p&gt;It's finally here!!!!  The third season has started for the Naptown Roller Girls.  Last Saturday our &lt;a href="http://naptownrollergirls.com"&gt;Tornado Sirens&lt;/a&gt; hit the track and faced off against the Steel City Derby Demons.  I've been trying to do my part in promoting the team through all my social networks, upcoming and eventful.  I don't think they really needed my help since the home opener's online tickets sold out a day or two before the bout.  On game day there were only paper tickets left at the box office, which also eventually sold out.  Luckily my wife and I bought season tickets this year!  None of our friends bought tickets before hand, so we showed up when tickets went on sale at five to make sure they could get in.  We were probably some of the first fans to show up.  The crowd really started to gather around quarter to six.  We grabbed a spot in line so that we could get first pick of suicide seats.  In three seasons of derby action, this was my first time in the suicide seats.  We ended up getting a nice spot in the third turn.  But alas, no roller girls ended up in our laps.
+&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://farm4.static.flickr.com/3090/3192370599_302842348a_m.jpg" width="180" height="240" class="image-left" alt="Bryce and Claytron ready for the bout" /&gt; As we settled into our seats the first order of business was to get some beers.  I was surprised to find that there was a nice selection of imports and micro brews on tap!  Roller derby just got that much sweeter.  In addition to the usual Bud and Bud Light they had Stella Artois, Red Hook ESB, Goose Island Winter Warmer and something else that escapes me at the moment.  While waiting for the bout to start I noticed there was a new scoreboard set up.  At first glance it seemed to be an improvement.  But once the bout started, it was hard to read the time remaining.  This season brings some other changes with it as well.  The bout is now divided into halves instead of periods.  There are also a few other changes to the rules.  But by far the biggest change this year for the Sirens is their uniforms.  They've switched to a sportier red and black jersey and ditched the Jerry Lee western style shirts.  I'll miss the old uniforms, they were so freakin' cool!
+&lt;/p&gt;
+&lt;p&gt;The Sirens jumped out to an early lead at the beginning of the first half and the crowd was at fever pitch.  You could feel the excitement brewing in the air.  &lt;img src="http://farm4.static.flickr.com/3440/3193217788_795cbb8ea5_m.jpg" width="240" height="180" class="image-right" alt="Naptown Roller Girls" /&gt;  They went back and forth a bit and then the Derby Demons hit their stride.  They grabbed the lead and never looked back.  Just before halftime, the Derby Demons put up a twenty point jam that the Sirens couldn't overcome.  They went into the half down thirty points with the score 55-25.  Despite our team getting crushed the crowd was still energized most of the second half.  The final score ended up being 99-44 in favor of Steel City.  Just as you could feel the excitement in the first half, you could sense the disappointment at the end of the bout.  Luckily we have lot's more derby action coming up!  This year the Sirens are joined by their junior varsity team the Warning Belles.  The next bout will be the debut of the new JV team.  There will also be two double headers this year featuring the Warning Belles and the Tornado Sirens!!   It's going to be a fun season, get &lt;a href="http://www.brownpapertickets.com/producer/3198"&gt;your tickets&lt;/a&gt; and join us!
+&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>Naptown Roller Girls</category>
+                
+
+                <pubDate>Mon, 12 Jan 2009 23:20:00 -0500</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>Upgraded to Plone 3.1.7</title>
+                <guid>http://claytron.com/blog/2008/12/29/upgraded-to-plone-3.1.7</guid>
+                <link>http://claytron.com/blog/2008/12/29/upgraded-to-plone-3.1.7</link>
+                <description>&lt;p&gt;Last night I bravely decided to upgrade claytron.com to the latest Plone release. Luckily I already converted it over to a &lt;a href="http://plone.org/documentation/tutorial/buildout"&gt;buildout&lt;/a&gt; based install a couple months back. This was pivotol in my speedy migration effort since it allowed me to switch products in and out so effortlessly.
+&lt;/p&gt;
+&lt;p&gt;This site is fairly simple since I'm only using a couple add-on products. &lt;a href="http://plone.org/products/quills"&gt;Quills&lt;/a&gt; is the primary product I use. The old site was running Plone 2.1.4 and Quills 1.5 RC3. I tried to go directly to 3.1.7, but the portal_migration failed. Rather than try and debug that nasty error, I decided to migrate to the latest 2.5 release first. This was a complete success!
+&lt;/p&gt;
+&lt;p&gt;Next, I updated the buildout with all the Plone 3 compatible versions of the products. Then changed the plone recipe to point to the latest 3.1.x release. After that, I ran the buildout and started the site back up. Now it was time to try the portal_migration again. It blew up again, but with a less painful error. Quills 1.6 and above no longer uses a custom workflow and therefore made something unhappy. All I had to do was set the weblog types back to the default Plone workflow and try again. This was a success!
+&lt;/p&gt;
+&lt;p&gt;Next up was the Quills migration. This is automatically run while quickinstalling Products.Quills in the portal_quickinstaller. No issues here either. There are some Quills artifacts that have to be removed by hand including the quills_tool, RPCAuth, blog archive folder and blog drafts folder. Also, I didn't like the way the beta of quills.app handled the addition of the portlets to the weblog. It's currently creating a new 'category' of portlets by interface that has no way of managing them through the Plone interface. I posted &lt;a href="http://lists.etria.com/pipermail/quills-dev/2008-December/003722.html"&gt;a hint&lt;/a&gt; on the Quills dev list on how to remove them via a debug session.
+&lt;/p&gt;
+&lt;p&gt;Lastly I needed to update my custom theme. I moved all my main_template customizations into custom viewlets. Any template overrides were re-integrated using z3c.jbot. Then I removed my Install.py in favor of a GenericSetup profile. That was it! Now I'm ready to upgrade to Plone 3.2 when it gets released in the not too distant future :)
+&lt;/p&gt;
+&lt;p&gt;Now that I'm on the Plone 3 series I was able to quickly install CacheFu via an egg. That should help my site's performance quite a bit out of the gate. I also installed the python markdown package and added the transform so I can write in plain text anywhere in Markdown, then copy paste into the site. Thanks to &lt;a href="http://tomster.org/blog/"&gt;tomster&lt;/a&gt; for evangelizing it, I was sold after reading the &lt;a href="http://daringfireball.net/projects/markdown/syntax"&gt;philosophy and synopsis&lt;/a&gt;.  This post was written in Markdown, and hopefully many more... :)
+&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>quills</category>
+                
+                
+                    <category>plone</category>
+                
+                
+                    <category>general</category>
+                
+
+                <pubDate>Mon, 29 Dec 2008 19:15:00 -0500</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>AppleScripting Missing iTunes Party Shuffle Features</title>
+                <guid>http://claytron.com/blog/2008/12/11/applescripting-missing-itunes-party-shuffle-features</guid>
+                <link>http://claytron.com/blog/2008/12/11/applescripting-missing-itunes-party-shuffle-features</link>
+                <description>&lt;p&gt;My name is claytron and I'm a party shuffle addict.  There, I said it.  In my opinion the iTunes party shuffle feature is pure awesomeness.  I have been using it like mad since it was introduced.  I'm still amazed when I talk to iTunes users that haven't used it.&lt;/p&gt;&lt;p&gt;My typical modus operandi is to set the party shuffle to a rated smart playlist (3 stars and up or 4 stars and up).  Then if i want to add an album in the mix I can select it and 'Play Next in Party Shuffle' or 'Add to Party Shuffle'.  This is where AppleScript can come in handy.  &lt;a href="http://dougscripts.com"&gt;Doug Adams&lt;/a&gt; wrote a nifty &lt;a href="http://dougscripts.com/itunes/scripts/ss.php?sp=playalbumnextinps"&gt;little AppleScript&lt;/a&gt; that allows you to select a track and add that track's album to the party shuffle!  This really comes in handy when my eMusic downloads arrive in iTunes.  I can sort my library by 'Date Added' and then select a track from one of the newly imported albums and have it start playing next in the party shuffle.  Totally effing awesome.&lt;/p&gt;&lt;p&gt;So herein lies the next issue.  Let's say I just downloaded five albums and imported them into iTunes.  You would think you could highlight a track from each album and then use the 'Play Next in Party Shuffle' script.  But instead it pops up with a selection dialog with all the albums in your library.  For me this is completely useless, I have 2000+ albums.  So I went ahead and modified the script to add the album for each selected track.&lt;/p&gt;&lt;p&gt;After doing so I emailed Doug about the modifications.  As you might guess, he gets a ton of emails with modifications and fixes for all the scripts posted on his site and can't possibly include them all.  I also don't think he quite understood the purpose of the modification.  But since most of the scripts are licensed under the GPL you can still benefit from my mods!&lt;/p&gt;&lt;p&gt;There are two scripts.  The first one is the '&lt;a href="http://claytron.com/applescripts/PlayAlbum(s)NextInPartyShuffle.scpt"&gt;Play Album(s) Next in Party Shuffle&lt;/a&gt;'  which allows you to select one or more tracks and have each track's album be cued up next in party shuffle.  The second script is '&lt;a href="http://claytron.com/applescripts/AddAlbum(s)toPartyShuffle.scpt"&gt;Add Album(s) to Party Shuffle&lt;/a&gt;' which does the same thing except it adds the album to the end of the party shuffle.  That way you don't have to add an album in the middle of another!&lt;/p&gt;&lt;p&gt;Both of these scripts require that the party shuffle is currently playing.  I couldn't find a way around that in AppleScript (but I'm still an AppleScript n00b).  The only other item to mention is that I added a property to the top of each script called 'show_party_shuffle'.  If this is true then you'll be taken to the party shuffle after adding the tracks.  If you don't want to be switched over, you can set it to false.&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>AppleScript</category>
+                
+                
+                    <category>music</category>
+                
+                
+                    <category>apple</category>
+                
+
+                <pubDate>Thu, 11 Dec 2008 01:15:00 -0500</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>Here kitty kitty kitty</title>
+                <guid>http://claytron.com/blog/2007/10/03/here-kitty-kitty-kitty</guid>
+                <link>http://claytron.com/blog/2007/10/03/here-kitty-kitty-kitty</link>
+                <description>&lt;p&gt;Cat macros are pretty damn funny.  Especially when &lt;a href="http://lolsecretz.blogspot.com"&gt;combined&lt;/a&gt; with other internet memes like &lt;a href="http://postsecret.blogspot.com/"&gt;PostSecret&lt;/a&gt;.  I was playing around with &lt;a href="http://plasq.com/skitch"&gt;skitch&lt;/a&gt; and decided to modify a &lt;a href="http://bp1.blogger.com/_48pIyTbrm4A/RwGJgOte9mI/AAAAAAAAATA/3S50_u8zo4g/s1600-h/lovesme.jpg"&gt;cat macro&lt;/a&gt; to make it funnier... 
+&lt;div class="thumbnail"&gt;&lt;a href="http://myskitch.com/claytron/red_wings-20071002-172145/"&gt;&lt;img src="http://myskitch.com/claytron/red_wings-20071002-172145.jpg/preview.jpg" alt="red wings" /&gt;&lt;/a&gt;&lt;br /&gt;&lt;a style="font-family: Lucida Grande, Trebuchet, sans-serif, Helvetica, Arial; font-size: 10px; color: #808080" href="http://plasq.com/skitch"&gt;Uploaded with Skitch!&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>catmacro</category>
+                
+                
+                    <category>general</category>
+                
+
+                <pubDate>Wed, 03 Oct 2007 10:38:05 -0400</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>A lost treasure</title>
+                <guid>http://claytron.com/blog/2007/06/28/a-lost-treasure</guid>
+                <link>http://claytron.com/blog/2007/06/28/a-lost-treasure</link>
+                <description>&lt;p&gt;
+There was a little poem I wrote a couple years ago that I thought I'd lost due to a backup malfunction.  While backing up some old jam session and song idea projects I happened to stumble across it.
+
+&lt;pre&gt;
+a golden tongue not full of words
+
+after nine one may wonder
+why eel etch the sky
+get your twelfth ear through the tube
+rome intense hiss desert
+&lt;/pre&gt;
+
+Not the greatest poem ever, but greatest title....maybe.
+&lt;/p&gt;
+&lt;br /&gt;
+&lt;br /&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>general</category>
+                
+
+                <pubDate>Thu, 28 Jun 2007 23:25:17 -0400</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>Randomly precise thoughts</title>
+                <guid>http://claytron.com/blog/2007/06/12/randomly-precise-thoughts</guid>
+                <link>http://claytron.com/blog/2007/06/12/randomly-precise-thoughts</link>
+                <description>&lt;p&gt;I haven't blogged in a while.  Time is not permitting.  Went camping last weekend and tried out my new &lt;a href="http://www.thenorthface.com/opencms/opencms/tnf/gear.jsp?site=AP&amp;amp;model=AH4X&amp;amp;language=en"&gt;hiking boots&lt;/a&gt;. They kick much ass.  Aircraft aluminum lacing system was an excellent idea.  Listening to &lt;a href="http://www.google.com/musicl?lid=ACZfG9UJIfN&amp;amp;aid=ppq-4Seg3HG"&gt;The Joggers&lt;/a&gt; right now.  Good shit.  Isn't cake supposed to have a rarities album out some time.  I just bought a bunch of other music from eMusic and iTunes.  Hopefully just as pleasing.  I'm searching for a new car.  My eye is on a Volvo 850 wagon.  If i'm lucky a '97 T-5 with low miles and a low price will show up soon.  I should upgrade this site to use Plone 3.0 (but i'm not sure if Quills is ready for that).  /terminate rambling.&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>music</category>
+                
+                
+                    <category>general</category>
+                
+
+                <pubDate>Tue, 12 Jun 2007 23:31:47 -0400</pubDate>
+
+                
+            </item>
+        
+        
+            <item>
+                <title>Long live the roller derby</title>
+                <guid>http://claytron.com/blog/2007/04/22/long-live-the-roller-derby</guid>
+                <link>http://claytron.com/blog/2007/04/22/long-live-the-roller-derby</link>
+                <description>&lt;p&gt;
+I hope that the current roller derby revival lasts a long time.  Lucie and I witnessed our first bout tonight and it was a blast.  Now you're saying, "Why the hell is he talking about roller derbies?  Didn't that sport die a long time ago?".  It did die.  Now it is breathing new life and governed by the &lt;a href="http://wftda.com"&gt;Women's Flat Track Derby Association (WFTDA)&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+If you are living in Indy (or any other city with a derby team) you have to check this out.  Our very own &lt;a href="http://www.naptownrollergirls.com/"&gt;Naptown Roller Girls&lt;/a&gt; put the smack down on the Hard Knox Roller Girls tonight.  Things were looking bleak for a few minutes but the Tornado Sirens (Naptown Roller Girls) pulled out to an 18 point lead at the second intermission.  They held on to win by 3 points in the last Jam.  At one point one of our girls (Touretta Lynn?) threw one of the Hard Knox girls (black-n-blue) down and a fight broke out between them.  The Naptown coach ran over to break it up and was then thrown out for doing so.  If that wasn't crazy enough the coach came back over and threw a chair into the rink and proceeded to get into a fight with one of the refs!  This was pure madness.  Finally the dust settled and all was right in the world again except that black-n-blue should have been thrown out.&lt;/p&gt;
+&lt;p&gt;This is the NRG's first season and it's been a pretty good one so far as I can tell.  I'll see you all at the &lt;a href="http://www.brownpapertickets.com/event/10246"&gt;next bout&lt;/a&gt; on May 12.  Go Tornado Sirens!  I'll be yelling the loudest for Jane Ire #1984 because she was totally kicking ass against Knoxville.  J. Roller #420 is in a close second.&lt;/p&gt;</description>
+                <author>claytron</author>
+
+                
+                    <category>Naptown Roller Girls</category>
+                
+
+                <pubDate>Sun, 22 Apr 2007 00:15:00 -0400</pubDate>
+
+                
+            </item>
+        
+
+    </channel>
+</rss>
+
+

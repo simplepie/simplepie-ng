@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Adrián Navarro</title>
+	<atom:link href="http://adrian.navarro.at/blog/feed/" rel="self" type="application/rss+xml" />
+	<link>http://adrian.navarro.at/blog</link>
+	<description>Esperando a que alguien me parta las piernas desde 1994</description>
+	<lastBuildDate>Sat, 03 Apr 2010 10:48:51 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.9.2</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>Concursos de la Euskal Encounter 17</title>
+		<link>http://adrian.navarro.at/blog/2010/04/03/concursos-de-la-euskal-encounter-17/</link>
+		<comments>http://adrian.navarro.at/blog/2010/04/03/concursos-de-la-euskal-encounter-17/#comments</comments>
+		<pubDate>Sat, 03 Apr 2010 10:33:56 +0000</pubDate>
+		<dc:creator>Adrián</dc:creator>
+				<category><![CDATA[Enredando]]></category>
+		<category><![CDATA[concursos]]></category>
+		<category><![CDATA[desarrollo]]></category>
+		<category><![CDATA[euskal encounter]]></category>
+		<category><![CDATA[lanparty]]></category>
+
+		<guid isPermaLink="false">http://adrian.navarro.at/blog/?p=209</guid>
+		<description><![CDATA[No he muerto. Sigo vivo. Y esto debí haberlo publicado hace ya eones, y me temo que tampoco estoy en mi mejor momento para reactivar el blog. Pero ahí va una entrada mientras tanto, que ya la tenía debida desde hace tiempo. Lo siento.
+Ya pasé por encima del tema de los concursos en la Euskal, [...]]]></description>
+			<content:encoded><![CDATA[<p><em>No he muerto. Sigo vivo. Y esto debí haberlo publicado hace ya eones, y me temo que tampoco estoy en mi mejor momento para reactivar el blog. Pero ahí va una entrada mientras tanto, que ya la tenía debida desde hace tiempo. Lo siento.</em></p>
+<p><em><span style="font-style: normal;">Ya pasé por encima del tema de los concursos en la Euskal, en <a href="http://adrian.navarro.at/blog/2009/08/02/euskal-encounter-17/">el post recopilatorio</a> de mi iniciación a la </span>experiencia vital</em> que fue. Ahí animé a cualquiera a probar suerte con los concursos, puesto que debido al limitado número de participantes posibles, todo depende de tu talento y concursar por algo se vuelve algo interesante.</p>
+<p>Sí, probé suerte. Concretamente con el <a href="http://www.euskalencounter.org/euskal17/es/actividades/api/">concurso de programación de GureGipuzkoa</a>. Sobrevolando un poco el asunto: <a href="http://guregipuzkoa.net/">GureGipuzkoa</a> es un proyecto de la diputación de cultura de <a href="http://www.gipuzkoa.net/">Gipuzkoa</a> (si no me equivoco).</p>
+<p>Lo cierto es que me esperaba algo más de participación, pero en general no estuvo nada mal. Está publicada <a href="http://www.guregipuzkoa.net/blog/index.php/eu/guregipuzkoa/37-trabajos-del-concurso-de-programacion-con-la-api">la lista de proyectos participantes</a>, <a href="http://www.guregipuzkoa.net/blog/index.php/eu/guregipuzkoa/38-resultados-definitivos-del-concurso-de-programacion">los resultados</a> y <a href="http://www.guregipuzkoa.net/blog/index.php/eu/guregipuzkoa/39-entrega-de-premios">la entrega de premios</a>, a la que no pude asistir (para mi desgracia a esa hora ya estaba en el tren de vuelta a Madrid). Pero no deja de ser un <em>boost</em> de ego, la verdad <img src='http://adrian.navarro.at/blog/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> .</p>
+<p>Mi proyecto consistió en un mashup que cruzaba Google Maps con las fotos del sitio web. Es bastante perfeccionable, puesto que en aquel momento no funcionaba el API para realizar búsquedas geográficas y tuve que recurrir a diversos hacks no demasiado claros para hacer funcionar la aplicación, pero el resultado en general es bastante usable (y debí haber añadido paginación, aunque es muy sencillo).</p>
+<p>La <a href="http://static.serviciosred.net/gg/">versión online está disponible aquí</a>, junto con un <a href="http://www.youtube.com/watch?v=y7dlNjhGcaI">video publicado</a> (screencast) que explica el funcionamiento de la aplicación (que ya de por si es muy sencilla y autoexplicativa).</p>
+<p>Los premios iniciales consistían en un Reloj Binario, una cámara compacta de alta gama y una aspiradora Roomba. Al final, por temas de stock se quedó en una cámara (modelo distinto, aunque ampliamente superior) junto con una tarjeta de memoria y funda así como la aspiradora Roomba.</p>
+<p>Aún no he tenido la ocasión de probar la Roomba (es el problema de vivir en una casa de varias plantas), pero en cualquier caso, la cámara es absolutamente maravillosa. Tuve la ocasión de probarla en un pequeño viaje que hice a Zaragoza con un amigo, las fotos como de costumbre <a href="http://www.flickr.com/photos/adrinavarro/sets/72157622679720403/">están en un set de Flickr</a>.</p>
+<p>La cámara, una <a href="http://www.amazon.co.uk/Samsung-ST1000-Digital-Camera-Black/dp/B002JM1GSC">Samsung ST-1000</a>, tiene GPS, WiFi así como un zoom óptico bastante alucinante y una calidad de imagen muy buena. Lo único que realmente echo de menos es la posibilidad de sacar fotos en lugares con poca luz sin trípode, pero mucho me temo que para eso no me queda otra que usar una réflex con trípode.</p>
+<p>Por cierto, este año vuelvo a estar en la <a href="http://euskal.org/">Euskal Encounter</a> (encaja de milagro entre los planes que ya tenía marcados, y allí estaré salvo imprevisto).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://adrian.navarro.at/blog/2010/04/03/concursos-de-la-euskal-encounter-17/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Objetos maestros en PHP</title>
+		<link>http://adrian.navarro.at/blog/2009/08/16/objetos-maestros-en-php/</link>
+		<comments>http://adrian.navarro.at/blog/2009/08/16/objetos-maestros-en-php/#comments</comments>
+		<pubDate>Sun, 16 Aug 2009 17:00:20 +0000</pubDate>
+		<dc:creator>Adrián</dc:creator>
+				<category><![CDATA[Enredando]]></category>
+		<category><![CDATA[Infinitos monos aporreando infinitos teclados]]></category>
+		<category><![CDATA[desarrollo]]></category>
+		<category><![CDATA[objetos]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[programacion]]></category>
+
+		<guid isPermaLink="false">http://adrian.navarro.at/blog/?p=194</guid>
+		<description><![CDATA[Ya comenté el tema de usar clases &#8220;principales&#8221; para un proyecto&#8230; y ahora vuelvo con el mismo tema. Muy creativo, sí&#8230;
+La idea es la de tener un objeto principal (maestro) con un constructor que crea dentro del propio objeto tantos objetos &#8220;internos&#8221; como hagan falta, pasándole por referencia su propio objeto al constuctor de los [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://adrian.navarro.at/blog/2009/02/07/php-estirar-el-objeto/">Ya comenté el tema</a> de usar clases &#8220;principales&#8221; para un proyecto&#8230; y ahora vuelvo con el mismo tema. Muy creativo, sí&#8230;</p>
+<p>La idea es la de tener un objeto principal (<em>maestro</em>) con un constructor que crea dentro del propio objeto tantos objetos &#8220;internos&#8221; como hagan falta, pasándole por referencia su propio objeto al constuctor de los &#8220;objetos internos&#8221;.</p>
+<p>Los &#8220;objetos internos&#8221; extienden a una plantilla de objeto, y esa plantilla contiene un constructor que a su vez &#8220;guarda&#8221; como referencia el parámetro pasado por el objeto principal.</p>
+<p>Sí, es un lío, así que mejor verlo en código:<br />
+<blockquote><code>class AppObjectSkel {<br />
+&nbsp;&nbsp;function __construct(&#038;$parent) {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;$this->_parent = $parent;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if(is_callable(array($this, 'init'))) $this->init();<br />
+&nbsp;&nbsp;}<br />
+}</p>
+<p>class AppDatabase extends AppObjectSkel {<br />
+&nbsp;&nbsp;function init() {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;/* Aquí se inicializa la DB */<br />
+&nbsp;&nbsp;}<br />
+}</p>
+<p>class AppCache extends AppObjectSkel {<br />
+&nbsp;&nbsp;/* Elemento de cache, no lo inicializamos en este ejemplo */<br />
+}</p>
+<p>class Application {<br />
+&nbsp;&nbsp;function __construct() {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;$this->database = new AppDatabase($this);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;$this->cache = new AppCache($this);<br />
+&nbsp;&nbsp;}<br />
+}</code></p></blockquote>
+<p>De esta manera se puede acceder de un elemento a otro. Por ejemplo, desde <code>AppCache</code> se puede acceder a <code>AppDatabase</code> pasando por <code>Application</code>, simplemente usando <code>$this->_parent->database</code>. Al tratarse de un valor pasado por referencia, se puede acceder desde <code>AppDatabase</code> a <code>AppCache</code> y reflejar cambios en tiempo real.</p>
+<p>Pero hay que tener en cuenta un pequeño detalle: los constructores. Debido a que se hereda de una clase maestra (<code>AppObjectSkel</code>), no se puede poner constructor de ningún tipo (ya sea <code>__constructor</code> o una función con el nombre de la clase), ya que PHP ejecutará únicamente el del objeto creado (<code>AppCache</code>, por ejemplo) y no el de <code>AppObjectSkel</code> (y mucho menos va a ejecutar dos constructores). Se puede evitar esto de varias formas: evitando <code>AppObjectSkel</code> en todos los casos y copiando el construct a cada vez, copiando el construct sólo cuando lo necesitamos (por que pisamos el construct de <code>AppObjectSkel</code>) o simplemente usar una función opcional (llamada init), como pongo en el ejemplo, que sólo se ejecuta si existe y se llama desde <code>AppObjectSkel</code>, a modo de constructor (un constructor invoca a otro).</p>
+<p>Desde la propia aplicación simplemente hay que crear una nueva instancia del objeto <code>Application</code> (<code>$app = new Application</code>) y acceder a los diferentes objetos a partir del maestro (<code>$app->db, $app->cache</code>).</p>
+<p>Esto llega a ser muy útil cuando la aplicación entera está divida en objetos (<code>AppUsers, AppForums, AppProfiles...</code>) y es necesario hacer transacciones entre los objetos. En lugar de crear una instancia para cada objeto cada vez que se necesitan (por ejemplo, instanciar <code>AppCache</code> desde <code>AppUsers</code> cuando hace falta usar memcache), se pueden instanciar una sola vez y acceder en un <em>entorno protegido</em> (<code>Application</code>, que vendría a ser un &#8220;contenedor&#8221; relativamente protegido de variables pisadas y globales erradas), a todos los objetos o variables que haga falta.</p>
+<p>Con esto después se pueden hacer montones de cambios (instanciar una clase poco usada sólo cuando se necesita, hacer una especie de <em>namespace</em> para tener un cache durante la ejecución del programa&#8230;). Y es que ahí, la imaginación es el límite.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://adrian.navarro.at/blog/2009/08/16/objetos-maestros-en-php/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Sistemas de recomendaciones</title>
+		<link>http://adrian.navarro.at/blog/2009/08/08/sistemas-de-recomendaciones/</link>
+		<comments>http://adrian.navarro.at/blog/2009/08/08/sistemas-de-recomendaciones/#comments</comments>
+		<pubDate>Sat, 08 Aug 2009 09:15:21 +0000</pubDate>
+		<dc:creator>Adrián</dc:creator>
+				<category><![CDATA[Los programadores también fallan]]></category>
+		<category><![CDATA[clustering]]></category>
+		<category><![CDATA[omghype]]></category>
+		<category><![CDATA[suggestions]]></category>
+
+		<guid isPermaLink="false">http://adrian.navarro.at/blog/?p=186</guid>
+		<description><![CDATA[Hace ya algún tiempo (casi 2 meses!) saqué showRSS. Se trata de un servicio web que permite generar un feed completamente personalizable que contiene los torrents de las series seleccionadas por los usuarios, extrayendo los torrents (y por lo tanto, series cubiertas) de EZTV, con el objetivo de sustituir al difunto FeedMyTorrents. El servicio tuvo [...]]]></description>
+			<content:encoded><![CDATA[<p>Hace ya algún tiempo (casi 2 meses!) saqué <a href="http://showrss.karmorra.info/">showRSS</a>. Se trata de un servicio web que permite generar un feed completamente personalizable que contiene los torrents de las series seleccionadas por los usuarios, extrayendo los torrents (y por lo tanto, series cubiertas) de <a href="http://eztv.it/">EZTV</a>, con el objetivo de sustituir al difunto FeedMyTorrents. El servicio tuvo bastante éxito (portada en <a href="http://digg.com/tech_news/Bye_Bye_FeedMyTorrents_Hello_ShowRSS">Digg</a>, aparición en <a href="http://torrentfreak.com/bye-bye-feedmytorrents-hello-showrss-090526/">TorrentFreak</a>, <a href="http://lifehacker.com/5271185/showrss-automates-your-tv-show-downloads">Lifehacker</a>, <a href="http://www.applesfera.com/software/como-descargar-automaticamente-tus-series-en-tu-mac">AppleSfera</a>, y de ahí bastantes más blogs de tamaño medio).</p>
+<p>Pese a mis temores, aguantó <em>demasiado bien</em> el tirón, y lo mejor de todo, sin posteriores sorpresas (lecturas aleatorias que fallan, índices que revientan y demás marrones aleatorios que suelen surgir). De ahí (y después del «hype») me puse a ver qué cosas interesantes se podían hacer con toda la cantidad de información que mueve semejante monstruo (sobre todo ahora mismo, con unos 15000 usuarios activos y unas 160000 selecciones de series hechas por los usuarios).</p>
+<p>Así que me puse manos a la obra y monté una especie de sistema que generase recomendaciones para series. Y menuda basura.</p>
+<p>La idea es de generar una lista de series &#8220;similares&#8221; a las dadas anteriorente. Técnicamente, <em>es poesía</em>. Sin embargo soy incapaz de entender código un mes después de escribirlo (eso es un problemón), y los resultados no son tan precisos como deberían. Al fin y al cabo, funciona pero <em>con sus detalles</em>.</p>
+<p>El principio técnico es &#8230; algo extraño. Primero se seleccionan los usuarios que ven alguna de las series seleccionadas. Esta lista se procesa de manera a posicionar a los usuarios que mayores coincidencias tienen, y calcular su <em>afinidad</em>. Por dar un ejemplo: si un usuario ve las 5 series que yo he seleccionado más una más, esa serie (y por lo tanto, ese usuario, que pasará con mayor peso a la segunda parte) será mucho más importante que cualquier otra serie que sea vista por un usuario que vea mis 5 series y otras 15 más.</p>
+<p>Después de atribuir los puntos a los usuarios, y los <em>bonus</em> a las series, se aplican también una serie de penalizaciones (por ejemplo, en el caso de que un usuario vea mis 5 series escogidas más una, si esa serie es por ejemplo la más vista, no va a tener prácticamente peso en el cálculo final, o de manera opuesta va a tener mucho más peso si se trata de una serie en la larga cola que tiene especial relevancia entre los usuarios con <em>gustos similares a los míos</em>).</p>
+<p>Pero ahí vuelve a destacarse otro gran problema: <em>la larga cola</em>. En las series, por ejemplo, <em>Nurse Jackie</em> es reciente y podría cubrir ciertas recomendaciones cuando el usuario por ejemplo ya ve <em>House</em> y <em>Mental</em>. Pero (y por pura estadística), <em>Heroes</em> (que es la serie más <em>suscrita</em> en la plataforma) va a tener mayor relevancia que <em>Nurse Jackie</em>, pese a todos los bonus, aunque sean negativos.</p>
+<p>Un método alternativo sería el <a href="http://en.wikipedia.org/wiki/Cluster_analysis#K-means_and_derivatives">clustering y k-means</a> (bueno, no voy a hablar demasiado, la explicación técnica induce al suicidio). A parte de que no comprendo la mitad, no contempla de la misma forma la cantidad de suscritos (y después de tantas pruebas puedo decir que algo sí que importa en este caso). El sistema de k-means (a parte de ser horriblemente complicado) se basa en crear &#8220;inicios&#8221; aleatorios, para crear unas especies de polos (sí, y esto sigue siendo complicado). Y es imprevisible.</p>
+<p>Otro problema (y ya de la propia naturaleza del sistema): igual que te puede gustar <em>House</em>, puedes odiar a <em>Mental</em> y <em>Pushing Daisies</em>, y para más inri, estar enganchado a <em>Big Brother</em>. Digno de una muerte dolorosa, sí, pero ocurre&#8230; y es que el ser humano&#8230; es extraordinario (y en esto no pensé antes).</p>
+<p>Hasta aquí, verborrea. Ahora pasemos a lo interesante y triples anidados de listas completamente innecesarios:</p>
+<ul>
+<li><strong>Diferentes ejemplos de resultados: </strong>
+<ol>
+<li>House, Mental, Nurse Jackie, Dexter, Bones
+<ul>
+<li><strong><em>Fringe</em></strong></li>
+<li>Dollhouse</li>
+<li><strong><em>Heroes</em></strong></li>
+<li><em>Burn Notice</em></li>
+<li><em>Chuck</em></li>
+<li><em>Lie to me</em></li>
+<li><em>The Mentalist</em></li>
+<li>Eureka</li>
+<li><strong>True Blood</strong></li>
+<li><strong>Lost</strong></li>
+</ul>
+</li>
+<li>NCIS, CSI: NY, Criminal Minds, Numb3rs, Cold Case
+<ul>
+<li>CSI</li>
+<li>CSI: Miami</li>
+<li><em>Bones</em></li>
+<li><strong><em>House</em></strong></li>
+<li><em>The Mentalist</em></li>
+<li><strong><em>Fringe</em></strong></li>
+<li><em>Burn Notice</em></li>
+<li><em>Chuck</em></li>
+<li><em>Lie to me</em></li>
+<li><strong><em>Heroes</em></strong></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p>Las dos &#8220;selecciones&#8221; son a grandes rasgos de dos temáticas diferentes. La primera, de medicina e investigación criminal, la segunda de investigación criminal y <em>enigmas criminales</em>, por decirlo de alguna forma. Por lo tanto, existe un &#8216;cruce&#8217; entre las temáticas, aunque sus extremos están bastante alejados. Los elementos en itálica señalan coincidencias en ambas listas y los elementos en negrita señalan a series en el Top 10 de series más suscritas.</p>
+<p>Las coincidencias son demasiado abundantes, ya que en ambos casos las series con mayor número de suscriptores <em>ganan</em> por encima de las series que realmente serían buenas sugerencias (por ejemplo, Dollhouse en la primera selección, <em>pienso</em>). Luego, las posibles selecciones (que se encontrarían a los &#8220;extremos&#8221; de ambas temáticas) en ciertos casos pueden no ser un reflejo de lo que el usuario espera.</p>
+<p>El cruce entre las series también se reporta a cualquier otro set de sugerencias. Las series en sí también evolucionan y no siempre mantiene una temática definida (por ejemplo, <em>Lost</em> pasó de ser una serie intrigante a ser una mierda intrigante). En ocasiones los &#8220;grupos&#8221; de series se solapan entre sí, así que del momento en el cual se escogen series que podrían pertenecer a grupos distintos (<em>Bones</em>, <em>Dexter</em>, <em>NCIS</em>) el resultado de la sugerencia es completamente inútil y sin sentido.</p>
+<p>Pero sigamos&#8230;</p>
+<ul>
+<li><strong>El problema técnico:</strong>
+<ol>
+<li>Lecturas a la base de datos: para calcular absolutamente todo se necesita recurrir a la base de datos, y eso hace una media de 3000 lecturas por recomendación.</li>
+<li>Cache: la solución al primer problema sería guardar el set cada lectura en memcache (el sistema de MySQL se revela inútil en estos casos). Sin embargo, debido a que se tratan de consultas muy precisas (y con muchos datos devueltos), por ejemplo, los shows de X usuario, el <em>hit rate</em> es bastante bajo (y a falta de RAM, termina siendo un <em>mal amigo</em> para un sistema como showRSS).</li>
+<li>La larga cola: esto sí que es un monstruo, y pura estadística. Cuanto más se ve una serie, más posibilidades hay de que se cuele en las sugerencias, y por mucha penalización que exista, es casi inevitable.</li>
+<li>La interfaz: no es realmente un problema técnico, pero si un verdadero marrón, a mitad entre diseño y técnica&#8230; por que cuando 150 líneas de JS dejan de funcionar sin motivo aparente bajo Internet Explorer, a uno le entran unos instintos asesinos bastante preocupantes.</li>
+</ol>
+</li>
+</ul>
+<p>A la larga, es muy difícil mantener un proyecto así funcionando. Requiere tener una máquina aislada (aunque se trate de un VPS, de lo contrario un pico de uso o simplemente un <em>capullo abusón</em> reventarían un servidor entero), suficiente RAM como para tener un cache funcional (y no un cache &#8220;peligroso&#8221;), y un programador que sepa interpretar su propio código (prometo no volver a usar nombres de variables abstractos sin documentar, lo prometo, por mi bien).</p>
+<p><strong>Conclusión:</strong> habrá que seguir buscando la formula <img src='http://adrian.navarro.at/blog/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+]]></content:encoded>
+			<wfw:commentRss>http://adrian.navarro.at/blog/2009/08/08/sistemas-de-recomendaciones/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Euskal Encounter 17</title>
+		<link>http://adrian.navarro.at/blog/2009/08/02/euskal-encounter-17/</link>
+		<comments>http://adrian.navarro.at/blog/2009/08/02/euskal-encounter-17/#comments</comments>
+		<pubDate>Sun, 02 Aug 2009 22:06:02 +0000</pubDate>
+		<dc:creator>Adrián</dc:creator>
+				<category><![CDATA[Ego]]></category>
+		<category><![CDATA[Verborrea]]></category>
+		<category><![CDATA[euskal encounter]]></category>
+		<category><![CDATA[guia de supervivencia]]></category>
+		<category><![CDATA[lanparty]]></category>
+
+		<guid isPermaLink="false">http://adrian.navarro.at/blog/?p=173</guid>
+		<description><![CDATA[Y esperando a la 18! Ha estado genial, con montones de conferencias, gente interesante, concursos, noches en vela&#8230;   &#8230; y a diferencia de la Campus Party, no nos hemos asado!
+Y a continuación, una chuleta para el año que viene (sí, siempre viene bien y tal):
+
+Equipaje: La tienda de campaña, el saco de dormir y [...]]]></description>
+			<content:encoded><![CDATA[<p>Y esperando a la 18! Ha estado genial, con montones de conferencias, gente interesante, concursos, noches en vela&#8230; <img src='http://adrian.navarro.at/blog/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' />  &#8230; y a diferencia de la Campus Party, no nos hemos asado!</p>
+<p>Y a continuación, una chuleta para el año que viene (sí, siempre viene bien y tal):</p>
+<ul>
+<li><strong>Equipaje:</strong> La tienda de campaña, el saco de dormir y eventualmente la esterilla son impepinables&#8230; Y unas chanclas no te vendrían mal si piensas ducharte. Y si te <em>da cosa</em> de que te vean el pito, lleva bañador (aunque tampoco es que importe, no?) En cuanto a la maleta, un trolley debería ser más que suficiente. No hay que olvidar que según vayas en metro, tren o simplemente en coche, vas a arrastrar el equipaje tanto en el aparcamiento como dentro y fuera del recinto (y el recinto es enorme!!).<br />&nbsp;</li>
+<li><strong>La tienda de campaña:</strong> Yo no llevé ni esterilla ni tienda de campaña, y me arrepiento profundamente. en cualquier caso la esterilla <strong>sí</strong> que hace falta, y la tienda de campaña merece mucho la pena. Además, Decathlon vende tiendas de campaña para interior, pequeñas, que se montan <em>solitas</em> (en 2s, dicen). Eso sí, mínimo media hora para volver a montar todo de vuelta.<br />&nbsp;</li>
+<li><strong>Al llegar:</strong> La acreditación empieza el día anterior a la inauguración, normalmente al medio día (13h). Es decir, que pese a que la inauguración es al día siguiente por la tarde, la red ya funciona y es posible instalarse sin problemas (como hace la gran mayoría de gente) un día antes. Pese a ello, oficialmente no se considera día de party (aunque todo funciona como un día corriente de party). Y por cierto, esa primera noche pre-party-oficial no apagan las luces, no insistáis!<br />&nbsp;</li>
+<li><strong>Instalarse:</strong> En cuanto llegues, instala tu tienda de campaña. Busca un lugar bien situado, eso puede ser por ejemplo relativamente cerca de las duchas (sin inundarte), teniendo los accesos al pabellón del recinto y al exterior a una distancia correcta (evitando ruidos) y en un lugar por el que no pase todo el mundo. Y si tienes miedo por tu equipaje, simplemente llévalo contigo mientras montas la tienda, aunque la seguridad en el recinto es muy buena y está generalmente bien vigilado (tanto servicio de urgencias médicas como vigilancia).<br />&nbsp;</li>
+<li><strong>Las duchas:</strong> Las duchas son una mierda. Una-soberana-mierda. Si te duchas, te van a <em>ver el pito</em>, así que si tienes un trauma personal con ello mejor evita limpiarte <img src='http://adrian.navarro.at/blog/wp-includes/images/smilies/icon_razz.gif' alt=':-P' class='wp-smiley' /> . Una de las razones por las que viene bien tener una tienda de campaña propia cerca de las duchas, es que puedes llevarte simplemente un bote de jabón, una toalla y unas chanclas, en lugar de tener que cargar con tu ropa de recambio hasta las duchas (o sin cambiarte, da igual), puesto que allí no hay lugar donde dejar tu ropa &#8220;a buen recaudo&#8221; mientras que te enjabonas y demás cosas.<br />&nbsp;</li>
+<li><strong>Los servicios:</strong> Suelen estar ocupados la mayoría del tiempo. Más de uno se ha quedado sin papel higiénico en plena «tarea» (además de que el papel es simplemente horrible). Llevar tu propio papel higiénico no es una idea descabellada (o comprarlo, teniendo en cuenta que hay un Eroski cerca, ahora lo comentaré). Y si no te importa demasiado (como a la mayoría de los mortales), limítate a comprobar que hay papel antes de pasar, y evita dentro de lo posible guarrear todo (visto que hay cola, es posible que el que pase después te vea la cara&#8230;). Todos los servicios (o <em>WC</em>) están situados en la parte trasera del pabellón, debajo de las rampas de acceso a la party (la acreditación se sitúa a un nivel superior, y hay escaleras mecánicas y ascensores para bajar al lugar de la party en sí). De cierta forma, el acceso, los servicios y el acceso al pabellón de descanso están en la parte &#8220;trasera&#8221; del recinto, y por lo tanto las filas AA-AB serían las más alejadas de los servicios, y AA-AB también las más alejadas de las zona de descanso, pero las más cercanas a la zona de pizza, control de escena y pantallas. Así que el sitio también es algo importante!<br />&nbsp;</li>
+<li><strong>Alimentación y aprovisionamiento:</strong> En el propio pabellón hay máquinas (pegadas a la zona de acceso y servicios). Las hay de café (de las cuales una a mi me timó dos veces, <em>mierda</em>), de Coca-Cola, de snacks, sandwiches&#8230; En la zona opuesta (parte «backstage», tras las pantallas) hay un bar en el que sirven (de 20h a 8h) algunos platos calientes a un precio no demasiado elevado (aunque creo que se exceden bastante en el precio de las bebidas). Y hay un telepizza con pocas y caras ofertas pero con buenas pizzas, en la zona de AA-01 (esquina opuesta al acceso al pabellón de descanso, por cierto).Fuera hay un Eroski, y más lejos un Decathlon, un Media Markt y un par de negocios más. Por cierto, si necesitas un disco duro o algún tipo de hardware a buen precio, pide antes precios en la party y en los propios <em>stands</em> que se suelen instalar (por ejemplo ModPC-Bexitec, tienen hardware a muy buenos precios). Si vas con alguien o simplemente <em>consumes mucho</em>, conviene ir al Eroski el primer o segundo día para &#8220;llenar el carro&#8221; durante toda la party (simplemente por el ahorro y disponibilidad, merece la pena). Y si tienes por ahí una neverita portátil y no te es un incordio llevarla, puede serte muy útil.<br />&nbsp;</li>
+<li><strong>Ordenadores y red:</strong> Si vas a querer llevar dos ordenadores, necesitas un switch. En mi caso llevé dos y de ello me arrepiento bastante, puesto que al final casi no jugué (tenía intención de participar en partidas LAN, pero apenas había y si no, había ya <em>lío</em> con otros temas, es difícil aburrirse!). La red es Gigabit, es decir, que cualquier instalación Fast Ethernet (100mbit), ya sea por una tarjeta de red no-gigabit o un switch que no soporta gigabit, es un desperdicio de recursos&#8230; y al intercambiar ficheros por DC++ (Direct Connect), se nota mucho la diferencia! Hay que compartir un mínimo de 2 GB para poder conectarse al DC++, y el programa tiene que <em>hashear</em> antes todos tus archivos, así que merece la pena configurar el DC junto con lo que vas a compartir previamente. La red asigna direcciones IP públicas, y la diferencia de velocidad de navegación en internet (en comparación a un ADSL residencial) no se nota demasiado (salvando algunas diferencias, por ejemplo es prácticamente imposible saturar la conexión para que vaya lenta!). Por cierto, no lleves algún router o volverás sin él, limítate a llevar un switch si realmente lo necesitas, y otra vez más, piensa en reducir tu equipaje al mínimo.<br />&nbsp;</li>
+<li><strong>Concursos:</strong> Hay concursos de muchos tipos y con diferentes premios. En algunos como el Hackit se puede participar simplemente por diversión. Un consejo personal: no te cortes, hay muchos concursos, muchos premios, y mucha gente se corta simplemente pensando que no van a llegar a ningún lado&#8230; y se equivocan <img src='http://adrian.navarro.at/blog/wp-includes/images/smilies/icon_wink.gif' alt=';-)' class='wp-smiley' /> .<br />&nbsp;</li>
+<li><strong>Último día: </strong>Si tienes que volver en tren o si se da el caso, en avión, duerme aunque sea un poco antes (y eso va por retorcida experiencia, el día de la vuelta dormí apenas 2h cuando ya era de día, y de milagro no me quedo allí). También ten un especial cuidado con tus pertenencias, aunque sin exagerar (la seguridad sigue estando muy presente como el resto de días, pero una cámara o un móvil sin dueño no se ven de la misma manera que cualquier otro día).</li>
+</ul>
+<p>Demás cosas: posiblemente se me hayan quedado en el tintero, sin que yo sea consciente. Iré añadiendo cosas según se me ocurran <img src='http://adrian.navarro.at/blog/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> , espero que le sea útil a alguien! (A parte de mi, claro)&#8230; Y espero veros el año que viene <img src='http://adrian.navarro.at/blog/wp-includes/images/smilies/icon_wink.gif' alt=';-)' class='wp-smiley' /> </p>
+]]></content:encoded>
+			<wfw:commentRss>http://adrian.navarro.at/blog/2009/08/02/euskal-encounter-17/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Cambios de página sin actualizar usando hashes</title>
+		<link>http://adrian.navarro.at/blog/2009/06/13/boton-atras-y-hashes-de-direccion-con-ajax/</link>
+		<comments>http://adrian.navarro.at/blog/2009/06/13/boton-atras-y-hashes-de-direccion-con-ajax/#comments</comments>
+		<pubDate>Sat, 13 Jun 2009 11:49:19 +0000</pubDate>
+		<dc:creator>Adrián</dc:creator>
+				<category><![CDATA[Dedos de acero]]></category>
+
+		<guid isPermaLink="false">http://adrian.navarro.at/blog/?p=167</guid>
+		<description><![CDATA[Páginas como Gmail, Facebook o Tuenti usan el modelo &#8216;hash&#8217; en las URL. Por ejemplo, la siguiente URL:
+http://www.tuenti.com/#m=Search&#38;func=view_friends_page&#38;job=243354
+Lleva a una búsqueda en Tuenti. Sin embargo, el contenido después de # en la URL no se envía al servidor, puesto que se trata de un &#8216;hash&#8217; de URL. Este contenido sí que es accesible mediante JavaScript, [...]]]></description>
+			<content:encoded><![CDATA[<p>Páginas como Gmail, Facebook o Tuenti usan el modelo &#8216;hash&#8217; en las URL. Por ejemplo, la siguiente URL:</p>
+<blockquote><p>http://www.tuenti.com/#m=Search&amp;func=view_friends_page&amp;job=243354</p></blockquote>
+<p>Lleva a una búsqueda en Tuenti. Sin embargo, el contenido después de # en la URL no se envía al servidor, puesto que se trata de un &#8216;hash&#8217; de URL. Este contenido sí que es accesible mediante JavaScript, usando la variable <code>window.location.hash</code>.</p>
+<p>Tiene dos grandes ventajas al usarlo junto con AJAX: por una parte, funciona el botón de retroceso (&#8220;atrás&#8221;) aunque la aplicación esté basada en AJAX (esto depende la implementación, claro). Por otra parte, se puede &#8216;compartir&#8217; el enlace, de tal forma que aunque sea una consulta inicialmente lanzada por AJAX, se pueda reproducir al entrar en el mismo enlace (con el mismo hash).</p>
+<p>He programado un pequeño ejemplo, <a href="http://adrian.navarro.at/demo/hash/demo.html">disponible aquí</a>. Es muy sencillo, aunque todo está bien explicado en el propio código (sólo que en inglés). El archivo de funciones JavaScript (igual de importante que el la serie de capas que contiene la página) <a href="http://adrian.navarro.at/demo/hash/scripts.js">está aquí</a>.</p>
+<p>El principio &#8220;simplificado es el siguiente&#8221;:</p>
+<ol>
+<li>El usuario accede a la página</li>
+<li>Se incluye la función &#8216;launch()&#8217; mediante jQuery a los eventos a ejecutar una vez se haya cargado el DOM</li>
+<li>Esta función simplemente &#8216;lanza&#8217; la carga de la primera página, según tenga o no hash.</li>
+<li>La función &#8216;load_page()&#8217; se ejecuta y carga el contenido. Al mismo tiempo crea un &#8216;timeout&#8217; con la función &#8216;verify_hash()&#8217;, que &#8216;vigila&#8217; el hash para detectar cambios.</li>
+<li>La función &#8216;verify_hash()&#8217; crea a su vez otro timeout que llama a la misma función. En caso de que el hash haya cambiado, lanza &#8216;load_page()&#8217;, de la misma forma que hace &#8216;launch()&#8217;.</li>
+</ol>
+<p>El ejemplo dado también incluye un timer de &#8216;timeout&#8217; (en caso de que se &#8216;cuelgue&#8217; la petición AJAX), una serie de capas de &#8216;Loading&#8217; y comprueba que el usuario tenga JavaScript activado (en el caso contrario, sólo ve un mensaje alertando de la necesidad de tener JavaScript activado, sin dejar trazas de la aplicación).</p>
+<p>Si se carga el hash #m=1&amp;abc=2, la consulta AJAX (siempre GET) será a <code>./pageloader?m=1&amp;abc=2</code>, incluyendo siempre como GET el contenido del hash. De la misma forma, se pueden incluir enlaces con hashes (se lanza la consulta AJAX al clickearlos) y el botón de retroceso funciona sin problemas.</p>
+<p>Intenté poner una función que lanzase automáticamente el cambio de página sin esperar al intervalo de comprobación (al hacer click en un enlace), sin embargo generaba conflictos con los timers. De cualquier manera, la diferencia de tiempo entre el click y la petición AJAX no es muy grande.</p>
+<p>El <a href="http://adrian.navarro.at/demo/hash/demo.html">ejemplo aquí</a> y <a href="http://adrian.navarro.at/demo/hash/scripts.js">el script aquí</a>. No olvidarse de mirar los comentarios del código <img src='http://adrian.navarro.at/blog/wp-includes/images/smilies/icon_wink.gif' alt=';-)' class='wp-smiley' /> .</p>
+]]></content:encoded>
+			<wfw:commentRss>http://adrian.navarro.at/blog/2009/06/13/boton-atras-y-hashes-de-direccion-con-ajax/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>YQL o la gran base de datos que es Internet</title>
+		<link>http://adrian.navarro.at/blog/2009/05/16/yql-o-la-gran-base-de-datos-que-es-internet/</link>
+		<comments>http://adrian.navarro.at/blog/2009/05/16/yql-o-la-gran-base-de-datos-que-es-internet/#comments</comments>
+		<pubDate>Sat, 16 May 2009 20:25:49 +0000</pubDate>
+		<dc:creator>Adrián</dc:creator>
+				<category><![CDATA[Infinitos monos aporreando infinitos teclados]]></category>
+
+		<guid isPermaLink="false">http://adrian.navarro.at/blog/2009/05/16/yql-o-la-gran-base-de-datos-que-es-internet/</guid>
+		<description><![CDATA[Leyendo korben.info (un blog en francés) me he encontrado un post la mar de interesante sobre YQL.
+YQL es &#34;Yahoo! Query Language&#34; y es básicamente un sistema de &#34;queries&#34;estructuradas que permite lanzar &#34;consultas&#34; contra Interner entero.
+Esto se hace usando una estructura XML pura que es consultada mediante consultas YQL (pseudo-SQL) que pasan antes por Yahoo!, por [...]]]></description>
+			<content:encoded><![CDATA[<p>Leyendo <a href="http://www.korben.info/">korben.info</a> (un blog en francés) me he encontrado un post la mar de interesante sobre YQL.</p>
+<p>YQL es &quot;Yahoo! Query Language&quot; y es básicamente un sistema de &quot;queries&quot;estructuradas que permite lanzar &quot;consultas&quot; contra Interner entero.</p>
+<p>Esto se hace usando una estructura XML pura que es consultada mediante consultas YQL (pseudo-SQL) que pasan antes por Yahoo!, por ejemplo: (hay mejores ejemplos por ahí, merece la pena echar un vistazo)</p>
+<blockquote>
+<p>SELECT * FROM twitter.user.status WHERE id=&#8217;adrinavarro&#8217;</p>
+<p>SELECT * FROM search.web WHERE query=&#8217;vacaciones&#8217;</p>
+<p>SELECT * FROM lastfm.tag WHERE tag=&#8217;beck&#8217; AND api_key=&#8217;?&#8217;</p>
+</blockquote>
+<p>La idea es muy sencilla y a más de uno le va a gustar. Hay una recopilación de las tablas en <a href="http://datatables.org/">datatables.org</a>. Para quién le interese probar, existe una <a href="http://developer.yahoo.com/yql/console/?env=http://datatables.org/alltables.env">consola de pruebas</a> para ejecutar consultas y analizar el resultado.</p>
+<p>Para más información, <a href="http://developer.yahoo.com/yql/">docs sobre YQL</a> y <a href="http://www.korben.info/initiation-au-yql-open-hack-day.html">ejemplos (en francés).</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://adrian.navarro.at/blog/2009/05/16/yql-o-la-gran-base-de-datos-que-es-internet/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>¿Somos terroristas?</title>
+		<link>http://adrian.navarro.at/blog/2009/03/28/somos-terroristas/</link>
+		<comments>http://adrian.navarro.at/blog/2009/03/28/somos-terroristas/#comments</comments>
+		<pubDate>Sat, 28 Mar 2009 10:36:54 +0000</pubDate>
+		<dc:creator>Adrián</dc:creator>
+				<category><![CDATA[Censura ACME]]></category>
+		<category><![CDATA[De qué no hablar]]></category>
+
+		<guid isPermaLink="false">http://adrian.navarro.at/blog/?p=149</guid>
+		<description><![CDATA[Mientras que unos países censuran internet, otros se limitan a desarrollar tecnología que al fin y al cabo nos vigila (pero dicen que no, ahora depende de nosotros – y si somos paranoicos o no). El debate del autómata, publicidad contextual y perfiles de personas&#8230; Igualito que con la publicidad en Gmail. Que según se [...]]]></description>
+			<content:encoded><![CDATA[<p>Mientras que <a href="http://ciberderechos.barrapunto.com/article.pl?sid=09/03/22/0229250&amp;from=rss">unos países censuran internet</a>, otros se limitan a desarrollar <a href="http://www.publico.es/ciencias/210547/cartel/observando">tecnología que al fin y al cabo nos vigila</a> (pero dicen que no, ahora depende de nosotros – y si somos <em>paranoicos</em> o no). El debate del autómata, publicidad contextual y perfiles de personas&#8230; Igualito que con la publicidad en Gmail. Que según se vea, también tiene su lado malo, <a href="http://proyectoliquido.net/h2blog/184/engoogleados-por-cory-doctorow-el-dia-en-que-google-se-volvio-malo/">como relata (ficción, claro) Cory Doctorow en &#8216;Engoogleados&#8217;</a>. Merece la pena leerlo aunque sólo sea para pensar un poco sobre lo que trata y la pérdida de privacidad en Internet. Que –parece ser– <a href="http://omglists.blogfaction.com/article/107357/9-good-things-the-internet-has-ruined-forever/">es lo que internet arruinó</a> (entre otras cosas, claro).</p>
+<p>Y ahora, la gente de <a href="http://thepiratebay.org/">ThePirateBay</a> ha sacado <a href="http://ipredator.se/">una VPN que simplemente no guarda registros</a> (parece ser que las demás &#8216;anónimas&#8217; los guardan pero no los entregan bajo ningún concepto, ¿será cierto?). Auque lo más preocupante –creo– es que lleguemos a este punto en el que se van restringiendo las libertades individuales y las VPN son una opción a considerar para &#8216;mantenernos seguros&#8217; (bromas de condones a parte, por favor).</p>
+<p>Nos vinieron con la ley contra el P2P (intercambio de datos). Por suerte, la <a href="http://bandaancha.eu/articulo/6448/parlamento-europeo-rechaza-ley-francesa-sobre-p2p">rechazó el Parlamento Europeo</a>. Menos mal. Aunque <a href="http://www.informador.com.mx/entretenimiento/2009/86369/6/lista-de-los-doce-paises-enemigos-de-internet.htm">internet sigue teniendo enemigos</a>, ahora se va dividiendo en dos partes. Los que censuran y los que no. Al fin y al cabo España no está nada mal, casi no existe censura. Bueno, <a href="http://bandaancha.eu/articulo/6403/parte-wordpresscom-bloqueada-orden-judicial">sólo un poco y de jueces torpes</a>, muy torpes.</p>
+<p>A ver cuanto tardan en darnos en las narices a nosotros también. Miedo me da&#8230;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://adrian.navarro.at/blog/2009/03/28/somos-terroristas/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Maldito &#8220;Desvío de llamadas activado&#8221;</title>
+		<link>http://adrian.navarro.at/blog/2009/03/23/maldito-desvio-de-llamadas-activado/</link>
+		<comments>http://adrian.navarro.at/blog/2009/03/23/maldito-desvio-de-llamadas-activado/#comments</comments>
+		<pubDate>Mon, 23 Mar 2009 21:27:21 +0000</pubDate>
+		<dc:creator>Adrián</dc:creator>
+				<category><![CDATA[Ego]]></category>
+		<category><![CDATA[Enredando]]></category>
+		<category><![CDATA[Fail]]></category>
+		<category><![CDATA[iPhone]]></category>
+
+		<guid isPermaLink="false">http://adrian.navarro.at/blog/?p=143</guid>
+		<description><![CDATA[Ni un mes llevo con el iPhone y ya estoy cansado de las ventanitas de &#8220;Desvió de llamadas activado&#8221;. Al llamar a alguien –por error o no– te tragas la ventana, con todo el rollo de tener que &#8220;Aceptar&#8221; la alerta antes de poder colgar rápidamente. Vamos, un gran fallo.
+Aquí viene una solución que he [...]]]></description>
+			<content:encoded><![CDATA[<p>Ni un mes llevo con el iPhone y ya estoy cansado de las ventanitas de &#8220;Desvió de llamadas activado&#8221;. Al llamar a alguien –por error o no– te tragas la ventana, con todo el rollo de tener que &#8220;Aceptar&#8221; la alerta antes de poder colgar rápidamente. Vamos, un <em>gran fallo</em>.</p>
+<p>Aquí viene una solución que he encontrado buscando y que me ha funcionado con el último firmware (2.2.1). Basta con tener el iPhone 3G jailbreakeado, Cydia instalado, actualizado y cinco minutos libres. El proceso es sencillo:</p>
+<ol>
+<li>Abres Cydia.</li>
+<li>En la &#8216;pestaña&#8217; o ventana &#8220;Home&#8221;, seleccionas &#8220;More package sources&#8221;, justo debajo de &#8220;Featured packages&#8221;.</li>
+<li>En la lista buscas el repo llamado &#8220;iPhone-Notes.de&#8221;.</li>
+<li>Pinchas, confirmas, le das a instalar, aceptas todo y vuelves a la pantalla de Cydia.</li>
+<li>En la lista de secciones verás un par de nuevas secciones. El paquete está en &#8220;Tweaks (2.2)&#8221;.</li>
+<li>Dentro de la sección &#8220;Tweaks (2.2)&#8221; hay un paquete llamado &#8220;ForwardMsgFix&#8221;.</li>
+<li>Tocas sobre el paquete, confirmas, instalas y sales de Cydia.</li>
+<li>Apagas el iPhone por completo (apretas en el botón <em>power</em> durante unos segundos, deslizas la barra &#8216;Apagar&#8217; y esperas a que se apague completamente – puede tardar un rato).</li>
+<li>Vuelves a encender de la misma forma, apretando el botón de power. Lo que se dice reiniciar, vamos.</li>
+<li><em>Voilà!</em></li>
+</ol>
+<p>Todo sea por encajar una chorrada en 10 pasos, pero vamos. Estoy feliz, ya puedo cancelar alegremente esas llamadas fatídicas de errores de toque. Y torpeza, claro.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://adrian.navarro.at/blog/2009/03/23/maldito-desvio-de-llamadas-activado/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Llenar internet de mierda</title>
+		<link>http://adrian.navarro.at/blog/2009/03/22/llenar-internet-de-mierda/</link>
+		<comments>http://adrian.navarro.at/blog/2009/03/22/llenar-internet-de-mierda/#comments</comments>
+		<pubDate>Sun, 22 Mar 2009 17:27:35 +0000</pubDate>
+		<dc:creator>Adrián</dc:creator>
+				<category><![CDATA[Bocazas]]></category>
+
+		<guid isPermaLink="false">http://adrian.navarro.at/blog/?p=139</guid>
+		<description><![CDATA[Es que es endemoniadamente difícil programar para el iPhone, incluso lo más básico. Vale, es cierto que soy un cafre y me he quedado en crear un elemento navegador de lo más cutre (que de hecho funciona la mitad de las veces y no sé por qué). Y que ni siquiera he podido hacer un [...]]]></description>
+			<content:encoded><![CDATA[<p>Es que es endemoniadamente difícil programar para el iPhone, incluso lo más básico. Vale, es cierto que soy un cafre y me he quedado en crear un elemento navegador de lo más cutre (que de hecho funciona la mitad de las veces y no sé por qué). Y que ni siquiera he podido hacer un programa que comunique con el GPS del teléfono. Entiendo que crear los &#8216;entornos&#8217; y diferentes vistas está <em>chupado </em>pero el código es otro mundo<em>, pero da igual.</em></p>
+<p>Yo es que <em>soy muy viejo para estas cosas</em>. Buscar (e importar!) el framework<em> CoreLocation</em> desde el gestor de proyectos de Xcode, crear un montón de <em>handlers</em>, vistas o controladores no es lo mio. Y leer la documentación tampoco.</p>
+<p>Pero en fin, a lo que venía: la pataleta. Es increíble la cantidad de chorradas que te puedes encontrar por el AppStore o en Cydia (en los repos de este último programa hay montones de basura, aunque muchísimas cosas interesantes también). Pensar que alguien se pasó horas programando para hacer un maravilloso programa que no hace absolutamente nada. Y lo puso en un repo, llenando internet de mierda. Un héroe. Incomprendido.</p>
+<p>Llenar internet de mierda es algo así como vengarse del reciclado del siglo 21. Inexistente por momentos (cuidado, avalancha).</p>
+<p>En fin, que me voy a mi esquina.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://adrian.navarro.at/blog/2009/03/22/llenar-internet-de-mierda/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>¿Entonces quién mandaba?</title>
+		<link>http://adrian.navarro.at/blog/2009/03/21/entonces-quien-mandaba/</link>
+		<comments>http://adrian.navarro.at/blog/2009/03/21/entonces-quien-mandaba/#comments</comments>
+		<pubDate>Sat, 21 Mar 2009 19:15:55 +0000</pubDate>
+		<dc:creator>Adrián</dc:creator>
+				<category><![CDATA[De qué no hablar]]></category>
+		<category><![CDATA[Que no es poco]]></category>
+
+		<guid isPermaLink="false">http://adrian.navarro.at/blog/?p=132</guid>
+		<description><![CDATA[Facebook mola. Bueno, eso no, simplemente se usa mucho. Ya sacaron su nuevo rediseño &#8216;en grande&#8217; (y creo que simplificaron muchas cosas, pero cometieron el error de &#8216;aglutinar complicaciones&#8217; en algunas partes de la aplicación convirtiéndola en un suplicio para el usuario final). También intentaron comprar Twitter por unos 500&#8230; millones de dólares. Casi nada.
+En [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.facebook.com/">Facebook</a> <em>mola</em>. Bueno, eso no, simplemente se usa mucho. Ya sacaron su nuevo rediseño &#8216;en grande&#8217; (y creo que simplificaron muchas cosas, pero cometieron el error de &#8216;aglutinar complicaciones&#8217; en algunas partes de la aplicación convirtiéndola en un suplicio para el usuario final). También intentaron comprar <a href="http://twitter.com/">Twitter</a> por unos 500&#8230; millones de dólares. Casi nada.</p>
+<p>En aquel momento se rifaban las inversiones en <a href="http://www.facebook.com/">Facebook</a> (incluso Microsoft invirtió en la empresa). Se valoraba en unos 15 mil millones (que tampoco es una cifra despreciable de dinero, ya podían darme una parte) y los directivos tenían ego para dar, tomar, regalar y guardar (para ahora mismo, supongo).</p>
+<p>Bueno, en cuanto al culebrón de <a href="http://twitter.com/">Twitter</a>, como mucha gente ya sabe <a href="http://www.businessweek.com/technology/content/mar2009/tc2009031_743025.htm">se quedó en la nada</a> (por lo visto no todo es el dinero). Y por eso, <a href="http://www.facebook.com/">Facebook</a> decide ahora <a href="http://www.facebook.com/sitetour/homepage_tour.php">rediseñar su portada para usuarios</a> haciendo que se parezca un poco más a <a href="http://twitter.com/">Twitter</a>, aunque con &#8216;el toque egocéntrico&#8217; que siempre otorga la <em>maravillosa</em> red social. Ya no hay límite de amigos (venga, mañana fiesta en casa y están invitados mis 41.514 amigos del alma), puedes decir qué cosas &#8220;se te pasan por la cabeza&#8221; en &#8216;tiempo real&#8217; (esto es que te enteras al momento de las actualizaciones de tus amigos, y yo que pensaba que antes ya era así), y compartir enlaces y demás contenidos con mayor facilidad.</p>
+<p>En otras palabras, convertir la portada en un egómetro en tiempo real. Te puedes encontrar con las fotos del verano de tu compañera de clase –la fea– del año pasado, la fiesta <em>entrepreneur</em> de ese tipo tan guay al que le gusta hacer de deejay o, por qué no, a algún naturalmente pervertido que te cuenta –tal cual– qué se le está pasando por la cabeza (¿qué cabeza?) ahora mismo. Ah, también puedes filtrar y ver sólo las perversiones de tus compañeros del colegio. O de la Universidad.</p>
+<p>Las opiniones sobre este cambio (fusilada de concepto descarada y mal hecha intentando imitar a <a href="http://twitter.com/">Twitter</a>) son bastante variadas. Por lo visto yo no soy el único que (sorprendentemente) tiene otras cosas que hacer a parte de estar atento al lifestream de Facebook. De todas formas, <a href="http://gawker.com/5177341/even-facebook-employees-hate-the-redesign">ni a los empleados les gusta el diseño</a>. A Zuckerberg <em>le importa un pepino lo que digan</em>, yo ya estoy cansado (venga, que les queda poco para descubrir la no-competencia con las redes sociales locales), y a los usuarios habituales de <a href="http://www.facebook.com/">Facebook</a> les molesta (o más bien, no les gusta nada): tanto cambio cansa y no es para menos si se trata de malgastar ego.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://adrian.navarro.at/blog/2009/03/21/entonces-quien-mandaba/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>
+
+<!-- Dynamic Page Served (once) in 0.450 seconds -->
+<!-- Cached page served by WP-Cache -->

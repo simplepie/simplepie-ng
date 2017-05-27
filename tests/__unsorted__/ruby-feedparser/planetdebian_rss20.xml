@@ -1,0 +1,1502 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+
+<channel>
+	<title>Planet Debian</title>
+	<link>http://planet.debian.org/</link>
+	<language>en</language>
+	<description>Planet Debian - http://planet.debian.org/</description>
+
+<item>
+	<title>Peter Makholm: On handling email</title>
+	<guid>http://peter.makholm.net/2007/08/21/on-handling-email/</guid>
+	<link>http://peter.makholm.net/2007/08/21/on-handling-email/</link>
+	<description>&lt;p&gt;Watching the popular &lt;a href=&quot;http://video.google.com/videoplay?docid=973149761529535925&quot;&gt;Inbox Zero&lt;/a&gt; video would probally improve my email handling skills better. But this took less time and I wanted to play around with Net::XMPP;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+#!/usr/bin/perl -l
+
+use warnings;
+use strict;
+
+use Config::Simple;
+use Linux::Inotify2;
+use Email::Abstract;
+use Net::XMPP; # aka Jabber and Gtalk
+use POSIX;
+
+my $DEBUG = 0;
+
+our %config;
+Config::Simple-&amp;gt;import_from(&quot;$ENV{HOME}/.mailnotifyrc&quot;, %config);
+
+deamonize() unless $DEBUG;
+
+my $inotify = new Linux::Inotify2
+     or die &quot;Unable to create new inotify object: $!&quot;;
+
+# Different Maildir implementations triggers different events&quot;
+#   IN_MOVED_TO: rename(&quot;tmp/file&quot;,&quot;new/file&quot;)
+#   IN_CREATE:   link(&quot;tmp/file&quot;, &quot;new/file&quot;) &amp;#038;&amp;#038; unlink(&quot;tmp/file&quot;)
+#
+# At this point the file should be written and closed.
+$inotify-&amp;gt;watch(&quot;$config{Maildir}/new&quot;, IN_MOVED_TO|IN_CREATE, sub {
+        my $e = shift;
+        my ($fh, $xmpp, $email, $message);
+
+        debug('Got event for ' . $e-&amp;gt;fullname);
+
+        open $fh, &quot;&amp;lt;&quot;, $e-&amp;gt;fullname;
+        $email = new Email::Abstract join(&quot;&quot;, &amp;lt;$fh&amp;gt;);
+        close $fh;
+
+        $message = 'Mail from ' . $email-&amp;gt;get_header('From') .
+                   ' concerning &quot;' . $email-&amp;gt;get_header('Subject') .'&quot;';
+
+        debug(&quot;Getting ready to send [$message]&quot;);
+
+        my $sender   = new Net::XMPP::JID ($config{Sender});
+        my $receiver = new Net::XMPP::JID ($config{Receiver});
+        $xmpp = new Net::XMPP::Client();
+        $xmpp-&amp;gt;Connect( hostname =&amp;gt; $sender-&amp;gt;GetServer,
+                        port     =&amp;gt; $config{port} || 5222,
+                        tls      =&amp;gt; $config{usetls} || 0,
+                      );
+        $xmpp-&amp;gt;AuthSend( username =&amp;gt; $sender-&amp;gt;GetUserID,
+                         password =&amp;gt; $config{password},
+                         resource =&amp;gt; $sender-&amp;gt;GetResource || 'mailnotify',
+                       );
+
+        $xmpp-&amp;gt;MessageSend( to   =&amp;gt; $receiver,
+                            type =&amp;gt; $config{MessageType} || 'chat',
+                            body =&amp;gt; $message,
+                          );
+
+        $xmpp-&amp;gt;Process(1);
+        $xmpp-&amp;gt;Disconnect;
+
+        debug(&quot;Event done&quot;);
+});
+
+1 while $inotify-&amp;gt;poll;
+
+sub deamonize {
+        my $pid = fork();
+
+        if ($pid) {
+                exit 0;
+        }
+
+        ### close all input/output and separate
+        ### from the parent process group
+        open STDIN,  '&amp;lt;/dev/null' or die &quot;Can't open STDIN from /dev/null: [$!]n&quot;;
+        open STDOUT, '&amp;gt;/dev/null' or die &quot;Can't open STDOUT to /dev/null: [$!]n&quot;;
+        open STDERR, '&amp;gt;&amp;#038;STDOUT'   or die &quot;Can't open STDERR to STDOUT: [$!]n&quot;;
+
+        ### Change to root dir to avoid locking a mounted file system
+        ### does this mean to be chroot ?
+        chdir '/'                 or die &quot;Can't chdir to \&quot;/\&quot;: [$!]&quot;;
+
+        ### Turn process into session leader, and ensure no controlling terminal
+        POSIX::setsid();
+}
+
+sub debug { return unless $DEBUG; print STDERR for @_; }
+
+__END__
+&lt;/code&gt;&lt;/pre&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 17:47:54 +0000</pubDate>
+</item>
+<item>
+	<title>Miriam Ruiz: PiX Frogger: help the frog cross the street</title>
+	<guid>http://www.miriamruiz.es/weblog/?p=99</guid>
+	<link>http://www.miriamruiz.es/weblog/?p=99</link>
+	<description>&lt;p&gt;Does the name &amp;#8220;&lt;a title=&quot;Frogger in the Wikipedia&quot; href=&quot;http://en.wikipedia.org/wiki/Frogger&quot;&gt;Frogger&lt;/a&gt;&amp;#8221; ring a bell? Introduced in &lt;a title=&quot;1981 (MCMLXXXI) in the Wikipedia&quot; href=&quot;http://en.wikipedia.org/wiki/1981&quot;&gt;1981&lt;/a&gt;, developed by &lt;a title=&quot;Konami Corporation in the Wikipedia&quot; href=&quot;http://en.wikipedia.org/wiki/Konami&quot;&gt;Konami&lt;/a&gt; and distributed by &lt;a title=&quot;Sega Corporation in the Wikipedia&quot; href=&quot;http://en.wikipedia.org/wiki/Sega&quot;&gt;Sega&lt;/a&gt;/&lt;a title=&quot;Gremlin Industries in the Wikipedia&quot; href=&quot;http://en.wikipedia.org/wiki/Gremlin_Industries&quot;&gt;Gremlin&lt;/a&gt;, it&amp;#8217;s one of the most classic from the earliest ages of computer videogames.&lt;/p&gt;
+&lt;p&gt;&lt;a title=&quot;PiX Frogger Homepage&quot; href=&quot;http://www.pixjuegos.com/?q=node/30&quot;&gt;PiX Frogger&lt;/a&gt; is a clone of the classic game Frogger, in which you must help a frog cross the street to avoid becoming roadkill by cars and trucks. The frog starts at the bottom of the screen and the only control the player has is navigating the direction for the frog to hop. The game allows 4 players playing simultaneously with the keyboard.&lt;/p&gt;
+&lt;p&gt;PIX Frogger is &lt;a title=&quot;Debian NEW and BYHAND Packages&quot; href=&quot;http://ftp-master.debian.org/new.html&quot;&gt;on the way&lt;/a&gt;. Implemented in &lt;a title=&quot;Fenix Homepage&quot; href=&quot;http://fenix.divsite.net/&quot;&gt;Fénix&lt;/a&gt;, an interpreted script programming language, &lt;a title=&quot;Especially or Specially?&quot; href=&quot;http://englishplus.com/grammar/00000287.htm&quot;&gt;specially&lt;/a&gt; designed to developing and running 2D games and added to &lt;a title=&quot;Fenix in Debian&quot; href=&quot;http://packages.debian.org/fenix&quot;&gt;Debian repositories&lt;/a&gt; some weeks ago, it has really cute graphics and the visual layout has been nicely taken care of. The game in itself is quite simple, so it shouldn&amp;#8217;t be hard for smaller kids to play, especially when they can compete against each other 4 at a time.&lt;/p&gt;
+&lt;p&gt;For more grown-ups, I guess it&amp;#8217;s so cool to have a version in Debian from this historical game. I&amp;#8217;m sure many people missed it. I hope it enters the repositories soon, but meanwhile you can get it from &lt;a title=&quot;Some debian packages&quot; href=&quot;http://users.alioth.debian.org/~baby-guest/fenix/&quot;&gt;here&lt;/a&gt;. Thake care while crossing the street, though.
+&lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 17:25:22 +0000</pubDate>
+</item>
+<item>
+	<title>Martin F. Krafft: If you procmail, read this</title>
+	<guid>http://blog.madduck.net/geek/2007.08.21_if-you-procmail-read-this</guid>
+	<link>http://blog.madduck.net/geek/2007.08.21_if-you-procmail-read-this.xhtml</link>
+	<description>&lt;p&gt;I just had a hard time finding &lt;a class=&quot;reference&quot; href=&quot;http://pm-doc.sourceforge.net/pm-tips.html&quot;&gt;this excellent procmail resource&lt;/a&gt; on the web. I am thus blogging
+it for posterity, in case anyone is looking for procmail documentation, tips,
+tricks, a how-to, or anything else related to procmail.&lt;/p&gt;
+&lt;p&gt;And if you procmail and have not read the document, I suggest you do. It's
+truly outstanding.&lt;/p&gt;
+&lt;p&gt;NP: &lt;a class=&quot;reference&quot; href=&quot;http://www.allmusic.com/cg/amg.dll?SQL=A%20Silver%20Mt.%20Zion&amp;amp;P=amg&amp;amp;OPT1=1&quot;&gt;A Silver Mt. Zion&lt;/a&gt;: &lt;em&gt;He Has Left us Alone, but Shafts of Light Sometimes Grace the Corner of our Rooms&lt;/em&gt;&lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 16:43:00 +0000</pubDate>
+</item>
+<item>
+	<title>Rapha&amp;#235;l Hertzog: Deprecating cvs.debian.org in favor of Alioth</title>
+	<guid>http://www.ouaza.com/wp/2007/08/21/deprecating-cvsdebianorg-in-favor-of-alioth/</guid>
+	<link>http://www.ouaza.com/wp/2007/08/21/deprecating-cvsdebianorg-in-favor-of-alioth/</link>
+	<description>&lt;p&gt;It&amp;#8217;s very difficult to discuss with DSA and make things evolve if none of the DSA member express an interest in something related to your goal: here comes an example of a story like another in my desperate quest to try to help the DSA team. &lt;img src=&quot;http://www.ouaza.com/wp/wp-includes/images/smilies/icon_smile.gif&quot; alt=&quot;:-)&quot; class=&quot;wp-smiley&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;Last time gluck ran out of space, a few non-DSA people (me, taggart, Ganneff, and others I might have forgotten) contacted people to ask them to clean their home directories. Following that discussion we discussed a bit about the opportunity to move some services from gluck on another host. Among the services on gluck, there&amp;#8217;s cvs.debian.org. As an Alioth administrator, it struck me that cvs.debian.org is the only VCS service that&amp;#8217;s handled by the DSA team. It seems logical to not duplicate the administrative work and have all the VCS repositories handled by the same team.&lt;/p&gt;
+
+&lt;p&gt;The logical conclusion is that cvs.debian.org should be deprecated in favor of Alioth. So I made the suggestion in &lt;a href=&quot;https://rt.debian.org/Ticket/Display.html?id=146&quot;&gt;RT ticket #146&lt;/a&gt; (login with guest/readonly). I got exactly zero response from DSA. No support and no opposition. So I went ahead and contacted the last users of cvs.debian.org:&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;webwml: the &lt;a href=&quot;http://lists.debian.org/debian-www/2007/08/msg00077.html&quot;&gt;website team&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;debian-doc: the &lt;a href=&quot;http://lists.debian.org/debian-doc/2007/08/msg00122.html&quot;&gt;Debian documentation project&lt;/a&gt;&lt;/li&gt;    
+        &lt;li&gt;debian-admin: the DSA team (this was already suggested in April this year in &lt;a href=&quot;https://rt.debian.org/Ticket/Display.html?id=44&quot;&gt;ticket #44&lt;/a&gt;, no response of course&amp;#8230; except elmo saying me that he&amp;#8217;s in favor. On IRC I also discovered that neuro doesn&amp;#8217;t like bzr and is thus not in favor of such a move. Furthermore he visibly wants to keep control on userdir-ldap, thus he probably has not much interest in moving to a distributed system.)&lt;/li&gt;
+    &lt;li&gt;buildd: the &lt;a href=&quot;http://cvs.debian.org/srcdep/?root=dak&quot;&gt;Packages-arch-specific&lt;/a&gt; file is maintained in the dak cvs&amp;#8230;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All in all, the debian-doc and debian-www folks are rather supportive of the move, but it requires adjustment to the build infrastructure, in particular to keep track of the status of translations. I have no answer from DSA and the buildd guys however.&lt;/p&gt;
+
+&lt;p&gt;The web team started a &lt;a href=&quot;http://wiki.debian.org/WebsiteVCSEvaluation&quot;&gt;wiki page&lt;/a&gt; to evaluate the VCS that they would switch to. Volunteers would be welcome to organize the conversion of the repositories and to fix the build infrastructure accordingly. This a nice little project for new contributors that want to learn. &lt;img src=&quot;http://www.ouaza.com/wp/wp-includes/images/smilies/icon_smile.gif&quot; alt=&quot;:-)&quot; class=&quot;wp-smiley&quot; /&gt; &lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 14:00:37 +0000</pubDate>
+</item>
+<item>
+	<title>Joey Schulze: PowerPC PReP Machines</title>
+	<guid>http://www.infodrom.org/~joey/log/?200708211534</guid>
+	<link>http://www.infodrom.org/~joey/log/?200708211534</link>
+	<description>&lt;p&gt;What to do with nice PowerPC PReP machines?  The PReP sub-architecture is
+not supported by the Linux kernel anymore and thus not in Debian either.
+Therefore, such machines can not exactly be used anymore, until somebody
+speaks up and revives the port.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, Debian's PowerPC developer machine is a nice Motorola
+Powerstack II Pro4000 machine.  This means that we currently don't have a
+working sid (and lenny) development environment.  Looks like maybe it's
+time to check out alternatives.&lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 13:34:00 +0000</pubDate>
+</item>
+<item>
+	<title>Theodore Ts'o: Thoughts about the Palm Foleo</title>
+	<guid>http://tytso.livejournal.com/30229.html</guid>
+	<link>http://tytso.livejournal.com/30229.html</link>
+	<description>&lt;p&gt;I looked at the Foleo and played with one while I was at Linux World a few weeks ago, but it is so restrictive in what it can do that I was completely unimpressed.&lt;/p&gt;
+
+&lt;p&gt;First of all, according to one of the people at the booth, it will only work with a select set of Treo's; mostly the newer ones.  A colleague I was with had just gotten a Treo 650, and the person at the booth said that it wouldn't work with that model of Treo.   (WTF?)    Furthermore, it will only do e-mail (POP or IMAP) by linking with the Treo over bluetooth connection and letting the Treo pull down the e-mail and store it on the Treo.  Given that it only has 128 megs of RAM and 256 megs of Flash, it just doesn't have enough storage apparently to run a stand-alone e-mail application, which is a little bit scary.   The limited amount of memory is probably why it is using Opera as a web browser, which previous experience on the N800 has largely unimpressed me in terms of compatibility with Web 2.0 sites that aggressively use AJAX or flash.&lt;/p&gt;
+
+&lt;p&gt;So OK, it's not supposed to be a laptop.   But the problem is, for 0.2 pounds more, I can &lt;i&gt;get&lt;/i&gt; a laptop.   Let's review the critical statistics, shall we?   The Foleo costs $499, weighs 2.5 pounds, and has a size of 10.5&quot; by 6.7&quot; by 0.9&quot;.  As stated before it has 128 megs of RAM and 256 megs of flash, with a SD slot for expansion purposes, and it has a claimed 5-6 hours of battery life.    But let's compare that with my IBM X41 which I recently purchased off of eBay for $800.  It has 1.5 gigs of memory, and 60 gigs of hard disk.   It has two batteries; with the 4 cell battery it weighs 2.7 pounds and delivers 2 hours of battery life, and with the 8 cell battery it weighs 3.2 pounds and delivers 4 hours of battery life.  So true, even with the 8 cell battery the X41 is 1.7 pounds heavier and still has slightly less battery life.  But you can do a lot more with the X41!  Furthermore, the Foleo's weight advantage is somewhat nullified by the fact that you have to bring the Treo around to do certain activities, and the Treo has to be powered on since the Foleo is mostly designed around being a remote large screen for the Treo.&lt;/p&gt;
+
+&lt;p&gt;At the end of the day it's all about tradeoffs.  Perhaps if enough companies created enough killer apps that could fit in 128 meg of ram for the Foleo, it might be useful enough to justifying buying it.     I hear for example, that even though the Foleo doesn't have any kind of PIM functionality, a 3rd party ISV is planning on making a product available that will provide calendar and contact functionality that can sync Palm PDA's.   No word on how much it will cost or how usable it will be, but with enough applications, maybe Foleo could be useful enough to justify its size/weight.   I imagine that these apps will probably be commercial ones, since open source apps like Evolution will probably have difficulty fitting in the Foleo's constrained environment.  :-)&lt;/p&gt;
+
+&lt;p&gt;And, of course, it's a lot cheaper than my used X41 laptop, never mind a brand-new Lenovo X61s, which could run 2 or 3 kilobucks fully outfitted with the 4 gigs of memory and 160 gig/7200 rpm drive.   However, as a road warrior, my priorities are not just weight, but functionality.  A 2.5 pound solid-state laptop with only 128 megs of memory which massively restricts what I can do is not a good use of the space in my laptop bag.   What I'm waiting for is the next generation of the Thinkpad X series which has a solid state disk --- which shouldn't be that far off --- and the elimination of the spinning magnetic media would mean that we should have something with Foleo's battery life without the Foleo's limited usefulness.    Sure, maybe I will need to wait another year or two for my perfect laptop (12&quot;, 1024x768 LED display, at least 60 gigs solid state disk, at least 2-4 gigs memory, Intel core 2 or follow-on processor, &amp;lt; 3 pounds, &amp;gt; 5 hours useful lifetime) to become available, but the technology to do this exists today; it's just a matter of making it affordable.   But given that kind of long-term future, I'm willing to settle for now with either 2 or 4 hour battery life, and a slightly heavier laptop, than to use something today with a desperately slow ARM processor and only 128 megs of memory.  The weight/size savings and the increased battery life of the Foleo isn't a fair tradeoff given its very limited capabilities.&lt;/p&gt;
+
+&lt;p&gt;This is all really too bad, because if Palm is counting on the Foleo to allow it to succeed, I think the concept has some massive shortcomings, much like their claimed LifeDrive product, which didn't last very long.   And I really like the Palm company; I &lt;b&gt;still&lt;/b&gt; haven't found better PDA functionality on a decade-old Palm design compared to what is available on all of the Nokia phones I've looked at, the WinCE phones/PDA's, the N800, etc.  So I want Palm as a company to stick around.   But with Treo getting eclipsed by newer smart phones, and the Foleo not getting particularly good buzz by folks reviewing it --- and after I played with it, I have to agree with the majority of the reviewers that this is not the Next Big Thing --- I'm not sure how much longer Palm is going to be around.&lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 11:09:16 +0000</pubDate>
+</item>
+<item>
+	<title>Jordi Mallach: Inbox Zero</title>
+	<guid>http://oskuro.net/blog/stuff/inbox-zero-2007-08-21-12-26</guid>
+	<link>http://oskuro.net/blog/stuff/inbox-zero-2007-08-21-12-26</link>
+	<description>&lt;pre&gt;
+jordi@nubol:~$ countmail
+SIX THOUSAND ONE HUNDRED EIGHTY-FOUR!
+
+SIX THOUSAND ONE HUNDRED EIGHTY-FOUR MAIL MESSAGES!
+
+HAHAHAHAHA!
+&lt;/pre&gt;
+&lt;p&gt;I'll watch
+&lt;a href=&quot;http://video.google.com/videoplay?docid=973149761529535925&quot;&gt;the talk&lt;/a&gt;
+this evening.&lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 10:26:00 +0000</pubDate>
+</item>
+<item>
+	<title>Joey Schulze: Interview</title>
+	<guid>http://www.infodrom.org/~joey/log/?200708211222</guid>
+	<link>http://www.infodrom.org/~joey/log/?200708211222</link>
+	<description>&lt;p&gt;Last week I gave an interview for &lt;a href=&quot;http://www.antennetux.de/&quot;&gt;Antennetux&lt;/a&gt;, a non-commercial radio station targeting regional and
+Internet users.  We spoke about the Debian project and the Debian
+GNU/Linux distribution with special attention to the current &lt;a href=&quot;http://www.debian.org/releases/etch/&quot;&gt;etch&lt;/a&gt; release.  The
+broadcast intends to provide listeners with some insight into Free
+Software and Debian in particular.&lt;/p&gt;
+
+&lt;p&gt;The final broadcast will be available in September on the station's
+website.  There are also plans to broadcast it via radio as well.  There
+will also be an installation party in October during which the radio
+people and Münster user group will install GNU/Linux on visitors machines.&lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 10:22:00 +0000</pubDate>
+</item>
+<item>
+	<title>Ross Burton: OpenMoko</title>
+	<guid>http://www.burtonini.com/blog/computers/openmoko-2007-08-21-10-30</guid>
+	<link>http://www.burtonini.com/blog/computers/openmoko-2007-08-21-10-30</link>
+	<description>&lt;p&gt;
+      Sean Moss-Pultz from OpenMoko &lt;a href=&quot;http://lists.openmoko.org/pipermail/announce/2007-August/000018.html&quot;&gt;announces
+      the new interface&lt;/a&gt;:
+    &lt;/p&gt;
+    &lt;blockquote&gt;&lt;q&gt;
+      We went back to the drawing board with OpenedHand -- lead by their vast
+      experience with GTK+, Matchbox, and mobile user interfaces -- and
+      redesigned an incredibly promising new interface.
+    &lt;/q&gt;&lt;/blockquote&gt;
+    &lt;p&gt;
+      I finally got my hands on a GTA01 last week, which was promptly flashed
+      with the latest software.  The new interface is pretty damn cool, with
+      smooth colours, clear icons and subtle gradients.  I'm sure Thomas will
+      blog with more details and screenshots at some point.
+    &lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 09:30:00 +0000</pubDate>
+</item>
+<item>
+	<title>Ross Burton: Postr 0.8</title>
+	<guid>http://www.burtonini.com/blog/computers/postr/postr-2007-08-21-10-10</guid>
+	<link>http://www.burtonini.com/blog/computers/postr/postr-2007-08-21-10-10</link>
+	<description>&lt;p&gt;
+      Finally, a new Postr release.  Nothing amazing here, just some internal
+      refactoring and better error handling.  If an error occurs when talking to
+      Flickr a dialog box will popup, which will help a great deal.
+    &lt;/p&gt;
+    &lt;p&gt;
+      The &lt;a href=&quot;http://burtonini.com/computing/postr-0.8.tar.gz&quot;&gt;tarball is
+      here&lt;/a&gt;, and packages for Debian/Ubuntu are building now.
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;small&gt;NP: &lt;cite&gt;Sleep&lt;/cite&gt;, DJ Olive&lt;/small&gt;
+    &lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 09:10:00 +0000</pubDate>
+</item>
+<item>
+	<title>Russell Coker: When to Use SE Linux</title>
+	<guid>http://etbe.coker.com.au/2007/08/21/when-to-use-se-linux/</guid>
+	<link>http://etbe.coker.com.au/2007/08/21/when-to-use-se-linux/</link>
+	<description>&lt;p&gt;Recently someone asked on IRC whether they should use SE Linux on a web server machine (that is being used for no other purpose) and then went on to add &amp;#8220;&lt;b&gt;since the webserver is installed as root anyway&lt;/b&gt;&amp;#8220;.&lt;/p&gt;
+&lt;p&gt;If a machine is used to run a single non-root application then the potential benefits of using SE Linux are significantly reduced, the issue will be whether the application could exploit a setuid program to gain root access if SE Linux was not there to prevent it.&lt;/p&gt;
+&lt;p&gt;The interesting point in this case is that the user notes that the webserver runs as root.  It was not made clear whether the entire service ran as root or whether the parent ran as root while child processes ran as a different UID (a typical Apache configuration).  In the case where the child processes run as non-root it is still potentially possible for a bug in Apache to be used to exploit the parent process and assume it&amp;#8217;s privileges.  So it&amp;#8217;s reasonable to consider that SE Linux will protect the integrity of the base OS from a web server running as root - even for the most basic configuration (without cgi-bin scripts).  If a root owned process that is confined by SE Linux is compromised then as long as there is no kernel vulnerability the base OS should keep it&amp;#8217;s integrity and the sys-admin should be able to login and discover what happened.&lt;/p&gt;
+&lt;p&gt;If the web server is more complex and runs cgi-bin scripts then there is a further benefit for system integrity in that a cgi-bin script could be compromised but the main Apache process (which runs in a different domain) would run without interruption.&lt;/p&gt;
+&lt;p&gt;When a daemon that runs as non-root is cracked on a non-SE system it will have the ability to execute setuid programs - some of which may have exploitable bugs.  Also on a non-SE system every daemon has unrestricted network access in a typical configuration (there is a Net Filter module to control access by UID and GID, but it is very rarely used and won&amp;#8217;t work in the case of multiple programs running with the same UID/GID).  With SE Linux a non-root daemon will usually have no access to run setuid programs (and if it can run them it will be without a domain transition so they gain no extra privileges).  Also SE Linux permits controls over which network ports an application may talk to.  So the ability of a compromised server process to attack other programs is significantly reduced on a SE Linux system.&lt;/p&gt;
+&lt;p&gt;In summary the more complex your installation is and the more privileges that are required by various server processes the more potential there is to increase the security of your system by using SE Linux.  But even on a simple server running only a single daemon as non-root there is potential for SE Linux to provide real benefits to system security.&lt;/p&gt;
+&lt;p class=&quot;akst_link&quot;&gt;&lt;a href=&quot;http://etbe.coker.com.au/?p=361&amp;amp;akst_action=share-this&quot; title=&quot;E-mail this, post to del.icio.us, etc.&quot; id=&quot;akst_link_361&quot; class=&quot;akst_share_link&quot; rel=&quot;nofollow&quot;&gt;Share This&lt;/a&gt;
+&lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 09:00:07 +0000</pubDate>
+</item>
+<item>
+	<title>David Welton: Hecl interview</title>
+	<guid>urn:uuid:a64c8b93-b80e-4825-bda4-53f5c1d51721</guid>
+	<link>http://journal.dedasys.com/articles/2007/08/21/hecl-interview</link>
+	<description>&lt;p&gt;Roger Binkley, leader of Sun's &lt;a href=&quot;http://community.java.net/mobileandembedded/&quot;&gt;Mobile and Embedded&lt;/a&gt; community, interviewed me after my talk at OSCON.  It went ok, given how tired I was:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://today.java.net/pub/a/today/2007/08/20/javamobility-podcast16.html&quot;&gt;http://today.java.net/pub/a/today/2007/08/20/javamobility-podcast16.html&lt;/a&gt;&lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 08:52:00 +0000</pubDate>
+</item>
+<item>
+	<title>Matt Brubeck: 21 Aug 2007</title>
+	<guid>http://www.advogato.org/person/mbrubeck/diary.html?start=102</guid>
+	<link>http://www.advogato.org/person/mbrubeck/diary.html?start=102</link>
+	<description>&lt;b&gt;Problems for shared desktop computers.&lt;/b&gt;
+
+&lt;p&gt; I share a home desktop computer with my wife.  Our computer
+use is probably
+pretty typical of a home computer shared between a small
+number of users,
+where only one user is logged in at a time, and users have
+some shared files
+and some private files.
+
+&lt;p&gt; I've found many things that don't work as well as they could
+in this
+situation.  We use Gnome on Debian GNU/Linux, but most other
+desktops have
+similar problems.  I know fixes or workarounds for most of
+the problems below,
+but novice users would probably have a hard time finding them.
+
+&lt;p&gt; Some of the problems below are relatively easy to fix.  Most
+already have bugs
+filed in the appropriate places, and some already have
+patches available.  A
+few problems may require hard work or fundamental design
+changes to solve.
+Here is the complete list of problems:  
+
+&lt;p&gt; User Switching:
+&lt;ul&gt;
+&lt;li&gt;If I select my name from FUSA while I'm not already
+logged in, GDM appears
+  and I have to type my username.  (The username should be
+filled in
+  automatically.)
+&lt;li&gt;When GDM is started by FUSA, the X server has slightly
+settings, causing the
+  fonts on the login screen to be a different size than my
+normal settings.
+&lt;li&gt;When I log out, I am taken either to a login screen or
+to another user's
+  session, depending on the order in which users originally
+logged in.  This
+  is arbitrary and unpredictable.  
+&lt;li&gt;If I switch to another user, my screen is locked. 
+Later, if the computer is
+  displaying a login screen and I type my username and
+password, I need to
+  type my password a second time to unlock the screen.
+&lt;li&gt;When I shut down the computer, it does not warn me if
+other users are still
+  logged in.
+&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt; Filesystem:
+&lt;ul&gt;
+&lt;li&gt;By default, users can read all of each other's files,
+and write to none of
+  each other's files (umask 0002).  This is a reasonably
+sensible default, but
+  most users on shared systems will want to change this to
+some degree.
+&lt;li&gt;It's very difficult for a user to change which other
+users can read which of
+  her files.  (Some strategies include making some or all
+files world
+  writeable; adding the other users to her primary group;
+creating a new
+  shared group and a share setgid directory owned by that
+group; changing her
+  umask; and/or manually changing permissions of individual
+files.)
+&lt;li&gt;There is no good location by default for shared files. 
+Various programs
+  complain (correctly) about insecurity if my home directory is
+  group-writeable, so I must create a world- or
+group-writeable (and setgid)
+  directory elsewhere.
+&lt;li&gt;Copying from other locations, or using programs that do
+not respect umask,
+  can cause users to inadvertently put non-group-writeable
+files in shared
+  setgid directories.  Other users of the shared directory
+have no easy way to
+  fix this.
+&lt;li&gt;Some programs modify permissions or groups of files when
+overwriting them.
+  (Usually this happens if the program moves the original
+file to a backup
+  location, then writes a new version using the default
+settings instead of
+  the original file's settings.)
+&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt; Application data:
+&lt;ul&gt;
+&lt;li&gt;Applications that maintain a database of files (e.g.
+photo managers, music
+  players) must be updated for each user when one user adds
+new files to a
+  shared directory.  For example, when I rip a CD to our
+shared music
+  directory, my wife can't see the songs in her music player
+until she
+  adds the new files to her database.
+&lt;li&gt;Applications that store their data in hard-coded
+locations in user home
+  directories (e.g. Tomboy, Miro) can't share files between
+users.  There is
+  no setting or permission that will let my wife open Tomboy
+and view my
+  Tomboy notes, for example.
+&lt;/li&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt; Installing software:
+&lt;ul&gt;
+&lt;li&gt;When I install software using the system admin tools, it
+changes the
+  application menu for all other users too.
+&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 05:57:59 +0000</pubDate>
+</item>
+<item>
+	<title>Manoj Srivastava: Arch Hook</title>
+	<guid>http://www.golden-gryphon.com/blog/manoj//blog/2007/08/21/Arch_Hook.html</guid>
+	<link>http://www.golden-gryphon.com/blog/manoj//blog/2007/08/21/Arch_Hook.html</link>
+	<description>&lt;p&gt;All the version control systems I am familiar with run scripts
+on checkout and commit to take additional site specific actions,
+and arch is no different. Well, actually, arch is perhaps different
+in the sense that arch runs a script on almost &lt;em&gt;all&lt;/em&gt;
+actions, namely, &lt;code&gt;~/.arch-params/hook&lt;/code&gt; script. Enough
+information is passed in to make this mechanism one of the most
+flexible I have had the pleasure to work with.&lt;/p&gt;
+&lt;p&gt;In my &lt;a href=&quot;http://www.golden-gryphon.com/blog/manoj///software/misc/hook.html&quot;&gt;hook&lt;/a&gt; script, I do
+the following things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On a commit, or an initial import
+&lt;ul&gt;
+&lt;li&gt;For my publicly replicated repositories (and only for my public
+repositories), the script creates a full source tree in the
+repository for every 20th commit. This can speed up subsequent
+calls to get for that and subsequent revisions, since users do not
+have to get the base version and all patches.&lt;/li&gt;
+&lt;li&gt;For the public repositories, the script removes older cached
+versions, keeping two cached versions in place. I assume there is
+not much demand for versions more than 40 patches out of date; and
+so having to download a few extra patches in that uncommon case is
+not a big issue.&lt;/li&gt;
+&lt;li&gt;If it is an ikiwiki commit, the script makes sure that it
+updates the checked out sources of the wiki on the webserver, and
+rebuilds the wiki.&lt;/li&gt;
+&lt;li&gt;If this is a commit to an archive for which I have a
+corresponding &lt;code&gt;-MIRROR&lt;/code&gt; defined, the script updates the
+mirror now, and logs an informational message to the screen.&lt;/li&gt;
+&lt;li&gt;There is special handling for my Debian packages.
+&lt;ul&gt;
+&lt;li&gt;If the category matches one of my packages, the script looks to
+see if any bugs have been closed in this commit, and, if so, sends
+the log to the bug, and tags it fixed.&lt;/li&gt;
+&lt;li&gt;If the category being checked in is one that corresponds to one
+of my Debian packages, or to the &lt;code&gt;./debian&lt;/code&gt; directory
+that belongs to one of my packages, then the script sends a cleaned
+up change log by mail to the &lt;em&gt;packages.qa.debian.org&lt;/em&gt;.
+People can subscribe to the mailing list setup for each package to
+get commit logs, if they so desire.&lt;/li&gt;
+&lt;li&gt;Arch has the concept of a grab file, and people can get all the
+components of a software package by just feeding arch either the
+grab file (either locally, or via a http URL). The script makes
+sure that a arch config file is created , as well as a grab file
+(using the script &lt;a href=&quot;http://www.golden-gryphon.com/blog/manoj///software/misc/arch_create_config.html&quot;&gt;arch_create_config&lt;/a&gt;),
+and uploads the grab file to to a public location (using the script
+&lt;a href=&quot;http://www.golden-gryphon.com/blog/manoj///software/misc/arch_upload_grab.html&quot;&gt;arch_upload_grab&lt;/a&gt;)
+mentioned in &lt;code&gt;./debian/control&lt;/code&gt; for all my
+packages.&lt;/li&gt;
+&lt;li&gt;For commits to the Debian policy package, the script also sends
+mail to the policy list with full commit logs. This is a group
+maintained package, so changes to this are disseminated slightly
+more volubly.&lt;/li&gt;
+&lt;li&gt;Whenever a new category, branch, or version is added to the
+repository corresponding to the Debian policy package, the script
+sends mail to the policy list. Again, changes to the Policy
+repository are fairly visible.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The scripts send myself mail, for archival purposes, whenever a
+new category or branch is created in any of my repositories (but
+not for every revision).&lt;/li&gt;
+&lt;li&gt;Additional action is taken to ensure that versions are cached
+in the local revision library. I am no longer sure if this is
+strictly needed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I’d be happy to hear about what other people add to their commit
+scripts, to see if I have missed out on anything.&lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 05:19:11 +0000</pubDate>
+</item>
+<item>
+	<title>Ian Wienand: On incorrectly utilising &quot;utilising&quot;</title>
+	<guid>http://www.technovelty.org/code/badcode/utilising.html</guid>
+	<link>http://www.technovelty.org/code/badcode/utilising.html</link>
+	<description>&lt;p&gt;My supervisor pointed out a very annoying habit I had formed when
+writing technical documents, best summed up below:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&quot;It would be difficult to find a page of governmental,
+military, or academic writing that doesn't have on it the word
+utilize. It must be one of the most over-utilized words in the
+world. It seems as though people out to impress people with the
+significance of what they're doing use utilize when they should use
+use.
+&lt;/p&gt;
+
+&lt;p&gt;Utilize is not an elegant variation of the word use; it has its own
+distinct meaning. When you utilize something, you make do with
+something not normally used for the purpose, e.g., you utilize a dime
+when the bloody screwdriver is nowhere to be found. If the screwdriver
+were there, you'd use it, not utilize a stupid dime for the
+purpose. Use use when you mean use, and utilize only when it's
+properly used to mean--to use something not normally used. The
+computer went off-line, so they utilized Mr. Wang's abacus, the one he
+liked to use. Despite the temporary breakdown, the computer's use-rate
+was up (not its utilization-rate).&quot;&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;Cheney, &quot;Getting the words right&quot; (1983)&lt;/i&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You will now probably notice this subtle verbiage in most
+everything you read!&lt;/p&gt;</description>
+	<pubDate>Tue, 21 Aug 2007 00:19:00 +0000</pubDate>
+</item>
+<item>
+	<title>David Watson: It's about time</title>
+	<guid>http://planetwatson.co.uk/11 at http://planetwatson.co.uk</guid>
+	<link>http://planetwatson.co.uk/blog/2007/08/20/its-about-time</link>
+	<description>&lt;p&gt;I decided that I really needed to start making proper backups of the data on my server this week.  I did have a tape drive in the server at one point but I never remembered to change the tape, or indeed ever test the backups.&lt;/p&gt;
+&lt;p&gt;Now that I have a Linksys NSLU2 (a slug), which I bought to use as a local Debian mirror.  &quot;Why not use it for backing up my important data?&quot; I thought, so I leapt into action.  The first job was to replace the drive in the USB caddy with a 250Gb drive.  250Gb should be plenty for both the mirror and the backups, which is mostly source code, mail and photos.  After that installing and setting up rsnapshot was a snap.&lt;/p&gt;
+&lt;p&gt;It sure beats the &quot;keep some stuff on my laptop&quot; backup method I was using, which did save me from a major brain fade moment involving my Maildir folder.&lt;/p&gt;
+&lt;p&gt;I shall now wallow in the warm glow that only a backup provides.&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 21:58:13 +0000</pubDate>
+</item>
+<item>
+	<title>Russell Coker: Suggestions and Thanks</title>
+	<guid>http://etbe.coker.com.au/2007/08/21/suggestions-and-thanks/</guid>
+	<link>http://etbe.coker.com.au/2007/08/21/suggestions-and-thanks/</link>
+	<description>&lt;p&gt;One problem with the blog space is that there is a lot of negativity.  Many people seem to think that if they don&amp;#8217;t like a blog post then the thing to do is to write a post complaining about it - or even worse a complaint that lacks specific details to such an extent that the subject of the complaint would be unable to change their writing in response.  The absolute worst thing to do is to post a complaint in a forum that the blog author is unlikely to read - which would be a pointless whinge that benefits no-one.&lt;/p&gt;
+&lt;p&gt;Of course an alternate way for the recipient to takeg such complaints as &lt;a href=&quot;http://www.paulgraham.com/marginal.html&quot;&gt;suggested by Paul Graham&lt;/a&gt; is &amp;#8220;&lt;b&gt;you&amp;#8217;re on the right track when people complain that you&amp;#8217;re unqualified, or that you&amp;#8217;ve done something inappropriate&lt;/b&gt;&amp;#8221; and &amp;#8220;&lt;b&gt;if they&amp;#8217;re driven to such empty forms of complaint, that means you&amp;#8217;ve probably done something good&lt;/b&gt;&amp;#8221; (Paul was talking about writing essays not blogs, but I&amp;#8217;m pretty sure that he intended it to apply to blogs too).  If you want to actually get a blog author (or probably any author) to make a change in their material in response to your comments then trying to avoid empty complaints is a good idea.  Another useful point Paul makes in the same essay is &amp;#8220;&lt;b&gt;&amp;#8220;Inappropriate&amp;#8221; is the null criticism. It&amp;#8217;s merely the adjective form of &amp;#8220;I don&amp;#8217;t like it.&amp;#8221;&lt;/b&gt;&amp;#8221; - something that&amp;#8217;s worth considering given the common criticism of particular blog content as being &amp;#8220;inappropriate&amp;#8221; for an aggregation feed that is syndicating it.  Before criticising blog posts you should consider that badly written criticism may result in more of whatever it is that you object to.&lt;/p&gt;
+&lt;p&gt;If you find some specific objective problem in the content or presentation of a blog the first thing to do is to determine the correct way of notifying the author.  I believe that it&amp;#8217;s a good idea for the author to have an &lt;b&gt;about&lt;/b&gt; page which either has a mailto URL or a web form for sending feedback, I have a mailto on my about page - &lt;a href=&quot;http://etbe.coker.com.au/about/&quot;&gt;(here&amp;#8217;s the link)&lt;/a&gt;.  Another possible method of contact is a comment on a blog post, if it&amp;#8217;s an issue for multiple posts on the blog then writing a comment on the most recent post will do (unless of course it&amp;#8217;s a comment about the comment system being broken).  For those who are new to blogging, the blog author has full control over what happens to comments.  If they decide that your comment about the blog color scheme doesn&amp;#8217;t belong on a post about C programming then they can respond to the comment in the way that they think best (making a change or not and maybe sending you an email about it) and then delete the comment if they wish.&lt;/p&gt;
+&lt;p&gt;If there is an issue that occurs on multiple blogs then a good option is to write a post about the general concept as I did in the case of &lt;a href=&quot;http://etbe.coker.com.au/2007/07/22/column-width-in-blogs/&quot;&gt;column width in blogs&lt;/a&gt; where I wrote about one blog as an example of a problem that affects many blogs.  I also described how I fixed my own blog in this regard (in sufficient detail to allow others to do the same).  Note that most blogs have some degree of support for &lt;a href=&quot;http://en.wikipedia.org/wiki/Linkback&quot;&gt;Linkback&lt;/a&gt; so any time you link to someone else&amp;#8217;s blog post they will usually get notified in some way.&lt;/p&gt;
+&lt;p&gt;On my blog I have a page for &lt;a href=&quot;http://etbe.coker.com.au/future-posts/&quot;&gt;future posts&lt;/a&gt; where I invite comments from readers as to what I plan to write about next.  Someone who prefers that I not write about topic A could write a comment requesting that I write about topic B instead.  Wordpress supports pages as a separate type of item to posts.  A post is a dated entry while pages are not sorted in date order and in most themes are displayed prominently on the front page (mine are displayed at the top).  I suggest that other bloggers consider doing something comparable.&lt;/p&gt;
+&lt;p&gt;One thing I considered is running a wiki page for the future posts.  One of the problems with a wiki page is that I would need to maintain my own private list which is separate, while a page with comments allows only me to edit the page in response to comments and then use the page as my own to-do list.  I may experiment with such a wiki page at some future time.  One possibility that might be worth considering is a wiki for post requests for any blog that is syndicated by a Planet.  For example a wiki related to &lt;a href=&quot;http://planet.debian.org/&quot;&gt;Planet Debian&lt;/a&gt; might request a post about running Debian on the latest SPARC systems, the first blogger to write a post on this topic could then remove the entry from the wish-list (maybe adding the URL to a list of satisfied requests).  If the person who made the original request wanted a more detailed post covering some specific area they could then add such a request to the wish-list page.  If I get positive feedback on this idea I&amp;#8217;ll create the wiki pages and add a few requests for articles that would interest me to start it up.&lt;/p&gt;
+&lt;p&gt;Finally to encourage the production of content that you enjoy reading I suggest publicly thanking people who write posts that you consider to be particularly good.  One way of thanking people is to cite their posts in articles on your own blog (taking care to include a link to at least one page to increase their &lt;a href=&quot;http://www.technorati.com/&quot;&gt;Technorati&lt;/a&gt; rank) or web site.  Another is to include a periodic (I suggest monthly at most) links post that contains URLs of blog posts you like along with brief descriptions of the content.  If you really like a post then thank the author by not only giving a links with a description (to encourage other people to read it) but also describe why you think it&amp;#8217;s a great post.  Also if recommending a blog make sure you give a feed URL so that anyone who wants to subscribe can do it as easily as possible (particularly for the blogs with a bad HTML layout).&lt;/p&gt;
+&lt;p&gt;Here are some recent blog posts that I particularly liked:&lt;/p&gt;
+&lt;p&gt;&lt;ul&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href=&quot;http://securityblog.org/brindle/2006/04/19/security-anti-pattern-path-based-access-control/&quot;&gt;Security Anti-Pattern: Path based access control&lt;/a&gt; from Joshua Brindle &lt;a href=&quot;http://securityblog.org/brindle/feed/&quot;&gt;(feed)&lt;/a&gt;.  A fairly strong criticism of path based access control (as used in AppArmor).  I&amp;#8217;d have written something about this myself but Joshua did it so well that there&amp;#8217;s no need.  His post about &lt;a href=&quot;http://securityblog.org/brindle/2006/03/25/security-anti-pattern-status-quo-encapsulation/&quot;&gt;Status Quo Encapsulation&lt;/a&gt; is also a good read.  It&amp;#8217;s a pity that Joshua doesn&amp;#8217;t write more than two posts a month.&lt;/li&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href=&quot;http://primates.ximian.com/~federico/news-2007-08.html#11&quot;&gt;Federico&amp;#8217;s post about concrete for housing.  Some technical data and some good pictures.&lt;/a&gt; &lt;a href=&quot;http://primates.ximian.com/~federico/rss.xml&quot;&gt;(feed)&lt;/a&gt;&lt;/li&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href=&quot;http://tau-iota-mu-c.livejournal.com/tag/politics&quot;&gt;Tim Connor&amp;#8217;s blog posts about Australian politics&lt;/a&gt; &lt;a href=&quot;http://tau-iota-mu-c.livejournal.com/data/rss&quot;&gt;(feed)&lt;/a&gt;, particularly &lt;a href=&quot;http://tau-iota-mu-c.livejournal.com/84694.html&quot;&gt;this post about interest rates&lt;/a&gt; (especially his latest comment).  It&amp;#8217;s a pity that Livejournal seems to offer no good options for searching and the comment in question has broken links.  I would be happy to offer advice if Tim wanted to switch to a self-hosted Wordpress installation (as would some other bloggers who are members of our local LUG).&lt;/li&gt;&lt;br /&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Here are some blogs that I read regularly:&lt;br /&gt;
+&lt;ul&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.problogger.net&quot;&gt;Problogger&lt;/a&gt; &lt;a href=&quot;http://feeds.feedburner.com/ProbloggerHelpingBloggersEarnMoney&quot;&gt;(feed)&lt;/a&gt;, I don&amp;#8217;t think that I&amp;#8217;ll be a full-time blogger in the forseeable future, but his posts have lots of good ideas for anyone who wants to blog effectively.  I particulaly appreciate the short posts with simple suggestions.&lt;/li&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.megatokyo.com&quot;&gt;Mega Tokyo&lt;/a&gt; &lt;a href=&quot;http://www.megatokyo.com/rss/megatokyo.xml&quot;&gt;(feed)&lt;/a&gt; - A manga comic on the web.  The amusing portrayal of computer gaming fanatics will probably remind most people in the computer industry of some of their friends.&lt;/li&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.d-n-i.net/&quot;&gt;Defence and the National Interest&lt;/a&gt; &lt;a href=&quot;http://www.d-n-i.net/new_at_DNI.xml&quot;&gt;(feed)&lt;/a&gt;.  The most interesting part of this (and the only reason I regularly read it) is the blog of &lt;a href=&quot;http://en.wikipedia.org/wiki/William_S._Lind&quot;&gt;William S. Lind&lt;/a&gt; (titled &lt;b&gt;On War&lt;/b&gt;.  William writes some very insightful posts about military strategy and tactics but some things about politics will offend most people who aren&amp;#8217;t white Christian conservatives.&lt;br /&gt;&lt;br /&gt;
+It&amp;#8217;s a pity that there is not a more traditional blog feed for the data, the individual archives contain all posts and there seems to be no possibility of viewing the posts for the last month (for people who read it regularly in a browser and don&amp;#8217;t use an RSS feed) and no search functionality built in.&lt;/li&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href=&quot;http://worsethanfailure.com/&quot;&gt;WorseThanFailure.com (was TheDailyWTF.com)&lt;/a&gt; &lt;a href=&quot;http://syndication.thedailywtf.com/TheDailyWtf&quot;&gt;(feed)&lt;/a&gt; subtitled Curious Perversions in Information Technology.  Many amusing anecdotes that illustrate how IT projects can go wrong.  This is useful for education, amusement, and as a threat (if you do THAT then we could submit to WorseThanFailure.com).&lt;/li&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.xkcd.com/&quot;&gt;XKCD - a stick-figure web comic&lt;/a&gt;, often criticised for the drawing quality by people who just don&amp;#8217;t get it, some people read comics for amusement and insightful commentry not drawings.  It&amp;#8217;s yet another example of content beating presentation when there&amp;#8217;s a level playing field.&lt;/li&gt;&lt;br /&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Finally I don&amp;#8217;t read it myself, but &lt;a href=&quot;http://www.cuteoverload.com/&quot;&gt;CuteOverload.com&lt;/a&gt; is a good site to refer people to when they claim that the Internet is too nasty for children - the Internet has lots of pictures of cute animals!&lt;/p&gt;
+&lt;p class=&quot;akst_link&quot;&gt;&lt;a href=&quot;http://etbe.coker.com.au/?p=359&amp;amp;akst_action=share-this&quot; title=&quot;E-mail this, post to del.icio.us, etc.&quot; id=&quot;akst_link_359&quot; class=&quot;akst_share_link&quot; rel=&quot;nofollow&quot;&gt;Share This&lt;/a&gt;
+&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 21:00:16 +0000</pubDate>
+</item>
+<item>
+	<title>Joey Hess: inbox zero</title>
+	<guid>http://kitenet.net/~joey/blog/entry/inbox_zero/</guid>
+	<link>http://kitenet.net/~joey/blog/entry/inbox_zero/</link>
+	<description>&lt;p&gt;My inbox is empty. &lt;a href=&quot;http://layer-acht.org/blog/debian/#1-120&quot;&gt;Holger&lt;/a&gt;
+posted a link to
+&lt;a href=&quot;http://video.google.com/videoplay?docid=973149761529535925&quot;&gt;this talk&lt;/a&gt;
+which makes some really simple suggestions about how to handle new mail,
+to avoid letting it rot in the inbox.&lt;/p&gt;
+
+&lt;p&gt;It turns out that I was already doing most of them pretty well. For
+example, offlineimap only downloads new mail every 30 minutes, so I don't
+constantly waste time checking my inbox for new mail. And I'm pretty good
+at deleting mail I don't want, quickly sending quick replies to easy mails,
+and adding calendar entries for time-sensative mails. So my inbox was only
+90 messages long..&lt;/p&gt;
+
+&lt;p&gt;The main thing I need to improve seems to be getting out of the habit of
+leaving deferred things to sit in my inbox. I went through and about 80%
+were mails sent from the Debian BTS. All that stuff is in the BTS, so
+there's no need to keep it in my inbox. Another 10% should have been in a
+BTS, but was sent directly to me -- so I put it in the BTS, and removed it
+from my inbox. I know I'm not the only one with this problem, BTW.&lt;/p&gt;
+
+&lt;p&gt;I recommend watching the talk. Thinking about mail in the inbox as only
+having one of 5 actions you can perform on it (delete, defer, delegate,
+respond, do) really helps process it quickly.&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 20:17:28 +0000</pubDate>
+</item>
+<item>
+	<title>Simon Richter: Non-standard compiler extensions</title>
+	<guid>http://www.hogyros.de/?q=node/305</guid>
+	<link>http://www.hogyros.de/?q=node/305</link>
+	<description>&lt;p&gt;Normally I don't like them, because the people using them write non-portable code.&lt;/p&gt;
+&lt;p&gt;In some cases however (mostly when writing stuff other people would write in perl), I'd like things like &lt;code&gt;__attribute__((mode(QI)))&lt;/code&gt; to work, and not claim that while the compiler perfectly well understood what I was trying to do, it can nonetheless not help me around writing my own support for 128 bit types. At least MSVC is no better, &lt;code&gt;__int128&lt;/code&gt; has the exact same behaviour.&lt;/p&gt;
+&lt;p&gt;Bleh.&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 19:49:45 +0000</pubDate>
+</item>
+<item>
+	<title>Bastian Venthur: Deserializing SOAP replies with ZSI?</title>
+	<guid>http://blog.venthur.de/2007/08/20/deserializing-soap-replies-with-zsi/</guid>
+	<link>http://blog.venthur.de/2007/08/20/deserializing-soap-replies-with-zsi/</link>
+	<description>&lt;p&gt;Dear Lazyweb,&lt;/p&gt;
+&lt;p&gt;what is the most elegant way to read a SOAP reply containing a complex type into an object using &lt;a href=&quot;http://pywebsvcs.sourceforge.net/&quot;&gt;ZSI&lt;/a&gt;? I&amp;#8217;ve read the &lt;a href=&quot;http://pywebsvcs.sourceforge.net/zsi_v2_0_0.html&quot;&gt;documentation&lt;/a&gt; several times and I guess there is an elegant way to solve this, but I still don&amp;#8217;t get it.&lt;/p&gt;
+&lt;p&gt;I &lt;em&gt;guess&lt;/em&gt; it should work like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Define a class Bugreport&lt;/li&gt;
+&lt;li&gt;Define Bugreport&amp;#8217;s &lt;a href=&quot;http://pywebsvcs.sourceforge.net/zsi.html#SECTION007000000000000000000&quot;&gt;typecode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Parse (how?) the SOAP reply containing bugreport-data into a Bugreport object&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What I&amp;#8217;m currently doing with soappy in &lt;a href=&quot;http://reportbug-ng.alioth.debian.org/&quot;&gt;rng&lt;/a&gt; is rather crude: I take the SOAP response which is a dictionary holding many interesting facts about a bug report, take those elements I&amp;#8217;m interested in and copy them into a bug report object. Not very elegant, but it works.&lt;/p&gt;
+&lt;p&gt;While I&amp;#8217;m moving away from soappy to ZSI I&amp;#8217;d like to implement the deserializion the ZSI way. Unfortunately I don&amp;#8217;t understand their examples. So please Lazyweb, is there any ZSI expert out there who can provide a minimalistic example?&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 17:29:20 +0000</pubDate>
+</item>
+<item>
+	<title>Romain Francoise: Cornflakes Heroes: &quot;Lifeline&quot; video</title>
+	<guid>tag:blogger.com,1999:blog-968657991057088749.post-6035141005018268965</guid>
+	<link>http://blog.orebokech.com/2007/08/cornflakes-heroes-lifeline-video.html</link>
+	<description>&lt;a href=&quot;http://www.cornflakesheroes.com/&quot;&gt;Cornflakes Heroes&lt;/a&gt; (my sister's band) have released the video for their new single &lt;span&gt;Lifeline&lt;/span&gt;, check it out:&lt;br /&gt;&lt;br /&gt; &lt;br /&gt;(click &lt;a href=&quot;http://www.youtube.com/watch?v=XENxzz_goo0&quot;&gt;here&lt;/a&gt; if the embedded player doesn't work)</description>
+	<pubDate>Mon, 20 Aug 2007 17:40:03 +0000</pubDate>
+</item>
+<item>
+	<title>Kartik Mistry: TODOs</title>
+	<guid>http://kartikmistry.org/blog/?p=352</guid>
+	<link>http://kartikmistry.org/blog/?p=352</link>
+	<description>&lt;p&gt;* Debian:&lt;/p&gt;
+&lt;p&gt;- Create pkg-festival at alioth, New &amp;#8216;long pending&amp;#8217; upstream release for Festival/Speech-tools&lt;/p&gt;
+&lt;p&gt;- &lt;a href=&quot;http://sourceforge.net/projects/xosview/&quot; target=&quot;_blank&quot;&gt;Xosview&lt;/a&gt; 1.8.3, &lt;a href=&quot;http://ayttm.sourceforge.net/files.shtml&quot; target=&quot;_blank&quot;&gt;Ayttm 0.5.0-6&lt;/a&gt; (Yeah, its &lt;a href=&quot;http://ayttm.cvs.sourceforge.net/ayttm/ayttm/ChangeLog?revision=1.695&amp;amp;view=markup&amp;amp;pathrev=AYTTM_0_5_0&quot; target=&quot;_blank&quot;&gt;GTK2 Port&lt;/a&gt; is out!!)&lt;/p&gt;
+&lt;p&gt;- &lt;a href=&quot;http://bugs.debian.org/cgi-bin/pkgreport.cgi?which=maint&amp;amp;data=kartik.mistry%40gmail.com&amp;amp;archive=no&amp;amp;raw=yes&amp;amp;bug-rev=yes&amp;amp;pend-exc=fixed&amp;amp;pend-exc=done&quot; target=&quot;_blank&quot;&gt;Bugs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;- Debian@&lt;a href=&quot;http://foss.in/2007&quot;&gt;Foss.in/2007&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;- T&amp;amp;S II&lt;/p&gt;
+&lt;p&gt;* &amp;#8220;Real life&amp;#8221;:&lt;/p&gt;
+&lt;p&gt;- Kavin@home&lt;/p&gt;
+&lt;p&gt;- As above&lt;/p&gt;
+&lt;p&gt;- As above&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;http://kartikmistry.org/blog/wp-includes/images/smilies/icon_wink.gif&quot; alt=&quot;;)&quot; class=&quot;wp-smiley&quot; /&gt;&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 14:33:36 +0000</pubDate>
+</item>
+<item>
+	<title>Michal &amp;#268;iha&amp;#345;: Gammu stable version 1.13.0</title>
+	<guid>http://blog.cihar.com/archives/2007/08/20/gammu_stable_version_1_13_0/</guid>
+	<link>http://blog.cihar.com/archives/2007/08/20/gammu_stable_version_1_13_0/</link>
+	<description>&lt;p&gt;I just released new version of &lt;a href=&quot;http://cihar.com/gammu/&quot;&gt;Gammu&lt;/a&gt;. There are no big changes
+since last testing release:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fixed several crashes of 6510 driver.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For stable users there are tons of changes, most noticable is initial 
+support for Sharp and Motorola phones, notes support for OBEX driver and
+various fixes to make compilation in Visual Studio possible.&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 13:06:44 +0000</pubDate>
+</item>
+<item>
+	<title>Jeff Bailey: Next stop: Buffalo</title>
+	<guid>http://jbailey.livejournal.com/37143.html</guid>
+	<link>http://jbailey.livejournal.com/37143.html</link>
+	<description>Hey'all!  We're still in transit on our great trans-continental adventure!  Sorry if you've emailed us and we've not gotten back, Internet access is spotty at best on this trip, and who wants to spend their vacation reading email anyway? =)&lt;br /&gt;&lt;br /&gt;We just finished a good time in the kitchens of Opus and ConCentric.  Angie, Sera, Chris and I all worked well together in a cohesive team, with a minimum of drama.  It was really nice to work with such a solid group of people that we could say things like &quot;Dude, I need a nap, can you cover for me?&quot; and there was no problem with the rest of the team trading off.&lt;br /&gt;&lt;br /&gt;Leif was an absolute hit at the con.  We were able to participate in a couple worships where him singing along wasn't a distraction at all, and he totally loved being passed between people.  It does mean that he caught his first cold, but he's doing alright.&lt;br /&gt;&lt;br /&gt;There are always the people that I'll miss when I'm gone from there.  Alexis was in the kitchen on a regular basis saying hi, Liz was always nearby, Karina with her star maps, lizzie the brit with her piles of energy, the frying-tofu master Geoff seemed to be in the kitchen often.  In the kitchen, though, we got to see pretty much everyone so it was a nice chance to connect with people.&lt;br /&gt;&lt;br /&gt;The staff was also a very neat set of people.  I don't think there was anyone in the Opus staff that I couldn't see actively working hard to pull of great programming.  There's always the curmudgeonly part of me that sits in the back corner and can nit pick things to death, but in doing so I wouldn't want to hide that by almost every measure this was a successful Opus.  In particular, I was impressed that the staff faced head-on how to handle walk-ins at the staff meeting just before the con started.  It was interesting to watch a consensus process work with a group of people who came in from wildly different personal perspectives and to watch people change from varying viewpoints to agree on the compromise that best suited the group.&lt;br /&gt;&lt;br /&gt;So what's next?  We've spent the night with Andrew from &lt;a href=&quot;http://www.koolu.com/&quot;&gt;Koolu&lt;/a&gt; and will be heading down to Buffalo next to get an van and start on the adventure.  We don't know where we're going yet, or how we'll get there, but the idea is to head down to the &lt;a href=&quot;http://www.creationmuseum.org/&quot;&gt;Creation Museum&lt;/a&gt; and then west towards Vegas and the Grand Canyon.  On the way, we might see if we can visit Stephanie in Ohio, Sera in Albuquerque, and Karina in Flagstaff.&lt;br /&gt;&lt;br /&gt;Peace, Love, Faith and Blessings to all.</description>
+	<pubDate>Mon, 20 Aug 2007 12:21:48 +0000</pubDate>
+</item>
+<item>
+	<title>David Welton: Hecl, DedaWiki updates</title>
+	<guid>urn:uuid:e48eac3b-bb33-4241-a10a-9980d3abf043</guid>
+	<link>http://journal.dedasys.com/articles/2007/08/20/hecl-dedawiki-updates</link>
+	<description>&lt;p&gt;I had a pretty good week last week in terms of doing some open source work.  I had the opportunity to do some consulting regarding &lt;a href=&quot;http://www.hecl.org&quot;&gt;Hecl&lt;/a&gt;, which was pretty cool.  Some of the work was fed back into Hecl itself, including the beginnings of a &quot;media&quot; API (video streams, taking pictures with the camera), and some other fixes and updates.  I've also been working on it a bit on my own time, adding a Canvas demo to the MIDP2.0 demo application (works in the emulator, haven't tried it on a phone yet), and today I'm going to look at updating some of the documentation that's been lagging the code.    In the course of my work, I also happened on a cool idea to speed up the launch of Hecl applications: by creating the widgets as regular widgets in Java, right away, in the &lt;code&gt;startApp&lt;/code&gt; MIDlet method, it's possible to get them on the screen quickly.  At that point, you can start loading Hecl, and create some Hecl objects to hold the already created Java widgets.  It goes something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Form mainform = new Form(&quot;Initial Form&quot;);
+TextField search = new TextField(&quot;search:&quot;, &quot;&quot;, 30, 0);
+... load script ...
+interp.setVar(&quot;mainform&quot;, ObjectThing.create(mainform));
+interp.setVar(&quot;searchwidget&quot;, ObjectThing.create(search));
+... evaluate script ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is a good tradeoff, because it gets something in front of the user right away, and it's not a throwaway like a splash screen.&lt;/p&gt;
+
+&lt;p&gt;On another front, I've updated some of the code in &lt;a href=&quot;http://dedawiki.dedasys.com&quot;&gt;DedaWiki&lt;/a&gt;, to enable email notifications in the comment system, which has percolated into the &lt;a href=&quot;http://www.leenooks.com&quot;&gt;Linux Incompatibility List&lt;/a&gt;, and, with a bit of tweaking, into &lt;a href=&quot;http://www.squeezedbooks.com&quot;&gt;Squeezed Books&lt;/a&gt;.  I don't think the code is quite ready for a real release, but by running the incompatibility list on it, it's a great way to give it a thorough shakedown, and I'll attempt to release it sooner or later.  Of course, in the meantime, interested parties can get the code out of subversion on rubyforge.&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 12:03:00 +0000</pubDate>
+</item>
+<item>
+	<title>Russell Coker: Feedburner Item Link Clicks</title>
+	<guid>http://etbe.coker.com.au/2007/08/20/feedburner-item-link-clicks/</guid>
+	<link>http://etbe.coker.com.au/2007/08/20/feedburner-item-link-clicks/</link>
+	<description>&lt;p&gt;For a while I used the Item Link Clicks feature in &lt;a href=&quot;http://www.feedburner.com/&quot;&gt;Feedburner&lt;/a&gt;.  For those who aren&amp;#8217;t aware Feedburner is a service that proxies access to an RSS feed (you need to either publish the Feedburner URL as the syndication link or use a HTTP redirect to send the requests there - I use a HTTP redirect).  Then when people download the feed they get it from Feedburner which is fast and reliable (unlike my blog on a bad day) and which also tracks some statistics which can be interesting.&lt;/p&gt;
+&lt;p&gt;The Item Link Clicks feature rewrites the &lt;b&gt;guid&lt;/b&gt; URLs to point to a Feedburner URL that will redirect back to the original post (and track clicks along the way).  The down-side of doing this is that some people who read blogs via &lt;a href=&quot;http://www.planetplanet.org/&quot;&gt;Planet&lt;/a&gt; installations and just copy the link from the Planet page when citing a blog post instead of actually visiting the blog in question.  This causes a potential problem for the person citing the post in that they won&amp;#8217;t know whether the URL is valid unless they visit it.  So when (not if) people have misconfigured blogs that are widely syndicated the people who cite them without verifying the links could end up linking to invalid URLs.  The problem for the person who is cited is that such Feedburner redirects don&amp;#8217;t seem to be counted as part of the &lt;a href=&quot;http://www.technorati.com/&quot;&gt;Technorati&lt;/a&gt; ranking (which is a count of the number of links to a blog in the last 6 months which give some rough approximation of how important the blog is).  The Technorati rating can sometimes be used in negotiations with an advertiser and is often used when boasting about how popular a blog is.&lt;/p&gt;
+&lt;p&gt;To increase my Technorati ranking I have stopped using the Feedburner URL rewriting feature.  For people who view my blog directly or through a Planet installation this will not give any difference that you would notice.  The problem is for people who use a service that syndicates RSS feeds and then forwards them on by email, such people received two copies of the last 10 items as the URL (GUID) change means that the posts are seen as new (Planet solves this by deleting the posts which are seen as unavailable and then creating new posts with the new URLs and no change is visible to the user).&lt;/p&gt;
+&lt;p&gt;Based on this experience I suggest not using URL rewriting services.  They will hurt your technorati ranking, give little benefit (IMHO) and annoy the small number of RSS to email readers.  Particularly don&amp;#8217;t change your mind about whether to use such a feature or not.  Changing the setting regularly would be really annoying.  Also this means that if you use such a service you should take care not to have you Feedburner redirection ever get disabled.  A minor Apache configuration error corrected a day later could end up in sending all the posts in the current feed an extra two times.&lt;/p&gt;
+&lt;p class=&quot;akst_link&quot;&gt;&lt;a href=&quot;http://etbe.coker.com.au/?p=358&amp;amp;akst_action=share-this&quot; title=&quot;E-mail this, post to del.icio.us, etc.&quot; id=&quot;akst_link_358&quot; class=&quot;akst_share_link&quot; rel=&quot;nofollow&quot;&gt;Share This&lt;/a&gt;
+&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 09:00:12 +0000</pubDate>
+</item>
+<item>
+	<title>Martin F. Krafft: Pay three times as much and get zero brain power</title>
+	<guid>http://blog.madduck.net/travel/2007.08.20_pay-three-times-as-much-and-get-zero-brain-power</guid>
+	<link>http://blog.madduck.net/travel/2007.08.20_pay-three-times-as-much-and-get-zero-brain-power.xhtml</link>
+	<description>&lt;p&gt;If you walk up to the Swiss railways customer service desk and tell them that
+you're a group of six looking to travel from Zurich to Munich and would thus
+like to make a reservation, they'll charge you 15 CHF (~ 9.50€) for a little
+piece of paper which documents that the guy behind the desk put his brain to
+use and reserved six contiguous seats to keep the group together. Well, he
+actually asked me whether that's what I wanted.&lt;/p&gt;
+&lt;p&gt;If you walk up to the German railways customer service desk and tell them that
+you're a group of (now) eight looking to travel from Munich to Zurich and
+would thus like to make a reservation, they'll charge you 28€ for a little
+piece of paper which documents that the guy behind the desk does not have
+a brain or didn't bother to switch it on: instead of two adjacent groups of
+four seats, we got four pairs of aisle seats.&lt;/p&gt;
+&lt;p&gt;Given that we mainly reserved to minimise the annoyance for the other
+travellers while we kept up a conversation for the five hours of the journey,
+it did piss me off quite a bit to have paid three times as much in Germany as
+the reservation cost in Switzerland and not be able to talk among each other
+without annoying the others.&lt;/p&gt;
+&lt;p&gt;This reservation was made two days in advance. You may, of course, think that
+the train was already full and no space to sit eight was left; however, I did
+not have to go further than two wagons to find copious amounts of unreserved
+spaces for eight, which were then, unfortunately, already occupied (of
+course).&lt;/p&gt;
+&lt;p&gt;It shames me to expose my peers (I made the travel arrangements) to the crap
+and blather one has to put up in German railways: the quality of the speaker
+system is crap, everything is repeated in English by non-English-speaking
+conductors, and after every stop, we're yet again alerted to the fact that we
+could be relaxing to high-quality cuisine in the board restaurant, or should
+watch out for the little trolley passing by and happy to collect our money.
+Oh, and of course the brainless and often unfriendly service employees.&lt;/p&gt;
+&lt;p&gt;And all that for a price more than it would have cost the lot of us to rent
+a van and drive back and forth.&lt;/p&gt;
+&lt;p&gt;Going by train is my most preferable means of transport, not only, but in
+large part due to environmental issues. I don't understand why the German
+government puts this important bit of infrastructure in the hands of imbeciles
+and lets them overcharge for their low-quality service and their delays.&lt;/p&gt;
+&lt;p&gt;NP: &lt;a class=&quot;reference&quot; href=&quot;http://www.allmusic.com/cg/amg.dll?SQL=Mono&amp;amp;P=amg&amp;amp;OPT1=1&quot;&gt;Mono&lt;/a&gt;: &lt;em&gt;Under the Pipal Tree&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: A guy from Berlin wrote:&lt;/p&gt;
+&lt;blockquote&gt;
+The seats you found in the other wagons may as well have been reserved, too.
+The electronic reservation signs will extinguish about 15 minutes after the
+train departs from the station. Or, there was too little time between
+reservation and departure, so you could only get one of the few
+express-reservation seats.&lt;/blockquote&gt;
+&lt;p&gt;I am aware of this. However, the train between Zurich and Munich is ancient
+(part of the way it still has to run on Diesel) and the reservation signs were
+paper slips. The seats of eight I found were definitely unreserved, especially
+because I checked immediately after departure.&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 08:43:00 +0000</pubDate>
+</item>
+<item>
+	<title>Holger Levsen: Red Cross sued for using the red cross</title>
+	<guid>http://layer-acht.org/blog/debian/#1-121</guid>
+	<link>http://layer-acht.org/blog/debian/#1-121</link>
+	<description>&lt;p&gt; Various newspapers report that the health product giant Johnson &amp;amp; Johnson is suing the Red Cross for using the red cross as a logo. Johnson &amp;amp; Johnson registered the trademark in 1887, six years after the us-american Red Cross started to use it. Needless to say, that a red cross has been in use for much longer and that european Red Cross associations also exist for quite some more years.&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 06:59:07 +0000</pubDate>
+</item>
+<item>
+	<title>Manoj Srivastava: Mail Filtering with CRM114: Part 4</title>
+	<guid>http://www.golden-gryphon.com/blog/manoj//blog/2007/08/20/Mail_Filtering_with_CRM114__58___Part_4.html</guid>
+	<link>http://www.golden-gryphon.com/blog/manoj//blog/2007/08/20/Mail_Filtering_with_CRM114__58___Part_4.html</link>
+	<description>&lt;h1&gt;Training the Discriminators&lt;/h1&gt;
+&lt;p&gt;It has been a while since I posted on this category — actually,
+it has been a long while since my last blog. When I &lt;a href=&quot;http://www.golden-gryphon.com/blog/manoj//blog/2007/01/14/Mail_Filtering_with_CRM114_Part_3.html&quot;&gt;last&lt;/a&gt;
+left you, I had mail (mbox format) folders called &lt;em&gt;ham&lt;/em&gt;
+and/or &lt;em&gt;junk&lt;/em&gt;, which were ready to be used for training
+either &lt;strong&gt;CRM114&lt;/strong&gt; or &lt;strong&gt;Spamassassin&lt;/strong&gt; or
+both.&lt;/p&gt;
+&lt;h2&gt;Setting up Spamassassin&lt;/h2&gt;
+&lt;p&gt;This post lays the groundwork for the training, and details how
+things are set up. The first part is setting up
+&lt;strong&gt;Spamassassin&lt;/strong&gt;. One of the things that bothered me
+about the default settings for &lt;strong&gt;Spamassassin&lt;/strong&gt; was
+how swiftly Bayes information was expired; indeed, it seems really
+eager to dumb the Bayes information (don’t they trust their
+engine?). I have spent some effort building a large corpus, and
+keeping ti clean, but &lt;strong&gt;Spamassassin&lt;/strong&gt; would discard
+most of the information from the DB after training over my corpus,
+and the decrease in accuracy was palpable. To prevent this
+information from leeching away, I firstly increased the size of the
+database, and turned off automatic expiration, by putting the
+following lines into &lt;em&gt;~/.spamassassin/user_prefs&lt;/em&gt;:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;bayes_expiry_max_db_size  4000000
+bayes_auto_expire         0
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;I also have regularly updated spam rules from the &lt;a href=&quot;http://www.rulesemporium.com/&quot;&gt;spamassassin rules emporium&lt;/a&gt; to
+improve the efficiency of the rules; my current &lt;a href=&quot;http://www.golden-gryphon.com/blog/manoj///software/misc/user_prefs.html&quot;&gt;user_prefs&lt;/a&gt; is available as an
+example.&lt;/p&gt;
+&lt;h2&gt;Initial training&lt;/h2&gt;
+&lt;p&gt;I keep my &lt;em&gt;Spam/Ham&lt;/em&gt; corpus under the directory
+&lt;code&gt;/backup/classify/Done&lt;/code&gt;, in the subdirectories
+&lt;code&gt;Ham&lt;/code&gt; and &lt;code&gt;Spam&lt;/code&gt;. At the time of writing, I
+have approximately 20,000 mails in each of these subdirectories,
+for a total of 41,000+ emails.&lt;/p&gt;
+&lt;p&gt;I have created a couple of scripts to train the discriminators
+from scratch using the extant Spam corpus; and these scripts are
+also used for re-learning, for instance, when I moved from a 32-bit
+machine to a 64-bit one, or when I change &lt;strong&gt;CRM114&lt;/strong&gt;
+discrimators. I generally run them from
+&lt;code&gt;~/.spamassassin/&lt;/code&gt; and &lt;code&gt;~/var/lib/crm114&lt;/code&gt;
+(which contains my &lt;strong&gt;CRM114&lt;/strong&gt; setup) directories.&lt;/p&gt;
+&lt;p&gt;I have found that training &lt;strong&gt;Spamassassin&lt;/strong&gt; works
+best if you alternate Spam and Ham message chunks; and &lt;a href=&quot;http://www.golden-gryphon.com/blog/manoj///software/misc/re-learn-sa.html&quot;&gt;this Spamassassin learning
+script&lt;/a&gt; delivers chunks of 50 messages for learning.&lt;/p&gt;
+&lt;p&gt;With &lt;strong&gt;CRM114&lt;/strong&gt;, I have discovered that it is not a
+good idea to stop learning based on the number of times the corpus
+has been gone over; since stopping before all messages i the Corpus
+are correctly handled is also disastrous. So I set the repeat count
+to a ridiculously high number, and tell &lt;code&gt;mailtrainer&lt;/code&gt; to
+continue training until a streak larger than the sum of Spam and
+Ham messages has occurred. &lt;a href=&quot;http://www.golden-gryphon.com/blog/manoj///software/misc/re-learn-crm114.html&quot;&gt;This CRM114 trainer
+script&lt;/a&gt; does the hob nicely; running it under
+&lt;code&gt;screen&lt;/code&gt; is highly recommend.&lt;/p&gt;
+&lt;h1&gt;Routine updates&lt;/h1&gt;
+&lt;p&gt;Coming back to where we left off, we had mail (mbox format)
+folders called &lt;em&gt;ham&lt;/em&gt; and/or &lt;em&gt;junk&lt;/em&gt; sitting in the
+local mail delivery directory, which were ready to be used for
+training either &lt;strong&gt;CRM114&lt;/strong&gt; or
+&lt;strong&gt;Spamassassin&lt;/strong&gt; or both.&lt;/p&gt;
+&lt;p&gt;There are two scripts that help me automate the training. The
+first script, called &lt;a href=&quot;http://www.golden-gryphon.com/blog/manoj///software/misc/mail-process.html&quot;&gt;mail-process&lt;/a&gt;, does most of
+the heavy listing. This processes a bunch of mail folders, which
+are supposed to contain mail which is either all ham or all spam,
+indicated by the command line arguments. We go looking though every
+mail, and any mail where either the &lt;strong&gt;CRM114&lt;/strong&gt; or the
+&lt;strong&gt;Spamassassin&lt;/strong&gt; judgement was not what we expected,
+we strip out mail gathering headers, and then we save the mail, one
+to a file, and we train the approprite filter. This ensures that we
+only train on error, and it does not matter if we accidentally try
+to train on correctly classified mail, since that would be a no-op
+(apart from increasing the size of the corpus).&lt;/p&gt;
+&lt;p&gt;The second script, called &lt;a href=&quot;http://www.golden-gryphon.com/blog/manoj///software/misc/mproc.html&quot;&gt;mproc&lt;/a&gt; is a convenience front-end;
+it just calls &lt;code&gt;mail-process&lt;/code&gt; with the proper command
+line arguments, and feeds them the &lt;em&gt;ham&lt;/em&gt; and &lt;em&gt;junk&lt;/em&gt;
+in sequence; and takes no arguments. So, after human
+classification, just calling &lt;code&gt;mproc&lt;/code&gt; does the
+classification.&lt;/p&gt;
+&lt;p&gt;This pretty much finishes the series of posts I had in mind
+about spam filtering, I hope it has been useful.&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 05:28:53 +0000</pubDate>
+</item>
+<item>
+	<title>Michael Janssen: Things That I Wish Remember The Milk Had</title>
+	<guid>http://base0.net/archives/322-guid.html</guid>
+	<link>http://base0.net/archives/322-Things-That-I-Wish-Remember-The-Milk-Had.html</link>
+	<description>A little bit ago I &lt;a href=&quot;http://base0.net/archives/319-Dont-you-dun-dun-dun-da-dun-dun-forget-about-me.html&quot;&gt;blogged&lt;/a&gt; about how I was using &lt;a href=&quot;http://rmilk.com&quot;&gt;Remember The Milk&lt;/a&gt; in order to get some things done around the house and to remind me about stuff that I want to do.  Things have been going pretty well on that account, I have been using it to great effect for basically everything that I need to do outside of things that I need to get done at Honeywell (I keep a separate todo list for there).  However, when using it these past weeks, I have noticed a few things that I wish it would have or things that could be improved upon, I think in a big way.&lt;br /&gt;
+&lt;br /&gt;
+I think the twitter interface should have some enhancements.  For example, it is impossible currently to mark off an item that repeats through twitter, because you always have more than one of them on your list.  I would love to do this with daily tasks so that I can mark them off as soon as I finish them with a few button presses on my cell phone.  Also it would be nice to be able to add things to lists and not just the INBOX through twitter.  Possibly another command starting with '!' that takes a keyword.&lt;br /&gt;
+&lt;br /&gt;
+Remember the milk has as a major component the map of locations that items in a list can be placed at.  There are a couple improvements that I would like in this area.  The first is to have multiple locations that are all just as valid in order to complete the task.   Remembering the Milk (the actual task) is a great example.  There are literally hundreds of places that I could get milk, and two or three of them that I use regularly, depending on which one I am driving by at the moment.  If you could place these three markets in a group of some sort, then they could all be associated with the item and you could see it on your mobile or however you're viewing the map.&lt;br /&gt;
+&lt;br /&gt;
+The other map improvement is fairly simple - offer to give me directions from one place to another.  I don't know how to drive to a random location I've just put in because it is where I need to drop my car or pick someone up or whatever, and a small link to a google maps directions would be nice.   Even just a link to google maps (where I could then click on the &quot;directions from...&quot; link) would be a big improvement.&lt;br /&gt;
+&lt;br /&gt;
+The last improvement that would be nice is to be able to click on the URL or visit the site in the URL field for tasks in some way.  Currently the URL field is pretty useless as a URL, because there is no way to click it and actually visit the site.  If I click on it, the editing field pops up and I have to do all the hard work myself of cutting and pasting the URL into the location field.  It's also a mis-cue because the URL looks like a link before I click it, just like I could click on it as I want to.  A keyboard shortcut for visiting the site would be nice as well since I do use the keyboard interface quite a bit.&lt;br /&gt;
+&lt;br /&gt;
+These improvements I think would make a big difference to RTM users.  The map improvements alone would be a big upgrade in my opinion.  As for now, I will continue to use RTM whether these are implemented or not - it's a good way to keep an online list in any case.  It's kept me writing blog posts at the rate of about once every two days.  Not sure if that's a good thing or not yet..</description>
+	<pubDate>Mon, 20 Aug 2007 04:48:53 +0000</pubDate>
+	<author>nospam@example.com (Jamuraa)</author>
+</item>
+<item>
+	<title>Chris Lamb: “Eww”</title>
+	<guid>http://www.chris-lamb.co.uk/2007/08/20/fred-ewww/</guid>
+	<link>http://www.chris-lamb.co.uk/2007/08/20/fred-ewww/</link>
+	<description>&lt;p&gt;&lt;a href=&quot;http://bakery.cakephp.org/articles/view/obvious-trick-to-reduce-amount-of-habtm-relationship-tables-1&quot;&gt;This&lt;/a&gt; is not how to do HABTM (ie. &amp;#8220;&lt;em&gt;many-many&lt;/em&gt;&amp;#8220;) database joins.&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 01:19:24 +0000</pubDate>
+</item>
+<item>
+	<title>Cameron Dale: DebTorrent Release 0.1.4 (and apt-transport-debtorrent 0.1.0)</title>
+	<guid>http://www.cs.sfu.ca/~camerond/personal/blog/posts/Aug-19-2007.html</guid>
+	<link>http://www.cs.sfu.ca/~camerond/personal/blog/posts/Aug-19-2007.html</link>
+	<description>&lt;p&gt;The &lt;a href=&quot;https://alioth.debian.org/frs/?group_id=31109&quot;&gt;next release&lt;/a&gt; of &lt;a href=&quot;http://debtorrent.alioth.debian.org/&quot;&gt;DebTorrent&lt;/a&gt; is now available. This
+release includes new functionality for communicating with APT using
+a new transport method specifically designed for debtorrent, and
+many bug fixes.&lt;/p&gt;
+
+&lt;p&gt;The major changes in this release are all in the communication
+between APT and DebTorrent. The HTTP server in DebTorrent that
+listens for APT requests has been upgraded to support HTTP/1.1
+persistent connections and pipelining, which allows APT to have
+multiple outstanding requests for files. This is useful as
+DebTorrent suffers from the typical bittorrent slow start, so
+requesting multiple files at a time helps to speed up the download
+considerably.&lt;/p&gt;
+
+&lt;p&gt;Though better, HTTP/1.1 is not ideal for DebTorrent however, as a
+maximum of 10 outstanding requests is maintained by APT's http
+method, and files must still be returned in the order they were
+requested (which is not ideal for bittorrent-type downloading since
+downloads occur randomly).&lt;/p&gt;
+
+&lt;p&gt;To further improve the APT communication I have modified APT's http
+method to create a debtorrent method. This new debtorrent transport
+for APT is packaged separately as apt-transport-debtorrent, and once
+installed APT can be told to use it by replacing &quot;http://&quot; with
+&quot;debtorrent://&quot; in your sources.list file. This method sends all
+requests it receives immediately to DebTorrent, and will receive
+responses from DebTorrent in any order. You can find this new method
+on the &lt;a href=&quot;https://alioth.debian.org/frs/?group_id=31109&quot;&gt;Alioth project&lt;/a&gt;, or in my &lt;a href=&quot;http://debian.camrdale.org/&quot;&gt;personal repository&lt;/a&gt;
+(only amd64 and i386 versions are currently available).&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, the story doesn't end here. The APT code responsible
+for sending requests to the method also limits the maximum number of
+outstanding requests that it will send to the method to 10, which is
+not really necessary since all existing methods limit the requests
+they send out themselves. I have therefore patched the current APT
+code to increase this limit to 1000 (a one line change), and
+released this patched version as 0.7.6-0.1. You can find this
+patched version in my &lt;a href=&quot;http://debian.camrdale.org/&quot;&gt;personal repository&lt;/a&gt; (again, only for
+i386 and amd64). I have tested it with the other methods available
+and it causes no problems, and I hope to get the change included in
+the regular APT code soon.&lt;/p&gt;
+
+&lt;p&gt;To sum up:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;new DebTorrent over HTTP = fast&lt;/li&gt;
+&lt;li&gt;new DebTorrent with new apt-transport-debtorrent = faster&lt;/li&gt;
+&lt;li&gt;new DebTorrent with new apt-transport-debtorrent and a patched
+APT = fastest&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The last DebTorrent version (0.1.3.1) is currently in the &lt;a href=&quot;http://ftp-master.debian.org/new.html&quot;&gt;NEW
+queue&lt;/a&gt;, and judging by the length of it, will be there for about
+another week. After DebTorrent is added to the archive, I will be
+upgrading it to this new version. I also hope to get the new
+apt-transport-debtorrent package into the NEW queue soon.&lt;/p&gt;
+
+&lt;p&gt;This brings to an end the Google &lt;a href=&quot;http://code.google.com/soc/2007/&quot;&gt;Summer of Code&lt;/a&gt; (which this
+project was &lt;a href=&quot;http://code.google.com/soc/2007/debian/appinfo.html?csaid=46454031B77ABCBA&quot;&gt;created as a part of&lt;/a&gt;), but development of
+DebTorrent will of course continue (probably a little slower). The
+next major change will be the addition of &lt;a href=&quot;http://wiki.debian.org/DebTorrent/UniquePieces&quot;&gt;unique piece
+numbers&lt;/a&gt;, which is almost complete but needs to be extensively
+tested. I'd like to thank Anthony Towns, Steve McIntyre, and Michael
+Vogt for their help over the last 4 months, and also the many others
+who sent me encouraging emails or engaged in interesting discussions
+about this project. It's the people who make a project like this a
+fun and memorable thing to do.&lt;/p&gt;
+
+&lt;p&gt;Here's the changelog for the new DebTorrent release:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;APT communication supports HTTP/1.1 connections, including
+persistent connections and pipelining&lt;/li&gt;
+&lt;li&gt;Add support for the new debtorrent APT transport method
+(see the new apt-transport-debtorrent package)&lt;/li&gt;
+&lt;li&gt;Make the Packages decompression and torrent creation threaded&lt;/li&gt;
+&lt;li&gt;Improve the startup initialization of files&lt;/li&gt;
+&lt;li&gt;Add init and configuration files for the tracker&lt;/li&gt;
+&lt;li&gt;bug fixes:
+&lt;ul&gt;
+&lt;li&gt;restarts would fail when downloaded files have been modified&lt;/li&gt;
+&lt;li&gt;deleting old cached data would fail&lt;/li&gt;
+&lt;li&gt;small tracker bug causing exceptions&lt;/li&gt;
+&lt;li&gt;prevent enabling files before the initialization is complete&lt;/li&gt;
+&lt;li&gt;only connect to unique peers from the tracker that are not
+already connected&lt;/li&gt;
+&lt;li&gt;tracker would return all torrents' peers for every request&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+	<pubDate>Mon, 20 Aug 2007 00:56:46 +0000</pubDate>
+</item>
+<item>
+	<title>Russell Coker: Controlling a STONITH and Upgrading a Cluster</title>
+	<guid>http://etbe.coker.com.au/2007/08/20/controlling-a-stonith-and-upgrading-a-cluster/</guid>
+	<link>http://etbe.coker.com.au/2007/08/20/controlling-a-stonith-and-upgrading-a-cluster/</link>
+	<description>&lt;p&gt;One situation that you will occasionally encounter when running a &lt;a href=&quot;http://www.linux-ha.org/&quot;&gt;Heartbeat cluster&lt;/a&gt; is a need to prevent a STONITH of a node.  As documented in &lt;a href=&quot;http://etbe.coker.com.au/2007/07/17/testing-stonith/&quot;&gt;my previous post about testing STONITH&lt;/a&gt; the ability to STONITH nodes is very important in an operating cluster.  However when the sys-admin is performing maintenance on the system or programmers are working on a development or test system it can be rather annoying.&lt;/p&gt;
+&lt;p&gt;One example of where STONITH is undesired is when upgrading packages of software related to the cluster services.  If during a package upgrade the data files and programs related to the &lt;a href=&quot;http://etbe.coker.com.au/2007/06/08/heartbeat-service-scripts/&quot;&gt;OCF script&lt;/a&gt; are not synchronised (EG you have two programs that interact and upgrading one requires upgrading the other) at the moment that the &lt;b&gt;status&lt;/b&gt; operation is run then an error may occur which may trigger a STONITH.  Another possibility is that if using small systems for testing or development (EG running a cluster under Xen with minimal RAM assigned to each node) then a package upgrade may cause the system to thrash which might then cause a timeout of the status scripts (a problem I encounter when upgrading my Xen test instances that have 64M of RAM).&lt;/p&gt;
+&lt;p&gt;If a STONITH occurs during the process of a package upgrade then you are likely to have consistency problems with the OS due to &lt;a href=&quot;http://etbe.coker.com.au/2007/07/02/committing-data-to-disk/&quot;&gt;RPM and DPKG not correctly calling fsync()&lt;/a&gt;, this can cause the OCF scripts to always fail to run the &lt;b&gt;status&lt;/b&gt; command which can cause an infinite loop of the cluster nodes in question being STONITHed.  Incidentally the best way to test for this (given the problems of a STONITH sometimes losing log data) is to boot the node in question without Heartbeat running and then run the OCF status commands manually (&lt;a href=&quot;http://etbe.coker.com.au/2007/08/03/starting-a-heartbeat-resource-without-heartbeat/&quot;&gt;I previously documented three ways of doing this&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Of course the ideal (and recommended) way of solving this problem is to migrate all services from a node using the &lt;b&gt;crm_resource&lt;/b&gt; program.  But in a test or development situation you may forget to migrate all services or simply forget to run the migration before the package upgrade starts.  In that case the best thing to do is to be able to remove the ability to call STONITH .  For my testing I use Xen and have the nodes &lt;a href=&quot;http://etbe.coker.com.au/2007/06/24/xen-and-heartbeat/&quot;&gt;ssh to the Dom0 to call STONITH&lt;/a&gt;, so all I have to do to remove the STONITH ability is to stop the ssh daemon on the Dom0.  For a more serious test network (EG using IPMI or an equivalent technology to perform a hardware STONITH as well as ssh for OS level STONITH on a private network) a viable option might be to shut down the switch port used for such operations - shutting down switch ports is not a nice thing to do, but to allow you to continue work on a development environment without hassle it&amp;#8217;s a reasonable hack.&lt;/p&gt;
+&lt;p&gt;When choosing your method of STONITH it&amp;#8217;s probably worth considering what the possibilities are for temporarily disabling it - preferably without having to walk to the server room.&lt;/p&gt;
+&lt;p class=&quot;akst_link&quot;&gt;&lt;a href=&quot;http://etbe.coker.com.au/?p=356&amp;amp;akst_action=share-this&quot; title=&quot;E-mail this, post to del.icio.us, etc.&quot; id=&quot;akst_link_356&quot; class=&quot;akst_share_link&quot; rel=&quot;nofollow&quot;&gt;Share This&lt;/a&gt;
+&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 21:00:45 +0000</pubDate>
+</item>
+<item>
+	<title>Mike Hommey: New WebKit snapshot (almost) in unstable</title>
+	<guid>http://web.glandium.org/blog/?p=158</guid>
+	<link>http://web.glandium.org/blog/?p=158</link>
+	<description>&lt;p&gt;Along with a &lt;a href=&quot;http://people.debian.org/~glandium/epiphany-browser_2.19.90-0.1_i386.changes&quot;&gt;new epiphany release&lt;/a&gt; using it as backend, I prepared a &lt;a href=&quot;http://people.debian.org/~glandium/webkit_0~svn25144-1_i386.changes&quot;&gt;new WebKit snapshot&lt;/a&gt;, which is now waiting in NEW for some ftp-master attention. Unfortunately, while webkit now has the necessary symbols for back and forward buttons, it seems not to work properly. Scrollbars are also not yet displayed. I&amp;#8217;ll have to take a look at these some day, if upstream doesn&amp;#8217;t do it before me.&lt;/p&gt;
+&lt;p&gt;I also set up a git repository to hold the &lt;a href=&quot;http://git.debian.org/?p=pkg-webkit/webkit.git;a=summary&quot;&gt;debian branch&lt;/a&gt;, following the already existing &lt;a href=&quot;http://git.debian.org/?p=pkg-webkit/upstream.git;a=summary&quot;&gt;git repository tracking upstream&lt;/a&gt;. Note the &lt;em&gt;filtered&lt;/em&gt; branch, which avoids the debian branch to contain what we don&amp;#8217;t ship, and reduce the download size from 100MB+ to roughly 16MB. I&amp;#8217;ll write more about this filtering in a few days.&lt;/p&gt;
+&lt;p&gt;Also, if you&amp;#8217;re interested in webkit and/or want to give a hand, you can subscribe to the &lt;a href=&quot;http://web.glandium.org/blog/ http://lists.alioth.debian.org/mailman/listinfo/pkg-webkit-maintainers&quot;&gt;pkg-webkit-maintainers mailing list&lt;/a&gt;. Everything is ready for team maintenance, so, don&amp;#8217;t hesitate ;).&lt;/p&gt;
+&lt;p&gt;If you want to track changes on the debian repo, there is also a &lt;a href=&quot;http://lists.alioth.debian.org/mailman/listinfo/pkg-webkit-commits&quot;&gt;pkg-webkit-commits mailing list&lt;/a&gt; where the post-receive hook sends the commit messages.
+&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 18:33:06 +0000</pubDate>
+</item>
+<item>
+	<title>Romain Francoise: bzip2 compression in debs</title>
+	<guid>tag:blogger.com,1999:blog-968657991057088749.post-9020999207564382177</guid>
+	<link>http://blog.orebokech.com/2007/08/bzip2-compression-in-debs.html</link>
+	<description>During my &lt;a href=&quot;http://blog.orebokech.com/2007/08/debian-packages-without-md5sums.html&quot;&gt;previous adventures&lt;/a&gt; with the Debian archive, I found that two packages in the archive use bzip2 compression inside the .deb instead of the traditional gzip compression, so I decided to try it out on emacs-snapshot (one of my larger packages). The combined size of the deb files goes from 36764KB to 33880KB, a 2884KB (7.8%) difference. It also makes both &lt;tt&gt;lintian&lt;/tt&gt; and &lt;tt&gt;linda&lt;/tt&gt; unhappy, the former gives me the following error:&lt;pre&gt;E: emacs-snapshot-nox: deb-data-member-wrongly-compressed&lt;br /&gt;N:&lt;br /&gt;N:   The binary package contains a data member not compressed with gzip.&lt;br /&gt;N:   From dpkg-dev 1.11 on, you can configure the way the data tarball is&lt;br /&gt;N:   compressed. Though this is possible, you are not allowed to use it&lt;br /&gt;N:   before dpkg 1.11 (or later) enters stable.&lt;/pre&gt;and &lt;tt&gt;linda&lt;/tt&gt; just bombs:&lt;pre&gt;E: emacs-snapshot-common; Package uses a newer feature of dpkg.&lt;br /&gt; This package uses a data.tar, or data.tar.bz2 member of the .deb. This&lt;br /&gt; was introduced in dpkg 1.11, but is not allowed to be used until dpkg&lt;br /&gt; 1.11 or later hits stable.&lt;br /&gt;File ...3_all.deb failed to process: Level 2 unpacking failed:&lt;br /&gt;Could not unpack data tarball&lt;/pre&gt;Etch was released with dpkg 1.13.25, so bzip2 compression is probably allowed now. But is a 7.8% saving worth the incompatibility price? I'm not sure.</description>
+	<pubDate>Sun, 19 Aug 2007 18:28:19 +0000</pubDate>
+</item>
+<item>
+	<title>Adam Rosi-Kessel: Solid State Kitchen Linux Box</title>
+	<guid>http://adam.rosi-kessel.org/weblog/2007/08/19/solid-state-kitchen-linux-box/</guid>
+	<link>http://adam.rosi-kessel.org/weblog/2007/08/19/solid-state-kitchen-linux-box/</link>
+	<description>&lt;p&gt;Dear LazyWeb:&lt;/p&gt;
+&lt;p&gt;Our kitchen laptop is on its last legs. I&amp;#8217;d like to replace it with a standalone LCD and a cheap, quiet, low-power CPU with just one or two gigabytes of storage for the operating system (music and other data are stored on a server in the basement). Can someone point me in the right direction? This is an instance where Google doesn&amp;#8217;t provide an obvious leading/consensus solution. Most searches for solid state computers point to laptops, which isn&amp;#8217;t what I want. The closest thing I&amp;#8217;ve found is the &lt;a href=&quot;http://zonbu.com/device/&quot;&gt;Zonbox&lt;/a&gt;, but I&amp;#8217;m not interested in their network/subscription storage model. Ideal specs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Total cost less than $300 (preferably less than $200)&lt;/li&gt;
+&lt;li&gt;High-end Pentium III or lower-end Pentium IV, or equivalent. Should be able to play ogg files and browse today&amp;#8217;s overactive websites at the same time without user latency. No need to support graphics-intensive applications like gaming or video editing.&lt;/li&gt;
+&lt;li&gt;Built-in wireless networking. Support for a PCMCIA wireless card would also be acceptable. Most data will be accessed via an NFS share on the WAN.&lt;/li&gt;
+&lt;li&gt;1GB or 2GB of Flash memory for storage.&lt;/li&gt;
+&lt;li&gt;Standard VGA out, preferably at least 1280&amp;#215;1024 (although 1024&amp;#215;768 would be okay).&lt;/li&gt;
+&lt;li&gt;USB ports for keyboard, mouse, possibly external hard drive storage when needed.&lt;/li&gt;
+&lt;li&gt;Painless Debian/Ubuntu installation, including out-of-the-box suspend/resume functionality.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Suggestions?
+&lt;p class=&quot;akst_link&quot;&gt;&lt;a href=&quot;http://adam.rosi-kessel.org/weblog/?p=564&amp;amp;akst_action=share-this&quot; title=&quot;E-mail this, post to del.icio.us, etc.&quot; id=&quot;akst_link_564&quot; class=&quot;akst_share_link&quot; rel=&quot;nofollow&quot;&gt;Share This&lt;/a&gt;&lt;/p&gt;&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 13:38:00 +0000</pubDate>
+</item>
+<item>
+	<title>Kai Hendry: Sharing multimedia</title>
+	<guid>http://natalian.org/archives/2007/08/19/sharing-multimedia/</guid>
+	<link>http://natalian.org/archives/2007/08/19/sharing-multimedia/</link>
+	<description>&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/hendry/1172361934/&quot; title=&quot;Photo Sharing&quot;&gt;&lt;img src=&quot;http://farm2.static.flickr.com/1055/1172361934_fe1a77dc72_m.jpg&quot; width=&quot;180&quot; height=&quot;240&quot; alt=&quot;Every home should have a WRT54G-L&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+	&lt;p&gt;Ok, I have the &lt;a href=&quot;http://natalian.org/archives/2007/07/03/slug/&quot;&gt;slug&lt;/a&gt;. It&amp;#8217;s great because it allows me to easily &amp;#38; reliably share my multimedia collection.&lt;/p&gt;
+
+	&lt;p&gt;So I&amp;#8217;ve moved my multimedia collection to a massive hard drive attached to the slug and now that hard drive is full. I could buy an even bigger &lt;span class=&quot;caps&quot;&gt;NAS&lt;/span&gt;, though wait a minute&amp;#8230;&lt;/p&gt;
+
+	&lt;p&gt;I have GIGs of (wasted) free space across my (flat mate&amp;#8217;s) machines.&lt;/p&gt;
+
+	&lt;p&gt;Wtf happened to &lt;span class=&quot;caps&quot;&gt;P2P&lt;/span&gt;? I need something like what Google has.&lt;/p&gt;
+	&lt;ul&gt;
+		&lt;li&gt;A distributed file system.&lt;/li&gt;
+		&lt;li&gt;With search.&lt;/li&gt;
+		&lt;li&gt;It doesn&amp;#8217;t have to work across on the Internet, though listening to some remote friend&amp;#8217;s music would be nice.&lt;/li&gt;
+		&lt;li&gt;Any level of data redundancy would be awesome. (I despise &lt;span class=&quot;caps&quot;&gt;RAID&lt;/span&gt;)&lt;/li&gt;
+		&lt;li&gt;I want direct access from the FS. No odd interfaces. (something with fuse?)&lt;/li&gt;
+	&lt;/ul&gt;
+
+	&lt;p&gt;I distantly recall mounting &lt;span class=&quot;caps&quot;&gt;NFS&lt;/span&gt; shares of each of my (friend&amp;#8217;s) machines and then mounting them on the central slug and trying to re-share them. I don&amp;#8217;t think that works.&lt;/p&gt;
+
+	&lt;p&gt;I remember in University dorms (I&amp;#8217;m not telling where!), students had a massive multimedia share with Windows file sharing. It actually worked quite well, including search.&lt;/p&gt;
+
+	&lt;p&gt;Any tips lazyweb? Or are centralised services really the future?&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 13:08:16 +0000</pubDate>
+</item>
+<item>
+	<title>Wouter Verhelst: &quot;empty&quot; LDAP addressbooks</title>
+	<guid>http://www.grep.be/blog/en/computer/play/ldap_addressbooks</guid>
+	<link>http://www.grep.be/blog/en/computer/play/ldap_addressbooks</link>
+	<description>&lt;p&gt;Bernhard R. Link &lt;a href=&quot;http://pcpool00.mathematik.uni-freiburg.de/~brl/blog/index.html#22&quot;&gt;blogs&lt;/a&gt;
+about LDAP addressbooks in Thunderb^WIcedove, and mentions:&lt;/p&gt;
+&lt;blockquote&gt;
+Also don't be confused by no records shown in the new addressbook. I
+guess that is some measure against always loading a possibly large
+remote addressbook. To test just enter anything in the search field, and
+the matching records should show up nicely. (I'm not sure if all
+versions allow searching for substrings. If they do, try searching for
+the at sign, to get a full list.)
+&lt;/blockquote&gt;
+&lt;p&gt;Actually, the reason is that an LDAP server is not a database, and it
+is not required to return the full list of matching items of a search,
+if that list is sufficiently large (I believe the RFC suggests a minimum
+of 100 items to be returned); this is to avoid people DoSsing the LDAP
+server by accident. It also means that the suggestion to search for the
+at sign to get all items in the directory may not work.&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 13:04:00 +0000</pubDate>
+</item>
+<item>
+	<title>Holger Levsen: again</title>
+	<guid>http://layer-acht.org/blog/debian/#1-120</guid>
+	<link>http://layer-acht.org/blog/debian/#1-120</link>
+	<description>&lt;p&gt; Again I have 99 unread mails in my mailbox ;-) &lt;br /&gt;&lt;br /&gt; More than two weeks ago I watched &lt;a href=&quot;http://video.google.com/videoplay?docid=973149761529535925&quot;&gt;Inbox zero&lt;/a&gt;, which I recommend you to watch if you have problems coping with your inbox, even if it mostly boils down to &quot;getting things done&quot;. &lt;br /&gt;&lt;br /&gt; /me smiles and continues to update tuxmath :-)&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 12:45:08 +0000</pubDate>
+</item>
+<item>
+	<title>Biella Coleman: The Lingering Memories of War</title>
+	<guid>http://healthhacker.org/satoroams/?p=814</guid>
+	<link>http://healthhacker.org/satoroams/?p=814</link>
+	<description>&lt;p&gt;As many readers of this blog know, I tend not to shy away from writing about my mother’s struggle with Alzheimers. But in the last 6 months and especially since I paid my last visit to my mother, I have found it much harder to sit and write about her current state of affairs. If we think of Alzheimers as a journey to a new place, she is almost at the point of reaching that place of great loneliness and inhospitality, which is not only new and different—both for her and those around her—but is a virtual prison, for it rarely allows you to leave and visit the places of your past. &lt;/p&gt;
+&lt;p&gt;More than ever, her memory and understanding of her life as she (as I and many others), once knew it, is fading fast; Of course, this was to be expected but it is quite difficult to imagine what it will be like until the actual experience unmistakably knocks on the door of present time and unfortunately, when it knocks, you can’t do anything but open the door and let it in. &lt;/p&gt;
+&lt;p&gt;Unsurprisingly, it is incredibly difficult to witness and interact with a person who is losing most all recollections, the stuff of which, you come to realize, is what defines a person and allows you to more or less have the opportunity to seamlessly interact with him or her. &lt;/p&gt;
+&lt;p&gt;In the last number of months, I have perhaps been more silent than usual because there is only so much I can and want to think about when it comes to my mother’s decline. I talk to her nearly every day and I have decided for now, that is enough. &lt;/p&gt;
+&lt;p&gt;But I am retreating out of my silence after reading a refreshingly honest, though still somewhat timid piece on Alzheimer in the NYTimes, entitled &lt;a href=&quot;http://www.nytimes.com/2007/08/14/health/14seco.html?ei=5087%0A&amp;#038;em=&amp;#038;en=d0e729d8196a22f5&amp;#038;ex=1187323200&amp;#038;adxnnl=1&amp;#038;adxnnlx=1187185170-Ko4yCS2ohzKBDSRKCdNbfQ  &quot;&gt; Zen and the Art of Coping With Alzheimer’s&lt;br /&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The piece is striking because it offers a more realistic portrayal of the disease than most mainstream media accounts and it provides some really sound advice about the importance of just letting go and going with the flow when interacting with those with Alzheimers.&lt;/p&gt;
+&lt;p&gt;At the same time, it lacks a certain window into just how disheartening and hard it can be to witness the decline, and how hard it can be to manage those conversations and interactions. &lt;/p&gt;
+&lt;p&gt;On the whole, I try to go with the flow. For example, I recently returned from a visit and soon after I left, my mother forgot I was even there. She started to ask me over and over again when I was coming home for a visit and when I told her I was just there, her semi-humorous reaction was “well, why didn’t anyone tell me?” (and then proceeded to castigate her caretaker for not telling her!!). &lt;/p&gt;
+&lt;p&gt;Perhaps I did not stay long enough, or perhaps her lack of recall would happen no matter what. To hear she forgot shook me hard and deeply. The first time I realized she could not remember I had just visited, I was able to jog her memory by listing off all that we did together. Finally, when I mentioned that I bought a new refrigerator while in PR, something clicked. She is still worried about money, so buying a refrigerator was enough to remind her I had spent a lot of money.&lt;/p&gt;
+&lt;p&gt;But after it was clear that she felt quite bad about not remembering, I knew that was the first and last time I would try to “jog” her memory. Instead, I will merge and mold my reality to her reality, as much as I can and assure her that I will soon visit.&lt;br /&gt;
+ &lt;a href=&quot;http://healthhacker.org/satoroams/?p=814#more-814&quot; class=&quot;more-link&quot;&gt;(more&amp;#8230;)&lt;/a&gt;&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 12:22:09 +0000</pubDate>
+</item>
+<item>
+	<title>Alexis Sukrieh: The road to libdevel-repl-perl, part 2</title>
+	<guid>http://www.sukria.net/en/archives/2007/08/19/the-road-to-libdevel-repl-perl-part-2/</guid>
+	<link>http://www.sukria.net/en/archives/2007/08/19/the-road-to-libdevel-repl-perl-part-2/</link>
+	<description>&lt;p&gt;Thanks to Florian Ragwitz, &lt;a href=&quot;http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=438569&quot;&gt;who packaged libpadwalker-perl 1.5-1&lt;/a&gt;, there is no blocker anymore that prevents libdevel-repl-perl from entering sid:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.sukria.net/images/libdevel-repl-perl-deps-2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;By the way, the author of Devel::REPL, Matt S Trout, &lt;a href=&quot;http://chainsawblues.vox.com/library/post/devel-repl-going-into-debian-apparently.html&quot;&gt;looks pretty happy to see his module entering Debian&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve just uploaded libdevel-repl-perl, this upload closes the exciting work session we did during all the weekend with Damyan Ivanov, in order to get the module into debian. All its dependencies are now in the Perl group&amp;#8217;s hands. That was fun.&lt;/p&gt;
+&lt;p&gt;Team maintenance rocks!
+&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 11:48:12 +0000</pubDate>
+</item>
+<item>
+	<title>Ross Burton: Mini PC Loveliness</title>
+	<guid>http://www.burtonini.com/blog/computers/minipc-2007-08-19-12-00</guid>
+	<link>http://www.burtonini.com/blog/computers/minipc-2007-08-19-12-00</link>
+	<description>&lt;p&gt;
+      I've just discovered the &lt;a href=&quot;http://minipc.aopen.com/Global/spec.htm&quot;&gt;AOpen MP965-DR mini PC&lt;/a&gt;,
+      and blimey it's lovely.  Does anyone out there run have one?  If I got one
+      it would be under the television and always on, so heat and noise are
+      important factors to me.
+    &lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 11:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>MJ Ray: Hamburg Classic</title>
+	<guid>http://mjr.towers.org.uk/blog/2007/cycling#hhracing</guid>
+	<link>http://mjr.towers.org.uk/blog/2007/cycling#hhracing</link>
+	<description>&lt;p&gt;
+&lt;a href=&quot;http://www.ndr.de/tv/&quot;&gt;NDR&lt;/a&gt;
+are broadcasting the
+&lt;a href=&quot;http://www.vattenfall-cyclassics.de/elite/&quot;&gt;Hamburg Classic&lt;/a&gt;
+in DVB (digital) and PAL (analogue) at
+&lt;a href=&quot;http://en.kingofsat.net/find.php?question=ndr&amp;amp;standard=All&quot;&gt;19 east&lt;/a&gt;
+at 11-14 GMT today, while
+&lt;a href=&quot;http://tour.ard.de/&quot;&gt;ARD&lt;/a&gt;
+at
+&lt;a href=&quot;http://en.kingofsat.net/detail-ard.php&quot;&gt;19 east and 13 east&lt;/a&gt;
+overlaps at 12.30-15.00 GMT,
+presumably including the closing stages.
+Notably, this race has excluded Tour de France
+winner Contador, apparently as well as
+everyone else
+even
+&lt;strong&gt;mentioned&lt;/strong&gt;
+in connection with the
+Fuentes affair.
+&lt;/p&gt;&lt;p&gt;
+Yesterday's last stages of the Burgos 
+and the Deutschland-Tour seemed
+surprisingly unsurprising, with
+Juan Mauricio Soler and Jens Voigt
+kept their respective leads.
+&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 10:47:00 +0000</pubDate>
+</item>
+<item>
+	<title>Joerg Jaspert: UMTS?</title>
+	<guid>http://blog.ganneff.de/blog/2007/08/19#umts</guid>
+	<link>http://blog.ganneff.de/blog/2007/08/19#umts</link>
+	<description>&lt;p&gt;
+Im currently looking if a UMTS data connection (flatrate) is something
+for me. Looking around it seems Vodafone has the best network for UMTS
+with that HSDPA technology (3.6MBit/s max. instead of only 384kbit/s).
+Especially the area I am most interested in - my way to work, is only
+available with HSDPA from Vodafone, all other telcos dont seem to be
+able to get UMTS there. Some days ago I sat besides someone in a train
+back home who was using UMTS connection. And didnt seem to have any
+problems. When I asked he told me that its fairly stable, on the whole
+way he only knows two points where the card seems to switch to the
+slower GPRS way. And looking at his screen he was using some weird
+webchat thingie, so nothing that likes too huge lags. (Ah, btw - how can
+anyone seriously chat in such a weird way? I mean - we have IRC, WTF are
+people dumb enough to use their webbrowser to chat? Thats so silly)
+&lt;/p&gt;
+
+&lt;p&gt;
+My main usage would be to be online on the way to work / back home,
+which is about 1.5h each, so 3hours on days where I go to work (using
+ICEs, so at least there are repeaters for the mobile stuff in the
+trains). Most of my online usage is ssh based, usually via (Open)VPNs,
+then some mail sync runs and various small things.
+&lt;/p&gt;
+
+&lt;a href=&quot;http://www.moobicent.de/&quot;&gt;Moobicent&lt;/a&gt; does offer a flatrate
+(a real one, not such a &amp;#8220;customers are dumb and dont see it is
+trafficlimited just because we named it flat&amp;#8221;one) using the
+Vodafone network. The hardware I need for it costs 99EUR when I order
+there. Its some
+&lt;a href=&quot;http://www.moobicent.de/mobiledsl-flat/hardware/pc-express-card/&quot;&gt;PC
+Express Card&lt;/a&gt; that comes with a PCMCIA Adapter.
+
+
+&lt;p&gt;
+Now, has anyone out there reading this blog experiences to share? Using
+google there is
+&lt;a href=&quot;http://blog.zugschlus.de/archives/114-UMTS-unter-Linux-funktioniert.html&quot;&gt;Marcs
+blog&lt;/a&gt;
+which suggests it shouldn&amp;#8217;t be too hard to get it all running, but maybe
+there is something I missed to take into account?
+&lt;/p&gt;
+
+&lt;p&gt;
+Comments? Suggestions? Anything? &lt;a href=&quot;mailto:&amp;#106;&amp;#111;&amp;#101;&amp;#114;&amp;#103;&amp;#64;&amp;#103;&amp;#97;&amp;#110;&amp;#110;&amp;#101;&amp;#102;&amp;#102;&amp;#46;&amp;#100;&amp;#101;&quot;&gt;Email
+me&lt;/a&gt; or catch me on IRC, (no, my blog doesnt have comments), and I
+summarize the results later.
+&lt;/p&gt;
+
+&lt;b&gt;Update:&lt;/b&gt;UMTS == 3G; 2 People already told me that the Vodafone net
+is the right selection in Germany, one said the same for UK.</description>
+	<pubDate>Sun, 19 Aug 2007 09:22:52 +0000</pubDate>
+</item>
+<item>
+	<title>Bernhard R. Link: Using slapd as thunderbird/icedove addressbook</title>
+	<guid>http://pcpool00.mathematik.uni-freiburg.de/~brl/blog/index.html#22</guid>
+	<link>http://pcpool00.mathematik.uni-freiburg.de/~brl/blog/index.html#22</link>
+	<description>&lt;p&gt;    It&amp;amp;aposs been some time since I got this working, but I decided to now
+   also blog about it here now, as I was just asked it.
+   &lt;br /&gt;&lt;br /&gt;
+   The main magic to get thunderbird/icedove use your ldap server as
+   addressbook, is to include the proper schema. Search the web for
+   mozillaAbPersonObsolete and you should find it. You do not have to
+   use any of it&amp;amp;aposs new fields, not even the object class in it is
+   needed. Your slap only have to know about the field names, then
+   thunderbird will be able to show the normal inetorgperson&amp;amp;aposs mail
+   attribute.
+   &lt;br /&gt;&lt;br /&gt;
+   Some caveats, though:
+   &lt;br /&gt;&lt;br /&gt;
+   You might think you might test your settings in thunderbirds by using
+   that button to download everything and store it locally.
+   In my experience that never works but strangly asks for a password, while
+   the addressbook is already nicely working and needs no password at all.
+   &lt;br /&gt;&lt;br /&gt;
+   Also don&amp;amp;apost be confused by no records shown in the new addressbook.
+   I guess that is some measure against always loading a possibly large
+   remote addressbook. To test just enter anything in the search field,
+   and the matching records should show up nicely. (I&amp;amp;aposm not sure if all
+   versions allow searching for substrings. If they do, try searching for
+   the at sign, to get a full list.)
+   &lt;br /&gt;&lt;br /&gt;
+   The shown fields seem also a bit strange, and differ with the different
+   mozilla messenger/thunderbird/icedove versions. In some versions the
+   field the primary name is extracted from can be changed, but directive
+   to set that seems to change even more often.
+   &lt;br /&gt;&lt;br /&gt;
+   Finaly, some snippet for your /etc/icedove/global-config.js, which causes
+   all newly created users to have an addressbook as default. I forgot if
+   all are needed or why I added them, but those that are unnecessary at least
+   do not seem to harm. (Last tested version is the one in etch, though.
+   Newer version might again have something changed).
+   &lt;br /&gt;&lt;br /&gt;
+   &lt;pre&gt;
+   /* ldap-Server for FOOBAR */
+   pref(&amp;quot;ldap_2.autoComplete.useDirectory&amp;quot;, true);
+   pref(&amp;quot;ldap_2.prefs_migrated&amp;quot;, true);
+   pref(&amp;quot;ldap_2.servers.mathematik.attrmap.DisplayName&amp;quot;, &amp;quot;displayName&amp;quot;);
+   pref(&amp;quot;ldap_2.servers.default.attrmap.DisplayName&amp;quot;, &amp;quot;displayName&amp;quot;);
+   pref(&amp;quot;ldap_2.servers.mathematik.auth.savePassword&amp;quot;, true);
+   pref(&amp;quot;ldap_2.servers.mathematik.description&amp;quot;, &amp;quot;FOOBAR&amp;quot;);
+   pref(&amp;quot;ldap_2.servers.mathematik.filename&amp;quot;, &amp;quot;foobar.mab&amp;quot;);
+   pref(&amp;quot;ldap_2.servers.mathematik.maxHits&amp;quot;, 500);
+   pref(&amp;quot;ldap_2.servers.mathematik.uri&amp;quot;, &amp;quot;ldap://HOSTNAME:389/ou=People,dc=FOOBAR,dc=TLD??sub?(mail=*)&amp;quot;);
+   &lt;/pre&gt;&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 09:05:59 +0000</pubDate>
+</item>
+<item>
+	<title>Andreas Metzler: those were the times</title>
+	<guid>http://www.bebt.de/blog/debian/archives/2007/08/19/T09_03_50/index.html</guid>
+	<link>http://www.bebt.de/blog/debian/archives/2007/08/19/T09_03_50/index.html</link>
+	<description>&lt;p&gt;
+Found at the exhibition &lt;i&gt;Play with Technology&lt;/i&gt; in
+&lt;a href=&quot;http://www.tmw.at/&quot;&gt;Technisches Museum Wien&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&quot;http://www.bebt.de/images/blog/x-ray.jpeg&quot;&gt;
+&lt;img src=&quot;http://www.bebt.de/images/blog/x-ray-small.jpeg&quot; alt=&quot;Toy x-ray machine from early 20th century&quot; /&gt;
+&lt;/a&gt;&lt;br /&gt;
+a small working x-ray machine toy. See &lt;a href=&quot;http://www.bebt.de/images/blog/x-ray-text.jpeg&quot;&gt;description&lt;/a&gt;.
+&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 09:03:50 +0000</pubDate>
+</item>
+<item>
+	<title>Russell Coker: Colorado Software Summit 2007</title>
+	<guid>http://etbe.coker.com.au/2007/08/19/colorado-software-summit-2007/</guid>
+	<link>http://etbe.coker.com.au/2007/08/19/colorado-software-summit-2007/</link>
+	<description>&lt;p&gt;On about 5 years I attended the conference &lt;a href=&quot;http://www.softwaresummit.com/&quot;&gt;The Colorado Software Summit&lt;/a&gt;.  The first one was the last conference under the old name (ColoradOS/2) but then as OS/2 was rapidly losing market share and the conference delegates changed their programming interests it changed to become a Java conference.&lt;/p&gt;
+&lt;p&gt;The Colorado Software Summit rapidly became known as THE event to really learn about Java, other conferences are larger and have a higher profile but the organisers of CSS decided to keep the numbers smaller (600 is usually the maximum number of delegates) to provide better opportunities for the delegates to meet and confer.  One of the attractions of CSS is the large number of skilled and experienced people who attend, there are many delegates who can teach you lots of interesting things even though they aren&amp;#8217;t on the speaking list.  I ended up never doing any serious Java programming, but I still found that I learned enough and had enough fun to justify the expense.&lt;/p&gt;
+&lt;p&gt;Currently there is an early registration open which saves $200 off the full price ($1,795 instead of $1,995), this lasts until the 31st of August.  In addition to this the organisers have offered a further $100 discount to the first five readers of my blog who register personally (IE an individual not a corporation is paying for the ticket).  To take advantage of the extra $100 discount you must include the code &lt;b&gt;CSS509907&lt;/b&gt; in your registration.&lt;/p&gt;
+&lt;p&gt;PS  I have no financial interest in this matter.  I like the conference organisers, but that largely stems from the fact that they run great conferences that I have enjoyed.  I recommend the conference because it&amp;#8217;s really good.&lt;/p&gt;
+&lt;p class=&quot;akst_link&quot;&gt;&lt;a href=&quot;http://etbe.coker.com.au/?p=357&amp;amp;akst_action=share-this&quot; title=&quot;E-mail this, post to del.icio.us, etc.&quot; id=&quot;akst_link_357&quot; class=&quot;akst_share_link&quot; rel=&quot;nofollow&quot;&gt;Share This&lt;/a&gt;
+&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 09:00:14 +0000</pubDate>
+</item>
+<item>
+	<title>Simon Richter: Hacking</title>
+	<guid>http://www.hogyros.de/?q=node/304</guid>
+	<link>http://www.hogyros.de/?q=node/304</link>
+	<description>&lt;p&gt;Some more hacking and the xcontrol aware &quot;checkbuilddeps&quot; command is nearly done. I have no idea whether using apt to access the package database was a good idea -- those bits that deal with it are hardly readable. On the other hand, directly reading the status database is frowned upon.&lt;/p&gt;
+&lt;p&gt;Hooray for more abstraction layers.&lt;/p&gt;
+&lt;p&gt;In other news, there is now a &lt;a href=&quot;http://wiki.debian.org/Xcontrol&quot;&gt;wiki page for xcontrol&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Sun, 19 Aug 2007 08:23:25 +0000</pubDate>
+</item>
+<item>
+	<title>Peter Makholm: libcbtsysinfo_0</title>
+	<guid>http://peter.makholm.net/2007/08/18/libcbtsysinfo_0/</guid>
+	<link>http://peter.makholm.net/2007/08/18/libcbtsysinfo_0/</link>
+	<description>&lt;p&gt;While testing &lt;a href=&quot;http://debian-live.alioth.debian.org&quot;&gt;Debian Live&lt;/a&gt; I suddenly discovered that something had installed a library in my home directory: &lt;tt&gt;~/cbt/lib/libcbtsysinfo_0.so&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Google gives two hints: Some discussion on the danish usenet group &lt;a href=&quot;http://groups.google.com/group/dk.edb.mac/browse_thread/thread/c8acbc3fa46116ec/9bf9dff1b6cf03bf&quot;&gt;dk.edb.mac&lt;/a&gt; and some discussion on &lt;a href=&quot;http://lists.debian.org/debian-user/2007/07/msg02432.html&quot;&gt;debian-user&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It looks like it get installed when I log into my internet bank. By lookin at the symbols extracted by objdump (a couple of symbols stating with Java_com_ibm_cbt_slight_CbtSysInfo) it seems to be IBM&amp;#8217;s &lt;a href=&quot;http://www-03.ibm.com/security/products/cbt.shtml&quot;&gt;Crypto-base Transaction&lt;/a&gt; system.&lt;/p&gt;
+&lt;p&gt;Evil to install such thing without asking. (Well, it&amp;#8217;s a Linux/x86 library even though I&amp;#8217;m using Linux/PPC)&lt;/p&gt;</description>
+	<pubDate>Sat, 18 Aug 2007 19:04:09 +0000</pubDate>
+</item>
+<item>
+	<title>Michael Janssen: Got a camera rolling on your back</title>
+	<guid>http://base0.net/archives/321-guid.html</guid>
+	<link>http://base0.net/archives/321-Got-a-camera-rolling-on-your-back.html</link>
+	<description>For the last few weeks, I've been trying to participate in &lt;a href=&quot;http://photojojo.com/content/tutorials/project-365-take-a-photo-a-day/&quot;&gt;Project 365&lt;/a&gt;.  For those that don't know about it, it is the idea of taking one picture a day in order to accomplish.. something.  I'm mainly just doing it for fun, and in order to improve my picture-taking skills with my camera phone.   I have it walking around everywhere basically, so when I see something interesting, I try to have my phone at the ready.  Some times I just take pictures of  &lt;a href=&quot;http://flickr.com/photos/jamuraa/1161207399/in/set-72157601532004533/&quot;&gt;random&lt;a&gt; &lt;a href=&quot;http://flickr.com/photos/jamuraa/1162062936/in/set-72157601532004533/&quot;&gt;stuff&lt;/a&gt;, but others are &lt;a href=&quot;http://flickr.com/photos/jamuraa/1012736321/in/set-72157601532004533/&quot;&gt;more&lt;/a&gt; &lt;a href=&quot;http://flickr.com/photos/jamuraa/1088783453/in/set-72157601532004533/&quot;&gt;interesting&lt;/a&gt;.&lt;br /&gt;
+&lt;br /&gt;
+I've found that it's pretty useful for me.  If you see the set, you can almost notice a perceptible increase in quality of the photos.  It may just be because I'm taking 2-3 photos per day and choosing the best one, or I may be actually improving in my photo-taking abilities.  Hopefully by the end of the year, the &lt;a href=&quot;http://flickr.com/photos/jamuraa/sets/72157601532004533/&quot;&gt;set of mine&lt;/a&gt; will actually have more than 300 photos in it.&lt;br /&gt;
+&lt;br /&gt;
+The idea of taking a picture a day is quite interesting to me, if only because if you asked me what I was doing last year this time, I would probably give you a general idea because my life is basically boring - I work in an office, even when I'm at school.  This way I might have some idea or get reminded.   &lt;br /&gt;
+&lt;br /&gt;
+I do have a couple of kinks that I would like to work out when I'm doing it though - when I download my photos through Bluetooth using my phone, it sets all of the creation dates to the time that I transfer the photos instead of the time that I took the photos.  This means that I need to fiddle with the &quot;taken on&quot; date when I finish uploading the pictures - there's no way to use the &lt;a href=&quot;http://flickr.com/tools/&quot;&gt;Flickr Uploadr&lt;/a&gt; to set the date.  This, and the horrible VGA camera that I have in the phone make it tempting for me to buy a new phone with a better camera and tools for transferring.  Also, some days I just stay in, and don't do anything interesting, so I don't have anything interesting or different to take a picture of.  I'm thinking of just taking a &lt;a href=&quot;http://flickr.com/photos/jamuraa/1012736547/in/set-72157601532004533/&quot;&gt;self-portrait&lt;/a&gt; on those days, but I'm not sure that it would be interesting enough.&lt;/a&gt;&lt;/a&gt;</description>
+	<pubDate>Sat, 18 Aug 2007 18:35:51 +0000</pubDate>
+	<author>nospam@example.com (Jamuraa)</author>
+</item>
+<item>
+	<title>David Welton: Business Friendly</title>
+	<guid>urn:uuid:2be2c13b-04ba-4749-b887-567ab8659a77</guid>
+	<link>http://journal.dedasys.com/articles/2007/08/18/business-friendly</link>
+	<description>&lt;p&gt;Growing up in Eugene, Oregon, which like Berkeley or Boulder could have the label &quot;People's Republic of&quot; applied to it, I always thought of &quot;business friendly&quot;, as something along the lines of helping huge corporations avoid laws against pollution, or other antisocial behavior.  Only after moving to Europe did I begin to get an idea of what the very positive side of &quot;business friendly&quot; is in the US.&lt;/p&gt;
+
+&lt;p&gt;Truth be told, all countries tend to protect their 'big players' to some degree, be it the US propping up creaking airlines after September 11th, Italy finding various clever ways to get around rules about funding Fiat and Alitalia, or France finding it in their 'national interests' to discourage a potential bid for Danone (yogurt!) by PepsiCo.  Some are better or worse (the UK has been pretty good about not interfering), but there is a tendency to want to intervene.&lt;/p&gt;
+
+&lt;p&gt;Leaving be the discussion over whether those sorts of policies are good, bad, or ugly, the biggest difference between continental Europe and the US is the ease with which new companies - 'startups' can be created and enter a market.&lt;/p&gt;
+
+&lt;p&gt;As a first hand example, I decided this summer to create DedaSys as a real company in order to better separate my business and personal financial dealings.  Were I to do that in Italy or Austria, we would be talking about fees upwards of 3000 Euros (about 4000 dollars at market rates), which is a great deal of money for something that is not making a lot of it at this point in time.&lt;/p&gt;
+
+&lt;p&gt;Contrast this with what it took to create a Limited Liability Company (LLC) in Oregon, my home state.  To have things done up professionally, it's certainly possible to lay down a bit of cash there too, but by trading my time for money, and with the assistance of some nolo.com books about the creation and maintenance of an LLC, I was able to register DedaSys with the state of Oregon for the grand total of 55 dollars, and was actually able to complete the process remotely from Austria prior to going home on vacation, where I did the only thing I needed to do in person: open a bank account.&lt;/p&gt;
+
+&lt;p&gt;So it costs 1% of what it costs in Italy or Austria to open a company that provides limited liability... a very impressive difference, especially to a small, new company that does not have the connections a Ford or a Fiat will likely have to enable it to deal with all the other paperwork, rules, and regulations to deal with.&lt;/p&gt;
+
+&lt;p&gt;Add to that a culture of greater risk taking (meaning also more acceptance of failure), better funding opportunities, and... one comes to the conclusion that &lt;a href=&quot;http://www.paulgraham.com/america.html&quot;&gt;Paul Graham is right&lt;/a&gt;.  It's a pity, because the people in Europe are top notch.  In Italy alone, I know a bunch of really bright hackers.  Granted, some of them aren't interested, and are probably better off not starting a company or otherwise dealing with the business side of the equation, but it's always nice to have that opportunity.&lt;/p&gt;
+
+&lt;p&gt;In closing, here is another example of bureaucracy in action, from my personal on line journal about life in Italy, and now Austria, which I recently revamped by moving it to the Typo platform:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://padovachronicles.welton.it/articles/2007/08/18/confronting-the-bureaucratic-beast-registering-an-italian-domain&quot;&gt;Confronting the bureaucratic beast - registering an Italian domain&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Two months to accomplish what can be done in ten minutes with a &lt;code&gt;.com&lt;/code&gt;!&lt;/p&gt;</description>
+	<pubDate>Sat, 18 Aug 2007 16:54:00 +0000</pubDate>
+</item>
+<item>
+	<title>Gustavo R. Montesino: Final SoC releases</title>
+	<guid>tag:blogger.com,1999:blog-7788396377703623641.post-2974646127998998413</guid>
+	<link>http://grmontesino.blogspot.com/2007/08/final-soc-releases.html</link>
+	<description>I've just finished releasing new versions of all modules related to my Summer of Code project, the Bug Triage and Forward Tool. If my mentor doesn't find any serious bug, these will be the last releases under the SoC flag. Thanks again, Google, for this great program and the progress it brings to Free Software.&lt;br /&gt;&lt;br /&gt;The releases:&lt;br /&gt;&lt;br /&gt;bzutils 0.2:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://lists.alioth.debian.org/pipermail/bug-triage-devel/2007-August/000006.html&quot;&gt;Announcement&lt;/a&gt;&lt;/li&gt;  &lt;li&gt;&lt;a href=&quot;http://alioth.debian.org/frs/download.php/2112/bzutils-0.2.tar.gz&quot;&gt;Source .tar.gz&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;btsutils 0.3:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://lists.alioth.debian.org/pipermail/bug-triage-devel/2007-August/000005.html&quot;&gt;Announcement&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://alioth.debian.org/frs/download.php/2111/btsutils-0.3.tar.gz&quot;&gt;Source .tar.gz&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;bug-triage 0.2.2:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://lists.alioth.debian.org/pipermail/bug-triage-devel/2007-August/000007.html&quot;&gt;Announcement&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://alioth.debian.org/frs/download.php/2116/bug-triage-0.2.2.tar.gz&quot;&gt;Source .tar.gz&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;Debian packages should hit the archive as soon as they get evaluated and sponsored. Of course, a full status report will also be posted during the evaluation time.</description>
+	<pubDate>Sat, 18 Aug 2007 16:48:19 +0000</pubDate>
+</item>
+<item>
+	<title>Daniel Stone: a fit of narcissism</title>
+	<guid>http://www.fooishbar.org/blog/life/stonesCorollory-2007-08-18-17-12.html</guid>
+	<link>http://www.fooishbar.org/blog/life/stonesCorollory-2007-08-18-17-12.html</link>
+	<description>Courtesy of an article in today's Guardian, I present Stone's Corollary to
+&lt;a href=&quot;http://www.burtonini.com/blog/life/burtons-low-2007-08-13-19-26&quot;&gt;Burton's
+Low&lt;/a&gt;:&lt;br /&gt;
+&lt;blockquote&gt;As a discussion about the contribution of vehicles to climate
+change grows longer, the probability of stating that China is &lt;a href=&quot;http://www.guardian.co.uk/environment/2007/aug/17/china.pollution&quot;&gt;putting
+1,000 new cars on the road every week&lt;/a&gt; approaches one.&lt;/blockquote&gt;
+&lt;br /&gt;
+When used as a defence for driving an SUV, I'd also like to invoke the sudden
+death variant, where the discussion is finished immediately.</description>
+	<pubDate>Sat, 18 Aug 2007 14:21:46 +0000</pubDate>
+</item>
+<item>
+	<title>Erich Schubert: More (ranting) on Skype</title>
+	<guid>http://blog.drinsama.de/erich/en/2007081701-skype</guid>
+	<link>http://blog.drinsama.de/erich/en/2007081701-skype.html</link>
+	<description>&lt;p&gt;A couple of people have pointed me to the &quot;Skype DoS exploit code&quot; that has
+been published. I had seen that, but I'm not convinced it works as simple
+as that. Some of the information around it doesn't make completely sense (such
+as using the term 'server', when they're referring to super nodes I guess, and
+since supernodes are just regular user machines annexed by the Skype network,
+they supposedly run the same software, don't they? So why doesn't it take down
+the client the exploit is run on?&lt;/p&gt;&lt;p&gt;Also I'd bet that someone has tried feeding the Skype client long URIs before;
+that is one of the most popular ways of seeing if some software can break.
+You know, &lt;a href=&quot;http://en.wikipedia.org/wiki/Buffer_overflow&quot;&gt;Buffer
+Overflow [wikipedia]&lt;/a&gt; is probably the most common class of security issues
+(maybe second only to PHP programming errors or SQL injection by now, though,
+with so many people with too little expertise writing webapps in PHP)&lt;/p&gt;&lt;p&gt;Others probably are wondering why I'm writing so much &quot;against&quot; Skype.&lt;/p&gt;&lt;p&gt;There are numerous reasons:
+&lt;ul&gt;
+&lt;li&gt;The whole P2P thing isn't necessary, they could use real servers&lt;/li&gt;
+&lt;li&gt;Skype is a pain for every network admin (and thus a users nightmare, since
+the admin might decide to just block any traffic that could be Skype, and
+enforce the use of HTTP proxies etc. and thus limiting other applications
+as well)&lt;/li&gt;
+&lt;li&gt;Skype uses all kinds of shady coding techniques in their client to obfuscate
+what their application is actually doing&lt;/li&gt;
+&lt;li&gt;Skype is a security risk&lt;/li&gt;
+&lt;li&gt;Skype is a memory hog (it uses 10 times as much memory as my other IM
+client, who does ICQ, MSN, Yahoo, Google Talk and tons of others!)&lt;/li&gt;
+&lt;li&gt;It's a resource hog (it wakes up 200 times as second for nothing, thus
+preventing my CPU from using power saving states efficiently)&lt;/li&gt;
+&lt;li&gt;It's a closed protocol and network, while there are open industry standards
+such as &lt;a href=&quot;http://en.wikipedia.org/wiki/Session_Initiation_Protocol&quot;&gt;SIP
+[wikipedia]&lt;/a&gt; and &lt;a href=&quot;http://en.wikipedia.org/wiki/H.323&quot;&gt;H.323
+[wikipedia]&lt;/a&gt; that can do much more than Skype&lt;/li&gt;
+&lt;li&gt;It's UI is crap (especially Linux version 1.4 is a serious degradation vs.
+version 1.3), contrary to any usability best practises&lt;/li&gt;
+&lt;li&gt;Their API is crap. I'd call that &quot;raping&quot; the DBus API what they're doing
+(basically they're offering a DBus interface that is just a transport wrapper
+for a text-based 'telnet-like' API. You know, DBus interfaces are meant to
+have meaningful functionality (like 'make a phone call') and not meant to be
+just &quot;send data to the skype application&quot;)&lt;/li&gt;
+&lt;li&gt;They don't tell the truth. Like e.g. what has really been happening these
+days. Or what their software really does (see 'obfuscation' above and search
+for &quot;Silver Needle In The Skype&quot;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;&lt;p&gt;And, honest, there is nothing in Skype that other apps wouldn't offer, or had
+been offering before &lt;em&gt;except&lt;/em&gt; being really &lt;em&gt;aggressive&lt;/em&gt; at
+getting through firewalls without any user intervention.
+&lt;/p&gt;</description>
+	<pubDate>Sat, 18 Aug 2007 12:14:00 +0000</pubDate>
+</item>
+<item>
+	<title>Bdale Garbee: Conservation:  It's in the Bag</title>
+	<guid>http://www.gag.com/cgi-bin/blosxom/2007/08/18#2007.08.18</guid>
+	<link>http://www.gag.com/cgi-bin/blosxom/2007/08/18#2007.08.18</link>
+	<description>&lt;p&gt;
+I was just reading the latest issue of 
+&lt;a href=&quot;http://www.homepower.com/&quot;&gt;Home Power&lt;/a&gt; 
+magazine, which is celebrating 20 years of publication with this issue.
+One of the articles, by Kathleen Jarschke-Schultze, talks about the value of
+reusable cotton bags for shopping instead of accepting the usual &quot;paper or 
+plastic&quot;.  It caught my eye because my wife Karen is an avid cotton-bag user.  
+Kathleen ends the article with an idea that I think is worth repeating:
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;
+So how about this new etiquette:  Conservation in everything except courtesy
+and generosity.  Seems like that would be a refreshing change.  We all need to
+just put one foot in front of the other to keep moving forward on conserving
+global resources.  Even if it is slow or small, take that first step.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+I like that.  Conservation, courtesy, and generosity should never go out of style...
+&lt;/p&gt;</description>
+	<pubDate>Sat, 18 Aug 2007 08:52:00 +0000</pubDate>
+</item>
+<item>
+	<title>Pete Nuttall: Firefox blocking</title>
+	<guid>http://www.lupin.org.uk/blog/computing/blocking-firefox.html</guid>
+	<link>http://www.lupin.org.uk/blog/computing/blocking-firefox.html</link>
+	<description>The great thing about the internet is that people can use it to make a
+fool of themselves in front of the whole world. Since this provides
+everyone with entertainment, I try and do something silly every once
+in a while. However, I'm easily topped by other people... Today's
+morons are &lt;a href=&quot;http://whyfirefoxisblocked.com/&quot;&gt;these guys&lt;/a&gt;
+who have decided that ad blocking is evil, bad and wrong. Their
+argument is simple - that not looking at the ads would be stealing.
+They point out they can't block people who are using the Ad Blocker,
+so they have to block every firefox user. This is the MPAAs thinking -
+the user is the enemy. For me, all it means is that I can't visit these
+websites - I'll have to go spend money somewhere else...</description>
+	<pubDate>Sat, 18 Aug 2007 04:59:42 +0000</pubDate>
+</item>
+<item>
+	<title>Eddy Petri&amp;#537;or: how did the Debian Games Team got rid of spam</title>
+	<guid>tag:blogger.com,1999:blog-1134723925265805427.post-4261575926394723984</guid>
+	<link>http://ramblingfoo.blogspot.com/2007/08/how-did-debian-games-team-got-rid-of.html</link>
+	<description>How to get rid of most spam on &lt;span class=&quot;blsp-spelling-corrected&quot; id=&quot;SPELLING_ERROR_0&quot;&gt;Alioth&lt;/span&gt; mailing lists.&lt;br /&gt;&lt;br /&gt;Until some &lt;span class=&quot;blsp-spelling-corrected&quot; id=&quot;SPELLING_ERROR_1&quot;&gt;Debian&lt;/span&gt; developer implements &lt;a href=&quot;http://wiki.debian.org/UsefulImprovements#head-e0eab470284b59976fc9c112a979ecf674879d27&quot;&gt;this idea&lt;/a&gt; in the &lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_2&quot;&gt;BTS&lt;/span&gt;, the mailing list and in &lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_3&quot;&gt;PTS&lt;/span&gt;, the quantities of spam that people get on the mail addresses they expose in the Debian world, the spam will keep on coming in huge quantities. I don't care that there will always be spam, I care that the &lt;span class=&quot;blsp-spelling-corrected&quot; id=&quot;SPELLING_ERROR_4&quot;&gt;amount&lt;/span&gt; of spam would be lower or probably &lt;span class=&quot;blsp-spelling-corrected&quot; id=&quot;SPELLING_ERROR_5&quot;&gt;nonexistent&lt;/span&gt; for one time sending (I sent just one mail to the &lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_6&quot;&gt;BTS&lt;/span&gt; from two &lt;span class=&quot;blsp-spelling-corrected&quot; id=&quot;SPELLING_ERROR_7&quot;&gt;different&lt;/span&gt; mail addresses and it was enough to get huge amounts of spam on them).&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;The Debian Games Team's ML has suffered for a while, back in 2006, from spam bombing.&lt;br /&gt;We thought that the easiest method to get rid of spam is to requires registration in order to be able to send mails to the list.&lt;br /&gt;&lt;br /&gt;That was a big mistake because, as some people suspect, mails from the &lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_8&quot;&gt;BTS&lt;/span&gt; needed to be allowed in and the reporters got an automated reply saying that the mail is waiting for &lt;span class=&quot;blsp-spelling-corrected&quot; id=&quot;SPELLING_ERROR_9&quot;&gt;approval&lt;/span&gt;, etc, etc - plain rude, people send you bug reports and you say &quot;You are not listed, &lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_10&quot;&gt;bla&lt;/span&gt;, &lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_11&quot;&gt;bla&lt;/span&gt; &lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_12&quot;&gt;bla&lt;/span&gt;&quot;. We changed the setting not to send any automatic reply and people were more content.&lt;br /&gt;&lt;br /&gt;But still, we had to hand approve or white list valid mails/addresses. That worked for a while, but once the mail ended up on &lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_13&quot;&gt;spammer&lt;/span&gt; lists, the thing blew out of proportions. We were desperate. We tweaked the settings of the lists in &lt;span class=&quot;blsp-spelling-corrected&quot; id=&quot;SPELLING_ERROR_14&quot;&gt;different&lt;/span&gt; ways, but in the end we ended up in having such a broken setup that we had to approve white listed addresses.&lt;br /&gt;&lt;br /&gt;That did for me. I had to do something. So I started working on the ML setup and basically I did &lt;a href=&quot;http://lists.debian.org/debian-devel-games/2007/04/msg00035.html&quot;&gt;the following things&lt;/a&gt; to get rid of spam:&lt;br /&gt;&lt;ul&gt;&lt;li&gt;anything coming from white listed mail addresses was approved&lt;/li&gt;&lt;li&gt;black listed mails (&lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_15&quot;&gt;bellsouth&lt;/span&gt; is one of those) is rejected (or should be)&lt;/li&gt;&lt;li&gt;anything that came from the &lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_16&quot;&gt;BTS&lt;/span&gt; (there are some nice headers that the &lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_17&quot;&gt;BTS&lt;/span&gt; puts) and was evaluated as ham with a score of 0 (there is a field for that, too - some field has Spam=No, Score=...) was allowed&lt;/li&gt;&lt;li&gt;anything that came from the &lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_18&quot;&gt;BTS&lt;/span&gt; that was Spam=No with a score above 0 was held for moderation&lt;/li&gt;&lt;li&gt;anything else is held for moderation&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;This solution allowed us to lighten the burden of manually white listing every email address that ever sent valid mails to the &lt;span class=&quot;blsp-spelling-error&quot; id=&quot;SPELLING_ERROR_19&quot;&gt;BTS&lt;/span&gt; and to focus only on real spam.&lt;br /&gt;&lt;br /&gt;Try it your self on your lists, you'll be &lt;span class=&quot;blsp-spelling-corrected&quot; id=&quot;SPELLING_ERROR_20&quot;&gt;pleasantly&lt;/span&gt; surprised.</description>
+	<pubDate>Sat, 18 Aug 2007 03:33:11 +0000</pubDate>
+</item>
+<item>
+	<title>Gunnar Wolf: Aggressive bug reports leading to a good answer (or so I hope)</title>
+	<guid>http://www.gwolf.org/index.php/blog/show/Aggressive-bug-reports-leading-to-a-good-answer-or-so-I-hope.html</guid>
+	<link>http://www.gwolf.org/index.php/blog/show/Aggressive-bug-reports-leading-to-a-good-answer-or-so-I-hope.html</link>
+	<description>&lt;p&gt;Joey &lt;a href=&quot;http://kitenet.net/~joey/blog/entry/a_little_politeness__44___please/&quot;&gt;complains about users filing aggressive or otherwise inappropriate bug reports&lt;/a&gt;. Well, in this case I must say I bit the bullet.&lt;br /&gt;Yesterday, somebody &lt;a href=&quot;http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=438168&quot;&gt;complained about the maintenance statuse&lt;/a&gt; of &lt;a href=&quot;http://packages.debian.org/cgi-bin/search_packages.pl?searchon=names&amp;#038;version=all&amp;#038;exact=1&amp;#038;keywords=libapache2-mod-perl2&quot;&gt;libapache2-mod-perl2&lt;/a&gt;. Usually, I would have sadly nodded and said that, yes, since the API change between mod_perl for Apache 1.x and mod_perl2 for Apache 2.x (which was a &lt;em&gt;long&lt;/em&gt; time ago - with perfect timing &lt;em&gt;not&lt;/em&gt; to be accepted in the last weeks of Sarge's hard-freeze period, causing many of us to have to maintain two or even three versions of our code depending on the API used - But that's a different story I won't go into details now). But this time, the bug report was sent with &lt;tt&gt;Severity: critical&lt;/tt&gt;.&lt;br /&gt;I replied to this report, intending just to lower its priority and get the attention of the maintainers by &lt;a href=&quot;http://lists.debian.org/debian-devel/2007/08/msg00681.html&quot;&gt;sending it to a couple of Debian lists&lt;/a&gt; - But soon afterwards, it became obvious that I was probably the person most interested in this package in Debian - At least, me and some other &lt;a href=&quot;http://alioth.debian.org/projects/pkg-perl&quot;&gt;pkg-perl fellows&lt;/a&gt; who -as foolishly as myself- volunteered to step forward when needed.&lt;br /&gt;Well, in short: I am now the proud owner of one of the packages most vital for many of the systems I've written for my work. It's also more complex than most of the other packages I maintain. From an undermaintained and quite full of warnings build process and resulting package set, I managed to make it linda- and lintian- clean, and... Well, now we have to dig through its &lt;a href=&quot;http://bugs.debian.org/cgi-bin/pkgreport.cgi?pkg=libapache2-mod-perl2;dist=unstable&quot;&gt;open bugs&lt;/a&gt;. Its build system is far from orthodox from a Perl point of view, and that took me most of the day, but hey - TIMTOWTDI, right? :)
+&lt;/p&gt;</description>
+	<pubDate>Fri, 17 Aug 2007 21:47:40 +0000</pubDate>
+	<author>gwolf@gwolf.org (Gunnar Wolf)</author>
+</item>
+<item>
+	<title>Erich Schubert: Skype problems aren't solved, but just worked around?</title>
+	<guid>http://blog.drinsama.de/erich/en/2007081701-skype-problems-not-solved-just-worked-around</guid>
+	<link>http://blog.drinsama.de/erich/en/2007081701-skype-problems-not-solved-just-worked-around.html</link>
+	<description>&lt;p&gt;Skype seems slowly to recover from yesterdays blackout.&lt;/p&gt;&lt;p&gt;However, it doesn't look to me as if they've actually solved the problem. I
+assume they've just added a workaround (e.g. maybe using DNS to locate good
+servers?) that help recovering. At least when enough people download the new
+version.&lt;/p&gt;&lt;p&gt;If you look at the graphs at
+&lt;a href=&quot;http://nyanyan.to/skype/40hr_chart.php&quot;&gt;Njanjan.to&lt;/a&gt; and
+&lt;a href=&quot;http://www.85qm.de/archives/567-Skype-Netzwerk-hat-sich-immer-noch-nicht-erholt.html&quot;&gt;85qm.de&lt;/a&gt;, then they still look far from healthy.&lt;/p&gt;&lt;p&gt;I'm not talking about the mere numbers - Skype reports about 3 Million users
+connected, which would mean 1 out of 3 regular users is back. But I'm talking
+about the &lt;em&gt;shape&lt;/em&gt; of the curve. During regular operations, the curve
+used to be smooth. Which is easy to explain: by some million users going online
+and offline &lt;em&gt;indepentenly&lt;/em&gt;, it all smoothens out. The curve goes up when
+people start working in a densely populated area and goes down when they go to
+bed. But if you look at the graphs for the past few hours &lt;b&gt;parts of the
+Skype P2P network still appear to get disconnected and reconnected&lt;/b&gt;.
+They cerainly didn't flip a switch and people could connect again. The service
+still appears to be going up and down.&lt;/p&gt;&lt;p&gt;To me, that indicates that they actually &lt;b&gt;didn't solve the problem, but
+just found a way to make the problems not take down the whole network&lt;/b&gt;,
+while parts still drop off now and then.&lt;/p&gt;&lt;p&gt;Just my guesses, though. And Skype will not tell the truth either, you bet.
+(You might want to skim over the presentation &lt;a href=&quot;http://www.blackhat.com/presentations/bh-europe-06/bh-eu-06-biondi/bh-eu-06-biondi-up.pdf&quot;&gt;&quot;Silver Needle In The Skype&quot; [PDF]&lt;/a&gt;, about the inner workings of Skype, their obfuscation technologies and how far they go at hiding what their software is actually doing)&lt;/p&gt;&lt;p&gt;P.S. I've read in a blog that Skype might right now only allow one connection
+per IP. That would even more support the rumors that they're actually trying
+to defend against an attack on their network (and using the IP limit to slow
+down the attacks?)&lt;/p&gt;&lt;p&gt;P.P.S. Another interesting note: the Skype stats on the Skype website report
+5.5 Million connected users - my Skype client reports 3.7 Million. Which
+number is correct?
+&lt;/p&gt;</description>
+	<pubDate>Fri, 17 Aug 2007 20:55:00 +0000</pubDate>
+</item>
+<item>
+	<title>Alexis Sukrieh: The road to libdevel-repl-perl, part 1</title>
+	<guid>http://www.sukria.net/en/archives/2007/08/17/the-road-to-libdevel-repl-perl-part-1/</guid>
+	<link>http://www.sukria.net/en/archives/2007/08/17/the-road-to-libdevel-repl-perl-part-1/</link>
+	<description>&lt;p&gt;I decided to play with Devel::REPL which looks to be exactly what I need to enhance my Perl Console. That module is not packaged in Debian, then I started packaging it with the help of the Debian Perl Group (big thanks go to Damyan Ivanov for his help).&lt;/p&gt;
+&lt;p&gt;The day was pretty productive and we&amp;#8217;re almost done now, as you can see in this tomboy note:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.sukria.net/images/libdevel-repl-perl-deps.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt; PS MadCoder: I&amp;#8217;m sorry dude, I&amp;#8217;m still speaking about Perl &lt;img src=&quot;http://www.sukria.net/en/wp-includes/images/smilies/icon_razz.gif&quot; alt=&quot;:P&quot; class=&quot;wp-smiley&quot; /&gt; &lt;/em&gt;
+&lt;/p&gt;</description>
+	<pubDate>Fri, 17 Aug 2007 20:42:51 +0000</pubDate>
+</item>
+
+</channel>
+</rss>

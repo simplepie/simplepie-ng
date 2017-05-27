@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head data-layout-view="default">
+        <script>(function(){var d={date:8,app:"s",host:"s",ip:4,ua:"s",user:"s",url:"s",html:4,css:4,render:4,js:4,nlr:4,nlr_eval:4,img:4,embed:4,obj:4,mcc:4,mcr:4,mct:4,nac:4,pac:4,l_t:"s"},h=document,e="getElementsByTagName",i=window,c=function(){return(new Date).getTime()},f=c(),g={},b={},a={},j=i.bzplcm={listen:{},start:function(k){b[k]=c();return j},stop:function(k){g[k]=c()-b[k];return j},ts:function(k){g[k]=c()-f;return j},abs_ts:function(k){g[k]=c();return j},add:function(l){for(var k in l){if("function"!=typeof l[k]){a[k]=l[k]}}},send:function(){if(!g.he){j.ts("he")}a.date=["xdate"];a.host=["xhost"];a.ip=["xip"];a.ua=["xua"];a.url=["xpath"];a.html=g.he-g.hb;a.css=g.ca-g.cb;a.render=g.jb-g.hb;a.js=g.ja-g.jb;a.nlr=g.nr-g.ns;a.nlr_eval=g.ni+g.ne;a.img=h[e]("img").length;a.embed=h[e]("embed").length;a.obj=h[e]("object").length;if(i.xg&&i.xg.xnTrackEvent){i.xg.xnTrackEvent(d,"BazelCSPerfLite",a)}}}})();</script><script>if(window.bzplcm)window.bzplcm.ts('hb')</script>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Atheist College</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="SHORTCUT ICON" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Atheist College é uma rede social" />
+    <meta name="keywords" content="ateu, atoa, a, toa, atheist, college, deus, divindade, humor, video" />
+<meta name="title" content="Atheist College" />
+<link rel="image_src" href="http://api.ning.com/icons/appatar/4964896?default=4964896&amp;width=90&amp;height=90" />
+<script type="text/javascript">
+djConfig = { baseScriptUri: 'http://atheistcollege.ning.com/xn/static-6.11.8.1/js/dojo-0.3.1-ning/', isDebug: false }
+ning = {"CurrentApp":{"premium":false,"iconUrl":"http:\/\/api.ning.com\/icons\/appatar\/4964896?default=4964896&width=64&height=64","url":"http:\/\/atheistcollege.ning.com","domains":[],"online":true,"privateSource":false,"id":"atheistcollege","appId":"4964896","description":"","name":"Atheist College","owner":"11op14xlcpzrc","createdDate":"2010-01-26T16:29:53.486Z","runOwnAds":false,"category":{"ateu":null,"atoa":null,"a":null,"toa":null,"atheist":null,"college":null,"deus":null,"divindade":null,"humor":null,"video":null},"tags":["ateu","atoa","a","toa","atheist","college","deus","divindade","humor","video"]},"CurrentProfile":null};
+    (function(){
+        if (!window.ning) { return; }
+
+        var age, gender, rand, obfuscated, combined;
+
+        obfuscated = document.cookie.match(/xgdi=([^;]+)/);
+        if (obfuscated) {
+            var offset = 100000;
+            obfuscated = parseInt(obfuscated[1]);
+            rand = obfuscated / offset;
+            combined = (obfuscated % offset) ^ rand;
+            age = combined % 1000;
+            gender = (combined / 1000) & 3;
+            gender = (gender == 1 ? 'm' : gender == 2 ? 'f' : 0);
+            ning.viewer = {"age":age,"gender":gender};
+        }
+    })();
+
+if (window.location.hash.indexOf('#!/') == 0) {
+    window.location.replace(window.location.hash.substr(2));
+}
+window.xg = {};
+xg.addOnRequire = function(f) { xg.addOnRequire.functions.push(f); };
+xg.addOnRequire.functions = [];
+xg.addOnFacebookLoad = function (f) { xg.addOnFacebookLoad.functions.push(f); };
+xg.addOnFacebookLoad.functions = [];
+xg._loader = {
+    p: 0,
+    loading: function(set) { this.p++; },
+    onLoad: function(set) {
+        this.p--;
+        if (this.p == 0 && typeof(xg._loader.onDone) == 'function') {
+            xg._loader.onDone();
+        }
+    }
+};
+xg._loader.loading('xnloader');
+if (window.bzplcm) {
+    window.bzplcm._profileCount = 0;
+    window.bzplcm._profileSend = function() { if (window.bzplcm._profileCount++ == 1) window.bzplcm.send(); };
+}
+xg._loader.onDone = function() {
+        if(window.bzplcm)window.bzplcm.start('ni');
+        xg.shared.util.parseWidgets();    var addOnRequireFunctions = xg.addOnRequire.functions;
+    xg.addOnRequire = function(f) { f(); };
+    try {
+        if (addOnRequireFunctions) { dojo.lang.forEach(addOnRequireFunctions, function(onRequire) { onRequire.apply(); }); }
+    } catch (e) {
+        if(window.bzplcm)window.bzplcm.ts('nx').send();
+        throw e;
+    }
+    if(window.bzplcm) { window.bzplcm.stop('ni'); window.bzplcm._profileSend(); }
+};
+window.xn = { track: { _globals: { screen_name: null, subdomain: "atheistcollege", is_owner: false, is_admin: false, is_member: false, join_date: 0, request_method: "GET", trace: "693a3758-ebc6-426e-a9f8-d51db576b220"}, event: function() {}, pageView: function() {}, registerCompletedFlow: function() {}, registerError: function() {}, timer: function() { return { lapTime: function() {} }; }, _trackingHost: "track.ning.com", _jsDebug: false } }    </script>
+<script type="text/javascript">
+    var ning_gaq = ning_gaq || [];
+    ning_gaq.push(['_ning_ga._setAccount', 'UA-2270114-6']); 
+    ning_gaq.push(['_ning_ga._setNamespace', 'ning']);
+               ning_gaq.push(['_ning_ga._setCustomVar', 1,'member_type',   'anonymous', 3]);
+       ning_gaq.push(['_ning_ga._setCustomVar', 2,'subdomain',     'atheistcollege.ning.com' ,3]); 
+       ning_gaq.push(['_ning_ga._setCustomVar', 3,'category',      'unknown' ,3]);
+       ning_gaq.push(['_ning_ga._setCustomVar', 4,'product_type',  'free' ,3]);
+       ning_gaq.push(['_ning_ga._setCustomVar', 5,'member_segment','20-149' ,3]);
+    ning_gaq.push(['_ning_ga._trackPageview']);
+    ning_gaq.push(['_ning_ga._trackPageLoadTime']);
+
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = "http://static.ning.com/socialnetworkmain/widgets/index/js/google-analytics/ga.js?v=201109302009";
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+</script>
+<link rel="alternate" type="application/rss+xml" title="&Uacute;ltimas atividades - Atheist College" href="http://atheistcollege.ning.com/activity/log/list?fmt=rss" /><link rel="alternate" type="application/atom+xml" title="F&oacute;rum - Atheist College" href="http://atheistcollege.ning.com/forum/topic/list?feed=yes&amp;xn_auth=no" /><link rel="alternate" type="application/atom+xml" title="Mensagens de blog - Atheist College" href="http://atheistcollege.ning.com/profiles/blog/feed?xn_auth=no" /><link rel="alternate" type="application/rss+xml" title="Ateu e &Agrave; toa - Atheist College" href="ateueatoa.com" />
+<style type="text/css" media="screen,projection">
+#xg_navigation ul div.xg_subtab ul li a {
+    color:#000099;
+    background:#FFFFFF;
+}
+#xg_navigation ul div.xg_subtab ul li a:hover {
+    color:#3333FF;
+    background:#FFFFFF;
+}
+</style>
+<script>if(window.bzplcm)window.bzplcm.ts('cb')</script>
+<style type="text/css" media="screen,projection">
+@import url(http://static.ning.com/socialnetworkmain/widgets/index/css/common.min.css?xn_version=2612706367);
+@import url(http://static.ning.com/socialnetworkmain/widgets/index/css/component.min.css?xn_version=1195359334);
+
+</style>
+
+<style type="text/css" media="screen,projection">
+@import url(http://static.ning.com/atheistcollege/instances/css/embed_1317425446.css?xn_version=201109302009);
+
+</style>
+
+<style type="text/css" media="screen,projection">
+@import url(http://static.ning.com/atheistcollege/instances/css/theme_1317425446.css?xn_version=201109302009);
+
+</style>
+
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="http://static.ning.com/socialnetworkmain/widgets/index/css/common-ie6.min.css?v=201109302009" />
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="http://static.ning.com/socialnetworkmain/widgets/index/css/common-ie7.css?v=201109302009" />
+<![endif]-->
+<script>if(window.bzplcm)window.bzplcm.ts('ca')</script><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://atheistcollege.ning.com/profiles/blog/rsd" />
+
+    </head>
+    <body>
+                <div id="xn_bar">
+            <div id="xn_bar_menu">
+                <div id="xn_bar_menu_branding" >
+                                            <p id="xn_brand" style="display: block !important;"><a href="http://www.ning.com?utm_campaign=9000&utm_medium=prd&utm_source=online&utm_term=atheistcollege&utm_content=bazbarmenu"><span>Ning</span></a></p>
+                                            <p id="xn_gyo_link">
+                                                    <a href="http://www.ning.com/chooseplan?source=atheistcollege&amp;utm_campaign=9000&amp;utm_medium=prd&amp;utm_source=online&amp;utm_term=atheistcollege&amp;utm_content=atheistcollege">Crie uma Rede do Ning!</a>
+                                                </p>
+                                     </div>
+
+                <div id="xn_bar_menu_more">
+                    <form id="xn_bar_menu_search" method="GET" action="http://atheistcollege.ning.com/main/search/search">
+                        <fieldset>
+                            <input type="text" name="q" id="xn_bar_menu_search_query" value="Pesquisar Atheist College" _hint="Pesquisar Atheist College" accesskey="4" class="text xj_search_hint" />
+                            <a id="xn_bar_menu_search_submit" href="#" onclick="document.getElementById('xn_bar_menu_search').submit();return false">Procurar</a>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <ul id="xn_bar_menu_tabs">
+                                            <li><a href="http://atheistcollege.ning.com/main/authorization/signUp?target=http%3A%2F%2Fatheistcollege.ning.com%2F%3Fz%3D1">Registre-se</a></li>
+                        <li><a href="http://atheistcollege.ning.com/main/authorization/signIn?target=http%3A%2F%2Fatheistcollege.ning.com%2F%3Fz%3D1">Acessar</a></li>
+                        
+                </ul>
+            </div>
+        </div>
+        <a style="display:none" class="button" href="#" dojoType="frameBusting" _isAdminOrNC="" _appUrl="http://atheistcollege.ning.com/?z=1"></a>
+<div id="xj_msg" style="display:none;"></div>
+
+
+<input type="hidden" id="xj_migration_lightbox_display" value="yes" />
+        <script id="recaptcha_options" type="text/javascript">
+            /* <![CDATA[ */
+            var RecaptchaOptions = {
+                theme: 'white',
+                lang: 'pt',
+                custom_translations: {
+                    instructions_visual: 'Digite as duas palavras:',
+                    instructions_audio: 'Digite o que ouvir:',
+                    play_again: 'Reproduzir o som novamente',
+                    cant_hear_this: 'Baixar o som como MP3',
+                    visual_challenge: 'Obter um desafio visual',
+                    audio_challenge: 'Obter um desafio de áudio',
+                    refresh_btn: 'Obter um novo desafio',
+                    help_btn: 'Ajuda',
+                    incorrect_try_again: 'Sua resposta não corresponde às palavras. Tente novamente.'
+                }
+            };
+            /* ]]> */
+        </script>
+    <script type="text/javascript" src="http://api.recaptcha.net/js/recaptcha_ajax.js"></script>
+<div class="xg_overlay" id="xj_temporary_overlay"></div>
+<input type="hidden" id="xj_migration_lightbox_title" value="Esta Rede do Ning est&aacute; indispon&iacute;vel no momento" />
+<div id="xj_migration_lightbox_body" style="display:none">
+  <div class="xj_contactnc contactnc" id="xj_contactnc" data-successMessage="Sua mensagem foi enviada!">
+        <div class="promo xg_lightborder">
+            <p>
+                <a href="http://www.ning.com/chooseplan?utm_source=DNLB&amp;utm_medium=prd&amp;utm_campaign=9000&amp;utm_term=atheistcollege&amp;utm_content=contactnc">
+                    <img src="http://static.ning.com/socialnetworkmain/widgets/index/gfx/test-network-label-logo.png?v=201109302009" alt="Ning" class="logoimg">
+                </a>
+            </p>
+            <p>Este site social é executado no Ning</p>
+            <p>
+                <a href="http://www.ning.com/chooseplan?utm_source=DNLB&amp;utm_medium=prd&amp;utm_campaign=9000&amp;utm_term=atheistcollege&amp;utm_content=contactnc">
+                    <img src="http://static.ning.com/about/images/dnlb_marketingimage.png" alt="Promoção" width="204" height="200" class="promoimg" />
+                </a>
+            </p>
+            <p>Criar um destino social para sua própria comunidade</p>
+            <p>
+                <a href="http://www.ning.com/chooseplan?utm_source=DNLB&amp;utm_medium=prd&amp;utm_campaign=9000&amp;utm_term=atheistcollege&amp;utm_content=contactnc" class="ningbutton">
+                    Criar sua própria                </a>
+            </p>
+        </div>
+<div>
+<form method="post" action="http://atheistcollege.ning.com/main/embed/contactNC" novalidate="novalidate">
+<input type="hidden" name="xg_token" value="" /><input type="hidden" name="t" value="N7md4lYEXiUxHR0o7kbLlA==,ivHDKwKOvP241Q2dktUgFJgbLFpyOt4z+/b3PydgleVZQtERG2f4oy2DltCxUiur" />
+<div class="xj_top">
+    <div class="summary">
+            <p class="dy-big">Deseja reativar esta Rede do Ning?</p>
+        <p>Informe o Criador com o preenchimento deste formulário:</p>
+        </div>
+</div>
+<fieldset class="noborder dy-form-2">
+            <dl>
+            <dt class="nobr"><label for="name" class="dy-label">Seu nome</label></dt>
+            <dd><input type="text" class="textfield dy-input-medium" id="name" name="name" /></dd>
+        </dl>
+        <dl>
+            <dt class="nobr"><label for="email" class="dy-label">Seu email</label></dt>
+            <dd><input type="email" class="textfield dy-input-medium" id="email" name="emailAddress" /></dd>
+        </dl>
+        <dl>
+        <dt class="nobr"><label for="question" class="dy-label">Sua mensagem</label></dt>
+        <dd><textarea id="question" class="textarea dy-input-medium" name="description"></textarea></dd>
+    </dl>
+            <dl>
+            <dd><div id="xj_recaptcha_div" data-key="6LehigcAAAAAADjv-vta_dpH1AoOrTX_-KszqcNb"></div></dd>
+        </dl>
+        <dl>
+        <dd>
+            <input type="submit" class="button" value="Enviar" />
+                    </dd>
+    </dl>
+            <dl>
+            <dd><p class="foot">Se você for o Criador, <a href="http://atheistcollege.ning.com/main/authorization/signIn">Acessar</a></p></dd>
+        </dl>
+    </fieldset>
+</form>
+</div>
+</div>
+</div>
+
+        
+        <div id="xg" class="xg_theme xg_widget_main xg_widget_main_index xg_widget_main_index_index" data-layout-pack="classic">
+            <div id="xg_head">
+                <div id="xg_masthead">
+                    <p id="xg_sitename"><a id="application_name_header_link" href="/">Atheist College</a></p>
+                    
+                </div>
+                <div id="xg_navigation">
+                    <ul>
+    <li dojoType="SubTabHover" id="xg_tab_main" class="xg_subtab this"><a href="/"><span>Origem e Recursos</span></a><div class="xg_subtab" style="display:none;position:absolute;"><ul class="xg_subtab" style="display:block;" ><li style="list-style:none !important;display:block;text-align:left;"><a href="/opensocial/ningapps/show?appUrl=http%3A%2F%2Fos1.sitesuites.net%2Fss%2Fos%2Frss%2Frss.xml%3Fning-app-status%3Dnetwork&amp;owner=11op14xlcpzrc" style="float:none;"><span>Todos os Rss Aqui!</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/profiles/members/" style="float:none;"><span>Outros Primatas</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/groups" style="float:none;"><span>Bandos</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/evolucao-ac" style="float:none;"><span>Qualidade</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/links-interessantes" style="float:none;"><span>Links interessantes</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/indique-um-feed" style="float:none;"><span>Indique um Feed</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/downloads-1" style="float:none;"><span>Downloads</span></a></li></ul></div></li><li id="xg_tab_profile" class="xg_subtab"><a href="/profiles"><span>Meu perfil</span></a></li><li dojoType="SubTabHover" id="xg_tab_xn24" class="xg_subtab"><a href="http://"><span>Atividades</span></a><div class="xg_subtab" style="display:none;position:absolute;"><ul class="xg_subtab" style="display:block;" ><li style="list-style:none !important;display:block;text-align:left;"><a href="/forum" style="float:none;"><span>Debatezz</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/video" style="float:none;"><span>V&iacute;deos</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/chat" style="float:none;"><span>Bate-Papo</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/events" style="float:none;"><span>Eventos</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/photo" style="float:none;"><span>Imagens</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/profiles/blog/list" style="float:none;"><span>Blogs!</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/profiles/blog/new" style="float:none;"><span>Divulgue seu Blog aqui!</span></a></li></ul></div></li><li dojoType="SubTabHover" id="xg_tab_xn0" class="xg_subtab"><a href="http://www.ateueatoa.com/"><span>Ateu e &agrave; toa</span></a><div class="xg_subtab" style="display:none;position:absolute;"><ul class="xg_subtab" style="display:block;" ><li style="list-style:none !important;display:block;text-align:left;"><a href="http://www.ateueatoa.com/search/label/ATEUSXTEISTAS" style="float:none;"><span>Ateus vs Te&iacute;stas</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="http://www.ateueatoa.com/search/label/TIRINHAS" style="float:none;"><span>Tirinhas</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="http://www.ateueatoa.com/search/label/TESTE" style="float:none;"><span>Teste</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="http://www.ateueatoa.com/search/label/INTERATIVIDADE" style="float:none;"><span>Interatividade</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="http://www.ateueatoa.com/search/label/ENQUETES" style="float:none;"><span>Enquetes</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="http://www.ateueatoa.com/search/label/CURIOSO" style="float:none;"><span>Poesias</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="http://www.ateueatoa.com/search/label/DICA%20DO%20LEITOR" style="float:none;"><span>Dica do Leitor</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="http://www.ateueatoa.com/search/label/PASTORES%20INCOMUNS" style="float:none;"><span>Pastores Incomuns</span></a></li></ul></div></li><li id="xg_tab_xn25" class="xg_subtab"><a href="http://grou.ps/ateueatoa"><span>Nova Rede Ateu e &agrave; toa</span></a></li></ul>
+
+                </div>
+            </div>
+            
+            <div id="xg_body">
+                
+                <div class="xg_column xg_span-16 xj_classic_canvas">
+                    <div  class='xg_colgroup first-child last-child'>
+<div _maxEmbedWidth="730" _columnCount="3"  class='xg_3col first-child'>
+<div  class='xg_colgroup first-child last-child'>
+<div _maxEmbedWidth="220" _columnCount="1"  id="xg_layout_column_1" class='xg_1col first-child'>
+								<div class="xg_module xg_module_network_description" data-module_name="description">
+									<div class="xg_module_head notitle"></div>
+									<div class="xg_module_body">
+										<p style="font-size:1.1em">
+                                            Atheist College &eacute; uma rede social										</p>
+									</div>
+								</div>
+<div class="xg_module music xg_module_music column_1" data-module_name="music">
+
+	<div class="xg_module_head">
+        <h2>M&uacute;sica</h2>
+    </div>
+        <div class="xg_module_body nopad">
+
+    <input type="hidden" name="musicPlayerHtml" class="musicPlayerHtml" value="&lt;embed class=&quot;xj_music_embed&quot; wmode=&quot;opaque&quot; src=&quot;http://static.ning.com/socialnetworkmain/widgets/music/swf/MusicPlayer.swf?v=201109302009&quot; FlashVars=&quot;configXmlUrl=http%3A%2F%2Fatheistcollege.ning.com%2Fmusic%2Fmusic%2FshowPlayerConfig%3FconfigVersion%3D4%26version%3DDEP-6948%253A24527da_24_24_5%26xn_auth%3Dno%26brand%3D0%26logoImage%3D0%26isInternalRequest%3D1&amp;playlistUrl=http%3A%2F%2Fatheistcollege.ning.com%2Fmusic%2Fplaylist%2Fshow%3Ffmt%3Dxspf%26id%3D4964896%253APlaylist%253A17%26mdate%3D2010-04-27T22%253A10%253A09.000Z&amp;playlistType=network&amp;networkUrl=http%3A%2F%2Fatheistcollege.ning.com%2F&amp;showPlaylist=1&amp;hideWatermark=1&amp;hideVisit=1&quot; width=&quot;100%&quot; height=&quot;295&quot; bgcolor=&quot;#CCFFFF&quot; scale=&quot;noscale&quot; allowscriptaccess=&quot;always&quot; type=&quot;application/x-shockwave-flash&quot; pluginspage=&quot;http://www.macromedia.com/go/getflashplayer&quot;&gt;&lt;/embed&gt;" />
+    <div class="musicplayer_visible xj_embed_container">
+                Carregando...    </div>
+    </div>
+
+</div>
+<div class="xg_module module_groups">
+    <div class="xg_module_head">
+        <h2>Grupos</h2>
+    </div>
+            <div class="xg_module_body body_list">
+                            <ul class="clist">
+                        <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://atheistcollege.ning.com/group/humorateu"><img  src="http://api.ning.com:80/files/BxrrnvrAy5j5idB20VtKNhoiRNvVTXcgJ2IWS83DHOg5fYeJlAcjBCkJ10wM08SjTkxAHfEec58gbg5W*D55Mp*OW*cP*HL8/Funny20Jesus1.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="Humor Ateu" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/group/humorateu">Humor Ateu</a></h3>
+            <p class="xg_lightfont">22 membros </p>
+                    </div>
+    </li>    <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://atheistcollege.ning.com/group/umsbadoqualquer"><img  src="http://api.ning.com:80/files/jRdvb-ZGWaoiXnOHKP*P*FXAdu-PLVRakcyQ02VM9d8Yo6QhBS0PsAiBu04NGyH9D-lPXr23lo63lrKiQe1WejCS18IgH55S/selo3.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="Um S&aacute;bado Qualquer" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/group/umsbadoqualquer">Um S&aacute;bado Qualquer</a></h3>
+            <p class="xg_lightfont">19 membros </p>
+                    </div>
+    </li>                </ul>
+                            <ul class="clist">
+                        <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://atheistcollege.ning.com/group/charlesdarwin"><img  src="http://api.ning.com:80/files/wrAtJrkZBq5Zd91BLIdE37il2LWWIZu0j7Qpzw*A5CdlRd2Hmfs4YYSXoiJPI7v*4kolnJord4e431*nNf8fh-4f52fjqdeR/darwin.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="Charles Darwin" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/group/charlesdarwin">Charles Darwin</a></h3>
+            <p class="xg_lightfont">15 membros </p>
+                    </div>
+    </li>    <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://atheistcollege.ning.com/group/abroumaigreja"><img  src="http://api.ning.com:80/files/YJ4jeSs08A4ykAH9mAdyEewcnnQIdmMEkuk5fhr9XtPafGDanb4ETzlWTpmofD0CrgdFmKaZ4nDlPj1S0grc-JQXpxjlkthx/igrejafull.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="Se tudo der errado, abro&hellip;" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/group/abroumaigreja">Se tudo der errado, abro&hellip;</a></h3>
+            <p class="xg_lightfont">10 membros </p>
+                    </div>
+    </li>                </ul>
+                            <ul class="clist">
+                        <li class="xg_lightborder last-child">
+        <div class="ib">
+                        <a href="http://atheistcollege.ning.com/group/meudeusthor"><img  src="http://api.ning.com:80/files/42vr-0pHrazO*nCGFxm9QtNirnSGnlNxLKjDuwaWoj4JOH*rQhMIErIUYLYywbuJa6ciL4JMo-U26zIUaNlEySQ75Iz3MxXB/thor.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="Meu deus &eacute; Thor" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/group/meudeusthor">Meu deus &eacute; Thor</a></h3>
+            <p class="xg_lightfont">8 membros </p>
+                    </div>
+    </li>                </ul>
+                    </div>
+                <div class="xg_module_foot">
+                <ul>
+                                            <li class="right"><a href="http://atheistcollege.ning.com/groups">Exibir todos</a></li>
+                                    </ul>
+            </div>
+        </div>
+<div class="xg_module  html_module module_text xg_reset" data-module_name="text"
+        >
+        <div class="xg_module_head"><h2>Envie-nos colabora&ccedil;&otilde;es por aqui</h2></div>
+            <div class="xg_module_body">
+            <embed wmode="opaque" src="http://www.megaupload.com/filebox/?t=0&amp;c=2&amp;u=650499811.834e3b6aef" type="application/x-shockwave-flash" width="220" height="135" _origwidth="232"></embed>
+        </div>
+            </div>
+&nbsp;</div>
+<div _maxEmbedWidth="492" _columnCount="2"  id="xg_layout_column_2" class='xg_2col last-child'>
+<div class="xg_module  html_module module_text xg_reset" data-module_name="text"
+        >
+        <div class="xg_module_head"><h2>ATHEIST COLLEGE MUDOU DE ENDERE&Ccedil;O, ACESSEM POR ESTE LINK</h2></div>
+            <div class="xg_module_body">
+            <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="http://grou.ps/ateueatoa" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/_dkU4qxLpZpo/TBAHfW584vI/AAAAAAAABCs/1wXulhSYr4I/s320/aeat.JPG"  /></a></td>
+</tr>
+<tr>
+<td class="tr-caption" style="text-align: center;"><i><b>Clique na imagem para conhecer e se inscrever na Rede do Ateu e à toa!</b></i></td>
+</tr>
+</tbody>
+</table>
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;"></div>
+<br />
+*******************************************************************************************************************<br />
+<br />
+O Ning, rede social que cria redes sociais tipo orkut e facebook, está com os dias contados da sua gratuidade.<br />
+O atual presidente do Ning, Jason Rosenthal que esta fazendo diversas mudanças na empresa, demitiu cerca de 70 pessoas, e deve cobrar pelo uso do sistema.<br />
+Segundo o TechCrunch, o presidente do Ning, anunciou que irá cancelar todas as contas gratuitas existentes no Ning, mas quem quizer manter a sua rede social, terá que migrar para contas Premium. A medida tem como se tornar independente ...<br />
+<p style="text-align: left;"><img src="http://api.ning.com:80/files/6gdqYVO*NToGPeTbecP65GnJKax87C*C6iv5FEDhfC4Ser*8E3o9*2DEYxhRhoVuokU*hmib1mGDI6CNGHQxfR6G*DZa9iA6/ningdeveloper1.png" alt=""  /></p>
+Aos usuários do Atheist College fica a pergunta:<br />
+Seria interessante que fizessemos um Fórum sobre Ciência e Ateísmo?<br />
+O que acha? Participaria?<br />
+<br />
+<br />
+<br />
+<br />
+<embed wmode="opaque" class="xg_slideshow" src="http://static.ning.com/socialnetworkmain/widgets/photo/slideshowplayer/slideshowplayer.swf?v=201004131104" quality="high" bgcolor="#" width="492" height="196" allowfullscreen="true" allowscriptaccess="always" scale="noscale" flashvars="feed_url=http%3A%2F%2Fatheistcollege.ning.com%2Fphoto%2Fphoto%2FslideshowFeed%3Fxn_auth%3Dno%26random%3D1%26mtime%3D1272594095%26x%3DpbxoPanyQHj85bQKI1uBk00TC0Q5AqGM%26x%3DpbxoPanyQHj85bQKI1uBk00TC0Q5AqGM&amp;autoplay=1&amp;config_url=http%3A%2F%2Fatheistcollege.ning.com%2Fphoto%2Fphoto%2FshowPlayerConfig%3Fx%3DpbxoPanyQHj85bQKI1uBk00TC0Q5AqGM%26xn_auth%3Dno%26feed_url%3Dhttp%253A%252F%252Fatheistcollege.ning.com%252Fphoto%252Fphoto%252FslideshowFeed%253Fxn_auth%253Dno%2526random%253D1%2526mtime%253D1272594095%2526x%253DpbxoPanyQHj85bQKI1uBk00TC0Q5AqGM%2526x%253DpbxoPanyQHj85bQKI1uBk00TC0Q5AqGM%26version%3DDEP-4285-1%253Aed41999_24_24_5&amp;slideshow_title=&amp;fullsize_url=http%3A%2F%2Fatheistcollege.ning.com%2Fphoto%2Fphoto%2Fslideshow%3Ffeed_url%3Dhttp%253A%252F%252Fatheistcollege.ning.com%252Fphoto%252Fphoto%252FslideshowFeed%253Fxn_auth%253Dno%2526random%253D1%2526mtime%253D1272594095%2526x%253DpbxoPanyQHj85bQKI1uBk00TC0Q5AqGM" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" _origwidth="500"></embed> <small><a href="http://atheistcollege.ning.com/photo/photo">Veja mais fotos como esta em <em>Atheist College</em></a></small>
+        </div>
+            </div>
+<div id="xg_network_activity" class="xg_module xg_module_activity indented_content   column_2"
+    dojotype="ActivityModule"
+    data-module_name="activity"
+    _isProfile=""
+    _isAdmin=""
+    _columnCount="2"
+    _maxEmbedWidth="492"
+    _embedLocatorId="101/homepage/index"
+
+
+        _delDeleteLinkText="Excluir"
+    _delItemUrl="http://atheistcollege.ning.com/activity/log/remove"
+    _delIconTooltip="Remover"  >
+    <div class="xg_module_head">
+        <h2>Últimas atividades</h2>
+    </div>
+    <div class="xg_module_body ">
+            <div class="module module-feed">
+            <div id="feed-7290e714c60025704b66748da934d88b" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/GabryelCordeirodeLima?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/ZQkjaKB*LgVgznIxMxXktAHmt2BciFzGocf1P-CMLQN2qbqjNppBiq*cJFfhImiFR9SCaxz-wxHWkTXC8UzcE96qXOpxglLw/222371634_e760cb7e29.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-story-body dy-clearfix"><h3 class="feed-story-title"><a href="http://atheistcollege.ning.com/xn/detail/4964896:Group:2425?xg_source=activity">Charles Darwin</a></h3><div class="rich"><div class="rich-thumb"><a  href="http://atheistcollege.ning.com/xn/detail/4964896:Group:2425?xg_source=activity" class=""><img src="http://api.ning.com/files/wrAtJrkZBq5Zd91BLIdE37il2LWWIZu0j7Qpzw*A5CdlRd2Hmfs4YYSXoiJPI7v*4kolnJord4e431*nNf8fh-4f52fjqdeR/darwin.jpg?crop=1%3A1&amp;width=64" width="64"  alt="Miniatura" /></a></div><div class="rich-detail"><div class="rich-excerpt">Graças ao nosso deus Darwin podemos sentir como é bom viver livre sem historias de fadas que conta a criação das coisas.</div></div></div></div>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/GabryelCordeirodeLima?xg_source=activity">Gabryel Cordeiro de Lima</a> entrou no grupo de <a href="http://atheistcollege.ning.com/profile/ALineSales?xg_source=activity">ALine Sales</a></span>
+                                                            <span class="event-info-timestamp xg_lightfont">11 Set, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                                    <a href="http://atheistcollege.ning.com/group/charlesdarwin#comments" data-page-type="main" data-contentid="4964896:Group:2425" data-user-avatar-url="" data-user-profile-url="" data-user-fullname=""  class="xg_sprite xg_sprite-comment">
+                <span class='comments-number'>
+                    <span class='xj_comment_count'>0</span>
+                    <span class='details'>Comentários</span>
+                </span>
+                </a>
+                            </div>
+            </div><div id="feed-a12c68eec5ddcd1507cc14c8ce2ebf45" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/GabryelCordeirodeLima?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/ZQkjaKB*LgVgznIxMxXktAHmt2BciFzGocf1P-CMLQN2qbqjNppBiq*cJFfhImiFR9SCaxz-wxHWkTXC8UzcE96qXOpxglLw/222371634_e760cb7e29.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/GabryelCordeirodeLima?xg_source=activity">Gabryel Cordeiro de Lima</a> <a href="http://atheistcollege.ning.com/xn/detail/4964896:Comment:3724?xg_source=activity">respondeu</a> à discussão '<a href="http://atheistcollege.ning.com/xn/detail/4964896:Topic:3426?xg_source=activity">Voc&ecirc; atende Testemunhas de Jeov&aacute;, quando visitam sua casa? O que acha desse tipo de tentativa de arrebanhar novos adeptos?</a>' de <a href="http://atheistcollege.ning.com/profile/Fabenrik?xg_source=activity">Fabenrik</a></span>
+                    <div class="content-comment"><div class="xg_sprite feed-quote"></div><em>Quando eles vêem aqui em casa, vou e falo que não acredito em Deus, e portanto não quero ir na igreja deles por que gosto do meu dinheirinho rsrsrsrs.
+
+Ai Eles dizem "Sangue de Jesus Tem Poder".
+
+é engraçado,
+
+Mas digo de uma forma que não denigre a…</em><span class="xg_sprite feed-endquote"></span></div>                                        <span class="event-info-timestamp xg_lightfont">9 Set, 2010</span>
+                </div>
+            </div><div id="feed-a5aaa5982bbbc71ae9a7afcc1310cef5" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/GabryelCordeirodeLima?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/ZQkjaKB*LgVgznIxMxXktAHmt2BciFzGocf1P-CMLQN2qbqjNppBiq*cJFfhImiFR9SCaxz-wxHWkTXC8UzcE96qXOpxglLw/222371634_e760cb7e29.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/GabryelCordeirodeLima?xg_source=activity">Gabryel Cordeiro de Lima</a> é agora um membro de Atheist College</span>
+                                                            <span class="event-info-timestamp xg_lightfont">9 Set, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                    <a class="xg_sprite xg_sprite-megaphone" href="/profile/GabryelCordeirodeLima?xg_source=activity#add_comment">Dê as boas-vindas a eles!</a>                </div>
+            </div><div id="feed-581b795f8602a6826a211cca77b7bf5c" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/PauloISTJ?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/EjKRHMlEMYBHbsBAexC*H*7w2fD0IBMO4L63ixlUAagTlzrtmvOhtRaucVEH9Mwh-2uF2vFMsySGRX4eiXzfdN*vVid8xaUv/asdsad.PNG?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/PauloISTJ?xg_source=activity">Paulo ISTJ</a> <a href="http://atheistcollege.ning.com/xn/detail/4964896:Comment:3709?xg_source=activity">respondeu</a> à discussão '<a href="http://atheistcollege.ning.com/xn/detail/4964896:Topic:3318?xg_source=activity">Se fosse dono de uma faculdade, contrataria um professor criacionista?</a>' de <a href="http://atheistcollege.ning.com/profile/Fabenrik?xg_source=activity">Fabenrik</a></span>
+                    <div class="content-comment"><div class="xg_sprite feed-quote"></div><em>Se fosse dono de uma faculdade e tivesse que completar o quadro de professores, e tivesse um professor criacionista, contrataria-o?
+Sim
+E se tivesse a opção entre dois igualmente bons em referências?
+Ai sim optaria pelo ateu. É mais facil de lidar.…</em><span class="xg_sprite feed-endquote"></span></div>                                        <span class="event-info-timestamp xg_lightfont">8 Set, 2010</span>
+                </div>
+            </div><div id="feed-055ad07bf2a8a442add26c574ce351f7" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/PauloISTJ?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/EjKRHMlEMYBHbsBAexC*H*7w2fD0IBMO4L63ixlUAagTlzrtmvOhtRaucVEH9Mwh-2uF2vFMsySGRX4eiXzfdN*vVid8xaUv/asdsad.PNG?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/PauloISTJ?xg_source=activity">Paulo ISTJ</a> <a href="http://atheistcollege.ning.com/xn/detail/4964896:Comment:3705?xg_source=activity">respondeu</a> à discussão '<a href="http://atheistcollege.ning.com/xn/detail/4964896:Topic:1983?xg_source=activity">Como sua fam&iacute;lia v&ecirc; seu ate&iacute;smo? Aceita? N&atilde;o aceita? Indiferente? Uns sim, outros n&atilde;o?</a>' de <a href="http://atheistcollege.ning.com/profile/Fabenrik?xg_source=activity">Fabenrik</a></span>
+                    <div class="content-comment"><div class="xg_sprite feed-quote"></div><em>Sou o único aqui que sofro discriminação ?
+Pro meu pai não tem dessa de ser ateu, pelo menos não enquanto não trabalhar ou fizer 18. Por isso nem discutor, nao me causa nenhum mal 'acreditar' pelo menos pra ele eu acredito.
+
+Meus amigos. Alguns dize…</em><span class="xg_sprite feed-endquote"></span></div>                                        <span class="event-info-timestamp xg_lightfont">8 Set, 2010</span>
+                </div>
+            </div><div id="feed-6eb229b4a12a4c70933c071fb09a9a51" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/PauloISTJ?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/EjKRHMlEMYBHbsBAexC*H*7w2fD0IBMO4L63ixlUAagTlzrtmvOhtRaucVEH9Mwh-2uF2vFMsySGRX4eiXzfdN*vVid8xaUv/asdsad.PNG?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/PauloISTJ?xg_source=activity">Paulo ISTJ</a> <a href="http://atheistcollege.ning.com/xn/detail/4964896:Comment:3703?xg_source=activity">respondeu</a> à discussão '<a href="http://atheistcollege.ning.com/xn/detail/4964896:Topic:3426?xg_source=activity">Voc&ecirc; atende Testemunhas de Jeov&aacute;, quando visitam sua casa? O que acha desse tipo de tentativa de arrebanhar novos adeptos?</a>' de <a href="http://atheistcollege.ning.com/profile/Fabenrik?xg_source=activity">Fabenrik</a></span>
+                    <div class="content-comment"><div class="xg_sprite feed-quote"></div><em>Essa de debate nem rola cara, eles já apelam pro "vc nao tem fé", "vc nao tem capacidade ainda pra amar cristo" e essas coisas lógicas no mundo deles.</em><span class="xg_sprite feed-endquote"></span></div>                                        <span class="event-info-timestamp xg_lightfont">8 Set, 2010</span>
+                </div>
+            </div><div id="feed-dad27b84afad708c06fb0ae7a9a3c091" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/PauloISTJ?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/EjKRHMlEMYBHbsBAexC*H*7w2fD0IBMO4L63ixlUAagTlzrtmvOhtRaucVEH9Mwh-2uF2vFMsySGRX4eiXzfdN*vVid8xaUv/asdsad.PNG?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/PauloISTJ?xg_source=activity">Paulo ISTJ</a> <a href="http://atheistcollege.ning.com/xn/detail/4964896:Comment:3701?xg_source=activity">respondeu</a> à discussão '<a href="http://atheistcollege.ning.com/xn/detail/4964896:Topic:3426?xg_source=activity">Voc&ecirc; atende Testemunhas de Jeov&aacute;, quando visitam sua casa? O que acha desse tipo de tentativa de arrebanhar novos adeptos?</a>' de <a href="http://atheistcollege.ning.com/profile/Fabenrik?xg_source=activity">Fabenrik</a></span>
+                    <div class="content-comment"><div class="xg_sprite feed-quote"></div><em>Ja atendi, geralmente é meu momento away no jogo.
+Não tenho nada contra eles, tirando que ele nao "podem" doar sangue, burrice tem limite e eles morrem por isso.</em><span class="xg_sprite feed-endquote"></span></div>                                        <span class="event-info-timestamp xg_lightfont">8 Set, 2010</span>
+                </div>
+            </div><div id="feed-7680364f77068b3bb8ccd98770ca9278" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/PauloISTJ?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/EjKRHMlEMYBHbsBAexC*H*7w2fD0IBMO4L63ixlUAagTlzrtmvOhtRaucVEH9Mwh-2uF2vFMsySGRX4eiXzfdN*vVid8xaUv/asdsad.PNG?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-story-body dy-clearfix"><h3 class="feed-story-title"><a href="http://atheistcollege.ning.com/xn/detail/4964896:Group:399?xg_source=activity">Um S&aacute;bado Qualquer</a></h3><div class="rich"><div class="rich-thumb"><a  href="http://atheistcollege.ning.com/xn/detail/4964896:Group:399?xg_source=activity" class=""><img src="http://api.ning.com/files/jRdvb-ZGWaoiXnOHKP*P*FXAdu-PLVRakcyQ02VM9d8Yo6QhBS0PsAiBu04NGyH9D-lPXr23lo63lrKiQe1WejCS18IgH55S/selo3.jpg?crop=1%3A1&amp;width=64" width="64"  alt="Miniatura" /></a></div><div class="rich-detail"><div class="rich-excerpt">Comunidade dedicada ao blog Um Sábado Qualquer</div></div></div></div>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/PauloISTJ?xg_source=activity">Paulo ISTJ</a> entrou no grupo de <a href="http://atheistcollege.ning.com/profile/Fabenrik?xg_source=activity">Fabenrik</a></span>
+                                                            <span class="event-info-timestamp xg_lightfont">8 Set, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                                    <a href="http://atheistcollege.ning.com/group/umsbadoqualquer#comments" data-page-type="main" data-contentid="4964896:Group:399" data-user-avatar-url="" data-user-profile-url="" data-user-fullname=""  class="xg_sprite xg_sprite-comment">
+                <span class='comments-number'>
+                    <span class='xj_comment_count'>1</span>
+                    <span class='details'>Comentar</span>
+                </span>
+                </a>
+                            </div>
+            </div><div id="feed-bce0f5b14f4260e4434e721da1325f39" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/PauloISTJ?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/EjKRHMlEMYBHbsBAexC*H*7w2fD0IBMO4L63ixlUAagTlzrtmvOhtRaucVEH9Mwh-2uF2vFMsySGRX4eiXzfdN*vVid8xaUv/asdsad.PNG?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-story-body dy-clearfix"><h3 class="feed-story-title"><a href="http://atheistcollege.ning.com/xn/detail/4964896:Group:995?xg_source=activity">Humor Ateu</a></h3><div class="rich"><div class="rich-thumb"><a  href="http://atheistcollege.ning.com/xn/detail/4964896:Group:995?xg_source=activity" class=""><img src="http://api.ning.com/files/BxrrnvrAy5j5idB20VtKNhoiRNvVTXcgJ2IWS83DHOg5fYeJlAcjBCkJ10wM08SjTkxAHfEec58gbg5W*D55Mp*OW*cP*HL8/Funny20Jesus1.jpg?crop=1%3A1&amp;width=64" width="64"  alt="Miniatura" /></a></div><div class="rich-detail"><div class="rich-excerpt">Comunidade dedicada ao blog <a href="http://humorateu.blogspot.com">http://humorateu.blogspot.com</a></div></div></div></div>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/PauloISTJ?xg_source=activity">Paulo ISTJ</a> entrou no grupo de <a href="http://atheistcollege.ning.com/profile/ThiagoGiovanella?xg_source=activity">Thiago Giovanella</a></span>
+                                                            <span class="event-info-timestamp xg_lightfont">8 Set, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                                    <a href="http://atheistcollege.ning.com/group/humorateu#comments" data-page-type="main" data-contentid="4964896:Group:995" data-user-avatar-url="" data-user-profile-url="" data-user-fullname=""  class="xg_sprite xg_sprite-comment">
+                <span class='comments-number'>
+                    <span class='xj_comment_count'>1</span>
+                    <span class='details'>Comentar</span>
+                </span>
+                </a>
+                            </div>
+            </div><div id="feed-e1d00647d808d8c18e9b0cd3cdc9f78c" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/PauloISTJ?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/EjKRHMlEMYBHbsBAexC*H*7w2fD0IBMO4L63ixlUAagTlzrtmvOhtRaucVEH9Mwh-2uF2vFMsySGRX4eiXzfdN*vVid8xaUv/asdsad.PNG?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-story-body dy-clearfix"><h3 class="feed-story-title"><a href="http://atheistcollege.ning.com/xn/detail/4964896:Group:2425?xg_source=activity">Charles Darwin</a></h3><div class="rich"><div class="rich-thumb"><a  href="http://atheistcollege.ning.com/xn/detail/4964896:Group:2425?xg_source=activity" class=""><img src="http://api.ning.com/files/wrAtJrkZBq5Zd91BLIdE37il2LWWIZu0j7Qpzw*A5CdlRd2Hmfs4YYSXoiJPI7v*4kolnJord4e431*nNf8fh-4f52fjqdeR/darwin.jpg?crop=1%3A1&amp;width=64" width="64"  alt="Miniatura" /></a></div><div class="rich-detail"><div class="rich-excerpt">Graças ao nosso deus Darwin podemos sentir como é bom viver livre sem historias de fadas que conta a criação das coisas.</div></div></div></div>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/PauloISTJ?xg_source=activity">Paulo ISTJ</a> entrou no grupo de <a href="http://atheistcollege.ning.com/profile/ALineSales?xg_source=activity">ALine Sales</a></span>
+                                                            <span class="event-info-timestamp xg_lightfont">8 Set, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                                    <a href="http://atheistcollege.ning.com/group/charlesdarwin#comments" data-page-type="main" data-contentid="4964896:Group:2425" data-user-avatar-url="" data-user-profile-url="" data-user-fullname=""  class="xg_sprite xg_sprite-comment">
+                <span class='comments-number'>
+                    <span class='xj_comment_count'>0</span>
+                    <span class='details'>Comentários</span>
+                </span>
+                </a>
+                            </div>
+            </div><div id="feed-a6103463af147ca5dcf4088304bc6143" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/Peggotty?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/tydu-zdN11nMmG6yBO3n53KBOrpHik6s0s0tYutNAk-VB8BwYMgA7M1QKndH5sFNqGagEDFZOPaHLuyohSfYRiDX94L2wxHu/364pxAlistnin_to_the_witchtales_at_Annie_tells_about.png?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/Peggotty?xg_source=activity">Peggotty</a> é agora um membro de Atheist College</span>
+                                                            <span class="event-info-timestamp xg_lightfont">28 Ago, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                    <a class="xg_sprite xg_sprite-megaphone" href="/profile/Peggotty?xg_source=activity#add_comment">Dê as boas-vindas a eles!</a>                </div>
+            </div><div id="feed-b6ff706fc6284a6ac7e7e3f683870401" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/JOSECARLOSRIBEIROGAMBAROTTO?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/8Hk*7aAawXPJMuF*B7UaLwCF9osMCDcY-y9tjvIZUVsf7qbpXn30eSU5fn83rqk5dcx8muLzUm3nZCkeGpe34GoYlY8O2qQ3/OgAAAMePghqfx_5Yll2Yu38J93PQzaxjgMXeepgxRY7o3x1N8pmryFULu4MRQzmk1zoeCcgR1R868dR1OzI_7v29E4Am1T1UGx16XXMSM9UbL8C3FQw_m4kSRLm.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/JOSECARLOSRIBEIROGAMBAROTTO?xg_source=activity">JOS&Eacute; CARLOS  GAMBAROTTO</a> é agora um membro de Atheist College</span>
+                                                            <span class="event-info-timestamp xg_lightfont">27 Ago, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                    <a class="xg_sprite xg_sprite-megaphone" href="/profile/JOSECARLOSRIBEIROGAMBAROTTO?xg_source=activity#add_comment">Dê as boas-vindas a eles!</a>                </div>
+            </div><div id="feed-629d83aa043e33d6dc7fc4be5da43093" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/CarlosAugustusPiresdeCarvalh?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/P6vCqz206a2r-ys*kZWvVhUy34qFKXodTigoBHy0RbCL1O7vKHcJ7I076nBQv*rcd0KUpTZYv8uP0QQsYqTqPNbW5azwxPEs/Z1oaxwjc.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/CarlosAugustusPiresdeCarvalh?xg_source=activity">Carlos Augustus</a> <a href="http://atheistcollege.ning.com/xn/detail/4964896:Comment:3689?xg_source=activity">respondeu</a> à discussão '<a href="http://atheistcollege.ning.com/xn/detail/4964896:Topic:963?xg_source=activity">Conte como &quot;virou&quot; ateu.</a>' de <a href="http://atheistcollege.ning.com/profile/icaronunes?xg_source=activity">icaro nunes @icaronunes</a></span>
+                    <div class="content-comment"><div class="xg_sprite feed-quote"></div><em>Bem, para começar digo-lhes que sou um ateu recente, só consegui assumir meu ateísmo, de fato, há, exatamente, uma semana devido ao preconceito e a intolerância.
+Fui criado na fé Católica Apostólica Romana, todo sábado na catequese. O primeiro quest…</em><span class="xg_sprite feed-endquote"></span></div>                                        <span class="event-info-timestamp xg_lightfont">13 Ago, 2010</span>
+                </div>
+            </div><div id="feed-0e80fdf5887e3c34c86ea30d85d5c4e6" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/CarlosAugustusPiresdeCarvalh?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/P6vCqz206a2r-ys*kZWvVhUy34qFKXodTigoBHy0RbCL1O7vKHcJ7I076nBQv*rcd0KUpTZYv8uP0QQsYqTqPNbW5azwxPEs/Z1oaxwjc.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/CarlosAugustusPiresdeCarvalh?xg_source=activity">Carlos Augustus</a> é agora um membro de Atheist College</span>
+                                                            <span class="event-info-timestamp xg_lightfont">13 Ago, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                    <a class="xg_sprite xg_sprite-megaphone" href="/profile/CarlosAugustusPiresdeCarvalh?xg_source=activity#add_comment">Dê as boas-vindas a eles!</a>                </div>
+            </div><div id="feed-c667273abbaaeccceb17806c55a39c42" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/DaniloBoatodaSilva?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/sPcliImUDM3ioB*TxrhhcgfL54s69GOq6shWCYyw36HJgBSjEx5iPzw176NY0urBFJR4QQwk3NOb7GXqHFSGMXxedZp3Euq-/11862_103131076379268_100000471286864_82383_5019664_n.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/DaniloBoatodaSilva?xg_source=activity">Danilo Boato da Silva</a> é agora um membro de Atheist College</span>
+                                                            <span class="event-info-timestamp xg_lightfont">11 Ago, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                    <a class="xg_sprite xg_sprite-megaphone" href="/profile/DaniloBoatodaSilva?xg_source=activity#add_comment">Dê as boas-vindas a eles!</a>                </div>
+            </div><div id="feed-9f8cd30260dfc43b6ac8912ec42bcfd1" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/HemersonMiranda?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/8BazO3OBQc8hw50DOjejLeagpyE0sHIZamHKnxBLCV8Xh1-4uMo1JWnVbJroGp0BQXvgR14e9lxl*9EL5-*-jc2098qvQHrH/the_it_crowd_roy.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/HemersonMiranda?xg_source=activity">Hemerson Miranda</a> é agora um membro de Atheist College</span>
+                                                            <span class="event-info-timestamp xg_lightfont">2 Ago, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                    <a class="xg_sprite xg_sprite-megaphone" href="/profile/HemersonMiranda?xg_source=activity#add_comment">Dê as boas-vindas a eles!</a>                </div>
+            </div><div id="feed-049c0507d06946acb2160ee52445489c" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/RobertdaSilvaSantos?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/iVt-wMb1tOIKwB5eO5akfCArt9QYjaMDP3OpxzX7jdFmn-xBUQNothOlVlr3FylifDzLdQSa3YSJG*rLsehmJlKCce2kauch/skull.gif?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/RobertdaSilvaSantos?xg_source=activity">Robert da Silva Santos</a> é agora um membro de Atheist College</span>
+                                                            <span class="event-info-timestamp xg_lightfont">30 Jul, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                    <a class="xg_sprite xg_sprite-megaphone" href="/profile/RobertdaSilvaSantos?xg_source=activity#add_comment">Dê as boas-vindas a eles!</a>                </div>
+            </div><div id="feed-0c31adfadc13199444e96b14a4207936" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/ThiagoSilvaFreitasOliveira?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/tScLg6Azec88o46WAjVgtattTZGKD8GkP0nvLdKl5M8XGyEKWZ40e7sP-*oM6TMQN5Z*f*Sq2e-lJlypBGOOFQMv5iGtPbJO/eddie_blood_1024.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-story-body dy-clearfix"><h3 class="feed-story-title"><a href="http://atheistcollege.ning.com/xn/detail/4964896:BlogPost:3663?xg_source=activity">Sem t&iacute;tulo</a></h3><div class="rich"><div class="rich-detail"><div class="rich-excerpt"><div data-contentId="4964896:BlogPost:3663">Confiram o blog: <a href="http://sphodras.blogspot.com/">http://sphodras.blogspot.com/</a> Não trato somente de ateísmo, mas é uma forte vertente em meus escritos no blog, que caminha aos poucos!Comentários e críticas sempre bem vindos!Thiago Oliveira<a class="continue-link" href="http://atheistcollege.ning.com/profiles/blogs/confiram-o-blog-a">Ver mais...</a></div></div></div></div></div>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont">Posts no blog por <a href="http://atheistcollege.ning.com/profile/ThiagoSilvaFreitasOliveira?xg_source=activity">Thiago Silva Freitas Oliveira</a></span>
+                                                            <span class="event-info-timestamp xg_lightfont">27 Jul, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                                    <a href="http://atheistcollege.ning.com/profiles/blogs/confiram-o-blog-a#comments" data-page-type="main" data-contentid="4964896:BlogPost:3663" data-user-avatar-url="" data-user-profile-url="" data-user-fullname=""  class="xg_sprite xg_sprite-comment xj_commentable">
+                <span class='comments-number'>
+                    <span class='xj_comment_count'>0</span>
+                    <span class='details'>Comentários</span>
+                </span>
+                </a>
+                            </div>
+            </div><div id="feed-b3f80bcb5dd5262c9f9c82e5cf80272b" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/ThiagoSilvaFreitasOliveira?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/tScLg6Azec88o46WAjVgtattTZGKD8GkP0nvLdKl5M8XGyEKWZ40e7sP-*oM6TMQN5Z*f*Sq2e-lJlypBGOOFQMv5iGtPbJO/eddie_blood_1024.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/ThiagoSilvaFreitasOliveira?xg_source=activity">Thiago Silva Freitas Oliveira</a> <a href="http://atheistcollege.ning.com/xn/detail/4964896:Comment:3662?xg_source=activity">comentou</a> a página '<a href="http://atheistcollege.ning.com/xn/detail/4964896:Page:2027?xg_source=activity">Links interessantes</a>' de <a href="http://atheistcollege.ning.com/profile/Fabenrik?xg_source=activity">Fabenrik</a></span>
+                    <div class="content-comment"><div class="xg_sprite feed-quote"></div><em><a rel="nofollow" href="http://sphodras.blogspot.com/" target="_blank">http://sphodras.blogspot.com/</a></em><span class="xg_sprite feed-endquote"></span></div>                                        <span class="event-info-timestamp xg_lightfont">27 Jul, 2010</span>
+                </div>
+            </div><div id="feed-a71ecff8229e87f572f1f10e30fc8144" class="feed-story  xg_separator"><div class='activity-close-wrapper'></div><a href="/profile/ThiagoSilvaFreitasOliveira?xg_source=activity"><img class=" feed-avatar" width="48" height="48" alt="Ícone do perfil" src="http://api.ning.com:80/files/tScLg6Azec88o46WAjVgtattTZGKD8GkP0nvLdKl5M8XGyEKWZ40e7sP-*oM6TMQN5Z*f*Sq2e-lJlypBGOOFQMv5iGtPbJO/eddie_blood_1024.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a>                <div class="feed-event-info">
+                    <span class="event-info-action xg_lightfont"><a href="http://atheistcollege.ning.com/profile/ThiagoSilvaFreitasOliveira?xg_source=activity">Thiago Silva Freitas Oliveira</a> é agora um membro de Atheist College</span>
+                                                            <span class="event-info-timestamp xg_lightfont">27 Jul, 2010</span>
+                </div>
+                            <div class="feed-reactions">
+                    <a class="xg_sprite xg_sprite-megaphone" href="/profile/ThiagoSilvaFreitasOliveira?xg_source=activity#add_comment">Dê as boas-vindas a eles!</a>                </div>
+            </div>        </div>
+    </div>
+        <div class="xg_module_foot">
+        <ul>            <li class="left"><a class="xg_icon xg_icon-rss" href="http://atheistcollege.ning.com/activity/log/list?fmt=rss">RSS</a></li>
+        </ul>
+    </div></div>
+<div class="xg_module module_photo" data-module_name="photo">
+    <div class="xg_module_head">
+        <h2>Fotos</h2>
+    </div>
+    <div class="xg_module_body body_list">
+                                    <ul class="clist">
+                        <li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/hawking-1?context=latest"><img width="35" height="139" src="http://api.ning.com:80/files/ooPRsqiJrtfLrYEZ9fv3x6KnEljdKHd-vmcpOsc802pZrwGNlS2mL8WR0QGCDC9HzBaQ1tzLCao3mspQGX-5Ql4m1UOj378U/hawking.jpg?width=35&amp;height=139" alt="hawking" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/hawking-1?context=latest">hawking</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/icaronunes" class='xg_lightfont'>icaro nunes @icaronunes</a></span>
+                    </p>
+    </div>
+</div>
+</li><li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/23424234-1?context=latest"><img width="112" height="139" src="http://api.ning.com:80/files/Wfnz6BkxpnV2HbiaeLmEfFnv2SSuqBGbwKkYvb4fp0dCaKk6TUaK3efvuRWuWVtp-dJIGOGa-UYDVXOATkyfLBnFiitzrhwF/23424234.jpg?width=112&amp;height=139" alt="23424234" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/23424234-1?context=latest">23424234</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/LeonardoAlmeidaLimaMeks" class='xg_lightfont'>Leonardo (Mek&#039;s)</a></span>
+                    </p>
+    </div>
+</div>
+</li><li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/ogaaadw3i6egsnqytyacut6qtrhbsq-1?context=latest"><img width="139" height="37" src="http://api.ning.com:80/files/UKR6RTdFcZnMaMYOnAY0uZ0C4URXQFi0ApC725aJYTEN6a2gSXU1xcVG7RzwpaRefc-X2x4P6l8w7h0ywMyZXNBBz9plTo-S/OgAAADw3I6EgsNQYT_yACuT6QTRhbsQFFVWvlUD5i0emA0NxBFVjMjabRNNf0kb3m7KipmtRR3OTb9qvkzoYvrjTAAm1T1UNWKZPWHvz4Gx2CoVjADya3gezKg.jpg?width=139&amp;height=37" alt="OgAAADw3I6EgsNQYT_yACuT6QTRhbsQFFVWvlUD5i0emA0NxBFVjMjabRNNf0kb3m7KipmtRR3OTb9qvkzoY-vrjT-AAm1T1UNWKZPWHvz4Gx2CoVjADya3gezKg" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/ogaaadw3i6egsnqytyacut6qtrhbsq-1?context=latest">OgAAADw3I6EgsNQYT_yACuT6QTRhbsQFFVWvlUD5i0emA0NxBFVjMjabRNNf0kb3m7KipmtRR3OTb9qvkzoY-vrjT-AAm1T1UNWKZPWHvz4Gx2CoVjADya3gezKg</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/LeonardoAlmeidaLimaMeks" class='xg_lightfont'>Leonardo (Mek&#039;s)</a></span>
+                    </p>
+    </div>
+</div>
+</li>                    </ul>
+                                    <ul class="clist">
+                        <li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/188351230583570405140360830430-1?context=latest"><img width="139" height="104" src="http://api.ning.com:80/files/jTbP6zIspOAnHSaK6K9SH0I*ekUj*GLyU8DNac-wjh59Hh3lOHtM3rPJBE3zHSQcCiEAijMndZSLgZsIo7NPx*7jd*hfgV8H/18835_1230583570405_1403608304_30641631_1040723_n.jpg?width=139&amp;height=104" alt="18835_1230583570405_1403608304_30641631_1040723_n" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/188351230583570405140360830430-1?context=latest">18835_1230583570405_1403608304_30641631_1040723_n</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/Alexsanderalvesolartecheavero" class='xg_lightfont'>Alexsander A, Olartechea Veron</a></span>
+                    </p>
+    </div>
+</div>
+</li><li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/188351230583730409140360830430-1?context=latest"><img width="139" height="104" src="http://api.ning.com:80/files/t8w1lwHalGUggvZIZVnzQ7pFQeAsyRmzXzdNQgkLKX3xu8AzFnld7IJ43mrvfKp13o1rxqjKM8Huqc-VLg4kUFmTX9kg10Uw/18835_1230583730409_1403608304_30641635_2655058_n.jpg?width=139&amp;height=104" alt="18835_1230583730409_1403608304_30641635_2655058_n" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/188351230583730409140360830430-1?context=latest">18835_1230583730409_1403608304_30641635_2655058_n</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/Alexsanderalvesolartecheavero" class='xg_lightfont'>Alexsander A, Olartechea Veron</a></span>
+                    </p>
+    </div>
+</div>
+</li><li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/188351230583690408140360830430-1?context=latest"><img width="139" height="104" src="http://api.ning.com:80/files/xlt*MKQH8NUgFbrpTgYKcTb0coaH9S88wJI8EUKu-Vz3LF5Ag4RNOUlPS24DWCVg65FdQS2A4ChYgPY8VrZsPNXmNtwJ*tku/18835_1230583690408_1403608304_30641634_4050836_n.jpg?width=139&amp;height=104" alt="18835_1230583690408_1403608304_30641634_4050836_n" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/188351230583690408140360830430-1?context=latest">18835_1230583690408_1403608304_30641634_4050836_n</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/Alexsanderalvesolartecheavero" class='xg_lightfont'>Alexsander A, Olartechea Veron</a></span>
+                    </p>
+    </div>
+</div>
+</li>                    </ul>
+                                    <ul class="clist">
+                        <li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/188351230583650407140360830430-1?context=latest"><img width="139" height="104" src="http://api.ning.com:80/files/H9XqORi6j8Zg2RTN597759Wk*NO7IYUINmCnLRu2YXLdeHGfZO4Y8HlVFBHMiehRxdL56RpsLwNbxJpNqOpcrjfT*JZqDbKQ/18835_1230583650407_1403608304_30641633_4759921_n.jpg?width=139&amp;height=104" alt="18835_1230583650407_1403608304_30641633_4759921_n" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/188351230583650407140360830430-1?context=latest">18835_1230583650407_1403608304_30641633_4759921_n</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/Alexsanderalvesolartecheavero" class='xg_lightfont'>Alexsander A, Olartechea Veron</a></span>
+                    </p>
+    </div>
+</div>
+</li><li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/188351230583610406140360830430-1?context=latest"><img width="104" height="139" src="http://api.ning.com:80/files/bnZChomDhGD7WqruHGbbuifkdwrhjzEB5M4tsVjE461V4GxcwbQQBHFpzBgKr7FbfAeMxRv8FtNfGZmBzRtT-Jju1-uY8NTc/18835_1230583610406_1403608304_30641632_958697_n.jpg?width=104&amp;height=139" alt="18835_1230583610406_1403608304_30641632_958697_n" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/188351230583610406140360830430-1?context=latest">18835_1230583610406_1403608304_30641632_958697_n</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/Alexsanderalvesolartecheavero" class='xg_lightfont'>Alexsander A, Olartechea Veron</a></span>
+                    </p>
+    </div>
+</div>
+</li><li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/robertlagdon-1?context=latest"><img width="56" height="139" src="http://api.ning.com:80/files/jl97PfTY4ohaZV-uuDvkHUWeoo1wzjI8Cui5vw00XIk-VsUtEMn-L0QRNrp6FrwlPeD8*mvdMFJG83wHD06wjblF1XBuA*yj/robertlagdon.jpg?width=56&amp;height=139" alt="robert-lagdon" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/robertlagdon-1?context=latest">robert-lagdon</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/LeonardoAlmeidaLimaMeks" class='xg_lightfont'>Leonardo (Mek&#039;s)</a></span>
+                    </p>
+    </div>
+</div>
+</li>                    </ul>
+                                    <ul class="clist">
+                        <li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/system-of-a-down-a-banda?context=latest"><img width="139" height="104" src="http://api.ning.com:80/files/5nw4FKfNX*fAQxpeyNbSOfMl0l-xLvjSf7FxqLkvKc4isuhjSZFKBl7GBVxj6-DDbudBDtqtnVZXGXs*Ai3J*kRD3c7mrYMW/SYSTEM_OF_A_DOWN_5.jpg?width=139&amp;height=104" alt="SYSTEM OF A DOWN A BANDA" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/system-of-a-down-a-banda?context=latest">SYSTEM OF A DOWN A BANDA</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/ALineSales" class='xg_lightfont'>ALine Sales</a></span>
+                    </p>
+    </div>
+</div>
+</li><li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/favorita-1?context=latest"><img width="139" height="104" src="http://api.ning.com:80/files/8VXHzCt0CVU9cJ4bGWF0ukVQK4WdP4SUN-ZnwYgkPCSgqhbsYbAmpQ5uxWM2dVWBwRG2bTL44U22xjL78aTetn-piTH79bTV/alinefavorites.jpg?width=139&amp;height=104" alt="FAVORITA" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/favorita-1?context=latest">FAVORITA</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/ALineSales" class='xg_lightfont'>ALine Sales</a></span>
+                    </p>
+    </div>
+</div>
+</li><li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/luva-do-fred?context=latest"><img width="139" height="104" src="http://api.ning.com:80/files/5nw4FKfNX*cMDwJbKGnxWeYOvPxChIjvpgn76UCuRlVfoCRfE5W3RVa4deJiaijySBc-4-FJ5i50lCdwp3YRbRMzx15-BSNE/76803.jpg?width=139&amp;height=104" alt="LUVA DO FRED" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/luva-do-fred?context=latest">LUVA DO FRED</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/ALineSales" class='xg_lightfont'>ALine Sales</a></span>
+                    </p>
+    </div>
+</div>
+</li>                    </ul>
+                                    <ul class="clist">
+                        <li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/fuuuuuck-1?context=latest"><img width="139" height="111" src="http://api.ning.com:80/files/lsNu6og-q1IV1LpvcCLUIWExj9bcmLYF3owjPapgeavrbZkhWA2ID2PAuSHuiLOCcCrUgo55y5wW2lQzeW3Bi35lvczsAmwm/0342VAISEFAX.jpg?width=139&amp;height=111" alt="FUUUUUCK" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/fuuuuuck-1?context=latest">FUUUUUCK</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/ALineSales" class='xg_lightfont'>ALine Sales</a></span>
+                    </p>
+    </div>
+</div>
+</li><li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/4964896:Photo:3305?context=latest"><img width="139" height="92" src="http://api.ning.com:80/files/XbPWjwmJwOM-dH64TY5IMMtyX82s8wDF*HRKUcbGkUwk-HAqLoM7PXNSV5fUd3wR8qoxBxd6yOdrBEbsEonXO8fsXCjuKQko/83.jpg?width=139&amp;height=92" alt="..." class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/4964896:Photo:3305?context=latest">...</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/ALineSales" class='xg_lightfont'>ALine Sales</a></span>
+                    </p>
+    </div>
+</div>
+</li><li><div class="bd">
+    <div class="ib">
+        <a href="http://atheistcollege.ning.com/photo/4964896:Photo:3303?context=latest"><img width="139" height="86" src="http://api.ning.com:80/files/Muxn4I*94DYbepY-xJzb5zX9EH28q9xUxea82UOnJDSSaeC0vazdFVgqC7beKU6UPHMsbtvjU*28iNqYv1TMNPO1vTKLvSeh/8C2FF0856E8362731A31EBB8AAA62D.jpg?width=139&amp;height=86" alt="C&Eacute;U" class="xg_lightborder" /></a>
+    </div>
+    <div class="tb">
+        <h3><a href="http://atheistcollege.ning.com/photo/4964896:Photo:3303?context=latest">C&Eacute;U</a></h3>
+        <p class="xg_lightfont">
+                            <span class="item_contributor">por <a href="/profile/ALineSales" class='xg_lightfont'>ALine Sales</a></span>
+                    </p>
+    </div>
+</div>
+</li>                    </ul>
+                            </div>
+                <div class="xg_module_foot">
+        <ul>
+                            <li class="left"><a href="http://atheistcollege.ning.com/photo/photo/chooseUploader" class="xg_sprite xg_sprite-add">Adicionar fotos</a></li>
+                                        <li class="right"><a href="http://atheistcollege.ning.com/photo/photo/list">Exibir todos</a></li>
+                                <li class="right photo-facebook-share" style="display:none; margin-right:10px;" ><a target="_blank"
+                        href="http://www.facebook.com/share.php?u=http%3A%2F%2Fatheistcollege.ning.com%2Fphoto%2Fphoto%2Flist%3Ffrom%3Dfb"><img src="http://static.ning.com/socialnetworkmain/widgets/index/gfx/icon/facebook.gif?v=201109302009" alt="Facebook" /></a></li>
+                    <script>
+                        xg.addOnRequire(function () {
+                            x$('.module_photo').mouseover(function () { x$(this).find('.photo-facebook-share').show(); })
+                                    .mouseout(function () { x$(this).find('.photo-facebook-share').hide(); });
+                        });
+                    </script>
+                    </ul>
+    </div></div>
+    <div class="xg_module module_forum indented_content" data-module_name="forum">
+            <div class="xg_module_head">
+            <h2>F&oacute;rum</h2>
+        </div>
+        <div class="xg_module_body">
+                <div class="vcard">
+                    <div class="author"><span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/Fabenrik"  title="Fabenrik"><img class=" photo"  src="http://api.ning.com:80/files/4lqlCgKKmkXwgv9ylmAHvs1UgzZqM2lc1EuDk8dJcw1*gdocSkQ5ik02gDaEnoGnbUvQI8xY3IOVrds8FvzQs95KjepIKzcc/fabb.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Fabenrik" /></a></span></div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://atheistcollege.ning.com/forum/topics/voce-atende-testemunhas-de" _snid="4964896:Topic:3426">Voc&ecirc; atende Testemunhas de Jeov&aacute;, quando visitam sua casa? O que acha desse tipo de tentativa de arrebanhar novos adeptos?</a>
+                    <small class="nobr" >10&nbsp;respostas&nbsp;</small>
+            </h3>
+            <p class="indent"><a rel=nofollow target="_blank" href="http://www.orapois.com.br/br/arquivos/10122002140128184g.jpg"></a>Quando vê no olho-mágico e percebe aquela dupla com a pastinha, que já sabemos o que deve ser, com aquela…<a href="http://atheistcollege.ning.com/forum/topics/voce-atende-testemunhas-de" class="xj_expandable continue-link">Continuar</a></p>            <p class="dy-small xg_lightfont indent ">
+                    Iniciado por Fabenrik em <a href="http://atheistcollege.ning.com/forum/categories/religiao-1/listForCategory">Religi&atilde;o</a>. <a href="http://atheistcollege.ning.com/forum/topics/voce-atende-testemunhas-de/showLastReply">Última resposta</a> de Gabryel Cordeiro de Lima 9 Set, 2010.            </p>
+                    </div>
+    </div>
+    <div class="vcard">
+                    <div class="author"><span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/Fabenrik"  title="Fabenrik"><img class=" photo"  src="http://api.ning.com:80/files/4lqlCgKKmkXwgv9ylmAHvs1UgzZqM2lc1EuDk8dJcw1*gdocSkQ5ik02gDaEnoGnbUvQI8xY3IOVrds8FvzQs95KjepIKzcc/fabb.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Fabenrik" /></a></span></div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://atheistcollege.ning.com/forum/topics/se-fosse-dono-de-uma-faculdade" _snid="4964896:Topic:3318">Se fosse dono de uma faculdade, contrataria um professor criacionista?</a>
+                    <small class="nobr" >3&nbsp;respostas&nbsp;</small>
+            </h3>
+            <p class="indent">Se fosse dono de uma faculdade e tivesse que completar o quadro de professores, e tivesse um professor criacionista, contrataria-o?E se tivesse a opção entre dois igualmente bons em referências?E se…<a href="http://atheistcollege.ning.com/forum/topics/se-fosse-dono-de-uma-faculdade" class="xj_expandable continue-link">Continuar</a></p>            <p class="dy-small xg_lightfont indent ">
+                    Iniciado por Fabenrik em <a href="http://atheistcollege.ning.com/forum/categories/sociedade-1/listForCategory">Sociedade</a>. <a href="http://atheistcollege.ning.com/forum/topics/se-fosse-dono-de-uma-faculdade/showLastReply">Última resposta</a> de Paulo ISTJ 8 Set, 2010.            </p>
+                    </div>
+    </div>
+    <div class="vcard">
+                    <div class="author"><span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/Fabenrik"  title="Fabenrik"><img class=" photo"  src="http://api.ning.com:80/files/4lqlCgKKmkXwgv9ylmAHvs1UgzZqM2lc1EuDk8dJcw1*gdocSkQ5ik02gDaEnoGnbUvQI8xY3IOVrds8FvzQs95KjepIKzcc/fabb.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Fabenrik" /></a></span></div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://atheistcollege.ning.com/forum/topics/como-sua-familia-ve-seu" _snid="4964896:Topic:1983">Como sua fam&iacute;lia v&ecirc; seu ate&iacute;smo? Aceita? N&atilde;o aceita? Indiferente? Uns sim, outros n&atilde;o?</a>
+                    <small class="nobr" >3&nbsp;respostas&nbsp;</small>
+            </h3>
+            <p class="indent">No meu caso, minha família sempre soube que era crítico com relação as coisas, então sempre tive uma opinião marcante, então depois que o patriarca faleceu, em algumas coisas eu tomei o lugar dele…<a href="http://atheistcollege.ning.com/forum/topics/como-sua-familia-ve-seu" class="xj_expandable continue-link">Continuar</a></p>            <p class="dy-small xg_lightfont indent ">
+                    Iniciado por Fabenrik em <a href="http://atheistcollege.ning.com/forum/categories/sociedade-1/listForCategory">Sociedade</a>. <a href="http://atheistcollege.ning.com/forum/topics/como-sua-familia-ve-seu/showLastReply">Última resposta</a> de Paulo ISTJ 8 Set, 2010.            </p>
+                    </div>
+    </div>
+    <div class="vcard">
+                    <div class="author"><span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/icaronunes"  title="icaro nunes @icaronunes"><img class=" photo"  src="http://api.ning.com:80/files/HMKq9A*w9HzZo6EwScHfsB6SVEvLHZ2UxnAwMaNaL0KZ5jozG79*rIS2GJAwbiJJ49SXswRI490cNNUzFCyPSXaEQzI8WcaU/Pirulito.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="icaro nunes @icaronunes" /></a></span></div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://atheistcollege.ning.com/forum/topics/conte-como-virou-ateu" _snid="4964896:Topic:963">Conte como &quot;virou&quot; ateu.</a>
+                    <small class="nobr" >19&nbsp;respostas&nbsp;</small>
+            </h3>
+            <p class="indent">Conte sua historia aqui. Todos tem um motivo ou um momente que se livrou dos grilhões da religião.<a href="http://atheistcollege.ning.com/forum/topics/conte-como-virou-ateu" class="xj_expandable continue-link">Continuar</a></p>            <p class="dy-small xg_lightfont indent ">
+                    Iniciado por icaro nunes @icaronunes em <a href="http://atheistcollege.ning.com/forum/categories/descrencas-1/listForCategory">Descren&ccedil;as</a>. <a href="http://atheistcollege.ning.com/forum/topics/conte-como-virou-ateu/showLastReply">Última resposta</a> de Carlos Augustus 13 Ago, 2010.            </p>
+                    </div>
+    </div>
+    <div class="vcard">
+                    <div class="author"><span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/Fabenrik"  title="Fabenrik"><img class=" photo"  src="http://api.ning.com:80/files/4lqlCgKKmkXwgv9ylmAHvs1UgzZqM2lc1EuDk8dJcw1*gdocSkQ5ik02gDaEnoGnbUvQI8xY3IOVrds8FvzQs95KjepIKzcc/fabb.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Fabenrik" /></a></span></div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://atheistcollege.ning.com/forum/topics/ativismo-no-ateismo-e-positivo" _snid="4964896:Topic:3257">ATIVISMO NO ATE&Iacute;SMO &Eacute; POSITIVO OU N&Atilde;O? AT&Eacute; QUE PONTO PODEMOS CLASSIFICAR COMO ATIVISMO E N&Atilde;O FANATISMO?</a>
+                    <small class="nobr" >5&nbsp;respostas&nbsp;</small>
+            </h3>
+            <p class="indent">Estou levantando o questionamento sobre o ativismo ateísta, gostaria de saber da opnião da galera do AC, sobre até que ponto podemos levar em conta se ativismo, fanatismo ou balburdia?Devemos mesmo…<a href="http://atheistcollege.ning.com/forum/topics/ativismo-no-ateismo-e-positivo" class="xj_expandable continue-link">Continuar</a></p>            <p class="dy-small xg_lightfont indent ">
+                    Iniciado por Fabenrik em <a href="http://atheistcollege.ning.com/forum/categories/descrencas-1/listForCategory">Descren&ccedil;as</a>. <a href="http://atheistcollege.ning.com/forum/topics/ativismo-no-ateismo-e-positivo/showLastReply">Última resposta</a> de Francisco Craveiro 27 Jun, 2010.            </p>
+                    </div>
+    </div>
+    <div class="vcard">
+                    <div class="author"><span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/Fabenrik"  title="Fabenrik"><img class=" photo"  src="http://api.ning.com:80/files/4lqlCgKKmkXwgv9ylmAHvs1UgzZqM2lc1EuDk8dJcw1*gdocSkQ5ik02gDaEnoGnbUvQI8xY3IOVrds8FvzQs95KjepIKzcc/fabb.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Fabenrik" /></a></span></div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://atheistcollege.ning.com/forum/topics/ja-sofreu-discriminacao-por" _snid="4964896:Topic:2479">J&aacute; sofreu discrimina&ccedil;&atilde;o por ser ateu?</a>
+                    <small class="nobr" >11&nbsp;respostas&nbsp;</small>
+            </h3>
+            <p class="indent">Um dos problemas que se arrasta até o tempos de hoje, é o grande preconceito que se tem acerca do ateísmo, talvez por medo, por parecerem pessoas lúcidas e inteligentes, além de muito equilibradas, o…<a href="http://atheistcollege.ning.com/forum/topics/ja-sofreu-discriminacao-por" class="xj_expandable continue-link">Continuar</a></p>            <p class="dy-small xg_lightfont indent ">
+                    Iniciado por Fabenrik em <a href="http://atheistcollege.ning.com/forum/categories/sociedade-1/listForCategory">Sociedade</a>. <a href="http://atheistcollege.ning.com/forum/topics/ja-sofreu-discriminacao-por/showLastReply">Última resposta</a> de Raphael R. F. 24 Maio, 2010.            </p>
+                    </div>
+    </div>
+    <div class="vcard">
+                    <div class="author"><span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/Fabenrik"  title="Fabenrik"><img class=" photo"  src="http://api.ning.com:80/files/4lqlCgKKmkXwgv9ylmAHvs1UgzZqM2lc1EuDk8dJcw1*gdocSkQ5ik02gDaEnoGnbUvQI8xY3IOVrds8FvzQs95KjepIKzcc/fabb.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Fabenrik" /></a></span></div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://atheistcollege.ning.com/forum/topics/o-que-falta" _snid="4964896:Topic:3498">O que falta?</a>
+                            </h3>
+            <p class="indent">O que falta para sua vida e como pretende alcançar?Onde acha que um ateu ganha de um teísta em seus objetivos?<a href="http://atheistcollege.ning.com/forum/topics/o-que-falta" class="xj_expandable continue-link">Continuar</a></p>            <p class="dy-small xg_lightfont indent ">
+                    Iniciado por Fabenrik em <a href="http://atheistcollege.ning.com/forum/categories/filosofia-1/listForCategory">Filosofia</a> 14 Maio, 2010.            </p>
+                    </div>
+    </div>
+    <div class="vcard">
+                    <div class="author"><span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/Fabenrik"  title="Fabenrik"><img class=" photo"  src="http://api.ning.com:80/files/4lqlCgKKmkXwgv9ylmAHvs1UgzZqM2lc1EuDk8dJcw1*gdocSkQ5ik02gDaEnoGnbUvQI8xY3IOVrds8FvzQs95KjepIKzcc/fabb.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Fabenrik" /></a></span></div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://atheistcollege.ning.com/forum/topics/qual-o-melhor-argumento-teista" _snid="4964896:Topic:3380">Qual o melhor argumento Te&iacute;sta que j&aacute; viram ou ouviram?</a>
+                    <small class="nobr" >2&nbsp;respostas&nbsp;</small>
+            </h3>
+            <p class="indent">Entre vários argumentos do lado teístas que presenciamos é realmente muito difícil presenciarmos algo iluminado, algo que nos deixe sem resposta, apesar de não sermos, nós, os ateus afirmarmos sermos…<a href="http://atheistcollege.ning.com/forum/topics/qual-o-melhor-argumento-teista" class="xj_expandable continue-link">Continuar</a></p>            <p class="dy-small xg_lightfont indent ">
+                    Iniciado por Fabenrik em <a href="http://atheistcollege.ning.com/forum/categories/religiao-1/listForCategory">Religi&atilde;o</a>. <a href="http://atheistcollege.ning.com/forum/topics/qual-o-melhor-argumento-teista/showLastReply">Última resposta</a> de Samurai 11 Maio, 2010.            </p>
+                    </div>
+    </div>
+    <div class="vcard">
+                    <div class="author"><span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/DafneFonsecaVinhaes"  title="Dafne"><img class=" photo"  src="http://api.ning.com:80/files/5KcbRfGUvMFm3nynzZeQmIl2Lt1ViRfueuu5DvFJoFJWH7Z53JrSP1CMxhpd48KeMlzSwbaPUrO20gigAiVNAQL6jmbVXKZb/wetgf.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Dafne" /></a></span></div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://atheistcollege.ning.com/forum/topics/voce-tem-certeza-absoluta-de" _snid="4964896:Topic:2869">Voc&ecirc; tem certeza absoluta de que Deus n&atilde;o existe?</a>
+                    <small class="nobr" >3&nbsp;respostas&nbsp;</small>
+            </h3>
+            <p class="indent">Se tem (o que eu acredito que a grande maioria aqui tenha), por que essa convicção toda?</p>            <p class="dy-small xg_lightfont indent ">
+                    Iniciado por Dafne em <a href="http://atheistcollege.ning.com/forum/categories/filosofia-1/listForCategory">Filosofia</a>. <a href="http://atheistcollege.ning.com/forum/topics/voce-tem-certeza-absoluta-de/showLastReply">Última resposta</a> de Samurai 11 Maio, 2010.            </p>
+                    </div>
+    </div>
+    <div class="vcard">
+                    <div class="author"><span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/Fabenrik"  title="Fabenrik"><img class=" photo"  src="http://api.ning.com:80/files/4lqlCgKKmkXwgv9ylmAHvs1UgzZqM2lc1EuDk8dJcw1*gdocSkQ5ik02gDaEnoGnbUvQI8xY3IOVrds8FvzQs95KjepIKzcc/fabb.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Fabenrik" /></a></span></div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://atheistcollege.ning.com/forum/topics/debate-exateu-existe-nao" _snid="4964896:Topic:842">Debate - Ex-ateu, existe? N&atilde;o existe? Como um ateu v&ecirc; um ex-ateu?</a>
+                    <small class="nobr" >12&nbsp;respostas&nbsp;</small>
+            </h3>
+            <p class="indent">Ontem no Bate-papo do Atheist College, estavamos em uma conversa, quando entrou um novo participante da rede, e o mesmo afirmava ser ex-ateu. E nos mostrou um vídeo.Gostaria de colocar aqui em…<a href="http://atheistcollege.ning.com/forum/topics/debate-exateu-existe-nao" class="xj_expandable continue-link">Continuar</a></p>            <p class="dy-small xg_lightfont indent ">
+                    Iniciado por Fabenrik em <a href="http://atheistcollege.ning.com/forum/categories/outros-assuntos/listForCategory">Outros Assuntos</a>. <a href="http://atheistcollege.ning.com/forum/topics/debate-exateu-existe-nao/showLastReply">Última resposta</a> de Callun Callvinno 26 Abr, 2010.            </p>
+                    </div>
+    </div>
+        </div>
+            <div class="xg_module_foot">
+            <ul>
+                                    <li class="left"><a href="http://atheistcollege.ning.com/main/authorization/signUp?target=http%3A%2F%2Fatheistcollege.ning.com%2Fforum%2Ftopic%2Fnew%3Ftarget%3Dhttp%253A%252F%252Fatheistcollege.ning.com%252F%253Fz%253D1" dojoType="PromptToJoinLink" _joinPromptText="Registre-se ou entre para executar esta etapa." _signInUrl="http://atheistcollege.ning.com/main/authorization/signIn?target=http%3A%2F%2Fatheistcollege.ning.com%2Fforum%2Ftopic%2Fnew%3Ftarget%3Dhttp%253A%252F%252Fatheistcollege.ning.com%252F%253Fz%253D1" class="xg_sprite xg_sprite-add xj_new_topic_link">Adicionar uma Discussão</a></li>
+                                <li class="right"><a href="http://atheistcollege.ning.com/forum">Exibir todos</a></li>
+            </ul>
+        </div>    </div>
+<div class="xg_module module_blog indented_content" data-module_name="blog">
+    <div class="xg_module_head">
+        <h2>Mensagens de blog</h2>
+    </div>
+    <div class="xg_module_body body_detail">
+            <div class="blogpost vcard" data-contentId="4964896:BlogPost:3663">
+                <div class="ib">
+                    <span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/ThiagoSilvaFreitasOliveira"  title="Thiago Silva Freitas Oliveira"><img class=" photo"  src="http://api.ning.com:80/files/tScLg6Azec88o46WAjVgtattTZGKD8GkP0nvLdKl5M8XGyEKWZ40e7sP-*oM6TMQN5Z*f*Sq2e-lJlypBGOOFQMv5iGtPbJO/eddie_blood_1024.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Thiago Silva Freitas Oliveira" /></a></span>                </div>
+                <div class="tb">
+                    <h3><a href="http://atheistcollege.ning.com/profiles/blogs/confiram-o-blog-a" _snid="4964896:BlogPost:3663">Confiram o blog: &lt;a href=&quot;http://sphodras.blogspot.com/&quot;&gt;http://sphodras.blogspot.com/&lt;/a&gt;&lt;br/&gt;&lt;br/</a></h3>
+                                            <div class="postbody">
+                            Confiram o blog: <a rel=nofollow href="http://sphodras.blogspot.com/">http://sphodras.blogspot.com/</a><br/><br/> Não trato somente de ateísmo, mas é uma forte vertente em meus escritos no blog, que caminha aos poucos!<br/>Comentários e críticas sempre bem vindos!<br/><br/>Thiago Oliveira<br/>                             <a href="http://atheistcollege.ning.com/profiles/blogs/confiram-o-blog-a" class="xj_expandable">Continuar</a>                        </div>
+                                        <p class="dy-small xg_lightfont">
+                                                    Postado por <a href="/profile/ThiagoSilvaFreitasOliveira">Thiago Silva Freitas Oliveira</a> em 27 julho 2010 às 19:00                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard" data-contentId="4964896:BlogPost:3501">
+                <div class="ib">
+                    <span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/Fabenrik"  title="Fabenrik"><img class=" photo"  src="http://api.ning.com:80/files/4lqlCgKKmkXwgv9ylmAHvs1UgzZqM2lc1EuDk8dJcw1*gdocSkQ5ik02gDaEnoGnbUvQI8xY3IOVrds8FvzQs95KjepIKzcc/fabb.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Fabenrik" /></a></span>                </div>
+                <div class="tb">
+                    <h3><a href="http://atheistcollege.ning.com/profiles/blogs/o-comeco-do-fim-rede-ning" _snid="4964896:BlogPost:3501">O COMEÇO DO FIM! REDE NING PASSARÁ A SER PAGA E PODE SER O FINAL DA REDE ATHEIST COLLEGE!</a></h3>
+                                            <div class="postbody">
+                            O Ning, rede social que cria redes sociais tipo orkut e facebook, está com os dias contados da sua gratuidade.<br/>
+O<br/>
+atual presidente do Ning, Jason Rosenthal que esta fazendo diversas<br/>
+mudanças na empresa, demitiu cerca de 70 pessoas, e deve cobrar pelo<br/>
+uso do sistema.<br/>
+Segundo o TechCrunch, o presidente do Ning, anunciou<br/>
+que irá cancelar todas as contas gratuitas existentes no Ning, mas<br/>
+quem quizer manter a sua rede social, terá que migrar para…                             <a href="http://atheistcollege.ning.com/profiles/blogs/o-comeco-do-fim-rede-ning" class="xj_expandable">Continuar</a>                        </div>
+                                        <p class="dy-small xg_lightfont">
+                                                    Postado por <a href="/profile/Fabenrik">Fabenrik</a> em 15 maio 2010 às 0:53                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard" data-contentId="4964896:BlogPost:3386">
+                <div class="ib">
+                    <span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/Fabenrik"  title="Fabenrik"><img class=" photo"  src="http://api.ning.com:80/files/4lqlCgKKmkXwgv9ylmAHvs1UgzZqM2lc1EuDk8dJcw1*gdocSkQ5ik02gDaEnoGnbUvQI8xY3IOVrds8FvzQs95KjepIKzcc/fabb.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Fabenrik" /></a></span>                </div>
+                <div class="tb">
+                    <h3><a href="http://atheistcollege.ning.com/profiles/blogs/historia-do-brasil-versus" _snid="4964896:BlogPost:3386">História do Brasil versus História bíblica!</a></h3>
+                                            <div class="postbody">
+                            <font size="4"><span style="font-weight: bold;">Vejamos incialmente a carta de Pero Vaz de Caminha em um trecho relevante à análise:</span></font><i style="font-weight: bold;"><br/><br/><br/>"Ali veríeis galantes, pintados de preto e vermelho, e quartejados,
+assim pelos corpos como pelas pernas, que, certo, assim pareciam bem.<br/>
+Também andavam entre eles quatro ou cinco mulheres, novas, que assim<br/>
+nuas, não pareciam</i> …                             <a href="http://atheistcollege.ning.com/profiles/blogs/historia-do-brasil-versus" class="xj_expandable">Continuar</a>                        </div>
+                                        <p class="dy-small xg_lightfont">
+                                                    Postado por <a href="/profile/Fabenrik">Fabenrik</a> em 7 maio 2010 às 1:15                                                        — <a href="http://atheistcollege.ning.com/profiles/blogs/historia-do-brasil-versus#comments" class="xg_lightfont">1 Comentário</a>
+                                                </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard" data-contentId="4964896:BlogPost:2735">
+                <div class="ib">
+                    <span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/DarlissonBarros"  title="Darlisson Barros"><img class=" photo"  src="http://api.ning.com:80/files/cmm8cV87ijk*1OBFY682AdiAtxBxhxacg626lZLUgwf2C89rSFOTXect9HpqCggAmFaKAPMCI9vghaT0rUqAS8aOT2zIpqAc/404notfound.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Darlisson Barros" /></a></span>                </div>
+                <div class="tb">
+                    <h3><a href="http://atheistcollege.ning.com/profiles/blogs/analise-a-lei-geral-das" _snid="4964896:BlogPost:2735">Análise a lei geral das religiões.</a></h3>
+                                            <div class="postbody">
+                            Tramita no senado o PROJETO DE LEI Nº 5.598/2009, DE 2009 (De George Hilton), conhecido por LEI GERAL DAS RELIGIÕES. Circulam na internet vários movimentos de apoio a aprovação de tal lei. Mas venho aqui pedir que leiam a lei na íntegra, e minha análise, e entendam que essa lei é um retrocesso, é uma agressão ao Estado de Direito bresileiro. Somos um país LAICO, fazer alança com religiões e garantir ainda mais privilégios é ir de frente com nossa LEI MÃE, a Constituição Federal. Acesse o link…                             <a href="http://atheistcollege.ning.com/profiles/blogs/analise-a-lei-geral-das" class="xj_expandable">Continuar</a>                        </div>
+                                        <p class="dy-small xg_lightfont">
+                                                    Postado por <a href="/profile/DarlissonBarros">Darlisson Barros</a> em 17 abril 2010 às 13:22                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard" data-contentId="4964896:BlogPost:2638">
+                <div class="ib">
+                    <span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/Fabenrik"  title="Fabenrik"><img class=" photo"  src="http://api.ning.com:80/files/4lqlCgKKmkXwgv9ylmAHvs1UgzZqM2lc1EuDk8dJcw1*gdocSkQ5ik02gDaEnoGnbUvQI8xY3IOVrds8FvzQs95KjepIKzcc/fabb.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Fabenrik" /></a></span>                </div>
+                <div class="tb">
+                    <h3><a href="http://atheistcollege.ning.com/profiles/blogs/nove-imagens-engracadas-da" _snid="4964896:BlogPost:2638">Nove Imagens Engraçadas da evolução!</a></h3>
+                                            <div class="postbody">
+                            <p style="text-align: left;"><img src="http://api.ning.com/files/HDUHt23laEOmnhBCEXlTVte8WfH1RSMefrWGMxX3LkoBEMy8ExIjFuEPy-hT0GlvTGOE-NKtsSZnG8D9FEZ8S2jc4BHwoXYS/kansasevolution.jpg" alt=""/></p>
+<p style="text-align: left;"><img src="http://api.ning.com/files/p1xG-t7x7He3Bh1F-f-x98zJsR-bB2pGoJ-KD5xW3E7HDOuu6xoABtnUn40Qm-x4GmQeS*nJHiarYPbTzCI*0UsZcWZ8sdI2/evolucao.jpg" alt=""/></p>
+<p style="text-align: left;">…</p>                             <a href="http://atheistcollege.ning.com/profiles/blogs/nove-imagens-engracadas-da" class="xj_expandable">Continuar</a>                        </div>
+                                        <p class="dy-small xg_lightfont">
+                                                    Postado por <a href="/profile/Fabenrik">Fabenrik</a> em 10 abril 2010 às 20:30                                                        — <a href="http://atheistcollege.ning.com/profiles/blogs/nove-imagens-engracadas-da#comments" class="xg_lightfont">1 Comentário</a>
+                                                </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard" data-contentId="4964896:BlogPost:2571">
+                <div class="ib">
+                    <span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/DarlissonBarros"  title="Darlisson Barros"><img class=" photo"  src="http://api.ning.com:80/files/cmm8cV87ijk*1OBFY682AdiAtxBxhxacg626lZLUgwf2C89rSFOTXect9HpqCggAmFaKAPMCI9vghaT0rUqAS8aOT2zIpqAc/404notfound.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Darlisson Barros" /></a></span>                </div>
+                <div class="tb">
+                    <h3><a href="http://atheistcollege.ning.com/profiles/blogs/colheita-de-almas" _snid="4964896:BlogPost:2571">Colheita de almas</a></h3>
+                                            <div class="postbody">
+                            Neste sábado, 3 de Abril, tive a oportunidade de assitir a estréia da<br/>
+nova estratégia de ação, do iluminado e inspirado Pastor Silas Malafaia <a rel=nofollow href="http://www.vitoriaemcristo.org/_gutenweb/_site/hotsite/clube1M/assista.cfm" target="_blank">[Veja aqui]</a>. Nesta nova 'jornada', o líder relioso<br/>
+da associação Votória em Cristo conta com o apoio de pastor americano,<br/>
+Dr. Mike Murdock.<br/><br/><h2 class="post-title entry-title">…</h2>                             <a href="http://atheistcollege.ning.com/profiles/blogs/colheita-de-almas" class="xj_expandable">Continuar</a>                        </div>
+                                        <p class="dy-small xg_lightfont">
+                                                    Postado por <a href="/profile/DarlissonBarros">Darlisson Barros</a> em 3 abril 2010 às 19:37                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard" data-contentId="4964896:BlogPost:2564">
+                <div class="ib">
+                    <span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/cleberfreitas"  title="cleber freitas"><img class=" photo"  src="http://api.ning.com:80/files/X3qAa-opqv5TYjyIWBHB145aSGW5K4nUWkAJmZ6*IZPKytceEFvRjjwKD13m10TUoKTfdJmOhvSC6wRRuxtkPwKt7*azuVMs/krebys1.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="cleber freitas" /></a></span>                </div>
+                <div class="tb">
+                    <h3><a href="http://atheistcollege.ning.com/profiles/blogs/divulgando-o-livre-pensador" _snid="4964896:BlogPost:2564">Divulgando o "Livre Pensador"</a></h3>
+                                            <div class="postbody">
+                            Alguns me conhecem, outros não...<div><br/></div>
+<div>Mais um blog na rede, com a finalidade de trazer a razão, apontando os males e erros de ser ter uma religião.</div>
+<div><br/></div>
+<div><a rel=nofollow href="http://krebys.blogspot.com/">Livre Pensador</a></div>                                                    </div>
+                                        <p class="dy-small xg_lightfont">
+                                                    Postado por <a href="/profile/cleberfreitas">cleber freitas</a> em 3 abril 2010 às 14:43                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard" data-contentId="4964896:BlogPost:2560">
+                <div class="ib">
+                    <span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/DarlissonBarros"  title="Darlisson Barros"><img class=" photo"  src="http://api.ning.com:80/files/cmm8cV87ijk*1OBFY682AdiAtxBxhxacg626lZLUgwf2C89rSFOTXect9HpqCggAmFaKAPMCI9vghaT0rUqAS8aOT2zIpqAc/404notfound.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Darlisson Barros" /></a></span>                </div>
+                <div class="tb">
+                    <h3><a href="http://atheistcollege.ning.com/profiles/blogs/planeta-insanidade-coletiva" _snid="4964896:BlogPost:2560">Planeta Insanidade Coletiva</a></h3>
+                                            <div class="postbody">
+                            Bom, muito se fala sobre a veracidade da evolução, "Onde estão as provas<br/>
+disso?", "Cadê as evidências?", bom, pergunta isso o ignorante, o <br/>
+leigo, o criacionista fanático. Pois, a teoria da evolução não é a <br/>
+verdade absoluta, a ciência sempre trata de verificar seus conhecimentos<br/>
+afim de corroborá-lo, visto que ela evolue a cada dia e sempre tem <br/>
+novos meios de buscar e comprovar o que descobriu. Bem, dito isso, veja <br/>
+os vídeos que separei, vídeos pró e contra,…                             <a href="http://atheistcollege.ning.com/profiles/blogs/planeta-insanidade-coletiva" class="xj_expandable">Continuar</a>                        </div>
+                                        <p class="dy-small xg_lightfont">
+                                                    Postado por <a href="/profile/DarlissonBarros">Darlisson Barros</a> em 2 abril 2010 às 20:03                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard" data-contentId="4964896:BlogPost:2556">
+                <div class="ib">
+                    <span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/ShrekSantiago"  title="Shrek Santiago"><img class=" photo"  src="http://api.ning.com:80/files/XqQzARyXVMD7cRIKcZc*3aYcf5vqNCGR378uvRQf3x-ecRTz7LwyuCdNVTBzRr0NiD9EJSweJ0A2SuJUkctrHaf9bqSrCGFE/telacrente.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Shrek Santiago" /></a></span>                </div>
+                <div class="tb">
+                    <h3><a href="http://atheistcollege.ning.com/profiles/blogs/fbi-prende-grupo-cristao" _snid="4964896:BlogPost:2556">FBI PRENDE GRUPO CRISTÃO TERRORISTA</a></h3>
+                                            <div class="postbody">
+                            O FBI (Polícia Federal Americana) prendeu na última segunda-feira oito <br/>
+integrantes do Hutaree (uma milícia radical cristã), sob a acusação de <br/>
+uma grave conspiração. O plano consistia em matar um policial e travar <br/>
+uma guerra contra os Estados Unidos...Leia mais&gt; <a rel=nofollow href="http://telacrente.wordpress.com/2010/04/01/fbi-prende-grupo-cristao-terrorista/">http://telacrente.wordpress.com/2010/04/01/fbi-prende-grupo-cristao-terrorista/</a><br/>                                                    </div>
+                                        <p class="dy-small xg_lightfont">
+                                                    Postado por <a href="/profile/ShrekSantiago">Shrek Santiago</a> em 2 abril 2010 às 9:24                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard" data-contentId="4964896:BlogPost:2542">
+                <div class="ib">
+                    <span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/DarlissonBarros"  title="Darlisson Barros"><img class=" photo"  src="http://api.ning.com:80/files/cmm8cV87ijk*1OBFY682AdiAtxBxhxacg626lZLUgwf2C89rSFOTXect9HpqCggAmFaKAPMCI9vghaT0rUqAS8aOT2zIpqAc/404notfound.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Darlisson Barros" /></a></span>                </div>
+                <div class="tb">
+                    <h3><a href="http://atheistcollege.ning.com/profiles/blogs/o-experimento-do-colisor-de" _snid="4964896:BlogPost:2542">O experimento do Colisor de Hadróns e o comentário de cientistas brasileiros.</a></h3>
+                                            <div class="postbody">
+                            GENEBRA - O Grande Colisor de Hádrons (LHC) bateu um novo recorde nesta<br/>
+terça-feira. O acelerador de partículas coseguiu produzir a colisão de<br/>
+dois feixes de prótons a 7 tera-elétron volts, criando uma explosão que<br/>
+os cientistas estão chamando de um "Big Bang em miniatura".<br/><br/><a rel=nofollow href="http://planetainsanidadecoletiva.blogspot.com/2010/03/cern-acelerador-de-particula-cria.html" target="_blank" title="Planeta Insanidade Coletiva">CERN - Acelerador de partícula cria recorde…</a>                             <a href="http://atheistcollege.ning.com/profiles/blogs/o-experimento-do-colisor-de" class="xj_expandable">Continuar</a>                        </div>
+                                        <p class="dy-small xg_lightfont">
+                                                    Postado por <a href="/profile/DarlissonBarros">Darlisson Barros</a> em 1 abril 2010 às 20:35                                            </p>
+                                    </div>
+            </div>
+    </div>
+    <div class="xg_module_foot">
+        <ul>
+            <li class="left"><a href="http://atheistcollege.ning.com/profiles/blog/new" class="xg_sprite xg_sprite-add">Adicione uma mensagem no blog</a></li>
+            <li class="right"><a href="http://atheistcollege.ning.com/profiles/blog/list">Exibir todos</a></li>        </ul>
+    </div>
+</div>
+<div class="xg_module module_feed" data-module_name="feed">
+    <div class="xg_module_head"><h2>Ateu e &Agrave; toa</h2></div>
+    <div class="xg_module_body" dojoType="UpdateFeed" _url="http://atheistcollege.ning.com/feed/embed/fetchFeed?xn_out=json&amp;canEdit=0&amp;feedUrl=ateueatoa.com&amp;itemCount=5&amp;showDescriptions=1&amp;maxEmbedWidth=492">
+	<p class="last-child">
+		<img src="http://static.ning.com/socialnetworkmain/widgets/index/gfx/spinner.gif?v=201109302009" height="16" width="16" alt="Carregando..."> Carregando feed	</p>
+</div>
+</div>
+&nbsp;</div>
+</div>
+&nbsp;</div>
+<div _maxEmbedWidth="173" _columnCount="1"  class='xg_1col last-child'>
+&nbsp;</div>
+</div>
+<script>xg_quickadd_forceReload = true /* enable the quick add refreshing. */ </script>
+
+                </div>
+                <div class="xg_column xg_span-4 xg_last xj_classic_sidebar">
+                        <div class="xg_module" id="xg_module_account">
+        <div class="xg_module_body xg_signup xg_lightborder">
+            <p>Bem-vindo a<br />Atheist College</p>
+            <p class="last-child">
+                <big><strong><a href="http://atheistcollege.ning.com/main/authorization/signUp?target=http%3A%2F%2Fatheistcollege.ning.com%2F%3Fz%3D1">Registre-se</a></strong></big><br/>
+                ou <a href="http://atheistcollege.ning.com/main/authorization/signIn?target=http%3A%2F%2Fatheistcollege.ning.com%2F%3Fz%3D1" style="white-space:nowrap">acesse</a>            </p>
+                    </div>
+    </div>
+<div class="xg_module module_about">
+    <div class="xg_module_head">
+        <h2>Sobre</h2>
+    </div>
+    <div class="xg_module_body xg_module_ning">
+        <div class="vcard">
+            <span class="xg_avatar"><a class="fn url" href="http://atheistcollege.ning.com/profile/Fabenrik"  title="Fabenrik"><img class=" photo"  src="http://api.ning.com:80/files/4lqlCgKKmkXwgv9ylmAHvs1UgzZqM2lc1EuDk8dJcw1*gdocSkQ5ik02gDaEnoGnbUvQI8xY3IOVrds8FvzQs95KjepIKzcc/fabb.jpg?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Fabenrik" /></a></span>            <span class="fn"><a href="/profile/Fabenrik">Fabenrik</a></span>
+            criou esta <a href='http://www.ning.com'>Rede do Ning</a>.        </div>
+        		<div class="clear easyclear"><a href="http://www.ning.com/chooseplan?source=atheistcollege&utm_campaign=9000&utm_medium=prd&utm_source=online&utm_term=atheistcollege&utm_content=atheistcollege" class="button">Crie uma Rede do Ning! »</a></div>
+            </div>
+    </div>
+<div class="xg_module module_birthdays" >
+    <div class="xg_module_head">
+        <h2>Anivers&aacute;rios</h2>
+    </div>
+    <div class="xg_module_body">
+<p class="small last-child">Não há aniversários hoje</p></div></div>
+	<div class="xg_module module_badge">
+		<div class="xg_module_head">
+	    <h2>Badge</h2>
+	    </div>
+	    <div class="xg_module_body xj_badge_body xj_embed_container" data-module_name="badge" _embedCode="&lt;object classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; codebase=&quot;http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab&quot;
+    id=&quot;badgeSwf&quot; width=&quot;100%&quot; height=&quot;242&quot; &gt;
+    &lt;param name=&quot;movie&quot; value=&quot;http://static.ning.com/socialnetworkmain/widgets/index/swf/badge.swf?v=201109302009&quot; /&gt;
+    &lt;param name=&quot;quality&quot; value=&quot;high&quot; /&gt;
+    &lt;param name=&quot;bgcolor&quot; value=&quot;#&quot; /&gt;
+    &lt;param name=&quot;flashvars&quot; value=&quot;hideVisit=1&amp;amp;config=http%3A%2F%2Fatheistcollege.ning.com%2Fmain%2Fbadge%2FshowPlayerConfig%3Fsize%3Dlarge%26v%3D5&amp;amp;backgroundColor=0x&amp;amp;textColor=0xFF0000&quot; /&gt;
+    &lt;param name=&quot;wmode&quot; value=&quot;opaque&quot;/&gt;
+    &lt;param name=&quot;allowScriptAccess&quot; value=&quot;always&quot; /&gt;
+&lt;embed
+    class=&quot;xj_badge_embed&quot;
+    src=&quot;http://static.ning.com/socialnetworkmain/widgets/index/swf/badge.swf?v=201109302009&quot;
+    quality=high
+    bgColor=&quot;#&quot;
+    width=&quot;100%&quot;
+    height=&quot;242&quot;
+    name=&quot;badgeSwf&quot;
+    type=&quot;application/x-shockwave-flash&quot;
+    pluginspage=&quot;http://www.macromedia.com/go/getflashplayer&quot;
+    wmode=&quot;opaque&quot;
+    FlashVars=&quot;hideVisit=1&amp;amp;config=http%3A%2F%2Fatheistcollege.ning.com%2Fmain%2Fbadge%2FshowPlayerConfig%3Fsize%3Dlarge%26v%3D5&amp;amp;backgroundColor=0x&amp;amp;textColor=0xFF0000&quot;
+    scale=&quot;noscale&quot;
+    allowScriptAccess=&quot;always&quot;&gt;
+&lt;/embed&gt;
+&lt;/object&gt;">
+    Carregando...</div>
+	    <div class="xg_module_foot">
+	        <p class="right"><a href="http://atheistcollege.ning.com/main/embeddable/list">Obter badge</a></p>
+	    </div>
+	</div>
+<div class="xg_module module_events" data-module_name="events">
+    <div class="xg_module_head">
+        <h2>Eventos</h2>
+    </div>
+    <div class="xg_module_foot">
+        <ul>
+            <li class="left"><a href="http://atheistcollege.ning.com/events/event/new?cancelTarget=http%3A%2F%2Fatheistcollege.ning.com%2F%3Fz%3D1" class="xg_sprite xg_sprite-add">Adicionar um evento</a></li>
+                                </ul>
+    </div>
+</div>
+<div class="xg_module module_video" data-module_name="video">
+    <div class="xg_module_head">
+        <h2>V&iacute;deos</h2>
+    </div>
+    <div class="xg_module_body body_large">
+  <ul class="clist">
+      <li>
+        <div class="ib">
+                <a href="http://atheistcollege.ning.com/video/falcao-orai-vigiai"><img  src="http://api.ning.com:80/files/8BazO3OBQc9VlhAmEHZKXy46M431*K23R4u5Ad*C4PvpkwCjPWX12FemIWYzox1xIiGZJHigQ730i0giJ1ABlQXDZMBNscUL/963061360.jpeg?width=136" alt="Falc&atilde;o - Orai &amp; Vigiai" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/video/falcao-orai-vigiai">
+                Falc&atilde;o - Orai &amp; Vigiai            </a></h3>
+                        <p class="xg_lightfont">
+                Adicionado por <a class="xg_lightfont" href="http://atheistcollege.ning.com/profile/icaronunes">icaro nunes @icaronunes</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://atheistcollege.ning.com/video/richard-dawkins-on-our-queer"><img  src="http://api.ning.com:80/files/wAuKxtsvHJx1gjNx4iVJ3vmtO1A-UaouuzPpXCppZ*rLdCi-AJXgPcEai-ukyAylsEDv374cV3dmVgslL*ke438C2JYyIdUy/924610691.png?width=136&amp;xj_video_default=1" alt="Richard Dawkins on our &quot;queer&quot; universe" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/video/richard-dawkins-on-our-queer">
+                Richard Dawkins on our &quot;queer&quot; universe            </a></h3>
+                        <p class="xg_lightfont">
+                Adicionado por <a class="xg_lightfont" href="http://atheistcollege.ning.com/profile/icaronunes">icaro nunes @icaronunes</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://atheistcollege.ning.com/video/richard-dawkins-e-o-ateismo"><img  src="http://api.ning.com:80/files/wAuKxtsvHJx1gjNx4iVJ3vmtO1A-UaouuzPpXCppZ*rLdCi-AJXgPcEai-ukyAylsEDv374cV3dmVgslL*ke438C2JYyIdUy/924610691.png?width=136&amp;xj_video_default=1" alt="Richard Dawkins e o ate&iacute;smo militante." width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/video/richard-dawkins-e-o-ateismo">
+                Richard Dawkins e o ate&iacute;smo militante.            </a></h3>
+                        <p class="xg_lightfont">
+                Adicionado por <a class="xg_lightfont" href="http://atheistcollege.ning.com/profile/icaronunes">icaro nunes @icaronunes</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://atheistcollege.ning.com/video/family-guy-jesus"><img  src="http://api.ning.com:80/files/wAuKxtsvHJx1gjNx4iVJ3vmtO1A-UaouuzPpXCppZ*rLdCi-AJXgPcEai-ukyAylsEDv374cV3dmVgslL*ke438C2JYyIdUy/924610691.png?width=136&amp;xj_video_default=1" alt="Family guy - Jesus" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/video/family-guy-jesus">
+                Family guy - Jesus            </a></h3>
+                        <p class="xg_lightfont">
+                Adicionado por <a class="xg_lightfont" href="http://atheistcollege.ning.com/profile/Fabenrik">Fabenrik</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://atheistcollege.ning.com/video/quantas-pessoas-jeova-matou"><img  src="http://api.ning.com:80/files/HoIR-5TtJNpLNGV8sIZVWA8Utu0gzM7w7E2zDv4Qp-z8juzQxpfyF5QKv6jjjY9z7wwqD*wE*qZHAkMtkWhcPBuRO*iIYAyh/777712180.jpeg?width=136" alt="Quantas pessoas Jeov&aacute; matou?" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/video/quantas-pessoas-jeova-matou">
+                Quantas pessoas Jeov&aacute; matou?            </a></h3>
+                        <p class="xg_lightfont">
+                Adicionado por <a class="xg_lightfont" href="http://atheistcollege.ning.com/profile/LeonardoAlmeidaLimaMeks">Leonardo (Mek&#039;s)</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://atheistcollege.ning.com/video/o-papa-tirando-um-cochilo"><img  src="http://api.ning.com:80/files/vyG5oVP57wBjo0Oa6mVGX8LSsdJsX-eGW6mof376q*TekLAVV2yzklLLMYEamnShoj-d9UXK7KusSJKcsAV9GIsAZ-MojTeO/943000809.jpeg?width=136" alt="o  papa tirando um cochilo" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/video/o-papa-tirando-um-cochilo">
+                o  papa tirando um cochilo            </a></h3>
+                        <p class="xg_lightfont">
+                Adicionado por <a class="xg_lightfont" href="http://atheistcollege.ning.com/profile/gabrielasouzacandido">gaby</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://atheistcollege.ning.com/video/camila-pitanga-fala-como-e-ser"><img  src="http://api.ning.com:80/files/Rk2YdDIf7iCdZLMQ3Hyzn0jCLnu92NA6tlNN*qDPkpPdjvd6lxxi7bJWh24NlSODhR8s1yDdLZ1BlReetKyL0VtkUTrnfLDC/825533587.jpeg?width=136" alt="Camila Pitanga fala como e ser At&eacute;ia" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/video/camila-pitanga-fala-como-e-ser">
+                Camila Pitanga fala como e ser At&eacute;ia            </a></h3>
+                        <p class="xg_lightfont">
+                Adicionado por <a class="xg_lightfont" href="http://atheistcollege.ning.com/profile/CallunCallvinno">Callun Callvinno</a>                            </p>
+            <img class="rating" src="http://static.ning.com/socialnetworkmain/widgets/index/gfx/rating/rating5.gif?v=201109302009" alt="5/5 estrelas " />        </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://atheistcollege.ning.com/video/richard-dawkins-o-virus-da-fe-4"><img  src="http://api.ning.com:80/files/oEAi2Kku0wKAhk*gngTVXxk73CLZ*VqPsvQ761p7SQJEh*SYxMD4Ws1c2l1mcqjQe6Z1lCFvd3yuSSxAhqLkVZcu48UHvxsR/892615359.jpeg?width=136" alt="Richard Dawkins - O V&iacute;rus da F&eacute; 1 - Legendado" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/video/richard-dawkins-o-virus-da-fe-4">
+                Richard Dawkins - O V&iacute;rus da F&eacute; 1 - Legendado            </a></h3>
+                        <p class="xg_lightfont">
+                Adicionado por <a class="xg_lightfont" href="http://atheistcollege.ning.com/profile/LeonardoAlmeidaLimaMeks">Leonardo (Mek&#039;s)</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://atheistcollege.ning.com/video/richard-dawkins-o-virus-da-fe-3"><img  src="http://api.ning.com:80/files/UzF-SeMDicZ3qFMn-Ea-epjpayHlM6NGl3QDSMq1*jeL6Z5J*W3yQzFn0pMIPHfhRmANAVTi-QTY5XcI0-l-EBVHCdcD3Tj-/825506463.jpeg?width=136" alt="Richard Dawkins - O V&iacute;rus da F&eacute; 2 - Legendado" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/video/richard-dawkins-o-virus-da-fe-3">
+                Richard Dawkins - O V&iacute;rus da F&eacute; 2 - Legendado            </a></h3>
+                        <p class="xg_lightfont">
+                Adicionado por <a class="xg_lightfont" href="http://atheistcollege.ning.com/profile/LeonardoAlmeidaLimaMeks">Leonardo (Mek&#039;s)</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://atheistcollege.ning.com/video/richard-dawkins-o-virus-da-fe-2"><img  src="http://api.ning.com:80/files/dR6G30IOfC7mE2eAtrZzZHT8SqNDeoQnzhhvLOj7xqFhGWe81F6Kbt2ENGTKxf7ELnMjhZiu3WxZqMDm6yZywjfFe898yGkA/859060843.jpeg?width=136" alt="Richard Dawkins - O V&iacute;rus da F&eacute; 3 - Legendado" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/video/richard-dawkins-o-virus-da-fe-2">
+                Richard Dawkins - O V&iacute;rus da F&eacute; 3 - Legendado            </a></h3>
+                        <p class="xg_lightfont">
+                Adicionado por <a class="xg_lightfont" href="http://atheistcollege.ning.com/profile/LeonardoAlmeidaLimaMeks">Leonardo (Mek&#039;s)</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://atheistcollege.ning.com/video/richard-dawkins-o-virus-da-fe-1"><img  src="http://api.ning.com:80/files/EysfPPF4KesAcIhl49js1GjzChhMrNWQE*-iDuOtRL2PSxJbXjf8UNhj0tfw7wW0pbn*q1-mOr*YI1nJB-ZEdEQFy9CzJTCs/777140806.jpeg?width=136" alt="Richard Dawkins - O V&iacute;rus da F&eacute; 4 - Legendado" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/video/richard-dawkins-o-virus-da-fe-1">
+                Richard Dawkins - O V&iacute;rus da F&eacute; 4 - Legendado            </a></h3>
+                        <p class="xg_lightfont">
+                Adicionado por <a class="xg_lightfont" href="http://atheistcollege.ning.com/profile/LeonardoAlmeidaLimaMeks">Leonardo (Mek&#039;s)</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://atheistcollege.ning.com/video/richard-dawkins-o-virus-da-fe"><img  src="http://api.ning.com:80/files/oEAi2Kku0wI*Z1M4ZaClrdQb6F4EMIH5quS-uYyObIJ6EqzuaCZBwVXsDVtxs7Wl6K51xdFk0n5yLA13nSAqExXUkQ23JU9Y/892615211.jpeg?width=136" alt="Richard Dawkins - O V&iacute;rus da F&eacute; 5 - Legendado" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://atheistcollege.ning.com/video/richard-dawkins-o-virus-da-fe">
+                Richard Dawkins - O V&iacute;rus da F&eacute; 5 - Legendado            </a></h3>
+                        <p class="xg_lightfont">
+                Adicionado por <a class="xg_lightfont" href="http://atheistcollege.ning.com/profile/LeonardoAlmeidaLimaMeks">Leonardo (Mek&#039;s)</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">  </ul>
+</div>
+        <div class="xg_module_foot">
+            <ul>
+                <li class="left"><a class="xg_sprite xg_sprite-add" href="http://atheistcollege.ning.com/video/video/chooseUploader">Adicionar vídeo</a></li>
+                <li class="right"><a href="http://atheistcollege.ning.com/video/video">Exibir todos</a></li>
+                                    <li class="right video-facebook-share" style="display:none; margin-right:10px;"><a target="_blank"
+                        href="http://www.facebook.com/share.php?u=http%3A%2F%2Fatheistcollege.ning.com%2Fvideo%2Fvideo%3Ffrom%3Dfb"><img src="http://static.ning.com/socialnetworkmain/widgets/index/gfx/icon/facebook.gif?v=201109302009" alt="Facebook" /></a></li>
+                    <script>
+                        xg.addOnRequire(function () {
+                            x$('.module_video').mouseover(function () { x$(this).find('.video-facebook-share').show(); })
+                                    .mouseout(function () { x$(this).find('.video-facebook-share').hide(); });
+                        });
+                    </script>
+                            </ul>
+        </div>
+    </div>
+<div class="xg_module html_module module_text xg_reset" data-module_name="text"
+        >
+                <div class="xg_module_body nopad">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" ></meta>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0" ></meta>
+<meta name="ProgId" content="FrontPage.Editor.Document" ></meta>
+AeA<link href='http://4.bp.blogspot.com/_dkU4qxLpZpo/TAmkqpfSvfI/AAAAAAAABCU/7XpNfj6uTx4/s320/avatar92.PNG' rel='shortcut icon' ></link>
+<link href='data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAADc0lEQVQ4ywXBXWgbBQDA8X8u18vH5fLVpNe0TZs1a2x1ZRR0KmgFLQ5dh0jrNoWB7EEQUUQG4pPzwUdB8EURRUtVHLgHUTfZBB/8WNMx6OzWrzRtmqRt2iZNk7vk8nn+fpbvlzdMWerAUtXxiCJSrcrRXo5aVWfv4ACLw87w2KNUTImm5OSwagHJRUmrISsexIBTxtJoktvepahpLM3PkU0mMBt1HIqLyekpMqtraEi4gj3Y3UGmzp7hwqU3ufj6NGIjm0M/KrJ6e57dxAqddoknB4dwSBKr6wluzHzH2naOiZdfoV/txyZ1cHJkmJ9mvubsxHOIfkFgYX6ecmqT4a4QU6cnaFcrRPrDNM0G6zu7SD4fE1PnecO08MyZl/jg3bdQ+4/RaJlYY6HwlUhXF0888jCnRoZRZRduqwUrbfRCAZfsxO1zMzA4QEEr4fZ5UXxuKrUy9YaBcGpsFL/bwc5Wki6fQn4nTSG3TSGdQokO4HbbSSwvEo2GiR3vw+OTcComVeMQu2Ii7u5niPT14pV6MBoastuG198DRoWjlUWKLQOtrrGd3mXo8cdI5DO47CqekEypmkd0KzYw6yiKk5u3rmPRK5T393nh9PP4QwGEqona7SO9cYBL6SDiCiL5fZQbNS6/fxnRZbNCw6DVanBiOMafv/zGwp05+nq72LyRJjjYS8/IcbKpdcalZ5EVD6VWFZdbZvaLz7Dc/fkHs6bryAgcU7uhUqWml/F5vXz48Uf4wyr7hsb0pYuMjT9FoaYjyjKIIjt7Oayff/rJlUJyA4cgklpZQ88fEvR6odVmfPxpAmqQ2dkZZKeDsKqSWlujret4BCseQUAoJ5NkMxni8duEQiEkp4OF+/dpWy1spLdot9tMTk4SCgTp7uslv7HJzatXScTjGJksojISQ/vjJp0hlbyhEY//Q8DnpZ1YYmnlAZqh8/Z77yC6bCzPz6HYOoj19XIyGuW/ewsIzaMCk+emMERoyhKd0Qh/PbjH3eQqgt/Di6+eQ+z08OU3X1FpGhwc7jM6eoJb138lFgljKeeXzPJRifjf/1I3KkT6ByiXiiyvrnDhtfM02nXU7k60YoEfZ7/Fa7Oh5fN0NFuYjTqWvYNFs1mvo8guDL1CdivF0EMxSqUibVogmiiyjVbdQBYFfr92jcU7cWREuoMB/geVc3xj9ZF+sgAAAABJRU5ErkJggg==' rel='icon' type='image/x-icon' ></link>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+        </div>
+            </div>
+    
+                </div>
+            </div>
+            <div id="xg_foot">
+                <p class="left">
+    © 2011 &nbsp; Criado por <a href="/profile/Fabenrik">Fabenrik</a>        &nbsp;
+    Ativado por <a href="http://www.ning.com/?utm_source=online&utm_content=bazfooter&utm_campaign=9000&utm_medium=prd&utm_term=atheistcollege"><img src="http://static.ning.com/socialnetworkmain/widgets/index/gfx/logo_ningbar.png?v=201109302009" width="48" height="15" alt="Ning" class="poweredbylogo" /></a>.
+    </p>
+    <p class="right xg_lightfont">
+                <a href="http://atheistcollege.ning.com/main/embeddable/list">Badges</a> &nbsp;|&nbsp;
+                            <a href="http://atheistcollege.ning.com/main/authorization/signUp?target=http%3A%2F%2Fatheistcollege.ning.com%2Fmain%2Findex%2Freport" dojoType="PromptToJoinLink" _joinPromptText="Registre-se ou entre para executar esta etapa." _signInUrl="http://atheistcollege.ning.com/main/authorization/signIn?target=http%3A%2F%2Fatheistcollege.ning.com%2Fmain%2Findex%2Freport">Relatar um incidente</a> &nbsp;|&nbsp;
+                <a href="http://atheistcollege.ning.com/main/authorization/termsOfService?previousUrl=http%3A%2F%2Fatheistcollege.ning.com%2F%3Fz%3D1">Termos de serviço</a>
+    </p>
+<img src="http://www22.glam.com/cTagsImgCmd.act?gname=ning&amp;gvalue=true&amp;gtid=5000059145&amp;gcmd=set&amp;gdata=ning" alt="" width="1" height="1" />
+
+            </div>
+        </div>
+        
+        <div id="xj_baz17246" class="xg_theme"></div>
+<div id="xg_overlay" style="display:none;">
+<!--[if lte IE 6.5]><iframe></iframe><![endif]-->
+</div>
+<!--googleoff: all--><noscript>
+	<style type="text/css" media="screen">
+        #xg { position:relative;top:120px; }
+        #xn_bar { top:120px; }
+	</style>
+	<div class="errordesc noscript">
+		<div>
+            <h3><strong>É necessário habilitar o JavaScript para usar o Atheist College.</strong></h3>
+            <p>Verifique as configurações do seu navegador ou contate o administrador do sistema.</p>
+			<img src="/xn_resources/widgets/index/gfx/jstrk_off.gif" alt="" height="1" width="1" />
+		</div>
+	</div>
+</noscript><!--googleon: all-->
+<script>if(window.bzplcm)window.bzplcm.ts('jb')</script><script type="text/javascript" src="http://static.ning.com/socialnetworkmain/widgets/lib/core.min.js?v=201109302009"></script>        <script>
+            var sources = ["http:\/\/static.ning.com\/atheistcollege\/instances\/shared\/js\/set_common.min.js?r=1317332843","http:\/\/static.ning.com\/atheistcollege\/instances\/shared\/js\/set_sidebar_u.min.js?r=1315439468","http:\/\/static.ning.com\/atheistcollege\/instances\/shared\/js\/set_mainindeinde_u.min.js?r=1317425446"];
+            var numSources = sources.length;
+            var heads = document.getElementsByTagName('head');
+            var node = heads.length > 0 ? heads[0] : document.body;
+            var onloadFunctionsObj = {};
+
+            var createScriptTagFunc = function(source) {
+                var script = document.createElement('script');
+                
+                script.type = 'text/javascript';
+
+                /**
+                 * The code below was changed to accomodate the fact that IE9 is the first browser to support both onload and onreadystatechange for the script tag.
+                 * This was resulting in a couple execution of the callback, and thus many inconsistencies with respect to when we executed our addOnRequire code.
+                 * The change checks for the presence of readyState on the script object (all IE browsers, including IE9) and uses onreadystatechange when it's present.
+                 * For other browsers, onload is used.
+                 *
+                 * This change was made in concert with a change in head.php that uses the actual set names as object properties
+                 * and deletes those properties upon completion of the loading callback.  This data-based approach ensures consistency by creating a 1-1 relationship between
+                 * asynch request and callback execution.
+                 */
+                var currentOnLoad = function() {xg._loader.onLoad(source);};
+                if (script.readyState) { //for IE (including IE9)
+                    script.onreadystatechange = function() {
+                        if (script.readyState == 'complete' || script.readyState == 'loaded') {
+                            script.onreadystatechange = null;
+                            currentOnLoad();
+                        }
+                    }
+                } else {
+                   script.onerror = script.onload = currentOnLoad;
+                }
+
+                script.src = source;
+                node.appendChild(script);
+            };
+
+            for (var i = 0; i < numSources; i++) {
+                xg._loader.loading(sources[i]);
+                createScriptTagFunc(sources[i]);
+            }
+        </script>
+    <script type="text/javascript">
+if (!ning._) {ning._ = {}}
+ning._.compat = { encryptedToken: "<empty>" }
+ning._.CurrentServerTime = "2011-10-03T17:38:33+00:00";
+ning._.probableScreenName = "";
+ning._.domains = {
+    base: 'ning.com',
+    ports: { http: '80', ssl: '443' }
+};
+ning.loader.version = '201109302009_5'; // DEP-6948:24527da 32
+djConfig.parseWidgets = false;
+</script>
+<script>if(window.bzplcm)window.bzplcm.ts('ja')</script><script>window.bzplcm.add({"app":"atheistcollege","user":null,"l_t":"homepage","mcr":13,"mct":13});</script><script type="text/javascript">
+    xg.token = '';
+    xg.cdnHost = 'static.ning.com';
+    xg.version = '201109302009';
+    xg.useMultiCdn = true;
+        xg.staticRoot = 'socialnetworkmain';
+    xg.xnTrackHost = "track.ning.com";
+            xg.cdnDefaultPolicyHost = 'static';
+        xg.cdnPolicy = [];
+        xg.global = xg.global||{}; xg.global.currentMozzle = 'main';
+    xg.global.userCanInvite = false;
+    xg.global.requestBase = '';
+    xg.global.locale = 'pt_BR';
+    xg.num_thousand_sep = ",";
+    xg.num_decimal_sep = ".";
+        (function() {
+        dojo.addOnLoad(function() {
+            if(window.bzplcm) { window.bzplcm.ts('hr'); window.bzplcm._profileSend(); }
+                    });
+                            xg._loader.onLoad('xnloader');
+            })();
+</script>
+<div id="xgDock" class="xg_dock">
+            <div class="jsContainer">
+            <a class="xg_info" href="/main/authorization/signIn?chat=true">Entrar no bate-papo</a>            <a href="#" class="xg_status xg_status-offline" title="Voc&ecirc; est&aacute; offline" ></a>
+        </div>
+    </div>
+<div class="xg_dock_spacer"></div><script type="text/javascript" src="http://static.ning.com/socialnetworkmain/widgets/lib/js/thrift/xn_track.min.js?v=201109302009"></script>
+<script>if(window.bzplcm)window.bzplcm.ts('he')</script>
+
+    </body>
+</html>

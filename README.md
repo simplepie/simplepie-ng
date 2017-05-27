@@ -28,11 +28,16 @@
 
 * [RSS 1.0 Content Modules](http://web.resource.org/rss/1.0/modules/content/)
 * [Dublin Core Metadata 1.0](http://dublincore.org/documents/1998/09/dces/) and [1.1](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements)
+* [Dublin Core Terms](http://dublincore.org/documents/2012/06/14/dcmi-terms/)
 * [W3C WGS84 Geo](https://www.w3.org/2003/01/geo/)
 * [GeoRSS (Simple)](http://www.georss.org/simple.html)
 * [GeoRSS (GML)](http://www.georss.org/gml.html)
 * [Media RSS](http://www.rssboard.org/media-rss)
 * [iTunes Podcast RSS](https://help.apple.com/itc/podcasts_connect/#/itcb54353390)
+* [Creative Commons](http://backend.userland.com/creativeCommonsRssModule)
+* [W3C Annotation Schema](https://www.w3.org/2000/10/annotation-ns)
+* [W3C Simple Knowledge Organization System](https://www.w3.org/2009/08/skos-reference/skos.html)
+* [FOAF](http://xmlns.com/foaf/spec/)
 
 ### Might come later
 

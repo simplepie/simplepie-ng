@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<?xml-stylesheet href="http://d.hatena.ne.jp/ryopeko/rssxsl" type="text/xsl" media="screen"?>
+
+
+<rdf:RDF
+	xmlns="http://purl.org/rss/1.0/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xml:lang="ja">
+<channel rdf:about="http://d.hatena.ne.jp/ryopeko/rss">
+	<title>ryopekoの日記</title>
+	<link>http://d.hatena.ne.jp/ryopeko/</link>
+	<description>ryopekoの日記</description>
+	
+	<dc:creator>ryopeko</dc:creator>
+	<dc:date>2011-06-27T00:55:55+09:00</dc:date>
+	<items>
+	<rdf:Seq>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/ryopeko/20110626/1309102300"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/ryopeko/20110430/1304180833"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/ryopeko/20101215/1292373612"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/ryopeko/20101126/1290755735"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/ryopeko/20101117/1289991194"/>
+	</rdf:Seq>
+	</items>
+</channel>
+
+
+
+<item rdf:about="http://d.hatena.ne.jp/ryopeko/20110626/1309102300">
+	<title>[Ruby]Ruby会議2011のLTで発表します</title>
+	<link>http://d.hatena.ne.jp/ryopeko/20110626/1309102300</link>
+	<description> タイトルの通りRuby会議2011のLTで発表することが決まりました。 それに合わせてブログのサイドバーにRuby会議2011 SPEAKERバッジを付けました。 (LTスピーカーでも貼っていいんだよね...?) &#60;追記:LT Talker用のバッジが作られたので貼り替えました&#62; まさか自分がこ</description>
+
+	<content:encoded><![CDATA[
+		<div class="section">
+			<p> タイトルの通りRuby会議2011のLTで発表することが決まりました。</p>
+			<p>それに合わせてブログのサイドバーにRuby会議2011 SPEAKERバッジを付けました。</p>
+			<p>(LTスピーカーでも貼っていいんだよね...?)</p>
+			<p>&#60;追記:LT Talker用のバッジが作られたので貼り替えました&#62;</p>
+			<p>まさか自分がこのバッジを貼る日が来るとは。</p>
+			<p>いつか貼れるようになりたいと思ってはいたけど。</p>
+			<p>自分にとってはRuby会議で発表することはひとつのマイルストーンだったので感慨ひとしおです。</p>
+			<p>本編で発表することはあまり頭になかったので、発表するならLTだろうなと思っていました。</p>
+			<p>というか本編はRubyコミッターかRubyistに大きな道しるべとして物事を啓蒙する人が立つステージだと考えています。</p>
+			<p>なのでそんなネタを自分で作り出せるようになって、かつ採択されるような機会があれば是非本編でも話してみたいなと企んでいます。</p>
+			<br>
+
+			<p>ここから先はRuby会議が終わってから書こうかと思っていたことだが、きっと最後のRuby会議が終わった後にはもっと書くべきことがあるはずなので、今書くべきだと感じたので書く。</p>
+			<p>Ruby会議は自分にとってこの業界のコミュニティに入っていくきっかけとなった"門"です。</p>
+			<p>初参加はRuby会議2009。</p>
+			<p>このときはRubyを使い始めて間もないころで、Rubyコミュニティの特色はおろかコミュニティ自体何も知らない状態でした。</p>
+			<p>最初はなんとなく身を委ねて各セッションを聞いていましたが、角谷さんのセッションを聞いたあとに何週間かかけてジワジワ昂ぶってくものを感じたのが大きな収穫でした。</p>
+			<p>そこで感じたことは具体的な事柄ではなく、自分という一エンジニアがどうありたいか、どうなりたいかということを考えるきっかけだったのだと思います。</p>
+			<p>そこからどう周りをドライブしていくかということにシフトしていって、周りを巻き込みつつ好き勝手成長していきました。</p>
+			<p>その後はデブサミに参加して更に当てられて様々な勉強会に参加してRuby会議2010に至ります。</p>
+			<p>このRuby会議2010がとても大事なものになっていきます。</p>
+			<p>2010では会期中フルで参加し、コミュニティナイトや懇親会、RejectRubyKaigiなどで様々なRubyistと知り合うことができました。</p>
+			<p>その1ヶ月後の高専カンファレンスではLTで発表しました。</p>
+			<p>そこではRubyつながりで@<a class="twitter-user-screen-name" href="http://twitter.com/hmsk">hmsk</a> , @<a class="twitter-user-screen-name" href="http://twitter.com/june29">june29</a> と知り合うことができました。</p>
+			<p>ここからRails勉強会東京等でもどんどんRubyistの知り合いが増えて沢山刺激を受け、自分の世界が広がりました。</p>
+			<p>Rails勉強会東京ではささいなきっかけからrubykaigi.orgのソースを読む、というセッションを持ったりしてrubykaigi.orgに接するきっかけを持ちました。</p>
+			<p>それが今年に入って、前職を退職し現職になってからはRubyから大きく離れた世界に身を置くことになりました。</p>
+			<p>Rubyから離れることはとても辛いことでしたが、プライベートでRubyを書くことは続けていこうと思っていました。</p>
+			<p>そんな時にほんのささいなtweetからrubykaigi.orgに誘っていただき、今回のLTに繋がります。</p>
+			<p>最後のRuby会議に少しでも貢献したい、と思っていた矢先だったのでとてもとても嬉しかったです。</p>
+			<p>rubykaigi.orgでは小さなコミットや刺身タンポポ業をしたりして、大きく貢献はできていませんがLTでrubykaigi.orgについて話すことも仕事のひとつだと思い、話すことにしました。</p>
+			<p>今回のLTでは個人としてではなく、rubykaigi.orgに携わるたくさんの人たちに代わって話すという気持ちで望みたいと思っています。</p>
+			<p>この3年間の区切りとして、5分間のLTを噛み締めて大事にお話します。</p>
+		</div>
+]]></content:encoded>
+	<dc:creator>ryopeko</dc:creator>
+	<dc:date>2011-06-27T00:31:40+09:00</dc:date>
+	<dc:subject>Ruby</dc:subject>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/ryopeko/20110430/1304180833">
+	<title>ガローア会議に参加してきました</title>
+	<link>http://d.hatena.ne.jp/ryopeko/20110430/1304180833</link>
+	<description> 昨日は#galore(ガローア会議）のハッカソンに参加してきました。 参加者は@june29と@hmsk。 当日は会場と札幌をskypeで結んで#sappathon0430との同時開催でした。 両会場とも@june29, @darashiをはじめ、活発な発言で距離を感じずところどころで成果の中間報告を行う等して</description>
+
+	<content:encoded><![CDATA[
+		<div class="section">
+			<p>昨日は#galore(ガローア会議）のハッカソンに参加してきました。</p>
+			<p>参加者は@june29と@hmsk。</p>
+			<p>当日は会場と札幌をskypeで結んで#sappathon0430との同時開催でした。</p>
+			<p>両会場とも@june29, @darashiをはじめ、活発な発言で距離を感じずところどころで成果の中間報告を行う等して、とても楽しいハッカソンでした。</p>
+			<p><a href="http://f.hatena.ne.jp/ryopeko/20110430192635" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/r/ryopeko/20110430/20110430192635.jpg" alt="f:id:ryopeko:20110430192635j:image" title="f:id:ryopeko:20110430192635j:image" class="hatena-fotolife"></a></p>
+			<p>自分はというと色々ネタ出しした結果、CoffeeScriptからnode.jsに移行し、サンプルアプリを作りました。</p>
+			<p><a href="http://f.hatena.ne.jp/ryopeko/20110430203545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/r/ryopeko/20110430/20110430203545.jpg" alt="f:id:ryopeko:20110430203545j:image" title="f:id:ryopeko:20110430203545j:image" class="hatena-fotolife"></a></p>
+			<p>CoffeeScriptに関しては正直現状手に余るという印象でした。</p>
+			<p>チームでCoffeeScriptを用いて開発するとなると導入コスト以上のものが見えないと感じました。</p>
+			<p>JavaScript Replacementとして挙げられますが、jQuery以上のメリットというよりは完全な新しい言語を取得するという意味合いのほうが強い気がします。</p>
+			<p>一方でJadeを用いてHTMLを記述したのですが、こちらはとてもしっくりきました。</p>
+			<p>むしろ素のHTMLを書くより自然な感じがしたぐらいです。</p>
+			<p>Rubyに関しても言えることですが、&#60;&#62;や;は思考をコードにアウトプットすることの妨げになるんだなと強く思いました。</p>
+			<p>最終的な成果物としては目新しいものはできませんでしたが、node.jsとsocket.ioを用いてメッセージの送受信を行えるところまでもっていけました。</p>
+			<p>今更ですがnode.jsに触れ自分の中で新しい世界が開けたなという感触です。</p>
+			<p><a href="http://images.instagram.com/media/2011/04/30/ec210f362fdc4c55bdf40b7a7b5d08a8_7.jpg" class="http-image" target="_blank"><img src="http://images.instagram.com/media/2011/04/30/ec210f362fdc4c55bdf40b7a7b5d08a8_7.jpg" class="http-image" alt="http://images.instagram.com/media/2011/04/30/ec210f362fdc4c55bdf40b7a7b5d08a8_7.jpg"></a></p>
+			<br>
+
+			<p>ハッカソンが終わり撤収した後は東京会場のメンツで飲みに行きました。</p>
+			<p>そこで話したことは、今回のきっかけとして高専というものが大きく関わっていたよねということです。</p>
+			<p>今回集まったきっかけといえば僕が高専カンファレンスで僕が面識が無いにも関わらず@june29と@hmskをLTでいじったということです。</p>
+			<p>そのLTで話したことは、僕自身が高専時代は御世辞にも優秀な学生とは言えない学生だったけど、今こう考えて頑張っているよ、ということでした。</p>
+			<p>今回@june29と話しながらそれらを振り返って、自分だからこそ高専の学生をはじめ、これから世に出て行く学生達にできることがあるんじゃないか、ということを初めて言葉にして伝えました。</p>
+			<p>この時@june29は釧路高専をはじめ、故郷の北海道に対する思いを熱っぽく語っていました。</p>
+			<p>僕はこれにあてられた訳ではないけど、アプローチは違えど、目指すところは似ているなと感じとても幸せになりました。</p>
+			<p>と同時に北海道でえにしテックがとてもとても素晴らしい想いを持って立ち上がり、活動している中で同じ環の中で行動していることが羨ましくも想いました。</p>
+			<p>だからこそ自分にも、自分にしかできないことがあると感じていて行動していることをもっと加速しようと思ったわけです。</p>
+			<p>これらを踏まえて直近の目標としては、母校の高専で@june29がやった講演みたいなことができるように頑張っていこうと思います。</p>
+			<br>
+
+			<p>他にもWebサービスについてのモチベーション等たくさん話したのですが、Webサービスに対する考えとかについてはもう少し考えてからまとめます。</p>
+			<p>転職したばかり、というタイミングもありますし。</p>
+			<br>
+
+			<p>と、今日はとても有意義で楽しい時間をすごせました。</p>
+			<p>ありがとうございましました！</p>
+		</div>
+]]></content:encoded>
+	<dc:creator>ryopeko</dc:creator>
+	<dc:date>2011-05-01T01:27:13+09:00</dc:date>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/ryopeko/20101215/1292373612">
+	<title>[Ruby][Rails]Arelで色んなSQLを組み立ててみる</title>
+	<link>http://d.hatena.ne.jp/ryopeko/20101215/1292373612</link>
+	<description> （この記事は Ruby Advent Calendar jp:2010の 15 日目です。前日は tomohiro68 さんでした。） Arelとは Arelの概要については@a_matsudaさんのgihyoの記事を参照してください。 http://gihyo.jp/dev/serial/01/ruby/0043 はじめに 扱うRDBはSQlite3です。 例として以下の</description>
+
+	<content:encoded><![CDATA[
+		<div class="section">
+			<p>（この記事は <a href="http://atnd.org/events/10430" target="_blank">Ruby Advent Calendar jp:2010</a>の 15 日目です。前日は <a href="http://future-nyanco.blogspot.com/2010/12/vim-ruby.html" target="_blank">tomohiro68</a> さんでした。）</p>
+			<h4>Arelとは</h4>
+			<p>Arelの概要については@a_matsudaさんのgihyoの記事を参照してください。</p>
+			<p><a href="http://gihyo.jp/dev/serial/01/ruby/0043" target="_blank">http://gihyo.jp/dev/serial/01/ruby/0043</a></p>
+			<h4>はじめに</h4>
+			<p>扱うRDBはSQlite3です。</p>
+			<p>例として以下のようなスキーマを持ったテーブルを取り扱い、進めていきます。</p>
+<pre class="syntax-highlight">
+<span class="synPreProc">class </span><span class="synType">CreateBooks</span> &#60; <span class="synIdentifier">ActiveRecord</span>::<span class="synIdentifier">Migration</span>
+  <span class="synPreProc">def </span><span class="synIdentifier">self.up</span>
+    create_table <span class="synIdentifier">:books</span> <span class="synStatement">do</span> |<span class="synIdentifier">t</span>|
+      t.string <span class="synIdentifier">:name</span>
+      t.string <span class="synIdentifier">:category</span>
+
+      t.timestamps
+    <span class="synStatement">end</span>
+  <span class="synPreProc">end</span>
+
+  <span class="synPreProc">def </span><span class="synIdentifier">self.down</span>
+    drop_table <span class="synIdentifier">:books</span>
+  <span class="synPreProc">end</span>
+<span class="synPreProc">end</span>
+</pre>
+
+			<h4>基本的な操作</h4>
+			<h5>where句</h5>
+<pre class="syntax-highlight">
+books = <span class="synIdentifier">Arel</span>::<span class="synIdentifier">Table</span>.new <span class="synIdentifier">:books</span>
+
+<span class="synComment">#=</span>
+books.project(<span class="synIdentifier">Arel</span>.sql(<span class="synSpecial">'</span><span class="synConstant">*</span><span class="synSpecial">'</span>)).where(books[<span class="synIdentifier">:id</span>].eq(<span class="synConstant">1</span>)).to_sql
+   =&#62; <span class="synIdentifier">SELECT</span> * <span class="synIdentifier">FROM</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">WHERE</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">id</span><span class="synSpecial">&#34;</span> = <span class="synConstant">1</span>
+
+<span class="synComment">#like</span>
+books.project(<span class="synIdentifier">Arel</span>.sql(<span class="synSpecial">'</span><span class="synConstant">*</span><span class="synSpecial">'</span>)).where(books[<span class="synIdentifier">:name</span>].matches(<span class="synSpecial">'</span><span class="synConstant">book_name_2_%</span><span class="synSpecial">'</span>)).to_sql
+   =&#62; <span class="synIdentifier">SELECT</span> * <span class="synIdentifier">FROM</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">WHERE</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">name</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">LIKE</span> <span class="synSpecial">'</span><span class="synConstant">book_name_2_%</span><span class="synSpecial">'</span>
+
+<span class="synComment">#&#62;,&#60;,andで条件を追加</span>
+books.project(<span class="synIdentifier">Arel</span>.sql(<span class="synSpecial">'</span><span class="synConstant">*</span><span class="synSpecial">'</span>)).where(books[<span class="synIdentifier">:id</span>].gt(<span class="synConstant">5</span>)).where(books[<span class="synIdentifier">:id</span>].lt(<span class="synConstant">10</span>)).to_sql
+   =&#62; <span class="synIdentifier">SELECT</span> * <span class="synIdentifier">FROM</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">WHERE</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">id</span><span class="synSpecial">&#34;</span> &#62; <span class="synConstant">5</span> <span class="synIdentifier">AND</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">id</span><span class="synSpecial">&#34;</span> &#60; <span class="synConstant">10</span>
+
+<span class="synComment">#orで条件を追加</span>
+books.project(<span class="synIdentifier">Arel</span>.sql(<span class="synSpecial">'</span><span class="synConstant">*</span><span class="synSpecial">'</span>)).where(books[<span class="synIdentifier">:id</span>].gt(<span class="synConstant">5</span>).or(books[<span class="synIdentifier">:id</span>].lt(<span class="synConstant">10</span>))).to_sql
+   =&#62; <span class="synIdentifier">SELECT</span> * <span class="synIdentifier">FROM</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span> WHERE (<span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">id</span><span class="synSpecial">&#34;</span> &#62; <span class="synConstant">5</span> <span class="synIdentifier">OR</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">id</span><span class="synSpecial">&#34;</span> &#60; <span class="synConstant">10</span>)
+</pre>
+
+			<h5>order by句</h5>
+<pre class="syntax-highlight">
+books = <span class="synIdentifier">Arel</span>::<span class="synIdentifier">Table</span>.new <span class="synIdentifier">:books</span>
+
+<span class="synComment">#default</span>
+books.project(<span class="synIdentifier">Arel</span>.sql(<span class="synSpecial">'</span><span class="synConstant">*</span><span class="synSpecial">'</span>)).order(books[<span class="synIdentifier">:id</span>]).to_sql
+   =&#62; <span class="synIdentifier">SELECT</span> * <span class="synIdentifier">FROM</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">ORDER</span> <span class="synIdentifier">BY</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">id</span><span class="synSpecial">&#34;</span>
+
+<span class="synComment">#昇順</span>
+books.project(<span class="synIdentifier">Arel</span>.sql(<span class="synSpecial">'</span><span class="synConstant">*</span><span class="synSpecial">'</span>)).order(books[<span class="synIdentifier">:id</span>].asc).to_sql
+   =&#62; <span class="synIdentifier">SELECT</span> * <span class="synIdentifier">FROM</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">ORDER</span> <span class="synIdentifier">BY</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">id</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">ASC</span>
+
+<span class="synComment">#降順</span>
+books.project(<span class="synIdentifier">Arel</span>.sql(<span class="synSpecial">'</span><span class="synConstant">*</span><span class="synSpecial">'</span>)).order(books[<span class="synIdentifier">:id</span>].desc).to_sql
+   =&#62; <span class="synIdentifier">SELECT</span> * <span class="synIdentifier">FROM</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">ORDER</span> <span class="synIdentifier">BY</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">id</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">DESC</span>
+</pre>
+
+			<h5>集計関数とgroup by</h5>
+<pre class="syntax-highlight">
+books = <span class="synIdentifier">Arel</span>::<span class="synIdentifier">Table</span>.new <span class="synIdentifier">:books</span>
+
+<span class="synComment">#count</span>
+books.project(books[<span class="synIdentifier">:id</span>].count, books[<span class="synIdentifier">:category</span>]).group(books[<span class="synIdentifier">:category</span>]).to_sql
+   =&#62; <span class="synIdentifier">SELECT</span> COUNT(<span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">id</span><span class="synSpecial">&#34;</span>), <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">category</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">FROM</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">GROUP</span> <span class="synIdentifier">BY</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">category</span><span class="synSpecial">&#34;</span>
+
+<span class="synComment">#集計カラムに別名をつける</span>
+books.project(books[<span class="synIdentifier">:id</span>].count.as(<span class="synSpecial">'</span><span class="synConstant">count_id</span><span class="synSpecial">'</span>), books[<span class="synIdentifier">:category</span>]).group(books[<span class="synIdentifier">:category</span>]).to_sql
+   =&#62; <span class="synIdentifier">SELECT</span> COUNT(<span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">id</span><span class="synSpecial">&#34;</span>) <span class="synIdentifier">AS</span> count_id, <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">category</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">FROM</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">GROUP</span> <span class="synIdentifier">BY</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">category</span><span class="synSpecial">&#34;</span>
+
+<span class="synComment">#sum</span>
+books.project(books[<span class="synIdentifier">:id</span>].sum.as(<span class="synSpecial">'</span><span class="synConstant">sum_id</span><span class="synSpecial">'</span>), books[<span class="synIdentifier">:category</span>]).group(books[<span class="synIdentifier">:category</span>]).to_sql
+   =&#62; <span class="synIdentifier">SELECT</span> SUM(<span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">id</span><span class="synSpecial">&#34;</span>) <span class="synIdentifier">AS</span> sum_id, <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">category</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">FROM</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">GROUP</span> <span class="synIdentifier">BY</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">category</span><span class="synSpecial">&#34;</span>
+</pre>
+
+			<h4>おまけ</h4>
+			<p>SQLで既存のテーブルから値を参照する方法がありますが、</p>
+			<p>一時テーブル(?)を作ってそこから参照することもできます。</p>
+<pre class="syntax-highlight">
+<span class="synStatement">select</span>
+  <span class="synConstant">1</span> <span class="synSpecial">as</span> num
+=&#62;
+num 
+<span class="synComment">----</span>
+<span class="synConstant">1</span> 
+</pre>
+
+			<p>unionでつなげると</p>
+<pre class="syntax-highlight">
+<span class="synStatement">select</span>
+  *
+<span class="synSpecial">from</span> (
+  <span class="synStatement">select</span>
+    <span class="synConstant">1</span> <span class="synSpecial">as</span> num
+  <span class="synStatement">union</span>
+  <span class="synStatement">select</span>
+    <span class="synConstant">2</span> <span class="synSpecial">as</span> num
+) <span class="synSpecial">as</span> tmp
+=&#62;
+num 
+<span class="synComment">----</span>
+<span class="synConstant">1</span>   
+<span class="synConstant">2</span> 
+</pre>
+
+			<p>これをArelで書くと以下の様になります(使い方違っているような気もしますが...</p>
+<pre class="syntax-highlight">
+table = <span class="synIdentifier">Arel</span>::<span class="synIdentifier">Table</span>.new <span class="synConstant">nil</span>
+table.from(<span class="synSpecial">'</span><span class="synConstant">(select 1 as num union select 2 as num) as tmp</span><span class="synSpecial">'</span>).project(<span class="synIdentifier">Arel</span>.sql(<span class="synSpecial">'</span><span class="synConstant">*</span><span class="synSpecial">'</span>)).to_sql
+   =&#62; <span class="synIdentifier">SELECT</span> * FROM (select <span class="synConstant">1</span> as num union select <span class="synConstant">2</span> as num) as tmp
+</pre>
+
+			<p>無理矢理ですね。</p>
+			<h4>おまけをjoin句でinner joinしてみる！</h4>
+			<p>さらにおまけで紹介したものを未紹介だったjoin句でつないでみます。</p>
+<pre class="syntax-highlight">
+table = <span class="synIdentifier">Arel</span>::<span class="synIdentifier">Table</span>.new <span class="synConstant">nil</span>
+books = <span class="synIdentifier">Arel</span>::<span class="synIdentifier">Table</span>.new <span class="synIdentifier">:books</span>
+table = table.from(<span class="synSpecial">'</span><span class="synConstant">(select 1 as num union select 2 as num) as tmp</span><span class="synSpecial">'</span>).project(<span class="synIdentifier">Arel</span>.sql(<span class="synSpecial">'</span><span class="synConstant">*</span><span class="synSpecial">'</span>))
+table.join(books).on(books[<span class="synIdentifier">:id</span>].eq(<span class="synIdentifier">Arel</span>.sql(<span class="synSpecial">'</span><span class="synConstant">tmp.num</span><span class="synSpecial">'</span>))).to_sql
+   =&#62; <span class="synIdentifier">SELECT</span> * FROM (select <span class="synConstant">1</span> as num union select <span class="synConstant">2</span> as num) as tmp <span class="synIdentifier">INNER</span> <span class="synIdentifier">JOIN</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span> <span class="synIdentifier">ON</span> <span class="synSpecial">&#34;</span><span class="synConstant">books</span><span class="synSpecial">&#34;</span>.<span class="synSpecial">&#34;</span><span class="synConstant">id</span><span class="synSpecial">&#34;</span> = tmp.num
+</pre>
+
+			<p>もはやfind_by_sqlを使え状態です。</p>
+			<p>しかも使う機会があるのかさえ微妙です。</p>
+			<h4>わかってないこと</h4>
+			<p>サブクエリや型変換を伴うようなSQLの組み上げについては調査中です。</p>
+			<p>型変換についてはfind_by_sqlを使わないと無理な気がしています。</p>
+			<p>サブクエリはSQLを一つにまとめる方法でなければできたのですが。</p>
+			<h4>まとめ</h4>
+			<p>このようにArelを使うことによって、より自然な形でSQLを組み立てることができるようになりました。</p>
+			<p>またArelになってからSQL厨の皆様にとっても使いやすくなったのではないかと思います。</p>
+		</div>
+]]></content:encoded>
+	<dc:creator>ryopeko</dc:creator>
+	<dc:date>2010-12-15T09:40:12+09:00</dc:date>
+	<dc:subject>Ruby</dc:subject>
+	<dc:subject>Rails</dc:subject>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/ryopeko/20101126/1290755735">
+	<title>[Javascript][jQueryMobile]iPhone等のスマホ向けレイアウトを簡単に作れるjQueryMobileを試してみた</title>
+	<link>http://d.hatena.ne.jp/ryopeko/20101126/1290755735</link>
+	<description> jQueryMobileを触ってみたのでメモ。 jQueryMobileはスマートフォン、タブレットに特化したJavascript Framework。 準備 downloadページからjQueryMobile本体とcssをダウンロードしてくる。 http://jquerymobile.com/download/ ホスティングもしているみたいだけど、今回はj</description>
+
+	<content:encoded><![CDATA[
+		<div class="section">
+			<p>jQueryMobileを触ってみたのでメモ。</p>
+			<p>jQueryMobileはスマートフォン、タブレットに特化したJavascript Framework。</p>
+			<h4>準備</h4>
+			<p>downloadページからjQueryMobile本体とcssをダウンロードしてくる。</p>
+			<p><a href="http://jquerymobile.com/download/" target="_blank">http://jquerymobile.com/download/</a></p>
+			<p>ホスティングもしているみたいだけど、今回はjQueryMobileで提供されるデザインテーマで利用される画像パスがアプリ側と合わなかった為zipをダウンロードした。</p>
+			<p>ダウンロードしたファイルを展開するとjs,css,imagesが入っている。</p>
+			<p>cssはjQueryMobileが要素の属性を判断してレイアウトを整えるのに使われる。</p>
+			<p>これらと合わせてjQuery本体も読み込む。</p>
+			<p>よってロードする順番は以下のようになる。</p>
+<pre class="syntax-highlight">
+<span class="synIdentifier">&#60;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/stylesheets/jquery.mobile-1.0a2.min.css&#34;</span><span class="synIdentifier"> </span><span class="synType">media</span><span class="synIdentifier">=</span><span class="synConstant">&#34;screen&#34;</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">&#34;stylesheet&#34;</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">&#34;text/css&#34;</span><span class="synIdentifier"> /&#62;</span>
+<span class="synIdentifier">&#60;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">&#34;text/javascript&#34;</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">&#34;http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js&#34;</span><span class="synIdentifier">&#62;&#60;/</span><span class="synStatement">script</span><span class="synIdentifier">&#62;</span>
+<span class="synIdentifier">&#60;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/javascripts/jquery.mobile-1.0a2.min.js&#34;</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">&#34;text/javascript&#34;</span><span class="synIdentifier">&#62;&#60;/</span><span class="synStatement">script</span><span class="synIdentifier">&#62;</span>
+</pre>
+
+			<p>以上で準備は完了。</p>
+			<h4>要素の記述</h4>
+			<p>実際にjQueryMobileを活用してスマホ向けviewを構築していく。</p>
+			<p>まずメインのコンテンツとなる部分を以下の属性をつけて記述する。</p>
+<pre class="syntax-highlight">
+<span class="synIdentifier">&#60;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-role=</span><span class="synConstant">&#34;page&#34;</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-theme=</span><span class="synConstant">&#34;d&#34;</span><span class="synIdentifier">&#62;</span>
+<span class="synIdentifier">&#60;/</span><span class="synStatement">div</span><span class="synIdentifier">&#62;</span>
+</pre>
+
+			<p>data-role="page"はメインのコンテンツであることを示す属性。</p>			<p>data-theme="d"は適用するデザインテーマ<span class="footnote"><a href="/ryopeko/#f1" name="fn1" title="http://jquerymobile.com/demos/1.0a2/#docs/api/themes.html">*1</a></span>の種類を指定する為の属性。</p>
+			<p>次にヘッダ要素の記述。</p>
+<pre class="syntax-highlight">
+<span class="synIdentifier">&#60;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-role=</span><span class="synConstant">&#34;header&#34;</span><span class="synIdentifier">&#62;</span>
+  header
+<span class="synIdentifier">&#60;/</span><span class="synStatement">div</span><span class="synIdentifier">&#62;</span>
+</pre>
+
+			<p>ここでもヘッダを表すdata-role="header"を指定することでヘッダレイアウトが適用される。</p>
+			<p>リスト要素の記述。</p>
+<pre class="syntax-highlight">
+<span class="synIdentifier">&#60;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-role=</span><span class="synConstant">&#34;listview&#34;</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-theme=</span><span class="synConstant">&#34;c&#34;</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-inset=</span><span class="synConstant">&#34;true&#34;</span><span class="synIdentifier">&#62;</span>
+  <span class="synIdentifier">&#60;</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+    <span class="synIdentifier">&#60;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/vocabulary/new&#34;</span><span class="synIdentifier">&#62;</span><span class="synUnderlined">add word</span><span class="synIdentifier">&#60;/</span><span class="synStatement">a</span><span class="synIdentifier">&#62;</span>
+  <span class="synIdentifier">&#60;/</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+  <span class="synIdentifier">&#60;</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+    <span class="synIdentifier">&#60;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/dashboard/index&#34;</span><span class="synIdentifier">&#62;</span><span class="synUnderlined">dashboard</span><span class="synIdentifier">&#60;/</span><span class="synStatement">a</span><span class="synIdentifier">&#62;</span>
+  <span class="synIdentifier">&#60;/</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+  <span class="synIdentifier">&#60;</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+    <span class="synIdentifier">&#60;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/mobile/list&#34;</span><span class="synIdentifier">&#62;</span><span class="synUnderlined">list</span><span class="synIdentifier">&#60;/</span><span class="synStatement">a</span><span class="synIdentifier">&#62;</span>
+  <span class="synIdentifier">&#60;/</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+  <span class="synIdentifier">&#60;</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+    <span class="synIdentifier">&#60;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/dashboard/examination&#34;</span><span class="synIdentifier">&#62;</span><span class="synUnderlined">examination</span><span class="synIdentifier">&#60;/</span><span class="synStatement">a</span><span class="synIdentifier">&#62;</span>
+  <span class="synIdentifier">&#60;/</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+<span class="synIdentifier">&#60;/</span><span class="synStatement">ul</span><span class="synIdentifier">&#62;</span>
+</pre>
+
+			<p>ここまでくると属性については大体予想できるでしょうが、</p>
+			<p>data-role="listview"でリスト構造を取ることを指定する。</p>			<p>data-theme="c"でリストのデザインテーマ<span class="footnote"><a href="/ryopeko/#f2" name="fn2" title="http://jquerymobile.com/demos/1.0a2/#docs/lists/lists-themes.html">*2</a></span>を適用。</p>
+			<p>data-inset="true"を指定することによって一括りのデータセットとされ、全体が角丸レイアウトされる模様。(詳細未確認</p>
+			<p>途中に上記以外の要素が入っているが、以上をレンダリングさせると以下のようなレイアウトになる。</p>
+			<p><a href="http://f.hatena.ne.jp/ryopeko/20101126155434" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/r/ryopeko/20101126/20101126155434.png" alt="f:id:ryopeko:20101126155434p:image" title="f:id:ryopeko:20101126155434p:image" class="hatena-fotolife"></a></p>
+			<h4>リンクについて</h4>			<p>jQueryMobileにおいてリンク(aタグ)は全てAjaxによるリクエストとなる。<span class="footnote"><a href="/ryopeko/#f3" name="fn3" title="Ajaxとならないように指定も可能">*3</a></span></p>
+			<p>これによりページ遷移なしにiOSのネイティブアプリの様なページ遷移を行うことができる。</p>
+			<p>イメージについては<a href="http://jquerymobile.com/demos/1.0a2/" target="_blank">jQueryMobileデモ</a>を参照。</p>
+			<p>リンク先のページについては特にAjaxリクエストであることを意識する必要はない。</p>
+			<p>従来通りのHTMLで、jQueryMobileのレイアウトを記述したHTMLを返すだけで良い。</p>
+			<p>例：</p>
+<pre class="syntax-highlight">
+<span class="synComment">&#60;!DOCTYPE html&#62;</span>
+<span class="synIdentifier">&#60;</span><span class="synStatement">html</span><span class="synIdentifier">&#62;</span>
+<span class="synIdentifier">&#60;</span><span class="synStatement">head</span><span class="synIdentifier">&#62;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&#60;</span><span class="synStatement">title</span><span class="synIdentifier">&#62;</span>title<span class="synIdentifier">&#60;/</span><span class="synStatement">title</span><span class="synIdentifier">&#62;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&#60;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/stylesheets/jquery.mobile-1.0a2.min.css&#34;</span><span class="synIdentifier"> </span><span class="synType">media</span><span class="synIdentifier">=</span><span class="synConstant">&#34;screen&#34;</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">&#34;stylesheet&#34;</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">&#34;text/css&#34;</span><span class="synIdentifier"> /&#62;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&#60;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">&#34;text/javascript&#34;</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">&#34;http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js&#34;</span><span class="synIdentifier">&#62;&#60;/</span><span class="synStatement">script</span><span class="synIdentifier">&#62;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&#60;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/javascripts/jquery.mobile-1.0a2.min.js&#34;</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">&#34;text/javascript&#34;</span><span class="synIdentifier">&#62;&#60;/</span><span class="synStatement">script</span><span class="synIdentifier">&#62;</span>
+<span class="synIdentifier">&#60;/</span><span class="synStatement">head</span><span class="synIdentifier">&#62;</span>
+<span class="synIdentifier">&#60;</span><span class="synStatement">body</span><span class="synIdentifier">&#62;</span>
+
+<span class="synIdentifier">&#60;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-role=</span><span class="synConstant">&#34;page&#34;</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-theme=</span><span class="synConstant">&#34;d&#34;</span><span class="synIdentifier">&#62;</span>
+  <span class="synIdentifier">&#60;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-role=</span><span class="synConstant">&#34;header&#34;</span><span class="synIdentifier">&#62;</span>
+    <span class="synIdentifier">&#60;</span><span class="synStatement">h1</span><span class="synIdentifier">&#62;</span>Word List<span class="synIdentifier">&#60;/</span><span class="synStatement">h1</span><span class="synIdentifier">&#62;</span>
+  <span class="synIdentifier">&#60;/</span><span class="synStatement">div</span><span class="synIdentifier">&#62;</span>
+
+  <span class="synIdentifier">&#60;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">style</span><span class="synIdentifier">=</span><span class="synConstant">&#34;margin:0 3px;&#34;</span><span class="synIdentifier">&#62;</span>
+    <span class="synIdentifier">&#60;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-role=</span><span class="synConstant">&#34;listview&#34;</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-theme=</span><span class="synConstant">&#34;c&#34;</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-inset=</span><span class="synConstant">&#34;true&#34;</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+        <span class="synIdentifier">&#60;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/vocabulary/show/1&#34;</span><span class="synIdentifier">&#62;</span><span class="synUnderlined">word</span><span class="synIdentifier">&#60;/</span><span class="synStatement">a</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;/</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+        <span class="synIdentifier">&#60;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/vocabulary/show/2&#34;</span><span class="synIdentifier">&#62;</span><span class="synUnderlined">duplicate</span><span class="synIdentifier">&#60;/</span><span class="synStatement">a</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;/</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+        <span class="synIdentifier">&#60;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/vocabulary/show/3&#34;</span><span class="synIdentifier">&#62;</span><span class="synUnderlined">disrupt</span><span class="synIdentifier">&#60;/</span><span class="synStatement">a</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;/</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+        <span class="synIdentifier">&#60;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/vocabulary/show/4&#34;</span><span class="synIdentifier">&#62;</span><span class="synUnderlined">rupt</span><span class="synIdentifier">&#60;/</span><span class="synStatement">a</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;/</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+        <span class="synIdentifier">&#60;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/vocabulary/show/5&#34;</span><span class="synIdentifier">&#62;</span><span class="synUnderlined">annual</span><span class="synIdentifier">&#60;/</span><span class="synStatement">a</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;/</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+        <span class="synIdentifier">&#60;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/vocabulary/show/6&#34;</span><span class="synIdentifier">&#62;</span><span class="synUnderlined">fundamental</span><span class="synIdentifier">&#60;/</span><span class="synStatement">a</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;/</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+        <span class="synIdentifier">&#60;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/vocabulary/show/7&#34;</span><span class="synIdentifier">&#62;</span><span class="synUnderlined">ensure</span><span class="synIdentifier">&#60;/</span><span class="synStatement">a</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;/</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+        <span class="synIdentifier">&#60;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">&#34;/vocabulary/show/8&#34;</span><span class="synIdentifier">&#62;</span><span class="synUnderlined">add</span><span class="synIdentifier">&#60;/</span><span class="synStatement">a</span><span class="synIdentifier">&#62;</span>
+      <span class="synIdentifier">&#60;/</span><span class="synStatement">li</span><span class="synIdentifier">&#62;</span>
+    <span class="synIdentifier">&#60;/</span><span class="synStatement">ul</span><span class="synIdentifier">&#62;</span>
+  <span class="synIdentifier">&#60;/</span><span class="synStatement">div</span><span class="synIdentifier">&#62;</span>
+<span class="synIdentifier">&#60;/</span><span class="synStatement">div</span><span class="synIdentifier">&#62;</span>
+<span class="synIdentifier">&#60;/</span><span class="synStatement">body</span><span class="synIdentifier">&#62;</span>
+<span class="synIdentifier">&#60;/</span><span class="synStatement">html</span><span class="synIdentifier">&#62;</span>
+</pre>
+
+			<p>jQueryMobileはこのレスポンスをロードして以下の様にレイアウトを整える。</p>
+			<p><a href="http://f.hatena.ne.jp/ryopeko/20101126160749" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/r/ryopeko/20101126/20101126160749.png" alt="f:id:ryopeko:20101126160749p:image" title="f:id:ryopeko:20101126160749p:image" class="hatena-fotolife"></a></p>
+			<p>この様に自動でbackボタンも付けられる。これを利用してページ遷移することなく元のページに戻ることができる。</p>
+			<h4>まとめ</h4>
+			<p>jQueryMobileはスマートフォン向けのページを素早く簡単に構築することができます。</p>
+			<p>自前で実装すると面倒な無遷移のページ移動が簡単に実装できます。</p>
+			<p>またデザインもjQueryMobile側で吸収してくれているので大量のcssを書かずに済みます。</p>
+			<p>これ以外にもたくさん機能が提供されているので非常に有用なフレームワークであると思います。</p>
+			<p>特にイベント関連の充実は本当に素晴らしいです。</p>
+			<p>これでデザインテーマも簡単に記述できるようになるともっと良いものになると思いました。</p>
+		</div>
+		<div class="footnote">
+			<p class="footnote"><a href="/ryopeko/#fn1" name="f1">*1</a>：<a href="http://jquerymobile.com/demos/1.0a2/#docs/api/themes.html" target="_blank">http://jquerymobile.com/demos/1.0a2/#docs/api/themes.html</a></p>
+			<p class="footnote"><a href="/ryopeko/#fn2" name="f2">*2</a>：<a href="http://jquerymobile.com/demos/1.0a2/#docs/lists/lists-themes.html" target="_blank">http://jquerymobile.com/demos/1.0a2/#docs/lists/lists-themes.html</a></p>
+			<p class="footnote"><a href="/ryopeko/#fn3" name="f3">*3</a>：Ajaxとならないように指定も可能</p>
+		</div>
+]]></content:encoded>
+	<dc:creator>ryopeko</dc:creator>
+	<dc:date>2010-11-26T16:15:35+09:00</dc:date>
+	<dc:subject>Javascript</dc:subject>
+	<dc:subject>jQueryMobile</dc:subject>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/ryopeko/20101117/1289991194">
+	<title>[Rails]Rails3でAjaxでformのcallbackを指定するには</title>
+	<link>http://d.hatena.ne.jp/ryopeko/20101117/1289991194</link>
+	<description> Rails3からの変更点でハマったのでメモ。 Rails2ではformをAjaxで送信するにはform_remote_tagを利用していた。 これがRails3では以下のように:remote =&#62; trueを指定することで実現する。 &#60;%= form_tag(url_for(:action =&#62; ’create’), :remote =&#62; true, :id</description>
+
+	<content:encoded><![CDATA[
+		<div class="section">
+			<p>Rails3からの変更点でハマったのでメモ。</p>
+			<p>Rails2ではformをAjaxで送信するにはform_remote_tagを利用していた。</p>
+			<p>これがRails3では以下のように:remote =&#62; trueを指定することで実現する。</p>
+<pre class="syntax-highlight">
+&#60;%= form_tag(url_for(<span class="synIdentifier">:action</span> =&#62; <span class="synSpecial">'</span><span class="synConstant">create</span><span class="synSpecial">'</span>), <span class="synIdentifier">:remote</span> =&#62; <span class="synConstant">true</span>, <span class="synIdentifier">:id</span> =&#62; <span class="synSpecial">&#34;</span><span class="synConstant">result_form</span><span class="synSpecial">&#34;</span>) <span class="synStatement">do</span> %&#62;
+&#60;% <span class="synStatement">end</span> %&#62;
+</pre>
+
+			<p>今は主にjQueryを使って開発している為、デフォルトで扱うjavascriptをjQueryに変更する。</p>
+			<p>Gemfileに以下記述</p>
+<pre class="syntax-highlight">
+gem <span class="synSpecial">'</span><span class="synConstant">jquery-rails</span><span class="synSpecial">'</span>
+</pre>
+
+			<p>bundle installして関連ファイルをgenerate</p>
+<pre>
+$ bundle install
+$ rails g jquery:install
+</pre>
+
+			<p>jquery.jsとrails.jsを読み込むように設定</p>
+			<p>jquery.jsはgoogleから読み込み</p>
+<pre class="syntax-highlight">
+<span class="synComment">#app/views/layouts/application.html.erb等に記述</span>
+  &#60;script type=<span class="synSpecial">&#34;</span><span class="synConstant">text/javascript</span><span class="synSpecial">&#34;</span> src=<span class="synSpecial">&#34;</span><span class="synConstant">http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js</span><span class="synSpecial">&#34;</span>&#62;&#60;/script&#62;
+  &#60;%= javascript_include_tag <span class="synSpecial">'</span><span class="synConstant">rails</span><span class="synSpecial">'</span> %&#62;
+</pre>
+
+			<p>formからのリクエストを受け取るcallbackをJavascriptファイルに設定</p>
+<pre class="syntax-highlight">
+$(<span class="synIdentifier">function</span>($)<span class="synIdentifier">{</span>
+    $(<span class="synConstant">'#result_form'</span>)
+        .bind(<span class="synConstant">&#34;ajax:complete&#34;</span>, <span class="synIdentifier">function</span>()<span class="synIdentifier">{</span>
+           <span class="synComment">//ここに具体的な処理を記述</span>
+        <span class="synIdentifier">}</span>);
+<span class="synIdentifier">}</span>);
+</pre>
+
+			<p>他のステータスについても記述可能</p>
+			<p>それぞれ引数を受け取ることもできる。</p>
+<pre class="syntax-highlight">
+$(<span class="synIdentifier">function</span>($)<span class="synIdentifier">{</span>
+    $(<span class="synConstant">'#result_form'</span>)
+        .bind(<span class="synConstant">&#34;ajax:loading&#34;</span>, <span class="synIdentifier">function</span>(xhr)<span class="synIdentifier">{</span>
+           <span class="synComment">//ここに具体的な処理を記述</span>
+        <span class="synIdentifier">}</span>)
+        .bind(<span class="synConstant">&#34;ajax:success&#34;</span>, <span class="synIdentifier">function</span>(data, <span class="synStatement">status</span>, xhr)<span class="synIdentifier">{</span>
+           <span class="synComment">//ここに具体的な処理を記述</span>
+        <span class="synIdentifier">}</span>)
+        .bind(<span class="synConstant">&#34;ajax:complete&#34;</span>, <span class="synIdentifier">function</span>(xhr)<span class="synIdentifier">{</span>
+           <span class="synComment">//ここに具体的な処理を記述</span>
+        <span class="synIdentifier">}</span>)
+        .bind(<span class="synConstant">&#34;ajax:failure&#34;</span>, <span class="synIdentifier">function</span>(data, <span class="synStatement">status</span>, xhr)<span class="synIdentifier">{</span>
+           <span class="synComment">//ここに具体的な処理を記述</span>
+        <span class="synIdentifier">}</span>);
+<span class="synIdentifier">}</span>);
+</pre>
+
+			<p>処理を無名関数に記述できるのでRails2でのようにviewにゴチャっと書く必要がなくなり、より明確になったと思う。</p>
+		</div>
+]]></content:encoded>
+	<dc:creator>ryopeko</dc:creator>
+	<dc:date>2010-11-17T19:53:14+09:00</dc:date>
+	<dc:subject>Rails</dc:subject>
+</item>
+</rdf:RDF>

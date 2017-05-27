@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xml:lang="ja">
+	<channel>
+		<title>たぐってつづる</title>
+		<link>http://d.hatena.ne.jp/hrsth/</link>
+		<description>たぐってつづる</description>
+		<dc:creator>hrsth</dc:creator>
+
+
+		<item>
+			<title>[Ruby]Array#product を使って配列の操作を楽にする</title>
+			<link>http://d.hatena.ne.jp/hrsth/20110910/1315625174</link>
+
+			<description>  配列が次のように与えられているときに，  a = %w(a b c d e f g h i j) b = %w(1 2 3 4 5 6 7 8 9 0)  各要素の総当りでこのような配列を作りたい場合，  [&#34;a1&#34;, &#34;a2&#34;, &#34;a3&#34;, &#34;a4&#34;, &#34;a5&#34;, &#34;a6&#34;, &#34;a7&#34;, &#34;a8&#34;, &#34;a9&#34;, &#38;quot ...</description>
+
+			<dc:creator>hrsth</dc:creator>
+
+			<pubDate>Sat, 10 Sep 2011 03:26:14 GMT</pubDate>
+
+
+
+			<category>Ruby</category>
+
+
+		</item>
+
+		<item>
+			<title>[Ruby] 配列内の重複する値を抽出する方法を測ってみた</title>
+			<link>http://d.hatena.ne.jp/hrsth/20110803/1312373564</link>
+
+			<description>  Rubyで配列内の重複する値を抽出する方法 というエントリを見て触発されてベンチマークを取ってみました． 紹介されている方法は下記のようなコード  a = [1, 2, 3, 4, 5, 6, 5, 4] a.uniq.map{|v| v if a.inject(Hash.new(0)) {|h, key| h[key] += 1; h}[v] &#62;= 2}.compact  mapのブロック内でのイテレートはコストが高く， 下記のエントリのようにArray#indexとArray#rindex  ...</description>
+
+			<dc:creator>hrsth</dc:creator>
+
+			<pubDate>Wed, 03 Aug 2011 12:12:44 GMT</pubDate>
+
+
+
+			<category>Ruby</category>
+
+
+		</item>
+
+		<item>
+			<title>[Mac]MacBookのバッテリーを交換してもらってきた．</title>
+			<link>http://d.hatena.ne.jp/hrsth/20110724/1311487034</link>
+
+			<description>   きっかけ MacBook の座りが悪くてがたがたするなーと思って ふとひっくり返してみてみたらバッテリー部分がこんもり膨らんでいたので Genius Barに駆け込んできました． バッテリーが膨らんだのはMacbook 2008 early の中位モデル． 3年以上前に買って，クラムシェルモード*1 で毎日のように使ってました． 電源アダプタを繋いでいないと動かせないので電源はつなぎっぱなし．  Genius Barにて Genius Barの方が言うには， （１）バッテリーの暴発や火災を防ぐために ...</description>
+
+			<dc:creator>hrsth</dc:creator>
+
+			<pubDate>Sun, 24 Jul 2011 05:57:14 GMT</pubDate>
+
+
+
+			<category>Mac</category>
+
+
+		</item>
+
+		<item>
+			<title>[Ruby]「集合知プログラミング」をRubyで書いてみよう</title>
+			<link>http://d.hatena.ne.jp/hrsth/20110703/1309659693</link>
+
+			<description>     集合知プログラミング  作者: Toby Segaran,當山仁健,鴨澤眞夫 出版社/メーカー: オライリージャパン 発売日: 2008/07/25 メディア: 大型本 購入: 66人 クリック: 1,666回 この商品を含むブログ (240件) を見る     何年か前に買って斜め読みしたまま放置していた 「集合知プログラミング」をRubyで書いてみようとふと思い立ったので とりあえず決意表明のエントリ*1．  github https://github.com/hrstt/collectiv ...</description>
+
+			<dc:creator>hrsth</dc:creator>
+
+			<pubDate>Sun, 03 Jul 2011 02:21:33 GMT</pubDate>
+
+
+
+			<category>Ruby</category>
+
+
+		</item>
+
+		<item>
+			<title>[Mac][Ruby][Ubuntu]RVM 関連のエントリまとめ</title>
+			<link>http://d.hatena.ne.jp/hrsth/20110629/1309351491</link>
+
+			<description>  rvmをネタにずいぶんエントリがたまってたんだなぁと気づいたので 自エントリのまとめをしておこうと思います． # 同じようなことばっかり書いている気もする．  Snow Leopard 新しめのエントリ．Xcode 4 を買うと，rvm周りに関しては MacPortsのお世話にならなくて良いのがいいですね．   Snow Leopard でrvm 環境を整えなおした - たぐってつづる   rvm のgemsetをおさらい（Mac でRuby） - たぐってつづる    関連ライブラリ readlin ...</description>
+
+			<dc:creator>hrsth</dc:creator>
+
+			<pubDate>Wed, 29 Jun 2011 12:44:51 GMT</pubDate>
+
+
+
+			<category>Mac</category>
+
+			<category>Ruby</category>
+
+			<category>Ubuntu</category>
+
+
+		</item>
+
+	</channel>
+</rss>

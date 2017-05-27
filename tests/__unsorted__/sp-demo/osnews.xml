@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<channel rdf:about="http://www.osnews.com/files/recent.rdf">
+		<title>OSNews</title>
+		<link>http://www.osnews.com/</link>
+		<description>Exploring the Future of Computing</description>
+		<image rdf:resource="http://www.osnews.com/images/osnews.gif"/>
+		<items>
+			<rdf:Seq>
+				<rdf:li resource="http://www.osnews.com/story/28832/SailfishOS_2_0_released_for_early_access_users"/>
+				<rdf:li resource="http://www.osnews.com/story/28831/A_graphical_OS_for_the_Atari_8-bit"/>
+				<rdf:li resource="http://www.osnews.com/story/28830/Apple_unveils_iPad_Pro_iPhone_6S_more"/>
+				<rdf:li resource="http://www.osnews.com/story/28829/Marc_Dillon_Jolla_s_co-founder_departs"/>
+				<rdf:li resource="http://www.osnews.com/story/28828/A_history_of_modern_init_systems"/>
+				<rdf:li resource="http://www.osnews.com/story/28827/_Google_will_comply_with_censorship_to_get_Play_into_China_"/>
+				<rdf:li resource="http://www.osnews.com/story/28826/Operating_systems_three_easy_pieces"/>
+				<rdf:li resource="http://www.osnews.com/story/28825/Steve_Jobs_the_man_in_the_machine"/>
+				<rdf:li resource="http://www.osnews.com/story/28824/The_object-oriented_state_machine_operating_system"/>
+				<rdf:li resource="http://www.osnews.com/story/28823/The_cheap_phones_quietly_winning_the_U_S_"/>
+				<rdf:li resource="http://www.osnews.com/story/28822/The_scales_are_tipping"/>
+				<rdf:li resource="http://www.osnews.com/story/28821/New_Android_phones_from_Sony_Lenovo_and_a_former_Apple_CEO"/>
+				<rdf:li resource="http://www.osnews.com/story/28820/_Samsung_s_Gear_S2_is_its_best-looking_smartwatch_yet_"/>
+				<rdf:li resource="http://www.osnews.com/story/28819/New_Moto360_unveiled"/>
+				<rdf:li resource="http://www.osnews.com/story/28818/The_limits_of_language"/>
+			</rdf:Seq>
+		</items>
+		<textinput rdf:resource="http://www.osnews.com/search.php"/>
+	</channel>
+	<image rdf:about="http://www.osnews.com/images/osnews.gif">
+		<title>OSNews.com</title>
+		<link>http://www.osnews.com/</link>
+		<url>http://www.osnews.com/images/osnews.gif</url>
+	</image>
+	<item rdf:about="http://www.osnews.com/story/28832/SailfishOS_2_0_released_for_early_access_users">
+		<title>SailfishOS 2.0 released for early access users</title>
+		<link>http://www.osnews.com/story/28832/SailfishOS_2_0_released_for_early_access_users</link>
+		<description>It's been a long wait, but SailfishOS 2.0 has been released - only for early access users right now, but since everyone can be an early access user, that's a moot point. SailfishOS 2.0 overhaul the entire user interface to supposedly make it simpler. Another major change is under the hood - the operating system is now ready for different screen sizes, since the Jolla tablet can ship any moment now.
+
+You can simply swipe left or right between Home and Events, like in a carousel. The App Grid is quickly accessible from anywhere in the UI just by swiping over the bottom edge - you don't need to go to the Home screen if you want to open a new app.
+
+Events is now richer and smarter by comprising a weather widget with an option to display five-day weather forecast, a calendar widget, as well as grouped and enhanced notification handling. Now you are able to see and do more with your notifications directly in Events, whether they are from native apps or Android apps.
+
+We also added a lot of other enhancements like redesigned App covers for Gallery, Notes, and Camera apps, added many new animations, and made improvements for existing apps like Jolla Store, Calendar, Camera. Just to mention a few.
+
+The update is installing on my Jolla right now, so I don't have much to add for now. I'll most likely add the SailfishOS 2.0 phone experience to my Jolla tablet review.</description>
+		<dc:date>2015-09-10T21:24:23+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28831/A_graphical_OS_for_the_Atari_8-bit">
+		<title>A graphical OS for the Atari 8-bit</title>
+		<link>http://www.osnews.com/story/28831/A_graphical_OS_for_the_Atari_8-bit</link>
+		<description>Atari 8-bit fans have long hankered after a GUI similar to GEOS on the Commodore 64. Diamond GOS went some way to addressing this deficiency, and since then there have been several creditable attempts at implementing a GUI OS on the A8. Now there's another one in the pipeline: an as yet unnamed project which aims to bring a pre-emptive multi-tasking graphical operating system to the 8-bit Atari.
+
+Impressive.</description>
+		<dc:date>2015-09-09T21:34:04+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28830/Apple_unveils_iPad_Pro_iPhone_6S_more">
+		<title>Apple unveils iPad Pro, iPhone 6S, more</title>
+		<link>http://www.osnews.com/story/28830/Apple_unveils_iPad_Pro_iPhone_6S_more</link>
+		<description>Apple held its usual September event tonight, and it unveiled three major new products: a new Apple TV, the iPad Pro, and the iPhone 6S/6S Plus. The new Apple TV is effectively the old Apple TV, but with Siri, applications, and a funny-looking remote. It looks fun to use, but it's nothing revolutionary and most likely won't change the TV landscape as much as Apple wants it to.
+
+Apple also made a big fuss about gaming on the new Apple TV, but since applications cannot be larger than 200 MB, don't expect much from this. Then again, Apple showed off a 100% Wii Sports rip-off as the big new thing in gaming, so I'm betting on Apple still not really having a clue about gaming.
+
+The iPad Pro, on the other hand, is literally Surface. Like, there are no ifs and buts - it's literally an iPad Surface. It's got a 12.9&quot; display, a crazy-fast processor and graphics chip, a foldable, Surface-like keyboard cover, and a stylus/pen for ink. It, of course, makes great use of the new Aero Snap and Windows 8.x multiwindow features introduced with iOS 9. The base model is fairly cheap, but much like the Surface, once you add the keyboard cover and pen, prices go up substantially.
+
+Speaking of the pen, Apple drapes it in all sorts of annoying Apple-isms, but it does actually look fairly advanced - closer to top-of-the-line Wacom stuff; this isn't the stylus that came with your Palm device. It'll be great for artists, but much like the Surface's pen, I just don't see a use for it any other application.
+
+Lastly, Apple unveiled the iPhone 6S and the 6S Plus, and it's got some really, really cool stuff. The Force Touch and Taptic engine stuff from Apple's latest trackpads and the Apple Watch is built right in, now dubbed 3D Touch (...eh), and it's used to add a number of new interactions into iOS on the 6S. You can gently press on, say, an e-mail, and it'll show you a quick preview, or press a bit harder and open it fully. This also works for application icons, where it'll open a menu with often-used actions for that application.
+
+Think of it as Quick Look for applications. It will be open to developers, so you can expect all kinds of cross-application functionality, which is really welcome on a mobile platforms so heavily focussed on apps-as-islands. I really like this new feature, and I can't wait to start using it (I'm buying the iPhone 6S early October).
+
+And, unimportant to most but I just want to mention it: it comes in an awesome new colour that I'm totally going for. And, as always, it'll have a faster processor, a better camera, and so on - all the usual things you can expect from a new flagship.</description>
+		<dc:date>2015-09-09T20:03:38+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28829/Marc_Dillon_Jolla_s_co-founder_departs">
+		<title>Marc Dillon, Jolla's co-founder, departs</title>
+		<link>http://www.osnews.com/story/28829/Marc_Dillon_Jolla_s_co-founder_departs</link>
+		<description>Dillon's visibility and personal passion for Sailfish has, at times, made him feel like the de facto face of the entire Sailfish project - eclipsing the other co-founders with his call-to-arms conviction and punkish demands for a more human technology, for software to have a heart, for developers to champion difference and care about consumers whose tastes are unlike the mainstream. Sailfish's small pond certainly rippled with the energy of such a vivid personality.
+
+So on one level it's a huge surprise to hear he's left Jolla, the company he quit former employer Nokia to help co-found all the way back in 2011.
+
+So, not only did Jolla split into a separate software and a separate hardware company (never a good sign), now its co-founder and frontman has left the, uh, ship as well.
+
+You don't need a lot of brain cells to figure this one out.</description>
+		<dc:date>2015-09-08T23:35:48+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28828/A_history_of_modern_init_systems">
+		<title>A history of modern init systems</title>
+		<link>http://www.osnews.com/story/28828/A_history_of_modern_init_systems</link>
+		<description>The subject of process management, supervision and init(8) for Unix-like systems is one plagued by a large degree of ahistoricity and &quot;pop culture&quot; explanations. This leads to a lot of confusion and misunderstanding surrounding feature sets and how one formulates the problems surrounding reliable process management on Unix in general, making it a ripe topic for demagogues of all persuasions.
+
+[...]
+
+The purpose of this article is to set the record straight on the history of attempts to create &quot;modern&quot; init systems, where we define &quot;modern&quot; somewhat broadly as anything that tries to improve the classical BSD and System V styles of initialization and service management.</description>
+		<dc:date>2015-09-08T23:31:47+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28827/_Google_will_comply_with_censorship_to_get_Play_into_China_">
+		<title>'Google will comply with censorship to get Play into China'</title>
+		<link>http://www.osnews.com/story/28827/_Google_will_comply_with_censorship_to_get_Play_into_China_</link>
+		<description>Today The Information reports that Google is making plans to get a version of Google Play back into China and that it's willing to work within Chinese censorship law to do it. The company &quot;will follow local laws and block apps that the government deems objectionable&quot; in the interest of regaining control over its own operating system. Google also wants to help Chinese developers distribute their apps outside of China and help international developers sell their apps within China.
+
+Everything's for sale.</description>
+		<dc:date>2015-09-07T22:43:04+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28826/Operating_systems_three_easy_pieces">
+		<title>Operating systems: three easy pieces</title>
+		<link>http://www.osnews.com/story/28826/Operating_systems_three_easy_pieces</link>
+		<description>Welcome to Operating Systems: Three Easy Pieces, a free online operating systems book! The book is centered around three conceptual pieces that are fundamental to operating systems: virtualization, concurrency, and persistence. In understanding the conceptual, you will also learn the practical, including how an operating system does things like schedule the CPU, manage memory, and store files persistently. Lots of fun stuff!</description>
+		<dc:date>2015-09-07T22:39:53+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28825/Steve_Jobs_the_man_in_the_machine">
+		<title>Steve Jobs: the man in the machine</title>
+		<link>http://www.osnews.com/story/28825/Steve_Jobs_the_man_in_the_machine</link>
+		<description>Steve Jobs: The Man in the Machine hits theaters, iTunes, Amazon Instant Video, and on demand systems today, and it's already provoking a wide range of reviews and discussion. In March, our own Bryan Bishop called it an &quot;unflinching look at the emotional shrapnel people took when they were part of JobsÃ¢ÂÂ life,&quot; and that focus sets it apart from the growing body of work that celebrates Jobs' accomplishments in business and technology while glossing over the depth of his character.
+
+I spoke with Gibney earlier this week about the movie, what he'd learned while making it, and the future of Apple.
+
+I've seen it. &quot;Steve Jobs: The Man In The Machine&quot; is amazing. What a beautiful testament to a brilliant, but flawed man. This documentary is anything but anti-Apple (as some claim). By painting this complete a picture of Jobs, it's as pro-Apple as it could possibly get - and it's glorious for it. When it hits upon Apple's best days - the original iMac, iBook, PowerMac G4, the Cube, the iMac G4 - I nearly lost it. That is the Apple I still love.
+
+I've never felt I understood him and Apple as much as I do now.</description>
+		<dc:date>2015-09-05T21:56:24+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28824/The_object-oriented_state_machine_operating_system">
+		<title>The object-oriented state machine operating system</title>
+		<link>http://www.osnews.com/story/28824/The_object-oriented_state_machine_operating_system</link>
+		<description>OOSMOS stands for Object-Oriented State Machine Operating System. It is a new type of operating system where the fundamental contextual unit is the object, not the thread as it is in traditional operating systems.
+
+Because there are no threads, there are no thread stacks, so OOSMOS is ideal for use in memory constrained environments where a traditional thread-based operating system is not a viable option.</description>
+		<dc:date>2015-09-04T22:46:54+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28823/The_cheap_phones_quietly_winning_the_U_S_">
+		<title>The cheap phones quietly winning the U.S.</title>
+		<link>http://www.osnews.com/story/28823/The_cheap_phones_quietly_winning_the_U_S_</link>
+		<description>ZTE is quietly becoming a force in the U.S. by selling good enough phones at low prices - smaller prepaid smartphones for $30, basic phones with QWERTY keyboards for about the same, and so on. The Chinese company's products are among the cheap phones of choice at three of the big four U.S. carriers. (Verizon doesn't carry them.) ZTE claimed about 8 percent of America's smartphone market in the second quarter of this year, says researcher IDC, up from 4.2 percent in the first quarter of 2014. That ranks the company fourth among smartphone makers overall, behind Apple, Samsung, and LG. &quot;We came from nowhere, and now we are a solid force,&quot; says Lixin Cheng, head of ZTE's U.S. operations.
+
+For many people, their phone isn't a status symbol, or it's just something they don't care about at all - as long as it makes calls and pulls some light duty, they're happy. I really dislike how these phones and its users tend to be portrayed in the media - almost as if these people are stupid, silly, or dumb for not wanting the latest iPhone or Galaxy phone. Elitist nonsense.
+</description>
+		<dc:date>2015-09-04T22:45:20+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28822/The_scales_are_tipping">
+		<title>*The scales are tipping*</title>
+		<link>http://www.osnews.com/story/28822/The_scales_are_tipping</link>
+		<description>For the past few years, we've been in a relatively healthy balance when it comes to our smartphones. Both Apple and Google provided us with relatively decent platforms that were pretty straightforward to use, provided us with interesting and useful functionality, and at mostly decent price points. In return, we accepted a certain amount of lock-in, a certain lack of control over our devices and the software platforms running on them. I felt comfortable with this trade-off, whether I was using an iPhone or an Android phone at the time.
+
+Recently, however, I've been feeling like this balance in iOS and Android is tipping - and not in the right direction. The users' interests have taken a decided backseat to corporate interests, and the user experiences of the two platforms in question have, consequently, suffered, and I see little in the future to counteract this development
+ Read more on this exclusive OSNews article...</description>
+		<dc:date>2015-09-04T15:13:29+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28821/New_Android_phones_from_Sony_Lenovo_and_a_former_Apple_CEO">
+		<title>New Android phones from Sony, Lenovo, and a former Apple CEO</title>
+		<link>http://www.osnews.com/story/28821/New_Android_phones_from_Sony_Lenovo_and_a_former_Apple_CEO</link>
+		<description>Like I said, it's Android week in the technology world right now, but I'm not going to write a new post for every Android phone being thrown onto the world stage to be forgotten in a week. Instead, I'm going to focus on a few that I think are particularly interesting, and I'm going to start with Sony. The company has unveiled its Xperia Z5 line and it has to be said - the Z5 Compact, the Z5, and the Z5 Premium are absolutely gorgeous.
+
+In terms of essential specs, the three Z5s are pretty similar. (The main differences are size, materials, and screen resolution.) ThereÃ¢ÂÂs the same Snapdragon 810 64-bit processor powering each of them, with both the Z5 and Z5 Premium sporting 3GB of RAM while the smaller Compact gets 2GB. All three devices are dust-tight and waterproof with capless micro USB ports, offer up to 32GB of internal memory (expandable up to 200GB with microSD cards), and have enough battery to last for up two days' use, says Sony.
+
+The Z5 Premium is a monster of a phone - it has a 4K display, which equates to 3840x2160 pixels and a ppi of 806. Pure insanity. Sony claims all three phones - even the Premium - get 2 days of use on a single charge. They look fantastic, but for some reason, nobody seems to buy Sony smartphones.
+
+Moving on, Lenovo unveiled a bunch of smartphones, and I think one of them might be of interest to many of you.
+
+The Vibe P1 and P1m slot in underneath the S1 just slightly, and they're all about simple features and battery life. The Vibe P1 is an all-metal affair, with a 5.5-inch 1080p display, Snapdragon 615 processor, 2GB of RAM, 32GB of storage, 13MP rear camera and an absolutely huge 5000 mAh battery. That battery enables reverse charging of other devices over USB, and sports quick charging capabilities.
+
+That's a positively huge battery, and should enable some major battery life.
+
+
+Lastly, there's a new company - lead by former Apple CEO John Sculley - who also unveiled two brand new Android smartphones. The company's called Obi, and their first two phones are the SF1 and SJ1.5. I'll be honest here - I want these phones' babies. They look fun, quirky, and different, and represent a welcome change from the boring, metallic, cold, hospital-esque stuff we get from other phone makers. They got decent specs, too.
+
+That being said, it's a startup - big name co-founder or no - and there's no information on availability and pricing yet, so for all I know, they're never going to be heard from again. Also, as with all the phones mentioned in this post, they're not running stock Android, so don't expect timely updates.
+
+Still, these are some interesting phones.</description>
+		<dc:date>2015-09-03T19:20:36+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28820/_Samsung_s_Gear_S2_is_its_best-looking_smartwatch_yet_">
+		<title>'Samsung's Gear S2 is its best-looking smartwatch yet'</title>
+		<link>http://www.osnews.com/story/28820/_Samsung_s_Gear_S2_is_its_best-looking_smartwatch_yet_</link>
+		<description>I can't believe I'm going to say this, but I'm actually a very tiny, tiny little bit 'excited' about Samsung's (...eh) new smartwatch, the Gear S2. It looks pretty decent, seems to have a better input method than laggy touch (Wear) or a finicky jog dial nobody uses (Apple Watch), and the software - that's Tizen, so an alternative operating system! Right? Right? - looks nice, and seems to work well too.
+
+
+The impressive things with the Gear S2 don't end with its new design: Samsung's actually figured out a really smart interaction model for smartwatches that I'm shocked no one else has done yet. There's the touchscreen, yes, just like most other smartwatches, and the Gear S2 has a couple buttons on its side for home and back. But its real trick is in the rotating bezel, which lets you quickly and easily scroll through lists, apps, watch faces, and whatever else you might be looking at on the screen. It's more predictable and intuitive than the Apple Watch's Digital Crown and is a joy to use.
+
+I can't believe that upon first inspection, this Gear S2 actually seems like a really well-designed and well-thought out product, considering we're dealing with Samsung here. This thing still isn't watch enough for my personal taste, but there's no denying that Samsung seems to have done a decent job here.
+
+I hope I get to play with one soon.</description>
+		<dc:date>2015-09-03T18:14:20+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28819/New_Moto360_unveiled">
+		<title>New Moto360 unveiled</title>
+		<link>http://www.osnews.com/story/28819/New_Moto360_unveiled</link>
+		<description>There's a technology conference going on - IFA - and there's lots and lots of Android-related news. First, a lot of Android Wear smartwatches - including the brand new Moto 360.
+
+If you were hoping for a radically different design from Motorola this year, you're barking up the wrong tree. As we saw in the leaks, Motorola has kept the imperfect circle design from the original Moto 360 and added lugs on the top and bottom instead of hiding the strap connectors inside the casing itself. This change makes it significantly easier to swap out the strap with whatever you want, but also makes more room in the casing for things like a beefier battery. The single button on the side of the watch has moved to the 2 o'clock position, making it significantly easier to reach for and use. Curiously, this button now has the Motorola M emblazoned across it.
+
+Other new Wear watches are the Huawei Watch and the Asus ZenWatch 2. There's really not much to say here - they all have the exact same software as the current (or now 'previous', I guess) crop of Wear devices, so if you weren't impressed then, you won't be impressed now.
+
+If you're looking for something different, I suggest you read the next item I'm about to post.</description>
+		<dc:date>2015-09-03T18:06:34+00:00</dc:date>
+	</item>
+	<item rdf:about="http://www.osnews.com/story/28818/The_limits_of_language">
+		<title>The limits of language</title>
+		<link>http://www.osnews.com/story/28818/The_limits_of_language</link>
+		<description>The best class I took in college was on the philosopher Ludwig Wittgenstein. Until that point, I had avoided philosophy of language as simply being too esoteric and hermetic to be of use. David Pears, a prodigious yet modest and approachable figure visiting from Oxford, changed my mind. In large part because of Pears' instruction, Wittgenstein's philosophy has been directly relevant to my thinking about computer science, artificial intelligence, and cognitive science. When other scholars were thinking that language and thought could be reduced to a universal, logical language, Wittgenstein turned the matter to practical questions and raised incredibly inconvenient questions that gained traction in artificial intelligence in the 1970s, 40 years after he was working on them.
+
+Great article. I found this paragraph especially interesting:
+
+Here's one example. The French equivalents for here and there are ici and lÃÂ  respectively. But if I point to a pen and say, &quot;The pen is here,&quot; the French equivalent is not &quot;Le stylo est ici,&quot; but &quot;Le stylo est lÃÂ .&quot; In French, lÃÂ  is always used to refer to a specific place or position, while in English here or there can both work. This rule is so obscure I never learned it in French classes, but obviously all native speakers learn it because no one ever uses it differently. It could just as easily be the other way round, but it's not. The situation is not arbitrary, but the way in which language carves up the interaction between mind and world varies in such a way that French speakers recognize certain practices as right or wrong in a different way than English speakers do. This may seem a trivial point, until you have to program a computer to translate &quot;I pointed to Paris on the map and said, 'She is here.' &quot; into French - at which point it becomes a nightmare. (If you are a translator, on the other hand, this is great news.)
+
+Aside from the obvious fact that I can relate to the remark about translators, the author touches upon something that I benefit from every day. I always feel that being multilingual (just Dutch, English, German, some French, and a basic grasp of ancient Greek and Latin - relatively limited when compared to true multilinguals) makes it easier for me to express myself. Being able to use words, concepts, ideas, structures, and conventions from foreign languages and incorporate them into my Dutch - even if only in my inner monologue - allows me to describe objects, concepts, and situations in a more fine-grained, and therefore, more accurate manner (accurate to my perception, which does not mean &quot;more correct&quot; in more absolute terms).
+
+I appreciate how ridiculously pretentious this sounds, but I do firmly believe this is true: being able to understand, read, write, and speak multiple language makes me better at language.
+
+I'm no programmer - something I like to repeat as often as I can to make sure everyone knows where I'm coming from on the subject of programming - but I get the idea that programming is not very different in that regard. That is, being able to program in multiple programming languages will make you better at programming, and not just in the sense that you will be useful in more situations (you can find a job both as a Java and an Objective-C programmer, for instance), but also in the sense that knowledge and experience in programming language Abc will give you new and different insights into programming language Xyz, allowing you to use a certain language in more unconventional ways that people with knowledge of fewer languages might not.
+
+As much as language is an expression of culture, a programming language is an expression of how a computer works. Both contain within them invaluable knowledge that cannot be easily expressed in other languages - and as such, they are invaluable in preserving knowledge, both culturally and digitally.</description>
+		<dc:date>2015-09-02T08:47:59+00:00</dc:date>
+	</item>
+	<textinput rdf:about="http://www.osnews.com/search.php">
+		<title>Search OSNews</title>
+		<description>Search OSNews articles</description>
+		<name>search</name>
+		<link>http://www.osnews.com/search.php</link>
+	</textinput>
+</rdf:RDF>

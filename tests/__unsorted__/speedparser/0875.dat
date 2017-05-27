@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0"><channel><description>News, tips and tricks about Web Translate It, the web-based translation software.
+You should follow @webtranslateit on Twitter, too.</description><title>Web Translate It Blog</title><generator>Tumblr (3.0; @webtranslateit)</generator><link>http://blog.webtranslateit.com/</link><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/webtranslateit" /><feedburner:info uri="webtranslateit" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://tumblr.superfeedr.com/" /><item><title>API update: new public API token and JSONP support</title><description>&lt;p&gt;I just released an update to WebTranslateIt’s API, which now accept two API keys for a project:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;the usual private token, which authenticates read and write API endpoints,&lt;/li&gt;
+&lt;li&gt;a public token, which only authenticates read API endpoints.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Developers should use the new public token to develop features where the API token will be exposed (when developing a Javascript client for instance). You’ll find the new public token in your project settings.&lt;/p&gt;
+
+&lt;p&gt;Finally, WebTranslateIt now supports &lt;a href="http://en.wikipedia.org/wiki/JSONP"&gt;JSONP&lt;/a&gt; for all API endpoints. You will find more information about that in the &lt;a href="http://docs.webtranslateit.com/api/"&gt;API documentation&lt;/a&gt;.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/tGxR7QdYJZo" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/tGxR7QdYJZo/10721820055</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/10721820055</guid><pubDate>Tue, 27 Sep 2011 09:56:25 +0200</pubDate><category>feature</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/10721820055</feedburner:origLink></item><item><title>Get the most out of developer comments</title><description>&lt;p&gt;Developer comments are instructions or help for translators left by developers in a locale file.&lt;/p&gt;
+
+&lt;p&gt;They are very different from regular comments. Comments are meant to be used for discussion, whereas developer comments as meant to be used for leaving a brief instruction to a translator.&lt;/p&gt;
+
+&lt;p&gt;When importing most language files, &lt;a href="https://webtranslateit.com"&gt;WebTranslateIt&lt;/a&gt; automatically extracts these developer comments and displays them in the translation interface, so they are visible to translators.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lrtyo5xc0b1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;You can author or edit a developer comment from the web interface. Click on the “option” button, then “Details” (keyboard shortcut: press the &lt;code&gt;d&lt;/code&gt; key after selecting a string).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lrtz1gevOj1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;A modal window appears and lets you type a comment. The length of a developer comment is limited to 140 characters to force you to keep your message short: these instructions should convey the idea quickly to translators.&lt;/p&gt;
+
+&lt;h1&gt;Advanced features&lt;/h1&gt;
+
+&lt;p&gt;Did you know you can upload and attach screenshots to developer comments to illustrate your comment? Use it to upload a screenshot of your app to show where a string is located, for instance.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lrtzfcvJPk1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;Perhaps the killer feature is that developer comments are formatted using &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt;. The Markdown syntax allows you can create links, display images… the possibilities are almost limitless.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lrtzk6EBPi1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;In this example, I used the markdown syntax to display an image inline.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lrtzoo6Fkl1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, here’s real-life example: one of our users pushed the usefulness of this feature even further. They use WebTranslateIt to translate a list of products for an online shop pulled from their database. They wanted to convey more context to translators: how different is this shoe look compared to this other shoe?&lt;/p&gt;
+
+&lt;p&gt;They had the idea of programmatically format their developer comments so a small thumbnail representing their product is displayed on the translation interface for each string. Is there a better way to give context to a translator than that?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lrv68zyH7Q1qz6hl3.png" alt=""/&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/vGHt9YvvABw" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/vGHt9YvvABw/10475945608</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/10475945608</guid><pubDate>Wed, 21 Sep 2011 10:50:54 +0200</pubDate><category>tip</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/10475945608</feedburner:origLink></item><item><title>Translation Suggestions 2.0</title><description>&lt;p&gt;I just released a large update to &lt;a href="https://webtranslateit.com"&gt;WebTranslateIt&lt;/a&gt;’s translation suggestion system. What’s new?&lt;/p&gt;
+
+&lt;h2&gt;Term Base Integration&lt;/h2&gt;
+
+&lt;p&gt;Translation suggestions now integrate with the Term Base. What’s the Term Base? It’s a glossary of recurrent terms in your project. You can read more about it &lt;a href="http://blog.webtranslateit.com/post/441346286"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When a term from your term base is detected, the translation interface will automatically pull its translation for you. Click on a term to copy the term to the textarea.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lrmdxrzdFt1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;Adding terms to the term base can be a lot of work, but this integration makes it worth your time, as it really helps with translation consistency.&lt;/p&gt;
+
+&lt;h2&gt;New translation suggestion algorithm&lt;/h2&gt;
+
+&lt;p&gt;Prior to this upgrade, we used suggestions from Google Translate (ranked first), suggestions from translations from your own project, and suggestions from the Global Translation Memory (which contains translations coming from Projects which chose to contribute their translations to the system).&lt;/p&gt;
+
+&lt;p&gt;The new Translation Memory system use a more elaborate algorithm coupled with a ranking system.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lrm7qrIWoB1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;The biggest difference with the previous algorithm is that it ranks suggestions better, and only uses Google Translate suggestions if the suggestions from WebTranslateIt have a bad ranking.&lt;/p&gt;
+
+&lt;p&gt;It is also able to pull out up to 20 different suggestions. By default we only display the 3 first translations, but you can see more by clicking on “view more suggestions”.&lt;/p&gt;
+
+&lt;h2&gt;Feedback&lt;/h2&gt;
+
+&lt;p&gt;I hope the new translation suggestion system works better for you. If you have feedback to share, don’t hesitate to &lt;a href="http://help.webtranslateit.com"&gt;let me know on the support website&lt;/a&gt;. Thank you for using WebTranslateIt!&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/PZ-7YJtgrVc" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/PZ-7YJtgrVc/10277332266</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/10277332266</guid><pubDate>Fri, 16 Sep 2011 16:55:00 +0200</pubDate><category>feature</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/10277332266</feedburner:origLink></item><item><title>web_translate_it gem v1.8.2.0 released</title><description>&lt;p&gt;I just released a new version of the &lt;a href="https://rubygems.org/gems/web_translate_it"&gt;web_translate_it gem&lt;/a&gt;, the open-source synchronization tool for &lt;a href="https://webtranslateit.com"&gt;Web Translate It&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This release brings one important speed improvement, as well as an important change in the configuration file.&lt;/p&gt;
+
+&lt;h2&gt;Speed Improvements&lt;/h2&gt;
+
+&lt;p&gt;This release use threads to download files. It means the tool can now download several files in parallel, which makes for faster syncs. The amount of threads used depends on the amount of files to download.&lt;/p&gt;
+
+&lt;p&gt;For instance this project contains 8 files. &lt;code&gt;wti pull&lt;/code&gt; will use 3 threads and will pull 3.8 files per second.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lremelWeU01qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;This other project contains more than a thousand files. It used to take several minutes to sync. With the new &lt;code&gt;wti&lt;/code&gt; client it now takes a few seconds. Here &lt;code&gt;wti pull&lt;/code&gt; use 20 threads and pulls 96 files per second.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lrenmsDVTI1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;h2&gt;Configuration File change&lt;/h2&gt;
+
+&lt;p&gt;I also changed the default configuration file name for this release.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;wti&lt;/code&gt; gem was originally designed as a Ruby on Rails plugin, so the default file name was &lt;code&gt;config/translation.yml&lt;/code&gt;, as this is the default location where one put configuration files in Ruby on Rails.&lt;/p&gt;
+
+&lt;p&gt;The gem was downloaded more than 20K times, and is used to sync hundreds of projects developed many different languages, so this default location doesn’t make much sense now. The new configuration file location is now &lt;code&gt;.wti&lt;/code&gt; at the root of your project.&lt;/p&gt;
+
+&lt;p&gt;You don’t have to change anything for this to work. The first time you use the new &lt;code&gt;wti&lt;/code&gt; gem, it’ll propose you to migrate your configuration file automatically.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lreno1aA2c1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;h2&gt;Install or Upgrade&lt;/h2&gt;
+
+&lt;p&gt;To install web_translate_it, please refer to the &lt;a href="https://github.com/atelierConvivialite/webtranslateit#readme"&gt;gem documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To upgrade web_translate_it to its latest version, type in a terminal: &lt;code&gt;gem install web_translate_it&lt;/code&gt;.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/aOFgeXCTOUo" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/aOFgeXCTOUo/10121867246</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/10121867246</guid><pubDate>Mon, 12 Sep 2011 12:15:00 +0200</pubDate><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/10121867246</feedburner:origLink></item><item><title>Another improvement to the Translation Validation feature</title><description>&lt;p&gt;I just released another improvement to the translation validation feature in Web Translate It.&lt;/p&gt;
+
+&lt;p&gt;The new translation validation system now checks whether line breaks in the translation text matches the ones in the source copy.&lt;/p&gt;
+
+&lt;p&gt;For instance, if the source copy contains a line break:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lqr1rwoFsO1qz6hl3.jpg" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;And we attempt to save a translation that contains no line break:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lqr1sp7jKq1qz6hl3.jpg" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;The improved translation validation feature now also checks whether spaces in the translation text match the ones in the source copy:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lqr1t4o0dG1qz6hl3.jpg" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lqr1tdrqs61qz6hl3.jpg" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;As usual, if you are sure your translation is correct, you can override the translation validation by unticking the “Perform validation checks” button before saving.&lt;/p&gt;
+
+&lt;p&gt;I hope you will find this improvement useful. Thank you for using &lt;a href="https://webtranslateit.com"&gt;WebTranslateIt&lt;/a&gt;.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/obUx4QM0jRU" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/obUx4QM0jRU/9589812202</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/9589812202</guid><pubDate>Tue, 30 Aug 2011 18:30:29 +0200</pubDate><category>feature</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/9589812202</feedburner:origLink></item><item><title>Advanced Tip: Manually set a file encoding</title><description>&lt;p&gt;Web Translate It automatically detects your file’s character encoding. I already wrote &lt;a href="http://blog.webtranslateit.com/post/6380685137"&gt;a blog post on how it works under the hood&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If the encoding of one of your file is wrongly detected or if you would like to change your encoding, there is an advanced —and somewhat hidden— option to set a specific encoding directly from the file manager.&lt;/p&gt;
+
+&lt;p&gt;Here’s how to do it. In the File Manager, hover the file you want to change, and click “rename”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lpcoxmlMno1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;A modal window appears. Click on “Toggle advanced options”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lpcp08FVUk1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;There you can type a specific character encoding, for instance ISO 8859-1, UTF-8 or UTF-16.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lpcp215LFp1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;Web Translate It generally does a great job detecting your file encoding, so this option shouldn’t be useful for most users. But if you need it, this gives you even more control on how your files are imported and created.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/-SRAvboHqxE" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/-SRAvboHqxE/8425545096</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/8425545096</guid><pubDate>Wed, 03 Aug 2011 14:02:50 +0200</pubDate><category>tip</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/8425545096</feedburner:origLink></item><item><title>Improved translation validation feature</title><description>&lt;p&gt;I just released an improvement to the &lt;a href="http://blog.webtranslateit.com/post/7128563224"&gt;translation validation feature&lt;/a&gt; in Web Translate It.&lt;/p&gt;
+
+&lt;p&gt;The translation validation feature checks whether the variables in the target copy are matching the ones in the source copy and prevents the translator from saving a broken string.&lt;/p&gt;
+
+&lt;p&gt;While this feature is really useful and prevented translators from saving countless broken strings, many translators were very confused when Web Translate It refused to save translations because the validation check didn’t pass.&lt;/p&gt;
+
+&lt;p&gt;The new validation check now displays a more visible and more detailed error message, which indicates exactly what is wrong with the translation.&lt;/p&gt;
+
+&lt;p&gt;For instance, when a variable named &lt;code&gt;person_name&lt;/code&gt; is missing, Web Translate It complains:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lp97m9gJnK1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;If no variable was in the source copy, but a variable was put in the target copy, the error message is:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lp97p0wfmN1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;I hope you will find this improvement useful. Thank you for using &lt;a href="https://webtranslateit.com"&gt;Web Translate It&lt;/a&gt;.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/qJp8AaEPjZo" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/qJp8AaEPjZo/8340860767</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/8340860767</guid><pubDate>Mon, 01 Aug 2011 16:48:12 +0200</pubDate><category>feature</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/8340860767</feedburner:origLink></item><item><title>Tip: Remove a label in batch</title><description>&lt;p&gt;Project managers can remove a label applied to several strings in batch. This is useful to quickly remove a label which is no longer relevant.&lt;/p&gt;
+
+&lt;p&gt;To remove a label, click on “Filters”, then on the “Labels” button.&lt;/p&gt;
+
+&lt;p&gt;Click on a “delete” button to remove a label.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lp3q6hqy0J1qz6hl3.png" alt=""/&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/x-oHbxrX5zw" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/x-oHbxrX5zw/8217151980</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/8217151980</guid><pubDate>Fri, 29 Jul 2011 17:40:00 +0200</pubDate><category>tip</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/8217151980</feedburner:origLink></item><item><title>Tip: Quickly invert source and target locale</title><description>&lt;p&gt;Click on the &lt;code&gt;»&lt;/code&gt; symbol on &lt;a href="https://webtranslateit.com"&gt;Web Translate It&lt;/a&gt;’s translation interface to quickly invert the locales displayed in the translation interface.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lntd3yE4QR1qz6hl3.jpg" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s switch from “English to French” to “French to English”:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lntd4ip1Mj1qz6hl3.jpg" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;I can now read the French copy and edit the English text.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/rUJqHnabcuM" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/rUJqHnabcuM/7228339120</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/7228339120</guid><pubDate>Mon, 04 Jul 2011 16:53:13 +0200</pubDate><category>tip</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/7228339120</feedburner:origLink></item><item><title>New in Web Translate It: Translation validations</title><description>&lt;p&gt;I just added translation validations checks to &lt;a href="https://webtranslateit.com"&gt;Web Translate It&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When translating software, language files often contain what we call “interpolated variables” among the text to translate. In this segment for instance:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;%{person_name} could not be found.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;%{person_name}&lt;/code&gt; is a variable. The text of the variable shouldn’t be translated and exactly match the source text, or it will break the software being translated. However it often happens that translators translate the variable.&lt;/p&gt;
+
+&lt;p&gt;By default, Web Translate It now checks whether the variables are matching and prevents the translator from saving a broken string.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lno557bLks1qz6hl3.jpg" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;If you are really sure of what you are doing, you can bypass this validation check by unticking the box.&lt;/p&gt;
+
+&lt;p&gt;Web Translate It currently recognizes the following variables: &lt;code&gt;{variable}&lt;/code&gt;, ruby-style &lt;code&gt;%{variable}&lt;/code&gt; or &lt;code&gt;{{variable}}&lt;/code&gt;, and C-style variables such as &lt;code&gt;%d&lt;/code&gt; or &lt;code&gt;%s&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I hope you will find this improvement useful, translation validations was by far the most requested feature on &lt;a href="https://webtranslateit.com"&gt;Web Translate It&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Edit 01/08/2011: I released an &lt;a href="http://blog.webtranslateit.com/post/8340860767"&gt;improvement to this feature&lt;/a&gt;.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/-W1e1Yka4BY" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/-W1e1Yka4BY/7128563224</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/7128563224</guid><pubDate>Fri, 01 Jul 2011 21:15:00 +0200</pubDate><category>feature</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/7128563224</feedburner:origLink></item><item><title>Downtime post-mortem: June 21st</title><description>&lt;p&gt;At 07:11 AM GMT today &lt;a href="https://webtranslateit.com"&gt;Web Translate It&lt;/a&gt; wasn’t responding. I was immediately notified, woke up and noticed the server wasn’t reachable by any means.&lt;/p&gt;
+
+&lt;p&gt;I immediately reported back on &lt;a href="http://twitter.com/webtranslateit"&gt;Twitter&lt;/a&gt; and contacted our hosting company, DigitalOne in order to know if they were having issues.&lt;/p&gt;
+
+&lt;p&gt;The word from the hosting company was that the service disruption was due to a bug one of their core routers and they appeared to be working on it. In the meanwhile, I noticed that services such as &lt;a href="http://pinboard.in"&gt;Pinboard&lt;/a&gt; and &lt;a href="http://instapaper.com"&gt;Instapaper&lt;/a&gt; —which are both partially or fully hosted at the same ISP— were also having network issues.&lt;/p&gt;
+
+&lt;p&gt;Since the service wasn’t completely down, but continuously coming on and off-line, I decided against moving the service to the backup server, which is much weaker than the main server.&lt;/p&gt;
+
+&lt;p&gt;Around 10:30 AM GMT the service became online again and has been stable throughout the day. We suffered no data loss.&lt;/p&gt;
+
+&lt;p&gt;Right now &lt;a href="https://twitter.com/pinboard/status/83256217174147072"&gt;the word&lt;/a&gt; is that the FBI raided our hosting company’s datacenter and pulled three racks of servers. Some servers were removed, others (such as Web Translate It’s) were temporarily disconnected.&lt;/p&gt;
+
+&lt;p&gt;I am really sorry for any and all problems this has caused. In the coming months I will take actions to make Web Translate It able to fail over more easily in such extraordinary events.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/yHgK33IxuPY" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/yHgK33IxuPY/6767889300</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/6767889300</guid><pubDate>Tue, 21 Jun 2011 23:33:00 +0200</pubDate><category>downtime</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/6767889300</feedburner:origLink></item><item><title>web_translate_it gem v1.8.1.2 released</title><description>&lt;p&gt;I just released a new version of the &lt;a href="https://github.com/AtelierConvivialite/webtranslateit"&gt;web_translate_it gem&lt;/a&gt;, the synchronization tool for &lt;a href="https://webtranslateit.com"&gt;Web Translate It&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This release fixes 2 bugs happening when running &lt;code&gt;wti&lt;/code&gt; under Microsoft Windows.&lt;/p&gt;
+
+&lt;p&gt;Here’s the changelog:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;Bug fix: Disable colors when running under MS Windows. &lt;a href="https://github.com/AtelierConvivialite/webtranslateit/issues/58"&gt;#58&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Bug fix: Don’t verify SSL certificate when running under MS Windows. &lt;a href="https://github.com/AtelierConvivialite/webtranslateit/issues/57"&gt;#57&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;Install or Upgrade&lt;/h2&gt;
+
+&lt;p&gt;To install &lt;code&gt;web_translate_it&lt;/code&gt;, please refer to the &lt;a href="https://github.com/atelierConvivialite/webtranslateit#readme"&gt;gem documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To upgrade &lt;code&gt;web_translate_it&lt;/code&gt; to its latest version, type in a terminal: &lt;code&gt;gem install web_translate_it&lt;/code&gt;.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/jXdXpKiW0qY" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/jXdXpKiW0qY/6720092102</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/6720092102</guid><pubDate>Mon, 20 Jun 2011 13:23:06 +0200</pubDate><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/6720092102</feedburner:origLink></item><item><title>File encoding detection improvements</title><description>&lt;p&gt;Today I released an update to Web Translate It to improve the file encoding detection.&lt;/p&gt;
+
+&lt;p&gt;Internally, Web Translate It use UTF-8, but we have to accept files of any file encoding. This is needed because while most files are UTF-8 encoded, Java .properties files are ISO 8859-1 encoded, while Apple .strings are sometimes UTF-16LE encoded. We also support uploading text files which can have any encoding.&lt;/p&gt;
+
+&lt;p&gt;Under the hood, Web Translate It detects your file’s encoding, saves it to database and converts your strings to UTF-8 before importing them to database. When you’ll download your translated file, Web Translate It will convert your strings back to your file original encoding.&lt;/p&gt;
+
+&lt;p&gt;In some rare cases, file imports were failing or strings were imported wrongly because Web Translate It wasn’t able to recognise your file encoding.&lt;/p&gt;
+
+&lt;p&gt;To remediate this issue, I improved the file encoding detection strategy. Here’s what Web Translate It does now:&lt;/p&gt;
+
+&lt;ol&gt;&lt;li&gt;&lt;p&gt;If your file contains a &lt;a href="http://en.wikipedia.org/wiki/Byte_order_mark"&gt;BOM&lt;/a&gt;, we’re sure that your file is encoded in UTF-8, UTF-16LE, UTF-16BE, UTF-32, etc.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If your file doesn’t contain a BOM, it means that either your file is encoded in something else that UTF-something, but it could also mean it is a UTF-8 file without a BOM. So we scrub the content of your file and look for a hint. For instance, if your Gettext .po file contains in its header &lt;code&gt;"Content-Type: text/plain; charset=UTF-8\n"&lt;/code&gt;, then we assume your file is UTF-8 encoded.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If we can’t find any indication of the encoding of your file, a character detection algorithm is used (we use &lt;a href="https://github.com/edouard/rchardet"&gt;rchardet&lt;/a&gt;). rchardet takes a sequence of bytes from your file (of unknown encoding), and attempts to determine the encoding so you we can read the text and import it to database.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Finally, there is so much we can do. If rchardet couldn’t reliably detect your file encoding, then our fallback strategy is to assume you’re using UTF-8.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;Detecting character encodings is tricky. If you’re having a character encoding problems when uploading a file to Web Translate It, &lt;a href="http://help.webtranslateit.com/discussion/new"&gt;please don’t hesitate to open a support ticket&lt;/a&gt; and we’ll work with you to correctly import your file.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/r-j2IVTbz2I" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/r-j2IVTbz2I/6380685137</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/6380685137</guid><pubDate>Fri, 10 Jun 2011 12:13:00 +0200</pubDate><category>feature</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/6380685137</feedburner:origLink></item><item><title>Now testing: support for Microsoft Word .docx and Powerpoint .pptx</title><description>&lt;p&gt;&lt;a href="https://webtranslateit.com"&gt;Web Translate It&lt;/a&gt; works pretty well to translate software language files. Could it translate documents too?&lt;/p&gt;
+
+&lt;p&gt;Web Translate It now supports for 2 new file formats: Microsoft Word .docx and Powerpoint .pptx. Note that we currently don’t support the older Microsoft Word .doc and Powerpoint .ppt.&lt;/p&gt;
+
+&lt;p&gt;The biggest challenge for supporting these files is to minimise the amount of Open XML’s infamous “tag soup”. Web Translate It does a pretty good job at keeping this markup code out of your way.&lt;/p&gt;
+
+&lt;p&gt;For instance, here’s what a .docx file might look like in a word processor:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lmh6oevFJc1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;The underlying code generated by Microsoft Word looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lmh69qve4V1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;And this is the same paragraph imported in Web Translate It:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lmh6q5Wtg71qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;Web Translate It removes unnecessary markup tags and “folds” complex and untranslatable markup tags into smaller tags.&lt;/p&gt;
+
+&lt;p&gt;We’re currently testing these new file formats. If you notice anything strange when translating these files, please &lt;a href="http://help.webtranslateit.com/discussion/new"&gt;open a support ticket&lt;/a&gt; and I will investigate and sort you out.&lt;/p&gt;
+
+&lt;p&gt;Web Translate It now supports &lt;a href="http://docs.webtranslateit.com/file_formats/"&gt;more than 20 different file formats&lt;/a&gt;. If you’d like to use a file format Web Translate It doesn’t support yet, open a &lt;a href="http://help.webtranslateit.com"&gt;support ticket&lt;/a&gt; and let me know.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/FqHn_w_I04Y" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/FqHn_w_I04Y/6320636911</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/6320636911</guid><pubDate>Wed, 08 Jun 2011 16:59:00 +0200</pubDate><category>feature</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/6320636911</feedburner:origLink></item><item><title>Support for SubRip .srt subtitle files</title><description>&lt;p&gt;&lt;a href="https://webtranslateit.com"&gt;Web Translate It&lt;/a&gt; now support .srt subtitle files.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href="http://en.wikipedia.org/wiki/SubRip#SubRip_text_file_format"&gt;SubRip .srt file format&lt;/a&gt; is supported by most software video players.&lt;/p&gt;
+
+&lt;p&gt;You can now use your favourite translation tool to translate subtitles for your screencast or any other video using subtitles.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/vjIb-GuqDT4" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/vjIb-GuqDT4/6315911209</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/6315911209</guid><pubDate>Wed, 08 Jun 2011 12:03:00 +0200</pubDate><category>feature</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/6315911209</feedburner:origLink></item><item><title>web_translate_it gem v1.8.1.0 released</title><description>&lt;p&gt;I just released a new version of the &lt;a href="https://github.com/AtelierConvivialite/webtranslateit"&gt;web_translate_it gem&lt;/a&gt;. Get it while it’s hot!&lt;/p&gt;
+
+&lt;p&gt;Here’s the changelog:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;Bug fix: &lt;code&gt;translation.yml&lt;/code&gt; file wasn’t created on new projects.&lt;/li&gt;
+&lt;li&gt;New: Gracefully quit on interrupt.&lt;/li&gt;
+&lt;li&gt;New command: &lt;code&gt;wti match&lt;/code&gt;. Displays files matching with the File Manager.&lt;/li&gt;
+&lt;li&gt;Improved help commands.&lt;/li&gt;
+&lt;li&gt;Upgrade &lt;code&gt;multipart-post&lt;/code&gt; dependency.&lt;/li&gt;
+&lt;li&gt;Replace &lt;code&gt;rainbow&lt;/code&gt; dependency by &lt;code&gt;ansi&lt;/code&gt;, which can also format columns.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Display of commands such as &lt;code&gt;wti pull&lt;/code&gt; or &lt;code&gt;wti push&lt;/code&gt; are now organized better.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lmgmeejCje1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;The new command &lt;code&gt;wti match&lt;/code&gt; allows you to see how the files are matched between your local computer and the File Manager.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lmgmh1qhxY1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;h2&gt;Install or Upgrade&lt;/h2&gt;
+
+&lt;p&gt;To install &lt;code&gt;web_translate_it&lt;/code&gt;, please refer to the &lt;a href="https://github.com/atelierConvivialite/webtranslateit#readme"&gt;gem documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To upgrade &lt;code&gt;web_translate_it&lt;/code&gt; to its latest version, type in a terminal: &lt;code&gt;gem install web_translate_it&lt;/code&gt;.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/HhWPTqXv5Uw" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/HhWPTqXv5Uw/6313528159</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/6313528159</guid><pubDate>Wed, 08 Jun 2011 09:10:48 +0200</pubDate><category>client</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/6313528159</feedburner:origLink></item><item><title>Improvements to the translation interface’s pagination</title><description>&lt;p&gt;Pagination is essential for web applications to provide faster page load times when displaying large data sets. However, classic pagination (using “previous page” - “next page” links) is a poor solution to remediate this technical limitation: it requires the user to click a button to request the next page, and then wait until the page loads. It feels awkward, especially when it makes the user wait for the page to load to pursue her work.&lt;/p&gt;
+
+&lt;p&gt;To palliate this inconvenience, &lt;a href="https://webtranslateit.com"&gt;Web Translate It&lt;/a&gt;’s translation interface use “infinite scrolling”. It is a pagination technique to serve users the next pages without needing to click on a pagination link: the more you scroll down, the more content magically streams in at the bottom of the page.&lt;/p&gt;
+
+&lt;p&gt;This is the best kind of pagination: it allows translators to focus on translating instead of focusing on manipulating a translation tool.&lt;/p&gt;
+
+&lt;p&gt;Despite this obvious advantage, this technique also has one major inconvenience: it is impossible to restore a position in the list, since the user doesn’t know where she is in the list. This makes sharing a link in the translation interface with a collaborator pretty difficult.&lt;/p&gt;
+
+&lt;h2&gt;Endless scroll with stateful position&lt;/h2&gt;
+
+&lt;p&gt;Thankfully technology improve and modern web browser such as Google Chrome, Firefox 4 or Safari 5 have implemented the new HTML5 history API, which allows websites to update the current URL without reloading a page. The translation interface now use this technique on available browsers to dynamically update the URL when you select a string in the interface. This way, you can link and refer to a specific position in the list of strings.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_lmd96yG2zD1qz6hl3.png" alt=""/&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s a live example: &lt;a href="https://webtranslateit.com/en/projects/406-Web-Translate-It/locales/en..fr/strings?current_id=140420"&gt;&lt;a href="https://webtranslateit.com/en/projects/406-Web-Translate-It/locales/en..fr/strings?current_id=140420"&gt;https://webtranslateit.com/en/projects/406-Web-Translate-It/locales/en..fr/strings?current_id=140420&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Scrolling upwards&lt;/h2&gt;
+
+&lt;p&gt;Since we’re now able to recover any position in the translation interface, I also added the ability to scroll up to load strings positioned upwards.&lt;/p&gt;
+
+&lt;p&gt;So wherever you are in the list, you can scroll up and down, just like if the list of strings wasn’t paginated at all.&lt;/p&gt;
+
+&lt;p&gt;I hope you will find this improvement useful. Thank you for using &lt;a href="https://webtranslateit.com"&gt;Web Translate It&lt;/a&gt;.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/11IIdH9XDnA" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/11IIdH9XDnA/6247816664</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/6247816664</guid><pubDate>Mon, 06 Jun 2011 15:04:12 +0200</pubDate><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/6247816664</feedburner:origLink></item><item><title>web_translate_it gem v1.8.0.1 released</title><description>&lt;p&gt;I just released a new version of the &lt;a href="https://github.com/AtelierConvivialite/webtranslateit"&gt;web_translate_it gem&lt;/a&gt;, which fixes a SSL certificate verification bug happening on Ubuntu systems.&lt;/p&gt;
+
+&lt;h2&gt;Install or Upgrade&lt;/h2&gt;
+
+&lt;p&gt;To install &lt;code&gt;web_translate_it&lt;/code&gt;, please refer to the &lt;a href="https://github.com/atelierConvivialite/webtranslateit#readme"&gt;gem documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To upgrade &lt;code&gt;web_translate_it&lt;/code&gt; to its latest version, type in a terminal: &lt;code&gt;gem install web_translate_it&lt;/code&gt;.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/kzo67JchmRc" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/kzo67JchmRc/6067590620</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/6067590620</guid><pubDate>Wed, 01 Jun 2011 11:40:33 +0200</pubDate><category>client</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/6067590620</feedburner:origLink></item><item><title>Web Translate It’s backup strategy</title><description>&lt;p&gt;Web Translate It hosts your data both on database and file system. We’ve almost 2,000 users, and host over 3.8 million translations, a bit more than 50,000 files and over 350,000 labels. We’re a small website hosting a lot of data to say the least.&lt;/p&gt;
+
+&lt;p&gt;Data loss is the worst thing that could happen to our service. It should be hard to lose data and easy to recover it.&lt;/p&gt;
+
+&lt;p&gt;Here’s a quick overview of what we currently do to backup your data.&lt;/p&gt;
+
+&lt;h1&gt;Live streaming replication&lt;/h1&gt;
+
+&lt;p&gt;First of all, we have a live database replication set up between our production server and a back-end server. The second a string is saved on the main server, it is copied over on another server. The servers are hosted on different datacenters and use different networks: the former is based in the United States while the latter is hosted in the United Kingdom.&lt;/p&gt;
+
+&lt;p&gt;Should the main server fail or be unreachable, we can start over the service on a new server in a matter of minutes.&lt;/p&gt;
+
+&lt;h1&gt;Database images&lt;/h1&gt;
+
+&lt;p&gt;Secondly, we create images (or dumps) of the production database 4 times a day, and we store backups at multiple locations: on the production server, on the backup server and on Amazon S3. We keep 12 backups on our servers and 6 backups on Amazon S3.&lt;/p&gt;
+
+&lt;p&gt;Additionally, every working day I download the latest database image and test re-importing it on my computer to make sure these images are actually working.&lt;/p&gt;
+
+&lt;p&gt;Snapshots are great to recover from a disaster, but there’s a maximum potential data loss of 6 hours.&lt;/p&gt;
+
+&lt;h1&gt;New: Language files backup and versioning&lt;/h1&gt;
+
+&lt;p&gt;Finally, and this is new as of this week: we backup your language files to a git repository every 5 minutes. This repository is pulled every 5 minutes by 2 different servers.&lt;/p&gt;
+
+&lt;p&gt;These backups don’t include comments, labels, or string statuses, but allows to recover strings and translations of your file from 5 minutes ago, one week ago, one month ago… Should you need a backup of your file, it is possible to recover it, so don’t hesitate to &lt;a href="http://help.webtranslateit.com"&gt;open a ticket on our support website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As the service grows, this is important to constantly refine our backup strategy. More and more users rely on Web Translate It, so it is important to be more and more reliable.&lt;/p&gt;
+
+&lt;p&gt;In the future I will work on saving the whole project under the XLIFF format. This should include string statuses, comments, tags as well as the translations.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/bJgZaFkYFZk" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/bJgZaFkYFZk/6035978527</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/6035978527</guid><pubDate>Tue, 31 May 2011 14:54:17 +0200</pubDate><category>system</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/6035978527</feedburner:origLink></item><item><title>web_translate_it gem v1.8.0.0 released</title><description>&lt;p&gt;I just released a new version of the &lt;a href="https://github.com/AtelierConvivialite/webtranslateit"&gt;web_translate_it gem&lt;/a&gt;, which includes important performance improvements and a few minor bugs fixes.&lt;/p&gt;
+
+&lt;p&gt;Downloading and uploading your language files is noticeably faster with this version (especially if you have a lot of files to sync).&lt;/p&gt;
+
+&lt;p&gt;Here’s the changelog:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;New: Faster file transfers using KeepAlive’d connection.&lt;/li&gt;
+&lt;li&gt;New: Verify SSL certificate on connection.&lt;/li&gt;
+&lt;li&gt;Fix: More detailed error messages on unconfigured projects. Ticket #56&lt;/li&gt;
+&lt;li&gt;Fix: &lt;code&gt;wti init&lt;/code&gt; now checks if the configuration file is writable. Ticket #35&lt;/li&gt;
+&lt;li&gt;Remove rake tasks. Rake tasks were removed as it is preferred and more performant to sync your project using the &lt;code&gt;wti&lt;/code&gt; executable. Should you want the rake tasks back on your project, see how to add them in your project &lt;a href="https://github.com/AtelierConvivialite/webtranslateit/wiki/Rake-tasks"&gt;on the wiki&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;Install or Upgrade&lt;/h2&gt;
+
+&lt;p&gt;To install &lt;code&gt;web_translate_it&lt;/code&gt;, please refer to the &lt;a href="https://github.com/atelierConvivialite/webtranslateit#readme"&gt;gem documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To upgrade &lt;code&gt;web_translate_it&lt;/code&gt; to its latest version, type in a terminal: &lt;code&gt;gem install web_translate_it&lt;/code&gt;.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/webtranslateit/~4/DfiqhMv5aUs" height="1" width="1"/&gt;</description><link>http://feedproxy.google.com/~r/webtranslateit/~3/DfiqhMv5aUs/6035532445</link><guid isPermaLink="false">http://blog.webtranslateit.com/post/6035532445</guid><pubDate>Tue, 31 May 2011 14:27:00 +0200</pubDate><category>client</category><dc:creator>edouardbriere</dc:creator><feedburner:origLink>http://blog.webtranslateit.com/post/6035532445</feedburner:origLink></item></channel></rss>

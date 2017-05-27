@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title>Planet Jabber</title>
+	<!--<link rel="self" type="text/atom" href=""/>-->
+	<link rel="alternate" type="text/html" href="http://planet.jabber.org/"/>
+	<id></id>
+	<updated>2007-02-12T07:08:19+00:00</updated>
+	<generator uri="http://www.planetplanet.org/">Planet/2.0 +http://www.planetplanet.org</generator>
+
+	<entry>
+		<title>Artur Hefczyc: Machines for tests</title>
+		<link rel="alternate" type="text/html" href="http://www.tigase.org/node/250"/>
+		<id>http://www.tigase.org/250 at http://www.tigase.org</id>
+		<updated>2007-02-12T00:46:25+00:00</updated>
+		<content type="html">&lt;p&gt;If you look at the &lt;a href=&quot;http://www.tigase.org/node/27&quot;&gt;test page&lt;/a&gt; you may notice that stability tests are missing for a few last releases.&lt;/p&gt;
+&lt;p&gt;This is because of lack of resources to do long lasting tests. It may take up to 80 hours to complete all stability tests and 2 machines are needed for that. Well, it would be even better to run tests on more than 2 machines if possible. Unfortunately it is not possible now to dedicate 2 computers for that long time.&lt;/p&gt;
+&lt;p&gt;Tigase project is looking for access to at least 2 machines in one network, preferably wired network (due to high traffic between these 2 machines) to do long lasting stability tests over the Tigase server. It doesn't need to be exclusive access and tests may run with low priority. Each server needs no more than 100MB of RAM during tests and maybe up to 100MB of hard drive space. It would be also very useful to have access to MySQL or/and PostgreSQL database.&lt;/p&gt;
+&lt;p&gt;So if you can offer Tigase project resources for testing, &lt;a href=&quot;http://www.tigase.org/contact&quot;&gt;please let me know&lt;/a&gt;....&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.tigase.org/node/250&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</content>
+		<author>
+			<name>kobit</name>
+			<uri>http://www.tigase.org</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Ralph Meijer: FOSDEM 2007 Jabber devroom schedule published</title>
+		<link rel="alternate" type="text/html" href="http://ralphm.net/blog/2007/02/09/fosdem_2007_devroom"/>
+		<id>http://ralphm.net/blog/2007/02/09/fosdem_2007_devroom</id>
+		<updated>2007-02-09T15:49:30+00:00</updated>
+		<content type="html">&lt;p&gt;Back in November &lt;a href=&quot;http://ralphm.net/blog/&quot;&gt;I&lt;/a&gt; &lt;a href=&quot;http://ralphm.net/blog/2006/11/17/fosdem_2007_call&quot;&gt;posted&lt;/a&gt;
+				a call for presence (haha) for the &lt;a href=&quot;http://fosdem.org/2007/schedule/devroom/jabber&quot;&gt;Jabber developer
+					room&lt;/a&gt; at FOSDEM 2007. But this year, with the help of &lt;a href=&quot;http://www.saint-andre.com/blog/&quot;&gt;Peter
+					Saint-André&lt;/a&gt;, the hunt for speakers has been far more
+				aggressive than previous editions. I must say that this has resulted in
+				a great, packed, line-up and I am sure that many people (currently)
+				from outside the will be interested in what will be presented. Loki has
+				put the schedule online earlier today.&lt;/p&gt;
+&lt;p&gt;To give a quick overview, on Saturday Peter will kick off with a
+				&lt;a href=&quot;http://fosdem.org/2007/schedule/events/jabber_101&quot;&gt;Jabber
+					101&lt;/a&gt;, targetted at getting developers acquainted with Jabber
+				technologies. Heiner Wolf follows with a presentation on &lt;a href=&quot;http://fosdem.org/2007/schedule/events/jabber_virtual_presence&quot;&gt;Virtual
+					Presence&lt;/a&gt;, a way to meet up on webpages. Ian Paterson will try
+				to reach the Rich Internet Application crowd that now uses JSON, Comet
+				or AJAX for browser-server communications, and show how you can &lt;a href=&quot;http://fosdem.org/2007/schedule/events/jabber_beyond_json&quot;&gt;put
+					XMPP to use&lt;/a&gt; in this arena. The day is concluded by two
+				presentations on the Tigase server implentation: Artur Hefczyc will
+				&lt;a href=&quot;http://fosdem.org/2007/schedule/events/jabber_tigase&quot;&gt;talk&lt;/a&gt;
+				on Tigase itself and Diana Cionoiu will &lt;a href=&quot;http://fosdem.org/2007/schedule/events/jabber_yate&quot;&gt;explain&lt;/a&gt;
+				how Yate hooks up Jingle with Tigase to build tomorrow's open telephony
+				networks.&lt;/p&gt;
+&lt;p&gt;For those that manage to get up bright and early on Sunday morning,
+				I will let visiting developers &lt;a href=&quot;http://fosdem.org/2007/schedule/events/jabber_sprint&quot;&gt;dig&lt;/a&gt; right into what Peter has touched
+				upon the day before. Using &lt;a href=&quot;http://www.twistedmatrix.com/&quot;&gt;Twisted&lt;/a&gt;, I will explain how to actually
+				develop asynchronous applications that communicate using XMPP and act
+				as a Jabber client or server-side component. Then this session will
+				transform into a mini-sprint and the visitors will rattle their
+				keyboards to crunch out running Python code. Bring your own
+				laptops!&lt;/p&gt;
+&lt;p&gt;Around lunch we &lt;a href=&quot;http://fosdem.org/2007/schedule/events/jabber_jingle&quot;&gt;give&lt;/a&gt;
+				Robert McQueen and Peter a Jingle to get us up to speed on rich media
+				streaming, and proceed with Mickaël Rémond of ejabberd fame on &lt;a href=&quot;http://fosdem.org/2007/schedule/events/jabber_oneteam&quot;&gt;OneTeam&lt;/a&gt;,
+				a Mozilla/XUL based Jabber client application. Mika Raento takes us to
+				the mobile world with his talk on &lt;a href=&quot;http://fosdem.org/2007/schedule/events/jabber_jaiku&quot;&gt;Jaiku&lt;/a&gt;,
+				that combines rich presence and group messaging on the web and on the
+				mobile. Then we close the room to go Peter Saint-André's talk in the
+				huge Janson room on &lt;a href=&quot;http://fosdem.org/2007/schedule/events/jabber&quot;&gt;secure
+					communications&lt;/a&gt;. Be sure to check out the &lt;a href=&quot;http://fosdem.org/2007/interview/peter+saint-andre&quot;&gt;interview&lt;/a&gt;.
+				To allow for some extra time for answering questions after that talk,
+				we reopen the developers' room for a &lt;a href=&quot;http://fosdem.org/2007/schedule/events/jabber_qa&quot;&gt;Q&amp;amp;A&lt;/a&gt;
+				session, and possibly a few 5 min. lightning talks, and then close up
+				shop.&lt;/p&gt;</content>
+		<author>
+			<name>ralphm</name>
+			<uri>http://ralphm.net/blog/</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Peter Saint-Andre: Getting IMified</title>
+		<link rel="alternate" type="text/html" href="http://www.saint-andre.com/blog/2007-02.html#2007-02-08T13:13"/>
+		<id>tag:saint-andre.com,2007-02-08:blog-entry-13:13</id>
+		<updated>2007-02-08T20:13:00+00:00</updated>
+		<content type="html">&lt;p&gt;&lt;a href=&quot;http://imified.com/&quot;&gt;IMified&lt;/a&gt; is a fun new service that enables you to keep to-do items and reminders, interact with Google Calendar, and so on -- all from the comfort of your Jabber client. It's well explained &lt;a href=&quot;http://blog.siltala.net/post/2007/02/08/IMified-is-your-best-buddy&quot;&gt;here&lt;/a&gt; with pretty screenshots. Just add &lt;a href=&quot;xmpp:imified@gmail.com&quot;&gt;imified@gmail.com&lt;/a&gt; to your roster and off you go. (I'm not sure how their bot will scale, but I suppose they'll figure it out ;-)&lt;/p&gt;</content>
+		<author>
+			<name>Peter Saint-Andre</name>
+			<uri>http://www.saint-andre.com/blog/jabber.html</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Christopher Zorn: Punjab release</title>
+		<link rel="alternate" type="text/html" href="http://thetofu.livejournal.com/67429.html"/>
+		<id>urn:lj:livejournal.com:atom1:thetofu:67429</id>
+		<updated>2007-02-08T17:15:55+00:00</updated>
+		<content type="html">A new version of punjab has been released. Also, we left sourceforge for various reasons. The new url is &lt;a href=&quot;http://www.butterfat.net/wiki/Projects/PunJab&quot;&gt;http://www.butterfat.net/wiki/Projects/PunJab&lt;/a&gt; &lt;br /&gt;&lt;br /&gt;This release has small bug fixes involving sessions and it now works with the newest versions of twisted and twisted.words.&lt;br /&gt;&lt;br /&gt;I got rid of the old demo too. I will put up a new one soon. If you want to demo what punjab is capable of you can visit &lt;a href=&quot;http://chesspark.com&quot;&gt;http://chesspark.com&lt;/a&gt; The webclient uses punjab.</content>
+		<author>
+			<name>Christopher Zorn</name>
+			<uri>http://thetofu.livejournal.com/</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Peter Saint-Andre: FOSDEM Interview</title>
+		<link rel="alternate" type="text/html" href="http://www.saint-andre.com/blog/2007-02.html#2007-02-08T09:44"/>
+		<id>tag:saint-andre.com,2007-02-08:blog-entry-09:44</id>
+		<updated>2007-02-08T16:44:00+00:00</updated>
+		<content type="html">&lt;p&gt;The generous volunteers who put on &lt;a href=&quot;http://fosdem.org/2007/&quot;&gt;FOSDEM&lt;/a&gt; have published an &lt;a href=&quot;http://fosdem.org/2007/interview/peter+saint-andre&quot;&gt;interview&lt;/a&gt; with yours truly, since I'll be a speaker at the conference (my topic is &lt;a href=&quot;http://fosdem.org/2007/schedule/events/jabber&quot;&gt;Secure Communications with Jabber&lt;/a&gt;, be there on Sunday at 15:00 :-).&lt;/p&gt;</content>
+		<author>
+			<name>Peter Saint-Andre</name>
+			<uri>http://www.saint-andre.com/blog/jabber.html</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Ignite Realtime Blog: Releases: Second Wave</title>
+		<link rel="alternate" type="text/html" href="http://www.igniterealtime.org/blog/2007/02/06/releases-second-wave/"/>
+		<id>http://www.igniterealtime.org/blog/2007/02/06/releases-second-wave/</id>
+		<updated>2007-02-07T01:27:37+00:00</updated>
+		<content type="html">&lt;p&gt;Just one week later, I’m pleased to announce the second wave of releases:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Wildfire 3.2.0&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The production release of Wildfire 3.2 is &lt;a href=&quot;http://www.igniterealtime.org/downloads/index.jsp&quot;&gt;now available&lt;/a&gt;, including updated versions of the Enterprise plugin and the connection manager module. The 3.2 release is a major milestone for the project. We’ve massively increased scalability and  started branching out beyond instant messaging by diving into VoIP support. View the &lt;a href=&quot;http://www.igniterealtime.org/builds/wildfire/docs/latest/changelog.html&quot;&gt;changelog&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Spark 2.5.0 Beta 2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We’ve &lt;a href=&quot;http://www.igniterealtime.org/builds/spark/docs/2.5.0.beta2/changelog.html&quot;&gt;incorporated&lt;/a&gt; a number of bug fixes and minor improvements since the first beta. Grab the download from the new &lt;a href=&quot;http://www.igniterealtime.org/downloads/beta.jsp&quot;&gt;beta area&lt;/a&gt; of the site.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Smack 3.0.0 Beta 1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After a long wait, Smack 3.0.0 is now in beta. See the &lt;a href=&quot;http://www.igniterealtime.org/blog/2007/02/06/smack-30-beta/&quot;&gt;blog entry&lt;/a&gt; for full details.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Gateway Plugin 1.0.0 Beta 7&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The gateway plugin, which provides connectivity to AOL, ICQ, Yahoo and MSN, gets a step closer to the final 1.0 release with the beta 7 version. View the &lt;a href=&quot;http://www.igniterealtime.org/projects/wildfire/plugins-beta/gateway/changelog.html&quot;&gt;changelog&lt;/a&gt;, or visit the &lt;a href=&quot;http://www.igniterealtime.org/projects/wildfire/plugins-beta.jsp&quot;&gt;download page&lt;/a&gt;.  Also check out &lt;a href=&quot;http://www.igniterealtime.org/forum/thread.jspa?threadID=24503&quot;&gt;Daniel’s post&lt;/a&gt; for details on the release.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SparkWeb 1.0.0 Beta 1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The first downloadable release of SparkWeb is &lt;a href=&quot;http://www.igniterealtime.org/projects/wildfire/plugins-beta.jsp&quot;&gt;now ready&lt;/a&gt;. Over the last week, we fixed support for Safari, did many UI tweaks and added minor new features like emoticon support.
+&lt;/p&gt;</content>
+		<author>
+			<name>matt</name>
+			<uri>http://www.igniterealtime.org/blog</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Ignite Realtime Blog: Smack 3.0 Beta</title>
+		<link rel="alternate" type="text/html" href="http://www.igniterealtime.org/blog/2007/02/06/smack-30-beta/"/>
+		<id>http://www.igniterealtime.org/blog/2007/02/06/smack-30-beta/</id>
+		<updated>2007-02-06T23:09:39+00:00</updated>
+		<content type="html">&lt;p&gt;A new beta of Smack (3.0.0 Beta 1) was &lt;a href=&quot;http://www.igniterealtime.org/downloads/beta.jsp&quot;&gt;released&lt;/a&gt; today. It’s been a &lt;strong&gt;long&lt;/strong&gt; time since the last release, which is easy to tell by the length of the &lt;a href=&quot;http://www.igniterealtime.org/builds/smack/docs/3.0.0.beta1/changelog.html&quot;&gt;changelog&lt;/a&gt;. The beta represents major new functionality. Some highlights:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Much better control over connections, including the ability to re-connect after a dropped connection.&lt;/li&gt;
+&lt;li&gt;Many new XEP’s supported and better XMPP RFC compliance.&lt;/li&gt;
+&lt;li&gt;Major re-factoring of how chats work.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All this is very good news. The bad news is that this new release isn’t a drop-in replacement for the old version of Smack. We had to make API changes in order to support the features above and we decided to make the move to Java 5 at the same time (might as well break a lot if you’re going to break a little). The switch to Java 5 in particular will be a deal-breaker for some. We’ll likely continue making bug fixes in the 2.x branch as compensation.&lt;/p&gt;
+&lt;p&gt;All these changes have been driven by work being done on Spark. In fact, Jingle support should officially land in Smack before the 3.0 beta period is up (you may have seen Jingle in the &lt;a href=&quot;http://www.igniterealtime.org/roadmap.jsp&quot;&gt;roadmap&lt;/a&gt; already). Let us know what you think of the beta. We’d also love your feedback on what we can do to make the transition smoother.
+&lt;/p&gt;</content>
+		<author>
+			<name>matt</name>
+			<uri>http://www.igniterealtime.org/blog</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Process One: OneTeam performance versus pure Multibrowsers Ajax Clients</title>
+		<link rel="alternate" type="text/html" href="http://www.process-one.net/en/blogs/article/oneteam_performance_versus_pure_multibrowsers_ajax_clients/"/>
+		<id>tag:process-one.net,2007:en/blogs/3.161</id>
+		<updated>2007-02-06T18:20:04+00:00</updated>
+		<content type="html">Pure Cross-browser application are targeting desktop like interfaces. However, performance improvements is radical in the XUL version of an application. This is why OneTeam offer a desktop-like feeling. &lt;p&gt;Performance of the pure cross-browser Ajax applications, cannot match the feeling of a true native set of widgets. This is why we bet on XUL for our OneTeam enterprise instant messaging client. With this approach you have a full web application with zero deployment, that can really be as responsive as a desktop app.&lt;/p&gt;
+&lt;p&gt;For the sceptical, read this article from O'Reilly: &lt;a href=&quot;http://www.xml.com/pub/a/2007/01/31/xul-enhanced-web-apps.html&quot;&gt;XUL-Enhanced Web Apps&lt;/a&gt; (better read from Firefox to compare the examples). The rendering speed for a large three is 4400 ms in DHTML versus 650 ms in XUL. Yes, it makes a real difference in term of usability.&lt;/p&gt;
+&lt;p&gt;You can check it by yourself in &lt;a href=&quot;http://www.process-one.net/en/oneteam/&quot;&gt;OneTeam&lt;/a&gt;. The &lt;a href=&quot;http://www.process-one.net/en/oneteam/&quot;&gt;beta test&lt;/a&gt; for our XUL based Enterprise Instant Messaging has started and the demand is huge. Please be patient, we are creating new accounts every day.&lt;/p&gt;</content>
+		<author>
+			<name>Mickaël Rémond</name>
+			<uri>http://www.process-one.net/en/blogs/</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Peter Saint-Andre: Simply Wrong</title>
+		<link rel="alternate" type="text/html" href="http://www.saint-andre.com/blog/2007-02.html#2007-02-05T16:25"/>
+		<id>tag:saint-andre.com,2007-02-05:blog-entry-16:25</id>
+		<updated>2007-02-05T23:25:00+00:00</updated>
+		<content type="html">&lt;p&gt;There are so many errors in &lt;a href=&quot;http://www.tmcnet.com/sip/0107/feature_articles_simple_in_the_enterprise_0107.htm&quot;&gt;this article&lt;/a&gt; about &lt;a href=&quot;http://www.ietf.org/html.charters/simple-charter.html&quot;&gt;SIMPLE&lt;/a&gt; in the enterprise that it would take me quite a while to correct them all. Maybe later this week I'll find the time...&lt;/p&gt;</content>
+		<author>
+			<name>Peter Saint-Andre</name>
+			<uri>http://www.saint-andre.com/blog/jabber.html</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Peter Saint-Andre: OSCON Proposal</title>
+		<link rel="alternate" type="text/html" href="http://www.saint-andre.com/blog/2007-02.html#2007-02-05T15:51"/>
+		<id>tag:saint-andre.com,2007-02-05:blog-entry-15:51</id>
+		<updated>2007-02-05T22:51:00+00:00</updated>
+		<content type="html">&lt;p&gt;I just submitted a proposal to speak at &lt;a href=&quot;http://conferences.oreillynet.com/os2007/&quot;&gt;OSCON 2007&lt;/a&gt;, the brief version is:&lt;/p&gt;
+&lt;blockquote cite=&quot;http://www.saint-andre.com/blog/atom-jabber.xml&quot;&gt;
+&lt;p&gt;Jabber/XMPP technologies not only provide an open platform for real-time communication, they do so in a high-security fashion. This talk will delve into Jabber security, including behind-the-firewall servers, reverse DNS lookups, channel encryption, strong authentication, end-to-end encryption, spam prevention, interdomain federation, and the Jabber network's intermediate certification authority.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And here's the longer version:&lt;/p&gt;
+&lt;blockquote cite=&quot;http://www.saint-andre.com/blog/atom-jabber.xml&quot;&gt;
+&lt;p&gt;Although Jabber/XMPP technologies are known as the open alternative for real-time communication, their security characteristics are less familiar. Yes Jabber provides high security for organizations and individuals alike. Companies can run their own Jabber servers behind the firewall, federate with select partners and suppliers, or open communication to the entire Jabber network (including Google Talk, Live Journal Talk, and many other public services). In addition, channel encryption and strong authentication can be required for all connections. The XMPP Standards Foundation provides cost-free digital certificates to Jabber server administrators through its own intermediate certification authority. The Jabber network is so far free of spam, viruses, and other malware. And there is an active effort underway to build robust end-to-end encryption features into popular Jabber clients and code libraries. Why use insecure technologies like the consumer instant messaging services when you can use open, secure technologies like Jabber?&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+		<author>
+			<name>Peter Saint-Andre</name>
+			<uri>http://www.saint-andre.com/blog/jabber.html</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Remko Tronçon: Psi @ FOSDEM</title>
+		<link rel="alternate" type="text/html" href="http://el-tramo.be/blog/psi-fosdem"/>
+		<id>http://el-tramo.be/blog/psi-fosdem</id>
+		<updated>2007-02-04T17:01:19+00:00</updated>
+		<content type="html">&lt;p&gt;&lt;a href=&quot;http://kismith.co.uk/&quot;&gt;Kev&lt;/a&gt; and I will be attending &lt;a href=&quot;http://fosdem.org&quot;&gt;FOSDEM&lt;/a&gt; on February 24th and 25th, and we’ll be joining other XMPP developers at the &lt;a href=&quot;http://wiki.jabber.org/index.php/Interop_Event&quot;&gt;XMPP Interop Event and DevCon&lt;/a&gt; the day after. So, if you want to meet up, or have some outstanding protocol issues with Psi, now is a good time to tell us &lt;img alt=&quot;:)&quot; class=&quot;wp-smiley&quot; src=&quot;http://el-tramo.be/wordpress/wp-includes/images/smilies/icon_smile.gif&quot; /&gt;&lt;/p&gt;</content>
+		<author>
+			<name>Remko Tronçon</name>
+			<uri>http://el-tramo.be</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Remko Tronçon: Receiving Google Talk files with libjingle</title>
+		<link rel="alternate" type="text/html" href="http://el-tramo.be/blog/psi-googleft"/>
+		<id>http://el-tramo.be/blog/psi-googleft</id>
+		<updated>2007-02-04T16:14:30+00:00</updated>
+		<content type="html">&lt;p&gt;As Google released a new version of &lt;a href=&quot;http://code.google.com/apis/talk/libjingle&quot;&gt;libjingle&lt;/a&gt; last friday, I decided to experiment with their file transfer implementation in Psi this weekend. I added some code that allows someone to accept files sent by Google Talk, and tested it with a few Google Talk contacts, with a perfect success rate (so far). For the brave who wish to experiment with this, see the instructions below. Note that this code is unofficial, untested, only uses a very rudimentary UI (there is no integration with the existing file transfers), still suffers from at least two bugs (on Mac OS X: one that segfaults when receiving images, and one where CPU skyrockets to 100% after a while, which we had with older libjingles as well), and has no support from the Psi developers whatsoever. Comments should therefore go directly to me.&lt;/p&gt;</content>
+		<author>
+			<name>Remko Tronçon</name>
+			<uri>http://el-tramo.be</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Artur Hefczyc: 2.5.0 version of Tigase server available</title>
+		<link rel="alternate" type="text/html" href="http://www.tigase.org/node/218"/>
+		<id>http://www.tigase.org/218 at http://www.tigase.org</id>
+		<updated>2007-02-03T16:56:24+00:00</updated>
+		<content type="html">&lt;p&gt;This time changes are very small but also very significant.&lt;/p&gt;
+&lt;p&gt;Following suggestions from Jabber/XMPP community I changed the policy for packets forwarding. Previously all unknown XMPP stanzas were rejected by default. After a few discussions I realized that this is not the way Jabber/XMPP server is supposed to work.&lt;/p&gt;
+&lt;p&gt;As a result &lt;code&gt;PacketFilter&lt;/code&gt; class has been created which takes care of all unknown XMPP stanzas. By default it just forwards all stanzas to destination address if the destination address is not the local server.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.tigase.org/node/218&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</content>
+		<author>
+			<name>kobit</name>
+			<uri>http://www.tigase.org</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Process One: Slides of the talk “Jabber, XMPP and the XSF”</title>
+		<link rel="alternate" type="text/html" href="http://www.process-one.net/en/blogs/article/slides_of_the_talk_jabber_xmpp_and_the_xsf/"/>
+		<id>tag:process-one.net,2007:en/blogs/3.156</id>
+		<updated>2007-02-02T09:14:17+00:00</updated>
+		<content type="html">Here are the slides from my talk given at the Solutions Linux Event in Paris (France). The talk is about Jabber, XMPP and the XMPP Standards Foundation. &lt;p&gt;The talk was given in a session called: &quot;Instant Messaging and VoIP solutions&quot;. The presentation is in French.&lt;/p&gt;
+&lt;p&gt;Here is the presentation:&lt;/p&gt;
+&lt;div&gt;&lt;br /&gt;&lt;b&gt;&lt;a href=&quot;http://www.dailymotion.com/video/x143a3_le-point-sur-la-messagerie-xmpp&quot;&gt;Le Point sur la Messagerie XMPP&lt;/a&gt;&lt;/b&gt;&lt;br /&gt;&lt;i&gt;envoyé par &lt;a href=&quot;http://www.dailymotion.com/process-one&quot;&gt;process-one&lt;/a&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;p&gt;The slides are also available as PDF: &lt;a href=&quot;http://www.process-one.net/images/uploads/XMPP_SL2007.pdf&quot;&gt;XMPP/Jabber and XSF Presentation&lt;/a&gt;.&lt;/p&gt;</content>
+		<author>
+			<name>Mickaël Rémond</name>
+			<uri>http://www.process-one.net/en/blogs/</uri>
+		</author>
+	</entry>
+
+	<entry>
+		<title>Process One: OneTeam Enterprise IM Client Video Preview</title>
+		<link rel="alternate" type="text/html" href="http://www.process-one.net/en/blogs/article/oneteam_enterprise_im_client_video_preview/"/>
+		<id>tag:process-one.net,2007:en/blogs/3.155</id>
+		<updated>2007-02-02T08:13:53+00:00</updated>
+		<content type="html">I have been presenting OneTeam yesterday at the Linux Solutions Event in Paris, in the Mozilla track. Here is the video preview from my talk. &lt;p&gt;My talk presenting our new OneTeam client have been well received by the Mozilla development community and by the users in the conference room. We feel that we are filling a gap in the Instant Messaging area. There is Firefox, Thunderbird, but no derivate IM client yet. The user expectations are high and this is encouraging.&lt;/p&gt;
+&lt;p&gt;We have now published the video preview that show some basic features of OneTeam: &lt;a href=&quot;http://www.process-one.net/tutorials/demo_oneteam_sl2007_fr_viewlet_swf.html&quot;&gt;Demo OneTeam Mozilla/XUL conference&lt;/a&gt;. Please note that the comments are in French. An english version is on the way.&lt;/p&gt;
+&lt;p&gt;The development is going at a fast pace those days. The first round of invitations for the beta test will be send during the week-end. It is still time to &lt;a href=&quot;http://www.process-one.net/en/oneteam&quot;&gt;register&lt;/a&gt;. Expect more video preview soon &lt;img alt=&quot;smile&quot; height=&quot;19&quot; src=&quot;http://www.process-one.net/images/smileys/smile.gif&quot; width=&quot;19&quot; /&gt;&lt;/p&gt;</content>
+		<author>
+			<name>Mickaël Rémond</name>
+			<uri>http://www.process-one.net/en/blogs/</uri>
+		</author>
+	</entry>
+
+</feed>

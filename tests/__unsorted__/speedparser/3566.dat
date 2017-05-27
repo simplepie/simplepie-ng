@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/atom10full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><feed xmlns="http://www.w3.org/2005/Atom" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
+ 
+ <title>Vesa Vänskä</title>
+ 
+ <link href="http://vesavanska.com" />
+ <updated>2011-07-28T07:46:25-07:00</updated>
+ <id>http://vesavanska.com</id>
+ <author>
+   <name>Vesa Vänskä</name>
+   <email>vesan2000@gmail.com</email>
+ </author>
+ 
+   <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/atom+xml" href="http://feeds.feedburner.com/vesavanska" /><feedburner:info uri="vesavanska" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><entry>
+     <title>jQuery Inline Footnotes plugin released</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/2-4SqsnGgK4/jquery-inline-footnotes-plugin-released" />
+     <updated>2011-07-26T00:00:00-07:00</updated>
+     <id>http://vesavanska.com/2011/jquery-inline-footnotes-plugin-released</id>
+     <content type="html">&lt;p&gt;jQuery Inline Footnotes provides inline footnotes like this &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is the first release (1.0) of this simple plugin. It&amp;#8217;s implemented with CoffeeScript as a jQuery plugin.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='https://github.com/vesan/jquery-inline-footnotes'&gt;Code and usage instructions&lt;/a&gt; can be found at GitHub and I set up a &lt;a href='http://vesavanska.com/jquery-inline-footnotes'&gt;minuscule site&lt;/a&gt; with the README and an example.&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
+&lt;p&gt;This content can be anywhere on the page, usually in the bottom of the post.&lt;/p&gt;
+&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/2-4SqsnGgK4" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2011/jquery-inline-footnotes-plugin-released</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>Benchmarking Rails models and views</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/I54S9X9YS8g/benchmarking-rails-models-and-views" />
+     <updated>2011-03-21T00:00:00-07:00</updated>
+     <id>http://vesavanska.com/2011/benchmarking-rails-models-and-views</id>
+     <content type="html">&lt;p&gt;Ruby on Rails provides many helper methods and commands to help you benchmark and profile your application code. But tools are only useful if you use them. The following methods seem to escape my mind and I end up creating quick hacks for benchmarking instead of using the built-in ones. That is clearly not optimal and I wanted to tell you about these handy benchmarking helpers.&lt;/p&gt;
+
+&lt;h2 id='models'&gt;Models&lt;/h2&gt;
+
+&lt;p&gt;In models you can use &lt;code&gt;benchmark&lt;/code&gt; method available as model class method. It takes a block and after running it outputs the elapsed time to the log file. Here&amp;#8217;s an example:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;generate_large_things&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;users&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+  &lt;span class='n'&gt;users&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;each&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
+    &lt;span class='no'&gt;Thing&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;benchmark&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;Creating a thing&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+      &lt;span class='n'&gt;thing&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;Thing&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;generate!&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+    &lt;span class='k'&gt;end&lt;/span&gt;
+    
+    &lt;span class='no'&gt;Thing&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;benchmark&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;Processing a thing&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+      &lt;span class='n'&gt;thing&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;process!&lt;/span&gt;
+    &lt;span class='k'&gt;end&lt;/span&gt;
+  &lt;span class='k'&gt;end&lt;/span&gt;
+&lt;span class='k'&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;After running the code you will see something like this in the log file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Creating a thing (0.47019)
+Processing a thing (2.17420)
+[other output]
+Creating a thing (0.42210)
+Processing a thing (4.23380)
+[other output]
+Creating a thing (0.39311)
+Processing a thing (2.02156)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The time measurements in seconds are in parentheses. In this case we can see that the processing took more time.&lt;/p&gt;
+
+&lt;h2 id='views'&gt;Views&lt;/h2&gt;
+
+&lt;p&gt;For benchmarking view code Rails provides &lt;code&gt;benchmark&lt;/code&gt; method. It works the same way as the model equivalent taking a block and outputting results to the log file. Simple example in Haml:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='haml'&gt;&lt;span class='p'&gt;-&lt;/span&gt; &lt;span class='n'&gt;benchmark&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Generating chart&amp;quot;&lt;/span&gt;
+  &lt;span class='p'&gt;=&lt;/span&gt; &lt;span class='n'&gt;generate_chart&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;data&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/I54S9X9YS8g" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2011/benchmarking-rails-models-and-views</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>Which Ruby library to choose?</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/NOVdyAp7zkc/which-ruby-library-to-choose" />
+     <updated>2011-02-06T00:00:00-08:00</updated>
+     <id>http://vesavanska.com/2011/which-ruby-library-to-choose</id>
+     <content type="html">&lt;p&gt;When I need a Ruby library I head to &lt;a href='http://github.com/'&gt;GitHub&lt;/a&gt; and use their search to see if there is a library for my need.&lt;/p&gt;
+
+&lt;p&gt;But when the problem I&amp;#8217;m trying to solve is common and there is multiple choices, I head to &lt;a href='http://www.ruby-toolbox.com/'&gt;The Ruby Toolbox&lt;/a&gt;. They list Ruby libraries under categories and show you relevant information for your choosing process. Information like number of watchers and forks at GitHub, number of downloads from RubyGems and when the last commit was made to the repository.&lt;/p&gt;
+
+&lt;p&gt;Usually this information tells you which library is most used, supported and trusted in the community.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='http://www.ruby-toolbox.com/'&gt;&lt;img src='/images/2011/ruby-toolbox.png' alt='The Ruby Toolbox -logo' /&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/NOVdyAp7zkc" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2011/which-ruby-library-to-choose</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>Rails Rumble 2010</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/olcsJ69A9V8/rails-rumble-2010" />
+     <updated>2010-10-18T00:00:00-07:00</updated>
+     <id>http://vesavanska.com/2010/rails-rumble-2010</id>
+     <content type="html">&lt;p&gt;&lt;a href='http://yarnit.r10.railsrumble.com/'&gt;&lt;img src='/images/2010/yarn_it.png' alt='Screenshot of Yarn It' /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Rails Rumble 2010 was last weekend and our &lt;a href='http://vesavanska.com/2008/6th-at-railsrumble-2008/'&gt;2008 team&lt;/a&gt; (Antti Salonen, Ville Ikonen and I) competed again. We built &lt;a href='http://yarnit.r10.railsrumble.com/'&gt;Yarn It, an app for generating and sharing knitting patterns&lt;/a&gt;. It&amp;#8217;s multiuser and features a simple editor for pattern generation and a chat for communicating with your friends while creating the pattern together.&lt;/p&gt;
+
+&lt;p&gt;On the tech side this Rumble was quite an adventure. My main responsibility was the backend. We started building our app with &lt;a href='http://faye.jcoglan.com/'&gt;Faye ruby gem&lt;/a&gt;, but five hours before the deadline we had problems we could not circumvent and switched to &lt;a href='http://pusherapp.com/'&gt;Pusher&lt;/a&gt;, which meant substantial rewrite resulting as pretty ugly code in some places. Faye was really nice, but probably due to inexperience with using it we couldn&amp;#8217;t get it to work reliably. Pusher is not perfec for our use case, but it seems to work reliably and overall seems like a really nice service.&lt;/p&gt;
+
+&lt;p&gt;I also got my first experience with &lt;a href='http://redis.io/'&gt;Redis&lt;/a&gt; with this project. Redis is an fast, persistent key-value store. We use it to store data for ongoing knitting sittings. My knowledge of key-value stores is limited, but using Redis was a blast and I&amp;#8217;m going to use it in the future when there is need for key-value store with more intelligent data types and functions for querying those.&lt;/p&gt;
+
+&lt;p&gt;I want to thank Antti and Ville for being awesome team partners and my employer Kisko Labs for letting us compete at the Kisko Rails Rumble HQ.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/olcsJ69A9V8" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2010/rails-rumble-2010</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>Joining Kisko Labs</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/CyLeg_Q9OKw/joining_kisko_labs" />
+     <updated>2010-09-14T00:00:00-07:00</updated>
+     <id>http://vesavanska.com/2010/joining_kisko_labs</id>
+     <content type="html">&lt;p&gt;My second full week at &lt;a href='http://kiskolabs.com/'&gt;Kisko Labs&lt;/a&gt; has started. I&amp;#8217;ve joined them as a full-time employee and my first projects there are well under way. I&amp;#8217;m really to happy to join this small team of talented people. Kisko isn&amp;#8217;t your traditional software shop renting &amp;#8220;coding resources&amp;#8221; to the highest bidder. Their goal is to help the client get their idea off the ground and into a profitable business. I relate to their core values and appreciate their getting things done mentality.&lt;/p&gt;
+
+&lt;p&gt;So what happened to my previous job, being the tech guy at &lt;a href='http://idealistdigital.fi'&gt;Idealist Digital&lt;/a&gt;? The co-founder Lare wanted to concentrate on coaching Scrum and other agile practices and I wanted to keep my focus on web software development. I pondered my options and after talking with the Kisko guys few times, I decided to join them. Lare, the Idealist Digital parent company &lt;a href='http://idealist.fi/'&gt;Idealist Group&lt;/a&gt;, and I decided that Idealist Digital wasn&amp;#8217;t needed any no more.&lt;/p&gt;
+
+&lt;p&gt;From now on you can get quality software development from Kisko Labs, agile training and coaching from &lt;a href='http://scrumwell.com/'&gt;ScrumWell&lt;/a&gt; (Lare&amp;#8217;s new company) and ideas from the Idealist Group.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/CyLeg_Q9OKw" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2010/joining_kisko_labs</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>Rails tips and tricks in your Twitter</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/fJXHSdVj1iY/rails-tips-and-tricks-in-your-twitter" />
+     <updated>2010-08-18T00:00:00-07:00</updated>
+     <id>http://vesavanska.com/2010/rails-tips-and-tricks-in-your-twitter</id>
+     <content type="html">&lt;p&gt;&lt;a href='http://apidock.com'&gt;Apidock&lt;/a&gt; is a site where you can search and read the documentation of Ruby, Ruby on Rails and RSpec. It also allows users to add notes to parts of the documentation. These notes often include interesting tips, gotchas, and cornercases discovered while using the documented features.&lt;/p&gt;
+
+&lt;p&gt;So how is this any way related to Twitter? Apidock has a &lt;a href='http://twitter.com/apidock'&gt;Twitter account&lt;/a&gt; where it posts links to all new notes added. Messages include the class and method the note has been added to, so you can easily see if there might be something interesting for you to read. Go check it out!&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/fJXHSdVj1iY" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2010/rails-tips-and-tricks-in-your-twitter</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>Unreliable USB hard drive connection</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/sXHKoSYgVRU/unreliable_usb_hard_drive_connection" />
+     <updated>2010-08-04T00:00:00-07:00</updated>
+     <id>http://vesavanska.com/2010/unreliable_usb_hard_drive_connection</id>
+     <content type="html">&lt;p&gt;I had a weird problem with my MacBook Pro and USB hard drive. I tried to copy large files but every 15 minutes or so the hard drive disconnected and after a few seconds connected back. Obviously that interrupted the copying operation which was pretty annoying.&lt;/p&gt;
+
+&lt;p&gt;I found out that &lt;a href='http://www.wired.com/gadgetlab/2008/05/the-macbook-all/'&gt;the USB ports are not powered equally&lt;/a&gt;. In my MacBook Pro the problem disappeared by switching to the port nearer the screen. After that the hard drive worked reliably.&lt;/p&gt;
+
+&lt;p&gt;It seems other laptops have similar problems, so if you encounter problems with not having enough power or unreliable connection, try another USB port.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/sXHKoSYgVRU" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2010/unreliable_usb_hard_drive_connection</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>Vim plugin documentation problem with Git</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/emfztwhvtyc/vim-plugin-documentation-problem-with-git" />
+     <updated>2010-07-11T00:00:00-07:00</updated>
+     <id>http://vesavanska.com/2010/vim-plugin-documentation-problem-with-git</id>
+     <content type="html">&lt;p&gt;I use &lt;a href='http://github.com/tpope/vim-pathogen'&gt;Pathogen&lt;/a&gt; and Git submodules to handle my Vim plugins with this &lt;a href='http://www.allenwei.cn/tips-using-git-submodule-keep-your-plugin-up-to-date/'&gt;setup&lt;/a&gt;. It works great but I get problems with the Git submodules after I create documentation for the plugins by running the Vim command &lt;code&gt;call pathogen#helptags()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;When I run &lt;code&gt;git status&lt;/code&gt; it says that the condition of the submodule plugin is dirty (most recently this happened with Tabular and textile.vim). This is caused by the &lt;code&gt;doc/tags&lt;/code&gt; file created inside the plugin. I have solved this by editing the &lt;code&gt;.git/info/exclude&lt;/code&gt; file inside the plugin&amp;#8217;s directory and adding the line &lt;code&gt;doc/tags&lt;/code&gt; to it.&lt;/p&gt;
+
+&lt;p&gt;Most plugins have their &lt;code&gt;doc/tags&lt;/code&gt; file already created and committed to Git so this problem doesn&amp;#8217;t happen that often, but if somebody has better solution for this, please leave a comment.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/emfztwhvtyc" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2010/vim-plugin-documentation-problem-with-git</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>Article about the cloud published</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/_stH28GvIpY/article-about-the-cloud-published" />
+     <updated>2010-04-15T00:00:00-07:00</updated>
+     <id>http://vesavanska.com/2010/article-about-the-cloud-published</id>
+     <content type="html">&lt;p&gt;This post is about cloud computing article co-written by me and my thesis. Both are written in Finnish so I decided to write this post also in Finnish.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Tiedosta-lehden tämän vuoden ensimmäisessä numerossa ja Tietoyhteiskunnan kehittämiskeskuksen verkkosivuilla on minun ja työtoverini Lare Lekmanin kirjoittama artikkeli &lt;a href='http://www.tieke.fi/julkaisut/tiedosta-lehti/?ARTICLE_NUM=39191&amp;amp;SINGLE_EMBED=12811'&gt;Pilvi on täällä tänään&lt;/a&gt;. Artikkeli kertoo yhdestä näkökulmasta mitä pilvipalvelut pohjimmiltaan ovat, mitä niiden käyttäminen tarkoittaa ja milloin niiden käyttöä voi olla hyödyllistä. Kyseinen numero on kokonaisuudessaan pilvi-teemainen joten jos aihealue kiinnostaa, kehotan tutustumaan!&lt;/p&gt;
+
+&lt;p&gt;Lisäksi voisin tässä mainita ensimmäistä kertaa opinnäytetyöstäni, joka tosin valmistui jo viime vuoden kesällä. Opinnäytetyö on nimeltään &lt;a href='http://urn.fi/URN:NBN:fi:amk-200905082576'&gt;Wreckamovie.com-verkkopalvelun ohjelmistotestauskäytännöt&lt;/a&gt; ja se selostaa ja analysoi Wreckamovie.com-palvelun kehittämisessä muodostuneita ohjelmistotestauskäytäntöjä. &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
+&lt;p&gt;Työ on kirjoitettu ennen naimisiinmenoani, mistä syystä sukunimi on tuossa työssä vielä vanha.&lt;/p&gt;
+&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/_stH28GvIpY" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2010/article-about-the-cloud-published</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>How to lock screen on OS X</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/FoAkR4tlu48/how-to-lock-screen-on-os-x" />
+     <updated>2010-03-29T00:00:00-07:00</updated>
+     <id>http://vesavanska.com/2010/how-to-lock-screen-on-os-x</id>
+     <content type="html">&lt;p&gt;You are going to lunch and want to lock the screen. Push:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;⌃ + ⇧ + ⏏ (ctrl + shift + eject)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I use this all the time.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/FoAkR4tlu48" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2010/how-to-lock-screen-on-os-x</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>When rake gem:unpack doesn't unpack</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/Nns4RzfJSEs/when-rake-gems-unpack-doesnt-unpack" />
+     <updated>2010-02-25T00:00:00-08:00</updated>
+     <id>http://vesavanska.com/2010/when-rake-gems-unpack-doesnt-unpack</id>
+     <content type="html">&lt;p&gt;If you run into a situation that &lt;code&gt;rake gems:unpack&lt;/code&gt; silently skips some gems, check if those gems provide rake tasks. When Rakefile is loaded, vendor/gems is not yet added to load path so Rails doesn&amp;#8217;t try to unpack those gems. For example when you run generator for &lt;a href='http://github.com/thoughtbot/hoptoad_notifier' title='thoughtbot&amp;apos;s hoptoad_notifier at master - GitHub'&gt;hoptoad_notifier&lt;/a&gt; it adds &lt;code&gt;tasks/hoptoad_notifier_tasks.rake&lt;/code&gt; to your Rails project. If you try to unpack it after that, it doesn´t work.&lt;/p&gt;
+
+&lt;p&gt;You can either run &lt;code&gt;rake gems:unpack&lt;/code&gt; before running the generator and adding the rake tasks or comment out the rake tasks temporarily and uncomment them after unpacking the gem. In hoptoad_notifier´s case you would comment out &lt;code&gt;require &amp;#39;hoptoad_notifier/tasks&amp;#39;&lt;/code&gt; in the &lt;code&gt;tasks/hoptoad_notifier_tasks.rake&lt;/code&gt; file.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/Nns4RzfJSEs" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2010/when-rake-gems-unpack-doesnt-unpack</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>Rails tip: Partials know if you are rendering a collection or an object</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/vTCQDvPxy7g/partials-know-what-we-are-rendering" />
+     <updated>2010-02-07T00:00:00-08:00</updated>
+     <id>http://vesavanska.com/2010/partials-know-what-we-are-rendering</id>
+     <content type="html">&lt;p&gt;When you render partial &lt;code&gt;thing&lt;/code&gt;, variable &lt;code&gt;thing_counter&lt;/code&gt; gets set. When you render it with an object &lt;code&gt;thing_counter&lt;/code&gt; is set to zero (0).&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;render&lt;/span&gt; &lt;span class='ss'&gt;:partial&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;thing&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:object&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='vi'&gt;@thing&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;When you render partial with a collection, &lt;code&gt;thing_counter&lt;/code&gt; is set to one (1) and goes up with each iteration.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;render&lt;/span&gt; &lt;span class='ss'&gt;:partial&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;thing&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:collection&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='vi'&gt;@list_of_things&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;You can use this to do more or less things depending on whether partial is rendered for an object or a collection. If &lt;code&gt;thing_counter.zero?&lt;/code&gt; is &lt;code&gt;true&lt;/code&gt; it&amp;#8217;s rendering a object.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/vTCQDvPxy7g" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2010/partials-know-what-we-are-rendering</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>Wreckamovie awarded with World Summit Award</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/ntK0G5ZCzsM/wreckamovie-awarded-with-world-summit-award" />
+     <updated>2009-07-08T00:00:00-07:00</updated>
+     <id>http://vesavanska.com/2009/wreckamovie-awarded-with-world-summit-award</id>
+     <content type="html">&lt;p&gt;Wreck A Movie has been awarded at the World Summit Awards in the &lt;a href='http://www.wsis-award.org/winners/winners.wbp#4e3c23ab-3d5f-468b-b12b-f61e1df1dec3' title='World Summit Awards Winners'&gt;e-Entertainment &amp;amp; Games category&lt;/a&gt;. We were &lt;a href='http://vesavanska.com/2008/wreckamovie-com-wins/' title='Wreckamovie.com wins!'&gt;elected for the WSA&lt;/a&gt; at the Finnish MindTrek event last year.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='http://www.wreckamovie.com/news/wreckamovie_archive/2009/7' title='Wreckamovie - MyWreck - WAM News'&gt;Read more&lt;/a&gt; about the WSA award.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/ntK0G5ZCzsM" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2009/wreckamovie-awarded-with-world-summit-award</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>6th at RailsRumble 2008</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/3VOah1HXZQI/6th-at-railsrumble-2008" />
+     <updated>2008-11-04T00:00:00-08:00</updated>
+     <id>http://vesavanska.com/2008/6th-at-railsrumble-2008</id>
+     <content type="html">&lt;p&gt;We were number 6 in the RailsRumble 2008 competition. Our team consisted of me and my schoolmates Antti Salonen and Ville Ikonen. I was the Rails guy, Antti was the HTML, CSS and shininess guy, and Ville was the JavaScript guy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src='/images/2008/dense-screenshot.png' alt='Screenshot of Dense, the slideshow app' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Our app was slideshow creation and presenting app that works fully inside a browser. Few slidetypes, simple interface, presenting done with S5 (standard html+css+javascript slideshow format), and a few extras like pdf export was everything needed for our easy to use app. Also one of our main advantages was that we had no forced registration. If user wanted to make presentation editable afterwards, she could give a password but it wasnt forced.&lt;/p&gt;
+
+&lt;p&gt;I’m really happy that people liked our app so much. There was tough competition and pretty many developers that I look up to participating in the contest. Thinking from that perspective, 6th place is not bad for a bunch of college kids :).&lt;/p&gt;
+
+&lt;p&gt;It was really nice to be part of the competition. Congratulations to all teams that took the effort to participate, and I’m hoping to see sequel for 2009.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src='/images/2008/rumble-location.jpg' alt='Our team is here' /&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/3VOah1HXZQI" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2008/6th-at-railsrumble-2008</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>Wreckamovie.com wins!</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/dkvsWSaoUio/wreckamovie-com-wins" />
+     <updated>2008-10-10T00:00:00-07:00</updated>
+     <id>http://vesavanska.com/2008/wreckamovie-com-wins</id>
+     <content type="html">&lt;p&gt;Star Wreck Studios Ltd where I am the lead developer went and won &lt;a href='http://www.mindtrek.org/competition' title='MindTrek Competition'&gt;Mindtrek Grand Prix 2008&lt;/a&gt; with our movie production community site &lt;a href='http://www.wreckamovie.com/' title='Wreckamovie - Be the Future of Film'&gt;Wreck A Movie&lt;/a&gt;. The price is awarded to most significant new Finnish digital media product or service.&lt;/p&gt;
+
+&lt;p&gt;Wreck A Movie was also elected as Finlands nominee for &lt;a href='http://www.wsis-award.org/index.wbp' title='WSA'&gt;World Summit Award 2009&lt;/a&gt; in e-Culture and Heritage category.&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/dkvsWSaoUio" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2008/wreckamovie-com-wins</feedburner:origLink></entry>
+ 
+   <entry>
+     <title>Where did that SQL-query come from?</title>
+     <link href="http://feedproxy.google.com/~r/vesavanska/~3/3xFN-l1TEj0/where-did-that-sql-query-come-from" />
+     <updated>2008-05-23T00:00:00-07:00</updated>
+     <id>http://vesavanska.com/2008/where-did-that-sql-query-come-from</id>
+     <content type="html">&lt;p&gt;I’ve been using Ruby on Rails plugin &lt;a href='http://terralien.com/projects/querytrace/'&gt;QueryTrace&lt;/a&gt; to see where the database action is really happening in my Rails apps. It adds short backtrace to your database queries in your log files. It’s great for pinpointing performance problems.&lt;/p&gt;
+
+&lt;p&gt;It causes the app to slow down a bit, so I have used Alex Chaffee’s &lt;a href='http://pivots.pivotallabs.com/users/alex/blog/articles/300-rake-query-trace'&gt;query_trace rake tasks&lt;/a&gt; to enable and disable it when needed. But now it seems that QueryTrace is moved to github and the old subversion repo is not working any more.&lt;/p&gt;
+
+&lt;p&gt;So I made working version of the rake tasks. Functionality is the same and because github makes tarballs of the projects for download git is not needed.&lt;/p&gt;
+
+&lt;p&gt;Here is the code:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='nb'&gt;require&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;open-uri&amp;#39;&lt;/span&gt;
+
+&lt;span class='n'&gt;namespace&lt;/span&gt; &lt;span class='ss'&gt;:query_trace&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+  &lt;span class='n'&gt;desc&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Enables the query_trace plugin. Must restart server to take effect.&amp;quot;&lt;/span&gt;
+  &lt;span class='n'&gt;task&lt;/span&gt; &lt;span class='ss'&gt;:on&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:environment&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+    &lt;span class='k'&gt;unless&lt;/span&gt; &lt;span class='no'&gt;File&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;exist?&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;&lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='no'&gt;RAILS_ROOT&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;/vendor/query_trace.tar.gz&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+      &lt;span class='no'&gt;Dir&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;chdir&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;&lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='no'&gt;RAILS_ROOT&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;/vendor&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+        &lt;span class='n'&gt;url&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;http://github.com/ntalbott/query_trace/tarball/master&amp;quot;&lt;/span&gt;
+        &lt;span class='nb'&gt;puts&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Loading query_trace tarball from &lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='n'&gt;url&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;...&amp;quot;&lt;/span&gt;
+        &lt;span class='n'&gt;file&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nb'&gt;open&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;query_trace.tar.gz&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;wb&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;f&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
+          &lt;span class='n'&gt;f&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;write&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nb'&gt;open&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;url&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;read&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+        &lt;span class='k'&gt;end&lt;/span&gt;
+      &lt;span class='k'&gt;end&lt;/span&gt;
+    &lt;span class='k'&gt;end&lt;/span&gt;
+    &lt;span class='no'&gt;Dir&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;chdir&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;&lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='no'&gt;RAILS_ROOT&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;/vendor/plugins&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+      &lt;span class='nb'&gt;system&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;tar zxf ../query_trace.tar.gz&amp;quot;&lt;/span&gt;
+    &lt;span class='k'&gt;end&lt;/span&gt;
+    &lt;span class='nb'&gt;puts&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;QueryTrace plugin enabled. Must restart server to take effect.&amp;quot;&lt;/span&gt;
+  &lt;span class='k'&gt;end&lt;/span&gt;
+
+
+  &lt;span class='n'&gt;desc&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Disables the query_trace plugin. Must restart server to take effect.&amp;quot;&lt;/span&gt;
+  &lt;span class='n'&gt;task&lt;/span&gt; &lt;span class='ss'&gt;:off&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:environment&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+    &lt;span class='no'&gt;Dir&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;chdir&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;&lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='no'&gt;RAILS_ROOT&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;/vendor/plugins&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+      &lt;span class='n'&gt;folder&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;Dir&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;glob&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;ntalbott-query_trace-*&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+      &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;folder&lt;/span&gt;
+        &lt;span class='n'&gt;folder&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;each&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;f&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt; &lt;span class='no'&gt;FileUtils&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;rm_rf&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;f&lt;/span&gt;&lt;span class='p'&gt;)}&lt;/span&gt;
+      &lt;span class='k'&gt;end&lt;/span&gt;
+    &lt;span class='k'&gt;end&lt;/span&gt;
+    &lt;span class='nb'&gt;puts&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;QueryTrace plugin disabled. Must restart server to take effect.&amp;quot;&lt;/span&gt;
+  &lt;span class='k'&gt;end&lt;/span&gt;
+&lt;span class='k'&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/vesavanska/~4/3xFN-l1TEj0" height="1" width="1"/&gt;</content>
+   <feedburner:origLink>http://vesavanska.com/2008/where-did-that-sql-query-come-from</feedburner:origLink></entry>
+ 
+</feed>

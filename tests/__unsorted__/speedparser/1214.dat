@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>LifeStyle:News:Global</title>
+	
+		
+	<script type="text/javascript" src="/js/lsn.js?1"></script>
+	<link rel="stylesheet" href="/css/lsn.css?1" media="screen" type="text/css">
+	<link rel="stylesheet" href="/css/print.css" media="print" type="text/css">
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="/css/ie/ie7.css" media="screen"/><![endif]-->
+    <!--[if gte IE 8]><link rel="stylesheet" type="text/css" href="/css/ie/ie8.css" media="screen"/><![endif]-->
+	
+	<link rel="alternate" type="application/rss+xml" href="/seed/feed.rss" title="RSS feed for Seed" />	
+	<script type="text/javascript">
+		$(function(){
+			$('#banner div').flash({swf: '/flash/banner.swf', width: 800, height: 73, flashvars: {type: 'SEED', delay: 200}});
+			
+							$('#pin').fadeTo(1000, 0.5);
+					});
+	</script>
+
+</head>
+<body>
+
+<!-- Profi ler data -->
+
+<div id="main-container" class="clearfix">
+
+
+	<div id="header">
+
+		<div class="logo-container">
+            <h1 id="logo">LS:N Global</h1>
+			<h2>The lifestyle news network</h2>
+		</div><!--/logo-container-->
+        
+        <div class="section-navigation">
+                	
+        	<div id="stick-pin">            	
+                <a href="/pinboard/" class="pinboard-count"><span id="count">0</span></a>
+            	<span id="pin"></span>            
+            </div>
+        
+        
+            <div class="section-header clear-fix">        
+                <div id="printbanner"><img src="/images/header/print500x72.png" /></div>
+                <div id="printsubhead"><h2>LSNglobal.com</h2></div>
+                <div id="banner"><div></div></div>
+            </div>
+            <!--/section-header--> 
+
+            <ul class="navigation">
+                <li><a href="/seed/">Seed</a></li>
+                <li><a href="/trends/">Trends</a></li>
+                <li class="sub-menu"><a href="/insight/">Insight</a>
+                    <ul>
+                        <li><a href="/insight/news/">News</a></li>
+                        <li><a href="/insight/tribes/">Tribes</a></li>
+                        <li><a href="/insight/markets/">Markets</a></li>
+						<li><a href="/insight/shows/">Shows</a></li>
+						<li><a href="/insight/retail/">Retail</a></li>
+                        <li><a href="/insight/consumer/">Consumer</a></li>
+                        <li><a href="/insight/safari/">Safari</a></li>
+                        <li><a href="/insight/toolkit/">Toolkit</a></li>
+                    </ul></li>
+                <li><a href="/innovate/">Innovate</a></li>
+                <li><a href="/inform/">Inform</a></li>
+                <li class="sub-menu omega"><a href="/inspire/">Inspire</a>
+                    <ul>
+                        <li><a href="/inspire/design-directions/">Design Directions</a></li>
+                        <li><a href="/inspire/portfolio/">Portfolio</a></li>
+                        <li><a href="/inspire/toolkit/">Toolkit</a></li>
+                    </ul></li>                                                                                                   
+            </ul>
+            <!--/navigation-->
+        
+        </div>                   
+    
+    </div>
+
+
+	<div id="left-column">
+        
+        <div class="form search">
+            <form method="post" action="/search/">
+            <input placeholder="Search" autocomplete="on" class="text float search" name="query" title="Sign up for E-mail Newsletter" type="text" />
+            <input value="Submit" class="button" name="search-submit" title="Sign up for E-mail Newsletter" type="submit" />
+            </form>
+        </div>   
+        
+		        <div class="form login">
+            <form method="post" action="/">
+            
+            <h3>Login:</h3>
+            <input placeholder="Enter email address" autocomplete="on" class="text" name="login-email" title="" type="text" />
+            <input placeholder="Password" autocomplete="on" class="text float" name="login-password" title="" type="password" />
+			<input type="hidden" name="url" value="%2Fseed%2Findex.rss" />
+            <input value="Submit" class="button" name="login-submit" title="" type="submit" />
+            </form>            
+			<p class="forgot"><a href="/forgot-password/">Forgot your password?</a></p>            
+        </div>
+				
+        <ul class="nav">
+                        <li class="shop"><a href="http://shop.thefuturelaboratory.com" target="_blank">Shop</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about-us/">About Us</a></li>
+            <li><a href="/contact-us/">Contact</a></li>
+            <li class="/"><a href="/faq">FAQ</a></li>
+			            <li><a href="/subscribe/">Subscribe</a></li>            <li><a href="http://www.thefuturelaboratory.com" target="_blank">The Future Laboratory</a></li>
+        </ul>
+        
+        <div class="form mailing-list">
+            <form action="/mailing-list/" method="post">
+            <h3>Join the Mailing List:</h3>
+            <input placeholder="Enter email address" autocomplete="on" class="text float" name="newsletter-email" title="Sign up for E-mail Newsletter" type="text" />
+			<input type="hidden" name="return" value="/seed/index.rss" />
+            <input value="Submit" class="button" name="newsletter-submit" title="Sign up for E-mail Newsletter" type="submit" />
+            </form>
+        </div>          
+        
+		    
+		        <h3>Announcement:</h3>        
+        <div id="announcement">
+			<div class="items">
+							<a id="ad-0" href="http://trendbriefingaw11.eventbrite.com/" target="_blank" ><img src="/advert/6/190x" alt="" /></a>
+							<a id="ad-1" href="http://shop.thefuturelaboratory.com" target="_blank" style="display: none;"><img src="/advert/5/190x" alt="" /></a>
+						</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				$('#announcement').fadeRotate({autoRotate: true, fadeDuration: 1000, autoRotateDelay: 10000});
+			});
+		</script>
+        <!--/announcement-->
+        		
+	</div>
+    <!--/left-column-->
+
+    <div id="content-container">    
+
+	        
+        <div class="content">
+
+			<!-- not cached: cache-module-seed-index-not-logged-in-url:/seed;section:Seed;year:index.rss -->	<div class="page-wrapper seed digest">
+	
+				
+		<!--/.sub-section-header-->
+
+		            <div class="content-filter" id="industry-filter">
+                <ul>
+				                    <li><a href="#" class="off industry-filter">Architecture</a></li>
+				                    <li><a href="#" class="off industry-filter">Auto</a></li>
+				                    <li><a href="#" class="off industry-filter">Beauty</a></li>
+				                    <li><a href="#" class="off industry-filter">Beverages</a></li>
+				                    <li><a href="#" class="off industry-filter">Fashion</a></li>
+				                    <li><a href="#" class="off industry-filter">Food</a></li>
+				                    <li><a href="#" class="off industry-filter">Hospitality</a></li>
+				                    <li><a href="#" class="off industry-filter">Interiors</a></li>
+				                    <li><a href="#" class="off industry-filter">Leisure</a></li>
+				                    <li><a href="#" class="off industry-filter">LS:N</a></li>
+				                    <li><a href="#" class="off industry-filter">Luxury</a></li>
+				                    <li><a href="#" class="off industry-filter">Packaging</a></li>
+				                    <li><a href="#" class="off industry-filter">Retail</a></li>
+				                    <li><a href="#" class="off industry-filter">Technology</a></li>
+				                    <li><a href="#" class="off industry-filter">Travel</a></li>
+				                </ul>
+            </div><!--/filter-->		
+		<script type="text/javascript">
+			$(function() {
+				var filters=[];
+				filters.push(new CategoryFilter($('#industry-filter a.industry-filter'), 'industries'));				
+				$('div.page div.row').filterContent({
+					filters: filters
+				});
+			});
+		</script>
+		
+		<div class="page">
+		
+						
+			<div class="archive" style="padding-top:30px;float:left;width:100%;">
+
+				<h4>Browse the archive</h4>
+
+				<ul>
+										<li>						2011 : 						<a href="/seed/2011/10/">October</a></li>
+										<li>						<a href="/seed/2011/09/">September</a></li>
+										<li>						<a href="/seed/2011/08/">August</a></li>
+										<li>						<a href="/seed/2011/07/">July</a></li>
+										<li>						<a href="/seed/2011/06/">June</a></li>
+										<li>						<a href="/seed/2011/05/">May</a></li>
+										<li>						<a href="/seed/2011/04/">April</a></li>
+										<li>						<a href="/seed/2011/03/">March</a></li>
+										<li>						<a href="/seed/2011/02/">February</a></li>
+										<li>						<a href="/seed/2011/01/">January</a></li>
+										<li>						2010 : 						<a href="/seed/2010/12/">December</a></li>
+										<li>						<a href="/seed/2010/11/">November</a></li>
+										<li>						<a href="/seed/2010/10/">October</a></li>
+										<li>						<a href="/seed/2010/09/">September</a></li>
+										<li>						<a href="/seed/2010/08/">August</a></li>
+										<li>						<a href="/seed/2010/07/">July</a></li>
+										<li>						<a href="/seed/2010/06/">June</a></li>
+										<li>						<a href="/seed/2010/05/">May</a></li>
+										<li>						<a href="/seed/2010/04/">April</a></li>
+										<li>						<a href="/seed/2010/03/">March</a></li>
+										<li>						<a href="/seed/2010/02/">February</a></li>
+										<li>						<a href="/seed/2010/01/">January</a></li>
+										<li>						2009 : 						<a href="/seed/2009/12/">December</a></li>
+										<li>						<a href="/seed/2009/11/">November</a></li>
+										<li>						<a href="/seed/2009/10/">October</a></li>
+										<li>						<a href="/seed/2009/09/">September</a></li>
+										<li>						<a href="/seed/2009/08/">August</a></li>
+										<li>						<a href="/seed/2009/07/">July</a></li>
+										<li>						<a href="/seed/2009/06/">June</a></li>
+										<li>						<a href="/seed/2009/05/">May</a></li>
+										<li>						<a href="/seed/2009/04/">April</a></li>
+										<li>						<a href="/seed/2009/03/">March</a></li>
+										<li>						<a href="/seed/2009/02/">February</a></li>
+										<li>						<a href="/seed/2009/01/">January</a></li>
+										<li>						2008 : 						<a href="/seed/2008/12/">December</a></li>
+										<li>						<a href="/seed/2008/11/">November</a></li>
+										<li>						<a href="/seed/2008/10/">October</a></li>
+										<li>						<a href="/seed/2008/09/">September</a></li>
+										<li>						<a href="/seed/2008/08/">August</a></li>
+									</ul>
+				
+			</div><!--/archive-->
+
+		</div>
+		<!--/page-->            		
+
+		</div>  
+	<!--/page-wrapper-->
+		</div><!--/content-->
+        
+				
+	</div>
+    <!--/content-container-->
+
+
+</div>
+<!--/main-container-->
+
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-1411136-4");
+  pageTracker._trackPageview();
+  } catch(err) {}
+</script>
+
+</body>
+</html>

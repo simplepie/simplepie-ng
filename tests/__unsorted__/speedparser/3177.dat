@@ -1,0 +1,14 @@
+<?php require("feed.inc"); ?>
+<?php header("Content-Type: text/xml"); ?>
+<?php echo '<?xml version="1.0" encoding="iso-8859-1"?>'."\n"; ?>
+<rss version="2.0">
+<channel>
+
+<title>RSS Feed - Webbureau med styr på webdesign og udvikling | 2ndEffect</title>
+<description>Følg med i det nyeste på 2ndEffect.</description>
+<link>http://2ndeffect.dk/feed/</link>
+
+<?php get_blogs(); ?>
+
+</channel>
+</rss>

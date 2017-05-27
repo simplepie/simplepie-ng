@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>mike says things sometimes</title>
+	<atom:link href="http://blueglowy.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blueglowy.com</link>
+	<description>omg where am I I AM NOT GOOD WITH COMPUTERS</description>
+	<lastBuildDate>Fri, 29 Apr 2011 04:15:19 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.2.1</generator>
+		<item>
+		<title>Garrison Titan on Evening Magazine</title>
+		<link>http://blueglowy.com/2011/04/28/garrison-titan-on-evening-magazine/</link>
+		<comments>http://blueglowy.com/2011/04/28/garrison-titan-on-evening-magazine/#comments</comments>
+		<pubDate>Fri, 29 Apr 2011 04:14:36 +0000</pubDate>
+		<dc:creator>Mike</dc:creator>
+				<category><![CDATA[nerdery]]></category>
+		<category><![CDATA[501st]]></category>
+		<category><![CDATA[garrison titan]]></category>
+		<category><![CDATA[star wars]]></category>
+
+		<guid isPermaLink="false">http://blueglowy.com/2011/04/28/garrison-titan-on-evening-magazine/</guid>
+		<description><![CDATA[&#160; Look! We’re on the news!]]></description>
+			<content:encoded><![CDATA[<p><object height="288" width="470"><param name="movie" type="application/x-shockwave-flash" value="http://www.king5.com/v/?i=120886354" /><param name="allowScriptAccess" value="always" /><param name="wmode" value="transparent" /><param name="AllowFullScreen" value="true" /><embed type="application/x-shockwave-flash" src="http://www.king5.com/v/?i=120886354" AllowFullScreen="true" allowScriptAccess="always" height="288" wmode="transparent" width="470"></embed></object>
+<p>&#160;</p>
+<p>Look! We’re on the news!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blueglowy.com/2011/04/28/garrison-titan-on-evening-magazine/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Switching users print servers with Powershell</title>
+		<link>http://blueglowy.com/2011/04/01/switching-users-print-servers-with-powershell/</link>
+		<comments>http://blueglowy.com/2011/04/01/switching-users-print-servers-with-powershell/#comments</comments>
+		<pubDate>Fri, 01 Apr 2011 17:44:21 +0000</pubDate>
+		<dc:creator>Mike</dc:creator>
+				<category><![CDATA[computers]]></category>
+		<category><![CDATA[nerdery]]></category>
+		<category><![CDATA[Powershell]]></category>
+
+		<guid isPermaLink="false">http://blueglowy.com/2011/04/01/switching-users-print-servers-with-powershell/</guid>
+		<description><![CDATA[&#160; So we recently setup a new Win2k8 R2 print server to replace our aging 2k3 server, and I needed a way to easily switch a whole bunch of users over to the printer mappings on the new server.&#160; After some digging, I came up with this method of switching everyone over at login with [...]]]></description>
+			<content:encoded><![CDATA[<p>&#160;</p>
+<p>So we recently setup a new Win2k8 R2 print server to replace our aging 2k3 server, and I needed a way to easily switch a whole bunch of users over to the printer mappings on the new server.&#160; After some digging, I came up with this method of switching everyone over at login with Powershell:</p>
+<p>&#160;</p>
+<p>&lt;#</p>
+<p>.SYNOPSIS   <br />This is a Powershell script to remove the old &lt;printserver&gt; printers and replace them with Printers mapped to &lt;newprintserver&gt;</p>
+<p>.DESCRIPTION   <br />This script will run at logon, and accomplish the following tasks:     <br />1) Sets ErrorAction to Silently Continue to hide any red errors if a printer connection doesn&#8217;t exist    <br />2) Gets the machines list of installed printers and passes it to the $localprinters variable    <br />3) Searches the $localprinters variable for the printer names and declares them    <br />4) Tests each variable for existence, and if it exists removes the old &lt;printserver&gt; version and installs the &lt;newprintserver&gt; version    <br />5) Checks what the original default printer was, and if it was a &lt;printserver&gt; one changes it to the new &lt;newprintserver&gt; version</p>
+<p>.NOTES   <br />This script is fairly easy to modify and tailor to a different site by modifying the what is searched for via -pattern, and adjusting the printer connections in each test case.</p>
+<p>.LINK   <br /><a href="http://www.blueglowy.com">http://www.blueglowy.com</a></p>
+<p>#&gt;   <br />$ErrorActionPreference = &quot;SilentlyContinue&quot;</p>
+<p>$localprinters = Get-WmiObject -Class Win32_Printer -ComputerName ${env:computername}</p>
+<p>$defaultprt = Get-WMIObject -class Win32_Printer -computer ${env:computername} -Filter Default=True | Select Name,Default</p>
+<p>$test = Select-String -inputObject $localprinters -pattern &quot;&lt;printer1&gt;&quot; -quiet   <br />$test2 = Select-String -inputObject $localprinters -pattern &quot;&lt;printer2&gt;&quot; -quiet    <br />$test3 = Select-String -inputObject $localprinters -pattern &quot;&lt;printer3&gt;&quot; -quiet    <br />$test4 = Select-String -inputObject $localprinters -pattern &quot;&lt;printer4&gt;&quot; -quiet</p>
+<p>$prt1 = Select-String -inputObject $defaultprt -pattern &quot;&lt;printer1&gt;&quot; -quiet    <br />$prt2 = Select-String -inputObject $defaultprt -pattern &quot;&lt;printer2&gt;&quot; -quiet    <br />$prt3 = Select-String -inputObject $defaultprt -pattern &quot;&lt;printer3&gt;&quot; -quiet    <br />$prt4 = Select-String -inputObject $defaultprt -pattern &quot;&lt;printer4&gt;&quot; -quiet</p>
+<p>if ($test -eq &quot;True&quot;) {(New-Object -ComObject WScript.Network).RemovePrinterConnection(&quot;\\&lt;printserver&gt;\&lt;printer1&gt;&quot;)   <br />&#160;&#160;&#160; (New-Object -ComObject WScript.Network).AddWindowsPrinterConnection(&quot;\\&lt;newprintserver&gt;\&lt;printer1&gt;&quot;)}    <br />&#160;&#160;&#160; else {&quot;&quot;}    <br />&#160;&#160;&#160; <br />if ($test2 -eq &quot;True&quot;) {(New-Object -ComObject WScript.Network).RemovePrinterConnection(&quot;\\&lt;printserver&gt;\&lt;printer2&gt;&quot;)    <br />&#160;&#160;&#160; (New-Object -ComObject WScript.Network).AddWindowsPrinterConnection(&quot;\\&lt;newprintserver&gt;\&lt;printer2&gt;&quot;)}    <br />&#160;&#160;&#160; else {&quot;&quot;}    <br />&#160;&#160;&#160; <br />if ($test3 -eq &quot;True&quot;) {(New-Object -ComObject WScript.Network).RemovePrinterConnection(&quot;\\&lt;printserver&gt;\&lt;printer3&gt;&quot;)    <br />&#160;&#160;&#160; (New-Object -ComObject WScript.Network).AddWindowsPrinterConnection(&quot;\\&lt;newprintserver&gt;\&lt;printer3&gt;&quot;)}    <br />&#160;&#160;&#160; else {&quot;&quot;}    <br />&#160;&#160;&#160; <br />if ($test4 -eq &quot;True&quot;) {(New-Object -ComObject WScript.Network).RemovePrinterConnection(&quot;\\&lt;printserver&gt;\&lt;printer4&gt;&quot;)    <br />&#160;&#160;&#160; (New-Object -ComObject WScript.Network).AddWindowsPrinterConnection(&quot;\\&lt;newprintserver&gt;\&lt;printer4&gt; PCL5&quot;)}    <br />&#160;&#160;&#160; else {&quot;&quot;}</p>
+<p>#Check for default printer and reset it to users original choice if printer was removed   <br />if ($prt1 -eq &quot;True&quot;) {($Printer = Get-WmiObject win32_printer&#160; | where {$_.name -match &quot;&lt;printer1&gt;&quot;})}    <br />&#160;&#160;&#160; Elseif ($prt2 -eq &quot;True&quot;) {($Printer = Get-WmiObject win32_printer&#160; | where {$_.name -match &quot;&lt;printer2&gt;&quot;})}    <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; Elseif ($prt3 -eq &quot;True&quot;) {($Printer = Get-WmiObject win32_printer&#160; | where {$_.name -match &quot;&lt;printer3&gt;&quot;})}    <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Elseif ($prt4 -eq &quot;True&quot;) {($Printer = Get-WmiObject win32_printer&#160; | where {$_.name -match &quot;&lt;printer4&gt; PCL5&quot;})}    <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Else {$Printer = &quot;&quot;}</p>
+<p>$Printer.SetDefaultPrinter()   <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />Printer Check Complete</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blueglowy.com/2011/04/01/switching-users-print-servers-with-powershell/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Deadly Space</title>
+		<link>http://blueglowy.com/2011/01/18/deadly-space/</link>
+		<comments>http://blueglowy.com/2011/01/18/deadly-space/#comments</comments>
+		<pubDate>Wed, 19 Jan 2011 06:41:34 +0000</pubDate>
+		<dc:creator>Mike</dc:creator>
+				<category><![CDATA[music]]></category>
+		<category><![CDATA[nerdery]]></category>
+		<category><![CDATA[dead space]]></category>
+		<category><![CDATA[gaming]]></category>
+		<category><![CDATA[nerdcore]]></category>
+
+		<guid isPermaLink="false">http://blueglowy.com/2011/01/18/deadly-space/</guid>
+		<description><![CDATA[Since Dead Space 2 comes out next week, I’d like to take this opportunity to remind everyone about the song I did for Rhyme Torrents 8, “Deadly Space”, inspired by the first game and Dead Space: Downfall. Please to be enjoying]]></description>
+			<content:encoded><![CDATA[<p>Since Dead Space 2 comes out next week, I’d like to take this opportunity to remind everyone about the song I did for Rhyme Torrents 8, “Deadly Space”, inspired by the first game and Dead Space: Downfall.</p>
+<p>Please to be enjoying</p>
+<p> <a href="http://blueglowy.com/Music/Deadly_Space.m4a" target="_blank"><img alt="Dead Space Wallpaper 2" src="http://i225.photobucket.com/albums/dd138/WooDyWooD_PaCKeR/Dead_Space_2l.jpg" width="601" height="480" /></a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://blueglowy.com/2011/01/18/deadly-space/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+<enclosure url="http://blueglowy.com/Music/Deadly_Space.m4a" length="8494895" type="audio/mpeg" />
+		</item>
+		<item>
+		<title>ME2 action figure 4 pack</title>
+		<link>http://blueglowy.com/2010/08/28/me2-action-figure-4-pack-2/</link>
+		<comments>http://blueglowy.com/2010/08/28/me2-action-figure-4-pack-2/#comments</comments>
+		<pubDate>Sun, 29 Aug 2010 06:56:54 +0000</pubDate>
+		<dc:creator>Mike</dc:creator>
+				<category><![CDATA[general]]></category>
+		<category><![CDATA[bioware]]></category>
+		<category><![CDATA[masseffect]]></category>
+		<category><![CDATA[xbox]]></category>
+
+		<guid isPermaLink="false">http://blueglowy.com/?p=334</guid>
+		<description><![CDATA[I pre-ordered this.  Yes, I&#8217;m a nerd. But it comes with a free t-shirt dammit! ME2 action figure 4 pack.]]></description>
+			<content:encoded><![CDATA[<p>I pre-ordered this.  Yes, I&#8217;m a nerd. But it comes with a free t-shirt dammit!</p>
+<p style="text-align: center;">
+<p style="text-align: center;"><a href="http://biowarestore.com/mass-effect/me2-action-figure-4-pack"><img src='http://blueglowy.com/wp-content/uploads/2010/08/dEM1Y.jpg' alt='ME2 figures' /></a></p>
+<p><a href="http://biowarestore.com/mass-effect/me2-action-figure-4-pack">ME2 action figure 4 pack</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blueglowy.com/2010/08/28/me2-action-figure-4-pack-2/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Mass Effect 2</title>
+		<link>http://blueglowy.com/2010/08/28/mass-effect-2/</link>
+		<comments>http://blueglowy.com/2010/08/28/mass-effect-2/#comments</comments>
+		<pubDate>Sun, 29 Aug 2010 06:49:08 +0000</pubDate>
+		<dc:creator>Mike</dc:creator>
+				<category><![CDATA[general]]></category>
+		<category><![CDATA[gaming]]></category>
+		<category><![CDATA[masseffect]]></category>
+		<category><![CDATA[xbox]]></category>
+
+		<guid isPermaLink="false">http://blueglowy.com/?p=299</guid>
+		<description><![CDATA[Playing it again. Doing my last class left to play, Sentinel run through. Still very fun. Yup.]]></description>
+			<content:encoded><![CDATA[<p>Playing it again.  Doing my last class left to play, Sentinel run through.  Still very fun.  Yup.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blueglowy.com/2010/08/28/mass-effect-2/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>I play songs sometimes</title>
+		<link>http://blueglowy.com/2010/06/21/i-play-songs-sometimes/</link>
+		<comments>http://blueglowy.com/2010/06/21/i-play-songs-sometimes/#comments</comments>
+		<pubDate>Mon, 21 Jun 2010 22:47:22 +0000</pubDate>
+		<dc:creator>Mike</dc:creator>
+				<category><![CDATA[general]]></category>
+
+		<guid isPermaLink="false">http://blueglowy.com/2010/06/21/i-play-songs-sometimes/</guid>
+		<description><![CDATA[So yeah, I still play music sometimes.  Sometimes its my own, other times its not.  Here’s me playing a Megadeth song. Liar Vox and here&#8217;s a video of me mucking about playing it]]></description>
+			<content:encoded><![CDATA[<p>So yeah, I still play music sometimes.  Sometimes its my own, other times its not.  Here’s me playing a Megadeth song.
+<p>
+<a href='http://blueglowy.com/wp-content/uploads/2010/06/Liar-Vox.mp3'>Liar Vox</a></p>
+<p>
+and here&#8217;s a video of me mucking about playing it</p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="640" height="385" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="src" value="http://www.youtube.com/v/l6PQiBJLdZM&amp;color1=0xb1b1b1&amp;color2=0xd0d0d0&amp;hl=en_US&amp;feature=player_embedded&amp;fs=1" /><param name="allowfullscreen" value="true" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/l6PQiBJLdZM&amp;color1=0xb1b1b1&amp;color2=0xd0d0d0&amp;hl=en_US&amp;feature=player_embedded&amp;fs=1" allowfullscreen="true" allowscriptaccess="always"></embed></object></p>
+]]></content:encoded>
+			<wfw:commentRss>http://blueglowy.com/2010/06/21/i-play-songs-sometimes/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+<enclosure url="http://blueglowy.com/wp-content/uploads/2010/06/Liar-Vox.mp3" length="4948096" type="audio/mpeg" />
+		</item>
+		<item>
+		<title>Standards People</title>
+		<link>http://blueglowy.com/2010/06/17/standards-people/</link>
+		<comments>http://blueglowy.com/2010/06/17/standards-people/#comments</comments>
+		<pubDate>Thu, 17 Jun 2010 22:51:47 +0000</pubDate>
+		<dc:creator>Mike</dc:creator>
+				<category><![CDATA[apple]]></category>
+		<category><![CDATA[computers]]></category>
+		<category><![CDATA[nerdery]]></category>
+		<category><![CDATA[piracy]]></category>
+		<category><![CDATA[itunes; apple; zune;]]></category>
+
+		<guid isPermaLink="false">http://blueglowy.com/2010/06/17/standards-people/</guid>
+		<description><![CDATA[I completely regret ever purchasing video from the itunes store now. So i like a good consumer I updated my itunes to 9.2 today, and after it completed, 88 files are missing, 564 tv shows are showing as unplayed, and some of my music is now gone.&#160; Thankfully the music had already been copied over [...]]]></description>
+			<content:encoded><![CDATA[<p>I completely regret ever purchasing video from the itunes store now. </p>
+<p>So i like a good consumer I updated my itunes to 9.2 today, and after it completed, 88 files are missing, 564 tv shows are showing as unplayed, and some of my music is now gone.&#160; Thankfully the music had already been copied over to my Zune library, but the problem is that I HAVE NO IDEA WHAT HAPPENED. Its just gone.</p>
+<p>Frankly though, my greater concern is the fact that even if I want to move to a computer’s product, like oh say….Zune, I can’t take my media with me.&#160; Due to drm and failure to adhere to standards, Apple has assured that I will forever have to use this apple TV they don’t really want to support to view the files.&#160; The container Apple uses for MP4 is an M4V with AC3 passthru, which is an unsupported hack to the MP4 codec container, therefore most other software won’t read it.&#160; Combined with the DRM, you are locked forever into using this thing, no matter how laggy and crappy it is, since Apple doesn’t wanna actually upgrade the device.&#160; </p>
+<p>The lesson I’ve learned here is this, if you want interoperability and you want to insure your investment in media isn’t destroyed by a shitty software update….PIRATE.&#160; </p>
+<p>And they wonder why they can’t beat piracy?</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blueglowy.com/2010/06/17/standards-people/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Easter Fail</title>
+		<link>http://blueglowy.com/2010/04/03/easter-fail/</link>
+		<comments>http://blueglowy.com/2010/04/03/easter-fail/#comments</comments>
+		<pubDate>Sat, 03 Apr 2010 21:54:34 +0000</pubDate>
+		<dc:creator>Mike</dc:creator>
+				<category><![CDATA[general]]></category>
+		<category><![CDATA[easter]]></category>
+		<category><![CDATA[mix94.1]]></category>
+		<category><![CDATA[townsquare]]></category>
+
+		<guid isPermaLink="false">http://blueglowy.com/2010/04/03/easter-fail/</guid>
+		<description><![CDATA[So Townsquare Las Vegas was having an easter event today, and I thought hey, the kid would have fun with this.&#160; So you have to register early for the hunt as it was supposed to be a limited number of kids each time, so we got there just after 10am.&#160; Got her registered, and waited [...]]]></description>
+			<content:encoded><![CDATA[<p>So Townsquare Las Vegas was having an easter <a href="http://www.townsquarelasvegas.com/events/kids-events/details/119-hop-a-shop.html">event</a> today, and I thought hey, the kid would have fun with this.&#160; So you have to register early for the hunt as it was supposed to be a limited number of kids each time, so we got there just after 10am.&#160; Got her registered, and waited the 4 HOURS till the hunt.&#160; In the meantime, she played at the park there and had some fun.</p>
+<p>At just after 1:30pm, we head down to line up, and there’s a TON of people there without the registration armbands, just lined up for a free for all.&#160; Apparently following simple instructions is beyond the majority of people at these events.&#160; We ended up near the back of the line behind a bunch of these people who didn’t register and refused to get out of line.</p>
+<p>Eventually, they call a start to the hunt, and these people pushed and shoved their way in, and my daughter got stuck in the back.&#160; She managed to get a few eggs, but not many.&#160; Now we were under the impression based on what they were saying that there was supposed to be candy and stickers in all the eggs, and a few would have tickets for larger prizes.&#160; Well, after the event we opened the eggs, and got NOTHING.&#160; Not a damn thing.&#160;&#160; Way to fail guys, thanks for the fun day.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blueglowy.com/2010/04/03/easter-fail/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Adjust your model</title>
+		<link>http://blueglowy.com/2010/03/16/adjust-your-model/</link>
+		<comments>http://blueglowy.com/2010/03/16/adjust-your-model/#comments</comments>
+		<pubDate>Tue, 16 Mar 2010 17:21:27 +0000</pubDate>
+		<dc:creator>Mike</dc:creator>
+				<category><![CDATA[music]]></category>
+		<category><![CDATA[arch enemy]]></category>
+		<category><![CDATA[carcass]]></category>
+		<category><![CDATA[Cwf + RtB]]></category>
+		<category><![CDATA[metal]]></category>
+		<category><![CDATA[piracy]]></category>
+		<category><![CDATA[RIAA]]></category>
+
+		<guid isPermaLink="false">http://blueglowy.com/2010/03/16/adjust-your-model/</guid>
+		<description><![CDATA[&#160; So anyone who knows me knows I’m all into the arguments against what the RIAA/Record Labels are doing, and have followed many a Techdirt post about it.&#160; Recently, I was catching up on some heavy metal news, and found an interesting remark from Michael Amott of Arch Enemy/Carcass regarding album sales. “Now the majority [...]]]></description>
+			<content:encoded><![CDATA[<p>&#160;</p>
+<p>So anyone who knows me knows I’m all into the arguments against what the RIAA/Record Labels are doing, and have followed many a Techdirt post about it.&#160; Recently, I was catching up on some heavy metal news, and found an interesting remark from Michael Amott of Arch Enemy/Carcass regarding album sales.</p>
+<p>“Now the majority of fans rather download albums for free, now you can go see how many downloads there are for <i>The Root Of All Evil</i>. It&#8217;s a lot more than what the Soundscan figures are for CD sales. That&#8217;s just the reality of it, I&#8217;m not one of these guys who&#8217;s going to sit around being bitter about it. It&#8217;s like &quot;Ok, this is the situation&quot;, so you just change your business model a little bit. But you know, new music is very important to me and we&#8217;re still writing new music. As I said, last night I wrote a new song.”&#160; </p>
+<p>The full interview can be found <a href="http://metalstorm.ee/pub/interview.php?interview_id=568">here</a>.</p>
+<p>Now this is a fine example of a guy who GETS IT.&#160; People WILL download, there is nothing you can do about, except adjust your business model and move on with life.&#160; The last sentence I believe really strikes home against the core argument that the Labels like to make, that when there is piracy that people will not make music as they have no incentive.</p>
+<p>The incentive to make music is this: MUSICIANS MAKE MUSIC.&#160; Its what they do, its in the blood.&#160; Piracy or not, musicians will make music, and they will want it to be heard by as many people as possible.&#160; Any musician who says otherwise has forgotten why they began making music in the first place.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blueglowy.com/2010/03/16/adjust-your-model/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Live reaction to watching the &#8220;We Are The World&#8221; remake video</title>
+		<link>http://blueglowy.com/2010/02/18/live-reaction-to-watching-the-we-are-the-world-remake-video/</link>
+		<comments>http://blueglowy.com/2010/02/18/live-reaction-to-watching-the-we-are-the-world-remake-video/#comments</comments>
+		<pubDate>Thu, 18 Feb 2010 18:24:35 +0000</pubDate>
+		<dc:creator>Mike</dc:creator>
+				<category><![CDATA[general]]></category>
+
+		<guid isPermaLink="false">http://blueglowy.com/2010/02/18/live-reaction-to-watching-the-we-are-the-world-remake-video/</guid>
+		<description><![CDATA[(10:11:46 AM) mike.becker: here comes the pain, i&#8217;m gonna try and watch the official video of the &#34;we are the world&#34; remake (10:11:48 AM) mike.becker to see how bad it is (10:12:39 AM) mike.becker: wow, the reverb (10:13:11 AM) mike.becker: these people&#8217;s voices and styles do NOT go together at all (10:13:31 AM) mike.becker: OH [...]]]></description>
+			<content:encoded><![CDATA[<p>(10:11:46 AM) mike.becker: here comes the pain, i&#8217;m gonna try and watch the official video of the &quot;we are the world&quot; remake   <br />(10:11:48 AM) mike.becker to see how bad it is    <br />(10:12:39 AM) mike.becker: wow, the reverb    <br />(10:13:11 AM) mike.becker: these people&#8217;s voices and styles do NOT go together at all    <br />(10:13:31 AM) mike.becker: OH GOD BARBARA STREISAND    <br />(10:14:33 AM) mike.becker: this is really bad    <br />(10:14:51 AM) mike.becker: and i&#8217;m pretty sure i just heard Auto-Tune    <br />(10:15:17 AM) mike.becker: ok, now i&#8217;m SURE i heard it    <br />(10:18:50 AM) Chris: lol    <br />(10:19:21 AM) mike.becker: OH GOD T-PAIN    <br />(10:19:47 AM) mike.becker@ and Jaime Foxx doing a ray charles impression    <br />(10:19:50 AM) mike.becker: WTF SHITTY RAP?    <br />(10:20:20 AM) mike.becker: is that LL COOL J?    <br />(10:20:35 AM) mike.becker: this makes my brain hurt    <br />(10:20:54 AM) mike.becker: what the fuck is all this rapping?    <br />(10:21:01 AM) mike.becker: and who&#8217;s the guy screaming?    <br />(10:21:03 AM) mike.becker: WTF IS GOING ON?    <br />(10:21:18 AM) Chris: we are teh world sucks now</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blueglowy.com/2010/02/18/live-reaction-to-watching-the-we-are-the-world-remake-video/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

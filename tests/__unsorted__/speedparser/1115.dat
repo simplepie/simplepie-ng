@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Site Is Offline</title>
+		<style type="text/css">
+			body
+			{
+				font-size:16px;
+				font-family: 'Kameron', Georgia,serif;
+			}
+			#cont
+			{
+				position:relative;
+				width:100%;
+				margin-top:20%;
+			}
+			.align-center
+			{
+				text-align:center;
+			}
+			.align-left
+			{
+				float:left;
+			}
+			.align-right
+			{
+				float:right;
+			}
+			
+.notice{
+background-color: rgb(203, 232, 107);
+padding:10px;
+}
+.warning{ 
+background-color: #BE2817;
+padding:10px;
+word-wrap: break-word;
+}
+
+div#list .green,div#list .red
+{
+	
+	width:400px;
+}
+
+
+		
+		</style>
+		
+	<script type="text/javascript">
+   WebFontConfig = {
+     google: { families: [ 'Kameron:400,700' ] }
+   };
+   (function() {
+     var wf = document.createElement('script');
+     wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+       '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+     wf.type = 'text/javascript';
+     wf.async = 'true';
+     var s = document.getElementsByTagName('script')[0];
+     s.parentNode.insertBefore(wf, s);
+   })(); </script>
+		
+		
+	</head>
+	<body>
+<div id="cont">
+	<span class="content">
+		<h1 class="align-center">Site is offline for maintenance</h1>
+<div id="list">
+
+	<ul class="green align-left">
+		<li><p class="notice">We have added two new features</p></li>
+	</ul>
+
+	<ul class="red align-right">
+		<li><p class="warning">Our site is down</p></li>				
+	</ul>
+
+</div>
+
+</span>
+
+</div>
+			
+			
+			
+
+	</body>
+</html>
+
+

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>tonydimaggio.com</title>
+	<atom:link href="http://tonydimaggio.com/blog/?feed=rss2" rel="self" type="application/rss+xml" />
+	<link>http://tonydimaggio.com/blog</link>
+	<description>Tony&#039;s own little slice of the internet...</description>
+	<lastBuildDate>Wed, 09 Feb 2011 15:36:13 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.4</generator>
+		<item>
+		<title>Installing and Configuring Dell Management vCenter Plugin</title>
+		<link>http://tonydimaggio.com/blog/?p=258</link>
+		<comments>http://tonydimaggio.com/blog/?p=258#comments</comments>
+		<pubDate>Mon, 31 Jan 2011 03:01:55 +0000</pubDate>
+		<dc:creator>tony</dc:creator>
+				<category><![CDATA[Server Management]]></category>
+		<category><![CDATA[VMware]]></category>
+		<category><![CDATA[Virtualization]]></category>
+
+		<guid isPermaLink="false">http://tonydimaggio.com/blog/?p=258</guid>
+		<description><![CDATA[DISCLAIMER: I work for Dell In January 2011, Dell released a new Management Plugin for vCenter that allows administrators to monitor and maintain Dell 11G servers directly from the vCenter.  While the plugin is not free, it does provide value.  I had a chance to play around with the plugin and thought I&#8217;d share some [...]]]></description>
+		<wfw:commentRss>http://tonydimaggio.com/blog/?feed=rss2&#038;p=258</wfw:commentRss>
+		<slash:comments>16</slash:comments>
+		</item>
+		<item>
+		<title>Career Move&#8230;</title>
+		<link>http://tonydimaggio.com/blog/?p=251</link>
+		<comments>http://tonydimaggio.com/blog/?p=251#comments</comments>
+		<pubDate>Tue, 21 Dec 2010 03:15:18 +0000</pubDate>
+		<dc:creator>tony</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://tonydimaggio.com/blog/?p=251</guid>
+		<description><![CDATA[I took a position as a Systems Consultant at Dell covering the NYC/Northern NJ region.  I&#8217;m not sure what the policy around blogging is so I won&#8217;t be posting anything technical until I find out. DISCLAIMER: The views and opinions expressed here are mine.  Although I work for Dell, this is NOT a Dell blog, [...]]]></description>
+		<wfw:commentRss>http://tonydimaggio.com/blog/?feed=rss2&#038;p=251</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Are Home Directories Dead?</title>
+		<link>http://tonydimaggio.com/blog/?p=233</link>
+		<comments>http://tonydimaggio.com/blog/?p=233#comments</comments>
+		<pubDate>Tue, 17 Aug 2010 03:19:24 +0000</pubDate>
+		<dc:creator>tony</dc:creator>
+				<category><![CDATA[Desktop Management]]></category>
+		<category><![CDATA[Server Management]]></category>
+		<category><![CDATA[Storage]]></category>
+		<category><![CDATA[NetApp]]></category>
+		<category><![CDATA[SharePoint]]></category>
+
+		<guid isPermaLink="false">http://tonydimaggio.com/blog/?p=233</guid>
+		<description><![CDATA[It&#8217;s been a while since I&#8217;ve posted anything, really because I haven&#8217;t had much to say and the rest of the blogsphere has already said it.  However recently, I&#8217;ve had some interesting discussions which prompted me to write something. Some background &#8211; For the last 5 weeks I&#8217;ve been in meetings and discussions with many [...]]]></description>
+		<wfw:commentRss>http://tonydimaggio.com/blog/?feed=rss2&#038;p=233</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Blog post from Android</title>
+		<link>http://tonydimaggio.com/blog/?p=230</link>
+		<comments>http://tonydimaggio.com/blog/?p=230#comments</comments>
+		<pubDate>Tue, 25 May 2010 01:42:34 +0000</pubDate>
+		<dc:creator>tony</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://tonydimaggio.com/blog/?p=230</guid>
+		<description><![CDATA[Just got a new Droid Incredible. I have to say its rather incredible. Posting this from WordPress Android app!]]></description>
+		<wfw:commentRss>http://tonydimaggio.com/blog/?feed=rss2&#038;p=230</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Quick Powershell for XenApp</title>
+		<link>http://tonydimaggio.com/blog/?p=213</link>
+		<comments>http://tonydimaggio.com/blog/?p=213#comments</comments>
+		<pubDate>Sat, 08 Aug 2009 01:06:43 +0000</pubDate>
+		<dc:creator>tony</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Citrix]]></category>
+		<category><![CDATA[PowerShell]]></category>
+
+		<guid isPermaLink="false">http://tonydimaggio.com/blog/?p=213</guid>
+		<description><![CDATA[I honestly haven&#8217;t had anything interesting to write about so here&#8217;s a quick and dirty Powershell script for XenApp Commands (Powershell for XenApp) which you can download from My Citrix. I&#8217;ve always found it annoying that there was no real quick way to get a list of all your apps and which users or groups [...]]]></description>
+		<wfw:commentRss>http://tonydimaggio.com/blog/?feed=rss2&#038;p=213</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Theme Fixed!</title>
+		<link>http://tonydimaggio.com/blog/?p=214</link>
+		<comments>http://tonydimaggio.com/blog/?p=214#comments</comments>
+		<pubDate>Mon, 03 Aug 2009 01:09:40 +0000</pubDate>
+		<dc:creator>tony</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://tonydimaggio.com/blog/?p=214</guid>
+		<description><![CDATA[]]></description>
+		<wfw:commentRss>http://tonydimaggio.com/blog/?feed=rss2&#038;p=214</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Busted Theme</title>
+		<link>http://tonydimaggio.com/blog/?p=208</link>
+		<comments>http://tonydimaggio.com/blog/?p=208#comments</comments>
+		<pubDate>Sat, 01 Aug 2009 19:40:47 +0000</pubDate>
+		<dc:creator>tony</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://tonydimaggio.com/blog/?p=208</guid>
+		<description><![CDATA[I was messing around with some different themes and I broke my original theme with the Lake George header. The current theme is just temporary for now. Although I do like it, we&#8217;ll see!!!]]></description>
+		<wfw:commentRss>http://tonydimaggio.com/blog/?feed=rss2&#038;p=208</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Sorry it&#8217;s so SLOOOOOW</title>
+		<link>http://tonydimaggio.com/blog/?p=207</link>
+		<comments>http://tonydimaggio.com/blog/?p=207#comments</comments>
+		<pubDate>Thu, 30 Jul 2009 03:28:18 +0000</pubDate>
+		<dc:creator>tony</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://tonydimaggio.com/blog/?p=207</guid>
+		<description><![CDATA[Apparently the server that tonydimaggio.com is being hosted on over at GoDaddy is having some hardware related issues.&#160; I’m being told they’re actively being worked on and should be resolved in the next 24-48 hours (great SLA huh?)&#160; I guess that’s what you get with “Economy Linux Hosting” Anyhoo…I apologize for any inconvenience Tony]]></description>
+		<wfw:commentRss>http://tonydimaggio.com/blog/?feed=rss2&#038;p=207</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>BriForum Day 3</title>
+		<link>http://tonydimaggio.com/blog/?p=197</link>
+		<comments>http://tonydimaggio.com/blog/?p=197#comments</comments>
+		<pubDate>Fri, 24 Jul 2009 13:35:15 +0000</pubDate>
+		<dc:creator>tony</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://tonydimaggio.com/blog/?p=197</guid>
+		<description><![CDATA[I&#8217;m finally back in NJ after another superb BriForum!  I&#8217;ve gone this far so here is my rundown on day 3 of BriForum&#8230; I was about 20 minutes late for my first morning session which was &#8220;Maximizing your SBC OS and Hardware Investments During Difficult Times&#8221; by Ian Parker.  I attended Ian&#8217;s first session &#8220;Quick [...]]]></description>
+		<wfw:commentRss>http://tonydimaggio.com/blog/?feed=rss2&#038;p=197</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>BriForum Day 2</title>
+		<link>http://tonydimaggio.com/blog/?p=194</link>
+		<comments>http://tonydimaggio.com/blog/?p=194#comments</comments>
+		<pubDate>Thu, 23 Jul 2009 00:37:26 +0000</pubDate>
+		<dc:creator>tony</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://tonydimaggio.com/blog/?p=194</guid>
+		<description><![CDATA[Decisions, Decisions, Decisions!  There were so many great sessions today that were in the same time slots, it made picking which sessions to attend really hard!  Here&#8217;s what I decided to do: I really struggled first thing in the morning!  I was planning on going to &#8220;A Deep Dive into the 20 Year History of [...]]]></description>
+		<wfw:commentRss>http://tonydimaggio.com/blog/?feed=rss2&#038;p=194</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

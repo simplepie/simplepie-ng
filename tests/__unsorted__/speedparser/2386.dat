@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    	<meta name="robots" content="noindex"/>
+    	<link rel="icon" href="http://assets.tumblr.com/images/favicon.gif?2" type="image/gif"/>
+    	<title>Password Protected Blog</title>
+    	<style type="text/css">
+    	    body {
+    	        background: url('http://assets.tumblr.com/images/protected_blog_bg.png') top left repeat-x #3d454d;
+            }
+            
+            form {
+                margin: 0;
+                padding: 0;
+            }
+            
+            #form {
+    	        position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -125px 0 0 -263px;
+    	    }
+            
+                #form #form_content {
+                    padding: 10px 30px;
+                    width: 466px;
+                    height: 141px;
+                    background: url('http://assets.tumblr.com/images/protected_blog_content.png') no-repeat;
+        	    }
+    	    
+        	        #form #form_content h1 {
+        	            font: normal 24px Arial, Helvetica, sans-serif;
+        	            color: #4f4f4f;
+        	            margin: 18px 0 28px 0;
+        	        }
+    	        
+        	            #form #form_content .big_button {
+                            margin: 0px;
+                            border: solid 1px #ccc;
+                            border-top: solid 1px #ddd;
+                            border-left: solid 1px #ddd;
+                            font-size: 22px;
+                            color: #fff;
+                            cursor: pointer;
+                            line-height: 42px;
+                            height: 42px;
+                            padding: 0px 15px;
+                            overflow: visible;
+                            border-radius: 5px;
+                            -moz-border-radius: 5px;
+                            -webkit-border-radius: 5px;
+                            background: #87b500 url('http://assets.tumblr.com/images/big_button_bg.png') top repeat-x;
+                            border-width: 0px;
+                            border-right: solid 1px #689300;
+                            border-bottom: solid 1px #689300;
+                            text-shadow: #719e03 1px 1px;
+                        }
+
+                            #form #form_content .big_button:active {
+                                background: #87b500;
+                                color: #ECF5DE;
+                                line-height: 44px;
+                            }
+                        
+                        #form #form_content .text_field {
+                            width: 320px;
+                            outline: 0;
+                            margin: 0px;
+                            font: normal 32px Georgia, Times, "Times New Roman", serif;
+                            border: 1px solid #cbcdd6;
+                            background: url('http://assets.tumblr.com/images/input_bg.png') top left repeat-x #fafbfd;
+                            color: #25313c;
+                        }
+
+                            #form #form_content .text_field:focus {
+                                background-color: #f9f8e4;
+                            }
+            
+                    #form #shadow {
+                        opacity: 0.6;
+                        filter: alpha(opacity=60);
+                        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+                    }
+         
+                #message {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin: -200px 0 0 -250px;
+                    width: 500px;
+                }
+
+                    #message h1 {
+                        color: #e3e7ec;
+                        text-shadow: 0 2px 4px rgba(0,0,0, 0.4);
+                        font: bold 34px Arial, Helvetica, sans-serif;
+                    }
+
+                    #message p {
+                        color: #fff;
+                        font-size: 20px;
+                        font: normal 20px Arial, Helvetica, sans-serif;
+                        text-shadow: 0 2px 4px rgba(0,0,0, 0.4);
+                    }
+
+                    #message a {
+                        color: #35c4f3;
+                        text-decoration: none;
+                        white-space: nowrap;
+                    }
+
+                        #message a:hover {
+                            text-decoration: underline;
+                        }
+    	</style>
+    </head>
+    <body>
+        <div id="message">
+            <h1>Sorry.  This feature isn't available on protected blogs.</h1>
+        </div>
+    </body>
+</html>

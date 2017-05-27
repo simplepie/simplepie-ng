@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Johan Driessen's blog</title>
+    <link>http://johan.driessen.se/</link>
+    <description>A blog about programming, mostly</description>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>Argotic Syndication Framework 2008.0.2.0, http://www.codeplex.com/Argotic</generator>
+    <lastBuildDate>Mon, 03 Oct 2011 20:27:26 GMT</lastBuildDate>
+    <atom:link href="http://johan.driessen.se/feed/rss/" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Accessing an IIS Express site from a remote computer</title>
+      <description>&lt;p&gt;Sometimes (waaaay to often) I have to check that a site I’m working on looks like it should in Internet Explorer 6, Safari on Mac or some other browser that I can’t run in Windows 7. In this case I wanted to access it from &lt;a href="http://johan.driessen.se/posts/windows-7-xp-mode-is-really-nice"&gt;IE6 running in XP Mode&lt;/a&gt;.&amp;nbsp; I could of course deploy it to IIS and make it publicly available, but since I’m now using &lt;a href="http://learn.iis.net/page.aspx/868/iis-express-overview/"&gt;IIS Expr</description>
+      <link>http://johan.driessen.se/posts/Accessing-an-IIS-Express-site-from-a-remote-computer</link>
+      <guid isPermaLink="true">http://johan.driessen.se/posts/Accessing-an-IIS-Express-site-from-a-remote-computer</guid>
+      <pubDate>Tue, 16 Aug 2011 16:45:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Getting the Firefox button back in Ubuntu 11.04 with Unity</title>
+      <description>&lt;p&gt;Since I've been trying to learn more about &lt;a href="http://rubyonrails.org/"&gt;Ruby on Rails&lt;/a&gt; (everybody else seems to be doing it, so why shouldn't I?) lately, I've been spending quite some time in &lt;a href="http://www.ubuntu.com/"&gt;Ubuntu&lt;/a&gt; instead of my usual Windows 7 environment. And since that's the way I do things, I immediately upgraded to &lt;a href="http://www.ubuntu.com/ubuntu/whats-new"&gt;11.04&lt;/a&gt; when it was released.&lt;/p&gt;
+&lt;p&gt;With Ubuntu 11.04 you get &lt;a href="http://unity.ubuntu.com</description>
+      <link>http://johan.driessen.se/posts/Getting-the-Firefox-button-back-in-Ubuntu-11.04-with-Unity</link>
+      <guid isPermaLink="true">http://johan.driessen.se/posts/Getting-the-Firefox-button-back-in-Ubuntu-11.04-with-Unity</guid>
+      <pubDate>Thu, 05 May 2011 16:50:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>World wide visitors</title>
+      <description>&lt;p&gt;Totally off topic for this blog, since I try not to write about random things, but rather keep to the technical topics, but I just had to share this map from &lt;a href="http://google.com/analytics"&gt;Google Analytics&lt;/a&gt; of where my visitors come from.&lt;/p&gt;&lt;p&gt;&lt;a href="http://johan.driessen.se/images/Windows-Live-Writer/World-wide-visitors_A568/map_of_visitors_2.png"&gt;&lt;img style="display: inline; background-image: none;" title="map_of_visitors" border="0" alt="map_of_visitors" src="http://johan.drie</description>
+      <link>http://johan.driessen.se/posts/World-wide-visitors</link>
+      <guid isPermaLink="true">http://johan.driessen.se/posts/World-wide-visitors</guid>
+      <pubDate>Thu, 07 Apr 2011 11:50:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>Getting Mercurial 1.8.1 to work against a repository with a self-signed SSL certificate</title>
+      <description>&lt;p&gt;For a project with some friends, we’ve set up our own private &lt;a href="http://mercurial.selenic.com"&gt;Mercurial&lt;/a&gt; repository. We’re publishing it using &lt;a href="http://mercurial.selenic.com/wiki/PublishingRepositories"&gt;hgweb and apache&lt;/a&gt;, and since we want it encrypted, we use a self-signed certificate. This has been working fine until recently, when I upgraded Mercurial from 1.6.x to 1.8.1, because it turns out that in Mercurial 1.7.2, they started throwing a big fat error when you try to</description>
+      <link>http://johan.driessen.se/posts/Getting-Mercurial-1.8.1-to-work-against-a-repository-with-a-self-signed-SSL-certificate</link>
+      <guid isPermaLink="true">http://johan.driessen.se/posts/Getting-Mercurial-1.8.1-to-work-against-a-repository-with-a-self-signed-SSL-certificate</guid>
+      <pubDate>Mon, 28 Mar 2011 21:10:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>Up and running on the Alpha Blog Engine!</title>
+      <description>&lt;p&gt;As I wrote in a post back in October, I’ve been writing my own blog engine, with the plan to run my blog on that instead. And today, finally, I was able to migrate my blog to my own blog engine, called Alpha! It took a little longer than I had hoped (the Devil is in the details…), and there are still lots of things I want to do on it, but it seems to work nicely, and I’m pretty happy with it!&lt;/p&gt;&lt;p&gt;A quick overview of the Alpha Blog Engine:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Built in &lt;a href="http://www.asp.net/mvc/</description>
+      <link>http://johan.driessen.se/posts/Up-and-running-on-the-Alpha-Blog-Engine!</link>
+      <guid isPermaLink="true">http://johan.driessen.se/posts/Up-and-running-on-the-Alpha-Blog-Engine!</guid>
+      <pubDate>Sun, 27 Feb 2011 16:08:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>Getting Ruby on Rails to work on Ubuntu 10.10</title>
+      <description>&lt;p&gt;&lt;em&gt;UPDATE 2001-06-21 – I noticed that the install script at beginrescueend.com has changed. I have updated this post to reflect this.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Since I'm still on parental leave, and just have too much god damn time on my hands, I thought I'd finally give &lt;a href="http://rubyonrails.org/"&gt;Ruby on Rails&lt;/a&gt; a good try, so first I finished &lt;a href="http://railsforzombies.org/"&gt;Rails for Zombies&lt;/a&gt;, and then I started on the &lt;a href="http://ruby.railstutorial.org/"&gt;Ruby on Rails Tutorial&lt;/a&gt;</description>
+      <link>http://johan.driessen.se/posts/Getting-Ruby-on-Rails-to-work-on-Ubuntu-10.10</link>
+      <guid isPermaLink="true">http://johan.driessen.se/posts/Getting-Ruby-on-Rails-to-work-on-Ubuntu-10.10</guid>
+      <pubDate>Wed, 16 Feb 2011 16:56:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>An even simpler way not to send email</title>
+      <description>&lt;p&gt;I thought this was to simple to blog about, but then I read &lt;a href="http://danielsaidi.wordpress.com/2011/01/28/c-easily-switch-between-sending-and-not-sending-out-e-mail-messages/"&gt;this post by my colleague Daniel Saidi&lt;/a&gt;, and I thought “what the hell”. &lt;/p&gt;  &lt;p&gt;Yes, when developing web applications you very often need to send emails. But during development, or testing for that matter, you often don’t actually want to send any emails. You could, of course, go the interface-injection-way,</description>
+      <link>http://johan.driessen.se/posts/an-even-simpler-way-not-to-send-email</link>
+      <guid isPermaLink="true">http://johan.driessen.se/posts/an-even-simpler-way-not-to-send-email</guid>
+      <pubDate>Fri, 28 Jan 2011 16:49:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>Progress on the new blog engine</title>
+      <description>&lt;p&gt;Hmmm, it seems that I did not manage to replace &lt;a href="http://subtextproject.com"&gt;Subtext&lt;/a&gt; with my new blog engine, &lt;a href="https://bitbucket.org/nahojd/alpha/overview"&gt;Alpha&lt;/a&gt;, before the end of 2010 &lt;a href="http://johan.driessen.se/archive/2010/10/18/irsquom-gonna-build-my-own-blog-engine-because-itrsquos-never.aspx"&gt;as I optimistically thought when I started in October&lt;/a&gt;. It turns out that there are other things to do than to program when you’re on paternal leave (ya, rly!)&lt;/p&gt;</description>
+      <link>http://johan.driessen.se/posts/progress-on-the-new-blog-engine</link>
+      <guid isPermaLink="true">http://johan.driessen.se/posts/progress-on-the-new-blog-engine</guid>
+      <pubDate>Sun, 02 Jan 2011 01:13:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>Dependency injection in ASP.NET MVC 3 got a lot simpler</title>
+      <description>&lt;p&gt;In my project of writing my own blog engine, I’m using &lt;a href="http://www.asp.net/mvc/mvc3"&gt;ASP.NET MVC 3 beta&lt;/a&gt;, and I like what they have done to &lt;a href="http://bradwilson.typepad.com/blog/2010/07/service-location-pt1-introduction.html"&gt;simplify the dependency injection&lt;/a&gt;! Let me show you the difference.&lt;/p&gt;  &lt;h3&gt;The MVC 2 way&lt;/h3&gt;  &lt;p&gt;First, I need a registry (that’s just &lt;a href="http://structuremap.net"&gt;ScructureMap&lt;/a&gt;, nothing really to do with MVC).&lt;/p&gt;  &lt;pre class="brush: cshar</description>
+      <link>http://johan.driessen.se/posts/dependency-injection-in-asp.net-mvc-3-got-a-lot-simpler</link>
+      <guid isPermaLink="true">http://johan.driessen.se/posts/dependency-injection-in-asp.net-mvc-3-got-a-lot-simpler</guid>
+      <pubDate>Sat, 30 Oct 2010 19:49:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>I’m gonna build my own blog engine, because it’s never been done before, or maybe I can just do it better!</title>
+      <description>&lt;p&gt;Today is the first day of my paternity leave, I’ll be home with my little daughter for at least six months. Which is great! But I immediately started to get the itch to write some code. I needed a hobby project. Since I suck at coming up with great ideas, I decided to &lt;a href="http://blog.wekeroad.com/blog/be-a-good-jedi-build-your-own-blog/"&gt;be a good Jedi&lt;/a&gt; and build my own blog engine!&lt;/p&gt;  &lt;p&gt;Yes, I know, there really is no need for another blog engine. Except that there is. The one I w</description>
+      <link>http://johan.driessen.se/posts/irsquom-gonna-build-my-own-blog-engine-because-itrsquos-never</link>
+      <guid isPermaLink="true">http://johan.driessen.se/posts/irsquom-gonna-build-my-own-blog-engine-because-itrsquos-never</guid>
+      <pubDate>Mon, 18 Oct 2010 23:06:23 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

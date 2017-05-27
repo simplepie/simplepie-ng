@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Mis Efectos Personales</title>
+	<atom:link href="http://www.misefectos.com/blog/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.misefectos.com/blog</link>
+	<description>Laia Jutglà : inputs i outputs</description>
+	<lastBuildDate>Wed, 19 Jan 2011 09:37:03 +0000</lastBuildDate>
+	<language>es</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.0.4</generator>
+		<item>
+		<title>¿Qué es un gestor de contenidos?</title>
+		<link>http://www.misefectos.com/blog/entender-la-web/que-es-un-gestor-de-contenidos/</link>
+		<comments>http://www.misefectos.com/blog/entender-la-web/que-es-un-gestor-de-contenidos/#comments</comments>
+		<pubDate>Wed, 19 Jan 2011 09:33:21 +0000</pubDate>
+		<dc:creator>admin</dc:creator>
+				<category><![CDATA[entender la web]]></category>
+
+		<guid isPermaLink="false">http://www.misefectos.com/blog/?p=40</guid>
+		<description><![CDATA[En la mayoría de páginas web hay contenidos que pueden no cambiar en años (dónde estamos, quiénes somos,..) y otros que serán ampliados y modificados a menudo (productos, proyectos,...). Para esos contenidos que van a evolucionar necesitaremos modificar la página web o, mucho mejor, usar un gestor de contenidos.]]></description>
+			<content:encoded><![CDATA[<p>Un gestor de contenidos esa una herramienta que te permite ampliar, editar o borrar los contenidos de tu página web. En realidad es una página web asociada a tu página y protegida por un nombre de usuario y una contraseña. Ahí podrás modificar una página web como si usaras un procesador de texto. A los gestores de contenidos tambien se les llama CMS (Content Management System o Sistema de Gestión de Contenidos) y a mi me gusta llamarlos &#8220;editora&#8221;.</p>
+<p>Hay gestores de contenidos gratuitos y también de pago. Si tu página web es muy especial, también podemos hacerle un gestor de contenidos a medida. WordPress es el gestor de contenidos gratuito más popular y completo. Me encanta WordPress, <a href="#">si haces clic aquí te explicaré por qué WordPress es un gran gestor de contenidos</a>. También es un gran invento <a href="#">Indexhibit</a>, mucho más sencillo de usar, pero también más limitado.</p>
+<p>Una página web con gestión de contenidos es más cara, pero sólo al principio. Instalar el gestor y asociarlo a la página tiene un coste inicial pero deberías considerarlo una inversión, pues te ahorrarás coste de mantenimiento. Podrás cambiar el contenido de la página desde cualquier lugar donde haya un ordenador y una conexión a internet y no tendrás que pasar por ningún cursillo para poder hacerlo.</p>
+<p>(video ejemplo)</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.misefectos.com/blog/entender-la-web/que-es-un-gestor-de-contenidos/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>¿Qué puedo hacer para que encuentren tu página?</title>
+		<link>http://www.misefectos.com/blog/entender-la-web/%c2%bfque-puedo-hacer-para-que-encuentren-tu-pagina/</link>
+		<comments>http://www.misefectos.com/blog/entender-la-web/%c2%bfque-puedo-hacer-para-que-encuentren-tu-pagina/#comments</comments>
+		<pubDate>Tue, 11 Jan 2011 15:31:55 +0000</pubDate>
+		<dc:creator>admin</dc:creator>
+				<category><![CDATA[entender la web]]></category>
+
+		<guid isPermaLink="false">http://www.misefectos.com/blog/?p=30</guid>
+		<description><![CDATA[Es importante que tu página web aparezca en los resultados de búsqueda de google. ¡Y No sólo eso! Lo verdaderamente importante es que lo haga cuando la gente busca lo que tú puedes ofrecer. Porque se trata de obtener visitas de calidad (aquellas que son o pueden ser clientes), y no sólo en cantidad.]]></description>
+			<content:encoded><![CDATA[<p>Cuando trabajo en una página web, uno de los pilares de mi trabajo es conseguir que la página se posicione solita. El resultado es una página optimizada para buscadores (<a href="#">SEO</a>). ¿Cómo lo consigo? Aquí tienes una lista de los puntos que tengo en cuenta:</p>
+<ul>
+<li>Me aseguro que los robots de google pueden acceder a todos los rincones. Para ello creo dos archivos: robots.txt y sitemap.xml.</li>
+<li>Creo contenidos indexables, que puedan guardarse en la base de datos de google.</li>
+</ul>
+<p>Hay varios factores que debo tener en cuenta para hacer que un contenido sea indexable:</p>
+<ul>
+<li><strong>Debe tener un buen dominio</strong>. Si todavía no tienes un <a href="#">dominio</a>, te asesoraré sobre <a href="#">cuál es el mejor dominio para tu web</a>.</li>
+<li><strong>Cuido la dirección de cada página.</strong><br />
+Un sitio web está formado por un montón de páginas web. Cada una de estas páginas es un archivo almacenado en algún rincón de internet al que se accede mediante una dirección web (<a href="#">URL</a>). La ruta hasta la página debe ser descriptiva de su contenido.<br />
+Por ejemplo:<br />
+Si quieres vender un queso manchego, una dirección como todoquesos.com/productos/queso-manchego.html será mucho mejor que todoquesos.com/productos.php?id=2</li>
+<li><strong>Cada página tiene un título y una descripción único, descriptivo y atractivo.</strong><br />
+Además de cuidar la redacción, incluiré palabras clave, aquellas por las que habrán buscado tu página. Eso implica que lo primero que haremos juntos será definir cuáles son esas palabras. Es lo que llamo una <a href="#">auditoría SEO.</a></li>
+<li><strong>Separo la forma del contenido.</strong><br />
+Hago que la página funcione perfetamente aunque le quitemos todo lo decorativo. Los robots de google son ciegos a las formas y a los colores. Sólo les preocupa el texto y es esa información la que procesan. Pero fíjate que hay dos informaciones que podemos dar en un texto: lo que dicen sus palabras y lo que dice su tamaño y posición en el documento. Porque no tiene la misma información un párrafo que un encabezado o una lista. Para google tampoco. Tener en cuenta eso mejora el posicionamiento de una página. Lo mejor de todo, es que una web que estructura correctamente la información permite que personas invidentes accedan a su contenido. El lector de páginas web que usan las personas con problemas de visión transmitirá correctamente el significado de cada parte de la página.</li>
+<li><strong>Permito que la información no textual sea interpretada por los robots rastreadores.</strong> Las imágenes siempre llevarán asociada una descripción, las tablas indicarán qué celdas funcionan como cabeceras,&#8230; Como en el punto anterior, esta forma de trabajar tambien hará más interesante la página a personas con problemas de visión.</li>
+</ul>
+<p>Estas son algunas de las cosas que tengo en cuenta a la hora de crear una página web. Hay otros factores que facilitarán o dificultarán el éxito del posicionamiento natural, pero con esta forma de programar tenemos el 95% del trabajo hecho.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.misefectos.com/blog/entender-la-web/%c2%bfque-puedo-hacer-para-que-encuentren-tu-pagina/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>ajax pino</title>
+		<link>http://www.misefectos.com/blog/diario/ajax-pino/</link>
+		<comments>http://www.misefectos.com/blog/diario/ajax-pino/#comments</comments>
+		<pubDate>Tue, 16 Mar 2010 12:59:26 +0000</pubDate>
+		<dc:creator>admin</dc:creator>
+				<category><![CDATA[Diario de trabajo]]></category>
+
+		<guid isPermaLink="false">http://www.misefectos.com/blog/?p=26</guid>
+		<description><![CDATA[Estoy trabajando en una web de esas sencillitas.. de esas de hay poco presupuesto, haremos algo sencillo.. De esas en las que acabas liándote, vaya. El apartado &#8220;mis piezas&#8221; funciona como una galería de proyectos de publicidad &#8220;gráfica&#8221; y &#8220;vídeo&#8221;. Cada proyecto está ilustrado con una miniatura que, al clicarla, abre una ventana en lightbox [...]]]></description>
+			<content:encoded><![CDATA[<p>Estoy trabajando en una web de esas sencillitas.. de esas de hay poco presupuesto, haremos algo sencillo.. De esas en las que acabas liándote, vaya.</p>
+<p>El apartado &#8220;mis piezas&#8221; funciona como una galería de proyectos de publicidad &#8220;gráfica&#8221; y &#8220;vídeo&#8221;. Cada proyecto está ilustrado con una miniatura que, al clicarla, abre una ventana en lightbox con una galeria de imágenes del proyecto (gráfica) o de video. Al principio usé lightbox.. pero al consultar la web del proyecto vi que ya no sigue en marcha y que invitaban a usar <a title="light-weight, customizable lightbox plugin for jQuery 1.3 &amp;amp; 1.4" href="http://colorpowered.com/colorbox/">colorBox </a>. Funciona bastante bien y la gráfica que viene por defecto es bastante discreta.</p>
+<p>El problema ha sido que no he conseguido que dejara de entrar en conflicto con el rollover de las miniaturas. Así que lo he modificado para que funcione sólo con CSS, sin transiciones de la librería jquery. Espero que les guste así&#8230;</p>
+<p>Para el apartado gráfica he creado una galería de imágenes en ajax. Es muy simple, sin transiciones ni nada. Pero la idea es que funcione bien y sea fácil de actualizar (sólo debe introducir imágenes en una lista). Quería usar una galería ya programada, pero al final he picado un poco de piedra.</p>
+<p>Ahora sólo queda saber si a nuestro amigo internet Explorer le vale&#8230; lo odio.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.misefectos.com/blog/diario/ajax-pino/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>programació cd-rom</title>
+		<link>http://www.misefectos.com/blog/programacio/programacio-cd-rom/</link>
+		<comments>http://www.misefectos.com/blog/programacio/programacio-cd-rom/#comments</comments>
+		<pubDate>Tue, 29 Dec 2009 13:48:29 +0000</pubDate>
+		<dc:creator>admin</dc:creator>
+				<category><![CDATA[programació]]></category>
+
+		<guid isPermaLink="false">http://www.misefectos.com/blog/?p=22</guid>
+		<description><![CDATA[anuari]]></description>
+			<content:encoded><![CDATA[<p>cd-rom Anuari 2009</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.misefectos.com/blog/programacio/programacio-cd-rom/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Realització Multimèdia</title>
+		<link>http://www.misefectos.com/blog/docencia/realitzacio-multimedia/</link>
+		<comments>http://www.misefectos.com/blog/docencia/realitzacio-multimedia/#comments</comments>
+		<pubDate>Tue, 29 Dec 2009 11:49:19 +0000</pubDate>
+		<dc:creator>admin</dc:creator>
+				<category><![CDATA[docència]]></category>
+
+		<guid isPermaLink="false">http://www.misefectos.com/blog/?p=10</guid>
+		<description><![CDATA[el extracto]]></description>
+			<content:encoded><![CDATA[<p>Curs de 7 hores setmanals al Institut Politècnic Sant Ignasi de Barcelona.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.misefectos.com/blog/docencia/realitzacio-multimedia/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>¡Gracias por utilizar el instalador de WordPress!</title>
+		<link>http://www.misefectos.com/blog/diario/hola-mundo/</link>
+		<comments>http://www.misefectos.com/blog/diario/hola-mundo/#comments</comments>
+		<pubDate>Tue, 10 Mar 2009 09:17:08 +0000</pubDate>
+		<dc:creator>admin</dc:creator>
+				<category><![CDATA[Diario de trabajo]]></category>
+
+		<guid isPermaLink="false">http://www.misefectos.com/blog/?p=1</guid>
+		<description><![CDATA[Te damos la bienvenida a WordPress. Esta es tu primera entrada. Edítala o bórrala&#8230; ¡y comienza a publicar!]]></description>
+			<content:encoded><![CDATA[<p>Te damos la bienvenida a WordPress. Esta es tu primera entrada. Edítala o bórrala&#8230; ¡y comienza a publicar!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.misefectos.com/blog/diario/hola-mundo/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

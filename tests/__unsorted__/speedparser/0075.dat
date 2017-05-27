@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>&#60;?php //..:: [ Code Bay ] ::..</title>
+	<atom:link href="http://cafed00d.net/feed" rel="self" type="application/rss+xml" />
+	<link>http://cafed00d.net</link>
+	<description>Geek&#039;s bay; About my passions (Programming &#38;&#38; Linux)</description>
+	<lastBuildDate>Fri, 01 Apr 2011 08:28:22 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.1.1</generator>
+		<item>
+		<title>Spam</title>
+		<link>http://cafed00d.net/archives/76</link>
+		<comments>http://cafed00d.net/archives/76#comments</comments>
+		<pubDate>Fri, 01 Apr 2011 08:28:22 +0000</pubDate>
+		<dc:creator>Robert</dc:creator>
+				<category><![CDATA[General]]></category>
+		<category><![CDATA[others]]></category>
+
+		<guid isPermaLink="false">http://cafed00d.net/?p=76</guid>
+		<description><![CDATA[Today I detected that spam boots discovered my blog :/. We will see how can I defend my blog. PHP has the POWER]]></description>
+			<content:encoded><![CDATA[<p>Today I detected that spam boots discovered my blog :/. We will see how can I defend my blog.<br />
+PHP has the POWER <img src='http://cafed00d.net/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+]]></content:encoded>
+			<wfw:commentRss>http://cafed00d.net/archives/76/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Black Belt Factory</title>
+		<link>http://cafed00d.net/archives/74</link>
+		<comments>http://cafed00d.net/archives/74#comments</comments>
+		<pubDate>Thu, 13 Jan 2011 13:11:52 +0000</pubDate>
+		<dc:creator>Robert</dc:creator>
+				<category><![CDATA[General]]></category>
+		<category><![CDATA[Black Belt Factory]]></category>
+
+		<guid isPermaLink="false">http://cafed00d.net/?p=74</guid>
+		<description><![CDATA[Two months ago I created an account on a service called &#8220;Black Belt Factory&#8221;. I wanted to gain some experience as Java developer. I also wanted to show people that I got some knowledge about Java. Anyway here is my profile on BBF : My BBF profile I have to say that this portal is [...]]]></description>
+			<content:encoded><![CDATA[<p>Two months ago I created an account on a service called &#8220;Black Belt Factory&#8221;. I wanted to gain some experience as Java developer. I also wanted to show people that I got some knowledge about Java.<br />
+Anyway here is my profile on BBF : <a href="http://www.blackbeltfactory.com/ui#!User/el.roberto">My BBF profile</a><br />
+I have to say that this portal is really cool.<br />
+I already a coach level 1. So if u wanna start learning Java this is a very good place to start. See you in there <img src='http://cafed00d.net/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> . </p>
+]]></content:encoded>
+			<wfw:commentRss>http://cafed00d.net/archives/74/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>working for company which has very bad economical condition</title>
+		<link>http://cafed00d.net/archives/33</link>
+		<comments>http://cafed00d.net/archives/33#comments</comments>
+		<pubDate>Thu, 13 Jan 2011 13:07:32 +0000</pubDate>
+		<dc:creator>Robert</dc:creator>
+				<category><![CDATA[General]]></category>
+		<category><![CDATA[work]]></category>
+
+		<guid isPermaLink="false">http://www.9sh.cc/?p=33</guid>
+		<description><![CDATA[On my current position Ive been working since almost 1 year and 2 months. Since last 4-5 months my company has a very bad condition state. Probably some of you know how it is. Im sitting here and wondering if there is a chance for any kind of changes &#8211; for good of coz. Anyway [...]]]></description>
+			<content:encoded><![CDATA[<p>On my current position Ive been working since almost 1 year and 2 months. Since last 4-5 months my company has a very bad condition state. Probably some of you know how it is.<br />
+Im sitting here and wondering if there is a chance for any kind of changes &#8211; for good of coz. Anyway I dont wanna risk too much and I already started to looking for something more stable. Even if it will be not so well paid. In this case if you guys have any information about free position for Java/PHP developer please let contact me via my private email or just post a comment.<br />
+Thx.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://cafed00d.net/archives/33/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Loop &#8220;for&#8221; in BASH</title>
+		<link>http://cafed00d.net/archives/56</link>
+		<comments>http://cafed00d.net/archives/56#comments</comments>
+		<pubDate>Wed, 25 Aug 2010 06:55:50 +0000</pubDate>
+		<dc:creator>Robert</dc:creator>
+				<category><![CDATA[Bash]]></category>
+
+		<guid isPermaLink="false">http://www.9sh.cc/?p=56</guid>
+		<description><![CDATA[#!/bin/bash -x for VARIABLE in &#123;1..10&#125; do &#160; &#160; echo $VARIABLE done]]></description>
+			<content:encoded><![CDATA[<div class="geshi no bash">
+<ol>
+<li class="li1">
+<div class="de1"><span class="co0">#!/bin/bash -x</span></div>
+</li>
+<li class="li1">
+<div class="de1"><span class="kw1">for</span> VARIABLE <span class="kw1">in</span> <span class="br0">&#123;</span><span class="nu0">1</span>..<span class="nu0">10</span><span class="br0">&#125;</span></div>
+</li>
+<li class="li1">
+<div class="de1"><span class="kw1">do</span></div>
+</li>
+<li class="li1">
+<div class="de1">&nbsp; &nbsp; <span class="kw3">echo</span> <span class="re1">$VARIABLE</span></div>
+</li>
+<li class="li1">
+<div class="de1"><span class="kw1">done</span></div>
+</li>
+</ol>
+</div>
+]]></content:encoded>
+			<wfw:commentRss>http://cafed00d.net/archives/56/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Another JAVA EE tutorial (based on GlassFish platform)</title>
+		<link>http://cafed00d.net/archives/41</link>
+		<comments>http://cafed00d.net/archives/41#comments</comments>
+		<pubDate>Wed, 25 Aug 2010 06:39:01 +0000</pubDate>
+		<dc:creator>Robert</dc:creator>
+				<category><![CDATA[JAVA]]></category>
+
+		<guid isPermaLink="false">http://www.9sh.cc/?p=41</guid>
+		<description><![CDATA[Few days ago I found on Youtube a really nice tutorial for JAVA EE and GlassFish platform. Part 1 of 5 www.youtube.com/watch?v=9Kf5m7bMu74 Part 2 of 5 www.youtube.com/watch?v=ppGqtOeHm-g Part 3 of 5 www.youtube.com/watch?v=CuLYhkqt0V0 Part 4 of 5 www.youtube.com/watch?v=1epUpQlKwME Part 5 of 5 www.youtube.com/watch?v=kfbgeLGAi3Q]]></description>
+			<content:encoded><![CDATA[<p>Few days ago I found on <a href="http://www.youtube.com">Youtube</a> a really nice tutorial for JAVA EE and GlassFish platform.</p>
+<h3>Part 1 of 5</h3>
+<p><span class="youtube">
+<object width="425" height="344">
+<param name="movie" value="http://www.youtube.com/v/9Kf5m7bMu74?color1=d6d6d6&amp;color2=f0f0f0&amp;border=0&amp;fs=1&amp;hl=en&amp;autoplay=0&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=1" />
+<param name="allowFullScreen" value="true" />
+<embed wmode="opaque" src="http://www.youtube.com/v/9Kf5m7bMu74?color1=d6d6d6&amp;color2=f0f0f0&amp;border=0&amp;fs=1&amp;hl=en&amp;autoplay=0&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=1" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"></embed>
+<param name="wmode" value="opaque" />
+</object>
+</span><p><a href="http://www.youtube.com/watch?v=9Kf5m7bMu74">www.youtube.com/watch?v=9Kf5m7bMu74</a></p></p>
+<h3>Part 2 of 5</h3>
+<p><span class="youtube">
+<object width="425" height="344">
+<param name="movie" value="http://www.youtube.com/v/ppGqtOeHm-g?color1=d6d6d6&amp;color2=f0f0f0&amp;border=0&amp;fs=1&amp;hl=en&amp;autoplay=0&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=1" />
+<param name="allowFullScreen" value="true" />
+<embed wmode="opaque" src="http://www.youtube.com/v/ppGqtOeHm-g?color1=d6d6d6&amp;color2=f0f0f0&amp;border=0&amp;fs=1&amp;hl=en&amp;autoplay=0&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=1" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"></embed>
+<param name="wmode" value="opaque" />
+</object>
+</span><p><a href="http://www.youtube.com/watch?v=ppGqtOeHm-g">www.youtube.com/watch?v=ppGqtOeHm-g</a></p></p>
+<h3>Part 3 of 5</h3>
+<p><span class="youtube">
+<object width="425" height="344">
+<param name="movie" value="http://www.youtube.com/v/CuLYhkqt0V0?color1=d6d6d6&amp;color2=f0f0f0&amp;border=0&amp;fs=1&amp;hl=en&amp;autoplay=0&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=1" />
+<param name="allowFullScreen" value="true" />
+<embed wmode="opaque" src="http://www.youtube.com/v/CuLYhkqt0V0?color1=d6d6d6&amp;color2=f0f0f0&amp;border=0&amp;fs=1&amp;hl=en&amp;autoplay=0&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=1" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"></embed>
+<param name="wmode" value="opaque" />
+</object>
+</span><p><a href="http://www.youtube.com/watch?v=CuLYhkqt0V0">www.youtube.com/watch?v=CuLYhkqt0V0</a></p></p>
+<h3>Part 4 of 5</h3>
+<p><span class="youtube">
+<object width="425" height="344">
+<param name="movie" value="http://www.youtube.com/v/1epUpQlKwME?color1=d6d6d6&amp;color2=f0f0f0&amp;border=0&amp;fs=1&amp;hl=en&amp;autoplay=0&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=1" />
+<param name="allowFullScreen" value="true" />
+<embed wmode="opaque" src="http://www.youtube.com/v/1epUpQlKwME?color1=d6d6d6&amp;color2=f0f0f0&amp;border=0&amp;fs=1&amp;hl=en&amp;autoplay=0&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=1" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"></embed>
+<param name="wmode" value="opaque" />
+</object>
+</span><p><a href="http://www.youtube.com/watch?v=1epUpQlKwME">www.youtube.com/watch?v=1epUpQlKwME</a></p></p>
+<h3>Part 5 of 5</h3>
+<p><span class="youtube">
+<object width="425" height="344">
+<param name="movie" value="http://www.youtube.com/v/kfbgeLGAi3Q?color1=d6d6d6&amp;color2=f0f0f0&amp;border=0&amp;fs=1&amp;hl=en&amp;autoplay=0&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=1" />
+<param name="allowFullScreen" value="true" />
+<embed wmode="opaque" src="http://www.youtube.com/v/kfbgeLGAi3Q?color1=d6d6d6&amp;color2=f0f0f0&amp;border=0&amp;fs=1&amp;hl=en&amp;autoplay=0&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=1" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"></embed>
+<param name="wmode" value="opaque" />
+</object>
+</span><p><a href="http://www.youtube.com/watch?v=kfbgeLGAi3Q">www.youtube.com/watch?v=kfbgeLGAi3Q</a></p></p>
+]]></content:encoded>
+			<wfw:commentRss>http://cafed00d.net/archives/41/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>PHP 5.3.3 has been released</title>
+		<link>http://cafed00d.net/archives/37</link>
+		<comments>http://cafed00d.net/archives/37#comments</comments>
+		<pubDate>Wed, 25 Aug 2010 06:32:48 +0000</pubDate>
+		<dc:creator>Robert</dc:creator>
+				<category><![CDATA[PHP]]></category>
+
+		<guid isPermaLink="false">http://www.9sh.cc/?p=37</guid>
+		<description><![CDATA[According to php.net new version of php has been released. It contains some nice change &#8220;Methods with the same name as the last element of a namespaced class name will no longer be treated as constructor. This change doesn&#8217;t affect non-namespaced classes.&#8221; Probably few Open Source projects (and I&#8217;m sure not only open source) will [...]]]></description>
+			<content:encoded><![CDATA[<p>According to <a href="http://www.php.net/archive/2010.php#id2010-07-22-2">php.net</a> new version of php has been released.<br />
+It contains some nice change<br />
+<em>&#8220;Methods with the same name as the last element of a namespaced class name will no longer be treated as constructor. This change doesn&#8217;t affect non-namespaced classes.&#8221;</em><br />
+Probably few Open Source projects (and I&#8217;m sure not only open source) will require some refactoring <img src='http://cafed00d.net/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+]]></content:encoded>
+			<wfw:commentRss>http://cafed00d.net/archives/37/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>JAVA EE quick tutorial/overview</title>
+		<link>http://cafed00d.net/archives/31</link>
+		<comments>http://cafed00d.net/archives/31#comments</comments>
+		<pubDate>Wed, 25 Aug 2010 06:26:29 +0000</pubDate>
+		<dc:creator>Robert</dc:creator>
+				<category><![CDATA[JAVA]]></category>
+
+		<guid isPermaLink="false">http://www.9sh.cc/?p=31</guid>
+		<description><![CDATA[Here you can find a nice tutorial for JAVA EE. It will give you quite nice and quick overview for the whole platform. I found it quite useful. Have Fun.]]></description>
+			<content:encoded><![CDATA[<p><a href="http://download.oracle.com/javaee/6/tutorial/doc/">Here</a> you can find a nice tutorial for JAVA EE.<br />
+It will give you quite nice and quick overview for the whole platform.<br />
+I found it quite useful.<br />
+Have Fun.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://cafed00d.net/archives/31/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>How to remove all .svn directories in Bash</title>
+		<link>http://cafed00d.net/archives/11</link>
+		<comments>http://cafed00d.net/archives/11#comments</comments>
+		<pubDate>Tue, 29 Dec 2009 21:53:12 +0000</pubDate>
+		<dc:creator>Robert</dc:creator>
+				<category><![CDATA[Bash]]></category>
+		<category><![CDATA[Linux]]></category>
+
+		<guid isPermaLink="false">http://www.9sh.cc/?p=11</guid>
+		<description><![CDATA[Solution is quite simple but each time I have to do this I simply don&#8217;t remember. So here is the spell: $find . -name .svn -exec rm -rf &#123;&#125; \;]]></description>
+			<content:encoded><![CDATA[<p>Solution is quite simple but each time I have to do this I simply don&#8217;t remember.<br />
+So here is the spell:</p>
+<div class="geshi no bash">
+<ol>
+<li class="li1">
+<div class="de1"><span class="re1">$find</span> . -name .svn -<span class="kw3">exec</span> <span class="kw2">rm</span> -rf <span class="br0">&#123;</span><span class="br0">&#125;</span> \;</div>
+</li>
+</ol>
+</div>
+]]></content:encoded>
+			<wfw:commentRss>http://cafed00d.net/archives/11/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Greetings</title>
+		<link>http://cafed00d.net/archives/1</link>
+		<comments>http://cafed00d.net/archives/1#comments</comments>
+		<pubDate>Tue, 29 Dec 2009 19:53:29 +0000</pubDate>
+		<dc:creator>Robert</dc:creator>
+				<category><![CDATA[General]]></category>
+
+		<guid isPermaLink="false">http://9sh.cc/?p=1</guid>
+		<description><![CDATA[Hi, this is my very first lets say blog . I created this site mainly as a place where can I store my ideas, solutions ect.]]></description>
+			<content:encoded><![CDATA[<p>Hi,</p>
+<p>this is my very first lets say blog <img src='http://cafed00d.net/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> . I created this site mainly as a place where can I store my ideas, solutions ect.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://cafed00d.net/archives/1/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

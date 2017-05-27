@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+		<rss version="2.0" xmlns:yweather="http://xml.weather.yahoo.com/ns/rss/1.0" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+			<channel>
+		
+<title>Yahoo! Weather - Basingstoke, UK</title>
+<link>http://us.rd.yahoo.com/dailynews/rss/weather/Basingstoke__UK/*http://weather.yahoo.com/forecast/UKXX0011_c.html</link>
+<description>Yahoo! Weather for Basingstoke, UK</description>
+<language>en-us</language>
+<lastBuildDate>Mon, 03 Oct 2011 6:49 pm BST</lastBuildDate>
+<ttl>60</ttl>
+<yweather:location city="Basingstoke" region=""   country="UK"/>
+<yweather:units temperature="C" distance="km" pressure="mb" speed="km/h"/>
+<yweather:wind chill="18"   direction="200"   speed="20.92" />
+<yweather:atmosphere humidity="77"  visibility="9.99"  pressure="1015.92"  rising="0" />
+<yweather:astronomy sunrise="7:05 am"   sunset="6:36 pm"/>
+<image>
+<title>Yahoo! Weather</title>
+<width>142</width>
+<height>18</height>
+<link>http://weather.yahoo.com</link>
+<url>http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif</url>
+</image>
+<item>
+<title>Conditions for Basingstoke, UK at 6:49 pm BST</title>
+<geo:lat>51.26</geo:lat>
+<geo:long>-1.1</geo:long>
+<link>http://us.rd.yahoo.com/dailynews/rss/weather/Basingstoke__UK/*http://weather.yahoo.com/forecast/UKXX0011_c.html</link>
+<pubDate>Mon, 03 Oct 2011 6:49 pm BST</pubDate>
+<yweather:condition  text="Fair"  code="33"  temp="18"  date="Mon, 03 Oct 2011 6:49 pm BST" />
+<description><![CDATA[
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 18 C<BR />
+<BR /><b>Forecast:</b><BR />
+Mon - Drizzle Late. High: 24 Low: 13<br />
+Tue - Drizzle. High: 18 Low: 14<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Basingstoke__UK/*http://weather.yahoo.com/forecast/UKXX0011_c.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+]]></description>
+<yweather:forecast day="Mon" date="3 Oct 2011" low="13" high="24" text="Drizzle Late" code="9" />
+<yweather:forecast day="Tue" date="4 Oct 2011" low="14" high="18" text="Drizzle" code="9" />
+<guid isPermaLink="false">UKXX0011_2011_10_04_7_00_BST</guid>
+</item>
+</channel>
+</rss>
+<!-- api4.weather.ac4.yahoo.com uncompressed/chunked Mon Oct  3 11:58:30 PDT 2011 -->

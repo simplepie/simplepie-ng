@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2spanishfull.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:series="http://unfoldingneurons.com/" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>yukei.net</title>
+	
+	<link>http://www.yukei.net</link>
+	<description>técnica y análisis para un mundo digital</description>
+	<lastBuildDate>Tue, 23 Aug 2011 05:19:59 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=</generator>
+<xhtml:meta xmlns:xhtml="http://www.w3.org/1999/xhtml" name="robots" content="noindex" />
+		<feedburner:info uri="yukei" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><creativeCommons:license>http://creativecommons.org/licenses/by-sa/3.0/</creativeCommons:license><image><link>http://creativecommons.org/licenses/by-sa/3.0/</link><url>http://creativecommons.org/images/public/somerights20.gif</url><title>Some Rights Reserved</title></image><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://www.yukei.net/feed/" /><feedburner:emailServiceId>yukei</feedburner:emailServiceId><feedburner:feedburnerHostname>http://feedburner.google.com</feedburner:feedburnerHostname><feedburner:feedFlare href="http://add.my.yahoo.com/content?lg=es&amp;url=http%3A%2F%2Fwww.yukei.net%2Ffeed%2F" src="http://eur.i1.yimg.com/eur.yimg.com/i/es/my/addto1.gif">Subscribe with My Yahoo!</feedburner:feedFlare><feedburner:feedFlare href="http://www.bloglines.com/sub/http://www.yukei.net/feed/" src="http://www.bloglines.com/images/sub_modern11.gif">Subscribe with Bloglines</feedburner:feedFlare><feedburner:feedFlare href="http://www.netvibes.com/subscribe.php?url=http%3A%2F%2Fwww.yukei.net%2Ffeed%2F" src="http://www.netvibes.com/img/add2netvibes.gif">Subscribe with Netvibes</feedburner:feedFlare><feedburner:feedFlare href="http://fusion.google.com/add?feedurl=http%3A%2F%2Fwww.yukei.net%2Ffeed%2F" src="http://buttons.googlesyndication.com/fusion/add.gif">Subscribe with Google</feedburner:feedFlare><feedburner:feedFlare href="http://www.live.com/?add=http%3A%2F%2Fwww.yukei.net%2Ffeed%2F" src="http://tkfiles.storage.msn.com/x1piYkpqHC_35nIp1gLE68-wvzLZO8iXl_JMledmJQXP-XTBOLfmQv4zhj4MhcWEJh_GtoBIiAl1Mjh-ndp9k47If7hTaFno0mxW9_i3p_5qQw">Subscribe with Live.com</feedburner:feedFlare><feedburner:feedFlare href="http://www.wikio.com/subscribe?url=http%3A%2F%2Fwww.yukei.net%2Ffeed%2F" src="http://www.wikio.com/shared/img/add2wikio.gif">Subscribe with Wikio</feedburner:feedFlare><feedburner:browserFriendly>Este es un feed de contenidos XML, y está diseñado para ser visto con un lector de feeds o para ser sindicado desde otro sitio, bajo las condiciones de copyright y uso justo.</feedburner:browserFriendly><item>
+		<title>Trabajando con datos serializados en WordPress</title>
+		<link>http://feedproxy.google.com/~r/yukei/~3/tc29O2EbPjM/</link>
+		<comments>http://www.yukei.net/2011/08/trabajando-con-datos-serializados-en-wordpress/#comments</comments>
+		<pubDate>Tue, 23 Aug 2011 05:19:59 +0000</pubDate>
+		<dc:creator>Felipe Lavín Z.</dc:creator>
+				<category><![CDATA[Desarrollo Web]]></category>
+		<category><![CDATA[WordPress]]></category>
+		<category><![CDATA[performance]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[programación]]></category>
+		<category><![CDATA[rendimiento]]></category>
+
+		<guid isPermaLink="false">http://www.yukei.net/?p=1366</guid>
+		<description>WordPress permite trabajar con datos serializados en opciones y meta datos de entradas, comentarios y usuarios, lo que puede ser una muy buena opción al trabajar con datos complejos como arrays u objetos.</description>
+			<content:encoded><![CDATA[<p>Supongamos el siguiente escenario: estás desarrollando un <a title="Referencia de la función add_meta_box en el Codex de WordPress" href="http://codex.wordpress.org/Function_Reference/add_meta_box" hreflang="en">metabox</a> para un tipo personalizado de contenido que representa a personas, y en el que debes agregar información de contacto como teléfono, correo electrónico, dirección, etc; la que se mostrará junto a cada persona como una ficha.</p>
+<p>Una opción para <em>guardar estos datos</em> sería recurrir a alguna convención de nombres de modo que cada dato se almacena como una fila en la tabla <code>$wpdb-&gt;postmeta</code>; algo como <code>_persona_telefono, _persona_email, _persona_direccion</code>, etc. Luego, al mostrar los datos podríamos hacer una consulta como <code>SELECT * FROM $wpdb-&gt;postmeta WHERE post_id = $post_id AND meta_key LIKE '_persona%'</code>.</p>
+<p>Sin embargo, <strong>una mejor alternativa</strong> en este tipo de casos sería recurrir a la utilización de <a title="Serialización en Wikipedia" href="http://es.wikipedia.org/wiki/Serializaci%C3%B3n" rel="help nofollow">datos serializados</a>, ya que nos permitirán guardar <strong>en un solo campo</strong> una estructura compleja de datos como un array (uni o multidimensional) o un objeto; lo que nos puede facilitar de forma importante varias tareas si planificamos con cuidado nuestra estructura de datos.</p>
+<p><span id="more-1366"></span></p>
+<h3>Por qué y cuándo preferir datos serializados en WordPress</h3>
+<p>Me atrevería a decir que en general los especialistas en bases de datos relacionales no miran con muy buenos ojos la utilización de este tipo de técnicas (ya que idealmente, cada objeto debiese estar modelado de acuerdo a un esquema que permita optimizar el rendimiento de la base de datos), sin embargo en WordPress muchas veces nos encontraremos con la necesidad de guardar un <strong>conjunto limitado (no necesariamente fijo) de datos relacionados y sin un esquema inmutable</strong> en la base de datos, ya sea como metadatos de un post (o un tipo de contenido personalizado), de un comentario o un usuario, o bien como opciones de un plugin — convenientemente, WordPress nos provee de APIs para interactuar de forma sencilla con la base de datos en estos casos, en los que la serialización de datos ya está considerada como parte del proceso de lectura/escritura desde/hacia la base de datos.</p>
+<p>Por lo tanto, el trabajo con datos serializados nos presenta una serie de ventajas, como:</p>
+<ul>
+<li><strong>Mejor performance</strong>, al obtener un solo valor desde la base de datos en lugar de múltiples filas</li>
+<li><strong>Mayor orden</strong>, al trabajar con una estructura de datos más evidente con el solo hecho de obtener la información requerida</li>
+<li><strong>Mayor simplicidad</strong> al momento de guardar o recuperar datos, ya que sólo tendrás que recurrir a un campo</li>
+<li><em>Menos posibilidades de tener conflictos</em> con datos insertados por otros desarrolladores, ya que es más fácil utilizar un nombre único para tus claves de búsqueda</li>
+</ul>
+<h3>Cómo trabajar con los datos serializados</h3>
+<p>Como decía anteriormente, WordPress nos hace este trabajo muy simple, ya que las APIs de metadatos para posts, comentarios y usuarios, tanto como el API de opciones ya contemplan la posibilidad de trabajar con datos serializados.</p>
+<p>Retomando el ejemplo del principio:</p>
+<pre class="brush: php; title: ; notranslate">
+// esta es la información sanitizada a partir del envío del formulario
+$person_data = array(
+	'tel' =&gt; '+1 012 345 678',
+	'email' =&gt; 'homero@plantanucleardespringfield.com',
+	'adr' =&gt; array(
+		'street-address' =&gt; 'Avenida Siempre Viva 742',
+		'locality' =&gt; 'Springfield',
+		'region' =&gt; '??'
+	)
+);
+
+// para guardar los datos
+// (el &quot;_&quot; antes del nombre de la opción hace que
+// no se vea en la lista de campos personalizados)
+update_post_meta($post-&gt;ID, '_person_data', $person_data);
+
+// para obtener los datos
+// devuelve un array similar a $person_data
+get_post_meta($post-&gt;ID, '_person_data', true);
+</pre>
+<p><strong>No es necesario serializar los datos antes de guardarlos ni des-serializarlos al obtenerlos</strong>, ya que WordPress internamente determinará si es necesario hacerlo (mediante las funciones <code>maybe_serialize</code> y <code>maybe_unserialize</code>, respectivamente).</p>
+<h3>Cuándo NO ocupar datos serializados</h3>
+<p>Quizás alguien a estas alturas estará pensando <em>&#8220;¿bueno, y cuáles son las desventajas?&#8221;</em>&#8230; muy suspicaz, ¿eh? Quizás no lo suficiente.</p>
+<p>Al serializar el array anterior, la información que se guarda en la base de datos corresponde a:</p>
+<pre class="brush: php; title: ; notranslate">
+a:3:{s:3:&quot;tel&quot;;s:14:&quot;+1 012 345 678&quot;;s:5:&quot;email&quot;;s:36:&quot;homero@plantanucleardepsringield.com&quot;;s:3:&quot;adr&quot;;a:3:{s:14:&quot;street-address&quot;;s:24:&quot;Avenida Siempre Viva 742&quot;;s:8:&quot;locality&quot;;s:11:&quot;Springfield&quot;;s:6:&quot;region&quot;;s:2:&quot;??&quot;;}}
+</pre>
+<p>En primer lugar, habría que plantear lo obvio: <em>cada vez que obtienes el valor necesitarás transformarlo</em> a su representación correcta (array u objeto). A partir de ello, no tiene mucho sentido usar esta técnica cuando los datos que se almacenan <em>no tienen mucha relación entre sí y se utilizan siempre de forma individual</em>. Por otra parte, <em>tampoco convendría guardar cantidades demasiado grandes de información de este modo</em>, ya que el gasto de procesamiento y memoria sería demasiado alto.</p>
+<p>El valor serializado que se guarda en la base de datos es simplemente una cadena de texto &#8230; el problema surge cuando queremos <em>buscar</em> algún dato en particular (ya que no será tan sencillo como buscar en un campo que tiene un texto simple) o bien al utilizar un dato como condición en en <code>SELECT</code> (por ejemplo, cuando se utiliza un campo de la tabla <code>postmeta</code> para obtener un conjunto de posts).</p>
+<p>Sin embargo&#8230; aquí si conviene ser más estricto en temas de bases de datos, ya que en todos los casos contemplados (meta datos de posts, usuarios, comentarios; opciones) <strong>el campo donde se almacenan los valores</strong> (meta_value, option_value, etc) <strong>no tiene índice</strong>, por lo que las consultas que utilizan estas condiciones están <em>fatalmente sub-optimizadas</em>: por ejemplo, al hace una consulta como <code>SELECT * FROM $wpdb-&gt;postmeta WHERE meta_key = '_persona_ciudad' AND meta_value = 'Springfield'</code>, la base de datos debe revisar <em>todos</em> los registros de la tabla en busca de coincidencias (esto no ocurre al hacer consultas como <code>SELECT * FROM $wpdb-&gt;postmeta WHERE post_id = $post_id AND meta_key = '_person_data'</code> ya que en esas columnas existen índices que permiten que la base de datos devuelva rápidamente los valores coincidentes con los criterios indicados).</p>
+<p>Por lo tanto, si deseas guardar muchos datos que pueden servir como criterios de búsqueda, la mejor opción en ese caso será crear una tabla especial para esa información, que te permita definir los índices adecuados según las necesidades del programa.</p>
+
+	<p class="tags">Tags: <a href="http://www.yukei.net/tag/performance/" title="performance" rel="tag">performance</a>, <a href="http://www.yukei.net/tag/php/" title="php" rel="tag">php</a>, <a href="http://www.yukei.net/tag/plugins/" title="plugins" rel="tag">plugins</a>, <a href="http://www.yukei.net/tag/programacion/" title="programación" rel="tag">programación</a>, <a href="http://www.yukei.net/tag/rendimiento/" title="rendimiento" rel="tag">rendimiento</a>, <a href="http://www.yukei.net/tag/wordpress/" title="WordPress" rel="tag">WordPress</a></p>
+
+	<h4>Related posts</h4>
+	<ul class="st-related-posts">
+	<li><a href="http://www.yukei.net/2010/11/usando-la-api-de-transients-en-wordpress/" title="Usando la API de Transients en WordPress (8 noviembre, 2010)">Usando la API de Transients en WordPress</a> (0)</li>
+	<li><a href="http://www.yukei.net/2011/04/wordpress-tips-utiliza-el-parametro-action-para-determinar-la-accion-que-estas-realizando/" title="WordPress Tips: Utiliza el parámetro action para determinar la acción que estás realizando (25 abril, 2011)">WordPress Tips: Utiliza el parámetro action para determinar la acción que estás realizando</a> (1)</li>
+	<li><a href="http://www.yukei.net/2011/06/parametros-variables-en-funciones-wordpress-con-wp_parse_args/" title="Usa parámetros variables en tus funciones con wp_parse_args (WordPress Tips) (1 junio, 2011)">Usa parámetros variables en tus funciones con wp_parse_args (WordPress Tips)</a> (0)</li>
+	<li><a href="http://www.yukei.net/2008/03/phpspeedy-mejora-el-tiempo-de-carga-de-tu-sitio/" title="PHPSpeedy: mejora el tiempo de carga de tu sitio (14 marzo, 2008)">PHPSpeedy: mejora el tiempo de carga de tu sitio</a> (6)</li>
+	<li><a href="http://www.yukei.net/2007/10/php-te-facilita-la-vida/" title="PHP te facilita la vida (25 octubre, 2007)">PHP te facilita la vida</a> (6)</li>
+</ul>
+
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/yukei?a=tc29O2EbPjM:yu9Wo9Xl3ks:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/yukei?i=tc29O2EbPjM:yu9Wo9Xl3ks:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=tc29O2EbPjM:yu9Wo9Xl3ks:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/yukei?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=tc29O2EbPjM:yu9Wo9Xl3ks:YwkR-u9nhCs"><img src="http://feeds.feedburner.com/~ff/yukei?d=YwkR-u9nhCs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=tc29O2EbPjM:yu9Wo9Xl3ks:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/yukei?i=tc29O2EbPjM:yu9Wo9Xl3ks:F7zBnMyn0Lo" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/yukei/~4/tc29O2EbPjM" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.yukei.net/2011/08/trabajando-con-datos-serializados-en-wordpress/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://www.yukei.net/2011/08/trabajando-con-datos-serializados-en-wordpress/</feedburner:origLink></item>
+		<item>
+		<title>Tres malas razones para elegir un servicio de hosting</title>
+		<link>http://feedproxy.google.com/~r/yukei/~3/42cdPmoTTuw/</link>
+		<comments>http://www.yukei.net/2011/08/tres-malas-razones-para-elegir-un-servicio-de-hosting/#comments</comments>
+		<pubDate>Wed, 17 Aug 2011 01:29:43 +0000</pubDate>
+		<dc:creator>Felipe Lavín Z.</dc:creator>
+				<category><![CDATA[Desarrollo Web]]></category>
+		<category><![CDATA[Estrategia]]></category>
+		<category><![CDATA[metodología]]></category>
+
+		<guid isPermaLink="false">http://www.yukei.net/?p=1368</guid>
+		<description>Siempre me ha llamado profundamente la atención esa costumbre que tienen algunos clientes de preferir proveedores de hosting nacionales&amp;#8230; no es que tenga nada en contra de los proveedores nacionales por el hecho de ser nacionales, sino porque son comprobadamente y rematadamente pésimos — por cierto, me refiero particularmente al escenario de Chile, desconozco cómo [...]</description>
+			<content:encoded><![CDATA[<p>Siempre me ha llamado profundamente la atención esa costumbre que tienen algunos clientes de preferir proveedores de hosting nacionales&#8230; no es que tenga nada en contra de los proveedores nacionales por el hecho de ser nacionales, sino porque son comprobadamente y rematadamente pésimos — por cierto, me refiero particularmente al escenario de Chile, desconozco cómo será el panorama en otros países pero tengo la impresión que puede pasar algo similar.</p>
+<p>Pensando un poco por las razones que uno podría tener para dispararse en el pie de este modo, creo que hay al menos tres motivos que podrían influir en esta decisión.</p>
+<p><span id="more-1368"></span></p>
+<h3>Creer que quien te vende el acceso a internet también debe ser un experto en hosting</h3>
+<p>&#8230; después de todo, no es tan descabellado pensar que son expertos en infraestructura y deberían tener las competencias para poder manejar ambos aspectos del negocio&#8230; lo que sabemos que no es necesariamente cierto: en general el servicio de hosting que venden los ISP está atado al paquete de servicios contratados o bien es <em>tan limitado que no aguanta nada que se más que un simple sitio tipo panfleto</em>.</p>
+<p>La búsqueda que sigue a partir de este punto suele terminar con alguno de los resultados de la primera página para &#8220;hosting {inserte su país aquí}&#8221; en Google: por lo general con una web que parece un homenaje a los 1990s, y que se preocupa de utilizar términos que parecen muy técnicos pero no aportan nada.</p>
+<h3>Que puedes pagar con cheque o transferencia bancaria, en moneda local</h3>
+<p>A pesar de que prácticamente todos los navegadores se han preocupado de aumentar y resaltar sus características de seguridad, al tipo de cliente que prefiere contratar un hosting nacional le preocupa más que le puedan hacer un cargo en la tarjeta de crédito (probablemente porque ha visto algún reportaje en las noticias de la televisión o en alguna película de hackers) a que lo estafen mensualmente en su cara, y <em>contratar un servicio malo que puede pagar con un cheque</em> o una transferencia bancaria a uno que debe pagar con tarjeta de crédito en un servicio que le puedas recomendar.</p>
+<p>Lo criticable no es el hecho de querer tomar sus decisiones en torno al servicio que quisieran contratar, más bien que de fondo probablemente está la idea que su sitio es simplemente uno más de los gastos de la oficina, como el agua o la electricidad, y que <em>con el solo hecho de pagar la cuenta mensualmente su sitio debiera funcionar por sí mismo</em>, sin preocuparse de crear contenidos ni hacer ningún tipo de mantención — es el tipo de sitio que encuentras con una noticia con más de un año de antigüedad&#8230; sobre su nuevo sitio.</p>
+<h3>Que hablan tu idioma y tienes &#8220;a quién llamar&#8221;</h3>
+<p>Probablemente el argumento más poderoso a la vez que el más engañoso. En lo personal, me parece inexplicable la especie de fascinación que a algunas personas les produce tener un &#8220;ejecutivo de cuenta&#8221; que les plantee un servicio &#8220;a la medida&#8221;, como si se tratara de una cuenta de banco o un sastre.</p>
+<p>Por otra parte, está la confianza ciega en que el personal de servicio técnico hable en tu idioma, lo que difícilmente podría ser una ventaja ya que si hay un fallo en el sitio o si por alguna razón el sitio se ve comprometido, el servicio técnico del hosting no es el que va a responder ni solucionar el problema: si el problema es a nivel de la aplicación, con razón podrían argumentar que no es de su responsabilidad (aunque si es así, no tiene mucho sentido contar con el servicio técnico del hosting, sino más bien con una mantención de quien desarrolló el sitio, ¿no?), pero por otra parte, si el problema es realmente de más bajo nivel y responsabilidad directa del hosting, entonces<strong> la cuestión no debería recaer en que puedas llamar a alguien para que solucione el problema, sino en que esos problemas no se produzcan</strong>, y si bien todo sistema es susceptible a fallos, un buen proveedor no necesita que le digan &#8220;esto está fallando&#8221; para saber que tiene algo que solucionar.</p>
+<p>La trampilla del &#8220;tener a quién llamar&#8221; pasa también por vender cosas que no son tal como las pintan: por una parte, están los que promueven a cPanel o Plesk como entornos &#8220;amigables&#8221; o &#8220;autoadministrables&#8221; (vaya a saber uno qué significa esto para ellos) como si cualquier persona fuera a entender mágicamente todas las opciones que se le ofrecen; mientras que por otra están los que se ufanan de tener un panel de control propio y que salvo contadas excepciones suelen ser engendros horripilantes y poco funcionales.</p>
+<p>Finalmente, están también los que exhiben como medallas de guerra sus certificaciones de Microsoft, Oracle y Java, pero que te miran como si estuvieras hablando en zulu (o peor, condescendientemente como a un párvulo) cuando planteas que estás trabajando sobre PHP+MySQL, WordPress y &#8220;todas esas cosas hippientas de software libre/código abierto&#8221;. Algunos llegan a afirmar que nadie da soporte a &#8220;esas cosas&#8221;, por lo que ellos sólo garantizan, básicamente, que el servidor está conectado a la electricidad, pero de ahí en más no es su responsabilidad.</p>
+<h3>¿Y cuál es la moraleja?</h3>
+<p>No estoy tratando de hacer una fábula, pero hay algunas cosas que podemos sacar en limpio:</p>
+<ul>
+<li>Negocia tus contratos hasta la <strong>entrega</strong> del sitio, no la <em>puesta en producción</em>: muestra el sitio funcionando en tu propio hosting para que tu cliente lo pruebe a sus anchas, pero haz una entrega en CD con los archivos del sitio, base de datos, manual de uso e instalación, etc. Puede que parezca cavernícola, pero te permitirá poder poner fin al proyecto cuando <strong>lo que es de tu responsabilidad</strong> ya se haya dado por cumplido.</li>
+<li>Recuérdate y recuérdale a tu cliente que el objetivo de su trabajo conjunto es llegar a tener un sitio funcionando. Plantea la puesta en línea del sitio como un mini-proyecto adicional de acuerdo a las características del hosting que decida contratar, ya que de acuerdo a esto podría ser desde una tarea de un par de horas a días enteros peloteando e-mails con los de soporte.</li>
+<li>Aconseja a tu cliente, guíalo y edúcalo en las características del producto que le estás vendiendo. Entrégale la documentación adecuada y la información sobre las condiciones necesarias para que su sitio web funcione correctamente.</li>
+</ul>
+<p>Siempre trata de anticipar y solucionar los escollos que puedan encontrar en este paso que debería ser un mero trámite. Un desarrollo no implementado le sirve tan poco a tu cliente como a tu portafolio y reputación.</p>
+
+	<p class="tags">Tags: <a href="http://www.yukei.net/tag/desarrollo-web/" title="Desarrollo Web" rel="tag">Desarrollo Web</a>, <a href="http://www.yukei.net/tag/estrategia/" title="Estrategia" rel="tag">Estrategia</a>, <a href="http://www.yukei.net/tag/metodologia/" title="metodología" rel="tag">metodología</a></p>
+
+	<h4>Related posts</h4>
+	<ul class="st-related-posts">
+	<li><a href="http://www.yukei.net/2010/11/worpress-no-solo-blogs/" title="WordPress: no sólo blogs (14 noviembre, 2010)">WordPress: no sólo blogs</a> (7)</li>
+	<li><a href="http://www.yukei.net/2007/10/yui-y-otros-frameworks-css/" title="YUI y otros Frameworks CSS (3 octubre, 2007)">YUI y otros Frameworks CSS</a> (4)</li>
+	<li><a href="http://www.yukei.net/2006/07/yo-corazon-wordpress/" title="Yo [corazón] WordPress (24 julio, 2006)">Yo [corazón] WordPress</a> (6)</li>
+	<li><a href="http://www.yukei.net/2007/01/y-tenemos-wordpress-21/" title="Y tenemos WordPress 2.1 (26 enero, 2007)">Y tenemos WordPress 2.1</a> (2)</li>
+	<li><a href="http://www.yukei.net/2006/07/xhtml-semantico-aplicado-a-listas/" title="XHTML Semántico aplicado a listas (3 julio, 2006)">XHTML Semántico aplicado a listas</a> (11)</li>
+</ul>
+
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/yukei?a=42cdPmoTTuw:sKF3w2qQ2Ho:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/yukei?i=42cdPmoTTuw:sKF3w2qQ2Ho:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=42cdPmoTTuw:sKF3w2qQ2Ho:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/yukei?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=42cdPmoTTuw:sKF3w2qQ2Ho:YwkR-u9nhCs"><img src="http://feeds.feedburner.com/~ff/yukei?d=YwkR-u9nhCs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=42cdPmoTTuw:sKF3w2qQ2Ho:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/yukei?i=42cdPmoTTuw:sKF3w2qQ2Ho:F7zBnMyn0Lo" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/yukei/~4/42cdPmoTTuw" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.yukei.net/2011/08/tres-malas-razones-para-elegir-un-servicio-de-hosting/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		<feedburner:origLink>http://www.yukei.net/2011/08/tres-malas-razones-para-elegir-un-servicio-de-hosting/</feedburner:origLink></item>
+		<item>
+		<title>… y van 8</title>
+		<link>http://feedproxy.google.com/~r/yukei/~3/RlUp2IN6690/</link>
+		<comments>http://www.yukei.net/2011/08/y-van-8/#comments</comments>
+		<pubDate>Fri, 12 Aug 2011 01:28:02 +0000</pubDate>
+		<dc:creator>Felipe Lavín Z.</dc:creator>
+				<category><![CDATA[Yukei]]></category>
+		<category><![CDATA[Weblogs]]></category>
+
+		<guid isPermaLink="false">http://www.yukei.net/?p=1588</guid>
+		<description>&amp;#8230; a pesar que desde Twitter y Facebook, ahora todos los años alguien dice que los blogs se acabaron, aún quedamos algunos dando vueltas&amp;#8230; aunque publiquemos cada vez menos — se me hace más posible que hayan menos blogs (como los de antes, quiero decir) porque todos los bloggers consiguieron trabajo (gracias a sus blogs) [...]</description>
+			<content:encoded><![CDATA[<div class="wp-caption aligncenter" style="width: 510px"><img src="http://farm3.static.flickr.com/2669/4165670401_21cb308130_d.jpg" alt="" width="500" height="375" /><p class="wp-caption-text">(cc) Lizzybethhh (flickr)</p></div>
+<p>&#8230; a pesar que desde Twitter y Facebook, ahora todos los años alguien dice que los blogs se acabaron, aún quedamos algunos dando vueltas&#8230; aunque publiquemos cada vez menos — se me hace más posible que hayan menos blogs (como los de antes, quiero decir) porque todos los bloggers consiguieron trabajo (gracias a sus blogs) más que cualquier otra cosa&#8230; al final, sólo es falta de tiempo.</p>
+<p>Aunque tampoco debiera ser tan fatalista: desde el año anterior hasta ahora, estoy con un promedio de 1 post por mes (que es poco, pero es mejor que nada)&#8230; y continuando con los anuncios que no le importan a nadie: estoy probando un cloud server en Rackspace (también-conocido-como <em>&#8220;humilde servidor&#8221;</em><strong>,</strong> props para <a href="http://twitter.com/pedroarellano">@pedroarellano</a>) y acabo de dar de baja un servicio de publicidad que prometía mucho pero resultaba una molestia más que nada (no para mí, sino para los pocos valientes que aún se pierden por acá)&#8230; ¡ah! y por fin tengo un proceso de desarrollo ordenado (ya no más <em>&#8220;en casa de herrero, cuchillo de palo&#8221;</em>).</p>
+<p>En fin&#8230; si me dedico a terminar el montón de borradores que tengo por ahí, queda <strong>yukei.net</strong> para rato.</p>
+
+	<p class="tags">Tags: <a href="http://www.yukei.net/tag/weblogs/" title="Weblogs" rel="tag">Weblogs</a>, <a href="http://www.yukei.net/tag/yukei/" title="Yukei" rel="tag">Yukei</a></p>
+
+	<h4>Related posts</h4>
+	<ul class="st-related-posts">
+	<li><a href="http://www.yukei.net/2009/01/un-nuevo-tema-para-yukeinet-ii/" title="Un nuevo tema para yukei.net (II) (24 enero, 2009)">Un nuevo tema para yukei.net (II)</a> (0)</li>
+	<li><a href="http://www.yukei.net/2004/01/de-vuelta-a-lo-basico/" title="De vuelta a lo b&aacute;sico&#8230; &iquest;? (24 enero, 2004)">De vuelta a lo b&aacute;sico&#8230; &iquest;?</a> (0)</li>
+	<li><a href="http://www.yukei.net/2008/12/la-micropublicacion-mato-al-blog/" title="¿La micropublicación mató al blog? (4 diciembre, 2008)">¿La micropublicación mató al blog?</a> (0)</li>
+	<li><a href="http://www.yukei.net/2006/08/yukeinet-cumple-tres-anos/" title="yukei.net cumple tres años (29 agosto, 2006)">yukei.net cumple tres años</a> (7)</li>
+	<li><a href="http://www.yukei.net/2006/07/yo-corazon-wordpress/" title="Yo [corazón] WordPress (24 julio, 2006)">Yo [corazón] WordPress</a> (6)</li>
+</ul>
+
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/yukei?a=RlUp2IN6690:qWZeMF6QIT4:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/yukei?i=RlUp2IN6690:qWZeMF6QIT4:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=RlUp2IN6690:qWZeMF6QIT4:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/yukei?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=RlUp2IN6690:qWZeMF6QIT4:YwkR-u9nhCs"><img src="http://feeds.feedburner.com/~ff/yukei?d=YwkR-u9nhCs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=RlUp2IN6690:qWZeMF6QIT4:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/yukei?i=RlUp2IN6690:qWZeMF6QIT4:F7zBnMyn0Lo" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/yukei/~4/RlUp2IN6690" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.yukei.net/2011/08/y-van-8/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.yukei.net/2011/08/y-van-8/</feedburner:origLink></item>
+		<item>
+		<title>Actualizar Komodo Edit en Ubuntu</title>
+		<link>http://feedproxy.google.com/~r/yukei/~3/Aeork8wZTFY/</link>
+		<comments>http://www.yukei.net/2011/07/actualizar-komodo-edit-en-ubuntu/#comments</comments>
+		<pubDate>Sat, 16 Jul 2011 00:51:53 +0000</pubDate>
+		<dc:creator>Felipe Lavín Z.</dc:creator>
+				<category><![CDATA[Desarrollo Web]]></category>
+		<category><![CDATA[Software]]></category>
+		<category><![CDATA[IDE]]></category>
+		<category><![CDATA[Komodo Edit]]></category>
+		<category><![CDATA[Open Source]]></category>
+		<category><![CDATA[programación]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.yukei.net/?p=1580</guid>
+		<description>Haca ya bastante tiempo mi editor de código de cabecera es Komodo Edit, que además de ser gratuito y multiplataforma, tiene varias características que lo hacen muy útil pero manteniendo la simplicidad. Quizás uno de sus puntos débiles es que no existen paquetes disponibles para Ubuntu ni Debian, por lo que su actualización es un [...]</description>
+			<content:encoded><![CDATA[<p>Haca ya bastante tiempo <a title="Komodo Edit, editor de código multiplataforma | yukei.net" href="http://www.yukei.net/2009/08/komodo-edit-editor-de-codigo-multiplataforma/">mi editor de código de cabecera</a> es <a title="Komodo Edit is a Free Open Source Editor for Perl, Python, PHP, Ruby, Javascript..." href="http://www.activestate.com/komodo-edit">Komodo Edit</a>, que además de ser gratuito y multiplataforma, tiene varias características que lo hacen muy útil pero manteniendo la simplicidad.</p>
+<p>Quizás uno de sus puntos débiles es que no existen paquetes disponibles para Ubuntu ni Debian, por lo que su actualización es un poco menos que obvia, pero de todos modos resulta bastante sencilla.</p>
+<p>Al modo de Firefox, Komodo te notificará cuando exista una nueva versión disponible (al menos cuando se trate de actualizaciones menores), pero junto con eso presentará un aviso que, en resumen te indicará que con tu cuenta actual no tienes privilegios para poder actualizar el software.</p>
+<p>Para solucionar esto, la forma más sencilla es abrir la terminal y dirigirte al directorio donde está instalado Komodo, en mi caso, <samp>/var/opt/active-state/</samp>. Una vez en esa carpeta, debes iniciar el programa como administrador, lo que puedes hacer de forma fácil y segura (con la tranquilidad que no existirán cambios de permisos u otros que pudieran dificultar el uso posterior) con <kbd>gksu bin/komodo</kbd>.</p>
+<p>Una vez iniciado el software, dirígete al menú <kbd>Help → Check Updates</kbd> y ejecuta la actualización. Reinicia el programa (aun como <code>gksu</code>) y listo&#8230; ya puedes volver a ejecutarlo como usuario normal.</p>
+
+	<p class="tags">Tags: <a href="http://www.yukei.net/tag/ide/" title="IDE" rel="tag">IDE</a>, <a href="http://www.yukei.net/tag/komodo-edit/" title="Komodo Edit" rel="tag">Komodo Edit</a>, <a href="http://www.yukei.net/tag/open-source/" title="Open Source" rel="tag">Open Source</a>, <a href="http://www.yukei.net/tag/programacion/" title="programación" rel="tag">programación</a>, <a href="http://www.yukei.net/tag/software/" title="Software" rel="tag">Software</a>, <a href="http://www.yukei.net/tag/ubuntu/" title="Ubuntu" rel="tag">Ubuntu</a></p>
+
+	<h4>Related posts</h4>
+	<ul class="st-related-posts">
+	<li><a href="http://www.yukei.net/2009/08/komodo-edit-editor-de-codigo-multiplataforma/" title="Komodo Edit, editor de código multiplataforma (16 agosto, 2009)">Komodo Edit, editor de código multiplataforma</a> (4)</li>
+	<li><a href="http://www.yukei.net/2009/12/servidor-de-musica-daap-en-ubuntu/" title="Servidor de música DAAP en Ubuntu (28 diciembre, 2009)">Servidor de música DAAP en Ubuntu</a> (0)</li>
+	<li><a href="http://www.yukei.net/2007/01/y-tenemos-wordpress-21/" title="Y tenemos WordPress 2.1 (26 enero, 2007)">Y tenemos WordPress 2.1</a> (2)</li>
+	<li><a href="http://www.yukei.net/2006/08/xubuntu-vii-sintesis-y-evaluacion-final/" title="Xubuntu (VII): Síntesis y evaluación final (1 agosto, 2006)">Xubuntu (VII): Síntesis y evaluación final</a> (27)</li>
+	<li><a href="http://www.yukei.net/2007/01/wordpress-y-habari/" title="WordPress y Habari (31 enero, 2007)">WordPress y Habari</a> (27)</li>
+</ul>
+
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/yukei?a=Aeork8wZTFY:OtS7bNiEP8o:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/yukei?i=Aeork8wZTFY:OtS7bNiEP8o:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=Aeork8wZTFY:OtS7bNiEP8o:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/yukei?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=Aeork8wZTFY:OtS7bNiEP8o:YwkR-u9nhCs"><img src="http://feeds.feedburner.com/~ff/yukei?d=YwkR-u9nhCs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=Aeork8wZTFY:OtS7bNiEP8o:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/yukei?i=Aeork8wZTFY:OtS7bNiEP8o:F7zBnMyn0Lo" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/yukei/~4/Aeork8wZTFY" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.yukei.net/2011/07/actualizar-komodo-edit-en-ubuntu/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.yukei.net/2011/07/actualizar-komodo-edit-en-ubuntu/</feedburner:origLink></item>
+		<item>
+		<title>Usa parámetros variables en tus funciones con wp_parse_args (WordPress Tips)</title>
+		<link>http://feedproxy.google.com/~r/yukei/~3/ARDbhYN0mgY/</link>
+		<comments>http://www.yukei.net/2011/06/parametros-variables-en-funciones-wordpress-con-wp_parse_args/#comments</comments>
+		<pubDate>Wed, 01 Jun 2011 12:15:42 +0000</pubDate>
+		<dc:creator>Felipe Lavín Z.</dc:creator>
+				<category><![CDATA[Desarrollo Web]]></category>
+		<category><![CDATA[WordPress]]></category>
+		<category><![CDATA[buenas prácticas]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[programación]]></category>
+
+		<guid isPermaLink="false">http://www.yukei.net/?p=1361</guid>
+		<description>wp_parse_args() es una función de WordPress que otorga un patrón para manejar una cantidad variable de parámetros y opciones predeterminadas</description>
+			<content:encoded><![CDATA[<p><code>wp_parse_args()</code> es una función de WordPress que nos permite contar con tres interesantes beneficios al escribir una función:</p>
+<ul>
+<li>poder <strong>aceptar una cantidad variable de argumentos</strong>, sin importar el orden en que estén declarados y además con la posibilidad de aumentar los argumentos que la función recibe sin tener problemas de compatibilidad</li>
+<li>aceptar argumentos como una <strong>cadena de consulta</strong><em>(query string)</em><strong>o como array</strong></li>
+<li>poder dotar de <strong>opciones predeterminadas</strong> para cada uno de los argumentos de la función, de modo que la mayoría de las veces sólo debamos indicar un par de variaciones para utilizarla efectivamente</li>
+</ul>
+<p>Según el <a href="http://codex.wordpress.org/Function_Reference/wp_parse_args">Codex</a>: <q>se usa a través de WordPress para evitar tener que preocuparse sobre la lógica de las opciones predeterminadas y los inputs, y produce un <strong>patrón estable</strong> para pasar argumentos.</q></p>
+<p>Aprovecharlo en tus funciones es muy sencillo. Veamos algunos ejemplos.</p>
+<p><span id="more-1361"></span></p>
+<p>Supongamos que queremos tener una función muy sencilla para mostrar la fecha actual, pero a la que queremos dar algo de flexibilidad para, por ejemplo, poder mostrar otras fechas que le podamos indicar como parámetro.</p>
+<pre class="brush: php; title: ; notranslate">
+function show_date( $args = null ){
+	$s = wp_parse_args( $args, array(
+		'format'    =&gt; 'j F Y',
+		'date'      =&gt; time(),
+		'echo'      =&gt; false,
+		'class'     =&gt; 'date-now',
+		'translate' =&gt; true
+	) );
+	$out = '&lt;span class=&quot;'. esc_attr( $s['class'] ) .'&quot;&gt;';
+	if ( $s['translate'] ) {
+		// si queremos obtener la fecha en el idioma de la instalación de
+		// WordPress, utilizaremos la función date_i18n()
+		$out .= date_i18n( $s['format'], $s['date'] );
+	} else {
+		$out .= date( $s['format'], $s['date'] );
+	}
+	$out .= '&lt;/span&gt;';
+	if ( $s['echo'] ) echo $out;
+	else return $out;
+}
+</pre>
+<p>En este caso, la mayoría de las veces podríamos utilizar la función llamando simplemente a <code>show_date( )</code>, sin ningún parámetro (ni siquiera <code>$args</code> es requerido), pero en otros casos contamos con una buena cantidad de opciones para poder reutilizar la función en distintos contextos, por ejemplo: <code>show_date('echo=0&amp;class=otra-clase')</code>.</p>
+<p>En este caso, dado que podríamos utilizar la función sin indicar ningún parámetro, en la definición de la función <code>$args</code> es igual a <code>null</code>, ya que <code>wp_parse_args()</code> espera recibir exactamente dos parámetros: los argumentos que la función está recibiendo ($args) en forma de array o query string, y un array de valores predeterminados.</p>
+<p>Por supuesto, también se puede dar el caso que tu función <em>necesite</em> recibir argumentos para hacer lo suyo; en ese caso podrías declarar esos argumentos de forma separada a los que trabajará wp_parse_args.</p>
+<p>Por ejemplo, una función que suelo utilizar para construir <code>select</code>:</p>
+<pre class="brush: php; title: ; notranslate">
+/**
+ * Create an HTML select
+ * @param array $els Array with the select options, the array key is the &quot;value&quot; attribute that will be sent with the form and the array value is the option text
+ * @param array|string $args Select attribute options, selected items and other arguments
+ * @return string Select
+ * @author Felipe Lavín &lt;felipe@yukei.net&gt;
+ **/
+function create_select($els, $args){
+	$s = wp_parse_args($args, array(
+		'id'               =&gt; null,
+		'echo'             =&gt; false,
+		'size'             =&gt; null,
+		'class'            =&gt; null,
+		'style'            =&gt; null,
+		'multiple'         =&gt; false,
+		'selected'         =&gt; null,
+		'__checkboxes'     =&gt; true,
+		'show_option_all'  =&gt; false,
+		'show_option_none' =&gt; false,
+	));
+	$multiple_values = ( is_array( $s['selected'] ) ) ? true : false;
+	$do_cb = ( $s['__checkboxes'] &amp;&amp; ( $multiple_values || $s['multiple'] ) ) ? true : false;
+	$atts = ( $do_cb ) ? array('id', 'class', 'style') : array('id', 'name', 'class', 'size', 'multiple', 'style');
+	$selected = $do_cb ? ' checked=&quot;checked&quot;' : ' selected=&quot;selected&quot;';
+	if ( !empty($els) ) {
+		$out = ( $do_cb ) ? '&lt;ul' : '&lt;select';
+		foreach($atts as $k){
+			if ( !is_null( $s[$k] ) &amp;&amp; $s[$k] !== false ) {
+				switch($k):
+					case 'multiple':
+						$out .= ' multiple=&quot;multiple&quot;';
+						break;
+					case 'name':
+						$out .= $s['multiple'] ? ' name=&quot;'. $s['name'].'[]&quot;' : ' name=&quot;'. $s['name'] .'&quot;';
+						break;
+					default:
+						$out .= ' '. $k .'=&quot;'. esc_attr( $s[$k] ) .'&quot;';
+				endswitch;
+			}
+		}
+		$out .= '&gt;';
+		if (!$do_cb ) {
+			// &quot;none&quot; could be empty, but &quot;all&quot; should be a string
+			if ( $s['show_option_none'] !== false ) {
+				if ( is_array( $s['show_option_none'] ) ) {
+					$out .= '&lt;option value=&quot;'. key( $s['show_option_none'] ) .'&quot;&gt;'. current( $s['show_option_none'] ) .'&lt;/option&gt;';
+				} else {
+					$out .=	'&lt;option value=&quot;-1&quot;&gt;'. $s['show_option_none'] .'&lt;/option&gt;';
+				}
+			}
+			if ( $s['show_option_all'] != false ) $out .= '&lt;option value=&quot;_all&quot;&gt;'. $s['show_option_all'] .'&lt;/option&gt;';
+		}
+		foreach ( $els as $key =&gt; $val ) {
+			if ( !$multiple_values ) $active = $s['selected'] == $key ? $selected : null;
+			else $active = in_array( $key, $s'selected'] ) ? $selected : null;
+
+			// So we can directly pass query results
+			if ( is_object( $val ) &amp;&amp; isset( $val .'_'. $key .'&quot;&gt;&lt;input'. $active .' type=&quot;checkbox&quot; value=&quot;'. $key .'&quot; name=&quot;'. $s['name'] .'[]&quot; id=&quot;cb_'. $s['id'] .'_'. $key .'&quot; /&gt; '. $val .'&lt;/label&gt;&lt;/li&gt;';
+			else
+				$out .= '&lt;option value=&quot;'. $key .'&quot;'. $active .'&gt;'. $val .'&lt;/option&gt;';
+		}
+		$out .= ( $do_cb ) ? '&lt;/ul&gt;' : '&lt;/select&gt;';
+		if ( $s['echo'] ) echo $out;
+		else return $out;
+	} else {
+		return false;
+	}
+</pre>
+<p>En este caso los dos parámetros son requeridos: el primero porque&#8230; porque necesitas elementos para poder construir el <code>select</code>; y el segundo porque determina el output que produce la función.</p>
+<p>Algunas notas para finalizar:</p>
+<ul>
+<li>Al mezclar los argumentos recibidos con los predeterminados los primeros <strong>no se filtran</strong>, por lo que podrías pasar argumentos que no estén considerados en la misma función a la que se los estás pasando&#8230;</li>
+<li>Por lo mismo, si dentro de tu función invocarás otras como <code>query_posts</code>, <code>get_posts</code> o crearás objetos de <code>WP_Query</code> es buena idea filtrar qué argumentos pasarán de un lado a otro.</li>
+<li>Por otra parte esto te puede dar una gran flexibilidad si, por ejemplo, usas este patrón como parte de un constructor de clase</li>
+</ul>
+<p>Ah, y por cierto, en jQuery puedes lograr <a href="http://www.yukei.net/2010/05/tres-usos-para-jquery-extend/">algo bastante similar con jQuery.extend()</a></p>
+
+	<p class="tags">Tags: <a href="http://www.yukei.net/tag/buenas-practicas/" title="buenas prácticas" rel="tag">buenas prácticas</a>, <a href="http://www.yukei.net/tag/php/" title="php" rel="tag">php</a>, <a href="http://www.yukei.net/tag/programacion/" title="programación" rel="tag">programación</a>, <a href="http://www.yukei.net/tag/wordpress/" title="WordPress" rel="tag">WordPress</a></p>
+
+	<h4>Related posts</h4>
+	<ul class="st-related-posts">
+	<li><a href="http://www.yukei.net/2011/04/wordpress-tips-utiliza-el-parametro-action-para-determinar-la-accion-que-estas-realizando/" title="WordPress Tips: Utiliza el parámetro action para determinar la acción que estás realizando (25 abril, 2011)">WordPress Tips: Utiliza el parámetro action para determinar la acción que estás realizando</a> (1)</li>
+	<li><a href="http://www.yukei.net/2011/08/trabajando-con-datos-serializados-en-wordpress/" title="Trabajando con datos serializados en WordPress (23 agosto, 2011)">Trabajando con datos serializados en WordPress</a> (2)</li>
+	<li><a href="http://www.yukei.net/2007/10/php-te-facilita-la-vida/" title="PHP te facilita la vida (25 octubre, 2007)">PHP te facilita la vida</a> (6)</li>
+	<li><a href="http://www.yukei.net/2007/07/crear-un-tumblelog-con-wordpress/" title="Crear un Tumblelog con WordPress (14 julio, 2007)">Crear un Tumblelog con WordPress</a> (19)</li>
+	<li><a href="http://www.yukei.net/2007/01/y-tenemos-wordpress-21/" title="Y tenemos WordPress 2.1 (26 enero, 2007)">Y tenemos WordPress 2.1</a> (2)</li>
+</ul>
+
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/yukei?a=ARDbhYN0mgY:DAsVFNG0_40:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/yukei?i=ARDbhYN0mgY:DAsVFNG0_40:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=ARDbhYN0mgY:DAsVFNG0_40:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/yukei?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=ARDbhYN0mgY:DAsVFNG0_40:YwkR-u9nhCs"><img src="http://feeds.feedburner.com/~ff/yukei?d=YwkR-u9nhCs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=ARDbhYN0mgY:DAsVFNG0_40:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/yukei?i=ARDbhYN0mgY:DAsVFNG0_40:F7zBnMyn0Lo" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/yukei/~4/ARDbhYN0mgY" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.yukei.net/2011/06/parametros-variables-en-funciones-wordpress-con-wp_parse_args/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.yukei.net/2011/06/parametros-variables-en-funciones-wordpress-con-wp_parse_args/</feedburner:origLink></item>
+		<item>
+		<title>La “piratería” como un falla del mercado</title>
+		<link>http://feedproxy.google.com/~r/yukei/~3/RRG607NCQj4/</link>
+		<comments>http://www.yukei.net/2011/05/la-pirateria-como-un-falla-del-mercado/#comments</comments>
+		<pubDate>Fri, 13 May 2011 12:00:54 +0000</pubDate>
+		<dc:creator>Felipe Lavín Z.</dc:creator>
+				<category><![CDATA[Estrategia]]></category>
+		<category><![CDATA[copyright]]></category>
+		<category><![CDATA[descargas]]></category>
+		<category><![CDATA[ebook]]></category>
+		<category><![CDATA[piratería]]></category>
+
+		<guid isPermaLink="false">http://www.yukei.net/?p=1356</guid>
+		<description>Hace un par de semanas he venido encontrándome con una serie de artículos en los que se plantea a la &amp;#8220;piratería&amp;#8221; (hagamos la concesión de que con esto nos referimos de forma amplia a las descargas no-oficiales de material bajo copyright) como una falla del mercado. El enfoque resulta tremendamente fresco no solamente porque es bueno [...]</description>
+			<content:encoded><![CDATA[<p>Hace un par de semanas he venido encontrándome con una serie de artículos en los que se plantea a la &#8220;piratería&#8221; (hagamos la concesión de que con esto nos referimos de forma amplia a las descargas no-oficiales de material bajo copyright) como una <strong>falla del mercado</strong>. El enfoque resulta tremendamente fresco no solamente porque es bueno encontrarse con discursos distintos a la criminalización de los usuarios/consumidores, sino porque plantea una visión totalmente <strong>práctica y propositiva</strong> en torno a lo que desde una u otra óptica puede ser considerado como un problema real.</p>
+<p>La premisa es relativamente simple: <em>en lugar de entender a la &#8220;piratería&#8221; como un problema legal</em>, se comprende como un problema originado por <strong>deficiencias en la forma de comercializar contenidos</strong>.</p>
+<p>Un ejemplo: si eras fanático de Lost y vives en un país latinoamericano, probablemente hayas optado por descargar la serie o verla en algún sitio online antes que esperar dos o tres semanas para poder verla por TV paga o <em>meses</em> para ver un mal doblaje en algún canal de televisión abierta&#8230; en otras palabras, la opción de recurrir a formas &#8220;no oficiales&#8221; para consumir la serie se debe fundamentalmente a un problema de acceso: ¿porqué esperar semanas o meses para ver un programa de televisión, si con <em>poco esfuerzo</em> puedo obtener <em>el mismo producto</em> <strong>antes</strong>?</p>
+<p>Y de aquí podemos desprender tres factores clave para la comprensión del problema como un tema de negocios. Asumiendo que los usuarios estarían dispuestos a pagar por los contenidos (que lso contenidos tienen como mínimo la calidad necesaria para interesar a un mercado a adquirirlos):</p>
+<ul>
+<li><strong>El acceso a los productos debe ser inmediata: </strong>no tiene sentido hacer fila de una hora para comer helado si al lado los están regalando</li>
+<li><strong>La entrega del producto debe ser impecable:</strong> el proceso de compra debe estar diseñado de principio a fin para sugerir la mejor experiencia posible al usuario final &#8212; pensemos en facilitar desde el registro a la selección de productos y su pago (¿alguien dijo &#8220;compra con un click&#8221;?), y por supuesto se debe considerar hasta el consumo (lo que significa nada de software adicional que el usuario deba instalar, ni de codecs raros, ni de restricciones con lo que pueda hacer con su producto legítimamente adquirido)</li>
+<li><strong>La calidad del producto debe ser igual o mejor </strong>a la que se podría conseguir gratuitamente &#8212; ¡vamos, que hay que vender! ¿Por qué habría de pagar por un MP3 de 320kbps? Por otra parte, si me ofrecen archivos de audio sin DRM y sin pérdida de calidad, la oferta es un poco más interesante&#8230; y si tiene un par de bonus tracks, mejor aún&#8230; o quizás acceso a una descarga extra. Y obviamente, una transferencia ultra rápida. Y acceso eterno a los productos que haya adquirido. Y si es video, que pueda elegir entre distintas resoluciones, desde una descarga liviana si estoy apurado a formatos portables en smartphones a 720 y 1080p&#8230; sin publicidad, lógicamente &#8212; en definitiva, ¿cuál es el valor agregado por el que se convencerá a los usuarios de pagar?</li>
+</ul>
+<p>Los dejo con los links donde pueden profundizar más en el tema:</p>
+<ul>
+<li>Ars Technica: <a title="Ars Technica: Competing with free: anime site treats piracy as a market failure" href="http://arstechnica.com/tech-policy/news/2011/04/competing-with-free-anime-site-treats-piracy-as-a-market-failure.ars">Competing with free: anime site treats piracy as a market failure</a></li>
+<li>Cory Doctorow en The Guardian: <a title="The Guardian: In the digital era free is easy, so how do you persuade people to pay?" href="http://www.guardian.co.uk/technology/gamesblog/2011/apr/20/digital-free-persuade-pay-cory-doctorow">In the digital era free is easy, so how do you persuade people to pay?</a></li>
+<li>Enrique Dans: <a title="Guía para desarrollar servicios de descarga" href="http://www.enriquedans.com/2011/05/guia-para-desarrollar-servicios-de-descarga.html">Guía para desarrollar servicios de descarga</a></li>
+<li>Claudio Ruiz: <a title="Quemarlasnaves.net: Mejorar la experiencia, una alternativa al paywall" href="http://www.quemarlasnaves.net/una-alternativa-al-paywall/">Mejorar la experiencia, una alternativa al paywall</a> y <a title="Quemarlasnaves.net: Las dificultades del despegue del ebook en castellano las crea la industria editorial" href="http://www.quemarlasnaves.net/las-dificultades-del-despegue-del-ebook-en-castellano-las-crea-la-industria-editorial-2/">Las dificultades del despegue del ebook en castellano las crea la industria editorial</a></li>
+<li>Ricardo Galli: <a title="Ricardo Galli, de software libre: No seamos incautos, Libranda no pretende vender ebooks" href="http://gallir.wordpress.com/2010/07/16/no-seamos-incautos-libranda-no-pretende-vender-ebooks/">No seamos incautos, Libranda no pretende vender ebooks</a></li>
+</ul>
+<div id="_mcePaste" class="mcePaste" style="position: absolute; left: -10000px; top: 232px; width: 1px; height: 1px; overflow: hidden;">
+<h1><a href="http://www.quemarlasnaves.net/las-dificultades-del-despegue-del-ebook-en-castellano-las-crea-la-industria-editorial-2/">Las dificultades del despegue del ebook en castellano las crea la industria editorial</a></h1>
+</div>
+
+	<p class="tags">Tags: <a href="http://www.yukei.net/tag/copyright/" title="copyright" rel="tag">copyright</a>, <a href="http://www.yukei.net/tag/descargas/" title="descargas" rel="tag">descargas</a>, <a href="http://www.yukei.net/tag/ebook/" title="ebook" rel="tag">ebook</a>, <a href="http://www.yukei.net/tag/pirateria/" title="piratería" rel="tag">piratería</a></p>
+
+	<h4>Related posts</h4>
+	<ul class="st-related-posts">
+	<li><a href="http://www.yukei.net/2003/12/en-contra-del-cartel-del-copyright/" title="En contra del cartel del copyright (3 diciembre, 2003)">En contra del cartel del copyright</a> (1)</li>
+	<li><a href="http://www.yukei.net/2008/01/usufructo-y-atribucion/" title="Usufructo y atribución (27 enero, 2008)">Usufructo y atribución</a> (5)</li>
+	<li><a href="http://www.yukei.net/2009/04/los-usos-justos-no-son-delito/" title="Los usos justos no son delito (19 abril, 2009)">Los usos justos no son delito</a> (3)</li>
+	<li><a href="http://www.yukei.net/2007/03/anti-anti-pirateria/" title="Anti-(anti-piratería) (9 marzo, 2007)">Anti-(anti-piratería)</a> (2)</li>
+</ul>
+
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/yukei?a=RRG607NCQj4:3oAXsSCwwws:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/yukei?i=RRG607NCQj4:3oAXsSCwwws:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=RRG607NCQj4:3oAXsSCwwws:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/yukei?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=RRG607NCQj4:3oAXsSCwwws:YwkR-u9nhCs"><img src="http://feeds.feedburner.com/~ff/yukei?d=YwkR-u9nhCs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=RRG607NCQj4:3oAXsSCwwws:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/yukei?i=RRG607NCQj4:3oAXsSCwwws:F7zBnMyn0Lo" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/yukei/~4/RRG607NCQj4" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.yukei.net/2011/05/la-pirateria-como-un-falla-del-mercado/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://www.yukei.net/2011/05/la-pirateria-como-un-falla-del-mercado/</feedburner:origLink></item>
+		<item>
+		<title>WordPress Tips: Utiliza el parámetro action para determinar la acción que estás realizando</title>
+		<link>http://feedproxy.google.com/~r/yukei/~3/o5mb-AB925o/</link>
+		<comments>http://www.yukei.net/2011/04/wordpress-tips-utiliza-el-parametro-action-para-determinar-la-accion-que-estas-realizando/#comments</comments>
+		<pubDate>Mon, 25 Apr 2011 13:30:49 +0000</pubDate>
+		<dc:creator>Felipe Lavín Z.</dc:creator>
+				<category><![CDATA[Desarrollo Web]]></category>
+		<category><![CDATA[WordPress]]></category>
+		<category><![CDATA[buenas prácticas]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[programación]]></category>
+
+		<guid isPermaLink="false">http://www.yukei.net/?p=1285</guid>
+		<description>Comienzo de una serie de entradas sobre buenas prácticas, tips, trucos y/o consejos para desarrollar de forma más eficiente sobre WordPress. En esta entrega:</description>
+			<content:encoded><![CDATA[<p>Si bien es cierto que WordPress es un <em>entorno de desarrollo bastante flexible</em>, también lo es el hecho de que conocer más acerca de su funcionamiento te puede ayudar bastante a <strong>agilizar</strong> tus procesos, <strong>mejorar la integración</strong> con el sistema y la interacción con otros plugins, y en definitiva a <em>desarrollar de forma más eficiente</em> para WordPress.</p>
+<p>Hace algún rato que quería presentar algunos de los trucos o buenas prácticas que he ido descubriendo o aprendiendo al desarrollar temas y/o plugins para WordPress; no espero despertar grandes revelaciones sino poner en discusión nuestras formas de trabajo diarias sobre este sistema.</p>
+<p>Comencemos por algo sencillo, casi cosmético&#8230; Es algo que primero noté en la misma interfaz de administración de WordPress y que luego de empezar a utilizar en mis propios desarrollos me ha demostrado ser muy valioso: <strong>al enviar solicitudes al servidor, siempre utiliza la variable <code>action</code> para determinar la acción que estás realizando</strong>.</p>
+<p><span id="more-1285"></span></p>
+<p>Ya sea que estés enviando un <code>$_POST</code> o solicitando algo por <code>$_GET</code>, sabrás que <code>action</code> siempre tendrá directa relación con lo que vayas a realizar. Esto resulta aún más conveniente si lo relacionas explícitamente al tipo de datos que estás trabajando: por ejemplo, si en tu plugin vas a crear un evento en un calendario, es bastante lógico que tu <code>action</code> sea algo como <code>add_calendar_event</code>, <code>edit_calendar_event</code> al editar o <code>remove_calendar_event</code> si lo vas a borrar (o simplemente <code>add</code>, <code>edit</code> y <code>remove</code> como métodos de una clase).</p>
+<p>Luego, al procesar el formulario puedes tener una estructura de control muy clara y ordenada, por ejemplo:</p>
+<pre class="brush: php; title: ; notranslate">
+function calendar_actions(){
+	// primero, revisar si está definida la variable; al usar $_REQUEST quedamos cubiertos tanto para $_POST como $_GET
+	if ( isset($_REQUEST['action'] ) {
+		switch ( $_REQUEST['action'] ) {
+			case 'add_calendar_event':
+				// procesar acción de agregar evento al calendario
+				calendar_event_add();
+				break;
+			case 'edit_calendar_event':
+				// procesar acción de edición de datos del evento
+				calendar_event_edit();
+				break;
+			case 'remove_calendar_event':
+				// eliminar evento del calendario
+				calendar_event_remove();
+				break;
+		}
+	}
+}
+</pre>
+<p>Si te das cuenta, las funciones que procesan cada acción también siguen un patrón: <code>calendar</code> sería el nombre del plugin, <code>event</code>es el objeto sobre el que estoy trabajando, y finalmente la acción que se realiza sobre cada objeto.</p>
+<p>He visto plugins donde las acciones desencadenadas por formularios se determinan verificando combinaciones de parámetros que a la larga resultan poco comprensibles. Por ejemplo:</p>
+<pre class="brush: php; title: ; notranslate">
+function calendar_actions(){
+	if ( !empty($_POST['start_date']) &amp;&amp; $_POST['add'] == 'true' ) {
+		calendar_add_event();
+	} elseif ( !empty($_GET['event_id']) &amp;&amp; $_GET['remove'] == 'do' ) {
+		calendar_event_remove();
+	} elseif ( !empty($_POST['event_id'] &amp;&amp; $_POST['edit'] == 'true' ) {
+		calendar_event_edit();
+	}
+}
+</pre>
+<p>A la larga, las combinaciones de parámetros se van haciendo cada vez más confusas. Por otra parte, la comprobación y validación de datos se corresponde mejor con las funciones ligadas a cada acción más que a la detección de qué función ejecutar.</p>
+
+	<p class="tags">Tags: <a href="http://www.yukei.net/tag/buenas-practicas/" title="buenas prácticas" rel="tag">buenas prácticas</a>, <a href="http://www.yukei.net/tag/php/" title="php" rel="tag">php</a>, <a href="http://www.yukei.net/tag/programacion/" title="programación" rel="tag">programación</a>, <a href="http://www.yukei.net/tag/wordpress/" title="WordPress" rel="tag">WordPress</a></p>
+
+	<h4>Related posts</h4>
+	<ul class="st-related-posts">
+	<li><a href="http://www.yukei.net/2011/06/parametros-variables-en-funciones-wordpress-con-wp_parse_args/" title="Usa parámetros variables en tus funciones con wp_parse_args (WordPress Tips) (1 junio, 2011)">Usa parámetros variables en tus funciones con wp_parse_args (WordPress Tips)</a> (0)</li>
+	<li><a href="http://www.yukei.net/2011/08/trabajando-con-datos-serializados-en-wordpress/" title="Trabajando con datos serializados en WordPress (23 agosto, 2011)">Trabajando con datos serializados en WordPress</a> (2)</li>
+	<li><a href="http://www.yukei.net/2007/10/php-te-facilita-la-vida/" title="PHP te facilita la vida (25 octubre, 2007)">PHP te facilita la vida</a> (6)</li>
+	<li><a href="http://www.yukei.net/2007/07/crear-un-tumblelog-con-wordpress/" title="Crear un Tumblelog con WordPress (14 julio, 2007)">Crear un Tumblelog con WordPress</a> (19)</li>
+	<li><a href="http://www.yukei.net/2007/01/y-tenemos-wordpress-21/" title="Y tenemos WordPress 2.1 (26 enero, 2007)">Y tenemos WordPress 2.1</a> (2)</li>
+</ul>
+
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/yukei?a=o5mb-AB925o:l6Tr9sTvkuc:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/yukei?i=o5mb-AB925o:l6Tr9sTvkuc:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=o5mb-AB925o:l6Tr9sTvkuc:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/yukei?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=o5mb-AB925o:l6Tr9sTvkuc:YwkR-u9nhCs"><img src="http://feeds.feedburner.com/~ff/yukei?d=YwkR-u9nhCs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=o5mb-AB925o:l6Tr9sTvkuc:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/yukei?i=o5mb-AB925o:l6Tr9sTvkuc:F7zBnMyn0Lo" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/yukei/~4/o5mb-AB925o" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.yukei.net/2011/04/wordpress-tips-utiliza-el-parametro-action-para-determinar-la-accion-que-estas-realizando/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://www.yukei.net/2011/04/wordpress-tips-utiliza-el-parametro-action-para-determinar-la-accion-que-estas-realizando/</feedburner:origLink></item>
+		<item>
+		<title>Control de versiones centralizado con Bazaar</title>
+		<link>http://feedproxy.google.com/~r/yukei/~3/mjzLNKDDGzY/</link>
+		<comments>http://www.yukei.net/2011/03/control-de-versiones-centralizado-con-bazaar/#comments</comments>
+		<pubDate>Thu, 24 Mar 2011 13:00:37 +0000</pubDate>
+		<dc:creator>Felipe Lavín Z.</dc:creator>
+				<category><![CDATA[Desarrollo Web]]></category>
+		<category><![CDATA[Software]]></category>
+		<category><![CDATA[bazaar]]></category>
+		<category><![CDATA[control de versiones]]></category>
+		<category><![CDATA[Open Source]]></category>
+		<category><![CDATA[programación]]></category>
+
+		<guid isPermaLink="false">http://www.yukei.net/?p=1295</guid>
+		<description>Bazaar es un sistema de control de versiones distribuído, que en lo personal me ha resultado muy fácil y cómodo de utilizar. Probablemente una de sus mejores características es que permite ser bastante flexible en cuanto a los flujos de trabajo que puedes utilizar con él — esto es parte fundamental de la filosofía de Bazaar [...]</description>
+			<content:encoded><![CDATA[<p><strong><a title="Documentación de Bazaar" href="http://bazaar.canonical.com/en/">Bazaar</a> es un sistema de control de versiones distribuído</strong>, que en lo personal me ha resultado muy fácil y cómodo de utilizar.</p>
+<p>Probablemente una de sus mejores características es que permite ser bastante <strong>flexible</strong> en cuanto a los <em>flujos de trabajo</em> que puedes utilizar con él — esto es parte fundamental de la filosofía de Bazaar — ya que si bien está diseñado para trabajar perfectamente de modo distribuído, también se adapta de forma excelente a un <em>flujo de trabajo centralizado</em>, en cuyo esquema adopta un modo de trabajo muy similar a Suversion pero manteniendo ciertas <em>ventajas propias de los sistemas distribuidos</em>, como contar con una copia local del repositorio, acceso local al historial de cambios (y poder consultar rápidamente el registro de cambios), poder realizar commits locales al no tener conexión a internet, volver rápidamente a versiones anteriores, etc.</p>
+<p>El modo particular de <strong>implementar un flujo centralizado de control de versiones con Bazaar</strong> puede variar, pero detallaré algunas de sus posibilidades.</p>
+<p><span id="more-1295"></span></p>
+<h3>Flujos centralizados y descentralizados</h3>
+<p>Algunas consideraciones sobre estas formas de organizar el trabajo antes de pasar a la implementación (aunque si ya quieres poner las manos en la masa puedes adelantarte al próximo apartado).</p>
+<p>Es necesario hacer notar que en Bazaar, como en otros sistemas  distribuidos, ocurre que por lo general el directorio que contiene los archivos del proyecto sobre el que estamos trabajando (la  <strong>copia de trabajo</strong> o <strong>árbol de trabajo</strong>) mantiene también una copia del <strong>repositorio</strong> (el lugar donde se almacena el historial de cambios).</p>
+<p>Al utilizar un <em>flujo descentralizado</em>, cada copia de trabajo + repositorio es una rama de desarrollo (una <strong>branch</strong>,  que desde ya se puede ver que es un modelo distinto a lo que sucede en  SVN), donde los commits son locales y las contribuciones entre distintas  ramas se comparten empujando <strong>(push)</strong> los cambios a otro repositorio.</p>
+<p>En un flujo centralizado, mantendremos <strong>un repositorio central</strong> y varias copias de trabajo (que normalmente tienen el repositorio, pero  también pueden no tenerlo como lo veremos más adelante) que hacen  commit a este repositorio central. En Bazaar, el concepto fundamental  que distingue un flujo centralizado de uno descentralizado es el <strong>&#8220;bind&#8221; </strong>(que  se puede traducir como <em>&#8220;ligar&#8221; </em>o<em> &#8220;enlazar&#8221;</em>, pero también como <em>&#8220;obligado a&#8221;</em>): una  copia de trabajo que está enlazada a otro repositorio es un <strong>checkout</strong>, y sus commits son enviados automáticamente a el repositorio al cual está enlazada; si no está enlazada es un <strong>branch</strong>, con commits locales que se comparten vía <strong>push</strong>.</p>
+<p>A partir de esto, es posible crear <a title="Workflows - Bazaar Version Control" href="http://wiki.bazaar.canonical.com/Workflows">diversos modos de colaboración</a>, incluyendo híbridos entre flujos centralizados y descentralizados&#8230; pero vamos a lo que nos interesa en esta entrada, que es el flujo centralizado.</p>
+<h3>A partir de un repositorio en un servidor</h3>
+<p>Esta opción debería resultar bastante sencilla para quienes han trabajado anteriormente con otros sistemas como Subversion. Básicamente, los pasos a seguir son:</p>
+<ol>
+<li>Crear un repositorio en una máquina que hará las veces de servidor</li>
+<li>Crear las copias de trabajo (checkout) en cada equipo que colaborará en el proyecto</li>
+<li>Al hacer modificaciones en las copias de trabajo, los cambios se envían al repositorio que está en el servidor central</li>
+</ol>
+<p>La implementación del modelo es muy sencilla:</p>
+<ol>
+<li><strong>En el servidor:</strong>
+<ol>
+<li>En la carpeta donde están los archivos del proyecto (por ejemplo, /var/bzr/miproyecto.com), <strong>inicializar el repositorio</strong> con <code>bzr init</code></li>
+<li>Luego, <strong>agregar los archivos del proyecto</strong> con <code>bzr add</code></li>
+<li>Realizar el <strong>primer commit</strong> con <code>bzr commit</code>. Ingresar el mensaje del commit (Bazaar no admite mensajes de commit vacíos) y ya está lista la primera revisión del repositorio</li>
+<li>Para aplicar los cambios del repositorio al árbol de trabajo: <code>bzr update</code></li>
+</ol>
+</li>
+<li><strong>En el cliente:</strong>
+<ol>
+<li>Hacer un <strong><em>checkout</em></strong> del repositorio: <code>bzr checkout bzr+ssh://miservidor.com/var/bzr/miproyecto.com</code> — en caso de que el espacio en disco sea una preocupación muy importante, puedes hacer un <strong>checkout &#8220;liviano&#8221;</strong>, es decir, que sólo se limitará a la copia de trabajo sin el historial de cambios (esto sería idéntico a lo que sucede en SVN, aunque con esto lógicamente no podrás efectuar operaciones locales) con <code>bzr checkout --lightweight bzr+ssh://miservidor.com/var/bzr/miproyecto.com</code></li>
+<li>Para <strong>enviar los cambios al repositorio</strong>: <code>bzr commit</code>. En caso que por algún motivo no tengas conexión a internet pero quieres <strong>guardar tus cambios en el repositorio local</strong> que acompaña a tu copia de trabajo, puedes hacerlo con <code>bzr commit  --local</code>. La próxima vez que hagas un commit, se enviarán todos los  cambios al repositorio central. Esto no funciona en un checkout &#8220;liviano&#8221;.</li>
+<li>Para <strong>bajar cambios desde el repositorio</strong>: <code>bzr update</code></li>
+</ol>
+</li>
+</ol>
+<h3>A partir de una copia de trabajo local</h3>
+<p>En caso de que ya hubiésemos comenzado a trabajar en un proyecto de forma local y queremos crear un repositorio centralizado donde otros puedan colaborar, los pasos a seguir serían:</p>
+<ol>
+<li>Inicializar un repositorio local</li>
+<li>Empujar la rama a un servidor</li>
+<li>Ligar la copia local al repositorio remoto</li>
+</ol>
+<p>Lo que se puede implementar del siguiente modo:</p>
+<ol>
+<li>En el directorio donde está nuestro proyecto, <strong>inicializar un repositorio</strong> con bzr init</li>
+<li><strong>Agregar los archivos del proyecto</strong> con <code>bzr add</code></li>
+<li>Realizar el <strong>primer commit al repositorio</strong> con <code>bzr commit</code></li>
+<li><strong>Empujar el repositorio al servidor:</strong> <code>bzr push bzr+ssh://miservidor.com/var/bzr/miproyecto.com</code></li>
+<li><strong>Convertir la copia de trabajo local en un checkout:</strong> <code>bzr bind bzr+ssh://miservidor.com/var/bzr/miproyecto.com</code></li>
+<li>En adelante, los cambios a la copia de trabajo local se <em>enviarán</em> al servidor con <code>bzr commit</code> y se pueden <em>obtener</em> los cambios con <code>bzr update</code></li>
+</ol>
+<p>Luego, los otros miembros de tu equipo pueden obtener su copia de trabajo según los pasos indicados anteriormente.</p>
+<h3>Referencias</h3>
+<p>Como se puede ver, Bazaar es tan sencillo como flexible. A partir de las configuraciones básicas es posible idear múltiples formas de trabajo que potencien la colaboración de los equipos de desarrollo. Como siempre, la documentación oficial siempre ofrece un buen punto de partida para comenzar a conocer el sistema, en especial la <a title="Bazaar User Guide" href="http://doc.bazaar.canonical.com/latest/en/user-guide/index.html">guía para usuarios</a> que está bastante amplia.</p>
+<p>Espero que esta breve guía haya servido para considerar Bazaar como una buena opción para el control de versiones.</p>
+
+	<p class="tags">Tags: <a href="http://www.yukei.net/tag/bazaar/" title="bazaar" rel="tag">bazaar</a>, <a href="http://www.yukei.net/tag/control-de-versiones/" title="control de versiones" rel="tag">control de versiones</a>, <a href="http://www.yukei.net/tag/open-source/" title="Open Source" rel="tag">Open Source</a>, <a href="http://www.yukei.net/tag/programacion/" title="programación" rel="tag">programación</a></p>
+
+	<h4>Related posts</h4>
+	<ul class="st-related-posts">
+	<li><a href="http://www.yukei.net/2009/08/komodo-edit-editor-de-codigo-multiplataforma/" title="Komodo Edit, editor de código multiplataforma (16 agosto, 2009)">Komodo Edit, editor de código multiplataforma</a> (4)</li>
+	<li><a href="http://www.yukei.net/2011/07/actualizar-komodo-edit-en-ubuntu/" title="Actualizar Komodo Edit en Ubuntu (15 julio, 2011)">Actualizar Komodo Edit en Ubuntu</a> (0)</li>
+	<li><a href="http://www.yukei.net/2007/01/y-tenemos-wordpress-21/" title="Y tenemos WordPress 2.1 (26 enero, 2007)">Y tenemos WordPress 2.1</a> (2)</li>
+	<li><a href="http://www.yukei.net/2006/08/xubuntu-vii-sintesis-y-evaluacion-final/" title="Xubuntu (VII): Síntesis y evaluación final (1 agosto, 2006)">Xubuntu (VII): Síntesis y evaluación final</a> (27)</li>
+	<li><a href="http://www.yukei.net/2007/01/wordpress-y-habari/" title="WordPress y Habari (31 enero, 2007)">WordPress y Habari</a> (27)</li>
+</ul>
+
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/yukei?a=mjzLNKDDGzY:xSQkl3hZdE4:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/yukei?i=mjzLNKDDGzY:xSQkl3hZdE4:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=mjzLNKDDGzY:xSQkl3hZdE4:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/yukei?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=mjzLNKDDGzY:xSQkl3hZdE4:YwkR-u9nhCs"><img src="http://feeds.feedburner.com/~ff/yukei?d=YwkR-u9nhCs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=mjzLNKDDGzY:xSQkl3hZdE4:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/yukei?i=mjzLNKDDGzY:xSQkl3hZdE4:F7zBnMyn0Lo" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/yukei/~4/mjzLNKDDGzY" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.yukei.net/2011/03/control-de-versiones-centralizado-con-bazaar/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.yukei.net/2011/03/control-de-versiones-centralizado-con-bazaar/</feedburner:origLink></item>
+		<item>
+		<title>La des/ilusión de la red</title>
+		<link>http://feedproxy.google.com/~r/yukei/~3/Kgrem07oeTg/</link>
+		<comments>http://www.yukei.net/2011/03/la-desilusion-de-la-red/#comments</comments>
+		<pubDate>Sat, 12 Mar 2011 03:44:57 +0000</pubDate>
+		<dc:creator>Felipe Lavín Z.</dc:creator>
+				<category><![CDATA[Estrategia]]></category>
+		<category><![CDATA[Internet]]></category>
+		<category><![CDATA[Tecnología]]></category>
+		<category><![CDATA[análisis]]></category>
+		<category><![CDATA[crítica]]></category>
+		<category><![CDATA[política]]></category>
+
+		<guid isPermaLink="false">http://www.yukei.net/?p=1288</guid>
+		<description>Hace algunos posts (lo que en la práctica significa hace unos buenos meses atrás) publiqué sobre Evgeny Morozov y su charla en TED sobre cómo la red ayuda a las dictaduras. Este bielorruso es un ácido crítico de la idea de la red como facilitadora de la democracia o como herramienta que potencie el activismo. [...]</description>
+			<content:encoded><![CDATA[<p><img class="alignright" title="The Net Delusion" src="http://static.yukei.net/wp-content/uploads/2011/03/net-delusion-morozov-120x120.jpg" alt="" width="120" height="120" />Hace algunos posts (lo que en la práctica significa hace unos buenos meses atrás) publiqué sobre <strong>Evgeny Morozov</strong> y su charla en TED sobre <a title="Evgeny Morozov: Cómo la red ayuda a las dictaduras" href="http://www.yukei.net/2010/07/evgeny-morozov-como-la-red-ayuda-a-las-dictaduras/">cómo la red ayuda a las dictaduras</a>. Este bielorruso es un ácido <em>crítico de la idea de la red como facilitadora de la democracia</em> o como herramienta que potencie el activismo. A principios de este año publicó un libro llamado <strong>The Net Delusion: the dark side of internet freedom</strong> dedicado completamente a este tema.</p>
+<p>En el otro rincón, tenemos a <strong>Cory Doctorow</strong>, un &#8220;autor de ciencia ficción, activista, periodista y blogger&#8221; que entre otras cosas es co-editor de <a href="http://boingboing.net/">Boing Boing</a> y que ha realizado un comentario muy interesante y profundo de los argumentos que Morozov plantea en su libro, concediéndole la razón en muchas oportunidades pero también haciendo una lectura crítica y que en muchos casos complementa o derechamente desarticula lo planteado en el libro.</p>
+<p><span id="more-1288"></span></p>
+<p>Su revisión se titula <a title="We need a serious critique of net activism en The Guardian" href="http://www.guardian.co.uk/technology/2011/jan/25/net-activism-delusion">We need a serious critique of net activism</a>, y abarca temas que van desde el rol de Twitter y Facebook en las elecciones de Irán, el cypherpunk como medida de resistencia ante los poderes gubernamentales, el rastreo de usuarios por las redes de publicidad, la calidad y relevancia de los contenidos en la red, la coordinación de activistas a través de la red, etc.</p>
+<p>Me resultó especialmente interesante el análisis planteado en relación al <em><a title="Cypherpunk en Wikipedia en inglés" href="http://en.wikipedia.org/wiki/Cypherpunk">cypherpunk</a> como un movimiento con motivaciones políticas</em> (o tecnopolíticas si se quiere) tan claras en torno a la idea de la promoción del uso de herramientas criptográficas. Como bien afirma Doctorow, el hecho de que sea muchísimo más simple encriptar un mensaje que romper su clave de cifrado para acceder a éste implica <em>contar con un importante contrapeso en la balanza del poder</em>. En palabras de Doctorow:</p>
+<blockquote><p>Practically speaking, this means that poorly resourced individuals and groups with cheap, old computers are able to encipher their messages to an extent that they cannot be deciphered by all the secret police in the world, even if they employ every computer ever built in a gigantic, decades-long project to force the locks off the intercepted message. In this sense, at least, <strong>the technological deck is stacked in favour of dissidents</strong> – who have never before enjoyed the power to hide their communiques beyond the reach of secret police – over the state, who have always enjoyed the power to keep secrets from the people.</p></blockquote>
+<p>Vale la pena leer el artículo completo para poder conocer y tener al menos una visión general de varias cuestiones relacionadas con el rol que internet está tomando en el mundo actual.</p>
+<p>Y ya que estamos en el tema, aprovecho de apuntar a un artículo que a estas alturas ya es como un clásico de la crítica al cyber-utopismo: <a title="Twitter, Facebok, and social activism - The New Yorker" href="http://www.newyorker.com/reporting/2010/10/04/101004fa_fact_gladwell">Small change. Why the revolution will not be tweeted</a>, de Malcom Gladwell en The New Yorker.</p>
+
+	<p class="tags">Tags: <a href="http://www.yukei.net/tag/analisis/" title="análisis" rel="tag">análisis</a>, <a href="http://www.yukei.net/tag/critica/" title="crítica" rel="tag">crítica</a>, <a href="http://www.yukei.net/tag/internet/" title="Internet" rel="tag">Internet</a>, <a href="http://www.yukei.net/tag/politica/" title="política" rel="tag">política</a></p>
+
+	<h4>Related posts</h4>
+	<ul class="st-related-posts">
+	<li><a href="http://www.yukei.net/2010/07/evgeny-morozov-como-la-red-ayuda-a-las-dictaduras/" title="Evgeny Morozov: Cómo la red ayuda a las dictaduras (1 julio, 2010)">Evgeny Morozov: Cómo la red ayuda a las dictaduras</a> (2)</li>
+	<li><a href="http://www.yukei.net/2008/02/analisis-patrocinado-tiendas-virtuales-de-laprimeranet/" title="[Análisis patrocinado] Tiendas Virtuales de laprimera.net (11 febrero, 2008)">[Análisis patrocinado] Tiendas Virtuales de laprimera.net</a> (0)</li>
+	<li><a href="http://www.yukei.net/2005/11/comentario-a-google-analytics-arrugo/" title="Comentario a Google Analytics Arrugó (22 noviembre, 2005)">Comentario a Google Analytics Arrugó</a> (8)</li>
+	<li><a href="http://www.yukei.net/2006/05/youtube-al-limite/" title="YouTube al límite (4 mayo, 2006)">YouTube al límite</a> (0)</li>
+	<li><a href="http://www.yukei.net/2006/07/xubuntu-iv-compartir-internet/" title="Xubuntu (IV): Compartir Internet (25 julio, 2006)">Xubuntu (IV): Compartir Internet</a> (2)</li>
+</ul>
+
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/yukei?a=Kgrem07oeTg:TqWniWT_DuA:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/yukei?i=Kgrem07oeTg:TqWniWT_DuA:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=Kgrem07oeTg:TqWniWT_DuA:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/yukei?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=Kgrem07oeTg:TqWniWT_DuA:YwkR-u9nhCs"><img src="http://feeds.feedburner.com/~ff/yukei?d=YwkR-u9nhCs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=Kgrem07oeTg:TqWniWT_DuA:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/yukei?i=Kgrem07oeTg:TqWniWT_DuA:F7zBnMyn0Lo" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/yukei/~4/Kgrem07oeTg" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.yukei.net/2011/03/la-desilusion-de-la-red/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.yukei.net/2011/03/la-desilusion-de-la-red/</feedburner:origLink></item>
+		<item>
+		<title>Tu memoria en la nube</title>
+		<link>http://feedproxy.google.com/~r/yukei/~3/PaUkSwcetfI/</link>
+		<comments>http://www.yukei.net/2011/01/tu-memoria-en-la-nube/#comments</comments>
+		<pubDate>Fri, 21 Jan 2011 14:30:13 +0000</pubDate>
+		<dc:creator>Felipe Lavín Z.</dc:creator>
+				<category><![CDATA[Tecnología]]></category>
+		<category><![CDATA[aplicaciones-web]]></category>
+		<category><![CDATA[cloud-computing]]></category>
+		<category><![CDATA[derechos-digitales]]></category>
+		<category><![CDATA[información]]></category>
+		<category><![CDATA[portabilidad de datos]]></category>
+
+		<guid isPermaLink="false">http://www.yukei.net/?p=1269</guid>
+		<description>Concuerdo con Robert Cringely cuando afirma que si este va a ser el año de la consagración de la cloud computing, probablemente también será el año en que nos va a decepcionar. No se trata de hacer profecías apocalípticas ni ser especialmente pesimista, sino quizás más bien a una consecuencia natural del hype en torno [...]</description>
+			<content:encoded><![CDATA[<p>Concuerdo con <em>Robert Cringely</em> cuando afirma que si este va a ser el año de la consagración de la <dfn title="computación en nube">cloud computing</dfn>, probablemente también será <a href="http://www.cringely.com/2011/01/2011-prediction-8-cloudburst/" title="I, Cringely » Blog Archive » 2011 prediction #8: Cloudburst - Cringely on technology">el año en que nos va a decepcionar</a>. No se trata de hacer profecías apocalípticas ni ser especialmente pesimista, sino quizás más bien a una consecuencia natural del <em>hype</em> en torno a la cloud computing, ya que siempre es difícil vivir a la altura de expectativas irreales —ya sea por su desconocimiento o por lo infladas que han sido como discurso de venta&#8230; y al hablar de cloud computing, creo no equivocarme al plantear que de forma importante estas expectativas tienen especial relación con <strong>la conservación de nuestra memoria</strong>.</p>
+<p><span id="more-1269"></span></p>
+<p>Esto resulta especialmente gráfico al ver la forma en que Google piensa el futuro de su sistema operativo y nuestra relación con lo digital:</p>
+<p><iframe title="YouTube video player" class="youtube-player" type="text/html" width="500" height="311" src="http://www.youtube.com/embed/lm-Vnx58UYo?rel=0" frameborder="0"></iframe></p>
+<p>¿Por qué me parece una expectativa desmedida? Porque hasta ahora, ningún medio para almacenar o distribuir información nos ha sido 100% fiel; siempre hemos estado a merced del paso del tiempo y otros tipos de deterioro físico: vinilos, cassettes, papel, discos ópticos, discos duros, diskettes, etc&#8230; ninguno resulta 100% confiable, y sin embargo ahora esperamos que nuestros datos en la nube estén seguros y a salvo de pérdidas.</p>
+<p>Ciertamente existe un factor tecnológico que nos permite esperar más —después de todo, el punto fuerte de la nube es que en tanto sus capacidades están distribuidas en múltiples máquinas no existe un único punto de fallo— pero sin siquiera considerar factores externos (por ejemplo, que muchas webapps son producidas por startups que nunca logran mantenerse económicamente, con lo que están destinadas a morir tarde o temprano) el expediente de las aplicaciones que viven en la nube no resulta especialmente esperanzador: basta recordar <a href="http://blog.evernote.com/2010/08/09/july1/" title="Evernote’s July 1st Server Problem « Evernote Blogcast">la pérdida de datos que afectó a Evernote</a> en Julio pasado, o antes de eso lo ocurrido con <a href="http://www.appleinsider.com/articles/09/10/11/microsofts_danger_sidekick_data_loss_casts_dark_on_cloud_computing.html" title="AppleInsider | Microsoft's Danger Sidekick data loss casts dark on cloud computing">los teléfonos Sidekick</a>&#8230; para qué hablar de las <a href="http://www.securecomputing.net.au/News/221419,100-million-facebook-accounts-exposed.aspx" title="100 million Facebook accounts exposed &gt; Social Networking &gt; Vulnerabilities &amp; Exploits &gt; News &gt; SC Magazine Australia/NZ">millones de cuentas hackeadas de Facebook</a> (aunque eso es más bien harina de otro costal).</p>
+<p>Pero el punto de fondo no es si se perderán datos o no —puesto que esta alternativa siempre está presente— sino <strong>de quién es la responsabilidad</strong> cuando suceda, y es por eso que tener la posibilidad de exportar o descargar tus datos de un servicio es fundamental, tanto como la importancia de <a href="http://www.dataportability.org/" title="DataPortability.org - Share and remix data using open standards">poder llevarte tus datos a donde te de la gana</a> y de recordar que <strong>tu información es tuya</strong> y debes poder decidir qué haces o no con ella&#8230; y si te preocuparás de respaldar porque te preocupa que meteorito caiga sobre la nube de Amazon y se borren tus archivos de Basecamp o lo que sea.</p>
+
+	<p class="tags">Tags: <a href="http://www.yukei.net/tag/aplicaciones-web/" title="aplicaciones-web" rel="tag">aplicaciones-web</a>, <a href="http://www.yukei.net/tag/cloud-computing/" title="cloud-computing" rel="tag">cloud-computing</a>, <a href="http://www.yukei.net/tag/derechos-digitales/" title="derechos-digitales" rel="tag">derechos-digitales</a>, <a href="http://www.yukei.net/tag/informacion/" title="información" rel="tag">información</a>, <a href="http://www.yukei.net/tag/portabilidad-de-datos/" title="portabilidad de datos" rel="tag">portabilidad de datos</a></p>
+
+	<h4>Related posts</h4>
+	<ul class="st-related-posts">
+	<li><a href="http://www.yukei.net/2007/11/visualizacion-de-datos/" title="Visualización de datos (14 noviembre, 2007)">Visualización de datos</a> (2)</li>
+	<li><a href="http://www.yukei.net/2008/02/visualzeus-marcadores-sociales-visuales/" title="vi.sualze.us, marcadores sociales visuales (24 febrero, 2008)">vi.sualze.us, marcadores sociales visuales</a> (1)</li>
+	<li><a href="http://www.yukei.net/2008/12/tareas/" title="Tareas (10 diciembre, 2008)">Tareas</a> (1)</li>
+	<li><a href="http://www.yukei.net/2007/02/subscripciones-a-comentarios-v-comments/" title="Subscripciones a Comentarios (V) &#8211; co.mments (27 febrero, 2007)">Subscripciones a Comentarios (V) &#8211; co.mments</a> (0)</li>
+	<li><a href="http://www.yukei.net/2004/02/sin-querer-queriendo/" title="Sin querer queriendo (23 febrero, 2004)">Sin querer queriendo</a> (0)</li>
+</ul>
+
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/yukei?a=PaUkSwcetfI:8M-VexhTv1s:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/yukei?i=PaUkSwcetfI:8M-VexhTv1s:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=PaUkSwcetfI:8M-VexhTv1s:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/yukei?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=PaUkSwcetfI:8M-VexhTv1s:YwkR-u9nhCs"><img src="http://feeds.feedburner.com/~ff/yukei?d=YwkR-u9nhCs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/yukei?a=PaUkSwcetfI:8M-VexhTv1s:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/yukei?i=PaUkSwcetfI:8M-VexhTv1s:F7zBnMyn0Lo" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/yukei/~4/PaUkSwcetfI" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.yukei.net/2011/01/tu-memoria-en-la-nube/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://www.yukei.net/2011/01/tu-memoria-en-la-nube/</feedburner:origLink></item>
+	</channel>
+</rss><!-- Served from: www.yukei.net @ 2011-09-25 04:26:09 by W3 Total Cache -->

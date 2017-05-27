@@ -1,0 +1,6 @@
+<div id="error" class="error"><strong>ERROR:</strong> Invalid feed URL.
+<br /><br />
+<form action="#">
+<input type="button" value="Back" onClick="history.back()" />
+</form>
+</div>

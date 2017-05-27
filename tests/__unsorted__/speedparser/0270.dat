@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="http://creativecss.co.uk"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>creativecss</title>
+ <link>http://creativecss.co.uk</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Google maps KML not playing nice</title>
+ <link>http://creativecss.co.uk/blog/google-maps-kml-zooming</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;
+	If you have or are planning on using custom layers of data in KML files over a Google map then you may want to note this down.&lt;/p&gt;
+&lt;p&gt;
+	By default the layer will recalculate the centre of the map and the zoom level based on the data in the KML. For me on a recent project this was an issue as the user was placing a marker to centre the map, setting a zoom level per map and adding a KML file to each map. But if their KML file only included data for 1 half of their reserve then  the user would be presented with a map defaulting to showing half of the location rather then the optimal zoom level set in the CMS.&lt;/p&gt;
+&lt;p&gt;
+	The solution is about as simple as they come.&lt;/p&gt;
+&lt;p&gt;
+	When setting the custom KML file pass this setting after the filename to force it to show some respect for your existing map configuration.&lt;/p&gt;
+&lt;pre&gt;
+var customKML = new google.maps.KmlLayer(&#039;my-kml-file.kml&#039;, {preserveViewport:true});
+&lt;/pre&gt;&lt;p&gt;
+	 &lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-tags field-type-taxonomy-term-reference field-label-above clearfix&quot;&gt;&lt;h3 class=&quot;field-label&quot;&gt;Tags: &lt;/h3&gt;&lt;ul class=&quot;links&quot;&gt;&lt;li class=&quot;taxonomy-term-reference-0&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/google-maps&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;google maps&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-1&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/development&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;development&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-2&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/javascript&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;javascript&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+ <pubDate>Tue, 16 Aug 2011 15:12:43 +0000</pubDate>
+ <dc:creator>adam</dc:creator>
+ <guid isPermaLink="false">15 at http://creativecss.co.uk</guid>
+ <comments>http://creativecss.co.uk/blog/google-maps-kml-zooming#comments</comments>
+</item>
+<item>
+ <title>Theming CCK Fieldgroups in Drupal 6</title>
+ <link>http://creativecss.co.uk/blog/cck-fieldgroups-drupal6</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;
+	If you ever have any trouble theming fieldgroups in Drupal 6 here is a list of steps to take to get it working&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;
+		Copy fieldgroup-simple.tpl.php from /$your-module-path/cck/fieldgroup/fieldgroup-simple.tpl.php to /$your-theme-path/fieldgroup-simple.tpl.php&lt;/li&gt;
+&lt;li&gt;
+		Edit the display of your content type (admin/content/node-type/$node-type-name/display)&lt;/li&gt;
+&lt;li&gt;
+		Check that the fieldgroups you want to theme are set to simple and not fieldseT&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;
+	From here on all fieldgroups set to simple display will use this file as its template, if however you want a more specific template for a certain fieldgroup you can now duplicate your fieldgroup-simple.tpl.php and use the following pattern.&lt;/p&gt;
+&lt;p&gt;
+	fieldgroup-simple-group_my_fields.tpl.php where group_my_fields is the machine name of my fieldgroup&lt;/p&gt;
+&lt;p&gt;
+	More details of the naming conventions can be found in the modules &lt;a href=&quot;http://drupalcontrib.org/api/drupal/contributions--cck--modules--fieldgroup--fieldgroup.module/function/template_preprocess_fieldgroup_simple/6&quot;&gt;template preprocess&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-tags field-type-taxonomy-term-reference field-label-above clearfix&quot;&gt;&lt;h3 class=&quot;field-label&quot;&gt;Tags: &lt;/h3&gt;&lt;ul class=&quot;links&quot;&gt;&lt;li class=&quot;taxonomy-term-reference-0&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/drupal-6&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;drupal 6&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-1&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/cck&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;cck&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-2&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/fieldgroups&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;fieldgroups&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-3&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/theming&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;theming&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+ <pubDate>Sun, 07 Aug 2011 09:49:14 +0000</pubDate>
+ <dc:creator>adam</dc:creator>
+ <guid isPermaLink="false">14 at http://creativecss.co.uk</guid>
+ <comments>http://creativecss.co.uk/blog/cck-fieldgroups-drupal6#comments</comments>
+</item>
+<item>
+ <title>Git aliases</title>
+ <link>http://creativecss.co.uk/content/git-aliases</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;Some good short alaises to use for GIT commands.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-url field-type-link-field field-label-above&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;URL:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;http://www.catonmat.net/blog/git-aliases&quot; rel=&quot;nofollow&quot;&gt;http://www.catonmat.net/blog/git-aliases&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-tags field-type-taxonomy-term-reference field-label-above clearfix&quot;&gt;&lt;h3 class=&quot;field-label&quot;&gt;Tags: &lt;/h3&gt;&lt;ul class=&quot;links&quot;&gt;&lt;li class=&quot;taxonomy-term-reference-0&quot;&gt;&lt;a href=&quot;/tags/git&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;git&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-1&quot;&gt;&lt;a href=&quot;/tags/version-control&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;version control&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-2&quot;&gt;&lt;a href=&quot;/tags/aliases&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;aliases&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+ <pubDate>Fri, 03 Jun 2011 10:07:03 +0000</pubDate>
+ <dc:creator>adam</dc:creator>
+ <guid isPermaLink="false">13 at http://creativecss.co.uk</guid>
+ <comments>http://creativecss.co.uk/content/git-aliases#comments</comments>
+</item>
+<item>
+ <title>Drupal term insert sql</title>
+ <link>http://creativecss.co.uk/content/drupal-term-insert-sql</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;Recently having needed to add the same term to different drupal sites this is the sql I used.&lt;/p&gt;
+&lt;p&gt;	There are two values that you need to change.&lt;/p&gt;
+&lt;p&gt;	The first is the &quot;2&quot; which is the vocabulary ID and the second is &quot;Open Day&quot; which is the name of the term.&lt;/p&gt;
+&lt;p&gt;	You could also choose to add a description with the term.&lt;/p&gt;
+&lt;p&gt;	What caught me out at first was I forgot to add a record for the term to the &quot;term_hierarchy&quot; table which stops the term from displaying.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-code field-type-text-long field-label-above&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Code:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;INSERT INTO `term_data` (`vid`, `name`) VALUES (2, &amp;#039;Open Day&amp;#039;);
+INSERT INTO `term_hierarchy` (`tid`) VALUES ((SELECT LAST_INSERT_ID()));&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-tags field-type-taxonomy-term-reference field-label-above clearfix&quot;&gt;&lt;h3 class=&quot;field-label&quot;&gt;Tags: &lt;/h3&gt;&lt;ul class=&quot;links&quot;&gt;&lt;li class=&quot;taxonomy-term-reference-0&quot;&gt;&lt;a href=&quot;/tags/drupal&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;drupal&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+ <pubDate>Fri, 03 Jun 2011 09:20:55 +0000</pubDate>
+ <dc:creator>adam</dc:creator>
+ <guid isPermaLink="false">12 at http://creativecss.co.uk</guid>
+ <comments>http://creativecss.co.uk/content/drupal-term-insert-sql#comments</comments>
+</item>
+<item>
+ <title>My project management system</title>
+ <link>http://creativecss.co.uk/blog/my-project-management-system</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;I have used Basecamp for a few years now and even though it does the job there are several things that let it down for me.&lt;/p&gt;
+&lt;p&gt;	My problems with Basecamp&lt;/p&gt;
+&lt;p&gt;	The one thing that sits right at the top of my wish list is a decent bug/issue tracker and the main existing feature that I feel needs a revamp is the search. It just doesn&#039;t do a very good job, if you have used Basecamp I am sure you know where I am coming from on this one. Main problem is having to go into a project, then clicking the search link in order to start my search.&lt;/p&gt;
+&lt;p&gt;	These issues have prompted me to build my own project management server/site. Being a PHP developer and having used Drupal a lot I think it will do the job, as it can take care of the basics such as users, types of content etc and allow me to focus on the workings of the rest of the service. I am currently weighing up the pros and cons between using a standard drupal install (probably D7) or &lt;a href=&quot;http://openatrium.com&quot;&gt;Open Atrium&lt;/a&gt; (a Drupal 6 install profile that is basicly an intranet in a box).&lt;/p&gt;
+&lt;p&gt;	So how can you help?&lt;/p&gt;
+&lt;p&gt;	Email me the features you think that you want from a project management tool. Calender, mobile version etc&lt;/p&gt;
+&lt;p&gt;	Send all ideas to &lt;a href=&quot;mailto:project@creativecss.co.uk?subject=Project%20management%20tool%20ideas&quot;&gt;project@creativecss.co.uk&lt;/a&gt; and I will make a follow up post detailing all the ideas that I recieved.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-tags field-type-taxonomy-term-reference field-label-above clearfix&quot;&gt;&lt;h3 class=&quot;field-label&quot;&gt;Tags: &lt;/h3&gt;&lt;ul class=&quot;links&quot;&gt;&lt;li class=&quot;taxonomy-term-reference-0&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/project-management&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;project management&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-1&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/project&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;project&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-2&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/drupal&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;drupal&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+ <pubDate>Wed, 16 Mar 2011 11:13:41 +0000</pubDate>
+ <dc:creator>adam</dc:creator>
+ <guid isPermaLink="false">9 at http://creativecss.co.uk</guid>
+</item>
+<item>
+ <title>What is Drupal?</title>
+ <link>http://creativecss.co.uk/blog/what-is-drupal</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;So recently &lt;a href=&quot;http://buytaert.net/help-needed-what-is-drupal#comment-34981&quot;&gt;Dries Buytaert&lt;/a&gt; (Drupal founder) asked the community &quot;What is Drupal?&quot; and wanted short replies to feature in his DrupalCon keynote at &lt;a href=&quot;http://chicago2011.drupal.org/&quot;&gt;Chicago&lt;/a&gt;.&lt;br /&gt;
+Having spent the last 3 years working with Drupal from version 5 to 6 and now starting to get stuck in with 7 I thought I would have a go at putting down what I think Drupal is. So I put down the following from my experiance as a developer&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Drupal is the Swiss army Knife of content management systems. Lots of sharp edges to hurt yourself on but lots of uses and great once you know how to use it.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;For those developers that have not worked with Drupal the part about hurting yourself due to the learning curve is sadly true, however I don&#039;t regret learning drupal and feel that going through the learning curve was worth it.&lt;br /&gt;
+I then got an email from Dries asking to feature my quote during his keynote, which was a shock as there have been (at the time of writing this post) 256 comments, so I managed to be one of the lucky few. Sadly I won&#039;t be at DrupalCon Chicago however I will be at London later in the year so hope to see some great talks then.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-tags field-type-taxonomy-term-reference field-label-above clearfix&quot;&gt;&lt;h3 class=&quot;field-label&quot;&gt;Tags: &lt;/h3&gt;&lt;ul class=&quot;links&quot;&gt;&lt;li class=&quot;taxonomy-term-reference-0&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/drupal&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;drupal&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-1&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/drupalcon&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;drupalcon&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+ <pubDate>Fri, 04 Mar 2011 17:24:39 +0000</pubDate>
+ <dc:creator>adam</dc:creator>
+ <guid isPermaLink="false">5 at http://creativecss.co.uk</guid>
+</item>
+<item>
+ <title>Thoughts on Drupal App Store</title>
+ <link>http://creativecss.co.uk/blog/drupal-app-store</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;So if you work with Drupal you may have heard about the idea of a Drupal app store, there are various views on in so thought I might put my idea down so here it goes.&lt;/p&gt;
+&lt;h3&gt;Who would benefit&lt;/h3&gt;
+&lt;p&gt;Its clear from other App stores, such as the Apple App Store and Android Market, that people are willing to pay for applications and that they are getting used to it.&lt;/p&gt;
+&lt;p&gt;So there is the chance for Developers to make some extra money. But this will depend on the price of apps, for example paying £1 for the &lt;a href=&quot;http://drupal.org/project/views&quot;&gt;views module&lt;/a&gt; would earn a lot of money for &lt;a href=&quot;http://drupal.org/user/26979&quot;&gt;merlinofchaos&lt;/a&gt; as views has a reported 269743 active sites using it (at the time of writing this post) and there are other modules with similar stats but there are many with much lower numbers.&lt;/p&gt;
+&lt;h3&gt;What are the problems I see&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; The first issue that came to mind is that this could encourage developers to build and release their own versions of modules that are already released in the community just to try and get some money for it. Its not like this is new, the Apple App Store and Android Market are both full of countless fart machines. Now the good thing with this is that a user has choice but it also means the amount of time spent going through all the apps to find the one that fits your needs is time consuming. I know if I am faced with 20 apps for my Android phone that I will only install 3-5 max then end up settling for the one that does the best job and this is for free apps. How many people would pay for an app then download it only to find out that its useless then have to start the process again by paying for a different app.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; Blocking the young newcomers to Drupal. Reflecting back on my student days the one activity I used to do was try new applications (content management sytems included), I started with wordpress and downloaded it and countless plugins. Now if I put myself back in that position but this time I had to pay for some of the plugins I downloaded then I can say that I would have downloaded a lot less modules, as there is no way I would pay money (even if it is a few pounds) for something just to try it out. This could be a major block for getting more people into Drupal, not just students. The only way I can think to overcome this would be creating student accounts however as soon you consider how on earth the account would be managed you realise it will never happen.&lt;/p&gt;
+&lt;h3&gt;Summary&lt;/h3&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;More clutter&lt;/strong&gt; as people strive to make a quick buck.&lt;/li&gt;
+&lt;li&gt;New people start contributing for the &lt;strong&gt;wrong reasons&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Potential to &lt;strong&gt;stop new people&lt;/strong&gt; coming to Drupal&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;So as you might be able to tell from the above that I am not a fan of the idea, even if I could make some money from it as I think it will do more harm to the Drupal project than its worth.&lt;/p&gt;
+&lt;p&gt;These are my opinions, what are yours? Leave a comment below.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-tags field-type-taxonomy-term-reference field-label-above clearfix&quot;&gt;&lt;h3 class=&quot;field-label&quot;&gt;Tags: &lt;/h3&gt;&lt;ul class=&quot;links&quot;&gt;&lt;li class=&quot;taxonomy-term-reference-0&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/drupal&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;drupal&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-1&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/drupal-app-store&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;drupal app store&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+ <pubDate>Thu, 27 Jan 2011 11:30:24 +0000</pubDate>
+ <dc:creator>adam</dc:creator>
+ <guid isPermaLink="false">4 at http://creativecss.co.uk</guid>
+ <comments>http://creativecss.co.uk/blog/drupal-app-store#comments</comments>
+</item>
+<item>
+ <title>Drupal 7 so far</title>
+ <link>http://creativecss.co.uk/blog/drupal-7-thoughts</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;So far I have found Drupal 7 very easy to install, e.g. no messing about with renaming default.settings.php.&lt;/p&gt;
+&lt;p&gt;The last year has been an interesting time for Drupal, first drupal.org was redesigned and I can&#039;t mention this without putting the credit to Mark Boulton, Leisa Reichelt and everyone else behind it. New site so much easier to use and looks so much nicer. My two favourite features of the new site are the dashboard I get if I am logged in, which makes keeping up to date with my recent activity a lot easier. My second favourite feature is the fixed width, I don&#039;t know what it is but a website with a 100% fluid width just drives me mad (this may just be because I have a 22&quot; monitor at work).&lt;/p&gt;
+&lt;p&gt;If you have worked with Drupal 7 you may of noticed that this site is now running on it. You might also notice that I haven&#039;t added much as I am still getting started with it but I will be updating the site as I go.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-tags field-type-taxonomy-term-reference field-label-above clearfix&quot;&gt;&lt;h3 class=&quot;field-label&quot;&gt;Tags: &lt;/h3&gt;&lt;ul class=&quot;links&quot;&gt;&lt;li class=&quot;taxonomy-term-reference-0&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/drupal&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;drupal&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-1&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/d7&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;d7&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;taxonomy-term-reference-2&quot; rel=&quot;dc:subject&quot;&gt;&lt;a href=&quot;/tags/mysite&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot;&gt;mysite&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+ <pubDate>Wed, 19 Jan 2011 22:26:47 +0000</pubDate>
+ <dc:creator>adam</dc:creator>
+ <guid isPermaLink="false">2 at http://creativecss.co.uk</guid>
+ <comments>http://creativecss.co.uk/blog/drupal-7-thoughts#comments</comments>
+</item>
+</channel>
+</rss>

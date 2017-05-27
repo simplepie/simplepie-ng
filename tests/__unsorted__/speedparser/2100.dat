@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:syn="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/">
+  <channel rdf:about="http://pinboard.in">
+    <title>Pinboard (dfannin)</title>
+    <link>http://pinboard.in/u:dfannin</link>
+    <description>recent bookmarks from dfannin</description>
+    <items>
+      <rdf:Seq>	<rdf:li rdf:resource="http://jashkenas.github.com/coffee-script/"/>
+	<rdf:li rdf:resource="http://jqfundamentals.com/book/index.html"/>
+	<rdf:li rdf:resource="http://www.ioncannon.net/system-administration/59/php-rrdtool-tutorial/"/>
+	<rdf:li rdf:resource="http://www.jeffreymorgenthaler.com/2007/how-to-make-your-own-gin-without-a-still/"/>
+	<rdf:li rdf:resource="http://toys.lerdorf.com/archives/57-ZeroMQ-+-libevent-in-PHP.html"/>
+	<rdf:li rdf:resource="http://keeprecipes.com/"/>
+	<rdf:li rdf:resource="http://www.ibm.com/developerworks/library/l-neural/"/>
+	<rdf:li rdf:resource="http://nvie.com/posts/a-successful-git-branching-model/"/>
+	<rdf:li rdf:resource="http://www.openflow.org/"/>
+	<rdf:li rdf:resource="http://www.dol.gov/ebsa/publications/nearretirement.html"/>
+	<rdf:li rdf:resource="http://www.amazon.com/dp/B001LFDABO/ref=r_ea_s_t"/>
+	<rdf:li rdf:resource="http://code.google.com/p/devops-toolchain/"/>
+	<rdf:li rdf:resource="http://en.wikipedia.org/wiki/Build_automation"/>
+	<rdf:li rdf:resource="http://blog.xebialabs.com/2010/11/25/deployment-automation-vs-release-management-automation/"/>
+	<rdf:li rdf:resource="http://www.maestrodev.com/"/>
+	<rdf:li rdf:resource="http://www.itsmwatch.com/itil/article.php/3680776"/>
+	<rdf:li rdf:resource="http://buildmeister.com/articles/software_release_management_best_practices"/>
+	<rdf:li rdf:resource="http://www.linuxjournal.com/content/data-deduplication-linux"/>
+	<rdf:li rdf:resource="http://www.yummly.com/"/>
+	<rdf:li rdf:resource="http://ccr.sigcomm.org/online/?q=node/378"/>
+	<rdf:li rdf:resource="http://code.google.com/googleapps/appsscript/articles/expense_report_approval.html"/>
+	<rdf:li rdf:resource="http://lifehacker.com/5830367/how-to-hack-your-wii-for-homebrew-in-five-minutes"/>
+	<rdf:li rdf:resource="http://www.squidoo.com/a-free-antenna-to-watch-free-hdtv"/>
+	<rdf:li rdf:resource="https://github.com/etsy/deployinator"/>
+	<rdf:li rdf:resource="http://japanesefood.about.com/od/recipeindex/tp/easyjapanese.htm"/>
+	<rdf:li rdf:resource="http://www.52kitchenadventures.com/2011/03/17/smores-cupcakes/"/>
+	<rdf:li rdf:resource="https://bugs.launchpad.net/ubuntu/+source/kickseed/+bug/420903"/>
+	<rdf:li rdf:resource="https://help.ubuntu.com/community/Desktop/PXE"/>
+	<rdf:li rdf:resource="http://www.eecho.info/Echo/multimedia/ubuntu-pxe-install/"/>
+	<rdf:li rdf:resource="https://github.com/TellagoDevLabs/Hermes/"/>
+	<rdf:li rdf:resource="https://github.com/etsy/nagios_tools/"/>
+	<rdf:li rdf:resource="http://leaflet.cloudmade.com/examples/quick-start.html"/>
+	<rdf:li rdf:resource="http://lifehacker.com/5756233/get-more-out-of-your-dd+wrt-router-with-an-external-drive"/>
+	<rdf:li rdf:resource="http://www.carlofet.com/diy-projector-screen-material.html"/>
+	<rdf:li rdf:resource="http://www.wired.com/geekdad/2009/05/lights-cameras-insect-repellent-how-to-build-your-own-outdoor-movie-theater"/>
+	<rdf:li rdf:resource="http://code.google.com/p/svn-hooks/"/>
+	<rdf:li rdf:resource="http://www.ibm.com/developerworks/xml/library/x-matters10/index.html"/>
+	<rdf:li rdf:resource="http://www.prashantraju.com/projects/pentaho/"/>
+	<rdf:li rdf:resource="https://fedorahosted.org/cobbler/"/>
+	<rdf:li rdf:resource="http://www.dnalounge.com/backstage/src/kiosk/#startup"/>
+	<rdf:li rdf:resource="http://www.pchart.net/"/>
+	<rdf:li rdf:resource="http://www.testking.com/techking/roundups/15-websites-where-you-can-find-code-snippets/"/>
+	<rdf:li rdf:resource="http://www.randombugs.com/linux/howto-extend-lvm-partition-online.html"/>
+	<rdf:li rdf:resource="http://chem-eng.utoronto.ca/~datamining/dmc/data_mining_map.htm"/>
+	<rdf:li rdf:resource="http://s3tools.org/s3cmd"/>
+	<rdf:li rdf:resource="http://upload.wikimedia.org/wikipedia/en/b/b4/Sting.ogg"/>
+	<rdf:li rdf:resource="http://www.concerto-signage.com/view/home"/>
+	<rdf:li rdf:resource="http://www.concerto-signage.org/"/>
+	<rdf:li rdf:resource="http://www.cpkb.org/wiki/Main_Page"/>
+	<rdf:li rdf:resource="http://twitter2rss.com/"/>
+      </rdf:Seq>
+    </items>
+  </channel><item rdf:about="http://jashkenas.github.com/coffee-script/">
+    <title>CoffeeScript</title>
+    <dc:date>2011-10-03T15:48:46+00:00</dc:date>
+    <link>http://jashkenas.github.com/coffee-script/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>javascript</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:e7c8efab9ced/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:javascript"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://jqfundamentals.com/book/index.html">
+    <title>jQuery Fundamentals</title>
+    <dc:date>2011-10-02T16:21:30+00:00</dc:date>
+    <link>http://jqfundamentals.com/book/index.html</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>javascript jquery</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:671f808b538e/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:jquery"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.ioncannon.net/system-administration/59/php-rrdtool-tutorial/">
+    <title>PHP RRDTool tutorial</title>
+    <dc:date>2011-10-02T01:01:07+00:00</dc:date>
+    <link>http://www.ioncannon.net/system-administration/59/php-rrdtool-tutorial/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>php monitoring graphs rrd</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:c5963085fc82/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:php"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:monitoring"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:graphs"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:rrd"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.jeffreymorgenthaler.com/2007/how-to-make-your-own-gin-without-a-still/">
+    <title>Jeffrey Morgenthaler » How to Make Your Own Gin Without a Still</title>
+    <dc:date>2011-10-02T00:32:31+00:00</dc:date>
+    <link>http://www.jeffreymorgenthaler.com/2007/how-to-make-your-own-gin-without-a-still/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>gin</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:34d178302672/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:gin"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://toys.lerdorf.com/archives/57-ZeroMQ-+-libevent-in-PHP.html">
+    <title>ZeroMQ + libevent in PHP - Rasmus' Toys Page</title>
+    <dc:date>2011-09-30T03:15:22+00:00</dc:date>
+    <link>http://toys.lerdorf.com/archives/57-ZeroMQ-+-libevent-in-PHP.html</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>php</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:9784eb97de86/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:php"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://keeprecipes.com/">
+    <title>KeepRecipes: Check-in Your Recipes</title>
+    <dc:date>2011-09-21T14:42:17+00:00</dc:date>
+    <link>http://keeprecipes.com/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>recipes</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:086cc0f13ce3/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:recipes"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.ibm.com/developerworks/library/l-neural/">
+    <title>An introduction to neural networks</title>
+    <dc:date>2011-09-17T02:55:47+00:00</dc:date>
+    <link>http://www.ibm.com/developerworks/library/l-neural/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>neuralnetwork</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:0ce398406f28/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:neuralnetwork"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://nvie.com/posts/a-successful-git-branching-model/">
+    <title>A successful Git branching model » nvie.com</title>
+    <dc:date>2011-09-11T18:33:24+00:00</dc:date>
+    <link>http://nvie.com/posts/a-successful-git-branching-model/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>cloudsec</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:b590de6f337f/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:cloudsec"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.openflow.org/">
+    <title>OpenFlow - Enabling Innovation in Your Network</title>
+    <dc:date>2011-09-11T18:16:40+00:00</dc:date>
+    <link>http://www.openflow.org/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>cloudsec</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:a3065b875553/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:cloudsec"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.dol.gov/ebsa/publications/nearretirement.html">
+    <title>Taking The Mystery Out Of Retirement Planning</title>
+    <dc:date>2011-09-10T23:19:06+00:00</dc:date>
+    <link>http://www.dol.gov/ebsa/publications/nearretirement.html</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>retirement</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:9547e847ef80/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:retirement"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.amazon.com/dp/B001LFDABO/ref=r_ea_s_t">
+    <title>Untitled (http://www.amazon.com/dp/B001LFDABO/ref=r_ea_s_t)</title>
+    <dc:date>2011-09-03T04:55:51+00:00</dc:date>
+    <link>http://www.amazon.com/dp/B001LFDABO/ref=r_ea_s_t</link>
+    <dc:creator>dfannin</dc:creator><description><![CDATA[finished Redemption Ark (Revelation Space) by Alastair Reynolds and gave it 4 stars  #Kindle]]></description>
+<dc:subject>Kindle</dc:subject>
+<dc:source>http://twitter.com/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:a8f7113f32ba/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:Kindle"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://code.google.com/p/devops-toolchain/">
+    <title>devops-toolchain - Building a toolchain for improving development to operations methodology - Google Project Hosting</title>
+    <dc:date>2011-08-28T04:49:18+00:00</dc:date>
+    <link>http://code.google.com/p/devops-toolchain/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>agile devops releasemanagement</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:482b4c879c3b/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:agile"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:devops"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:releasemanagement"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://en.wikipedia.org/wiki/Build_automation">
+    <title>Build automation - Wikipedia, the free encyclopedia</title>
+    <dc:date>2011-08-28T00:58:28+00:00</dc:date>
+    <link>http://en.wikipedia.org/wiki/Build_automation</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>releasemanagement</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:1db08b503dfa/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:releasemanagement"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://blog.xebialabs.com/2010/11/25/deployment-automation-vs-release-management-automation/">
+    <title>Deployment automation vs. release management automation | Java Application Deployment Automation with Deployit | XebiaLabs</title>
+    <dc:date>2011-08-28T00:56:19+00:00</dc:date>
+    <link>http://blog.xebialabs.com/2010/11/25/deployment-automation-vs-release-management-automation/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>releasemanagement</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:a0144248ef30/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:releasemanagement"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.maestrodev.com/">
+    <title>MaestroDev | DevOps Tools for Automating Build Software, Release Management, and Continuous Integration</title>
+    <dc:date>2011-08-28T00:55:21+00:00</dc:date>
+    <link>http://www.maestrodev.com/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>releasemanagement</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:b3a3db419254/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:releasemanagement"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.itsmwatch.com/itil/article.php/3680776">
+    <title>ITSM Watch - IT Service Management and ITIL Information News, Advice and Opinion</title>
+    <dc:date>2011-08-28T00:54:24+00:00</dc:date>
+    <link>http://www.itsmwatch.com/itil/article.php/3680776</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>releasemanagement</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:cff33db9dfab/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:releasemanagement"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://buildmeister.com/articles/software_release_management_best_practices">
+    <title>The Buildmeister: Software Release Management Best Practices</title>
+    <dc:date>2011-08-28T00:53:31+00:00</dc:date>
+    <link>http://buildmeister.com/articles/software_release_management_best_practices</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>configurationmanagement releasemanagement</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:2cf642de5676/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:configurationmanagement"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:releasemanagement"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.linuxjournal.com/content/data-deduplication-linux">
+    <title>Data Deduplication with Linux | Linux Journal</title>
+    <dc:date>2011-08-28T00:50:05+00:00</dc:date>
+    <link>http://www.linuxjournal.com/content/data-deduplication-linux</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>linux ubuntu storage</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:cdbc48aa7072/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:linux"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:ubuntu"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:storage"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.yummly.com/">
+    <title>Yummly | The best site for recipes, recommendations, food and cooking</title>
+    <dc:date>2011-08-27T16:25:49+00:00</dc:date>
+    <link>http://www.yummly.com/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>food recipe</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:2d7f602eaf4b/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:food"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:recipe"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://ccr.sigcomm.org/online/?q=node/378">
+    <title>A Scalable, Commodity Data Center Network Architecture | CCR online</title>
+    <dc:date>2011-08-27T02:37:43+00:00</dc:date>
+    <link>http://ccr.sigcomm.org/online/?q=node/378</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>networking datacenter</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:274f68d74efe/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:networking"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:datacenter"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://code.google.com/googleapps/appsscript/articles/expense_report_approval.html">
+    <title>Google Apps Script - Google Apps Script - Google Code</title>
+    <dc:date>2011-08-26T15:39:02+00:00</dc:date>
+    <link>http://code.google.com/googleapps/appsscript/articles/expense_report_approval.html</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>workflow</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:0ceab2590d79/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:workflow"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://lifehacker.com/5830367/how-to-hack-your-wii-for-homebrew-in-five-minutes">
+    <title>How to Hack Your Wii for Homebrew in Five Minutes</title>
+    <dc:date>2011-08-13T14:29:08+00:00</dc:date>
+    <link>http://lifehacker.com/5830367/how-to-hack-your-wii-for-homebrew-in-five-minutes</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>wii</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:58af598d7eed/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:wii"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.squidoo.com/a-free-antenna-to-watch-free-hdtv">
+    <title>A FREE antenna to watch FREE HDTV</title>
+    <dc:date>2011-08-10T14:55:08+00:00</dc:date>
+    <link>http://www.squidoo.com/a-free-antenna-to-watch-free-hdtv</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>diy hdtv</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:4db1674779a0/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:diy"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:hdtv"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="https://github.com/etsy/deployinator">
+    <title>etsy/deployinator - GitHub</title>
+    <dc:date>2011-07-31T15:01:43+00:00</dc:date>
+    <link>https://github.com/etsy/deployinator</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>devops</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:6d3330dff71e/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:devops"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://japanesefood.about.com/od/recipeindex/tp/easyjapanese.htm">
+    <title>Easy Japanese Dishes</title>
+    <dc:date>2011-07-23T20:28:22+00:00</dc:date>
+    <link>http://japanesefood.about.com/od/recipeindex/tp/easyjapanese.htm</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>recipe</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:b57cec11c93c/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:recipe"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.52kitchenadventures.com/2011/03/17/smores-cupcakes/">
+    <title>Homemade S'mores Cupcakes | 52 Kitchen Adventures</title>
+    <dc:date>2011-07-22T05:18:43+00:00</dc:date>
+    <link>http://www.52kitchenadventures.com/2011/03/17/smores-cupcakes/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>recipe</dc:subject>
+<dc:identifier>http://pinboard.in/u:dfannin/b:c7ad999e02c9/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:recipe"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="https://bugs.launchpad.net/ubuntu/+source/kickseed/+bug/420903">
+    <title>Bug #420903 in kickseed (Ubuntu): “Ubuntu Kickstart/Kickseed does not work with dual boot hosts”</title>
+    <dc:date>2011-07-20T08:01:44+00:00</dc:date>
+    <link>https://bugs.launchpad.net/ubuntu/+source/kickseed/+bug/420903</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>pxe</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:25ee2d2095f8/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:pxe"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="https://help.ubuntu.com/community/Desktop/PXE">
+    <title>Desktop/PXE - Community Ubuntu Documentation</title>
+    <dc:date>2011-07-20T07:37:55+00:00</dc:date>
+    <link>https://help.ubuntu.com/community/Desktop/PXE</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>pxe</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:d6a8a13620f1/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:pxe"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.eecho.info/Echo/multimedia/ubuntu-pxe-install/">
+    <title>Ubuntu PXE Install</title>
+    <dc:date>2011-07-20T07:34:57+00:00</dc:date>
+    <link>http://www.eecho.info/Echo/multimedia/ubuntu-pxe-install/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>pxe</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:de5c92f259a9/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:pxe"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="https://github.com/TellagoDevLabs/Hermes/">
+    <title>TellagoDevLabs/Hermes - GitHub</title>
+    <dc:date>2011-07-16T22:24:21+00:00</dc:date>
+    <link>https://github.com/TellagoDevLabs/Hermes/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>xmpp jabber pubsub</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:df533b016db6/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:xmpp"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:jabber"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:pubsub"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="https://github.com/etsy/nagios_tools/">
+    <title>etsy/nagios_tools - GitHub</title>
+    <dc:date>2011-07-13T14:25:01+00:00</dc:date>
+    <link>https://github.com/etsy/nagios_tools/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>nagios graphite</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:6a0ae5d29b05/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:nagios"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:graphite"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://leaflet.cloudmade.com/examples/quick-start.html">
+    <title>Leaflet - a modern, lightweight JavaScript library for interactive maps by CloudMade - Quick Start Guide</title>
+    <dc:date>2011-07-10T02:25:16+00:00</dc:date>
+    <link>http://leaflet.cloudmade.com/examples/quick-start.html</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>maps javascript</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:907b3c437b5d/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:maps"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:javascript"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://lifehacker.com/5756233/get-more-out-of-your-dd+wrt-router-with-an-external-drive">
+    <title>Get More Out of Your DD-WRT Router with an External Drive</title>
+    <dc:date>2011-07-08T00:16:45+00:00</dc:date>
+    <link>http://lifehacker.com/5756233/get-more-out-of-your-dd+wrt-router-with-an-external-drive</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>dd-wrt wireless openwrt</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:b7359259304b/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:dd-wrt"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:wireless"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:openwrt"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.carlofet.com/diy-projector-screen-material.html">
+    <title>Buy Blackout Cloth</title>
+    <dc:date>2011-06-25T20:47:16+00:00</dc:date>
+    <link>http://www.carlofet.com/diy-projector-screen-material.html</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>diy</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:e1f163bcc6ca/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:diy"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.wired.com/geekdad/2009/05/lights-cameras-insect-repellent-how-to-build-your-own-outdoor-movie-theater">
+    <title>Lights … Cameras … Insect Repellent? How To Build Your Own Outdoor Movie Theater | GeekDad | Wired.com</title>
+    <dc:date>2011-06-25T20:40:32+00:00</dc:date>
+    <link>http://www.wired.com/geekdad/2009/05/lights-cameras-insect-repellent-how-to-build-your-own-outdoor-movie-theater</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>diy</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:610f06168255/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:diy"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://code.google.com/p/svn-hooks/">
+    <title>svn-hooks - Framework for Subversion hooks - Google Project Hosting</title>
+    <dc:date>2011-06-22T05:32:21+00:00</dc:date>
+    <link>http://code.google.com/p/svn-hooks/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>subversion</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:8ee9cbb8a214/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:subversion"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.ibm.com/developerworks/xml/library/x-matters10/index.html">
+    <title>XML Matters: Indexing XML documents</title>
+    <dc:date>2011-06-20T00:27:22+00:00</dc:date>
+    <link>http://www.ibm.com/developerworks/xml/library/x-matters10/index.html</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>xml</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:335aa2cf14c7/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:xml"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.prashantraju.com/projects/pentaho/">
+    <title>Pentaho - Projects - Analyse This</title>
+    <dc:date>2011-06-11T04:03:04+00:00</dc:date>
+    <link>http://www.prashantraju.com/projects/pentaho/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>businessobjects</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:6a4b0539166b/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:businessobjects"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="https://fedorahosted.org/cobbler/">
+    <title>cobbler - Trac</title>
+    <dc:date>2011-06-09T21:26:45+00:00</dc:date>
+    <link>https://fedorahosted.org/cobbler/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>automation linux sysadmin</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:85cf7588c664/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:automation"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:linux"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:sysadmin"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.dnalounge.com/backstage/src/kiosk/#startup">
+    <title>DNA Lounge: Source Code: Diskless Linux Kiosks</title>
+    <dc:date>2011-06-04T20:51:52+00:00</dc:date>
+    <link>http://www.dnalounge.com/backstage/src/kiosk/#startup</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>sysadmin</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:78cda1d5f6ce/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:sysadmin"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.pchart.net/">
+    <title>pChart 2.0 - a PHP charting library</title>
+    <dc:date>2011-05-25T14:35:22+00:00</dc:date>
+    <link>http://www.pchart.net/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>php graphics</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:275abda06ebc/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:php"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:graphics"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.testking.com/techking/roundups/15-websites-where-you-can-find-code-snippets/">
+    <title>15 websites where you can find code snippets | Tech King</title>
+    <dc:date>2011-05-24T23:13:08+00:00</dc:date>
+    <link>http://www.testking.com/techking/roundups/15-websites-where-you-can-find-code-snippets/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>php webdev css html5</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:567c73ba32b3/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:php"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:webdev"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:css"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:html5"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.randombugs.com/linux/howto-extend-lvm-partition-online.html">
+    <title>How-to extend a LVM Partition online | Random Bugs</title>
+    <dc:date>2011-05-24T02:53:58+00:00</dc:date>
+    <link>http://www.randombugs.com/linux/howto-extend-lvm-partition-online.html</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>kvm lvm</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:9db0371d533c/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:kvm"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:lvm"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://chem-eng.utoronto.ca/~datamining/dmc/data_mining_map.htm">
+    <title>Data Mining Map</title>
+    <dc:date>2011-05-22T16:36:43+00:00</dc:date>
+    <link>http://chem-eng.utoronto.ca/~datamining/dmc/data_mining_map.htm</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>datamining</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:7ab4f356dd6b/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:datamining"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://s3tools.org/s3cmd">
+    <title>Amazon S3 tools: s3cmd : command line S3 client</title>
+    <dc:date>2011-05-21T18:02:16+00:00</dc:date>
+    <link>http://s3tools.org/s3cmd</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>s3 aws backup</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:39c6b83816fd/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:s3"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:aws"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:backup"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://upload.wikimedia.org/wikipedia/en/b/b4/Sting.ogg">
+    <title></title>
+    <dc:date>2011-05-21T17:18:24+00:00</dc:date>
+    <link>http://upload.wikimedia.org/wikipedia/en/b/b4/Sting.ogg</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>rimshot</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:32c0879202b3/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:rimshot"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.concerto-signage.com/view/home">
+    <title>Home - Concerto Digital Signage</title>
+    <dc:date>2011-05-21T07:58:58+00:00</dc:date>
+    <link>http://www.concerto-signage.com/view/home</link>
+    <dc:creator>dfannin</dc:creator><description><![CDATA[Friday Nite Project:  making over the code base for a Digital Signage project -  Concerto  ]]></description>
+<dc:source>http://twitter.com/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:eeb375c401e6/</dc:identifier>
+</item>
+<item rdf:about="http://www.concerto-signage.org/">
+    <title>Home - Concerto Digital Signage Project</title>
+    <dc:date>2011-05-21T07:58:58+00:00</dc:date>
+    <link>http://www.concerto-signage.org/</link>
+    <dc:creator>dfannin</dc:creator><description><![CDATA[Friday Nite Project:  making over the code base for a Digital Signage project -  Concerto  ]]></description>
+<dc:source>http://twitter.com/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:2015b8af3168/</dc:identifier>
+</item>
+<item rdf:about="http://www.cpkb.org/wiki/Main_Page">
+    <title>Main Page - CPKB - Cell Phone Knowledge Base</title>
+    <dc:date>2011-05-18T04:37:51+00:00</dc:date>
+    <link>http://www.cpkb.org/wiki/Main_Page</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>mobile cell</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:31756ea9d282/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:mobile"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:cell"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://twitter2rss.com/">
+    <title>Twitter2RSS</title>
+    <dc:date>2011-05-17T06:29:50+00:00</dc:date>
+    <link>http://twitter2rss.com/</link>
+    <dc:creator>dfannin</dc:creator><dc:subject>twitter RSS</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:dfannin/b:8f840b067e85/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:twitter"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:dfannin/t:RSS"/>
+</rdf:Bag></taxo:topics>
+</item>
+</rdf:RDF>

@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0"><channel><title>Lucas Ferreira</title><link>http://blog.lucasferreira.com</link><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/LucasFerreira" /><description>@lucasferreira</description><language>en</language><generator>http://wordpress.org/?v=2.6</generator><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/LucasFerreira" /><feedburner:info uri="lucasferreira" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><geo:lat>-28.682757</geo:lat><geo:long>-49.392128</geo:long><item><title>Links for 2011-09-03 [del.icio.us]</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/T9xrOPEtJuU/lucasferreira</link><pubDate>Sun, 04 Sep 2011 00:00:00 PDT</pubDate><guid isPermaLink="false">http://del.icio.us/lucasferreira#2011-09-03</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.kesiev.com/magaka/#"&gt;Magaka - Digital magazines with your face.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/lucasferreira#2011-09-03</feedburner:origLink></item><item><title>Links for 2011-08-29 [del.icio.us]</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/7e8al2TRJ58/lucasferreira</link><pubDate>Tue, 30 Aug 2011 00:00:00 PDT</pubDate><guid isPermaLink="false">http://del.icio.us/lucasferreira#2011-08-29</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blog.lucasferreira.com/2011/08/27/cakephp-amazon-ses/"&gt;Lucas Ferreira &amp;raquo; Archive &amp;raquo; CakePHP + Amazon SES&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/lucasferreira#2011-08-29</feedburner:origLink></item><item><title>CakePHP + Amazon SES</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/21SvJ1ttosQ/</link><category>CakePHP</category><category>Experimentos</category><category>PHP</category><category>amazon</category><category>component</category><category>ses</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lucas Ferreira</dc:creator><pubDate>Sat, 27 Aug 2011 14:28:57 PDT</pubDate><guid isPermaLink="false">http://blog.lucasferreira.com/?p=106</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Há algum tempo a Amazon lançou um serviço muito interessante relacionado ao envio de e-mail em grande escala com um custo bem baixo. Este serviço chamado <strong><a href="http://aws.amazon.com/ses/" target="_blank">Amazon SES</a></strong> fornece uma boa API para envio de e-mails.</p>
+<p>Um dos frameworks que mais utilizo em minha rotina de trabalho é o <strong><a href="http://cakephp.org/" target="_blank">CakePHP</a></strong>, um ótimo framework MVC escrito em PHP.</p>
+<p>O CakePHP possui um componente para envio de e-mails sobre a função mail do PHP ou por SMTP.</p>
+<p>Como estava querendo testar o serviço da AWS de envio de e-mails resolvi criar uma solução compatível com o CakePHP.</p>
+<p>Criei um novo componente que estende o <em>EmailComponent</em> chamado <em><strong>EmailServiceComponent</strong></em> para ter as habilidades de operar com o Amazon SES.</p>
+<p>O código fonte deste componente pode ser baixado no projeto que crie no GitHub, <a href="https://github.com/lucasferreira/cakephp-amazonses" target="_blank">clicando aqui</a>.</p>
+<h3>Como utilizar:</h3>
+<p>Primeiro devemos baixar o Amazon SDK PHP, <a href="http://aws.amazon.com/sdkforphp/" target="_blank">neste link</a>.</p>
+<p>Descompacte o arquivo na pasta vendors de sua aplicação, e renomeie a pasta principal da SDK para <strong>aws-sdk</strong>.</p>
+<p>Logo após renomeie o arquivo <em>config-sample.inc.php</em> para <strong>config.inc.php</strong> e insira suas credenciais de acesso nele.</p>
+<p>Uma vez a SDK estando configurada e devidamente colocada em seu projeto, baixe o <em>EmailServiceComponent</em> <a href="https://github.com/lucasferreira/cakephp-amazonses/blob/master/controllers/components/email_service.php" target="_blank">disponível aqui</a> e coloque em sua pasta controllers/components.</p>
+<p>Quando for necessário enviar um e-mail usando o <em>Amazon SES</em> basta carregar o componente no controller:</p>
+<p><code>var $components = array('EmailService');</code></p>
+<p>E habilitar o aws_ses como função padrão para envio de e-mails:</p>
+<p><code>$this-&gt;EmailService-&gt;delivery = 'aws_ses'; // ou 'aws_ses_raw' se você desejar enviar um e-mail complexo ou com anexos...</code></p>
+<p>Depois disso é só seguir o procedimento padrão de envio de e-mails do Cake, só lembrando de sempre usar <strong>EmailService</strong> ao invés de Email.</p>
+<p>Se tiverem dúvidas deixem no espaço de comentários deste post.</p>
+
+<p><a href="http://feedads.g.doubleclick.net/~a/DgtReOG4w0PHpFQHC-Mv19S2gPI/0/da"><img src="http://feedads.g.doubleclick.net/~a/DgtReOG4w0PHpFQHC-Mv19S2gPI/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/DgtReOG4w0PHpFQHC-Mv19S2gPI/1/da"><img src="http://feedads.g.doubleclick.net/~a/DgtReOG4w0PHpFQHC-Mv19S2gPI/1/di" border="0" ismap="true"></img></a></p>]]></content:encoded><description>Há algum tempo a Amazon lançou um serviço muito interessante relacionado ao envio de e-mail em grande escala com um custo bem baixo. Este serviço chamado Amazon SES fornece uma boa API para envio de e-mails.
+Um dos frameworks que mais utilizo em minha rotina de trabalho é o CakePHP, um ótimo framework MVC escrito em [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://blog.lucasferreira.com/2011/08/27/cakephp-amazon-ses/feed/</wfw:commentRss><feedburner:origLink>http://blog.lucasferreira.com/2011/08/27/cakephp-amazon-ses/</feedburner:origLink></item><item><title>Links for 2011-08-25 [del.icio.us]</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/MVjsugxfUOg/lucasferreira</link><pubDate>Fri, 26 Aug 2011 00:00:00 PDT</pubDate><guid isPermaLink="false">http://del.icio.us/lucasferreira#2011-08-25</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://forums.aws.amazon.com/ann.jspa?annID=1005"&gt;AWS Developer Forums: SSL Connection Issues: Possible Solution?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://bakery.cakephp.org/por/articles/dankroad/2011/01/30/integrar_o_amazon_simple_email_service_ses_em_uma_aplica%C3%A7%C3%A3o_existente"&gt;Integrar o Amazon Simple Email Service (SES) em uma aplica&amp;ccedil;&amp;atilde;o existente | The Bakery, Everything CakePHP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/lucasferreira#2011-08-25</feedburner:origLink></item><item><title>Links for 2011-08-23 [del.icio.us]</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/cDIPN3_GJfM/lucasferreira</link><pubDate>Wed, 24 Aug 2011 00:00:00 PDT</pubDate><guid isPermaLink="false">http://del.icio.us/lucasferreira#2011-08-23</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://zoomzum.com/22-awesome-admin-panels-for-web-developers/"&gt;22 Awesome Admin Panels For Web Developers | ZoomZum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/lucasferreira#2011-08-23</feedburner:origLink></item><item><title>Links for 2011-08-20 [del.icio.us]</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/6y_GNHX55Kw/lucasferreira</link><pubDate>Sun, 21 Aug 2011 00:00:00 PDT</pubDate><guid isPermaLink="false">http://del.icio.us/lucasferreira#2011-08-20</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://twitter.github.com/bootstrap/#"&gt;Twitter Bootstrap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/lucasferreira#2011-08-20</feedburner:origLink></item><item><title>Links for 2011-08-11 [del.icio.us]</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/yNRHRKN9ALE/lucasferreira</link><pubDate>Fri, 12 Aug 2011 00:00:00 PDT</pubDate><guid isPermaLink="false">http://del.icio.us/lucasferreira#2011-08-11</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://cubiq.org/iscroll-4"&gt;iScroll 4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/lucasferreira#2011-08-11</feedburner:origLink></item><item><title>Links for 2011-06-24 [del.icio.us]</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/oKz_iako2Ss/lucasferreira</link><pubDate>Sat, 25 Jun 2011 00:00:00 PDT</pubDate><guid isPermaLink="false">http://del.icio.us/lucasferreira#2011-06-24</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.albumartexchange.com/"&gt;Album Art Exchange - High Quality Album Art (Album Covers and CD Covers)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://dev.opera.com/articles/view/beautiful-ui-styling-with-css3-text-shadow-box-shadow-and-border-radius/"&gt;Beautiful UI styling with CSS3 text-shadow, box-shadow, and border-radius - Dev.Opera&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><feedburner:origLink>http://del.icio.us/lucasferreira#2011-06-24</feedburner:origLink></item><item><title>Twitavatar</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/KFHiYvR90NA/</link><category>Experimentos</category><category>Google App Engine</category><category>Internet</category><category>WebDev</category><category>gae</category><category>python</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lucas Ferreira</dc:creator><pubDate>Sun, 17 Oct 2010 09:36:11 PDT</pubDate><guid isPermaLink="false">http://blog.lucasferreira.com/?p=96</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Após um pequeno hiato de 2 anos estou de volta no Blog <img src='http://blog.lucasferreira.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /><br />
+<br />
+Nos últimos meses venho estudando Python focado no <a href="http://code.google.com/intl/pt-BR/appengine/">Google App Engine</a>. Para quem não conhece o Google App Engine ou GAE é um serviço de desenvolvimento e hospedagem baseado em Python ou Java cedido pelo Google para uso dos desenvolvedores em geral. Ou como eles mesmos definem:</p>
+<p>&#8220;<em>O Google App Engine oferece um conjunto completo de desenvolvimento que  utiliza tecnologias familiares para criar e hospedar aplicativos da web.</em>&#8220;</p>
+<p>Estou achando as possibilidades de desenvolvimento em Python muito interessante, em especial com a facilidade de desenvolver algo para o GAE e em como hospedar lá.</p>
+<p>Meu primeiro &#8220;projetinho&#8221; público hosteado e desenvolvido para o GAE sobre Python é o <a href="http://twitavatar.appspot.com/"><strong>Twitter Avatar Image Cache ou Twitavatar</strong></a>. É um serviço bem simples com apenas uma finalidade (inicialmente) que é acessar de forma fácil a imagem de avatar de um usuário do twitter.</p>
+<p>A forma de se utilizar é a mais direta possível, confira:</p>
+<blockquote><p>http://twitavatar.appspot.com/<em class="key">COLOQUE_O_USUARIO_DO_TWITTER_AQUI</em>.png</p></blockquote>
+<p>Normalmente um avatar do twitter têm uma URL complexa baseada nos servidores de armazenagem de arquivo deles. Resumindo seria pegar uma URL de avatar assim:</p>
+<p><a href="http://a1.twimg.com/profile_images/1124040897/at-twitter_reasonably_small.png"><em>http://a1.twimg.com/profile_images/1124040897/at-twitter_reasonably_small.png</em></a></p>
+<p>E deixa-la assim:</p>
+<p><a href="http://twitavatar.appspot.com/twitter.png"><strong>http://twitavatar.appspot.com/twitter.png</strong></a></p>
+<p>E você ainda têm a vantagem que se o usuário mudar sua imagem de exibição o seu link estará automaticamente atualizado já que ele se baseia no usuário do twitter e não no nome do arquivo de imagem.</p>
+<p>Simples não?<br />
+<br />
+Espero que este não seja o meu único projeto no GAE, já estou com outras idéias legais e depois contarei as novidades por aqui.</p>
+<p>Abs!</p>
+
+<p><a href="http://feedads.g.doubleclick.net/~a/hrYm6s4vbquP-MAicgZ0D3m89qA/0/da"><img src="http://feedads.g.doubleclick.net/~a/hrYm6s4vbquP-MAicgZ0D3m89qA/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/hrYm6s4vbquP-MAicgZ0D3m89qA/1/da"><img src="http://feedads.g.doubleclick.net/~a/hrYm6s4vbquP-MAicgZ0D3m89qA/1/di" border="0" ismap="true"></img></a></p>]]></content:encoded><description>Após um pequeno hiato de 2 anos estou de volta no Blog 
+
+Nos últimos meses venho estudando Python focado no Google App Engine. Para quem não conhece o Google App Engine ou GAE é um serviço de desenvolvimento e hospedagem baseado em Python ou Java cedido pelo Google para uso dos desenvolvedores em geral. Ou [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://blog.lucasferreira.com/2010/10/17/twitavatar/feed/</wfw:commentRss><feedburner:origLink>http://blog.lucasferreira.com/2010/10/17/twitavatar/</feedburner:origLink></item><item><title>Lightbox + Flash: A missão II</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/-r9O3ZgUyHY/</link><category>Experimentos</category><category>Flash</category><category>JavaScript</category><category>WebDev</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lucas Ferreira</dc:creator><pubDate>Mon, 01 Dec 2008 19:27:37 PST</pubDate><guid isPermaLink="false">http://blog.lucasferreira.com/?p=86</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Olá,</p>
+<p>Devido a grande quantidade comentários em <a href="http://blog.lucasferreira.com/2007/03/29/lightbox-flash/">um post</a> sobre este mesmo assunto, resolvi dar uma revisada na técnica.</p>
+<p>Fato que eu prefiro e utilizo em meus projetos o <a href="http://www.mjijackson.com/shadowbox/">Shadowbox</a> por ser muito mais completo, extensível, adaptável e ainda por cima funciona com <a href="http://jquery.com/">jQuery</a>. Se alguém quiser saber como operar Flash + Shadowbox confira <a href="http://blog.ericksouza.com/flash-junto-ao-lightbox-e-shadowbox/">aqui</a>.</p>
+<p>Porém neste post iremos trabalhar novamente com <a href="http://www.lokeshdhakar.com/projects/lightbox2/">Lightbox</a>, dado a quantidade de dúvidas e também por ser mais popular.</p>
+<p>Abordarei inicialmente e como sempre com <strong>ActionScript 2.0</strong> porém farei também em outro post como utilizar a solução em AS 3.0.</p>
+<p>A idéia é a mesma, <a href="http://www.lokeshdhakar.com/projects/lightbox2/#download">baixa-se</a> o script do Lightbox, descompacte-o na pasta de seu projeto e depois é só ligar o flash ao mesmo.</p>
+<p>O objetivo final é termos uma ação semelhante a este <strong><a href="http://www.lucasferreira.com/experimentos/lightbox_flash/">exemplo</a></strong> que disponibilizarei no final do artigo. Não abordarei, assim como no outro post, como instalar o Lightbox em sua página HTML, dado que isto está na página do script.</p>
+<h3>Mãos a obra</h3>
+<p>Um dos problemas mais relatados em comentários no artigo/post anterior é a questão de que as últimas versões do Lightbox estarem com uma ação embutida na sua execução que <strong>esconde os SWFs da página</strong>, o que para muitos esteticamente não é interessante.</p>
+<p>É aí que entra o foco principal desta nova postagem. Eu fiz um <em>hack</em> em JavaScript para o Lightbox afim de evitar essa ação de esconder os SWFs o máximo possível e também facilitar a chamada de ação junto ao flash. Este script pode ser baixado <a href="http://www.lucasferreira.com/experimentos/lightbox_flash/js/lightbox.flash.js">aqui</a> e deverá ser carregado junto com o seu HTML. Desde que o SWF tenha fundo(<em><strong>wmode</strong></em>) <strong>transparent</strong> ou <strong>opaque</strong>, e com excessão de versões mais antigas do FlashPlayer em ambiente linux, no restante dos sistemas operacionais e navegadores não terá problema algum com SWFs.</p>
+<p>Além deste pequeno hack, criei uma função para auxiliar a chamada do Lightbox pelo Flash, confiram:</p>
+<div class="igBar"><span id="lactionscript-3"><a href="#" onclick="javascript:showPlainTxt('actionscript-3'); return false;">PLAIN TEXT</a></span></div>
+<div class="syntax_hilite"><span class="langName">ACTIONSCRIPT:</span>
+<div id="actionscript-3">
+<div class="actionscript">
+<ol>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #808080; font-style: italic;">//lightBox function for call JavaScript...</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #000000; font-weight: bold;">function</span> Lightbox<span style="color: #66cc66;">&#40;</span>src, title<span style="color: #66cc66;">&#41;</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #66cc66;">&#123;</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span><span style="color: #0066CC;">typeof</span> src == <span style="color: #ff0000;">"string"</span><span style="color: #66cc66;">&#41;</span> src = <span style="color: #66cc66;">&#91;</span>src<span style="color: #66cc66;">&#93;</span>;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span><span style="color: #0066CC;">typeof</span> title == <span style="color: #ff0000;">"string"</span><span style="color: #66cc66;">&#41;</span> title = <span style="color: #66cc66;">&#91;</span>title<span style="color: #66cc66;">&#93;</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span><span style="color: #0066CC;">typeof</span> title == <span style="color: #ff0000;">"undefined"</span><span style="color: #66cc66;">&#41;</span> title = <span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">&#93;</span>;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #000000; font-weight: bold;">function</span> addSlashes<span style="color: #66cc66;">&#40;</span>str<span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span> <span style="color: #b1b100;">return</span> <span style="color: #ff0000;">"'"</span> + escape<span style="color: #66cc66;">&#40;</span>str<span style="color: #66cc66;">&#41;</span> + <span style="color: #ff0000;">"'"</span>; <span style="color: #66cc66;">&#125;</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>flash.<span style="color: #006600;">external</span>.<span style="color: #006600;">ExternalInterface</span> &amp;&amp; flash.<span style="color: #006600;">external</span>.<span style="color: #006600;">ExternalInterface</span>.<span style="color: #006600;">available</span><span style="color: #66cc66;">&#41;</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #66cc66;">&#123;</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">flash.<span style="color: #006600;">external</span>.<span style="color: #006600;">ExternalInterface</span>.<span style="color: #0066CC;">call</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">"Lightbox.start"</span>, src, title<span style="color: #66cc66;">&#41;</span>;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #66cc66;">&#125;</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #b1b100;">else</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #66cc66;">&#123;</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">var</span> i=<span style="color: #cc66cc;color:#800000;">0</span>; i&lt;src.<span style="color: #0066CC;">length</span>; i++<span style="color: #66cc66;">&#41;</span> src<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> = addSlashes<span style="color: #66cc66;">&#40;</span>src<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">var</span> i=<span style="color: #cc66cc;color:#800000;">0</span>; i&lt;title.<span style="color: #0066CC;">length</span>; i++<span style="color: #66cc66;">&#41;</span> title<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> = addSlashes<span style="color: #66cc66;">&#40;</span>title<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0066CC;">getURL</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">"javascript:Lightbox.start(["</span> + src.<span style="color: #0066CC;">join</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">","</span><span style="color: #66cc66;">&#41;</span> + <span style="color: #ff0000;">"],["</span> + title.<span style="color: #0066CC;">join</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">","</span><span style="color: #66cc66;">&#41;</span> + <span style="color: #ff0000;">"]);void(0);"</span><span style="color: #66cc66;">&#41;</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #66cc66;">&#125;</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #66cc66;">&#125;</span> </div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<p></p>
+<p>Com essa função podemos chamar a execução com maior facilidade, também implementei a possibilidade abrir um grupo de fotos por vez, aproveitando dos recursos de galeria do Lightbox. Coloquei a possibilidade de colocar uma legenda/title por foto. Ficou bem mais completo que a nossa primeira tentativa.</p>
+<p>Copie a função acima e coloque dentro de seu arquivo .fla e depois basta colocar uma chamada para função Lightbox em seu objeto para que a mágica aconteça. Exemplo:</p>
+<div class="igBar"><span id="lactionscript-4"><a href="#" onclick="javascript:showPlainTxt('actionscript-4'); return false;">PLAIN TEXT</a></span></div>
+<div class="syntax_hilite"><span class="langName">ACTIONSCRIPT:</span>
+<div id="actionscript-4">
+<div class="actionscript">
+<ol>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">bt1.<span style="color: #0066CC;">onRelease</span> = <span style="color: #000000; font-weight: bold;">function</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #66cc66;">&#123;</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">Lightbox<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'images/image-1.jpg'</span>, <span style="color: #ff0000;">'images/thumb-1.jpg'</span><span style="color: #66cc66;">&#93;</span>, <span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'Legend Test'</span>, <span style="color: #ff0000;">'çóh?'</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #66cc66;">&#125;</span>; </div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<p></p>
+<p>No código acima, estamos setando uma ação de clique/release a um botão chamado <strong>bt1</strong>. Ao clicar, será aberto um grupo de imagens(<em>array de valores no primeiro argumento</em>), com suas respectivas legendas(<em>array de valores do segundo argumento</em>).</p>
+<h3>Finalizando</h3>
+<p>Então é isso pessoal, creio que agora ficou redondinho. Se alguém achar algum bug ou quiser testar melhor no Internet Explorer(só dei uma testada assim por cima :P) fiquem a vontade.</p>
+<p>Para baixar um exemplo completo de utilização junto com todos os scripts <a href="http://www.lucasferreira.com/experimentos/lightbox_flash.zip">clique aqui</a>.</p>
+<p>Abraços!</p>
+
+<p><a href="http://feedads.g.doubleclick.net/~a/iITUMLTfS-P4jzlt3kDIS85cDII/0/da"><img src="http://feedads.g.doubleclick.net/~a/iITUMLTfS-P4jzlt3kDIS85cDII/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/iITUMLTfS-P4jzlt3kDIS85cDII/1/da"><img src="http://feedads.g.doubleclick.net/~a/iITUMLTfS-P4jzlt3kDIS85cDII/1/di" border="0" ismap="true"></img></a></p>]]></content:encoded><description>Olá,
+Devido a grande quantidade comentários em um post sobre este mesmo assunto, resolvi dar uma revisada na técnica.
+Fato que eu prefiro e utilizo em meus projetos o Shadowbox por ser muito mais completo, extensível, adaptável e ainda por cima funciona com jQuery. Se alguém quiser saber como operar Flash + Shadowbox confira aqui.
+Porém neste post [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://blog.lucasferreira.com/2008/12/02/lightbox-flash-a-missao-ii/feed/</wfw:commentRss><feedburner:origLink>http://blog.lucasferreira.com/2008/12/02/lightbox-flash-a-missao-ii/</feedburner:origLink></item><item><title>jQuery - Belas introduções</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/Y_31AxiAxXk/</link><category>AJAX</category><category>Internet</category><category>JavaScript</category><category>Tutoriais</category><category>jQuery</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lucas Ferreira</dc:creator><pubDate>Thu, 14 Aug 2008 14:21:36 PDT</pubDate><guid isPermaLink="false">http://blog.lucasferreira.com/?p=68</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Bom,</p>
+<p>Quero ver se tiro um tempinho para falar sobre a super biblioteca de funções JavaScript chamada <a title="jQuery Site" href="http://jquery.com/">jQuery</a>, que muda/facilita a vida de qualquer desenvolvedor web, chega até a ser um caso de depedencia <img src='http://blog.lucasferreira.com/wp-includes/images/smilies/icon_razz.gif' alt=':P' class='wp-smiley' /> </p>
+<p>Pois bem, vo indicar aos leitores dois belos tutoriais para iniciantes, overview geral mesmo:</p>
+<p><a title="Permalink - Usando jQuery na prática" rel="bookmark" href="http://simplesideias.com.br/usando-jquery-na-pratica/">Usando jQuery na prática</a> do <a href="http://simplesideias.com.br">Nando Vieira</a></p>
+<p>e este <a title="from Effectize" href="http://effectize.com/jquery-developer-guide">Guia completo sobre jQuery para iniciantes</a> que vi no site <a href="http://www.pinceladasdaweb.com.br/blog/2008/08/14/guia-completo-sobre-jquery-para-iniciantes/">Pinceladas da Web</a></p>
+<p>Abracetas.. <img src='http://blog.lucasferreira.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /></p>
+
+<p><a href="http://feedads.g.doubleclick.net/~a/nkNi5FhVR94Uzdua20hgJybQ4xI/0/da"><img src="http://feedads.g.doubleclick.net/~a/nkNi5FhVR94Uzdua20hgJybQ4xI/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/nkNi5FhVR94Uzdua20hgJybQ4xI/1/da"><img src="http://feedads.g.doubleclick.net/~a/nkNi5FhVR94Uzdua20hgJybQ4xI/1/di" border="0" ismap="true"></img></a></p>]]></content:encoded><description>Bom,
+Quero ver se tiro um tempinho para falar sobre a super biblioteca de funções JavaScript chamada jQuery, que muda/facilita a vida de qualquer desenvolvedor web, chega até a ser um caso de depedencia  
+Pois bem, vo indicar aos leitores dois belos tutoriais para iniciantes, overview geral mesmo:
+Usando jQuery na prática do Nando Vieira
+e este [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://blog.lucasferreira.com/2008/08/14/jquery-belas-introducoes/feed/</wfw:commentRss><feedburner:origLink>http://blog.lucasferreira.com/2008/08/14/jquery-belas-introducoes/</feedburner:origLink></item><item><title>Boleto BESC - Projeto BoletoPHP</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/sqIrnRo6dkY/</link><category>Experimentos</category><category>Internet</category><category>O cotidiano do dia-a-dia</category><category>PHP</category><category>WebDev</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lucas Ferreira</dc:creator><pubDate>Sun, 01 Jun 2008 12:03:04 PDT</pubDate><guid isPermaLink="false">http://blog.lucasferreira.com/2008/06/01/boleto-besc-projeto-boletophp/</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Olá =D</p>
+<p>Vou abrir este pequeno parênteses aqui para avisar sobre a minha contribuição no <a href="http://www.boletophp.com.br/">Projeto BoletoPHP</a>.</p>
+<p>Ajudei o projeto desenvolvendo o boleto do banco <a href="http://www.besc.com.br/">BESC</a>, confiram lá.</p>
+<p>E veeeva o open source!</p>
+<p>Abracetas... <img src='http://blog.lucasferreira.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /></p>
+
+<p><a href="http://feedads.g.doubleclick.net/~a/RGO6cKFKGCr9pcFhD6ewoJqQaWw/0/da"><img src="http://feedads.g.doubleclick.net/~a/RGO6cKFKGCr9pcFhD6ewoJqQaWw/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/RGO6cKFKGCr9pcFhD6ewoJqQaWw/1/da"><img src="http://feedads.g.doubleclick.net/~a/RGO6cKFKGCr9pcFhD6ewoJqQaWw/1/di" border="0" ismap="true"></img></a></p>]]></content:encoded><description>Olá =D
+Vou abrir este pequeno parênteses aqui para avisar sobre a minha contribuição no Projeto BoletoPHP.
+Ajudei o projeto desenvolvendo o boleto do banco BESC, confiram lá.
+E veeeva o open source!
+Abracetas...</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://blog.lucasferreira.com/2008/06/01/boleto-besc-projeto-boletophp/feed/</wfw:commentRss><feedburner:origLink>http://blog.lucasferreira.com/2008/06/01/boleto-besc-projeto-boletophp/</feedburner:origLink></item><item><title>Correios, SEDEX e o tão famigerado Cálculo de Frete</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/CoTUY2MfbwI/</link><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lucas Ferreira</dc:creator><pubDate>Mon, 11 Feb 2008 13:01:21 PST</pubDate><guid isPermaLink="false">http://blog.lucasferreira.com/2008/02/11/correios-sedex-e-o-tao-famigerado-calculo-de-frete/</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Opa?</p>
+<p>Nesta vida de desenvolvedor web alguns desafio tendem a surgir em nosso caminho, um deles sem dúvida será este que abordarei aqui, de forma rápida de direta, o <strong>Cálculo de Frete dos Correios</strong>. Com base em cep de origem, cep de destino e o peso da encomenda, obteremos o valor do SEDEX. Recurso muito utilizado em lojas virtuais e sistemas com delivery na web =)</p>
+<p>Algo que muitas pessoas não sabem, é que os Correios disponibilizam um serviço de consulta web, com resposta em XML(as possibilidades iniciam aí :P), de forma simples, acessado via URL, sem webservices, ai vai um exemplo deste acesso:</p>
+<p><a href="http://www.correios.com.br/encomendas/precos/calculo.cfm?resposta=xml&amp;servico=40010&amp;cepOrigem=17012-350&amp;cepDestino=01102-000&amp;peso=0.31">http://www.correios.com.br/encomendas/precos/calculo.cfm?resposta=xml&#038;servico=40010&#038; cepOrigem=17012-350&#038;cepDestino=01102-000&#038;peso=0.31</a></p>
+<p>Percebam que ao acessarmos o endereço acima, obtemos um XML simples, com todos os dados necessários para a consulta. Tudo que devemos fazer é completar a URL acima com nossos dados, da seguinte forma:</p>
+<p><strong>servico=40010</strong> é sedex, outros serviços tem que procurar no site dos correios<br />
+<strong>cepOrigem=17012-350</strong> -> CEP de Origem (do teu cliente no caso)<br />
+<strong>cepDestino=88818-400</strong> -> de quem vai receber<br />
+<strong>peso=0.62</strong> -> peso da encomenda</p>
+<p>Uma vez com nossa requisição devidamente configurada, basta tratarmos o XML da forma mais interessante para seu projeto. Javascript, Flash, PHP, Java, Ruby on Rails e por aí vai =P</p>
+<p>Neste caso, criaremos uma função de exemplo em PHP para tratarmos esta resposta, e obtermos os dados de forma fácil e direta. Aí vai ela "mastigadinha":</p>
+<div class="igBar"><span id="lphp-6"><a href="#" onclick="javascript:showPlainTxt('php-6'); return false;">PLAIN TEXT</a></span></div>
+<div class="syntax_hilite"><span class="langName">PHP:</span>
+<div id="php-6">
+<div class="php">
+<ol>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color:#000000; font-weight:bold;">&lt;?php</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; </div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color:#000000; font-weight:bold;">function</span> getSEDEX<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF;">$cepOrigem</span> = <span style="color:#FF0000;">"88818-520"</span>, <span style="color:#0000FF;">$cepDestino</span> = <span style="color:#FF0000;">"88818-400"</span>, <span style="color:#0000FF;">$peso</span> = <span style="color:#CC66CC;color:#800000;">0</span>.<span style="color:#CC66CC;color:#800000;">5</span><span style="color:#006600; font-weight:bold;">&#41;</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color:#006600; font-weight:bold;">&#123;</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#0000FF;">$urlCorreios</span> = <span style="color:#FF0000;">"http://www.correios.com.br/encomendas/precos/calculo.cfm?resposta=xml&amp;servico=40010&amp;cepOrigem=%s&amp;cepDestino=%s&amp;peso=%s"</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; </div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#0000FF;">$urlCorreios</span> = <a href="http://www.php.net/sprintf"><span style="color:#000066;">sprintf</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF;">$urlCorreios</span>, <span style="color:#0000FF;">$cepOrigem</span>, <span style="color:#0000FF;">$cepDestino</span>, <span style="color:#0000FF;">$peso</span><span style="color:#006600; font-weight:bold;">&#41;</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; </div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF9933; font-style:italic;">//carregando url dos correios...</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF9933; font-style:italic;">//caso o seu servidor não permita o uso da função file para url's externas</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF9933; font-style:italic;">//recomenda-se a utilização de CURL - http://www.php.net/manual/en/ref.curl.php</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#0000FF;">$carrega</span> = <a href="http://www.php.net/file"><span style="color:#000066;">file</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF;">$urlCorreios</span><span style="color:#006600; font-weight:bold;">&#41;</span> or <a href="http://www.php.net/die"><span style="color:#000066;">die</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#FF0000;">"Problemas em obter os dados dos correios"</span><span style="color:#006600; font-weight:bold;">&#41;</span>;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; </div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF9933; font-style:italic;">//tratando string xml obtida. Removendo espaços e linhas para facilitar...</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#0000FF;">$conteudo</span> = <a href="http://www.php.net/trim"><span style="color:#000066;">trim</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><a href="http://www.php.net/str_replace"><span style="color:#000066;">str_replace</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><a href="http://www.php.net/array"><span style="color:#000066;">array</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#FF0000;">"<span style="color:#000099; font-weight:bold;">\n</span>"</span>, <a href="http://www.php.net/chr"><span style="color:#000066;">chr</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#CC66CC;color:#800000;">13</span><span style="color:#006600; font-weight:bold;">&#41;</span><span style="color:#006600; font-weight:bold;">&#41;</span>, <span style="color:#FF0000;">""</span>, <a href="http://www.php.net/implode"><span style="color:#000066;">implode</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF;">$carrega</span>, <span style="color:#FF0000;">""</span><span style="color:#006600; font-weight:bold;">&#41;</span><span style="color:#006600; font-weight:bold;">&#41;</span><span style="color:#006600; font-weight:bold;">&#41;</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; </div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#616100;">if</span><span style="color:#006600; font-weight:bold;">&#40;</span><a href="http://www.php.net/strlen"><span style="color:#000066;">strlen</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF;">$conteudo</span><span style="color:#006600; font-weight:bold;">&#41;</span> &lt;<span style="color:#CC66CC;color:#800000;">1</span><span style="color:#006600; font-weight:bold;">&#41;</span> <span style="color:#616100;">return</span> <span style="color:#000000; font-weight:bold;">false</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; </div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF9933; font-style:italic;">//informações de origem tratadas com RegExp...</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.php.net/preg_match_all"><span style="color:#000066;">preg_match_all</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#FF0000;">"/&lt;uf_origem&gt;(.+)&lt;<span style="color:#000099; font-weight:bold;">\/</span>uf_origem&gt;/"</span>, <span style="color:#0000FF;">$conteudo</span>, <span style="color:#0000FF;">$uf_origem</span><span style="color:#006600; font-weight:bold;">&#41;</span>;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.php.net/preg_match_all"><span style="color:#000066;">preg_match_all</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#FF0000;">"/&lt;local_origem&gt;(.+)&lt;<span style="color:#000099; font-weight:bold;">\/</span>local_origem&gt;/"</span>, <span style="color:#0000FF;">$conteudo</span>, <span style="color:#0000FF;">$local_origem</span><span style="color:#006600; font-weight:bold;">&#41;</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.php.net/preg_match_all"><span style="color:#000066;">preg_match_all</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#FF0000;">"/&lt;cep_origem&gt;(.+)&lt;<span style="color:#000099; font-weight:bold;">\/</span>cep_origem&gt;/"</span>, <span style="color:#0000FF;">$conteudo</span>, <span style="color:#0000FF;">$cep_origem</span><span style="color:#006600; font-weight:bold;">&#41;</span>;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; </div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF9933; font-style:italic;">//informações de destino tratadas com RegExp...</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.php.net/preg_match_all"><span style="color:#000066;">preg_match_all</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#FF0000;">"/&lt;uf_destino&gt;(.+)&lt;<span style="color:#000099; font-weight:bold;">\/</span>uf_destino&gt;/"</span>, <span style="color:#0000FF;">$conteudo</span>, <span style="color:#0000FF;">$uf_destino</span><span style="color:#006600; font-weight:bold;">&#41;</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.php.net/preg_match_all"><span style="color:#000066;">preg_match_all</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#FF0000;">"/&lt;local_destino&gt;(.+)&lt;<span style="color:#000099; font-weight:bold;">\/</span>local_destino&gt;/"</span>, <span style="color:#0000FF;">$conteudo</span>, <span style="color:#0000FF;">$local_destino</span><span style="color:#006600; font-weight:bold;">&#41;</span>;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.php.net/preg_match_all"><span style="color:#000066;">preg_match_all</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#FF0000;">"/&lt;cep_destino&gt;(.+)&lt;<span style="color:#000099; font-weight:bold;">\/</span>cep_destino&gt;/"</span>, <span style="color:#0000FF;">$conteudo</span>, <span style="color:#0000FF;">$cep_destino</span><span style="color:#006600; font-weight:bold;">&#41;</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; </div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF9933; font-style:italic;">//informações sobre a encomenda tratadas com RegExp...</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.php.net/preg_match_all"><span style="color:#000066;">preg_match_all</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#FF0000;">"/&lt;peso&gt;(.+)&lt;<span style="color:#000099; font-weight:bold;">\/</span>peso&gt;/"</span>, <span style="color:#0000FF;">$conteudo</span>, <span style="color:#0000FF;">$peso</span><span style="color:#006600; font-weight:bold;">&#41;</span>;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.php.net/preg_match_all"><span style="color:#000066;">preg_match_all</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#FF0000;">"/&lt;preco_postal&gt;(.+)&lt;<span style="color:#000099; font-weight:bold;">\/</span>preco_postal&gt;/"</span>, <span style="color:#0000FF;">$conteudo</span>, <span style="color:#0000FF;">$preco_postal</span><span style="color:#006600; font-weight:bold;">&#41;</span>;&nbsp; &nbsp;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; </div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF9933; font-style:italic;">//objeto contendo as informações sobre o frete...</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#0000FF;">$sedex</span> = <a href="http://www.php.net/array"><span style="color:#000066;">array</span></a><span style="color:#006600; font-weight:bold;">&#40;</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF0000;">"uf_origem"</span> =&gt; <span style="color:#0000FF;">$uf_origem</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">1</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">0</span><span style="color:#006600; font-weight:bold;">&#93;</span>,</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF0000;">"local_origem"</span> =&gt; <span style="color:#0000FF;">$local_origem</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">1</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">0</span><span style="color:#006600; font-weight:bold;">&#93;</span>,</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF0000;">"cep_origem"</span> =&gt; <span style="color:#0000FF;">$cep_origem</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">1</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">0</span><span style="color:#006600; font-weight:bold;">&#93;</span>,</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF0000;">"uf_destino"</span> =&gt; <span style="color:#0000FF;">$uf_destino</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">1</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">0</span><span style="color:#006600; font-weight:bold;">&#93;</span>,</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF0000;">"local_destino"</span> =&gt; <span style="color:#0000FF;">$local_destino</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">1</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">0</span><span style="color:#006600; font-weight:bold;">&#93;</span>,</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF0000;">"cep_destino"</span> =&gt; <span style="color:#0000FF;">$cep_destino</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">1</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">0</span><span style="color:#006600; font-weight:bold;">&#93;</span>,</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF0000;">"peso"</span> =&gt; <a href="http://www.php.net/floatval"><span style="color:#000066;">floatval</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF;">$peso</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">1</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">0</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#41;</span>,</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#FF0000;">"valor"</span> =&gt; <a href="http://www.php.net/floatval"><span style="color:#000066;">floatval</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF;">$preco_postal</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">1</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#CC66CC;color:#800000;">0</span><span style="color:#006600; font-weight:bold;">&#93;</span><span style="color:#006600; font-weight:bold;">&#41;</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#006600; font-weight:bold;">&#41;</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; </div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#616100;">return</span> <span style="color:#0000FF;">$sedex</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color:#006600; font-weight:bold;">&#125;</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; </div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color:#FF9933; font-style:italic;">//informações processadas. Cep de Origem, Cep destino, Peso...</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color:#0000FF;">$sedex</span> = getSEDEX<span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#FF0000;">"88818-520"</span>, <span style="color:#FF0000;">"88818-400"</span>, <span style="color:#CC66CC;color:#800000;">0</span>.<span style="color:#CC66CC;color:#800000;">750</span><span style="color:#006600; font-weight:bold;">&#41;</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; </div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color:#FF9933; font-style:italic;">//enfim exibimos o valor de nossa encomenda...</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <a href="http://www.php.net/echo"><span style="color:#000066;">echo</span></a> <span style="color:#FF0000;">"R$ "</span> . <a href="http://www.php.net/number_format"><span style="color:#000066;">number_format</span></a><span style="color:#006600; font-weight:bold;">&#40;</span><span style="color:#0000FF;">$sedex</span><span style="color:#006600; font-weight:bold;">&#91;</span><span style="color:#FF0000;">"valor"</span><span style="color:#006600; font-weight:bold;">&#93;</span>, <span style="color:#CC66CC;color:#800000;">2</span>, <span style="color:#FF0000;">","</span>, <span style="color:#FF0000;">","</span><span style="color:#006600; font-weight:bold;">&#41;</span>; <span style="color:#FF9933; font-style:italic;">//valor do sedex, já formatado em reais...</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color:#000000; font-weight:bold;">?&gt;</span> </div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<p></p>
+<p>Uma vez com a função <strong>getSEDEX</strong> executada, obtemos todos os dados tratado no retorno da mesma.</p>
+<p>Fácil não?</p>
+<p>Abracetas... <img src='http://blog.lucasferreira.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </preco_postal></peso></cep_destino></local_destino></uf_destino></cep_origem></local_origem></p>
+
+<p><a href="http://feedads.g.doubleclick.net/~a/GLa1w8QZStJzosfFH5rqEY1rzmg/0/da"><img src="http://feedads.g.doubleclick.net/~a/GLa1w8QZStJzosfFH5rqEY1rzmg/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/GLa1w8QZStJzosfFH5rqEY1rzmg/1/da"><img src="http://feedads.g.doubleclick.net/~a/GLa1w8QZStJzosfFH5rqEY1rzmg/1/di" border="0" ismap="true"></img></a></p>]]></content:encoded><description>Opa?
+Nesta vida de desenvolvedor web alguns desafio tendem a surgir em nosso caminho, um deles sem dúvida será este que abordarei aqui, de forma rápida de direta, o Cálculo de Frete dos Correios. Com base em cep de origem, cep de destino e o peso da encomenda, obteremos o valor do SEDEX. Recurso muito utilizado [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://blog.lucasferreira.com/2008/02/11/correios-sedex-e-o-tao-famigerado-calculo-de-frete/feed/</wfw:commentRss><feedburner:origLink>http://blog.lucasferreira.com/2008/02/11/correios-sedex-e-o-tao-famigerado-calculo-de-frete/</feedburner:origLink></item><item><title>Twitter de c* é rola!</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/KZ7BrarJVVg/</link><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lucas Ferreira</dc:creator><pubDate>Mon, 27 Aug 2007 17:59:02 PDT</pubDate><guid isPermaLink="false">http://blog.lucasferreira.com/2007/08/27/twitter-de-c-e-rola/</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Opa,</p>
+<p>Blog morto é pros fracos <img src='http://blog.lucasferreira.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>Também criei um, mais ainda não descobrir muito bem pra que que server, mais o lance no talk é massa =D</p>
+<p><a href="http://twitter.com/lucasferreira" title="Twitter">http://twitter.com/lucasferreira</a></p>
+<p> <img src='http://blog.lucasferreira.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /></p>
+
+<p><a href="http://feedads.g.doubleclick.net/~a/sHG7lSq8H4rTBedcJMp4VudtnwU/0/da"><img src="http://feedads.g.doubleclick.net/~a/sHG7lSq8H4rTBedcJMp4VudtnwU/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/sHG7lSq8H4rTBedcJMp4VudtnwU/1/da"><img src="http://feedads.g.doubleclick.net/~a/sHG7lSq8H4rTBedcJMp4VudtnwU/1/di" border="0" ismap="true"></img></a></p>]]></content:encoded><description>Opa,
+Blog morto é pros fracos  
+Também criei um, mais ainda não descobrir muito bem pra que que server, mais o lance no talk é massa =D
+http://twitter.com/lucasferreira</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://blog.lucasferreira.com/2007/08/27/twitter-de-c-e-rola/feed/</wfw:commentRss><feedburner:origLink>http://blog.lucasferreira.com/2007/08/27/twitter-de-c-e-rola/</feedburner:origLink></item><item><title>Lightbox + Flash</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/k2YZ2njgsUs/</link><category>Experimentos</category><category>Flash</category><category>JavaScript</category><category>O cotidiano do dia-a-dia</category><category>Tutoriais</category><category>WebDev</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lucas Ferreira</dc:creator><pubDate>Thu, 29 Mar 2007 14:54:46 PDT</pubDate><guid isPermaLink="false">http://blog.lucasferreira.com/2007/03/29/lightbox-flash/</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p><strong>UPDATE</strong>: Atenção povo, fiz um novo artigo sobre este mesmo assunto, desta vez melhorado, <a href="http://blog.lucasferreira.com/2008/12/02/lightbox-flash-a-missao-ii/">cliquem aqui </a>para acompanhar.</p>
+<p>Opa?</p>
+<p>Acho que a maioria dos desenvolvedores web já conhecem o <a href="http://www.huddletogether.com/projects/lightbox2/">Lightbox</a>. É um efeitinho super supimpa (tirando o peso) de ampliar imagens, baseado em Javascript e CSS.</p>
+<p>Pois bem, devido ao fato de ser JS e CSS, muita gente fica na mão se deseja utilizar o recurso no Flash, contando que estejam sem tempo ou sem conhecimento, para desenvolver tal efeito 100% Flash. Aí que entra a integração que apresentarei aqui <img src='http://blog.lucasferreira.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<h3>Lightbox + Flash</h3>
+<p>Para utilizar o LightBox acionado a partir do flash, primeiro você deve fazer o de praxe como apresentado <a href="http://www.huddletogether.com/projects/lightbox2/">neste link</a>(carregar os arquivos .js e .css, as imagens e etc), deixar tudo certinho como se fosse usar o LightBox normalmente, isso tudo você acerta no HTML que receberá o SWF(Flash) com a ação em questão.</p>
+<p>Depois coloque a seguinte função JavaScript(entre as tags SCRIPT) no mesmo HTML:</p>
+<div class="igBar"><span id="ljavascript-9"><a href="#" onclick="javascript:showPlainTxt('javascript-9'); return false;">PLAIN TEXT</a></span></div>
+<div class="syntax_hilite"><span class="langName">JavaScript:</span>
+<div id="javascript-9">
+<div class="javascript">
+<ol>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #003366; font-weight: bold;">function</span> showFoto<span style="color: #66cc66;">&#40;</span>src<span style="color: #66cc66;">&#41;</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #66cc66;">&#123;</span></div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #009900; font-style: italic;">//criando um link falso, para o LightBox captar as informações</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #003366; font-weight: bold;">var</span> a_false = document.<span style="color: #006600;">createElement</span><span style="color: #66cc66;">&#40;</span><span style="color: #3366CC;">"A"</span><span style="color: #66cc66;">&#41;</span>;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">a_false.<span style="color: #006600;">rel</span> = <span style="color: #3366CC;">"lightbox"</span>;</div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">a_false.<span style="color: #006600;">href</span> = src;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #009900; font-style: italic;">//chamando a função do lightbox responsável pelo início das ações</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">myLightbox.<span style="color: #006600;">start</span><span style="color: #66cc66;">&#40;</span>a_false<span style="color: #66cc66;">&#41;</span>;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #009900; font-style: italic;">//anulando o link</span></div>
+</li>
+<li style="font-weight: bold;color:#26536A;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">a_false = <span style="color: #003366; font-weight: bold;">null</span>;</div>
+</li>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #66cc66;">&#125;</span> </div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<p></p>
+<p>E no Flash, em nosso botão, chamamos na ação onRelease, o seguinte AS:</p>
+<div class="igBar"><span id="lactionscript-10"><a href="#" onclick="javascript:showPlainTxt('actionscript-10'); return false;">PLAIN TEXT</a></span></div>
+<div class="syntax_hilite"><span class="langName">ACTIONSCRIPT:</span>
+<div id="actionscript-10">
+<div class="actionscript">
+<ol>
+<li style="font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;color:#3A6A8B;">
+<div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0066CC;">getURL</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">"javascript:showFoto('MINHAFOTOAQUI.jpg');"</span>, <span style="color: #ff0000;">"_self"</span><span style="color: #66cc66;">&#41;</span>; </div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<p></p>
+<p>Agora, é só publicar, botar o SWF no html preparado e só alegria =D</p>
+<p>Obs.: Para o efeito ficar completo, é necessário o SWF estar com fundo transparent(wmode=transparent) ou opaco(wmode=opaque), para que o lightbox não fique por trás do SWF.</p>
+<p><strong>[update]</strong></p>
+<p>Na ultima versão do LightBox, colocaram uma função para esconder os SWFs da página na hora do efeito, logo quem notar que seu SWF sumiu do fundo ao aciona-lo, já sabe o porque :S</p>
+<p>Neste link <a href="http://www.huddletogether.com/projects/lightbox2/#download">http://www.huddletogether.com/projects/lightbox2/#download</a> tem o changelog da versão, com as mudanças que teve.</p>
+<p>Abracetas... <img src='http://blog.lucasferreira.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /></p>
+
+<p><a href="http://feedads.g.doubleclick.net/~a/ZcEFEj7Cy86AATKm5AaHLl_GpV0/0/da"><img src="http://feedads.g.doubleclick.net/~a/ZcEFEj7Cy86AATKm5AaHLl_GpV0/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/ZcEFEj7Cy86AATKm5AaHLl_GpV0/1/da"><img src="http://feedads.g.doubleclick.net/~a/ZcEFEj7Cy86AATKm5AaHLl_GpV0/1/di" border="0" ismap="true"></img></a></p>]]></content:encoded><description>UPDATE: Atenção povo, fiz um novo artigo sobre este mesmo assunto, desta vez melhorado, cliquem aqui para acompanhar.
+Opa?
+Acho que a maioria dos desenvolvedores web já conhecem o Lightbox. É um efeitinho super supimpa (tirando o peso) de ampliar imagens, baseado em Javascript e CSS.
+Pois bem, devido ao fato de ser JS e CSS, muita gente [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://blog.lucasferreira.com/2007/03/29/lightbox-flash/feed/</wfw:commentRss><feedburner:origLink>http://blog.lucasferreira.com/2007/03/29/lightbox-flash/</feedburner:origLink></item><item><title>Flash Tag Object - Update</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/tEL5yNVSNyc/</link><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lucas Ferreira</dc:creator><pubDate>Fri, 09 Mar 2007 14:35:23 PST</pubDate><guid isPermaLink="false">http://blog.lucasferreira.com/2007/03/09/flash-tag-object-update-2/</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Dae meu povo =D</p>
+<p>Firme?</p>
+<p>Venho por meio deste, comunicar que fiz uma atualização na flashtag, reforcei ainda mais a correção daquele bug do IE 7 no método <em>automatic</em>, melhorei algumas coisinhas no code, e por fim adicionei um método interessante <strong>getObject</strong>, responsável por pegar o objeto DOM do SWF, direto na instancia do FlashTag. Vejam um exemplo <a href="http://www.lucasferreira.com/flashtag/example3.htm">aqui</a>.</p>
+<p>Para baixar a ultima versão da flashtag <a href="http://www.lucasferreira.com/flashtag/">clique aqui</a>.</p>
+<p>Abraços!</p>
+
+<p><a href="http://feedads.g.doubleclick.net/~a/wAFQ9iyJCw1c1xB_G9XmQkwg1yc/0/da"><img src="http://feedads.g.doubleclick.net/~a/wAFQ9iyJCw1c1xB_G9XmQkwg1yc/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/wAFQ9iyJCw1c1xB_G9XmQkwg1yc/1/da"><img src="http://feedads.g.doubleclick.net/~a/wAFQ9iyJCw1c1xB_G9XmQkwg1yc/1/di" border="0" ismap="true"></img></a></p>]]></content:encoded><description>Dae meu povo =D
+Firme?
+Venho por meio deste, comunicar que fiz uma atualização na flashtag, reforcei ainda mais a correção daquele bug do IE 7 no método automatic, melhorei algumas coisinhas no code, e por fim adicionei um método interessante getObject, responsável por pegar o objeto DOM do SWF, direto na instancia do FlashTag. Vejam um [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://blog.lucasferreira.com/2007/03/09/flash-tag-object-update-2/feed/</wfw:commentRss><feedburner:origLink>http://blog.lucasferreira.com/2007/03/09/flash-tag-object-update-2/</feedburner:origLink></item><item><title>Feeds no FeedBurner</title><link>http://feedproxy.google.com/~r/LucasFerreira/~3/0UVe9uJns2s/</link><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lucas Ferreira</dc:creator><pubDate>Wed, 15 Nov 2006 16:42:04 PST</pubDate><guid isPermaLink="false">http://blog.lucasferreira.com/2006/11/15/feeds-no-feedburner/</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Opa!</p>
+<p>Aí galerinha do mal que acompanha meu blog, negócio é o seguinte, me rendi ao <a href="http://www.feedburner.com/">feedburner </a>também:</p>
+<p><a title="MEUS FEEDS" href="http://feeds.feedburner.com/lucasferreira">http://feeds.feedburner.com/lucasferreira</a></p>
+<p>Pois então, favor atualizar o endereço do <strong>rss </strong>de vcs <img src='http://blog.lucasferreira.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>Abraços!</p>
+<p><!--adsense--></p>
+
+<p><a href="http://feedads.g.doubleclick.net/~a/H5-6lddt_-hPYKjwgpyWXvL8S-4/0/da"><img src="http://feedads.g.doubleclick.net/~a/H5-6lddt_-hPYKjwgpyWXvL8S-4/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/H5-6lddt_-hPYKjwgpyWXvL8S-4/1/da"><img src="http://feedads.g.doubleclick.net/~a/H5-6lddt_-hPYKjwgpyWXvL8S-4/1/di" border="0" ismap="true"></img></a></p>]]></content:encoded><description>Opa!
+Aí galerinha do mal que acompanha meu blog, negócio é o seguinte, me rendi ao feedburner também:
+http://feeds.feedburner.com/lucasferreira
+Pois então, favor atualizar o endereço do rss de vcs  
+Abraços!</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://blog.lucasferreira.com/2006/11/15/feeds-no-feedburner/feed/</wfw:commentRss><feedburner:origLink>http://blog.lucasferreira.com/2006/11/15/feeds-no-feedburner/</feedburner:origLink></item><lastBuildDate>Sun, 04 Sep 2011 00:00:00 PDT</lastBuildDate></channel></rss>

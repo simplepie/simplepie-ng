@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xml:base="http://www.wayfire.com/webways">
+  <channel>
+    <title>Wayfire Media</title>
+    <link>http://www.wayfire.com/webways</link>
+    <description />
+    <language>en</language>
+          <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/wayfire" /><feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="wayfire" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><feedburner:emailServiceId xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">wayfire</feedburner:emailServiceId><feedburner:feedburnerHostname xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">http://feedburner.google.com</feedburner:feedburnerHostname><item>
+    <title>Analyzing Coastsiders on Twitter</title>
+    <link>http://www.wayfire.com/webways/analyzing-coastsiders-twitter</link>
+    <description>&lt;p&gt;&lt;img width="261" height="178" alt="" style="margin: 0pt 0pt 5px 5px; float: right; clear: none;" src="http://www.wayfire.com/files/images/twitter-coastside.jpg" /&gt;{EAV_BLOG_VER:47f4e295941a8c71}&lt;/p&gt;
+&lt;p&gt;For the past few weeks, I've been trying to put together a &lt;a href="http://twitter.com/khenney/coastsiders"&gt;comprehensive list of Coastside residents on Twitter&lt;/a&gt;. Currently the list has leveled off at 266 members, and while I'm sure there are at least a few more out there, I think we now have a pretty good representation of local Twitter users. I thought it would be interesting to collect data from this list and see what we might learn about Twitter use on the Coastside.&amp;nbsp;&lt;/p&gt;
+&lt;div style="margin: 0pt 0pt 5px 5px; float: right; clear: right; width: 261px;"&gt;
+&lt;script src="http://widgets.twimg.com/j/2/widget.js"&gt;&lt;/script&gt;&lt;script&gt;
+new TWTR.Widget({
+  version: 2,
+  type: 'list',
+  rpp: 30,
+  interval: 6000,
+  title: '',
+  subject: 'Coastsiders on Twitter',
+  width: 261,
+  height: 250,
+  theme: {
+    shell: {
+      background: '#313436',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#eeeeee',
+      color: '#666666',
+      links: '#d27d1b'
+    }
+  },
+  features: {
+    scrollbar: true,
+    loop: false,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: true,
+    behavior: 'all'
+  }
+}).render().setList('khenney', 'coastsiders').start();
+&lt;/script&gt;&lt;/div&gt;
+&lt;p style="font-size: 0.8em;"&gt;&lt;em&gt;&lt;strong&gt;Methodology&lt;/strong&gt;: In compiling the Twitter list, I've defined &amp;quot;the Coastside&amp;quot;  as the coastal areas of San Mateo County, bounded by Pescadero to the south and Montara to the north. Member's locations were  primarily determined by the location listed on their Twitter profiles and from listings in various third-party  Twitter directories. All data used was pulled from the Twitter API, including user data for each of the 266 list members and every tweet posted by list members for one week (between October 30, 2009 and November 5, 2009).&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Who Tweets&lt;/h3&gt;
+&lt;p&gt;Of the 266 users identified, 119 (45%) posted at least once during the week we analyzed. Of the 3,864 tweets captures for the week, 85%  came from the top 10% of users, which is in line with the general Twitter population.&lt;/p&gt;
+&lt;p&gt;One big suprise, at least to me, is that Robert Scoble (&lt;a target="_parent" href="http://www.twitter.com/Scobleizer"&gt;@Scobleizer&lt;/a&gt;) wasn't the coastside's most prolific Tweeter. That honor goes to Susan Lord (&lt;a target="_parent" href="http://www.twitter.com/MATTITUDEMOM"&gt;@MATTITUDEMOM&lt;/a&gt;); who's been been cranking out an average of 55 tweets per day, more than twice Scoble's output. Rounding out the top 5 most active are &lt;a target="_parent" href="http://www.twitter.com/buoy46012"&gt;@buoy46012&lt;/a&gt; (an automated bot that posts hourly wave info), &lt;a target="_parent" href="http://www.twitter.com/hardaway"&gt;@hardaway&lt;/a&gt; and &lt;a target="_parent" href="http://www.twitter.com/IBTerri"&gt;@IBTerri&lt;/a&gt;. The 20 most active coastside Twitterers can be found in the chart below.&lt;/p&gt;
+&lt;table cellspacing="0" cellpadding="0"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="center" colspan="2"&gt;Average Tweets per Day (all time)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/MATTITUDEMOM"&gt;@MATTITUDEMOM&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="275" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;55&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/Scobleizer"&gt;@Scobleizer&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="120" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/buoy46012"&gt;@buoy46012&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="115" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;23&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/hardaway"&gt;@hardaway&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="100" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/IBTerri"&gt;@IBTerri&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="80" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/plangarden"&gt;@plangarden&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="55" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/scoblelite"&gt;@scoblelite&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="50" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/JAdP"&gt;@JAdP&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="50" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/krash63"&gt;@krash63&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="50" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/JeriDansky"&gt;@JeriDansky&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="30" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/coastsider_com"&gt;@coastsider_com&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="30" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/lkilpatrick"&gt;@lkilpatrick&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="30" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/sunshinemug"&gt;@sunshinemug&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="30" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/ccarfi"&gt;@ccarfi&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="25" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/jasonmancebo"&gt;@jasonmancebo&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="25" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/judynaomi"&gt;@judynaomi&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="25" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/surfergrrrl"&gt;@surfergrrrl&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="25" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/PDX_JP"&gt;@PDX_JP&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="20" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/20dollarwine"&gt;@20dollarwine&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="20" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="150" align="left"&gt;&lt;a target="_parent" href="http://www.twitter.com/jtroyer"&gt;@jtroyer&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="20" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;How We Tweet&lt;/h3&gt;
+&lt;p&gt;The Twitter web site tops the list of ways we access Twitter, but both TweetDack and Seesmic are well repesented as well. Many coastsiders are clearly aware of alternate means of tweeting;57% of those who posted more than once also used multiple clients.&lt;/p&gt;
+&lt;p&gt;If you're looking for guidance on which Twitter client is right for you, you might want to ask Francine Hardaway (&lt;a target="_parent" href="http://www.twitter.com/hardaway"&gt;@hardaway&lt;/a&gt;), who used 18 different clients in the one week period we examined. &lt;a target="_parent" href="http://www.twitter.com/Scobleizer"&gt;@Scobleizer&lt;/a&gt; posted from 8 different clients, and no one else used more than five.&lt;/p&gt;
+&lt;table cellspacing="0" cellpadding="0"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="center" colspan="2"&gt;Top Clients (by number of users)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td width="100"&gt;&lt;a href="http://www.twitter.com"&gt;Twitter&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="165" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;33%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="100"&gt;&lt;a href="http://www.tweetdeck.com/"&gt;TweetDeck&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="55" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;11%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="100"&gt;&lt;a href="http://seesmic.com/"&gt;Seesmic&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="35" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;7%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="100"&gt;&lt;a href="http://www.atebits.com/tweetie-iphone/"&gt;Tweetie&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="25" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;5%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="100"&gt;&lt;a href="http://apiwiki.twitter.com/"&gt;API&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="20" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;4%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="100"&gt;&lt;a href="http://twitpic.com/"&gt;TwitPic&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="15" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;3%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="100"&gt;&lt;a href="http://echofon.com/"&gt;Echofon&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="15" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;3%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="100"&gt;&lt;a href="http://m.twitter.com/"&gt;Twitter Mobile&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="10" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;2%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="100"&gt;&lt;a href="http://www.facebook.com"&gt;Facebook&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="10" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;2%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="100"&gt;&lt;a href="http://www.orangatame.com/products/twitterberry/"&gt;TwitterBerry&lt;/a&gt;&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="10" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;2%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;When We Tweet&lt;/h3&gt;
+&lt;p&gt;Coastsiders seem to be most vocal at the end of the week, with 21% of the tweets we captured occurring on Friday. Tuesday and Saturday were the slowest days.&lt;/p&gt;
+&lt;table cellspacing="0" cellpadding="0"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="center" colspan="2"&gt;Tweets by Weekday&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td width="80"&gt;Monday&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="130" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;13%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="80"&gt;Tuesday&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="120" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;12%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="80"&gt;Wednesday&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="140" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;14%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="80"&gt;Thursday&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="150" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;15%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="80"&gt;Friday&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="210" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;21%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="80"&gt;Saturday&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="120" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;12%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="80"&gt;Sunday&lt;/td&gt;
+&lt;td align="left"&gt;&lt;img width="130" height="15" alt="" src="http://www.wayfire.com/files/images/bar.gif" /&gt;13%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;What We Tweet&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;24% of tweets were retweets (RT)&lt;/li&gt;
+&lt;li&gt;22% of tweets contained at least one link&lt;/li&gt;
+&lt;li&gt;53% of tweets containing links used &lt;a href="http://bit.ly"&gt;bit.ly&lt;/a&gt; for URL shortening&lt;/li&gt;
+&lt;li&gt;71% of tweets used the &lt;strong&gt;@&lt;/strong&gt; syntax to reference other twitter users&lt;/li&gt;
+&lt;li&gt;11% of tweets included a &lt;strong&gt;#&lt;/strong&gt;hashcode&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Follow Your Neighbors&lt;/h3&gt;
+&lt;p&gt;If you're a fellow Coastsider (or just a Coastsider at heart), you ought to check out the full list of &lt;a href="http://twitter.com/khenney/coastsiders"&gt;Coastsiders in Twitter&lt;/a&gt; and get to know your neighbors. You can follow the whole list, or browse through the list members and follow those who interest you. If you know someone who's missing from the list, just leave a comment below and I'll make sure they're added.&lt;/p&gt;
+&lt;p&gt;What do you think? Is there value in connecting online with your physical neighbors?&lt;/p&gt;
+</description>
+     <comments>http://www.wayfire.com/webways/analyzing-coastsiders-twitter#comments</comments>
+ <category domain="http://www.wayfire.com/category/tags/coastside">Coastside</category>
+ <category domain="http://www.wayfire.com/category/tags/twitter">Twitter</category>
+ <pubDate>Mon, 09 Nov 2009 06:57:13 +0000</pubDate>
+ <dc:creator>Kevin Henney</dc:creator>
+ <guid isPermaLink="false">184 at http://www.wayfire.com</guid>
+  </item>
+  <item>
+    <title>WhiteHouse.gov switched to Drupal</title>
+    <link>http://www.wayfire.com/webways/whitehousegov-switched-drupal</link>
+    <description>&lt;p&gt;The official web site of the &lt;a href="http://www.whitehouse.gov"&gt;White House&lt;/a&gt; has been ported to Drupal, the open-source Content Management System (CMS) that powers many of our own clients' web sites. We've been recommending Drupal to our clients for years, due to its powerful features and clean, extensible codebase.&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;img width="500" height="328" src="http://www.wayfire.com/files/images/whitehouse.jpg" alt="White House web site, powered by Drupal" style="clear: both;" /&gt;&lt;/p&gt;
+&lt;p&gt;Drupal  has increasingly been adopted by large, highly visible sites such as the White House, and is also being used to power sites from:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AT&amp;amp;T&lt;/li&gt;
+&lt;li&gt;CNN&lt;/li&gt;
+&lt;li&gt;Duke University&lt;/li&gt;
+&lt;li&gt;Fast Company&lt;/li&gt;
+&lt;li&gt;Mattel&lt;/li&gt;
+&lt;li&gt;MIT&lt;/li&gt;
+&lt;li&gt;Nokia&lt;/li&gt;
+&lt;li&gt;Reuters&lt;/li&gt;
+&lt;li&gt;Rutgers University&lt;/li&gt;
+&lt;li&gt;Sony Ericsson&lt;/li&gt;
+&lt;li&gt;Stanford University&lt;/li&gt;
+&lt;li&gt;Symantec&lt;/li&gt;
+&lt;li&gt;The Emmys&lt;/li&gt;
+&lt;li&gt;The Onion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For our clients who've already been enjoying Drupal for years, it's easy to understand why high profile sites like these have been making the switch. Congrats to the entire Drupal team; it's great to see how far the project has come in the past few years.&lt;/p&gt;
+</description>
+     <comments>http://www.wayfire.com/webways/whitehousegov-switched-drupal#comments</comments>
+ <category domain="http://www.wayfire.com/category/tags/drupal">Drupal</category>
+ <pubDate>Wed, 28 Oct 2009 07:00:00 +0000</pubDate>
+ <dc:creator>Kevin Henney</dc:creator>
+ <guid isPermaLink="false">185 at http://www.wayfire.com</guid>
+  </item>
+  <item>
+    <title>The Times, They Are A-Changin'</title>
+    <link>http://www.wayfire.com/webways/times-they-are-changin</link>
+    <description>&lt;p&gt;New name, new look. Quartz Mountain Communications has rebranded as Wayfire Media. We'll still be bringing you the same quality, service and insight you've come to expect, with an expanded range of services to meet the needs of an increasingly digital business world.&lt;/p&gt;
+&lt;p&gt;Over the next few weeks, we'll be importing much of the archived content from our previous site, and some new stuff as well. Stay tuned...&lt;/p&gt;
+</description>
+     <comments>http://www.wayfire.com/webways/times-they-are-changin#comments</comments>
+ <pubDate>Wed, 05 Aug 2009 11:27:56 +0000</pubDate>
+ <dc:creator>Kevin Henney</dc:creator>
+ <guid isPermaLink="false">3 at http://www.wayfire.com</guid>
+  </item>
+  <item>
+    <title>Top 3 Mistakes of Rookie Web Designers</title>
+    <link>http://www.wayfire.com/webways/top-3-mistakes-rookie-web-designers</link>
+    <description>&lt;p&gt;Everyone makes mistakes, and web designers are no exception. However, there some web design goofs that are frequently made by designers who are just starting out - so consistently that most web designers will admit to committing some or all of these at some point early in our careers.&lt;/p&gt;
+&lt;p&gt;&lt;img width="230" height="145" style="margin: 0pt 0pt 10px 10px; float: right;" alt="oops" src="http://www.wayfire.com/files/images/agh.jpg" /&gt;We aren't talking about the real amateur problems, like cheesy animated GIFs, loud backgrounds, and horrible font choices. Here we're looking at mistakes that you might see from professionals who get paid good money for their work. And it often looks good. But even a site that looks great to the untrained eye can conceal  problems beneath the surface (and invisible to the client).&lt;/p&gt;
+&lt;h3&gt;1) Insufficient Browser Compatibility Testing&lt;/h3&gt;
+&lt;h3&gt;&lt;img width="192" height="211" src="http://www.wayfire.com/files/images/browser-list.gif" alt="list of web browsers" style="border: 1px solid rgb(153, 153, 153); margin: 0pt 0pt 10px 10px; float: right;" /&gt;&lt;/h3&gt;
+&lt;p&gt;Everyone in the world doesn't use the same combination of web browser and operating system as you do. Rookie web designers might check their design in one or two browsers, but few do any extensive testing on the full range of browsers and even fewer test on multiple operating systems. &lt;/p&gt;
+&lt;p&gt;Those who haven't experienced the differences in platforms may be surprised to learn that Internet Explorer for Windows behaves &lt;em&gt;very &lt;/em&gt;differently from IE  Mac (fortunately the latter is nearly dead).&lt;/p&gt;
+&lt;p&gt;Professional web designers  learn to support as many browsers as possible, even if the extra effort often goes unnoticed by clients. A web site may get only a handful of visitors using Camino, but if one of that small group is looking to make a million-dollar purchase, you want be sure your site looks great to them.&lt;/p&gt;
+&lt;h3&gt;2)  Lack of Plain Text&lt;/h3&gt;
+&lt;p&gt;&lt;img width="317" height="69" src="http://www.wayfire.com/files/images/sample-serp.gif" alt="sample serp" style="border: 1px solid rgb(153, 153, 153); margin: 0pt 10px 10px 0pt; float: left;" /&gt;Have you ever seen a search result like this? &amp;quot;Copyright 2005&amp;quot; isn't a very good description of &lt;em&gt;any&lt;/em&gt; site, so what's going on here? Usually you'll see this when a page has virtually no plain text content (including ALT attributes and META descriptions).&lt;/p&gt;
+&lt;p&gt;New designers often succumb to the temptation to lock their text within image files, where they're able to use a wide range of fonts and render them with pixel-perfect precision. Unfortunately, while the end result may look great on screen, it takes longer to load, can't be easily resized, and it's unreadable to machines (including screen readers for the blind).&lt;/p&gt;
+&lt;p&gt;The internet may have changed a lot since it's early days, but at it's heart it has always been about text, and it still is. As good as computers have become at displaying  multimedia content, they're still not very good at understanding it. &lt;/p&gt;
+&lt;p&gt;Plain text is still the most reliable way of representing information in a way that's  understandable to both people and machines, and it's the web designer's challenge to present that text in an appealing way, without resorting to images and other methods which are less accessible. &lt;/p&gt;
+&lt;p&gt;Multimedia has it's place, of course, but plain text should not be neglected.&lt;/p&gt;
+&lt;h3&gt;3) No Call to Action&lt;/h3&gt;
+&lt;p&gt;Almost every web site is created for a reason. Online stores, obviously, exist to sell products, but many small business sites don't actually incorporate ecommerce features. These &amp;quot;brochure sites&amp;quot; don't just exist to provide information; they are created in the hopes of eliciting a specific reaction from the visitor. It may be  a phone call for more information, or generating a lead by filling out an online form. Often, new designers focus so much on things like graphics and page layout that they forget to tell the site's visitors what they want them to do.&lt;/p&gt;
+&lt;p&gt;It's important that a web designer understand the goals of the web site, and structure the site in a way that encourages visitors to take that action. &lt;/p&gt;
+&lt;p&gt;Sites built to generate sales calls should feature the company phone number prominently on every page, not just buried on a contact page. If the goal is to have visitors fill out a form, then the link to that form should be the most &amp;quot;clickable&amp;quot; element on the page. &lt;/p&gt;
+&lt;p&gt;Visitors are more likely to do what you want if you give them some direction, and web site owners are much happier when their web site generates real leads and sales - not just page views.&lt;/p&gt;
+&lt;h3&gt;Still Looking Good&lt;/h3&gt;
+&lt;p&gt;Again, a web site can have all of the problems above, yet still look fantastic. That's why these mistakes can go unnoticed by clients and newer professionals. They may not be apparent until the site has been live for some time, and clients begin to complain about poor search engine performance, or lack of conversions, or an important customer who can't view the site properly. &lt;/p&gt;
+&lt;p&gt;Fortunately, they can all be fixed (some more easily than others) and as designers gain experience we learn to avoid these pitfalls - and discover new ones :)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Designers: &lt;/strong&gt;&lt;em&gt;&lt;strong&gt;What other mistakes did you make when you were just starting out? Or what mistakes do you see newbies making again and again?&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;*This post was written as part of the &lt;a href="http://www.dailyblogtips.com/blog-project-three/"&gt;Three Blog Project&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+</description>
+     <comments>http://www.wayfire.com/webways/top-3-mistakes-rookie-web-designers#comments</comments>
+ <category domain="http://www.wayfire.com/category/tags/web-design">Web Design</category>
+ <pubDate>Mon, 09 Jul 2007 05:01:31 +0000</pubDate>
+ <dc:creator>Kevin Henney</dc:creator>
+ <guid isPermaLink="false">93 at http://www.wayfire.com</guid>
+  </item>
+  <item>
+    <title>Paid Links - Don't Ask, Don't Sell</title>
+    <link>http://www.wayfire.com/webways/paid-links-dont-ask-dont-sell</link>
+    <description>&lt;p&gt;Following Matt Cutts' recent announcement that Google will allow users to &lt;a href="http://www.mattcutts.com/blog/how-to-report-paid-links/"&gt;report paid links&lt;/a&gt;, Andy Beard has taken the bold step of &lt;a href="http://andybeard.eu/2007/04/google-paidlinks.html"&gt;submitting his own content&lt;/a&gt; to Google's webspam team, in the hope of getting some official statement out of Google. I certainly hope he gets a response, but it seems unlikely.&lt;/p&gt;
+&lt;p&gt;The disturbing truth is that the only noise out of Google about paid links comes from Matt Cutts' &amp;quot;personal&amp;quot; blog postings. And Matt's stance on the need for machine-readable disclosure of paid links seems to contradict everything Google has ever said about building sites for people, rather than for search engines.&lt;/p&gt;
+&lt;p&gt;There's obviously a considerable gray area regarding what constitutes a paid link, and Andy's post does a good job of listing many cases where a link may be motivated (directly or indirectly) by financial gain. If Google is serious about identifying and penalizing &amp;quot;paid links,&amp;quot; and would prefer that webmasters avoid them, it would seem that the obvious first step is define what constitutes a &amp;quot;paid link.&amp;quot; But rather than offering such a definition, or at least some clear guidelines, Google seems content to remain silent while Matt drops hints and spreads FUD.&lt;/p&gt;
+&lt;p&gt;It's also very troubling that, while no precise definition has been offered, the only &amp;quot;paid links&amp;quot; Matt seems to be concerned about are the cheap ones. Buying links for a few hundred dollars (through TextLinkAds, PayPerPost, ReviewMe, etc) is bad. But links gained through multi-million dollar corporate partnerships are okay.&lt;/p&gt;
+&lt;p&gt;Currently there's a live link to Google at the bottom of every page of Adobe.com. Are we to believe that this is simply an editorial endorsement of Google by Adobe, and that it has nothing to with the partnership between the two companies? That would be an odd coincidence, since Google's ubiquitous presence on Adobe.com began in in May of 2006, just a month before the announcement of an agreement to distribute Google's toolbar with Adobe software (terms of the deal were undisclosed).&lt;/p&gt;
+&lt;p&gt;Maybe trading links for financial compensation is okay if it part of some larger business dealing? What about a more clear cut case? Andy says:&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Companies are allowed to buy links from the Yahoo directory, which is well known to confer a large amount of trust to a domain, and has been propping up Google's algorithms for years. Will we soon see Google state that the Yahoo directory should be made nofollow for all paid inclusions? Matt Cutts has previously stated that the Yahoo directory is OK because there is editorial review. &lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;So it's alright for Yahoo to sell links because of their &amp;quot;editorial review.&amp;quot; Certainly the paid reviews that Andy submitted to the webspam team required much more editorial review than the Yahoo directory can afford to give to the many sites it receives, so if Google's stance on the value of &amp;quot;editorial review&amp;quot; is consistent, Andy should be in the clear.&lt;/p&gt;
+&lt;p&gt;But then, Matt Cutts doesn't speak for Google, according to his blog's disclaimer, so we're left to wonder about Google's official stance on &amp;quot;paid links.&amp;quot; Hopefully, some day soon they'll tell us plainly, rather than making us read between the lines of their employee's personal blog. Is that too much to ask from the company that pledged to &amp;quot;Do No Evil?&amp;quot;&lt;/p&gt;
+</description>
+     <comments>http://www.wayfire.com/webways/paid-links-dont-ask-dont-sell#comments</comments>
+ <category domain="http://www.wayfire.com/category/tags/link-exchange">Link Exchange</category>
+ <category domain="http://www.wayfire.com/category/tags/seo">SEO</category>
+ <pubDate>Tue, 17 Apr 2007 08:55:13 +0000</pubDate>
+ <dc:creator>Kevin Henney</dc:creator>
+ <guid isPermaLink="false">85 at http://www.wayfire.com</guid>
+  </item>
+  <item>
+    <title>You Don't Need a Professional Web Designer</title>
+    <link>http://www.wayfire.com/webways/you-dont-need-professional-web-designer</link>
+    <description>&lt;p&gt;At least according to BusinessWeek. &lt;img width="200" height="263" border="0" src="http://www.wayfire.com/files/images/laptopboy.jpg" alt="boy with laptop" style="float: right;" /&gt;They're running an article called &lt;a href="http://www.businessweek.com/magazine/content/07_09/b4023445.htm?chan=smallbiz_smallbiz+index+page_today's+top+stories"&gt;No Geeks Required&lt;/a&gt;, all about how small business owners can realize big savings by designing their own websites. They claim that &amp;quot;a variety of services make it easy for the tech-impaired and time-challenged to get a site up and running,&amp;quot; and then go on to profile 3 business owners who've had success with these services.&lt;/p&gt;
+&lt;p&gt;It's interesting   that BusinessWeek neglected to link to any of the self-made sites that they profile, and I took the time to track them down and have a look. Normally, I don't use this space to critique anyone else's work. But since the creators of these sites are not professional designers, and they're claiming in an widely read magazine that my profession is unnecessary and overpriced, I'm going to consider them fair game. Lets take a look.&lt;/p&gt;
+&lt;h3&gt;Wow! Imports&lt;/h3&gt;
+&lt;p&gt;&lt;a href="http://wowimports.us/index.html" rel="nofollow"&gt;&lt;img width="300" height="204" border="0" src="http://www.wayfire.com/files/images/sc1.jpg" alt="" style="float: right;" /&gt;&lt;/a&gt;According to the article, the owner  of Wow! Imports used a do-it-yourself service at Register.com to create her site. &amp;quot;I stayed up all night cutting and pasting and did the whole thing in two days&amp;quot;, she says. Take a look at &lt;a rel="nofollow" href="http://wowimports.us/index.html"&gt;what two sleepless nights can produce&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Clearly the work of an amateur, but not too bad. The pink-gray gradients are &amp;quot;interesting&amp;quot;, though the header and footer seem to be completely divorced from one another, separated by a sea of empty space. I actually hit refresh and then tried a different browser, because it felt like there was a background image that wasn't loading, but it appears to be done that way &amp;quot;by design&amp;quot;. The company name in the header is just plain text, instead of incorporating the logo which appears elsewhere (the logo is also a do-it-yourself design, I assume). Visually, it's unimpressive, but of course that's largely a matter of taste. Taste, though, is one of those intangible things that a professional brings to a design.&lt;/p&gt;
+&lt;p&gt;Beyond the  visual appearance, other problems lurk. The pages carry non-descriptive names such as &amp;quot;page2.html&amp;quot; and are needlessly buried in a subdirectory. The page titles, largely identical across the site, are ridiculously long and stuffed with keywords. For example, the front page title contains 33 words and is 228 characters long. The products page has almost all of it's text hidden within image files. None of these things are helping the site on the search engines, and the spammy title tags may even be hurtful.&lt;/p&gt;
+&lt;h3&gt;Dream a Little Dream Events&lt;/h3&gt;
+&lt;p&gt;&lt;a href="http://www.dreamalittledreamevents.com/index.html" rel="nofollow"&gt;&lt;img width="300" height="204" border="0" src="http://www.wayfire.com/files/images/sc2.jpg" alt="" style="float: right;" /&gt;&lt;/a&gt;Next up is &lt;a href="http://www.dreamalittledreamevents.com/index.html" rel="nofollow"&gt;Dream a Little Dream Events&lt;/a&gt;, created with software from Homestead. The owner originally tried out the site builder at Register.com but found that &amp;quot;everything looked weird&amp;quot;. &lt;em&gt;(note: this site has since been redesigned since this story was originally posted)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I wasn't surprised to find this the most visually appealing site. A company that plans weddings and designs invitations should be expected to have an eye for design, and the site is tastefully put together. There's an odd use of white space at the top of the front page, and a few alignment issues, but that's forgivable - these are amateur sites we're talking about.&lt;/p&gt;
+&lt;p&gt;Once you get past the visual aspects, the site doesn't hold up so well. The navigation is  done with javascript, which is bound to cause problems for search engine spiders. This probably explains the fact that the front page has a Google Page Rank of 3, while most of the internal pages haven't even been indexed. If I could only fix one thing on this site, this would be it. Search engines can't send visitors to your site if they can't crawl it.&lt;/p&gt;
+&lt;p&gt;There's also a problem with the images on the site. Large images are used, with the scaling left to the browser. This causes  larger pages, longer download times, and badly rendered images (most browsers are terrible at image scaling). Beyond the on-site images, there are photo galleries  hosted with a different service on a separate domain. The galleries have a different design and no link back to the primary web site, and no contact information for the company. If a visitor finds the company via the photo gallery pages, they have no way to find the actual company site without resorting to a search engine.&lt;/p&gt;
+&lt;h3&gt;Parking Padding Solutions&lt;/h3&gt;
+&lt;p&gt;&lt;a href="http://garagepadding.com" rel="nofollow"&gt;&lt;img width="300" height="204" border="0" src="http://www.wayfire.com/files/images/sc3.jpg" alt="" style="float: right;" /&gt;&lt;/a&gt;Finally, we have &lt;a href="http://garagepadding.com" rel="nofollow"&gt;Parking Padding Solutions&lt;/a&gt;, created with Microsoft's Office Live. This is also a second attempt, after the first try with Yahoo produced a site that &amp;quot;wasn't as professional-looking&amp;quot;. &lt;em&gt;(note: this site has since been redesigned since this story was originally posted)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This site manages to avoids most of the structural problems of the other two, so it appears to be well indexed by the search engines. Visually, though, it falls far short of the &amp;quot;professional-looking&amp;quot; image the site owner was going for. The logo and graphics are clearly amateur. Every element on the page seems to have a border applied, which only accentuates the lack of padding in some table cells. Viewed the Firefox, the design falls apart, producing horizontal scrollbars no matter how large the browser window is. In Internet Explorer, the right side of the page is cut off for users with a screen resolution less than 1280 pixels wide. I suppose that's fine if your target market is people with huge monitors.&lt;/p&gt;
+&lt;h3&gt;Professional Design Matters&lt;/h3&gt;
+&lt;p&gt;Despite their problems, all three websites are largely functional, and I have to applaud the efforts of the do-it-yourself designers. I only want to point out that you do get what you pay for, and that all of these low cost sites contain problems that a professional would know how to solve. Further, these sites were selected by BusinessWeek as examples of successful DIY sites, we're not hearing from those who have given up in frustration.&lt;/p&gt;
+&lt;p&gt;Although all 3 site builders are apparently satisfied with the fruits of their efforts, I believe that these are examples of businesses that have succeeded &lt;em&gt;in spite of&lt;/em&gt; their websites, not because of them. How many potential customers didn't get in touch because the site looked unprofessional? Or because it wouldn't work in their web browser? How many clients never even found them because their pages weren't indexed by Google?&lt;/p&gt;
+</description>
+     <comments>http://www.wayfire.com/webways/you-dont-need-professional-web-designer#comments</comments>
+ <category domain="http://www.wayfire.com/category/tags/web-design">Web Design</category>
+ <pubDate>Sat, 10 Mar 2007 01:29:46 +0000</pubDate>
+ <dc:creator>Kevin Henney</dc:creator>
+ <guid isPermaLink="false">71 at http://www.wayfire.com</guid>
+  </item>
+  <item>
+    <title>Making Article Marketing Work</title>
+    <link>http://www.wayfire.com/webways/making-article-marketing-work</link>
+    <description>&lt;p&gt;I just happened across a post by Matt Jones, who's asking if &lt;a href="http://matt608.blogspot.com/2007/02/article-marketing-is-waste-of-time.html"&gt;Article Marketing is a Waste of Time&lt;/a&gt;. Matt submitted 20 articles to a couple of popular article directories and was less than impressed with the results (2 incoming links from low trust sites). Submitting to free article sites is one of the most commonly mentioned ways of building links and traffic for your web site, and I've even heard it touted as a means of search engine optimization. I think it's a complete waste of time.&lt;/p&gt;
+&lt;h3&gt;Who Republishes Articles?&lt;/h3&gt;
+&lt;p&gt;Think about the type of links you're going to get by submitting to article directories. Do any of the reputable sites you read post this type of content? The reality is that sites republishing free articles are generally of very low quality. Sites that regularly publish quality, original content aren't going to water down their pages with this sort of duplicate content. Instead, your article is going to end up on Made for Adsense sites with a lot of other republished content. Those aren't the links you want, and they're unlikely to drive much traffic either.&lt;/p&gt;
+&lt;p&gt;If you must submit to article directories, make sure you're writing new content to submit, and don't publish those same articles on your own site. At least that way you won't be hurting yourself with duplicate content. But if you're going to go through the trouble to write fresh content, there are better uses for those articles that can garner links from quality sites. Like most things worth doing, though, it does require a bit of work.&lt;/p&gt;
+&lt;h3&gt;An Alternative - Guest Blogging&lt;/h3&gt;
+&lt;p&gt;Instead of writing up your article for the free directories, consider writing it for a particular site as a guest author.&lt;/p&gt;
+&lt;p&gt;Find a few blogs that write on similar topics and contact the authors. Let them know that you're trying to get more exposure for your blog and you'd like to write an article for their site. You'll find many authors who are open to the idea if you make it clear that you're going to provide them with a quality article, meaning:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Provide original content that will be published only on their blog (nothing you're going to publish yourself or submit to directories).&lt;/li&gt;
+&lt;li&gt;Your writing should meet the site's editorial standards. Think of this like an audition, and a chance to attract new readers. Make it some of your best work.&lt;/li&gt;
+&lt;li&gt;Solicit feedback on the article's topic. Be flexible (within reason).&lt;/li&gt;
+&lt;li&gt;Show some links to your best blog posts to demonstrate that you can write a good post. Once you've done this a few times, show links to the other site's where you've written guest posts.&lt;/li&gt;
+&lt;li&gt;No blatant self-promotion. No affiliate links.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Publishing on other blogs in this fashion is definitely more work. You have to write an original, quality article for each site, and you have to do the legwork to set up these guest blogging opportunities. The payoff, though, is that you can obtain quality links from trusted web sites. If you enjoy writing articles and want to be read by a wider audience, all while building quality links, you might find this method well worth the effort.&lt;/p&gt;
+&lt;p&gt;UPDATE:&amp;nbsp; In the comments, &lt;a href="http://andybeard.eu/"&gt;niche marketing&lt;/a&gt; blogger Andy Beard recommended the &lt;strong&gt;Article Marketer&lt;/strong&gt; service as a viable method for article distribution. They even have a free service available, so if you're interested in trying your hand at article marketing, &lt;a rel="nofollow" href="http://www.articlemarketer.com/?a_aid=marketing"&gt;it's worth a try&lt;/a&gt;.&lt;/p&gt;
+</description>
+     <comments>http://www.wayfire.com/webways/making-article-marketing-work#comments</comments>
+ <category domain="http://www.wayfire.com/category/tags/article-marketing">Article Marketing</category>
+ <category domain="http://www.wayfire.com/category/tags/seo">SEO</category>
+ <pubDate>Thu, 22 Feb 2007 08:00:00 +0000</pubDate>
+ <dc:creator>Kevin Henney</dc:creator>
+ <guid isPermaLink="false">41 at http://www.wayfire.com</guid>
+  </item>
+  <item>
+    <title>Sometimes "free" is worth every penny</title>
+    <link>http://www.wayfire.com/webways/sometimes-free-worth-every-penny</link>
+    <description>&lt;p&gt;&lt;a href="http://consumerist.com/consumer/complaints/lycos-deletes-all-of-customers-email-tells-em-to-suck-it-233394.php" target="_self" title="the Consumerist"&gt;The Consumerist reports&lt;/a&gt; on a recent complaint from a Lyco's customer who lost 2 years worth of her personal email. The customer in question hadn't logged into her free account for 30 days, which is grounds for deletion according to Lyco's terms of service, and found that Lyco's customer service was anything but helpful.&lt;/p&gt;
+&lt;p&gt;I'm not suprised to find so many people drawn to the free email services that are available everywhere on the internet.&amp;nbsp; We all love a bargain, and most of these services are extremely easy to set up, even for those with little internet experience. Few people consider the drawbacks until disaster strikes. And once their email has been lost, they're shocked to receive subpar customer service for a service that hasn't cost them a penny.&lt;/p&gt;
+&lt;p&gt;With so many online services offered for free, it's easy to forget that the rules of the real world also apply to the internet. You get what you pay for. If you just need a personal email account for occasional correspondence, and you don't care to much about the level of service you receive, free email accounts are a great deal.&amp;nbsp; But if you really rely on your email service, or you're using it for business, a real email account on your own domain is well worth the small cost.&amp;nbsp; &lt;/p&gt;
+</description>
+     <comments>http://www.wayfire.com/webways/sometimes-free-worth-every-penny#comments</comments>
+ <pubDate>Fri, 02 Feb 2007 08:00:00 +0000</pubDate>
+ <dc:creator>Kevin Henney</dc:creator>
+ <guid isPermaLink="false">51 at http://www.wayfire.com</guid>
+  </item>
+  <item>
+    <title>ROI of Business Blogs</title>
+    <link>http://www.wayfire.com/webways/roi-business-blogs</link>
+    <description>&lt;p&gt;Forrester Research &lt;img width="109" height="48" border="0" style="float: right;" alt="Forrester logo" src="http://www.wayfire.com/files/images/logo-forrester.gif" /&gt;has released a new report on &lt;a href="http://www.forrester.com/Research/Document/Excerpt/0,7211,41064,00.html" title="The ROI Of Blogging at Forrester Research"&gt;The ROI Of Blogging&lt;/a&gt;, available to anyone with $379 burning a hole in their pocket.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;For those of us who don't want to spend that kind of cash on a 15 page report, Forrester blogger Charlene Li provides a &lt;a href="http://blogs.forrester.com/charleneli/2007/01/new_roi_of_blog.html" title="summary and excerpt of Forrester report"&gt;summary and excerpt&lt;/a&gt;. While the value of business blogging is widely accepted, it can be difficult to quantify that value, and Forrester's aim here is to provide businesses with a method for measuring the value of their blogging efforts.&lt;/p&gt;
+&lt;p&gt;Some potential benefits mentioned in the summary are increased brand visibility, increased sales efficiency, and savings on customer insight. Charlene reveals some interesting details on this last benefit, regarding the value of customer insight in their case study of General Motor's FastLane blog:&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt; FastLane has about 100 people commenting on the blog each month, which is equivalent to gaining customer insight on products and brands from a traditional focus group. We estimated that the value of this was equivalent to running a focus group every month at the cost of $15,000 a month, or $180,000 a year. Voila &amp;ndash; there&amp;rsquo;s the value of the blogging benefit laid out in black and white. &lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Small businesses may not have the budget to run focus groups in order to learn what their customers want, but a simple blog is within the reach of everyone. There's no need to limit yourself to posting news and announcements on your business blog. Instead, consider telling your customers about a new product you're considering and solicit their feedback. Ask visitors to comment about what they think of your new service offering.&lt;/p&gt;
+&lt;p&gt;The important thing is to actively encourage participation among the customers who visit your blog. If you make it easy for customers to tell you what they want, and what they think of your business, you'll be able to get significant value from your blogging efforts.&lt;/p&gt;
+</description>
+     <comments>http://www.wayfire.com/webways/roi-business-blogs#comments</comments>
+ <pubDate>Thu, 25 Jan 2007 08:00:00 +0000</pubDate>
+ <dc:creator>Kevin Henney</dc:creator>
+ <guid isPermaLink="false">50 at http://www.wayfire.com</guid>
+  </item>
+  <item>
+    <title>Humanizing Your Business with a Blog</title>
+    <link>http://www.wayfire.com/webways/humanizing-your-business-blog</link>
+    <description>&lt;p&gt;When Apple announced their new iPhone yesterday, bloggers and tech sites across the internet rushed heap praise on the long anticipated gadget. The name &amp;quot;iPhone&amp;quot; has been attached to so many internet rumors about Apple's top-secret project that few ever considered who owned the actual trademark.&amp;nbsp; &lt;/p&gt;
+&lt;h3&gt;The Press Release&lt;/h3&gt;
+&lt;p&gt; Cisco announced in a &lt;a title="Cisco Press Release about Apple Trademark suit" target="_self" href="http://newsroom.cisco.com/dlls/2007/corp_011007.html"&gt;press release&lt;/a&gt; earlier today that they have filed a lawsuit against Apple for trademark infringement. The lawsuit, in itself, isn't terribly interesting; a company infringes on your trademark, you have to protect it. But suing Apple while they're still basking in the afterglow of their triumphant product announcement was bound to leave Cisco looking like the bad guy. And Cisco's press release, while stating the relevant facts well enough, does little to alter the impression that Cisco is just a big, bad corporation looking to rain on Apple's parade.&lt;/p&gt;
+&lt;h3&gt;The Blog Post&lt;/h3&gt;
+&lt;p&gt;But take a look at &lt;a title="Cisco Blog about iPhone suit" target="_self" href="http://blogs.cisco.com/news/2007/01/update_on_ciscos_iphone_tradem.html"&gt;this blog post&lt;/a&gt; from Cisco general counsel Mark Chandler. It's a much more human, almost informal description of the events that led up to the lawsuit, and the reasons behind Cisco's decision to sue. It wouldn't be appropriate for a press release, but Cisco's corporate blog allows them a place to speak a bit more freely about their motivations. And it makes it much easier to sympathize with Cisco's position in the matter. Which statement would you want representing your company?&lt;/p&gt;
+&lt;h3&gt;If you're not blogging, you're missing out&lt;/h3&gt;
+&lt;p&gt;If your business web site doesn't incorporate a blog of some sort, you're missing out on a terrific way of speaking to your customers on a more personal level. You may not be embroiled in a major lawsuit that will be on the front page of tomorrow's business section, but every small business has things they wish they could say to their customers.&amp;nbsp; With a blog, you have a place to put those things that don't fit in a press release, things that don't warrant a big announcement splashed across your home page, but things that are worth saying nonetheless.&lt;/p&gt;
+&lt;p&gt;By allowing your customers to leave comments on your blog posts, you create another means for getting direct feedback and even engaging in conversations with people who might never have taken the time to make a phone call.&lt;/p&gt;
+&lt;p&gt;Any small business that wants to improve on communication with their customers should seriously consider testing the waters of blogging.&amp;nbsp; Cisco is just one example a a large corporation that's using blogs effectively, but most small businesses, especially outside of the tech industry, haven't caught on yet. But they will in time. The only question is, are you going to be the first small business in your market to get a blog, or the last?&lt;/p&gt;
+</description>
+     <comments>http://www.wayfire.com/webways/humanizing-your-business-blog#comments</comments>
+ <pubDate>Wed, 10 Jan 2007 08:00:00 +0000</pubDate>
+ <dc:creator>Kevin Henney</dc:creator>
+ <guid isPermaLink="false">48 at http://www.wayfire.com</guid>
+  </item>
+  </channel>
+</rss>

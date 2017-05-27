@@ -1,0 +1,474 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<!-- Load Theme Options -->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="de-DE">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<!-- Meta & Title -->
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>TechDevice - Das Onlinemagazin für die Technik von heute und die Gadgets von morgen!</title>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="http://www.TechDevice.de/wp-content/themes/Open/style.css" type="text/css" media="screen" />
+	
+	<!-- Feed & Pingbacks -->
+		<link rel="alternate" type="application/rss+xml" title="TechDevice RSS Feed" href="TechDevice" />
+		<link rel="pingback" href="http://www.TechDevice.de/xmlrpc.php" />
+	
+	<!-- Hooks -->
+    					
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.1.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-22292717-1']);
+	_gaq.push(['_trackPageview'],['_trackPageLoadTime']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel='stylesheet' id='thickbox-css'  href='http://www.TechDevice.de/wp-includes/js/thickbox/thickbox.css?ver=20090514' type='text/css' media='all' />
+<link rel='stylesheet' id='recent-comments-with-gravatar-css'  href='http://www.TechDevice.de/wp-content/plugins/recent-comments-with-gravatar/style.css?ver=1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='socialize-css'  href='http://www.TechDevice.de/wp-content/plugins/socialize/frontend/css/socialize.css?ver=3.2.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.TechDevice.de/wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='http://www.TechDevice.de/wp-includes/js/jquery/jquery.js?ver=1.6.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.TechDevice.de/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.TechDevice.de/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='TechDevice' href='http://www.TechDevice.de/' />
+<meta name="generator" content="WordPress 3.2.1" />
+<link rel='shortlink' href='http://wp.me/1akyx' />
+<link href="http://www.TechDevice.de/wp-content/plugins/appstore/css/AppStore.css" rel="stylesheet" type="text/css"/><style type='text/css'>.appImageContainer {width: auto;margin: 0px;}</style>	
+	<!-- Javascript -->
+	<script type="text/javascript" src="http://www.TechDevice.de/wp-content/themes/Open/js/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="http://www.TechDevice.de/wp-content/themes/Open/js/superfish.js"></script>
+	<script type="text/javascript" src="http://www.TechDevice.de/wp-content/themes/Open/js/custom.js"></script>
+	
+
+	
+</head>
+
+<link href="http://www.techdevice.de/favicon.ico" rel="shortcut icon" />
+
+<body class="home blog default">
+
+<div class="wrap">
+
+	<div id="content" class="">
+
+
+		<div id="top-bar">
+		
+			<!-- WordPress Top Menu (Display Menus or Pages) -->
+							<ul id="menu-seiten" class="fl nav"><li id="menu-item-5429" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-home menu-item-5429"><a href="http://www.TechDevice.de/">Startseite</a></li>
+<li id="menu-item-5802" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5802"><a href="http://www.TechDevice.de/techdevice-shop/">TechDevice Shop</a></li>
+<li id="menu-item-5437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5437"><a href="http://www.TechDevice.de/uber-uns/">Über Uns</a>
+<ul class="sub-menu">
+	<li id="menu-item-5443" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5443"><a href="http://www.TechDevice.de/uber-uns/sebastian-2/">Sebastian</a></li>
+	<li id="menu-item-5440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5440"><a href="http://www.TechDevice.de/uber-uns/florian/">Florian</a></li>
+	<li id="menu-item-5441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5441"><a href="http://www.TechDevice.de/uber-uns/jens/">Jens</a></li>
+	<li id="menu-item-5449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5449"><a href="http://www.TechDevice.de/uber-uns/johannes/">Johannes</a></li>
+	<li id="menu-item-5813" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5813"><a href="http://www.TechDevice.de/uber-uns/yannic/">Yannic</a></li>
+	<li id="menu-item-5814" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5814"><a href="http://www.TechDevice.de/uber-uns/wolfram/">Wolfram</a></li>
+</ul>
+</li>
+<li id="menu-item-5448" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5448"><a href="http://www.TechDevice.de/gewinner/">Gewinner</a></li>
+<li id="menu-item-5438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5438"><a href="http://www.TechDevice.de/partner/">Partner</a></li>
+<li id="menu-item-5439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5439"><a href="http://www.TechDevice.de/impressum/">Impressum</a></li>
+</ul>						
+			<!-- Subscribe For Updates (Twitter, RSS, Email) -->
+			<ul class="fr">
+				<!-- Twitter -->
+								<li><a href="http://twitter.com/TechDeviceDE/" target="_blank" title="Updates Via Twitter"><span class="twitter"></span></a></li>
+								<!-- Feedburner (Email) -->
+								<li><a href="http://feedburner.google.com/fb/a/mailverify?uri=TechDevice" target="_blank" title="Subscribe For Updates Via Email"><span class="email"></span></a></li>
+								<!-- Feedburner (RSS) -->
+				<li><a href="http://feeds.feedburner.com/TechDevice" title="Subscribe For Updates Via RSS"><span class="rss"></span></a></li>
+			</ul>
+			
+			<div class="clear"></div>
+		</div><!--top-bar-->
+		
+		
+		<div id="header">
+		
+			<!-- Site Logo -->
+			<div class="logo">
+									<a href="http://www.TechDevice.de"><img src="http://www.TechDevice.de/wp-content/themes/Open/images/TD_Logo.png" alt="TechDevice" /></a>
+							</div>
+			
+			<!-- Banner Ad -->
+			<div class="banner">
+							</div>
+			
+			<div class="clear"></div>
+		</div><!--header-->
+		
+		
+		<!-- WordPress Main Menu (Display Menus or Categories) -->
+		<div id="main-nav">
+
+							<!-- If WP 3.0 Or Later, Use Menus -->
+				<ul id="menu-kategorienmenu" class="nav"><li id="menu-item-5377" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5377"><a href="http://www.TechDevice.de/category/allgemein/"><span>Allgemein</span></a></li>
+<li id="menu-item-5695" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5695"><a href="http://www.TechDevice.de/category/mac/"><span>Mac</span></a></li>
+<li id="menu-item-5694" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5694"><a href="http://www.TechDevice.de/category/ipad/"><span>iPad</span></a></li>
+<li id="menu-item-5693" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5693"><a href="http://www.TechDevice.de/category/iphone/"><span>iPhone</span></a></li>
+<li id="menu-item-5696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5696"><a href="http://www.TechDevice.de/category/ipod/"><span>iPod</span></a></li>
+<li id="menu-item-5722" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5722"><a href="http://www.TechDevice.de/category/android/"><span>Android</span></a></li>
+<li id="menu-item-5454" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5454"><a href="http://www.TechDevice.de/category/andere-betriebssysteme/"><span>Andere Betriebssysteme</span></a></li>
+<li id="menu-item-5457" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5457"><a href="http://www.TechDevice.de/category/sonstige-gadgets/"><span>Sonstige Gadgets</span></a></li>
+<li id="menu-item-5382" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5382"><a href="http://www.TechDevice.de/category/reviews/"><span>Reviews</span></a></li>
+<li id="menu-item-5430" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5430"><a href="http://www.TechDevice.de/category/tutorials/"><span>Tutorials</span></a></li>
+<li id="menu-item-5456" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5456"><a href="http://www.TechDevice.de/category/gewinnspiele/"><span>Gewinnspiele</span></a></li>
+</ul>						
+			<div class="clear"></div>
+		</div><!--main-nav-->
+
+			
+			    
+			
+	
+			<div id="featured">
+			
+				<div id="featured-wrap">
+					<div id="featured-inner">
+											 	
+						<div class="post">
+							<div class="post-img-medium"><a href="http://www.TechDevice.de/2011/08/05/testbericht-iprop-ein-praktischer-stander-fur-euer-ipad/" rel="bookmark" title="Testbericht: iProp &#8211; ein praktischer Ständer für euer iPad"><img width="285" height="175" src="http://www.TechDevice.de/wp-content/uploads/2011/08/Header_iprop1-285x175.png" class="attachment-medium wp-post-image" alt="Header_iprop" title="Header_iprop" /></a></div>
+							<h2><a href="http://www.TechDevice.de/2011/08/05/testbericht-iprop-ein-praktischer-stander-fur-euer-ipad/" rel="bookmark" title="Testbericht: iProp &#8211; ein praktischer Ständer für euer iPad">Testbericht: iProp &#8211; ein praktischer Ständer für euer iPad</a></h2>
+							<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/ipad/" title="Alle Artikel in iPad ansehen" rel="category tag">iPad</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/reviews/" title="Alle Artikel in Reviews ansehen" rel="category tag">Reviews</a></span>
+							<span class="comments"><a href="http://www.TechDevice.de/2011/08/05/testbericht-iprop-ein-praktischer-stander-fur-euer-ipad/#respond" title="Kommentiere Testbericht: iProp &#8211; ein praktischer Ständer für euer iPad">0 Comments</a></span>
+						</div><!--post-->
+						
+											 	
+						<div class="post">
+							<div class="post-img-medium"><a href="http://www.TechDevice.de/2011/08/04/testbericht-sennheiser-pxc-310-bt/" rel="bookmark" title="Testbericht: Sennheiser PXC 310 BT"><img width="285" height="175" src="http://www.TechDevice.de/wp-content/uploads/2011/06/Header_Sennheiserfix-285x175.png" class="attachment-medium wp-post-image" alt="Header_Sennheiser(fix)" title="Header_Sennheiser(fix)" /></a></div>
+							<h2><a href="http://www.TechDevice.de/2011/08/04/testbericht-sennheiser-pxc-310-bt/" rel="bookmark" title="Testbericht: Sennheiser PXC 310 BT">Testbericht: Sennheiser PXC 310 BT</a></h2>
+							<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/ipad/" title="Alle Artikel in iPad ansehen" rel="category tag">iPad</a>, <a href="http://www.TechDevice.de/category/iphone/" title="Alle Artikel in iPhone ansehen" rel="category tag">iPhone</a>, <a href="http://www.TechDevice.de/category/ipod/" title="Alle Artikel in iPod ansehen" rel="category tag">iPod</a>, <a href="http://www.TechDevice.de/category/mac/" title="Alle Artikel in Mac ansehen" rel="category tag">Mac</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/reviews/" title="Alle Artikel in Reviews ansehen" rel="category tag">Reviews</a></span>
+							<span class="comments"><a href="http://www.TechDevice.de/2011/08/04/testbericht-sennheiser-pxc-310-bt/#respond" title="Kommentiere Testbericht: Sennheiser PXC 310 BT">0 Comments</a></span>
+						</div><!--post-->
+						
+											 	
+						<div class="post">
+							<div class="post-img-medium"><a href="http://www.TechDevice.de/2011/07/31/review-hessian-pouch-sleeve-fur-das-iphone-oder-den-ipod-touch/" rel="bookmark" title="Review: Hessian Pouch (Sleeve für das iPhone oder den iPod Touch)"><img width="285" height="175" src="http://www.TechDevice.de/wp-content/uploads/2011/07/Header_proporta600x200-285x175.png" class="attachment-medium wp-post-image" alt="Header_proporta600x200" title="Header_proporta600x200" /></a></div>
+							<h2><a href="http://www.TechDevice.de/2011/07/31/review-hessian-pouch-sleeve-fur-das-iphone-oder-den-ipod-touch/" rel="bookmark" title="Review: Hessian Pouch (Sleeve für das iPhone oder den iPod Touch)">Review: Hessian Pouch (Sleeve für das iPhone oder den iPod Touch)</a></h2>
+							<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/iphone/" title="Alle Artikel in iPhone ansehen" rel="category tag">iPhone</a>, <a href="http://www.TechDevice.de/category/ipod/" title="Alle Artikel in iPod ansehen" rel="category tag">iPod</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/reviews/" title="Alle Artikel in Reviews ansehen" rel="category tag">Reviews</a></span>
+							<span class="comments"><a href="http://www.TechDevice.de/2011/07/31/review-hessian-pouch-sleeve-fur-das-iphone-oder-den-ipod-touch/#respond" title="Kommentiere Review: Hessian Pouch (Sleeve für das iPhone oder den iPod Touch)">0 Comments</a></span>
+						</div><!--post-->
+						
+											 	
+						<div class="post">
+							<div class="post-img-medium"><a href="http://www.TechDevice.de/2011/07/29/review-smartsuit2-fur-das-ipad-2/" rel="bookmark" title="Review: SmartSuit2 für das iPad 2"><img width="285" height="175" src="http://www.TechDevice.de/wp-content/uploads/2011/07/Header_thejoyfactory-285x175.png" class="attachment-medium wp-post-image" alt="Header_thejoyfactory" title="Header_thejoyfactory" /></a></div>
+							<h2><a href="http://www.TechDevice.de/2011/07/29/review-smartsuit2-fur-das-ipad-2/" rel="bookmark" title="Review: SmartSuit2 für das iPad 2">Review: SmartSuit2 für das iPad 2</a></h2>
+							<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/ipad/" title="Alle Artikel in iPad ansehen" rel="category tag">iPad</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/reviews/" title="Alle Artikel in Reviews ansehen" rel="category tag">Reviews</a>, <a href="http://www.TechDevice.de/category/uncategorized/" title="Alle Artikel in Uncategorized ansehen" rel="category tag">Uncategorized</a></span>
+							<span class="comments"><a href="http://www.TechDevice.de/2011/07/29/review-smartsuit2-fur-das-ipad-2/#comments" title="Kommentiere Review: SmartSuit2 für das iPad 2">2 Comments</a></span>
+						</div><!--post-->
+						
+											 	
+						<div class="post">
+							<div class="post-img-medium"><a href="http://www.TechDevice.de/2011/07/24/review-unityremote-von-gear4-universal-fernbedienung-furs-iphone-ipad/" rel="bookmark" title="Review: UnityRemote von Gear4 (Universal-Fernbedienung fürs iPhone &amp; iPad)"><img width="285" height="175" src="http://www.TechDevice.de/wp-content/uploads/2011/07/Header_Gear4-285x175.png" class="attachment-medium wp-post-image" alt="Header_Gear4" title="Header_Gear4" /></a></div>
+							<h2><a href="http://www.TechDevice.de/2011/07/24/review-unityremote-von-gear4-universal-fernbedienung-furs-iphone-ipad/" rel="bookmark" title="Review: UnityRemote von Gear4 (Universal-Fernbedienung fürs iPhone &amp; iPad)">Review: UnityRemote von Gear4 (Universal-Fernbedienung fürs iPhone &#038; iPad)</a></h2>
+							<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/ipad/" title="Alle Artikel in iPad ansehen" rel="category tag">iPad</a>, <a href="http://www.TechDevice.de/category/iphone/" title="Alle Artikel in iPhone ansehen" rel="category tag">iPhone</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/reviews/" title="Alle Artikel in Reviews ansehen" rel="category tag">Reviews</a></span>
+							<span class="comments"><a href="http://www.TechDevice.de/2011/07/24/review-unityremote-von-gear4-universal-fernbedienung-furs-iphone-ipad/#comments" title="Kommentiere Review: UnityRemote von Gear4 (Universal-Fernbedienung fürs iPhone &amp; iPad)">1 Comment</a></span>
+						</div><!--post-->
+						
+											 	
+						<div class="post">
+							<div class="post-img-medium"><a href="http://www.TechDevice.de/2011/07/23/das-bluebird-sleeve-der-firma-%e2%80%9eraedan%e2%80%9c-fur-das-ipad-im-test/" rel="bookmark" title="Das Bluebird Sleeve der Firma „Raedan“ für das iPad im Test"><img width="285" height="175" src="http://www.TechDevice.de/wp-content/uploads/2011/07/Header_raedan1-285x175.png" class="attachment-medium wp-post-image" alt="Header_raedan" title="Header_raedan" /></a></div>
+							<h2><a href="http://www.TechDevice.de/2011/07/23/das-bluebird-sleeve-der-firma-%e2%80%9eraedan%e2%80%9c-fur-das-ipad-im-test/" rel="bookmark" title="Das Bluebird Sleeve der Firma „Raedan“ für das iPad im Test">Das Bluebird Sleeve der Firma „Raedan“ für das iPad im Test</a></h2>
+							<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/ipad/" title="Alle Artikel in iPad ansehen" rel="category tag">iPad</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/reviews/" title="Alle Artikel in Reviews ansehen" rel="category tag">Reviews</a></span>
+							<span class="comments"><a href="http://www.TechDevice.de/2011/07/23/das-bluebird-sleeve-der-firma-%e2%80%9eraedan%e2%80%9c-fur-das-ipad-im-test/#respond" title="Kommentiere Das Bluebird Sleeve der Firma „Raedan“ für das iPad im Test">0 Comments</a></span>
+						</div><!--post-->
+						
+												<div class="clear"></div>
+					</div><!--featured-inner-->
+					<div class="clear"></div>
+				</div><!--featured-wrap-->
+				
+				
+									<div id="featured-controls">
+						<a href="#slide-prev" class="fl" rel="prev"><img src="http://www.TechDevice.de/wp-content/themes/Open/images/featured-arrow-left.png" alt="Slider" /></a>
+						
+													<a href="#slide-1" class="active featured-dot" rel="1"></a>
+													<a href="#slide-2" class=" featured-dot" rel="2"></a>
+												
+						<a href="#slide-next" class="fr" rel="next"><img src="http://www.TechDevice.de/wp-content/themes/Open/images/featured-arrow-right.png" alt="Slider" /></a>
+					</div><!--featured-controls-->
+								
+			</div><!--featured-->
+			
+							<script type="text/javascript">
+				setInterval(function() {
+						jQuery('#featured-controls a:last').trigger('click');
+					}, 10000
+				);
+				</script>
+			    
+     
+    			                    
+					
+		
+		<div id="main">
+									
+			
+
+		
+				
+    	    	
+						
+				<div class="post">
+					<div class="post-img-large"><a href="http://www.TechDevice.de/2011/09/18/trackroom-fur-das-iphone-und-android-verabreden-war-noch-nie-so-einfach/" rel="bookmark" title="TrackRoom für das iPhone und Android: Verabreden war noch nie so einfach!"><img width="600" height="200" src="http://www.TechDevice.de/wp-content/uploads/2011/09/Header_trackroom.png" class="attachment-large wp-post-image" alt="Header_trackroom" title="Header_trackroom" /></a></div>
+					<h2 class="post-title"><a href="http://www.TechDevice.de/2011/09/18/trackroom-fur-das-iphone-und-android-verabreden-war-noch-nie-so-einfach/" rel="bookmark" title="TrackRoom für das iPhone und Android: Verabreden war noch nie so einfach!">TrackRoom für das iPhone und Android: Verabreden war noch nie so einfach!</a></h2>
+					<p class="post-excerpt">TrackRoom für das iPhone und Android: Verabreden war noch nie so einfach! Track Room für iPhone &#8211; 79 Cent Wer sich abends zu einem Konzert verabredet, auf einem Volksfest einen Treffpunkt für alle ausmachen möchte oder die Freunde gezielt zu einem neuen Restaurant lotsen möchte, braucht die App TrackRoom für das iPhone und für Android. &#8230; <a href="http://www.TechDevice.de/2011/09/18/trackroom-fur-das-iphone-und-android-verabreden-war-noch-nie-so-einfach/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.TechDevice.de']);">Continue Reading</a>
+</p>
+					<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/iphone/" title="Alle Artikel in iPhone ansehen" rel="category tag">iPhone</a>, <a href="http://www.TechDevice.de/category/ipod/" title="Alle Artikel in iPod ansehen" rel="category tag">iPod</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/pressemitteilung-2/" title="Alle Artikel in Pressemitteilung ansehen" rel="category tag">Pressemitteilung</a></span>
+					<span class="comments"><a href="http://www.TechDevice.de/2011/09/18/trackroom-fur-das-iphone-und-android-verabreden-war-noch-nie-so-einfach/#respond" title="Kommentiere TrackRoom für das iPhone und Android: Verabreden war noch nie so einfach!">0 Comments</a></span>
+				</div><!--post(large)-->
+				
+			    	
+	    	<div class="posts">
+    	            	            			            			
+						
+				<div class="post half fl">
+					<div class="post-img-medium"><a href="http://www.TechDevice.de/2011/08/17/pm-euroapp-1-0-kostenlose-iphone-app-zeigt-den-weg-des-geldes/" rel="bookmark" title="PM: EuroApp 1.0: Kostenlose iPhone-App zeigt den Weg des Geldes!"><img width="285" height="175" src="http://www.TechDevice.de/wp-content/uploads/2011/08/Header_EuroApp-285x175.png" class="attachment-medium wp-post-image" alt="Header_EuroApp" title="Header_EuroApp" /></a></div>
+					<h2 class="post-title"><a href="http://www.TechDevice.de/2011/08/17/pm-euroapp-1-0-kostenlose-iphone-app-zeigt-den-weg-des-geldes/" rel="bookmark" title="PM: EuroApp 1.0: Kostenlose iPhone-App zeigt den Weg des Geldes!">PM: EuroApp 1.0: Kostenlose iPhone-App zeigt den Weg des Geldes!</a></h2>
+					<p class="post-excerpt">EuroApp 1.0: Kostenlose iPhone-App zeigt den Weg des Geldes! EuroApp &#8211; Folge deinem Geld für das iPhone &#8211; kostenlos Was passiert eigentlich mit einem Geldschein, sobald er das eigene Portemonnaie verlassen hat? Das lässt sich leicht herausfinden. Über 170.000 Anwender arbeiten bereits seit 2002 in der EuroBillTracker-Community daran, den Weg des Geldes zu protokollieren. Über &#8230; <a href="http://www.TechDevice.de/2011/08/17/pm-euroapp-1-0-kostenlose-iphone-app-zeigt-den-weg-des-geldes/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.TechDevice.de']);">Continue Reading</a>
+</p>
+					<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/iphone/" title="Alle Artikel in iPhone ansehen" rel="category tag">iPhone</a>, <a href="http://www.TechDevice.de/category/ipod/" title="Alle Artikel in iPod ansehen" rel="category tag">iPod</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/pressemitteilung-2/" title="Alle Artikel in Pressemitteilung ansehen" rel="category tag">Pressemitteilung</a></span>
+					<span class="comments"><a href="http://www.TechDevice.de/2011/08/17/pm-euroapp-1-0-kostenlose-iphone-app-zeigt-den-weg-des-geldes/#respond" title="Kommentiere PM: EuroApp 1.0: Kostenlose iPhone-App zeigt den Weg des Geldes!">0 Comments</a></span>
+				</div><!--post(half)-->
+				
+						
+				<div class="post half fl">
+					<div class="post-img-medium"><a href="http://www.TechDevice.de/2011/08/15/review-wildtiere-namibia/" rel="bookmark" title="Review: Wildtiere Namibia"><img width="285" height="175" src="http://www.TechDevice.de/wp-content/uploads/2011/08/Header_Namibia-285x175.png" class="attachment-medium wp-post-image" alt="Header_Namibia" title="Header_Namibia" /></a></div>
+					<h2 class="post-title"><a href="http://www.TechDevice.de/2011/08/15/review-wildtiere-namibia/" rel="bookmark" title="Review: Wildtiere Namibia">Review: Wildtiere Namibia</a></h2>
+					<p class="post-excerpt">Wie man schon bei vielen Apps sehen konnte, ist das iPad als Betrachter von Fotos und Videos ideal geeignet. So kann man multimediale Unterhaltung und Wissensvermittlung verknüpfen. Damit haben dann auch die Jüngsten Spaß am schauen. Sicherlich ist ein entsprechendes Buch von der Haptick besser, aber die Farbbrillianz und die Kombination mit Audio und Video &#8230; <a href="http://www.TechDevice.de/2011/08/15/review-wildtiere-namibia/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.TechDevice.de']);">Continue Reading</a>
+</p>
+					<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/ipad/" title="Alle Artikel in iPad ansehen" rel="category tag">iPad</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/reviews/" title="Alle Artikel in Reviews ansehen" rel="category tag">Reviews</a></span>
+					<span class="comments"><a href="http://www.TechDevice.de/2011/08/15/review-wildtiere-namibia/#respond" title="Kommentiere Review: Wildtiere Namibia">0 Comments</a></span>
+				</div><!--post(half)-->
+				
+						
+				<div class="post half fl">
+					<div class="post-img-medium"><a href="http://www.TechDevice.de/2011/08/07/rowmote-pro-den-mac-fernsteuern-gewinnspiel/" rel="bookmark" title="RowMote Pro &#8211; den Mac fernsteuern (+Gewinnspiel!)"><img width="285" height="175" src="http://www.TechDevice.de/wp-content/uploads/2011/08/row-285x175.png" class="attachment-medium wp-post-image" alt="row" title="row" /></a></div>
+					<h2 class="post-title"><a href="http://www.TechDevice.de/2011/08/07/rowmote-pro-den-mac-fernsteuern-gewinnspiel/" rel="bookmark" title="RowMote Pro &#8211; den Mac fernsteuern (+Gewinnspiel!)">RowMote Pro &#8211; den Mac fernsteuern (+Gewinnspiel!)</a></h2>
+					<p class="post-excerpt">Den Mac vom Sofa, Bett oder sonst wo bedienen zu können ist eine wahnsinnig bequeme Sache. Mit der Apple Remote klappt das auch ganz gut &#8211; zumindest wenn man nur iTunes oder den DVD-Player steuern will. RowMote Pro erlaubt es, so ziemlich alles, was es zu steuern gibt, bequem per iPhone, iPod oder iPad zu &#8230; <a href="http://www.TechDevice.de/2011/08/07/rowmote-pro-den-mac-fernsteuern-gewinnspiel/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.TechDevice.de']);">Continue Reading</a>
+</p>
+					<span class="category"><a href="http://www.TechDevice.de/category/gewinnspiele/" title="Alle Artikel in Gewinnspiele ansehen" rel="category tag">Gewinnspiele</a>, <a href="http://www.TechDevice.de/category/ipad/" title="Alle Artikel in iPad ansehen" rel="category tag">iPad</a>, <a href="http://www.TechDevice.de/category/iphone/" title="Alle Artikel in iPhone ansehen" rel="category tag">iPhone</a>, <a href="http://www.TechDevice.de/category/ipod/" title="Alle Artikel in iPod ansehen" rel="category tag">iPod</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/reviews/" title="Alle Artikel in Reviews ansehen" rel="category tag">Reviews</a>, <a href="http://www.TechDevice.de/category/tutorials/" title="Alle Artikel in Tutorials ansehen" rel="category tag">Tutorials</a></span>
+					<span class="comments"><a href="http://www.TechDevice.de/2011/08/07/rowmote-pro-den-mac-fernsteuern-gewinnspiel/#comments" title="Kommentiere RowMote Pro &#8211; den Mac fernsteuern (+Gewinnspiel!)">5 Comments</a></span>
+				</div><!--post(half)-->
+				
+						
+				<div class="post half fl">
+					<div class="post-img-medium"><a href="http://www.TechDevice.de/2011/08/05/objektive-fur-das-iphone/" rel="bookmark" title="Objektive für das iPhone"><img width="285" height="175" src="http://www.TechDevice.de/wp-content/uploads/2011/08/Header_iPhoneLens-285x175.png" class="attachment-medium wp-post-image" alt="Header_iPhoneLens" title="Header_iPhoneLens" /></a></div>
+					<h2 class="post-title"><a href="http://www.TechDevice.de/2011/08/05/objektive-fur-das-iphone/" rel="bookmark" title="Objektive für das iPhone">Objektive für das iPhone</a></h2>
+					<p class="post-excerpt">Kreatives Fotografieren hat in erster Linie nichts mit der verwendeten Kamera zu tun. Bekanntlich ist ja auch die beste Kamera die, die man dabei hat. Somit hat sich das iPhone 4 recht schnell zu einem kreativen Werkzeug für Fotografen entwickelt. Gerade hat Martin Gommel von Kwerfeldein.de eine Artikel über sein erstes Jahr mit dem iPhone &#8230; <a href="http://www.TechDevice.de/2011/08/05/objektive-fur-das-iphone/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.TechDevice.de']);">Continue Reading</a>
+</p>
+					<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/iphone/" title="Alle Artikel in iPhone ansehen" rel="category tag">iPhone</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/sonstige-gadgets/" title="Alle Artikel in Sonstige Gadgets ansehen" rel="category tag">Sonstige Gadgets</a></span>
+					<span class="comments"><a href="http://www.TechDevice.de/2011/08/05/objektive-fur-das-iphone/#respond" title="Kommentiere Objektive für das iPhone">0 Comments</a></span>
+				</div><!--post(half)-->
+				
+			
+			</div><!--posts-->
+
+			<div class="clear"></div>
+
+									
+						
+				<div class="post small">
+					<div class="post-img-small"><a href="http://www.TechDevice.de/2011/08/05/ea-preisaktion-6-spiele-fur-das-iphone-14-spiele-fur-das-ipad-gunstiger/" rel="bookmark" title="EA Preisaktion: 6 Spiele für das iPhone &amp; 14 Spiele für das iPad günstiger"><img width="180" height="125" src="http://www.TechDevice.de/wp-content/uploads/2011/08/Header_Eapreisaktion-180x125.png" class="attachment-small wp-post-image" alt="Header_Eapreisaktion" title="Header_Eapreisaktion" /></a></div>
+					<h2 class="post-title"><a href="http://www.TechDevice.de/2011/08/05/ea-preisaktion-6-spiele-fur-das-iphone-14-spiele-fur-das-ipad-gunstiger/" rel="bookmark" title="EA Preisaktion: 6 Spiele für das iPhone &amp; 14 Spiele für das iPad günstiger">EA Preisaktion: 6 Spiele für das iPhone &#038; 14 Spiele für das iPad günstiger</a></h2>
+					<p class="post-excerpt">EA Preisaktion: 6 Spiele für das iPhone &amp; 14 Spiele für das iPad günstiger Pünktlich zum Wochenende gibt es mal wieder Neuigkeiten für die Schnäppchen Jäger unter euch: EA hat die Preise von insgesamt 20 iOS Spieletitel für kurze Zeit gesenkt. Unten haben wir euch alle betroffene Spiele für das iPhone bzw. für das iPad &#8230; <a href="http://www.TechDevice.de/2011/08/05/ea-preisaktion-6-spiele-fur-das-iphone-14-spiele-fur-das-ipad-gunstiger/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.TechDevice.de']);">Continue Reading</a>
+</p>
+					<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/ipad/" title="Alle Artikel in iPad ansehen" rel="category tag">iPad</a>, <a href="http://www.TechDevice.de/category/iphone/" title="Alle Artikel in iPhone ansehen" rel="category tag">iPhone</a>, <a href="http://www.TechDevice.de/category/ipod/" title="Alle Artikel in iPod ansehen" rel="category tag">iPod</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/pressemitteilung-2/" title="Alle Artikel in Pressemitteilung ansehen" rel="category tag">Pressemitteilung</a>, <a href="http://www.TechDevice.de/category/uncategorized/" title="Alle Artikel in Uncategorized ansehen" rel="category tag">Uncategorized</a></span>
+					<span class="comments"><a href="http://www.TechDevice.de/2011/08/05/ea-preisaktion-6-spiele-fur-das-iphone-14-spiele-fur-das-ipad-gunstiger/#respond" title="Kommentiere EA Preisaktion: 6 Spiele für das iPhone &amp; 14 Spiele für das iPad günstiger">0 Comments</a></span>
+				</div><!--post(small)-->
+
+						
+				<div class="post small">
+					<div class="post-img-small"><a href="http://www.TechDevice.de/2011/08/05/alles-was-das-musiker-herz-begehrt-tabletop-fur-ipad/" rel="bookmark" title="Alles was das Musiker Herz begehrt &#8211; Tabletop für iPad"><img width="180" height="125" src="http://www.TechDevice.de/wp-content/uploads/2011/08/Header_Tabletop-180x125.png" class="attachment-small wp-post-image" alt="Header_Tabletop" title="Header_Tabletop" /></a></div>
+					<h2 class="post-title"><a href="http://www.TechDevice.de/2011/08/05/alles-was-das-musiker-herz-begehrt-tabletop-fur-ipad/" rel="bookmark" title="Alles was das Musiker Herz begehrt &#8211; Tabletop für iPad">Alles was das Musiker Herz begehrt &#8211; Tabletop für iPad</a></h2>
+					<p class="post-excerpt">Sicherlich ist die Musik von Hand gemacht für den echten Musiker wichtig. Im Zeitalter elektronische Verstärker und Musikerzeugern aller Art ist sicherlich das iPad eine willkommene Unterstützung für den Musiker. Nun ist ein App erschienen was dies alles noch schöner ermöglicht: Zu finden bei Tabletop oder im AppStore.
+</p>
+					<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/ipad/" title="Alle Artikel in iPad ansehen" rel="category tag">iPad</a>, <a href="http://www.TechDevice.de/category/kurztipps/" title="Alle Artikel in Kurztipps ansehen" rel="category tag">Kurztipps</a></span>
+					<span class="comments"><a href="http://www.TechDevice.de/2011/08/05/alles-was-das-musiker-herz-begehrt-tabletop-fur-ipad/#respond" title="Kommentiere Alles was das Musiker Herz begehrt &#8211; Tabletop für iPad">0 Comments</a></span>
+				</div><!--post(small)-->
+
+						
+				<div class="post small">
+					<div class="post-img-small"><a href="http://www.TechDevice.de/2011/08/03/ischadling-fur-das-iphone-gratis-app-von-rentokil-bestimmt-schadlinge-in-den-eigenen-vier-wanden/" rel="bookmark" title="iSchädling für das iPhone: Gratis-App von Rentokil bestimmt Schädlinge in den eigenen vier Wänden!"><img width="180" height="125" src="http://www.TechDevice.de/wp-content/uploads/2011/08/Header_ISchädling-180x125.png" class="attachment-small wp-post-image" alt="Header_ISchädling" title="Header_ISchädling" /></a></div>
+					<h2 class="post-title"><a href="http://www.TechDevice.de/2011/08/03/ischadling-fur-das-iphone-gratis-app-von-rentokil-bestimmt-schadlinge-in-den-eigenen-vier-wanden/" rel="bookmark" title="iSchädling für das iPhone: Gratis-App von Rentokil bestimmt Schädlinge in den eigenen vier Wänden!">iSchädling für das iPhone: Gratis-App von Rentokil bestimmt Schädlinge in den eigenen vier Wänden!</a></h2>
+					<p class="post-excerpt">iSchädling für das iPhone: Gratis-App von Rentokil bestimmt Schädlinge in den eigenen vier Wänden! iSchädling für das iPhone und iPod Touch &#8211; kostenlos PM: Mäuse, Mehlmotten, Bettwanzen oder Kakerlaken: Niemand teilt sein Heim gern mit Schädlingen. Rentokil, ausgewiesener Experte in der Schädlingsbekämpfung, stellt die kostenlose App iSchädling für das iPhone vor. Sie erlaubt es, im &#8230; <a href="http://www.TechDevice.de/2011/08/03/ischadling-fur-das-iphone-gratis-app-von-rentokil-bestimmt-schadlinge-in-den-eigenen-vier-wanden/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.TechDevice.de']);">Continue Reading</a>
+</p>
+					<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/iphone/" title="Alle Artikel in iPhone ansehen" rel="category tag">iPhone</a>, <a href="http://www.TechDevice.de/category/ipod/" title="Alle Artikel in iPod ansehen" rel="category tag">iPod</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/pressemitteilung-2/" title="Alle Artikel in Pressemitteilung ansehen" rel="category tag">Pressemitteilung</a></span>
+					<span class="comments"><a href="http://www.TechDevice.de/2011/08/03/ischadling-fur-das-iphone-gratis-app-von-rentokil-bestimmt-schadlinge-in-den-eigenen-vier-wanden/#respond" title="Kommentiere iSchädling für das iPhone: Gratis-App von Rentokil bestimmt Schädlinge in den eigenen vier Wänden!">0 Comments</a></span>
+				</div><!--post(small)-->
+
+						
+				<div class="post small">
+					<div class="post-img-small"><a href="http://www.TechDevice.de/2011/08/03/verlosung-speed-task-fur-das-iphone-preview-speed-task-hd/" rel="bookmark" title="Verlosung: Speed Task für das iPhone + Preview: Speed Task für das iPad"><img width="180" height="125" src="http://www.TechDevice.de/wp-content/uploads/2011/06/Header_SpeedTask-180x125.png" class="attachment-small wp-post-image" alt="Header_SpeedTask" title="Header_SpeedTask" /></a></div>
+					<h2 class="post-title"><a href="http://www.TechDevice.de/2011/08/03/verlosung-speed-task-fur-das-iphone-preview-speed-task-hd/" rel="bookmark" title="Verlosung: Speed Task für das iPhone + Preview: Speed Task für das iPad">Verlosung: Speed Task für das iPhone + Preview: Speed Task für das iPad</a></h2>
+					<p class="post-excerpt">Verlosung: Speed Task für das iPhone + Preview: Speed Task für das iPad Speed Task für iOS &#8211; derzeit 2,39 € Speed Task für den Mac &#8211; 3,99 € Den Schaffensweg der kleinen App „SpeedTask“ begleiten wir ja nun schon fast seit Beginn dieses Blogs. Angefangen hat alles mit der iPhone Version, worauf ein paar &#8230; <a href="http://www.TechDevice.de/2011/08/03/verlosung-speed-task-fur-das-iphone-preview-speed-task-hd/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.TechDevice.de']);">Continue Reading</a>
+</p>
+					<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/ipad/" title="Alle Artikel in iPad ansehen" rel="category tag">iPad</a>, <a href="http://www.TechDevice.de/category/iphone/" title="Alle Artikel in iPhone ansehen" rel="category tag">iPhone</a>, <a href="http://www.TechDevice.de/category/ipod/" title="Alle Artikel in iPod ansehen" rel="category tag">iPod</a>, <a href="http://www.TechDevice.de/category/planet-apple/" title="Alle Artikel in Planet-Apple ansehen" rel="category tag">Planet-Apple</a>, <a href="http://www.TechDevice.de/category/uncategorized/" title="Alle Artikel in Uncategorized ansehen" rel="category tag">Uncategorized</a></span>
+					<span class="comments"><a href="http://www.TechDevice.de/2011/08/03/verlosung-speed-task-fur-das-iphone-preview-speed-task-hd/#comments" title="Kommentiere Verlosung: Speed Task für das iPhone + Preview: Speed Task für das iPad">2 Comments</a></span>
+				</div><!--post(small)-->
+
+						
+				<div class="post small">
+					<div class="post-img-small"><a href="http://www.TechDevice.de/2011/08/03/neu-deutsche-zeitschrift-zu-android/" rel="bookmark" title="Neu: Deutsche Zeitschrift zu Android"><img width="180" height="125" src="http://www.TechDevice.de/wp-content/uploads/2011/08/Header_Android-180x125.png" class="attachment-small wp-post-image" alt="Header_Android" title="Header_Android" /></a></div>
+					<h2 class="post-title"><a href="http://www.TechDevice.de/2011/08/03/neu-deutsche-zeitschrift-zu-android/" rel="bookmark" title="Neu: Deutsche Zeitschrift zu Android">Neu: Deutsche Zeitschrift zu Android</a></h2>
+					<p class="post-excerpt">Ich bin auch immer ein Fan von Zeitschriften, besonders wenn es darum geht sich einen ersten Überblick auf einem neuen Gebiet zu verschaffen. Im CDA Verlag, beheimatet im schönen Perg in Österreich, ist nun eine solche Zeitschrift für das Android Betriebssystem erschienen. Ruft man die Homepage des Verlages auf, kann man sich zwischen den beiden &#8230; <a href="http://www.TechDevice.de/2011/08/03/neu-deutsche-zeitschrift-zu-android/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.TechDevice.de']);">Continue Reading</a>
+</p>
+					<span class="category"><a href="http://www.TechDevice.de/category/allgemein/" title="Alle Artikel in Allgemein ansehen" rel="category tag">Allgemein</a>, <a href="http://www.TechDevice.de/category/android/" title="Alle Artikel in Android ansehen" rel="category tag">Android</a>, <a href="http://www.TechDevice.de/category/pressemitteilung-2/" title="Alle Artikel in Pressemitteilung ansehen" rel="category tag">Pressemitteilung</a></span>
+					<span class="comments"><a href="http://www.TechDevice.de/2011/08/03/neu-deutsche-zeitschrift-zu-android/#respond" title="Kommentiere Neu: Deutsche Zeitschrift zu Android">0 Comments</a></span>
+				</div><!--post(small)-->
+
+			
+				
+			<div id="pagination">
+				<div class="fl"><a href="http://www.TechDevice.de/page/2/" ><span>Previous</span></a></div>
+				<div class="fr"></div>
+				<div class="clear"></div>
+			</div><!--pagination-->
+
+		
+
+			                
+		</div><!-- /main -->
+		
+		<div id="sidebar">
+			<div id="search-3" class="widget widget_search"><form id="widget-searchform" name="widget-searchform" method="get" action="http://www.TechDevice.de">
+	<input type="text" name="s" id="widget-s" value="Search" onblur="if (this.value == '') {this.value = 'Search';}" onfocus="if (this.value == 'Search') {this.value = '';}" />
+	<button type="submit" name="submit" id="submit"></button>
+</form></div><div id="widget-ads-3" class="widget widget-ads"><div class="ads square"><a class="ad-image" href="http://www.tabytone.com/?aff=o7O1NlRbs78oce8P" target="_blank"><img src="http://ads.tabytone.com/assets/ad/banner-125x125-de.gif" alt="Ad" /><span></span></a> <a class="ad-image" href="http://www.flyertaxi.de" target="_blank"><img src="http://www.TechDevice.de/wp-content/uploads/2011/03/Banner_Flyertaxi.png" alt="Ad" /><span></span></a> <a class="ad-image" href="http://clkde.tradedoubler.com/click?p=23761&a=1962080&g=17051600" target="_blank"><img src="http://impde.tradedoubler.com/imp?type(inv)g(17051600)a(1962080)" alt="Ad" /><span></span></a> <a class="ad-image" href="http://boonbags.com" target="_blank"><img src="http://www.TechDevice.de/wp-content/uploads/2011/03/boonbag_125x125.png" alt="Ad" /><span></span></a> </div><div class="clear"></div></div><div id="text-5" class="widget widget_text">			<div class="textwidget"><script type="text/javascript" id="AdTaily_Widget">
+  (function() {
+    var AdTaily = document.createElement('script');
+    AdTaily.type = 'text/javascript'; AdTaily.async = true; AdTaily.id = "AdTaily_Widget_Js";
+    AdTaily.src = 'http://assets.adtaily.com/widget.js#XzdVH83ZIMVgIAmU';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(AdTaily);
+  })();
+</script>
+</div>
+		</div><div id="recent-comments-with-gravatar" class="widget recent_comments_gravatar_widget"><h3 class="widget-title">Neueste Kommentare</h3><div class="rcg-div"><ul><li ><div class="rcg-wrapper"><div class="rcg-avatar"><a href="http://www.matworx.de" title="madda" rel="external nofollow" target="_blank"><img alt='' src='http://1.gravatar.com/avatar/7af85f9efa4250c0537f613343b33b07?s=35&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D35&amp;r=G' class='avatar avatar-35 photo' height='35' width='35' /></a></div><div class="rcg-text" style="padding-left:45px"><a href="http://www.matworx.de" title="madda" rel="external nofollow" target="_blank">madda</a> commented on <a href="http://www.TechDevice.de/2011/02/06/pulse-der-stylische-news-reader/#comment-1116" title="madda | Pulse &#8211; der stylische News Reader">Pulse - der stylische News Reader</a><br/>  (6 weeks ago)</div></div></li><li ><div class="rcg-wrapper"><div class="rcg-avatar"><span title="Patrick"><img alt='' src='http://1.gravatar.com/avatar/5aa8d19bf584cfedf739379ed44d8d9f?s=35&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D35&amp;r=G' class='avatar avatar-35 photo' height='35' width='35' /></span></div><div class="rcg-text" style="padding-left:45px">Patrick commented on <a href="http://www.TechDevice.de/2011/08/07/rowmote-pro-den-mac-fernsteuern-gewinnspiel/#comment-1115" title="Patrick | RowMote Pro &#8211; den Mac fernsteuern (+Gewinnspiel!)">RowMote Pro - den Mac fernsteuern (+Gewinnspiel!)</a><br/>  (7 weeks ago)</div></div></li><li ><div class="rcg-wrapper"><div class="rcg-avatar"><span title="iMactouch"><img alt='' src='http://0.gravatar.com/avatar/2a2380704daec77fd660757406c18772?s=35&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D35&amp;r=G' class='avatar avatar-35 photo' height='35' width='35' /></span></div><div class="rcg-text" style="padding-left:45px">iMactouch commented on <a href="http://www.TechDevice.de/2011/08/07/rowmote-pro-den-mac-fernsteuern-gewinnspiel/#comment-1114" title="iMactouch | RowMote Pro &#8211; den Mac fernsteuern (+Gewinnspiel!)">RowMote Pro - den Mac fernsteuern (+Gewinnspiel!)</a><br/>  (8 weeks ago)</div></div></li><li ><div class="rcg-wrapper"><div class="rcg-avatar"><span title="Manuel Katzer"><img alt='' src='http://1.gravatar.com/avatar/beaa7df828789215cb662d0db2b3e299?s=35&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D35&amp;r=G' class='avatar avatar-35 photo' height='35' width='35' /></span></div><div class="rcg-text" style="padding-left:45px">Manuel Katzer commented on <a href="http://www.TechDevice.de/2011/08/07/rowmote-pro-den-mac-fernsteuern-gewinnspiel/#comment-1113" title="Manuel Katzer | RowMote Pro &#8211; den Mac fernsteuern (+Gewinnspiel!)">RowMote Pro - den Mac fernsteuern (+Gewinnspiel!)</a><br/>  (8 weeks ago)</div></div></li><li ><div class="rcg-wrapper"><div class="rcg-avatar"><a href="http://wolfsteiner.de" title="Lukas W." rel="external nofollow" target="_blank"><img alt='' src='http://0.gravatar.com/avatar/2a784c48b126c7edfb5b44ff67043e39?s=35&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D35&amp;r=G' class='avatar avatar-35 photo' height='35' width='35' /></a></div><div class="rcg-text" style="padding-left:45px"><a href="http://wolfsteiner.de" title="Lukas W." rel="external nofollow" target="_blank">Lukas W.</a> commented on <a href="http://www.TechDevice.de/2011/08/07/rowmote-pro-den-mac-fernsteuern-gewinnspiel/#comment-1112" title="Lukas W. | RowMote Pro &#8211; den Mac fernsteuern (+Gewinnspiel!)">RowMote Pro - den Mac fernsteuern (+Gewinnspiel!)</a><br/>  (8 weeks ago)</div></div></li></ul></div></div><div id="text-4" class="widget widget_text">			<div class="textwidget"><form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="D9YW3DTH66JNE">
+<input type="image" src="https://www.paypal.com/de_DE/DE/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
+<div align="center"><img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1"></div>
+</form>
+</div>
+		</div><div id="text-3" class="widget widget_text">			<div class="textwidget"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/pages/TechDevicede/197150450315365" width="260" show_faces="true" stream="false" header="true"></fb:like-box></div>
+		</div><div id="widget-twitter-3" class="widget widget-twitter"><h3 class="widget-title">TechDevice @ Twitter</h3>        <script type="text/javascript" src="http://www.TechDevice.de/wp-content/themes/Open/js/jquery.tweet.js"></script>
+        <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".tweet").tweet({
+				username: "TechDeviceDE",
+				count: 2            });
+          })
+        </script>
+        <div class="tweet"></div>
+        <a href="http://twitter.com/TechDeviceDE/" target="_blank" class="button"><span></span></a>     
+		</div><div id="linkcat-2" class="widget widget_links"><h3 class="widget-title">Blogroll</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.allemeineapps.de" target="" onclick="javascript:_gaq.push(['_trackEvent','outbound-blogroll','http://www.allemeineapps.de']);">AllemeineApps.de</a></li>
+<li><a href="http://www.apfelhd.de" target="_blank" onclick="javascript:_gaq.push(['_trackEvent','outbound-blogroll','http://www.apfelhd.de']);">ApfelHD.de</a></li>
+<li><a href="http://www.apfelpad.eu" target="" onclick="javascript:_gaq.push(['_trackEvent','outbound-blogroll','http://www.apfelpad.eu']);">ApfelPad.eu</a></li>
+<li><a href="http://www.like-a-prince.blogspot.com" target="" onclick="javascript:_gaq.push(['_trackEvent','outbound-blogroll','http://www.like-a-prince.blogspot.com']);">Like-a-Prince</a></li>
+<li><a href="http://www.pack-smooch.com" target="" onclick="javascript:_gaq.push(['_trackEvent','outbound-blogroll','http://www.pack-smooch.com']);">Pack &amp; Smootch</a></li>
+<li><a href="http://www.tabtech.de" target="" onclick="javascript:_gaq.push(['_trackEvent','outbound-blogroll','http://www.tabtech.de']);">Tablet Test &amp; News</a></li>
+<li><a href="http://astore.amazon.de/techd-21" rel="me" title="TecDevice Shop" target="_blank" onclick="javascript:_gaq.push(['_trackEvent','outbound-blogroll','http://astore.amazon.de/techd-21']);">TechDevice Shop</a></li>
+<li><a href="http://topreview.de" target="" onclick="javascript:_gaq.push(['_trackEvent','outbound-blogroll','http://topreview.de']);">TopReview.de</a></li>
+<li><a href="http://www.touchbay.net" target="" onclick="javascript:_gaq.push(['_trackEvent','outbound-blogroll','http://www.touchbay.net']);">TouchBay.net</a></li>
+
+	</ul>
+</div>
+		</div><!--sidebar-->
+			
+		
+		<div class="clear"></div>
+		
+		<div id="subfooter">
+			<div id="meta-3" class="widget widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+						<li><a href="http://www.TechDevice.de/wp-login.php">Anmelden</a></li>
+			<li><a href="http://www.TechDevice.de/feed/" title="Abonniere diese Website mit RSS 2.0">Artikel-Feed (<abbr title="Really Simple Syndication">RSS</abbr>)</a></li>
+			<li><a href="http://www.TechDevice.de/comments/feed/" title="Die neuesten Kommentare zu allen Beiträgen als RSS">Kommentare als <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+</div>			<div class="clear"></div>
+			
+												
+		</div><!--subfooter-->
+		
+		<div id="footer">
+			<p class="fl">Copyright © 2010-2011 <span>·</span> <a href="http://www.techdevice.de">TechDevice.de</a> <span>·</span> All Rights Reserved</p>
+						<ul id="menu-seiten-1" class="fr"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-home menu-item-5429"><a href="http://www.TechDevice.de/">Startseite</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5802"><a href="http://www.TechDevice.de/techdevice-shop/">TechDevice Shop</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5437"><a href="http://www.TechDevice.de/uber-uns/">Über Uns</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5448"><a href="http://www.TechDevice.de/gewinner/">Gewinner</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5438"><a href="http://www.TechDevice.de/partner/">Partner</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5439"><a href="http://www.TechDevice.de/impressum/">Impressum</a></li>
+</ul>						<div class="clear"></div>
+		</div><!--footer-->
+		
+	</div><!--content-->
+	
+</div><!--wrap-->
+	
+<script type='text/javascript'>
+/* <![CDATA[ */
+var thickboxL10n = {
+	next: "Next &gt;",
+	prev: "&lt; Prev",
+	image: "Image",
+	of: "of",
+	close: "Close",
+	noiframes: "This feature requires inline frames. You have iframes disabled or your browser does not support them.",
+	loadingAnimation: "http://www.TechDevice.de/wp-includes/js/thickbox/loadingAnimation.gif",
+	closeImage: "http://www.TechDevice.de/wp-includes/js/thickbox/tb-close.png"
+};
+try{convertEntities(thickboxL10n);}catch(e){};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.TechDevice.de/wp-includes/js/thickbox/thickbox.js?ver=3.1-20110528'></script>
+<!-- *** WP-Piwik - see http://www.braekling.de/wp-piwik-wpmu-piwik-wordpress/ -->
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://wp10596975.wp260.webpack.hosteurope.de/Piwik/" : "http://wp10596975.wp260.webpack.hosteurope.de/Piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+  var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+  piwikTracker.trackPageView();
+  piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://wp10596975.wp260.webpack.hosteurope.de/Piwik/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Tag -->
+<!-- *** /WP-Piwik *********************************************************** -->
+<!--stats_footer_test--><script src="http://stats.wordpress.com/e-201140.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({blog:'17238637',v:'ext',post:'0'});
+var load_cmc = function(){linktracker_init(17238637,0,2);};
+if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+else load_cmc();
+</script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://wp10596975.wp260.webpack.hosteurope.de/Piwik/" : "http://wp10596975.wp260.webpack.hosteurope.de/Piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://wp10596975.wp260.webpack.hosteurope.de/Piwik/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Tag -->
+</body>
+</html>

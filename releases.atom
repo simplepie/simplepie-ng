@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:https://github.com/skyzyx/signer/releases</id>
+  <link type="text/html" rel="alternate" href="https://github.com/skyzyx/signer/releases"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/skyzyx/signer/releases.atom"/>
+  <title>Release notes from signer</title>
+  <updated>2015-02-12T23:30:50Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/25600856/1.1.0</id>
+    <updated>2015-02-12T23:30:50Z</updated>
+    <link rel="alternate" type="text/html" href="/skyzyx/signer/releases/tag/1.1.0"/>
+    <title>1.1.0</title>
+    <content type="html">&lt;p&gt;Format fixing.&lt;/p&gt;</content>
+    <author>
+      <name>skyzyx</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/39447?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/25600856/1.0.4</id>
+    <updated>2015-02-12T23:21:41Z</updated>
+    <link rel="alternate" type="text/html" href="/skyzyx/signer/releases/tag/1.0.4"/>
+    <title>1.0.4</title>
+    <content type="html">&lt;p&gt;Composer updates.&lt;/p&gt;</content>
+    <author>
+      <name>skyzyx</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/39447?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/25600856/1.0.3</id>
+    <updated>2015-02-11T23:01:05Z</updated>
+    <link rel="alternate" type="text/html" href="/skyzyx/signer/releases/tag/1.0.3"/>
+    <title>The &quot;Do Nothing&quot; Release</title>
+    <content type="html">&lt;p&gt;* CHANGLOG tweaks.&lt;/p&gt;
+
+&lt;p&gt;* Moved CHANGELOG to CHANGELOG.md.
+&lt;br /&gt;* Updated the development dependencies. Added a CHANGELOG.
+&lt;br /&gt;* Update README.md
+&lt;br /&gt;* Updated the dependencies.&lt;/p&gt;</content>
+    <author>
+      <name>skyzyx</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/39447?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/25600856/1.0.2</id>
+    <updated>2014-10-29T22:29:30Z</updated>
+    <link rel="alternate" type="text/html" href="/skyzyx/signer/releases/tag/1.0.2"/>
+    <title>Added a SignerInterface interface</title>
+    <content type="html">&lt;p&gt;Now you can type-hint against an interface-compatible class in your projects.&lt;/p&gt;</content>
+    <author>
+      <name>skyzyx</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/39447?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/25600856/1.0.1</id>
+    <updated>2014-10-23T10:11:24Z</updated>
+    <link rel="alternate" type="text/html" href="/skyzyx/signer/releases/tag/1.0.1"/>
+    <title>Fixing the stupid</title>
+    <content type="html">&lt;p&gt;Aside from documentation and README updates, the only &lt;em&gt;actual&lt;/em&gt; issue this resolves is &lt;a href=&quot;https://github.com/skyzyx/signer/issues/3&quot; class=&quot;issue-link js-issue-link&quot; data-url=&quot;https://github.com/skyzyx/signer/issues/3&quot; data-id=&quot;46582575&quot; data-error-text=&quot;Failed to load issue title&quot; data-permission-text=&quot;Issue title is private&quot;&gt;#3&lt;/a&gt;.&lt;/p&gt;</content>
+    <author>
+      <name>skyzyx</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/39447?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/25600856/1.0</id>
+    <updated>2014-10-23T10:09:31Z</updated>
+    <link rel="alternate" type="text/html" href="/skyzyx/signer/releases/tag/1.0"/>
+    <title>Big Bang</title>
+    <content type="html">&lt;p&gt;Initial release.&lt;/p&gt;
+&lt;p&gt;Based on a simplified version of the AWS Signature v4 implementation from the &lt;a href=&quot;https://github.com/aws/aws-for-php&quot;&gt;AWS SDK for PHP&lt;/a&gt;.&lt;/p&gt;</content>
+    <author>
+      <name>skyzyx</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/39447?v=3&amp;s=60"/>
+  </entry>
+</feed>

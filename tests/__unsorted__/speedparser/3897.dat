@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>Ze Technology</title>
+	
+	<link>http://www.ze-technology.com</link>
+	<description>Ze Blog qui parle de Ze Technology. Univers du libre, programmation, sociÃ©tÃ©, business...</description>
+	<lastBuildDate>Fri, 17 Dec 2010 20:42:55 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.8.6</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/blogspot/zt" /><feedburner:info uri="blogspot/zt" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><item>
+		<title>Lister des fichiers en python… avec les fonctions POSIX !</title>
+		<link>http://feedproxy.google.com/~r/blogspot/zt/~3/PZc_Ka6Qg-M/</link>
+		<comments>http://www.ze-technology.com/2010/12/17/lister-des-fichiers-en-python-avec-les-fonctions-posix/#comments</comments>
+		<pubDate>Fri, 17 Dec 2010 20:37:47 +0000</pubDate>
+		<dc:creator>Adrien Mogenet</dc:creator>
+				<category><![CDATA[Astuce]]></category>
+		<category><![CDATA[Python]]></category>
+		<category><![CDATA[Tutoriaux]]></category>
+
+		<guid isPermaLink="false">http://www.ze-technology.com/?p=711</guid>
+		<description><![CDATA[Je me suis mis depuis quelques mois Ã  Python. Il y a Ã©normÃ©ment de choses trÃ¨s apprÃ©ciables dans le langage et sa logique. Ã€ vrai dire, plus le temps passe, et moins je lui trouve de points faibles. SÃ»rement le dÃ©but d&#8217;une longue sÃ©rie d&#8217;articles, de tous niveaux.
+Mais en attendant, je vais ici relater mon [...]]]></description>
+			<content:encoded><![CDATA[<p>Je me suis mis depuis quelques mois Ã  Python. Il y a Ã©normÃ©ment de choses trÃ¨s apprÃ©ciables dans le langage et sa logique. Ã€ vrai dire, plus le temps passe, et moins je lui trouve de points faibles. SÃ»rement le dÃ©but d&#8217;une longue sÃ©rie d&#8217;articles, de tous niveaux.</p>
+<p>Mais en attendant, je vais ici relater mon premier bout de code un petit peu &laquo;&nbsp;tricky&nbsp;&raquo;. Python propose un lot de mÃ©thodes pour accÃ©der aux rÃ©pertoires/fichiers : os.listdir, walk&#8230;  Mais ces mÃ©thodes ont le dÃ©faut de retourner une liste construite des Ã©lÃ©ments. Du coup, lorsque le temps de traitement devient critique, on aimerait bien pouvoir itÃ©rer directement sur les descripteurs de fichiers sans attendre une liste de potentiellement 10 000 Ã©lÃ©ments. Bref, la possibilitÃ© d&#8217;accÃ©der aux fonctions Posix <span style="font-family: courier">opendir()</span> et <span style="font-family: courier">readdir()</span>.</p>
+<p>Le soucis ? Python ne propose pas ces fonctions. Mais il y a la possibilitÃ© d&#8217;accÃ©der Ã  des API du langage C, et dans un environnement Unix, on y retrouve nos chÃ¨res fonctions si convoitÃ©es ! AprÃ¨s avoir Ã©tudiÃ© cette piste, voilÃ  un snippet fort utile :</p>
+<pre class="brush: python;">
+#!/usr/bin/python
+from ctypes import CDLL, c_char_p, c_int, c_long, c_ushort, c_byte, c_char
+from ctypes import Structure, POINTER
+from ctypes.util import find_library
+
+class c_dir(Structure):
+    &quot;&quot;&quot; Defined C struct DIR &quot;&quot;&quot;
+    pass
+
+class c_dirent(Structure):
+    &quot;&quot;&quot; Directory entry structure equivalent &quot;&quot;&quot;
+    _fields_ = (
+        ('d_ino', c_long),  # inode number
+        ('d_off', c_long),  # offset to the next dirent
+        ('d_reclen', c_ushort), # length of this record
+        ('d_type', c_byte),  # type of files; os specific
+        ('d_name', c_char * 4096) # filename
+        )
+
+c_dirent_p = POINTER(c_dirent)
+c_dir_p = POINTER(c_dir)
+c_lib = CDLL(find_library(&quot;c&quot;))
+
+opendir = c_lib.opendir
+opendir.argtypes = [c_char_p]
+opendir.restype = c_dir_p
+
+readdir = c_lib.readdir_r
+readdir.argtypes = [c_dir_p]
+readdir.restype = c_dirent_p
+
+closedir = c_lib.closedir
+closedir.argtypes = [c_dir_p]
+closedir.restype = c_int
+
+def listdir(path):
+    &quot;&quot;&quot;
+    A generator to return the names of files in the directory passed in
+    &quot;&quot;&quot;
+    dir_p = opendir(&quot;.&quot;)
+    try:
+        while True:
+            p = readdir(dir_p)
+            if not p:
+                break
+            yield p.contents.d_name
+    finally:
+        closedir(dir_p)
+</pre>
+<p>Attention, <span style="font-family: courier">listdir()</span> retournera les rÃ©pertoires &laquo;&nbsp;.&nbsp;&raquo; et &laquo;&nbsp;..&nbsp;&raquo; ! Notez l&#8217;utilisation du <span style="font-family: courier">yield</span> pour dÃ©finir ici un gÃ©nÃ©rateur (sujet d&#8217;un autre article). De ce fait, notre fonction s&#8217;utilise comme cela :</p>
+<pre class="brush: python;">
+if __name__ == &quot;__main__&quot;:
+    for name in listdir(&quot;.&quot;):
+        print name
+</pre>
+<p>En espÃ©rant que Ã§a puisse servir Ã  quelqu&#8217;un d&#8217;autre&#8230;</p>
+<img src="http://feeds.feedburner.com/~r/blogspot/zt/~4/PZc_Ka6Qg-M" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.ze-technology.com/2010/12/17/lister-des-fichiers-en-python-avec-les-fonctions-posix/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.ze-technology.com/2010/12/17/lister-des-fichiers-en-python-avec-les-fonctions-posix/</feedburner:origLink></item>
+		<item>
+		<title>Adoption de bonnes pratiques QA, retour d’expÃ©rience</title>
+		<link>http://feedproxy.google.com/~r/blogspot/zt/~3/dgusUhUj1UA/</link>
+		<comments>http://www.ze-technology.com/2010/12/05/adoption-de-bonnes-pratiques-qa-retour-dexperience/#comments</comments>
+		<pubDate>Sun, 05 Dec 2010 21:52:43 +0000</pubDate>
+		<dc:creator>Adrien Mogenet</dc:creator>
+				<category><![CDATA[Non classÃ©]]></category>
+
+		<guid isPermaLink="false">http://www.ze-technology.com/?p=708</guid>
+		<description><![CDATA[Cher lectorat, bonjour.
+Alors que l&#8217;on parle plus que jamais de casino en ligne, de paris sportif, poker ou des fameux &#171;&#160;bonus&#160;&#187; de casino sans dÃ©pÃ´t, l&#8217;Ã©tÃ© dernier a Ã©tÃ© pour moi l&#8217;occasion de retourner de l&#8217;autre cÃ´tÃ© de la barriÃ¨re. L&#8217;occasion de collaborer Ã  nouveau avecÂ mon ancien (excellent) employeur en matiÃ¨re de gambling. La mission [...]]]></description>
+			<content:encoded><![CDATA[<p>Cher lectorat, bonjour.</p>
+<p>Alors que l&#8217;on parle plus que jamais de <a href="http://fr.casinotoplists.com/" target="_blank">casino en ligne</a>, de paris sportif, poker ou des fameux &laquo;&nbsp;bonus&nbsp;&raquo; de <a href="http://fr.casinotoplists.com/bonus-de-casino-sans-depot">casino sans dÃ©pÃ´t</a>, l&#8217;Ã©tÃ© dernier a Ã©tÃ© pour moi l&#8217;occasion de retourner de l&#8217;autre cÃ´tÃ© de la barriÃ¨re. L&#8217;occasion de collaborer Ã  nouveau avecÂ mon ancien (excellent) employeur en matiÃ¨re de gambling. La mission qui m&#8217;Ã©tait confiÃ©e Ã©tait la suivante : partager mes expÃ©riences en matiÃ¨re de QA pour les projets PHP, et sensibiliser/dÃ©velopper tout un lot de bonnes pratiques auprÃ¨s de l&#8217;Ã©quipe technique en place.</p>
+<p>Pour formaliser un peu le pÃ©rimÃ¨tre, ces 2 mois devaient permettre de dÃ©rouler un Ã©tat de l&#8217;art des tests unitaires, fonctionnels, de performances, sur l&#8217;intÃ©gration continue et les bonnes pratiques de dÃ©veloppement &laquo;&nbsp;modernes&nbsp;&raquo; appliquÃ©es au PHP.</p>
+<p>Ma plus grosse crainte Ã©tait rÃ©solument celle de voir ces pratiques rejetÃ©es, jugÃ©es &laquo;&nbsp;inutiles&nbsp;&raquo;, ou &laquo;&nbsp;trop lourdes&nbsp;&raquo; Ã  appliquer au quotidien. Je savais que j&#8217;avais alors 2 mois pour dÃ©montrer tout l&#8217;intÃ©rÃªt de ces pratiques, pour prouver que les mÃ©triques de phpcs, phpcpd ou phpunit Ã©taient bien plus que des simples chiffres.</p>
+<h3>L&#8217;approche</h3>
+<p>Mon approche fÃ»t la suivante : adapter chaque point au cas prÃ©cis des dÃ©veloppeurs de l&#8217;entreprise, et les impliquer le plus tÃ´t possible dans un processus &laquo;&nbsp;d&#8217;auto-formation&nbsp;&raquo;, pour assurer uneÂ pÃ©rennitÃ©Â Ã  la politique qualitÃ©, une fois ces 2 mois &#8211; Ã  mi temps &#8211; terminÃ©s. Craignant des rejets du type : &laquo;&nbsp;les tests, c&#8217;est pas pour nous !&nbsp;&raquo;, je me suis efforcÃ© de rÃ©soudre TOUS les problÃ¨mes qui pourraient m&#8217;Ãªtre posÃ©. L&#8217;exemple le plusÂ concretÂ concerne un refactoring de classes PHP. L&#8217;une d&#8217;entre elle mÃ©langeait logique mÃ©tier, logique d&#8217;accÃ¨s aux donnÃ©es, logique utilisateur&#8230; L&#8217;argument avancÃ© Ã©tait que le code <strong>devait</strong> Ãªtre comme cela, que Ã§a avait Ã©tÃ© pensÃ© et que finalement, Ã§a marchait trÃ¨s bien.</p>
+<p>Sans forcÃ©ment rejeter cette idÃ©e (aprÃ¨s tout, un code qui marche, c&#8217;est dÃ©jÃ  beaucoup de nos jours !) j&#8217;ai accordÃ© le temps qu&#8217;il fallait au problÃ¨me en dÃ©cortiquant chaque ligne. AprÃ¨s avoir expliquÃ© ma mÃ©thodologie (qui en est une Ã  peu prÃ¨s standard parmi tant d&#8217;autres), on obtenait un code iso-fonctionnel, mais :</p>
+<ul>
+<li>avec des portions beaucoup plus courtes</li>
+<li>beaucoup plus facilement testable</li>
+<li>plus ordonnÃ© par &laquo;&nbsp;logiques&nbsp;&raquo;, au lieu d&#8217;emboÃ®ter des appels procÃ©duraux</li>
+<li>et donc, plus facilement maintenable</li>
+</ul>
+<p>Je pense que cet exemple concret a Ã©tÃ© le dÃ©clencheur sur la prise de conscience de la part de l&#8217;Ã©quipe. L&#8217;exemple qui a montrÃ© que le changement n&#8217;est pas impossible, et, mieux encore, peut Ãªtre pas si coÃ»teux que Â Ã§a en temps s&#8217;il est fait rigoureusement.</p>
+<h3>Des acteurs impliquÃ©s</h3>
+<p>Une fois la thÃ©orie abordÃ©e et l&#8217;exemple donnÃ©, j&#8217;avais dÃ©diÃ© une partie Ã  la &laquo;&nbsp;pratique&nbsp;&raquo; collaborative. Les mains dans le cambouis, comme on dit. Des micro-tÃ¢ches Ã©taient assignÃ©es entre les diffÃ©rents dÃ©veloppeurs, afin qu&#8217;ils s&#8217;approprient les outils et diffÃ©rents outils, et intÃ©grer les bons rÃ©flexes. Ajout d&#8217;une nouvelle mÃ©trique Ã  Hudson, modification d&#8217;un test unitaire, relecture du code d&#8217;autrui, consultation de la documentation&#8230; Autant de minutes dÃ©pensÃ©es Ã  bonÂ escient.</p>
+<h3>La finalitÃ©</h3>
+<p>J&#8217;ai oubliÃ© de vous dire : c&#8217;Ã©tait ma premiÃ¨re vraie expÃ©rience en &laquo;&nbsp;formation&nbsp;&raquo;. Je ne peux me targuer d&#8217;avoir 10 ans d&#8217;expÃ©rience en QA ou en pÃ©dagogie, mon but Ã©tait d&#8217;apporter mon regard et de partager ce que je savais. Le pari est apparemment rÃ©ussi. Les 2 points clÃ©s (exemple concret autour des besoins rÃ©els et implication des acteurs) ont l&#8217;air d&#8217;avoir portÃ© leurs fruits. La plate-forme d&#8217;intÃ©gration continue fonctionne&#8230; en continue. VoilÃ  2 mois bien rentabilisÃ©s !</p>
+<img src="http://feeds.feedburner.com/~r/blogspot/zt/~4/dgusUhUj1UA" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.ze-technology.com/2010/12/05/adoption-de-bonnes-pratiques-qa-retour-dexperience/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.ze-technology.com/2010/12/05/adoption-de-bonnes-pratiques-qa-retour-dexperience/</feedburner:origLink></item>
+		<item>
+		<title>PHPUnit 3.5 : pas moins de $this !</title>
+		<link>http://feedproxy.google.com/~r/blogspot/zt/~3/F04ni0wz1c4/</link>
+		<comments>http://www.ze-technology.com/2010/08/18/phpunit-3-5-pas-moins-de-this/#comments</comments>
+		<pubDate>Wed, 18 Aug 2010 13:17:06 +0000</pubDate>
+		<dc:creator>Adrien Mogenet</dc:creator>
+				<category><![CDATA[Non classÃ©]]></category>
+
+		<guid isPermaLink="false">http://www.ze-technology.com/?p=704</guid>
+		<description><![CDATA[C&#8217;est une nouvelle (?) que vient d&#8217;annoncer Sebastian Bergmann. Suite aux remarques de la communautÃ©, il n&#8217;y aura pas moins de $this dans vos tests unitaires.
+Pour rappel, Â Sebastian avait eu pas mal de plaintes d&#8217;utilisateurs rÃ©clamant la disparition du $this pour effectuer les diffÃ©rentes assertions.
+Source
+]]></description>
+			<content:encoded><![CDATA[<p>C&#8217;est une nouvelle (?) que vient d&#8217;annoncer Sebastian Bergmann. Suite aux remarques de la communautÃ©, il n&#8217;y aura pas moins de $this dans vos tests unitaires.</p>
+<p>Pour rappel, Â Sebastian avait eu pas mal de plaintes d&#8217;utilisateurs rÃ©clamant la disparition du $this pour effectuer les diffÃ©rentes assertions.</p>
+<p><a href="http://sebastian-bergmann.de/archives/896-guid.html">Source</a></p>
+<img src="http://feeds.feedburner.com/~r/blogspot/zt/~4/F04ni0wz1c4" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.ze-technology.com/2010/08/18/phpunit-3-5-pas-moins-de-this/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://www.ze-technology.com/2010/08/18/phpunit-3-5-pas-moins-de-this/</feedburner:origLink></item>
+		<item>
+		<title>Retour d’expÃ©rience sur MongoDB partie 1 : prÃ©sentation</title>
+		<link>http://feedproxy.google.com/~r/blogspot/zt/~3/OX5vyD8u2vM/</link>
+		<comments>http://www.ze-technology.com/2010/07/23/retour-dexperience-sur-mongodb/#comments</comments>
+		<pubDate>Fri, 23 Jul 2010 20:19:55 +0000</pubDate>
+		<dc:creator>Adrien Mogenet</dc:creator>
+				<category><![CDATA[MongoDB]]></category>
+		<category><![CDATA[Non classÃ©]]></category>
+
+		<guid isPermaLink="false">http://www.ze-technology.com/?p=691</guid>
+		<description><![CDATA[Retour d&#8217;expÃ©rience sur MongoDB
+Cela fait maintenant quelques temps que je donne plus de nouvelles,
+plus un signe de technologie, de recherche. Et pourtant, de la
+recherche, il y en a eu !
+AprÃ¨s avoir passÃ© une longue pÃ©riode Ã  essayer les diffÃ©rents outils
+de QA dÃ©diÃ©s au web, j&#8217;ai passÃ© ces derniers mois Ã  essayer &#8211; et
+exploiter &#8211; les [...]]]></description>
+			<content:encoded><![CDATA[<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Retour d&#8217;expÃ©rience sur MongoDB</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Cela fait maintenant quelques temps que je donne plus de nouvelles,</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">plus un signe de technologie, de recherche. Et pourtant, de la</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">recherche, il y en a eu !</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">AprÃ¨s avoir passÃ© une longue pÃ©riode Ã  essayer les diffÃ©rents outils</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">de QA dÃ©diÃ©s au web, j&#8217;ai passÃ© ces derniers mois Ã  essayer &#8211; et</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">exploiter &#8211; les NoSQL. La littÃ©rature est dÃ©jÃ  bien large sur le sujet</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">dans ses gÃ©nÃ©ralitÃ©s. Cassandra, HBase, Voldemort, Redis&#8230; tout y</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">passe, du plus ancien dÃ©pÃ´t clÃ©/valeur au plus Ã©voluÃ© systÃ¨me orientÃ©</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">graphe ou document. Je vais parler ici finalement de MongoDB, que j&#8217;ai</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">pu torturer en long, en large et en travers, et qui appartient</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">justement Ã  la catÃ©gorie des NoSQL orientÃ© document.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Un NoSQL, pourquoi ?</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Certainement pas par effet de mode. Une prise de dÃ©cision basÃ©e sur ce</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">critÃ¨re ne serait que folie. Par besoin ? Il va Ãªtre temps de dÃ©finir</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">ces besoins. Car on assiste Ã  bon nombre de projets qui tendent Ã </div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">dÃ©laisser ces bons vieux SGBDR au profit de leurs consins</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">non-relationnels. Or, la plupart de ces projets ont &#8211; selon moi -</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">surtout un problÃ¨me de conception et non d&#8217;outils. Si ces projets</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">reprochent Ã  MySQL une certaine lenteur, ils feraient bien mieux</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">d&#8217;apprendre Ã  tirer profit d&#8217;une configuration optimale, et d&#8217;une</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">conception sÃ©rieuse du modÃ¨le de donnÃ©es, avec une stratÃ©gie</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">d&#8217;indexation adaptÃ©e. On ne le dira jamais assez : des bases comme</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">MySQL, PostgreSQL ou autre ont perdurÃ© pendant des annÃ©es. La</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">rÃ©plication est fonctionelle. Le partitionnement est possible. Les</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">plus gros l&#8217;ont utilisÃ© et continuent Ã  l&#8217;utiliser. Twitter avoue mÃªme</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">rester sur MySQL aprÃ¨s avoir essayÃ© timidement de mettre en place</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Cassandra. Non, pour moi, une des raison qui peut pousser Ã  envisager</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">une solution NoSQL est ailleurs. La grosse plus value de ces solutions</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">reste toujours leur trÃ¨s bonne disposition Ã  &laquo;&nbsp;scaler&nbsp;&raquo;. Autrement dit,</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">si on souhaite absorber un dÃ©luge de donnÃ©es croissant, on y trouvera</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">un alliÃ© puissant pour rapidement doubler, quadrupler la puissance de</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">stockage, sans se lancer dans une trop lourde configuration du</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">partitionnement et/ou de la rÃ©plication.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">OrientÃ© document, pourquoi ?</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Comme d&#8217;habitude, nuanÃ§ons ce point de vue par un autre apport, mais</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">celui-ci est propre au modÃ¨le de stockage choisi. On en dÃ©nombre 4 :</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">- dÃ©pÃ´ts clÃ©/valeur (Voldemort, Redis&#8230;)</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">- orientÃ©s colonne (Cassandra, HBase&#8230;)</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">- orientÃ©s documents (CouchDB, MongoDB&#8230;)</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">- orientÃ©s graphes (Neo4J&#8230;)</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Chaque modÃ¨le rÃ©pond Ã  des problÃ©matiques et stratÃ©gies de stockage</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">diffÃ©rentes. MongoDB stocke des &laquo;&nbsp;documents&nbsp;&raquo;. Un document est un</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">ensemble de paires clÃ©/valeurs, ici dÃ©crites au format BSon. Ce format</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">est largement comparable au JSon, modulo quelques types additionnels.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">{</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">blog: http://www.zt.com,</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">authors: [adrien, robot],</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">comments:</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">[</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;"><span style="white-space: pre;"> </span>{ author: robert, age: 42 },</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;"><span style="white-space: pre;"> </span>{ author: johanna, age: 25 }</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">]</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">}</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">VolÃ  donc typiquement ce qui peut Ãªtre stockÃ© dans une collection (=</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">table) MongoDB. Ce stockage est dit &laquo;&nbsp;schemaless&nbsp;&raquo;, traduire par &laquo;&nbsp;sans</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">schÃ©ma&nbsp;&raquo;. Les documents ne correspondent Ã  aucune dÃ©finition formelle</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">qui aurait Ã©tÃ© prÃ©alablement dÃ©finie. Ainsi, on pourrait trÃ¨s bien</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">rajouter un autre document &laquo;&nbsp;blog&nbsp;&raquo; similaire Ã  l&#8217;exemple, mais sans</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">champs &laquo;&nbsp;authors&nbsp;&raquo; et avec une colonne &laquo;&nbsp;keywords&nbsp;&raquo;. le NewYorkTimes tire</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">partie de ce modÃ¨le avec MongoDB en permettant Ã  ses contributeurs</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">d&#8217;ajouter des mÃ©ta-donnÃ©es Ã  la volÃ©e pour chaque photo soumise. En</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">effet, on ne retrouve pas forcÃ©ment les mÃªme mÃ©ta-donnÃ©es entre une</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">photo de lieu et celle d&#8217;une star. Certes, la chose reste largement</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">faisable avec les outils actuels. Le modÃ¨le document est juste</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">extrÃ©mement adaptÃ© Ã  ce type de stockage, sans s&#8217;occuper d&#8217;un modÃ¨le</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">relationnel et ses multiples contraintes. Je sais, je viens de donner</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">un argument qui pourrait remettre en cause le premier : certains NoSQL</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">ont un rÃ´le qui dÃ©passe de loin celui d&#8217;un entrepÃ´t extensible et redondÃ©.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">MongoDB, pourquoi ?</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Voyons maintenant le cas particulier de MongoDB. C&#8217;est un NoSQL</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">orientÃ© documents, qui se qualifie par l&#8217;acronyme &laquo;&nbsp;CP&nbsp;&raquo; du thÃ©orÃ¨me de</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">CAP.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">1) Langage de requÃªtage intuitif</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Tout naturellement, lorsqu&#8217;on essaye un systÃ¨me de stockage, nos</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">premiers essais se tournent vers l&#8217;insertion et la rÃ©cupÃ©ration de</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">donnÃ©es. Pour l&#8217;insertion, nous venons de voir qu&#8217;elle s&#8217;effectuait au</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">format BSon. Concretement, aprÃ¨s avoir lancÃ© le shell MongoDB, la</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">commande suivante effectuerait une insertion dans une collection</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">&laquo;&nbsp;test&nbsp;&raquo; :</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">db.test.insert({&nbsp;&raquo;name&nbsp;&raquo;: &laquo;&nbsp;Adrien&nbsp;&raquo;});</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Et pour requÃªter nos collections, cela s&#8217;effectue Ã©galement tout</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">naturellement au format BSon ! MongoDB fournit un certain nombre</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">d&#8217;opÃ©rateurs classiques : &gt;, &lt;, =, &gt;=, IN, NOT IN, etc. Quelques</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">exemples :</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;"># Tous les utilisateurs &laquo;&nbsp;toto&nbsp;&raquo;</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">db.test.find({&nbsp;&raquo;name&nbsp;&raquo;: &laquo;&nbsp;toto&nbsp;&raquo;});</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;"># Les 3 premiers &laquo;&nbsp;Adrien&nbsp;&raquo;, ayant plus de 23 ans, triÃ©s</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">db.test.find({&nbsp;&raquo;name&nbsp;&raquo;: &laquo;&nbsp;Adrien&nbsp;&raquo;, &laquo;&nbsp;age&nbsp;&raquo;: {$gt: 23}}.sort({&nbsp;&raquo;age&nbsp;&raquo;: -1}).limit(3);</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">C&#8217;est en gÃ©nÃ©ral le premier point qui ressort de MongoDB par rapport Ã </div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">la plupart de ses rivaux. Son systÃ¨me de requÃªtage sÃ©duisant permet</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">une prise en main extrÃ©mement rapide.</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">2) Auto-sharding</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Venons en maintenant Ã  ce qui fait normalement tout l&#8217;attrait des</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">NoSQL : leur forte extensibilitÃ© et leur mÃ©canisme de</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">rÃ©plication. MongoDB offre des possibilitÃ©s de sharding</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">(partitionnement) afin de distribuer les donnÃ©es au sein de plusieurs</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">&laquo;&nbsp;shards&nbsp;&raquo; (bloc venant constituer le cluster, et ne possÃ©dant qu&#8217;une</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">partie des donnÃ©es). L&#8217;auto-sharding reste aujourd&#8217;hui (version 1.5.3)</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">en version beta, mais il est possible tout de mÃªme de spÃ©cifier ses</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">propres pattern de sharding. Par exemple, on peut dÃ©cider que le</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">champs &laquo;&nbsp;name&nbsp;&raquo; de nos exemple deviendra une clÃ© de sharding. Il est</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">possible, Ã  l&#8217;instar des indexes, de spÃ©cifier des clÃ©s composÃ©es de</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">plusieurs champs. MongoDB calculera un hash de ces clÃ©s pour</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">dÃ©terminer sur quel shard envoyer tel ou tel document. La</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">configuration du cluster et toutes ses mÃ©ta-donnÃ©es sont stockÃ©es au</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">sein de &laquo;&nbsp;serveurs de configuration&nbsp;&raquo;. En production, trois serveurs de</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">ce type sont normalement configurÃ©s. Si un de ces serveurs tombe en</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">rade, le systÃ¨me continue de fonctionner normalement. Si deux de ces 3</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">serveurs montrent un dysfonctionnement, le dernier serveur de</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">configuration devient accessible en lecture seulement. Ceci n&#8217;empÃªche</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">pas le cluster complet de fonctionner, mais empÃªche toute modification</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">de la configuration, et tout dÃ©placement de &laquo;&nbsp;chunks&nbsp;&raquo; (position des</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">blocs de donnÃ©es, qui est elle aussi stockÃ©e dans ces serveurs de</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">configuration).</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">3) Replica pair, replica sets</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Chaque shard peut actuellement Ãªtre redondÃ© par ce qu&#8217;on appelle un systÃ¨me de</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">&laquo;&nbsp;replica pair&nbsp;&raquo; : le shard est constituÃ© d&#8217;un master et d&#8217;un slave. Ã€</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">tout moment, si le master tombe en panne, le slave prend le relai. Les</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">donnÃ©es peuvent Ãªtre rÃ©pliquÃ©es instantanÃ©ment ou avec une certaines</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">latence dans le cas d&#8217;un systÃ¨me dit &laquo;&nbsp;finalement consistant&nbsp;&raquo;. Cette</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">paire est bien limitÃ©e actuellement en matiÃ¨re de fail-over et</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">laissera place aux &laquo;&nbsp;replica sets&nbsp;&raquo; avec MongoDB 1.6, qui laissera la</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">possibilitÃ© de plus de 2 serveurs de sauvegarde. Dans cette nouvelle</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">situation, en cas de panne du master, l&#8217;Ã©lection du slave qui</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">deviendra master se fera par la rÃ©solution d&#8217;un consensus basÃ© sur la</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">disponibilitÃ© de chaque noeud, le nombre de serveurs vus par chacun, etc&#8230;</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Conclusion</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">On attend les replica sets, l&#8217;autosharding fonctionnel</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Liens Ã  insÃ©rer :</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">- &laquo;&nbsp;twitter avoue&nbsp;&raquo;</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">- &laquo;&nbsp;thÃ©oreme de CAP&nbsp;&raquo;</div>
+<div id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow-x: hidden; overflow-y: hidden;">Article sur XOP</div>
+<p>Cela fait maintenant quelques temps que je donne plus de nouvelles,Â plus un signe de technologie, de recherche. Et pourtant, de laÂ recherche, il y en a eu !Â AprÃ¨s avoir passÃ© une longue pÃ©riode Ã  essayer les diffÃ©rents outilsÂ de QA dÃ©diÃ©s au web, j&#8217;ai passÃ© ces derniers mois Ã  essayer &#8211; etÂ exploiter &#8211; les NoSQL. La littÃ©rature est dÃ©jÃ  bien large sur le sujetÂ dans ses gÃ©nÃ©ralitÃ©s. Cassandra, HBase, Voldemort, Redis&#8230; tout yÂ passe, du plus ancien dÃ©pÃ´t clÃ©/valeur au plus Ã©voluÃ© systÃ¨me orientÃ©Â graphe ou document. Je vais parler ici finalement de MongoDB, que j&#8217;aiÂ pu torturer en long, en large et en travers, et qui appartientÂ justement Ã  la catÃ©gorie des NoSQL orientÃ© document.</p>
+<h3>Un NoSQL, pourquoi ?</h3>
+<p>Certainement pas par effet de mode. Une prise de dÃ©cision basÃ©e sur ceÂ critÃ¨re ne serait que folie. Par besoin ? Il va Ãªtre temps de dÃ©finirÂ ces besoins. Car on assiste Ã  bon nombre de projets qui tendent Ã Â dÃ©laisser ces bons vieux SGBDR au profit de leurs cousinsÂ non-relationnels. Or, la plupart de ces projets ont &#8211; selon moi -Â surtout un problÃ¨me de conception et non d&#8217;outils. Si ces projetsÂ reprochent Ã  MySQL une certaine lenteur, ils feraient bien mieuxÂ d&#8217;apprendre Ã  tirer profit d&#8217;une configuration optimale, et d&#8217;uneÂ conception sÃ©rieuse du modÃ¨le de donnÃ©es, avec une stratÃ©gieÂ d&#8217;indexation adaptÃ©e. On ne le dira jamais assez : des bases commeÂ MySQL, PostgreSQL ou autre ont perdurÃ© pendant des annÃ©es. LaÂ rÃ©plication est fonctionelle. Le partitionnement est possible. LesÂ plus gros l&#8217;ont utilisÃ© et continuent Ã  l&#8217;utiliser. Twitter <a href="http://engineering.twitter.com/2010/07/cassandra-at-twitter-today.html">avoue mÃªmeÂ rester sur MySQL</a> aprÃ¨s avoir essayÃ© timidement de mettre en placeÂ Cassandra. Non, pour moi, une des raison qui peut pousser Ã  envisagerÂ une solution NoSQL est ailleurs. La grosse plus value de ces solutionsÂ reste toujours leur trÃ¨s bonne disposition Ã  &laquo;&nbsp;scaler&nbsp;&raquo;. Autrement dit,Â si on souhaite absorber un dÃ©luge de donnÃ©es croissant, on y trouveraÂ un alliÃ© puissant pour rapidement doubler, quadrupler la puissance deÂ stockage, sans se lancer dans une trop lourde configuration duÂ partitionnement et/ou de la rÃ©plication.</p>
+<h3>OrientÃ© document, pourquoi ?</h3>
+<p>Comme d&#8217;habitude, nuanÃ§ons ce point de vue par un autre apport, maisÂ celui-ci est propre au modÃ¨le de stockage choisi. On en dÃ©nombre 4 :</p>
+<ul>
+<li>dÃ©pÃ´ts clÃ©/valeur (Voldemort, Redis&#8230;)</li>
+<li>orientÃ©s colonne (Cassandra, HBase&#8230;)</li>
+<li>orientÃ©s documents (CouchDB, MongoDB&#8230;)</li>
+<li>orientÃ©s graphes (Neo4J&#8230;)</li>
+</ul>
+<p>Chaque modÃ¨le rÃ©pond Ã  des problÃ©matiques et stratÃ©gies de stockageÂ diffÃ©rentes. MongoDB stocke des &laquo;&nbsp;documents&nbsp;&raquo;. Un document est unÂ ensemble de paires clÃ©/valeurs, ici dÃ©crites au format BSon. Ce formatÂ est largement comparable au JSon, modulo quelques types additionnels.</p>
+<p><code>{<br />
+blog: http://www.zt.com,<br />
+authors: [adrien, robot],<br />
+comments:<br />
+[<br />
+<span style="white-space: pre;"> </span>{ author: robert, age: 42 },<br />
+<span style="white-space: pre;"> </span>{ author: johanna, age: 25 }<br />
+]<br />
+}<br />
+</code></p>
+<p>VoolÃ  donc typiquement ce qui peut Ãªtre stockÃ© dans une collection (=Â table) MongoDB. Ce stockage est dit &laquo;&nbsp;schemaless&nbsp;&raquo;, traduire par &laquo;&nbsp;sansÂ schÃ©ma&nbsp;&raquo;. Les documents ne correspondent Ã  aucune dÃ©finition formelleÂ qui aurait Ã©tÃ© prÃ©alablement dÃ©finie. Ainsi, on pourrait trÃ¨s bienÂ rajouter un autre document &laquo;&nbsp;blog&nbsp;&raquo; similaire Ã  l&#8217;exemple, mais sansÂ champs &laquo;&nbsp;authors&nbsp;&raquo; et avec une colonne &laquo;&nbsp;keywords&nbsp;&raquo;. le NewYorkTimes tireÂ partie de ce modÃ¨le avec MongoDB en permettant Ã  ses contributeursÂ d&#8217;ajouter des mÃ©ta-donnÃ©es Ã  la volÃ©e pour chaque photo soumise. EnÂ effet, on ne retrouve pas forcÃ©ment les mÃªme mÃ©ta-donnÃ©es entre uneÂ photo de lieu et celle d&#8217;une star. Certes, la chose reste largementÂ faisable avec les outils actuels. Le modÃ¨le document est justeÂ extrÃ©mement adaptÃ© Ã  ce type de stockage, sans s&#8217;occuper d&#8217;un modÃ¨leÂ relationnel et ses multiples contraintes. Je sais, je viens de donnerÂ un argument qui pourrait remettre en cause le premier : certains NoSQLÂ ont un rÃ´le qui dÃ©passe de loin celui d&#8217;un entrepÃ´t extensible et redondÃ©.</p>
+<h3>MongoDB, pourquoi ?</h3>
+<p>Voyons maintenant le cas particulier de MongoDB. C&#8217;est un NoSQLÂ orientÃ© documents, qui se qualifie par l&#8217;acronyme &laquo;&nbsp;CP&nbsp;&raquo; du <a href="http://en.wikipedia.org/wiki/CAP_theorem">thÃ©orÃ¨me deÂ CAP</a>.</p>
+<h4>1) Langage de requÃªtage intuitif</h4>
+<p>Tout naturellement, lorsqu&#8217;on essaye un systÃ¨me de stockage, nosÂ premiers essais se tournent vers l&#8217;insertion et la rÃ©cupÃ©ration deÂ donnÃ©es. Pour l&#8217;insertion, nous venons de voir qu&#8217;elle s&#8217;effectuait auÂ format BSon. Concretement, aprÃ¨s avoir lancÃ© le shell MongoDB, laÂ commande suivante effectuerait une insertion dans une collectionÂ &nbsp;&raquo;test&nbsp;&raquo; :</p>
+<p><span style="font-family: Consolas, Monaco, 'Courier New', Courier, monospace; line-height: 18px; font-size: 12px; white-space: pre;">db.test.insert({&nbsp;&raquo;name&nbsp;&raquo;: &laquo;&nbsp;Adrien&nbsp;&raquo;});</span></p>
+<p>Et pour requÃªter nos collections, cela s&#8217;effectue Ã©galement toutÂ naturellement au format BSon ! MongoDB fournit un certain nombreÂ d&#8217;opÃ©rateurs classiques : &gt;, &lt;, =, &gt;=, IN, NOT IN, etc. QuelquesÂ exemples :</p>
+<pre><code># Tous les utilisateurs "toto"
+db.test.find({"name": "toto"});
+</code></pre>
+<p><code># Les 3 premiers "Adrien", ayant plus de 23 ans, triÃ©s<br />
+db.test.find({"name": "Adrien", "age": {$gt: 23}}.sort({"age": -1}).limit(3);</code></p>
+<p>C&#8217;est en gÃ©nÃ©ral le premier point qui ressort de MongoDB par rapport Ã Â la plupart de ses rivaux. Son systÃ¨me de requÃªtage sÃ©duisant permetÂ une prise en main extrÃ©mement rapide.</p>
+<h4>2) Auto-sharding</h4>
+<p>Venons en maintenant Ã  ce qui fait normalement tout l&#8217;attrait desÂ NoSQL : leur forte extensibilitÃ© et leur mÃ©canisme deÂ rÃ©plication. MongoDB offre des possibilitÃ©s de shardingÂ (partitionnement) afin de distribuer les donnÃ©es au sein de plusieursÂ &nbsp;&raquo;shards&nbsp;&raquo; (bloc venant constituer le cluster, et ne possÃ©dant qu&#8217;uneÂ partie des donnÃ©es). L&#8217;auto-sharding reste aujourd&#8217;hui (version 1.5.3)Â en version beta, mais il est possible tout de mÃªme de spÃ©cifier sesÂ propres pattern de sharding. Par exemple, on peut dÃ©cider que leÂ champs &laquo;&nbsp;name&nbsp;&raquo; de nos exemple deviendra une clÃ© de sharding. Il estÂ possible, Ã  l&#8217;instar des indexes, de spÃ©cifier des clÃ©s composÃ©es deÂ plusieurs champs. MongoDB calculera un hash de ces clÃ©s pourÂ dÃ©terminer sur quel shard envoyer tel ou tel document. LaÂ configuration du cluster et toutes ses mÃ©ta-donnÃ©es sont stockÃ©es auÂ sein de &laquo;&nbsp;serveurs de configuration&nbsp;&raquo;. En production, trois serveurs deÂ ce type sont normalement configurÃ©s. Si un de ces serveurs tombe enÂ rade, le systÃ¨me continue de fonctionner normalement. Si deux de ces 3Â serveurs montrent un dysfonctionnement, le dernier serveur deÂ configuration devient accessible en lecture seulement. Ceci n&#8217;empÃªcheÂ pas le cluster complet de fonctionner, mais empÃªche toute modificationÂ de la configuration, et tout dÃ©placement de &laquo;&nbsp;chunks&nbsp;&raquo; (position desÂ blocs de donnÃ©es, qui est elle aussi stockÃ©e dans ces serveurs deÂ configuration).</p>
+<h4>3) Replica pair, replica sets</h4>
+<p>Chaque shard peut actuellement Ãªtre redondÃ© par ce qu&#8217;on appelle un systÃ¨me deÂ &nbsp;&raquo;replica pair&nbsp;&raquo; : le shard est constituÃ© d&#8217;un master et d&#8217;un slave. Ã€Â tout moment, si le master tombe en panne, le slave prend le relai. LesÂ donnÃ©es peuvent Ãªtre rÃ©pliquÃ©es instantanÃ©ment ou avec une certainesÂ latence dans le cas d&#8217;un systÃ¨me dit &laquo;&nbsp;finalement consistant&nbsp;&raquo;. CetteÂ paire est bien limitÃ©e actuellement en matiÃ¨re de fail-over etÂ laissera place aux &laquo;&nbsp;replica sets&nbsp;&raquo; avec MongoDB 1.6, qui laissera laÂ possibilitÃ© de plus de 2 serveurs de sauvegarde. Dans cette nouvelleÂ situation, en cas de panne du master, l&#8217;Ã©lection du slave quiÂ deviendra master se fera par la rÃ©solution d&#8217;un consensus basÃ© sur laÂ disponibilitÃ© de chaque noeud, le nombre de serveurs vus par chacun, etc&#8230;</p>
+<h4>4) Map/Reduce</h4>
+<p>L&#8217;algorithme Map/Reduce a le vent en poupe depuis les papiers Google et l&#8217;implÃ©mentation Hadoop. Et devinez quoi ? MongoDB, Ã  l&#8217;instar de CouchDB, offre des possibilitÃ©s d&#8217;interrogation en Map/Reduce. Dans un environnement &laquo;&nbsp;shardÃ©&nbsp;&raquo;, les requÃªtes sont en effet ciblÃ©es ou globales (parallÃ¨les ou sÃ©quentielles). Pour effecter un certain nombre de calculs efficacement, MongoDB permet l&#8217;Ã©criture de fonctions map() et Â reduce() &#8211; et finalize() &#8211; en javascript. Les rÃ©sultats peuvent Ãªtre stockÃ©es dans des collections temporaires pour conserver un cache des rÃ©sultats.</p>
+<h4>5) Autres fonctionnalitÃ©s</h4>
+<p>En fait, il y a trop de choses Ã  raconter sur MongoDB. Je vais faire un bon petit lot de petits articles pour dÃ©tailler chaque point, mais pour ce soir, il faudra se contenter d&#8217;une dÃ©couverte rapide :</p>
+<ul>
+<li>Un moteur d&#8217;indexation gÃ©ographique, que Foursquare utilise Ã  outrance</li>
+<li>Une indexation en background</li>
+<li>Des capped-collections, collections de tailles fixes auto-gÃ©rÃ©es pour ne conserver que les X derniers Ã©lÃ©ments insÃ©rÃ©s (fonctionnement par TTL prÃ©vu pour les futures versions)</li>
+<li>Profiling des requÃªtes</li>
+<li>Interface REST</li>
+</ul>
+<h3>Conclusion</h3>
+<p>MongoDB est la solution qui actuellement suscite le plus ma curiositÃ©, et surtout mon intÃ©rÃªt, tant pour ses performances que pour sa conception et ses fonctionnalitÃ©s. Son plus gros dÃ©faut actuel est sa grande jeunesse. Gageons qu&#8217;une fois l&#8217;auto-sharding et les replica-sets 100% fonctionnels, 10 Gen Confluence arrivera Ã  mettre en place une architecture composÃ©e de 1000 shards, son objectif actuel.</p>
+<img src="http://feeds.feedburner.com/~r/blogspot/zt/~4/OX5vyD8u2vM" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.ze-technology.com/2010/07/23/retour-dexperience-sur-mongodb/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		<feedburner:origLink>http://www.ze-technology.com/2010/07/23/retour-dexperience-sur-mongodb/</feedburner:origLink></item>
+		<item>
+		<title>Symfony 1.3.5 et 1.4.5 : correctif de sÃ©curitÃ©</title>
+		<link>http://feedproxy.google.com/~r/blogspot/zt/~3/M-ENXNiftAs/</link>
+		<comments>http://www.ze-technology.com/2010/06/02/symfony-1-3-5-et-1-4-5-correctif-de-securite/#comments</comments>
+		<pubDate>Wed, 02 Jun 2010 18:56:21 +0000</pubDate>
+		<dc:creator>Adrien Mogenet</dc:creator>
+				<category><![CDATA[Symfony]]></category>
+
+		<guid isPermaLink="false">http://www.ze-technology.com/?p=689</guid>
+		<description><![CDATA[Pour les dÃ©veloppeurs qui lisent ce blog et qui seraient passÃ©s au travers de cette actualitÃ©, sachez que les nouvelles moutures du framework symfony corrigent une faille de sÃ©curitÃ© importante dans les classes de formulaires gÃ©nÃ©rÃ©es, affectant aussi bien Propel que Doctrine. Les validators sur les clÃ©-primaires ont Ã©tÃ© mis Ã  jour. Pour les dÃ©tails [...]]]></description>
+			<content:encoded><![CDATA[<p>Pour les dÃ©veloppeurs qui lisent ce blog et qui seraient passÃ©s au travers de cette actualitÃ©, sachez que les nouvelles moutures du framework <a href="http://symfony-project.com">symfony</a> corrigent une faille de sÃ©curitÃ© importante dans les classes de formulaires gÃ©nÃ©rÃ©es, affectant aussi bien Propel que Doctrine. Les validators sur les clÃ©-primaires ont Ã©tÃ© mis Ã  jour. Pour les dÃ©tails techniques, c&#8217;est sur <a href="http://trac.symfony-project.org/changeset/29661/branches/1.4">le trac </a>!</p>
+<img src="http://feeds.feedburner.com/~r/blogspot/zt/~4/M-ENXNiftAs" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.ze-technology.com/2010/06/02/symfony-1-3-5-et-1-4-5-correctif-de-securite/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.ze-technology.com/2010/06/02/symfony-1-3-5-et-1-4-5-correctif-de-securite/</feedburner:origLink></item>
+		<item>
+		<title>Tu n’Ã©cris plus beaucoup, dis donc !</title>
+		<link>http://feedproxy.google.com/~r/blogspot/zt/~3/rJZFxFM5-hQ/</link>
+		<comments>http://www.ze-technology.com/2010/04/05/tu-necris-plus-beaucoup-dis-donc/#comments</comments>
+		<pubDate>Mon, 05 Apr 2010 12:51:42 +0000</pubDate>
+		<dc:creator>Adrien Mogenet</dc:creator>
+				<category><![CDATA[Non classÃ©]]></category>
+
+		<guid isPermaLink="false">http://www.ze-technology.com/?p=678</guid>
+		<description><![CDATA[Non, c&#8217;est vrai ! Et en guise d&#8217;excuse, je ne peux pas dire que ce sont les sujets qui manquent ! En fait, il y a plein de raisons Ã  la passivitÃ© actuelle de ce blog. La premiÃ¨re, c&#8217;est le travail ; mais Ã§a, c&#8217;est pas une excuse, tous les blogueurs ont un travail (pour [...]]]></description>
+			<content:encoded><![CDATA[<p><img class="aligncenter size-full wp-image-679" title="landscape" src="http://www.ze-technology.com/wp-content/uploads/2010/04/landscape.jpg" alt="landscape" width="600" height="90" />Non, c&#8217;est vrai ! Et en guise d&#8217;excuse, je ne peux pas dire que ce sont les sujets qui manquent ! En fait, il y a plein de raisons Ã  la passivitÃ© actuelle de ce blog. La premiÃ¨re, c&#8217;est le travail ; mais Ã§a, c&#8217;est pas une excuse, tous les blogueurs ont un travail (pour les plus chanceux). La deuxiÃ¨me, la vraie, c&#8217;est que je me passionne en ce moment pour un tas de sujets, sÃ»rement les sujets phares de 2010 :</p>
+<ul>
+<li>Les NoSQL (Cassandra, HBase, MongoDB&#8230;)</li>
+<li>ParallÃ¨lement, les systÃ¨mes distribuÃ©s (Hadoop, Gearman&#8230;)</li>
+<li>MariaDB</li>
+<li>Les produits Talend</li>
+<li>Les outils de qualitÃ© logicielle open-source (Hudson, PHP Under Control&#8230;)</li>
+<li>Le framework <a href="http://symfony-project.com">symfony</a>, toujours et encore</li>
+</ul>
+<p>Comme l&#8217;objectif de Ze-Technology n&#8217;a jamais Ã©tÃ© d&#8217;Ã©crire des articles superficiels et sans intÃ©rÃªt, je souhaite avoir un minimum de recul sur chacune de ces technologies avant de pouvoir Ã©crire quoi que ce soit d&#8217;intÃ©ressant (ou d&#8217;inintÃ©ressant, vous en jugerez !). Je tombe bien chaque jour sur des dizaines de liens tous plus passionnants les uns que les autres, mais ce blog ne peut se rÃ©soudre Ã  devenir une simple liste de liens. Cher public, vous qui m&#8217;aimez, laÂ <span style="text-decoration: line-through;"> caisse attend votre gÃ©nÃ©rositÃ© </span> un peu de patience&#8230;</p>
+<img src="http://feeds.feedburner.com/~r/blogspot/zt/~4/rJZFxFM5-hQ" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.ze-technology.com/2010/04/05/tu-necris-plus-beaucoup-dis-donc/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://www.ze-technology.com/2010/04/05/tu-necris-plus-beaucoup-dis-donc/</feedburner:origLink></item>
+		<item>
+		<title>Ant pour les projets PHP</title>
+		<link>http://feedproxy.google.com/~r/blogspot/zt/~3/Zokol25VUps/</link>
+		<comments>http://www.ze-technology.com/2010/03/06/ant-pour-les-projets-php/#comments</comments>
+		<pubDate>Sat, 06 Mar 2010 09:58:40 +0000</pubDate>
+		<dc:creator>Adrien Mogenet</dc:creator>
+				<category><![CDATA[DÃ©veloppement]]></category>
+		<category><![CDATA[Php]]></category>
+
+		<guid isPermaLink="false">http://www.ze-technology.com/?p=667</guid>
+		<description><![CDATA[
+Bien connu des dÃ©veloppeurs Java, Ant est un build-system, Ã  l&#8217;instar des Makefiles, permettant d&#8217;automatiser le dÃ©ploiement d&#8217;un projet. Bon nombre de projets PHP ne sont en effet pas directement utilisables tout de suite aprÃ¨s rÃ©cupÃ©ration des sources, et/ou nÃ©cessitent un certain nombre d&#8217;adaptation en fonction du serveur sur lequel le projet est dÃ©ployÃ©. Voire [...]]]></description>
+			<content:encoded><![CDATA[<p><img class="aligncenter size-full wp-image-668" title="Ant" src="http://www.ze-technology.com/wp-content/uploads/2010/03/ant.jpg" alt="Ant" width="600" height="115" /></p>
+<p>Bien connu des dÃ©veloppeurs Java, <strong>Ant</strong> est un <em>build-system</em>, Ã  l&#8217;instar des <strong>Makefiles</strong>, permettant d&#8217;automatiser le dÃ©ploiement d&#8217;un projet. Bon nombre de projets PHP ne sont en effet pas directement utilisables tout de suite aprÃ¨s rÃ©cupÃ©ration des sources, et/ou nÃ©cessitent un certain nombre d&#8217;adaptation en fonction du serveur sur lequel le projet est dÃ©ployÃ©. Voire mÃªme, parfois, certaines tÃ¢ches de maintenances assez rÃ©barbatives pourraient Ãªtre automatisÃ©es.</p>
+<h3>Je ne connais mÃªme pas Ant !</h3>
+<p>Pour ceux qui ne connaissent pas du tout <strong>Ant</strong> (et je ne parle pas d&#8217;un diminutif d&#8217;Antoine&#8230;), les rouages tournent concrÃ¨tement grÃ¢ce Ã  un fichier XML classiquement nommÃ© &laquo;&nbsp;build.xml&nbsp;&raquo;, comprenant une succession de balises du style :</p>
+<pre>
+<pre class="brush: xml;">
+&lt;target name=&quot;NOM_REGLE&quot; depends=&quot;REGLES Ã€ EFFECTUER AUPARAVANT&quot;&gt;
+     &lt;actions Ã  effectuer ... /&gt;
+&lt;/target&gt;
+</pre>
+</pre>
+<p>Une fois ce fichier XML dÃ»ment rempli, vos rÃ¨gles s&#8217;exÃ©cutent par le biais d&#8217;une ligne de commande, aprÃ¨s bien entendu avoir vÃ©rifiÃ© qu&#8217;Ant Ã©tait bien installÃ© sur votre machine :<br />
+<code>&gt; ant NOM_REGLE</code></p>
+<p>Il y a un certain nombre d&#8217;options disponibles, il est par exemple possible d&#8217;afficher les rÃ¨gles disponibles et leur rÃ´le respectif via <span class="code">ant -p</span>  pour peu que vous ayez renseignÃ© un champ &laquo;&nbsp;description&nbsp;&raquo; dans le fichier build.xml.</p>
+<h3>Bon, et pour mon projet, Ã§a sert Ã  quoi ?</h3>
+<p>Vous manquez d&#8217;imagination ? Voici Ã  titre d&#8217;exemple la liste de rÃ¨gles que j&#8217;ai dÃ©finie pour <a href="http://www.piwam.org">Piwam</a> :</p>
+<ul>
+<li><strong>init</strong>: CrÃ©er les rÃ©pertoires manquants (log, cache, build&#8230;</li>
+<li><strong>cc</strong>: Vider le cache</li>
+<li><strong>doc</strong>: GÃ©nÃ©rer la documentation Doxygen</li>
+<li><strong>up</strong>: Update SVN</li>
+<li><strong>phpcpd</strong>: Cherche le code PHP dupliquÃ© au sein du projet</li>
+<li><strong>pdepend</strong>: GÃ©nÃ¨re un rapport de dÃ©pendance des classes</li>
+<li><strong>phpcs</strong>: VÃ©rifie la conformitÃ© du code avec une norme donnÃ©e</li>
+<li><strong>lint</strong>: VÃ©rifie qu&#8217;aucun fichier ne contient une erreur de syntaxe</li>
+<li><strong>test</strong>: Lance les tests unitaires et fonctionnels</li>
+<li><strong>css</strong>: ConcatÃ¨ne l&#8217;ensemble des fichiers CSS en un seul grand fichier CSS</li>
+<li><strong>css.min</strong>: Minimise la taille du gros fichier CSS. (appelle automatiquement la rÃ¨gle <strong>css</strong> en amont)</li>
+<li><strong>clear</strong>: Nettoie les fichiers gÃ©nÃ©rÃ©s</li>
+<li><strong>build</strong>: Lance l&#8217;ensemble des tÃ¢ches permettant de vÃ©rifier la qualitÃ© du projet</li>
+</ul>
+<p>je vous invite Ã  dÃ©couvrir le fichier XML correspondant sur le <a href="http://code.google.com/p/piwam/source/browse/branches/1.2/build.xml">dÃ©pÃ´t SVN du projet</a>. Ce fichier vous permet alors d&#8217;effectuer toute une batterie d&#8217;actions de maniÃ¨re extrÃªmement simplifiÃ©e. Ant est utilisÃ© au sein d&#8217;une multitude d&#8217;outils du monde Java, des IDE (Eclipse&#8230;) aux outils d&#8217;intÃ©gration (Hudson, CruiseControl&#8230;). En pratique, ces outils vont aller lire votre fichier build.xml et appeler les commandes correspondant aux tests (dans mon cas : phpcs, pdepend, etc.) de maniÃ¨re 100% automatisÃ©e afin de vous permettre de suivre l&#8217;Ã©volution de votre projet au fil des rÃ©visions.<br />
+Sur ce, je vous laisse rÃ©diger votre propre antfile, en attendant de vous prÃ©senter comment l&#8217;exploiter au sein d&#8217;<a href="http://hudson-ci.org/">Hudson</a> dans un projet article !</p>
+<h3>Liens utiles</h3>
+<ul>
+<li><a href="http://ant.apache.org/">http://ant.apache.org</a> : Site officiel de Ant, par la fondation Apache</li>
+<li><a href="http://phing.info/">http://phing.info</a> : Alternative Ã  Ant spÃ©cialement conÃ§ue pour les outils PHP. (BasÃ©e sur Ant)</li>
+<li><a href="http://hudson-ci.org/">http://hudson-ci.org</a> : Hudson, outil d&#8217;intÃ©gration continue</li>
+</ul>
+<img src="http://feeds.feedburner.com/~r/blogspot/zt/~4/Zokol25VUps" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.ze-technology.com/2010/03/06/ant-pour-les-projets-php/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://www.ze-technology.com/2010/03/06/ant-pour-les-projets-php/</feedburner:origLink></item>
+		<item>
+		<title>Bien dangereux, bien puissant Facebook…</title>
+		<link>http://feedproxy.google.com/~r/blogspot/zt/~3/uEIt4l-Ag-8/</link>
+		<comments>http://www.ze-technology.com/2010/02/21/bien-dangereux-bien-puissant-facebook/#comments</comments>
+		<pubDate>Sun, 21 Feb 2010 19:39:57 +0000</pubDate>
+		<dc:creator>Adrien Mogenet</dc:creator>
+				<category><![CDATA[Internet]]></category>
+		<category><![CDATA[Non classÃ©]]></category>
+
+		<guid isPermaLink="false">http://www.ze-technology.com/?p=658</guid>
+		<description><![CDATA[
+Il y a eu toutes sortes d&#8217;expÃ©riences autour du rÃ©seau social qui fait tant parler de lui. Je vous en propose une nouvelle. Mon but Ã©tait d&#8217;Ã©tablir un Ã©tat des lieux des comportements des utilisateurs envers une demande d&#8217;ami inconnu. Le procÃ©dÃ© fÃ»t fort simple : la premiÃ¨re Ã©tape fÃ»t la crÃ©ation d&#8217;un compte d&#8217;un [...]]]></description>
+			<content:encoded><![CDATA[<p><img class="aligncenter size-full wp-image-661" title="facebook" src="http://www.ze-technology.com/wp-content/uploads/2010/02/facebook.jpg" alt="facebook" width="600" height="70" /></p>
+<p>Il y a eu toutes sortes d&#8217;expÃ©riences autour du rÃ©seau social qui fait tant parler de lui. Je vous en propose une nouvelle. Mon but Ã©tait d&#8217;Ã©tablir un Ã©tat des lieux des comportements des utilisateurs envers une demande d&#8217;ami inconnu. Le procÃ©dÃ© fÃ»t fort simple : la premiÃ¨re Ã©tape fÃ»t la crÃ©ation d&#8217;un compte d&#8217;un personnage complÃ¨tement fictif et inconnu, qu&#8217;on appellera Jean-Claude. Suite Ã  Ã§a, ce sont quelques 250 personnes qui ont Ã©tÃ© sollicitÃ©es pour faire partie du rÃ©seau d&#8217;amis. 250 personnes de toutes origines, tous pays, sÃ©lectionnÃ©es complÃ¨tement alÃ©atoirement.</p>
+<p>Une semaine plus tard, les rÃ©sultats sont lÃ . Il y a dÃ©jÃ  <strong>119</strong> <strong>personnes</strong> qui se sont dÃ©clarÃ©es ami(e)s avec mon Jean-Claude. Sur ces 119 individus, seulement 6 ont envoyÃ© un message pour connaÃ®tre mon identitÃ©. AprÃ¨s avoir rÃ©pondu, 2 m&#8217;ont retirÃ© de leur liste d&#8217;amis. Jean-Claude aurait donc 113 personnes qui le connaissent vraiment ? En tout cas, Jean-Claude a accÃ¨s Ã  toutes les informations de ses amis : photos, statuts, quizz, etc.</p>
+<p>Des consÃ©quences qu&#8217;Ã  titre personnel, je considÃ¨re dÃ©sastreuses. Ok, je ne suis pas mal intentionnÃ©. Mais qu&#8217;en savent ces &laquo;&nbsp;amis&nbsp;&raquo; ? De mÃªme, rien ne semble m&#8217;empÃªcher de dresser une liste d&#8217;habitudes, de comportements. Ces problÃ¨mes de confidentialitÃ© ne sont pas nouveaux, je ne vais les dÃ©baller ici, mais ce qui m&#8217;intrigue surtout au plus haut point, c&#8217;est cette facilitÃ© dÃ©concertante de rentrer dans le cercle de connaissances de n&#8217;importe qui. Une sensibilisation des utilisateurs ne ferait de mal Ã  personne&#8230;</p>
+<img src="http://feeds.feedburner.com/~r/blogspot/zt/~4/uEIt4l-Ag-8" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.ze-technology.com/2010/02/21/bien-dangereux-bien-puissant-facebook/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.ze-technology.com/2010/02/21/bien-dangereux-bien-puissant-facebook/</feedburner:origLink></item>
+		<item>
+		<title>Lien de la semaine #16</title>
+		<link>http://feedproxy.google.com/~r/blogspot/zt/~3/ty_ePTwUfaY/</link>
+		<comments>http://www.ze-technology.com/2010/02/15/lien-de-la-semaine-16/#comments</comments>
+		<pubDate>Mon, 15 Feb 2010 19:44:45 +0000</pubDate>
+		<dc:creator>Adrien Mogenet</dc:creator>
+				<category><![CDATA[Lien De La Semaine]]></category>
+		<category><![CDATA[Mysql]]></category>
+
+		<guid isPermaLink="false">http://www.ze-technology.com/?p=654</guid>
+		<description><![CDATA[
+Un code de la route version DBA. Le maillon faible puissance 10 000. Voyez Ã§a comme vous voulez, &#171;&#160;MySQL Question Of The Day&#160;&#187; est un sympathique site qui vous permettra de tester vos connaissances et d&#8217;apprendre en tentant de rÃ©pondre chaque jour Ã  une nouvelle question. Bref, Ã  suivre ! http://mysql-qotd.casperia.net
+]]></description>
+			<content:encoded><![CDATA[<p><img class="aligncenter size-full wp-image-655" title="mysqlqa" src="http://www.ze-technology.com/wp-content/uploads/2010/02/mysqlqa.png" alt="mysqlqa" width="600" height="87" /></p>
+<p>Un code de la route version DBA. Le maillon faible puissance 10 000. Voyez Ã§a comme vous voulez, &laquo;&nbsp;<em>MySQL Question Of The Day</em>&nbsp;&raquo; est un sympathique site qui vous permettra de tester vos connaissances et d&#8217;apprendre en tentant de rÃ©pondre chaque jour Ã  une nouvelle question. Bref, Ã  suivre ! <a href="http://mysql-qotd.casperia.net">http://mysql-qotd.casperia.net</a></p>
+<img src="http://feeds.feedburner.com/~r/blogspot/zt/~4/ty_ePTwUfaY" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.ze-technology.com/2010/02/15/lien-de-la-semaine-16/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.ze-technology.com/2010/02/15/lien-de-la-semaine-16/</feedburner:origLink></item>
+		<item>
+		<title>Lien de la semaine #15</title>
+		<link>http://feedproxy.google.com/~r/blogspot/zt/~3/2GBkG_sJ470/</link>
+		<comments>http://www.ze-technology.com/2010/02/05/lien-de-la-semaine-15/#comments</comments>
+		<pubDate>Fri, 05 Feb 2010 09:06:19 +0000</pubDate>
+		<dc:creator>Adrien Mogenet</dc:creator>
+				<category><![CDATA[Humour]]></category>
+		<category><![CDATA[Lien De La Semaine]]></category>
+
+		<guid isPermaLink="false">http://www.ze-technology.com/?p=650</guid>
+		<description><![CDATA[
+Cette semaine, c&#8217;est un lien pour tout le monde ! Au diable la technologie, au diable l&#8217;innovation, nous n&#8217;avons que faire du business, place Ã  l&#8217;humour ! J&#8217;ai rÃ©cemment dÃ©couvert pas le biais de ma dulcinÃ©e la &#171;&#160;BD de MaÃ©&#171;&#160;, signÃ©e Pacco.
+En quelques phylactÃ¨res, Pacco retrace sa vie avec sa fille MaÃ©, insupportable au possible. [...]]]></description>
+			<content:encoded><![CDATA[<p><img class="aligncenter size-full wp-image-649" title="mae-bd" src="http://www.ze-technology.com/wp-content/uploads/2010/02/mae-bd.jpg" alt="mae-bd" width="600" height="95" /></p>
+<p>Cette semaine, c&#8217;est un lien <strong>pour tout le monde</strong> ! Au diable la technologie, au diable l&#8217;innovation, nous n&#8217;avons que faire du business, place Ã  l&#8217;<strong>humour</strong> ! J&#8217;ai rÃ©cemment dÃ©couvert pas le biais de ma dulcinÃ©e la &laquo;&nbsp;<a href="http://www.mae-bd.fr">BD de MaÃ©</a>&laquo;&nbsp;, signÃ©e Pacco.</p>
+<p>En quelques phylactÃ¨res, Pacco retrace sa vie avec sa fille MaÃ©, insupportable au possible. Deux tomes ont d&#8217;ailleurs Ã©tÃ© Ã©ditÃ© en chouette BD papier, disponibles chez les libraires habituels. Un petit aperÃ§u avec un rÃ©cent Ã©pisode qui fera sourire tout geek qui se reconnaÃ®t : <a href="http://farm3.static.flickr.com/2718/4282116795_c1199816d1_o.gif">ici</a>. N&#8217;hÃ©sitez pas donc pas Ã  suivre dÃ¨s maintenant cette agrÃ©able aventure : <a href="http://www.mae-bd.fr">http://www.mae-bd.fr</a></p>
+<img src="http://feeds.feedburner.com/~r/blogspot/zt/~4/2GBkG_sJ470" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.ze-technology.com/2010/02/05/lien-de-la-semaine-15/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://www.ze-technology.com/2010/02/05/lien-de-la-semaine-15/</feedburner:origLink></item>
+	</channel>
+</rss>

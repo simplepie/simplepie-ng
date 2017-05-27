@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss xmlns:slash="http://purl.org/rss/1.0/modules/slash/" version="2.0">
+  <channel>
+    <title />
+    <link>http://blogs.warwick.ac.uk/chrismay</link>
+    <description />
+    <language>en-GB</language>
+    <copyright>(C) 2011 Chris May</copyright>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <managingEditor>Chris May</managingEditor>
+    <webMaster>Chris May</webMaster>
+    <generator>Warwick Blogs, University of Warwick, http://blogs.warwick.ac.uk</generator>
+    <ttl>120</ttl>
+    <item>
+      <title>5 Operations metrics that Java web developers should care about by Chris May</title>
+      <link>http://blogs.warwick.ac.uk/chrismay/entry/5_operations_metrics/</link>
+      <description>&lt;p&gt;Sometimes it&amp;rsquo;s nice, as a developer, to ignore the world outside and focus in on &amp;ldquo;I&amp;rsquo;m going to implement what the specification says I should, and anything else is somebody else&amp;rsquo;s problem&amp;rdquo;. And sometimes that&amp;rsquo;s the right thing to do. But if you really want to make your product better, then real production data can provide valuable insights into whether you&amp;rsquo;re building the right thing, rather than just building the thing right. Operations groups gather this kind of stuff as part of normal business*, so here are a handful of ops. metrics that I&amp;rsquo;ve found particularly useful from a Java Web Application point of view. Note that I&amp;rsquo;m assuming here that you as the developer aren&amp;rsquo;t actually &lt;em&gt;responsible&lt;/em&gt; for running the aplicationp in production &amp;ndash; rather, you just want the data so you can make better informed decisions about design and functionality.&lt;/p&gt;
+
+&lt;p&gt;How should you expose this information? Well, emailing round a weekly summary is definitely the &lt;em&gt;wrong&lt;/em&gt; thing to do. The agile concept of &amp;ldquo;information radiators&amp;rdquo; applies here: Big Visible Charts showing this kind of data in real time will allow it to seep into the subconscious of everyone who passes by.&lt;/p&gt;
+
+&lt;h2&gt;Request &amp;amp; Error rates&lt;/h2&gt;
+
+&lt;p&gt;How many requests per second does your application normally handle? How often do you get a 5-fold burst in traffic? How often do you get a 50-fold burst? How does your application perform when this happens? Knowing this kind of thing allows you to make better decisions about which parts of the application should be optimised, and which don&amp;rsquo;t need it yet.&lt;br /&gt;
+   &lt;img style="padding-right:5px;padding-left:5px;" src="http://blogs.warwick.ac.uk/images/chrismay/2011/09/07/multigraphen_sbrrequests_per_min_1current.png?maxWidth=800" alt="Requests per minute graph" title="Requests per minute graph" border="0" /&gt;&lt;br /&gt;
+   &lt;em&gt;Request rates for one node on a medium-scale &lt;span class="caps"&gt;CMS&lt;/span&gt;. Note the variance throughout the day. The 5AM spike is someone&amp;rsquo;s crazy web crawler spidering more than it ought to&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Error rates &amp;ndash; be they counting the number of &lt;span class="caps"&gt;HTTP 500&lt;/span&gt; responses, or the number of stack traces in your logs, are extremely useful for spotting those edge-cases that you thought should never happen, but actually turn out to be disappointingly common. &lt;br /&gt;
+   &lt;img style="padding-right:5px;padding-left:5px;" src="http://blogs.warwick.ac.uk/images/chrismay/2011/09/07/index.png?maxWidth=800" alt="Error rates graph" title="Error rates graph" border="0" /&gt;&lt;br /&gt;
+   &lt;em&gt;Whoa. What are all those spikes? Better go take a look in the logs&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;GC Performance&lt;/h2&gt;
+
+&lt;p&gt;GC is a very common cause of application slowdowns, but it&amp;rsquo;s also not unusual to find people blaming GC for problems which are entirely unrelated. Using GC logging, and capturing the results, will allow you to get a feel for what &amp;ldquo;normal&amp;rdquo; means in the context of your application, which can help both in identifying GC problems, and also in excluding it from the list of suspects. The most helpful metrics to track, in my experience, are the minimum heap size (which will vary, but should drop down to the same value after each full GC) and the frequency of full GCs (which should be low and constant).&lt;/p&gt;
+
+&lt;p&gt;&lt;img style="padding-right:5px;padding-left:5px;" src="http://blogs.warwick.ac.uk/images/chrismay/2011/09/07/indexphp.png?maxWidth=800" alt="weekly GC performance" title="weekly GC performance" border="0" /&gt;&lt;br /&gt;
+   &lt;em&gt;A healthy-looking application. Full GCs (the big drops) are happening about one per hour at peak, and although there&amp;rsquo;s a bit of variance in the minimum heap levels, there&amp;rsquo;s no noticeable upwards trend&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;Request duration&lt;/h2&gt;
+
+&lt;p&gt;Request duration is a fairly standard non-functional requirement for most web applications. What tends not to be measured and tracked quite so well is the variance in request times in production. It&amp;rsquo;s not much good having an average page-load time of 50 milliseconds if 20% of your requests are taking 10 seconds to load. Facebook credit their &lt;a href="http://highscalability.com/blog/2010/11/4/facebook-at-13-million-queries-per-second-recommends-minimiz.html"&gt;focus on minimising variance&lt;/a&gt; as a key enabler for their ability to scale to the sizes they have.&lt;br /&gt;
+   &lt;img style="padding-right:5px;padding-left:5px;" src="http://blogs.warwick.ac.uk/images/chrismay/2011/09/07/multigraphen_sbrrender_time_2daily.png?maxWidth=800" alt="Render performance graph" title="Render performance graph" border="0" /&gt;&lt;br /&gt;
+   &lt;em&gt;the jitter on this graph gives a reasonable approximation of the variance, though it&amp;rsquo;s not quite as good as a proper statistical measure. Note that the requests have been split into various different kinds, each of which has different performance characteristics&lt;/em&gt;. &lt;br /&gt;
+   &lt;img style="padding-right:5px;padding-left:5px;" src="http://blogs.warwick.ac.uk/images/chrismay/2011/09/08/screenshot-1.png?maxWidth=500" alt="smokeping screenshot" title="smokeping screenshot" border="0" /&gt;&lt;br /&gt;
+   &lt;em&gt;Request speed with proper variance overlaid&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;Worker pool sizes&lt;/h2&gt;
+
+&lt;p&gt;How many apache processes does your application normally use? How often do you get to within 10% of the apache worker limit? What about tomcat worker threads? Pooled &lt;span class="caps"&gt;JDBC&lt;/span&gt; connections? Asynchronous worker pools? All of these rate-limiting mechanisms need careful observation, or you&amp;rsquo;re likely to run into hard-to-reproduce performance problems. Simply increasing pool sizes is inefficient, will more likely than not will just move the bottleneck to somewhere else, and will leave you with less protection against request-flooding denial of service attacks (deliberate or otherwise).&lt;/p&gt;
+
+&lt;p&gt;&lt;img style="padding-right:5px;padding-left:5px;" src="http://blogs.warwick.ac.uk/images/chrismay/2011/09/07/si-sbr-apcsvwarwickacuk_check_apache_si-sbr-ap_2daily.png?maxWidth=800" alt="Apache workers graph" title="Apache workers graph" border="0" /&gt;&lt;br /&gt;
+   &lt;em&gt;Apache worker pool, split by worker state. Remember that enabling &lt;span class="caps"&gt;HTTP&lt;/span&gt; keepalive on your front-end makes a huge difference to client performance, but will require a significantly larger pool of connections (most of which will be idle for most of the time)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have large numbers of very long-running requests bound by the network speed to your clients (e.g. large file downloads) consider either offloading them to your web tier, using mod_x_sendfile or similar. For long-running requests that are bound by server-side performance, (giant database queries or complex computations), consider making them asynchronous, and having the client poll periodically for status.&lt;/p&gt;
+
+&lt;h2&gt;Helpdesk call statistics&lt;/h2&gt;
+
+&lt;p&gt;The primary role of a helpdesk is to ensure that second and third-tier support isn&amp;rsquo;t overwhelmed by the volume of calls coming in. And many helpdesks measure performance in terms of the number of calls which agents are able to close without escalation. This can sometimes create a perverse incentive, whereby you release a new, buggy version of your software, users begin calling to complain, but the helpdesk simply issue the same workaround instructions over and over again &amp;ndash; after all, that&amp;rsquo;s what they&amp;rsquo;re paid for. If only you&amp;rsquo;d known, you could have rolled back, or rolled out a patch there and then, instead of waiting for the fortnightly call volumes meeting to highlight the issue. If you can get near-real-time statistics for the volume of calls (ideally, just those related to your service) you can look for sudden jumps, and ask yourself what might be causing them&lt;/p&gt;
+
+&lt;p&gt;&lt;img style="padding-right:5px;padding-left:5px;" src="http://blogs.warwick.ac.uk/images/chrismay/2011/09/07/17_nature_of_request_frequency.jpg?maxWidth=800" alt="Helpdesk call volumes" title="Helpdesk call volumes" border="0" /&gt;&lt;/p&gt;
+
+&lt;p&gt;* &amp;ldquo;But but&amp;hellip; my operations team doesn&amp;rsquo;t have graphs like this!&amp;rdquo; you say? Well, if only there were some kind of person who could build such a thing&amp;hellip; hold on a minute, that&amp;rsquo;s you, isn&amp;rsquo;t it? Building the infrastructure to collect and manage this kind of data is pretty much a solved problem nowadays, and ensuring that it&amp;rsquo;s all in place really should be part and parcel of the overall development effort for any large-scale web application project. Of course, if operations don&amp;rsquo;t &lt;em&gt;want&lt;/em&gt; to have access to this kind of information, then you have a different problem &amp;ndash; which is topic for a whole &amp;lsquo;nother blog post some other time.&lt;/p&gt;</description>
+      <pubDate>Wed, 07 Sep 2011 09:48:47 GMT</pubDate>
+      <author>Chris May</author>
+      <comments>http://blogs.warwick.ac.uk/chrismay/entry/5_operations_metrics/#comments</comments>
+      <guid isPermaLink="false">094d73cd31d7958d0132432e44e7117b</guid>
+      <slash:comments>0</slash:comments>
+    </item>
+    <item>
+      <title>There's no such thing as bad weather... by Chris May</title>
+      <link>http://blogs.warwick.ac.uk/chrismay/entry/theres_no_such/</link>
+      <description>&lt;p&gt;...only the wrong clothes. Continuing the camping-kit theme, let&amp;rsquo;s talk about waterproofs. If you&amp;rsquo;re going camping in the UK, it&amp;rsquo;s going to rain sooner or later. There are a few things you can do to make this not be a problem&lt;/p&gt;
+
+&lt;p&gt;- a tarp, or gazebo, or event shelter, or other tent-without-a-floor-or-walls, allows you to sit around, cook, and generally be outside without getting rained on or feeling quite as penned-in as sitting inside the tent does. Watch out in high winds though.&lt;/p&gt;
+
+&lt;p&gt;- Wet grass will soak trainers and leather boots. Get some wellies, some crocs, or some flip-flops&lt;/p&gt;
+
+&lt;p&gt;- An umbrella is pretty handy&lt;/p&gt;
+
+&lt;p&gt;- Most importantly, get some decent &lt;a href="http://www.gooutdoors.co.uk/"&gt;waterproof clothing&lt;/a&gt; . For summer camping, I like a lightweight jacket rather than a big heavy winter gore-tex &amp;ndash; drying stuff out in a tent is hard (especially if it&amp;rsquo;s damp outside), so the less fabric there is to dry, the easier it&amp;rsquo;ll be. My jacket of choice at the moment is a Montane Atomic DT, but my lovely wife has been testing a &lt;a href="http://www.gooutdoors.co.uk/the-north-face-resolve-womens-waterproof-jacket-p99832"&gt;&lt;span class="caps"&gt;TNF&lt;/span&gt; Resolve&lt;/a&gt; &lt;br /&gt;
+   It uses a 2-layer construction with a mesh drop liner, dries fast (and the mesh liner means it feels dry even when slightly damp), breathes well, and is slightly fitted so it doesn&amp;rsquo;t look too much like a giant sack. Packs down nice and small, and, of course, it keeps the rain out. It&amp;rsquo;s cut fairly short, so if you&amp;rsquo;re out in the rain for a long time you&amp;rsquo;ll either need waterproof trousers or a tolerance for wet legs. For 3-season use, I&amp;rsquo;d say it&amp;rsquo;s ideal. ( Other &lt;a href="http://www.gooutdoors.co.uk/womens/clothing/coats-and-jackets"&gt;ladies waterproof jackets&lt;/a&gt; are available :-) )&lt;/p&gt;</description>
+      <pubDate>Fri, 05 Aug 2011 09:30:59 GMT</pubDate>
+      <author>Chris May</author>
+      <comments>http://blogs.warwick.ac.uk/chrismay/entry/theres_no_such/#comments</comments>
+      <guid isPermaLink="false">094d73cd3184e57201319948076202c0</guid>
+      <slash:comments>0</slash:comments>
+    </item>
+    <item>
+      <title>How to back up your gmail on ubuntu by Chris May</title>
+      <link>http://blogs.warwick.ac.uk/chrismay/entry/how_to_back/</link>
+      <description>&lt;p&gt;Quick-and-dirty solution:&lt;/p&gt;
+
+&lt;p&gt;1. install python and &lt;a href="http://pyropus.ca/software/getmail/"&gt;getmail&lt;/a&gt;&lt;br /&gt;
+   2. make a getmail config like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[retriever]
+type = SimplePOP3SSLRetriever
+server = pop.gmail.com
+username = your_user_name@gmail.com
+password = your_password
+
+[destination]
+type = Mboxrd
+path = ~/gmail-archive/gmail-backup.mbox
+
+[options]
+# print messages about each action (verbose = 2)
+# Other options:
+# 0 prints only warnings and errors
+# 1 prints messages about retrieving and deleting messages only
+verbose = 2
+message_log = ~/.getmail/gmail.log &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3. enable pop on your gmail account&lt;br /&gt;
+   4. add a cronjob like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;13,33,53 * * * * /usr/bin/getmail -q -r /path/to/your/getmail/config&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You&amp;rsquo;ll end up with a .mbox file which grows and grows over time. Mine is currently at 5GB. I have no idea whether thunderbird or evolution can open such a big file, but mutt can (use &amp;ldquo;mutt -f ~/gmail-archive/gmail-backup.mbox -R&amp;rdquo; , unless you really like waiting whilst mutt rewrites the mbox on each save) , or it&amp;rsquo;s easy enough to grep through if you just need to find the text of a specific message. If you needed to break it into chunks, you could always just use split, and accept that you&amp;rsquo;ll lose a message where the split occurs (or use split, and then patch toghether the message that gets split in half.&lt;/p&gt;</description>
+      <pubDate>Thu, 04 Aug 2011 15:28:35 GMT</pubDate>
+      <author>Chris May</author>
+      <comments>http://blogs.warwick.ac.uk/chrismay/entry/how_to_back/#comments</comments>
+      <guid isPermaLink="false">094d73cd3184e572013195690dc10251</guid>
+      <slash:comments>1</slash:comments>
+    </item>
+    <item>
+      <title>Gnome 3 / gnome-shell on Ubuntu Natty by Chris May</title>
+      <link>http://blogs.warwick.ac.uk/chrismay/entry/gnome_3_on/</link>
+      <description>&lt;p&gt;OK, so I&amp;rsquo;m not the first to do this by a long chalk, but here&amp;rsquo;s what worked for me:&lt;/p&gt;
+
+&lt;p&gt;1: Install the gnome 3 PPAs (c.f. &lt;a href="http://nirajsk.wordpress.com/category/gnome-3/"&gt;http://nirajsk.wordpress.com/category/gnome-3/&lt;/a&gt;) :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:gnome3-team/gnome3
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo apt-get install gnome-shell
+sudo apt-get install gnome-shell-extensions-user-theme&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For some reason, the default theme (Adwaita) was missing, as was the default font (Cantarell). (Could be because I didn&amp;rsquo;t install gnome-themes and gnome-themes-extra &amp;ndash; see &lt;a href="http://donovanmethod.wordpress.com/2011/04/17/ubuntu-gnome-3-installation-guide/"&gt;here&lt;/a&gt;). You can download Adwaita from &lt;a href="http://ubuntuforums.org/showpost.php?p=10655293&amp;amp;postcount=86"&gt;here&lt;/a&gt; Get Cantarell from &lt;a href="http://www.omgubuntu.co.uk/2010/11/gnome-3-to-get-a-new-font/"&gt;here&lt;/a&gt;, copy to /usr/share/fonts/ttf, and sudo fc-cache -rv to update.&lt;br /&gt;
+   I wasn&amp;rsquo;t too keen on the fat titlebars in adwaita, so I used &lt;a href="http://mikeyshelpdesk.blogspot.com/2011/04/gnome-3-massive-title-bar.html"&gt;this&lt;/a&gt; to shrink them down:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sed -i &amp;quot;/title_vertical_pad/s/value=\&amp;quot;[0-9]\{1,2\}\&amp;quot;/value=\&amp;quot;0\&amp;quot;/g&amp;quot; /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can set the theme and the font using gnome-tweak-tool (aptitude install it if it didn&amp;rsquo;t arrive with gnome-shell). I&amp;rsquo;m still looking for a nice icon set; the ubuntu unity ones are a bit orange, and the gnome ones are an unispiring shade of khaki. For now I&amp;rsquo;ve settled on the &lt;span class="caps"&gt;KDE&lt;/span&gt;-inspired Oxygen (aptitude install oxygen-icon-theme) which is OK, but still doesn&amp;rsquo;t &lt;em&gt;quite&lt;/em&gt; look right.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s an &lt;a href="http://www.omgubuntu.co.uk/2011/05/adwaita-theme-for-gnome-3-chrome-users-now-available/"&gt;adwaita theme for chrome&lt;/a&gt; which is nice, and makes everything a bit more consistent.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href="http://gnome-look.org/content/show.php/London+Smoke+-+Gnome-Shell?content=142426"&gt;London Smoke&lt;/a&gt; gnome-shell theme is really nice&lt;/p&gt;
+
+&lt;p&gt;Switching from pidgin to empathy gets you nice, &lt;em&gt;clickable&lt;/em&gt; message notifications, although I&amp;rsquo;d rather they were at the top of the screen than the bottom.&lt;/p&gt;
+
+&lt;p&gt;Aero-style snap-to-window-edge works fine, except that for nvidia graphics cards with TwinView, you can&amp;rsquo;t snap to the edges that are between two monitors. Right-click context menus look weird in a way that I can&amp;rsquo;t quite put my finger on, but they function as expected.&lt;/p&gt;
+
+&lt;p&gt;Other than that, it pretty much just works. The only glitch I&amp;rsquo;ve yet to work out is that spawning a new gnome-terminal window freezes the whole UI for a second or so. Not got to the bottom of why that might be yet; if I find it I&amp;rsquo;ll post something. In gnome 2 there was a similar problem with the nvidia drivers, which could be &amp;ldquo;solved&amp;rdquo; by disabling compiz, but that&amp;rsquo;s not an option here. &lt;strong&gt;Update&lt;/strong&gt; it seems to be connected to using a semi-transparent background for the terminal; if I use a solid background the problem goes away.&lt;/p&gt;
+
+&lt;p&gt;Things I like better than Unity, after a week of playing:&lt;br /&gt;
+   &amp;ndash; Clickable notifications from empathy. The auto-hiding notification bar at the bottom of the screen is great, although I&amp;rsquo;ve found it can sometimes be a bit reluctant to come out of hiding when you mouse over it.&lt;br /&gt;
+   &amp;ndash; alt-tab that shows you the window title (good when you&amp;rsquo;ve got 20 terminals open). I like the ability to tab through multiple instances of the same app in order, too. To get alt-shift-tab to work, I used &lt;a href="http://nearlybananaflavour.blogspot.com/2011/05/bugslaying.html"&gt;these&lt;/a&gt; instructions&lt;br /&gt;
+   &amp;ndash; menus on the application. Fitt&amp;rsquo;s law can go hang; I like my menus to be connected to the window they control&lt;/p&gt;</description>
+      <pubDate>Fri, 15 Jul 2011 11:51:56 GMT</pubDate>
+      <author>Chris May</author>
+      <comments>http://blogs.warwick.ac.uk/chrismay/entry/gnome_3_on/#comments</comments>
+      <guid isPermaLink="false">094d73cd30fa002001312da3849507fb</guid>
+      <slash:comments>0</slash:comments>
+    </item>
+    <item>
+      <title>Camping time! by Chris May</title>
+      <link>http://blogs.warwick.ac.uk/chrismay/entry/camping_time/</link>
+      <description>&lt;p&gt;It&amp;rsquo;s summer time, and that means it&amp;rsquo;s camping season again. Camping is ace, and it&amp;rsquo;s doubly ace if you have kids. Almost without exception, kids love weaselling about in the countryside, so once you&amp;rsquo;ve got them onto the campsite, they&amp;rsquo;ll amuse themselves and you can get on with the serious business of drinking beer, talking rubbish and playing with fires. What could be finer?&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s a curious kind of &lt;a href="http://en.wikipedia.org/wiki/Moore's_law"&gt;Moore&amp;rsquo;s Law&lt;/a&gt; at the moment, as far as &lt;a href="http://www.gooutdoors.co.uk/camping/tents"&gt;tents&lt;/a&gt; are concerned. &lt;br /&gt;
+   Every year, technology trickles down from the top-end, so low and mid-range tents get better and better. My first tent, long long ago, was pretty much bottom-of-the-range and cost about &amp;pound;50 (which was a &lt;em&gt;lot&lt;/em&gt; of money for a fourteen year old in ninteen-eighty-something). It weighed approximately a tonne, leaked like a sieve, and stood me in good stead for a few years worth of adventures. Now, for half of that price you can get one of these &lt;a href="http://www.gooutdoors.co.uk/camping/tents/pop-up"&gt;pop up tents&lt;/a&gt; &lt;img style="float:left; padding-right:5px;padding-left:5px;" src="http://blogs.warwick.ac.uk/images/chrismay/2011/07/06/july_11_048.jpg?maxWidth=400" alt="pop-up tent" title="pop-up tent" border="0" /&gt;&lt;/p&gt;
+
+&lt;p&gt;You don&amp;rsquo;t so much &amp;ldquo;pitch&amp;rdquo; it as just take it out of the bag and stand back. It sleeps two close friends, or one with too much gear, it&amp;rsquo;s pretty waterproof, and if you peg out the guy-ropes it&amp;rsquo;s surprisingly sturdy in the wind.&lt;/p&gt;
+
+&lt;p&gt;Downsides? It doesn&amp;rsquo;t pack down small, and I&amp;rsquo;m not sure it would be my first choice for a week in the Lake District in November &amp;ndash; in cold, wet conditions the single-skin design means you&amp;rsquo;ll end up damp from condensation on the inside of the tent &amp;ndash; but for summer weekend trips it&amp;rsquo;s brilliant; fun, easy, and it costs roughly 1/25th as much as an &lt;a href="http://www.terra-nova.co.uk/Brand/Terra_Nova/Tents/Ultra_Quasar_GREEN.html"&gt;Ultra Quasar&lt;/a&gt; (though if you &lt;em&gt;do&lt;/em&gt; have &amp;pound;600 to spare, I can highly recommend one of those as an alternative!).&lt;/p&gt;
+
+&lt;p&gt;ProTip: If you want to extend the range of weather you can use this in, get a &lt;a href="http://www.gooutdoors.co.uk/adventure-tarp-p185835"&gt;tarp&lt;/a&gt; and pitch it over the top of the tent, overhanging the front by a meter or two. You get an extra layer of waterproofing, and a porch so you don&amp;rsquo;t have to bring your soggy boots into the tent.&lt;/p&gt;</description>
+      <pubDate>Wed, 06 Jul 2011 21:14:54 GMT</pubDate>
+      <author>Chris May</author>
+      <comments>http://blogs.warwick.ac.uk/chrismay/entry/camping_time/#comments</comments>
+      <guid isPermaLink="false">094d73cd30fa00200131014db38c017a</guid>
+      <slash:comments>0</slash:comments>
+    </item>
+    <item>
+      <title>one-liner of the day: quick-and-dirty network summary by Chris May</title>
+      <link>http://blogs.warwick.ac.uk/chrismay/entry/one-liner_of_the/</link>
+      <description>&lt;p&gt;If you&amp;rsquo;ve got a solaris box with a load of zones on, you might sometimes have an issue whereby you can see that the box is pushing a lot of traffic over the network, but you&amp;rsquo;re unsure which zone(s) are responsible. Here&amp;rsquo;s a super-hacky way to get an overview:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; snoop -c 1000 | awk '{print $1}' | sort | uniq -c | sort -n&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;basically, catch the first 1000 packets, find the source for each one (assuming most of your traffic is outbound; if it&amp;rsquo;s inbound then print $3), and then count the distinct hosts (i.e. your zone names) and list them.&lt;/p&gt;
+
+&lt;p&gt;If you have a slow nameserver you may want to add &amp;ldquo;-r&amp;rdquo; to the snoop command and then map IPs to names afterwards.&lt;/p&gt;</description>
+      <pubDate>Wed, 06 Jul 2011 12:12:52 GMT</pubDate>
+      <author>Chris May</author>
+      <comments>http://blogs.warwick.ac.uk/chrismay/entry/one-liner_of_the/#comments</comments>
+      <guid isPermaLink="false">094d73cd30fa00200130ff5d74ba00ef</guid>
+      <slash:comments>0</slash:comments>
+    </item>
+    <item>
+      <title>Scala: fun with Lists by Chris May</title>
+      <link>http://blogs.warwick.ac.uk/chrismay/entry/scala_fun_with/</link>
+      <description>&lt;p&gt;So, I&amp;rsquo;m slowly working my way though some of the programming exercises at &lt;a href="http://projecteuler.net/"&gt;Project Euler&lt;/a&gt; as a means of learning scala (and hopefully a little bit of FP at the same time). &lt;br /&gt;
+   &lt;a href="http://projecteuler.net/index.php?section=problems&amp;amp;id=11"&gt;Problem #11&lt;/a&gt; is my most recent success, and it&amp;rsquo;s highlighted a number of interesting points. In brief, the problem provides you with a 20&amp;times;20 square of 2-digit integers, and asks for the largest product of any 4 adjacent numbers in any direction (up, down, left, right, diagonally). Kind of like a word-search, but with extra maths.&lt;/p&gt;
+
+&lt;p&gt;For no better reason than the afore-mentioned desire to get a bit more acquainted with a functional style of programming, I chose to implement it with no mutable state. I&amp;rsquo;m not sure if that was really sensible or not. It led to a &lt;a href="https://github.com/chrismay/euler-scala/blob/master/src/test/scala/Ex11.scala"&gt;solution&lt;/a&gt; that&amp;rsquo;s almost certainly less efficient, but potentially simpler than some of the other solutions I&amp;rsquo;ve seen.&lt;/p&gt;
+
+&lt;p&gt;So, step one: Give that we&amp;rsquo;re going to represent the grid as a List[List[Int]], let&amp;rsquo;s see if we can get the set of 4-element runs going horizontally left-to-right:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    def toQuadList()= {
+      def lrQuadsFromLine(line: List[Int], accumulator: List[List[Int]]): List[List[Int]] = {
+        if (line.length &amp;lt; 4)
+          accumulator
+        else
+          lrQuadsFromLine(line.tail, accumulator :+ line.slice(0, 4))
+      }
+      data.flatMap(line =&amp;gt; lrQuadsFromLine(line, List.empty))
+    }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(&amp;ldquo;data&amp;rdquo; is the List[List[Int]] representing the grid). Here we define a recursive function that takes a List[Int], obtains the first 4-number run (line.slice), adds it to an accumulator, and then pops the first item from the list and calls itself with the remainder. &lt;br /&gt;
+   Then we just call flatMap() on the original List-of-Lists to obtain all such quadruples. We could call Map, but that would give us a list of lists of quadruples &amp;ndash; flatMap mushes it down into one list.&lt;br /&gt;
+   It would be nice to find a way to make the if/else go away, but other than just transliterating it into a match, I can&amp;rsquo;t see a way to do it.&lt;/p&gt;
+
+&lt;p&gt;Given that list, finding the largest product is trivial.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   def findMaxProduct = data.map((x: List[Int]) =&amp;gt; x.reduce(_ * _)).max&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;- take each Quadruple in turn and transform it into a single number by multiplying each element with the next. Then call .max to find the largest.&lt;/p&gt;
+
+&lt;p&gt;So now we can do one of the 6 directions. However, a bit of thought at this point can save us some time: the Right-to-Left result is guaranteed to be the same as the left-to-right, since multiplication doesn&amp;rsquo;t care about order (the set of quadruples will be the same in each direction). Similarly, the downwards result will be the same as the upwards one.&lt;/p&gt;
+
+&lt;p&gt;Next time-saver: Calculating the downwards result is the same as rotating the grid by 90 degrees and then calculating the left-to-right result. So we just need a rotate function, and we get the vertical results for free:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   def rotate90Deg() = {
+      data.head.zipWithIndex.map((t) =&amp;gt; data.map((row: List[Int]) =&amp;gt; row(t._2)).reverse)
+    }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Doing this without mutable state took me some pondering, but the solution is reasonably concise. Doing zipWithIndex on an arbitrary row of the grid (I used .head because it&amp;rsquo;s easy to access) gives us an iterator with an index number in, so we can now build up a List containing the _n_th element from each of the original lists. (The outer map() iterates over the columns in the grid, the inner one over the rows in the grid))&lt;/p&gt;
+
+&lt;p&gt;So now we have the horizontal and vertical totals, we need to do the diagonals. It would be nice if we could once again re-use the left-to-right quadruple-finding code, so we need to get the grid into a form where going left to right gets the sequences that would previously have been diagonals. We can do this by offsetting subsequent rows by one each time, the rotating; like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1,2,3
+4,5,6
+7,8,9
+
+?,?,1,2,3
+?,4,5,6,?
+7,8,9,?,?
+
+7,?,?
+8,4,?
+9,5,1
+?,6,2
+?,?,3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see that the horizontal sequences are now the original diagonals. Initially, I started using Option[Int] for the items in the grid, so I could use None for the &amp;ldquo;question marks&amp;rdquo;. However, after more time than it ought to have taken me, I realised that using zero for those would work perfectly, as any zero in a quadruple will immediately set that quad&amp;rsquo;s product to zero, thus excluding it from our calculation (which is what we want). &lt;br /&gt;
+   The function to do the offseting is still rather complex, but not too bad (it owes a lot to the recursive toQuadList function above:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    def diagonalize() = {
+      def shiftOneRow(rowsRemaining: List[List[Int]], lPad: List[Int], rPad: List[Int], rowsDone: List[List[Int]]): List[List[Int]] = {
+        rowsRemaining match {
+          case Nil =&amp;gt; rowsDone
+          case _ =&amp;gt; {
+            val newRow: List[Int] = lPad ::: rowsRemaining.head ::: rPad
+            shiftOneRow(rowsRemaining.tail,
+              lPad.tail,
+              0 :: rPad,
+              rowsDone ::: List(newRow))
+          }
+        }
+      }
+      shiftOneRow(data, List.fill(data.size)(0), List.empty, List.empty)
+    }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We define a recursive function that takes a list of rows yet to be padded, a list of zeros to pad the left-hand-side with, another for the right-hand-side, and an accumulator of rows already padded. As we loop through, we remove from the remaining rows, add to the done rows, remove from the left-padding, and add to the right padding. It kind of feels like there ought to be a neater way to do this, but I&amp;rsquo;m not quite sure what yet.&lt;/p&gt;
+
+&lt;p&gt;To get the &amp;ldquo;other&amp;rdquo; diagonals, just flip the grid left-to-right before diagonalizing it.&lt;/p&gt;
+
+&lt;p&gt;Once that&amp;rsquo;s done, all that remains is to glue it together. Because I&amp;rsquo;ve been thinking in OO for so long, I chose to wrap this behaviour in a couple of classes; one for the list-of-quadruples, and one for the grid itself. Then I can finish the job with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; println(
+      List(new Grid(data).toQuadList.findMaxProduct,
+      new Grid(data).rotate90Deg.toQuadList.findMaxProduct,
+      new Grid(data).diagonalize.rotate90Deg.toQuadList.findMaxProduct,
+      new Grid(data).flipLR.diagonalize.rotate90Deg.toQuadList.findMaxProduct).max)&lt;/code&gt;&lt;/pre&gt;</description>
+      <pubDate>Sat, 25 Jun 2011 23:01:34 GMT</pubDate>
+      <author>Chris May</author>
+      <comments>http://blogs.warwick.ac.uk/chrismay/entry/scala_fun_with/#comments</comments>
+      <guid isPermaLink="false">094d73cd308d95b70130c90966891160</guid>
+      <slash:comments>0</slash:comments>
+    </item>
+    <item>
+      <title>The one where I fail to go on any exciting expeditions by Chris May</title>
+      <link>http://blogs.warwick.ac.uk/chrismay/entry/and_now_for/</link>
+      <description>&lt;p class="answer"&gt;Writing about web page &lt;a href="http://www.gooutdoors.co.uk/thermarest-prolite-small-p147594" title="Related external link: http://www.gooutdoors.co.uk/thermarest-prolite-small-p147594"&gt;http://www.gooutdoors.co.uk/thermarest-prolite-small-p147594&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So, in the spirit of previous product reviews, this should have been an entry that described various recent feats of derring-do, and casually slipped in a plug for the latest bit of &lt;a href="http://www.gooutdoors.co.uk/camping"&gt;camping equipment&lt;/a&gt; that I&amp;rsquo;ve been sent to review. Unfortunately, the last few weeks have been characterised by some especially foul weather. Last week&amp;rsquo;s planned camping trip to do the &lt;a href="http://www.roughride.co.uk/"&gt;Torq rough ride&lt;/a&gt; was abandoned, in favour of an early morning drive down on sunday, followed by three-and-a-half hours of squelching round the &amp;ldquo;short&amp;rdquo; route in driving rain. &lt;br /&gt;
+   Then tonight&amp;rsquo;s Second Annual &lt;a href="http://www.flickr.com/photos/chrismay/4722431868/in/set-72157626884232081/"&gt;Summer-Solstice-Mountain-Bike-Bivi-Trip&lt;/a&gt; was abandoned when it became apparent that the chances of a scenic sunrise were pretty much zero, whereas the chance of a night in a plastic bag in the rain on a hill were looking close to 100%.&lt;/p&gt;
+
+&lt;p&gt;All of which means that my shiny new toy has so far not seen much action outside of the back garden. But it seems churlish not to write &lt;em&gt;something&lt;/em&gt; about it; so here goes. It&amp;rsquo;s a &lt;a href="http://www.gooutdoors.co.uk/travel/backpacking/sleeping-mats;"&gt;sleeping mat&lt;/a&gt; specifically a Thermarest Pro-Lite. Mats might seem like a pretty mundane item, but if you&amp;rsquo;re trying to travel light, either running or on a bike, then they&amp;rsquo;re a tricky thing to get right. Too minimalist and you don&amp;rsquo;t get any sleep, then you feel like crap the next morning. Too heavy, and they start to make a serious contribution to your pack weight, which matters a lot if you&amp;rsquo;re having to run up a hill or ride down one.&lt;br /&gt;
+   For a long time, my preferred option was a cut-down foam karrimat, which was a reasonable compromise, but suffered from being a bit on the bulky side, and also not terribly warm. I have an old thermarest as well, which is fabulously comfy &amp;ndash; great for winter camping, but far too bulky for fast &amp;amp; light summer trips.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;There will be some pics here, when it stops raining for long enough&amp;hellip; for now, here&amp;rsquo;s a stock photo&amp;hellip;&lt;/em&gt;&lt;br /&gt;
+   &lt;img style="float:right;padding-left:5px;" src="http://cdn.gooutdoors.co.uk/Products/14385-280111103613891847858.jpg" alt="" border="0" /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, the pro-lite: Point 1; I got the small one; it&amp;rsquo;s very small. (note the artful perspective on the photo!) If you want something that will reach alll the way down to your toes (or even your knees) this isn&amp;rsquo;t it; buy the large size. I don&amp;rsquo;t mind this, though; in the summertime I&amp;rsquo;m happy with something that just reaches from head-to-thigh. Equally, it&amp;rsquo;s quite slim. My shoulders are fairly scrawny, and this just-about reaches from one to the other. If you&amp;rsquo;ve been spending longer in the gym (or the cake shop) than on the track or the turbo, then you might want a bigger size.&lt;/p&gt;
+
+&lt;p&gt;Point 2: It is just unbelievably compact. Really. It rolls up into something about the size of a 750ml drink bottle. Foam karimats can&amp;rsquo;t come near to this. This makes more of a difference than you might think, because it means you can get away with a pack that&amp;rsquo;s 5L or so smaller (and therefore lighter), and still fit the mat inside (keeping your mat inside your pack is a winning plan, because you can keep it dry). It&amp;rsquo;s also great if you&amp;rsquo;re backpacking on a bike, because the smaller your pack, the less it affects the bike&amp;rsquo;s handling.&lt;/p&gt;
+
+&lt;p&gt;Point 3: It&amp;rsquo;s as light as a foam mat. Unlike my old thermarest, there&amp;rsquo;s not a lot inside this mat, so it&amp;rsquo;s super-lightweight. Mine weighed in at a smidge over 300g according to the kitchen scales.&lt;/p&gt;
+
+&lt;p&gt;Point 4: Back-garden tests strongly suggest that it&amp;rsquo;s a lot more comfy than my old foam mat. I&amp;rsquo;ll report back once it&amp;rsquo;s stopped raining long enough to try it out for real!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update #1&lt;/strong&gt; : Still not had the chance to take this backpacking, but a car-camping trip confirms that it&amp;rsquo;s very comfortable indeed &amp;ndash; just as good as my old thermarest, though in a big tent you have to be careful not to roll off it in the night!&lt;/p&gt;</description>
+      <pubDate>Mon, 20 Jun 2011 22:03:35 GMT</pubDate>
+      <author>Chris May</author>
+      <comments>http://blogs.warwick.ac.uk/chrismay/entry/and_now_for/#comments</comments>
+      <guid isPermaLink="false">094d73cd308d95b70130aefd9b870a51</guid>
+      <slash:comments>1</slash:comments>
+    </item>
+    <item>
+      <title>Partial and Curried Functions by Chris May</title>
+      <link>http://blogs.warwick.ac.uk/chrismay/entry/partial_and_curried/</link>
+      <description>&lt;p&gt;On with the scala show! Partially-applied functions and curried functions took me a while to get my head around, but really they&amp;rsquo;re quite simple, and partials at least are super-useful.&lt;/p&gt;
+
+&lt;p&gt;Partially-applied functions are just functions where you pre-bind one of the parameters. e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scala&amp;gt; val message:(String,String,String)=&amp;gt;String = &amp;quot;Dear &amp;quot; + _ +&amp;quot;, &amp;quot; + _ + &amp;quot; from &amp;quot; + _
+message: (String, String, String) =&amp;gt; String = &amp;lt;function3&amp;gt;
+
+scala&amp;gt; message(&amp;quot;Alice&amp;quot;,&amp;quot;hello&amp;quot;,&amp;quot;Bob&amp;quot;)
+res24: String = Dear Alice, hello from Bob
+
+scala&amp;gt; val helloMessage=message(_:String,&amp;quot;hello&amp;quot;,_:String)
+helloMessage: (String, String) =&amp;gt; String = &amp;lt;function2&amp;gt;
+
+scala&amp;gt; helloMessage(&amp;quot;Alice&amp;quot;,&amp;quot;Bob&amp;quot;)
+res25: String = Dear Alice, hello from Bob
+
+scala&amp;gt; val aliceToBobMessage=message(&amp;quot;Alice&amp;quot;,_:String,&amp;quot;Bob&amp;quot;)
+aliceToBobMessage: (String) =&amp;gt; String = &amp;lt;function1&amp;gt;
+
+scala&amp;gt; aliceToBobMessage(&amp;quot;greetings&amp;quot;)
+res27: String = Dear Alice, greetings from Bob&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What&amp;rsquo;s happening here is reasonably self-explanatory. We create a function &amp;ldquo;message&amp;rdquo; which takes 3 parameters, then we create two more functions, &amp;ldquo;helloMessage&amp;rdquo; and &amp;ldquo;aliceToBobMessage&amp;rdquo; which just are just aliases to the &amp;ldquo;message&amp;rdquo; function with some of the parameters pre-filled.&lt;/p&gt;
+
+&lt;p&gt;Since functions are first-class objects that you can pass around just like anything else, this means you can do stuff like&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scala&amp;gt; val times:(Int,Int)=&amp;gt;Int = _*_
+times: (Int, Int) =&amp;gt; Int = &amp;lt;function2&amp;gt;
+
+scala&amp;gt; val times2=times(2,_:Int)
+times2: (Int) =&amp;gt; Int = &amp;lt;function1&amp;gt;
+
+scala&amp;gt; (1 to 10) map times2
+res38: scala.collection.immutable.IndexedSeq[Int] = Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Currying is, at first sight, just a different (more complicated) way to achieve the same thing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scala&amp;gt; val message:(String)=&amp;gt;(String)=&amp;gt;(String)=&amp;gt;String = (to:String)=&amp;gt;(message:String)=&amp;gt;(from:String)=&amp;gt;{ &amp;quot;Dear &amp;quot; + to +&amp;quot;, &amp;quot; + message + &amp;quot; from &amp;quot; + from}
+message: (String) =&amp;gt; (String) =&amp;gt; (String) =&amp;gt; String = &amp;lt;function1&amp;gt;
+
+scala&amp;gt; message(&amp;quot;Alice&amp;quot;)(&amp;quot;Hello&amp;quot;)(&amp;quot;Bob&amp;quot;)
+res28: String = Dear Alice, Hello from Bob
+
+scala&amp;gt; val aliceToBobMessage=message(&amp;quot;Alice&amp;quot;)(_:String)(&amp;quot;Bob&amp;quot;)aliceToBobMessage: (String) =&amp;gt; String = &amp;lt;function1&amp;gt;
+
+scala&amp;gt; aliceToBobMessage(&amp;quot;greetings&amp;quot;)res29: String = Dear Alice, greetings from Bob&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What that giant line of verbiage at the start is doing, is creating a function which takes one string and returns a function that takes another string, which returns a function that takes another string, which returns a string. Phew. &lt;br /&gt;
+   This mapping from a function that takes &lt;em&gt;n&lt;/em&gt; parameters, to a chain of &lt;em&gt;n&lt;/em&gt; functions that each take 1 parameter, is known as &amp;ldquo;currying&amp;rdquo; (After Haskell Curry). Why on earth would you want to do this, rather than the much simpler partial application example above?&lt;br /&gt;
+   Several of the core scala &lt;span class="caps"&gt;API&lt;/span&gt; methods use curried functions &amp;ndash; for example foldLeft in the &lt;a href="https://lampsvn.epfl.ch/trac/scala/browser/scala/tags/R_2_9_0_1/src//library/scala/collection/IndexedSeqOptimized.scala#L1"&gt;collections classes&lt;/a&gt; &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def foldLeft[B](z: B)(op: (B, A) =&amp;gt; B): B = 
+        foldl(0, length, z, op)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;- here we&amp;rsquo;re exposing a curried function, and then proxying on to a non-curried implementation. Why do it like this?&lt;/p&gt;
+
+&lt;p&gt;It turns out that curried functions have an advantage (&lt;em&gt;see update below&lt;/em&gt;) that partial ones dont. If I curry a function, and then bind some variables to form what is effectively the same as a partial function, I can also modify the type of the remaining unbound parameters. Example required!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scala&amp;gt; val listMunger:(String)=&amp;gt;(List[Any])=&amp;gt;String = (prefix:String)=&amp;gt;(contents:List[Any])=&amp;gt;prefix + (contents.reduce(_.toString +_.toString))
+listMunger: (String) =&amp;gt; (List[Any]) =&amp;gt; String = &amp;lt;function1&amp;gt;
+
+scala&amp;gt; val ints = List(1,2,3)
+ints: List[Int] = List(1, 2, 3)
+
+scala&amp;gt; listMunger(&amp;quot;ints&amp;quot;)(ints)
+res31: String = ints123
+
+scala&amp;gt; val strings = List(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;)
+strings: List[java.lang.String] = List(a, b, c)
+
+scala&amp;gt; listMunger(&amp;quot;strings&amp;quot;)(strings)
+res32: String = stringsabc
+
+scala&amp;gt; val stringListMunger=listMunger(&amp;quot;strings&amp;quot;)(_:List[String])
+stringListMunger: (List[String]) =&amp;gt; String = &amp;lt;function1&amp;gt;
+
+scala&amp;gt; stringListMunger(strings)
+res33: String = stringsabc
+
+scala&amp;gt; stringListMunger(ints)
+&amp;lt;console&amp;gt;:11: error: type mismatch;
+ found   : List[Int]
+ required: List[String]
+       stringListMunger(ints)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That last error is the important bit. We&amp;rsquo;ve specialized the parameter type for the unbound parameter in stringListMunger so it won&amp;rsquo;t accept a list of anything other than Strings. Note that you can&amp;rsquo;t arbitrarily re-assign the type; it has to be a subtype of the original (otherwise the implementation might fail).&lt;br /&gt;
+   OK; so now all I have to do is think of a real-world example where this would be useful&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt; Gah, I was wrong. You can do exactly the same type-specialization with a partial:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scala&amp;gt; val x:(Int,List[Any])=&amp;gt;Int = (_,_)=&amp;gt;1
+x: (Int, List[Any]) =&amp;gt; Int = &amp;lt;function2&amp;gt;
+
+scala&amp;gt; val y:(List[Int])=&amp;gt;Int = x(1,_)
+y: (List[Int]) =&amp;gt; Int = &amp;lt;function1&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So now I &lt;em&gt;still&lt;/em&gt; have no idea when you&amp;rsquo;d want to curry a function, rather than just leaving it with multiple arguments and partially applying when required. This &lt;a href="http://www.uncarved.com/blog/not_currying.mrk"&gt;blog entry&lt;/a&gt; suggests that it really exists to support languages like OCaml or Haskel that only allow one parameter per function &amp;ndash; so maybe it&amp;rsquo;s only in scala to allow people to use that style if they like it. But then what&amp;rsquo;s it doing in the APIs ?&lt;/p&gt;</description>
+      <pubDate>Thu, 16 Jun 2011 20:39:17 GMT</pubDate>
+      <author>Chris May</author>
+      <comments>http://blogs.warwick.ac.uk/chrismay/entry/partial_and_curried/#comments</comments>
+      <guid isPermaLink="false">094d73cd308d95b701309a19437c043a</guid>
+      <slash:comments>0</slash:comments>
+    </item>
+    <item>
+      <title>Further Scala: Implicit conversions by Chris May</title>
+      <link>http://blogs.warwick.ac.uk/chrismay/entry/further_scala_implicit/</link>
+      <description>&lt;p&gt;My attempts to learn scala continue&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Implicit conversions are a cool, if slightly unsettling (from a java programmers &lt;span class="caps"&gt;POV&lt;/span&gt;) scala feature. If I have an instance of one class, and I try and call a method on it which is defined in a different class, then if there&amp;rsquo;s an &amp;ldquo;implicit&amp;rdquo; method in scope which will convert between the two, scala will silently use it. &lt;br /&gt;
+   e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scala&amp;gt; var x = 12
+x: Int = 12
+
+scala&amp;gt; x.substring(1,2)
+&amp;lt;console&amp;gt;:9: error: value substring is not a member of Int
+       x.substring(1,2)
+
+scala&amp;gt; implicit def foo(i:Int):String={i.toString}
+foo: (i: Int)String
+
+scala&amp;gt; 12.substring(1,2)
+res10: java.lang.String = 2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;span class="caps"&gt;WITCHCRAFT&lt;/span&gt;! BURN &lt;span class="caps"&gt;THE COMPILER&lt;/span&gt;!&lt;/p&gt;
+
+&lt;p&gt;This lends itself to a very very useful trick; the ability to enhance classes with additional methods. Say you had a java Map class, and you wanted the ability to merge it with another Map according to some sort of merge function on the values. You&amp;rsquo;d probably do it like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class MergeableMap implements Map{
+
+public MergeableMap(Map delegate){
+ this.delegate = delegate
+}
+
+public Map merge(Map otherMap, ValueMergingFunction mergeFunction){
+ ....
+}
+
+... delegate implementations of all Map methods here...
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Trouble is, (a) writing all the delegate methods is tedious, and(b) every time you want to use it, you&amp;rsquo;ve got to do&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;MergeableMap m = new MergeableMap(myMapVariable)
+m.merge(myOtherMap,...)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Implicits in scala make this a &lt;em&gt;lot&lt;/em&gt; easier:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class MergeableMap[A, B](self: Map[A, B]) {
+  def merge(m1, merger): Map[A, B] = {
+... implementation here...
+  }
+}
+
+implicit def map2mergeableMap[A,B](m:Map[A,B]):MergeableMap[A,B] = new MergeableMap(m)
+
+myMap.merge(myOtherMap, myMergeFunction)
+myMap.get(...)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;there&amp;rsquo;s no need to implement the other delegate methods, since we can just call them on the original Map class &amp;ndash; but when we call merge() compiler-based voodoo works out that we want a mergeable map, and swaps it in for us. Magical.&lt;/p&gt;</description>
+      <pubDate>Sat, 11 Jun 2011 19:13:18 GMT</pubDate>
+      <author>Chris May</author>
+      <comments>http://blogs.warwick.ac.uk/chrismay/entry/further_scala_implicit/#comments</comments>
+      <guid isPermaLink="false">094d73cd3003a6240130801f638534e0</guid>
+      <slash:comments>2</slash:comments>
+    </item>
+  </channel>
+</rss>
+

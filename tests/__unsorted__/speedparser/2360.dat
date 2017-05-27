@@ -1,0 +1,1574 @@
+<?xml version="1.0" encoding="iso-8859-1"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:admin="http://webns.net/mvcb/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Hacking Quam Plures</title>
+<link>http://www.hackingquamplures.com/index.php</link>
+<atom:link rel="self" type="application/rss+xml" href="http://www.hackingquamplures.com/index.php?viewmode=_rss2" />
+<description>Lee Turner's adventures in contributing and hacking with Quam Plures</description>
+<language>en-GB</language>
+<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+<admin:generatorAgent rdf:resource="http://quamplures.net/"/>
+<ttl>60</ttl>
+	<item>
+	<title>Hic Sunt Dracones</title>
+	<link>http://www.hackingquamplures.com/hackblog/hic-sunt-dracones</link>
+	<pubDate>Thu, 07 Jul 2011 17:29:37 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">Misc</category>	<guid isPermaLink="false">23@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fhic-sunt-dracones&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;blockquote&gt;&lt;p&gt;Here Be Dragons&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;This post is dedicated to one of the founding Quam Plures dragons - &lt;a href=&quot;http://innervisions.org.uk&quot; title=&quot;Yabba&quot;&gt;Yabba&lt;/a&gt; who passed away suddenly yesterday.&lt;/p&gt;
+
+&lt;p&gt;You will be greatly missed in many, many ways.&lt;/p&gt;
+
+&lt;p&gt;R.I.P my friend&lt;/p&gt;&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/hackblog/hic-sunt-dracones&quot; title=&quot;Hic Sunt Dracones&quot;&gt;Hic Sunt Dracones&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fhic-sunt-dracones&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><blockquote><p>Here Be Dragons</p></blockquote>
+
+<p>This post is dedicated to one of the founding Quam Plures dragons - <a href="http://innervisions.org.uk" title="Yabba">Yabba</a> who passed away suddenly yesterday.</p>
+
+<p>You will be greatly missed in many, many ways.</p>
+
+<p>R.I.P my friend</p><div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/hackblog/hic-sunt-dracones" title="Hic Sunt Dracones">Hic Sunt Dracones</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/hackblog/hic-sunt-dracones#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/hackblog/?viewmode=_rss2&#38;disp=comments&#38;p=23</wfw:commentRss>
+	</item>
+		<item>
+	<title>Twitter Follow Button Plugin</title>
+	<link>http://www.hackingquamplures.com/quam-plures-plugins/twitter-follow-button-plugin</link>
+	<pubDate>Tue, 07 Jun 2011 20:43:11 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">3rd Party Integration</category>	<guid isPermaLink="false">22@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Ftwitter-follow-button-plugin&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_3/twitter.jpg&quot; alt=&quot;Twitter Follow Button Plugin&quot; title=&quot;Twitter Follow Button Plugin&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt;The &lt;strong&gt;Twitter Follow Button&lt;/strong&gt; is a small widget which allows users to easily follow a Twitter account from any webpage. This plugin allows you to add the Twitter follow button to your site.  It is implemented as a widget so you can place it in any container.&lt;/p&gt;
+
+
+
+&lt;h3&gt;Settings, Settings, &amp;amp; Settings&lt;/h3&gt;
+
+&lt;h4&gt;Plugin Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no plugin settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;User Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no user settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Blog Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no blog settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Widget Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Twitter username:&lt;/strong&gt;  This is the username of the Twitter account.  &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Show Follower Count:&lt;/strong&gt; Specifies whether to display the follower count.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Follow Button Language&lt;/strong&gt; What language would you like your twitter follow button to be?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;More Info, Credits &amp;amp; Links&lt;/h3&gt;
+
+&lt;h4&gt;More Info:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;As this is implemented as a widget you can add multiple instances to your site and each of them can have different settings.  For example, if your blog is dedicated to a team of people, each person could have their own twitter follow button.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Credits:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Author: &lt;a href=&quot;http://www.hackingquamplures.com&quot; title=&quot;Hacking Quam Plures&quot;&gt;Hacking Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Links:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Plugin Homepage: &lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/twitter-follow-button-plugin&quot; title=&quot;Twitter Follow Button Plugin&quot;&gt;Twitter Follow Button Plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/leeturner&quot; title=&quot;Lee Turner on Twitter&quot;&gt;Lee Turner on Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://quamplures.net/&quot; title=&quot;Quam Plures&quot;&gt;Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;You can download this file and more from the &lt;a href=&quot;https://launchpad.net/hackingqp/+download&quot; title=&quot;Hacking Quam Plures plugin repository&quot;&gt;Hacking Quam Plures plugin repository&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/twitter-follow-button-plugin&quot; title=&quot;Twitter Follow Button Plugin&quot;&gt;Twitter Follow Button Plugin&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Ftwitter-follow-button-plugin&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_3/twitter.jpg" alt="Twitter Follow Button Plugin" title="Twitter Follow Button Plugin" width="75" height="75" class="spanimage" /></span>The <strong>Twitter Follow Button</strong> is a small widget which allows users to easily follow a Twitter account from any webpage. This plugin allows you to add the Twitter follow button to your site.  It is implemented as a widget so you can place it in any container.</p>
+
+
+
+<h3>Settings, Settings, &amp; Settings</h3>
+
+<h4>Plugin Settings:</h4>
+
+<ul>
+<li>This plugin has no plugin settings.</li>
+</ul>
+
+<h4>User Settings:</h4>
+
+<ul>
+<li>This plugin has no user settings.</li>
+</ul>
+
+<h4>Blog Settings:</h4>
+
+<ul>
+<li>This plugin has no blog settings.</li>
+</ul>
+
+<h4>Widget Settings:</h4>
+
+<ul>
+<li><strong>Twitter username:</strong>  This is the username of the Twitter account.  </li>
+<li><strong>Show Follower Count:</strong> Specifies whether to display the follower count.</li>
+<li><strong>Follow Button Language</strong> What language would you like your twitter follow button to be?</li>
+</ul>
+
+<h3>More Info, Credits &amp; Links</h3>
+
+<h4>More Info:</h4>
+
+<ul>
+<li>As this is implemented as a widget you can add multiple instances to your site and each of them can have different settings.  For example, if your blog is dedicated to a team of people, each person could have their own twitter follow button.</li>
+</ul>
+
+<h4>Credits:</h4>
+
+<ul>
+<li>Author: <a href="http://www.hackingquamplures.com" title="Hacking Quam Plures">Hacking Quam Plures</a></li>
+</ul>
+
+<h4>Links:</h4>
+
+<ul>
+<li>Plugin Homepage: <a href="http://www.hackingquamplures.com/quam-plures-plugins/twitter-follow-button-plugin" title="Twitter Follow Button Plugin">Twitter Follow Button Plugin</a></li>
+<li>Twitter: <a href="http://twitter.com/leeturner" title="Lee Turner on Twitter">Lee Turner on Twitter</a></li>
+<li><a href="http://quamplures.net/" title="Quam Plures">Quam Plures</a></li>
+</ul>
+
+<blockquote>
+  <p><strong>You can download this file and more from the <a href="https://launchpad.net/hackingqp/+download" title="Hacking Quam Plures plugin repository">Hacking Quam Plures plugin repository</a></strong></p>
+</blockquote>
+<div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/quam-plures-plugins/twitter-follow-button-plugin" title="Twitter Follow Button Plugin">Twitter Follow Button Plugin</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/quam-plures-plugins/twitter-follow-button-plugin#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/quam-plures-plugins/?viewmode=_rss2&#38;disp=comments&#38;p=22</wfw:commentRss>
+	</item>
+		<item>
+	<title>Including RSS Feeds In Your Posts</title>
+	<link>http://www.hackingquamplures.com/hackblog/including-rss-feeds-in-your-posts</link>
+	<pubDate>Fri, 27 May 2011 20:55:50 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">Plugins</category>	<guid isPermaLink="false">21@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fincluding-rss-feeds-in-your-posts&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_3/rss.jpg&quot; alt=&quot;RSS&quot; title=&quot;RSS&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt;As I have just released the &lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/zrssfeed-plugin&quot; title=&quot;zRSSFeed Plugin&quot;&gt;zRSSFeed Plugin&lt;/a&gt; I thought I would do a quick post to show you what it looks like with a couple of RSS feeds included in a post.  I have taken a couple of feeds from the main Quam Plures website, namely the &lt;a href=&quot;http://quamplures.net/news.php&quot; title=&quot;Latest News&quot;&gt;latest news&lt;/a&gt; blog and the &lt;a href=&quot;http://codex.quamplures.net&quot; title=&quot;Codex&quot;&gt;codex&lt;/a&gt; blog.  See what you think:&lt;/p&gt;
+
+
+
+&lt;p&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+		$(document).ready(function () {
+			$('#qp-forum').rssfeed('http://quamplures.net/news.php?viewmode=_rss2', {
+				limit: 10,
+				titletag: 'h3',
+				header: true,
+				date: true,
+				content: true,
+				snippet: true,
+			});
+		});
+		&lt;/script&gt;
+		&lt;div id=&quot;qp-forum&quot;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+		$(document).ready(function () {
+			$('#qp-codex').rssfeed('http://codex.quamplures.net/?viewmode=_rss2', {
+				limit: 10,
+				titletag: 'h3',
+				header: true,
+				date: true,
+				content: true,
+				snippet: true,
+			});
+		});
+		&lt;/script&gt;
+		&lt;div id=&quot;qp-codex&quot;&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;All in all not too bad &lt;img src=&quot;http://www.hackingquamplures.com/qp_rsc/smilies/smiley.png&quot; alt=&quot;&amp;#58;&amp;#41;&quot; class=&quot;middle&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/hackblog/including-rss-feeds-in-your-posts&quot; title=&quot;Including RSS Feeds In Your Posts&quot;&gt;Including RSS Feeds In Your Posts&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fincluding-rss-feeds-in-your-posts&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_3/rss.jpg" alt="RSS" title="RSS" width="75" height="75" class="spanimage" /></span>As I have just released the <a href="http://www.hackingquamplures.com/quam-plures-plugins/zrssfeed-plugin" title="zRSSFeed Plugin">zRSSFeed Plugin</a> I thought I would do a quick post to show you what it looks like with a couple of RSS feeds included in a post.  I have taken a couple of feeds from the main Quam Plures website, namely the <a href="http://quamplures.net/news.php" title="Latest News">latest news</a> blog and the <a href="http://codex.quamplures.net" title="Codex">codex</a> blog.  See what you think:</p>
+
+
+
+<p><script type="text/javascript">
+		$(document).ready(function () {
+			$('#qp-forum').rssfeed('http://quamplures.net/news.php?viewmode=_rss2', {
+				limit: 10,
+				titletag: 'h3',
+				header: true,
+				date: true,
+				content: true,
+				snippet: true,
+			});
+		});
+		</script>
+		<div id="qp-forum"></div></p>
+
+<p><script type="text/javascript">
+		$(document).ready(function () {
+			$('#qp-codex').rssfeed('http://codex.quamplures.net/?viewmode=_rss2', {
+				limit: 10,
+				titletag: 'h3',
+				header: true,
+				date: true,
+				content: true,
+				snippet: true,
+			});
+		});
+		</script>
+		<div id="qp-codex"></div></p>
+
+<p>All in all not too bad <img src="http://www.hackingquamplures.com/qp_rsc/smilies/smiley.png" alt="&#58;&#41;" class="middle" /></p>
+<div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/hackblog/including-rss-feeds-in-your-posts" title="Including RSS Feeds In Your Posts">Including RSS Feeds In Your Posts</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/hackblog/including-rss-feeds-in-your-posts#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/hackblog/?viewmode=_rss2&#38;disp=comments&#38;p=21</wfw:commentRss>
+	</item>
+		<item>
+	<title>ZRSSFeed Plugin</title>
+	<link>http://www.hackingquamplures.com/quam-plures-plugins/zrssfeed-plugin</link>
+	<pubDate>Fri, 27 May 2011 20:32:45 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">Text Renderers</category>	<guid isPermaLink="false">20@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Fzrssfeed-plugin&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_3/rss.jpg&quot; alt=&quot;zRSSFeed Plugin&quot; title=&quot;zRSSFeed Plugin&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt;This plugin allows you to display RSS feeds in your posts.  You can include multiple RSS feeds in the same post.  To use the plugin all you need to do is add the following code to your posts:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[zrssfeed:id:feed_url]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;strong&gt;id&lt;/strong&gt; is a unique identifier for the RSS feed.  This can be anything you like but must be unique within your blog posts - especially if you are including multiple RSS feeds.  The &lt;strong&gt;feed_url&lt;/strong&gt; is the actual url of the feed you are wanting to display.  Note that this is not the url of the website the feed is from but the actual url of the feed itself.&lt;/p&gt;
+
+
+
+&lt;h3&gt;Settings, Settings, &amp;amp; Settings&lt;/h3&gt;
+
+&lt;h4&gt;Plugin Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Limit:&lt;/strong&gt;  This specifies the number of feed items to return.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Header:&lt;/strong&gt; If this is checked, the header section containing the feed name and link are included.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Feed Title Size:&lt;/strong&gt; This allows you to specify the side of the title using the standard html header tags.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Show Date:&lt;/strong&gt; If selected, the feed date section is included.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Show Content:&lt;/strong&gt; If selected, the feed description is included.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Show Snippet:&lt;/strong&gt; If selected the snippet short description is displayed if available.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;User Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no user settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Blog Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no blog settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Widget Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no widget settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;More Info, Credits &amp;amp; Links&lt;/h3&gt;
+
+&lt;h4&gt;More Info:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No additional information provided by the author.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Credits:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Author: &lt;a href=&quot;http://www.hackingquamplures.com&quot; title=&quot;Hacking Quam Plures&quot;&gt;Hacking Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Links:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Plugin Homepage: &lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/zrssfeed-plugin&quot; title=&quot;zRSSFeed Plugin&quot;&gt;ZRSSFeed Plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/leeturner&quot; title=&quot;Lee Turner on Twitter&quot;&gt;Lee Turner on Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://quamplures.net/&quot; title=&quot;Quam Plures&quot;&gt;Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;You can download this file and more from the &lt;a href=&quot;https://launchpad.net/hackingqp/+download&quot; title=&quot;Hacking Quam Plures plugin repository&quot;&gt;Hacking Quam Plures plugin repository&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/zrssfeed-plugin&quot; title=&quot;ZRSSFeed Plugin&quot;&gt;ZRSSFeed Plugin&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Fzrssfeed-plugin&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_3/rss.jpg" alt="zRSSFeed Plugin" title="zRSSFeed Plugin" width="75" height="75" class="spanimage" /></span>This plugin allows you to display RSS feeds in your posts.  You can include multiple RSS feeds in the same post.  To use the plugin all you need to do is add the following code to your posts:</p>
+
+<pre><code>[zrssfeed:id:feed_url]
+</code></pre>
+
+<p>The <strong>id</strong> is a unique identifier for the RSS feed.  This can be anything you like but must be unique within your blog posts - especially if you are including multiple RSS feeds.  The <strong>feed_url</strong> is the actual url of the feed you are wanting to display.  Note that this is not the url of the website the feed is from but the actual url of the feed itself.</p>
+
+
+
+<h3>Settings, Settings, &amp; Settings</h3>
+
+<h4>Plugin Settings:</h4>
+
+<ul>
+<li><strong>Limit:</strong>  This specifies the number of feed items to return.</li>
+<li><strong>Header:</strong> If this is checked, the header section containing the feed name and link are included.</li>
+<li><strong>Feed Title Size:</strong> This allows you to specify the side of the title using the standard html header tags.</li>
+<li><strong>Show Date:</strong> If selected, the feed date section is included.</li>
+<li><strong>Show Content:</strong> If selected, the feed description is included.</li>
+<li><strong>Show Snippet:</strong> If selected the snippet short description is displayed if available.</li>
+</ul>
+
+<h4>User Settings:</h4>
+
+<ul>
+<li>This plugin has no user settings.</li>
+</ul>
+
+<h4>Blog Settings:</h4>
+
+<ul>
+<li>This plugin has no blog settings.</li>
+</ul>
+
+<h4>Widget Settings:</h4>
+
+<ul>
+<li>This plugin has no widget settings.</li>
+</ul>
+
+<h3>More Info, Credits &amp; Links</h3>
+
+<h4>More Info:</h4>
+
+<ul>
+<li>No additional information provided by the author.</li>
+</ul>
+
+<h4>Credits:</h4>
+
+<ul>
+<li>Author: <a href="http://www.hackingquamplures.com" title="Hacking Quam Plures">Hacking Quam Plures</a></li>
+</ul>
+
+<h4>Links:</h4>
+
+<ul>
+<li>Plugin Homepage: <a href="http://www.hackingquamplures.com/quam-plures-plugins/zrssfeed-plugin" title="zRSSFeed Plugin">ZRSSFeed Plugin</a></li>
+<li>Twitter: <a href="http://twitter.com/leeturner" title="Lee Turner on Twitter">Lee Turner on Twitter</a></li>
+<li><a href="http://quamplures.net/" title="Quam Plures">Quam Plures</a></li>
+</ul>
+
+<blockquote>
+  <p><strong>You can download this file and more from the <a href="https://launchpad.net/hackingqp/+download" title="Hacking Quam Plures plugin repository">Hacking Quam Plures plugin repository</a></strong></p>
+</blockquote>
+<div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/quam-plures-plugins/zrssfeed-plugin" title="ZRSSFeed Plugin">ZRSSFeed Plugin</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/quam-plures-plugins/zrssfeed-plugin#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/quam-plures-plugins/?viewmode=_rss2&#38;disp=comments&#38;p=20</wfw:commentRss>
+	</item>
+		<item>
+	<title>Markdown Plugin</title>
+	<link>http://www.hackingquamplures.com/quam-plures-plugins/markdown-plugin</link>
+	<pubDate>Fri, 27 May 2011 13:32:59 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">Text Renderers</category>	<guid isPermaLink="false">19@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Fmarkdown-plugin&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_3/markdown.png&quot; alt=&quot;Markdown Plugin&quot; title=&quot;Markdown Plugin&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt;&lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot; title=&quot;Markdown&quot;&gt;Markdown&lt;/a&gt; is a text-to-HTML conversion tool for web writers created by &lt;a href=&quot;http://daringfireball.net&quot; title=&quot;John Gruber&quot;&gt;John Gruber&lt;/a&gt;. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).  This plugin allows you to write your Quam Plures blog posts using markdown syntax.  When the post is displayed on your site it will be automatically converted to html.&lt;/p&gt;
+
+
+
+&lt;h3&gt;Settings, Settings, &amp;amp; Settings&lt;/h3&gt;
+
+&lt;h4&gt;Plugin Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no plugin settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;User Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no user settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Blog Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no blog settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Widget Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no widget settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;More Info, Credits &amp;amp; Links&lt;/h3&gt;
+
+&lt;h4&gt;More Info:&lt;/h4&gt;
+
+&lt;p&gt;When your markdown is converted into html to be displayed on your blog, the paragraph tags &amp;lt;p&amp;gt; will be included.  Because of this you might want to disable the 'Auto P' plugin that is designed to add the paragraph tags into your posts automatically.&lt;/p&gt;
+
+&lt;h4&gt;Credits:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Author: &lt;a href=&quot;http://www.hackingquamplures.com&quot; title=&quot;Hacking Quam Plures&quot;&gt;Hacking Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;This plugin uses code from the &lt;a href=&quot;http://michelf.com/projects/php-markdown/&quot; title=&quot;PHP Markdown&quot;&gt;PHP Markdown&lt;/a&gt; project by Michel Fortin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Links:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Plugin Homepage: &lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/markdown-plugin&quot; title=&quot;Markdown Plugin&quot;&gt;Markdown Plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/leeturner&quot; title=&quot;Lee Turner on Twitter&quot;&gt;Lee Turner on Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://quamplures.net/&quot; title=&quot;Quam Plures&quot;&gt;Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;You can download this file and more from the &lt;a href=&quot;https://launchpad.net/hackingqp/+download&quot; title=&quot;Hacking Quam Plures plugin repository&quot;&gt;Hacking Quam Plures plugin repository&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/markdown-plugin&quot; title=&quot;Markdown Plugin&quot;&gt;Markdown Plugin&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Fmarkdown-plugin&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_3/markdown.png" alt="Markdown Plugin" title="Markdown Plugin" width="75" height="75" class="spanimage" /></span><a href="http://daringfireball.net/projects/markdown/" title="Markdown">Markdown</a> is a text-to-HTML conversion tool for web writers created by <a href="http://daringfireball.net" title="John Gruber">John Gruber</a>. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).  This plugin allows you to write your Quam Plures blog posts using markdown syntax.  When the post is displayed on your site it will be automatically converted to html.</p>
+
+
+
+<h3>Settings, Settings, &amp; Settings</h3>
+
+<h4>Plugin Settings:</h4>
+
+<ul>
+<li>This plugin has no plugin settings.</li>
+</ul>
+
+<h4>User Settings:</h4>
+
+<ul>
+<li>This plugin has no user settings.</li>
+</ul>
+
+<h4>Blog Settings:</h4>
+
+<ul>
+<li>This plugin has no blog settings.</li>
+</ul>
+
+<h4>Widget Settings:</h4>
+
+<ul>
+<li>This plugin has no widget settings.</li>
+</ul>
+
+<h3>More Info, Credits &amp; Links</h3>
+
+<h4>More Info:</h4>
+
+<p>When your markdown is converted into html to be displayed on your blog, the paragraph tags &lt;p&gt; will be included.  Because of this you might want to disable the 'Auto P' plugin that is designed to add the paragraph tags into your posts automatically.</p>
+
+<h4>Credits:</h4>
+
+<ul>
+<li>Author: <a href="http://www.hackingquamplures.com" title="Hacking Quam Plures">Hacking Quam Plures</a></li>
+<li>This plugin uses code from the <a href="http://michelf.com/projects/php-markdown/" title="PHP Markdown">PHP Markdown</a> project by Michel Fortin</li>
+</ul>
+
+<h4>Links:</h4>
+
+<ul>
+<li>Plugin Homepage: <a href="http://www.hackingquamplures.com/quam-plures-plugins/markdown-plugin" title="Markdown Plugin">Markdown Plugin</a></li>
+<li>Twitter: <a href="http://twitter.com/leeturner" title="Lee Turner on Twitter">Lee Turner on Twitter</a></li>
+<li><a href="http://quamplures.net/" title="Quam Plures">Quam Plures</a></li>
+</ul>
+
+<blockquote>
+  <p><strong>You can download this file and more from the <a href="https://launchpad.net/hackingqp/+download" title="Hacking Quam Plures plugin repository">Hacking Quam Plures plugin repository</a></strong></p>
+</blockquote>
+<div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/quam-plures-plugins/markdown-plugin" title="Markdown Plugin">Markdown Plugin</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/quam-plures-plugins/markdown-plugin#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/quam-plures-plugins/?viewmode=_rss2&#38;disp=comments&#38;p=19</wfw:commentRss>
+	</item>
+		<item>
+	<title>Hello Bar Plugin</title>
+	<link>http://www.hackingquamplures.com/quam-plures-plugins/hello-bar-plugin</link>
+	<pubDate>Wed, 25 May 2011 13:25:00 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">3rd Party Integration</category>	<guid isPermaLink="false">17@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Fhello-bar-plugin&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_3/hellobar.png&quot; alt=&quot;HelloBar&quot; title=&quot;HelloBar&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt;The &lt;a href=&quot;http://www.hellobar.com&quot; title=&quot;Hello Bar&quot;&gt;Hello Bar&lt;/a&gt; is a simple web toolbar that engages users and communicates a call to action. This plugin allows you to add the Hello Bar to your blogs.&lt;/p&gt;
+
+
+
+&lt;h3&gt;Settings, Settings, &amp;amp; Settings&lt;/h3&gt;
+
+&lt;h4&gt;Plugin Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The first hello bar number&lt;/strong&gt;: The first number in the bit that looks like &quot;new HelloBar(1111,2222);&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The second hello bar number&lt;/strong&gt;: The second number in the bit that looks like &quot;new HelloBar(1111,2222);&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NoScript text&lt;/strong&gt;: The Hello Bar is displayed via javascript.  This setting controls what do you want displayed if the user has javascript turned off?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Location of hello bar code&lt;/strong&gt;: This setting controls where on your blog you want the Hello Bar code to go.  You can choose just after the &amp;lt;body&amp;gt; tag or just before the &amp;lt;/body&amp;gt; tag. If you are not sure then leave it just before the &amp;lt;/body&amp;gt; tag.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;User Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no user settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Blog Settings:&lt;/h4&gt;
+
+&lt;p&gt;This plugin provides the same blog settings as the plugin settings to enable you to specify a different hello bar on each of your blogs.  There is also an extra setting in the blog settings to allow you to enable or disable hello bar on a per blog basis.  For example - if you have 6 blogs on your installation and you want the same hello bar on all but two of them, specify that hello bar in the plugin settings and override it for the other two by using the blog settings.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Enable Hello Bar&lt;/strong&gt;: Use this to enable or disable Hello Bar on a per blog basis.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The first hello bar number&lt;/strong&gt;: The first number in the bit that looks like &quot;new HelloBar(1111,2222);&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The second hello bar number&lt;/strong&gt;: The second number in the bit that looks like &quot;new HelloBar(1111,2222);&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NoScript text&lt;/strong&gt;: The Hello Bar is displayed via javascript.  This setting controls what do you want displayed if the user has javascript turned off?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Location of hello bar code&lt;/strong&gt;: This setting controls where on your blog you want the Hello Bar code to go.  You can choose just after the &amp;lt;body&amp;gt; tag or just before the &amp;lt;/body&amp;gt; tag. If you are not sure then leave it just before the &amp;lt;/body&amp;gt; tag.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Widget Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no widget settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;More Info, Credits &amp;amp; Links&lt;/h3&gt;
+
+&lt;h4&gt;More Info:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No additional information provided by the author.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Credits:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Author: &lt;a href=&quot;http://www.hackingquamplures.com&quot; title=&quot;Hacking Quam Plures&quot;&gt;Hacking Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Links:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Plugin Homepage: &lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/hello-bar-plugin&quot; title=&quot;HelloBar Plugin&quot;&gt;HelloBar Plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/leeturner&quot; title=&quot;Lee Turner on Twitter&quot;&gt;Lee Turner on Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://quamplures.net/&quot; title=&quot;Quam Plures&quot;&gt;Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;You can download this file and more from the &lt;a href=&quot;https://launchpad.net/hackingqp/+download&quot; title=&quot;Hacking Quam Plures plugin repository&quot;&gt;Hacking Quam Plures plugin repository&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/hello-bar-plugin&quot; title=&quot;Hello Bar Plugin&quot;&gt;Hello Bar Plugin&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Fhello-bar-plugin&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_3/hellobar.png" alt="HelloBar" title="HelloBar" width="75" height="75" class="spanimage" /></span>The <a href="http://www.hellobar.com" title="Hello Bar">Hello Bar</a> is a simple web toolbar that engages users and communicates a call to action. This plugin allows you to add the Hello Bar to your blogs.</p>
+
+
+
+<h3>Settings, Settings, &amp; Settings</h3>
+
+<h4>Plugin Settings:</h4>
+
+<ul>
+<li><strong>The first hello bar number</strong>: The first number in the bit that looks like "new HelloBar(1111,2222);</li>
+<li><strong>The second hello bar number</strong>: The second number in the bit that looks like "new HelloBar(1111,2222);</li>
+<li><strong>NoScript text</strong>: The Hello Bar is displayed via javascript.  This setting controls what do you want displayed if the user has javascript turned off?</li>
+<li><strong>Location of hello bar code</strong>: This setting controls where on your blog you want the Hello Bar code to go.  You can choose just after the &lt;body&gt; tag or just before the &lt;/body&gt; tag. If you are not sure then leave it just before the &lt;/body&gt; tag.</li>
+</ul>
+
+<h4>User Settings:</h4>
+
+<ul>
+<li>This plugin has no user settings.</li>
+</ul>
+
+<h4>Blog Settings:</h4>
+
+<p>This plugin provides the same blog settings as the plugin settings to enable you to specify a different hello bar on each of your blogs.  There is also an extra setting in the blog settings to allow you to enable or disable hello bar on a per blog basis.  For example - if you have 6 blogs on your installation and you want the same hello bar on all but two of them, specify that hello bar in the plugin settings and override it for the other two by using the blog settings.</p>
+
+<ul>
+<li><strong>Enable Hello Bar</strong>: Use this to enable or disable Hello Bar on a per blog basis.</li>
+<li><strong>The first hello bar number</strong>: The first number in the bit that looks like "new HelloBar(1111,2222);</li>
+<li><strong>The second hello bar number</strong>: The second number in the bit that looks like "new HelloBar(1111,2222);</li>
+<li><strong>NoScript text</strong>: The Hello Bar is displayed via javascript.  This setting controls what do you want displayed if the user has javascript turned off?</li>
+<li><strong>Location of hello bar code</strong>: This setting controls where on your blog you want the Hello Bar code to go.  You can choose just after the &lt;body&gt; tag or just before the &lt;/body&gt; tag. If you are not sure then leave it just before the &lt;/body&gt; tag.</li>
+</ul>
+
+<h4>Widget Settings:</h4>
+
+<ul>
+<li>This plugin has no widget settings.</li>
+</ul>
+
+<h3>More Info, Credits &amp; Links</h3>
+
+<h4>More Info:</h4>
+
+<ul>
+<li>No additional information provided by the author.</li>
+</ul>
+
+<h4>Credits:</h4>
+
+<ul>
+<li>Author: <a href="http://www.hackingquamplures.com" title="Hacking Quam Plures">Hacking Quam Plures</a></li>
+</ul>
+
+<h4>Links:</h4>
+
+<ul>
+<li>Plugin Homepage: <a href="http://www.hackingquamplures.com/quam-plures-plugins/hello-bar-plugin" title="HelloBar Plugin">HelloBar Plugin</a></li>
+<li>Twitter: <a href="http://twitter.com/leeturner" title="Lee Turner on Twitter">Lee Turner on Twitter</a></li>
+<li><a href="http://quamplures.net/" title="Quam Plures">Quam Plures</a></li>
+</ul>
+
+<blockquote>
+  <p><strong>You can download this file and more from the <a href="https://launchpad.net/hackingqp/+download" title="Hacking Quam Plures plugin repository">Hacking Quam Plures plugin repository</a></strong></p>
+</blockquote>
+<div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/quam-plures-plugins/hello-bar-plugin" title="Hello Bar Plugin">Hello Bar Plugin</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/quam-plures-plugins/hello-bar-plugin#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/quam-plures-plugins/?viewmode=_rss2&#38;disp=comments&#38;p=17</wfw:commentRss>
+	</item>
+		<item>
+	<title>Up and Coming Plugins</title>
+	<link>http://www.hackingquamplures.com/hackblog/up-and-coming-plugins</link>
+	<pubDate>Tue, 24 May 2011 18:25:08 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">Plugins</category>	<guid isPermaLink="false">16@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fup-and-coming-plugins&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/plugins.jpg&quot; alt=&quot;Plugins&quot; title=&quot;Plugins&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt;Things have been a little hectic in my work life over the past few months so, much to my disappointment, work on QP has been a little non existent.  However, on the up side, pretty much all the new sites I put together are now built with QP so I am getting chance to give it a really good road test and figure out what plugins I need.  I try where ever possible to use formal releases of QP (other than this blog which normally has the most recent dev version) so they are all running version 0.0.0.  It is proving to be a really stable build with a few bugs being found and pretty much already fixed on Launchpad.&lt;/p&gt;
+
+&lt;p&gt;So, in this post I thought I would give you a quick update as to the &lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/&quot; title=&quot;Quam Plures Plugins&quot;&gt;Quam Plures plugins&lt;/a&gt; that I am going to be releasing over the next week or two.&lt;/p&gt;
+
+
+
+&lt;h3&gt;Markdown Plugin&lt;/h3&gt;
+
+&lt;p&gt;If you are not familiar with &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot; title=&quot;Markdown&quot;&gt;Markdown&lt;/a&gt; by &lt;a href=&quot;http://daringfireball.net&quot; title=&quot;John Gruber&quot;&gt;John Gruber&lt;/a&gt; then I recommend you stop reading this now and head on over to his site and get reading.  Markdown is a text-to-HTML conversion tool for writers and it allows you to write using an easy-to-read, easy-to-write plain text format then convert it to, amongst other things, structurally valid XHTML (or HTML).&lt;/p&gt;
+
+&lt;p&gt;Pretty much all of the writing I do now is in the Markdown format (including this blog post) so as you can imagine, the Markdown plugin allows you to write your blog posts in the Markdown format and have them rendered in HTML at display time.&lt;/p&gt;
+
+&lt;h3&gt;Hello Bar Plugin&lt;/h3&gt;
+
+&lt;p&gt;The Hello Bar is a simple web toolbar that engages users and communicates a call to action. You can find out more at the &lt;a href=&quot;http://www.hellobar.com&quot; title=&quot;Hello Bar&quot;&gt;Hello Bar&lt;/a&gt; website.  This plugin allows you to add the hello bar to your QP website and enable or disable on a per blog basis and even display different hello bars on different blogs.&lt;/p&gt;
+
+&lt;h3&gt;zRSS Feed Plugin&lt;/h3&gt;
+
+&lt;p&gt;One of my little side projects has been to set up my own URL bookmarking site (more on that in a separate post) and as part of that project I wanted to display feeds from other popular social bookmarking sites.  I wanted something nice and simple and found a little JQuery project that did just what I wanted.  This plugin will allow you to add rss feeds to your blog posts in a nice, easy, convenient way.&lt;/p&gt;
+
+&lt;h3&gt;Base URL Plugin&lt;/h3&gt;
+
+&lt;p&gt;This is a really simple plugin that just replaces a placeholder with the base url of your website.  This plugin came about because I wanted a way to use the same content (like privacy policy and terms and conditions) across multiple sites and I didn't want to have to worry about changing the URLs every time.&lt;/p&gt;
+
+&lt;p&gt;Well, that's about it for now.  Keep an eye on the blog for when these plugins are released.&lt;/p&gt;
+
+&lt;div class=&quot;photo_credit&quot;&gt;Photo credit: &lt;a rel=&quot;nofollow&quot; href=&quot;http://www.flickr.com/photos/39747297@N05/5229733647&quot;&gt; Samuel M. Livingston &lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/hackblog/up-and-coming-plugins&quot; title=&quot;Up and Coming Plugins&quot;&gt;Up and Coming Plugins&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fup-and-coming-plugins&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_2/plugins.jpg" alt="Plugins" title="Plugins" width="75" height="75" class="spanimage" /></span>Things have been a little hectic in my work life over the past few months so, much to my disappointment, work on QP has been a little non existent.  However, on the up side, pretty much all the new sites I put together are now built with QP so I am getting chance to give it a really good road test and figure out what plugins I need.  I try where ever possible to use formal releases of QP (other than this blog which normally has the most recent dev version) so they are all running version 0.0.0.  It is proving to be a really stable build with a few bugs being found and pretty much already fixed on Launchpad.</p>
+
+<p>So, in this post I thought I would give you a quick update as to the <a href="http://www.hackingquamplures.com/quam-plures-plugins/" title="Quam Plures Plugins">Quam Plures plugins</a> that I am going to be releasing over the next week or two.</p>
+
+
+
+<h3>Markdown Plugin</h3>
+
+<p>If you are not familiar with <a href="http://daringfireball.net/projects/markdown/" title="Markdown">Markdown</a> by <a href="http://daringfireball.net" title="John Gruber">John Gruber</a> then I recommend you stop reading this now and head on over to his site and get reading.  Markdown is a text-to-HTML conversion tool for writers and it allows you to write using an easy-to-read, easy-to-write plain text format then convert it to, amongst other things, structurally valid XHTML (or HTML).</p>
+
+<p>Pretty much all of the writing I do now is in the Markdown format (including this blog post) so as you can imagine, the Markdown plugin allows you to write your blog posts in the Markdown format and have them rendered in HTML at display time.</p>
+
+<h3>Hello Bar Plugin</h3>
+
+<p>The Hello Bar is a simple web toolbar that engages users and communicates a call to action. You can find out more at the <a href="http://www.hellobar.com" title="Hello Bar">Hello Bar</a> website.  This plugin allows you to add the hello bar to your QP website and enable or disable on a per blog basis and even display different hello bars on different blogs.</p>
+
+<h3>zRSS Feed Plugin</h3>
+
+<p>One of my little side projects has been to set up my own URL bookmarking site (more on that in a separate post) and as part of that project I wanted to display feeds from other popular social bookmarking sites.  I wanted something nice and simple and found a little JQuery project that did just what I wanted.  This plugin will allow you to add rss feeds to your blog posts in a nice, easy, convenient way.</p>
+
+<h3>Base URL Plugin</h3>
+
+<p>This is a really simple plugin that just replaces a placeholder with the base url of your website.  This plugin came about because I wanted a way to use the same content (like privacy policy and terms and conditions) across multiple sites and I didn't want to have to worry about changing the URLs every time.</p>
+
+<p>Well, that's about it for now.  Keep an eye on the blog for when these plugins are released.</p>
+
+<div class="photo_credit">Photo credit: <a rel="nofollow" href="http://www.flickr.com/photos/39747297@N05/5229733647"> Samuel M. Livingston </a></div>
+<div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/hackblog/up-and-coming-plugins" title="Up and Coming Plugins">Up and Coming Plugins</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/hackblog/up-and-coming-plugins#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/hackblog/?viewmode=_rss2&#38;disp=comments&#38;p=16</wfw:commentRss>
+	</item>
+		<item>
+	<title>Tweetmeme Follow Button Plugin</title>
+	<link>http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-follow-button-plugin</link>
+	<pubDate>Wed, 18 May 2011 11:26:09 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">3rd Party Integration</category>	<guid isPermaLink="false">15@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Ftweetmeme-follow-button-plugin&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_3/tweetmeme.png&quot; alt=&quot;tweetmeme&quot; title=&quot;tweetmeme&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt;The Follow Button is a new and innovative way to provide a simple button to allow your readers to follow you on Twitter. The button includes the ability for your readers to see your reach or influence through Twitter Grader, your engagement through Twitalyzer and your growth through Twitter Counter.  This plugin allows you to add the Tweetmeme follow button to your site.  It is implemented as a widget so you can place it in any container.&lt;/p&gt;
+
+
+
+&lt;h3&gt;Settings, Settings, &amp;amp; Settings&lt;/h3&gt;
+
+&lt;h4&gt;Plugin Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no plugin settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;User Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no user settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Blog Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no blog settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Widget Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Twitter username:&lt;/strong&gt;  This is the username of the Twitter account.  &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Style:&lt;/strong&gt; Normal, Compact or Square.  Go here to see what the different styles look like - http://help.tweetmeme.com/2010/02/23/follow-button/&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Square Size&lt;/strong&gt; If you have selected &quot;Square&quot; as the style, enter how big you would like the square to be.  If empty it defaults to 32&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;More Info, Credits &amp;amp; Links&lt;/h3&gt;
+
+&lt;h4&gt;More Info:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;I&amp;#8217;m seeing a ? instead of my Twitter profile picture, what do I do?&lt;/strong&gt;: This means that you haven&amp;#8217;t set the twitter username in the widget settings. &lt;/li&gt;
+&lt;li&gt;As this is implemented as a widget you can add multiple instances to your site and each of them can have different settings.  For example, if your blog is dedicated to a team of people, each person could have their own tweetmeme follow button.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Credits:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Author: &lt;a href=&quot;http://www.hackingquamplures.com&quot; title=&quot;Hacking Quam Plures&quot;&gt;Hacking Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Links:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Plugin Homepage: &lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-follow-button-plugin&quot; title=&quot;Tweetmeme Follow Button Plugin&quot;&gt;Tweetmeme Follow Button Plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/leeturner&quot; title=&quot;Lee Turner on Twitter&quot;&gt;Lee Turner on Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://quamplures.net/&quot; title=&quot;Quam Plures&quot;&gt;Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;You can download this file and more from the &lt;a href=&quot;https://launchpad.net/hackingqp/+download&quot; title=&quot;Hacking Quam Plures plugin repository&quot;&gt;Hacking Quam Plures plugin repository&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-follow-button-plugin&quot; title=&quot;Tweetmeme Follow Button Plugin&quot;&gt;Tweetmeme Follow Button Plugin&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Ftweetmeme-follow-button-plugin&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_3/tweetmeme.png" alt="tweetmeme" title="tweetmeme" width="75" height="75" class="spanimage" /></span>The Follow Button is a new and innovative way to provide a simple button to allow your readers to follow you on Twitter. The button includes the ability for your readers to see your reach or influence through Twitter Grader, your engagement through Twitalyzer and your growth through Twitter Counter.  This plugin allows you to add the Tweetmeme follow button to your site.  It is implemented as a widget so you can place it in any container.</p>
+
+
+
+<h3>Settings, Settings, &amp; Settings</h3>
+
+<h4>Plugin Settings:</h4>
+
+<ul>
+<li>This plugin has no plugin settings.</li>
+</ul>
+
+<h4>User Settings:</h4>
+
+<ul>
+<li>This plugin has no user settings.</li>
+</ul>
+
+<h4>Blog Settings:</h4>
+
+<ul>
+<li>This plugin has no blog settings.</li>
+</ul>
+
+<h4>Widget Settings:</h4>
+
+<ul>
+<li><strong>Twitter username:</strong>  This is the username of the Twitter account.  </li>
+<li><strong>Style:</strong> Normal, Compact or Square.  Go here to see what the different styles look like - http://help.tweetmeme.com/2010/02/23/follow-button/</li>
+<li><strong>Square Size</strong> If you have selected "Square" as the style, enter how big you would like the square to be.  If empty it defaults to 32</li>
+</ul>
+
+<h3>More Info, Credits &amp; Links</h3>
+
+<h4>More Info:</h4>
+
+<ul>
+<li><strong>I&#8217;m seeing a ? instead of my Twitter profile picture, what do I do?</strong>: This means that you haven&#8217;t set the twitter username in the widget settings. </li>
+<li>As this is implemented as a widget you can add multiple instances to your site and each of them can have different settings.  For example, if your blog is dedicated to a team of people, each person could have their own tweetmeme follow button.</li>
+</ul>
+
+<h4>Credits:</h4>
+
+<ul>
+<li>Author: <a href="http://www.hackingquamplures.com" title="Hacking Quam Plures">Hacking Quam Plures</a></li>
+</ul>
+
+<h4>Links:</h4>
+
+<ul>
+<li>Plugin Homepage: <a href="http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-follow-button-plugin" title="Tweetmeme Follow Button Plugin">Tweetmeme Follow Button Plugin</a></li>
+<li>Twitter: <a href="http://twitter.com/leeturner" title="Lee Turner on Twitter">Lee Turner on Twitter</a></li>
+<li><a href="http://quamplures.net/" title="Quam Plures">Quam Plures</a></li>
+</ul>
+
+<blockquote>
+  <p><strong>You can download this file and more from the <a href="https://launchpad.net/hackingqp/+download" title="Hacking Quam Plures plugin repository">Hacking Quam Plures plugin repository</a></strong></p>
+</blockquote>
+<div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-follow-button-plugin" title="Tweetmeme Follow Button Plugin">Tweetmeme Follow Button Plugin</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-follow-button-plugin#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/quam-plures-plugins/?viewmode=_rss2&#38;disp=comments&#38;p=15</wfw:commentRss>
+	</item>
+		<item>
+	<title>Version 0.2 of the Webmaster Plugin</title>
+	<link>http://www.hackingquamplures.com/hackblog/version-0-2-of-the-webmaster-plugin</link>
+	<pubDate>Mon, 16 May 2011 13:24:12 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">Plugins</category>	<guid isPermaLink="false">13@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fversion-0-2-of-the-webmaster-plugin&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_3/analytics.jpg&quot; alt=&quot;Webmaster Plugin&quot; title=&quot;Webmaster Plugin&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt; Version 0.2 of the &lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/webmaster-plugin&quot;&gt;Webmaster Plugin&lt;/a&gt; has just been released.  This version brings two simple changes to the Google Analytics settings of the plugin, which basically allow you to better position the analytics code and allow you to integrate the new site speed report.  The new features are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You now have the option to include the analytics code in the &amp;lt;head&amp;gt; section of your site.&lt;/li&gt;
+&lt;li&gt;Google have recently released the option for Google Analytics to track the page load speeds of your site.  Extra code is needed in your sites pages to do this and this release of the plugin allows you to add that code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To read more about the new site speed report in Google Analytics, see the post on the analytics blog: &lt;a href=&quot;http://analytics.blogspot.com/2011/05/measure-page-load-time-with-site-speed.html&quot;&gt;Measure Page Load Time with Site Speed Analytics Report&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can download this plugin from the &lt;a href=&quot;https://launchpad.net/hackingqp/+download&quot;&gt;Hacking Quam Plures plugin repository&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Enjoy &lt;img src=&quot;http://www.hackingquamplures.com/qp_rsc/smilies/smiley.png&quot; alt=&quot;&amp;#58;&amp;#41;&quot; class=&quot;middle&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/hackblog/version-0-2-of-the-webmaster-plugin&quot; title=&quot;Version 0.2 of the Webmaster Plugin&quot;&gt;Version 0.2 of the Webmaster Plugin&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fversion-0-2-of-the-webmaster-plugin&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_3/analytics.jpg" alt="Webmaster Plugin" title="Webmaster Plugin" width="75" height="75" class="spanimage" /></span> Version 0.2 of the <a href="http://www.hackingquamplures.com/quam-plures-plugins/webmaster-plugin">Webmaster Plugin</a> has just been released.  This version brings two simple changes to the Google Analytics settings of the plugin, which basically allow you to better position the analytics code and allow you to integrate the new site speed report.  The new features are:</p>
+
+<ul>
+<li>You now have the option to include the analytics code in the &lt;head&gt; section of your site.</li>
+<li>Google have recently released the option for Google Analytics to track the page load speeds of your site.  Extra code is needed in your sites pages to do this and this release of the plugin allows you to add that code.</li>
+</ul>
+
+<p>To read more about the new site speed report in Google Analytics, see the post on the analytics blog: <a href="http://analytics.blogspot.com/2011/05/measure-page-load-time-with-site-speed.html">Measure Page Load Time with Site Speed Analytics Report</a></p>
+
+<p>You can download this plugin from the <a href="https://launchpad.net/hackingqp/+download">Hacking Quam Plures plugin repository</a></p>
+
+<p>Enjoy <img src="http://www.hackingquamplures.com/qp_rsc/smilies/smiley.png" alt="&#58;&#41;" class="middle" /></p>
+<div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/hackblog/version-0-2-of-the-webmaster-plugin" title="Version 0.2 of the Webmaster Plugin">Version 0.2 of the Webmaster Plugin</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/hackblog/version-0-2-of-the-webmaster-plugin#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/hackblog/?viewmode=_rss2&#38;disp=comments&#38;p=13</wfw:commentRss>
+	</item>
+		<item>
+	<title>Hacking the Admin Look and Feel</title>
+	<link>http://www.hackingquamplures.com/hackblog/hacking-the-admin-look-and-feel</link>
+	<pubDate>Wed, 08 Dec 2010 20:36:31 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="alt">Core</category>
+<category domain="main">Admin</category>	<guid isPermaLink="false">12@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fhacking-the-admin-look-and-feel&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/paint.jpg&quot; alt=&quot;paint&quot; title=&quot;paint&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt;Just like many other aspects of &lt;strong&gt;Quam Plures&lt;/strong&gt;, the admin console has changed significantly since we departed from b2evolution 3.3.3.  We have moved settings around to allow them to be grouped more logically together and totally removed all the blue from the old admin look and feel.  This left us with something that looked like this:&lt;/p&gt;
+
+
+
+&lt;div class=&quot;image_block&quot;&gt;&lt;a class=&quot;fancybox&quot; href=&quot;http://www.hackingquamplures.com/media/blogs/id_2/admin1.png&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/admin1-small.png&quot; alt=&quot;Old Admin Look and Feel&quot; title=&quot;Old Admin Look and Feel&quot; width=&quot;345&quot; height=&quot;183&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;OK, it works, it is functional but after I had been using the admin console for a number of weeks I noticed that my eyes were always drawn immediately to the dark headers and not to the parts of the screen that I actually wanted to work with (writing content or changing settings for example).  I therefore set off to tone it down a little bit and make it a little more pleasing to the eye - well, to my eyes anyway &lt;img src=&quot;http://www.hackingquamplures.com/qp_rsc/smilies/smiley-wink.png&quot; alt=&quot;&amp;#59;&amp;#41;&quot; class=&quot;middle&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My main goal was for my eyes to be immediately drawn to the parts of the screen I wanted to work with and for the rest of the screen to just blend away into the background and not be distracting.  I decided to keep the grey look and feel as it wasn't offensive in any way (admittedly it made the whole admin console look a little, well, grey really but hey, it worked for me) and started to make the colour shifts in a lot more subtle.  Anyway, a long story short here is what I ended up with:&lt;/p&gt;
+
+&lt;div class=&quot;image_block&quot;&gt;&lt;a class=&quot;fancybox&quot; href=&quot;http://www.hackingquamplures.com/media/blogs/id_2/admin2.png&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/admin2-small.png&quot; alt=&quot;Toned Down&quot; title=&quot;Toned Down&quot; width=&quot;345&quot; height=&quot;183&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;Now, the main down side to this new look and feel is that the contrast is a lot less between all the different screen elements and for some people this may be a little hard to work with.  However, on the up side, this new look and feel provides a great basis to work from for creating new colour schemes like this one:&lt;/p&gt;
+
+&lt;div class=&quot;image_block&quot;&gt;&lt;a class=&quot;fancybox&quot; href=&quot;http://www.hackingquamplures.com/media/blogs/id_2/admin3.png&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/admin3-small.png&quot; alt=&quot;Admin On Fire&quot; title=&quot;Admin On Fire&quot; width=&quot;345&quot; height=&quot;183&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;Again, it might not be to everyone's taste but it certainly has contrast &lt;img src=&quot;http://www.hackingquamplures.com/qp_rsc/smilies/smiley.png&quot; alt=&quot;&amp;#58;&amp;#41;&quot; class=&quot;middle&quot; /&gt;  The problem when we are making look and feel changes instead of functionality changes is that we are never going to meet everyone's tastes but hitting a middle ground would be good.  An interesting project would be a total redesign of the admin console...... but that is for a different day.&lt;/p&gt;
+
+&lt;div class=&quot;photo_credit&quot;&gt;Photo credit: &lt;a rel=&quot;nofollow&quot; href=&quot;http://www.flickr.com/photos/murtazabravo/1016644248/&quot;&gt; murtazabravo &lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/hackblog/hacking-the-admin-look-and-feel&quot; title=&quot;Hacking the Admin Look and Feel&quot;&gt;Hacking the Admin Look and Feel&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fhacking-the-admin-look-and-feel&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_2/paint.jpg" alt="paint" title="paint" width="75" height="75" class="spanimage" /></span>Just like many other aspects of <strong>Quam Plures</strong>, the admin console has changed significantly since we departed from b2evolution 3.3.3.  We have moved settings around to allow them to be grouped more logically together and totally removed all the blue from the old admin look and feel.  This left us with something that looked like this:</p>
+
+
+
+<div class="image_block"><a class="fancybox" href="http://www.hackingquamplures.com/media/blogs/id_2/admin1.png"><img src="http://www.hackingquamplures.com/media/blogs/id_2/admin1-small.png" alt="Old Admin Look and Feel" title="Old Admin Look and Feel" width="345" height="183" /></a></div><p> </p>
+
+<p>OK, it works, it is functional but after I had been using the admin console for a number of weeks I noticed that my eyes were always drawn immediately to the dark headers and not to the parts of the screen that I actually wanted to work with (writing content or changing settings for example).  I therefore set off to tone it down a little bit and make it a little more pleasing to the eye - well, to my eyes anyway <img src="http://www.hackingquamplures.com/qp_rsc/smilies/smiley-wink.png" alt="&#59;&#41;" class="middle" /></p>
+
+<p>My main goal was for my eyes to be immediately drawn to the parts of the screen I wanted to work with and for the rest of the screen to just blend away into the background and not be distracting.  I decided to keep the grey look and feel as it wasn't offensive in any way (admittedly it made the whole admin console look a little, well, grey really but hey, it worked for me) and started to make the colour shifts in a lot more subtle.  Anyway, a long story short here is what I ended up with:</p>
+
+<div class="image_block"><a class="fancybox" href="http://www.hackingquamplures.com/media/blogs/id_2/admin2.png"><img src="http://www.hackingquamplures.com/media/blogs/id_2/admin2-small.png" alt="Toned Down" title="Toned Down" width="345" height="183" /></a></div><p> </p>
+
+<p>Now, the main down side to this new look and feel is that the contrast is a lot less between all the different screen elements and for some people this may be a little hard to work with.  However, on the up side, this new look and feel provides a great basis to work from for creating new colour schemes like this one:</p>
+
+<div class="image_block"><a class="fancybox" href="http://www.hackingquamplures.com/media/blogs/id_2/admin3.png"><img src="http://www.hackingquamplures.com/media/blogs/id_2/admin3-small.png" alt="Admin On Fire" title="Admin On Fire" width="345" height="183" /></a></div><p> </p>
+
+<p>Again, it might not be to everyone's taste but it certainly has contrast <img src="http://www.hackingquamplures.com/qp_rsc/smilies/smiley.png" alt="&#58;&#41;" class="middle" />  The problem when we are making look and feel changes instead of functionality changes is that we are never going to meet everyone's tastes but hitting a middle ground would be good.  An interesting project would be a total redesign of the admin console...... but that is for a different day.</p>
+
+<div class="photo_credit">Photo credit: <a rel="nofollow" href="http://www.flickr.com/photos/murtazabravo/1016644248/"> murtazabravo </a></div><div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/hackblog/hacking-the-admin-look-and-feel" title="Hacking the Admin Look and Feel">Hacking the Admin Look and Feel</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/hackblog/hacking-the-admin-look-and-feel#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/hackblog/?viewmode=_rss2&#38;disp=comments&#38;p=12</wfw:commentRss>
+	</item>
+		<item>
+	<title>Tweetmeme Plugin</title>
+	<link>http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-plugin</link>
+	<pubDate>Thu, 28 Oct 2010 16:06:21 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">3rd Party Integration</category>	<guid isPermaLink="false">8@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;tweetmeme_plugin tweetmeme_right&quot;&gt;&lt;script type=&quot;text/javascript&quot;&gt;tweetmeme_url = 'http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-plugin';tweetmeme_service = 'bit.ly';tweetmeme_source = 'leeturner';tweetmeme_style = 'compact';tweetmeme_hashtags = 'quamplures';&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;http://tweetmeme.com/i/scripts/button.js&quot;&gt;&lt;/script&gt;&lt;/div&gt;&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Ftweetmeme-plugin&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_3/tweetmeme.png&quot; alt=&quot;tweetmeme&quot; title=&quot;tweetmeme&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt;The Tweetmeme retweet button is for website and blog publishers that want to encourage their audience to retweet their content on twitter.  The Tweetmeme plugin will place the Tweetmeme retweet badge in your blog posts&lt;/p&gt;
+
+
+
+&lt;h3&gt;Settings, Settings, &amp;amp; Settings&lt;/h3&gt;
+
+&lt;h4&gt;Plugin Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Twitter username:&lt;/strong&gt;  This is the username of the Twitter account.  Leave this blank to get a retweet of &quot;RT @tweetmeme &amp;lt;title&amp;gt; &amp;lt;link&amp;gt;&quot;. Fill it in and get &quot;RT @yourname &amp;lt;title&amp;gt; &amp;lt;link&amp;gt; (via @tweetmeme)&quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Style:&lt;/strong&gt; Normal or Compact.  Go here to see what the different styles look like - http://tweetmeme.com/static.php?page=button&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Top or Bottom:&lt;/strong&gt; Do you want the Tweetmeme retweet badge at the top or bottom of your blog posts?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Left or Right:&lt;/strong&gt; Do you want the Tweetmeme retweet badge to the left or right hand side of your blog posts?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL Shortener:&lt;/strong&gt; Choose which URL shortener you want to use&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;API Key:&lt;/strong&gt; If your URL shortener has an api key (for your own account) enter it here&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Default Hashtags:&lt;/strong&gt; A comma separated list of default hashtags to add to the end of the tweet.  You don't need the # as these will be added for you.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Spaces:&lt;/strong&gt; The amount of empty space to leave at the end of the tweet.  A number between 0 - 30.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;User Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no user settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Blog Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no blog settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Widget Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no widget settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;More Info, Credits &amp;amp; Links&lt;/h3&gt;
+
+&lt;h4&gt;More Info:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When a post is displayed with the Tweetmeme retweet badge included the whole thing is cached by b2evolution to make displaying the post faster in the future.  Therefore if you want to change the location of the retweet badge using the above settings you will need to clear the cache before the changes will be reflected in your posts.  You can do this by going to the Tools -&gt; Misc tab and clicking on the link called 'Delete pre-renderered item cache'.&lt;/li&gt;
+&lt;li&gt;If your Tweetmeme retweet badge is not looking or working like you expect then please head over to the &lt;a href=&quot;http://help.tweetmeme.com/2009/04/15/button-faq&quot; title=&quot;Tweetmeme Button FAQ&quot;&gt;Tweetmeme FAQ page&lt;/a&gt;.  This will answer a few of the comon questions like why you are seeing a ? in your retweet badge and why the retweet badge is white and not green.  If you can't find an answer there then head over to the &lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-plugin&quot; title=&quot;Tweetmeme Plugin&quot;&gt;plugin homepage&lt;/a&gt; and post a question to the blog and I will try to answer it the best I can.&lt;/li&gt;
+&lt;li&gt;The position of the Tweetmeme retweet badge is controlled by its own custom css file that ships with the plugin.  This css file can be found in the folder &lt;em&gt;/plugins/tweetmeme_plugin/css/tweetmeme.css&lt;/em&gt; and can be edited to further tweak the position of the badge in your specific skin.  The whole badge is wrapped in a div with a class called &lt;em&gt;tweetmeme_plugin&lt;/em&gt; and the left and right possitions are controlled with classes called &lt;em&gt;tweetmeme_left&lt;/em&gt; and &lt;em&gt;tweetmeme_right&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Credits:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Author: &lt;a href=&quot;http://www.hackingquamplures.com&quot; title=&quot;Hacking Quam Plures&quot;&gt;Hacking Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Links:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Plugin Homepage: &lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-plugin&quot; title=&quot;Tweetmeme Plugin&quot;&gt;Tweetmeme Plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/leeturner&quot; title=&quot;Lee Turner on Twitter&quot;&gt;Lee Turner on Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://quamplures.net/&quot; title=&quot;Quam Plures&quot;&gt;Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;You can download this file and more from the &lt;a href=&quot;https://launchpad.net/hackingqp/+download&quot; title=&quot;Hacking Quam Plures plugin repository&quot;&gt;Hacking Quam Plures plugin repository&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-plugin&quot; title=&quot;Tweetmeme Plugin&quot;&gt;Tweetmeme Plugin&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="tweetmeme_plugin tweetmeme_right"><script type="text/javascript">tweetmeme_url = 'http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-plugin';tweetmeme_service = 'bit.ly';tweetmeme_source = 'leeturner';tweetmeme_style = 'compact';tweetmeme_hashtags = 'quamplures';</script><script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script></div><div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Ftweetmeme-plugin&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_3/tweetmeme.png" alt="tweetmeme" title="tweetmeme" width="75" height="75" class="spanimage" /></span>The Tweetmeme retweet button is for website and blog publishers that want to encourage their audience to retweet their content on twitter.  The Tweetmeme plugin will place the Tweetmeme retweet badge in your blog posts</p>
+
+
+
+<h3>Settings, Settings, &amp; Settings</h3>
+
+<h4>Plugin Settings:</h4>
+
+<ul>
+<li><strong>Twitter username:</strong>  This is the username of the Twitter account.  Leave this blank to get a retweet of "RT @tweetmeme &lt;title&gt; &lt;link&gt;". Fill it in and get "RT @yourname &lt;title&gt; &lt;link&gt; (via @tweetmeme)"</li>
+<li><strong>Style:</strong> Normal or Compact.  Go here to see what the different styles look like - http://tweetmeme.com/static.php?page=button</li>
+<li><strong>Top or Bottom:</strong> Do you want the Tweetmeme retweet badge at the top or bottom of your blog posts?</li>
+<li><strong>Left or Right:</strong> Do you want the Tweetmeme retweet badge to the left or right hand side of your blog posts?</li>
+<li><strong>URL Shortener:</strong> Choose which URL shortener you want to use</li>
+<li><strong>API Key:</strong> If your URL shortener has an api key (for your own account) enter it here</li>
+<li><strong>Default Hashtags:</strong> A comma separated list of default hashtags to add to the end of the tweet.  You don't need the # as these will be added for you.</li>
+<li><strong>Spaces:</strong> The amount of empty space to leave at the end of the tweet.  A number between 0 - 30.</li>
+</ul>
+
+<h4>User Settings:</h4>
+
+<ul>
+<li>This plugin has no user settings.</li>
+</ul>
+
+<h4>Blog Settings:</h4>
+
+<ul>
+<li>This plugin has no blog settings.</li>
+</ul>
+
+<h4>Widget Settings:</h4>
+
+<ul>
+<li>This plugin has no widget settings.</li>
+</ul>
+
+<h3>More Info, Credits &amp; Links</h3>
+
+<h4>More Info:</h4>
+
+<ul>
+<li>When a post is displayed with the Tweetmeme retweet badge included the whole thing is cached by b2evolution to make displaying the post faster in the future.  Therefore if you want to change the location of the retweet badge using the above settings you will need to clear the cache before the changes will be reflected in your posts.  You can do this by going to the Tools -> Misc tab and clicking on the link called 'Delete pre-renderered item cache'.</li>
+<li>If your Tweetmeme retweet badge is not looking or working like you expect then please head over to the <a href="http://help.tweetmeme.com/2009/04/15/button-faq" title="Tweetmeme Button FAQ">Tweetmeme FAQ page</a>.  This will answer a few of the comon questions like why you are seeing a ? in your retweet badge and why the retweet badge is white and not green.  If you can't find an answer there then head over to the <a href="http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-plugin" title="Tweetmeme Plugin">plugin homepage</a> and post a question to the blog and I will try to answer it the best I can.</li>
+<li>The position of the Tweetmeme retweet badge is controlled by its own custom css file that ships with the plugin.  This css file can be found in the folder <em>/plugins/tweetmeme_plugin/css/tweetmeme.css</em> and can be edited to further tweak the position of the badge in your specific skin.  The whole badge is wrapped in a div with a class called <em>tweetmeme_plugin</em> and the left and right possitions are controlled with classes called <em>tweetmeme_left</em> and <em>tweetmeme_right</em>.</li>
+</ul>
+
+<h4>Credits:</h4>
+
+<ul>
+<li>Author: <a href="http://www.hackingquamplures.com" title="Hacking Quam Plures">Hacking Quam Plures</a></li>
+</ul>
+
+<h4>Links:</h4>
+
+<ul>
+<li>Plugin Homepage: <a href="http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-plugin" title="Tweetmeme Plugin">Tweetmeme Plugin</a></li>
+<li>Twitter: <a href="http://twitter.com/leeturner" title="Lee Turner on Twitter">Lee Turner on Twitter</a></li>
+<li><a href="http://quamplures.net/" title="Quam Plures">Quam Plures</a></li>
+</ul>
+
+<blockquote>
+  <p><strong>You can download this file and more from the <a href="https://launchpad.net/hackingqp/+download" title="Hacking Quam Plures plugin repository">Hacking Quam Plures plugin repository</a></strong></p>
+</blockquote>
+<div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-plugin" title="Tweetmeme Plugin">Tweetmeme Plugin</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/quam-plures-plugins/tweetmeme-plugin#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/quam-plures-plugins/?viewmode=_rss2&#38;disp=comments&#38;p=8</wfw:commentRss>
+	</item>
+		<item>
+	<title>Fancybox Plugin</title>
+	<link>http://www.hackingquamplures.com/quam-plures-plugins/fancybox-plugin</link>
+	<pubDate>Sun, 24 Oct 2010 17:40:17 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">Media</category>	<guid isPermaLink="false">7@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Ffancybox-plugin&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_3/square_camera.jpg&quot; alt=&quot;square_camera&quot; title=&quot;square_camera&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt; The Fancybox plugin adds the fancybox media viewer from &lt;a href=&quot;http://www.fancybox.net&quot; title=&quot;Fancybox&quot;&gt;http://www.fancybox.net&lt;/a&gt; to your blog allowing you to use it within your posts.  Here is the description from the fancybox website:  FancyBox is a tool for displaying images, html content and multi-media in a Mac-style &quot;lightbox&quot; that floats overtop of web page.  It was built using the jQuery library. It can display images, HTML elements, SWF movies, Iframes and also Ajax requests&lt;/p&gt;
+
+
+
+&lt;h3&gt;Settings, Settings, &amp;amp; Settings&lt;/h3&gt;
+
+&lt;h4&gt;Plugin Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Enable &quot;mouse-wheel&quot; navigation:&lt;/strong&gt; Using fancybox you can make the media (images etc) in your posts into a gallery.  Tick this setting if you want to allow your visitors to use their mouse-wheel to scroll through your gallery items. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fancybox JQuery Selector:&lt;/strong&gt; The fancybox JQuery selector determines how fancybox will interact with the media on your site.  This plugin comes with two pre-set selectors (see below).  If you know a little about fancybox and JQuery you will be able to further configure fancybox using this setting but you can use it as is if you prefer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;User Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no user settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Blog Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no blog settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Widget Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no widget settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;More Info, Credits &amp;amp; Links&lt;/h3&gt;
+
+&lt;h4&gt;More Info:&lt;/h4&gt;
+
+&lt;p&gt;This plugin comes with two pre-set selectors.  These are:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$(&quot;a.fancybox&quot;).fancybox({
+        'transitionIn'  :   'elastic',
+        'transitionOut' :   'elastic',
+});
+
+$(&quot;a.fancybox_group&quot;).fancybox();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This means that to use fancybox for a single image all you need to do is add a class called 'fancybox' to the link to the image.  Something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a class=&quot;fancybox&quot; href=&quot;http://link-to-larger-image.jpg&quot;&amp;gt;
+    &amp;lt;img src=&quot;http://link-to-thumbnail.jpg&quot; /&amp;gt;
+&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To make a gallery of images all you need to do is add a class called 'fancybox_group' to the links and a rel=&quot;groupname&quot; to define the groups.  Something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a class=&quot;fancybox_group&quot; rel=&quot;group1&quot; href=&quot;http://link-to-larger-image1.jpg&quot;&amp;gt;
+    &amp;lt;img src=&quot;http://link-to-thumbnail1.jpg&quot; /&amp;gt;
+&amp;lt;/a&amp;gt;
+&amp;lt;a class=&quot;fancybox_group&quot; rel=&quot;group1&quot; href=&quot;http://link-to-larger-image2.jpg&quot;&amp;gt;
+    &amp;lt;img src=&quot;http://link-to-thumbnail2.jpg&quot; /&amp;gt;
+&amp;lt;/a&amp;gt;
+&amp;lt;a class=&quot;fancybox_group&quot; rel=&quot;group2&quot; href=&quot;http://link-to-larger-image3.jpg&quot;&amp;gt;
+    &amp;lt;img src=&quot;http://link-to-thumbnail3.jpg&quot; /&amp;gt;
+&amp;lt;/a&amp;gt;
+&amp;lt;a class=&quot;fancybox_group&quot; rel=&quot;group2&quot; href=&quot;http://link-to-larger-image4.jpg&quot;&amp;gt;
+    &amp;lt;img src=&quot;http://link-to-thumbnail4.jpg&quot; /&amp;gt;
+&amp;lt;/a&amp;gt;
+&amp;lt;a class=&quot;fancybox_group&quot; rel=&quot;group2&quot; href=&quot;http://link-to-larger-image5.jpg&quot;&amp;gt;
+    &amp;lt;img src=&quot;http://link-to-thumbnail5.jpg&quot; /&amp;gt;
+&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above html code will create two galleries of images, group1 with two images and group2 with three images.&lt;/p&gt;
+
+&lt;h4&gt;Credits:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Author: &lt;a href=&quot;http://www.hackingquamplures.com&quot; title=&quot;Hacking Quam Plures&quot;&gt;Hacking Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Uses the &lt;a href=&quot;http://www.fancybox.net&quot; title=&quot;Fancybox&quot;&gt;Fancybox Library&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Links:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Plugin Homepage: &lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/fancybox-plugin&quot; title=&quot;Fancybox Plugin&quot;&gt;Fancybox Plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/leeturner&quot; title=&quot;Lee Turner on Twitter&quot;&gt;Lee Turner on Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://quamplures.net/&quot; title=&quot;Quam Plures&quot;&gt;Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;You can download this file and more from the &lt;a href=&quot;https://launchpad.net/hackingqp/+download&quot; title=&quot;Hacking Quam Plures plugin repository&quot;&gt;Hacking Quam Plures plugin repository&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;photo_credit&quot;&gt;Photo credit: &lt;a rel=&quot;nofollow&quot; href=&quot;http://www.flickr.com/photos/alf_sigaro/385406699/&quot;&gt; alf sigaro &lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/fancybox-plugin&quot; title=&quot;Fancybox Plugin&quot;&gt;Fancybox Plugin&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Ffancybox-plugin&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_3/square_camera.jpg" alt="square_camera" title="square_camera" width="75" height="75" class="spanimage" /></span> The Fancybox plugin adds the fancybox media viewer from <a href="http://www.fancybox.net" title="Fancybox">http://www.fancybox.net</a> to your blog allowing you to use it within your posts.  Here is the description from the fancybox website:  FancyBox is a tool for displaying images, html content and multi-media in a Mac-style "lightbox" that floats overtop of web page.  It was built using the jQuery library. It can display images, HTML elements, SWF movies, Iframes and also Ajax requests</p>
+
+
+
+<h3>Settings, Settings, &amp; Settings</h3>
+
+<h4>Plugin Settings:</h4>
+
+<ul>
+<li><strong>Enable "mouse-wheel" navigation:</strong> Using fancybox you can make the media (images etc) in your posts into a gallery.  Tick this setting if you want to allow your visitors to use their mouse-wheel to scroll through your gallery items. </li>
+<li><strong>Fancybox JQuery Selector:</strong> The fancybox JQuery selector determines how fancybox will interact with the media on your site.  This plugin comes with two pre-set selectors (see below).  If you know a little about fancybox and JQuery you will be able to further configure fancybox using this setting but you can use it as is if you prefer.</li>
+</ul>
+
+<h4>User Settings:</h4>
+
+<ul>
+<li>This plugin has no user settings.</li>
+</ul>
+
+<h4>Blog Settings:</h4>
+
+<ul>
+<li>This plugin has no blog settings.</li>
+</ul>
+
+<h4>Widget Settings:</h4>
+
+<ul>
+<li>This plugin has no widget settings.</li>
+</ul>
+
+<h3>More Info, Credits &amp; Links</h3>
+
+<h4>More Info:</h4>
+
+<p>This plugin comes with two pre-set selectors.  These are:</p>
+
+<pre><code>$("a.fancybox").fancybox({
+        'transitionIn'  :   'elastic',
+        'transitionOut' :   'elastic',
+});
+
+$("a.fancybox_group").fancybox();
+</code></pre>
+
+<p>This means that to use fancybox for a single image all you need to do is add a class called 'fancybox' to the link to the image.  Something like this:</p>
+
+<pre><code>&lt;a class="fancybox" href="http://link-to-larger-image.jpg"&gt;
+    &lt;img src="http://link-to-thumbnail.jpg" /&gt;
+&lt;/a&gt;
+</code></pre>
+
+<p>To make a gallery of images all you need to do is add a class called 'fancybox_group' to the links and a rel="groupname" to define the groups.  Something like this:</p>
+
+<pre><code>&lt;a class="fancybox_group" rel="group1" href="http://link-to-larger-image1.jpg"&gt;
+    &lt;img src="http://link-to-thumbnail1.jpg" /&gt;
+&lt;/a&gt;
+&lt;a class="fancybox_group" rel="group1" href="http://link-to-larger-image2.jpg"&gt;
+    &lt;img src="http://link-to-thumbnail2.jpg" /&gt;
+&lt;/a&gt;
+&lt;a class="fancybox_group" rel="group2" href="http://link-to-larger-image3.jpg"&gt;
+    &lt;img src="http://link-to-thumbnail3.jpg" /&gt;
+&lt;/a&gt;
+&lt;a class="fancybox_group" rel="group2" href="http://link-to-larger-image4.jpg"&gt;
+    &lt;img src="http://link-to-thumbnail4.jpg" /&gt;
+&lt;/a&gt;
+&lt;a class="fancybox_group" rel="group2" href="http://link-to-larger-image5.jpg"&gt;
+    &lt;img src="http://link-to-thumbnail5.jpg" /&gt;
+&lt;/a&gt;
+</code></pre>
+
+<p>The above html code will create two galleries of images, group1 with two images and group2 with three images.</p>
+
+<h4>Credits:</h4>
+
+<ul>
+<li>Author: <a href="http://www.hackingquamplures.com" title="Hacking Quam Plures">Hacking Quam Plures</a></li>
+<li>Uses the <a href="http://www.fancybox.net" title="Fancybox">Fancybox Library</a></li>
+</ul>
+
+<h4>Links:</h4>
+
+<ul>
+<li>Plugin Homepage: <a href="http://www.hackingquamplures.com/quam-plures-plugins/fancybox-plugin" title="Fancybox Plugin">Fancybox Plugin</a></li>
+<li>Twitter: <a href="http://twitter.com/leeturner" title="Lee Turner on Twitter">Lee Turner on Twitter</a></li>
+<li><a href="http://quamplures.net/" title="Quam Plures">Quam Plures</a></li>
+</ul>
+
+<blockquote>
+  <p><strong>You can download this file and more from the <a href="https://launchpad.net/hackingqp/+download" title="Hacking Quam Plures plugin repository">Hacking Quam Plures plugin repository</a></strong></p>
+</blockquote>
+
+<div class="photo_credit">Photo credit: <a rel="nofollow" href="http://www.flickr.com/photos/alf_sigaro/385406699/"> alf sigaro </a></div>
+<div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/quam-plures-plugins/fancybox-plugin" title="Fancybox Plugin">Fancybox Plugin</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/quam-plures-plugins/fancybox-plugin#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/quam-plures-plugins/?viewmode=_rss2&#38;disp=comments&#38;p=7</wfw:commentRss>
+	</item>
+		<item>
+	<title>Webmaster Plugin</title>
+	<link>http://www.hackingquamplures.com/quam-plures-plugins/webmaster-plugin</link>
+	<pubDate>Fri, 22 Oct 2010 09:42:45 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">3rd Party Integration</category>	<guid isPermaLink="false">6@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Fwebmaster-plugin&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_3/analytics.jpg&quot; alt=&quot;Webmaster Plugin&quot; title=&quot;Webmaster Plugin&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt; &lt;/p&gt;
+
+&lt;p&gt;The Webmaster Plugin allows you to add verify meta tags from the major search engine webmaster tools along with installing and manage analytics code on your site.  Currently this plugin supports &lt;strong&gt;Google webmaster&lt;/strong&gt; meta tag and &lt;strong&gt;Google Analytics&lt;/strong&gt;.  The meta tags and analytics code will be added to every page on your site and the plugin gives you the ability to control where on your pages the analytics code is places and whether you want to track admin users (that are logged on).&lt;/p&gt;
+
+
+
+&lt;h3&gt;Settings, Settings, &amp;amp; Settings&lt;/h3&gt;
+
+&lt;h4&gt;Plugin Settings:&lt;/h4&gt;
+
+&lt;h5&gt;Meta Tag Options&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Google Webmaster&lt;/strong&gt;: Enter the content of the meta tag as specified in Google Webmaster.  This will look like a string of random letters and numbers.  The bit you are looking for is the content=&quot;&quot; bit in the meta tag: &amp;lt;meta name=&quot;google-site-verification&quot; content=&quot;jfnaDFsadADjdklaskj3v23nbksa34SADK76&quot;/&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Analytics Options&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Google Analytics _uacct / pageTracker code&lt;/strong&gt;: Enter the code you obtained from Google. The code is in the form UA-1234567-1&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Track page load times&lt;/strong&gt;: If this is selected then the google analytics code to track page load speeds will be included.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Location of analytics code&lt;/strong&gt;: Where do you want the analytics code to go? If you are not sure then leave it to in the &amp;lt;head&amp;gt; section. Only applies to your blog, not the admin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add analytics scripts to admin pages&lt;/strong&gt;: If ticked this will add the analytics code to the admin pages.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Track admin users:&lt;/strong&gt; If checked, visits to blog pages by members of admin groups are also tracked.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;User Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no user settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Blog Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no blog settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Widget Settings:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This plugin has no widget settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;More Info, Credits &amp;amp; Links&lt;/h3&gt;
+
+&lt;h4&gt;More Info:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No additional information provided by the author.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Credits:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Author: &lt;a href=&quot;http://www.hackingquamplures.com&quot; title=&quot;Hacking Quam Plures&quot;&gt;Hacking Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;This plugin contains code from the original &lt;a href=&quot;http://www.blog.hemminga.net/index.php/2008/04/30/google-analytics-code-plugin&quot; title=&quot;Google Analytics for b2evo&quot;&gt;Google Analytics plugin for b2evolution&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Links:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Plugin Homepage: &lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/webmaster-plugin&quot; title=&quot;Webmaster Plugin&quot;&gt;Webmaster Plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;http://twitter.com/leeturner&quot; title=&quot;Lee Turner on Twitter&quot;&gt;Lee Turner on Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://quamplures.net/&quot; title=&quot;Quam Plures&quot;&gt;Quam Plures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;You can download this file and more from the &lt;a href=&quot;https://launchpad.net/hackingqp/+download&quot; title=&quot;Hacking Quam Plures plugin repository&quot;&gt;Hacking Quam Plures plugin repository&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;photo_credit&quot;&gt;Photo credit: &lt;a rel=&quot;nofollow&quot; href=&quot;http://www.flickr.com/photos/sepblog/3542294246/&quot;&gt; sepblog &lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/quam-plures-plugins/webmaster-plugin&quot; title=&quot;Webmaster Plugin&quot;&gt;Webmaster Plugin&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fquam-plures-plugins%2Fwebmaster-plugin&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_3/analytics.jpg" alt="Webmaster Plugin" title="Webmaster Plugin" width="75" height="75" class="spanimage" /></span> </p>
+
+<p>The Webmaster Plugin allows you to add verify meta tags from the major search engine webmaster tools along with installing and manage analytics code on your site.  Currently this plugin supports <strong>Google webmaster</strong> meta tag and <strong>Google Analytics</strong>.  The meta tags and analytics code will be added to every page on your site and the plugin gives you the ability to control where on your pages the analytics code is places and whether you want to track admin users (that are logged on).</p>
+
+
+
+<h3>Settings, Settings, &amp; Settings</h3>
+
+<h4>Plugin Settings:</h4>
+
+<h5>Meta Tag Options</h5>
+
+<ul>
+<li><strong>Google Webmaster</strong>: Enter the content of the meta tag as specified in Google Webmaster.  This will look like a string of random letters and numbers.  The bit you are looking for is the content="" bit in the meta tag: &lt;meta name="google-site-verification" content="jfnaDFsadADjdklaskj3v23nbksa34SADK76"/&gt;</li>
+</ul>
+
+<h5>Analytics Options</h5>
+
+<ul>
+<li><strong>Google Analytics _uacct / pageTracker code</strong>: Enter the code you obtained from Google. The code is in the form UA-1234567-1</li>
+<li><strong>Track page load times</strong>: If this is selected then the google analytics code to track page load speeds will be included.</li>
+<li><strong>Location of analytics code</strong>: Where do you want the analytics code to go? If you are not sure then leave it to in the &lt;head&gt; section. Only applies to your blog, not the admin.</li>
+<li><strong>Add analytics scripts to admin pages</strong>: If ticked this will add the analytics code to the admin pages.</li>
+<li><strong>Track admin users:</strong> If checked, visits to blog pages by members of admin groups are also tracked.</li>
+</ul>
+
+<h4>User Settings:</h4>
+
+<ul>
+<li>This plugin has no user settings.</li>
+</ul>
+
+<h4>Blog Settings:</h4>
+
+<ul>
+<li>This plugin has no blog settings.</li>
+</ul>
+
+<h4>Widget Settings:</h4>
+
+<ul>
+<li>This plugin has no widget settings.</li>
+</ul>
+
+<h3>More Info, Credits &amp; Links</h3>
+
+<h4>More Info:</h4>
+
+<ul>
+<li>No additional information provided by the author.</li>
+</ul>
+
+<h4>Credits:</h4>
+
+<ul>
+<li>Author: <a href="http://www.hackingquamplures.com" title="Hacking Quam Plures">Hacking Quam Plures</a></li>
+<li>This plugin contains code from the original <a href="http://www.blog.hemminga.net/index.php/2008/04/30/google-analytics-code-plugin" title="Google Analytics for b2evo">Google Analytics plugin for b2evolution</a>.</li>
+</ul>
+
+<h4>Links:</h4>
+
+<ul>
+<li>Plugin Homepage: <a href="http://www.hackingquamplures.com/quam-plures-plugins/webmaster-plugin" title="Webmaster Plugin">Webmaster Plugin</a></li>
+<li>Twitter: <a href="http://twitter.com/leeturner" title="Lee Turner on Twitter">Lee Turner on Twitter</a></li>
+<li><a href="http://quamplures.net/" title="Quam Plures">Quam Plures</a></li>
+</ul>
+
+<blockquote>
+  <p><strong>You can download this file and more from the <a href="https://launchpad.net/hackingqp/+download" title="Hacking Quam Plures plugin repository">Hacking Quam Plures plugin repository</a></strong></p>
+</blockquote>
+
+<div class="photo_credit">Photo credit: <a rel="nofollow" href="http://www.flickr.com/photos/sepblog/3542294246/"> sepblog </a></div>
+<div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/quam-plures-plugins/webmaster-plugin" title="Webmaster Plugin">Webmaster Plugin</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/quam-plures-plugins/webmaster-plugin#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/quam-plures-plugins/?viewmode=_rss2&#38;disp=comments&#38;p=6</wfw:commentRss>
+	</item>
+		<item>
+	<title>Cleaning up the installer</title>
+	<link>http://www.hackingquamplures.com/hackblog/cleaning-up-the-installer</link>
+	<pubDate>Wed, 20 Oct 2010 13:20:34 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">Core</category>	<guid isPermaLink="false">5@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fcleaning-up-the-installer&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/orange_slice.jpg&quot; alt=&quot;orange_slice&quot; title=&quot;orange_slice&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt;There are still a few things left over from b2evo in the QP code base and one of those things is the installer.  It is still very orange and has the grey gradient images for the background.  It also uses images to make up the bulk of the rounded corners on the page.  Over the past few days I have been working on simplifying the installer and giving it a cleaner look and feel and a cleaning up the code a little.  I think the installer now looks a lot better and definitely easier on the eye.  Maybe more work to do but certainly a good starting point.&lt;/p&gt;
+
+
+
+&lt;p&gt;This is how the installer now looks:&lt;/p&gt;
+
+&lt;div class=&quot;image_block&quot;&gt;&lt;a class=&quot;fancybox&quot; href=&quot;http://www.hackingquamplures.com/media/blogs/id_2/base_config.png&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/base_config_small.png&quot; alt=&quot;Installer Base Config&quot; title=&quot;Installer Base Config&quot; width=&quot;342&quot; height=&quot;300&quot; /&gt;&lt;/a&gt;&lt;/div&gt; 
+
+&lt;div class=&quot;image_block&quot;&gt;&lt;a class=&quot;fancybox&quot; href=&quot;http://www.hackingquamplures.com/media/blogs/id_2/install_qp.png&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/install_qp_small.png&quot; alt=&quot;Installing Quam Plures&quot; title=&quot;Installing Quam Plures&quot; width=&quot;316&quot; height=&quot;248&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;Just small improvements really but I think it looks a lot better than it did.&lt;/p&gt;
+
+&lt;div class=&quot;photo_credit&quot;&gt;Photo credit: &lt;a rel=&quot;nofollow&quot; href=&quot;http://www.flickr.com/photos/manicomi/2260527943/&quot;&gt; Malkav &lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/hackblog/cleaning-up-the-installer&quot; title=&quot;Cleaning up the installer&quot;&gt;Cleaning up the installer&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fcleaning-up-the-installer&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_2/orange_slice.jpg" alt="orange_slice" title="orange_slice" width="75" height="75" class="spanimage" /></span>There are still a few things left over from b2evo in the QP code base and one of those things is the installer.  It is still very orange and has the grey gradient images for the background.  It also uses images to make up the bulk of the rounded corners on the page.  Over the past few days I have been working on simplifying the installer and giving it a cleaner look and feel and a cleaning up the code a little.  I think the installer now looks a lot better and definitely easier on the eye.  Maybe more work to do but certainly a good starting point.</p>
+
+
+
+<p>This is how the installer now looks:</p>
+
+<div class="image_block"><a class="fancybox" href="http://www.hackingquamplures.com/media/blogs/id_2/base_config.png"><img src="http://www.hackingquamplures.com/media/blogs/id_2/base_config_small.png" alt="Installer Base Config" title="Installer Base Config" width="342" height="300" /></a></div> 
+
+<div class="image_block"><a class="fancybox" href="http://www.hackingquamplures.com/media/blogs/id_2/install_qp.png"><img src="http://www.hackingquamplures.com/media/blogs/id_2/install_qp_small.png" alt="Installing Quam Plures" title="Installing Quam Plures" width="316" height="248" /></a></div><p> </p>
+
+<p>Just small improvements really but I think it looks a lot better than it did.</p>
+
+<div class="photo_credit">Photo credit: <a rel="nofollow" href="http://www.flickr.com/photos/manicomi/2260527943/"> Malkav </a></div><div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/hackblog/cleaning-up-the-installer" title="Cleaning up the installer">Cleaning up the installer</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/hackblog/cleaning-up-the-installer#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/hackblog/?viewmode=_rss2&#38;disp=comments&#38;p=5</wfw:commentRss>
+	</item>
+		<item>
+	<title>Easier Upgrade Process</title>
+	<link>http://www.hackingquamplures.com/hackblog/easier-upgrade-process</link>
+	<pubDate>Thu, 14 Oct 2010 20:03:51 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">Core</category>	<guid isPermaLink="false">4@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Feasier-upgrade-process&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/zx_spectrum.jpg&quot; alt=&quot;zx spectrum&quot; title=&quot;zx spectrum&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt;Upgrading your blog software is never an easy job.  There are a number of things that can go wrong and a number of things you need to be aware of before starting your upgrade.  Obviously the most important one is to &lt;strong&gt;back up your database&lt;/strong&gt; and &lt;strong&gt;backup your files&lt;/strong&gt; before doing anything.  Now Quam Plures doesn't have an automated update solution where you click a button and your blog software is updated (not that I think I would use one) so the way we update to a newer version is by overwriting the software on our servers with the newest release.  This, of course, leads to the question of which files you should overwrite.&lt;/p&gt;
+
+
+
+&lt;p&gt;Back in the days of b2evolution this was quite difficult as all the 'system' files and directories were mixed up with all the user directories (media folder and the like) so there was always questions flying around as to what needs to be overwritten and what should stay.  QP has tried to make this whole process a little easier by making all of the 'system' folders easily identifiable by prefixing them with 'qp_'.  Take a look at the following screen shot to see what I mean (click to get a bigger image):&lt;/p&gt;
+
+&lt;div class=&quot;image_block&quot;&gt;&lt;a class=&quot;fancybox&quot; href=&quot;http://www.hackingquamplures.com/media/blogs/id_2/qp_file_listing.png&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/qp_file_listing_small.png&quot; alt=&quot;QP file listing&quot; title=&quot;QP file listing&quot; width=&quot;165&quot; height=&quot;289&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;As you can see from the picture, it is very easy to see which are QP folders and which are your folders.  Hopefully this will make the upgrade process a little easier in the future.&lt;/p&gt;
+
+&lt;div class=&quot;photo_credit&quot;&gt;Photo credit: &lt;a rel=&quot;nofollow&quot; href=&quot;http://www.flickr.com/photos/quenerapu/2622099393/&quot;&gt; quenerapu &lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/hackblog/easier-upgrade-process&quot; title=&quot;Easier Upgrade Process&quot;&gt;Easier Upgrade Process&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Feasier-upgrade-process&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_2/zx_spectrum.jpg" alt="zx spectrum" title="zx spectrum" width="75" height="75" class="spanimage" /></span>Upgrading your blog software is never an easy job.  There are a number of things that can go wrong and a number of things you need to be aware of before starting your upgrade.  Obviously the most important one is to <strong>back up your database</strong> and <strong>backup your files</strong> before doing anything.  Now Quam Plures doesn't have an automated update solution where you click a button and your blog software is updated (not that I think I would use one) so the way we update to a newer version is by overwriting the software on our servers with the newest release.  This, of course, leads to the question of which files you should overwrite.</p>
+
+
+
+<p>Back in the days of b2evolution this was quite difficult as all the 'system' files and directories were mixed up with all the user directories (media folder and the like) so there was always questions flying around as to what needs to be overwritten and what should stay.  QP has tried to make this whole process a little easier by making all of the 'system' folders easily identifiable by prefixing them with 'qp_'.  Take a look at the following screen shot to see what I mean (click to get a bigger image):</p>
+
+<div class="image_block"><a class="fancybox" href="http://www.hackingquamplures.com/media/blogs/id_2/qp_file_listing.png"><img src="http://www.hackingquamplures.com/media/blogs/id_2/qp_file_listing_small.png" alt="QP file listing" title="QP file listing" width="165" height="289" /></a></div><p> </p>
+
+<p>As you can see from the picture, it is very easy to see which are QP folders and which are your folders.  Hopefully this will make the upgrade process a little easier in the future.</p>
+
+<div class="photo_credit">Photo credit: <a rel="nofollow" href="http://www.flickr.com/photos/quenerapu/2622099393/"> quenerapu </a></div><div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/hackblog/easier-upgrade-process" title="Easier Upgrade Process">Easier Upgrade Process</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/hackblog/easier-upgrade-process#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/hackblog/?viewmode=_rss2&#38;disp=comments&#38;p=4</wfw:commentRss>
+	</item>
+		<item>
+	<title>What are those .pot files anyway?</title>
+	<link>http://www.hackingquamplures.com/hackblog/what-are-those-pot-files-anyway</link>
+	<pubDate>Fri, 08 Oct 2010 12:50:53 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">Plugins</category>	<guid isPermaLink="false">3@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fwhat-are-those-pot-files-anyway&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/french_dictionary.jpg&quot; alt=&quot;french dictionary&quot; title=&quot;french dictionary&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt; I have been developing plugins for b2evolution for a little while now and am in the process of converting those over to &lt;abbr title=&quot;Quam Plures&quot;&gt;QP&lt;/abbr&gt;.  Throughout that whole time I have always made sure that my plugins used the right code to make them translatable into other languages.  However, I never went as far as to extract out the text strings to make my plugins easy to translate.  As it turns out there is a specific format for doing this.&lt;/p&gt;
+
+
+
+&lt;p&gt;With all the plugins shipped with &lt;abbr title=&quot;Quam Plures&quot;&gt;QP&lt;/abbr&gt; there is a folder called 'po' that contains a file called messages.pot.  This file contains all the strings contained in the plugin code that you might want to translate.  Here is a good definition from http://www.icanlocalize.com&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;POT &amp;#8211; Portable Object Template. This is the file that you get when you extract texts from the application. Normally, you send this file to your translators.&lt;br /&gt;
+PO &amp;#8211; Portable Object. This is the file that you receive back from the translators. It&amp;#8217;s a text file that includes the original texts and the translations.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So, while I have been &lt;a title=&quot;playing around with the quicktags plugin&quot; href=&quot;/hackblog/playing-with-the-quick-tags-plugin&quot;&gt;playing around with the quicktags plugin&lt;/a&gt; I thought it was about time I learned how to create these files (mainly because my changes wouldn't have been accepted otherwise &lt;img src=&quot;http://www.hackingquamplures.com/qp_rsc/smilies/smiley-grin.png&quot; alt=&quot;&amp;#58;&amp;#68;&quot; class=&quot;middle&quot; /&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://1912webworks.com&quot; title=&quot;EdB&quot;&gt;EdB&lt;/a&gt; &lt;a href=&quot;http://forums.quamplures.net/viewtopic.php?f=11&amp;amp;t=589#p3813&quot;&gt;pointed me&lt;/a&gt; in the direction of a piece of software called &lt;a href=&quot;http://www.poedit.net/&quot; title=&quot;Poedit&quot;&gt;Poedit&lt;/a&gt; which totally simplifies the creation of these files.  So here is a brief update on how I went about doing it:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1) Download and install Poedit for your chosen platform (I am on a Mac)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2) Go to File -&gt; New Catalog&lt;/strong&gt;.  The following screen should appear:&lt;/p&gt;
+
+&lt;div class=&quot;image_block&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/poedit_new_catalog.png&quot; alt=&quot;Poedit New Catalog screen&quot; title=&quot;Poedit New Catalog screen&quot; width=&quot;575&quot; height=&quot;491&quot; /&gt;&lt;/div&gt;&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3) Enter the project name and version and then click on the Paths tab&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;image_block&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/poedit_new_catalog_paths.png&quot; alt=&quot;Poedit New Catalog Paths screen&quot; title=&quot;Poedit New Catalog Paths screen&quot; width=&quot;575&quot; height=&quot;491&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;The messages.pot file is located in a sub folder of the main plugin folder so we need to tell Poedit to look in the parent folder for our source files.  We therefore need to add a new path to this screen which is the '..' path that denotes the parent directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4) Next, click on the Keyword tab&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;image_block&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/poedit_new_catalog_keywords.png&quot; alt=&quot;Poedit New Catalog Keywords screen&quot; title=&quot;Poedit New Catalog Keywords screen&quot; width=&quot;575&quot; height=&quot;491&quot; /&gt;&lt;/div&gt;&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;This screen is asking what functions you are using in your code to perform the translations.  In Quam Plures this is the code &lt;code&gt;T_('Text Goes Here')&lt;/code&gt; so in this screen we need to add a new keyword 'T_'.  Once you have done this click on the OK button and you will be prompted for a location to save the .po file.  You should select the plugin's 'po' folder.  This will be the same folder as where the file 'messages.pot. is located.  At this stage I don't recommend overwriting the messages.pot file as it contain header comments that we need to keep.&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; One of the things I found out while playing with the QuickTags plugin is that QP has a function that you need to use when when echoing strings for use in JavaScript.  This is the &lt;code&gt;TS_('Text Goes Here')&lt;/code&gt; function and there is also one called 'NT_'.  This means that in this stage you need to add the 'T_', 'TS_' and the 'NT_' keywords.&lt;/p&gt;&lt;/blockquote&gt;
+
+
+&lt;p&gt;After clicking OK, Poedit will scan the parent directories for your code and extract out all the translatable strings based on the keywords we provided.  Once it has done that, the following screen should appear:&lt;/p&gt;
+
+&lt;div class=&quot;image_block&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/poedit_update_summary.png&quot; alt=&quot;Poedit update summary&quot; title=&quot;Poedit update summary&quot; width=&quot;602&quot; height=&quot;565&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;Click on the OK buton and then save.  You should now have a .po file in the same directory as the file 'messages.pot'.  Once I was at this stage I opened both files and copied the contents of my new .po file over the contents of messages.pot while leaving the header comments and text alone.  I then deleted the new .po file.  This last part is not optimal so I will have to dig into the Poedit settings to see if I can get it to enter all the header info for me to enable me to just overwrite the messages.pot file.&lt;/p&gt;
+
+&lt;div class=&quot;photo_credit&quot;&gt;Photo credit: &lt;a rel=&quot;nofollow&quot; href=&quot;http://www.flickr.com/photos/dibytes/3292484412/&quot;&gt;dibytes&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/hackblog/what-are-those-pot-files-anyway&quot; title=&quot;What are those .pot files anyway?&quot;&gt;What are those .pot files anyway?&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fwhat-are-those-pot-files-anyway&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_2/french_dictionary.jpg" alt="french dictionary" title="french dictionary" width="75" height="75" class="spanimage" /></span> I have been developing plugins for b2evolution for a little while now and am in the process of converting those over to <abbr title="Quam Plures">QP</abbr>.  Throughout that whole time I have always made sure that my plugins used the right code to make them translatable into other languages.  However, I never went as far as to extract out the text strings to make my plugins easy to translate.  As it turns out there is a specific format for doing this.</p>
+
+
+
+<p>With all the plugins shipped with <abbr title="Quam Plures">QP</abbr> there is a folder called 'po' that contains a file called messages.pot.  This file contains all the strings contained in the plugin code that you might want to translate.  Here is a good definition from http://www.icanlocalize.com</p>
+
+<blockquote>
+<p>POT &#8211; Portable Object Template. This is the file that you get when you extract texts from the application. Normally, you send this file to your translators.<br />
+PO &#8211; Portable Object. This is the file that you receive back from the translators. It&#8217;s a text file that includes the original texts and the translations.</p>
+</blockquote>
+
+<p>So, while I have been <a title="playing around with the quicktags plugin" href="http://www.hackingquamplures.com/hackblog/playing-with-the-quick-tags-plugin">playing around with the quicktags plugin</a> I thought it was about time I learned how to create these files (mainly because my changes wouldn't have been accepted otherwise <img src="http://www.hackingquamplures.com/qp_rsc/smilies/smiley-grin.png" alt="&#58;&#68;" class="middle" />).</p>
+
+<p><a href="http://1912webworks.com" title="EdB">EdB</a> <a href="http://forums.quamplures.net/viewtopic.php?f=11&amp;t=589#p3813">pointed me</a> in the direction of a piece of software called <a href="http://www.poedit.net/" title="Poedit">Poedit</a> which totally simplifies the creation of these files.  So here is a brief update on how I went about doing it:</p>
+
+<p><strong>1) Download and install Poedit for your chosen platform (I am on a Mac)</strong></p>
+
+<p><strong>2) Go to File -> New Catalog</strong>.  The following screen should appear:</p>
+
+<div class="image_block"><img src="http://www.hackingquamplures.com/media/blogs/id_2/poedit_new_catalog.png" alt="Poedit New Catalog screen" title="Poedit New Catalog screen" width="575" height="491" /></div><p> </p>
+
+<p><strong>3) Enter the project name and version and then click on the Paths tab</strong>:</p>
+
+<div class="image_block"><img src="http://www.hackingquamplures.com/media/blogs/id_2/poedit_new_catalog_paths.png" alt="Poedit New Catalog Paths screen" title="Poedit New Catalog Paths screen" width="575" height="491" /></div>
+
+<p>The messages.pot file is located in a sub folder of the main plugin folder so we need to tell Poedit to look in the parent folder for our source files.  We therefore need to add a new path to this screen which is the '..' path that denotes the parent directory.</p>
+
+<p><strong>4) Next, click on the Keyword tab</strong>:</p>
+
+<div class="image_block"><img src="http://www.hackingquamplures.com/media/blogs/id_2/poedit_new_catalog_keywords.png" alt="Poedit New Catalog Keywords screen" title="Poedit New Catalog Keywords screen" width="575" height="491" /></div><p> </p>
+
+<p>This screen is asking what functions you are using in your code to perform the translations.  In Quam Plures this is the code <code>T_('Text Goes Here')</code> so in this screen we need to add a new keyword 'T_'.  Once you have done this click on the OK button and you will be prompted for a location to save the .po file.  You should select the plugin's 'po' folder.  This will be the same folder as where the file 'messages.pot. is located.  At this stage I don't recommend overwriting the messages.pot file as it contain header comments that we need to keep.</p>
+
+<blockquote><p><strong>Update:</strong> One of the things I found out while playing with the QuickTags plugin is that QP has a function that you need to use when when echoing strings for use in JavaScript.  This is the <code>TS_('Text Goes Here')</code> function and there is also one called 'NT_'.  This means that in this stage you need to add the 'T_', 'TS_' and the 'NT_' keywords.</p></blockquote>
+
+
+<p>After clicking OK, Poedit will scan the parent directories for your code and extract out all the translatable strings based on the keywords we provided.  Once it has done that, the following screen should appear:</p>
+
+<div class="image_block"><img src="http://www.hackingquamplures.com/media/blogs/id_2/poedit_update_summary.png" alt="Poedit update summary" title="Poedit update summary" width="602" height="565" /></div>
+
+<p>Click on the OK buton and then save.  You should now have a .po file in the same directory as the file 'messages.pot'.  Once I was at this stage I opened both files and copied the contents of my new .po file over the contents of messages.pot while leaving the header comments and text alone.  I then deleted the new .po file.  This last part is not optimal so I will have to dig into the Poedit settings to see if I can get it to enter all the header info for me to enable me to just overwrite the messages.pot file.</p>
+
+<div class="photo_credit">Photo credit: <a rel="nofollow" href="http://www.flickr.com/photos/dibytes/3292484412/">dibytes</a></div><div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/hackblog/what-are-those-pot-files-anyway" title="What are those .pot files anyway?">What are those .pot files anyway?</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/hackblog/what-are-those-pot-files-anyway#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/hackblog/?viewmode=_rss2&#38;disp=comments&#38;p=3</wfw:commentRss>
+	</item>
+		<item>
+	<title>Playing with the Quick Tags plugin</title>
+	<link>http://www.hackingquamplures.com/hackblog/playing-with-the-quick-tags-plugin</link>
+	<pubDate>Thu, 07 Oct 2010 11:46:11 +0000</pubDate>	<dc:creator>Lee Turner</dc:creator>
+	<category domain="main">Core</category>
+<category domain="alt">Plugins</category>	<guid isPermaLink="false">2@http://www.hackingquamplures.com/</guid>
+			<description>&lt;div class=&quot;facebook_plugin&quot;&gt;&lt;iframe src=&quot;http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fplaying-with-the-quick-tags-plugin&amp;amp;send=true&amp;amp;layout=standard&amp;amp;width=450&amp;amp;show_faces=false&amp;amp;action=like&amp;amp;colorscheme=light&amp;amp;font&amp;amp;height=35&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; style=&quot;border:none; overflow:hidden; width:450px; height:35px;&quot; allowTransparency=&quot;true&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;span class=&quot;imgwrap floatleft center&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/html_book.jpg&quot; alt=&quot;html book&quot; title=&quot;html book&quot; width=&quot;75&quot; height=&quot;75&quot; class=&quot;spanimage&quot; /&gt;&lt;/span&gt; There have been quite a few changes to &lt;abbr title=&quot;Quam Plures&quot;&gt;QP&lt;/abbr&gt; since it was originally forked.  The admin console has bee streamlined, made more flexible and had a colour change (although more work is needed there &lt;img src=&quot;http://www.hackingquamplures.com/qp_rsc/smilies/smiley-wink.png&quot; alt=&quot;&amp;#59;&amp;#41;&quot; class=&quot;middle&quot; /&gt;).  Skins are now Templates, the install process is now improved as it asks you for an admin username and password and the upgrade process should now be a lot smoother due to a new directory naming convention.  However, a lot of the changes aren't visible from the outside as a lot of code has been refactored and removed (I am thinking spam and calling home code here).  Anyway, the thing I am playing with today is the Quick Tags plugin. &lt;/p&gt;
+
+
+
+&lt;p&gt;This is a plugin that is distributed with the core and adds a number of toolbars to the write/edit post screen to allow you to quickly insert html tags.  This plugin is a god send if (like me) you don't like the &lt;abbr title=&quot;What You See Is What You Get&quot;&gt;WYSIWYG&lt;/abbr&gt; editors.  Today's job is to add more features to the Link button.  At the moment it prompts you for a URL to link to and that is it.  I want it to also prompt you for a title attribute and possibly a class and a target attribute also.  The title attribute should always be there so the plugin will always prompt for that but the class and the target will be configurable items (ie you can turn them on or off and if they are on you can set a default.)  The default for these configurable items will be off.  Something like this:&lt;/p&gt;
+
+&lt;div class=&quot;image_block&quot;&gt;&lt;img src=&quot;http://www.hackingquamplures.com/media/blogs/id_2/quick_tags_settings.png&quot; alt=&quot;Quick Tags Settings&quot; title=&quot;Quick Tags Settings&quot; width=&quot;560&quot; height=&quot;123&quot; /&gt;&lt;/div&gt;
+
+&lt;div class=&quot;photo_credit&quot;&gt;Photo credit: &lt;a rel=&quot;nofollow&quot; href=&quot;http://www.flickr.com/photos/ianlloyd/2542795166/&quot;&gt;ianlloyd&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;item_footer&quot;&gt;&lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://www.hackingquamplures.com/hackblog/playing-with-the-quick-tags-plugin&quot; title=&quot;Playing with the Quick Tags plugin&quot;&gt;Playing with the Quick Tags plugin&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;&lt;/div&gt;</description>
+		<content:encoded><![CDATA[<div class="facebook_plugin"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hackingquamplures.com%2Fhackblog%2Fplaying-with-the-quick-tags-plugin&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe></div><p><span class="imgwrap floatleft center"><img src="http://www.hackingquamplures.com/media/blogs/id_2/html_book.jpg" alt="html book" title="html book" width="75" height="75" class="spanimage" /></span> There have been quite a few changes to <abbr title="Quam Plures">QP</abbr> since it was originally forked.  The admin console has bee streamlined, made more flexible and had a colour change (although more work is needed there <img src="http://www.hackingquamplures.com/qp_rsc/smilies/smiley-wink.png" alt="&#59;&#41;" class="middle" />).  Skins are now Templates, the install process is now improved as it asks you for an admin username and password and the upgrade process should now be a lot smoother due to a new directory naming convention.  However, a lot of the changes aren't visible from the outside as a lot of code has been refactored and removed (I am thinking spam and calling home code here).  Anyway, the thing I am playing with today is the Quick Tags plugin. </p>
+
+
+
+<p>This is a plugin that is distributed with the core and adds a number of toolbars to the write/edit post screen to allow you to quickly insert html tags.  This plugin is a god send if (like me) you don't like the <abbr title="What You See Is What You Get">WYSIWYG</abbr> editors.  Today's job is to add more features to the Link button.  At the moment it prompts you for a URL to link to and that is it.  I want it to also prompt you for a title attribute and possibly a class and a target attribute also.  The title attribute should always be there so the plugin will always prompt for that but the class and the target will be configurable items (ie you can turn them on or off and if they are on you can set a default.)  The default for these configurable items will be off.  Something like this:</p>
+
+<div class="image_block"><img src="http://www.hackingquamplures.com/media/blogs/id_2/quick_tags_settings.png" alt="Quick Tags Settings" title="Quick Tags Settings" width="560" height="123" /></div>
+
+<div class="photo_credit">Photo credit: <a rel="nofollow" href="http://www.flickr.com/photos/ianlloyd/2542795166/">ianlloyd</a></div><div class="item_footer"><p><small><a href="http://www.hackingquamplures.com/hackblog/playing-with-the-quick-tags-plugin" title="Playing with the Quick Tags plugin">Playing with the Quick Tags plugin</a></small></p></div>]]></content:encoded>
+			<comments>http://www.hackingquamplures.com/hackblog/playing-with-the-quick-tags-plugin#comments</comments>
+	<wfw:commentRss>http://www.hackingquamplures.com/hackblog/?viewmode=_rss2&#38;disp=comments&#38;p=2</wfw:commentRss>
+	</item>
+	</channel>
+</rss>

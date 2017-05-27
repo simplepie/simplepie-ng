@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?><feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xml:lang="en-US"
+  xml:base="http://weblog.philringnalda.com/wp-atom.php"
+   >
+	<title type="text">phil ringnalda</title>
+	<subtitle type="text">a digital magpie</subtitle>
+
+	<updated>2008-12-11T17:08:26Z</updated>
+
+	<link rel="alternate" type="text/html" href="http://weblog.philringnalda.com" />
+	<id>http://weblog.philringnalda.com/feed</id>
+	<link rel="self" type="application/atom+xml" href="http://weblog.philringnalda.com/feed" />
+
+	<generator uri="http://wordpress.org/" version="4.3">WordPress</generator>
+	<entry>
+		<author>
+			<name>Phil Ringnalda</name>
+						<uri>http://weblog.philringnalda.com</uri>
+					</author>
+		<title type="html"><![CDATA[pink and repink]]></title>
+		<link rel="alternate" type="text/html" href="http://weblog.philringnalda.com/2007/02/23/pink-and-repink" />
+		<id>http://weblog.philringnalda.com/2007/02/23/pink-and-repink</id>
+		<updated>2008-04-08T06:15:59Z</updated>
+		<published>2007-02-24T05:57:21Z</published>
+		<category scheme="http://weblog.philringnalda.com" term="blogging tech" /><category scheme="http://weblog.philringnalda.com" term="carping" /><category scheme="http://weblog.philringnalda.com" term="feeds and syndication" /><category scheme="http://weblog.philringnalda.com" term="mozilla" /><category scheme="http://weblog.philringnalda.com" term="planet fodder" />		<summary type="html"><![CDATA[Since Pinkerton got kicked off the planet(.mozilla.org), somebody's got to keep people up to date with him, don't they?]]></summary>
+		<content type="html" xml:base="http://weblog.philringnalda.com/2007/02/23/pink-and-repink"><![CDATA[<p>Quoting from <a href="http://weblogs.mozillazine.org/pinkerton/archives/017614.html">Sucking less, on a budget</a>, for reasons that will be obvious to some:</p>
+<blockquote><p>Beta</p>
+<p>A friend asked me today if Camino 1.1 was even in alpha. Heck, we&#8217;re on alpha two, but I guess we haven&#8217;t really done the best job of promoting it. To some extent, that&#8217;s reasonable, alphas generally aren&#8217;t the kind of thing you want your grandmother using. However, our standards are usually a little higher than most, and I&#8217;ve been running 1.1a2 daily on both home and work machines for a while.</p>
+<p>In fact, we&#8217;re really close to beta. We wanted to have something for Presidents Day (Abe Lincoln is a *huge* Camino fan) but we extended our deadline to pick up some last minute crash fixes. I promise to blog about it when we do reach beta, and we&#8217;re going to have an increased presence, both on the Camino website and among download sites. It&#8217;s important that we get a lot of people to try it out and send us feedback before we go final.</p>
+<p>Ben disputes my claim that Camino never crashes. Personally, I think he&#8217;s on crack. I have 1.1a2 running for over a month and a half of intense usage on both my laptops and my work desktop without a single crash. Maybe it&#8217;s because I turn Java off. What&#8217;s Java, you ask? Beats me. I think I used it in 1995. Really, would you allow a 12-year old to run wild in your browser? I think the blink tag is more relevant these days&#8230;.props to Lou Montulli.</p>
+<p>If Pacman Jones can make it rain for $81,000, then I want to be a stripper. Seriously. What&#8217;s the visual of a man walking into a club with $81,000 in his pocket?</p>
+<p>Oh, I&#8217;m sorry, did I digress from Mozilla-related content? Oops. I did it again.</p>
+</blockquote>
+<p>(In fact, they did <a href="http://caminoupdate.blogspot.com/2007/02/camino-11-beta-released.html">go beta</a>, but that was just today, so you can&#8217;t expect pink to know yet.)</p>
+]]></content>
+			<link rel="replies" type="text/html" href="http://weblog.philringnalda.com/2007/02/23/pink-and-repink#comments" thr:count="24"/>
+		<link rel="replies" type="application/atom+xml" href="http://weblog.philringnalda.com/2007/02/23/pink-and-repink/feed" thr:count="24"/>
+		<thr:total>24</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>Phil Ringnalda</name>
+						<uri>http://weblog.philringnalda.com</uri>
+					</author>
+		<title type="html"><![CDATA[Tell me you were lyin&#8217;]]></title>
+		<link rel="alternate" type="text/html" href="http://weblog.philringnalda.com/2006/08/23/tell-me-you-were-lyin" />
+		<id>http://weblog.philringnalda.com/?p=1074</id>
+		<updated>2006-08-24T04:24:11Z</updated>
+		<published>2006-08-24T04:22:16Z</published>
+		<category scheme="http://weblog.philringnalda.com" term="feeds and syndication" />		<summary type="html"><![CDATA[Filing security bugs with Netscape 7.1? Please, no.]]></summary>
+		<content type="html" xml:base="http://weblog.philringnalda.com/2006/08/23/tell-me-you-were-lyin"><![CDATA[<p>I really, really hope that SPI Labs, whose widely trumpeted report on JavaScript vulnerabilities in feed readers <a href="http://www.intertwingly.net/blog/2006/08/04/Feeds-As-Attack-Delivery-Systems#c1154937474">left me cold</a>, were spoofing their user-agent string when they filed <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=344681">their bug</a> on (an old version of) Firefox (that didn&#8217;t actually do anything in the component where they filed it).</p>
+<p>&#8220;Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.4) Gecko/20030624 Netscape/7.1 (ax)&#8221; doesn&#8217;t give me a secure feeling, even without the &#8220;(ax)&#8221; for ActiveX.</p>
+]]></content>
+			<link rel="replies" type="text/html" href="http://weblog.philringnalda.com/2006/08/23/tell-me-you-were-lyin#comments" thr:count="2"/>
+		<link rel="replies" type="application/atom+xml" href="http://weblog.philringnalda.com/2006/08/23/tell-me-you-were-lyin/feed" thr:count="2"/>
+		<thr:total>2</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>Phil Ringnalda</name>
+						<uri>http://weblog.philringnalda.com</uri>
+					</author>
+		<title type="html"><![CDATA[Some Mac and &#060;p&#062;s]]></title>
+		<link rel="alternate" type="text/html" href="http://weblog.philringnalda.com/2006/05/22/some-mac-and-ps" />
+		<id>http://weblog.philringnalda.com/?p=1066</id>
+		<updated>2006-05-23T03:12:57Z</updated>
+		<published>2006-05-23T03:10:30Z</published>
+		<category scheme="http://weblog.philringnalda.com" term="meta" />		<summary type="html"><![CDATA[More computers might be a good thing, if they came with more attention and a better memory for me as well.]]></summary>
+		<content type="html" xml:base="http://weblog.philringnalda.com/2006/05/22/some-mac-and-ps"><![CDATA[<p>Back in February, not long after the Intel iMacs came out, I decided I needed one. I&#8217;d been using a limping Windows desktop as a stereo, and a not so limping Windows laptop as an everything-else, but I&#8217;d idly wanted another Mac ever since my 512K &#8220;Fat Mac&#8221; died in 1991 or so.</p>
+<p>Getting one hasn&#8217;t turned out to be the best idea I ever had.</p>
+<p>It&#8217;s a delightful computer, quick and smooth and elegant, that part&#8217;s not a problem. But, now I&#8217;ve got a Windows laptop to my left, the Mac directly ahead, and my old Windows desktop turned to Linux to my right. I&#8217;m building Firefox trunk on Windows to see if I broke anything with a patch, typing this post and being less funny than I think on IRC and reading email and trying to figure out how to patch the appearance of readonly XUL textboxes on the Mac, and building Firefox branch on Linux, though I&#8217;ve already forgotten why and what I&#8217;m supposed to test once the build finishes. Most of the time, I think that three computers has made me one third as productive, but sometimes, when I can&#8217;t remember what I was doing on any of them, I think it&#8217;s worse than just arithmetic.</p>
+]]></content>
+			<link rel="replies" type="text/html" href="http://weblog.philringnalda.com/2006/05/22/some-mac-and-ps#comments" thr:count="11"/>
+		<link rel="replies" type="application/atom+xml" href="http://weblog.philringnalda.com/2006/05/22/some-mac-and-ps/feed" thr:count="11"/>
+		<thr:total>11</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>Phil Ringnalda</name>
+						<uri>http://weblog.philringnalda.com</uri>
+					</author>
+		<title type="html"><![CDATA[&#060;Unwelcome&#062;]]></title>
+		<link rel="alternate" type="text/html" href="http://weblog.philringnalda.com/2006/02/21/unwelcome" />
+		<id>http://weblog.philringnalda.com/2006/02/21/unwelcome</id>
+		<updated>2006-02-21T23:24:52Z</updated>
+		<published>2006-02-21T23:18:57Z</published>
+		<category scheme="http://weblog.philringnalda.com" term="trackback" />		<summary type="html"><![CDATA[Apparently, they knew I'd be annoying on a mailing list discussing standardizing trackback.]]></summary>
+		<content type="html" xml:base="http://weblog.philringnalda.com/2006/02/21/unwelcome"><![CDATA[<p>Because I&#8217;m both stupid, and a glutton for punishment, my reaction to the <a href="http://www.sixapart.com/pronet/weblog/2006/02/submitting_trac.html">news that Six Apart wants to make Trackback a standard</a> was to sign up for the mailing list.</p>
+<p>Their reaction?</p>
+<blockquote><p>The email address you supplied is banned from this mailing list. If you think this restriction is erroneous, please contact the list owners at&#8230;</p>
+</blockquote>
+<p>You know what? I think I&#8217;ll blog it, instead.</p>
+]]></content>
+			<link rel="replies" type="text/html" href="http://weblog.philringnalda.com/2006/02/21/unwelcome#comments" thr:count="34"/>
+		<link rel="replies" type="application/atom+xml" href="http://weblog.philringnalda.com/2006/02/21/unwelcome/feed" thr:count="34"/>
+		<thr:total>34</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>Phil Ringnalda</name>
+						<uri>http://weblog.philringnalda.com</uri>
+					</author>
+		<title type="html"><![CDATA[&#060;Boy, this nest sure is roomy&#062;]]></title>
+		<link rel="alternate" type="text/html" href="http://weblog.philringnalda.com/2006/02/08/boy-this-nest-sure-is-roomy" />
+		<id>http://weblog.philringnalda.com/?p=1069</id>
+		<updated>2006-02-09T05:12:38Z</updated>
+		<published>2006-02-09T05:09:23Z</published>
+		<category scheme="http://weblog.philringnalda.com" term="mozilla" />		<summary type="html"><![CDATA[Trolling for a comment, I am.]]></summary>
+		<content type="html" xml:base="http://weblog.philringnalda.com/2006/02/08/boy-this-nest-sure-is-roomy"><![CDATA[<p><a href="http://weblog.philringnalda.com/2006/02/01/nice-gorilla-whats-he-weigh#comment-13223">I wonder</a>, does anyone have anything they&#8217;d like to say about some new work they&#8217;re doing, <a href="http://wiki.mozilla.org/Firefox2/StatusMeetings/2006-02-07">maybe with an open source project</a>?</p>
+]]></content>
+			<link rel="replies" type="text/html" href="http://weblog.philringnalda.com/2006/02/08/boy-this-nest-sure-is-roomy#comments" thr:count="6"/>
+		<link rel="replies" type="application/atom+xml" href="http://weblog.philringnalda.com/2006/02/08/boy-this-nest-sure-is-roomy/feed" thr:count="6"/>
+		<thr:total>6</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>Phil Ringnalda</name>
+						<uri>http://weblog.philringnalda.com</uri>
+					</author>
+		<title type="html"><![CDATA[Where&#8217;s Mama Bear&#8217;s update notification?]]></title>
+		<link rel="alternate" type="text/html" href="http://weblog.philringnalda.com/2006/02/04/wheres-mama-bears-update-notification" />
+		<id>http://weblog.philringnalda.com/?p=1068</id>
+		<updated>2006-02-05T04:53:40Z</updated>
+		<published>2006-02-05T04:24:02Z</published>
+		<category scheme="http://weblog.philringnalda.com" term="planet fodder" />		<summary type="html"><![CDATA[Baby Bear's update notification, a red Christmas tree by the throbber, was too little to be seen. Papa Bear's update notification, a dialog that interrupts you until you let it interrupt you by restarting your browser, is annoying. What does Mama Bear's just right notification look like?]]></summary>
+		<content type="html" xml:base="http://weblog.philringnalda.com/2006/02/04/wheres-mama-bears-update-notification"><![CDATA[<p>Paul Bausch is absolutely right that Firefox&#8217;s current update notification, a popup dialog that gives you the choice between &#8220;stop what you are doing and restart your browser right now&#8221; and &#8220;be nagged at some random later time until you stop what you are doing and restart your browser&#8221; is <a href="http://www.onfocus.com/2006/02/3782">the sort of annoyance we use Firefox to avoid</a>, not to seek out.</p>
+<p>But the previous version, a red Christmas tree that I think was supposed to be an arrow displayed up by the throbber, flat out didn&#8217;t work. For every single non-geek on whose computer I installed Firefox, that was something for me to see when I was doing something else for them, my little Christmas present of also getting to update their browser, and not anything for them to even notice, much less do anything about.</p>
+<p>A couple of hours of thinking about less extreme methods of reminding people about an update without being invisible has only left me reinventing <a href="http://en.wikipedia.org/wiki/Clippy">Clippy</a>. So, what sort of notification can&#8217;t be missed, but can be ignored until you&#8217;re ready for it?</p>
+]]></content>
+			<link rel="replies" type="text/html" href="http://weblog.philringnalda.com/2006/02/04/wheres-mama-bears-update-notification#comments" thr:count="14"/>
+		<link rel="replies" type="application/atom+xml" href="http://weblog.philringnalda.com/2006/02/04/wheres-mama-bears-update-notification/feed" thr:count="14"/>
+		<thr:total>14</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>Phil Ringnalda</name>
+						<uri>http://weblog.philringnalda.com</uri>
+					</author>
+		<title type="html"><![CDATA[Nice &#060;gorilla&#062;; what&#8217;s he weigh?]]></title>
+		<link rel="alternate" type="text/html" href="http://weblog.philringnalda.com/2006/02/01/nice-gorilla-whats-he-weigh" />
+		<id>http://weblog.philringnalda.com/?p=1067</id>
+		<updated>2006-02-03T04:57:10Z</updated>
+		<published>2006-02-02T07:05:29Z</published>
+		<category scheme="http://weblog.philringnalda.com" term="feeds and syndication" />		<summary type="html"><![CDATA[IE7 treats RSS titles as plain text: is it going to be a big enough force in the syndication world to make everyone else do the right thing, too?]]></summary>
+		<content type="html" xml:base="http://weblog.philringnalda.com/2006/02/01/nice-gorilla-whats-he-weigh"><![CDATA[<p>Several things are interesting me about IE7&beta;2, but most of all is a relatively minor decision in the feed handling code. </p>
+<p>If you start from <a href="http://www.rssboard.org/rss-2-0-1-rv-6">the RSS 2.0.1-rv6 spec</a>, and follow along carefully, you should notice that the <code>&lt;description&gt;</code> which is a child of <code>&lt;item&gt;</code> is described as allowing escaped HTML, while no other element is so described, and you then <em>should</em> conclude that no other element allows escaped HTML, that the content model for all other elements is plain text, and if someone has a <code>&lt;title&gt;</code> like <code>&lt;title&gt;&amp;amp;eacute;&lt;/title&gt;</code> it is because they want their readers to see <samp>&amp;eacute;</samp>, not because they want their readers to see an e with an acute accent.</p>
+<p>If, however, you start with most weblog software or most existing aggregators, you&#8217;ll find that you can put links in your weblog&#8217;s subhead by editing its description, and that if you want to italicize <kbd>Odyssey</kbd> in a title to make it clear you mean the book, not your car or your own road trip, it not only works in your weblog, but probably makes it into your feed, and works in your aggregator, because someone else tried it long ago, and people complained about how bad it looked when the aggregator displayed <samp>&lt;I&gt;Odyssey&lt;/I&gt;</samp>, so the aggregator author thought &#8220;why not?&#8221; and started treating item and channel titles and channel descriptions as escaped HTML.</p>
+<p>Despite the enormous amount of time people have spent arguing over which one of those is &#8220;right,&#8221; it really doesn&#8217;t matter (except perhaps for a couple dozen people like Norm Walsh who will absolutely refuse to have anything to do with escaped markup). What matters is that there only be one way. If you have to create workable feeds for searches of 300,000 browser bug reports, many of which want to display examples of HTML tags in the titles, then it doesn&#8217;t matter too much whether you use <samp>&lt;title&gt;&amp;lt;foo&amp;gt; support broken&lt;/title&gt;</samp> or <samp>&lt;title&gt;&amp;amp;lt;foo&amp;amp;gt; support broken&lt;/title&gt;</samp>. However, if using one is clearly correct and to spec, but using the other one is required to avoid breaking some aggregators and opening <acronym title="Cross Site Scripting">XSS</acronym> holes in others, but that then breaks some which were not broken by doing The Right Thing, then you&#8217;re likely to wind up saying &#8220;screw you guys, I&#8217;m going home&#8221; and using <a href="http://www.ietf.org/rfc/rfc4287">Atom</a>, which mostly exists for precisely this reason.</p>
+<p>While I have as much hope for the <a href="http://www.rssboard.org/rss-draft-1">spec rewrite</a> that the <a href="http://www.rssboard.org/news/15/rss-advisory-board-goes-public">new version of the RSS Advisory Board</a> is starting on as all the other people who&#8217;ve been banging their heads against the syndication brick wall for so long they&#8217;re at risk of <a href="http://www.cbsnews.com/stories/2005/05/04/earlyshow/leisure/books/main692870.shtml">naming all their children George</a>, that much hope is about&#8230; George! you stop teasing George this instant, or you&#8217;ll be grounded like George and George!</p>
+<p>So I was quite interested to <a href="http://www.myelin.co.nz/post/2006/2/2/#200602021">see that</a> IE7, and thus presumably the Windows Feed Platform, have decided to do the right, and hard, thing, and treat all RSS elements other than item/description as the plain text they are supposed to be. Which leaves me wondering: are they really enough of an 800lb. gorilla to convince everyone else to follow along, and make it once again possible to include a less-than character in an RSS title?</p>
+]]></content>
+			<link rel="replies" type="text/html" href="http://weblog.philringnalda.com/2006/02/01/nice-gorilla-whats-he-weigh#comments" thr:count="30"/>
+		<link rel="replies" type="application/atom+xml" href="http://weblog.philringnalda.com/2006/02/01/nice-gorilla-whats-he-weigh/feed" thr:count="30"/>
+		<thr:total>30</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>Phil Ringnalda</name>
+						<uri>http://weblog.philringnalda.com</uri>
+					</author>
+		<title type="html"><![CDATA[A Google just for &#060;me&#062;]]></title>
+		<link rel="alternate" type="text/html" href="http://weblog.philringnalda.com/2006/01/11/a-google-just-for-me" />
+		<id>http://weblog.philringnalda.com/?p=1065</id>
+		<updated>2006-01-12T06:01:20Z</updated>
+		<published>2006-01-12T06:00:19Z</published>
+		<category scheme="http://weblog.philringnalda.com" term="carping" /><category scheme="http://weblog.philringnalda.com" term="meta" />		<summary type="html"><![CDATA[When you want to see the last thing they want you to see.]]></summary>
+		<content type="html" xml:base="http://weblog.philringnalda.com/2006/01/11/a-google-just-for-me"><![CDATA[<p>Now that&#8217;s my kind of Google: via <a href="http://lastgoogle.blogspot.com/2006/01/search-search-advertisers.html" title="The last thing you should read about 'search advertisers'">their results weblog</a>, <a href="http://www.lastgoogle.com/index.php">Last Google (Beta)</a>, providing you with the last thing Google wants you to see. For lots of things we both talk about, <a href="http://www.kbcafe.com/rss/">Randy</a>&#8216;s got me beat for the bottom, since he&#8217;s been going out of his way to post <a href="http://realgeek.blogspirit.com/archive/2005/12/19/atom-title.html">duplicate</a> <a href="http://www.kbcafe.com/rss/?guid=20051219094550">content</a>, but there&#8217;s still an enormous number of things for which I&#8217;m the very last thing you should look at.</p>
+<p>In related news, so far I&#8217;m very happy with my switch to <a href="http://search.yahoo.com/">searching Yahoo!</a>: their results are quite good, and I&#8217;m much happier having to sift through five different sites with the same Wikipedia article than I am wondering what&#8217;s being mistakenly hidden from me every time I search. Google may be mostly okay if there&#8217;s one and only one possible result for your searches (something that I remember being fairly true a few years ago, when &#8220;I&#8217;m feeling lucky&#8221; was moderately useful, but these days I&#8217;m only rarely looking for one exact page), but if you want to look around and decide for yourself, Yahoo! feels like a better bet.</p>
+]]></content>
+			<link rel="replies" type="text/html" href="http://weblog.philringnalda.com/2006/01/11/a-google-just-for-me#comments" thr:count="8"/>
+		<link rel="replies" type="application/atom+xml" href="http://weblog.philringnalda.com/2006/01/11/a-google-just-for-me/feed" thr:count="8"/>
+		<thr:total>8</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>Phil Ringnalda</name>
+						<uri>http://weblog.philringnalda.com</uri>
+					</author>
+		<title type="html"><![CDATA[Another &#060;Google&#062; loser heard from]]></title>
+		<link rel="alternate" type="text/html" href="http://weblog.philringnalda.com/2006/01/09/another-google-loser-heard-from" />
+		<id>http://weblog.philringnalda.com/?p=1064</id>
+		<updated>2008-09-24T15:53:38Z</updated>
+		<published>2006-01-09T22:36:42Z</published>
+		<category scheme="http://weblog.philringnalda.com" term="blogging tech" /><category scheme="http://weblog.philringnalda.com" term="carping" /><category scheme="http://weblog.philringnalda.com" term="identity" />		<summary type="html"><![CDATA[Matt Mower? Didn't he used to exist?]]></summary>
+		<content type="html" xml:base="http://weblog.philringnalda.com/2006/01/09/another-google-loser-heard-from"><![CDATA[<p>Because it lacked the all-important feature of being about me, me, me, I&#8217;d forgotten that I wasn&#8217;t the only one getting unpersoned by Google: <a href="http://matt.blogs.it/entries/00002087.html">Matt Mower doesn&#8217;t exist either</a>.</p>
+<p>The situation isn&#8217;t quite as bad as he thinks: in fact, he shows up in [<a href="http://www.google.com/search?q=%22Matt+Mower%22">&#8220;Matt Mower&#8221;</a>], it&#8217;s just that when your weblog is <a href="http://www.google.com/search?q=%22Matt+Mower%22&#038;start=150">result 151 for your own name as a phrase</a> it feels like you&#8217;ve been disappeared.</p>
+<p>Hmm. Moved from <a href="http://radio.weblogs.com/0148602/">one URL</a> to <a href="http://matt.blogs.it">another</a> (and worse yet, the old one doesn&#8217;t redirect to the new), content republished by <a href="http://iaslash.org/aggregator/sources/88">at least one aggregator</a> which doesn&#8217;t decline to be indexed by search engines. Sounds <a href="http://weblog.philringnalda.com/2006/01/08/searching-where-im-not-hated">pretty familiar to me</a>.</p>
+<p>I&#8217;d say the one difference is that Matt cares and I don&#8217;t, but if (MS employee) <a href="http://blogs.duncanmackenzie.net/duncanma/archive/2006/01/09/3517.aspx">Duncan Mackenzie is going to have trouble finding me again</a> because I&#8217;m not indexed in MSN Search unless you already know my URL&hellip; well, now you&#8217;re starting to get into &#8220;actually does matter to me&#8221; territory.</p>
+]]></content>
+			<link rel="replies" type="text/html" href="http://weblog.philringnalda.com/2006/01/09/another-google-loser-heard-from#comments" thr:count="17"/>
+		<link rel="replies" type="application/atom+xml" href="http://weblog.philringnalda.com/2006/01/09/another-google-loser-heard-from/feed" thr:count="17"/>
+		<thr:total>17</thr:total>
+	</entry>
+		<entry>
+		<author>
+			<name>Phil Ringnalda</name>
+						<uri>http://weblog.philringnalda.com</uri>
+					</author>
+		<title type="html"><![CDATA[&#060;Searching where I&#8217;m not hated&#062;]]></title>
+		<link rel="alternate" type="text/html" href="http://weblog.philringnalda.com/2006/01/08/searching-where-im-not-hated" />
+		<id>http://weblog.philringnalda.com/?p=1063</id>
+		<updated>2006-01-09T00:09:53Z</updated>
+		<published>2006-01-09T00:09:40Z</published>
+		<category scheme="http://weblog.philringnalda.com" term="blogging tech" /><category scheme="http://weblog.philringnalda.com" term="carping" /><category scheme="http://weblog.philringnalda.com" term="meta" /><category scheme="http://weblog.philringnalda.com" term="wordpress" />		<summary type="html"><![CDATA[If Google and MSN Search hate me so much, what are they doing naked in my bed, humping away while they punch me and scream "I hate you!"?]]></summary>
+		<content type="html" xml:base="http://weblog.philringnalda.com/2006/01/08/searching-where-im-not-hated"><![CDATA[<p>As (Google employee) Nelson Minar <a href="http://www.somebits.com/weblog/tech/movingUrlResults.html">notes</a>, sometimes changing URLs by returning a <code>301 Moved Permanently</code> with the new URL works out fine with search engines: if you search Google for [<a href="http://www.google.com/search?q=for+fear+they%27ll+lose+visibility+in+search+engines">for fear they&#8217;ll lose visibility in search engines</a>], his post at his new URL is the first result.</p>
+<p>And as (Google employee) Matt Cutts <a href="http://www.mattcutts.com/blog/the-little-301-that-could">notes</a>, sometimes it doesn&#8217;t work out quite so well. Back at the end of October, when I switched to WordPress, I moved my weblog to the subdomain &#8220;weblog.&#8221; and changed to WordPress&#8217;s default URL scheme, with the words from the post title separated by hyphens (because <a href="http://weblog.philringnalda.com/2004/04/22/underscores-are-bad-mmkay">Underscores are bad</a> (for search engines)) and without the &#8220;.php&#8221; extension (because, among other things, it makes search results for [foo php] horribly cluttered with things only published using PHP, not about PHP), and redirected all my old URLs to the new ones. Now when you search for a set of words I&#8217;ve used in a post, like [<a href="http://www.google.com/search?q=when+Gmail+first+added+Atom+feeds">when Gmail first added Atom feeds</a>], you <strong>will not find my post</strong>.</p>
+<p>If you want to find me in your Google search results, you need to do one of two things: remember that the parameter to include &#8220;duplicate results&#8221; is <kbd>&amp;filter=0</kbd> and add that to your query URL, or work your way to the end of the results (in this case, that would be around result 747, despite their claim to have 412,000 results) and click the link to include omitted results. Then, once again work your way out to the end of the results (now at result 976, despite the complete and utter lie of &#8220;412,000 results&#8221;), and you&#8217;ll find me: the last damn thing they think anyone would ever want, with my useless front page, my worthless permalink, my crap-filled paged archive (now blocked off in <code>robots.txt</code>, because there&#8217;s really no value a search engine can extract from that view), and my spammy HTMLized version of the Atom autodiscovery RFC (which at least serves the purpose of increasing my spam load).</p>
+<p>The other, and faster, way to find me in Google results, searching for the words as a phrase, might hold a partial clue to why I&#8217;ve become <i>persona non grata</i> in Google&#8217;s view: [<a href="http://www.google.com/search?q=%22when+Gmail+first+added+Atom+feeds%22">&#8220;when Gmail first added Atom feeds&#8221;</a>] returns one result, from Sameer D&#8217;Costa&#8217;s aggregator. Include duplicates on that search, and you&#8217;ll also see a couple more Gregarius installs, along with my own worthless results. You won&#8217;t see my Gregarius install, though, because I know search engines hate duplicate content, so in Gregarius&#8217;s Admin/Config I set <code>rss.config.robotsmeta</code> to &#8220;noindex, follow&#8221; so that every page gets a <code>&lt;meta name="robots" content="noindex,follow" /&gt;</code> to tell search engines not to index my aggregator as duplicate content, though they are welcome to discover any URLs they don&#8217;t already know about. I don&#8217;t have any way of knowing whether Google first decided I was garbage, and then decided that made me a duplicate of other people aggregating me, or decided I was garbage because I was a duplicate of people duplicating me, but I know it isn&#8217;t helping: the only time you should let search engines index the output of an aggregator is when that&#8217;s the only place the feeds appear as HTML. Otherwise, it&#8217;s duplicate content, and that&#8217;s going to wind up hurting someone, whether it&#8217;s you or the source.</p>
+<p>Now, maybe it&#8217;s just me, but I really don&#8217;t like getting fucked by someone who spends the whole time punching me and swearing at me and insulting me. If that&#8217;s the way Google feels about me, I&#8217;d rather just end our relationship. That takes two things. First, I went to <kbd>about:config</kbd> and changed <code>keyword.URL</code> to <samp>http://myweb2.search.yahoo.com/search?ei=UTF-8&amp;p=</samp> so typing search terms in the addressbar will take me to Yahoo! rather than doing a Google &#8220;I&#8217;m feeling lucky&#8221; search, changed <code>browser.search.defaultenginename</code> to <samp>Yahoo</samp> so that selecting text and choosing <samp>Search Web for</samp> from the context menu would search at Yahoo, and changed <code>browser.search.order.1</code> to <samp>Yahoo</samp> so Google wouldn&#8217;t be on top. I should probably delete the google.src plugin file, too, but for now I&#8217;m not quite willing to burn every last bridge. (And I didn&#8217;t switch to MSN Search because they make Google look like the kindest and gentlest of lovers: the only way you&#8217;ll find me in any results there is to include <kbd>weblog.philringnalda.com</kbd> in your search terms. Otherwise, I simply don&#8217;t exist.)</p>
+<p>Then there&#8217;s the other half of breaking up: taking away Googlebot&#8217;s and msnbot&#8217;s keys to my house. Despite the fact that Google just flat out hates me, they&#8217;ve requested 6226 pages from me already this month (msnbot has only requested 1836, but they&#8217;ve requested <code>robots.txt</code> 104 times, to Googlebot&#8217;s 31 &#8212; maybe they know what&#8217;s coming).</p>
+<p>That ain&#8217;t free: to keep my host from pushing me into a dedicated server, I had to install a caching plugin, and then reconfigure it to an even longer cache time to prevent misses when they came back for more, just for search engines, which are the only things that ever look at most old weblog posts (well, along with confused and misled searchers, if you happen to be returned as something other than the very last result after duplicate results are included). But, block Googlebot? That seems pretty serious, somehow, even though most of the &#8220;visitors&#8221; they deliver are just comment spammers (one of the clues that I&#8217;d become invisible in search engines was just how little comment spam I&#8217;m getting).</p>
+<p>So, just like every abused woman on a crappy talk show that you want to shake some sense into, I&#8217;ll give Googlebot and his buddy msnbot another month, hoping he&#8217;ll change his abusive ways. After all, maybe one of his friends is reading this, and can talk some sense into him.</p>
+]]></content>
+			<link rel="replies" type="text/html" href="http://weblog.philringnalda.com/2006/01/08/searching-where-im-not-hated#comments" thr:count="23"/>
+		<link rel="replies" type="application/atom+xml" href="http://weblog.philringnalda.com/2006/01/08/searching-where-im-not-hated/feed" thr:count="23"/>
+		<thr:total>23</thr:total>
+	</entry>
+	</feed>
+
+<!-- Dynamic page generated in 0.601 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2015-09-10 20:12:44 -->

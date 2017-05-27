@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><!-- generator="Joomla! 1.5 - Open Source Content Management" --><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+	<channel>
+		<title>Blog</title>
+		<description>Webblog von Robert Deutz</description>
+		<link>http://robert-deutz.de/de/blog.html</link>
+		<lastBuildDate>Mon, 03 Oct 2011 18:37:24 +0000</lastBuildDate>
+		<generator>Joomla! 1.5 - Open Source Content Management</generator>
+		<language>de-de</language>
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/RobertDeutz" /><feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="robertdeutz" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><item>
+			<title>Joomla Module - Show by Vars</title>
+			<link>http://robert-deutz.de/de/blog/5-entwicklung/39-joomla-module-show-by-vars.html</link>
+			<guid>http://robert-deutz.de/de/blog/5-entwicklung/39-joomla-module-show-by-vars.html</guid>
+			<description><![CDATA[<p>I have made a small module for Joomla! that helps me to show module text only of some specific pages. This module shows the text only, if the conditions they are set for the module all true. This gives you the ability to show a module on a site when you haven't a menu item for that page. But keep in mind that you have to set up the module to be shown on any page, if not then Joomla doesn't render the module at all.</p>
+<p>e.g. <br />option = com_content<br />view = article<br />id = 4711:an-article-without-a-menu-entry<br /><br /></p>
+<p>Download:<br />{rddl}rdbs-showbyvars.zip{/rddl}</p>]]></description>
+			<author>rdeutz@googlemail.com (Robert Deutz)</author>
+			<category>Entwicklung</category>
+			<pubDate>Tue, 10 Aug 2010 11:09:21 +0000</pubDate>
+		</item>
+		<item>
+			<title>Cron Component for Joomla!</title>
+			<link>http://robert-deutz.de/de/blog/1-allgemein/38-cron-component-for-joomla.html</link>
+			<guid>http://robert-deutz.de/de/blog/1-allgemein/38-cron-component-for-joomla.html</guid>
+			<description><![CDATA[<p>If you integrate Joomla! in a larger and complex environment it is often necessary to have processes running without starting the process manually. In a UNIX environment this is quite simple, you can use the cron functionality, but for Joomla! the problem is that you don't have your Joomla! environment, if you run a UNIX shell script. Com_cron for Joomla! fills this gap.<br /><br />Com_cron is a component to run **jobs** in a Joomla! environment. The concept has tree parts:<br /><br /></p>
+<ol>
+<li>A admin component to administrate the jobs and show the logs</li>
+<li>A frontend part to allow the starting from outside (e.g. unix cron + curl)</li>
+<li>The Jobs are implemented as plugins. Every plugin can use tree events "onBeforeRunCron","onRunCron" and "onAfterRunCron".</li>
+</ol>
+<p><br />The installation process installs an example plugin and the component. After that you must set up a hash in the parameters for the component and you have to create a job. For the first run you can setup a name and choose a plugin, if you don't change anything more then the job runs with every trigger from outside.<br /><br />Then you have to trigger the component. If you have set the hash to 123456, then you have to call your site with index.php?option=com_cron&amp;hash=123456. After that you should see a log item in the backend. You should see the last executed set on your job and you should see the output from the plugin in the frontend:<br /><br />OUTPUT<br />This is the test output for the Event: onBeforeRunCron<br />This is the test output for the Event: onRunCron<br />This is the test output for the Event: onAfterRunCron<br /><br />Please take a look at the example plugin, it explains how you can use the functionality.<br /><br />That's it.<br />&nbsp;<br />Please keep in mind:</p>
+<ul>
+<li>that this component is not for production use. </li>
+<li>The deinstallation process deletes all tables created from the component.</li>
+<li>Cron Plugin will not be deleted, if you install the component, but it will be over-written if you reinstall.&nbsp;&nbsp;&nbsp;&nbsp; </li>
+</ul>
+<p>{rddl}com_cron_v0_6.zip{/rddl}</p>]]></description>
+			<author>rdeutz@googlemail.com (Robert Deutz)</author>
+			<category>Allgemein</category>
+			<pubDate>Fri, 09 Jul 2010 13:55:01 +0000</pubDate>
+		</item>
+		<item>
+			<title>I am still alive :-)</title>
+			<link>http://robert-deutz.de/de/blog/1-allgemein/37-i-am-still-alive-.html</link>
+			<guid>http://robert-deutz.de/de/blog/1-allgemein/37-i-am-still-alive-.html</guid>
+			<description><![CDATA[<p>Sometimes it takes a little bit longer. For this Blog it is true in two ways:</p>
+<ul>
+<li>My last post is more than 6 months old. Apologies for the silence&nbsp; </li>
+<li>I had a component 80% ready to publish, but I didn't have the time to make it ready.</li>
+</ul>
+<p><br />For the second issue I found the time and the blog post about my new component com_cron is practically finished, if you read this post. <br /><br />Writing about the first issue is a longer story. My last post was an "Open Letter to the community" asking for help to make an international conference about Joomla! It is impossible not to hear about "JandBeyond an international Joomla! conference" we had at the end of May here in Germany with around 180 attendees from 27 different countries. It was such a huge success and it was so much work that I didn't have the time to write here about what is going on. In the meantime I was elected as Open Source Matters Board Member, I am now the event team leader (some more information about my views about this position <a target="_blank" href="http://magazine.joomla.org/topics/item/80-Interview-Robert-Deutz,-Events-Team-Leader-for-OSM">here</a> in the Joomla Magazine) and my company is doing well. Life is good!! <br /><br />I know the next post will come in a couple of minutes and I hope that the post after the next will not take so much time.</p>]]></description>
+			<author>rdeutz@googlemail.com (Robert Deutz)</author>
+			<category>Allgemein</category>
+			<pubDate>Fri, 09 Jul 2010 13:06:13 +0000</pubDate>
+		</item>
+		<item>
+			<title>Open Letter International Joomla Conference</title>
+			<link>http://robert-deutz.de/de/blog/6-joomla/35-open-letter-international-joomla-conference.html</link>
+			<guid>http://robert-deutz.de/de/blog/6-joomla/35-open-letter-international-joomla-conference.html</guid>
+			<description><![CDATA[<p><strong>Open Letter and invitation for participation and support for an International Joomla Conference to OpenSourceMatters, The Project, The Leadership, Production and Community Team, any Joomla! working group and any community member.</strong><br /><br />It started as a simple offer for a place and date and the response was amazing. Many people liked the idea of meeting people in person on an international basis. We all know, have heard about or have participated and know what fun and great experience a Joomla!Day is. The international event will be slightly different but also a great experience for all the attendees. <br /><br />I think it is important that all parts of the community together build a "WE" and help to make this event a great success. I truly believe that we can make it happen, but we need support from everywhere. We need OSM as the trademark holder and official organisation in the Joomla! community. We need our teams and working groups to be there and talk with the other community members. And most of all we need the participation of all the people in the Joomla! community.<br /><br />Joomla! is Open Source and this is a great concept, let us use this concept to discuss all options and possibilities in an open environment. Please note that nothing is fixed yet and your suggestions and the wishes of the community are very welcome.<br /><br />This is an open invitation to help shape the event and to be part of it.<br /><br />Robert</p>
+<p>Discuss this topic <a target="_parent" href="http://forum.joomla.org/viewtopic.php?f=306&amp;t=452922">here</a></p>]]></description>
+			<author>rdeutz@googlemail.com (Robert Deutz)</author>
+			<category>Joomla</category>
+			<pubDate>Wed, 21 Oct 2009 15:59:16 +0000</pubDate>
+		</item>
+		<item>
+			<title>International Joomla! Day/Conference/Meeting in Germany 30. May - 1.June </title>
+			<link>http://robert-deutz.de/de/blog/6-joomla/34-international-joomla-dayconferencemeeting-in-germany-30-may-1june.html</link>
+			<guid>http://robert-deutz.de/de/blog/6-joomla/34-international-joomla-dayconferencemeeting-in-germany-30-may-1june.html</guid>
+			<description><![CDATA[<p>Some weeks ago we have finished our Joomla!Day here in Germany. One of our attendees gave me the name of a cheap and good location for our next Joomla!day. I have booked the location 2 days later, because it is so cheap that booking can't be a mistake. I'd like to offer this location for an "International Joomla! Day/Conference/Meeting".</p>
+<h3>Where it is?</h3>
+<p>It is near Wiesbaden/Frankfurt with good public transport possibilities and via Frankfurt with good flight connections worldwide. The Name is "Wilhelm-Kempf-Haus" (here the link to the Website but the site is only in German). I have booked the hole location.</p>
+<h3>What do we get?</h3>
+<p> </p>
+<ul>
+<li>room for 240 attendees</li>
+<li>over 14 rooms for presentations or talks</li>
+<li> free WLAN</li>
+<li> modern technical equipment</li>
+</ul>
+<p>and many things more, I'm perfectly happy with the location</p>
+<h3>What can we do on tree days?</h3>
+<p>I think the first day should be a "Community Day", maybe in unconference style. This day could be focused on meet people and having fun.<br />Second day could be a day with business topics: Business Models, Success Stories, Marketing, .... all the funny things we love and hate :-)<br />Last but not least, the third day could be the developers Day. Not easy to know now what is an important topic in seven months, but at the moment we need only a headline for the day and "Developers Day" is my suggestion.</p>
+<h3>There are some minor problems:</h3>
+<p>We have only 90 rooms for over night stay (prizes: 24 up to 37,50 euro/per day for a minum booking period of two days), but there are Hotels near by so I think this problem can be solved. <br />We have to organize a shuttle service to get all the people to the venue, but this is also a small problem.</p>
+<h3>What we need?</h3>
+<p>People they are willing to help. <br />Sponsors to cover the cost and for reducing the financial risk for the people they are organizing the event.  <br /><strong><br />AND People they like to come to Germany.</strong><br /><br />I have spoken with many people and I got only positive response. I'd like to hear your ideas your pro or cons, please post it here as comment or in the forum <a target="_blank" href="http://www.alltogetherasawhole.org/forum/topics/international-joomla">here</a> .</p>
+<p> </p>]]></description>
+			<author>rdeutz@googlemail.com (Robert Deutz)</author>
+			<category>Joomla</category>
+			<pubDate>Fri, 09 Oct 2009 15:19:44 +0000</pubDate>
+		</item>
+		<item>
+			<title>RDBS Comment meets K2</title>
+			<link>http://robert-deutz.de/de/blog/6-joomla/33-rdbs-comment-meets-k2.html</link>
+			<guid>http://robert-deutz.de/de/blog/6-joomla/33-rdbs-comment-meets-k2.html</guid>
+			<description><![CDATA[<p>Yesterday evening I have played a little bit with K2 and the K2 plugins. I like K2 it is a nice and powerfully component for Joomla!, but the commenting system don't work if javascript is switched off. Some people know I have build a commenting system named RDBS Comment and this system is focused on accessibility. Second focus was to build a system that can handle comments for different application, so what could be a better test as to integrate RDBS Comments in K2. It was quite simple and managing it in svn, writing documentation and this blog Post, takes more time as developing the plugin. Try it, and if you like it or if you hate it, give me a response here in the comments.</p>
+<p>You need to install the component and you need to install the k2-plugin.</p>
+<p>{rddl}rdbs_comment_1rc2.zip{/rddl}</p>
+<p>{rddl}plgk2rdbs_comment.zip{/rddl}</p>
+<p><strong>Update instructions:</strong> Please deinstall "RDBS Comment" Component and the "RDBS Comment" content plugin</p>
+<p><strong>Changelog:</strong><br />change: section/category restrictions moved to plugin<br />add: language file for plugin<br />add: k2 templates</p>
+<p>Good Luck <br />Robert</p>]]></description>
+			<author>rdeutz@googlemail.com (Robert Deutz)</author>
+			<category>Joomla</category>
+			<pubDate>Wed, 26 Aug 2009 09:50:23 +0000</pubDate>
+		</item>
+		<item>
+			<title>RDBS Comment - Released</title>
+			<link>http://robert-deutz.de/de/blog/6-joomla/31-rdbs-comment-released.html</link>
+			<guid>http://robert-deutz.de/de/blog/6-joomla/31-rdbs-comment-released.html</guid>
+			<description><![CDATA[<p>I am happy to announce the avalibity of my new Joomla! Extension "RDBS Comment". I will not write to much about the features, I have done this in the article <a target="_blank" href="http://robert-deutz.de/index.php?option=com_content&amp;view=article&amp;id=29&amp;catid=6&amp;Itemid=2">Announcement RDBS Comment</a> recently.</p>
+<p>In Open Source Business we have always the problem with the support for extensions. I can talk a lot of hours about answering the same question and don't using search in forums or not reading documentation I have written to help people. On the other site it is normal that the people have questions. So what should I do, I have written many extensions and can't answer all the question. I don't know, if it is a solution but I like the idea Fotis had with <a target="_blank" href="http://k2community.joomlaworks.gr">http://k2community.joomlaworks.gr</a>. So I have also created a community on ning.com: <a target="_blank" href="http://community.rdbs.net">http://community.rdbs.net</a> (this is a redirect to rdbs-network.ning.com). I hope this will be a place were people help people. In the first weeks I will help as much as I can to make it possible and give it a good start.</p>
+<p>So here the documentation: {rddl}rdbs_comment.pdf{/rddl} and the package: {rddl}rdbs_comment.zip{/rddl}.</p>
+<p>Have fun :-)</p>
+<p> </p>
+<p> </p>]]></description>
+			<author>rdeutz@googlemail.com (Robert Deutz)</author>
+			<category>Joomla</category>
+			<pubDate>Thu, 06 Aug 2009 11:18:30 +0000</pubDate>
+		</item>
+		<item>
+			<title>RDBS Comment</title>
+			<link>http://robert-deutz.de/de/blog/6-joomla/30-rdbs-comment.html</link>
+			<guid>http://robert-deutz.de/de/blog/6-joomla/30-rdbs-comment.html</guid>
+			<description><![CDATA[<p>Sorry, I am a little bit in delay with publishing my new component, but some task couldn't wait and I have to finish this task first. I think I could finish my work next week so the component will be available as late as the end of the next week.</p>]]></description>
+			<author>rdeutz@googlemail.com (Robert Deutz)</author>
+			<category>Joomla</category>
+			<pubDate>Sat, 01 Aug 2009 15:21:38 +0000</pubDate>
+		</item>
+		<item>
+			<title>Announcement RDBS Comment</title>
+			<link>http://robert-deutz.de/de/blog/6-joomla/29-announcement-rdbs-comment.html</link>
+			<guid>http://robert-deutz.de/de/blog/6-joomla/29-announcement-rdbs-comment.html</guid>
+			<description><![CDATA[Today I'll announce a new Joomla! extension named RDBS Comment. It is not very difficult to guess right what the extension should do. Maybe you ask yourself why an other commenting extension for Joomla! There are some good reasons for developing a new commenting system:<br /> 
+]]></description>
+			<author>rdeutz@googlemail.com (Robert Deutz)</author>
+			<category>Joomla</category>
+			<pubDate>Thu, 23 Jul 2009 18:47:20 +0000</pubDate>
+		</item>
+		<item>
+			<title>TAKE COVER</title>
+			<link>http://robert-deutz.de/de/blog/1-allgemein/28-take-cover.html</link>
+			<guid>http://robert-deutz.de/de/blog/1-allgemein/28-take-cover.html</guid>
+			<description><![CDATA[<p>This is my first posting in English here on this blog. I have two reasons for writing in English:</p>
+<p>1) I think my English is not really good and making it better could only work if I use the language</p>
+<p>2) I can achieve a larger audience</p>
+<p>What can you expect? The topics I will write about here will mostly have a technical background. Something about CMS, Joomla!, programming but sometimes also about things I like or hate.</p>
+<p>I will not write all posts in English sometimes in German and sometimes in English, it depends on the issue I will write about.</p>
+<p>So enough writing about what I will do. Come out of your covering enjoy and have fun.</p>]]></description>
+			<author>rdeutz@googlemail.com (Robert Deutz)</author>
+			<category>Allgemein</category>
+			<pubDate>Sun, 28 Jun 2009 11:23:33 +0000</pubDate>
+		</item>
+	</channel>
+</rss>

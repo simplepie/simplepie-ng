@@ -1,0 +1,186 @@
+<?xml version="1.0"?><?xml-stylesheet type="text/xsl" href="http://www.codeplex.com/rss.xsl"?><rss version="2.0"><channel><title>lockpick</title><link>http://lockpick.codeplex.com/project/feeds/rss</link><description>LockPick is a toolkit for Visual Studio .NET code security automation.</description><item><title>Source code checked in, #52373</title><link>http://lockpick.codeplex.com/SourceControl/changeset/changes/52373</link><description>Checked in by server upgrade</description><author>_TFSSERVICE</author><pubDate>Wed, 28 Jul 2010 17:08:20 GMT</pubDate><guid isPermaLink="false">Source code checked in, #52373 20100728050820P</guid></item><item><title>Source code checked in, #20012</title><link>http://www.codeplex.com/lockpick/SourceControl/ListDownloadableCommits.aspx</link><description></description><author>drive</author><pubDate>Wed, 16 Jul 2008 17:16:15 GMT</pubDate><guid isPermaLink="false">Source code checked in, #20012 20080716051615P</guid></item><item><title>UPDATED WIKI: Home</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Home&amp;version=17</link><description>&lt;div class="wikidoc"&gt;
+&lt;h1&gt;
+Project Description
+&lt;/h1&gt;LockPick is a toolkit for Visual Studio .NET code security automation.
+&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Vision
+&lt;/h1&gt;Lockpick will allow developers to add a lockpick project, point to source or compiled code and generate various security automation function including code scans, fuzzer results and various vulnerability tests.  A developer can modify the generated code for specific environments and then add it to any post build events.  In a continuous integration environment, we are looking to integrate lockpick as a NANT and MSBUILD task.  &lt;br /&gt; &lt;br /&gt;The first version will include the project template, target website sample, code generation wizards, framework, console and user interface.&lt;br /&gt; &lt;br /&gt;Future releases will include checklist, code snippets and script repository, external tool integration, log file creator, and OVAL feed reader.&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Project Goals
+&lt;/h1&gt; &lt;br /&gt;&lt;h2&gt;
+Version 1
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;Sample Website to demonstrate OWASP Top 10 vulnerabilities.&lt;/li&gt;&lt;li&gt;VS Project (C#/VB.NET using .NET 3.5 framework) to connect to code, assembly, site, executable&lt;/li&gt;&lt;li&gt;Code generator&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-framework&lt;/b&gt; for code security automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-console&lt;/b&gt; for automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-gui&lt;/b&gt; for interactive&lt;/li&gt;&lt;li&gt;Simple report generator&lt;/li&gt;&lt;li&gt;NANT/MSBUILD custom tasks&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;h2&gt;
+Version 2
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;DSL for generating security automation projects&lt;/li&gt;&lt;li&gt;Checklist and scripting repository&lt;/li&gt;&lt;li&gt;3rd Party Tool integration&lt;/li&gt;&lt;li&gt;Testing log GUI&lt;/li&gt;&lt;li&gt;OVAL feed reader&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Roadmap&amp;amp;referringTitle=Home"&gt;Roadmap&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Tracking&amp;amp;referringTitle=Home"&gt;Tracking&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Resources&amp;amp;referringTitle=Home"&gt;Resources&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=References&amp;amp;referringTitle=Home"&gt;References&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;amp;referringTitle=Home"&gt;Procedures&lt;/a&gt;&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sun, 11 May 2008 04:00:18 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Home 20080511040018A</guid></item><item><title>UPDATED WIKI: Home</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Home&amp;version=16</link><description>&lt;div class="wikidoc"&gt;
+&lt;h1&gt;
+Project Description
+&lt;/h1&gt;LockPick is a toolkit for Visual Studio .NET code security automation.
+&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Vision
+&lt;/h1&gt;Lockpick will allow developers to add a lockpick project, point to source or compiled code and generate various security automation function including code scans, fuzzer results and various vulnerability tests.  A developer can modify the generated code for specific environments and then add it to any post build events.  In a continuous integration environment, we are looking to integrate lockpick as a NANT and MSBUILD task.  &lt;br /&gt; &lt;br /&gt;The first version will include the project template, code generation wizards, framework, console and user interface.&lt;br /&gt; &lt;br /&gt;Future releases will include checklist, code snippets and script repository, external tool integration, log file creator, and OVAL feed reader.&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Project Goals
+&lt;/h1&gt; &lt;br /&gt;&lt;h2&gt;
+Version 1
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;Sample Website to demonstrate OWASP Top 10 vulnerabilities.&lt;/li&gt;&lt;li&gt;VS Project (C#/VB.NET using .NET 3.5 framework) to connect to code, assembly, site, executable&lt;/li&gt;&lt;li&gt;Code generator&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-framework&lt;/b&gt; for code security automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-console&lt;/b&gt; for automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-gui&lt;/b&gt; for interactive&lt;/li&gt;&lt;li&gt;Simple report generator&lt;/li&gt;&lt;li&gt;NANT/MSBUILD custom tasks&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;h2&gt;
+Version 2
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;DSL for generating security automation projects&lt;/li&gt;&lt;li&gt;Checklist and scripting repository&lt;/li&gt;&lt;li&gt;3rd Party Tool integration&lt;/li&gt;&lt;li&gt;Testing log GUI&lt;/li&gt;&lt;li&gt;OVAL feed reader&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Roadmap&amp;amp;referringTitle=Home"&gt;Roadmap&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Tracking&amp;amp;referringTitle=Home"&gt;Tracking&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Resources&amp;amp;referringTitle=Home"&gt;Resources&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=References&amp;amp;referringTitle=Home"&gt;References&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;amp;referringTitle=Home"&gt;Procedures&lt;/a&gt;&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sun, 11 May 2008 03:58:40 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Home 20080511035840A</guid></item><item><title>Source code checked in</title><link>http://www.codeplex.com/lockpick/SourceControl/ListDownloadableCommits.aspx</link><description></description><author>drive</author><pubDate>Mon, 14 Apr 2008 03:45:54 GMT</pubDate><guid isPermaLink="false">Source code checked in 20080414034554A</guid></item><item><title>Source code checked in</title><link>http://www.codeplex.com/lockpick/SourceControl/ListDownloadableCommits.aspx</link><description></description><author>drive</author><pubDate>Mon, 14 Apr 2008 03:04:25 GMT</pubDate><guid isPermaLink="false">Source code checked in 20080414030425A</guid></item><item><title>UPDATED WIKI: Home</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Home&amp;version=15</link><description>&lt;div class="wikidoc"&gt;
+&lt;h1&gt;
+Project Description
+&lt;/h1&gt;LockPick is a toolkit for Visual Studio .NET code security automation.
+&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Vision
+&lt;/h1&gt;Lockpick will allow developers to add a lockpick project, point to source or compiled code and generate various security automation function including code scans, fuzzer results and various vulnerability tests.  A developer can modify the generated code for specific environments and then add it to any post build events.  In a continuous integration environment, we are looking to integrate lockpick as a NANT and MSBUILD task.  &lt;br /&gt; &lt;br /&gt;The first version will include the project template, code generation wizards, framework, console and user interface.&lt;br /&gt; &lt;br /&gt;Future releases will include checklist, code snippets and script repository, external tool integration, log file creator, and OVAL feed reader.&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Project Goals
+&lt;/h1&gt; &lt;br /&gt;&lt;h2&gt;
+Version 1
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;VS Project (C#/VB.NET using .NET 3.5 framework) to connect to code, assembly, site, executable&lt;/li&gt;&lt;li&gt;Code generator&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-framework&lt;/b&gt; for code security automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-console&lt;/b&gt; for automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-gui&lt;/b&gt; for interactive&lt;/li&gt;&lt;li&gt;Simple report generator&lt;/li&gt;&lt;li&gt;NANT/MSBUILD custom tasks&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;h2&gt;
+Version 2
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;DSL for generating security automation projects&lt;/li&gt;&lt;li&gt;Checklist and scripting repository&lt;/li&gt;&lt;li&gt;3rd Party Tool integration&lt;/li&gt;&lt;li&gt;Testing log GUI&lt;/li&gt;&lt;li&gt;OVAL feed reader&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Roadmap&amp;amp;referringTitle=Home"&gt;Roadmap&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Tracking&amp;amp;referringTitle=Home"&gt;Tracking&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Resources&amp;amp;referringTitle=Home"&gt;Resources&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=References&amp;amp;referringTitle=Home"&gt;References&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;amp;referringTitle=Home"&gt;Procedures&lt;/a&gt;&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sat, 12 Apr 2008 22:48:09 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Home 20080412104809P</guid></item><item><title>UPDATED WIKI: Roadmap</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Roadmap&amp;version=2</link><description>&lt;div class="wikidoc"&gt;
+&lt;b&gt;1st Milestone (1 month)&lt;/b&gt;&lt;br /&gt;*VS Project (C#/VB.NET using .NET 3.5 framework) to connect to code, assembly, site, executable&lt;br /&gt;*Wizard&lt;br /&gt;*Code generator&lt;br /&gt;*lockpick-framework for code security automation&lt;br /&gt; &lt;br /&gt;&lt;b&gt;2nd Milestone (1st quarter - 3 mos)&lt;/b&gt;&lt;br /&gt;*lockpick-console for automation&lt;br /&gt;*lockpick-gui for interactive&lt;br /&gt;	&lt;br /&gt;&lt;b&gt;3rd Milestone (1st Year - 12 mos)&lt;/b&gt;&lt;br /&gt;*Simple report generator&lt;br /&gt;*NANT/MSBUILD custom tasks&lt;br /&gt;*DSL for security automation&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sat, 12 Apr 2008 22:47:21 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Roadmap 20080412104721P</guid></item><item><title>UPDATED WIKI: Home</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Home&amp;version=14</link><description>&lt;div class="wikidoc"&gt;
+&lt;h1&gt;
+Project Description
+&lt;/h1&gt;LockPick is a toolkit for Visual Studio .NET code security automation.
+&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Vision
+&lt;/h1&gt;Lockpick will allow developers to add a lockpick project, point to source or compiled code and generate various security automation function including code scans, fuzzer results and various vulnerability tests.  A developer can modify the generated code for specific environments and then add it to any post build events.  In a continuous integration environment, we are looking to integrate lockpick as a NANT and MSBUILD task.  &lt;br /&gt; &lt;br /&gt;The first version will include the project template, code generation wizards, framework, console and user interface.&lt;br /&gt; &lt;br /&gt;Future releases will include checklist, code snippets and script repository, external tool integration, log file creator, and OVAL feed reader.&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Project Goals
+&lt;/h1&gt; &lt;br /&gt;&lt;h2&gt;
+Version 1
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;VS Project (C#/VB.NET using .NET 3.5 framework) to connect to code, assembly, site, executable&lt;/li&gt;&lt;li&gt;Code generator&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-framework&lt;/b&gt; for code security automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-console&lt;/b&gt; for automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-gui&lt;/b&gt; for interactive&lt;/li&gt;&lt;li&gt;Simple report generator&lt;/li&gt;&lt;li&gt;NANT/MSBUILD custom tasks&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;h2&gt;
+Version 2
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;Checklist and scripting repository&lt;/li&gt;&lt;li&gt;3rd Party Tool integration&lt;/li&gt;&lt;li&gt;Testing log GUI&lt;/li&gt;&lt;li&gt;OVAL feed reader&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Roadmap&amp;amp;referringTitle=Home"&gt;Roadmap&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Tracking&amp;amp;referringTitle=Home"&gt;Tracking&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Resources&amp;amp;referringTitle=Home"&gt;Resources&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=References&amp;amp;referringTitle=Home"&gt;References&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;amp;referringTitle=Home"&gt;Procedures&lt;/a&gt;&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sat, 12 Apr 2008 22:45:14 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Home 20080412104514P</guid></item><item><title>UPDATED WIKI: Home</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Home&amp;version=13</link><description>&lt;div class="wikidoc"&gt;
+&lt;h1&gt;
+Project Description
+&lt;/h1&gt;Lockpick is an open source penetration testing project manager toolkit.
+&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Vision
+&lt;/h1&gt;Lockpick will allow developers to add a lockpick project, point to source or compiled code and generate various security automation function including code scans, fuzzer results and various vulnerability tests.  A developer can modify the generated code for specific environments and then add it to any post build events.  In a continuous integration environment, we are looking to integrate lockpick as a NANT and MSBUILD task.  &lt;br /&gt; &lt;br /&gt;The first version will include the project template, code generation wizards, framework, console and user interface.&lt;br /&gt; &lt;br /&gt;Future releases will include checklist, code snippets and script repository, external tool integration, log file creator, and OVAL feed reader.&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Project Goals
+&lt;/h1&gt; &lt;br /&gt;&lt;h2&gt;
+Version 1
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;VS Project to connect to code, assembly, site, executable&lt;/li&gt;&lt;li&gt;Code generator&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-framework&lt;/b&gt; for code security automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-console&lt;/b&gt; for automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-gui&lt;/b&gt; for interactive&lt;/li&gt;&lt;li&gt;Simple report generator&lt;/li&gt;&lt;li&gt;NANT/MSBUILD custom tasks&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;h2&gt;
+Version 2
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;Checklist and scripting repository&lt;/li&gt;&lt;li&gt;3rd Party Tool integration&lt;/li&gt;&lt;li&gt;Testing log GUI&lt;/li&gt;&lt;li&gt;OVAL feed reader&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Roadmap&amp;amp;referringTitle=Home"&gt;Roadmap&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Tracking&amp;amp;referringTitle=Home"&gt;Tracking&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Resources&amp;amp;referringTitle=Home"&gt;Resources&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=References&amp;amp;referringTitle=Home"&gt;References&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;amp;referringTitle=Home"&gt;Procedures&lt;/a&gt;&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sat, 12 Apr 2008 16:03:22 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Home 20080412040322P</guid></item><item><title>UPDATED WIKI: Home</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Home&amp;version=12</link><description>&lt;div class="wikidoc"&gt;
+&lt;h1&gt;
+Project Description
+&lt;/h1&gt;Lockpick is an open source penetration testing project manager toolkit.
+&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Vision
+&lt;/h1&gt;LockPick is a toolkit for Visual Studio .NET code security automation.  Lockpick will allow developers to add a lockpick project, point to source or compiled code and generate various security automation function including code scans, fuzzer results and various vulnerability tests.  A developer can modify the generated code for specific environments and then add it to any post build events.  In a continuous integration environment, we are looking to integrate lockpick as a NANT and MSBUILD task.  &lt;br /&gt; &lt;br /&gt;The first version will include the project template, code generation wizards, framework, console and user interface.&lt;br /&gt; &lt;br /&gt;Future releases will include checklist, code snippets and script repository, external tool integration, log file creator, and OVAL feed reader.&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Project Goals
+&lt;/h1&gt; &lt;br /&gt;&lt;h2&gt;
+Version 1
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;VS Project to connect to code, assembly, site, executable&lt;/li&gt;&lt;li&gt;Code generator&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-framework&lt;/b&gt; for code security automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-console&lt;/b&gt; for automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-gui&lt;/b&gt; for interactive&lt;/li&gt;&lt;li&gt;Simple report generator&lt;/li&gt;&lt;li&gt;NANT/MSBUILD custom tasks&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;h2&gt;
+Version 2
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;Checklist and scripting repository&lt;/li&gt;&lt;li&gt;3rd Party Tool integration&lt;/li&gt;&lt;li&gt;Testing log GUI&lt;/li&gt;&lt;li&gt;OVAL feed reader&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Roadmap&amp;amp;referringTitle=Home"&gt;Roadmap&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Tracking&amp;amp;referringTitle=Home"&gt;Tracking&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Resources&amp;amp;referringTitle=Home"&gt;Resources&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=References&amp;amp;referringTitle=Home"&gt;References&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;amp;referringTitle=Home"&gt;Procedures&lt;/a&gt;&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sat, 12 Apr 2008 16:02:48 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Home 20080412040248P</guid></item><item><title>UPDATED WIKI: Home</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Home&amp;version=11</link><description>&lt;div class="wikidoc"&gt;
+&lt;h1&gt;
+Project Description
+&lt;/h1&gt;Lockpick is an open source penetration testing project manager toolkit.
+&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Vision
+&lt;/h1&gt;LockPick is a toolkit for Visual Studio .NET code security automation.  Lockpick will allow developers to add a lockpick project, point to source or compiled code and generate various security automation function including code scans, fuzzer results and various vulnerability tests.  A developer can modify the generated code for specific environments and then add it to any post build events.  In a continuous integration environment, we are looking to integrate lockpick as a NANT and MSBUILD task.  &lt;br /&gt; &lt;br /&gt;The first version will include the project template, code generation wizards, framework, console and user interface.&lt;br /&gt; &lt;br /&gt;Future releases will include checklist, code snippets and script repository, external tool integration, log file creator, and OVAL feed reader.&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Project Goals
+&lt;/h1&gt; &lt;br /&gt;&lt;h2&gt;
+Version 1
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;VS Project to connect to code, assembly, site, executable&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-framework&lt;/b&gt; for code security automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-console&lt;/b&gt; for automation&lt;/li&gt;&lt;li&gt;&lt;b&gt;lockpick-gui&lt;/b&gt; for interactive&lt;/li&gt;&lt;li&gt;Simple report generator&lt;/li&gt;&lt;li&gt;NANT/MSBUILD custom tasks&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;h2&gt;
+Version 2
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;Checklist and scripting repository&lt;/li&gt;&lt;li&gt;3rd Party Tool integration&lt;/li&gt;&lt;li&gt;Testing log GUI&lt;/li&gt;&lt;li&gt;OVAL feed reader&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Roadmap&amp;amp;referringTitle=Home"&gt;Roadmap&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Tracking&amp;amp;referringTitle=Home"&gt;Tracking&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Resources&amp;amp;referringTitle=Home"&gt;Resources&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=References&amp;amp;referringTitle=Home"&gt;References&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;amp;referringTitle=Home"&gt;Procedures&lt;/a&gt;&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sat, 12 Apr 2008 16:01:19 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Home 20080412040119P</guid></item><item><title>UPDATED WIKI: Home</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Home&amp;version=10</link><description>&lt;div class="wikidoc"&gt;
+&lt;h1&gt;
+Project Description
+&lt;/h1&gt;Lockpick is an open source penetration testing project manager toolkit.
+&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Vision
+&lt;/h1&gt;LockPick is a toolkit for Penetration Testing.  The first version will include project manager, checklists and a report generator.  Future releases will include tool integration, log file creator, and OVAL feed reader.&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Project Goals
+&lt;/h1&gt; &lt;br /&gt;&lt;h2&gt;
+Version 1
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;VS Project to connect to code, assembly, site, executable&lt;/li&gt;&lt;li&gt;Fuzzer object&lt;/li&gt;&lt;li&gt;Vulnerability object&lt;/li&gt;&lt;li&gt;Vulnerability Database&lt;/li&gt;&lt;li&gt;GUI for penetration test projects&lt;/li&gt;&lt;li&gt;Checklist and scripting repository&lt;/li&gt;&lt;li&gt;Penetration Testing Report generator&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;h2&gt;
+Version 2
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;3rd Party Tool integration&lt;/li&gt;&lt;li&gt;Testing log GUI&lt;/li&gt;&lt;li&gt;OVAL feed reader&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Roadmap&amp;amp;referringTitle=Home"&gt;Roadmap&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Tracking&amp;amp;referringTitle=Home"&gt;Tracking&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Resources&amp;amp;referringTitle=Home"&gt;Resources&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=References&amp;amp;referringTitle=Home"&gt;References&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;amp;referringTitle=Home"&gt;Procedures&lt;/a&gt;&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Wed, 09 Apr 2008 17:10:17 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Home 20080409051017P</guid></item><item><title>Source code checked in</title><link>http://www.codeplex.com/lockpick/SourceControl/ListDownloadableCommits.aspx</link><description>Placeholder Check to keep Codeplex project alive</description><author>drive</author><pubDate>Wed, 09 Apr 2008 17:04:37 GMT</pubDate><guid isPermaLink="false">Source code checked in 20080409050437P</guid></item><item><title>UPDATED WIKI: Tracking</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Tracking&amp;version=2</link><description>&lt;div class="wikidoc"&gt;
+&lt;b&gt;Current Status&lt;/b&gt;&lt;br /&gt;Project Kickoff 4/1/2008&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Thu, 27 Mar 2008 15:38:54 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Tracking 20080327033854P</guid></item><item><title>UPDATED WIKI: Home</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Home&amp;version=9</link><description>&lt;div class="wikidoc"&gt;
+&lt;h1&gt;
+Project Description
+&lt;/h1&gt;Lockpick is an open source penetration testing project manager toolkit.
+&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Vision
+&lt;/h1&gt;LockPick is a toolkit for Penetration Testing.  The first version will include project manager, checklists and a report generator.  Future releases will include tool integration, log file creator, and OVAL feed reader.&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Project Goals
+&lt;/h1&gt; &lt;br /&gt;&lt;h2&gt;
+Version 1
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;GUI for penetration test projects&lt;/li&gt;&lt;li&gt;Checklist and scripting repository&lt;/li&gt;&lt;li&gt;Penetration Testing Report generator&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;h2&gt;
+Version 2
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;3rd Party Tool integration&lt;/li&gt;&lt;li&gt;Testing log GUI&lt;/li&gt;&lt;li&gt;OVAL feed reader&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Roadmap&amp;amp;referringTitle=Home"&gt;Roadmap&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Tracking&amp;amp;referringTitle=Home"&gt;Tracking&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Resources&amp;amp;referringTitle=Home"&gt;Resources&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=References&amp;amp;referringTitle=Home"&gt;References&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;amp;referringTitle=Home"&gt;Procedures&lt;/a&gt;&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sat, 08 Mar 2008 23:38:19 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Home 20080308113819P</guid></item><item><title>UPDATED WIKI: Home</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Home&amp;version=8</link><description>&lt;div class="wikidoc"&gt;
+&lt;h1&gt;
+Project Description
+&lt;/h1&gt;Lockpick is an open source penetration testing project manager toolkit.
+&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Vision
+&lt;/h1&gt;LockPick is a toolkit for Penetration Testing.  The first version will include project manager, checklists and a report generator.  Future releases will include tool integration, log file creator, and OVAL feed reader.&lt;br /&gt; &lt;br /&gt;&lt;h1&gt;
+Project Goals
+&lt;/h1&gt; &lt;br /&gt;&lt;h2&gt;
+Version 1*
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;GUI for penetration test projects&lt;/li&gt;&lt;li&gt;Checklist and scripting repository&lt;/li&gt;&lt;li&gt;Penetration Testing Report generator&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;h2&gt;
+Version 2*
+&lt;/h2&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;3rd Party Tool integration&lt;/li&gt;&lt;li&gt;Testing log GUI&lt;/li&gt;&lt;li&gt;OVAL feed reader&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Roadmap&amp;amp;referringTitle=Home"&gt;Roadmap&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Tracking&amp;amp;referringTitle=Home"&gt;Tracking&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Resources&amp;amp;referringTitle=Home"&gt;Resources&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=References&amp;amp;referringTitle=Home"&gt;References&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;amp;referringTitle=Home"&gt;Procedures&lt;/a&gt;&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sat, 08 Mar 2008 23:38:11 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Home 20080308113811P</guid></item><item><title>UPDATED WIKI: Home</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Home&amp;version=7</link><description>&lt;div class="wikidoc"&gt;
+&lt;b&gt;Project Description&lt;/b&gt;&lt;br /&gt;Lockpick is an open source penetration testing project manager toolkit.
+&lt;br /&gt; &lt;br /&gt;&lt;b&gt;Vision&lt;/b&gt;&lt;br /&gt;LockPick is a toolkit for Penetration Testing.  The first version will include project manager, checklists and a report generator.  Future releases will include tool integration, log file creator, and OVAL feed reader.&lt;br /&gt; &lt;br /&gt;&lt;b&gt;Project Goals&lt;/b&gt;&lt;br /&gt; &lt;br /&gt;&lt;b&gt;Version 1&lt;/b&gt;&lt;br /&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;GUI for penetration test projects&lt;/li&gt;&lt;li&gt;Checklist and scripting repository&lt;/li&gt;&lt;li&gt;Penetration Testing Report generator&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;b&gt;Version 2&lt;/b&gt;&lt;br /&gt; &lt;br /&gt;&lt;ul&gt;
+&lt;li&gt;3rd Party Tool integration&lt;/li&gt;&lt;li&gt;Testing log GUI&lt;/li&gt;&lt;li&gt;OVAL feed reader&lt;/li&gt;
+&lt;/ul&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Roadmap&amp;amp;referringTitle=Home"&gt;Roadmap&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Tracking&amp;amp;referringTitle=Home"&gt;Tracking&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Resources&amp;amp;referringTitle=Home"&gt;Resources&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=References&amp;amp;referringTitle=Home"&gt;References&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;a href="http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;amp;referringTitle=Home"&gt;Procedures&lt;/a&gt;&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sat, 08 Mar 2008 23:37:06 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Home 20080308113706P</guid></item><item><title>UPDATED WIKI: Procedures</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;version=2</link><description>&lt;div class="wikidoc"&gt;
+&lt;b&gt;Development Methodology&lt;/b&gt;&lt;br /&gt; &lt;br /&gt;&lt;b&gt;Agile Scrum&lt;/b&gt;&lt;br /&gt;We will be releasing every 30 days.  Each day, there will be a scrum at 10:00p.m. EST for all members.  If you don't attend the scrums, you will be removed from the project.  This is a volunteer based project, and we appreciate every line of code written, but we do want to produce something every 30 days.&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sat, 08 Mar 2008 23:36:52 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Procedures 20080308113652P</guid></item><item><title>UPDATED WIKI: Procedures</title><link>http://www.codeplex.com/lockpick/Wiki/View.aspx?title=Procedures&amp;version=1</link><description>&lt;div class="wikidoc"&gt;
+&lt;b&gt;Development Methodology&lt;/b&gt;&lt;br /&gt;Agile Scrum - We will be releasing every 30 days.  Each day, there will be a scrum at 10:00p.m. EST for all members.  If you don't attend the scrums, you will be removed from the project.  This is a volunteer based project, and we appreciate every line of code written, but we do want to produce something every 30 days.&lt;br /&gt;
+&lt;/div&gt;</description><author>drive</author><pubDate>Sat, 08 Mar 2008 23:36:34 GMT</pubDate><guid isPermaLink="false">UPDATED WIKI: Procedures 20080308113634P</guid></item></channel></rss>

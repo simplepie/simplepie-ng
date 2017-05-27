@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>bluebones.net</title>
+	<atom:link href="http://bluebones.net/feed/" rel="self" type="application/rss+xml" />
+	<link>http://bluebones.net</link>
+	<description>Adventures in Computer Programming</description>
+	<lastBuildDate>Mon, 12 Sep 2011 17:45:09 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.2.1</generator>
+		<item>
+		<title>You Know You Are Trying to Do Too Much in a Bash One-Liner When &#8230;</title>
+		<link>http://bluebones.net/2011/08/you-know-you-are-trying-to-do-too-much-in-a-bash-one-liner-when/</link>
+		<comments>http://bluebones.net/2011/08/you-know-you-are-trying-to-do-too-much-in-a-bash-one-liner-when/#comments</comments>
+		<pubDate>Mon, 15 Aug 2011 02:45:25 +0000</pubDate>
+		<dc:creator>bakert</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://bluebones.net/?p=911</guid>
+		<description><![CDATA[find ~/bazel/src/main/webapp/lib -type f &#124; grep -v "lib/deps/" &#124; grep -v "lib/ext/" &#124; grep -v "XG_MessageCatalog_" &#124; xargs -I{} -L1 sh -c "echo {}; phpcs -d memory_limit=1024M -p -n -s --standard=/Users/bakert/Desktop/BazelCodingStandard {}" Edit: Better: #!/bin/env ruby BAZEL_HOME = '/Users/bakert/bazel' STANDARD_PATH = '/Users/bakert/Desktop/BazelCodingStandard' VERBOSE = false def main exclude_patterns = [ /XG_MessageCatalog_/, /\/lib\/deps\//, /\/lib\/ext\// ] files [...]]]></description>
+			<content:encoded><![CDATA[<p><code>find ~/bazel/src/main/webapp/lib -type f | grep -v "lib/deps/" | grep -v "lib/ext/" | grep -v "XG_MessageCatalog_" | xargs -I{} -L1 sh -c "echo {}; phpcs -d memory_limit=1024M -p -n -s --standard=/Users/bakert/Desktop/BazelCodingStandard {}"</code></p>
+<p><em>Edit:</em> Better:</p>
+<pre class="viewsource">
+#!/bin/env ruby
+
+BAZEL_HOME = '/Users/bakert/bazel'
+STANDARD_PATH = '/Users/bakert/Desktop/BazelCodingStandard'
+VERBOSE = false
+
+def main
+  exclude_patterns = [ /XG_MessageCatalog_/, /\/lib\/deps\//, /\/lib\/ext\// ]
+  files = Dir.glob("#{BAZEL_HOME}/src/main/webapp/**/*").reject do |f|
+    exclude_patterns.any? { |p| f.match(p) } \
+      || ! File.file?(f) \
+      || File.extname(f) != '.php'
+  end
+  files.each do |f|
+    puts f if VERBOSE
+    print %x[phpcs -d memory_limit=1024M -n -s --standard=#{STANDARD_PATH} #{f}]
+  end
+end
+
+main
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://bluebones.net/2011/08/you-know-you-are-trying-to-do-too-much-in-a-bash-one-liner-when/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>A Pleasing Way to Represent Ascending and Descending sort in querystring</title>
+		<link>http://bluebones.net/2011/07/a-pleasing-way-to-represent-ascending-and-descending-sort-in-querystring/</link>
+		<comments>http://bluebones.net/2011/07/a-pleasing-way-to-represent-ascending-and-descending-sort-in-querystring/#comments</comments>
+		<pubDate>Sat, 23 Jul 2011 20:37:43 +0000</pubDate>
+		<dc:creator>bakert</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://bluebones.net/?p=903</guid>
+		<description><![CDATA[I&#8217;ve often used sort=name_a and sort=name_d for this but I noticed that ReviewBoard uses sort=name and sort=-name. I like it.]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve often used <code>sort=name_a</code> and <code>sort=name_d</code> for this but I noticed that ReviewBoard uses <code>sort=name</code> and <code>sort=-name</code>.</p>
+<p>I like it.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://bluebones.net/2011/07/a-pleasing-way-to-represent-ascending-and-descending-sort-in-querystring/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Transparent Overlays in iMovie &#8217;09</title>
+		<link>http://bluebones.net/2011/07/transparent-overlays-in-imovie-09/</link>
+		<comments>http://bluebones.net/2011/07/transparent-overlays-in-imovie-09/#comments</comments>
+		<pubDate>Sat, 23 Jul 2011 15:57:54 +0000</pubDate>
+		<dc:creator>bakert</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://bluebones.net/?p=904</guid>
+		<description><![CDATA[Assuming you have a PNG with transparency, and an iMovie project then, in iMovie: iMovie, Preferences Check &#8220;Show Advanced Tools&#8221; File, Project Properties, Timing Set Initial Photo Placement to &#8220;Crop&#8221; Drag the PNG with transparency to the point you want the overlay to appear in the timeline From the resulting pop-up menu choose &#8220;Overlay&#8221; (for [...]]]></description>
+			<content:encoded><![CDATA[<p>Assuming you have a PNG with transparency, and an iMovie project then, in iMovie:</p>
+<ol>
+<li>iMovie, Preferences</li>
+<li>Check &#8220;Show Advanced Tools&#8221;</li>
+<li>File, Project Properties, Timing</li>
+<li>Set Initial Photo Placement to &#8220;Crop&#8221;</li>
+<li>Drag the PNG with transparency to the point you want the overlay to appear in the timeline</li>
+<li>From the resulting pop-up menu choose &#8220;Overlay&#8221; (for full screen) or &#8220;Picture in Picture&#8221; (for part-of-screen)</li>
+<li>Adjust the size and duration of your overlay</li>
+</ol>
+]]></content:encoded>
+			<wfw:commentRss>http://bluebones.net/2011/07/transparent-overlays-in-imovie-09/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>node.js on ubuntu (on linode)</title>
+		<link>http://bluebones.net/2011/06/node-js-on-ubuntu-on-linode/</link>
+		<comments>http://bluebones.net/2011/06/node-js-on-ubuntu-on-linode/#comments</comments>
+		<pubDate>Sun, 19 Jun 2011 23:53:16 +0000</pubDate>
+		<dc:creator>bakert</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://bluebones.net/?p=897</guid>
+		<description><![CDATA[I got my simple movies node.js app running through Apache using mod_proxy $ a2enmod proxy_http $ a2enmod proxy Configured under sites-available like so: $ cat /etc/apache2/sites-available/movies &#60;VirtualHost *:80&#62; ServerName actualfqdnofhost.bluebones.net ServerAlias movies.bluebones.net ProxyPass / http://127.0.0.1:3000/ &#60;Proxy *&#62; Allow from all &#60;/Proxy&#62; &#60;/VirtualHost&#62; (This assumes that your app listens on port 3000 when running.) Then to [...]]]></description>
+			<content:encoded><![CDATA[<p>I got my simple movies node.js app running through Apache using mod_proxy</p>
+<pre>
+$ a2enmod proxy_http
+$ a2enmod proxy
+</pre>
+<p>Configured under sites-available like so:</p>
+<pre>
+$ cat /etc/apache2/sites-available/movies
+&lt;VirtualHost *:80&gt;
+    ServerName actualfqdnofhost.bluebones.net
+    ServerAlias movies.bluebones.net
+    ProxyPass / http://127.0.0.1:3000/
+    &lt;Proxy *&gt;
+	Allow from all
+    &lt;/Proxy&gt;
+&lt;/VirtualHost&gt;
+</pre>
+<p>(This assumes that your app listens on port 3000 when running.)</p>
+<p>Then to ensure it gets restarted when the machine does I created the following file as /etc/init/movies.conf</p>
+<pre>
+$ cat /etc/init/movies.conf
+description "movies.bluebones.net on node.js"
+author "bakert"
+
+start on startup
+stop on shutdown
+
+script
+  export MOVIES_ROOT=/srv/movies
+  export EXPRESS_ROOT=$MOVIES_ROOT/src/express
+  cd $EXPRESS_ROOT &#038;&#038; exec sudo -u www-data NODE_PATH=$NODE_PATH:/opt/local/node/lib/node_modules/ EXPRESS_ENV=production /opt/local/node/bin/node $EXPRESS_ROOT/app.js 2&gt;&#038;1 &gt;&gt;$MOVIES_ROOT/logs/node.log
+end script
+</pre>
+<p>Which also lets me stop and start my app with:</p>
+<pre>
+$ start movies
+$ stop movies
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://bluebones.net/2011/06/node-js-on-ubuntu-on-linode/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Set up an SPF Record to (theoretically) reduce the risk of your web app&#8217;s email being marked as spam</title>
+		<link>http://bluebones.net/2011/06/set-up-an-spf-record-to-theoretically-reduce-the-risk-of-your-web-apps-email-being-marked-as-spam/</link>
+		<comments>http://bluebones.net/2011/06/set-up-an-spf-record-to-theoretically-reduce-the-risk-of-your-web-apps-email-being-marked-as-spam/#comments</comments>
+		<pubDate>Sun, 19 Jun 2011 19:45:18 +0000</pubDate>
+		<dc:creator>bakert</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://bluebones.net/?p=895</guid>
+		<description><![CDATA[I&#8217;m setting up email sending from my domain instead of faking gmail.com because of mail delivery issues. To make this work without just going automatically to everyone&#8217;s spam folder I have set up an SPF record. I found the documentation on the web a bit dense trying to work this out so here&#8217;s a short [...]]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m setting up email sending from my domain instead of faking gmail.com because of mail delivery issues.  To make this work without just going automatically to everyone&#8217;s spam folder I have set up an SPF record.  I found the documentation on the web a bit dense trying to work this out so here&#8217;s a short look at what I did.</p>
+<p>&#8220;Show Original&#8221; in gmail used to say:</p>
+<pre>
+Received-SPF: neutral (google.com: 74.54.101.112 is neither permitted nor denied by domain of bakert+fantasyfootball@gmail.com) client-ip=74.54.101.112;
+Authentication-Results: mx.google.com; spf=neutral (google.com: 74.54.101.112 is neither permitted nor denied by domain of bakert+fantasyfootball@gmail.com) smtp.mail=bakert+fantasyfootball@gmail.com
+</pre>
+<p>Now it says:</p>
+<pre>
+Received-SPF: pass (google.com: domain of admin+2@ff.bluebones.net designates 178.79.178.155 as permitted sender) client-ip=178.79.178.155;
+Authentication-Results: mx.google.com; spf=pass (google.com: domain of admin+2@ff.bluebones.net designates 178.79.178.155 as permitted sender) smtp.mail=admin+2@ff.bluebones.net
+</pre>
+<p>This means Gmail is less likely to mark email sent by my web app as spam, thanks to the SPF record I have set up.</p>
+<p>An SPF record is implemented as a DNS TXT (as opposed to A, CNAME, etc.) record with no &#8220;name&#8221; and a value something like this:</p>
+<pre>
+v=spf1 a mx include:_spf.google.com ~all
+</pre>
+<p>Let&#8217;s break that down &#8230;</p>
+<p><strong>v=spf1</strong> &#8211; this indicates that the record is an SPF v1 record.</p>
+<p><strong>A</strong> &#8211; this indicates that any IP address in an A record for this network is allowed to send email for this domain.</p>
+<p><strong>MX</strong> &#8211; this indicates that any IP address in an MX record for this network is allowed to send email for this domain.</p>
+<p><strong>include:_spf.google.com</strong> &#8211; this indicates that _spf.google.com is allowed to send email for this domain.</p>
+<p><strong>~all</strong> &#8211; this indicates that _spf.google.com is allowed to send email for this domain.</p>
+<p>All parts of the record except v=spf1 are optional and can take a prefix of -, + or ~.  If there is no prefix + is assumed.  + means allowed, &#8211; means not allowed and ~ means might be allowed.  <strong>all</strong> is the catch-all for anything not explicitly called out by the rule.</p>
+<p>You might be interested in <a href="http://www.openspf.org/SPF_Record_Syntax">a more detailed guide to SPF record syntax</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://bluebones.net/2011/06/set-up-an-spf-record-to-theoretically-reduce-the-risk-of-your-web-apps-email-being-marked-as-spam/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Setup NS Records for Subdomain</title>
+		<link>http://bluebones.net/2011/06/setup-ns-records-for-subdomain/</link>
+		<comments>http://bluebones.net/2011/06/setup-ns-records-for-subdomain/#comments</comments>
+		<pubDate>Sat, 18 Jun 2011 05:25:12 +0000</pubDate>
+		<dc:creator>bakert</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://bluebones.net/?p=892</guid>
+		<description><![CDATA[If you want to serve DNS for a subdomain while keeping most of the DNS records to do with its domain with another DNS provider you need NS records. On the nameserver for example.com: somesubdomain NS ns1.otherprovider.net somesubdomain NS ns2.otherprovider.net somesubdomain NS ns3.otherprovider.net somesubdomain NS ns4.otherprovider.net On the otherprovider.net nameserver for somesubdomain.example.com you just need [...]]]></description>
+			<content:encoded><![CDATA[<p>If you want to serve DNS for a subdomain while keeping most of the DNS records to do with its domain with another DNS provider you need NS records.</p>
+<p>On the nameserver for <strong>example.com</strong>:</p>
+<pre>
+somesubdomain			NS	ns1.otherprovider.net
+somesubdomain			NS	ns2.otherprovider.net
+somesubdomain			NS	ns3.otherprovider.net
+somesubdomain			NS	ns4.otherprovider.net
+</pre>
+<p>On the otherprovider.net nameserver for <strong>somesubdomain.example.com</strong> you just need a &#8220;normal&#8221; A record (+CNAME/MX/whatever):</p>
+<pre>
+somesubdomain			A	178.79.178.155
+</pre>
+<p>I have this setup working with everydns.net providing most of my DNS but linode providing DNS for the sites I have moved off my old providers and on to linode.</p>
+<p>The previously wonderful everydns that served me well for many years (for nothing!) has been bought up and is going paid in less than 90 days so I&#8217;m taking this opportunity to move things around.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://bluebones.net/2011/06/setup-ns-records-for-subdomain/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Develop node.js without restarting</title>
+		<link>http://bluebones.net/2011/06/develop-node-js-without-restarting/</link>
+		<comments>http://bluebones.net/2011/06/develop-node-js-without-restarting/#comments</comments>
+		<pubDate>Mon, 13 Jun 2011 05:44:35 +0000</pubDate>
+		<dc:creator>bakert</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://bluebones.net/?p=889</guid>
+		<description><![CDATA[Run your server with nodemon instead of node. It will scan for filesystem changes and restart node automatically when a change is made. $ sudo npm install nodemon $ nodemon app.js]]></description>
+			<content:encoded><![CDATA[<p>Run your server with nodemon instead of node.  It will scan for filesystem changes and restart node automatically when a change is made.</p>
+<pre class="code">
+$ sudo npm install nodemon
+$ nodemon app.js
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://bluebones.net/2011/06/develop-node-js-without-restarting/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Partials in Jade</title>
+		<link>http://bluebones.net/2011/06/partials-in-jade/</link>
+		<comments>http://bluebones.net/2011/06/partials-in-jade/#comments</comments>
+		<pubDate>Mon, 13 Jun 2011 05:17:15 +0000</pubDate>
+		<dc:creator>bakert</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://bluebones.net/?p=886</guid>
+		<description><![CDATA[I couldn&#8217;t find good docs on partials in the Jade template engine which is used by default by the Express framework for node.js. Here&#8217;s an example: movies.jade in the views directory: div(id='movies') - each movie in movies !=partial('movie', movie) where movie.jade is also in the views directory.]]></description>
+			<content:encoded><![CDATA[<p>I couldn&#8217;t find good docs on partials in the <a href="http://jade-lang.com/">Jade template engine</a> which is used by default by the <a href="http://expressjs.com/">Express framework</a> for <a href="http://nodejs.org/">node.js</a>.  Here&#8217;s an example:</p>
+<p><code>movies.jade</code> in the <code>views</code> directory:</p>
+<pre class="code">
+div(id='movies')
+  - each movie in movies
+    !=partial('movie', movie)
+</pre>
+<p>where <code>movie.jade</code> is also in the <code>views</code> directory.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://bluebones.net/2011/06/partials-in-jade/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Google&#8217;s One-Letter Guesses</title>
+		<link>http://bluebones.net/2011/05/googles-one-letter-guesses/</link>
+		<comments>http://bluebones.net/2011/05/googles-one-letter-guesses/#comments</comments>
+		<pubDate>Sun, 08 May 2011 06:37:00 +0000</pubDate>
+		<dc:creator>bakert</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://bluebones.net/?p=880</guid>
+		<description><![CDATA[Top search suggestions on google.com just now after entering a single letter: amazon best buy craigslist dictionary ebay facebook google hotmail irs jet blue kohls lowes mapquest netflix osama bin laden pandora quotes rebecca black southwest target ups verizon weather xbox youtube zillow 127 hours 2011 calendar 3ds 411 50 cent 60 minutes 7zip 8 [...]]]></description>
+			<content:encoded><![CDATA[<p>Top search suggestions on google.com just now after entering a single letter:</p>
+<p><strong>a</strong>mazon<br />
+<strong>b</strong>est buy<br />
+<strong>c</strong>raigslist<br />
+<strong>d</strong>ictionary<br />
+<strong>e</strong>bay<br />
+<strong>f</strong>acebook<br />
+<strong>g</strong>oogle<br />
+<strong>h</strong>otmail<br />
+<strong>i</strong>rs<br />
+<strong>j</strong>et blue<br />
+<strong>k</strong>ohls<br />
+<strong>l</strong>owes<br />
+<strong>m</strong>apquest<br />
+<strong>n</strong>etflix<br />
+<strong>o</strong>sama bin laden<br />
+<strong>p</strong>andora<br />
+<strong>q</strong>uotes<br />
+<strong>r</strong>ebecca black<br />
+<strong>s</strong>outhwest<br />
+<strong>t</strong>arget<br />
+<strong>u</strong>ps<br />
+<strong>v</strong>erizon<br />
+<strong>w</strong>eather<br />
+<strong>x</strong>box<br />
+<strong>y</strong>outube<br />
+<strong>z</strong>illow<br />
+<strong>1</strong>27 hours<br />
+<strong>2</strong>011 calendar<br />
+<strong>3</strong>ds<br />
+<strong>4</strong>11<br />
+<strong>5</strong>0 cent<br />
+<strong>6</strong>0 minutes<br />
+<strong>7</strong>zip<br />
+<strong>8</strong> mile<br />
+<strong>9</strong>0210<br />
+<strong>0</strong><br />
+<strong>@</strong>font-face<br />
+<strong>&#038;</strong>nbsp<br />
+<strong>_</strong><br />
+<strong>.</strong>net</p>
+]]></content:encoded>
+			<wfw:commentRss>http://bluebones.net/2011/05/googles-one-letter-guesses/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>&#8220;Javascript: the Good Parts&#8221;: the Good Parts</title>
+		<link>http://bluebones.net/2011/04/javascript-the-good-parts-the-good-parts/</link>
+		<comments>http://bluebones.net/2011/04/javascript-the-good-parts-the-good-parts/#comments</comments>
+		<pubDate>Mon, 18 Apr 2011 06:06:18 +0000</pubDate>
+		<dc:creator>bakert</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://bluebones.net/?p=872</guid>
+		<description><![CDATA[Use JSLint to determine if what you are doing is sensible. Avoid &#8220;/* &#8230; */&#8221; for comments, &#8220;*/&#8221; appears in useful constructs in javascript. Use &#8220;//&#8221;. Javascript strings are 16-bit unicode. It has no character type, only string. All numbers are numeric, there is no int/float/etc. The value Infinity represents all values greater than ~1.79E+308 [...]]]></description>
+			<content:encoded><![CDATA[<ul>
+<li>Use <a href="http://www.jslint.com/">JSLint</a> to determine if what you are doing is sensible.</li>
+<li>Avoid &#8220;/* &#8230; */&#8221; for comments, &#8220;*/&#8221; appears in useful constructs in javascript.  Use &#8220;//&#8221;.</li>
+<li>Javascript strings are 16-bit unicode.  It has no character type, only string.</li>
+<li>All numbers are numeric, there is no int/float/etc.</li>
+<li>The value <code>Infinity</code> represents all values greater than ~1.79E+308</li>
+<li>Javascript has functional scoping.  Braces do not denote scope.  Thus, declare variables at the top of functions not within braces.</li>
+<li>Falsy values: <code>false</code>, <code>null</code>, <code>undefined</code>, &#8221; (empty string), <code>0</code>, <code>NaN</code>.  Everything else is truthy.</li>
+<li>If using a <code>for ... in</code> loop you must you <code>hasOwnProperty</code>.</li>
+<li><code>typeof</code><code> returns "object" for an array and for </code><code>null</code>.</li>
+<li>Declare <code>var that = this;</code> in a function so that inner functions can access that function&#8217;s <code>this</code> value.  (Prefer &#8220;self&#8221;?)</li>
+<li>Because functions are first class objects, javascript supports currying.</li>
+<li>General memoizer (p. 45)</li>
+<li>Don&#8217;t use <code>new</code> at all.</li>
+<li>Functional inheritance (p. 52).</li>
+<li>Do not use &#8220;/g&#8221; with <code>RegExp.test</code>.</li>
+<li>Prefer &#8220;<code>if (</code>&#8221; to &#8220;<code>if(</code>&#8221; because &#8220;<code>if(</code>&#8221; looks like a method invocation.</li>
+<li>K&#038;R-style curly braces because of how <code>return</code> works in javascript.</li>
+<li>Always pass the second parameter (radix) to <code>parseInt</code>.</li>
+<li>Always use <code>===</code> and <code>!==</code> not <code>==</code> and <code>!=</code>.</li>
+<li>Do not use <code>with</code>.</li>
+<li>Use <a href="http://json.org/js.html"><code>JSON.parse</code></a> not <code>eval</code>.</li>
+<li>Do not use <code>++</code> and <code>--</code>.</li>
+</ul>
+]]></content:encoded>
+			<wfw:commentRss>http://bluebones.net/2011/04/javascript-the-good-parts-the-good-parts/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.lukesmith.net/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>Luke Smith</title>
+	
+	<link>http://blog.lukesmith.net</link>
+	<description>Write today, wrong tomorrow</description>
+	<lastBuildDate>Tue, 19 Jul 2011 14:39:18 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.com/</generator>
+<cloud domain="blog.lukesmith.net" port="80" path="/?rsscloud=notify" registerProcedure="" protocol="http-post" />
+<image>
+		<url>http://s2.wp.com/i/buttonw-com.png</url>
+		<title>Luke Smith</title>
+		<link>http://blog.lukesmith.net</link>
+	</image>
+	<atom:link rel="search" type="application/opensearchdescription+xml" href="http://blog.lukesmith.net/osd.xml" title="Luke Smith" />
+	
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.lukesmith.net/LukeSmith" /><feedburner:info uri="lukesmith" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://blog.lukesmith.net/?pushpress=hub" /><geo:lat>51.4484</geo:lat><geo:long>-0.9344</geo:long><feedburner:feedFlare href="http://add.my.yahoo.com/rss?url=http%3A%2F%2Ffeeds.lukesmith.net%2FLukeSmith" src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif">Subscribe with My Yahoo!</feedburner:feedFlare><feedburner:feedFlare href="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http%3A%2F%2Ffeeds.lukesmith.net%2FLukeSmith" src="http://www.newsgator.com/images/ngsub1.gif">Subscribe with NewsGator</feedburner:feedFlare><feedburner:feedFlare href="http://feeds.my.aol.com/add.jsp?url=http%3A%2F%2Ffeeds.lukesmith.net%2FLukeSmith" src="http://o.aolcdn.com/favorites.my.aol.com/webmaster/ffclient/webroot/locale/en-US/images/myAOLButtonSmall.gif">Subscribe with My AOL</feedburner:feedFlare><feedburner:feedFlare href="http://www.bloglines.com/sub/http://feeds.lukesmith.net/LukeSmith" src="http://www.bloglines.com/images/sub_modern11.gif">Subscribe with Bloglines</feedburner:feedFlare><feedburner:feedFlare href="http://www.netvibes.com/subscribe.php?url=http%3A%2F%2Ffeeds.lukesmith.net%2FLukeSmith" src="http://www.netvibes.com/img/add2netvibes.gif">Subscribe with Netvibes</feedburner:feedFlare><feedburner:feedFlare href="http://fusion.google.com/add?feedurl=http%3A%2F%2Ffeeds.lukesmith.net%2FLukeSmith" src="http://buttons.googlesyndication.com/fusion/add.gif">Subscribe with Google</feedburner:feedFlare><feedburner:feedFlare href="http://www.pageflakes.com/subscribe.aspx?url=http%3A%2F%2Ffeeds.lukesmith.net%2FLukeSmith" src="http://www.pageflakes.com/ImageFile.ashx?instanceId=Static_4&amp;fileName=ATP_blu_91x17.gif">Subscribe with Pageflakes</feedburner:feedFlare><feedburner:feedFlare href="http://www.live.com/?add=http%3A%2F%2Ffeeds.lukesmith.net%2FLukeSmith" src="http://tkfiles.storage.msn.com/x1piYkpqHC_35nIp1gLE68-wvzLZO8iXl_JMledmJQXP-XTBOLfmQv4zhj4MhcWEJh_GtoBIiAl1Mjh-ndp9k47If7hTaFno0mxW9_i3p_5qQw">Subscribe with Live.com</feedburner:feedFlare><item>
+		<title>Sharing configuration across visual studio projects</title>
+		<link>http://feeds.lukesmith.net/~r/LukeSmith/~3/OTS80SIOrH4/</link>
+		<comments>http://blog.lukesmith.net/2011/05/19/sharing-configuration-across-visual-studio-projects/#comments</comments>
+		<pubDate>Thu, 19 May 2011 13:29:13 +0000</pubDate>
+		<dc:creator>Luke Smith</dc:creator>
+				<category><![CDATA[Development]]></category>
+
+		<guid isPermaLink="false">http://blog.lukesmith.net/?p=295</guid>
+		<description>Whenever creating a new visual studio project I always go through the pain of ensuring certain properties are setup and StyleCop is enabled. It&amp;#8217;s manual and boring, and not to mention the repetition of the settings not exactly being DRY. I can&amp;#8217;t believe I didn&amp;#8217;t think of this sooner but one way to get around [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;amp;blog=17598776&amp;amp;post=295&amp;amp;subd=lukesmithnet&amp;amp;ref=&amp;amp;feed=1" width="1" height="1" /&gt;</description>
+			<content:encoded><![CDATA[<p>Whenever creating a new visual studio project I always go through the pain of ensuring certain properties are setup and StyleCop is enabled. It&#8217;s manual and boring, and not to mention the repetition of the settings not exactly being DRY.</p>
+<p>I can&#8217;t believe I didn&#8217;t think of this sooner but one way to get around this is to create a single target file, containing all of the properties and bits you want to run as part of building the project, then all you have to add to each project file is a single import of the target.</p>
+<p><code>&lt;Import Project="$(SolutionDir)\build\common.target" /&gt;</code></p>
+<p>My <a href="https://gist.github.com/980750">common.target</a> can be found on github.</p>
+<p>Next task is to create a simple script to run through all .csproj files in a directory tree and add/update the import element if it&#8217;s missing.</p>
+<br />Filed under: <a href='http://blog.lukesmith.net/category/development/'>Development</a>  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/lukesmithnet.wordpress.com/295/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/lukesmithnet.wordpress.com/295/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/lukesmithnet.wordpress.com/295/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/lukesmithnet.wordpress.com/295/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/lukesmithnet.wordpress.com/295/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/lukesmithnet.wordpress.com/295/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/lukesmithnet.wordpress.com/295/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/lukesmithnet.wordpress.com/295/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/lukesmithnet.wordpress.com/295/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/lukesmithnet.wordpress.com/295/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/lukesmithnet.wordpress.com/295/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/lukesmithnet.wordpress.com/295/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/lukesmithnet.wordpress.com/295/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/lukesmithnet.wordpress.com/295/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;blog=17598776&amp;post=295&amp;subd=lukesmithnet&amp;ref=&amp;feed=1" width="1" height="1" />
+<p><a href="http://feedads.g.doubleclick.net/~a/XkhN63dMc96YHZhvUNYho7YTgY4/0/da"><img src="http://feedads.g.doubleclick.net/~a/XkhN63dMc96YHZhvUNYho7YTgY4/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/XkhN63dMc96YHZhvUNYho7YTgY4/1/da"><img src="http://feedads.g.doubleclick.net/~a/XkhN63dMc96YHZhvUNYho7YTgY4/1/di" border="0" ismap="true"></img></a></p><div class="feedflare">
+<a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=OTS80SIOrH4:datMumhFEVM:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=OTS80SIOrH4:datMumhFEVM:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/LukeSmith?i=OTS80SIOrH4:datMumhFEVM:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=OTS80SIOrH4:datMumhFEVM:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=qj6IDK7rITs" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://blog.lukesmith.net/2011/05/19/sharing-configuration-across-visual-studio-projects/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+	
+		<media:content url="http://0.gravatar.com/avatar/430c14e8a565d6a28e1cf14babcf1122?s=96&amp;d=identicon&amp;r=G" medium="image">
+			<media:title type="html">lukesmith</media:title>
+		</media:content>
+	<feedburner:origLink>http://blog.lukesmith.net/2011/05/19/sharing-configuration-across-visual-studio-projects/</feedburner:origLink></item>
+		<item>
+		<title>Updating a pointhq dns record from amazon ec2 instances</title>
+		<link>http://feeds.lukesmith.net/~r/LukeSmith/~3/99DIwR4ZJ-A/</link>
+		<comments>http://blog.lukesmith.net/2011/05/16/updating-a-pointhq-dns-record-from-amazon-ec2-instances/#comments</comments>
+		<pubDate>Mon, 16 May 2011 21:47:19 +0000</pubDate>
+		<dc:creator>Luke Smith</dc:creator>
+				<category><![CDATA[Development]]></category>
+		<category><![CDATA[amazon]]></category>
+		<category><![CDATA[dns]]></category>
+		<category><![CDATA[ec2]]></category>
+		<category><![CDATA[pointhq]]></category>
+		<category><![CDATA[teamcity]]></category>
+
+		<guid isPermaLink="false">http://blog.lukesmith.net/?p=263</guid>
+		<description>If you&amp;#8217;re using Amazon EC2 for any reason, but not running the instance 24/7 (I have an instance with TeamCity that I only want to run on the evenings/weekends when I&amp;#8217;m doing any work) you may not want to spend the extra on an Elastic IP to get a static IP address. Unless you use [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;amp;blog=17598776&amp;amp;post=263&amp;amp;subd=lukesmithnet&amp;amp;ref=&amp;amp;feed=1" width="1" height="1" /&gt;</description>
+			<content:encoded><![CDATA[<p>If you&#8217;re using Amazon EC2 for any reason, but not running the instance 24/7 (I have an instance with TeamCity that I only want to run on the evenings/weekends when I&#8217;m doing any work) you may not want to spend the extra on an Elastic IP to get a static IP address.</p>
+<p>Unless you use Elastic IP however, everytime you start your EC2 instance you get allocated a new dynamic address, annoying if you want to use a friendly hostname. So how can you  get your dns server updated when your instance starts?</p>
+<p>My dns host of choice is <a href="https://pointhq.com/">PointHQ</a>, they give 10 free domains and provide a useful <a href="http://docs.atechmedia.com/point/api">api</a> for managing the zones and records. Theres even a <a href="http://docs.atechmedia.com/point/api/ruby-api-client">ruby gem</a>.</p>
+<h2>Step 1 &#8211; Create an A record in PointHQ</h2>
+<p>First of all we need to create the record in Point. For my <a href="http://www.jetbrains.com/teamcity/">TeamCity</a> instance i&#8217;ve created a A record for teamcity.example.com and put a temporary IP address as the records data.</p>
+<p><a href="http://lukesmithnet.files.wordpress.com/2011/05/pointhq-add-record.png"><img class="alignnone size-medium wp-image-272" title="pointhq-add-record" src="http://lukesmithnet.files.wordpress.com/2011/05/pointhq-add-record.png?w=300&#038;h=190" alt="" width="300" height="190" /></a></p>
+<h2><strong>Step 2 &#8211; Create a ruby script</strong></h2>
+<p>The next step is to create a script that can be run to get the machines current public IP address and then to call the Point api. For this you will need to get your api key from the Point website.</p>
+<p>To get the current IP address of the EC2 instance you need to make a GET request</p>
+<p><code>ip = open('http://169.254.169.254/latest/meta-data/public-ipv4').read</code></p>
+<p>Using the Point ruby gem we now need to get hold of the zone record hosted by Point and update the data with the instances public IP address.<br />
+<code><br />
+zone = Point::Zone.find(&lt;ZoneId&gt;) # example.com<br />
+record = zone.record(&lt;RecordId&gt;) # teamcity.example.com<br />
+record.data = ip<br />
+record.save<br />
+</code></p>
+<p>Run the <a href="https://gist.github.com/974384">ruby script</a> now and check PointHQ. The data field of the A record created in step 1 should now be updated with the public IP address of the EC2 instance.</p>
+<h2>Step 3 &#8211; AutoRun the script</h2>
+<p>We&#8217;ve got the script working updating Point, but it&#8217;s pretty useless if we still need to remote into the server and run it manually. As I&#8217;m running on Windows I&#8217;ve used the Task Scheduler to automatically run the ruby script. I couldn&#8217;t find a way to be notified when the EC2 instance starts so used the following triggers which update Point fairly quickly after starting the instance.</p>
+<ul>
+<li>At system startup</li>
+<li>At log on of any user &lt;- I have a feeling only this one is required</li>
+<li>One time &#8211; repeat every 10 minutes</li>
+</ul>
+<p>The only problem I&#8217;ve had is dns caching, which you can flush locally easily. I use <a href="http://www.opendns.com/">opendns</a> which gets updated incredibly quickly and if not theres a handy <a href="http://www.opendns.com/support/cache/">cachecheck</a> + refresh tool.</p>
+<div>Now with hosted <a href="http://www.jetbrains.com/youtrack/">YouTrack</a> from <a href="http://www.jetbrains.com">JetBrains</a>, and <a href="https://github.com/">GitHub</a>, I have a fixed url that I can point to for integrating with <a href="http://www.jetbrains.com/teamcity/">TeamCity</a>.</div>
+<br />Filed under: <a href='http://blog.lukesmith.net/category/development/'>Development</a>  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/lukesmithnet.wordpress.com/263/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/lukesmithnet.wordpress.com/263/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/lukesmithnet.wordpress.com/263/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/lukesmithnet.wordpress.com/263/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/lukesmithnet.wordpress.com/263/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/lukesmithnet.wordpress.com/263/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/lukesmithnet.wordpress.com/263/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/lukesmithnet.wordpress.com/263/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/lukesmithnet.wordpress.com/263/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/lukesmithnet.wordpress.com/263/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/lukesmithnet.wordpress.com/263/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/lukesmithnet.wordpress.com/263/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/lukesmithnet.wordpress.com/263/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/lukesmithnet.wordpress.com/263/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;blog=17598776&amp;post=263&amp;subd=lukesmithnet&amp;ref=&amp;feed=1" width="1" height="1" />
+<p><a href="http://feedads.g.doubleclick.net/~a/Xv1N-Jr84SL9TDQ1acMiU1Gvd1A/0/da"><img src="http://feedads.g.doubleclick.net/~a/Xv1N-Jr84SL9TDQ1acMiU1Gvd1A/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/Xv1N-Jr84SL9TDQ1acMiU1Gvd1A/1/da"><img src="http://feedads.g.doubleclick.net/~a/Xv1N-Jr84SL9TDQ1acMiU1Gvd1A/1/di" border="0" ismap="true"></img></a></p><div class="feedflare">
+<a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=99DIwR4ZJ-A:BkkjL5vmh1E:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=99DIwR4ZJ-A:BkkjL5vmh1E:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/LukeSmith?i=99DIwR4ZJ-A:BkkjL5vmh1E:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=99DIwR4ZJ-A:BkkjL5vmh1E:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=qj6IDK7rITs" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://blog.lukesmith.net/2011/05/16/updating-a-pointhq-dns-record-from-amazon-ec2-instances/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+	
+		<media:content url="http://0.gravatar.com/avatar/430c14e8a565d6a28e1cf14babcf1122?s=96&amp;d=identicon&amp;r=G" medium="image">
+			<media:title type="html">lukesmith</media:title>
+		</media:content>
+
+		<media:content url="http://lukesmithnet.files.wordpress.com/2011/05/pointhq-add-record.png?w=300" medium="image">
+			<media:title type="html">pointhq-add-record</media:title>
+		</media:content>
+	<feedburner:origLink>http://blog.lukesmith.net/2011/05/16/updating-a-pointhq-dns-record-from-amazon-ec2-instances/</feedburner:origLink></item>
+		<item>
+		<title>IIS Application Pool “randomly” stopping</title>
+		<link>http://feeds.lukesmith.net/~r/LukeSmith/~3/jv29kB9zI6Y/</link>
+		<comments>http://blog.lukesmith.net/2011/04/21/iis-application-pool-randomly-stopping/#comments</comments>
+		<pubDate>Thu, 21 Apr 2011 14:03:37 +0000</pubDate>
+		<dc:creator>Luke Smith</dc:creator>
+				<category><![CDATA[Development]]></category>
+		<category><![CDATA[nservicebus]]></category>
+
+		<guid isPermaLink="false">http://blog.lukesmith.net/?p=259</guid>
+		<description>This issue has just sent me crazy for the past day. On my development machine the application pool hosting one of our webservices would randomly stop with nothing more than the following error in the System Windows Log Application pool &amp;#8216;xx&amp;#8217; is being automatically disabled due to a series of failures in the process(es) serving [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;amp;blog=17598776&amp;amp;post=259&amp;amp;subd=lukesmithnet&amp;amp;ref=&amp;amp;feed=1" width="1" height="1" /&gt;</description>
+			<content:encoded><![CDATA[<p>This issue has just sent me crazy for the past day. On my development machine the application pool hosting one of our webservices would randomly stop with nothing more than the following error in the System Windows Log</p>
+<blockquote><p>Application pool &#8216;xx&#8217; is being automatically disabled due to a series of failures in the process(es) serving that application pool.</p></blockquote>
+<p>Which resulted in subsequent calls to the service returning</p>
+<blockquote><p>HTTP Error 503. The service is unavailable.</p></blockquote>
+<p>Any attempt to attach a debugger to the service was no help, with the debugger becoming detached every 10 seconds when w3wp.exe died.</p>
+<p>The automatic disabling of the app pool turned out to be due to the Rapid-Fail Protection that will stop the application pool after a default of 5 worker process failures. Several suggestions say to just disable Rapid-Fail protection, but this just masks the problem to stop the 503 from occurring.</p>
+<p>With some help from <a href="http://www.chrisforster.com/">Chris Forster</a> I dived into the world of Windows Debugging, looking for any kind of IIS exception that could be causing the worker process to keep failing, which turned up nothing.</p>
+<p><strong>The culprit &#8211; NServiceBus</strong></p>
+<p>To cut a long and boring debugging story short, NServiceBus was the culprit. Or rather the user account of the application pool not having the permission to Read or Peek messages from the message queue. On application startup NServiceBus attempts to send a message and read it from the message queue in the background, killing the process after 10 seconds if it is not able to read it back from the queue.</p>
+<br />Filed under: <a href='http://blog.lukesmith.net/category/development/'>Development</a>, <a href='http://blog.lukesmith.net/category/nservicebus/'>nservicebus</a>  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/lukesmithnet.wordpress.com/259/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/lukesmithnet.wordpress.com/259/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/lukesmithnet.wordpress.com/259/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/lukesmithnet.wordpress.com/259/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/lukesmithnet.wordpress.com/259/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/lukesmithnet.wordpress.com/259/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/lukesmithnet.wordpress.com/259/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/lukesmithnet.wordpress.com/259/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/lukesmithnet.wordpress.com/259/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/lukesmithnet.wordpress.com/259/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/lukesmithnet.wordpress.com/259/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/lukesmithnet.wordpress.com/259/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/lukesmithnet.wordpress.com/259/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/lukesmithnet.wordpress.com/259/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;blog=17598776&amp;post=259&amp;subd=lukesmithnet&amp;ref=&amp;feed=1" width="1" height="1" />
+<p><a href="http://feedads.g.doubleclick.net/~a/eXFexdsGT5I9GoSP0tcxIl9VVE4/0/da"><img src="http://feedads.g.doubleclick.net/~a/eXFexdsGT5I9GoSP0tcxIl9VVE4/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/eXFexdsGT5I9GoSP0tcxIl9VVE4/1/da"><img src="http://feedads.g.doubleclick.net/~a/eXFexdsGT5I9GoSP0tcxIl9VVE4/1/di" border="0" ismap="true"></img></a></p><div class="feedflare">
+<a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=jv29kB9zI6Y:1dYHb-GFprY:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=jv29kB9zI6Y:1dYHb-GFprY:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/LukeSmith?i=jv29kB9zI6Y:1dYHb-GFprY:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=jv29kB9zI6Y:1dYHb-GFprY:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=qj6IDK7rITs" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://blog.lukesmith.net/2011/04/21/iis-application-pool-randomly-stopping/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:content url="http://0.gravatar.com/avatar/430c14e8a565d6a28e1cf14babcf1122?s=96&amp;d=identicon&amp;r=G" medium="image">
+			<media:title type="html">lukesmith</media:title>
+		</media:content>
+	<feedburner:origLink>http://blog.lukesmith.net/2011/04/21/iis-application-pool-randomly-stopping/</feedburner:origLink></item>
+		<item>
+		<title>Videos on CQRS</title>
+		<link>http://feeds.lukesmith.net/~r/LukeSmith/~3/FiNu6Rvg5kw/</link>
+		<comments>http://blog.lukesmith.net/2010/07/02/videos-on-cqrs/#comments</comments>
+		<pubDate>Fri, 02 Jul 2010 14:47:26 +0000</pubDate>
+		<dc:creator>Luke Smith</dc:creator>
+				<category><![CDATA[CQRS]]></category>
+		<category><![CDATA[Development]]></category>
+
+		<guid isPermaLink="false">http://localhost:8080/archive/2010/07/02/videos-on-cqrs.aspx</guid>
+		<description>This is more a future reference to me, but here’s a couple of excellent videos on Command Query Responsibility Segregation. Command Query Responsibility Segregation– Udi Dahan CQRS and Event Sourcing – the Business Perspective– Greg Young CQRS: Why, What and How– Ian Cooper CQRS Pattern, Event Sourcing and Their Real World Applications– Neil Robbins Filed [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;amp;blog=17598776&amp;amp;post=235&amp;amp;subd=lukesmithnet&amp;amp;ref=&amp;amp;feed=1" width="1" height="1" /&gt;</description>
+			<content:encoded><![CDATA[<p>This is more a future reference to me, but here’s a couple of excellent videos on Command Query Responsibility Segregation.</p>
+<ol>
+<li><a href="http://skillsmatter.com/podcast/open-source-dot-net/udi-dahan-command-query-responsibility-segregation">Command Query Responsibility Segregation</a>– Udi Dahan</li>
+<li><a href="http://skillsmatter.com/podcast/open-source-dot-net/greg-young-cqrs-event-sourcing-the-business-perspecive">CQRS and Event Sourcing – the Business Perspective</a>– Greg Young</li>
+<li><a href="http://skillsmatter.com/podcast/open-source-dot-net/ian-cooper-will-give-a-tutorial-at-the-progressivedot-net-tutorials">CQRS: Why, What and How</a>– Ian Cooper</li>
+<li><a href="http://skillsmatter.com/podcast/open-source-dot-net/neil-robbins-cqrs-pattern-event-sourcing-and-their-real-world-applications">CQRS Pattern, Event Sourcing and Their Real World Applications</a>– Neil Robbins</li>
+</ol>
+<br />Filed under: <a href='http://blog.lukesmith.net/category/cqrs/'>CQRS</a>, <a href='http://blog.lukesmith.net/category/development/'>Development</a>  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/lukesmithnet.wordpress.com/235/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/lukesmithnet.wordpress.com/235/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/lukesmithnet.wordpress.com/235/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/lukesmithnet.wordpress.com/235/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/lukesmithnet.wordpress.com/235/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/lukesmithnet.wordpress.com/235/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/lukesmithnet.wordpress.com/235/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/lukesmithnet.wordpress.com/235/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/lukesmithnet.wordpress.com/235/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/lukesmithnet.wordpress.com/235/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/lukesmithnet.wordpress.com/235/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/lukesmithnet.wordpress.com/235/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/lukesmithnet.wordpress.com/235/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/lukesmithnet.wordpress.com/235/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;blog=17598776&amp;post=235&amp;subd=lukesmithnet&amp;ref=&amp;feed=1" width="1" height="1" />
+<p><a href="http://feedads.g.doubleclick.net/~a/rZNAR1Lsc4o6x3LNciBBB_obvRE/0/da"><img src="http://feedads.g.doubleclick.net/~a/rZNAR1Lsc4o6x3LNciBBB_obvRE/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/rZNAR1Lsc4o6x3LNciBBB_obvRE/1/da"><img src="http://feedads.g.doubleclick.net/~a/rZNAR1Lsc4o6x3LNciBBB_obvRE/1/di" border="0" ismap="true"></img></a></p><div class="feedflare">
+<a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=FiNu6Rvg5kw:foqBI9lTBQs:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=FiNu6Rvg5kw:foqBI9lTBQs:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/LukeSmith?i=FiNu6Rvg5kw:foqBI9lTBQs:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=FiNu6Rvg5kw:foqBI9lTBQs:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=qj6IDK7rITs" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://blog.lukesmith.net/2010/07/02/videos-on-cqrs/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:content url="http://0.gravatar.com/avatar/430c14e8a565d6a28e1cf14babcf1122?s=96&amp;d=identicon&amp;r=G" medium="image">
+			<media:title type="html">lukesmith</media:title>
+		</media:content>
+	<feedburner:origLink>http://blog.lukesmith.net/2010/07/02/videos-on-cqrs/</feedburner:origLink></item>
+		<item>
+		<title>When is an email address not an email address?</title>
+		<link>http://feeds.lukesmith.net/~r/LukeSmith/~3/Efkg_Bv_1gk/</link>
+		<comments>http://blog.lukesmith.net/2010/06/15/when-is-an-email-address-not-an-email-address/#comments</comments>
+		<pubDate>Tue, 15 Jun 2010 12:19:16 +0000</pubDate>
+		<dc:creator>Luke Smith</dc:creator>
+				<category><![CDATA[Development]]></category>
+
+		<guid isPermaLink="false">http://localhost:8080/archive/2010/06/15/when-is-an-email-address-not-an-email-address.aspx</guid>
+		<description>When it’s a string. How many systems have you worked on where you pass strings/integers etc about for email addresses and passwords among other things. Edit: I knew there was a real term for this, which Rob has reminded me - Business Primitives What’s wrong with this? You’re adding a lot more work to any methods [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;amp;blog=17598776&amp;amp;post=234&amp;amp;subd=lukesmithnet&amp;amp;ref=&amp;amp;feed=1" width="1" height="1" /&gt;</description>
+			<content:encoded><![CDATA[<p>When it’s a string.</p>
+<p>How many systems have you worked on where you pass strings/integers etc about for email addresses and passwords among other things.</p>
+<p><em>Edit: I knew there was a real term for this, which </em><a href="http://codeofrob.com"><em>Rob</em></a><em> has reminded me - </em><a href="http://codebetter.com/blogs/dru.sellers/archive/2010/01/27/business-primitives-1-2.aspx"><em>Business Primitives</em></a></p>
+<h6>What’s wrong with this?</h6>
+<p>You’re adding a lot more work to any methods that deal with email addresses. If your methods accept a string, even if the parameter name is “emailAddress”, what is stopping me from passing a value that doesn’t represent a valid address. The answer nothing. This puts the responsibility of validating the input on the called method, likely raising an exception if it doesn’t agree with what you’ve passed it.</p>
+<p>Extension methods get used, and abused, for checking whether a string is a valid email address. The fact you are doing this with an extension method should indicate that a string is probably the wrong type.</p>
+<h6>So what can we do instead?</h6>
+<p>I believe a better approach is to represent the value with its own type. Create an EmailAddress type and have this do the validating and parsing of the actual value and have methods accept parameters of this type. No longer will you have conditions spread throughout your codebase and no more will you have to trace to find out how and where the incorrect value entered the system. You get instant feedback as soon as you try treating an invalid value as an email address, stopping it moving deeper into the system.</p>
+<p>Passwords *should* be encrypted so generally you store the encrypted value as well as a <a href="http://en.wikipedia.org/wiki/Salt_%28cryptography%29">Salt</a>. value. Why treat these two values separate (a string for the encrypted value and a string for the salt), bring them together under a Password type. You then have a logical place to create passwords from plain text and compare whether a plain text string is the same as an encrypted password.</p>
+<h6>But what about my ORM?</h6>
+<p>Any decent ORM, such as NHibernate, will allow you to map a custom type. NHibernate enables this via the IUserType interface.</p>
+<h6>Show me the code</h6>
+<p>I have posted both my implementations for the <a href="http://gist.github.com/439016#file_email_address.cs">EmailAddress</a> and <a href="http://gist.github.com/439016#file_password.cs">Password</a> types over on <a href="http://github.com/">github</a>. I’ve also added gists for the associated <a href="http://gist.github.com/439031">NHibernate user types</a>.</p>
+</p>
+<p>Another thing to think about is to not use integers to represent Age. Age generally cannot be negative, unless you have some complex domain, so using a type which allows this may not be the right solution if you are putting conditional checks throughout the system.</p>
+<br />Filed under: <a href='http://blog.lukesmith.net/category/development/'>Development</a>  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/lukesmithnet.wordpress.com/234/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/lukesmithnet.wordpress.com/234/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/lukesmithnet.wordpress.com/234/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/lukesmithnet.wordpress.com/234/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/lukesmithnet.wordpress.com/234/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/lukesmithnet.wordpress.com/234/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/lukesmithnet.wordpress.com/234/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/lukesmithnet.wordpress.com/234/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/lukesmithnet.wordpress.com/234/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/lukesmithnet.wordpress.com/234/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/lukesmithnet.wordpress.com/234/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/lukesmithnet.wordpress.com/234/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/lukesmithnet.wordpress.com/234/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/lukesmithnet.wordpress.com/234/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;blog=17598776&amp;post=234&amp;subd=lukesmithnet&amp;ref=&amp;feed=1" width="1" height="1" />
+<p><a href="http://feedads.g.doubleclick.net/~a/GDIMO3RoxU_BIh_p7FnDwgIGCW4/0/da"><img src="http://feedads.g.doubleclick.net/~a/GDIMO3RoxU_BIh_p7FnDwgIGCW4/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/GDIMO3RoxU_BIh_p7FnDwgIGCW4/1/da"><img src="http://feedads.g.doubleclick.net/~a/GDIMO3RoxU_BIh_p7FnDwgIGCW4/1/di" border="0" ismap="true"></img></a></p><div class="feedflare">
+<a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=Efkg_Bv_1gk:_qYJeGQnDAI:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=Efkg_Bv_1gk:_qYJeGQnDAI:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/LukeSmith?i=Efkg_Bv_1gk:_qYJeGQnDAI:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=Efkg_Bv_1gk:_qYJeGQnDAI:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=qj6IDK7rITs" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://blog.lukesmith.net/2010/06/15/when-is-an-email-address-not-an-email-address/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:content url="http://0.gravatar.com/avatar/430c14e8a565d6a28e1cf14babcf1122?s=96&amp;d=identicon&amp;r=G" medium="image">
+			<media:title type="html">lukesmith</media:title>
+		</media:content>
+	<feedburner:origLink>http://blog.lukesmith.net/2010/06/15/when-is-an-email-address-not-an-email-address/</feedburner:origLink></item>
+		<item>
+		<title>The When, What and Why of auditing</title>
+		<link>http://feeds.lukesmith.net/~r/LukeSmith/~3/fgXDDZ7CQJE/</link>
+		<comments>http://blog.lukesmith.net/2010/02/04/the-when-what-and-why-of-auditing/#comments</comments>
+		<pubDate>Thu, 04 Feb 2010 21:53:02 +0000</pubDate>
+		<dc:creator>Luke Smith</dc:creator>
+				<category><![CDATA[Development]]></category>
+
+		<guid isPermaLink="false">http://localhost:8080/archive/2010/02/04/the-when-what-and-why-of-auditing.aspx</guid>
+		<description>One of the things I’ve come across in most systems is the requirement for auditing. As i see it there are 3 approaches to auditing When &amp;#8211; Keeping track of when something changed. e.g Product A was changed by Bob on 1st April 2009. What &amp;#8211; Keeping track of what changed &amp;#8211; e.g Product A&amp;#8217;s [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;amp;blog=17598776&amp;amp;post=233&amp;amp;subd=lukesmithnet&amp;amp;ref=&amp;amp;feed=1" width="1" height="1" /&gt;</description>
+			<content:encoded><![CDATA[<p>One of the things I’ve come across in most systems is the requirement for auditing.</p>
+<p>As i see it there are 3 approaches to auditing</p>
+<ol>
+<li><strong>When</strong> &#8211; Keeping track of when something changed. e.g <em>Product A was changed by Bob on 1st April 2009.</em> </li>
+<li><strong>What</strong> &#8211; Keeping track of what changed &#8211; e.g <em>Product A&#8217;s price was changed from £15 to £20 by bob on 1st April 2009</em> </li>
+<li><strong>Why</strong> &#8211; Keeping track of why something changed &#8211; e.g <em>Product A&#8217;s price changed from £15 to £20 by bob on 1st April 2009 because it was wrongly priced originally.</em> </li>
+</ol>
+<p>Number 3, <strong>why</strong>, provides the most value. Not only does it allow the users of the system to be able to see the intent of changes (providing an extra dimension to reports) but it also provides some valuable information to any developer tasked with fixing an issue in the system. If a developer can see what the users intent was then it can help in providing a possible diagnoses.</p>
+<p>As a more detailed example imagine you own an online shop that allows users to be able to cancel orders before they are actually shipped from the warehouse. You could provide a big button that says &#8220;cancel order&#8221;. Simple, but this would not give a reason behind the user cancelling their order.</p>
+<p>A better option would be to give the customer a set of options as to why they want to cancel, is it because they’ve since found it cheaper elsewhere, decided they don’t want it anymore, have heard &#8220;the next big thing&#8221; is due out in a week and are waiting for that or that it is taking too long to dispatch? Capturing this information allows audit reports to be run in the future about why customers are cancelling their orders.</p>
+<p>Once you know the intent behind the customer cancelling the order you can then initiate different business processes, if it is because they&#8217;ve found it cheaper elsewhere then this could invoke a process for the sales team to contact them to match the offer. If its because its taking too long to dispatch then send them a voucher for free delivery on their next order. Keeping the customer happy is more likely to make them return.</p>
+<p>Without catching the intent (whether for auditing or not) this would not be possible.</p>
+<br />Filed under: <a href='http://blog.lukesmith.net/category/development/'>Development</a>  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/lukesmithnet.wordpress.com/233/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/lukesmithnet.wordpress.com/233/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/lukesmithnet.wordpress.com/233/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/lukesmithnet.wordpress.com/233/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/lukesmithnet.wordpress.com/233/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/lukesmithnet.wordpress.com/233/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/lukesmithnet.wordpress.com/233/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/lukesmithnet.wordpress.com/233/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/lukesmithnet.wordpress.com/233/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/lukesmithnet.wordpress.com/233/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/lukesmithnet.wordpress.com/233/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/lukesmithnet.wordpress.com/233/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/lukesmithnet.wordpress.com/233/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/lukesmithnet.wordpress.com/233/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;blog=17598776&amp;post=233&amp;subd=lukesmithnet&amp;ref=&amp;feed=1" width="1" height="1" />
+<p><a href="http://feedads.g.doubleclick.net/~a/6Ugf5OTrKPZ5D7SLmArLTYtX-3o/0/da"><img src="http://feedads.g.doubleclick.net/~a/6Ugf5OTrKPZ5D7SLmArLTYtX-3o/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/6Ugf5OTrKPZ5D7SLmArLTYtX-3o/1/da"><img src="http://feedads.g.doubleclick.net/~a/6Ugf5OTrKPZ5D7SLmArLTYtX-3o/1/di" border="0" ismap="true"></img></a></p><div class="feedflare">
+<a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=fgXDDZ7CQJE:YNyFI1Kwenc:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=fgXDDZ7CQJE:YNyFI1Kwenc:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/LukeSmith?i=fgXDDZ7CQJE:YNyFI1Kwenc:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=fgXDDZ7CQJE:YNyFI1Kwenc:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=qj6IDK7rITs" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://blog.lukesmith.net/2010/02/04/the-when-what-and-why-of-auditing/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:content url="http://0.gravatar.com/avatar/430c14e8a565d6a28e1cf14babcf1122?s=96&amp;d=identicon&amp;r=G" medium="image">
+			<media:title type="html">lukesmith</media:title>
+		</media:content>
+	<feedburner:origLink>http://blog.lukesmith.net/2010/02/04/the-when-what-and-why-of-auditing/</feedburner:origLink></item>
+		<item>
+		<title>Write today, wrong tomorrow</title>
+		<link>http://feeds.lukesmith.net/~r/LukeSmith/~3/izoxk9g98PY/</link>
+		<comments>http://blog.lukesmith.net/2010/01/18/write-today-wrong-tomorrow/#comments</comments>
+		<pubDate>Mon, 18 Jan 2010 16:47:00 +0000</pubDate>
+		<dc:creator>Luke Smith</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://localhost:8080/archive/2010/01/18/write-today-wrong-tomorrow.aspx</guid>
+		<description>My blogs been without a subtitle for as long as I can remember, I just couldn’t think of anything “catchy”. But now I have come up with something that I think fits “Write today. Wrong tomorrow”. This refers to the constant learning that occurs in the development world. I’m a huge believer that if you [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;amp;blog=17598776&amp;amp;post=232&amp;amp;subd=lukesmithnet&amp;amp;ref=&amp;amp;feed=1" width="1" height="1" /&gt;</description>
+			<content:encoded><![CDATA[<p>My blogs been without a subtitle for as long as I can remember, I just couldn’t think of anything “catchy”. But now I have come up with something that I think fits “Write today. Wrong tomorrow”.</p>
+<p>This refers to the constant learning that occurs in the development world. I’m a huge believer that if you look back at code written 6 months ago and think “wow, that was amazing – I wouldn’t do anything differently” then you haven’t learnt anything new since.</p>
+<p>So take whatever I say on this blog with a pinch of salt, I might not necessarily agree with it in 6 months time – that includes the subtitle <img src='http://s1.wp.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<br />Posted in Uncategorized  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/lukesmithnet.wordpress.com/232/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/lukesmithnet.wordpress.com/232/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/lukesmithnet.wordpress.com/232/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/lukesmithnet.wordpress.com/232/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/lukesmithnet.wordpress.com/232/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/lukesmithnet.wordpress.com/232/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/lukesmithnet.wordpress.com/232/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/lukesmithnet.wordpress.com/232/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/lukesmithnet.wordpress.com/232/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/lukesmithnet.wordpress.com/232/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/lukesmithnet.wordpress.com/232/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/lukesmithnet.wordpress.com/232/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/lukesmithnet.wordpress.com/232/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/lukesmithnet.wordpress.com/232/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;blog=17598776&amp;post=232&amp;subd=lukesmithnet&amp;ref=&amp;feed=1" width="1" height="1" />
+<p><a href="http://feedads.g.doubleclick.net/~a/z8OQrBpE9p9GHmTu3XJqb-qR5QY/0/da"><img src="http://feedads.g.doubleclick.net/~a/z8OQrBpE9p9GHmTu3XJqb-qR5QY/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/z8OQrBpE9p9GHmTu3XJqb-qR5QY/1/da"><img src="http://feedads.g.doubleclick.net/~a/z8OQrBpE9p9GHmTu3XJqb-qR5QY/1/di" border="0" ismap="true"></img></a></p><div class="feedflare">
+<a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=izoxk9g98PY:8LrDr9Zrqs0:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=izoxk9g98PY:8LrDr9Zrqs0:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/LukeSmith?i=izoxk9g98PY:8LrDr9Zrqs0:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=izoxk9g98PY:8LrDr9Zrqs0:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=qj6IDK7rITs" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://blog.lukesmith.net/2010/01/18/write-today-wrong-tomorrow/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:content url="http://0.gravatar.com/avatar/430c14e8a565d6a28e1cf14babcf1122?s=96&amp;d=identicon&amp;r=G" medium="image">
+			<media:title type="html">lukesmith</media:title>
+		</media:content>
+	<feedburner:origLink>http://blog.lukesmith.net/2010/01/18/write-today-wrong-tomorrow/</feedburner:origLink></item>
+		<item>
+		<title>Creating website installer using WiX</title>
+		<link>http://feeds.lukesmith.net/~r/LukeSmith/~3/x79jWZjhoug/</link>
+		<comments>http://blog.lukesmith.net/2010/01/17/creating-website-installer-using-wix/#comments</comments>
+		<pubDate>Sun, 17 Jan 2010 15:47:46 +0000</pubDate>
+		<dc:creator>Luke Smith</dc:creator>
+				<category><![CDATA[Development]]></category>
+		<category><![CDATA[Installers]]></category>
+		<category><![CDATA[WiX]]></category>
+
+		<guid isPermaLink="false">http://localhost:8080/archive/2010/01/17/creating-website-installer-using-wix.aspx</guid>
+		<description>I’m currently working on a new project and one of the things I want is an easy deployment process. Rather than wait till I actually want to deploy the site to production to put something in place I’ve decided to build it early and use the same process as part of my CI process. Testing [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;amp;blog=17598776&amp;amp;post=231&amp;amp;subd=lukesmithnet&amp;amp;ref=&amp;amp;feed=1" width="1" height="1" /&gt;</description>
+			<content:encoded><![CDATA[<p>I’m currently working on a new project and one of the things I want is an easy deployment process. Rather than wait till I actually want to deploy the site to production to put something in place I’ve decided to build it early and use the same process as part of my CI process. Testing the process early and often will mean any issues will be solved sooner rather than on the day of the release.</p>
+<p>I decided to go with an msi installer, so had 2 choices. Either using a Setup Project, that’s included in Visual Studio, or <a href="http://wix.sourceforge.net/">WiX</a>. <a href="http://wix.sourceforge.net/">WiX</a> is far more powerful, and also doesn’t require Visual Studio being installed on the build machine (Setup Projects aren’t supported by MSBuild and so you have to use devenv.exe to build them…urgh).</p>
+<p>WiX is a Windows Installer toolset and you write your installation packages using XML. It’s a Microsoft project and hosted on <a href="http://wix.sourceforge.net/">sourceforge</a>.</p>
+<p>The following uses <a href="http://sourceforge.net/projects/wix/files/">wix3.0.5419</a> and requires Visual Studio 2008.</p>
+<h4>Step 1: Download WiX</h4>
+<p>Download WiX from sourceforge. Make sure you also install <a href="http://wix.sourceforge.net/votive.html">Votive</a> (included in the WiX installer) which will give you support for creating WiX projects inside Visual Studio with full intellisense.</p>
+<h4>Step 2: Create a new WiX project</h4>
+<p>Simple, just as you would any other Visual Studio project.</p>
+<p><a href="http://lukesmithnet.files.wordpress.com/2010/01/image_4.png"><img class="alignnone size-medium wp-image-245" title="image_4" src="http://lukesmithnet.files.wordpress.com/2010/01/image_4.png?w=300&#038;h=213" alt="" width="300" height="213" /></a></p>
+<h4>Step 3: Adding the WixIIsExtension</h4>
+<p>WiX provides a template to work with when creating a new project, which is useful. The first thing we need to do is reference to WiXIIsExtension, which provides us with the tasks needed to create websites and virtual directories from the installer. References are added in the same way as any other project reference, via the Solution Explorer.</p>
+<p><a href="http://lukesmithnet.files.wordpress.com/2010/01/image_6.png"><img class="alignnone size-medium wp-image-246" title="image_6" src="http://lukesmithnet.files.wordpress.com/2010/01/image_6.png?w=283&#038;h=300" alt="" width="283" height="300" /></a></p>
+<p>&nbsp;</p>
+<p>You then need to add a new xml namespace to the Wix root element in your Product.wxs file. If you don’t do this then I’ve found you cannot make use of the tasks provided by the extension library and will get the error “<em>The Component element contains an unexpected child element &#8216;WebSite&#8217;.”</em></p>
+<p>Add the namespace xmlns:iis=”http://schemas.microsoft.com/wix/IIsExtension”.</p>
+<p><a href="http://lukesmithnet.files.wordpress.com/2010/01/image_8.png"><img class="alignnone size-medium wp-image-247" title="image_8" src="http://lukesmithnet.files.wordpress.com/2010/01/image_8.png?w=300&#038;h=35" alt="" width="300" height="35" /></a></p>
+<h4>Step 4: Creating the website</h4>
+<p>In the Product.wxs file you can now add a task to create a website in IIS within a Component.</p>
+<p>&nbsp;</p>
+<p>Update the ComponentRef under the Feature Id=”ProductFeature” to point to the Website component, Ctrl+Shift+B and you’ve created an installer that creates a website under IIS.</p>
+<p><a href="http://lukesmithnet.files.wordpress.com/2010/01/image_12.png"><img class="alignnone size-medium wp-image-248" title="image_12" src="http://lukesmithnet.files.wordpress.com/2010/01/image_12.png?w=300&#038;h=91" alt="" width="300" height="91" /></a></p>
+<h4>Step 5: Run the installer and view the result</h4>
+<p>Find the installer that is produced in the bin directory and run it. There is no UI for the user to interact with, and a new website is created pointing to C:\Project Files (x86)\WixSampleProject</p>
+<p><a href="http://lukesmithnet.files.wordpress.com/2010/01/image_14.png"><img class="alignnone size-medium wp-image-249" title="image_14" src="http://lukesmithnet.files.wordpress.com/2010/01/image_14.png?w=300&#038;h=219" alt="" width="300" height="219" /></a></p>
+<p>&nbsp;</p>
+<p>We’ve not included any files in our installer, for that I use <a href="http://wix.sourceforge.net/manual-wix3/heat.htm">heat</a> which I’ll blog about in a future post.</p>
+<p>Hope you’ve found this helpful</p>
+<div id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:7f6063f3-43b6-4a05-8b37-c5ef0802fadf" class="wlWriterEditableSmartContent" style="display:inline;float:none;margin:0;padding:0;">Technorati Tags: <a rel="tag" href="http://technorati.com/tags/WiX">WiX</a>,<a rel="tag" href="http://technorati.com/tags/msi">msi</a>,<a rel="tag" href="http://technorati.com/tags/installer">installer</a>,<a rel="tag" href="http://technorati.com/tags/website">website</a></div>
+<br />Posted in Development, Installers, WiX  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/lukesmithnet.wordpress.com/231/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/lukesmithnet.wordpress.com/231/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/lukesmithnet.wordpress.com/231/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/lukesmithnet.wordpress.com/231/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/lukesmithnet.wordpress.com/231/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/lukesmithnet.wordpress.com/231/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/lukesmithnet.wordpress.com/231/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/lukesmithnet.wordpress.com/231/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/lukesmithnet.wordpress.com/231/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/lukesmithnet.wordpress.com/231/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/lukesmithnet.wordpress.com/231/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/lukesmithnet.wordpress.com/231/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/lukesmithnet.wordpress.com/231/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/lukesmithnet.wordpress.com/231/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;blog=17598776&amp;post=231&amp;subd=lukesmithnet&amp;ref=&amp;feed=1" width="1" height="1" />
+<p><a href="http://feedads.g.doubleclick.net/~a/-iugJ2B6whgpKjaE1WiKhWe3MXo/0/da"><img src="http://feedads.g.doubleclick.net/~a/-iugJ2B6whgpKjaE1WiKhWe3MXo/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/-iugJ2B6whgpKjaE1WiKhWe3MXo/1/da"><img src="http://feedads.g.doubleclick.net/~a/-iugJ2B6whgpKjaE1WiKhWe3MXo/1/di" border="0" ismap="true"></img></a></p><div class="feedflare">
+<a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=x79jWZjhoug:kxCE_uhWGvU:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=x79jWZjhoug:kxCE_uhWGvU:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/LukeSmith?i=x79jWZjhoug:kxCE_uhWGvU:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=x79jWZjhoug:kxCE_uhWGvU:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=qj6IDK7rITs" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://blog.lukesmith.net/2010/01/17/creating-website-installer-using-wix/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+	
+		<media:content url="http://0.gravatar.com/avatar/430c14e8a565d6a28e1cf14babcf1122?s=96&amp;d=identicon&amp;r=G" medium="image">
+			<media:title type="html">lukesmith</media:title>
+		</media:content>
+
+		<media:content url="http://lukesmithnet.files.wordpress.com/2010/01/image_4.png?w=300" medium="image">
+			<media:title type="html">image_4</media:title>
+		</media:content>
+
+		<media:content url="http://lukesmithnet.files.wordpress.com/2010/01/image_6.png?w=283" medium="image">
+			<media:title type="html">image_6</media:title>
+		</media:content>
+
+		<media:content url="http://lukesmithnet.files.wordpress.com/2010/01/image_8.png?w=300" medium="image">
+			<media:title type="html">image_8</media:title>
+		</media:content>
+
+		<media:content url="http://lukesmithnet.files.wordpress.com/2010/01/image_12.png?w=300" medium="image">
+			<media:title type="html">image_12</media:title>
+		</media:content>
+
+		<media:content url="http://lukesmithnet.files.wordpress.com/2010/01/image_14.png?w=300" medium="image">
+			<media:title type="html">image_14</media:title>
+		</media:content>
+	<feedburner:origLink>http://blog.lukesmith.net/2010/01/17/creating-website-installer-using-wix/</feedburner:origLink></item>
+		<item>
+		<title>Reading Geek Night Presentation slides</title>
+		<link>http://feeds.lukesmith.net/~r/LukeSmith/~3/Vh4zw3La2uQ/</link>
+		<comments>http://blog.lukesmith.net/2009/12/09/reading-geek-night-presentation-slides/#comments</comments>
+		<pubDate>Wed, 09 Dec 2009 19:51:41 +0000</pubDate>
+		<dc:creator>Luke Smith</dc:creator>
+				<category><![CDATA[Development]]></category>
+		<category><![CDATA[reading geek night]]></category>
+		<category><![CDATA[SOLID Principles]]></category>
+
+		<guid isPermaLink="false">http://localhost:8080/archive/2009/12/09/reading-geek-night-presentation-slides.aspx</guid>
+		<description>I recently gave a 15minute presentation covering the SOLID Principles at the Reading Geek Night, not enough time to go into each principle but hopefully enough that people went away with some understanding of the principles and were encouraged to learn more about them. I highly recommend watching this video of &amp;#8220;UncleBob&amp;#8221; at the Norwegian [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;amp;blog=17598776&amp;amp;post=230&amp;amp;subd=lukesmithnet&amp;amp;ref=&amp;amp;feed=1" width="1" height="1" /&gt;</description>
+			<content:encoded><![CDATA[<p>I recently gave a 15minute presentation covering the <a href="http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf">SOLID Principles</a> at the <a href="http://readinggeeknight.com/">Reading Geek Night</a>, not enough time to go into each principle but hopefully enough that people went away with some understanding of the principles and were encouraged to learn more about them.</p>
+<p>I highly recommend watching this video of <a href="http://blog.objectmentor.com/">&#8220;UncleBob&#8221;</a> at the Norwegian Developers Conference 2009 on <a href="http://weblogs.asp.net/rosherove/archive/2009/08/19/ndc-video-robert-martin-s-o-l-i-d-principles-of-oo-class-design.aspx">SOLID Principles of OO class design</a></p>
+<p>I’ve also uploaded my slides of my presentation to slideshare.</p>
+<div style="text-align:left;width:425px;" id="__ss_2684744"><a style="display:block;font:14px helvetica,arial,sans-serif;text-decoration:underline;margin:12px 0 3px;" title="The Solid Principles" href="http://www.slideshare.net/lukesmith/the-solid-principles">The Solid Principles</a><a href="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=thesolidprinciples-091209133525-phpapp02&#038;stripped_title=the-solid-principles">http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=thesolidprinciples-091209133525-phpapp02&#038;stripped_title=the-solid-principles</a></p>
+<div style="font-family:tahoma,arial;height:26px;font-size:11px;padding-top:2px;">View more <a style="text-decoration:underline;" href="http://www.slideshare.net/">presentations</a> from <a style="text-decoration:underline;" href="http://www.slideshare.net/lukesmith">lukesmith</a>.</div>
+</div>
+<br />Posted in Development, reading geek night, SOLID Principles  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/lukesmithnet.wordpress.com/230/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/lukesmithnet.wordpress.com/230/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/lukesmithnet.wordpress.com/230/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/lukesmithnet.wordpress.com/230/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/lukesmithnet.wordpress.com/230/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/lukesmithnet.wordpress.com/230/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/lukesmithnet.wordpress.com/230/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/lukesmithnet.wordpress.com/230/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/lukesmithnet.wordpress.com/230/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/lukesmithnet.wordpress.com/230/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/lukesmithnet.wordpress.com/230/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/lukesmithnet.wordpress.com/230/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/lukesmithnet.wordpress.com/230/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/lukesmithnet.wordpress.com/230/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;blog=17598776&amp;post=230&amp;subd=lukesmithnet&amp;ref=&amp;feed=1" width="1" height="1" />
+<p><a href="http://feedads.g.doubleclick.net/~a/l3I8uLTa8ybmjQy8Pqdg32kefhI/0/da"><img src="http://feedads.g.doubleclick.net/~a/l3I8uLTa8ybmjQy8Pqdg32kefhI/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/l3I8uLTa8ybmjQy8Pqdg32kefhI/1/da"><img src="http://feedads.g.doubleclick.net/~a/l3I8uLTa8ybmjQy8Pqdg32kefhI/1/di" border="0" ismap="true"></img></a></p><div class="feedflare">
+<a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=Vh4zw3La2uQ:RSkcMXIiGBQ:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=Vh4zw3La2uQ:RSkcMXIiGBQ:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/LukeSmith?i=Vh4zw3La2uQ:RSkcMXIiGBQ:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=Vh4zw3La2uQ:RSkcMXIiGBQ:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=qj6IDK7rITs" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://blog.lukesmith.net/2009/12/09/reading-geek-night-presentation-slides/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:content url="http://0.gravatar.com/avatar/430c14e8a565d6a28e1cf14babcf1122?s=96&amp;d=identicon&amp;r=G" medium="image">
+			<media:title type="html">lukesmith</media:title>
+		</media:content>
+	<feedburner:origLink>http://blog.lukesmith.net/2009/12/09/reading-geek-night-presentation-slides/</feedburner:origLink></item>
+		<item>
+		<title>Now using github</title>
+		<link>http://feeds.lukesmith.net/~r/LukeSmith/~3/dTQ5A_auiy4/</link>
+		<comments>http://blog.lukesmith.net/2009/11/01/now-using-github/#comments</comments>
+		<pubDate>Sun, 01 Nov 2009 12:24:15 +0000</pubDate>
+		<dc:creator>Luke Smith</dc:creator>
+				<category><![CDATA[Development]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[linq2js]]></category>
+		<category><![CDATA[vegeojson]]></category>
+
+		<guid isPermaLink="false">http://localhost:8080/archive/2009/11/01/now-using-github.aspx</guid>
+		<description>I&amp;#8217;ve decided to move my open source projects over to github, rather than hosting them on a private subversion server where they aren’t very accessible. From what I&amp;#8217;ve seen, and heard, github is a great source control repository, I only hope there is a visual studio addin as good as visualsvn in the pipeline. Currently [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;amp;blog=17598776&amp;amp;post=229&amp;amp;subd=lukesmithnet&amp;amp;ref=&amp;amp;feed=1" width="1" height="1" /&gt;</description>
+			<content:encoded><![CDATA[<p />
+<p>I&#8217;ve decided to move my open source projects over to <a href="http://github.com/lukesmith">github</a>, rather than hosting them on a private subversion server where they aren’t very accessible.</p>
+<p>From what I&#8217;ve seen, and heard, github is a great source control repository, I only hope there is a visual studio addin as good as visualsvn in the pipeline.    </p>
+<p>Currently my 2 JavaScript libraries have been moved over</p>
+<ul>
+<li><a href="http://github.com/lukesmith/linq2js">linq2js</a> is a JavaScript library providing an api similar to that of linq in the .net framework. It features a near complete method for method implementation of those found on the IEnumerable interface as well as lazy evaluation of queries. </li>
+<li><a href="http://github.com/lukesmith/vegeojson">vegeojson</a> is a helper utility i wrote for drawing shapes on a virtual earth (now bing) map given an object in the <a href="http://geojson.org/">geojson</a> format. </li>
+</ul>
+<br />Posted in Development, git, linq2js, vegeojson  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/lukesmithnet.wordpress.com/229/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/lukesmithnet.wordpress.com/229/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/lukesmithnet.wordpress.com/229/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/lukesmithnet.wordpress.com/229/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/lukesmithnet.wordpress.com/229/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/lukesmithnet.wordpress.com/229/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/lukesmithnet.wordpress.com/229/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/lukesmithnet.wordpress.com/229/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/lukesmithnet.wordpress.com/229/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/lukesmithnet.wordpress.com/229/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/lukesmithnet.wordpress.com/229/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/lukesmithnet.wordpress.com/229/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/lukesmithnet.wordpress.com/229/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/lukesmithnet.wordpress.com/229/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.lukesmith.net&amp;blog=17598776&amp;post=229&amp;subd=lukesmithnet&amp;ref=&amp;feed=1" width="1" height="1" />
+<p><a href="http://feedads.g.doubleclick.net/~a/M2IdmAWbmYo3UdKQaKFcYP3lxVM/0/da"><img src="http://feedads.g.doubleclick.net/~a/M2IdmAWbmYo3UdKQaKFcYP3lxVM/0/di" border="0" ismap="true"></img></a><br/>
+<a href="http://feedads.g.doubleclick.net/~a/M2IdmAWbmYo3UdKQaKFcYP3lxVM/1/da"><img src="http://feedads.g.doubleclick.net/~a/M2IdmAWbmYo3UdKQaKFcYP3lxVM/1/di" border="0" ismap="true"></img></a></p><div class="feedflare">
+<a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=dTQ5A_auiy4:57_vq9pHEEk:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=dTQ5A_auiy4:57_vq9pHEEk:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/LukeSmith?i=dTQ5A_auiy4:57_vq9pHEEk:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.lukesmith.net/~ff/LukeSmith?a=dTQ5A_auiy4:57_vq9pHEEk:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/LukeSmith?d=qj6IDK7rITs" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://blog.lukesmith.net/2009/11/01/now-using-github/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:content url="http://0.gravatar.com/avatar/430c14e8a565d6a28e1cf14babcf1122?s=96&amp;d=identicon&amp;r=G" medium="image">
+			<media:title type="html">lukesmith</media:title>
+		</media:content>
+	<feedburner:origLink>http://blog.lukesmith.net/2009/11/01/now-using-github/</feedburner:origLink></item>
+	</channel>
+</rss>

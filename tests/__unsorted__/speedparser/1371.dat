@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>deldan.com</title>
+	<atom:link href="http://deldan.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://deldan.com</link>
+	<description>blog de Dan El chalbzouri Rivas</description>
+	<lastBuildDate>Tue, 26 Jul 2011 09:11:49 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.1</generator>
+		<item>
+		<title>HTML &#8211; div 100% alto</title>
+		<link>http://deldan.com/2011/07/html-div-100-alto/</link>
+		<comments>http://deldan.com/2011/07/html-div-100-alto/#comments</comments>
+		<pubDate>Tue, 26 Jul 2011 09:11:49 +0000</pubDate>
+		<dc:creator>deldan</dc:creator>
+				<category><![CDATA[Código]]></category>
+		<category><![CDATA[código]]></category>
+		<category><![CDATA[html]]></category>
+
+		<guid isPermaLink="false">http://deldan.com/?p=426</guid>
+		<description><![CDATA[Para un programador, el css y html a veces no guarda mucha lógica, a veces es así y punto. Así que aunque esto parezca un tontería, es algo que se olvida y es bueno tenerlo apuntado. html, body { height: 100%; } Importante que el height a 100% se aplique tanto en html con en [...]]]></description>
+			<content:encoded><![CDATA[<p>Para un programador, el css y html a veces no guarda mucha lógica, a veces es así y punto.<br />
+Así que aunque esto parezca un tontería, es algo que se olvida y es bueno tenerlo apuntado.</p>
+<pre name="code" class="html:nocontrols">
+html, body { height: 100%; }
+</pre>
+<p>Importante que el height a 100% se aplique tanto en html con en body.</p>
+<pre name="code" class="html:nocontrols">
+#main{height: 100%;}
+</pre>
+<p>El div en cuestión.
+<div class='kouguu_fb_like_button'><iframe src="http://www.facebook.com/plugins/like.php?href=http://deldan.com/2011/07/html-div-100-alto/&#038;layout=standard&#038;show_faces=false&#038;width=450&#038;height=25&#038;action=like&#038;colorscheme=light&#038;" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px;"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>http://deldan.com/2011/07/html-div-100-alto/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Componente REST para cakePhp</title>
+		<link>http://deldan.com/2011/05/componente-rest-para-cakephp/</link>
+		<comments>http://deldan.com/2011/05/componente-rest-para-cakephp/#comments</comments>
+		<pubDate>Tue, 10 May 2011 21:16:28 +0000</pubDate>
+		<dc:creator>deldan</dc:creator>
+				<category><![CDATA[cakephp]]></category>
+		<category><![CDATA[Código]]></category>
+		<category><![CDATA[código]]></category>
+		<category><![CDATA[componente]]></category>
+		<category><![CDATA[REST]]></category>
+
+		<guid isPermaLink="false">http://deldan.com/?p=415</guid>
+		<description><![CDATA[Buenas, acabo de subir un componente RESTfull para cakePhp en mi cuenta de github https://github.com/deldan/RestAndCurl-component-cakePhp ¿Como hacerlo funcionar? Descargar los dos componentes y guardarlos en la carpeta app/controller/components de tu proyecto cakePhp Llamalo en el controlador que se necesite, como con cualquier componente var $components=array('Curl', 'Restclient'); Y crear las llamadas REST Dejo un pequeño ejemplo [...]]]></description>
+			<content:encoded><![CDATA[<p>Buenas, acabo de subir un componente RESTfull para cakePhp en mi cuenta de github <a href="https://github.com/deldan/RestAndCurl-component-cakePhp" target="_blank">https://github.com/deldan/RestAndCurl-component-cakePhp</a></p>
+<p>¿Como hacerlo funcionar?</p>
+<p>Descargar los dos componentes y guardarlos en la carpeta app/controller/components de tu proyecto cakePhp</p>
+<p>Llamalo en el controlador que se necesite, como con cualquier componente</p>
+<pre name="code" class="php:nocontrols">
+var $components=array('Curl', 'Restclient');
+</pre>
+<p>Y crear las llamadas REST</p>
+<p>Dejo un pequeño ejemplo de conexión y llamada a la api de <a href="http://11870.com/" target="_blank">11870.com</a> con estos componentes</p>
+<pre name="code" class="php:nocontrols">
+
+//uri REST
+$uri = "http://api.11870.com/api/v2/search";
+
+//parametro de busqueda
+ $params['q'] = $search;
+
+ //parametro ciudad
+ $params['ls'] = $city;
+
+//parametro categoria
+ $params['category'] = $tipo;
+
+ //params
+ $params['fields'] = 'title,summary,link';
+ $params['oauth_token'] = '**********************';
+ $params['oauth_token_secret'] = '**********************';
+ $params['appToken'] = '**********************';
+
+ // REST call
+ $result = $this-&gt;Restclient-&gt;get($uri, $params, 'xml');
+</pre>
+<div class='kouguu_fb_like_button'><iframe src="http://www.facebook.com/plugins/like.php?href=http://deldan.com/2011/05/componente-rest-para-cakephp/&#038;layout=standard&#038;show_faces=false&#038;width=450&#038;height=25&#038;action=like&#038;colorscheme=light&#038;" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px;"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>http://deldan.com/2011/05/componente-rest-para-cakephp/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>“deldan” Recomienda (9-05-11)</title>
+		<link>http://deldan.com/2011/05/%e2%80%9cdeldan%e2%80%9d-recomienda-9-05-11/</link>
+		<comments>http://deldan.com/2011/05/%e2%80%9cdeldan%e2%80%9d-recomienda-9-05-11/#comments</comments>
+		<pubDate>Sun, 08 May 2011 23:52:18 +0000</pubDate>
+		<dc:creator>deldan</dc:creator>
+				<category><![CDATA[Recomienda]]></category>
+		<category><![CDATA[aplicaciones]]></category>
+		<category><![CDATA[Herramientas]]></category>
+
+		<guid isPermaLink="false">http://deldan.com/?p=407</guid>
+		<description><![CDATA[www.strikeapp.com &#8211; Para crear listas de tareas de usar y tirar online. www.simplediagrams.com &#8211; Aplicación en la nube de creación de diagramas. www.prezi.com &#8211; Crear presentaciones de ideas nunca fué tan sencillo. www.scrumy.com &#8211; Aplicación online para ayudarte a seguir scrum www.goodsie.com &#8211; Crear tienda online de manera sencilla. &#160;]]></description>
+			<content:encoded><![CDATA[<p><a title="www.strikeapp.com" href="http://www.strikeapp.com" target="_blank">www.strikeapp.com</a> &#8211; Para crear listas de tareas de usar y tirar online.</p>
+<p><a title="www.simplediagrams.com" href="http://www.simplediagrams.com" target="_blank">www.simplediagrams.com</a> &#8211; Aplicación <del datetime="2011-05-12T08:24:48+00:00">en la nube</del> de creación de diagramas.</p>
+<p><a title="www.prezi.com" href="http://www.prezi.com" target="_blank">www.prezi.com</a> &#8211; Crear presentaciones de ideas nunca fué tan sencillo.</p>
+<p><a title="www.scrumy.com" href="http://www.scrumy.com/" target="_blank">www.scrumy.com</a> &#8211; Aplicación online para ayudarte a seguir <a title="scrum" href="http://deldan.com/2010/02/metodologias-agiles/">scrum</a></p>
+<p><a title="www.goodsie.com" href="http://www.goodsie.com" target="_blank">www.goodsie.com</a> &#8211; Crear tienda online de manera sencilla.</p>
+<p>&nbsp;</p>
+<div class='kouguu_fb_like_button'><iframe src="http://www.facebook.com/plugins/like.php?href=http://deldan.com/2011/05/%e2%80%9cdeldan%e2%80%9d-recomienda-9-05-11/&#038;layout=standard&#038;show_faces=false&#038;width=450&#038;height=25&#038;action=like&#038;colorscheme=light&#038;" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px;"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>http://deldan.com/2011/05/%e2%80%9cdeldan%e2%80%9d-recomienda-9-05-11/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Cambiar url navegador desde Ajax en cakePhp (location.hash)</title>
+		<link>http://deldan.com/2011/02/cambiar-url-navegador-desde-ajax-en-cakephp-location-hash/</link>
+		<comments>http://deldan.com/2011/02/cambiar-url-navegador-desde-ajax-en-cakephp-location-hash/#comments</comments>
+		<pubDate>Wed, 09 Feb 2011 10:37:26 +0000</pubDate>
+		<dc:creator>deldan</dc:creator>
+				<category><![CDATA[cakephp]]></category>
+		<category><![CDATA[Ajax]]></category>
+		<category><![CDATA[código]]></category>
+		<category><![CDATA[ejemplo]]></category>
+		<category><![CDATA[php]]></category>
+
+		<guid isPermaLink="false">http://deldan.com/?p=392</guid>
+		<description><![CDATA[Cuando usamos Ajax,  y cargamos información, no se refresca nuestra url. A veces nos interesa que si sea así, que nuestra url cambié. Una manera sencilla de hacerlo en cakePhp echo $ajax->link( ‘ver Usuario’, array(‘controller’ => ‘User’, ‘action’ => ‘ver/’.$id), array(‘update’ => ‘ver_usuario’, ‘complete’ => ‘window.location.hash = “usuario”‘) ); Lo que tenemos en window.location.hash es [...]]]></description>
+			<content:encoded><![CDATA[<p>Cuando usamos Ajax,  y cargamos información, no se refresca nuestra url.<br />
+A veces nos interesa que si sea así, que nuestra url cambié.</p>
+<p>Una manera sencilla de hacerlo en cakePhp</p>
+<pre name="code" class="php:nocontrols">
+echo $ajax->link(
+‘ver Usuario’,
+array(‘controller’ => ‘User’, ‘action’ => ‘ver/’.$id),
+
+array(‘update’ => ‘ver_usuario’, ‘complete’ => ‘window.location.hash = “usuario”‘)
+);
+</pre>
+<p>Lo que tenemos en window.location.hash es lo que luego saldrá en nuestra url tipo:  http://localhost/user/ver#usuario
+<div class='kouguu_fb_like_button'><iframe src="http://www.facebook.com/plugins/like.php?href=http://deldan.com/2011/02/cambiar-url-navegador-desde-ajax-en-cakephp-location-hash/&#038;layout=standard&#038;show_faces=false&#038;width=450&#038;height=25&#038;action=like&#038;colorscheme=light&#038;" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px;"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>http://deldan.com/2011/02/cambiar-url-navegador-desde-ajax-en-cakephp-location-hash/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Pequeño podcast Número 3 &#8211; Productividad</title>
+		<link>http://deldan.com/2011/01/pequeno-podcast-numero-3-productividad/</link>
+		<comments>http://deldan.com/2011/01/pequeno-podcast-numero-3-productividad/#comments</comments>
+		<pubDate>Fri, 21 Jan 2011 22:47:47 +0000</pubDate>
+		<dc:creator>deldan</dc:creator>
+				<category><![CDATA[Podcast]]></category>
+		<category><![CDATA[Productividad]]></category>
+		<category><![CDATA[Metodología ágil]]></category>
+		<category><![CDATA[podcast]]></category>
+		<category><![CDATA[pomodoro]]></category>
+		<category><![CDATA[productividad]]></category>
+		<category><![CDATA[Scrum]]></category>
+
+		<guid isPermaLink="false">http://deldan.com/?p=388</guid>
+		<description><![CDATA[Hace mucho desde el último Podcast, y ya tenía ganas, en esta ocasión Habló sobre productividad y que pequeños hábitos me están ayudando a ser más productivo. Nombro en algún momento la técnica pomodoro, hablé sobre ella en un post, también nombro una pequeña parte de la técnica Scrum, y una aplicación visual online para [...]]]></description>
+			<content:encoded><![CDATA[<p>Hace mucho desde el último Podcast, y ya tenía ganas, en esta ocasión Habló sobre productividad y que pequeños hábitos me están ayudando a ser más productivo.</p>
+<p>Nombro en algún momento la técnica <a href="http://deldan.com/2010/05/gestion-de-tiempo-tecnica-pomodoro/" target="_self">pomodoro,</a> hablé sobre ella en un post, también nombro una pequeña parte de la técnica <a href="http://es.wikipedia.org/wiki/Scrum" target="_blank">Scrum</a>, y una aplicación visual online para hacer scrum llamada <a href="http://scrumy.com" target="_blank">scrumy</a>.</p>
+<p><object id="boo_player_1" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="400" height="129" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="data" value="http://boos.audioboo.fm/swf/fullsize_player.swf" /><param name="scale" value="noscale" /><param name="salign" value="lt" /><param name="bgColor" value="#FFFFFF" /><param name="allowScriptAccess" value="always" /><param name="wmode" value="window" /><param name="FlashVars" value="rootID=boo_player_1&amp;mp3=http%3A%2F%2Faudioboo.fm%2Fboos%2F260145-podcast-2-productividad.mp3%3Fsource%3Dembed&amp;mp3Author=bonzzaydan&amp;mp3LinkURL=http%3A%2F%2Faudioboo.fm%2Fboos%2F260145-podcast-2-productividad&amp;mp3Title=Podcast+2+-+Productividad&amp;mp3Time=10.37pm+21+Jan+2011" /><param name="src" value="http://boos.audioboo.fm/swf/fullsize_player.swf" /><embed id="boo_player_1" type="application/x-shockwave-flash" width="400" height="129" src="http://boos.audioboo.fm/swf/fullsize_player.swf" flashvars="rootID=boo_player_1&amp;mp3=http%3A%2F%2Faudioboo.fm%2Fboos%2F260145-podcast-2-productividad.mp3%3Fsource%3Dembed&amp;mp3Author=bonzzaydan&amp;mp3LinkURL=http%3A%2F%2Faudioboo.fm%2Fboos%2F260145-podcast-2-productividad&amp;mp3Title=Podcast+2+-+Productividad&amp;mp3Time=10.37pm+21+Jan+2011" wmode="window" allowscriptaccess="always" bgcolor="#FFFFFF" salign="lt" scale="noscale" data="http://boos.audioboo.fm/swf/fullsize_player.swf"></embed></object>
+<div class='kouguu_fb_like_button'><iframe src="http://www.facebook.com/plugins/like.php?href=http://deldan.com/2011/01/pequeno-podcast-numero-3-productividad/&#038;layout=standard&#038;show_faces=false&#038;width=450&#038;height=25&#038;action=like&#038;colorscheme=light&#038;" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px;"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>http://deldan.com/2011/01/pequeno-podcast-numero-3-productividad/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Aplicaciones indispensables para Mac Os X</title>
+		<link>http://deldan.com/2011/01/aplicaciones-indispensables-para-mac-os-x/</link>
+		<comments>http://deldan.com/2011/01/aplicaciones-indispensables-para-mac-os-x/#comments</comments>
+		<pubDate>Sun, 16 Jan 2011 17:07:35 +0000</pubDate>
+		<dc:creator>deldan</dc:creator>
+				<category><![CDATA[Herramientas]]></category>
+		<category><![CDATA[aplicaciones]]></category>
+		<category><![CDATA[gestión de tiempo]]></category>
+		<category><![CDATA[Getting Things Done]]></category>
+		<category><![CDATA[Google]]></category>
+		<category><![CDATA[GTD]]></category>
+		<category><![CDATA[mailplane]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[pomodoro]]></category>
+		<category><![CDATA[productividad]]></category>
+
+		<guid isPermaLink="false">http://deldan.com/?p=322</guid>
+		<description><![CDATA[Ya llevo casí un año con el sistema operativo Mac Os X, y creo que puedo aventurarme a listar cuales son las aplicaciones indispensables, al menos para mí, y siempre desde el punto de vista de un programador web. Growl Es un simple notificador, con un buen aspecto, y muy configurable Adium Aplicación de mensajería [...]]]></description>
+			<content:encoded><![CDATA[<p>Ya llevo casí un año con el sistema operativo Mac Os X, y creo que puedo aventurarme a listar cuales son las aplicaciones indispensables, al menos para mí, y siempre desde el punto de vista de un programador web.</p>
+<p><a href="http://growl.info/" target="_blank"><strong>Growl</strong></a><br />
+Es un simple notificador, con un buen aspecto, y muy configurable</p>
+<p><a href="http://deldan.com/wp-content/uploads/2011/01/growl.jpg"><img class="aligncenter size-medium wp-image-371" title="growl" src="http://deldan.com/wp-content/uploads/2011/01/growl-295x300.jpg" alt="" width="295" height="300" /></a></p>
+<p><strong><a href="http://adium.im/" target="_blank">Adium</a></strong><br />
+Aplicación de mensajería instantaneta para multiples cuentas.</p>
+<p><a href="http://deldan.com/wp-content/uploads/2011/01/twitter-full_610x616.png"><img class="aligncenter size-medium wp-image-369" title="twitter-full_610x616" src="http://deldan.com/wp-content/uploads/2011/01/twitter-full_610x616-297x300.png" alt="" width="297" height="300" /></a></p>
+<p><a href="http://www.dropbox.com" target="_blank"><strong>Dropbox</strong></a><br />
+El TimeMachine está bien para copias de seguridad, pero hay ciertos documentos que quieres tener disponibles desde cualquier ordenador o dispositivo, o incluso compartilo. ( está aplicación ya la comente en el post de <a href="http://deldan.com/2010/09/11-importantes-aplicaciones-en-la-nube/" target="_self">11 importantes aplicaciones en la nube </a>).</p>
+<p><a href="http://deldan.com/wp-content/uploads/2011/01/dropbox.jpg"><img class="aligncenter size-medium wp-image-367" title="dropbox" src="http://deldan.com/wp-content/uploads/2011/01/dropbox-300x177.jpg" alt="" width="300" height="177" /></a></p>
+<p><a href="http://pomodoro.ugolandini.com/" target="_blank"><strong>Pomodoro</strong></a><br />
+Aplicación que nos ayuda con la técnica <a href="http://www.pomodorotechnique.com/" target="_blank">pomodoro</a>, ayuda a ser más productivos, a concentrarnos y tener los descansos adecuados, ya sea para trabajar o estudiar.</p>
+<p><a href="http://deldan.com/wp-content/uploads/2011/01/stacks_image_457_1.png"><img class="aligncenter size-full wp-image-365" title="stacks_image_457_1" src="http://deldan.com/wp-content/uploads/2011/01/stacks_image_457_1.png" alt="pomodoro" width="177" height="250" /></a></p>
+<p><a href="http://madeatgloria.com/brewery/stefan/alarms" target="_blank"><strong>Reeader</strong></a><br />
+Si eres un fan de los rss, es tu aplicación, los rss de reader de google de una manera bonita.</p>
+<p><a href="http://deldan.com/wp-content/uploads/2011/01/reeder33_02.jpg"><img class="aligncenter size-medium wp-image-372" title="reeder33_02" src="http://deldan.com/wp-content/uploads/2011/01/reeder33_02-300x225.jpg" alt="" width="300" height="225" /></a></p>
+<p><strong><a href="http://culturedcode.com/things/" target="_blank">Things</a></strong><br />
+Herramienta sencilla para ayudarnos con <a href="http://thinkwasabi.com/2009/03/screencast-3-gtd-facil-ii/" target="_blank">GTD</a>.</p>
+<p><a href="http://deldan.com/wp-content/uploads/2011/01/screenshot_things_big5-.jpg"><img class="aligncenter size-medium wp-image-373" title="screenshot_things_big5" src="http://deldan.com/wp-content/uploads/2011/01/screenshot_things_big5--300x279.jpg" alt="" width="300" height="279" /></a></p>
+<p><strong><a href="http://itunes.apple.com/es/app/twitter/id409789998?mt=12" target="_blank">Twitter for Mac</a></strong><br />
+Si usas twitter, esta es una buena aplicación, incluso si tienes varias cuentas, la estoy usando ahora en vez de <a href="http://www.tweetdeck.com/" target="_blank">tweetDeck</a> que también es una buena aplicación para varias cuentas y no solo para twitter.</p>
+<p><a href="http://deldan.com/wp-content/uploads/2011/01/mzl.brflldtt.800x500-75.jpg"><img class="aligncenter size-medium wp-image-374" title="mzl.brflldtt.800x500-75" src="http://deldan.com/wp-content/uploads/2011/01/mzl.brflldtt.800x500-75-300x187.jpg" alt="" width="300" height="187" /></a></p>
+<p><a href="http://mailplaneapp.com/" target="_blank"><strong>Mailplane</strong></a><br />
+Si usas Gmail para todas tu cuentas, siempre puedes optar por Mailplane, una aplicación para gmail, no es un indispensable hasta que te acostumbras a ella.</p>
+<p><a href="http://deldan.com/wp-content/uploads/2011/01/mailplane.png"><img class="aligncenter size-medium wp-image-375" title="mailplane" src="http://deldan.com/wp-content/uploads/2011/01/mailplane-300x201.png" alt="" width="300" height="201" /></a></p>
+<p><a href="http://www.mamp.info/en/index.html" target="_self"><strong>Mamp pro</strong></a><br />
+Si desarrollas en php, el mejor servidor web para tu Mac.</p>
+<p><a href="http://deldan.com/wp-content/uploads/2011/01/E300169372.jpg"><img class="aligncenter size-medium wp-image-376" title="E300169372" src="http://deldan.com/wp-content/uploads/2011/01/E300169372-300x267.jpg" alt="" width="300" height="267" /></a></p>
+<p><a href="http://macrabbit.com/espresso/" target="_blank"><strong>Espresso</strong></a><br />
+Aplicación para desarrollar web, he probado otras como <a href="http://www.panic.com/coda/" target="_blank">Coda</a> o <a href="http://macromates.com/" target="_blank">TextMate</a>, pero al final me he quedado con Espresso.</p>
+<p><a href="http://deldan.com/wp-content/uploads/2011/01/MainFind.jpg"><img class="aligncenter size-medium wp-image-377" title="MainFind" src="http://deldan.com/wp-content/uploads/2011/01/MainFind-300x225.jpg" alt="" width="300" height="225" /></a></p>
+<p><strong><br />
+</strong></p>
+<p><strong>¿Crees que hay alguna aplicación más que es indispensable para mac, que debería estar en esta lista?</strong></p>
+<p><strong>¡Comentalo!</strong></p>
+<p><strong><br />
+</strong>
+<div class='kouguu_fb_like_button'><iframe src="http://www.facebook.com/plugins/like.php?href=http://deldan.com/2011/01/aplicaciones-indispensables-para-mac-os-x/&#038;layout=standard&#038;show_faces=false&#038;width=450&#038;height=25&#038;action=like&#038;colorscheme=light&#038;" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px;"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>http://deldan.com/2011/01/aplicaciones-indispensables-para-mac-os-x/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Enviar felicitaciones de navidad desde gmail</title>
+		<link>http://deldan.com/2010/12/enviar-felicitaciones-de-navidad-desde-gmail/</link>
+		<comments>http://deldan.com/2010/12/enviar-felicitaciones-de-navidad-desde-gmail/#comments</comments>
+		<pubDate>Wed, 22 Dec 2010 15:29:22 +0000</pubDate>
+		<dc:creator>deldan</dc:creator>
+				<category><![CDATA[Emprendedor]]></category>
+		<category><![CDATA[diseño]]></category>
+		<category><![CDATA[ejemplo]]></category>
+		<category><![CDATA[emprender]]></category>
+		<category><![CDATA[Google]]></category>
+
+		<guid isPermaLink="false">http://deldan.com/?p=345</guid>
+		<description><![CDATA[Como programador, esto debería ser una tarea muy sencilla. diseñas un felicitación curiosa, y las envias por mail. El problema viene cuando piensas. Habrá que meter la imagen en html, y crear un lista de correos, o enviarlo através de un programa de newsletters, nada de eso dejo los pasos a seguir para hacerlo de [...]]]></description>
+			<content:encoded><![CDATA[<p>Como programador, esto debería ser una tarea muy sencilla. diseñas un felicitación curiosa, y las envias por mail.</p>
+<p>El problema viene cuando piensas. Habrá que meter la imagen en html, y crear un lista de correos, o enviarlo através de un programa de newsletters, nada de eso dejo los pasos a seguir para hacerlo de una manera sencilla desde gmail, gracias a mi amigo Antonio de <a href="http://www.dandelium.com/" target="_blank">Dandelium</a>.</p>
+<p><a href="http://deldan.com/wp-content/uploads/2010/12/firma.jpg"><img class="aligncenter size-medium wp-image-351" title="firma" src="http://deldan.com/wp-content/uploads/2010/12/firma-300x152.jpg" alt="" width="300" height="152" /></a></p>
+<ol>
+<li>Nos vamos Configuraciones generales de gmail, y en firmas añadimos la imágen desde un url ( antes tendrá que estar subida a tu web).</li>
+<li>Vamos a contactos de gmail.</li>
+<li>Generamos un nuevo grupo. Llámandolo &#8220;Navidad11&#8243;, por ejemplo.</li>
+<li>Seleccionamos todos los contactos a los que queremos enviar el correo.</li>
+<li>Cuando los tengamos seleccionado, arriba hay un botón llamado Grupos, selecionamos el nombre del grupo &#8220;Navidad11&#8243;.</li>
+<li>Vamos a crear correo, se añadirá directamente la firma con la imagen. Habilita el campo CCO (Con copia oculta) que está debajo de CC.</li>
+<li> Escribimos &#8220;Navidad11&#8243;.</li>
+<li> Y enviamos.</li>
+</ol>
+<p>Por cierto <strong>Feliz Navidad</strong> y <strong>Feliz 2011</strong>
+<div class='kouguu_fb_like_button'><iframe src="http://www.facebook.com/plugins/like.php?href=http://deldan.com/2010/12/enviar-felicitaciones-de-navidad-desde-gmail/&#038;layout=standard&#038;show_faces=false&#038;width=450&#038;height=25&#038;action=like&#038;colorscheme=light&#038;" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px;"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>http://deldan.com/2010/12/enviar-felicitaciones-de-navidad-desde-gmail/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>“deldan” Recomienda (23-11-10) Marklets</title>
+		<link>http://deldan.com/2010/11/%e2%80%9cdeldan%e2%80%9d-recomienda-23-11-10-marklets/</link>
+		<comments>http://deldan.com/2010/11/%e2%80%9cdeldan%e2%80%9d-recomienda-23-11-10-marklets/#comments</comments>
+		<pubDate>Mon, 22 Nov 2010 21:31:16 +0000</pubDate>
+		<dc:creator>deldan</dc:creator>
+				<category><![CDATA[Recomienda]]></category>
+		<category><![CDATA[firefox]]></category>
+		<category><![CDATA[Google]]></category>
+		<category><![CDATA[Herramientas]]></category>
+
+		<guid isPermaLink="false">http://deldan.com/?p=332</guid>
+		<description><![CDATA[Quiero dejar los cuatro Marklets que más utilizo. Antes de nada decir que Marklets son pequeños scripts que añadimos como favoritos en el Firefox,  y nos facilitan tareas. http://lab.arc90.com/experiments/readability/es/ &#8211; Para leer web, sin anuncios ni cositas, solo el texto y sus fotos. http://www.instapaper.com/ &#8211; Si quieres leer algo pero ahora no tienes tiempo (hay [...]]]></description>
+			<content:encoded><![CDATA[<p>Quiero dejar los cuatro Marklets que más utilizo.</p>
+<p>Antes de nada decir que Marklets son pequeños scripts que añadimos como favoritos en el Firefox,  y nos facilitan tareas.</p>
+<p><a href="http://lab.arc90.com/experiments/readability/es/" target="_blank">http://lab.arc90.com/experiments/readability/es/</a> &#8211; Para leer web, sin anuncios ni cositas, solo el texto y sus fotos.</p>
+<p><a href="http://www.instapaper.com/" target="_blank">http://www.instapaper.com/</a> &#8211; Si quieres leer algo pero ahora no tienes tiempo (hay que registrarse).</p>
+<p><a href="javascript:var%20t=((window.getSelection&amp;&amp;window.getSelection())||(document.getSelection&amp;&amp;document.getSelection())||(document.selection&amp;&amp;document.selection.createRange&amp;&amp;document.selection.createRange().text));var%20e=(document.charset||document.characterSet);if(t!=''){location.href='http://translate.google.com/translate_t?text='+t+'&amp;hl=en&amp;langpair=auto|es&amp;tbb=1&amp;ie='+e;}else{location.href='http://translate.google.com/translate?u='+escape(location.href)+'&amp;hl=en&amp;langpair=auto|es&amp;tbb=1&amp;ie='+e;};">Traducir</a> &#8211; Para traducir a inglés con google el contenido que está visualizando e tu navegador (añadir a favoritos el link).</p>
+<p><a href="javascript:w=window;d=document;var%20u;s='';if%20(d.selection)%20%7Bs=d.selection.createRange().text;%7D%20else%20if%20(d.getSelection!=u)%20%7Bs=d.getSelection();%7D%20else%20if%20(w.getSelection!=u)%20%7Bs='link%3A'+w.getSelection();%7D%20if%20(s.length%3C2)%7Bif(String(w.location).substring(0,6)=='about:')%7Bs=prompt('Google%20Blog%20Search%20for:',s);%7Delse%7Bs='link%3A'+w.location;%7D%7Dif%20(s!=null)%20w.location='http%3A//blogsearch.google.com/blogsearch?q='+escape(s);void(0);">Blog links</a> &#8211; Ver si el contenido que estás viendo está enlazado a un blog (añadir a favoritos el link) .
+<div class='kouguu_fb_like_button'><iframe src="http://www.facebook.com/plugins/like.php?href=http://deldan.com/2010/11/%e2%80%9cdeldan%e2%80%9d-recomienda-23-11-10-marklets/&#038;layout=standard&#038;show_faces=false&#038;width=450&#038;height=25&#038;action=like&#038;colorscheme=light&#038;" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px;"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>http://deldan.com/2010/11/%e2%80%9cdeldan%e2%80%9d-recomienda-23-11-10-marklets/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Módulo de pago servired para prestashop V1.3.2.3</title>
+		<link>http://deldan.com/2010/11/modulo-de-pago-servired-para-prestashop-v1-3-2-3/</link>
+		<comments>http://deldan.com/2010/11/modulo-de-pago-servired-para-prestashop-v1-3-2-3/#comments</comments>
+		<pubDate>Thu, 18 Nov 2010 16:14:15 +0000</pubDate>
+		<dc:creator>deldan</dc:creator>
+				<category><![CDATA[prestashop]]></category>
+		<category><![CDATA[código]]></category>
+		<category><![CDATA[tienda virtual]]></category>
+
+		<guid isPermaLink="false">http://deldan.com/?p=325</guid>
+		<description><![CDATA[Con la nueva versión de prestashop ( tienda virtual), hay algunos módulos de pago, pero ninguno me funcionó correctamente. Hay uno que casí lo conseguía ( uso la caixa como pasarela de pago), hacía toda la transación perfecta con la caixa, pero cuando volvía a la tienda, el pedido no se añadía, y no desaparecía [...]]]></description>
+			<content:encoded><![CDATA[<p>Con la nueva versión de prestashop ( tienda virtual), hay algunos módulos de pago, pero ninguno me funcionó correctamente.</p>
+<p><a href="http://deldan.com/wp-content/uploads/2010/11/servired.jpg"><img class="aligncenter size-full wp-image-342" title="servired" src="http://deldan.com/wp-content/uploads/2010/11/servired.jpg" alt="" width="122" height="92" /></a>Hay uno que casí lo conseguía ( uso la caixa como pasarela de pago), hacía toda la transación perfecta con la caixa, pero cuando volvía a la tienda, el pedido no se añadía, y no desaparecía del carrito los productos. Así que ya que funcionaba casí a la perfección, hecho algunas modificaciones, para que funcione correctamente ahora crea el pedido en administración, y borra todo lo que tenías en el carrito.</p>
+<p>Versión original: <span style="text-decoration: line-through;"><a href="http://www.deldan.com/downloads/servired07v4.zip" target="_blank">servired07v4</a></span></p>
+<p>Versión modificada por deldan.com: <span style="text-decoration: line-through;"><a href="http://deldan.com/downloads/servired_deldan.zip" target="_blank">servired07v4bydeldan</a></span> ( bug encontrado por <a href="http://zhenit.com/" target="_blank">@zhenit</a>).</p>
+<p>Versión Modifcada por <a href="http://zhenit.com/" target="_blank">@zhenit</a> : <a href="http://modulosdepago.es/descargas/servired_ZhenIT%20(FREE).zip" target="_blank">serviredbyzhenit</a> (bug solucionado)
+<div class='kouguu_fb_like_button'><iframe src="http://www.facebook.com/plugins/like.php?href=http://deldan.com/2010/11/modulo-de-pago-servired-para-prestashop-v1-3-2-3/&#038;layout=standard&#038;show_faces=false&#038;width=450&#038;height=25&#038;action=like&#038;colorscheme=light&#038;" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px;"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>http://deldan.com/2010/11/modulo-de-pago-servired-para-prestashop-v1-3-2-3/feed/</wfw:commentRss>
+		<slash:comments>103</slash:comments>
+		</item>
+		<item>
+		<title>Medir tráfico saliente en Google Analytics</title>
+		<link>http://deldan.com/2010/11/medir-trafico-saliente-en-google-analytics/</link>
+		<comments>http://deldan.com/2010/11/medir-trafico-saliente-en-google-analytics/#comments</comments>
+		<pubDate>Mon, 08 Nov 2010 08:50:31 +0000</pubDate>
+		<dc:creator>deldan</dc:creator>
+				<category><![CDATA[Código]]></category>
+		<category><![CDATA[Analytics]]></category>
+		<category><![CDATA[código]]></category>
+		<category><![CDATA[Formulario]]></category>
+		<category><![CDATA[Google]]></category>
+
+		<guid isPermaLink="false">http://deldan.com/?p=314</guid>
+		<description><![CDATA[Normalmente queremos saber, cuanto tráfico viene, de donde, la calidad de este tráfico. Pero y cuando tenemos la necesidad de saber cuanto tráfico sale por determinados lugares de nuestra web. Voy a  poner un ejemplo práctico, yo al menos así lo suelo entender mejor. Tenemos una super web y tiendasreunidas.com quiere publitarse en nuestra web, [...]]]></description>
+			<content:encoded><![CDATA[<p>Normalmente queremos saber, cuanto tráfico viene, de donde, la calidad de este tráfico. Pero y cuando tenemos la necesidad de saber cuanto tráfico sale por determinados lugares de nuestra web.</p>
+<p>Voy a  poner un ejemplo práctico, yo al menos así lo suelo entender mejor.</p>
+<p>Tenemos una super web y tiendasreunidas.com quiere publitarse en nuestra web, con un banner, necesitamos saber cuanto usuarios nuestros cliquean al enlacen y se van a tiendasreunidas.com</p>
+<p>Si ya tenemos instalado en nuestra web Analytics de google. solo tendremos que hacer lo siguiente:</p>
+<pre name="code" class="html:nocontrols">
+&lt;a href="http://www.tiendasreunidas.com" onClick="javascript:pageTracker._trackPageview('/outgoing/tiendasreunidas_com');"&gt;
+</pre>
+<p>También hay posibles casos en que necesites esto mismo para un formulario, el onClick lo ponemos en el submit del formulario:</p>
+<pre name="code" class="html:nocontrols">&lt;input type="submit" value="Enviar" onClick="javascript:pageTracker._trackPageview('/outgoing/tiendasreunidas_com');"/&gt;</pre>
+<div class='kouguu_fb_like_button'><iframe src="http://www.facebook.com/plugins/like.php?href=http://deldan.com/2010/11/medir-trafico-saliente-en-google-analytics/&#038;layout=standard&#038;show_faces=false&#038;width=450&#038;height=25&#038;action=like&#038;colorscheme=light&#038;" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px;"></iframe></div>
+]]></content:encoded>
+			<wfw:commentRss>http://deldan.com/2010/11/medir-trafico-saliente-en-google-analytics/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

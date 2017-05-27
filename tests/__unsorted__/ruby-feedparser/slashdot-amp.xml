@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:syn="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
+
+<channel rdf:about="http://slashdot.org/">
+<title>Slashdot</title>
+<link>http://slashdot.org/</link>
+<description>News for nerds, stuff that matters</description>
+<dc:language>en-us</dc:language>
+<dc:rights>Copyright 1997-2006, OSTG - Open Source Technology Group, Inc.  All Rights Reserved.</dc:rights>
+<dc:date>2006-06-19T15:00:06+00:00</dc:date>
+<dc:publisher>OSTG</dc:publisher>
+<dc:creator>pater@slashdot.org</dc:creator>
+<dc:subject>Technology</dc:subject>
+<syn:updatePeriod>hourly</syn:updatePeriod>
+<syn:updateFrequency>1</syn:updateFrequency>
+<syn:updateBase>1970-01-01T00:00+00:00</syn:updateBase>
+<items>
+ <rdf:Seq>
+  <rdf:li rdf:resource="http://slashdot.org/article.pl?sid=06/06/19/1133223&amp;from=rss" />
+  <rdf:li rdf:resource="http://apple.slashdot.org/article.pl?sid=06/06/19/1127225&amp;from=rss" />
+  <rdf:li rdf:resource="http://apple.slashdot.org/article.pl?sid=06/06/19/1111258&amp;from=rss" />
+  <rdf:li rdf:resource="http://politics.slashdot.org/article.pl?sid=06/06/19/0141222&amp;from=rss" />
+  <rdf:li rdf:resource="http://it.slashdot.org/article.pl?sid=06/06/19/114230&amp;from=rss" />
+  <rdf:li rdf:resource="http://hardware.slashdot.org/article.pl?sid=06/06/19/041237&amp;from=rss" />
+  <rdf:li rdf:resource="http://science.slashdot.org/article.pl?sid=06/06/19/0457240&amp;from=rss" />
+  <rdf:li rdf:resource="http://linux.slashdot.org/article.pl?sid=06/06/19/0138242&amp;from=rss" />
+  <rdf:li rdf:resource="http://slashdot.org/article.pl?sid=06/06/18/229257&amp;from=rss" />
+  <rdf:li rdf:resource="http://science.slashdot.org/article.pl?sid=06/06/18/2021241&amp;from=rss" />
+ </rdf:Seq>
+</items>
+<image rdf:resource="http://images.slashdot.org/topics/topicslashdot.gif" />
+<textinput rdf:resource="http://slashdot.org/search.pl" />
+</channel>
+
+<image rdf:about="http://images.slashdot.org/topics/topicslashdot.gif">
+<title>Slashdot</title>
+<url>http://images.slashdot.org/topics/topicslashdot.gif</url>
+<link>http://slashdot.org/</link>
+</image>
+
+<item rdf:about="http://slashdot.org/article.pl?sid=06/06/19/1133223&amp;from=rss">
+<title>Gates' Replacement says Microsoft Must Simplify</title>
+<link>http://rss.slashdot.org/Slashdot/slashdot?m=6120</link>
+<description>Javaman59 writes "This article in The Australian newspaper describes the background and the agenda of Ray Ozzie, Bill Gates' replacement as chief architect at Microsoft. The creator of Lotus Notus, he's a high calibre technologist. From the article: "Ray's a programmer's programmer .. He's much closer to an uber-engineer, whereas Bill hasn't been a programmer for a number of years." Ozzie is also driving Microsoft to simplify its software: "Complexity kills .. It sucks the life out of developers, it makes products difficult to plan, build and test, it introduces security challenges, and it causes end-user and administrator frustration." He's not the only brilliant programmer in the world, but he does have Microsoft's resources behind him."
+&lt;p&gt;&lt;a href="http://rss.slashdot.org/~a/Slashdot/slashdot?a=pox0F0"&gt;&lt;img src="http://rss.slashdot.org/~a/Slashdot/slashdot?i=pox0F0" border="0"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=6120"/&gt;</description>
+<dc:creator>Hemos</dc:creator>
+<dc:date>2006-06-19T14:32:00+00:00</dc:date>
+<dc:subject>microsoft</dc:subject>
+<slash:department>planning-the-future</slash:department>
+<slash:section>mainpage</slash:section>
+<slash:comments>35</slash:comments>
+<slash:hit_parade>35,35,27,19,7,5,1</slash:hit_parade>
+<feedburner:origLink>http://slashdot.org/article.pl?sid=06/06/19/1133223&amp;from=rss</feedburner:origLink></item>
+
+<item rdf:about="http://apple.slashdot.org/article.pl?sid=06/06/19/1127225&amp;from=rss">
+<title>Hollywood Against Jobs' Movie Pricing Plan</title>
+<link>http://rss.slashdot.org/Slashdot/slashdot?m=6119</link>
+<description>Alex Romanelli, Variety writes "Hollywood insiders tell Variety why/how Hollywood is in stalemate with Jobs over movie downloads on iTunes. Jobs wants a flat $9.99 per film download, studios are refusing, insisting upon tiered pricing. On the other side there's a different, longer, analytical story looking at how H'wood executives are still unsure if Jobs should be considered a friend or foe.
+&lt;p&gt;&lt;a href="http://rss.slashdot.org/~a/Slashdot/slashdot?a=ilkmtf"&gt;&lt;img src="http://rss.slashdot.org/~a/Slashdot/slashdot?i=ilkmtf" border="0"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=6119"/&gt;</description>
+<dc:creator>Hemos</dc:creator>
+<dc:date>2006-06-19T14:02:00+00:00</dc:date>
+<dc:subject>movies</dc:subject>
+<slash:section>apple</slash:section>
+<slash:comments>91</slash:comments>
+<slash:hit_parade>91,88,78,60,17,8,5</slash:hit_parade>
+<feedburner:origLink>http://apple.slashdot.org/article.pl?sid=06/06/19/1127225&amp;from=rss</feedburner:origLink></item>
+
+<item rdf:about="http://apple.slashdot.org/article.pl?sid=06/06/19/1111258&amp;from=rss">
+<title>Experimenting With Light on Apple Laptops</title>
+<link>http://rss.slashdot.org/Slashdot/slashdot?m=6118</link>
+<description>venkatg writes "Soon after Apple introduced sudden motion sensors in their PowerBooks in early 2005, Amit Singh had shown how these sensors can be used for creative purposes (covered by Slashdot earlier as Having Fun With PowerBook Motion Sensors and PowerBook As A New Kind Of Human Interface Device). This time around Singh discusses "Experimenting With Light" in a new article whereby by light he means the ambient light sensors and the illuminated backlight keyboard sensors in Apple's laptops. The article shows (source code is included) how one can measure ambient light and do things with it. It also shows things like how to get/set illuminated keyboard brightness and display brightness or do fade transitions of the keyboard lighting. So now that we have all these motion and light sensors under control is there a MacBook discotheque in the works?"
+&lt;p&gt;&lt;a href="http://rss.slashdot.org/~a/Slashdot/slashdot?a=Xsfd3U"&gt;&lt;img src="http://rss.slashdot.org/~a/Slashdot/slashdot?i=Xsfd3U" border="0"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=6118"/&gt;</description>
+<dc:creator>Hemos</dc:creator>
+<dc:date>2006-06-19T13:19:00+00:00</dc:date>
+<dc:subject>hardhack</dc:subject>
+<slash:department>the-joy-of-light</slash:department>
+<slash:section>apple</slash:section>
+<slash:comments>64</slash:comments>
+<slash:hit_parade>64,62,46,28,9,6,2</slash:hit_parade>
+<feedburner:origLink>http://apple.slashdot.org/article.pl?sid=06/06/19/1111258&amp;from=rss</feedburner:origLink></item>
+
+<item rdf:about="http://politics.slashdot.org/article.pl?sid=06/06/19/0141222&amp;from=rss">
+<title>Microsoft, Massachusetts, and IT</title>
+<link>http://rss.slashdot.org/Slashdot/slashdot?m=6117</link>
+<description>Andy Updegrove writes "A big story in Massachusetts last week was the announcement by Microsoft that it would give $30 million in software to Bay State high schools and universities. Less noticed was the fact that an important economic stimulus bill adopted by the legislature lacked the amendment that sought to gut the power of the State CIO to set any new IT policies that might require compliance with certain standards (like ODF) or favor open source software. Should these two dots be connected, and if so, how? After all, why would Microsoft reward Massachusetts for taking no action to curtail an IT policy that favored ODF and rejected Microsoft's own XML format, especially after Microsoft has by all accounts lobbied so aggressively to bring about a change? As it happens, the fact is that the game isn't over yet: I've learned that the IT policy language hasn't been permanently defeated - its just been shifted out of sight to an "outside section" of the current budget bill."
+&lt;p&gt;&lt;a href="http://rss.slashdot.org/~a/Slashdot/slashdot?a=kXJ9It"&gt;&lt;img src="http://rss.slashdot.org/~a/Slashdot/slashdot?i=kXJ9It" border="0"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=6117"/&gt;</description>
+<dc:creator>ScuttleMonkey</dc:creator>
+<dc:date>2006-06-19T12:42:00+00:00</dc:date>
+<dc:subject>microsoft</dc:subject>
+<slash:department>big-business-and-politics-go-together-so-well</slash:department>
+<slash:section>politics</slash:section>
+<slash:comments>102</slash:comments>
+<slash:hit_parade>102,97,77,56,30,13,7</slash:hit_parade>
+<feedburner:origLink>http://politics.slashdot.org/article.pl?sid=06/06/19/0141222&amp;from=rss</feedburner:origLink></item>
+
+<item rdf:about="http://it.slashdot.org/article.pl?sid=06/06/19/114230&amp;from=rss">
+<title>Nokia &amp;amp; Siemens To Merge Network Business</title>
+<link>http://rss.slashdot.org/Slashdot/slashdot?m=6116</link>
+<description>An anonymous reader writes "Nokia and Siemens are joining forces in fixed and mobile network businesses to create a new global player, Nokia Siemens Networks. Based in Finland, the new company will have a revenue of 15.8 billion euros, and a workforce of 60.000 (before the projected "synergy benefits", that will cut costs 1,5 billions euros, and make 10-15 per cent of employees redundant, that is). More info in their press release." There's been other information released in the media as well.
+&lt;p&gt;&lt;a href="http://rss.slashdot.org/~a/Slashdot/slashdot?a=ObBIsn"&gt;&lt;img src="http://rss.slashdot.org/~a/Slashdot/slashdot?i=ObBIsn" border="0"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=6116"/&gt;</description>
+<dc:creator>Hemos</dc:creator>
+<dc:date>2006-06-19T11:58:00+00:00</dc:date>
+<dc:subject>money</dc:subject>
+<slash:department>joining-together-to-become-more-powerful</slash:department>
+<slash:section>it</slash:section>
+<slash:comments>33</slash:comments>
+<slash:hit_parade>33,30,21,14,7,3,2</slash:hit_parade>
+<feedburner:origLink>http://it.slashdot.org/article.pl?sid=06/06/19/114230&amp;from=rss</feedburner:origLink></item>
+
+<item rdf:about="http://hardware.slashdot.org/article.pl?sid=06/06/19/041237&amp;from=rss">
+<title>RoboGames 2006 Wrapup</title>
+<link>http://rss.slashdot.org/Slashdot/slashdot?m=6115</link>
+<description>An anonymous reader writes "Engadget has a quick summary of much of the coverage surrounding the 2006 RoboGames. The games wrapped up today after much fire-fighting, speed-racing, and just plain robo-strutting around. The official results are still pending but it looks like the USA has a commanding lead on the medal count with Singapore and Japan filling the second and third slots."
+&lt;p&gt;&lt;a href="http://rss.slashdot.org/~a/Slashdot/slashdot?a=jJh6wQ"&gt;&lt;img src="http://rss.slashdot.org/~a/Slashdot/slashdot?i=jJh6wQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=6115"/&gt;</description>
+<dc:creator>ScuttleMonkey</dc:creator>
+<dc:date>2006-06-19T09:49:00+00:00</dc:date>
+<dc:subject>robotics</dc:subject>
+<slash:department>and-i'll-form-the-head</slash:department>
+<slash:section>hardware</slash:section>
+<slash:comments>24</slash:comments>
+<slash:hit_parade>24,24,20,17,10,7,5</slash:hit_parade>
+<feedburner:origLink>http://hardware.slashdot.org/article.pl?sid=06/06/19/041237&amp;from=rss</feedburner:origLink></item>
+
+<item rdf:about="http://science.slashdot.org/article.pl?sid=06/06/19/0457240&amp;from=rss">
+<title>A Pacemaker Made From Your Own Cells</title>
+<link>http://rss.slashdot.org/Slashdot/slashdot?m=6114</link>
+<description>FiReaNGeL writes to tell us that researchers at the Children's Hospital in Boston are on the road to crafting a pacemaker from living cells instead of an artificial implant. From the article: "When the engineered tissue was implanted into rats, between the right atrium and right ventricle, the implanted cells integrated with the surrounding heart tissue and electrically coupled to neighboring heart cells. Optical mapping of the heart showed that in nearly a third of the hearts, the engineered tissue had established an electrical conduction pathway, which disappeared when the implants were destroyed. The implants remained functional through the animals' lifespan (about 3 years)."
+&lt;p&gt;&lt;a href="http://rss.slashdot.org/~a/Slashdot/slashdot?a=e91DmF"&gt;&lt;img src="http://rss.slashdot.org/~a/Slashdot/slashdot?i=e91DmF" border="0"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=6114"/&gt;</description>
+<dc:creator>ScuttleMonkey</dc:creator>
+<dc:date>2006-06-19T06:37:00+00:00</dc:date>
+<dc:subject>biotech</dc:subject>
+<slash:department>shocking-discoveries</slash:department>
+<slash:section>science</slash:section>
+<slash:comments>48</slash:comments>
+<slash:hit_parade>48,43,31,23,17,13,9</slash:hit_parade>
+<feedburner:origLink>http://science.slashdot.org/article.pl?sid=06/06/19/0457240&amp;from=rss</feedburner:origLink></item>
+
+<item rdf:about="http://linux.slashdot.org/article.pl?sid=06/06/19/0138242&amp;from=rss">
+<title>Linux 2.6.17 Released</title>
+<link>http://rss.slashdot.org/Slashdot/slashdot?m=6113</link>
+<description>diegocgteleline.es writes "After almost three months, Linux 2.6.17 has been released. The changes include support for Sun Niagara CPUs, a new I/O mechanism called 'splice' which can improve the performance greatly for some applications, a scheduler domain optimized for multicore machines, driver for the widely used broadcom 43xx wifi chip (Apple's Airport Extreme and such), iptables support for the H.323 protocol, CCID2 support for DCCP, softmac layer for the wireless stack, block queue IO tracing, and many other changes listed at the changelog"
+&lt;p&gt;&lt;a href="http://rss.slashdot.org/~a/Slashdot/slashdot?a=gryoIh"&gt;&lt;img src="http://rss.slashdot.org/~a/Slashdot/slashdot?i=gryoIh" border="0"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=6113"/&gt;</description>
+<dc:creator>ScuttleMonkey</dc:creator>
+<dc:date>2006-06-19T03:52:00+00:00</dc:date>
+<dc:subject>upgrades</dc:subject>
+<slash:department>spit-shine</slash:department>
+<slash:section>linux</slash:section>
+<slash:comments>313</slash:comments>
+<slash:hit_parade>313,295,238,174,58,34,24</slash:hit_parade>
+<feedburner:origLink>http://linux.slashdot.org/article.pl?sid=06/06/19/0138242&amp;from=rss</feedburner:origLink></item>
+
+<item rdf:about="http://slashdot.org/article.pl?sid=06/06/18/229257&amp;from=rss">
+<title>Microsoft's Mundie to Continue OSS Outreach</title>
+<link>http://rss.slashdot.org/Slashdot/slashdot?m=6112</link>
+<description>Techie writes "In an interview with eWeek Craig Mundie, Microsoft's new co-head-honcho and chief research and strategy officer, says he plans to continue to push the Redmond software titan forward with its goal of greater interoperability with software licensed under the GPL." From the article: "Even in Bill's own public remarks, he pointed out that he thought his iconic status and the way that was reported tended to overemphasize his role in the company's innovation and execution. This is really a transition that has been in the works for a couple of years, with a couple to go before, and we will see the emergence of a lot of great talent that has today been portrayed as all Bill. This is a company with, in many cases, the best people in the world. "
+&lt;p&gt;&lt;a href="http://rss.slashdot.org/~a/Slashdot/slashdot?a=COpE6P"&gt;&lt;img src="http://rss.slashdot.org/~a/Slashdot/slashdot?i=COpE6P" border="0"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=6112"/&gt;</description>
+<dc:creator>ScuttleMonkey</dc:creator>
+<dc:date>2006-06-19T00:38:00+00:00</dc:date>
+<dc:subject>microsoft</dc:subject>
+<slash:department>so-much-excitement-for-one-guy</slash:department>
+<slash:section>mainpage</slash:section>
+<slash:comments>207</slash:comments>
+<slash:hit_parade>207,199,164,120,48,32,24</slash:hit_parade>
+<feedburner:origLink>http://slashdot.org/article.pl?sid=06/06/18/229257&amp;from=rss</feedburner:origLink></item>
+
+<item rdf:about="http://science.slashdot.org/article.pl?sid=06/06/18/2021241&amp;from=rss">
+<title>Shuttle to Launch Despite Objections</title>
+<link>http://rss.slashdot.org/Slashdot/slashdot?m=6111</link>
+<description>sam0ht writes "NASA has just named July 1st as the launch date for the space shuttle Discovery, a year after the last shuttle mission. Last July's mission was the first since the break-up of Columbia in 2003, but after foam again broke away from the main tank, the shuttle fleet was grounded. More foam has been removed from the main tank, but NASA staff are divided over whether this is enough to ensure the flight's safety, with some reporting that both the lead engineer and top safety official are against launching again so soon. Managers want to make only one major change at a time, and plan that if damage does occur, the crew would be able to stay in the International Space Station, to which they are delivering supplies, rather than trying to land a damaged shuttle."
+&lt;p&gt;&lt;a href="http://rss.slashdot.org/~a/Slashdot/slashdot?a=DX4RVa"&gt;&lt;img src="http://rss.slashdot.org/~a/Slashdot/slashdot?i=DX4RVa" border="0"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=6111"/&gt;</description>
+<dc:creator>ScuttleMonkey</dc:creator>
+<dc:date>2006-06-18T21:07:00+00:00</dc:date>
+<dc:subject>nasa</dc:subject>
+<slash:department>damn-the-torpedoes-full-speed-agead</slash:department>
+<slash:section>science</slash:section>
+<slash:comments>261</slash:comments>
+<slash:hit_parade>261,253,196,139,63,46,28</slash:hit_parade>
+<feedburner:origLink>http://science.slashdot.org/article.pl?sid=06/06/18/2021241&amp;from=rss</feedburner:origLink></item>
+
+<textinput rdf:about="http://slashdot.org/search.pl">
+<title>Search Slashdot</title>
+<description>Search Slashdot stories</description>
+<name>query</name>
+<link>http://slashdot.org/search.pl</link>
+</textinput>
+
+</rdf:RDF>

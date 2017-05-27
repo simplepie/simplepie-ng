@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="feed.css" type="text/css"?>
+<feed xml:lang="fr" xmlns="http://www.w3.org/2005/Atom" 
+                    xmlns:html="http://www.w3.org/1999/xhtml"
+                    xmlns:dublincore="http://purl.org/dc/elements/1.1/">
+
+<title>Blog de Stéphane Bortzmeyer</title>
+<dublincore:title>Blog de Stéphane Bortzmeyer</dublincore:title>
+<link rel="alternate" type="text/html" href="http://www.bortzmeyer.org/"/>
+<link rel="self" type="application/atom+xml" href="http://www.bortzmeyer.org/feed.atom"/><!-- TODO: fails for the full Atom feed which has a different URI http://feedvalidator.org/docs/warning/SelfDoesntMatchLocation.html -->
+<link rel="license" type="text/html" title="GFDL in HTML format" href="http://www.gnu.org/copyleft/fdl.html"/>
+<!--  draft-walsh-app-docbook-xml, not yet registered -->
+<link rel="license" type="application/docbook+xml" title="GFDL in Docbook format" href="http://www.gnu.org/licenses/fdl.xml"/>
+<link rel="license" type="text/plain" title="GFDL in plain text" href="http://www.gnu.org/licenses/fdl.txt"/>
+<rights type="xhtml"><html:div>&#169; Stéphane Bortzmeyer, 2005. <html:a href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</html:a> (GFDL).</html:div></rights>
+<icon>/favicon.ico</icon>
+<dublincore:language>fr</dublincore:language> <!-- TODO: xml:lang for Atom ? -->
+<author>
+<name>
+Stéphane Bortzmeyer
+</name>
+<email>stephane+blog@bortzmeyer.org</email>
+</author>
+<dublincore:creator>Stéphane Bortzmeyer</dublincore:creator>
+<dublincore:publisher>Stéphane Bortzmeyer</dublincore:publisher>
+<id>tag:bortzmeyer.org,2006-02:Blog/</id>
+<dublincore:identifier>tag:bortzmeyer.org,2006-02:Blog/</dublincore:identifier>
+<updated>2009-05-03T22:13:00Z</updated>
+<dublincore:date>2009-05-03T22:13:00Z</dublincore:date>
+<generator>make-feed.py (Python 2.5.2 (r252:60911, Jan  4 2009, 17:40:26) 
+[GCC 4.3.2])</generator>
+<dublincore:format>application/atom+xml</dublincore:format>
+
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5511: Routing Backus-Naur
+		Form (RBNF) : A Syntax Used to Form Encoding Rules in Various
+		Routing Protocol
+		Specifications</title><id>tag:bortzmeyer.org,2006-02:Blog/5511</id><updated>2009-05-03T00:00:00Z</updated><published>2009-05-03T00:00:00Z</published><content>Ceci
+		est un <a href="http://www.google.fr">lien</a>. Ceci est un <a
+			href="http://www.google.com">autre lien</a>. Et <a
+			href="http://www.google.fr">encore un autre
+			lien</a>.<br/>
+		Et maintenant, <img src="http://foo.com/img.png"/>, <img src="http://foo.com/img2.png"/>, <img src="http://foo.com/img.png"/>.</content><link rel="alternate"
+		href="http://www.bortzmeyer.org/tests-disques-postgresql.html"/></entry>
+
+</feed>
+

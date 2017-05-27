@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" version="2.0">
+
+<channel>
+	<title>Dharmafly</title>
+	
+	<link>http://dharmafly.com</link>
+	<description>Apps for change</description>
+	<lastBuildDate>Mon, 26 Sep 2011 14:58:02 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.2.1</generator>
+		<feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="dharmafly" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><geo:lat>50.827036</geo:lat><geo:long>-0.164838</geo:long><creativeCommons:license>http://creativecommons.org/licenses/by/3.0/</creativeCommons:license><image><link>http://dharmafly.com</link><url>http://dharmafly.com/images/logo/df-logo_128x128.png</url><title>Dharmafly</title></image><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://dharmafly.com/feed" /><feedburner:emailServiceId xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">dharmafly</feedburner:emailServiceId><feedburner:feedburnerHostname xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">http://feedburner.google.com</feedburner:feedburnerHostname><feedburner:feedFlare xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" href="http://add.my.yahoo.com/rss?url=http%3A%2F%2Fdharmafly.com%2Ffeed" src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif">Subscribe with My Yahoo!</feedburner:feedFlare><feedburner:feedFlare xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" href="http://fusion.google.com/add?feedurl=http%3A%2F%2Fdharmafly.com%2Ffeed" src="http://buttons.googlesyndication.com/fusion/add.gif">Subscribe with Google</feedburner:feedFlare><item>
+		<title>Winning app for the HP TouchPad</title>
+		<link>http://dharmafly.com/touchpad</link>
+		<comments>http://dharmafly.com/touchpad#comments</comments>
+		<pubDate>Thu, 21 Jul 2011 11:32:33 +0000</pubDate>
+		<dc:creator>Premasagar</dc:creator>
+				<category><![CDATA[Awards]]></category>
+		<category><![CDATA[Dharmafly Creations]]></category>
+		<category><![CDATA[Semantic Web]]></category>
+		<category><![CDATA[social media]]></category>
+		<category><![CDATA[Technology]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[app]]></category>
+		<category><![CDATA[enyo]]></category>
+		<category><![CDATA[guardian]]></category>
+		<category><![CDATA[hackday]]></category>
+		<category><![CDATA[hp]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[js]]></category>
+		<category><![CDATA[mobile app]]></category>
+		<category><![CDATA[mobile app development]]></category>
+		<category><![CDATA[mobile web]]></category>
+		<category><![CDATA[nodejs]]></category>
+		<category><![CDATA[touchpad]]></category>
+		<category><![CDATA[web app]]></category>
+		<category><![CDATA[webos]]></category>
+
+		<guid isPermaLink="false">http://dharmafly.com/?p=2269</guid>
+		<description><![CDATA[URL: dharmafly.com/hpwebos-hackday/demo/ I went along with Andrea and Sym to The Guardian to join a hack day for HP&#8217;s new TouchPad tablet &#8211; an interesting alternative to the iPad that uses web standard technologies for creating native mobile applications. We won the competition(!) with a prototype app for exploring live web content, such as news, [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://dharmafly.com/hpwebos-hackday/demo/"><img style="border: none;" src="http://farm7.static.flickr.com/6021/5929263969_210de4179a.jpg" alt="HP webOS TouchPad app" /></a></p>
+<p><strong>URL</strong>: <a href="http://dharmafly.com/hpwebos-hackday/demo/">dharmafly.com/hpwebos-hackday/demo/</a></p>
+<p>I went along with <a href="http://twitter.com/a_fiore">Andrea</a> and <a href="http://twitter.com/symroe">Sym</a> to <a href="http://www.guardian.co.uk">The Guardian</a> to join a <a href="http://mulqueeny.wordpress.com/2011/06/19/whats-the-point-of-a-hack-day/">hack day</a> for HP&#8217;s new <a href="http://www.guardian.co.uk/technology/2011/jun/30/hp-touchpad-tablet-review">TouchPad tablet</a> &#8211; an interesting alternative to the iPad that uses <a href="http://mobile.tutsplus.com/tutorials/webos/introduction-to-webos-3-0-enyo/">web standard technologies</a> for creating native mobile applications.</p>
+<p>We <a href="http://rewiredstate.org/projects/notw">won the competition</a>(!) with a prototype app for exploring live web content, such as news, reviews and photos, about any place on earth. (See <a href="http://rewiredstate.org/projects#hp-webos-developer-event">all the projects</a> from the event).</p>
+<p>The app we produced is part magazine, part <a href="http://www.google.com/support/feedburner/bin/answer.py?answer=79408">feed reader</a> and lets you swipe and slide the magazine in any direction to shift the geographical location that the magazine&#8217;s content represents.<br />
+<span id="more-2269"></span></p>
+<p>You can check it out by playing with <a href="http://dharmafly.com/hpwebos-hackday/demo/">the browser-based demo</a>. <em>(Note, this is utterly non-optimised at the moment and has only been tested in Chrome and Firefox)</em>.</p>
+<h3>What it does</h3>
+<p>Starting at the reader&#8217;s current location (imagine that you are travelling or visiting somewhere new), a magazine-style page of content is pulled in for that place (e.g. a one mile square centred on Kings Cross, London). The reader can then <em>slide</em> the page in any of eight compass directions (north, east, south, west, nw, ne, sw, se), to re-centre the magazine at that new location (e.g. a one mile square centred on Hillingdon, London). Content is then pulled in for the location represented by the new position.</p>
+<p>We&#8217;ve divided the world into a grid of cells, and the user can slide between any of the cells to view the content that they each contain. Content is linked through to its original source on the web, e.g. a travel article from The Guardian, or a note on the history of a place from Wikipedia.</p>
+<p>We think that the format is ideally suited to a tablet like the TouchPad: location-aware, tactile navigation, relevant material for reading and exploring while on the move. The magazine might be used to explore content around a particular part of the world, or to follow each step along a journey.</p>
+<p>Working in the same familiar way as the &#8220;slippy map&#8221; of <a href="http://maps.google.com/maps?q=kings+cross,+london&#038;hl=en&#038;ll=51.545428,-0.124712&#038;spn=0.021992,0.055189&#038;sll=51.545214,-0.122051&#038;sspn=0.021992,0.055189&#038;z=14">Google Maps</a>, we provide an intuitive mechanism for browsing, though we&#8217;ve never seen something quite like our app before.</p>
+<h3>Building for the TouchPad</h3>
+<p>Although there were some rough edges, all in all, it was a refreshing experience to develop for a mobile device that uses native web technologies (HTML, JavaScript and CSS). The app was put together in a normal desktop browser and, with the TouchPad connected via a USB cable, it was simply pushed down to the device for testing.</p>
+<p>So the application is portable &#8211; it can work in a desktop or mobile browser, and it could be <a href="http://www.phonegap.com">wrapped up</a> to be used on other, non-web platforms like the iPhone, iPad and Android.</p>
+<h3>Technicalities</h3>
+<p>We used Node.js and Django Python <em>outside</em> of the device to pull in the content, process it and compile it down into JSON data, to be consumed by the app. The TouchPad&#8217;s operating system, webOS, actually allows apps to include <a href="http://ajaxian.com/archives/the-node-js-now-running-on-webos-and-more-web-improvements">JavaScript-based, Node.js services</a>, to run a tiny server on each device. We might want to use this, for example, to continually process and serve content to the front-end.</p>
+<p>We rolled our own JavaScript, opting to remove the considerable benefits that webOS provides in the form of <a href="https://developer.palm.com/content/api/dev-guide/enyo.html">Enyo, an app components framework</a>. Without Enyo, we are left with just a basic WebKit shell, hooked into the operating system. We used <a href="http://cubiq.org/iscroll-4">iScroll</a>, a touch-based scrolling library, to assist with user interactions.</p>
+<h3>Ideas for taking the project forward</h3>
+<p>We would love to extend the app to use a full global grid of content, allowing zooming in and out from <em>hyperlocal</em> to country-wide scales, introduce clumping of content into cities and notable locations, allow layers of content types that can be switched on or off, and include user-curated and user-generated material. The concept, its focus, the look and feel, and the app&#8217;s behaviour will all need some love and care, but we think it has potential.</p>
+<p>What do you think? Would you use it?</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dharmafly?a=EcTdQNZ9wgc:dgOtLA5ghy0:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=EcTdQNZ9wgc:dgOtLA5ghy0:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=EcTdQNZ9wgc:dgOtLA5ghy0:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=EcTdQNZ9wgc:dgOtLA5ghy0:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=EcTdQNZ9wgc:dgOtLA5ghy0:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=EcTdQNZ9wgc:dgOtLA5ghy0:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=EcTdQNZ9wgc:dgOtLA5ghy0:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=EcTdQNZ9wgc:dgOtLA5ghy0:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=yIl2AUoC8zA" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://dharmafly.com/touchpad/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Starting Weeknotes</title>
+		<link>http://dharmafly.com/weeknotes-1</link>
+		<comments>http://dharmafly.com/weeknotes-1#comments</comments>
+		<pubDate>Tue, 19 Jul 2011 09:16:49 +0000</pubDate>
+		<dc:creator>Premasagar</dc:creator>
+				<category><![CDATA[Weeknotes]]></category>
+		<category><![CDATA[weeknotes]]></category>
+
+		<guid isPermaLink="false">http://dharmafly.com/?p=2261</guid>
+		<description><![CDATA[Well, we&#8217;ve been procrastinating and deliberating for around a year and a half over publishing regular &#8220;Weeknotes&#8220;. That is, little bite size updates of what on earth we&#8217;ve been up to, from week to week. And so, here we go, with our very first week (or was it two?) of reminiscences&#8230; We started off with [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.flickr.com/photos/striatic/131995938/" title="draw your camera : Kyocera SL400R by striatic, on Flickr"><img src="http://farm1.static.flickr.com/48/131995938_5b23b36684.jpg" width="500" height="375" alt="draw your camera : Kyocera SL400R"></a></p>
+<p>Well, we&#8217;ve been procrastinating and deliberating for around a year and a half over publishing regular &#8220;<a href="http://www.wired.co.uk/magazine/archive/2010/06/start/russell-m-davies-on-the-structure-of-time">Weeknotes</a>&#8220;. That is, little bite size updates of what on earth we&#8217;ve been up to, from week to week.</p>
+<p>And so, here we go, with our very first week (or was it two?) of reminiscences&#8230;<br />
+<span id="more-2261"></span></p>
+<hr />
+<p>We started off with <a href="http://premasagar.com">Prem</a> &#038; <a href="http://makeroomnow.tumblr.com">Matt</a> working on a funding bid with a startup partner. The plan is to build a live data visualisation dashboard to assist with public health, amongst other things. Fingers crossed.</p>
+<p><a href="http://dharmafly.com/tasket" title="BrightWorks"><img src="http://farm7.static.flickr.com/6052/5880152921_cb935a3853_m.jpg" width="240" height="150" alt="BrightWorks"></a></p>
+<p>We&#8217;re super excited that <a href="http://brightworks.me">BrightWorks</a> has now <a href="http://blog.brightworks.me/towards-a-bigger-better-brightone">launched</a>. It&#8217;s a web app that helps a community of volunteers complete tiny tasks for charities. It was created with and for <a href="http://brightone.org.uk">Bright One</a>, the volunteer-run communications agency. In tandem, we&#8217;ve released the open source task engine, <a href="https://github.com/dharmafly/tasket">Tasket</a>, which is the oomph behind BrightWorks. Read more about here: <a href="http://dharmafly.com/tasket">dharmafly.com/tasket</a></p>
+<p>We&#8217;ve started on a few little titbits of work: JavaScript programming for a smartphone game with <a href="http://www.matchboxmobile.com">Matchbox Mobile</a> (watch this space), and we&#8217;ve been planning the second round of development for a web/mobile app for <a href="http://www.netdev.co.uk">NetDev</a> to augment real-time communications and group collaboration, something of an exposition of the virtues of <a href="http://studio.html5rocks.com">HTML5</a> (erm, watch this space!).</p>
+<p><a href="http://www.bbc.co.uk/worldservice/bangladeshboat/" title="BBC World Service - Bangladesh River Journey, by Dharmafly"><img src="http://farm3.static.flickr.com/2298/1848329163_99ef9335c7_m.jpg" width="240" height="148" alt="BBC World Service: site launch"></a></p>
+<p><a href="http://petegoodman.com">Pete</a> started working with Dharmafly, initially helping with all those <a href="http://mindmapblog.files.wordpress.com/2008/06/time-management-1.jpg">important but not urgent</a> things that end up just aching to be done. Job number one: fix a bug that popped up in our old <a href="http://dharmafly.com/bangladeshboat">BBC Bangladesh River Journey</a> web app. We needed to re-implement our use of an undocumented Google Maps feature (oh ho, always a risk, but it seemed so clever at the time) &#8211; a little hack to let us shift the <a href="http://brainoff.com/weblog/2007/10/29/1272">map balloons outside of the actual map</a>. Fixed. Sorted. Next task&#8230;</p>
+<p>We&#8217;ve been migrating the source code of our older client projects from <a href="http://unfuddle.com">Unfuddle</a> to <a href="http://github.com">GitHub</a>. (You can follow our public projects at <a href="http://github.com/dharmafly">github.com/dharmafly</a>. Some of my code libraries at <a href="http://github.com/premasagar">github.com/premasagar</a> will also be moved there). Lashings and lashings of <a href="http://www.kernel.org/pub/software/scm/git/docs/git-svn.html">git-svn</a> and copy-paste-copy-paste along the way.</p>
+<p><a href="http://rewiredstate.org/projects/notw" title=""News of the World": a prototype app for the HP TouchPad"><img src="http://farm7.static.flickr.com/6021/5929263969_210de4179a_m.jpg" width="240" height="188" alt=""News of the World": a prototype app for the HP TouchPad" style="border:none;"></a></p>
+<p>I went along to <a href="http://www.guardian.co.uk">The Guardian</a> to join a <a href="http://mulqueeny.wordpress.com/2011/06/19/whats-the-point-of-a-hack-day/">hack day</a> for HP&#8217;s new <a href="http://www.guardian.co.uk/technology/2011/jun/30/hp-touchpad-tablet-review">TouchPad tablet</a> (an interesting alternative to the iPad that uses <a href="https://developer.palm.com/content/resources/develop/quick_start_javascript.html">web standard technologies</a> for creating native apps). Working in a team with <a href="http://twitter.com/a_fiore">Andrea</a> and <a href="http://twitter.com/symroe">Sym</a>, we <a href="http://rewiredstate.org/projects/notw">won the competition</a> with a prototype app for exploring live web content (such as news, reviews and photos) about any place on earth.</p>
+<p>It is part magazine, part feed reader and lets the reader swipe and slide the magazine in any direction to shift the geographical location that the magazine&#8217;s content represents. You can <a href="http://dharmafly.com/touchpad">read more about it here</a> or <a href="http://dharmafly.com/hpwebos-hackday/demo/">play with the browser-based demo</a>.</p>
+<p>That&#8217;s it. How did we do? Remember, you can follow our future posts in your <a href="http://dharmafly.com/feed">feed reader</a>, or <a href="http://feedburner.google.com/fb/a/mailverify?uri=dharmafly">by email</a> or <a href="http://twitter.com/dharmafly">on Twitter</a>.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dharmafly?a=mmroasev56A:ZtqCHpGbJSE:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=mmroasev56A:ZtqCHpGbJSE:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=mmroasev56A:ZtqCHpGbJSE:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=mmroasev56A:ZtqCHpGbJSE:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=mmroasev56A:ZtqCHpGbJSE:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=mmroasev56A:ZtqCHpGbJSE:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=mmroasev56A:ZtqCHpGbJSE:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=mmroasev56A:ZtqCHpGbJSE:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=yIl2AUoC8zA" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://dharmafly.com/weeknotes-1/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>A web app for tiny tasks and a crowd of volunteers</title>
+		<link>http://dharmafly.com/tasket</link>
+		<comments>http://dharmafly.com/tasket#comments</comments>
+		<pubDate>Fri, 08 Jul 2011 12:55:09 +0000</pubDate>
+		<dc:creator>Premasagar</dc:creator>
+				<category><![CDATA[Charities]]></category>
+		<category><![CDATA[Community]]></category>
+		<category><![CDATA[Data visualisation]]></category>
+		<category><![CDATA[Dharmafly Creations]]></category>
+		<category><![CDATA[Ethical Business]]></category>
+		<category><![CDATA[Technology]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[backbonejs]]></category>
+		<category><![CDATA[dharmafly]]></category>
+		<category><![CDATA[django]]></category>
+		<category><![CDATA[gtd]]></category>
+		<category><![CDATA[opensource]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[rewiredstate]]></category>
+		<category><![CDATA[tasket]]></category>
+		<category><![CDATA[taskmanagement]]></category>
+		<category><![CDATA[tasks]]></category>
+		<category><![CDATA[todo]]></category>
+		<category><![CDATA[webapp]]></category>
+		<category><![CDATA[webdev]]></category>
+		<category><![CDATA[webdevelopment]]></category>
+
+		<guid isPermaLink="false">http://dharmafly.com/?p=2195</guid>
+		<description><![CDATA[URLs: brightworks.me &#038; tasket.dharmafly.com People like to help out with a good cause, but it can be difficult to find the time. What if, through the Web, we could gather enough people and bring them together to achieve something great? At Dharmafly, we&#8217;ve been hard at work creating an open source tool called &#8220;Tasket&#8220;, which [...]]]></description>
+			<content:encoded><![CDATA[<p><a title="BrightWorks by premasagar, on Flickr" href="http://www.flickr.com/photos/dharmasphere/5880152921/"><img src="http://farm7.static.flickr.com/6052/5880152921_cb935a3853.jpg" alt="BrightWorks" width="500" height="313" /></a></p>
+<p><strong>URLs</strong>: <a href="http://brightworks.me">brightworks.me</a> &#038; <a href="http://tasket.dharmafly.com">tasket.dharmafly.com</a></p>
+<p>People like to help out with a good cause, but it can be difficult to find the time. What if, through the Web, we could gather enough people and bring them together to achieve something great?</p>
+<p>At Dharmafly, we&#8217;ve been hard at work creating an <a href="https://github.com/dharmafly/tasket">open source</a> tool called &#8220;<strong>Tasket</strong>&#8220;, which we hope will do just that. It&#8217;s a visually immersive web app, riffing off some of our data visualisation work, that engages volunteers in performing tiny tasks for a cause.</p>
+<p>Essentially, it&#8217;s a &#8220;<a href="http://en.wikipedia.org/wiki/Micro-volunteering">micro-volunteering</a>&#8221; task management tool that lets people <em>create tasks</em> that need doing. Anyone can <em>claim those tasks</em> and Tasket helps everyone <em>track the progress</em> of the community. <span id="more-2195"></span></p>
+<h3>BrightWorks: mobilising the crowd</h3>
+<p>We&#8217;ve designed Tasket with the not-for-profit company <a href="http://brightone.org.uk">Bright One</a>, who enable volunteers to work on projects for charities and third sector organisations. Bright One are an ethical Public Relations agency who provide a specialist, low-cost service for social good organisations, by connecting student volunteers with expert mentors. They help their volunteers to train and gain skills, and to work together as a cohesive team.</p>
+<p>Using Tasket, we&#8217;ve built a website for Bright One called &#8220;<strong>BrightWorks</strong>&#8220;. The first version <a href="http://blog.brightworks.me/towards-a-bigger-better-brightone">has just launched</a>. You can explore it, click around (and even complete a task or two) at: <a href="http://brightworks.me">brightworks.me</a></p>
+<p>Bright One have only been going for two years, but in that time they have grown to be impressively successful &#8211; so much so that they have <em>too many volunteers</em> and <em>too many charities</em> wanting to get involved. It&#8217;s what you call &#8220;a nice problem to have&#8221;.</p>
+<p>They needed a way to activate their volunteers more quickly, increase their capacity to work on more campaigns, and help everyone to stay informed and engaged with each other&#8217;s projects. BrightWorks now helps them to maximise their output from a dispersed, but eager, crowd of individuals.</p>
+<p>The leaders of each project add information to the website, posting the highest priority tasks to be done. Anyone can offer to take on a task. And when a task is complete, it can be verified by its creator. Each volunteer accumulates a record of completed tasks (which in future might be used as part of a <acronym title="curriculum vitae">CV</acronym> or resumé, or plugged into the volunteer&#8217;s professional profile on <a href="http://www.linkedin.com">LinkedIn</a>).</p>
+<h3>Gaming</h3>
+<p>There is a light layer of game dynamics incorporated into the web app. Projects rise and fall, as the weight of their tasks is unburdened by people completing them. Tasks can only take a maximum of four hours each, so a heavy task will need to be broken down into smaller ones. A volunteer can only take a limited number of tasks at one time, and there is a time limit for them to complete each one. (Tasket lets all these variables be configured for the requirements of its target website).</p>
+<p>In future, we would love to add analytics, to show the performance of the community. We&#8217;d also like to expose the networks that emerge when people become connected via the projects that they contribute to. The tasks are a kind of currency; it&#8217;s actually the <em>connections created between people</em> that matter within the community.</p>
+<p>Oh, and I&#8217;d also add to the wishlist: task notifications, alerts, messaging&#8230; and an <em>app-load</em> of other features.</p>
+<h3>Early feedback</h3>
+<p>What people have said so far:</p>
+<blockquote><p>The BrightWorks concept is genius because it fits right into a mould that we are all already comfortable with – microblogging. BrightWorks has taken a social networking concept and adapted it to the needs of non-profit organizations and volunteers – giving them the ideal meeting ground to actually get something done.</p></blockquote>
+<p>- <a href="http://thenextweb.com/apps/2011/06/30/brightworks-social-networking-meets-micro-volunteering-for-a-cause/">The Next Web</a></p>
+<blockquote><p>I love the idea of a more loose visual representation of a collection of tasks. It&#8217;s an area that’s been vexing us for a while… how to say “I’ll do this” for any given component of a larger project. All around, one of the most interesting/ smart/ exciting microvolunteering apps that I’ve seen to date.</p></blockquote>
+<p>- <a href="http://blog.sparked.com/2011/06/30/brightworks-launches-new-microvolunteering-app/">Sparked.com</a></p>
+<blockquote><p>Really lovely concept, like the dashboard-style interface &#8211; makes it feel like a tool rather than a site. The sign up form is very slick and quick. Also big bonus points for the photo upload being one-step: no resizing, no restrictions. Just works.</p></blockquote>
+<p>- <a href="http://www.oxfam.org.uk">Oxfam GB Digital Manager</a></p>
+<blockquote><p>Sometimes, people are more than willing to volunteer yet have very little time to look for charities. And that is really frustrating. Well, if this new application manages to take off then that should stop being a problem.</p></blockquote>
+<p>- <a href="http://www.killerstartups.com/Web-App-Tools/brightworks-me-easily-support-charities">Killer Startups</a></p>
+<h3>Tasket for Carers: a prototype</h3>
+<p><a href="http://www.flickr.com/photos/dharmasphere/5254352505/" title="Tasket: the Carers prototype by premasagar, on Flickr"><img src="http://farm6.static.flickr.com/5210/5254352505_0494c6458e.jpg" width="500" height="293" alt="Tasket: the Carers prototype"></a></p>
+<p>Early on, before we started building Tasket, we presented a prototype for the concept at the Government&#8217;s &#8220;<a href="http://rewiredstate.org/events/dotgovlabs_weekender">DotGovLabs Developer Weekend</a>&#8220;, organised with Rewired State. Our frame of reference was a bit different &#8211; instead of dealing with <em>projects</em>, the main focus was on <em>carers</em> &#8211; people who live with and care for others.</p>
+<p>There are 6 million carers in the UK (that&#8217;s one in ten). Many suffer from being overburdened, isolated and stressed. Poor health and depression can often result. We believe that, if carers could get help with just the little things in their daily lives, the result could be a big improvement in their quality of life.</p>
+<p>Our 24-hour prototype shows how Tasket could be used to let carers add tiny tasks, such as collecting groceries or putting out the rubbish, and allow friends, family or neighbours to complete those tasks for them.</p>
+<p>The prototype was a success. We won the Government&#8217;s &#8220;Carers&#8221; category prize. You can take a look here: <a href="http://dharmafly.com/tasket-carers-prototype/">dharmafly.com/tasket-carers-prototype/</a></p>
+<p>We&#8217;ve gone on to make it into the <a href="https://dotgovlabs.direct.gov.uk/Page/ViewIdea?ideaid=401">DotGovLabs top 3 innovative solutions</a> for the extended project.</p>
+<h3>Play in the sandpit</h3>
+<p><a href="http://www.flickr.com/photos/dharmasphere/5915264184/" title="Tasket: open source, micro-volunteering task management app by premasagar, on Flickr"><img src="http://farm6.static.flickr.com/5277/5915264184_c0d62f0dc2.jpg" width="500" height="319" alt="Tasket: open source, micro-volunteering task management app"></a></p>
+<p>You can have a play with the open source Tasket app (in glorious black n&#8217; white), at <a href="http://tasket.dharmafly.com">tasket.dharmafly.com</a></p>
+<p>Go ahead, sign up, create a project, add some tasks. You can claim tasks that others have created, click around, explore. And remember, because it&#8217;s all <a href="https://github.com/dharmafly/tasket">open source</a>, you can re-use the code for your own task management applications (or <a href="http://dharmafly.com/contact">contact Dharmafly</a> to adapt it for you).</p>
+<h3>One data server, many apps</h3>
+<p><a href="http://www.flickr.com/photos/dharmasphere/5881849497/" title="Tasket notepad by premasagar, on Flickr"><img src="http://farm6.static.flickr.com/5155/5881849497_534a44df13.jpg" width="500" height="486" alt="Tasket notepad"></a></p>
+<p>We&#8217;ve built the server as a kind of pure <em>data engine</em>. How the actual application looks and behaves can be wildly different, but still use the same underlying data.</p>
+<p>As an example, the screenshot above shows a notepad style &#8220;to do&#8221; list manager, built on Tasket. It&#8217;s much more focussed on an individual and their own tasks, but could equally be used for sharing lists between a group of people. A <em>very early</em> version of the app can be <a href="http://tasket.dharmafly.com/notepad.html">seen here</a>.</p>
+<h3>A little note on technology (for the geeks)</h3>
+<p>Tasket uses a collection of HTML5-related technologies. It is a &#8220;thick client&#8221;, built with the JavaScript library <a href="http://documentcloud.github.com/backbone/">Backbone.js</a>, and communicates with a JSON-based API (e.g. <a href="http://brightworks.me/tasks/">here are all the unfinished tasks</a> on BrightWorks). The server is created with the Python-based framework, Django (this may be swapped with Node.js in future).</p>
+<p>Projects and tasks are laid out with force-directed physics, to prevent them from overlapping each other and the walls of the website. The lines connecting tasks are in <a title="Scalable Vector Graphics" href="https://developer.mozilla.org/en/SVG">SVG</a> (although the circles that represent each project instead use simple CSS3 <a href="https://developer.mozilla.org/en/css/border-radius">border-radius</a>).</p>
+<p>You can <strong>download the code and run it on your own server</strong> (it has the permissive MIT license), or <a href="https://github.com/dharmafly/tasket">fork the project on GitHub</a>. Improvements and pull requests are welcome.</p>
+<h3>Created by</h3>
+<p>Tasket and BrightWorks have been brought to you by:</p>
+<ul>
+<li><a href="http://makeroomnow.tumblr.com">Matt Weston</a> &#8211; social design</li>
+<li><a href="http://twitter.com/gavinocarroll">Gavin O&#8217; Carroll</a> &#8211; visual design</li>
+<li><a href="http://twitter.com/symroe">Sym Roe</a> &#8211; server-side</li>
+<li><a href="http://twitter.com/ac94">Aron Carroll</a> &#8211; JavaScript, CSS</li>
+<li>Kyran Dale &#8211; force-directed physics</li>
+<li>Christian Thrower, <a href="http://twitter.com/ramblinollie">Ollie Bettany</a> and <a href="http://twitter.com/a_fiore">Andrea Fiore</a> &#8211; front-end design &#038; dev for the Notepad app</li>
+<li><a href="http://premasagar.com">Prem</a> (that&#8217;s me) &#8211; concept, JavaScript, coordination</li>
+<li>&#8230;and the brilliant minds at <a href="http://twitter.com/brightone">Bright One</a>. Big thanks especially to <a href="http://twitter.com/benrmatthews">Ben</a>, <a href="http://twitter.com/allthatkatydid">Katy</a> and <a href="http://twitter.com/DanHowe">Dan</a>.</li>
+</ul>
+<p>You can follow the further developments of the BrightWorks project <a href="http://blog.brightworks.me">on its blog</a>.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dharmafly?a=adendx9zlmM:6TartQM05VY:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=adendx9zlmM:6TartQM05VY:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=adendx9zlmM:6TartQM05VY:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=adendx9zlmM:6TartQM05VY:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=adendx9zlmM:6TartQM05VY:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=adendx9zlmM:6TartQM05VY:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=adendx9zlmM:6TartQM05VY:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=adendx9zlmM:6TartQM05VY:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=yIl2AUoC8zA" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://dharmafly.com/tasket/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>What makes a UK Online centre?</title>
+		<link>http://dharmafly.com/ukonline-dataviz</link>
+		<comments>http://dharmafly.com/ukonline-dataviz#comments</comments>
+		<pubDate>Tue, 24 Aug 2010 10:36:29 +0000</pubDate>
+		<dc:creator>Premasagar</dc:creator>
+				<category><![CDATA[Data visualisation]]></category>
+		<category><![CDATA[Dharmafly Creations]]></category>
+		<category><![CDATA[Semantic Web]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[datavis]]></category>
+		<category><![CDATA[dataviz]]></category>
+		<category><![CDATA[digital engagement]]></category>
+		<category><![CDATA[digital includion]]></category>
+		<category><![CDATA[infographics]]></category>
+		<category><![CDATA[infovis]]></category>
+		<category><![CDATA[infoviz]]></category>
+		<category><![CDATA[marketing]]></category>
+		<category><![CDATA[rewiredstate]]></category>
+		<category><![CDATA[RSgetO]]></category>
+		<category><![CDATA[tools]]></category>
+		<category><![CDATA[uko]]></category>
+		<category><![CDATA[ukonline]]></category>
+		<category><![CDATA[ukonline centres]]></category>
+		<category><![CDATA[wordle]]></category>
+
+		<guid isPermaLink="false">http://dharmafly.com/?p=2136</guid>
+		<description><![CDATA[URL: rewiredstate.org/projects/what-makes-a-centre We previously blogged about helping to create a prototype SMS text message service for the Government&#8217;s UK Online Centres. The centres help people get online for the first time, and are a key part of the government&#8217;s strategy for Digital Engagement. We also worked on a handful of data visualisations to highlight the [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.flickr.com/photos/dharmasphere/4875750652/" title="UK online centres: Target Audience by premasagar, on Flickr"><img src="http://farm5.static.flickr.com/4137/4875750652_4acf51b322.jpg" width="500" height="264" alt="UK online centres: Target Audience" /></a></p>
+<p><strong>URL:</strong> <a href="http://rewiredstate.org/projects/what-makes-a-centre">rewiredstate.org/projects/what-makes-a-centre</a></p>
+<p>We previously blogged about helping to create a <a href="http://dharmafly.com/digitalinclusion">prototype SMS text message service</a> for the Government&#8217;s <a href="http://www.ukonlinecentres.com">UK Online Centres</a>. The centres help people get online for the first time, and are a key part of the government&#8217;s strategy for <a href="http://digitalengagement.org/about/">Digital Engagement</a>.</p>
+<p>We also worked on a handful of data visualisations to highlight the hidden aspects of the centres. <span id="more-2136"></span>These could assist in making decisions about outreach or marketing, or on the balance of facilities on offer to customers of the service. To create them, we prepared different slices of the <a href="https://github.com/jaggeree/ukonline-data">UK Online dataset</a>, and passed them through the wonderful <a href="http://wordle.net">Wordle</a> web service:</p>
+<h3>Centres&#8217; target audience:</h3>
+<p>The visualisation at the top of this article shows the words that individual centres use to describe their own target audience.</p>
+<h3>Centre locations:</h3>
+<p><a href="http://www.flickr.com/photos/dharmasphere/4875750636/" title="UK online centres: Locations by premasagar, on Flickr"><img src="http://farm5.static.flickr.com/4075/4875750636_3320895332.jpg" width="500" height="251" alt="UK online centres: Locations" /></a></p>
+<p>This shows the relative proportions of centres in different parts of the country.</p>
+<h3>Centre names:</h3>
+<p><a href="http://www.flickr.com/photos/dharmasphere/4875750646/" title="UK online centres: Centre Names by premasagar, on Flickr"><img src="http://farm5.static.flickr.com/4099/4875750646_74d6f845f4.jpg" width="500" height="254" alt="UK online centres: Centre Names" /></a></p>
+<p>This shows trends in the names of the different centres. Clearly, most of them are in libraries and community centres.</p>
+<h3>Centre names (minus the six most popular words):</h3>
+<p><a href="http://www.flickr.com/photos/dharmasphere/4875750650/" title="UK online centres: Centre Names2 by premasagar, on Flickr"><img src="http://farm5.static.flickr.com/4114/4875750650_f2b693b6d4.jpg" width="500" height="252" alt="UK online centres: Centre Names2" /></a></p>
+<p>This final visualisation shows all but the most common six words in the names of the centres (i.e. without &#8220;library&#8221;, &#8220;centre&#8221;, &#8220;community&#8221;, &#8220;learning&#8221; and &#8220;training&#8221;).</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dharmafly?a=Y9UNozzO6G8:ZK-sxjE5VOU:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=Y9UNozzO6G8:ZK-sxjE5VOU:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=Y9UNozzO6G8:ZK-sxjE5VOU:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=Y9UNozzO6G8:ZK-sxjE5VOU:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=Y9UNozzO6G8:ZK-sxjE5VOU:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=Y9UNozzO6G8:ZK-sxjE5VOU:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=Y9UNozzO6G8:ZK-sxjE5VOU:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=Y9UNozzO6G8:ZK-sxjE5VOU:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=yIl2AUoC8zA" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://dharmafly.com/ukonline-dataviz/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Digital inclusion goes mobile</title>
+		<link>http://dharmafly.com/digitalinclusion</link>
+		<comments>http://dharmafly.com/digitalinclusion#comments</comments>
+		<pubDate>Mon, 23 Aug 2010 11:42:30 +0000</pubDate>
+		<dc:creator>Premasagar</dc:creator>
+				<category><![CDATA[Community]]></category>
+		<category><![CDATA[Data visualisation]]></category>
+		<category><![CDATA[Dharmafly Creations]]></category>
+		<category><![CDATA[Technology]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[api]]></category>
+		<category><![CDATA[digital engagement]]></category>
+		<category><![CDATA[digital inclusion]]></category>
+		<category><![CDATA[django]]></category>
+		<category><![CDATA[geo]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[government]]></category>
+		<category><![CDATA[london]]></category>
+		<category><![CDATA[mobile]]></category>
+		<category><![CDATA[mobile web]]></category>
+		<category><![CDATA[phone]]></category>
+		<category><![CDATA[rewired state]]></category>
+		<category><![CDATA[rewiredstate]]></category>
+		<category><![CDATA[RSgetO]]></category>
+		<category><![CDATA[sms]]></category>
+		<category><![CDATA[taykt]]></category>
+		<category><![CDATA[uk online centres]]></category>
+		<category><![CDATA[ukonline]]></category>
+		<category><![CDATA[web service]]></category>
+
+		<guid isPermaLink="false">http://dharmafly.com/?p=2092</guid>
+		<description><![CDATA[URL: rewiredstate.org/projects/sms-centre-finder There are 61 million people in the UK and 10 million of them have never used the Web. How would you help someone to get online for the first time? The job of the Government&#8217;s UK Online Centres is to help bridge the digital divide, by providing places with free public Internet and [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.flickr.com/photos/nettsu/1365343292/" title="bird learns to use phone by nettsu, on Flickr"><img src="http://farm2.static.flickr.com/1315/1365343292_734f4e6eb2.jpg" width="500" height="373" alt="bird learns to use phone" /></a></p>
+<p><strong>URL:</strong> <a href="http://rewiredstate.org/projects/sms-centre-finder">rewiredstate.org/projects/sms-centre-finder</a></p>
+<p><strong>There are 61 million people in the UK and 10 million of them have never used the Web.<br />
+How would you help someone to get online for the first time?</strong></p>
+<p>The job of the Government&#8217;s <a href="http://ukonlinecentres.com">UK Online Centres</a> is to help bridge the digital divide, by providing places with free public Internet and hands-on assistance. We recently helped them to explore a new web strategy, as part of a prototyping session at Google London, which was <span id="more-2092"></span>organised by <a href="http://rewiredstate.org">Rewired State</a>.</p>
+<h3>First steps on the Web, thanks to an SMS text message</h3>
+<p>People seek out a UK online centre for a number of reasons: to get help emailing their children who are overseas, to fill in a job application that&#8217;s available only on the Web, or to join Facebook because their grandchildren are all on there.</p>
+<p>But there&#8217;s an interesting fact: <em>around 70% of these first-timers have a mobile phone</em>. What if we could take advantage of that fact to make it easier for them to get the help they need?</p>
+<p>I worked with <a href="http://twitter.com/symroe">Sym Roe</a>, <a href="http://tomhume.org">Tom Hume</a> and <a href="http://danieljohnmorris.co.uk">Daniel Morris</a> on a prototype to explore this question. In just a few hours, we had created an SMS text message service, which allows people to text their postcode to a short phone number, and be texted back details of their nearest UK Online centre.</p>
+<h3>How it could work</h3>
+<p>Imagine that you&#8217;re out and about. You see a poster on the wall at a community centre, a library or some other noticeboard, and it says:</p>
+<blockquote><p>Want to get online? To find your nearest UK online centre, send a text message to 82958 saying &#8216;ukonline&#8217; plus your postcode &#8211; e.g. &#8216;ukonline SW1A 2AA&#8217;.</p>
+<p>We’ll text you back with your nearest centre. This service costs 25p.</p></blockquote>
+<p>You can try it out with your own postcode. Did you realise that there&#8217;s a centre so close to you?</p>
+<h3>Ingredients of an SMS web service</h3>
+<p>We took advantage of the really easy-to-use SMS service, <a href="http://taykt.com">Taykt</a> (it&#8217;s pronounced &#8220;take it&#8221;), a new startup based in Brighton. It takes the pain out of dealing with mobile networks and registering shortcode phone numbers.</p>
+<p>First, we chose a keyword for users to start their SMS message with &#8211; in our case, we chose &#8220;<em>ukonline</em>&#8220;. Taykt then passes through to our web service any message that starts with that keyword. If no postcode is supplied, then we just give a generic response. If there is a postcode, then we convert it to a latitude and longitude, then query the UK Online database to find the nearest centre.</p>
+<p>To make best use of the 160 characters available in our text message response, the information we send back is prioritised: first the centre&#8217;s name and phone number is given, and then if there&#8217;s still room in the message, we give the address, and then information about creche facilities, disabled access, etc. We try keep it concise, but human-friendly. Tom wrote about his work on maximising the text message response <a href="http://www.tomhume.org/2010/08/rewired-state-hack-day.html">on his blog</a>.</p>
+<p>Because Takyt lets us pass on the cost of the service to the end user (25p per request), it means it would be a viable proposition for UK Online to get up and running quickly, with little risk or upfront fees.</p>
+<p>If you&#8217;d like to check out the code, see Sym&#8217;s <a href="http://github.com/symroe/UK-Online-Centres-API">Django-based web service</a>, and Chris Thorpe&#8217;s <a href="http://github.com/jaggeree/ukonline-data">UK Online API</a>.</p>
+<p>There&#8217;s a write-up of our SMS Centre Finder project <a href="http://rewiredstate.org/projects/sms-centre-finder">on the Rewired State website</a>. </p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dharmafly?a=eigzf04f4oE:8zrEElHM-2w:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=eigzf04f4oE:8zrEElHM-2w:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=eigzf04f4oE:8zrEElHM-2w:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=eigzf04f4oE:8zrEElHM-2w:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=eigzf04f4oE:8zrEElHM-2w:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=eigzf04f4oE:8zrEElHM-2w:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=eigzf04f4oE:8zrEElHM-2w:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=eigzf04f4oE:8zrEElHM-2w:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=yIl2AUoC8zA" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://dharmafly.com/digitalinclusion/feed</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Show me the money</title>
+		<link>http://dharmafly.com/coins</link>
+		<comments>http://dharmafly.com/coins#comments</comments>
+		<pubDate>Sat, 03 Jul 2010 09:26:02 +0000</pubDate>
+		<dc:creator>Premasagar</dc:creator>
+				<category><![CDATA[Data visualisation]]></category>
+		<category><![CDATA[Dharmafly Creations]]></category>
+		<category><![CDATA[Politics]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[api]]></category>
+		<category><![CDATA[budget]]></category>
+		<category><![CDATA[coins]]></category>
+		<category><![CDATA[coins database]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[datagov]]></category>
+		<category><![CDATA[dataviz]]></category>
+		<category><![CDATA[depression]]></category>
+		<category><![CDATA[government]]></category>
+		<category><![CDATA[guardian]]></category>
+		<category><![CDATA[informatics]]></category>
+		<category><![CDATA[information]]></category>
+		<category><![CDATA[infoviz]]></category>
+		<category><![CDATA[jit]]></category>
+		<category><![CDATA[mysociety]]></category>
+		<category><![CDATA[okfn]]></category>
+		<category><![CDATA[open data]]></category>
+		<category><![CDATA[open knowledge foundation]]></category>
+		<category><![CDATA[recession]]></category>
+		<category><![CDATA[rewired state]]></category>
+		<category><![CDATA[spending]]></category>
+		<category><![CDATA[taxes]]></category>
+		<category><![CDATA[thejit]]></category>
+		<category><![CDATA[treasury]]></category>
+		<category><![CDATA[uk government]]></category>
+
+		<guid isPermaLink="false">http://dharmafly.com/?p=2037</guid>
+		<description><![CDATA[URL: guardian.co.uk/datablog/&#8230;infovis (fullscreen version) There&#8217;s been a lot of discussion recently about public spending, amidst a global recession, countries in crisis and the emergency budget. The Guardian has been following this closely and, when the UK Treasury released &#8220;Coins&#8220;, its huge database of Government spending, the Guardian invited a small group of programmers and experts to [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.guardian.co.uk/news/datablog/2010/jun/14/coins-data-results-10-things#infovis"><img src="http://farm5.static.flickr.com/4093/4756500336_7e2204fddc.jpg" width="500" height="293" alt="guardian-coins-dataviz"></a></p>
+<p><strong>URL</strong>: <a href="http://www.guardian.co.uk/news/datablog/2010/jun/14/coins-data-results-10-things#infovis">guardian.co.uk/datablog/&#8230;infovis</a> (<a href="http://assets.dharmafly.com/widgets/coins/fullscreen.html">fullscreen version</a>)</p>
+<p>There&#8217;s been a lot of discussion recently about public spending, amidst a <a href="http://www.guardian.co.uk/commentisfree/2010/jun/28/21st-century-depression-greece-deficit">global recession</a>, <a href="http://www.guardian.co.uk/world/2010/jun/24/greece-islands-sale-save-economy">countries in crisis</a> and the <a href="http://www.guardian.co.uk/uk/2010/jun/22/budget-2010-vat-austerity-plan">emergency budget</a>.</p>
+<p><a href="http://www.guardian.co.uk">The Guardian</a> has been following this closely and, when the <a href="http://www.hm-treasury.gov.uk">UK Treasury</a> released &#8220;<a href="http://www.guardian.co.uk/global/datablog/2010/jun/04/coins-treasury-data-live-blog"><abbr title="Combined Online Information System">Coins</abbr></a>&#8220;, its huge database of Government spending, the Guardian invited a small group of programmers and experts to work with them and help unravel the hidden stories buried beneath the data.</p>
+<p>Brought in by <a href="http://rewiredstate.org">Rewired State</a>, I worked with others from the <a href="http://www.okfn.org">Open Knowledge Foundation</a> and <a href="http://www.mysociety.org">MySociety</a> on data visualisations and articles for the <a href="http://www.guardian.co.uk/news/datablog">Guardian Data Blog</a>. <span id="more-2037"></span></p>
+<h3>Expenditure per Government department</h3>
+<p><a href="http://www.guardian.co.uk/news/datablog/2010/jun/14/coins-data-results-10-things#infovis"><img src="http://farm5.static.flickr.com/4093/4756500336_7e2204fddc_m.jpg" width="240" height="141" alt="guardian-coins-dataviz" /></a></p>
+<p><a href="http://www.guardian.co.uk/news/datablog/2010/jun/14/coins-data-results-10-things#infovis">This interactive visualisation</a>, which I created with <a href="http://www.rufuspollock.org">Rufus Pollock</a>, shows the relative amounts of spending, per Government department. You can left-click a department to see the distribution of spending per geographical region (and right-click to get back again).</p>
+<p><a href="http://assets.dharmafly.com/widgets/coins/fullscreen.html">It&#8217;s worth seeing this fullscreen</a>, to catch the numerous small departments.</p>
+<p>This type of visualisation is called a &#8220;tree map&#8221; and is written in pure JavaScript, with the help of an excellent piece of open-source software, <a href="http://thejit.org">the <abbr title="JavaScript Infoviz Toolkit">JIT</abbr></a>.</p>
+<h3>The Coins Explorer</h3>
+<p><a href="http://www.flickr.com/photos/jamescridland/3244096925/" title="Money money money by James Cridland, on Flickr"><img src="http://farm4.static.flickr.com/3077/3244096925_4518e763ac_m.jpg" width="240" height="115" alt="Money money money" /></a></p>
+<p>I also produced <a href="http://www.guardian.co.uk/open-platform/blog/guide-to-coins-explorer">an article for web developers</a>, about getting more from the <a href="http://coins.guardian.co.uk">Coins Explorer</a>. The Explorer lets you search for particular types of spending, and export subsets of the data to use elsewhere. It was pulled together by the Guardian&#8217;s razor-sharp team of developers in just a matter of hours.</p>
+<h3>Appreciation</h3>
+<p>Big thanks go out to <a href="http://mulqueeny.wordpress.com">Emma</a> from <a href="http://rewiredstate.org">Rewired State</a>, Mike, <a href="http://www.guardian.co.uk/profile/simonrogers">Simon</a>, Giles, <a href="http://www.brunton-spall.co.uk">Michael</a>, <a href="http://twitter.com/dvydra">Daniel</a> and <a href="http://twitter.com/matwall">Matt</a> from the Guardian, and all the developers there with us.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dharmafly?a=KyScuIHuCAA:kiz9lemUqmk:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=KyScuIHuCAA:kiz9lemUqmk:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=KyScuIHuCAA:kiz9lemUqmk:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=KyScuIHuCAA:kiz9lemUqmk:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=KyScuIHuCAA:kiz9lemUqmk:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=KyScuIHuCAA:kiz9lemUqmk:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=KyScuIHuCAA:kiz9lemUqmk:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=KyScuIHuCAA:kiz9lemUqmk:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=yIl2AUoC8zA" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://dharmafly.com/coins/feed</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Science Hack Day and The Revolutionaries</title>
+		<link>http://dharmafly.com/scihack</link>
+		<comments>http://dharmafly.com/scihack#comments</comments>
+		<pubDate>Thu, 01 Jul 2010 09:42:21 +0000</pubDate>
+		<dc:creator>Premasagar</dc:creator>
+				<category><![CDATA[Dharmafly Creations]]></category>
+		<category><![CDATA[science]]></category>
+		<category><![CDATA[Technology]]></category>
+		<category><![CDATA[api]]></category>
+		<category><![CDATA[dbpedia]]></category>
+		<category><![CDATA[guardian]]></category>
+		<category><![CDATA[isaacnewton]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[linkeddata]]></category>
+		<category><![CDATA[localstorage]]></category>
+		<category><![CDATA[microtemplates]]></category>
+		<category><![CDATA[microtemplating]]></category>
+		<category><![CDATA[museum]]></category>
+		<category><![CDATA[newton]]></category>
+		<category><![CDATA[opendata]]></category>
+		<category><![CDATA[rdf]]></category>
+		<category><![CDATA[revolutionaries]]></category>
+		<category><![CDATA[sciencehackday]]></category>
+		<category><![CDATA[sciencemuseum]]></category>
+		<category><![CDATA[scihack]]></category>
+		<category><![CDATA[sparql]]></category>
+		<category><![CDATA[tmpl]]></category>
+		<category><![CDATA[webapp]]></category>
+		<category><![CDATA[webservices]]></category>
+		<category><![CDATA[wikipedia]]></category>
+		<category><![CDATA[yql]]></category>
+
+		<guid isPermaLink="false">http://dharmafly.com/?p=1941</guid>
+		<description><![CDATA[URL: dharmafly.com/revolutionaries/ Last week saw an exciting event that brought together scientists, programmers and designers: &#8220;Science Hack Day&#8220;. Held at The Guardian in London, this was an up-all-night two days of web development, hardware building and invention, with the goal of prototyping new services and tools for science and scientists. With my background in ecology [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://dharmafly.com/revolutionaries/" title="The Revolutionaries"><img src="http://farm5.static.flickr.com/4079/4748799465_2f147d70ee.jpg" width="500" height="309" alt="The Revolutionaries"></a></p>
+<p><strong>URL</strong>: <a href="http://dharmafly.com/revolutionaries/" title="The Revolutionaries">dharmafly.com/revolutionaries/</a></p>
+<p>Last week saw an exciting event that brought together scientists, programmers and designers: &#8220;<a href="http://sciencehackday.com">Science Hack Day</a>&#8220;.</p>
+<p>Held at <a href="http://guardian.co.uk">The Guardian</a> in London, this was an up-all-night two days of web development, hardware building and invention, with the goal of prototyping new services and tools for science and scientists. <span id="more-1941"></span></p>
+<p>With my background in ecology and biology (ah, it seems like a long time ago now), my initial thought was to develop some kind of web-based game for exploring relationships between animals and plants in their ecosystems, for which I was going to use data from <a href="http://www.wildlifenearyou.com">Wildlife Near You</a>, the <a href="http://www.bbc.co.uk/nature/species/Barn_Owl">BBC&#8217;s Wildlife Finder</a> and <a href="http://www.kew.org/data/subjects.html">Kew Gardens</a>. Ultimately though, I decided to help with an idea by <a href="http://openobjects.blogspot.com">Mia Ridge</a> of the <a href="http://www.sciencemuseum.org.uk">Science Museum</a>, for investigating the influences between scientists and their inventions.</p>
+<h3>The evolution of ideas</h3>
+<p><a href="http://www.flickr.com/photos/toptechwriter/338573258/" title="Space Shuttle Discovery approaches ISS for docking [1680x1050] by TopTechWriter.US, on Flickr"><img src="http://farm1.static.flickr.com/125/338573258_6576d11c64_m.jpg" width="240" height="150" alt="Space Shuttle Discovery approaches ISS for docking [1680x1050]"></a></p>
+<p>Mia wanted to expose some of the rich data about <a href="http://collectionsonline.nmsi.ac.uk">the Museum&#8217;s collections</a> and to demonstrate how scientific ideas and inventions have evolved over time, as each successive generation absorbs the lessons of those who have come before.</p>
+<p>An invention (such as the space shuttle or the mobile phone) doesn&#8217;t simply arrive on the scene all by itself. It will have been the result of countless generations of convergent technologies, research and new paradigms of thinking. So what&#8217;s the thread that connects them together? And how have inventors and thinkers inspired one another and built on each other&#8217;s works?</p>
+<h3>There&#8217;s an app for that</h3>
+<p>A group of us built an explorer, called &#8220;<a href="http://dharmafly.com/revolutionaries/">The Revolutionaries</a>&#8220;. It lets you start with a scientist, say, <a href="http://dharmafly.com/revolutionaries/#Isaac_Newton">Isaac Newton</a>, and then click through to view those who influenced him and those he went on to influence. In fact, because of the way the app is built, it isn&#8217;t just scientists who are matched &#8211; <a href="http://dharmafly.com/revolutionaries/#George_Orwell">writers</a>, <a href="http://dharmafly.com/revolutionaries/#Bob_Dylan">musicians</a> and <a href="http://dharmafly.com/revolutionaries/#Prabhat_Ranjan_Sarkar">thinkers</a> are in there too.</p>
+<h3>Some interesting technologies</h3>
+<p><a href="http://www.flickr.com/photos/dharmasphere/125136124/" title="The New Species by premasagar, on Flickr"><img src="http://farm1.static.flickr.com/45/125136124_c9b11b68c4_m.jpg" width="240" height="148" alt="The New Species"></a></p>
+<p>Hack days are ripe opportunities to experiment with new techniques and technologies. Here are some of those that make up the app:</p>
+<h4>Pulling data out of Wikipedia, with DBpedia</h4>
+<p>When the app first loads, it doesn&#8217;t contain any data at all. To piece together information about a person, it gathers content from the crowd-sourced encyclopaedia, <a href="http://en.wikipedia.org">Wikipedia</a>. We use a service called <a href="http://dbpedia.org">DBpedia</a>, which weaves together Wikipedia articles in a multitude of ways. This allows us to pull data out of Wikipedia as if it were a giant database, using a language called SPARQL.</p>
+<p>We gather information about individuals, and about the connections between them, in order to find out who has influenced who. We then wrap up these requests to DBpedia with the ever-useful web service, <a href="http://developer.yahoo.com/yql/">YQL</a>, which lets us pull the data straight into the application.</p>
+<h4>Using &#8216;localStorage&#8217;, a mini database inside the browser</h4>
+<p><a href="http://www.flickr.com/photos/doommeer/2340829271/" title="autostadt-turm von innen by doommeer, on Flickr"><img src="http://farm4.static.flickr.com/3294/2340829271_d7d55ebb52_m.jpg" width="240" height="234" alt="autostadt-turm von innen"></a></p>
+<p>Since we are pulling in content from remote web services, we wanted to reduce the number of remote calls that it has to make, and to speed up browsing. So, we use a feature found in all modern browsers, called &#8216;<a href="http://hacks.mozilla.org/2009/06/localstorage/">localStorage</a>&#8216; (it&#8217;s part of the <a href="http://diveintohtml5.org/introduction.html">HTML5 suite of tools</a>). This is a small, simple type of database contained with the browser, where we store all the gathered information. It makes navigating through previously viewed content lightning fast, even when browsing on a mobile phone.</p>
+<h4>Micro-templating</h4>
+<p><a href="http://www.flickr.com/photos/hinkelstone/2435823037/" title="labyrinthine circuit board lines by quapan, on Flickr"><img src="http://farm3.static.flickr.com/2093/2435823037_2f67cc65b1_m.jpg" width="240" height="175" alt="labyrinthine circuit board lines"></a></p>
+<p>The content that the user sees is built up from a small number of tiny pieces of HTML. When new data is loaded, the relevant pieces are assembled and the data is displayed. You can see these simple &#8216;micro-templates&#8217; <a href="http://github.com/premasagar/revolutionaries/blob/b19d94e68d4b68e85328696618c92ca29f81d362/index.html#L107">here, in the source code</a>.</p>
+<p>We use a modified version of John Resig&#8217;s <a href="http://ejohn.org/blog/javascript-micro-templating/">basic templating script</a>. For more details, see <a href="http://dharmafly.com/tmpl/index.html">my slides on client-side templating</a>, from a talk I recently gave at <a href="http://asyncjs.com">Async</a>.</p>
+<h3>Educational</h3>
+<p><a href="http://www.flickr.com/photos/hine/2976359199/" title="rocket by xmatt, on Flickr"><img src="http://farm4.static.flickr.com/3055/2976359199_3cc917a957_m.jpg" width="240" height="160" alt="rocket"></a></p>
+<p>We ran out of time before we could finish integrating the Science Museum&#8217;s collections data with the Wikipedia data. After 24 hours of hacking, it was time to demo to the crowd.</p>
+<p>And we wound up with a prize for the hack most useful in education. Thanks guys!</p>
+<p>Take a look at the result: &#8220;<a href="http://dharmafly.com/revolutionaries/">The Revolutionaries</a>&#8220;.<br />
+(The <a href="http://github.com/premasagar/revolutionaries">source code is available on GitHub</a> to download or modify).</p>
+<h3>The people</h3>
+<p>The full list of people who contributed to the app were <a href="http://openobjects.blogspot.com">Mia Ridge</a>, <a href="http://premasagar.com">myself</a>, <a href="http://www.ianwootten.co.uk">Ian Wooten</a>, <a href="http://tommorris.org/blog/">Tom Morris</a>, <a href="http://yaili.com">Inayaili de León</a>, <a href="http://twitter.com/goodonpaper">Andy McMillan</a> and <a href="http://twitter.com/rboulton">Richard Boulton</a>. With thanks to <a href="http://www.wait-till-i.com">Christian</a>, as ever, for hands-on help with YQL.</p>
+<h3>The Hack Day</h3>
+<p>Science Hack Day was an exciting blend of scientific geekery and hackery, cross-pollination and fresh ideas. (Thanks a lot to <a href="http://adactio.com">Jeremy</a>, for setting it up). The other hacks from the weekend can be <a href="http://sciencehackday.pbworks.com/hacks">found on the wiki</a>.</p>
+<p>Here&#8217;s a little taste of the scene &#8211; <a href="http://carolune.org/wp/?p=1032">a timelapse video</a> created by <a href="http://twitter.com/carolune">Carolina Ödman</a>:</p>
+<p><object width="500" height="375"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=12720036&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=A6C664&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=12720036&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=A6C664&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="500" height="375"></embed></object></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dharmafly?a=rYV4sYJoesg:Cj4Y-VOQlWQ:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=rYV4sYJoesg:Cj4Y-VOQlWQ:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=rYV4sYJoesg:Cj4Y-VOQlWQ:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=rYV4sYJoesg:Cj4Y-VOQlWQ:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=rYV4sYJoesg:Cj4Y-VOQlWQ:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=rYV4sYJoesg:Cj4Y-VOQlWQ:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=rYV4sYJoesg:Cj4Y-VOQlWQ:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=rYV4sYJoesg:Cj4Y-VOQlWQ:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=yIl2AUoC8zA" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://dharmafly.com/scihack/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Festive Geekery</title>
+		<link>http://dharmafly.com/festive-geekery</link>
+		<comments>http://dharmafly.com/festive-geekery#comments</comments>
+		<pubDate>Thu, 03 Sep 2009 21:26:23 +0000</pubDate>
+		<dc:creator>Premasagar</dc:creator>
+				<category><![CDATA[Community]]></category>
+		<category><![CDATA[Sponsorship]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[barcamp]]></category>
+		<category><![CDATA[barcampbrighton]]></category>
+		<category><![CDATA[barcampbrighton4]]></category>
+		<category><![CDATA[bcb4]]></category>
+		<category><![CDATA[brighton]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[dconstruct]]></category>
+		<category><![CDATA[dconstruct09]]></category>
+
+		<guid isPermaLink="false">http://dharmafly.com/?p=1165</guid>
+		<description><![CDATA[It&#8217;s geek festival season, down here in Brighton. First up is dConstruct, a one-day conference on the cutting edge of interface design and user engagement. And then it&#8217;s good old BarCamp Brighton, now into its fourth incarnation. BarCamp, always a favourite, is a handmade 2-day conference, pulled together by its community of participants. Everyone gives [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.flickr.com/photos/hildeengwenverbouwen/3123172903/" title="haze.I_120x70cm (by Gwen Vanhee)"><img src="http://farm4.static.flickr.com/3222/3123172903_f18c006f34.jpg" title="haze.I_120x70cm (by Gwen Vanhee)" alt="haze.I_120x70cm (by Gwen Vanhee)" width="500" height="292" /></a></p>
+<p>It&#8217;s geek festival season, down here in Brighton. First up is <a href="http://2009.dconstruct.org">dConstruct</a>, a one-day conference on the cutting edge of interface design and user engagement.</p>
+<p>And then it&#8217;s good old <a href="http://www.barcampbrighton.org">BarCamp Brighton</a>, now into its fourth incarnation. BarCamp, always a favourite, is a handmade 2-day conference, pulled together by its community of participants. Everyone gives a talk on something they feel (geekily) passionate about, and they bring sleeping bags to spend the night at the donated event space. This time, we&#8217;ll be moving into the old Music Library for the weekend.</p>
+<p>Dharmafly is again a proud sponsor of BarCamp. I had in mind a fun little game to give away to the attendees, but not quite had the time to pull it off. Next time, next time. (And no more <a href="http://dharmafly.com/3-2-1-blast-off-to-planet-crunchy">crunchy spirulina, like last time</a>). See our <a href="http://dharmafly.com/tags/barcamp">BarCamp archive</a> for more.</p>
+<p>If you&#8217;re at either of these events, do roll up and say hi.</p>
+<p><strong>Update:</strong> At BarCamp, I gave a talk called &#8220;<a href="http://dharmafly.com/bcb4">Indestructible JavaScript Widgets</a>&#8220;, about the pitfalls and solutions when developing widgets to embed in third-party websites (like our <a href="http://dharmafly.com/bbc-world-service-widget">widget for BBC World Service</a>). No pretty slides, but my notes are at: <a href="http://dharmafly.com/bcb4">dharmafly.com/bcb4</a>.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dharmafly?a=ZqLDAXUKlJg:qj1PM9otwbE:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=ZqLDAXUKlJg:qj1PM9otwbE:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=ZqLDAXUKlJg:qj1PM9otwbE:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=ZqLDAXUKlJg:qj1PM9otwbE:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=ZqLDAXUKlJg:qj1PM9otwbE:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=ZqLDAXUKlJg:qj1PM9otwbE:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=ZqLDAXUKlJg:qj1PM9otwbE:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=ZqLDAXUKlJg:qj1PM9otwbE:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=yIl2AUoC8zA" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://dharmafly.com/festive-geekery/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Teen Hackers Take Over Google</title>
+		<link>http://dharmafly.com/youngrewiredstate</link>
+		<comments>http://dharmafly.com/youngrewiredstate#comments</comments>
+		<pubDate>Wed, 26 Aug 2009 12:01:24 +0000</pubDate>
+		<dc:creator>Premasagar</dc:creator>
+				<category><![CDATA[Community]]></category>
+		<category><![CDATA[Politics]]></category>
+		<category><![CDATA[social media]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[computer science]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[education]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[government]]></category>
+		<category><![CDATA[grassroots]]></category>
+		<category><![CDATA[hack day]]></category>
+		<category><![CDATA[hackers]]></category>
+		<category><![CDATA[hacking]]></category>
+		<category><![CDATA[linked data]]></category>
+		<category><![CDATA[london]]></category>
+		<category><![CDATA[open data]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[rewiredstate]]></category>
+		<category><![CDATA[teenagers]]></category>
+		<category><![CDATA[teens]]></category>
+		<category><![CDATA[uk]]></category>
+		<category><![CDATA[youngrewiredstate]]></category>
+		<category><![CDATA[yrs]]></category>
+
+		<guid isPermaLink="false">http://dharmafly.com/?p=1111</guid>
+		<description><![CDATA[At the weekend, I helped mentor a group of tech-minded teenagers at the community-led event, &#8220;Young Rewired State&#8220;. Held at Google&#8217;s London HQ, this was a two-day, action-packed programme for 15-18 year olds to build something better with government data on the web. And the results were truly impressive. Young people are sometimes written-off as [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.flickr.com/photos/harrymetcalfe/3847771505/" title="Hacking in full swing (by harry-m)"><img src="http://farm3.static.flickr.com/2462/3847771505_7c5095320f.jpg" title="Hacking in full swing (by harry-m)" alt="Hacking in full swing (by harry-m)" width="500" height="333" /></a></p>
+<p>At the weekend, I helped mentor a group of tech-minded teenagers at the community-led event, &#8220;<a href="http://youngrewiredstate.org">Young Rewired State</a>&#8220;. Held at Google&#8217;s London <acronym title="headquarters">HQ</acronym>, this was a two-day, action-packed programme for 15-18 year olds to build something better with government data on the web. And the results were truly impressive.</p>
+<p>Young people are sometimes written-off as being apathetic, or handed patronising websites and services to interact with. Here was their chance to show the kinds of services they really want and to demonstrate that, given access to the right kinds of data and a little support along the way, they are more than capable of building it themselves. <span id="more-1111"></span></p>
+<p>In just two days, they created a plethora of new web apps: a mobile service to give real-time info on London buses (&#8220;<a href="http://rewiredstate.org/projects/tfhell">TFHell</a>&#8220;), interactive maps with routes to school that avoid local crime hotspots (&#8220;<a href="http://stemount.co.uk/static/SchoolRoutr2.0.pdf">SchoolRoutr</a>&#8221; and &#8220;Step Safe&#8221;), sexual health advice (&#8220;Blab to Betty&#8221;), a service matching new tech talent with employers (&#8220;<a href="http://twitter.com/workforpeanuts">Will Work For Peanuts</a>&#8220;) and <a href="http://www.guardian.co.uk/open-platform/blog/young-rewired-state">many others</a>.</p>
+<p><a href="http://www.flickr.com/photos/_anima_/3848641450/" title="IMG_8620 (by anima)"><img src="http://farm4.static.flickr.com/3484/3848641450_e3f501242f_m.jpg" title="IMG_8620 (by anima)" alt="IMG_8620 (by anima)" width="240" height="160" /></a></p>
+<p>The team I assisted were a politically minded trio. <a href="http://www.freedomdreams.co.uk/blog">Ben</a>, <a href="http://twitter.com/idde_ukl">Joe</a> and <a href="http://identi.ca/binary0x5c">Richard</a> came down from Manchester and built a website that grabs the <a href="http://services.parliament.uk/bills/">latest bills</a> passing through parliament and attempts to show the emotional response to these bills from blogs around the web. The results are shown graphically, using the <a href="http://code.google.com/apis/chart/">Google Charts API</a>. The result of this blogs / politics experiment is: &#8220;<a href="http://libreapps.com/blogotics/">Blog-o-tics</a>&#8220;.</p>
+<p>Although they weren&#8217;t awarded a prize, Blog-o-tics was given a &#8220;special mention&#8221; by the panel of judges, who had come from government, the tech industry and beyond.</p>
+<p>The field of <a href="http://www.readwriteweb.com/archives/sentiment_analysis_is_ramping_up_in_2009.php">&#8220;sentimental analysis&#8221; is growing</a> and, although Blog-o-tics was just a quick proof-of-concept, it does hint at the possibilities. <a href="http://www.conservatives.com/News/Blogs/Young_Rewired_State.aspx">Craig Elder noted</a> its similarities with the concept for <a href="http://techpresident.com/node/6537">YourOwnDemocracy</a>.</p>
+<p>Other mentors came from <a href="http://last.fm">Last.fm</a>, <a href="http://bbc.co.uk">the BBC</a>, <a href="http://developer.yahoo.com">Yahoo</a>, <a href="http://moo.com">Moo</a>, <a href="http://mysociety.org">My Society</a> and small businesses around the country. I think we were all pretty much blown away by, not only the standard and focus of the work produced, but how entirely natural everyone seemed with the stack of technologies being used. Here is a generation of people who have grown up with computers, the ubiquitous Web and the programming languages used to harness it. Government could really benefit from their input.</p>
+<p><a href="http://www.flickr.com/photos/jamin2/3850216935/" title="youngrewiredstate 11 (by Benjamin Ellis)"><img src="http://farm3.static.flickr.com/2640/3850216935_a7538a6b75_m.jpg" title="youngrewiredstate 11 (by Benjamin Ellis)" alt="youngrewiredstate 11 (by Benjamin Ellis)" width="240" height="140" /></a></p>
+<p>The original Rewired State event, dubbed &#8220;<a href="http://rewiredstate.org/hackthegovday">National Hack the Government Day</a>&#8220;, had been held at the <a href="http://guardian.co.uk">Guardian</a>&#8216;s offices earlier this year. It was such a success that many of us who attended were invited to the <a href="http://en.wikipedia.org/wiki/Cabinet_Office">Cabinet Office</a> to explain just what the government should be doing with its web properties, and we were given suggestions on ways through what can sometimes seem like a maze of bureaucracies.</p>
+<p>Since then, no less than Tim Berners-Lee (the inventor of the Web) has been <a href="http://www.guardian.co.uk/technology/2009/jun/10/berners-lee-downing-street-web-open">invited by the prime minister</a> to help <a href="http://www.readwriteweb.com/archives/open_goverment_berners-lee_and_the_uk_to_show_obam.php">open up government data</a>, to help bring transparency and to simply help those who want to solve problems get access to the data they need. The young hackers from Rewired State are off to a fine start.</p>
+<h3>Other reports on Young Rewired State</h3>
+<ul>
+<li><a href="http://www.bbc.co.uk/blogs/technology/2009/08/teenage_hackers_making_the_wor.html">BBC</a></li>
+<li><a href="http://developer.yahoo.net/blog/archives/2009/08/young-rewired-state.html">Yahoo</a></li>
+<li><a href="http://www.guardian.co.uk/open-platform/blog/young-rewired-state">Guardian</a></li>
+<li><a href="http://strategytalk.typepad.com/public_strategy/2009/08/yet-more-rewired-state.html">Public Strategy</a></li>
+<li><a href="http://www.h-online.com/open/Community-Live-The-Young-Rewired-State--/features/114063">The H</a></li>
+<li><a href="http://www.conservatives.com/News/Blogs/Young_Rewired_State.aspx">Conservative party</a></li>
+<li><a href="http://twitter.com/search?q=%23youngrewiredstate">the Twitter conversation</a></li>
+<li><a href="http://www.flickr.com/search/?q=youngrewiredstate&#038;m=tags&#038;z=e&#038;ss=2&#038;s=int">the Flickr photos</a></li>
+</ul>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dharmafly?a=Qv1ogKQ81DU:cakhXboe7Wc:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=Qv1ogKQ81DU:cakhXboe7Wc:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=Qv1ogKQ81DU:cakhXboe7Wc:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=Qv1ogKQ81DU:cakhXboe7Wc:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=Qv1ogKQ81DU:cakhXboe7Wc:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=Qv1ogKQ81DU:cakhXboe7Wc:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=Qv1ogKQ81DU:cakhXboe7Wc:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=Qv1ogKQ81DU:cakhXboe7Wc:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=yIl2AUoC8zA" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://dharmafly.com/youngrewiredstate/feed</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>BBC World Service Widget Launched</title>
+		<link>http://dharmafly.com/bbc-world-service-widget</link>
+		<comments>http://dharmafly.com/bbc-world-service-widget#comments</comments>
+		<pubDate>Mon, 20 Jul 2009 10:05:32 +0000</pubDate>
+		<dc:creator>Premasagar</dc:creator>
+				<category><![CDATA[Dharmafly Creations]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[bbc]]></category>
+		<category><![CDATA[bbcworldservice]]></category>
+		<category><![CDATA[global]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[language]]></category>
+		<category><![CDATA[media]]></category>
+		<category><![CDATA[multi-language]]></category>
+		<category><![CDATA[news]]></category>
+		<category><![CDATA[web application]]></category>
+		<category><![CDATA[widget]]></category>
+		<category><![CDATA[widget platforms]]></category>
+		<category><![CDATA[world]]></category>
+		<category><![CDATA[worldservice]]></category>
+
+		<guid isPermaLink="false">http://dharmafly.com/?p=1088</guid>
+		<description><![CDATA[We recently completed an exciting project for BBC World Service: the World Service Widget, which lets people share BBC World Service content on their websites, blogs or computer desktops. It's being released on a number of web platforms (WordPress, iGoogle, Adobe Air, Facebook, Netvibes, Mac Dashboard, Vista Sidebar and as a simple snippet of HTML [...]]]></description>
+			<content:encoded><![CDATA[<a href="http://www.flickr.com/photos/tallkev/232821959/" title="Gears (by tallkev)"><img src="http://farm1.static.flickr.com/88/232821959_2d618ed2e3.jpg" title="Gears (by tallkev)" alt="Gears (by tallkev)" width="500" height="326" /></a>
+
+<p>We recently completed an exciting project for BBC World Service: the <a href="http://www.bbc.co.uk/worldservice/programmes/000000_widget_terms.shtml">World Service Widget</a>, which lets people share BBC World Service content on their websites, blogs or computer desktops.</p>
+
+<p>It's being released on a number of <a href="http://www.bbc.co.uk/worldservice/programmes/090702_widget_platforms.shtml">web platforms</a> (WordPress, iGoogle, Adobe Air, Facebook, Netvibes, Mac Dashboard, Vista Sidebar and as a simple snippet of HTML code). These are being rolled out over the coming days.</p>
+
+<p>The widget is available in a multitude of different languages and content networks. (This was one of the trickiest aspects of development - although there were other, perhaps even stickier issues). Below, for example, are the English and Farsi flavours. (<strong><em>Farsi</em></strong> is the language spoken in Iran. It is written right-to-left, and it has a special widget: click on a news story to open the "Lightbox" window). <span id="more-1088"></span></p>
+
+<p>We've already started thinking about what the widget could do better, so do <a href="http://dharmafly.com/bbc-world-service-widget#respond">tell us your thoughts</a>.</p>
+
+<div style="width:300px; float:left;">
+<h3>English:</h3>
+<iframe src="http://dharmafly.com/projects/bbcwswidget/en" name="bbcwswidget-en" width="300" height="500" frameborder="0" allowtransparency="true" style="overflow:hidden;"></iframe>
+</div>
+
+<div style="width:300px; float:right;">
+<h3>Farsi:</h3>
+
+<script src="http://www.bbc.co.uk/worldservice/widget/widget.js" type="text/javascript"></script>
+<script type="text/javascript">bbcwswidget.settings({"package" : "fa"
+});
+</script>
+<noscript><a href="http://www.bbc.co.uk/persian">به سایت فارسی بی بی سی مراجعه کنید</a></noscript>
+
+</div><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dharmafly?a=BNlyL-NIJMI:f9ePUxduMls:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=BNlyL-NIJMI:f9ePUxduMls:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=BNlyL-NIJMI:f9ePUxduMls:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=BNlyL-NIJMI:f9ePUxduMls:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=BNlyL-NIJMI:f9ePUxduMls:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dharmafly?i=BNlyL-NIJMI:f9ePUxduMls:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=BNlyL-NIJMI:f9ePUxduMls:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dharmafly?a=BNlyL-NIJMI:f9ePUxduMls:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dharmafly?d=yIl2AUoC8zA" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://dharmafly.com/bbc-world-service-widget/feed</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+	</channel>
+</rss><!-- Dynamic page generated in 0.377 seconds. --><!-- Cached page generated by WP-Super-Cache on 2011-10-03 16:58:11 -->

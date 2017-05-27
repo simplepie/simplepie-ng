@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+<channel>
+	<title>Marko Anastasov</title>
+	<atom:link href="http://marko.anastasov.name/blog/feed" rel="self" type="application/rss+xml" />
+	<link>http://marko.anastasov.name/blog</link>
+	<description></description>
+	<lastBuildDate>2011-09-12T01:11:49-07:00</lastBuildDate>
+	<generator>Jekyll</generator>
+	<language>en</language>
+	<sy:updatePeriod>daily</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+		
+	<item>
+		<title>Kay's future</title>
+		<link>http://marko.anastasov.name/blog/2011/09/12/kays-future/</link>
+		<comments>http://marko.anastasov.name/blog/2011/09/12/kays-future/#disqus_thread</comments>
+		<pubDate>2011-09-12T00:00:00-07:00</pubDate>
+		<dc:creator>Marko Anastasov</dc:creator>
+		<guid isPermaLink="false">http://marko.anastasov.name/blog/2011/09/12/kays-future/</guid>
+		<content:encoded><![CDATA[<p>Here&#8217;s <a href="http://vimeo.com/22463791">an interesting talk by Alan Kay</a> (<a href="http://axisofeval.blogspot.com/2011/08/srii-2011-keynote-talk-by-alan-kay.html">via</a>) about some exciting history in computing that he was part of but didn&#8217;t spread, how new is much harder than news, how the web was done by amateurs etc. Many, many ideas float.</p>
+<p>Is Apple, with more cash than the US state, forever going to cater only to people&#8217;s primal computing needs? Why not try to make something new (in software) and educate people about it? I like my iPad-the-reading-device but sometimes it feels shallow.</p>
+<p>Kay says that the desktop <span class="caps">GUI</span> that we have today was just a subset that he intended for children. He also brings up an &#8220;old&#8221; idea about making software objects communicate not by agreemeent, but by negotiation. That&#8217;s what we do between ourselves all the time. We&#8217;re a kind that has agreed on so little.</p>
+<p>Anything that takes a big deal of agreement is likely to fail. A lot of things on the web are like that. The foundations are very primitive, and we cannot evolve particularly brilliant things on top of them. Latest reminder is the <a href="http://markmail.org/message/uro3jtoitlmq6x7t">unfolding</a> <a href="http://news.ycombinator.com/item?id=2982256">drama of Google Dash</a>.</p>]]></content:encoded>
+	</item>
+		
+	<item>
+		<title>Knuth on multicore</title>
+		<link>http://marko.anastasov.name/blog/2011/01/22/knuth-on-multicore/</link>
+		<comments>http://marko.anastasov.name/blog/2011/01/22/knuth-on-multicore/#disqus_thread</comments>
+		<pubDate>2011-01-22T00:00:00-08:00</pubDate>
+		<dc:creator>Marko Anastasov</dc:creator>
+		<guid isPermaLink="false">http://marko.anastasov.name/blog/2011/01/22/knuth-on-multicore/</guid>
+		<content:encoded><![CDATA[<p><a href="http://twitter.com/#!/renderedtext/status/28115277115817984">In this short video interview that we found</a>, Donald Knuth throws an interesting opinion that I didn&#8217;t hear anyone expressing publicly:</p>
+<blockquote>
+<p>I don&#8217;t know anybody who likes multicore except the people that are manufacturing the chips, and they&#8217;re saying &#8220;Well, now we&#8217;re giving you all this great hardware&#8221; &hellip; [the chip designers] are just passing the buck, they ran out of ideas and so they said &#8220;OK now it&#8217;s your problem&#8221;.</p>
+<p>These multicores actually do a lot of important things well and so if you&#8217;re good in video games or you&#8217;re doing some calculations like physicists like to have&hellip; then multicore is a super thing. The trouble is, when I look at the last 2000 programs I&#8217;ve written, maybe 2 of them are helped by multicore.</p>
+</blockquote>
+<p>While I like the idea of learning a new programming language that will change and expand my thinking, the idea of learning one &#8220;to tackle multi-core complexity&#8221; never felt right &mdash; as if we wanted that complexity in the first place. Once again, it&#8217;s worth remembering to practice the skill of taking a step back and seeing beyond what is served and marketed to us.</p>
+<p>On the other hand, a professor from my university, who taught an OS course where we were writing concurrent programs in C++, said at the end of the semester that concurrency <em>is</em> a way of thinking, and if you really mastered it, you will approach and solve many problems that way. So it&#8217;s probably not an option to avoid entirely, and new languages and frameworks(?) should help us explore those grounds.</p>]]></content:encoded>
+	</item>
+		
+	<item>
+		<title>Active hammer</title>
+		<link>http://marko.anastasov.name/blog/2010/08/01/active-hammer/</link>
+		<comments>http://marko.anastasov.name/blog/2010/08/01/active-hammer/#disqus_thread</comments>
+		<pubDate>2010-08-01T00:00:00-07:00</pubDate>
+		<dc:creator>Marko Anastasov</dc:creator>
+		<guid isPermaLink="false">http://marko.anastasov.name/blog/2010/08/01/active-hammer/</guid>
+		<content:encoded><![CDATA[<p><a href="http://blog.frankchimero.com/post/881248867/lazy-hammer">Frank Chimero has yet another interesting post</a> on the value of making new things through collaboration with people from other fields. In the introduction, he makes this good observation:</p>
+<blockquote>
+<p>[Dino and He-Man] were my two favorite toys. Looking back at them, I played more with that shabby dinosaur toy than I did with He-Man. Because He-Man, well, had to be He-Man. That’s all he could be, and he could only do the things I saw on the television show. He couldn’t shoot lasers out of his eyes, he couldn’t bend time, he couldn’t eat bombs. But dinosaur could. Dino could do anything [&#8230;] because I wasn’t playing in someone else’s story, letting someone else do my pretending for me.</p>
+</blockquote>
+<p>To maintain a healthy state of mind, I believe that the same applies to anyone doing some kind of creative work. If you&#8217;re in it, you must get at least some pleasure in making things. From nothing. Most likely, it is why you&#8217;ve always wanted to do that.</p>
+<p>If you&#8217;re a programmer, I think it&#8217;s essential to have something going on aside. Either a part-time startup, or an open source pet project, or reading a CS book on a topic you&#8217;re not familiar with. Otherwise, depending on your job but still, you might start wondering <a href="http://reprog.wordpress.com/2010/03/03/whatever-happened-to-programming/">whatever happened to programming</a>.</p>]]></content:encoded>
+	</item>
+		
+	<item>
+		<title>OpenID and OAuth</title>
+		<link>http://marko.anastasov.name/blog/2010/07/23/openid-and-oauth/</link>
+		<comments>http://marko.anastasov.name/blog/2010/07/23/openid-and-oauth/#disqus_thread</comments>
+		<pubDate>2010-07-23T00:00:00-07:00</pubDate>
+		<dc:creator>Marko Anastasov</dc:creator>
+		<guid isPermaLink="false">http://marko.anastasov.name/blog/2010/07/23/openid-and-oauth/</guid>
+		<content:encoded><![CDATA[<p>About three years have passed since OpenID initiative was widely launched and from what I see, only hardcore tech geeks, a tiny fraction of Internet users, have acquired or figured out what their OpenID <span class="caps">URL</span> is. (My OpenID <span class="caps">URL</span> is this site&#8217;s <span class="caps">URL</span>, which redirects to myid.net via some meta tags.)</p>
+<p>The password problem does remain. However, it is a problem that only we have, the fraction that has dozens of active accounts. In a way, it was expected that because of this everyone else would eventually understand and <em>type in</em> an OpenID. Ambitious.</p>
+<p>Meanwhile, a data-sharing idea that started much more modest, OAuth, is being applied on a large scale. Its implementations, two-<em>click</em> sign ins with Twitter, Facebook, Google Account etc, in the context where these accounts provide value and integration with the corresponding service makes sense, are awesome. It’s becoming a standard for secure third-party application development through <span class="caps">API</span> access, latest example being <a href="http://staff.tumblr.com/post/806396160/oauth">Tumblr</a>. But to use it just to solve the “login problem” is not appropriate.</p>
+<p>This has proved that the data and, perhaps even more, friend portability problem is more important. There can’t be one true universal solution on the web. Rather, we should continue to standardize how to connect the nodes.</p>]]></content:encoded>
+	</item>
+		
+	<item>
+		<title>Surprise reminders</title>
+		<link>http://marko.anastasov.name/blog/2010/07/18/surprise-reminders/</link>
+		<comments>http://marko.anastasov.name/blog/2010/07/18/surprise-reminders/#disqus_thread</comments>
+		<pubDate>2010-07-18T00:00:00-07:00</pubDate>
+		<dc:creator>Marko Anastasov</dc:creator>
+		<guid isPermaLink="false">http://marko.anastasov.name/blog/2010/07/18/surprise-reminders/</guid>
+		<content:encoded><![CDATA[<p>Consider setting email reminders (via Google Calendar, for instance) for something in distant future. Eg “have you done x with this person”, “chase this client unless he finally paid”, “go to _” etc. It’s an interesting way to, not just remember, but check whether months later you’re still feeling the same way, and the conditions you’ve predicted still hold true.</p>]]></content:encoded>
+	</item>
+		
+	<item>
+		<title>Analog</title>
+		<link>http://marko.anastasov.name/blog/2010/04/06/analog/</link>
+		<comments>http://marko.anastasov.name/blog/2010/04/06/analog/#disqus_thread</comments>
+		<pubDate>2010-04-06T00:00:00-07:00</pubDate>
+		<dc:creator>Marko Anastasov</dc:creator>
+		<guid isPermaLink="false">http://marko.anastasov.name/blog/2010/04/06/analog/</guid>
+		<content:encoded><![CDATA[<p><a href="http://www.flickr.com/photos/manastasov/4467284182"><img src="http://farm5.static.flickr.com/4058/4467284182_84d71aaa6e.jpg" alt="" /></a></p>
+<p>Recently I acquired an old <span class="caps">SLR</span> and a brand new turntable. <a href="http://omegawm.tumblr.com/post/439689476/">Zenit 12aa</a> from my parents&#8217; wardrobe and a cheap and simple <a href="http://omegawm.tumblr.com/post/430484889">Roadstar <span class="caps">TTR</span>-8633</a>.</p>
+<p>The turntable happenned more by accident. I was walking through a local home store with a friend and spotted it for just 50 euros. I only have three records at the moment, the pictured rare compilation <a href="http://www.discogs.com/Various-Nothing-Short-Of-Total-War-Part-One/release/388215">Nothing Short Of Total War</a>, and old <a href="http://en.wikipedia.org/wiki/Jugoton">Jugoton</a> Ace Of Spades and a <a href="http://www.melody.su/eng/">Мелодия</a> issued Rachmaninov&#8217;s piano Concerto No. 2, which can be found on the street here for 1 euro.</p>
+<p>I&#8217;ve always been finding new music, but I&#8217;m slowing down recently. I&#8217;m still checking out new stuff, but when something grabs me, I need to give it some time and my full attention, otherwise it feels like a waste.</p>
+<p>One assignment in high school was to write freely about what we&#8217;d do alone in the house. Two of us, who were talking about music most of the time, complained that we can&#8217;t imagine silly things that teacher thought we would want when the best thing to do is just lay down and listen to the music.</p>
+<p>These days it seems that digital music works best as a preview and my walking soundtrack. In room settings, I never had or saw a non-distracting bridge between a hard drive and speakers. I&#8217;m still for CDs there. And now big vinyl records feel better than them. There&#8217;s something about taking the vinyl out of the card box, putting the needle down, changing sides. Anticipation, sense of time, the pleasure of process. I want that instead of instant availability.</p>
+<p>The Zenit camera is pure joy. I&#8217;ve uploaded <a href="http://www.flickr.com/photos/manastasov/sets/72157623713651378/">my first roll of film on Flickr</a>. Most of them are overexposed (noob), but still the tone and DoF are beautiful. It&#8217;s just silly to have to pay like 500 euros for a <span class="caps">DSLR</span> to get decent lens and manual focus capabilities. And I&#8217;m not sure about the tone. By now you&#8217;re probably assuming that I have metaphysical appreciation for film and mechanical controls. Yes, <a href="http://www.flickr.com/groups/573182@N24/pool/">I&#8217;m having fun and megapixels bore the shit out of me</a>.</p>]]></content:encoded>
+	</item>
+		
+	<item>
+		<title>Again(st) patents</title>
+		<link>http://marko.anastasov.name/blog/2010/03/06/against-patents/</link>
+		<comments>http://marko.anastasov.name/blog/2010/03/06/against-patents/#disqus_thread</comments>
+		<pubDate>2010-03-06T00:00:00-08:00</pubDate>
+		<dc:creator>Marko Anastasov</dc:creator>
+		<guid isPermaLink="false">http://marko.anastasov.name/blog/2010/03/06/against-patents/</guid>
+		<content:encoded><![CDATA[<p>I wasn&#8217;t completely honest in <a href="/blog/2010/03/03/ten-minutes-with-software-patents/">my previous post</a>. As I was searching for the exact link to Amazon&#8217;s cookie patent on USPTO&#8217;s site, I did a <a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&amp;Sect2=HITOFF&amp;p=1&amp;u=/netahtml/PTO/search-bool.html&amp;r=0&amp;f=S&amp;l=50&amp;TERM1=cookies&amp;FIELD1=TI&amp;co1=AND&amp;TERM2=&amp;FIELD2=&amp;d=PTXT">search for &#8216;cookies&#8217;</a>. Turns out there&#8217;s lots of other silly software patents about doing something with browser cookies, which is logically not far from patenting an arbitrary sequence of operation in <span class="caps">RAM</span>. But there are also patents about how to actually <a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&amp;Sect2=HITOFF&amp;p=1&amp;u=/netahtml/PTO/search-bool.html&amp;r=24&amp;f=G&amp;l=50&amp;co1=AND&amp;d=PTXT&amp;s1=cookies.TI.&amp;OS=TTL/cookies&amp;RS=TTL/cookies">make cookies</a>. Now in predefined shapes.</p>
+<p>Recent <a href="http://bits.blogs.nytimes.com/2010/03/04/an-explosion-of-mobile-patent-lawsuits/">explosion of patent lawsuits in mobile computing</a> has provoked a <a href="http://www.tbray.org/ongoing/When/200x/2004/10/12/PatentTheory">lot</a> of <a href="http://daringfireball.net/2010/03/this_apple_htc_patent_thing">people</a> to <a href="http://www.marco.org/430351101">blog</a> about software patents. But seriously, how are software patents different from any other? They&#8217;re all about how to make something. Is it because software is not a physical thing?</p>
+<p>In fact I think that patents should not exist in general.</p>
+<p>Some say that companies need to protect their inventions. There&#8217;s plenty of <a href="http://www.apple.com">evidence</a> that a company can be a leader in some field even if all the ingredients and methods are available to everybody else. A frequent example are pharmaceutical companies, who are thought to spend huge amounts of money in research, thus should be given a monopoly on a certain medication for some time. They <em>deserve</em> a monopoly? Perhaps a better question would be how did the society end up in a situation that such research should not be done through a joint effort at universities. It just doesn&#8217;t work trying to <a href="http://blogs.hbr.org/haque/2009/12/21st_century_strategy_in_four.html">maximize profit at every step you make</a>.</p>
+<p>Perhaps patents made sense in late 19th century, but I don&#8217;t think that a legal ground that creates <a href="http://en.wikipedia.org/wiki/Rambus">companies that make money from lawsuites</a> is the way to go. Neither should individuals get passivizing royalties. It doesn&#8217;t matter if they <a href="http://www.imdb.com/title/tt0276751/">go to the hair dresser every day</a> or start a company; a false sense of reality can have bad consequences &mdash; mostly on the people who are around.</p>
+<p>Good ideas should spread freely.</p>]]></content:encoded>
+	</item>
+		
+	<item>
+		<title>Ten minutes with software patents</title>
+		<link>http://marko.anastasov.name/blog/2010/03/03/ten-minutes-with-software-patents/</link>
+		<comments>http://marko.anastasov.name/blog/2010/03/03/ten-minutes-with-software-patents/#disqus_thread</comments>
+		<pubDate>2010-03-03T00:00:00-08:00</pubDate>
+		<dc:creator>Marko Anastasov</dc:creator>
+		<guid isPermaLink="false">http://marko.anastasov.name/blog/2010/03/03/ten-minutes-with-software-patents/</guid>
+		<content:encoded><![CDATA[<p>One of the news of last week was that Facebook was granted a U.S. patent on <a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/PTO/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=7669123.PN.&amp;OS=PN/7669123&amp;RS=PN/7669123">news feed</a>. I share the opinion that <a href="http://cdixon.org/2009/09/24/software-patents-should-be-abolished/">software patents should not exist</a>:</p>
+<p><img src="/images/blog/stopwords-in-software-patents.png" height="300" width="389" alt="percentage of stopwords in software patents" /></p>
+<p>Here are some other insanities that I found quickly:</p>
+<ul>
+	<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/PTO/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=7346850.PN.&amp;OS=PN/7346850&amp;RS=PN/7346850">Method and system for storing, navigating and accessing files within an operating system through the use of a graphical thumbnail representing the video display of the active document within the active application, and organized chronologically by the most recent file captured</a></li>
+	<li><a href="http://appft1.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PG01&amp;p=1&amp;u=/netahtml/PTO/srchnum.html&amp;r=1&amp;f=G&amp;l=50&amp;s1=&#39;20020087509&#39;.PGNR.&amp;OS=DN/20020087509&amp;RS=DN/20020087509">Method to identify a supplier of good or services over the Internet by providing a home page with at least one link to a directory Web site for a class of goods or services</a></li>
+	<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/PTO/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=7181690.PN.&amp;OS=PN/7181690&amp;RS=PN/7181690">System and method for enabling users to interact in a virtual space</a></li>
+	<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/PTO/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=6990452.PN.&amp;OS=PN/6990452&amp;RS=PN/6990452">Method for sending multi-media messages using emoticons</a></li>
+	<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/PTO/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=5764992.PN.&amp;OS=PN/5764992&amp;RS=PN/5764992">Method and apparatus for automatic software replacement</a></li>
+	<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/PTO/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=6,775,828.PN.&amp;OS=PN/6,775,828&amp;RS=PN/6,775,828">Delayed uploading of user registration data</a></li>
+	<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/PTO/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=7660816.PN.&amp;OS=PN/7660816&amp;RS=PN/7660816">System and process for encoding selected data structures in browser cookies</a></li>
+	<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&amp;Sect2=HITOFF&amp;p=1&amp;u=/netahtml/PTO/search-bool.html&amp;r=1&amp;f=G&amp;l=50&amp;co1=AND&amp;d=PTXT&amp;s1=%22Unlocking+Device+Performing+Gestures+Unlock+Image%22.TI.&amp;OS=TTL/">Unlocking a device by performing gestures on an unlock image</a> (update via <a href="http://twitter.com/dhh/status/9931291336">@dhh</a>)</li>
+</ul>]]></content:encoded>
+	</item>
+		
+	<item>
+		<title>A month with HTC Tattoo</title>
+		<link>http://marko.anastasov.name/blog/2010/02/16/a-month-with-htc-tattoo/</link>
+		<comments>http://marko.anastasov.name/blog/2010/02/16/a-month-with-htc-tattoo/#disqus_thread</comments>
+		<pubDate>2010-02-16T00:00:00-08:00</pubDate>
+		<dc:creator>Marko Anastasov</dc:creator>
+		<guid isPermaLink="false">http://marko.anastasov.name/blog/2010/02/16/a-month-with-htc-tattoo/</guid>
+		<content:encoded><![CDATA[<h2>A personal intro</h2>
+<p>Once upon a time, I had an iPhone. There was a competition on my university that I was lucky to win (there, <em>believe</em>). It was the early days of 1.1, when everything was in infancy, including jailbreaking and unlocking methodology. There&#8217;s another thing I assure you that you can believe &mdash; those disclaimers that say you&#8217;re doing it all on your own risk. Because what I did eventually made parts of my iPhone&#8217;s hardware stop functioning after a little over a year.</p>
+<p>Then I was back in the world of those simple but reliable phones that you need to recharge every week, such as <a href="http://europe.nokia.com/find-products/devices/nokia-6303-classic">Nokia 6303</a>, and <a href="http://www.nokia.co.uk/find-products/all-phones/nokia-1208">1208</a> even.</p>
+<p>But eventually more small computers, that also happen to be usable as phones, began to appear. They&#8217;re certainly interesting, the future one might say? Well, one important thing is, they&#8217;re <em>hackable</em>. Especially Android phones. You can download the <span class="caps">SDK</span>, make the .apk file and put it on your phone. If you have time that is&#8230;</p>
+<p>Anyway, here I&#8217;m going to talk about my experience with <span class="caps">HTC</span> Tattoo, which will after two years of a decent contract cost me about 300 euros.</p>
+<h2>About the phone</h2>
+<p>On the surface, Tattoo is very light (just a little bit over 100 grams), has all those unnecessary system buttons every Android phone must have, and a smaller screen size than probably all other Androids. It also has a <span class="caps">GPS</span> unit. Other details are not very interesting to me, but you can always see the complete <a href="http://www.htc.com/www/product/tattoo/specification.html">specs</a>.</p>
+<p>Now, about the virtual keyboard. Since Tattoo comes with a <a href="http://en.wikipedia.org/wiki/Resistive_touchscreen">resistive</a> rather than a more gentle <a href="http://en.wikipedia.org/wiki/Capacitive_sensing">capacitive touchscreen</a>, its virtual keyboard needs more finger pressure than, say, iPhone&#8217;s. It&#8217;s absolutely required to go through keyboard and gravity calibration the moment you begin using the phone so that it doesn&#8217;t miss more than half of your presses. Still, having done that, I cannot type and walk at the same time, which is crap. Now I&#8217;m one of those people who stop everything just to write a message.</p>
+<p>There&#8217;s no multitouch as we all know, but in some apps holding the finger down may cause a right-click kind of an action. Eg over a tweet in Peep, the Twitter client.</p>
+<p><span class="caps">USB</span> connectivity and a microSD memory card on which you can just throw whatever music you have from any OS, for example, is something I appreciate.</p>
+<p>A number of times I was using Tattoo for sort of web browsing &mdash; going through unread items in Google Reader and opening links from the Twitter client. The browser is good at fitting text to display, and I almost never need to zoom in or out. However, it often happens that I randomly lose wireless and 3G connection while doing that for more than a couple of minutes. Somehow this requires me to go to settings and restart wifi.</p>
+<p>I saw some other bugs, like once the phone started to ring while charging, and when I unplugged the cable it reset.</p>
+<p>Screen difference means that <a href="http://androinica.com/2009/10/11/htc-tattoos-android-market-will-not-list-apps-that-dont-support-qvga-display-option-update/">very few of all the Android apps are available for <span class="caps">HTC</span> Tattoo</a>. This is because developers need to explicitly specify that their app works in a small screen resolution (called <span class="caps">QVGA</span> &mdash; kind of makes you think we&#8217;re going to see Super <span class="caps">VGA</span> again). So basically there are not many interesting apps out there. I managed to <a href="http://www.last.fm/group/Last.fm+Android/forum/114391/_/544135">manually install the Last.fm app</a>, and it works just fine. When you do this however, even though the system notifies you when a new version is available, you cannot upgrade automatically, again because Android Market is set to ignore these non-supported apps.</p>
+<p>Another variable here is the version of Android that the phone comes with. If you&#8217;re a programmer, when you create an app with Android <span class="caps">SDK</span> 1.6, it can&#8217;t run on phones with Android 1.5 (such as <span class="caps">HTC</span> Hero). As a user, since all phone manufacturers take the Android source code and modify it a bit, the fate of your phone&#8217;s OS upgrade is in the hands of the manufacturer. For example, <a href="http://twitter.com/htc/statuses/5243593307"><span class="caps">HTC</span> has announced a 2.0 upgrade for Hero</a> (although without mentioning any specific date). Meanwhile, you&#8217;re stuck with mostly the same choice of apps and platform limitations.</p>
+<p>Since I mention the platform, I must point out that you may find some nuisances within the Android <span class="caps">SDK</span>. For example, <a href="http://code.google.com/p/android/issues/detail?id=2607">you cannot parse <span class="caps">XML</span> with Unicode entity references</a>, something every web <span class="caps">API</span> could serve you.</p>
+<p>The music player is okay, although becomes a little unresponsive if you&#8217;ve got lots of music, and it does look five years older than the iPhone&#8217;s player. Perhaps due to patents or something, the album covers that you see in the player when you open it for the first time do not represent an album view. Instead, it begins playing from a random song. I need to do many more taps than I&#8217;d like to in order to reach a list of all albums. (By the way, you don&#8217;t say &#8220;taps&#8221; on Android, it&#8217;s &#8220;clicks&#8221;.)</p>
+<p>I&#8217;d also say that the maximum audio volume is too low, but I may be just turning deaf.</p>
+<p>Generally the interface could be a little snappier &mdash; it is perfectly fine when you&#8217;re in peace, but if you&#8217;re in some sort of rush on the street you do notice those microseconds.</p>
+<p>Since the phone synchronizes with Google services, most notably email and calendar, everybody I ever emailed appeared in my address book. That felt like a punch in the face, although fortunately when you enter the phone dialer, it will filter out those without a phone number. That said, Twitter and Flickr updates from the corresponding system apps are a good thing. I rarely use the calendar, but it&#8217;s nice to know that what I enter there is also accessible from any other browser and computer.</p>
+<p>It&#8217;s handy that the universal share button is pretty much always there. Therefore I can always easily email myself a todo or a link to Backpack, for example.</p>
+<p>For all the activities that are going on the phone, its battery is quite weak. With all connectivity on as by default, I need to recharge it every night.</p>
+<h2>Satisfied?</h2>
+<p>Overall I do think that Tattoo is good enough. Sure, it could be better on all bad points that I listed. OS updates may never come, and even Android 2.0 still has a limit of 256 MB for application storage. But I can live with Tattoo&#8217;s shortcomings for now. If there was a carrier in Serbia that offered the iPhone under some conditions, I&#8217;d take it instead long time ago. But that&#8217;s not the case, and I ain&#8217;t shelling out 650 euros for a gadget that I need to &#8220;unlock&#8221;.</p>
+<p>The important point is that a very capable device connected to the web is accessible to everyone now. In the big picture, we&#8217;re probably witnessing the same process that happenned to personal computers in the 80s, now applied to mobile phones: Apple will be making a great iPhone and other companies that ever made a PC component will be making good Androids.</p>]]></content:encoded>
+	</item>
+		
+	<item>
+		<title>Seeing evolution</title>
+		<link>http://marko.anastasov.name/blog/2010/01/31/seeing-evolution/</link>
+		<comments>http://marko.anastasov.name/blog/2010/01/31/seeing-evolution/#disqus_thread</comments>
+		<pubDate>2010-01-31T00:00:00-08:00</pubDate>
+		<dc:creator>Marko Anastasov</dc:creator>
+		<guid isPermaLink="false">http://marko.anastasov.name/blog/2010/01/31/seeing-evolution/</guid>
+		<content:encoded><![CDATA[<p>Recently I finished reading <a href="http://en.wikipedia.org/wiki/The_Ancestor&#39;s_Tale">The Ancestor&#8217;s Tale</a> by Richard Dawkins. It took me a while&mdash;I&#8217;ve read numerous other books while on it&mdash;but long before the end my views about life on our planet have significantly clarified. I&#8217;ve begun to see the algorithms of evolution and natural selection at work in various forms where previously I have not.</p>
+<p>One example can be how people usually do not maintain the same level of communication and attention to their partners when they realize that they don&#8217;t need to. Every individual optimizes its activity to succeed; here a relationship is the aim and the instinct is to do just enough of what it takes to maintain it at a desired level. This is usually the case with any human activity that can be assessed.</p>
+<p>Sometimes human intelligence and biological success diverge. Nikola Tesla, for example, held an opinion that not having any affairs with women helps him maintain his scientific abilities. Having no children makes him a failed individual in the biological sense: he did not pass on his genes and our species never got a chance to have further benefits from new individuals that could have inherited them.</p>
+<p>Within groups, competition is critical for an individual&#8217;s achievements. When highly competitive environments yield people who are better trained at certain labour, sport or art, it is the same process that drives the biological arms race in the wild between hunters and prey.</p>
+<p>Businesses are units of evolution. <a href="http://www.mckinsey.com/ideas/books/originofwealth/index.asp">The origin of wealth</a> taught me this earlier actually, but now I see it not just as a purely logical, but as a consequence empirically derived as well. Businesses are just a special case in fact. Any functional group of living organisms is a subject of evolution in an environment created with other groups who share the same goal.</p>
+<p>Yet the rules and mechanics of competition within a group influence an individual&#8217;s life just as much. Societies create their own conditions for natural selection. Given the high standard of living in most of the world today, &#8220;selection&#8221; here does not usually signify survival, but rather success in forms such as authority and power. Now, you may not like the concepts of authority and power in modern human societies, but we should keep in mind that the notions of good and bad are subjective human concepts and for nature (evolution) they do not exist as such. In societies that maintain <a href="http://en.wikipedia.org/wiki/Crony_capitalism">crony capitalism</a>, for example, it is then a natural consequence that people who use political party membership to gain business opportunities are usually more successful than those with a regular job.</p>
+<p>All problems that we share on Earth today, such as pollution, food crisis and climate change, are natural regulatory consequences at the scale of our overdominance as a species. In the long run, I believe that out of any destructive actions that may occur, a new balance must emerge. Ultimately everything we do is natural and is subject to the same rules.</p>]]></content:encoded>
+	</item>
+	
+</channel>

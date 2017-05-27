@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:cc="http://web.resource.org/cc/"
+  xmlns="http://purl.org/rss/1.0/">
+
+<channel rdf:about="http://nj-pop.cocolog-nifty.com/nj/">
+<title>nj blog freely</title>
+<link>http://nj-pop.cocolog-nifty.com/nj/</link>
+<description>j-popユニット、nj（エヌジェイ）のblog</description>
+<dc:language>ja-JP</dc:language>
+<dc:creator></dc:creator>
+<dc:date>2011-10-03T22:40:39+09:00</dc:date>
+<admin:generatorAgent rdf:resource="http://www.typepad.com/" />
+
+
+<items>
+<rdf:Seq><rdf:li rdf:resource="http://nj-pop.cocolog-nifty.com/nj/2011/10/post-af8c.html" />
+<rdf:li rdf:resource="http://nj-pop.cocolog-nifty.com/nj/2011/10/post-150e.html" />
+<rdf:li rdf:resource="http://nj-pop.cocolog-nifty.com/nj/2011/09/post-f108.html" />
+<rdf:li rdf:resource="http://nj-pop.cocolog-nifty.com/nj/2011/09/nj-5b6e.html" />
+</rdf:Seq>
+</items>
+
+</channel>
+
+<item rdf:about="http://nj-pop.cocolog-nifty.com/nj/2011/10/post-af8c.html">
+<title>伊勢原ライブありがとうございました♪</title>
+<link>http://nj-pop.cocolog-nifty.com/nj/2011/10/post-af8c.html</link>
+<description>ライブに来てくださったみなさん、ありがとうございました♪ 天気も午前中は雨が降っ...</description>
+
+
+<dc:creator>nj</dc:creator>
+<dc:date>2011-10-03T22:40:39+09:00</dc:date>
+</item>
+<item rdf:about="http://nj-pop.cocolog-nifty.com/nj/2011/10/post-150e.html">
+<title>無印のかふぇ。</title>
+<link>http://nj-pop.cocolog-nifty.com/nj/2011/10/post-150e.html</link>
+<description>以前働いていた、無印のカフェが改装したというので スタジオ後にごはんを食べに行っ...</description>
+
+
+<dc:creator>nj</dc:creator>
+<dc:date>2011-10-01T23:58:49+09:00</dc:date>
+</item>
+<item rdf:about="http://nj-pop.cocolog-nifty.com/nj/2011/09/post-f108.html">
+<title>まっこり♪</title>
+<link>http://nj-pop.cocolog-nifty.com/nj/2011/09/post-f108.html</link>
+<description>昨日はindigo blueの里菜ちゃんと渋谷のチェゴヤに行って、 遅くまでおい...</description>
+
+
+<dc:creator>nj</dc:creator>
+<dc:date>2011-09-30T23:15:34+09:00</dc:date>
+</item>
+<item rdf:about="http://nj-pop.cocolog-nifty.com/nj/2011/09/nj-5b6e.html">
+<title>njコーナー！</title>
+<link>http://nj-pop.cocolog-nifty.com/nj/2011/09/nj-5b6e.html</link>
+<description>昨日、大館市でCD発売中という記事を書きましたが CDを置いて頂いている、この「...</description>
+
+
+<dc:creator>nj</dc:creator>
+<dc:date>2011-09-28T13:58:29+09:00</dc:date>
+</item>
+
+
+</rdf:RDF>

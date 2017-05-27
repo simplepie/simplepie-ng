@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Diarmuid.ie&#039;s Blog &#187; blog</title>
+	<atom:link href="http://diarmuid.ie/blog/feed/" rel="self" type="application/rss+xml" />
+	<link>http://diarmuid.ie</link>
+	<description>I&#039;m Diarmuid. This is some of the stuff I stumble across on the interwebs.</description>
+	<lastBuildDate>Sun, 24 Jul 2011 14:37:49 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.2.1</generator>
+		<item>
+		<title>Irish Mobile Phone Number Validation in PHP</title>
+		<link>http://diarmuid.ie/blog/code/irish-mobile-phone-number-validation-in-php/</link>
+		<comments>http://diarmuid.ie/blog/code/irish-mobile-phone-number-validation-in-php/#comments</comments>
+		<pubDate>Sun, 24 Jul 2011 14:08:43 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[code]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960868</guid>
+		<description><![CDATA[I  recently had a project that needed to validate Irish mobile phone numbers. Here is the PHP function I used in case anyone needs to do the same again. The function returns FALSE if the number is not in a valid format or else it returns the mobile number in the format 003538XXXXXXXX. It can [...]]]></description>
+			<content:encoded><![CDATA[<p>I  recently had a project that needed to validate Irish mobile phone numbers. Here is the PHP function I used in case anyone needs to do the same again.</p>
+<p>The function returns FALSE if the number is not in a valid format or else it returns the mobile number in the format 003538XXXXXXXX. It can deal with odd formated numbers such as (086) 1234123, +353861234123 etc.</p>
+<pre class="brush: php; title: ; notranslate">
+function validate_number($number) {
+
+	$number = preg_replace('/\D/', '', $number); //Strip all non numeric characters
+
+	$length = strlen($number);
+
+	// Strip the 00353, 353 or 0 from the start of the number
+	if ($length == 10) // 08XXXXXXXX
+	{
+		$number = substr($number, 1);
+	}
+	elseif ($length == 12) // 3538XXXXXXXX
+	{
+		$number = substr($number, 3);
+	}
+	elseif ($length == 14) // 003538XXXXXXXX
+	{
+		$number = substr($number, 5);
+	}
+	else // Not a valid number
+	{
+		return FALSE;
+	}
+
+	if (preg_match('/8\d{8}$/', $number)) {
+		//Number must have an '8' followed by eight other digits i.e. 8XXXXXXXX
+		return $number;
+	}
+	else // Not a valid number
+	{
+		return FALSE;
+	}
+}
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/code/irish-mobile-phone-number-validation-in-php/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>What Song Are You Listening To?</title>
+		<link>http://diarmuid.ie/blog/music/what-song-are-you-listening-to/</link>
+		<comments>http://diarmuid.ie/blog/music/what-song-are-you-listening-to/#comments</comments>
+		<pubDate>Fri, 27 May 2011 09:59:44 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[music]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960866</guid>
+		<description><![CDATA[]]></description>
+			<content:encoded><![CDATA[<p><iframe width="640" height="390" src="http://www.youtube.com/embed/tvHRUY0tBcs?rel=0" frameborder="0" allowfullscreen></iframe></p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/music/what-song-are-you-listening-to/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Trinity Orchestra plays Daft Punk</title>
+		<link>http://diarmuid.ie/blog/music/trinity-orchestra-plays-daft-punk/</link>
+		<comments>http://diarmuid.ie/blog/music/trinity-orchestra-plays-daft-punk/#comments</comments>
+		<pubDate>Fri, 06 May 2011 17:08:38 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[music]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960858</guid>
+		<description><![CDATA[Trinity Orchestra plays Daft Punk]]></description>
+			<content:encoded><![CDATA[<p><iframe width="640" height="390" src="http://www.youtube.com/embed/LPS45PzUvBM?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p>Trinity Orchestra plays Daft Punk</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/music/trinity-orchestra-plays-daft-punk/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Lisa Hannigan &#8211; &#8220;Just like Tom Thumb&#8217;s blues&#8221;</title>
+		<link>http://diarmuid.ie/blog/music/lisa-hannigan-just-like-tom-thumbs-blues/</link>
+		<comments>http://diarmuid.ie/blog/music/lisa-hannigan-just-like-tom-thumbs-blues/#comments</comments>
+		<pubDate>Fri, 06 May 2011 07:52:41 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[music]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960856</guid>
+		<description><![CDATA[Lisa Hannigan &#8211; &#8220;Just like Tom Thumb&#8217;s blues&#8221; Live in Dick Mac&#8217;s in Dingle.]]></description>
+			<content:encoded><![CDATA[<p><iframe width="640" height="390" src="http://www.youtube.com/embed/S55BlxoGFsM?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p>Lisa Hannigan &#8211; &#8220;Just like Tom Thumb&#8217;s blues&#8221; Live in Dick Mac&#8217;s in Dingle.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/music/lisa-hannigan-just-like-tom-thumbs-blues/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Ueli Steck speed solo Eiger record</title>
+		<link>http://diarmuid.ie/blog/video/ueli-steck-speed-solo-eiger-record/</link>
+		<comments>http://diarmuid.ie/blog/video/ueli-steck-speed-solo-eiger-record/#comments</comments>
+		<pubDate>Wed, 27 Apr 2011 23:00:52 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[video]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960855</guid>
+		<description><![CDATA[The north face was first climbed on July 24, 1938 in three days. Ueli Steck set the record for climbing it in 2 hours 47 min.]]></description>
+			<content:encoded><![CDATA[<p><iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/G-dPjDYVKUY?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p>The north face was first climbed on July 24, 1938  in three days. Ueli Steck set the record for climbing it in 2 hours 47 min.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/video/ueli-steck-speed-solo-eiger-record/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>The Hourglass</title>
+		<link>http://diarmuid.ie/blog/video/the-hourglass/</link>
+		<comments>http://diarmuid.ie/blog/video/the-hourglass/#comments</comments>
+		<pubDate>Wed, 27 Apr 2011 19:05:29 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[video]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960854</guid>
+		<description><![CDATA[&#8220;Marc Newson&#8217;s latest creation for Ikepod sees the Australian designer interpret the most iconic timepiece of all: The Hourglass. Director Philip Andelman traveled to Basel, Switzerland, to document the designer&#8217;s modern take of the classic hourglass inside the Glaskeller factory. Each hand made hourglass comprises highly durable borosilicate glass and millions of stainless steel nanoballs, [...]]]></description>
+			<content:encoded><![CDATA[<p><iframe src="http://player.vimeo.com/video/22396483?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="640" height="360" frameborder="0"></iframe></p>
+<p>&#8220;Marc Newson&#8217;s latest creation for Ikepod sees the Australian designer interpret the most iconic timepiece of all: The Hourglass. Director Philip Andelman traveled to Basel, Switzerland, to document the designer&#8217;s modern take of the classic hourglass inside the Glaskeller factory. Each hand made hourglass comprises highly durable borosilicate glass and millions of stainless steel nanoballs, and is available in a 10 or 60 minute timer.&#8221;</p>
+<p>(via <a href="http://Ikepod.com">Ikepod.com</a>)</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/video/the-hourglass/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Duolingo: The Next Chapter in Human Computation</title>
+		<link>http://diarmuid.ie/blog/video/duolingo-the-next-chapter-in-human-computation/</link>
+		<comments>http://diarmuid.ie/blog/video/duolingo-the-next-chapter-in-human-computation/#comments</comments>
+		<pubDate>Tue, 26 Apr 2011 18:56:05 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[video]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960853</guid>
+		<description><![CDATA[ReCaptcha and DuoLingo. Solving big tasks one word at a time.]]></description>
+			<content:encoded><![CDATA[<p><iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/cQl6jUjFjp4" frameborder="0" allowfullscreen></iframe></p>
+<p>ReCaptcha and DuoLingo. Solving big tasks one word at a time.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/video/duolingo-the-next-chapter-in-human-computation/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Avalanche Cliff Jump with Matthias Giraud</title>
+		<link>http://diarmuid.ie/blog/video/avalanche-cliff-jump-with-matthias-giraud/</link>
+		<comments>http://diarmuid.ie/blog/video/avalanche-cliff-jump-with-matthias-giraud/#comments</comments>
+		<pubDate>Sun, 24 Apr 2011 09:37:09 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[video]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960852</guid>
+		<description><![CDATA[Avalanche Cliff Jump with Matthias Giraud]]></description>
+			<content:encoded><![CDATA[<p><iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/SwbP9WLX3fY?rel=0" frameborder="0" allowfullscreen></iframe><br />
+Avalanche Cliff Jump with Matthias Giraud</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/video/avalanche-cliff-jump-with-matthias-giraud/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>The Greatest Movie Ever Sold</title>
+		<link>http://diarmuid.ie/blog/video/the-greatest-movie-ever-sold/</link>
+		<comments>http://diarmuid.ie/blog/video/the-greatest-movie-ever-sold/#comments</comments>
+		<pubDate>Sat, 23 Apr 2011 10:46:13 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[video]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960850</guid>
+		<description><![CDATA[Morgan Spurlock makes a movie about product placement&#8230; entirely funded by product placement. Genius!]]></description>
+			<content:encoded><![CDATA[<p><iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/f9vu3dUMQ1s?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p>Morgan Spurlock makes a movie about product placement&#8230; entirely funded by product placement. Genius!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/video/the-greatest-movie-ever-sold/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Baby is Afraid of Nose Blowing</title>
+		<link>http://diarmuid.ie/blog/video/baby-is-afraid-of-nose-blowing/</link>
+		<comments>http://diarmuid.ie/blog/video/baby-is-afraid-of-nose-blowing/#comments</comments>
+		<pubDate>Wed, 16 Mar 2011 21:02:10 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[video]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960848</guid>
+		<description><![CDATA[A baby goes through an emotional roller coster as his mother blows her nose.]]></description>
+			<content:encoded><![CDATA[<p><iframe title="YouTube video player" width="640" height="510" src="http://www.youtube.com/embed/N9oxmRT2YWw?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p>A baby goes through an emotional roller coster as his mother blows her nose.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/video/baby-is-afraid-of-nose-blowing/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Donald Crowhurst: The Man Who Sailed Around The World Without Leaving The Atlantic.</title>
+		<link>http://diarmuid.ie/blog/regular/donald-crowhurst-the-man-who-sailed-around-the-world-without-leaving-the-atlantic/</link>
+		<comments>http://diarmuid.ie/blog/regular/donald-crowhurst-the-man-who-sailed-around-the-world-without-leaving-the-atlantic/#comments</comments>
+		<pubDate>Tue, 08 Mar 2011 23:01:10 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[regular]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960846</guid>
+		<description><![CDATA[I Wrote this essay for a college course on Project Management. The guidelines stated we had to write about a project that failed. Donald Crowhurst Was a British Businessman and amateur sailor who died while competing in the Sunday Times Golden Globe Race, a race to be the first to sail single headedly non-stop around the [...]]]></description>
+			<content:encoded><![CDATA[<p><img class="alignleft size-medium wp-image-201960847" title="donald-crowhurst-in-una-scena-del-documentario-deep-water-la-folle-regata-930411" src="http://diarmuid.ie/wp-content/uploads/2011/03/donald-crowhurst-in-una-scena-del-documentario-deep-water-la-folle-regata-930411-640x433.jpg" alt="" width="640" height="433" /></p>
+<p><em>I Wrote this essay for a college course on Project Management. The guidelines stated we had to write about a project that failed.</em></p>
+<p>Donald Crowhurst Was a British Businessman and amateur sailor who died while competing in the Sunday Times Golden Globe Race, a race to be the first to sail single headedly non-stop around the world. Faced with mounting financial and technical challenges prior to the start of the race Crowhurst departed from Teignmouth, Devon, on the last day permitted by the rules: 31 October 1968. From the beginning of the race Crowhurst realised that his boat was not suitable for the race and began reporting false positions, in an attempt to appear to circumnavigate the world without actually doing so. Four months into the race Crowhurst’s boat was found drifting in the north Atlantic with no one aboard. Evidence from his logbooks indicates that his race ended in insanity and apparent suicide (Hall <em>and</em> Tomalin 1970).<span id="more-201960846"></span></p>
+<p>During early 1968 the Sunday Times newspaper was looking to build upon their successful sponsorship of Francis Chichester’s solo circumnavigation attempt the previous year. Chichester sailed singlehanded around the world, stopping in Australia on the way to restock and repair his boat. Sir Robin Knox-Johnston, a British merchant marine office stated that a non-stop solo circumnavigation was &#8220;about all there&#8217;s left to do now&#8221; (Knox-Johnston 1970). Seeing an opportunity, The Sunday Times decided to offer the Golden Globe trophy as a prize for the first person to sail single-handed, non-stop, around the world. At the time it was wildly held that neither a yachtsman nor his boat could survive the stress and strain of a non-stop round the world race (Knox-Johnston 1970).</p>
+<p>Crowhurst was a weekend sailor who owned an electronics company, Electron Utilisation Ltd., which designed and sold marine electronics. By the beginning of 1968 his business had began to fail and Crowhurst knew that he needed a way to promote and prove his products. When the Sunday Times announced the Golden Globe Race Crowhurst saw it as the perfect opportunity and convinced a local caravan dealer and millionaire, Stanley Best, to sponsor his race entry. Race fever now set in and Crowhurst re mortgaged his house and business against the sponsorship, placing himself in a grave financial position (Hall <em>and</em> Tomalin 1970).</p>
+<p>Compared to the eight other competitors Crowhurst was hopelessly inexperienced, having only ever undertaken short day sails. Added to this was the fact that time was running out for Crowhurst and by the time he announced his entrance to the race most of the competitors had already started their race. With no time to loose Crowhurst hired a Norfolk boatyard to build his boat, a trimaran. The boats design was new and untested, and while trimarans have the ability to sail faster than monohulls if they are capsized there is no way for them to self-right. Most of the other competitors were sailing in tried and tested monohull boat designs (Knox-Johnston 1970).</p>
+<p>On its first sea trial from East Anglia to the West Country Crowhust’s boat, <em>Teignmouth</em><em> Electron</em> performed so badly that what was normally a three day sail took almost two weeks. However Crowhurst had no time to make modifications to the boat, which due to a money shortage had not yet been fitted out fully. Many of the innovative electronic safety features Crowhurst had planned for the boat had also to be abandoned because of a lack of time. Crowhurst now had a choice to make, start a race in a boat he knew was unfinished and untested or step down and face humiliation and bankruptcy.</p>
+<p>On the very last day permitted by the rules: 31 October 1968 Crowhurst started his race, despite not being confident in his boat or his preparation. He encountered problems almost immediately with his boat and equipment, and in the first few weeks was making less than half of his planned speed. As the hopelessness of his situation became clear to Crowhurst he took the fateful decision the deceive everyone by sailing around the South Atlantic and re-joining the competitors as the rounded Cape Horn, forging his log books to make it look like he had also sailed around the world (Hall <em>and</em> Tomalin 1970).</p>
+<p>After 8 months of solitude, the pressure of maintaining his lie finally overcame Crowhurst and he stepped over the side of his boat into the North Atlantic, leaving behind a confession in his logbook.</p>
+<p>Many combinatory factors in the planning of Crowhurst’s race lead to the huge amounts of stress placed on him and ultimately his suicide. Crowhurst left his decision to enter the Golden Globe Race too late, forcing him to adopt an unrealistic schedule for the construction and testing of his boat and planning the race. During the construction of the boat Crowhurst was rarely at the boat yard to make decisions, as he had to secure sponsorship. Because of this and a lack of funding the boat was not suitable for a round the world race, with leaking hatches and poor quality plywood used during the construction. Crowhurst also planned to use new electronic equipment, which he would design, to make the boat safer and less demanding for him to sail. With only days left till the start date though these plans were scrapped, leaving Crowhurst to face a much harder race (Wingett 1970).</p>
+<p>It is impossible to say whether Crowhurst would have successfully completed the race had he had more time to prepare his boat and himself and sufficient money to construct a boat which could survive the demands of a round the world race. It is almost certain, however, that had his race attempt been better managed and planned that there would have been much less pressure on Crowhurst, leaving him to focus on the race.</p>
+<h2>References:</h2>
+<p>Hall, R. and Tomalin, N. (1970) <em>The Strange Last Voyage of Donald Crowhurst</em>, New York: Stein and Day.</p>
+<p>Knox-Johnston, R. (1970) <em>A world of My Own: the single-handed, non-stop circumnavigation of the world in Suhaili</em>, London: Marrow.</p>
+<p>Wingett, F. (2006) ‘My father was so determined &#8211; he would have sailed even if he knew it was wrong’, The Sunday Time, 31 Dec, available: <a title="http://www.timesonline.co.uk/tol/news/article1265280.ece" href="http://www.timesonline.co.uk/tol/news/article1265280.ece">http://www.timesonline.co.uk/tol/news/article1265280.ece</a> [accessed 6<sup>th</sup> Feb 2011].</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/regular/donald-crowhurst-the-man-who-sailed-around-the-world-without-leaving-the-atlantic/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Press Pause Play</title>
+		<link>http://diarmuid.ie/blog/video/press-pause-play/</link>
+		<comments>http://diarmuid.ie/blog/video/press-pause-play/#comments</comments>
+		<pubDate>Sun, 06 Mar 2011 11:23:28 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[video]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960845</guid>
+		<description><![CDATA[(via presspauseplay.com)]]></description>
+			<content:encoded><![CDATA[<p><iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/MterbpYTyjM?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p>(via <a href="http://www.presspauseplay.com/">presspauseplay.com</a>)</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/video/press-pause-play/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Nyiragongo Crater</title>
+		<link>http://diarmuid.ie/blog/photo/nyiragongo-crater/</link>
+		<comments>http://diarmuid.ie/blog/photo/nyiragongo-crater/#comments</comments>
+		<pubDate>Wed, 02 Mar 2011 19:40:54 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[photo]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960841</guid>
+		<description><![CDATA[Franck Pothé approaches the shores of Nyiragongo lake in the Democratic Republic of the Congo. The world&#8217;s largest lava lake. (via The Big Picture)]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.boston.com/bigpicture/2011/02/nyiragongo_crater_journey_to_t.html"><img class="alignnone size-medium wp-image-201960842" title="Nyiragongo Crater" src="http://diarmuid.ie/wp-content/uploads/2011/03/bp20-1-640x426.jpg" alt="Nyiragongo Crater" width="640" height="426" /></a></p>
+<p>Franck Pothé approaches the shores of Nyiragongo lake in the Democratic Republic of the Congo. The world&#8217;s largest lava lake.<br />
+(via <a href="http://www.boston.com/bigpicture/2011/02/nyiragongo_crater_journey_to_t.html">The Big Picture</a>)</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/photo/nyiragongo-crater/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Why are so many things broken?</title>
+		<link>http://diarmuid.ie/blog/video/why-are-so-many-things-broken/</link>
+		<comments>http://diarmuid.ie/blog/video/why-are-so-many-things-broken/#comments</comments>
+		<pubDate>Sat, 19 Feb 2011 19:02:44 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[video]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960840</guid>
+		<description><![CDATA[Why are so many things broken? Seth Godin talkes about why so many things are poorly designed and how to fix them.]]></description>
+			<content:encoded><![CDATA[<p><iframe src="http://player.vimeo.com/video/4246943?title=0&amp;byline=0&amp;portrait=0" width="640" height="480" frameborder="0"></iframe></p>
+<p>Why are so many things broken?</p>
+<p>Seth Godin talkes about why so many things are poorly designed and how to fix them.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/video/why-are-so-many-things-broken/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Crime Cops</title>
+		<link>http://diarmuid.ie/blog/video/crime-cops/</link>
+		<comments>http://diarmuid.ie/blog/video/crime-cops/#comments</comments>
+		<pubDate>Fri, 18 Feb 2011 19:02:21 +0000</pubDate>
+		<dc:creator>diarmuid</dc:creator>
+				<category><![CDATA[video]]></category>
+
+		<guid isPermaLink="false">http://diarmuid.ie/?p=201960839</guid>
+		<description><![CDATA[Computers are amazing!]]></description>
+			<content:encoded><![CDATA[<p><iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/gF_qQYrCcns?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p>Computers are amazing!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://diarmuid.ie/blog/video/crime-cops/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Minified using apc
+
+Served from: diarmuid.ie @ 2011-10-03 19:40:12 -->

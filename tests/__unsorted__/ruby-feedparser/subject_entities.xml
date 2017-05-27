@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?><feed version="0.3"
+	xmlns="http://purl.org/atom/ns#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xml:lang="en"
+	>
+	<title>Light Blue Touchpaper</title>
+	<link rel="alternate" type="text/html" href="http://www.lightbluetouchpaper.org" />
+	<tagline>Security Research, Computer Laboratory, University of Cambridge</tagline>
+	<modified>2007-02-25T15:15:34Z</modified>
+	<copyright>Copyright 2007</copyright>
+	<generator url="http://wordpress.org/" version="2.1">WordPress</generator>
+			<entry>
+		<author>
+			<name>Richard Clayton</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[(In)security at the University of Birmingham]]></title>
+		<link rel="alternate" type="text/html" href="http://www.lightbluetouchpaper.org/2007/02/25/insecurity-at-the-university-of-birmingham/" />
+		<id>http://www.lightbluetouchpaper.org/2007/02/25/insecurity-at-the-university-of-birmingham/</id>
+		<modified>2007-02-25T15:15:34Z</modified>
+		<issued>2007-02-25T15:15:34Z</issued>
+		
+		<dc:subject><![CDATA[Security engineering]]></dc:subject>
+
+		<dc:subject><![CDATA[Interesting stuff]]></dc:subject>
+		<summary type="text/html" mode="escaped"><![CDATA[I travelled to the University of Birmingham on Friday to give a guest lecture to their undergraduates on Anonymity and Traceability. It was given in a smart new lecture theatre, which had what Birmingham apparently call a lectern PC at the front with buttons to give the speaker control of the room&#8217;s AV devices and [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.lightbluetouchpaper.org/2007/02/25/insecurity-at-the-university-of-birmingham/"><![CDATA[<p>I travelled to the <a href="http://www.cs.bham.ac.uk/">University of Birmingham</a> on Friday to give a guest lecture to their undergraduates on <a href="http://www.cl.cam.ac.uk/~rnc1/talks/070223-anontrace.pdf">Anonymity and Traceability</a>. It was given in a smart new lecture theatre, which had what Birmingham apparently call a <a href="http://www.is.bham.ac.uk/lrat/lecternsoftware.htm">lectern PC</a> at the front with buttons to give the speaker control of the room&#8217;s AV devices and lighting, along with a proper PC running various Windows applications, so you can plug in your <a href="http://www.usbflashdrive.org/">USB flash drive</a> and display your material.</p>
+<p>As you can see from the photo, they have a rather trivial security model for using this PC:</p>
+<p><a href='http://www.lightbluetouchpaper.org/wp-content/uploads/2007/02/birmingham-lectern-pc.jpg' title='Birmingham Lectern PC with text “Username=user” and “Password=user&#038;2006″'><img width="425" src='http://www.lightbluetouchpaper.org/wp-content/uploads/2007/02/birmingham-lectern-pc.jpg' alt='Birmingham Lectern PC with text “Username=user” and “Password=user&#038;2006″' /></a></p>
+<p>The text (apologies for a rather fuzzy photo) says: <code>"Username=user"</code> and <code>"Password=user&#038;2006"</code>.</p>
+<p>With a little thought, it can be seen that most likely this isn&#8217;t really a security issue at all, but a software design issue. I rather suspect that there just isn&#8217;t a way of turning off the login function, and the PC can&#8217;t be used to access any other important systems &#8212; and no-one wants to see lectures delayed if the password isn&#8217;t to hand. That&#8217;s undoubtedly why they&#8217;ve used proper <a href="http://global.dymo.com/enGB/Products/LabelMANAGER_150.html">Dymo</a>-style tape for the information, rather than relying on the <a href="http://www.computerworld.com/securitytopics/security/story/0,10801,61986,00.html">traditional</a> <a href="http://www.3m.com/us/office/postit/pastpresent/history_ws.html">yellow sticky</a>, which could get lost!</p>
+]]></content>
+	</entry>
+		<entry>
+		<author>
+			<name>Richard Clayton</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[SOCA: we just want your money?]]></title>
+		<link rel="alternate" type="text/html" href="http://www.lightbluetouchpaper.org/2007/02/11/soca-we-just-want-your-money/" />
+		<id>http://www.lightbluetouchpaper.org/2007/02/11/soca-we-just-want-your-money/</id>
+		<modified>2007-02-11T16:56:09Z</modified>
+		<issued>2007-02-11T16:56:09Z</issued>
+		
+		<dc:subject><![CDATA[Legal issues]]></dc:subject>
+		<summary type="text/html" mode="escaped"><![CDATA[Just over a year ago I wrote about the, then upcoming, Serious Organised Crime Agency (SOCA), reporting that their aim in tackling &#8220;level 3&#8243; crime was to be &#8220;mysterious and menacing&#8220;. I pointed out how they were going to be absorbing the National High Tech Crime Unit (NHTCU) and that this would leave a large [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.lightbluetouchpaper.org/2007/02/11/soca-we-just-want-your-money/"><![CDATA[<p>Just over a year ago I wrote about the, then upcoming, Serious Organised Crime Agency (SOCA), reporting that their aim in tackling &#8220;level 3&#8243; crime was to be &#8220;<a href="http://www.lightbluetouchpaper.org/2006/02/06/mysterious-and-menacing/">mysterious and menacing</a>&#8220;. I pointed out how they were going to be absorbing the National High Tech Crime Unit (NHTCU) and that this would leave a large gap, in that there would apparently be no police organisation dealing with &#8220;level 2&#8243; eCrime &#8212; crime which is not local to a single police force area, but that is not sufficiently serious or organised to be dealt with by SOCA.</p>
+<p>In fact, I&#8217;ve since learnt that the inability to deal with level 2 criminality is not just an eCrime issue. In 2005 Her Majesty&#8217;s Inspectorate of Constabulary (HMIC) published &#8220;<a href="http://inspectorates.homeoffice.gov.uk/hmic/inspect_reports1/thematic-inspections/closinggap05.pdf">Closing the Gap - Review of the &#8216;Fitness for Purpose&#8217; of the Current Structure of Policing in England and Wales</a>&#8220;, which found that the failure to deal with &#8220;level 2&#8243; criminality was an issue across a very wide range of different crimes (the whole report makes its points without once mentioning eCrime or the Internet). This led to the, <a href="http://news.bbc.co.uk/1/hi/programmes/breakfast/5331538.stm">now abandoned</a>, proposals to compulsorily merge 43 police forces into 17 larger units. No further generic policy initiative appears to be forthcoming.</p>
+<p>However, as I wrote in October, there is some thought going into eCrime and the current proposal is &#8220;<a href="http://www.lightbluetouchpaper.org/2006/10/13/mainstreaming-ecrime/">mainstreaming</a>&#8220;, viz: not treating it as anything special.</p>
+<p>Additionally, the Met Police have been floating the idea of  an national coordination centre for eCrime reports, as hinted at in this January 2007 <a href="http://www.mpa.gov.uk/committees/mpa/2007/070125/10.htm">Met eCrime progress report</a> to the Metropolitan Police Authority. Current indications are that the Home Office <a href="http://www.pcmag.co.uk/computing/analysis/2173353/tech-crime-units-lack-central">may have problems coming up with the money</a> to fund the centre, although <a href="http://www.sdea.police.uk/nhtcus.htm">SCDEA e-Crime</a>, the equivalent unit in Scotland, is funded by the Scottish Executive. Perhaps more about progress south of the border will come to light in March, when <a href="http://www.met.police.uk/scd/about/s_wilkinson.htm">Commander Sue Wilkinson</a>, the Association of Chief Police Officers (ACPO) lead on eCrime testifies before a <a href="http://www.parliament.uk/parliamentary_committees/lords_s_t_select/internet.cfm">House of Lords Select Committee</a>.</p>
+<p>But, I&#8217;m digressing, so back to <a href="http://www.soca.gov.uk/">SOCA</a>&#8230;</p>
+<p>Last month I, and a couple of other eCrime policy opinion formers (!), were invited down to Docklands for the proverbial &#8220;free lunch&#8221; and several hours of presentations on what SOCA is doing about &#8220;level 3&#8243; criminality. It&#8217;s a little tricky to report on the detail, because they asked us to treat some of the material in confidence. However, two clear messages stood out:</p>
+<p>The first is that the absorbed NHTCU is now significantly bigger, significantly better resourced, and with the hiving off of &#8220;child abuse image&#8221; issues to <a href="http://www.ceop.gov.uk/">CEOP</a>, is not being forever distracted into chasing down individual paedophiles (if there&#8217;s one child at risk, or an <a href="http://www.eweek.com/article2/0,1895,1777706,00.asp">420-million dollar bank hack</a> to investigate, the former tended to get all the resource). This is basically a Good Thing, so far as it goes.</p>
+<p>The second message is that SOCA is a &#8220;harm reduction agency&#8221; and is not just concentrating on detective work and prosecutions. They are also looking at a whole range of other interventions, from offender management (serious, organised criminals have a very high recidivism rate) through diligent application of the <a href="http://www.opsi.gov.uk/acts/acts2002/20020029.htm">Proceeds of Crime</a> legislation, to working with industry to harden systems against criminal opportunities.</p>
+<p>They have a Bill before parliament at present (the <a href="http://www.publications.parliament.uk/pa/pabills/200607/serious_crime.htm">Serious Crime Bill</a>) which will give them sweeping new powers to create &#8220;gangster-ASBOs&#8221; to restrict the lives of convicted organised criminals, and will permit the wholesale swapping of data for the prevention of fraud, without infringement of the Data Protection Act.  The Bill also reworks the framework for &#8220;inchoate&#8221; offences, viz: incitement to commit crimes or assisting with them &#8212; of which perhaps more on another occasion, since poor wording for the offences could make many security research activities problematic.</p>
+<p>Looking back, it is this strong emphasis on SOCA&#8217;s approach to ensuring &#8220;crime doesn&#8217;t pay&#8221; that remains with me most strongly. This isn&#8217;t just the approach of <a href="http://www.fbi.gov/libref/historic/famcases/capone/capone.htm">locking Al Capone up for tax evasion</a> because nothing else could be made to stick (though Capone actually served time for several other offences). This is all about SOCA developing an effective way of stripping criminals of their ill-gotten gains.</p>
+<p>I&#8217;m reminded of <a href="http://www.amstrad.com/about/sir_alan.html">Sir Alan Sugar</a> giving a lecture about management way back in the 1980&#8217;s. He was mocking the catch-phrase/mission-statement culture, memorably saying, &#8220;<a href="http://eurowards.org/content/article.php?sid=25">&#8216;Pan Am takes good care of you&#8217;, &#8216;Marks and Spencer loves you&#8217;, &#8216;Securicor cares&#8217; . . . at Amstrad, &#8216;We just want your money&#8217;</a>&#8220;. Twenty years on, that seems a rather apt phrase for a significant slice of SOCA&#8217;s activities.</p>
+]]></content>
+	</entry>
+		<entry>
+		<author>
+			<name>Steven J. Murdoch</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[Financial Ombudsman on Chip &#038; PIN infallibility]]></title>
+		<link rel="alternate" type="text/html" href="http://www.lightbluetouchpaper.org/2007/02/08/financial-ombudsman-on-chip-pin-infallibility/" />
+		<id>http://www.lightbluetouchpaper.org/2007/02/08/financial-ombudsman-on-chip-pin-infallibility/</id>
+		<modified>2007-02-08T18:25:56Z</modified>
+		<issued>2007-02-08T18:25:56Z</issued>
+		
+		<dc:subject><![CDATA[Legal issues]]></dc:subject>
+
+		<dc:subject><![CDATA[Banking security]]></dc:subject>
+		<summary type="text/html" mode="escaped"><![CDATA[The Financial Ombudsman Service offers to adjudicate disputes between banks and their customers who claim to have been treated unfairly. We were forwarded a letter written by the Ombudsman concerning a complaint by a Halifax customer over unauthorised ATM withdrawals. I am not familiar with the details of this particular case, but the letter does [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.lightbluetouchpaper.org/2007/02/08/financial-ombudsman-on-chip-pin-infallibility/"><![CDATA[<p>The <a href="http://www.financial-ombudsman.org.uk/">Financial Ombudsman Service</a> offers to adjudicate disputes between banks and their customers who claim to have been treated unfairly. We were forwarded <a href="http://www.lightbluetouchpaper.org/wp-content/uploads/2007/02/ombud-redact.png">a letter written by the Ombudsman</a> concerning a complaint by a Halifax customer over unauthorised ATM withdrawals. I am not familiar with the details of this particular case, but the letter does give a good illustration of how the complaint procedure is stacked against customers.</p>
+<p>The customer had requested further information from Halifax (the Firm) and the Financial Ombudsman Service (this Service) had replied:</p>
+<blockquote><p>However this Service has already been presented with the evidence you have requested from the Firm and I comment on it as follows. Although you have requested this information from the Firm yourself (and I consider that it is not obliged to provide it to you) I conclude that this will not make any difference, because this Service has already reviewed this information.</p></blockquote>
+<p>The right of parties in dispute to see the evidence involved is a basic component of justice systems, but the Financial Ombudsman has clearly not heard of this, but then again <a href="http://www.financial-ombudsman.org.uk/publications/intro_firms/intro-firms-18.htm">they are funded by the banks</a>. While the bank can have their own experts examine the evidence, the customer cannot do the same. Although the Financial Ombudsman service can review the evidence, giving it to the customer would allow them to pursue further investigation on their own.</p>
+<blockquote><p>The Firm has provided an &#8216;audit trail&#8217; of the transactions disputed by you. This shows the location and times of the transactions any evidences that the card used was &#8216;CHIP&#8217; read.</p></blockquote>
+<p>Without access to the audit trail and information concerning how it was produced, it is almost impossible for the customer to know the precise details of the transaction. Based solely on the letter, there are still a number of important unanswered questions. For example:
+<dl>
+<dt>Was the card in question SDA or DDA?</dt>
+<dd>SDA cards <a href="http://www.dailymail.co.uk/pages/live/articles/news/news.html?in_article_id=389084&#038;in_page_id=1770&#038;in_a_source=">can be cloned</a> to produce <em>yes cards</em>, which will accept any PIN and still work in <em>offline</em> transactions, where the terminal or ATM does not contact the bank. This type of fraud has been <a href="http://www.clusif.asso.fr/fr/production/ouvrages/pdf/CyberCrime2001.pdf">seen in France</a> (pp.&nbsp;5&ndash;10).</dd>
+<dt>Was the ATM online or offline at the time of the transaction?</dt>
+<dd>Although ATMs are generally online, if Chip &amp; PIN terminals fail to dial up the bank they may continue to work offline and so accept SDA clones. Could this have happened with this ATM?</dd>
+<dt>What was the application cryptogram presented in this transaction?</dt>
+<dd>When a Chip &amp; PIN card authorises a transaction, it produces an <em>application cryptogram</em> which allows the bank to verify that the card is legitimate. A yes card would not produce the correct application cryptogram.</dd>
+<dt>What is the key for the card?</dt>
+<dd>The application cryptogram is produced using a cryptographic <em>key</em> known only by the card and bank. With this and some other information the customer could confirm that the application cryptogram really came from his card. Since the card has long since been cancelled, releasing this key should not be a security risk. If the banks are not storing this information, how can they be sure that their systems are operating correctly?</dd>
+</dl>
+<p>It seems unlikely that the Financial Ombudsman knew which of these events have occurred either, otherwise I would have expected them to say so in their letter.</p>
+<blockquote><p>As we have already advised you, since the advent of CHIP and PIN, this Service is not aware of any incidents where a card with a &#8216;CHIP&#8217; has been successfully cloned by fraudsters so that it could be used by them successfully in a cash machine.</p></blockquote>
+<p>Besides the scenarios mentioned above, our <a href="http://www.lightbluetouchpaper.org/2007/02/06/chip-pin-relay-attacks/">demonstration for Watchdog</a> showed how, even without cloning a card, a Chip &amp; PIN terminal could be fooled into accepting a counterfeit. Assuming this ATM read the chip rather than the magnetic stripe, our attack would work just as well there. The situation surrounding this particular case might preclude a relay attack, but it is one of many possibilities that ought to be eliminated in a serious investigation.</p>
+<blockquote><p>Although you question The Firm&#8217;s security systems, I consider that the audit trail provided is in a format utilised by several major banks and therefore can be relied upon.</p></blockquote>
+<p>The format of the audit trail is no indication of whether the information it records is a true and complete representation of what actually happened and it is almost ludicrous to suggest that. Even if it were, the fact that several banks are using it is no indication of its security. To actually establish these facts, external scrutiny is required and, without access to bank&#8217;s systems, customers are not a position to arrange for this.</p>
+<p>So the banking dispute resolution process works well for the banks, by reducing their litigation costs, but not well for their customers. If customers go to the Ombudsman, they risk being asked to prove their innocence without being given access to the information necessary to do so. Instead, they could go directly to the courts, but while the bank might accuse customers of not following proper procedures, if they win there they can at least <a href="http://www.dailymail.co.uk/pages/live/articles/news/news.html?in_article_id=430129&#038;in_page_id=1770">send in the bailiffs</a>.</p>
+]]></content>
+	</entry>
+		<entry>
+		<author>
+			<name>Steven J. Murdoch</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[Chip &#038; PIN relay attacks]]></title>
+		<link rel="alternate" type="text/html" href="http://www.lightbluetouchpaper.org/2007/02/06/chip-pin-relay-attacks/" />
+		<id>http://www.lightbluetouchpaper.org/2007/02/06/chip-pin-relay-attacks/</id>
+		<modified>2007-02-06T09:36:58Z</modified>
+		<issued>2007-02-06T09:36:58Z</issued>
+		
+		<dc:subject><![CDATA[Security economics]]></dc:subject>
+
+		<dc:subject><![CDATA[Legal issues]]></dc:subject>
+
+		<dc:subject><![CDATA[News coverage]]></dc:subject>
+
+		<dc:subject><![CDATA[Banking security]]></dc:subject>
+		<summary type="text/html" mode="escaped"><![CDATA[Saar Drimer and myself have shown that the Chip &#038; PIN system, used for card payments in the UK, is vulnerable to a new kind of fraud. By “relaying” information from a genuine card, a Chip &#038; PIN terminal in another shop, can be made to accept a counterfeit card. We previously discussed this possibility [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.lightbluetouchpaper.org/2007/02/06/chip-pin-relay-attacks/"><![CDATA[<p>Saar Drimer and myself have shown that the <a href="http://www.chipandpin.co.uk/">Chip &#038; PIN system</a>, used for card payments in the UK, is vulnerable to a new kind of fraud. By “relaying” information from a genuine card, a Chip &#038; PIN terminal in another shop, can be made to accept a counterfeit card. We previously discussed this possibility in <a href="http://www.chipandspin.co.uk/spin.pdf">&#8220;Chip &#038; Spin&#8221;</a> but it was not until now that we implemented and tested the attack.</p>
+<p>A fraudster sets up a <a href="http://www.lightbluetouchpaper.org/2006/12/24/chip-pin-terminal-playing-tetris/">fake terminal</a> in a busy shop or restaurant. When a genuine customer inserts their card into this terminal, the fraudster&#8217;s accomplice, in another shop, inserts their counterfeit card into the merchant&#8217;s terminal. The fake terminal reads details from the genuine card, and relays them to the counterfeit card, so that it will be accepted. The PIN is recorded by the fake terminal and sent to the accomplice for them to enter, and they can then walk off with the goods. To the victim, everything was normal, but when their statement arrives, they will find that they have been defrauded.</p>
+<p><img id="image189" src="http://www.lightbluetouchpaper.org/wp-content/uploads/2007/02/relay.jpg" alt="Equipment used in relay attack" /></p>
+<p>From the banks&#8217; perspective, there will be nothing unusual about this transaction. To them, it will seem as if the real card was used, with a chip and along with the correct PIN. Banks have previously claimed that if a fraudulent Chip &#038; PIN transaction was placed, then the customer must have been negligent in protecting their card and PIN, and so must be liable. This work shows that despite customers taking all due care in using their card, they can still be the victim of fraud.</p>
+<p>For more information, we have a <a href="http://www.cl.cam.ac.uk/research/security/projects/banking/relay/">summary of the technique and FAQ</a>. This attack will be featured on <a href="http://www.bbc.co.uk/consumer/tv_and_radio/watchdog/">Watchdog</a>, tonight (6 February) at 19:00 GMT on BBC One. The programme will show how we successfully sent details between two shops in the same street, but it should work equally well, via mobile phone, to the other side of the world.</p>
+<p>It is unlikely that criminals are currently using techniques such as this, as there are less sophisticated attacks which Chip &#038; PIN remains vulnerable to. However, as security is improved, the relay attack may become a significant source of fraud. Therefore, it is important that defences against this attack are deployed sooner rather than later. We discuss defences in our <a href="http://www.cl.cam.ac.uk/research/security/projects/banking/relay/bounding.pdf">draft academic paper</a>, submitted for review at a peer reviewed conference.</p>
+<p><strong>Update</strong> (2007-01-10): The segment of Watchdog featuring our contribution has been <a href="http://www.youtube.com/watch?v=X7pjUIxKoEc">posted to YouTube</a>.</p>
+]]></content>
+	</entry>
+		<entry>
+		<author>
+			<name>Richard Clayton</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[Human Rights and Biophysics (strange similarities)]]></title>
+		<link rel="alternate" type="text/html" href="http://www.lightbluetouchpaper.org/2007/01/07/human-rights-and-biophysics-strange-similarities/" />
+		<id>http://www.lightbluetouchpaper.org/2007/01/07/human-rights-and-biophysics-strange-similarities/</id>
+		<modified>2007-01-07T21:21:15Z</modified>
+		<issued>2007-01-07T21:21:15Z</issued>
+		
+		<dc:subject><![CDATA[Security economics]]></dc:subject>
+
+		<dc:subject><![CDATA[Interesting stuff]]></dc:subject>
+		<summary type="text/html" mode="escaped"><![CDATA[I recently received an email from &#8220;Daniel&#8221; at the &#8220;European Human Rights Centre&#8221;.
+I came across your site while searching the net for
+some quality websites. I think you did a great job
+with your site.
+My name is Daniel. I work for The European Human
+Rights Centre (EHRC).
+I would like to add your site to our usefull links page
+(http://www.ehrcweb.org/links.php [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.lightbluetouchpaper.org/2007/01/07/human-rights-and-biophysics-strange-similarities/"><![CDATA[<p>I recently received an email from &#8220;Daniel&#8221; at the &#8220;European Human Rights Centre&#8221;.</p>
+<p><code>I came across your site while searching the net for<br />
+some quality websites. I think you did a great job<br />
+with your site.</code></p>
+<p><code>My name is Daniel. I work for The European Human<br />
+Rights Centre (EHRC).</code></p>
+<p><code>I would like to add your site to our usefull links page<br />
+(http://www.ehrcweb.org/links.php ) and I was<br />
+wondering if you can post a link with our site in<br />
+your website.</code></p>
+<p><code>For your convenience  I send you bellow the code<br />
+for our website:<br />
+&#60;a href="http://www.ehrcweb.org/"&#62;EHRC&#60;/a&#62;</code></p>
+<p><code>If you have any questions, don't hesitate to<br />
+contact me and I'll answer your questions promtly.</code></p>
+<p><code>We are Nonprofit organization .<br />
+Best regards,<br />
+Daniel<br />
+European Human Rights Centre Organisation<br />
+ehrcweb.org<br />
+HPM G5<br />
+ETH Honggeberg<br />
+CH-8093 Zurich / Switzerland<br />
+Tel: +41-1-638-3453<br />
+Fax: +41-1-693-10 73 and 693 11 51<br />
+</code></p>
+<p>But this email is not quite what it seems….</p>
+]]></content>
+	</entry>
+		<entry>
+		<author>
+			<name>Saar Drimer</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[Chip &#038; PIN terminal playing Tetris]]></title>
+		<link rel="alternate" type="text/html" href="http://www.lightbluetouchpaper.org/2006/12/24/chip-pin-terminal-playing-tetris/" />
+		<id>http://www.lightbluetouchpaper.org/2006/12/24/chip-pin-terminal-playing-tetris/</id>
+		<modified>2006-12-24T21:08:24Z</modified>
+		<issued>2006-12-24T21:08:24Z</issued>
+		
+		<dc:subject><![CDATA[Banking security]]></dc:subject>
+		<summary type="text/html" mode="escaped"><![CDATA[Many discussions over the security of Chip &#038; PIN have focused on the tamper-resistance of terminals (for example in the aftermath of the Shell Chip &#038; PIN fraud). It is important to remember, however, that even perfect tamper resistance only ensures that the terminal will no longer be able to communicate with the bank once [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.lightbluetouchpaper.org/2006/12/24/chip-pin-terminal-playing-tetris/"><![CDATA[<p>Many discussions over the security of Chip &#038; PIN have focused on the tamper-resistance of terminals (for example in the aftermath of the <a href="http://www.lightbluetouchpaper.org/2006/05/10/the-mythical-tamper-proof-pin-pad/">Shell Chip &#038; PIN fraud</a>). It is important to remember, however, that even perfect tamper resistance only ensures that the terminal will no longer be able to communicate with the bank once opened. It does not prevent anyone from replacing most of the terminal&#8217;s hardware and presenting it to customers as legitimate, so freely collecting card details and PINs.</p>
+<p>Steven Murdoch and myself took the chassis of a real terminal and replaced much of the internal electronics such that it allows us to control the screen, keypad and card-reader. Steven suggested that in order to show that it is completely under our control, we should make it play Tetris (similarly to the guys who made a <a href="http://www.wijvertrouwenstemcomputersniet.nl/other/es3b-en.pdf">voting machine play chess</a>). We recorded a short video showing our Tetris playing terminal in action. Have a merry Christmas and happy New Year <img src='http://www.lightbluetouchpaper.org/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+<p><strong>Update</strong> (2007-01-03): The video is now <a href="http://www.youtube.com/watch?v=wWTzkD9M0sU">on YouTube</a>.</p>
+<p><strong>Update</strong> (2007-01-05): The Association for Payment Clearing Services<br />
+(APACS) has <a href="http://www.thisismoney.co.uk/saving-and-banking/article.html?in_article_id=416139&#038;in_page_id=7&#038;ct=5">responded</a>:</p>
+<blockquote><p>
+APACS, the payments organisation representing high street banks, said the Cambridge breakthrough could be a threat.</p>
+<p>&#8216;People could, in theory, use this to steal account details from cards,&#8217; said Sandra Quinn of APACS. &#8216;Our experts are in discussion with the manufacturers of terminals to see what can be done. Essentially what these people have done is replace the innards of a chip and Pin machine.</p>
+<p>&#8216;However, we would say that this has only been seen in a laboratory so far. People would not be able to create counterfeit chip and Pin cards, but they could use this information abroad to make purchases.&#8217; </p></blockquote>
+]]></content>
+<enclosure url='http://www.lightbluetouchpaper.org/wp-content/uploads/2006/12/emv_tetris.avi' length='4327770' type='video/x-msvideo'/>
+	</entry>
+		<entry>
+		<author>
+			<name>Ross Anderson</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[Health database optout - latest news]]></title>
+		<link rel="alternate" type="text/html" href="http://www.lightbluetouchpaper.org/2006/12/18/health-database-optout-latest-news/" />
+		<id>http://www.lightbluetouchpaper.org/2006/12/18/health-database-optout-latest-news/</id>
+		<modified>2006-12-18T10:10:58Z</modified>
+		<issued>2006-12-18T10:10:58Z</issued>
+		
+		<dc:subject><![CDATA[Security engineering]]></dc:subject>
+
+		<dc:subject><![CDATA[Interesting stuff]]></dc:subject>
+
+		<dc:subject><![CDATA[Legal issues]]></dc:subject>
+
+		<dc:subject><![CDATA[News coverage]]></dc:subject>
+		<summary type="text/html" mode="escaped"><![CDATA[This morning I debated health privacy on Radio 4&#8217;s Today programme with health minister Lord Warner. You can listen to the debate here, and there is an earlier comment by Michael Summers of the Patients&#8217; Association here.
+I support a campaign by TheBigOptOut.org which has so far persuaded thousands of people to write to their GPs [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.lightbluetouchpaper.org/2006/12/18/health-database-optout-latest-news/"><![CDATA[<p>This morning I debated health privacy on Radio 4&#8217;s Today programme with health minister Lord Warner. You can listen to the debate <a href="http://www.bbc.co.uk/radio4/today/listenagain/ram/today4_nhs_record_20061218.ram">here</a>, and there is an earlier comment by Michael Summers of the Patients&#8217; Association <a href="http://www.bbc.co.uk/radio4/today/listenagain/ram/today2_nhs_record_20061218.ram">here</a>.</p>
+<p>I support a campaign by <a href="http://www.thebigoptout.org">TheBigOptOut.org</a> which has so far persuaded thousands of people to write to their GPs forbidding the upload of their patient records to central systems. Once they are uploaded, you&#8217;ll have to prove &#8217;substantial mental distress&#8217; to the government (as Lord Warner says) to get them removed or restricted. It is much simpler to tell your GP not to upload them in the first place (and you can always change your mind later if the Government delivers on its claims about safety and privacy).</p>
+<p>For more, see <a href="http://www.thebigoptout.org">TheBigOptOut.org</a>, <a href="http://www.nhs-it.info">nhs-it.info</a> and my previous blog posts <a href="http://www.lightbluetouchpaper.org/2006/12/01/health-privacy-breaking-news/">here</a>, <a href="http://www.lightbluetouchpaper.org/2006/11/27/developments-on-health-privacy/">here</a> and <a href="http://www.lightbluetouchpaper.org/2006/11/01/opting-out-of-the-nhs-database/">here</a>, and our work on <a href="http://www.lightbluetouchpaper.org/2006/11/22/kids-databases/">children&#8217;s databases</a> (children&#8217;s safety and privacy might be particularly at risk from the proposals, as I explain in the <a href="http://www.bbc.co.uk/radio4/today/listenagain/ram/today4_nhs_record_20061218.ram">debate</a>).</p>
+]]></content>
+<enclosure url='http://www.bbc.co.uk/radio4/today/listenagain/ram/today4_nhs_record_20061218.ram' length='0' type='audio/x-pn-realaudio'/>
+<enclosure url='http://www.bbc.co.uk/radio4/today/listenagain/ram/today2_nhs_record_20061218.ram' length='42' type='audio/x-pn-realaudio'/>
+	</entry>
+		<entry>
+		<author>
+			<name>Steven J. Murdoch</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[23rd Chaos Communication Congress]]></title>
+		<link rel="alternate" type="text/html" href="http://www.lightbluetouchpaper.org/2006/12/12/23rd-chaos-communication-congress/" />
+		<id>http://www.lightbluetouchpaper.org/2006/12/12/23rd-chaos-communication-congress/</id>
+		<modified>2006-12-12T11:13:44Z</modified>
+		<issued>2006-12-12T11:13:44Z</issued>
+		
+		<dc:subject><![CDATA[Privacy technology]]></dc:subject>
+
+		<dc:subject><![CDATA[Hardware &#038; signals]]></dc:subject>
+
+		<dc:subject><![CDATA[Interesting stuff]]></dc:subject>
+
+		<dc:subject><![CDATA[Cryptology]]></dc:subject>
+
+		<dc:subject><![CDATA[Banking security]]></dc:subject>
+
+		<dc:subject><![CDATA[Internet censorship]]></dc:subject>
+		<summary type="text/html" mode="escaped"><![CDATA[The 23rd Chaos Communication Congress will be held later this month in Berlin, Germany on 27&#8211;30 December. I will be attending to give a talk on Hot or Not: Revealing Hidden Services by their Clock Skew.  Another contributor to this blog, George Danezis, will be talking on An Introduction to Traffic Analysis.
+This will be [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.lightbluetouchpaper.org/2006/12/12/23rd-chaos-communication-congress/"><![CDATA[<p><img id="image181" src="http://www.lightbluetouchpaper.org/wp-content/uploads/2006/12/23c3_135x122_23c3.jpg" alt="23C3 logo" style="float: right; margin: 5px" />The <a href="http://events.ccc.de/congress/2006/Home">23rd Chaos Communication Congress</a> will be held later this month in Berlin, Germany on 27&#8211;30 December. I will be attending to give <a href="http://events.ccc.de/congress/2006/Fahrplan/events/1513.en.html">a talk</a> on <a href="http://www.lightbluetouchpaper.org/2006/09/04/hot-or-not-revealing-hidden-services-by-their-clock-skew/">Hot or Not: Revealing Hidden Services by their Clock Skew</a>.  Another contributor to this blog, <a href="http://homes.esat.kuleuven.be/~gdanezis/">George Danezis</a>, will be talking on <a href="http://events.ccc.de/congress/2006/Fahrplan/events/1478.en.html">An Introduction to Traffic Analysis</a>.</p>
+<p>This will be my third time speaking at the CCC (I previously talked on <a href="http://events.ccc.de/congress/2004/fahrplan/event/271.en.html">Hidden Data in Internet Published Documents</a> and <a href="http://events.ccc.de/congress/2004/fahrplan/event/108.en.html">The Convergence of Anti-Counterfeiting and Computer Security</a> in 2004 then <a href="http://events.ccc.de/congress/2005/fahrplan/events/798.en.html">Covert channels in TCP/IP: attack and defence</a> in 2005) and I&#8217;ve always had a great time but this year looks to be the best yet. Here are a few highlights from the <a href="http://events.ccc.de/congress/2006/Fahrplan/events.en.html">draft programme</a>, although I am sure there are many great talks I have missed.</p>
+<ul>
+<li>Bernd R. Fix on <a href="http://events.ccc.de/congress/2006/Fahrplan/events/1449.en.html">A not so smart card</a> &#8212; one of the rare cases where key length (320 bit RSA) <strong>was</strong> the major weakness in a security system</li>
+<li>Caspar Bowden, Chief Privacy Advisor, Microsoft EMEA (and former director of <a href="http://www.fipr.org/">FIPR</a>) on <a href="http://events.ccc.de/congress/2006/Fahrplan/events/1724.en.html">Transparency and Privacy</a>, covering Kim Cameron&#8217;s <a href="http://www.identityblog.com/stories/2004/12/09/thelaws.html">7 laws of identity</a></li>
+<li>Ilja (who has an amazing ability to exploit seemingly unexploitable bugs) on <a href="http://events.ccc.de/congress/2006/Fahrplan/events/1456.en.html">Unusual bugs</a> and <a href="http://events.ccc.de/congress/2006/Fahrplan/events/1428.en.html">You can&#8217;t make this stuff up</a></li>
+<li>Jacob Appelbaum and Ralf-Philipp Weinmann on <a href="http://events.ccc.de/congress/2006/Fahrplan/events/1642.en.html">Unlocking FileVault</a> &#8212; Jacob was at the CCC last year giving a summary of disk encryption systems; now he is back to go into more detail on the one from MacOS X</li>
+<li>Joanna Rutkowska, author of the <a href="http://www.ccc.de/congress/2004/fahrplan/event/176.en.html">Nushu TCP/IP steganography scheme</a> (which I discussed in <a href="http://www.cl.cam.ac.uk/~sjm217/papers/ih05coverttcp.pdf">my paper</a> on this topic) and the <a href="http://theinvisiblethings.blogspot.com/2006/06/introducing-blue-pill.html">Blue Pill virtualization based rootkit</a>, will be talking on <a href="http://events.ccc.de/congress/2006/Fahrplan/events/1381.en.html">Stealth malware &#8212; can good guys win?</a></li>
+<li>Melanie Rieback on <a href="http://events.ccc.de/congress/2006/Fahrplan/events/1597.en.html">A Hacker&#8217;s Toolkit for RFID Emulation and Jamming</a> &#8212; covering the <a href="http://www.rfidguardian.org/">RFID Guardian</a>, as featured on <a href="http://www.schneier.com/blog/archives/2006/12/rfid_personal_f.html">Schneier&#8217;s blog</a>, <a href="http://www.boingboing.net/2006/12/06/personal_firewall_fo.html">Boing Boing</a> and <a href="http://hardware.slashdot.org/article.pl?sid=06/12/07/1355219">Slashdot</a>. Melanie gave a talk on an early version of this project at the <a href="http://homepages.feis.herts.ac.uk/~strrjh/SP2005/schedule.html">International Workshop on Security Protocols</a> so I will be interested to see how it has progressed</li>
+<li>Roger Dingledine (co-designer of <a href="http://tor.eff.org/">Tor</a>) on <a href="http://events.ccc.de/congress/2006/Fahrplan/events/1444.en.html">Tor and China</a> &#8212; censorship resistance has been a major interest of mine, particularly since I started working for the <a href="http://opennet.net/">OpenNet Initiative</a></li>
+<li>Rop Gonggrijp on <a href="http://events.ccc.de/congress/2006/Fahrplan/events/1423.en.html">We don&#8217;t trust voting computers</a> &#8212; from the team who made a Dutch voting computer <a href="http://www.heise.de/english/newsticker/news/79106">play chess</a></li>
+</ul>
+<p>It&#8217;s looking like a great line-up, so I hope many of you can make it. See you there!</p>
+]]></content>
+	</entry>
+		<entry>
+		<author>
+			<name>Ross Anderson</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[Health privacy &#8230; breaking news &#8230;]]></title>
+		<link rel="alternate" type="text/html" href="http://www.lightbluetouchpaper.org/2006/12/01/health-privacy-breaking-news/" />
+		<id>http://www.lightbluetouchpaper.org/2006/12/01/health-privacy-breaking-news/</id>
+		<modified>2006-12-01T15:29:31Z</modified>
+		<issued>2006-12-01T15:29:31Z</issued>
+		
+		<dc:subject><![CDATA[Privacy technology]]></dc:subject>
+
+		<dc:subject><![CDATA[Interesting stuff]]></dc:subject>
+
+		<dc:subject><![CDATA[Legal issues]]></dc:subject>
+
+		<dc:subject><![CDATA[News coverage]]></dc:subject>
+		<summary type="text/html" mode="escaped"><![CDATA[The Chief Medical Officer, Sir Liam Donaldson, has written a letter to all GPs and hospital medical directors telling them that if patients try to opt out of the central collection of their medical data, the Secretary of State must be told. This follows a campaign that I&#8217;ve been helping and that has attracted strong [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.lightbluetouchpaper.org/2006/12/01/health-privacy-breaking-news/"><![CDATA[<p>The Chief Medical Officer, Sir Liam Donaldson, has written a <a href="http://www.cl.cam.ac.uk/~rja14/Papers/nhs-cmolet-nov.pdf">letter</a> to all GPs and hospital medical directors telling them that if patients try to opt out of the central collection of their medical data, the Secretary of State must be told. This follows a <a href="http://www.thebigoptout.org">campaign</a> that I&#8217;ve been helping and that has attracted strong support - in the <a href="http://www.lightbluetouchpaper.org/2006/11/01/opting-out-of-the-nhs-database/">press</a>, from <a href="http://society.guardian.co.uk/e-public/story/0,,1953185,00.html">GPs</a> and from <a href="http://www.guardian.co.uk/uk_news/story/0,,1960170,00.html">public opinion</a>.</p>
+<p>This letter orders GPs to break patient confidentiality - and apparently for the noble purpose of news management. I understand that at least one GP will be reporting Sir Liam to the General Medical Council. It is entirely up to the patient to decide whether to send an opt-out letter to their GP, to Ms Hewitt, or to both. It is not for a civil servant - even a very grand one like Sir Liam - to unilaterally override the wishes of those patients who decide to write to their GP but not to Ms Hewitt. (It&#8217;s also somewhat amusing as, only a month ago, officials were telling patients who tried to opt out that <a href="http://dooooooom.blogspot.com/2006/11/nhs-data-rape-hits-headlines.html">their GPs would decide whether to upload data</a>.)</p>
+<p>Developing &#8230;</p>
+]]></content>
+	</entry>
+		<entry>
+		<author>
+			<name>Ross Anderson</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[Developments on health privacy&#8230;]]></title>
+		<link rel="alternate" type="text/html" href="http://www.lightbluetouchpaper.org/2006/11/27/developments-on-health-privacy/" />
+		<id>http://www.lightbluetouchpaper.org/2006/11/27/developments-on-health-privacy/</id>
+		<modified>2006-11-27T23:08:23Z</modified>
+		<issued>2006-11-27T23:08:23Z</issued>
+		
+		<dc:subject><![CDATA[Privacy technology]]></dc:subject>
+
+		<dc:subject><![CDATA[Interesting stuff]]></dc:subject>
+
+		<dc:subject><![CDATA[Legal issues]]></dc:subject>
+
+		<dc:subject><![CDATA[News coverage]]></dc:subject>
+		<summary type="text/html" mode="escaped"><![CDATA[The Register reports a leaked document from the NHS which concludes that sensitive patient records would probably be safer held locally, rather than stored on a national database as the Government proposes.
+This follows a poll last week in which a majority of GPs said they would not upload their patients&#8217; records to the national database. [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.lightbluetouchpaper.org/2006/11/27/developments-on-health-privacy/"><![CDATA[<p>The <a href="http://www.theregister.co.uk/2006/11/27/care_record_conf/">Register</a> reports a <a href="http://www.nhsconfidentiality.org/wp-content/uploads/November%20-%20NHS%20Care%20Records%20Report.pdf">leaked document</a> from the NHS which concludes that sensitive patient records would probably be safer held locally, rather than stored on a national database as the Government proposes.</p>
+<p>This follows a poll last week in which <a href="http://society.guardian.co.uk/e-public/story/0,,1953185,00.html">a majority of GPs</a> said they would not upload their patients&#8217; records to the national database. Together the poll and the leak are a double whammy for the <a href="http://editthis.info/nhs_it_info/Main_Page">misguided and wasteful project to centralise all computer systems in the NHS</a>.</p>
+<p>On Wednesday we are launching <a href="http://www.thebigoptout.org">a campaign</a> to persuade patients to opt out too. The inaugural meeting will be <a href="http://www.no2id.net/news/events.php#111">from 7 to 9 PM in Imperial College, London</a>. For background, see recent posts on <a href="http://www.lightbluetouchpaper.org/2006/11/01/opting-out-of-the-nhs-database/">opting out</a> and on <a href="http://www.lightbluetouchpaper.org/2006/11/22/kids-databases/">kids&#8217; databases</a>.</p>
+]]></content>
+	</entry>
+	</feed>

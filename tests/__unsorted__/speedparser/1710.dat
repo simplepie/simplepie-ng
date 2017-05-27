@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Abby Sims - the web site</title>
+	<atom:link href="http://abbysims.me/feed/" rel="self" type="application/rss+xml" />
+	<link>http://abbysims.me</link>
+	<description>about me, my work, and things i love</description>
+	<lastBuildDate>Sun, 07 Aug 2011 16:50:50 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.1.1</generator>
+		<item>
+		<title>Facebook iframe being cut off in Firefox 3.6.x on Mac when using setAutoResize()</title>
+		<link>http://abbysims.me/2010/10/facebook-iframe-being-cut-off-in-firefox-3-6-x-on-mac-when-using-setautoresize/</link>
+		<comments>http://abbysims.me/2010/10/facebook-iframe-being-cut-off-in-firefox-3-6-x-on-mac-when-using-setautoresize/#comments</comments>
+		<pubDate>Thu, 21 Oct 2010 16:24:40 +0000</pubDate>
+		<dc:creator>Abby Sims</dc:creator>
+				<category><![CDATA[Facebook]]></category>
+		<category><![CDATA[programming]]></category>
+
+		<guid isPermaLink="false">http://abbysims.me/2010/10/facebook-iframe-being-cut-off-in-firefox-3-6-x-on-mac-when-using-setautoresize/</guid>
+		<description><![CDATA[Another day, another Facebook development quirk. If you’re having issues with your iframe not automatically resizing to full height in Firefox on Mac when using FB.Canvas.setAutoResize, try manually setting the height using FB.Canvas.setSize as in the code below. Obviously, this is only really an option if your know how tall your application will render and [...]]]></description>
+			<content:encoded><![CDATA[<p>Another day, another Facebook development quirk.</p>
+<p>If you’re having issues with your iframe not automatically resizing to full height in Firefox on Mac when using FB.Canvas.setAutoResize, try manually setting the height using FB.Canvas.setSize as in the code below. Obviously, this is only really an option if your know how tall your application will render and it’s the same from page to page or you manually set it on each page.</p>
+<pre style="font-family: consolas;">
+    <span style="color: #881280;">&lt;</span><span style="color: #881280;">div</span> <span style="color: #994500;">id</span><span style="color: blue;">=</span><span style="color: #1a1aa6;">"fb-root"</span><span style="color: #881280;">&gt;&lt;/</span><span style="color: #881280;">div</span><span style="color: #881280;">&gt;</span>    <span style="color: #881280;">&lt;</span><span style="color: #881280;">script</span> <span style="color: #994500;">type</span><span style="color: blue;">=</span><span style="color: #1a1aa6;">"text/javascript"</span>  <span style="color: #994500;">src</span><span style="color: blue;">=</span><span style="color: #1a1aa6;">"http://connect.facebook.net/en_US/all.js"</span><span style="color: #881280;">&gt;&lt;/</span><span style="color: #881280;">script</span><span style="color: #881280;">&gt;</span>    <span style="color: #881280;">&lt;</span><span style="color: #881280;">script</span> <span style="color: #994500;">type</span><span style="color: blue;">=</span><span style="color: #1a1aa6;">"text/javascript"</span><span style="color: #881280;">&gt;</span>        FB.init({ appId: <span style="color: #760f15;">'</span><span style="background: white; color: #ff0033;">&lt;%</span><span style="color: #881280;">=</span><span style="color: #760f15;"> ConfigurationManager.AppSettings["FacebookAppID"] </span><span style="background: white; color: #ff0033;">%&gt;</span><span style="color: #760f15;">'</span>, status: <span style="color: #881350;">true</span>, cookie: <span style="color: #881350;">true</span>, xfbml: <span style="color: #881350;">true</span> });        FB.Event.subscribe(<span style="color: #760f15;">'auth.sessionChange'</span>, <span style="color: #881350;">function</span> (response) {            <span style="color: #881350;">if</span> (response.session) {                <span style="color: #236e25;">// A user has logged in, and a new cookie has been saved</span>                            } <span style="color: #881350;">else</span> {                <span style="color: #236e25;">// The user has logged out, and the cookie has been cleared</span>            }        });
+
+        $(document).ready(<span style="color: #881350;">function</span> () {            FB.Canvas.setSize({ height: <span style="color: blue;">1100</span> });        });    <span style="color: #881280;">&lt;/</span><span style="color: #881280;">script</span><span style="color: #881280;">&gt;</span></pre>
+]]></content:encoded>
+			<wfw:commentRss>http://abbysims.me/2010/10/facebook-iframe-being-cut-off-in-firefox-3-6-x-on-mac-when-using-setautoresize/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Querying Facebook Comment Table with FQL.Query and C#</title>
+		<link>http://abbysims.me/2010/09/querying-facebook-comment-table-with-fql-query-and-c/</link>
+		<comments>http://abbysims.me/2010/09/querying-facebook-comment-table-with-fql-query-and-c/#comments</comments>
+		<pubDate>Mon, 20 Sep 2010 14:22:25 +0000</pubDate>
+		<dc:creator>Abby Sims</dc:creator>
+				<category><![CDATA[C#]]></category>
+		<category><![CDATA[Facebook]]></category>
+		<category><![CDATA[programming]]></category>
+
+		<guid isPermaLink="false">http://abbysims.me/?p=177</guid>
+		<description><![CDATA[Here’s a code snippet for querying the Facebook Comment table using the Facebook C# SDK. Note that this query uses an app signed request, so you’ll get results whether your user is logged in to Facebook or not. This code queries for all comments xids used by your application. If you have more than one [...]]]></description>
+			<content:encoded><![CDATA[<p>Here’s a code snippet for querying the Facebook Comment table using the <a href="http://github.com/facebook/csharp-sdk" target="_blank">Facebook C# SDK</a>. Note that this query uses an app signed request, so you’ll get results whether your user is logged in to Facebook or not. This code queries for all comments xids used by your application. If you have more than one like I did, you can then filter through the results to get counts, latest post information, or whatever you need. For more info about the Comment table, read the <a href="http://developers.facebook.com/docs/reference/fql/comment" target="_blank">official documentation</a>.</p>
+<pre style="font-family: consolas;"><span style="color: #003399;">public</span> <span style="color: #003399;">void</span> GetFacebookComments()
+{
+    <span style="color: #003399;">var</span> appId = ConfigurationManager.AppSettings[<span style="color: #eb7300;">"AppID"</span>];
+    <span style="color: #003399;">var</span> appSecret = ConfigurationManager.AppSettings[<span style="color: #eb7300;">"Secret"</span>];
+    <span style="color: green;">// use app signed api key</span>
+    FacebookAPI api = <span style="color: #003399;">new</span> FacebookAPI(appId + <span style="color: #eb7300;">"|"</span> + appSecret);
+
+    <span style="color: #003399;">string</span> url = <span style="color: #440088;">String</span>.Format(<span style="color: #eb7300;">"https://api.facebook.com/method/fql.query?query=SELECT fromid, text, id, time, username, xid, object_id FROM comment WHERE xid IN (SELECT xid FROM comments_info WHERE app_id = {0}) ORDER BY time desc&amp;access_token={1}&amp;format=json"</span>, appId, api.AccessToken);
+
+    HttpWebRequest request = WebRequest.Create(url) <span style="color: #003399;">as</span> HttpWebRequest;
+    <span style="color: #003399;">using</span> (HttpWebResponse response = request.GetResponse() <span style="color: #003399;">as</span> HttpWebResponse)
+    {
+        StreamReader reader = <span style="color: #003399;">new</span> StreamReader(response.GetResponseStream());
+        comments = reader.ReadToEnd();
+    }
+    JSONObject fbComments = JSONObject.CreateFromString(comments);
+    <span style="color: #003399;">if</span> (fbComments.Array != <span style="color: #003399;">null</span>)
+    {
+        <span style="color: #440088;">String</span>[] xidArray = <span style="color: #003399;">new</span> <span style="color: #440088;">String</span>[] { <span style="color: #eb7300;">"xid1"</span>, <span style="color: #eb7300;">"xid2"</span>, <span style="color: #eb7300;">"etc"</span> };
+
+        <span style="color: #003399;">foreach</span> (<span style="color: #003399;">var</span> xid <span style="color: #003399;">in</span> xidArray) {
+            <span style="color: #003399;">var</span> xidComments = fbComments.Array.Where(m =&gt; m.Dictionary[<span style="color: #eb7300;">"xid"</span>].String == xid);
+
+            <span style="color: #003399;">if</span> (xidComments != <span style="color: #003399;">null</span> &amp;&amp; xidComments.Count() &gt; <span style="color: blue;">0</span>)
+            {
+                <span style="color: #003399;">var</span> lastDiscussBy = xidComments.First().Dictionary[<span style="color: #eb7300;">"fromid"</span>].String;
+                <span style="color: #003399;">var</span> dtDateTime = <span style="color: #003399;">new</span> <span style="color: #440088;">DateTime</span>(<span style="color: blue;">1970</span>, <span style="color: blue;">1</span>, <span style="color: blue;">1</span>, <span style="color: blue;">0</span>, <span style="color: blue;">0</span>, <span style="color: blue;">0</span>, <span style="color: blue;">0</span>);
+                <span style="color: #003399;">var</span> lastDiscussTime = dtDateTime.AddSeconds(<span style="color: #440088;">Convert</span>.ToDouble(chzComments.Last().Dictionary[<span style="color: #eb7300;">"time"</span>].String)).ToLocalTime();
+            }
+        }
+    }
+}</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://abbysims.me/2010/09/querying-facebook-comment-table-with-fql-query-and-c/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>PowerShell, MySQL Command-Line, and mysqldump Restore Issues</title>
+		<link>http://abbysims.me/2010/06/powershell-mysql-command-line-and-mysqldump-restore-issues/</link>
+		<comments>http://abbysims.me/2010/06/powershell-mysql-command-line-and-mysqldump-restore-issues/#comments</comments>
+		<pubDate>Fri, 18 Jun 2010 21:15:05 +0000</pubDate>
+		<dc:creator>Abby Sims</dc:creator>
+				<category><![CDATA[programming]]></category>
+
+		<guid isPermaLink="false">http://abbysims.me/?p=166</guid>
+		<description><![CDATA[Today&#8217;s fun involved trying to restore a mysql dump file. I&#8217;m integrating this into an existing process that happens to be a PowerShell script. First, I worked out the appropriate command via the MySQL Command Line Tool to import some data that I needed to work with. The result was that I tried to add something [...]]]></description>
+			<content:encoded><![CDATA[<p>Today&#8217;s fun involved trying to restore a mysql dump file. I&#8217;m integrating this into an existing process that happens to be a PowerShell script. First, I worked out the appropriate command via the <a href="http://dev.mysql.com/doc/refman/5.1/en/mysql.html">MySQL Command Line Tool</a> to import some data that I needed to work with. The result was that I tried to add something similar to the following into my PowerShell script:</p>
+<pre>mysql -u root -p[root_password] [database_name] &lt; dumpfile.sql</pre>
+<p>Running this command in PowerShell, I was given this lovely error message.</p>
+<pre>The '&lt;' operator is reserved for future use.</pre>
+<p>I&#8217;m not an expert PowerShell coder. I try my hand at it to get things done, but I don&#8217;t study it regularly. I pretty much know that if I need to do task A, there&#8217;s probably a command for it that I just need to get syntactically correct. I expect to put that command in a window that is supposed to run commands and I expect it to work. Apparently, the &#8216;&lt;&#8217; operator is called a &#8220;redirection operator&#8221; and PowerShell doesn&#8217;t support them in this way. I had no concept of &#8220;redirection operator&#8221; before today. It&#8217;s still a fuzzy concept.</p>
+<p>In the end, I found two solutions to my problem. One of them was good and one was not. First, here&#8217;s what you <strong>don&#8217;t</strong> want to do:</p>
+<pre>Get-Content dumpfile.sql | mysql -u root -p[root_password] [database_name]</pre>
+<p>This will cause your entire file to get loaded into an object that can be manipulated in local memory. Fine if you know your file is small, but bad if your file is large. My file is 300+ MB. Instead, try this:</p>
+<pre>&amp;cmd /c "<span style="font-family: Consolas, Monaco, 'Courier New', Courier, monospace; line-height: 18px; font-size: 12px; white-space: pre;">mysql -u root -p[root_password] [database_name]</span> &lt; dumpfile.sql"</pre>
+<p>This basically runs this command as though you typed it in the command line. It was much faster.</p>
+<p><em>P.S &#8211; Thank you, Luke, for helping me figure this out.</em></p>
+]]></content:encoded>
+			<wfw:commentRss>http://abbysims.me/2010/06/powershell-mysql-command-line-and-mysqldump-restore-issues/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Architecture Mismatch In Connection Between SQL 2008 and MySQL ODBC</title>
+		<link>http://abbysims.me/2010/06/architecture-mismatch-in-connection-between-sql-2008-and-mysql-odbc/</link>
+		<comments>http://abbysims.me/2010/06/architecture-mismatch-in-connection-between-sql-2008-and-mysql-odbc/#comments</comments>
+		<pubDate>Wed, 16 Jun 2010 17:39:47 +0000</pubDate>
+		<dc:creator>Abby Sims</dc:creator>
+				<category><![CDATA[programming]]></category>
+
+		<guid isPermaLink="false">http://abbysims.me/?p=161</guid>
+		<description><![CDATA[Spent too much time this morning troubleshooting this error when attempting to setup a linked server in SQL 2008 Express to a MySQL database. Cannot initialize the data source object of OLE DB provider "MSDASQL" for linked server "LINKEDSERVERNAME". OLE DB provider "MSDASQL" for linked server "LINKEDSERVERNAME" returned message "[Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch [...]]]></description>
+			<content:encoded><![CDATA[<p>Spent too much time this morning troubleshooting this error when attempting to setup a linked server in SQL 2008 Express to a MySQL database.</p>
+<pre>Cannot initialize the data source object of OLE DB provider "MSDASQL" for linked server "LINKEDSERVERNAME".</pre>
+<pre>OLE DB provider "MSDASQL" for linked server "LINKEDSERVERNAME" returned message "[Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application". (.Net SqlClient Data Provider)</pre>
+<p>The simple solution to my problem was to uninstall my 32-bit driver and instead install the <a href="http://dev.mysql.com/downloads/mirror.php?id=376347">64-bit Connector/ODBC driver</a>. For those of you looking for additional help on how to configure a linked server connection to MySQL, see <a href="http://www.ideaexcursion.com/2009/02/25/howto-setup-sql-server-linked-server-to-mysql/">HOWTO: Setup SQL Server Linked Server to MySQL</a> and <a href="http://dineshasanka.spaces.live.com/blog/cns!22A79FCE82651673!409.entry">How to create a Link Server for mySQL in SQL Server Management Studio (SSMS) in SQL Server 2005</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://abbysims.me/2010/06/architecture-mismatch-in-connection-between-sql-2008-and-mysql-odbc/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Mid-Year Recap</title>
+		<link>http://abbysims.me/2010/06/mid-year-recap/</link>
+		<comments>http://abbysims.me/2010/06/mid-year-recap/#comments</comments>
+		<pubDate>Wed, 09 Jun 2010 15:16:36 +0000</pubDate>
+		<dc:creator>Abby Sims</dc:creator>
+				<category><![CDATA[random stuff]]></category>
+
+		<guid isPermaLink="false">http://abbysims.me/?p=159</guid>
+		<description><![CDATA[Biggest achievements of the year so far: 4 new ASP.net MVC apps 2 enhanced PHP apps 1 website launched 1 new job as rock star [web developer] 1 trip to Jersey to visit new niece 1 mommy-son trip to Branson Goals for the rest of the year*: Continue to rock the projects at work Develop [...]]]></description>
+			<content:encoded><![CDATA[<p>Biggest achievements of the year so far:</p>
+<ul>
+<li>4 new ASP.net MVC apps</li>
+<li>2 enhanced PHP apps</li>
+<li>1 website launched</li>
+<li>1 new job as rock star [web developer]</li>
+<li>1 trip to Jersey to visit new niece</li>
+<li>1 mommy-son trip to Branson</li>
+</ul>
+<p>Goals for the rest of the year*:</p>
+<ul>
+<li>Continue to rock the projects at work</li>
+<li>Develop an Android app and put on market</li>
+<li>Find something with OS X and port Android app to Objective-C</li>
+<li>Complete at least one more side web development projects</li>
+<li>Hot air balloon ride this fall sounds nice (<em>sans kids</em>)</li>
+<li>Weekend trips with the kids</li>
+<li>Vacation with the hubby</li>
+<li>Chill</li>
+</ul>
+<p><em>*subject to change</em></p>
+]]></content:encoded>
+			<wfw:commentRss>http://abbysims.me/2010/06/mid-year-recap/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Support Bryant Soccer Club at Reynolds Road Chick-fil-A</title>
+		<link>http://abbysims.me/2010/04/support-bryant-soccer-club-at-reynolds-road-chick-fil-a/</link>
+		<comments>http://abbysims.me/2010/04/support-bryant-soccer-club-at-reynolds-road-chick-fil-a/#comments</comments>
+		<pubDate>Wed, 07 Apr 2010 14:58:01 +0000</pubDate>
+		<dc:creator>Abby Sims</dc:creator>
+				<category><![CDATA[community]]></category>
+
+		<guid isPermaLink="false">http://abbysims.me/?p=149</guid>
+		<description><![CDATA[From April 6 &#8211; 20, 2010, bring in this flyer to donate 15% of your purchase at the Reynolds Road Chick-fil-A to the Bryant Soccer Club! Bryant Soccer Club Chick-fil-a Fundraiser Flyer]]></description>
+			<content:encoded><![CDATA[<p>From April 6 &#8211; 20, 2010, bring in this flyer to donate 15% of your purchase at the Reynolds Road Chick-fil-A to the Bryant Soccer Club!</p>
+<p><a href="http://abbysims.me/wp-content/uploads/2010/04/BSC_Chick-fil-a_Flyer.pdf">Bryant Soccer Club Chick-fil-a Fundraiser Flyer</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://abbysims.me/2010/04/support-bryant-soccer-club-at-reynolds-road-chick-fil-a/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Another Nutty Order</title>
+		<link>http://abbysims.me/2010/01/another-nutty-order/</link>
+		<comments>http://abbysims.me/2010/01/another-nutty-order/#comments</comments>
+		<pubDate>Tue, 19 Jan 2010 18:28:31 +0000</pubDate>
+		<dc:creator>Abby Sims</dc:creator>
+				<category><![CDATA[things i love]]></category>
+
+		<guid isPermaLink="false">http://abbysims.me/?p=142</guid>
+		<description><![CDATA[Looking forward my next nutty order from Nuts Online. It&#8217;s always good quality and tasty stuff! Here&#8217;s what&#8217;s coming to me: 1 lb. Assorted Sixlets: 1 Pound Bags 1 lb. Neapolitan Covered Pretzels: 1 Pound Bags 1 lb. Roasted Soy Beans (Salted, Whole): 1 Pound Bags 1 lb. Dry Roasted Edamame (Salted): 1 Pound Bags 1 lb. Roasted [...]]]></description>
+			<content:encoded><![CDATA[<p>Looking forward my next nutty order from <a title="Nuts Online" href="http://www.NutsOnline.com">Nuts Online</a>. It&#8217;s always good quality and tasty stuff! Here&#8217;s what&#8217;s coming to me:</p>
+<ul>
+<li>1 lb. Assorted Sixlets: 1 Pound Bags</li>
+<li>1 lb. Neapolitan Covered Pretzels: 1 Pound Bags</li>
+<li>1 lb. Roasted Soy Beans (Salted, Whole): 1 Pound Bags</li>
+<li>1 lb. Dry Roasted Edamame (Salted): 1 Pound Bags</li>
+<li>1 lb. Roasted Pistachios (Salted, In Shell): 1 Pound Bags</li>
+<li>1 lb. Georgia Pecans (Raw, No Shell): 1 Pound Bags</li>
+<li>2 lbs. Roasted Peanuts (Salted, In Shell): 1 Pound Bags</li>
+</ul>
+<p>Let me know if you are interested in ordering from them. I can refer a friend and get you 10% off your first order.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://abbysims.me/2010/01/another-nutty-order/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Tyler the Christmas Minister</title>
+		<link>http://abbysims.me/2009/12/tyler-the-christmas-minister/</link>
+		<comments>http://abbysims.me/2009/12/tyler-the-christmas-minister/#comments</comments>
+		<pubDate>Mon, 21 Dec 2009 22:22:03 +0000</pubDate>
+		<dc:creator>Abby Sims</dc:creator>
+				<category><![CDATA[news]]></category>
+
+		<guid isPermaLink="false">http://abbysims.me/?p=137</guid>
+		<description><![CDATA[My seven-year old son, Tyler, was at the office with me last Friday after his class Christmas party. He was running around sharing the Legend of the Candy Cane, reciting Luke chapter 2 verses 8 through 14, and generally winning over the hearts of all. One of the ladies I work with was kind enough to capture his Luke [...]]]></description>
+			<content:encoded><![CDATA[<p>My seven-year old son, Tyler, was at the office with me last Friday after his class Christmas party. He was running around sharing the <a href="http://www.easyfunschool.com/article1266.html">Legend of the Candy Cane</a>, reciting Luke chapter 2 verses 8 through 14, and generally winning over the hearts of all. One of the ladies I work with was kind enough to capture his Luke recital on an audio recorder.</p>
+<p>Enjoy and happy holidays!</p>
+<p><a href="http://abbysims.me/wp-content/uploads/2009/12/tyler_luke_chap_2_8-141.mp3">Tyler Reciting Luke Chapter 2, Verse 8 &#8211; 14</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://abbysims.me/2009/12/tyler-the-christmas-minister/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+<enclosure url="http://abbysims.me/wp-content/uploads/2009/12/tyler_luke_chap_2_8-141.mp3" length="708144" type="audio/mpeg" />
+		</item>
+		<item>
+		<title>On Christmas&#8230; Unreasonable Things I Want</title>
+		<link>http://abbysims.me/2009/12/on-christmas-unreasonable-things-i-want/</link>
+		<comments>http://abbysims.me/2009/12/on-christmas-unreasonable-things-i-want/#comments</comments>
+		<pubDate>Tue, 15 Dec 2009 19:24:25 +0000</pubDate>
+		<dc:creator>Abby Sims</dc:creator>
+				<category><![CDATA[random stuff]]></category>
+
+		<guid isPermaLink="false">http://abbysims.me/?p=127</guid>
+		<description><![CDATA[An Android phone. (I&#8217;m still waiting to be happy with the hardware and Android version combination for this one.) A trip to a tropical island or resort. A ride in a hot air balloon (but not until the fall foilage is here again). At least one romantic surprise a week from my husband. (In case [...]]]></description>
+			<content:encoded><![CDATA[<ol>
+<li>An Android phone. (I&#8217;m still waiting to be happy with the hardware and Android version combination for this one.)</li>
+<li>A trip to a tropical island or resort.</li>
+<li>A ride in a hot air balloon (but not until the fall foilage is here again).</li>
+<li>At least one <em>romantic</em> surprise a week from my husband. (In case you read this, that&#8217;s flowers, cards, chocolates, candle-lit backrubs, etc., etc. <img src='http://abbysims.me/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> )</li>
+<li>Speaking of backrubs, a lifetime spa membership.</li>
+<li>The kids to stop complaining about having to shower and who has to go first.</li>
+<li>For Red to decide to use the litter box again.</li>
+<li>To develop websites and applications all day long (ok&#8230; well only while at work).</li>
+</ol>
+]]></content:encoded>
+			<wfw:commentRss>http://abbysims.me/2009/12/on-christmas-unreasonable-things-i-want/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Now Accepting Clients</title>
+		<link>http://abbysims.me/2009/11/now-accepting-clients/</link>
+		<comments>http://abbysims.me/2009/11/now-accepting-clients/#comments</comments>
+		<pubDate>Thu, 12 Nov 2009 04:53:55 +0000</pubDate>
+		<dc:creator>Abby Sims</dc:creator>
+				<category><![CDATA[news]]></category>
+		<category><![CDATA[web]]></category>
+		<category><![CDATA[work]]></category>
+
+		<guid isPermaLink="false">http://abbysims.me/?p=124</guid>
+		<description><![CDATA[A while back, I decided I was ready to once again make the leap to accept contracts for web design work. I&#8217;ve decided to turn this into an at least part-time business. As such, I&#8217;m happy to announce that I&#8217;ve created a new www.idestini.com to advertise my efforts. If you know a small business or organization [...]]]></description>
+			<content:encoded><![CDATA[<p>A while back, I decided I was ready to once again make the leap to accept contracts for web design work. I&#8217;ve decided to turn this into an at least part-time business.</p>
+<p>As such, I&#8217;m happy to announce that I&#8217;ve created a new <a href="http://www.idestini.com">www.idestini.com</a> to advertise my efforts. If you know a small business or organization looking for a new site or some updates to their existing site (especially from the Little Rock area), please forward them on over.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://abbysims.me/2009/11/now-accepting-clients/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

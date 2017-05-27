@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xml:lang="ja">
+	<channel>
+		<title>hp12c</title>
+		<link>http://d.hatena.ne.jp/keyesberry/</link>
+		<description>hp12c</description>
+		<dc:creator>keyesberry</dc:creator>
+
+
+		<item>
+			<title>irbから学ぶRubyの並列処理 ~ forkからWebSocketまで</title>
+			<link>http://d.hatena.ne.jp/keyesberry/20110929/p1</link>
+
+			<description>  世の中は並列化花ざかりだよ 人間はシングルタスクのままなのに プログラミングするときは マルチタスクが要求されるなんて 世知辛い世の中になったものだね  でも情報革命は始まったばかりだから 愚痴ってばかりもいられないよ 自分がその波にうまく乗れないとしても うまく乗ってる人の様を 間近で見てみたいと思うんだ   そんなわけで..  Rubyのfork Thread Reactor EventMachine WebSocketなどの並列化について少し学んだので 自分の理解をここにまとめておくよ  REP ...</description>
+
+			<dc:creator>keyesberry</dc:creator>
+
+			<pubDate>Wed, 28 Sep 2011 15:00:00 GMT</pubDate>
+
+
+
+
+		</item>
+
+		<item>
+			<title>僕はブログを書く ~ HateDa::Bookmarks の紹介</title>
+			<link>http://d.hatena.ne.jp/keyesberry/20110914/p1</link>
+
+			<description>  僕はブログを書く 名前も知らない誰かが そのテーマに惹かれて きっと読んでくれるから  僕はブログを書く 年齢も性別も知らない誰かが 僕と同じ関心を持って ブクマをしてくれるから  僕はブログを書く きっと生涯会うことのない誰かが その内容に共感して スターやコメントをくれるから  僕はブログを書く ブクマやスターを通して 同じ関心を持っている人たちを 見つけることができるから  僕はブログを書く  でもどうやったら 僕のブログに良くブクマしてくれる人を 簡単に見つけることができるの？ どうやったら. ...</description>
+
+			<dc:creator>keyesberry</dc:creator>
+
+			<pubDate>Tue, 13 Sep 2011 15:00:00 GMT</pubDate>
+
+
+
+
+		</item>
+
+		<item>
+			<title>Ruby脳でCoffeeScriptのクラスを理解する</title>
+			<link>http://d.hatena.ne.jp/keyesberry/20110908/p1</link>
+
+			<description>  Rubyは最高の言語だから もっと普及していいと思うけれども その障害となっているのはたぶん 「Rubyがビジュアルに訴えない言語」となっているからだよ たしかにRubyにはRuby/TkとかShoesとかがあるけど 現代のプログラミングで「ビジュアル」と言ったら 暗黙的に「Web上の」という修飾が付くよね  一方でJavaScriptは jQueryやCoffeeScriptの人気を見る限り 最高とは言えない言語だけれども 「ビジュアルに訴える言語」となっている点が 普及の大きな要因になっていると思 ...</description>
+
+			<dc:creator>keyesberry</dc:creator>
+
+			<pubDate>Wed, 07 Sep 2011 15:00:00 GMT</pubDate>
+
+
+
+
+		</item>
+
+		<item>
+			<title>Rubyでもリスト内包表記したい？</title>
+			<link>http://d.hatena.ne.jp/keyesberry/20110902/p1</link>
+
+			<description>  PythonやHaskellやErlangにはリスト内包表記と呼ばれる リストの中で新たなリストを生成する構文があるよ 例えばRubyでリストの要素の値を倍にしたい場合は Array#mapを使うよね  l = [*1..10] l.map { |i| i*2 } # =&#62; [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]   これをErlangのリスト内包表記では以下のように書けるんだ  L = lists:seq(1,10). [X*2 || X &#60;- L].  ...</description>
+
+			<dc:creator>keyesberry</dc:creator>
+
+			<pubDate>Thu, 01 Sep 2011 15:00:00 GMT</pubDate>
+
+
+
+
+		</item>
+
+		<item>
+			<title>Rubyで論理プログラミングしようよ!</title>
+			<link>http://d.hatena.ne.jp/keyesberry/20110831/p1</link>
+
+			<description>  人生は選択の連続だよ １つの選択が君の未来を変えるよ そして残念なことに 後からその失敗に気がついても 選択をやり直すことは人生ではできないんだよ..  コンピュータプログラムにも似たようなところがあるよ プログラムは一度走り出したら止まらないから 途中の分岐で選ばれた選択を 後から変えるのは得意じゃないんだ  問題１ 例えば次のような問題を考えてみるよ   xが1,2,3の何れかで yが4,5,6の何れかであるとき  x + y = 7  となるx, yの組みを求めよ  x, yには複数の選択肢があ ...</description>
+
+			<dc:creator>keyesberry</dc:creator>
+
+			<pubDate>Tue, 30 Aug 2011 15:00:00 GMT</pubDate>
+
+
+
+
+		</item>
+
+	</channel>
+</rss>

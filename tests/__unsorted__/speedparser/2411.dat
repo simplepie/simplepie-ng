@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<?xml-stylesheet href="http://d.hatena.ne.jp/mainyaa/rssxsl" type="text/xsl" media="screen"?>
+
+
+<rdf:RDF
+	xmlns="http://purl.org/rss/1.0/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xml:lang="ja">
+<channel rdf:about="http://d.hatena.ne.jp/mainyaa/rss">
+	<title>Happy New World</title>
+	<link>http://d.hatena.ne.jp/mainyaa/</link>
+	<description>Happy New World</description>
+	
+	<dc:creator>mainyaa</dc:creator>
+	<dc:date>2011-08-01T15:42:38+09:00</dc:date>
+	<items>
+	<rdf:Seq>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/mainyaa/20110801/p1"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/mainyaa/20110417/p1"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/mainyaa/20110321/p1"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/mainyaa/20090707/p1"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/mainyaa/20090625/p1"/>
+	</rdf:Seq>
+	</items>
+</channel>
+
+
+
+<item rdf:about="http://d.hatena.ne.jp/mainyaa/20110801/p1">
+	<title> 転職</title>
+	<link>http://d.hatena.ne.jp/mainyaa/20110801/p1</link>
+	<description> 7月31日をもって、mixiを退職しました。ここは個人ブログなので堅苦しい挨拶は抜きにして、これまでと今後について書きたいと思います。 これまで 07年に最初の新卒としてmixiにジョインし、Perlに四苦八苦しながらも、Find Job !、mixiとサービスに関わり、特にmixiアプリ</description>
+
+	<content:encoded><![CDATA[
+		<div class="section">
+			<p>7月31日をもって、mixiを退職しました。ここは個人ブログなので堅苦しい挨拶は抜きにして、これまでと今後について書きたいと思います。</p>
+			<h4> これまで</h4>
+			<p>07年に最初の新卒としてmixiにジョインし、Perlに四苦八苦しながらも、Find Job !、mixiとサービスに関わり、特にmixiアプリは、プロジェクトの立ち上げから4年近くエンジニアとして開発に携われたのはすごく貴重な経験でした。</p>
+			<p>このプロジェクトのおかげでいろんな人に会えたし、何も無いところからモノを作る楽しさ、優れたエンジニアと仕事をするスピード感、プラットフォームの戦略、抽象化して捉えることの大切さを学びました。</p>
+			<p>4年という長きにわたって（長くないように思えるかもしれないが、僕にとっては長かった）mixiの開発に携わってきたが、最良の出来事は、mixiを通じて様々な人物に出会えたことだなーと感じています。</p>
+			<p>圧倒的な技術力を持つひと、いろいろ教えてくれるメンター、気の許せる友人、負けたくない好敵手、バカみたいにヲタ話ばかり出来る人、組織の中でしたたかに生きる人、兄のような人、いろんな人がいた。その全員に感謝したい。</p>
+			<p><span style="font-weight:bold;" class="deco">本当に本当にありがとう！</span></p>
+			<p>組織を抜けることで話せなくなる内容ができたとしても、新しい挑戦を応援してくれ、人同士の繋がりだけは決して切れないと信じさせてくれる人達の後押しのおかげで今の僕がある気がします。</p>
+			<h4> これから</h4>
+			<p>会社を抜ける理由は書きませんが、今後の抱負など。まぁ今後の抱負と言っても、mixiに入る時とあまり変わりません。</p>
+			<p><span style="font-weight:bold;" class="deco">ユーザーに一番近いところから世界を変えるプロダクトを作ること</span>です。</p>
+			<p>短期的には英語でコミュニケーションを取れるようにするとかAndroidの開発を極めるとかがありますが、いつか会社を起こしてみたいし、技術ももっともっと高めたい。まだまだやりたいことはたくさんあるので手段はいろいろ変わるかもしれませんが、この目標だけは今後も変わらない気がしています。</p>
+			<p>目標があり、そこまでに複雑な情報があれば整理し、問題があれば解決し、道がなければコードで作る。ただそれだけです。</p>
+			<p>次の会社ですが、<a href="http://vettl.com/" target="_blank">Vettl Inc.</a>にジョインします。webooさんこと山下さんが立ち上げたスタートアップで、僕も入れて3人全員エンジニアの小さな会社です。</p>
+			<p>スタートアップの失敗？リスク？糞食らえ。最大限の努力をした上で、もし失敗しても失敗から学び懲りずにやり直すのがエンジニアのやり方です。</p>
+			<p>8月1日からすぐに働き始めます。夏休みはもう十分に取りました。お金はないが、やる気はヤバイぐらい満ち溢れてます。働く場所は相変わらず渋谷なので、気軽にランチや飲みに誘って頂ければと思います！</p>
+			<h4> まとめ</h4>
+			<p>次回作にご期待ください。</p>
+		</div>
+]]></content:encoded>
+	<dc:creator>mainyaa</dc:creator>
+	<dc:date>2011-08-01</dc:date>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/mainyaa/20110417/p1">
+	<title>[社会][社会2.0][東日本大震災]モヒカン族の考えた新しい社会システム</title>
+	<link>http://d.hatena.ne.jp/mainyaa/20110417/p1</link>
+	<description> 最近めっきり聞かなくなったモヒカン族。絶滅危惧種であるモヒカン族のアプローチで今回の東日本大震災の問題について1ヶ月間スタートレック：ヴォイジャーとまどかマギカを見なおしながら考えてきたことをここに公開する。 モヒカン族についてもっと知りたい人は、モヒカン</description>
+
+	<content:encoded><![CDATA[
+		<div class="section">
+			<p>最近めっきり聞かなくなったモヒカン族。絶滅危惧種であるモヒカン族のアプローチで今回の東日本大震災の問題について1ヶ月間スタートレック：ヴォイジャーとまどかマギカを見なおしながら考えてきたことをここに公開する。</p>
+			<p>モヒカン族についてもっと知りたい人は、<a href="http://mohican.g.hatena.ne.jp/keyword/%E3%83%A2%E3%83%92%E3%82%AB%E3%83%B3%E5%AE%A3%E8%A8%80" target="_blank">モヒカン宣言</a>を見るといいだろう。</p>
+			<p>さて、もやもやを吐き出すだけ吐き出すように書いていたら非常に長くなってしまったのでここに章立てへのリンクを置いておく。時間がない人は第4章とまとめだけ読んでもいいだろう。</p>
+			<blockquote>
+			<p><a href="http://d.hatena.ne.jp/mainyaa/20110417/p1#1" target="_blank">第1章：「地震怖いよ。マジで怖いよ。津波怖すぎだよ。原発事故まで重なったらマジでヤバイ。日本オワタ。」</a></p>
+			<p><a href="http://d.hatena.ne.jp/mainyaa/20110417/p1#2" target="_blank">第2章：「あれ？案外平気じゃね？でも、この平気ってまた危険が見えなくなっただけだよね？平気を平気のままにしておいたらまた歴史を繰り返すんじゃね？」</a></p>
+			<p><a href="http://d.hatena.ne.jp/mainyaa/20110417/p1#3" target="_blank">第3章：「歴史を繰り返さないにはどうしたらいいか？このままどんどん今の状況が平気で当たり前になったらまた問題を先送りしちゃうよ？どうしたらいいんだろう？」</a></p>
+			<p><a href="http://d.hatena.ne.jp/mainyaa/20110417/p1#4" target="_blank">第4章：【僕と契約して「社会2.0」になろうよ！】</a></p>
+			<p><a href="http://d.hatena.ne.jp/mainyaa/20110417/p1#5" target="_blank">第5章：「奇跡も、魔法も、あるんだよ」</a></p>
+			<p><a href="http://d.hatena.ne.jp/mainyaa/20110417/p1#6" target="_blank">第6章：「もう何も怖くない」</a></p>
+			<p><a href="http://d.hatena.ne.jp/mainyaa/20110417/p1#7" target="_blank">第7章：まとめ</a></p>
+			</blockquote>
+			<p><a name="1"></a></p>
+			<h4>第1章：「地震怖いよ。マジで怖いよ。津波怖すぎだよ。原発事故まで重なったらマジでヤバイ。日本オワタ。」</h4>
+
+			<ul>
+				<li> <span style="font-weight:bold;">「原子力発電は危ないからすべて壊すべき」</span></li>
+			</ul>
+			<p>このような極論は正しいか？それは誰にもわからない。</p>
+			<p>難しい問題を抽象的に捉えるアプローチは正しい。しかし、問題を0と1で捉えることは情報が欠損しすぎており、問題を議論できず、否定もできないため、極論は先に言ったほうが、必ず正しくなる。必ず正しい意見というのは簡単に優越感を得られる。だからこそ「<span style="font-weight:bold;">優越感ゲーム</span>」に陥るのである。</p>
+			<p>なぜこのような極論が出てしまうのか。それは、自分の安全が脅かされるという「恐怖」によって、自分の意見を否定されたくない、問題を早く解決したいという欲求が出て、問題を多面的に捉えられなくなってしまうからだ。</p>
+			<p>問題を解決するには、その問題の定義を考え、誰にとっての問題化を考え、抽象的に捉え、問題の本質を考え、議論する必要がある。感情に流されて結論を急いでは、また間違ってしまうだろう。</p>
+			<p>もちろん、複雑な問題を数値化し、「<span style="font-weight:bold;">見える化</span>」し、抽象化によって1次元にプロットする行為は、正しい。正しく使えば。体系化されていない情報を理解するのに非常に強力なツールなので積極的に使うべきだ。ただし、自分の論理の正当性を証明するのに使ってはいけない。</p>
+			<p>「<span style="font-weight:bold;">ライトついてますか</span>」</p>
+			<blockquote>
+			<p><img alt="ライト、ついてますか―問題発見の人間学" src="http://ecx.images-amazon.com/images/I/410X6YM9F7L._SL160_.jpg" class="hatena-asin-detail-image"></p>
+			<p><div class="hatena-asin-detail-info"></p>
+			<p><a href="http://www.amazon.co.jp/gp/product/4320023684/ref=as_li_qf_sp_asin_tl?ie=UTF8&tag=ne7i-22&linkCode=as2&camp=247&creative=1211&creativeASIN=4320023684"><span style="font-weight:bold;">ライト、ついてますか―問題発見の人間学</span></p>
+			<p></a></p>
+			<p></div></p>
+			<p><div class="hatena-asin-detail-foot"></p>
+			</blockquote>
+			<p>問題発見手法の名著にこの本がある。この本は、問題を多面的に捉え、誰にとっての問題か、問題の本質は何かを考えるのに役にたつ。</p>
+			<p>極論に陥らずに議論するには、そもそも問題とは何かを理解する必要が有る。問題というものを考えるときに頼りになるのが抽象化だ。様々な視点で問題を捉える手助けになる。</p>
+			<p><a name="2"></a></p>
+			<h4>第2章：「あれ？案外平気じゃね？でも、この平気ってまた危険が見えなくなっただけだよね？平気を平気のままにしておいたらまた歴史を繰り返すんじゃね？」</h4>
+			<p>ここでの問題の本質は、解決に長期間かかる問題を先送りしてしまう構造にある。</p>
+			<p><span style="font-weight:bold;">時間という軸が抜けているのだ。</span></p>
+			<p>社会問題というのは、解決に長い予測を必要とし、目標がない問題である。人間は同じ刺激を繰り返し受けるとそれに慣れてしまう。「危ない危ない」と思いつつ、問題を先送りにしてしまうのだ。長期に渡る問題の意思決定の難しさはそこに起因する。</p>
+			<p>構造に時間軸を含めるにはどうしたらいいか。マイルストーン決め、時間を区切って定期的に見直しながら、数値目標を作るのだ。時間が区切られていないプロジェクトは曖昧な目標しか設定できない。そして、目標が曖昧なプロジェクトは正確な意思決定が出来ないのだ。</p>
+			<p><a name="3"></a></p>
+			<h4>第3章：「歴史を繰り返さないにはどうしたらいいか？このままどんどん今の状況が平気で当たり前になったらまた問題を先送りしちゃうよ？どうしたらいいんだろう？」</h4>
+			<p>前置きが長くなってしまった。ではどうすればいいのか？社会問題は、時間軸を含めて長期的な未来を正確に予測し、意思決定する必要が有る。その為にはどうすればいいか。</p>
+
+			<ul>
+				<li><span style="font-size:large;">社会問題は数値に基づいて多面的に議論し、極論に頼らない</span></li>
+				<li><span style="font-size:large;">社会問題の議論は時間の推移による問題の先送りを対策する</span></li>
+				<li><span style="font-size:large;">社会システムを時間の推移を前提とし、問題を再定義して変化し続ける社会システムにする</span></li>
+			</ul>
+			<p>さて、ここで上げた方法はどれも<span style="font-weight:bold;">具体性がない</span>。それはなぜか。まだまだ問題の本質に迫れていないのだ。</p>
+			<p>問題の本質とはなにか。問題の定義とはなにか。それは、社会問題を自分の問題だと考えていないことだ。それを解決するにはどうすればいいのか。システムのアップデートの呼びかけるのだ。</p>
+			<p><a name="4"></a></p>
+			<h4>第4章：【僕と契約して「社会2.0」になろうよ！】</h4>
+			<p>オープンな情報発信によって論理に基づいた議論をし、社会問題を先送りにしない、変化し続ける社会を「<span style="font-weight:bold;font-size:x-large;">社会2.0</span>」として定義し、それを広めるのだ。</p>
+			<p>民主主義である社会を変えるには、オープンな場に情報発信し、開かれた議論によって多数派になるのだ。このエントリーを書いたのは、この結論に達したからだ。</p>
+			<p>個人が情報発信するWeb2.0の時代には、それにふさわしい議論の方法がある。ブログを書いて情報発信するのだ。もちろんTwitterでもmixiでも何でも良い。開かれ場で議論することが大切なのだ。そのためのツールはたくさんそろっている。</p>
+			<p><span style="font-size:large;font-weight:bold;">地震によって津波対策とエネルギー問題を先送りにしてきた社会システムは破壊された。沢山の人が死に、外国に危ない国と思われ、みんな恐怖し、混乱した。</span></p>
+			<p><span style="font-weight:bold;font-size:large;">もう二度とゴメンだ。</span></p>
+			<p><span style="font-weight:bold;font-size:large;">社会問題を自分たちの問題であると捉え、問題を先送りにしない論理による社会システムを作るための行動が必要だ。</span></p>
+			<p><span style="font-size:large;"><span style="font-weight:bold;">古いシステムや、古い考え方しかできない人に「1.0」というレッテルを貼り、社会的に多数派になるのだ。</span></p>
+			<p>「社会2.0」じゃなくても、「Society2.0」でも「モヒカン党」でも「モヒカンNPO」でもなんでもいい。とにかく、恐怖と利害と極論での議論を避け、数値を出し、時間と目標を決めさせ、政府や企業が問題の先送りをさせない監視システムに、私たち一人ひとりがなるのだ。</p>
+			<p><a name="5"></a></p>
+			<h4>第5章：「奇跡も、魔法も、あるんだよ」</h4>
+			<p>社会というモンスターは我々個人が立ち向かうにはあまりに強固に見える。それにはまず情報という武器が必要だ。社会を変える方法を勉強すればいいのだ。それには、フランスに学ぶのが手っ取り早いだろう。</p>
+			<p>私の好きなブログの「<a href="http://mesetudesenfrance.blogspot.com/" target="_blank">フランスの日々</a>」のエントリーを一部引用します。フランスの解決手法や考え方は複雑で多次元の問題をうまく抽象化しており、勉強になります。</p>
+			<blockquote>
+			<p>かぶれていると思われるかもしれませんが、僕はフランスの人たちが一生懸命考えて出した答えを信頼しています。「センター入試とバカロレアに見る日仏の違い 」でも書きましたが、彼らは答えのない問題に対して、執拗にねちっこく思考力を回転させます。フランスの宗教問題や、ストライキの問題、結婚に対する考え方などなど、彼らが出した回答は日本から見るとへんてこなものに見えますが、背景を知るとなかなか妥当なものだと感じます。同じ人間が苦しみながら考え抜いた答えは、多くの場合日本の状況に対しても参考になるのです。</p>
+			</blockquote>
+			<p><a href="http://mesetudesenfrance.blogspot.com/2010/02/blog-post_22.html" target="_blank">http://mesetudesenfrance.blogspot.com/2010/02/blog-post_22.html</a></p>
+			<p><a name="6"></a></p>
+			<h4>第6章：「もう何も怖くない」</h4>
+			<p>ここで、フランスを上げたことには理由がある。「学ぶ事は真似る事」であるからだ。教育や知識のマスターは一定の推移を辿るので、まずは真似てみるのだ。</p>
+			<p>・真似から入り、真似て反復練習をし、抽象的に捉え、発展させる</p>
+			<p>まだまだ日本の社会や議論は未熟であると私は考えている。私自身も未熟だ。未熟さを指摘されたときに「揚げ足取り」と短絡的に捉えずに、未熟であることを認め、発展させる必要が有る。</p>
+			<p>日本人は伝統的に他国のテクノロジーを輸入して、改良してきた。それを社会にも適用するのだ。私は未熟を認めたときの日本人の力強さを知っている。そしてそれを強く信じている。</p>
+			<p><a name="7"></a></p>
+			<h4>第7章：まとめ</h4>
+
+			<ul>
+				<li>地震で浮かび上がった問題
+
+				<ul>
+					<li>私たちは問題を先送りにし、日本という集団の意思決定を間違ったことを知った</li>
+					<li>人間は恐怖により、極論を使ってしまい、議論をしないで結論を急ぐが、社会問題は性急に解決できないため、目標が設定できず、時間による問題の先送りを招く</li>
+					<li>私たちは恐怖や利害によって成り立った社会システムを駆逐しなければ、また間違った意思決定をして沢山の人を殺すだろう</li>
+					<li><span style="font-weight:bold;font-size:large;">そして、まどかマギカの最終話が放送されないような事態は二度と繰り返してはならない</span></li>
+				</ul>
+				</li>
+			</ul>
+
+			<ul>
+				<li>私の提案する解決法
+
+				<ul>
+					<li>混乱と恐怖を制御し、数値と論理をもとに議論し、意思決定する</li>
+					<li>長期的な問題を解決できるような社会システムに変化させる</li>
+					<li>それは時間を区切り、目標を掲げ、問題を再定義して社会システムだ</li>
+					<li>「<span style="font-weight:bold;">社会2.0</span>」を掲げ、議論と論理を基にし、変化し続ける社会を作る</li>
+					<li>それを広め、多数派になり、発展させる</li>
+				</ul>
+				</li>
+			</ul>
+
+			<ul>
+				<li>次のアクション
+
+				<ul>
+					<li>未熟さを認めて問題発見手法、問題解決手法、議論、論理、社会について学び、情報発信をする</li>
+					<li>私の社会的影響力は非常に低い。取るに足らない小さな声かもしれない</li>
+					<li>だとしても、オープンな場に情報発信して議論する。民主主義だからね</li>
+					<li>私は日本人と、インターネットの可能性を信じている</li>
+					<li>これを読んで感じたこと、考えたことをブログやTwitterに書いてフィードバックしてほしい</li>
+				</ul>
+				</li>
+			</ul>
+		</div>
+]]></content:encoded>
+	<dc:creator>mainyaa</dc:creator>
+	<dc:date>2011-04-17</dc:date>
+	<dc:subject>社会</dc:subject>
+	<dc:subject>社会2.0</dc:subject>
+	<dc:subject>東日本大震災</dc:subject>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/mainyaa/20110321/p1">
+	<title>[programming][event][hackforjapan]HackForJapanに参加してReTweetPlusというものを作った話</title>
+	<link>http://d.hatena.ne.jp/mainyaa/20110321/p1</link>
+	<description> ３日かけてHackForJapan ( https://sites.google.com/site/hackforjapan/ ) というイベントに参加しました。参加したと言っても全部オンラインです。 みんなでこの３連休を使って今回の東北地方太平洋沖地震で出てきた問題をみんなでアイディアを出して実装して、自分たちに</description>
+
+	<content:encoded><![CDATA[
+		<div class="section">
+			<p>３日かけてHackForJapan ( <a href="https://sites.google.com/site/hackforjapan/" target="_blank">https://sites.google.com/site/hackforjapan/</a> ) というイベントに参加しました。参加したと言っても全部オンラインです。</p>
+			<p>みんなでこの３連休を使って今回の東北地方太平洋沖地震で出てきた問題をみんなでアイディアを出して実装して、<span style="font-weight:bold;">自分たちに出来るやり方で社会に貢献しようぜ！</span>というイベントでした。</p>
+			<h4> 作ろうとした物</h4>
+			<p><span style="font-weight:bold;font-size:large;">ReTweetPlus</span></p>
+			<p><a href="http://f.hatena.ne.jp/mainyaa/20110322004904" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/m/mainyaa/20110322/20110322004904.png" alt="f:id:mainyaa:20110322004904p:image" title="f:id:mainyaa:20110322004904p:image" class="hatena-fotolife"></a></p>
+			<p>Twitterサイト上で流れてきたRTに対して、</p>
+
+			<ul>
+				<li> <span style="font-weight:bold;">外部サイトのタグ（はてなブックマークのタグ）</span></li>
+				<li> <span style="font-weight:bold;">関連エントリー（そのツイートが含まれるTogetterや、今回他の方が作られる関連サービスへのURL）</span></li>
+			</ul>
+			<p>などのメタ情報を付与するChrome Extension / Greasemonkeyスクリプトを作る</p>
+			<h4> なぜ？</h4>
+
+			<ul>
+				<li> なぜこれを開発するのか？
+
+				<ul>
+					<li> 今回の東北地方太平洋沖地震ではTwitterがかなり活用されたが、【拡散希望】で流れてきたRTに対して、それがデマかどうか、その情報が古いかどうか、どういう流れででてきたツイートなのかなど、ツイートのメタ情報が無いために、噂が噂を呼ぶ状態になった</li>
+					<li> そこで、Twitterサイト上ですぐにRTのメタ情報を見れるChromeアドオンを開発することで、集合知で情報を整理し、噂が噂を呼ぶという状況をなくし、本当に重要度の高い情報が流れやすくする</li>
+				</ul>
+				</li>
+			</ul>
+
+			<ul>
+				<li> なぜTwitterのChrome Extension？
+
+				<ul>
+					<li> サービス乱立よくない！</li>
+					<li> 情報が散らばっちゃうよ！</li>
+					<li> 緊急時にはサービス名を思い出せないからいつも使うサイトに組み込みたい</li>
+					<li> 緊急情報はグローバルに共有するほうがいいから、ユーザーが一番多いところに一次情報を置くべき</li>
+					<li> <span style="font-weight:bold;">JSがすきだから</span></li>
+				</ul>
+				</li>
+			</ul>
+			<h4> やったこと（1日目）</h4>
+
+			<ul>
+				<li> アイディア出し</li>
+				<li> WaveやModeratorに色々書いた
+
+				<ul>
+					<li> 自分の出したアイディアにBad投票をいただいてちょっと凹む</li>
+					<li> WaveもModeratorも超使いにくい</li>
+					<li> 全部GoogleDocsでよかった気がする</li>
+				</ul>
+				</li>
+			</ul>
+			<h4> やったこと（2日目）</h4>
+
+			<ul>
+				<li> ３日目に備えて技術情報調査</li>
+				<li> Yahoo! Pipesで一日中遊ぶ
+
+				<ul>
+					<li> 結局Pipesは使わなかった</li>
+				</ul>
+				</li>
+				<li> ffmpegで一日中遊ぶ
+
+				<ul>
+					<li> 結局何も関係ないまま知識だけ溜まった</li>
+				</ul>
+				</li>
+			</ul>
+			<h4> やったこと（3日目）</h4>
+			<p><a href="http://f.hatena.ne.jp/mainyaa/20110322004903" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/m/mainyaa/20110322/20110322004903_120.jpg" alt="f:id:mainyaa:20110322004903p:image:medium" title="f:id:mainyaa:20110322004903p:image:medium" class="hatena-fotolife"></a></p>
+
+			<ul>
+				<li> Chrome Extension作った
+
+				<ul>
+					<li> 表示がそっけないけど一応完成！</li>
+					<li> Greasemonkey にも対応</li>
+					<li> TwitterのJSを読むのが超疲れた</li>
+					<li> いつもどうりクロスドメインにはまった</li>
+					<li> ただ、ツイートをクリックした先にタグが表示されるので、そこはTL上に流れるように修正する</li>
+				</ul>
+				</li>
+				<li> Google Codeにプロジェクトサイト作った
+
+				<ul>
+					<li> <a href="http://code.google.com/p/re-tweet-plus/" target="_blank">http://code.google.com/p/re-tweet-plus/</a></li>
+					<li> wikiでTaskを共有</li>
+					<li> 協力を申し出てくれた人に共有した
+
+					<ul>
+						<li> もっと別のやり方があったんじゃないかな・・・正直失敗</li>
+						<li> プロジェクトマネジメント難しい</li>
+					</ul>
+					</li>
+				</ul>
+				</li>
+			</ul>
+			<h4> 感想</h4>
+
+			<ul>
+				<li> <span style="font-weight:bold;">超感謝</span>
+
+				<ul>
+					<li> いろんな人が協力してくれた
+
+					<ul>
+						<li> 協力してくれた人ありがとうございました！</li>
+					</ul>
+					</li>
+				</ul>
+				</li>
+				<li> UstやWaveやTwitter見ている隙がない・・・</li>
+				<li> 京都会場楽しそう・・・
+
+				<ul>
+					<li> <a href="http://d.hatena.ne.jp/yositosi/20110322" target="_blank">http://d.hatena.ne.jp/yositosi/20110322</a></li>
+					<li> でもオフライン参加のほうが一日が終わるまでプログラミングできる！</li>
+				</ul>
+				</li>
+				<li> アイディア出しが２日あったのでいろんな調査も進んで調度良かった
+
+				<ul>
+					<li> こういう短期間の開発のほうが向いている気がする</li>
+				</ul>
+				</li>
+				<li>素晴らしいイベントでした。超楽しかった。</li>
+				<li>俺達の開発はまだ始まったばかりだぜ！</li>
+			</ul>
+		</div>
+]]></content:encoded>
+	<dc:creator>mainyaa</dc:creator>
+	<dc:date>2011-03-21</dc:date>
+	<dc:subject>programming</dc:subject>
+	<dc:subject>event</dc:subject>
+	<dc:subject>hackforjapan</dc:subject>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/mainyaa/20090707/p1">
+	<title>[マネタイズ][VirtualCurrency][心理]お金を払う心理</title>
+	<link>http://d.hatena.ne.jp/mainyaa/20090707/p1</link>
+	<description> 以前レポートを書いた第3回マネタイズhacksの動画があがっていました。レポートもよいですが、動画もその雰囲気が伝わってきていいですよね。 第３回マネタイズHacksの動画を公開＆感想エントリまとめ - livedoor ディレクターブログ お金を払う心理 有料ゲーム危機の時代　</description>
+
+	<content:encoded><![CDATA[
+		<div class="section">
+			<p>以前<a href="http://d.hatena.ne.jp/mainyaa/20090625/p1" target="_blank">レポート</a>を書いた第3回マネタイズhacksの動画があがっていました。レポートもよいですが、動画もその雰囲気が伝わってきていいですよね。</p>
+
+			<ul>
+				<li> <a href="http://blog.livedoor.jp/ld_directors/archives/51217565.html" target="_blank">第３回マネタイズHacksの動画を公開＆感想エントリまとめ - livedoor ディレクターブログ</a></li>
+			</ul>
+			<h4> お金を払う心理</h4>
+			<p><a href="http://it.nikkei.co.jp/digital/news/index.aspx?n=MMITew000003072009" target="_blank">有料ゲーム危機の時代　iPhoneアプリは「ゼロ化」の法則に立ち向かえるか&#160;デジタル家電&#38;エンタメ-最新ニュース:IT-PLUS</a></p>
+			<blockquote>
+			<p>アンダーソン氏は、ゼロ化への対抗策として５つのルールを提案している。</p>
+			<p><span style="font-weight:bold;">１．最善のモデルは有料コンテンツと無料コンテンツをミックスすること</span></p>
+			<p><span style="font-weight:bold;">２．よそでも真似できるようなものを、有料限定にしてお金を取ることはできない</span></p>
+			<p><span style="font-weight:bold;">３．サイトの中で最も人気のあるコンテンツで料金を取ってはいけない</span></p>
+			<p><span style="font-weight:bold;">４．有料コンテンツはニッチに訴求しなければならない</span></p>
+			<p><span style="font-weight:bold;">５．ニッチは狭ければ狭いほどよい</span></p>
+			<p>　この５つの条件を満たし示唆に富むケースとして、韓国ネクソンの大規模ロールプレイングゲーム「メイプルストーリー」のアイテム課金モデルを紹介している。</p>
+			<p>　メイプルストーリーは、05年時点で北米で350万人もの登録ユーザーを集めている。ユーザーのプレー料金は基本的には無料で、ゲーム内の様々なアイテムを有料で提供している。プリペイドカードをコンビニで販売して決済を簡単にしたことで、10代に人気が出た。北米でゲーム内のアイテム課金を本格的に成功させた初のケースといわれている。</p>
+			<p>　アンダーソン氏はユーザー行動の観察から、ユーザーは「心理的に自由（フリー）」になるために、次のようなことにお金を払うと述べている。</p>
+			<p>アンダーソン氏はユーザー行動の観察から、ユーザーは「心理的に自由（フリー）」になるために、次のようなことにお金を払うと述べている。</p>
+			<p><span style="font-weight:bold;">１．時間を節約するために、お金を払う</span></p>
+			<p><span style="font-weight:bold;">２．リスクを減らすために、お金を払う</span></p>
+			<p><span style="font-weight:bold;">３．愛着を感じるもののために、お金を払う</span></p>
+			<p><span style="font-weight:bold;">４．ステイタスを得るために、お金を払う</span></p>
+			<p><span style="font-weight:bold;">５．何かを作るために、お金を払う</span></p>
+			<p>　これらから得られる教訓は比較的はっきりしている。仮に小さなゲームアプリであれ、ユーザーのニッチな要望を満たすような要素を組み合わせて入れ込んでおくべき、ということである。</p>
+			<p>　また、プラットフォーム化を目指せる余地を戦略的に持たせるべきでもある。何をもってプラットフォームというかは定義が難しいが、今までのようにハードウエアベンダーだけがプラットフォームホルダーなのではない。ソフト単体でも十分にプラットフォームになる。</p>
+			<p>　多様な動機を持ったユーザーが、特定のアプリを通じてコミュニケーションし、コミュニティーを形成していく仕掛けはすべてプラットフォームといえる。上記の３〜５は、まさに他のユーザーを意識することで行われる行動である。</p>
+			<p>　プラットフォームになる条件は明白だ。人数を集め、多くの人が継続的に使い続けてくれるかどうかにかかっている。ゲーム的なおもしろさは、自分と他人との相対的な比較によって生まれることが多く、それが人を熱中させる。そのためには参加してくれる人が多ければ多いほどいい。</p>
+			<p><span style="font-weight:bold;">　韓国のアイテム課金ゲームの場合でも、実際にお金を支払うユーザーは全体の10％以下で、５％程度まで下がる場合もある。しかし、５％が払うそのニッチ性こそが、ゼロ化の流れが及ばない領域であると考えることができる。</span></p>
+			</blockquote>
+			<p>人がお金を払う心理について書こうと思ってたら、非常に質の高いエントリーがあがってきたのでありがたく便乗します。</p>
+			<p>特に、「４．有料コンテンツはニッチに訴求しなければならない」と「４．ステイタスを得るために、お金を払う」は非常に重要。アイテム課金のMMORPGでは全ユーザーの1%が売り上げ全体の80%を占めていたとかよく聞く話。</p>
+			<p>元エントリーは素晴らしいのでけちのつけようも無いですが、あえて付け足すとしたら、</p>
+
+			<ul>
+				<li> ランダムに対して、お金を払う
+
+				<ul>
+					<li> ギャンブルやガチャガチャやおまけ商法など、人はランダムに対してそれがどんなに確率が低くても過度な期待を持つ傾向がある。</li>
+				</ul>
+				</li>
+			</ul>
+
+			<ul>
+				<li> 人に勝つために、お金を払う
+
+				<ul>
+					<li> 人は比べられたり競争させられたりした場合、相手に勝つためにお金を払いやすい傾向がある。</li>
+				</ul>
+				</li>
+			</ul>
+
+			<ul>
+				<li> 期間限定に、お金を払う
+
+				<ul>
+					<li> 今なら○円引き！や今なら○○がつきます！など、人は時間に制限があるとお金を払いやすい傾向がある。</li>
+				</ul>
+				</li>
+			</ul>
+
+			<ul>
+				<li> 人と会うために、お金を払う
+
+				<ul>
+					<li> 出会い系・人材紹介・イベントなど、人はコミュニケーションや会話に対してお金を払いやすい傾向がある。</li>
+				</ul>
+				</li>
+			</ul>
+
+			<ul>
+				<li> みんながお金を払ってるから、お金を払う
+
+				<ul>
+					<li> 船が沈没しそうなときには日本人には「みんな飛び込んでいますよ」と言うなんてジョークがあるぐらい、日本人は他のみんなに合わせたがる傾向がある。</li>
+				</ul>
+				</li>
+			</ul>
+			<p>こんな感じでしょうか。ほかにもアポイントメント商法など、人をおだてていい気分にさせてお金を使わせる方法もありますが、方法自体は問題はなくても詐欺のイメージが強いのであえてはずしました。</p>
+			<p>この辺の話は小売業界などでよく聞く手法ですね。まだまだありそうな気がします。他にも知っている人がいましたらコメントやブコメやTwitterに書いていただけるとありがたいです。</p>
+			<h4> ソーシャルアプリ関連の講義</h4>
+			<p>最近モバイル夜間大学で、ソーシャルアプリ関連の講義が多いみたいです。特にgumi国光さんの中韓のソーシャルアプリの現状が気になるところ。聞きに行ってみようかな。</p>
+
+			<ul>
+				<li> <a href="http://www.mobile-daigaku.jp/details_seminar.php?id=00070" target="_blank">mixiアプリで利益を出すには？？｜モバイル夜間大学</a></li>
+				<li> <a href="http://www.mobile-daigaku.jp/details_seminar.php?id=00071" target="_blank">世界初モバイルソーシャルアプリのgumi、ミクシィへの挑戦。そして世界へ。｜モバイル夜間大学</a></li>
+				<li> <a href="http://www.mobile-daigaku.jp/details_seminar.php?id=00072" target="_blank">ソーシャルアプリの最新動向｜モバイル夜間大学</a></li>
+				<li> <a href="http://www.mobile-daigaku.jp/details_seminar.php?id=00080" target="_blank">ソーシャルアプリ強化月間のトリはロックユー！｜モバイル夜間大学</a></li>
+			</ul>
+		</div>
+]]></content:encoded>
+	<dc:creator>mainyaa</dc:creator>
+	<dc:date>2009-07-07</dc:date>
+	<dc:subject>マネタイズ</dc:subject>
+	<dc:subject>VirtualCurrency</dc:subject>
+	<dc:subject>心理</dc:subject>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/mainyaa/20090625/p1">
+	<title>[マネタイズ][VirtualCurrency][event]第３回マネタイズhacksのレポート書いたよー</title>
+	<link>http://d.hatena.ne.jp/mainyaa/20090625/p1</link>
+	<description> 抽選（笑）が激しくて参加できない人がたくさんいたらしい第３回マネタイズhacks行ってきましたー。ちなみに、第１回、第２回もあったみたいです。 私のほかにもyasuyukiさんやtksさんやyang8さんがTsudaってたので、会場の雰囲気を知りたい人はそっちも追ってみるといいか</description>
+
+	<content:encoded><![CDATA[
+		<div class="section">
+			<p>抽選（笑）が激しくて参加できない人がたくさんいたらしい<a href="http://blog.livedoor.jp/ld_directors/archives/51206033.html" target="_blank">第３回マネタイズhacks</a>行ってきましたー。ちなみに、<a href="http://blog.livedoor.jp/ld_directors/archives/51042268.html" target="_blank">第１回</a>、<a href="http://blog.livedoor.jp/ld_directors/archives/51106308.html" target="_blank">第２回</a>もあったみたいです。</p>
+			<p><a href="http://twitter.com/mainyaa" target="_blank">私</a>のほかにも<a href="http://twitter.com/yasuyuki" target="_blank">yasuyuki</a>さんや<a href="http://twitter.com/tks" target="_blank">tks</a>さんや<a href="http://twitter.com/yang8" target="_blank">yang8</a>さんがTsudaってたので、会場の雰囲気を知りたい人はそっちも追ってみるといいかも。</p>
+			<p>ブログを書くまでが勉強会ってことで、以下レポートです。</p>
+			<h4> Yahoo</h4>
+
+			<ul>
+				<li> 遅刻してyahooさんのは聞き逃しました＞＜</li>
+			</ul>
+			<h4> pixiv</h4>
+
+			<ul>
+				<li> 力を入れていること：アフィリエイト、有料会員</li>
+				<li> チョビ（社員犬）を有名にしてマネタイズをしたい（笑）</li>
+				<li> アフィリエイトでは今売れてるものを集中的に表示するとよい
+
+				<ul>
+					<li> 目的のもののついでに他の物も買ってくれる</li>
+				</ul>
+				</li>
+				<li> もうすぐもバイル向けサービスをリリースするかも。
+
+				<ul>
+					<li> ここだけの話〜が結構あった。いいのかな話しちゃって。</li>
+				</ul>
+				</li>
+				<li> 片桐さん面白すぎるw</li>
+			</ul>
+			<h4> ウノウ</h4>
+
+			<ul>
+				<li> まちつく！は街の育成ゲーム。アイテム課金がある</li>
+				<li> 定額課金ではテール、アイテム課金ではヘッドがとれる
+
+				<ul>
+					<li> 定額課金は単価が高くても安くても売り上げはほとんどかわらない</li>
+					<li> アイテム課金では単価が高いほど売上が伸びる</li>
+				</ul>
+				</li>
+				<li> 注意していること
+
+				<ul>
+					<li> ポイント=お金にならないようにする</li>
+					<li> 消費パターンを知る。ターゲットに合わせる</li>
+					<li> 長く楽しめるようにする
+
+					<ul>
+						<li> 課金したら圧倒的になるとかなくす。</li>
+						<li> 一日にできることを制限したり。</li>
+						<li> あくまで一日ちょっとづつやってる人が一番得するようにする。</li>
+					</ul>
+					</li>
+					<li> スポンサー登録
+
+					<ul>
+						<li> スポンサー登録は300ポイントに300円払うより、その分のサービスを受けたいという考え方</li>
+					</ul>
+					</li>
+					<li> 友達紹介にインセンティブを与える
+
+					<ul>
+						<li> Facebookアプリがこれですごい流行った。</li>
+					</ul>
+					</li>
+					<li> 調整調整調整！
+
+					<ul>
+						<li> 細かいところまでとにかく調整</li>
+					</ul>
+					</li>
+				</ul>
+				</li>
+				<li> 最近注目していること
+
+				<ul>
+					<li> iPhoneのアプリ内課金とmixiアプリ。</li>
+				</ul>
+				</li>
+			</ul>
+			<h4> kayacの玉田さん</h4>
+
+			<ul>
+				<li> 何があたるかわからないため、たくさん作って人気が出たものを伸ばす</li>
+				<li> 一年間に2007年は77サービス、2008年は88サービス、2009年は99サービス作った</li>
+				<li> 作ったサービスは受託開発でデモとして見せられる</li>
+				<li> 作ったものは無駄にならない！</li>
+			</ul>
+			<h4> ライブドア</h4>
+
+			<ul>
+				<li> ライブドアブログ</li>
+				<li> ２００７年９月から黒字化</li>
+				<li> 売り上げの３０％がユーザー課金。６０％が広告。</li>
+				<li> 無料ブログが月額３００円の有料サービスになったら続けるかどうかの調査があった
+
+				<ul>
+					<li> ココログが１位、ライブドアブログが２位</li>
+				</ul>
+				</li>
+				<li> 課金ビジネスはCGMサービスとは切り離せない</li>
+				<li> ライブドアブログの有料プランの売上額の比率の８０％がクレジットカード決済、１０％がコンビニ決済</li>
+				<li> 年代別比率は２０代〜５０代はクレジットカード決済、１０代｜６０代はコンビニ決済が多い</li>
+				<li> クレジットカード決済向けには月額課金、コンビニ決済にはショット課金がよい</li>
+			</ul>
+			<h4> mixi</h4>
+
+			<ul>
+				<li> コミュニケーション課金に明確な定義はない。</li>
+				<li> ミクシィ年賀状の話</li>
+				<li> mixiでやるサービスは儲かるかどうかでは決めない。まずユーザーに使ってもらえてコミュニケーションできるサービスを作るのが大前提</li>
+				<li> ソーシャルグラフを活用することで、住所を知らなくても年賀状を送れる。</li>
+				<li> 年賀状を紙でもらうこと自体は８０％の人がうれしいと感じている</li>
+				<li> mixiでも年末にコミュニケーションが活発になる</li>
+				<li> プロモーションに工夫した。雑誌広告、４００種類のテンプレート、４８円〜という安い価格帯、エコ</li>
+			</ul>
+			<h4> はてな</h4>
+
+			<ul>
+				<li> モバイル課金はキャリア課金によって課金が近いため、UU＝有料会員になる</li>
+				<li> グッズも意外と売れてる</li>
+				<li> mixiのあしあとと違ってスターはゆるい</li>
+				<li> はてなスターの売れ筋は５００円。DSiで子供に売れてる。</li>
+				<li> はてなスターはスターをつけてもらえない子供が泣いちゃうぐらい熱量が高い</li>
+				<li> カラースターはレアなので付けるとあしあとよりレスポンスを期待できる</li>
+				<li> <a href="http://m.twitter.com/Yappo/status/2309257371" target="_blank">Twitter / kazuhiro osawa: こどもから金を巻き上げるのはだめだよ。って川崎さんのはてなスターのプレゼンを見て思いますね。</a></li>
+			</ul>
+			<h4> 感想</h4>
+
+			<ul>
+				<li> 「お金を稼ぐのは悪いことじゃない。みんなここで勉強したことをどんどんパクって！」という言葉が印象的だった。オープン＆シェア。<strong>これだからウェブは大好きなんだ。愛してる。</strong></li>
+				<li> 次はDeNAとかGREEとかドワンゴとかプーペガールとか、海外の話とかも聞いてみたいな。</li>
+				<li> mixiアプリへの言及が多かった。がんばらなければ。</li>
+				<li> ウノウの田中さんのプレゼンで友達の紹介にポイントなどを付与すると書いてあったけど、Facebookでは大丈夫みたいですが、Myspaceでは友達紹介にインセンティブを与えることは数ヶ月前に規約で禁止されました。mixiアプリは・・・禁止してないはず。
+
+				<ul>
+					<li> myspaceがどういう意図でこれ禁止したのかはわかりませんが、同じOpenSocialでも規約がそれぞれのSNSで違ったりするので注意。というかSNSごとの規約の違いとか規約変更とかガイドライン変更とか追ってられない。誰かまとめて＞＜</li>
+				</ul>
+				</li>
+				<li> それにしてもこの辺の話って全部MMORPGで通った話ですよね。プレゼンでもアメリカより日本の方が数年先を行っていると言っててそれには同意しますがが、一番の課金ビジネス先進国は韓国・中国じゃないかな。</li>
+			</ul>
+
+			<ul>
+				<li> 運営おつかれさまでした！次も期待してます！</li>
+			</ul>
+		</div>
+]]></content:encoded>
+	<dc:creator>mainyaa</dc:creator>
+	<dc:date>2009-06-25</dc:date>
+	<dc:subject>マネタイズ</dc:subject>
+	<dc:subject>VirtualCurrency</dc:subject>
+	<dc:subject>event</dc:subject>
+</item>
+</rdf:RDF>

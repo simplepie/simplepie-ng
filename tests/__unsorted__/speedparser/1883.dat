@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Subforge: Blogs</title>
+  <link href="http://subforge.org/blogs/index/3?format=atom&amp;amp;key=IMtvoB8fqhurY8PLOYEbgK8jlSbaOueYtZbJG1ym" rel="self"/>
+  <link href="http://subforge.org/blogs/index/3" rel="alternate"/>
+  <id>http://subforge.org/</id>
+  <updated>2011-02-04T11:28:32+01:00</updated>
+  <author>
+    <name>Subforge</name>
+  </author>
+  <generator uri="http://www.redmine.org/">
+Redmine  </generator>
+  <entry>
+    <title> - Section, subsection, subsubsection?</title>
+    <link href="http://subforge.org/blogs/show/24" rel="alternate"/>
+    <id>http://subforge.org/blogs/show/24</id>
+    <updated>2011-02-04T11:28:32+01:00</updated>
+    <author>
+      <name>Christoph Kappel</name>
+      <email>chkappel@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Someone might say, when you need more than tree levels you are screwed or should use another doc class, but sometimes it's really useful. To enable more than the three default levels just add the following to your preamble:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;span style=&quot;font-size: 9px; position: absolute; right: 5px&quot;&gt;Numbers: &lt;a href=&quot;#&quot; onclick=&quot;$$('span[class=no]').each(Element.show); return false&quot;&gt;on&lt;/a&gt; /&lt;a href=&quot;#&quot; onclick=&quot;$$('span[class=no]').each(Element.hide); return false&quot;&gt;off&lt;/a&gt;&lt;/span&gt;&lt;code&gt;setcounter{secnumdepth}{5} % Enable level 4-5
+setcounter{tocdepth}{5}    % Include level 4-5 in TOC
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;This enables this hierarchy:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;% Default levels
+section{}       % Level 1
+subsection{}    % Level 2
+subsubsection{} % Level 3
+
+% New levels
+paragraph{}     % Level 4
+subparagraph{}  % Level 5
+&lt;/code&gt;&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title> - Trouble with indentation</title>
+    <link href="http://subforge.org/blogs/show/22" rel="alternate"/>
+    <id>http://subforge.org/blogs/show/22</id>
+    <updated>2011-01-23T21:33:32+01:00</updated>
+    <author>
+      <name>Christoph Kappel</name>
+      <email>chkappel@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;&lt;a href=&quot;http://irssi.org&quot; class=&quot;external&quot;&gt;irssi&lt;/a&gt; doesn't provide indentation stuff like &lt;a href=&quot;http://weechat.org&quot; class=&quot;external&quot;&gt;weechat&lt;/a&gt;, but this can be archieved with a little &lt;a href=&quot;http://perl.org&quot; class=&quot;external&quot;&gt;perl&lt;/a&gt; &lt;a href=&quot;http://irssi.org/documentation/tips&quot; class=&quot;external&quot;&gt;trick&lt;/a&gt;: Just prepend the nickname with whitespaces or cut it after some letters.&lt;/p&gt;
+
+
+	&lt;p&gt;This works fine until &lt;a href=&quot;http://scripts.irssi.org/html/nickcolor.pl.html&quot; class=&quot;external&quot;&gt;nickcolor.pl&lt;/a&gt; comes into play. First, I thought this is a bug in &lt;a href=&quot;http://irssi.org&quot; class=&quot;external&quot;&gt;irssi&lt;/a&gt; and I tested various things and version. Then I asked &lt;a href=&quot;http://google.com&quot; class=&quot;external&quot;&gt;google&lt;/a&gt; and to my surprise someone had the same &lt;a href=&quot;http://bugs.irssi.org/index.php?do=details&amp;#38;task_id=544&quot; class=&quot;external&quot;&gt;issue&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Based on that, the whole thing was easy to fix. Since &lt;a href=&quot;http://scripts.irssi.org/html/nickcolor.pl.html&quot; class=&quot;external&quot;&gt;nickcolor.pl&lt;/a&gt; overwrites the format I need to change exactly that:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;diff syntaxhl&quot;&gt;&lt;span class=&quot;CodeRay&quot;&gt;&lt;span class=&quot;no&quot;&gt; 1&lt;/span&gt; &lt;div class=&quot;head&quot;&gt;&lt;span class=&quot;head&quot;&gt;--- &lt;/span&gt;a/.irssi/scripts/nickcolor.pl    Sat Jan 08 21:47:43 2011 +0100&lt;/div&gt;
+&lt;span class=&quot;no&quot;&gt; 2&lt;/span&gt; &lt;div class=&quot;head&quot;&gt;&lt;span class=&quot;head&quot;&gt;+++ &lt;/span&gt;b/.irssi/scripts/nickcolor.pl    Sat Jan 22 16:13:19 2011 +0100&lt;/div&gt;
+&lt;span class=&quot;no&quot;&gt; 3&lt;/span&gt; &lt;div class=&quot;chg&quot;&gt;&lt;span class=&quot;chg&quot;&gt;@@&lt;/span&gt; -93,7 +93,8 &lt;span class=&quot;chg&quot;&gt;@@&lt;/span&gt;&lt;/div&gt;
+&lt;span class=&quot;no&quot;&gt; 4&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;   }&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt; 5&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt; 6&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;   $color = &amp;quot;0&amp;quot;.$color if ($color &amp;lt; 10);&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt; 7&lt;/span&gt; &lt;div class=&quot;del&quot;&gt;&lt;span class=&quot;del&quot;&gt;-&lt;/span&gt;  $server-&amp;gt;command('/^format pubmsg {pubmsgnick $2 {pubnick '.chr(3).$color.'$0}}$1');&lt;/div&gt;
+&lt;span class=&quot;no&quot;&gt; 8&lt;/span&gt; &lt;div class=&quot;ins&quot;&gt;&lt;span class=&quot;ins&quot;&gt;+&lt;/span&gt;  #$server-&amp;gt;command('/^format pubmsg {pubmsgnick $2 {pubnick '.chr(3).$color.'$0}}$1');&lt;/div&gt;
+&lt;span class=&quot;no&quot;&gt; 9&lt;/span&gt; &lt;div class=&quot;ins&quot;&gt;&lt;span class=&quot;ins&quot;&gt;+&lt;/span&gt;  $server-&amp;gt;command('/^format pubmsg {pubmsgnick $2 {pubnick '.chr(3).$color.'$[-11]0}}$1');&lt;/div&gt;
+&lt;span class=&quot;no&quot;&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt; }&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;11&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;c&quot;&gt; sub sig_private {&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title> - irssi vs weechat</title>
+    <link href="http://subforge.org/blogs/show/21" rel="alternate"/>
+    <id>http://subforge.org/blogs/show/21</id>
+    <updated>2011-01-09T13:23:44+01:00</updated>
+    <author>
+      <name>Christoph Kappel</name>
+      <email>chkappel@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;There are two curses based IRC clients that compete with each other: &lt;a href=&quot;http://irssi.org&quot; class=&quot;external&quot;&gt;irssi&lt;/a&gt; and &lt;a href=&quot;http://weechat.org&quot; class=&quot;external&quot;&gt;weechat&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Nowadays most of the guys I know use &lt;a href=&quot;http://weechat.org&quot; class=&quot;external&quot;&gt;weechat&lt;/a&gt; and I am still a &lt;a href=&quot;http://irssi.org&quot; class=&quot;external&quot;&gt;irssi&lt;/a&gt; guy. I thought they might use it for a good reason so time for me to give it a try. This whole thing is funny for me, because I usually witness when people try to use &lt;a href=&quot;http://subtle.subforge.org&quot; class=&quot;external&quot;&gt;subtle&lt;/a&gt; and adapt it to their daily workflow and now I am forced to change my own.&lt;/p&gt;
+
+
+	&lt;h2  id=&quot;First-steps&quot;&gt;First steps&lt;a href=&quot;#First-steps&quot; class=&quot;wiki-anchor&quot;&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+
+
+	&lt;p&gt;After my first few minutes with &lt;a href=&quot;http://weechat.org&quot; class=&quot;external&quot;&gt;weechat&lt;/a&gt;, it's somehow different and somehow similar to &lt;a href=&quot;http://irssi.org&quot; class=&quot;external&quot;&gt;irssi&lt;/a&gt;. It almost felt like they made all scripts that I used in &lt;a href=&quot;http://irssi.org&quot; class=&quot;external&quot;&gt;irssi&lt;/a&gt; before to builtins. &lt;a href=&quot;http://scripts.irssi.org/html/nickcolor.pl.html&quot; class=&quot;external&quot;&gt;Nickcolor&lt;/a&gt; is well included, also the &lt;a href=&quot;http://scripts.irssi.org/html/trackbar.pl.html&quot; class=&quot;external&quot;&gt;trackbar&lt;/a&gt; and a reasonable &lt;a href=&quot;http://scripts.irssi.org/html/chanact.pl.html&quot; class=&quot;external&quot;&gt;chanact&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;There were many defaults that really confused me, like the behaviour to toggle between the last window and the current one, when I press the window switch key again. This was really easy to turn off, just needed to read the settings thoroughly.&lt;/p&gt;
+
+
+	&lt;h2  id=&quot;Customization&quot;&gt;Customization&lt;a href=&quot;#Customization&quot; class=&quot;wiki-anchor&quot;&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+
+
+	&lt;p&gt;The docs of &lt;a href=&quot;http://weechat.org&quot; class=&quot;external&quot;&gt;weechat&lt;/a&gt; are a bit odd and probably need rework, I was usually lost finding the information I needed. The open and very kind community and other &lt;a href=&quot;http://weechat.org&quot; class=&quot;external&quot;&gt;weechat&lt;/a&gt; users made this still to a solvable task. Another thing that surprised me was, that &lt;a href=&quot;http://weechat.org&quot; class=&quot;external&quot;&gt;weechat&lt;/a&gt; doesn't use themes files like &lt;a href=&quot;http://irssi.org&quot; class=&quot;external&quot;&gt;irssi&lt;/a&gt;. Changing the colors can be done via &lt;strong&gt;/set&lt;/strong&gt; which is quite easy during runtime.&lt;/p&gt;
+
+
+	&lt;h2  id=&quot;Biased-comparison&quot;&gt;Biased comparison&lt;a href=&quot;#Biased-comparison&quot; class=&quot;wiki-anchor&quot;&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+
+
+	&lt;p&gt;Here is a table of scripts/things I would like to have in my IRC client and if this is possible in both clients:&lt;/p&gt;
+
+
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Script/thing                            &lt;/th&gt;
+			&lt;th&gt;&lt;a href=&quot;http://irssi.org&quot; class=&quot;external&quot;&gt;irssi&lt;/a&gt; (0.8.15)                                   &lt;/th&gt;
+			&lt;th&gt;&lt;a href=&quot;http://weechat.org&quot; class=&quot;external&quot;&gt;weechat&lt;/a&gt; (0.3.3) &lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; Draw a separator when I switch windows    &lt;/td&gt;
+			&lt;td&gt; &lt;a href=&quot;http://scripts.irssi.org/html/trackbar.pl.html&quot; class=&quot;external&quot;&gt;trackbar.pl&lt;/a&gt;          &lt;/td&gt;
+			&lt;td&gt; builtin                                &lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; Alternate colors of nicknames             &lt;/td&gt;
+			&lt;td&gt; &lt;a href=&quot;http://scripts.irssi.org/html/nickcolor.pl.html&quot; class=&quot;external&quot;&gt;nickcolor.pl&lt;/a&gt;        &lt;/td&gt;
+			&lt;td&gt; builtin                                &lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; Activity bar of channels with names       &lt;/td&gt;
+			&lt;td&gt; &lt;a href=&quot;http://scripts.irssi.org/html/chanact.pl.html&quot; class=&quot;external&quot;&gt;chanact&lt;/a&gt;               &lt;/td&gt;
+			&lt;td&gt; builtin                                &lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; Nickserv integration                      &lt;/td&gt;
+			&lt;td&gt; &lt;a href=&quot;http://scripts.irssi.org/html/nickserv.pl.html&quot; class=&quot;external&quot;&gt;nickserv.pl&lt;/a&gt;          &lt;/td&gt;
+			&lt;td&gt; None found, probably scriptable        &lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; Edit topics via sed                       &lt;/td&gt;
+			&lt;td&gt; &lt;a href=&quot;http://scripts.irssi.org/html/topicsed.pl.html&quot; class=&quot;external&quot;&gt;topicsed.pl&lt;/a&gt;          &lt;/td&gt;
+			&lt;td&gt; None found, probably scriptable        &lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; Search in buffer history                  &lt;/td&gt;
+			&lt;td&gt; builtin (/lastlog)                                                    &lt;/td&gt;
+			&lt;td&gt; &lt;a href=&quot;http://www.weechat.org/scripts/source/stable/grep.py/&quot; class=&quot;external&quot;&gt;grep.py&lt;/a&gt; &lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; Readable /names list (e.g. in columns)    &lt;/td&gt;
+			&lt;td&gt; builtin (/names)                                                      &lt;/td&gt;
+			&lt;td&gt; None found, probably scriptable (nicklist is no option) &lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; Multiserver handling (e.g. join channel)  &lt;/td&gt;
+			&lt;td&gt; builtin (e.g. /join -prefix #channel)                                 &lt;/td&gt;
+			&lt;td&gt; builtin (probably scriptable)          &lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; Send &lt;strong&gt;&amp;#92;a&lt;/strong&gt; on highlight to set urgency &lt;/td&gt;
+			&lt;td&gt; builtin (see &lt;a href=&quot;http://subforge.org/blogs/show/20&quot; class=&quot;external&quot;&gt;Urgent on highlight&lt;/a&gt;) &lt;/td&gt;
+			&lt;td&gt; None found (probably scriptable&lt;sup&gt;&lt;a href=&quot;#fn1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;)    &lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; Hide status windows                       &lt;/td&gt;
+			&lt;td&gt; /window immortal off; /window close                                   &lt;/td&gt;
+			&lt;td&gt; Impossible currently                   &lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt; Nick indentation                          &lt;/td&gt;
+			&lt;td&gt; via theme                                                             &lt;/td&gt;
+			&lt;td&gt; builtin                                &lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+
+
+
+
+	&lt;p&gt;I moved back to &lt;a href=&quot;http://irssi.org&quot; class=&quot;external&quot;&gt;irssi&lt;/a&gt; after two weeks, I don't have time to write all the scripts that I need. Killing argument for me was the names list and the lack of a way to send &lt;strong&gt;&amp;#92;a&lt;/strong&gt; on highlight&lt;sup&gt;&lt;a href=&quot;#fn1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+
+	&lt;p id=&quot;fn1&quot; class=&quot;footnote&quot;&gt;&lt;sup&gt;1&lt;/sup&gt; My first attempts caused a freeze of &lt;a href=&quot;http://weechat.org&quot; class=&quot;external&quot;&gt;weechat&lt;/a&gt; once in a while.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title> - Urgent on highlight</title>
+    <link href="http://subforge.org/blogs/show/20" rel="alternate"/>
+    <id>http://subforge.org/blogs/show/20</id>
+    <updated>2010-12-21T22:41:34+01:00</updated>
+    <author>
+      <name>Christoph Kappel</name>
+      <email>chkappel@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;I seldom have my &lt;a href=&quot;http://irssi.org&quot; class=&quot;external&quot;&gt;irssi&lt;/a&gt; &lt;a href=&quot;http://software.schmorp.de/pkg/rxvt-unicode.html&quot; class=&quot;external&quot;&gt;urxvt&lt;/a&gt; not on a current view, but whenever this happens, a notice about any highlight would be welcome. This can be done with only a few steps:&lt;/p&gt;
+
+
+	&lt;ol&gt;
+	&lt;li&gt;Launch the &lt;a href=&quot;http://irssi.org&quot; class=&quot;external&quot;&gt;irssi&lt;/a&gt; &lt;a href=&quot;http://software.schmorp.de/pkg/rxvt-unicode.html&quot; class=&quot;external&quot;&gt;urxvt&lt;/a&gt; with &lt;em&gt;&amp;#8722;urgentOnBell&lt;/em&gt;&lt;/li&gt;
+		&lt;li&gt;In case &lt;a href=&quot;http://www.gnu.org/software/screen/&quot; class=&quot;external&quot;&gt;screen&lt;/a&gt; is used enable audible bells with &lt;strong&gt;^A^G&lt;/strong&gt;&lt;/li&gt;
+		&lt;li&gt;Set following values in irssi:&lt;br /&gt;  &lt;pre&gt;&lt;span style=&quot;font-size: 9px; position: absolute; right: 5px&quot;&gt;Numbers: &lt;a href=&quot;#&quot; onclick=&quot;$$('span[class=no]').each(Element.show); return false&quot;&gt;on&lt;/a&gt; /&lt;a href=&quot;#&quot; onclick=&quot;$$('span[class=no]').each(Element.hide); return false&quot;&gt;off&lt;/a&gt;&lt;/span&gt;&lt;code&gt;/set beep_when_window_active ON
+/set beep_when_away ON
+/set beep_msg_level MSGS NOTICES DCC DCCMSGS HILIGHT
+/set bell_beeps ON&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+	&lt;/ol&gt;
+
+
+	&lt;p&gt;This basically tells &lt;a href=&quot;http://irssi.org&quot; class=&quot;external&quot;&gt;irssi&lt;/a&gt; to send &lt;strong&gt;a&lt;/strong&gt; (alarm) on highlights. Then on such an alarm, &lt;a href=&quot;http://software.schmorp.de/pkg/rxvt-unicode.html&quot; class=&quot;external&quot;&gt;urxvt&lt;/a&gt; sets the &lt;a href=&quot;http://standards.freedesktop.org/wm-spec/wm-spec-latest.html#URGENCY&quot; class=&quot;external&quot;&gt;urgency hint&lt;/a&gt; and the window manager, if it supports urgency at all, will try to inform you about that.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title> - Adding a compose key</title>
+    <link href="http://subforge.org/blogs/show/19" rel="alternate"/>
+    <id>http://subforge.org/blogs/show/19</id>
+    <updated>2010-11-21T14:32:45+01:00</updated>
+    <author>
+      <name>Christoph Kappel</name>
+      <email>chkappel@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Sometimes it's useful to be able to type accented characters, especially when you use the &lt;strong&gt;nodeadkeys&lt;/strong&gt; option, which effectively removes any way to type them. Known from the old days, there is the &lt;strong&gt;compose&lt;/strong&gt; key. It advises &lt;a href=&quot;http://www.x.org/wiki/&quot; class=&quot;external&quot;&gt;xorg&lt;/a&gt;, that the next two keys pressed &lt;em&gt;after&lt;/em&gt; the &lt;strong&gt;compose&lt;/strong&gt; key belong together.&lt;/p&gt;
+
+
+	&lt;p&gt;Examples:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;compose + &quot; + a =&amp;gt; &#228;
+compose + ` + e =&amp;gt; &#232;
+compose + , + c =&amp;gt; &#231;
+compose + o + c =&amp;gt; &#169;
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;There are two ways to enable it when input hot-plugging is disabled:&lt;/p&gt;
+
+
+	&lt;p&gt;1) Enable it per user session e.g. in &lt;em&gt;$HOME/.xinitrc&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;setxkbmap -option compose:caps&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;2) Put it into &lt;em&gt;xorg.conf&lt;/em&gt; to enable it globally:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;Section &quot;InputDevice&quot; 
+  Option  &quot;XkbOptions&quot;  &quot;compose:caps&quot; 
+EndSection
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;This basically turn your &lt;ins&gt;caps lock key&lt;/ins&gt; into a &lt;strong&gt;compose&lt;/strong&gt; key. Here is a list of the things you can &lt;em&gt;compose&lt;/em&gt;: &lt;a class=&quot;external&quot; href=&quot;http://www.hermit.org/Linux/ComposeKeys.html&quot;&gt;http://www.hermit.org/Linux/ComposeKeys.html&lt;/a&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title> - Gem on debian moved permanently</title>
+    <link href="http://subforge.org/blogs/show/18" rel="alternate"/>
+    <id>http://subforge.org/blogs/show/18</id>
+    <updated>2010-08-06T08:14:43+02:00</updated>
+    <author>
+      <name>Christoph Kappel</name>
+      <email>chkappel@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Debian seems to have big problems with gem and the different versions, you will notice when you see this:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;bash syntaxhl&quot;&gt;&lt;span class=&quot;CodeRay&quot;&gt;&lt;span class=&quot;no&quot;&gt;1&lt;/span&gt; &amp;gt; gem list --remote
+&lt;span class=&quot;no&quot;&gt;2&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;3&lt;/span&gt; *** REMOTE GEMS ***
+&lt;span class=&quot;no&quot;&gt;4&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;5&lt;/span&gt; ERROR: While executing gem ... (Gem::RemoteFetcher::FetchError)
+&lt;span class=&quot;no&quot;&gt;6&lt;/span&gt; bad response Moved Permanently 301 (http://gems.rubyforge.org/latest_specs.4.8)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Apparently there is an easy fix, just update the sources of gem:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;bash syntaxhl&quot;&gt;&lt;span class=&quot;CodeRay&quot;&gt;&lt;span class=&quot;no&quot;&gt; 1&lt;/span&gt; &amp;gt; gem sources
+&lt;span class=&quot;no&quot;&gt; 2&lt;/span&gt; *** CURRENT SOURCES ***
+&lt;span class=&quot;no&quot;&gt; 3&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt; 4&lt;/span&gt; http://gems.rubyforge.org/
+&lt;span class=&quot;no&quot;&gt; 5&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt; 6&lt;/span&gt; &amp;gt; gem sources -r http://gems.rubyforge.org/
+&lt;span class=&quot;no&quot;&gt; 7&lt;/span&gt; http://gems.rubyforge.org/ removed from sources
+&lt;span class=&quot;no&quot;&gt; 8&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt; 9&lt;/span&gt; &amp;gt; gem sources -a http://production.s3.rubygems.org/
+&lt;span class=&quot;no&quot;&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/span&gt; http://production.s3.rubygems.org/ added to sources
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title> - Unknown encoding in ruby 1.9.1-p429</title>
+    <link href="http://subforge.org/blogs/show/17" rel="alternate"/>
+    <id>http://subforge.org/blogs/show/17</id>
+    <updated>2010-07-14T22:24:06+02:00</updated>
+    <author>
+      <name>Christoph Kappel</name>
+      <email>chkappel@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Updating &lt;a href=&quot;http://ruby-lang.org&quot; class=&quot;external&quot;&gt;Ruby&lt;/a&gt; is usually a task that breaks many things, therefore I avoid it if possible. Being &lt;a href=&quot;http://archlinux.org&quot; class=&quot;external&quot;&gt;archuser&lt;/a&gt;, the maintainer of the &lt;a href=&quot;http://ruby-lang.org&quot; class=&quot;external&quot;&gt;Ruby&lt;/a&gt; decides when I need to face new problems.&lt;/p&gt;
+
+
+	&lt;p&gt;This time they just added filesystem encoding stuff in &lt;strong&gt;p429&lt;/strong&gt;:&lt;/p&gt;
+
+
+&lt;pre&gt;Error loading gem paths on load path in gem_prelude
+unknown encoding name - filesystem
+&amp;lt;internal:gem_prelude&amp;gt;:69:in `find'
+&amp;lt;internal:gem_prelude&amp;gt;:69:in `set_home'
+&amp;lt;internal:gem_prelude&amp;gt;:38:in `dir'
+&amp;lt;internal:gem_prelude&amp;gt;:76:in `set_paths'
+&amp;lt;internal:gem_prelude&amp;gt;:47:in `path'
+&amp;lt;internal:gem_prelude&amp;gt;:286:in `push_all_highest_version_gems_on_load_path'
+&amp;lt;internal:gem_prelude&amp;gt;:355:in `&amp;lt;compiled&amp;gt;'
+&lt;/pre&gt;
+
+	&lt;p&gt;There exists still now sane way to init the gem path of &lt;a href=&quot;http://ruby-lang.org&quot; class=&quot;external&quot;&gt;Ruby&lt;/a&gt; so we can start with our hack from &lt;a href=&quot;http://subforge.org/blogs/show/1&quot; class=&quot;external&quot;&gt;Setup gems load path in embedded ruby&lt;/a&gt; and add the required encoding stuff. This problem is known in the &lt;a href=&quot;http://redmine.ruby-lang.org/issues/show/2178&quot; class=&quot;external&quot;&gt;ruby redmine&lt;/a&gt; and the changesets to this issue give at least some hints what need to be done:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;span style=&quot;font-size: 9px; position: absolute; right: 5px&quot;&gt;Numbers: &lt;a href=&quot;#&quot; onclick=&quot;$$('span[class=no]').each(Element.show); return false&quot;&gt;on&lt;/a&gt; /&lt;a href=&quot;#&quot; onclick=&quot;$$('span[class=no]').each(Element.hide); return false&quot;&gt;off&lt;/a&gt;&lt;/span&gt;&lt;code class=&quot;c syntaxhl&quot;&gt;&lt;span class=&quot;CodeRay&quot;&gt;&lt;span class=&quot;no&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;pp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;ic&quot;&gt;&amp;lt;ruby/encoding.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt; 2&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt; 3&lt;/span&gt; VALUE encoding = Qnil;
+&lt;span class=&quot;no&quot;&gt; 4&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt; 5&lt;/span&gt; &lt;span class=&quot;di&quot;&gt;void&lt;/span&gt; Init_prelude(&lt;span class=&quot;di&quot;&gt;void&lt;/span&gt;);
+&lt;span class=&quot;no&quot;&gt; 6&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt; 7&lt;/span&gt; RUBY_INIT_STACK;
+&lt;span class=&quot;no&quot;&gt; 8&lt;/span&gt; ruby_init();
+&lt;span class=&quot;no&quot;&gt; 9&lt;/span&gt; ruby_init_loadpath();
+&lt;span class=&quot;no&quot;&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/span&gt; ruby_script(&lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;subtle&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
+&lt;span class=&quot;no&quot;&gt;11&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* Get encoding from file system */&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;13&lt;/span&gt; encoding = rb_enc_from_encoding(rb_filesystem_encoding());
+&lt;span class=&quot;no&quot;&gt;14&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* Set internal and external encoding */&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;16&lt;/span&gt; rb_enc_set_default_internal(encoding);
+&lt;span class=&quot;no&quot;&gt;17&lt;/span&gt; rb_enc_set_default_external(encoding);
+&lt;span class=&quot;no&quot;&gt;18&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;19&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* FIXME: Fake ruby_init_gems(Qtrue) */&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;&lt;strong&gt;20&lt;/strong&gt;&lt;/span&gt; rb_define_module(&lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;Gem&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
+&lt;span class=&quot;no&quot;&gt;21&lt;/span&gt; Init_prelude();
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title> - Logitech Wave</title>
+    <link href="http://subforge.org/blogs/show/16" rel="alternate"/>
+    <id>http://subforge.org/blogs/show/16</id>
+    <updated>2010-07-06T14:53:57+02:00</updated>
+    <author>
+      <name>Christoph Kappel</name>
+      <email>chkappel@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;I finally made a decision and chose the &lt;a href=&quot;http://www.logitech.com/en-us/keyboards/keyboard-mice-combos/devices/3072&quot; class=&quot;external&quot;&gt;Logitech Wave&lt;/a&gt; after reading about it with all the pros and cons. Yesterday it arrived and I am really satisfied with the layout and especially with the wave design, it really makes typing a bit more pleasent. Overall it's not as heavy as it looks and it's well manufactured.&lt;/p&gt;
+
+
+	&lt;p&gt;The mini usb receiver is a bit bigger than something I would call &lt;strong&gt;mini&lt;/strong&gt; and to connect mouse and keyboard you need to press the connect keys manually. After that both work properly.&lt;/p&gt;
+
+
+	&lt;h2  id=&quot;Wave-and-linux&quot;&gt;Wave and linux&lt;a href=&quot;#Wave-and-linux&quot; class=&quot;wiki-anchor&quot;&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+
+
+	&lt;p&gt;On the linux console no problems at all, but under xorg many keys didn't work like expected and I am not speaking of the multimedia keys. This is probably a fault of my xmodmap though. Generally almost all of the multimedia keys have keycodes that aren't in the range of the supported keycodes(0-255) of the kbd driver. After some &lt;a href=&quot;http://google.com&quot; class=&quot;external&quot;&gt;goodling&lt;/a&gt; I found the suggestion to use the evdev driver for this, here is my config for mouse and keyboard:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;
+Section &quot;InputDevice&quot; 
+  Identifier  &quot;Mouse1&quot; 
+  Driver      &quot;evdev&quot; 
+  Option      &quot;Device&quot;            &quot;/dev/input/by-path/pci-0000:00:04.0-usb-0:9:1.1-event-mouse&quot; 
+  Option      &quot;ZAxisMapping&quot;      &quot;4 5&quot; 
+EndSection
+
+Section &quot;InputDevice&quot; 
+Identifier  &quot;Keyboard0&quot; 
+ Driver  &quot;evdev&quot; 
+ Option  &quot;Device&quot;      &quot;/dev/input/by-path/pci-0000:00:04.0-usb-0:9:1.0-event-kbd&quot; 
+ Option  &quot;XkbModel&quot;    &quot;evdev&quot; 
+ Option  &quot;XkbLayout&quot;   &quot;de&quot; 
+ Option  &quot;XkbVariant&quot;  &quot;nodeadkeys&quot; 
+ Option  &quot;XkbOptions&quot;  &quot;ctrl:nocaps&quot; 
+ Option  &quot;evBits&quot;      &quot;+1&quot; 
+ Option  &quot;keyBits&quot;     &quot;~1-255 ~352-511&quot; 
+ Option  &quot;Pass&quot;        &quot;3&quot; 
+EndSection
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;The devices need to be adjusted for your config, by-path is a bit more pleasent than just relying e.g. on event0. This can avoid trouble when you switch usb ports.&lt;/p&gt;
+
+
+	&lt;h2  id=&quot;Multimedia-keys&quot;&gt;Multimedia keys&lt;a href=&quot;#Multimedia-keys&quot; class=&quot;wiki-anchor&quot;&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+
+
+	&lt;p&gt;There are &lt;ins&gt;many&lt;/ins&gt; multimedia keys on the keyboard, some of them work and some of them don't. Currently I am only using the keys to control &lt;a href=&quot;http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki&quot; class=&quot;external&quot;&gt;mpd&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;Here is my Xmodmap for this:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code&gt;
+keycode 121 = XF86AudioMute
+keycode 122 = XF86AudioLowerVolume
+keycode 123 = XF86AudioRaiseVolume
+keycode 165 = XF86AudioPrev
+keycode 171 = XF86AudioNext
+keycode 172 = XF86AudioPlay
+keycode 174 = XF86AudioStop
+&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;You can use the keynames than in your config, like I don in my &lt;a href=&quot;http://subtle.subforge.org&quot; class=&quot;external&quot;&gt;subtle&lt;/a&gt;:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class=&quot;ruby syntaxhl&quot;&gt;&lt;span class=&quot;CodeRay&quot;&gt;&lt;span class=&quot;no&quot;&gt;1&lt;/span&gt; grab &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;XF86AudioMute&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;amixer set Master toggle&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;2&lt;/span&gt; grab &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;XF86AudioRaiseVolume&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;amixer set Master 2dB+&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;3&lt;/span&gt; grab &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;XF86AudioLowerVolume&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;amixer set Master 2dB-&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;4&lt;/span&gt; grab &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;XF86AudioPlay&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mpc toggle&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;5&lt;/span&gt; grab &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;XF86AudioStop&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mpc stop&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;6&lt;/span&gt; grab &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;XF86AudioPrev&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mpc prev&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;7&lt;/span&gt; grab &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;XF86AudioNext&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;s&quot;&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mpc next&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;br /&gt;&lt;/code&gt;&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title> - Gdm and a xinitrc</title>
+    <link href="http://subforge.org/blogs/show/13" rel="alternate"/>
+    <id>http://subforge.org/blogs/show/13</id>
+    <updated>2010-06-18T14:34:20+02:00</updated>
+    <author>
+      <name>Christoph Kappel</name>
+      <email>chkappel@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;The current version of &lt;a href=&quot;http://projects.gnome.org/gdm/&quot; class=&quot;external&quot;&gt;gdm&lt;/a&gt; ignores the &lt;code&gt;~/.xinitrc&lt;/code&gt; and the &lt;code&gt;~/.xsession&lt;/code&gt; completely which really surprised me, I thought it used them in prior versions.&lt;/p&gt;
+
+
+	&lt;p&gt;The is mostly a problem when using &lt;a href=&quot;http://www.ubuntu.com/&quot; class=&quot;external&quot;&gt;ubuntu&lt;/a&gt; but there is a way to get this working. &lt;a href=&quot;http://projects.gnome.org/gdm/&quot; class=&quot;external&quot;&gt;Gdm&lt;/a&gt; loads the &lt;strong&gt;.desktop&lt;/strong&gt; files from &lt;code&gt;/usr/share/xsessions&lt;/code&gt; and offers them in the sessions menu, therefore the easiest way is to create a new entry for our xsession:&lt;/p&gt;
+
+
+&lt;pre&gt;
+[Desktop Entry]
+Name=Xsession
+Exec=/etc/X11/Xsession
+&lt;/pre&gt;
+
+	&lt;p&gt;This will load our &lt;code&gt;~/.xinitrc&lt;/code&gt; as we expect it.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title> - Running sshd on gentoo</title>
+    <link href="http://subforge.org/blogs/show/12" rel="alternate"/>
+    <id>http://subforge.org/blogs/show/12</id>
+    <updated>2010-06-17T17:45:32+02:00</updated>
+    <author>
+      <name>Christoph Kappel</name>
+      <email>chkappel@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;I got this new vserver and I decided to use it as &lt;a href=&quot;http://gentoo.org&quot; class=&quot;external&quot;&gt;Gentoo&lt;/a&gt; &lt;a href=&quot;http://buildbot.org&quot; class=&quot;external&quot;&gt;buildslave&lt;/a&gt;. Just after installing the image I had no working ssh. Reading the log I stumbled across this:&lt;/p&gt;
+
+
+&lt;pre&gt;
+Jun 17 14:46:17 vadmin234 sshd[3519]: Server listening on :: port 22.
+Jun 17 14:46:17 vadmin234 sshd[3519]: error: Bind to port 22 on 0.0.0.0 failed: Address already in use.
+Jun 17 14:46:23 vadmin234 sshd[3519]: Received signal 15; terminating.
+&lt;/pre&gt;
+
+	&lt;p&gt;Looks like sshd binds port 22 on :: and tries to bind then the same port on 0.0.0.0 which obviously can't work. This is overall a bit cumbersome, because I don't have any ipv6 address for this machine.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;em&gt;A solution is either to remove ipv6 support from the kernel or even better say sshd which address it should use:&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;pre&gt;ListenAddress 0.0.0.0&lt;/pre&gt;    </content>
+  </entry>
+</feed>

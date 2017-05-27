@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Flávio Ricardo</title>
+	<atom:link href="http://www.fricardo.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.fricardo.com</link>
+	<description>Sul mato-grossense, web developer, computer science academic, evangelist WordPress and a lover of good music.</description>
+	<lastBuildDate>Fri, 02 Sep 2011 15:18:56 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>Restaurando ícones dos menus no Ubuntu</title>
+		<link>http://www.fricardo.com/restaurando-icones-dos-menus-no-ubuntu/</link>
+		<comments>http://www.fricardo.com/restaurando-icones-dos-menus-no-ubuntu/#comments</comments>
+		<pubDate>Fri, 02 Sep 2011 15:09:01 +0000</pubDate>
+		<dc:creator>Flávio Ricardo</dc:creator>
+				<category><![CDATA[Linux]]></category>
+
+		<guid isPermaLink="false">http://www.fricardo.com/?p=625</guid>
+		<description><![CDATA[Essa é uma dica bastante simples, mas que muita gente tem e outros nem sabem da existência desse &#8220;problema&#8221;. Nas últimas versões do Ubuntu, os ícones de alguns menus não são exibidos, deixando estes com uma aparência estranha. Para solucionar &#8230; <a href="http://www.fricardo.com/restaurando-icones-dos-menus-no-ubuntu/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p><img class="alignright size-full wp-image-627" title="Restaurando ícones dos menus no Ubuntu" src="http://www.fricardo.com/wp-content/uploads/2011/09/ubuntu-logo-large.png" alt="ubuntu logo large" width="138" height="138" />Essa é uma dica bastante simples, mas que muita gente tem e outros nem sabem da existência desse &#8220;problema&#8221;. Nas últimas versões do Ubuntu, os ícones de alguns menus não são exibidos, deixando estes com uma aparência estranha.</p>
+<p>Para solucionar esse caso siga os passos abaixo:</p>
+<ol>
+<li>Pressione <strong>Alt + F2</strong> para abrir o &#8220;executar&#8221; do Ubuntu.</li>
+<li>Digite <strong><em>gconf-editor</em></strong> e pressione <strong>Executar</strong> (ou tecle <em>Enter</em>).</li>
+<li>Navegue pelas &#8220;pastas&#8221; que se abrem da seguinte forma: <strong><em>desktop</em></strong> &gt; <strong><em>gnome</em></strong> &gt; <strong><em>interface</em></strong>.</li>
+<li>Dentro de <strong><em>interface</em></strong> procure e marque o item <strong><em>menu_have_icons</em></strong>.</li>
+<li>Pronto!</li>
+</ol>
+<p>Espero que essa dica possa ajudá-los. <img src='http://www.fricardo.com/wp-includes/images/smilies/icon_wink.gif' alt="icon wink" class='wp-smiley' title="Restaurando ícones dos menus no Ubuntu" /> </p>
+<!-- PHP 5.x -->]]></content:encoded>
+			<wfw:commentRss>http://www.fricardo.com/restaurando-icones-dos-menus-no-ubuntu/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Campo Grande mais ágil com a Maré de Agilidade</title>
+		<link>http://www.fricardo.com/campo-grande-mais-agil-com-a-mare-de-agilidade/</link>
+		<comments>http://www.fricardo.com/campo-grande-mais-agil-com-a-mare-de-agilidade/#comments</comments>
+		<pubDate>Thu, 19 May 2011 01:53:32 +0000</pubDate>
+		<dc:creator>Flávio Ricardo</dc:creator>
+				<category><![CDATA[Eventos]]></category>
+
+		<guid isPermaLink="false">http://www.fricardo.com/?p=588</guid>
+		<description><![CDATA[Acontece dia 21 de Maio, próximo sábado, no bloco 7 da Uniderp Ahangeura a 9ª edição da Maré de Agilidade. A Maré de Agilidade é um evento que acontece em vários lugares do país com intuito de disseminar a cultura &#8230; <a href="http://www.fricardo.com/campo-grande-mais-agil-com-a-mare-de-agilidade/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p><img class="alignleft size-full wp-image-593" title="Campo Grande mais ágil com a Maré de Agilidade" src="http://www.fricardo.com/wp-content/uploads/2011/05/maredeagilidade.png" alt="maredeagilidade" width="202" height="47" />Acontece dia <strong>21 de Maio, próximo sábado, no bloco 7 da Uniderp Ahangeura</strong> a 9ª edição da Maré de Agilidade. A <a title="Maré de Agilidade Edição Pantanal" href="http://maredeagilidade.jera.com.br/" target="_blank">Maré de Agilidade</a> é um evento que acontece em vários lugares do país com intuito de disseminar a <strong><em>cultura ágil</em></strong> entre os desenvolvedores, analistas e demais profissionais envolvidos no processo de criação de <em>software</em>.</p>
+<p>O evento que conta com palestrantes de renome no mercado, tem visilidade dentro e fora do país já sendo considerado o evento que mais prega as boas práticas em desenvolvimento de <em>software</em> com um público que ultrapassa <strong>1000 pessoas</strong>.</p>
+<p>A organização está por conta da <a title="Jera Software" href="http://jera.com.br/" target="_blank">Jera Software</a>, que trouxe para Campo Grande alguns nomes como Paulo Silveira da <strong><a title="Caelum" href="http://www.caelum.com.br/" target="_blank">Caelum</a></strong> falando sobre Arquitetura e Design de Projetos Java e Paulo Vasconcellos da <strong><a title="Finito" href="http://www.pfvasconcellos.eti.br/" target="_blank">Finito</a></strong> falando sobre Análise de Negócios. A <a title="Programação das palestras e cursos" href="http://maredeagilidade.jera.com.br/programacao/" target="_blank">programação</a> completa das palestras e cursos você confere no <a title="Maré de Agilidade" href="http://maredeagilidade.jera.com.br/" target="_blank">site do Maré de Agilidade</a>.</p>
+<p>As inscrições se encerram na sexta-feira e custam R$ 30. A time da <strong><a title="Catwork" href="http://www.catwork.com.br/" target="_blank">Catwork</a></strong> vai marcar presença, e você vai perder essa senhora oportunidade?</p>
+<!-- PHP 5.x -->]]></content:encoded>
+			<wfw:commentRss>http://www.fricardo.com/campo-grande-mais-agil-com-a-mare-de-agilidade/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Mais um DOJO realizado com sucesso!</title>
+		<link>http://www.fricardo.com/mais-um-dojo-realizado-com-sucesso/</link>
+		<comments>http://www.fricardo.com/mais-um-dojo-realizado-com-sucesso/#comments</comments>
+		<pubDate>Wed, 16 Feb 2011 14:22:09 +0000</pubDate>
+		<dc:creator>Flávio Ricardo</dc:creator>
+				<category><![CDATA[Eventos]]></category>
+
+		<guid isPermaLink="false">http://www.fricardo.com/?p=526</guid>
+		<description><![CDATA[Aconteceu no último sábado mais um DOJO do PHPMS que contou com o apoio do Senac/MS que cedeu toda a infraestrutura necessária. Gostaria de agradecer ao Samuel Cavalcante que está sempre ajudando os grupos sul mato-grossenses quando estes lhe pedem &#8230; <a href="http://www.fricardo.com/mais-um-dojo-realizado-com-sucesso/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Aconteceu no último sábado mais um DOJO do <strong>PHPMS</strong> que contou com o apoio do Senac/MS que cedeu toda a infraestrutura necessária. Gostaria de agradecer ao <a title="@samuelmbc" href="http://twitter.com/#!/samuelmbc" target="_blank">Samuel Cavalcante</a> que está sempre ajudando os grupos sul mato-grossenses quando estes lhe pedem algum tipo de apoio.</p>
+<p>Dessa vez escolhemos um problema mais simples, sugerido pelo <a title="@adrianobacha" href="http://twitter.com/#!/adrianobacha" target="_blank">Adriano Bacha</a> dias antes que foi a conversão de números <a title="algarismos indo-arábicos" href="http://pt.wikipedia.org/wiki/Algarismos_indo-ar%C3%A1bicos" target="_blank">arábicos</a> para <a title="numeração romana" href="http://pt.wikipedia.org/wiki/Numera%C3%A7%C3%A3o_romana" target="_blank">romano</a> e vice-versa. O legal foi que contrário as outras &#8220;edições&#8221; do DOJO, os participantes não tiveram dificuldade para entender o <strong>problema</strong> e a <strong>participação</strong> de todos foi muito mais efetiva.</p>
+<p><img class="aligncenter size-large wp-image-538" title="Mais um DOJO realizado com sucesso!" src="http://www.fricardo.com/wp-content/uploads/2011/02/12022011139-1024x768.jpg" alt="12022011139 1024x768" width="640" height="480" /></p>
+<p>O número de participantes se manteve na média com 19 inscritos e <strong>12 presentes</strong>. É claro que seria legal se todos os inscritos estivessem presente, mas fica a expectativa para o próximo. No final, já com o problema resolvido realizamos a sagrada retrospectiva para avaliar os pontos bons, ruins e a melhorar para o próximo DOJO.</p>
+<p>Bom</p>
+<ol>
+<li>Teclado</li>
+<li>Infraestrutura do <strong>Senac</strong></li>
+<li>Organização dos participantes</li>
+<li>Definição do problema simples</li>
+<li>Venda das camisetas do PHPMS</li>
+<li>Quantidade de pessoas</li>
+<li>Tempo dos participantes</li>
+</ol>
+<p>Ruim</p>
+<ol>
+<li>Falta de acesso a internet</li>
+<li><em>Notebook</em> com tela pequena</li>
+<li>Pontualidade</li>
+<li>Restrições do DOJO</li>
+</ol>
+<p>Melhorias</p>
+<ol>
+<li>Sistema de inscrição <em>online</em></li>
+<li>DOJO para solução de<em> bugs</em></li>
+</ol>
+<p>O ponto alto do DOJO foi quando o <a title="@otaviosalomao" href="http://twitter.com/#!/otaviosalomao" target="_blank">Otávio Salomão</a> junto com seu co-piloto Pedro Calgaro implementaram o método <strong>testMorreDiabo</strong> e depois <strong>testTambemMorreDiabo</strong> para testar as entradas inválidas. <img src='http://www.fricardo.com/wp-includes/images/smilies/icon_razz.gif' alt="icon razz" class='wp-smiley' title="Mais um DOJO realizado com sucesso!" />  A classe <em>arabicToRoman</em> e o <em>testArabicToRoman</em> estão disponíveis no <a style="font-weight: bold;" title="Social coding" href="https://github.com/flavioricardo/PHPMS" target="_blank">GitHub</a> para quem quiser consultar, estudar e/ou melhorar.</p>
+<p>As fotos podem ser visualizadas no <a title="fotos do DOJO" href="http://www.flickr.com/photos/catwork/sets/72157625941149135/" target="_blank">Flickr da Catwork</a>. O próximo DOJO foi previamente marcado para o <strong>dia 19/03</strong>. Não deixe de participar, é uma ótima oportunidade para melhorar seus conhecimentos e fazer <em>networking</em> com outros desenvolvedores. <img src='http://www.fricardo.com/wp-includes/images/smilies/icon_wink.gif' alt="icon wink" class='wp-smiley' title="Mais um DOJO realizado com sucesso!" /> </p>
+<!-- PHP 5.x -->]]></content:encoded>
+			<wfw:commentRss>http://www.fricardo.com/mais-um-dojo-realizado-com-sucesso/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Javaneiros 2010 &#8211; Arduino, Ruby on Rails, Spring Roo e Pessoas</title>
+		<link>http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/</link>
+		<comments>http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/#comments</comments>
+		<pubDate>Mon, 10 Jan 2011 20:25:22 +0000</pubDate>
+		<dc:creator>Flávio Ricardo</dc:creator>
+				<category><![CDATA[Eventos]]></category>
+
+		<guid isPermaLink="false">http://www.fricardo.com/?p=489</guid>
+		<description><![CDATA[Aconteceu no último sábado do mês passado (27/11/11) em Campo Grande mais uma edição do Javaneiros, evento idealizado pelo Grupo de Usuários Java de Mato Grosso do Sul que vem já há alguns anos se dedicando em disseminar a linguagem &#8230; <a href="http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Aconteceu no último sábado do mês passado (27/11/11) em Campo Grande mais uma edição do <a title="Javaneiros 2010" href="http://www.javaneiros.com.br/2010/" target="_blank">Javaneiros</a>, evento idealizado pelo <a title="JUGMS" href="http://www.jugms.com.br/blog/" target="_blank">Grupo de Usuários Java</a> de <strong>Mato Grosso do Sul</strong> que vem já há alguns anos se dedicando em disseminar a linguagem de programação Java no estado.</p>
+<div class="wp-caption alignnone" style="width: 640px"><img title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas" src="http://www.fricardo.com/wp-content/uploads/2010/12/IMG_0086.jpg" alt="IMG 0086" width="630" height="470" /><p class="wp-caption-text">Vinicius Senger da Global Code falando sobre Arduino no Javaneiros 2010</p></div>
+<p>Em relação as anteriores, esta edição contou com um diferencial que foi estar aberta a mais tópicos sobre o processo de desenvolvimento de <em>software</em> e não focar somente na linguagem de programação e na plataforma Java.</p>
+<p>Quem abriu o evento foi <strong>Paulo Silveira</strong> da Caelum falando um pouco sobre a plataforma e não somente a linguagem Java com a palestra <a title="Palestras de Paulo Silveira no Javaneiros" href="http://www.javaneiros.com.br/2010/palestrante/paulo-silveira/" target="_blank">Java como plataformo onipresente</a>. Não assisti a palestra mas o <em>feedback</em> foi bastante positivo por parte dos presentes. O mesmo, à tarde apresentou a palestra <strong>O impacto do design na sua arquitetura</strong>. Palestra essa que assisti quando participei da <strong>Qcon</strong> São Paulo e posso dizer que é de extrema importância para aqueles que buscam padrões e melhores práticas quando o assunto é codigo.</p>
+<p>O ponto forte da manhã foi a palestra <strong>Utilizando Java, Arduino e a Web para criar empreendimentos próprios de sucesso</strong> apresentada por <a title="@vsenger" href="http://www.javaneiros.com.br/2010/palestrante/vinicius-senger/" target="_blank">Vinicius Senger</a> da Global Code que atualmente atua como evangelista do Arduino no Brasil através do site <a title="Elétron Livre" href="http://www.eletronlivre.com.br/" target="_blank">Elétron Livre</a>. A idéia do Arduino é dar poder para os programadores criarem seus &#8220;aparatos eletrônicos&#8221; sem ter muito conhecimento em eletrônica. No dia que antecedeu ao evento, ocorreu um laboratório onde os participantes puderam ver todo o poder do Arduino com exemplos práticos.</p>
+<p>Ocorreu também uma apresentação do <a title="Vimerson Santos" href="http://www.javaneiros.com.br/2010/palestrante/vimerson-santos/" target="_blank">Vimerson</a> falando sobre <strong>TV Digial</strong> e um <em>workshop </em>sobre <strong>Planejamento Ágil</strong> ministrado pelo <a title="Saulo Arruda" href="http://www.javaneiros.com.br/2010/palestrante/saulo-arruda/" target="_blank">Saulo Arruda</a>, onde ele aplicou na prática algumas estratégias do processo ágil de desenvolvimento de <em>software</em>. Não posso passar um <em>feedback </em>mais aprofundado sobre as palestras do período matutino pois não participei do evento neste turno.</p>
+
+<a href='http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/img_0086/' title='@vsenger falando sobre Arduino no Javaneiros 2010'><img width="100" height="100" src="http://www.fricardo.com/wp-content/uploads/2010/12/IMG_0086-e1291214350618-100x100.jpg" class="attachment-thumbnail" alt="IMG 0086 e1291214350618 100x100" title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas"  /></a>
+<a href='http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/img_0095/' title='Thiago Moretto'><img width="100" height="100" src="http://www.fricardo.com/wp-content/uploads/2010/12/IMG_0095-100x100.jpg" class="attachment-thumbnail" alt="IMG 0095 100x100" title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas"  /></a>
+<a href='http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/img_0092/' title='Ruby para programadores Java'><img width="100" height="100" src="http://www.fricardo.com/wp-content/uploads/2010/12/IMG_0092-100x100.jpg" class="attachment-thumbnail" alt="IMG 0092 100x100" title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas"  /></a>
+<a href='http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/img_0098/' title='Professor Robson Soares falando sobre a evolução do Android'><img width="100" height="100" src="http://www.fricardo.com/wp-content/uploads/2010/12/IMG_0098-100x100.jpg" class="attachment-thumbnail" alt="IMG 0098 100x100" title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas"  /></a>
+<a href='http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/img_0103/' title='Spring Roo com João Paulo e Marcos Beirigo'><img width="100" height="100" src="http://www.fricardo.com/wp-content/uploads/2010/12/IMG_0103-100x100.jpg" class="attachment-thumbnail" alt="IMG 0103 100x100" title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas"  /></a>
+<a href='http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/img_0061/' title='Paulo Silveira de Caelum'><img width="100" height="100" src="http://www.fricardo.com/wp-content/uploads/2010/12/IMG_0061-100x100.jpg" class="attachment-thumbnail" alt="IMG 0061 100x100" title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas"  /></a>
+<a href='http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/img_0109/' title='Encerramento'><img width="100" height="100" src="http://www.fricardo.com/wp-content/uploads/2010/12/IMG_0109-100x100.jpg" class="attachment-thumbnail" alt="IMG 0109 100x100" title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas"  /></a>
+<a href='http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/img_0069/' title='Workshop sobre Planejamento Ágil'><img width="100" height="100" src="http://www.fricardo.com/wp-content/uploads/2010/12/IMG_0069-100x100.jpg" class="attachment-thumbnail" alt="IMG 0069 100x100" title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas"  /></a>
+<a href='http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/donatoinfo2/' title='Check-in do Javaneiros 2010'><img width="100" height="100" src="http://www.fricardo.com/wp-content/uploads/2010/12/DonatoInfo2-100x100.jpg" class="attachment-thumbnail" alt="DonatoInfo2 100x100" title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas"  /></a>
+<a href='http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/img_0088/' title='Paulo Silveira'><img width="100" height="100" src="http://www.fricardo.com/wp-content/uploads/2010/12/IMG_0088-100x100.jpg" class="attachment-thumbnail" alt="IMG 0088 100x100" title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas"  /></a>
+
+<p>No período vespertino estava presente fisicamente. <img src='http://www.fricardo.com/wp-includes/images/smilies/icon_smile.gif' alt="icon smile" class='wp-smiley' title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas" />  Comecei assistindo a palestra do <strong>Marcos Beirigo</strong> e <strong>João Paulo</strong> apresentando uma simples mas poderosa ferramenta para desenvolver aplicações Java usando o <em>framework </em>Spring como base. A palestra <strong>Spring Roo: design simples e agilidade do desenvolvimento Java</strong> contou com um publico variado, desce iniciantes até desenvolvedores experientes. Possuo um maior contato com a linguagem PHP, porém foi muito interessante ver os recursos disponíveis para os amantes de Java e ver como esses recuros tem semelhança com o <em>bake </em>do CakePHP ou o gerador de <em>schema </em>do Symphony.</p>
+<p>Em seguida foi a vez do <strong>Thiago Moretto</strong> tomar a frente e falar sobre Ruby. Sim, com a palestra <strong>Por que programadores (Java) devem aprender Ruby</strong> ele desmistificou alguns pontos da badalada linguagem de programação e deu uma introdução aqueles que querem aprender Ruby. Thiago mostrou as várias implementações e &#8220;combinações&#8221; de Ruby até mesmo com Java através do JRuby.</p>
+<p>Após isso assisti a apresentação de <strong>Fabio Akita</strong> que ao contrário do que muitos esperavam não veio para falar sobre conteúdo técnico, melhores práticas de desenvolvimento ou Ruby. Akita fez uma excelente abordagem sobre pessoas e como elas se comportam em seu ambiente de trabalho. Com a palestra <a title="Fábio Akita no Javaneiros" href="http://www.javaneiros.com.br/2010/palestrante/fabio-akita/" target="_blank">Pessoas você provavelmente não as entende ainda</a> ele quebrou alguns mitos e me fez enxergar que o grande problema das grandes corporações está na forma como o gerente e/ou dono trata seus colaboradores. Questões comportamentais estão sempre acima de questões burocráticas como salário e rotinas administrativas, porque o que de fato importa para uma pessoa é como ela se sente com o que faz, é isso que vai definir a qualidade do seu trabalho.</p>
+<p>Devo confessar que me surpreendi com o evento. Aprendi muito tanto no quesito técnico como no pessoal, conheci pessoas e vivenciei um pouco sobre a logística de organização de um evento grande como é o Javaneiros. Fico na expectativa para a próxima edição. <img src='http://www.fricardo.com/wp-includes/images/smilies/icon_wink.gif' alt="icon wink" class='wp-smiley' title="Javaneiros 2010   Arduino, Ruby on Rails, Spring Roo e Pessoas" /> </p>
+<!-- PHP 5.x -->]]></content:encoded>
+			<wfw:commentRss>http://www.fricardo.com/javaneiros-2010-arduino-ruby-on-rails-spring-roo-e-pessoas/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Menus personalizados no WordPress 3.0</title>
+		<link>http://www.fricardo.com/menus-personalizados-no-wordpress-3-0/</link>
+		<comments>http://www.fricardo.com/menus-personalizados-no-wordpress-3-0/#comments</comments>
+		<pubDate>Thu, 25 Nov 2010 11:28:12 +0000</pubDate>
+		<dc:creator>Flávio Ricardo</dc:creator>
+				<category><![CDATA[WordPress]]></category>
+
+		<guid isPermaLink="false">http://www.fricardo.com/?p=460</guid>
+		<description><![CDATA[O grande diferencial do WordPress frente aos demais sistemas de gerenciamento de conteúdo é de fato o grande apelo ao visual e a usabilidade. Com a evolução do sistema, fomos sendo agraciados cada vez mais com funcionalidades que nos mostraram &#8230; <a href="http://www.fricardo.com/menus-personalizados-no-wordpress-3-0/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>O grande diferencial do <a title="WordPress - Code is poetry" href="http://wordpress.org/" target="_blank">WordPress</a> frente aos demais sistemas de gerenciamento de conteúdo é de fato o grande apelo ao visual e a <strong>usabilidade</strong>. Com a evolução do sistema, fomos sendo agraciados cada vez mais com funcionalidades que nos mostraram isso cada vez mais e, com a <strong>versão 3.0 do WordPress</strong> isso ficou muito claro.</p>
+<p>O novo recurso de <em><a title="Custom Menus ou Menus Personalizados" href="http://codex.wordpress.org/Appearance_Menus_SubPanel" target="_blank">Custom Menus</a></em><a title="Custom Menus ou Menus Personalizados" href="http://codex.wordpress.org/Appearance_Menus_SubPanel" target="_blank"> ou Menus Personalizados</a> melhorou e muito a gestão destes principalmente porque agora até o usuário mais leigo tem a capacidade de gerir os menus de seu site simplesmente arrastando os items que ele deseja inserir.</p>
+<p><img class="alignnone size-full wp-image-468" title="Menus personalizados no WordPress 3.0" src="http://www.fricardo.com/wp-content/uploads/2010/11/wordpress-menu.png" alt="wordpress menu" width="662" height="412" /></p>
+<h2><span style="color: #444444;">Dê adeus aos <em>plugins</em></span></h2>
+<p><img class="alignright size-full wp-image-474" title="Menus personalizados no WordPress 3.0" src="http://www.fricardo.com/wp-content/uploads/2010/11/custom-links.jpg" alt="custom links" width="297" height="172" />Para este tipo de tarefa muitos programadores criaram <em>plugins</em> que criavam uma espécie de interface para administrar menus. O número de <em>plugins</em> para esta ação era grande, porém como não se tratava de um recurso nativo as &#8220;brechas&#8221; existiam.</p>
+<p>O recurso de menus personalizados lhe permite criar um menu de navegação com páginas e sub-páginas, categorias, tags e links externos para serem apresentados aos seus visitantes.</p>
+<p>Você também será capaz de arrastar e soltar itens na ordem desejada / hierarquia, criar vários menus e até mesmo ligar para os lugares específicos quando necessário. <img src='http://www.fricardo.com/wp-includes/images/smilies/icon_wink.gif' alt="icon wink" class='wp-smiley' title="Menus personalizados no WordPress 3.0" /> </p>
+<!-- PHP 5.x -->]]></content:encoded>
+			<wfw:commentRss>http://www.fricardo.com/menus-personalizados-no-wordpress-3-0/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Instalando Python 2.5 no Ubuntu 10.10</title>
+		<link>http://www.fricardo.com/instalando-python-2-5-no-ubuntu-10-10/</link>
+		<comments>http://www.fricardo.com/instalando-python-2-5-no-ubuntu-10-10/#comments</comments>
+		<pubDate>Mon, 15 Nov 2010 05:00:57 +0000</pubDate>
+		<dc:creator>Flávio Ricardo</dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Python]]></category>
+
+		<guid isPermaLink="false">http://www.fricardo.com/?p=445</guid>
+		<description><![CDATA[Conversando com o Marcos Beirigo, vimos o quanto interessante é desenvolver aplicações utilizando a plataforma do Google App Engine. Depois de participar da Qcon São Paulo e assistir algumas palestras mostrando cases e as vantagens de desvantagens da plataforma do &#8230; <a href="http://www.fricardo.com/instalando-python-2-5-no-ubuntu-10-10/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p><img class="alignleft size-full wp-image-448" title="Instalando Python 2.5 no Ubuntu 10.10" src="http://www.fricardo.com/wp-content/uploads/2010/11/python-logo.gif" alt="python logo" width="211" height="71" />Conversando com o <a href="http://twitter.com/marcosbeirigo" target="_blank">Marcos Beirigo</a>, vimos o quanto interessante é desenvolver aplicações utilizando a plataforma do <a title="GAE" href="http://code.google.com/appengine/" target="_blank">Google App Engine</a>. Depois de participar da <a href="http://www.qconsp.com/" target="_blank">Qcon</a> São Paulo e assistir algumas palestras mostrando cases e as vantagens de desvantagens da plataforma do Google decido que estava na hora de aprender Python.</p>
+<p>O José Ricardo também se interessou e saiu na frente, tanto que já passou por um <a href="http://www.josericardo.eti.br/pt/2010/09/22/portugues-gae-ubuntu-erro-no-module-named-_multiprocessing/" target="_blank">problema de importação do GAE</a>. A solução era simples: seguir a documentação da plataforma e utilizar a versão 2.5 da linguagem Python. Sério, siga isto à risca e evite diversos problemas de importação de módulos e funcionalidades.</p>
+<p>O único porém nessa história é que se você está utilizando a última versão do <a href="http://www.ubuntu.com/" target="_blank">Ubuntu</a> (10.10 &#8211; Maverick Meerkat) verá que a versão do Python instalada é a 2.6.6 e no repositório está disponível para <em>download</em> apenas a versão 2.7. Como fazer para instalar a versão 2.5? Simples: a Canonical mantém um repositório de &#8220;cobras mortas&#8221; ou numa linguagem mais humana de se entender &#8220;pacotes obsoletos&#8221;.</p>
+<p>Siga os passos abaixo para instalar o <a title="Python" href="http://www.python.org/" target="_blank">Python</a> 2.5 e utilizar o Google App Engine:</p>
+<pre class="brush: bash">
+sudo add-apt-repository ppa:fkrull/deadsnakes
+sudo apt-get update
+sudo apt-get install python2.5
+</pre>
+<!-- PHP 5.x -->]]></content:encoded>
+			<wfw:commentRss>http://www.fricardo.com/instalando-python-2-5-no-ubuntu-10-10/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Manipulando cookies com jQuery</title>
+		<link>http://www.fricardo.com/manipulando-cookies-com-jquery/</link>
+		<comments>http://www.fricardo.com/manipulando-cookies-com-jquery/#comments</comments>
+		<pubDate>Tue, 09 Nov 2010 12:08:44 +0000</pubDate>
+		<dc:creator>Flávio Ricardo</dc:creator>
+				<category><![CDATA[Javascript e jQuery]]></category>
+
+		<guid isPermaLink="false">http://www.fricardo.com/?p=350</guid>
+		<description><![CDATA[Tempos atrás era comum ver desenvolvedores passando horas trabalhando em códigos Javascript para tentar incrementar suas aplicações ou buscar soluções alternativas para seus problemas. Não só pelo fato de mais de 50% dos desenvolvedores fazerem uso da linguagem sem de &#8230; <a href="http://www.fricardo.com/manipulando-cookies-com-jquery/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p><img class="alignright" title="Manipulando cookies com jQuery" src="http://www.fricardo.com/wp-content/uploads/2010/08/jquery.png" alt="jquery" width="231" height="70" />Tempos atrás era comum ver desenvolvedores passando horas trabalhando em códigos <a title="Javascript" href="http://www.w3schools.com/js/default.asp" target="_blank">Javascript</a> para tentar incrementar suas aplicações ou buscar soluções alternativas para seus problemas. Não só pelo fato de mais de <abbr title="segundo Douglas Crockford na Qcon São Paulo 2010">50% dos desenvolvedores fazerem uso da linguagem sem de fato estudá-la antes</abbr>, o Javascript em si carece de uma sintaxe mais amigável e isso faz com que muita gente sinta um certo ódio pela linguagem.</p>
+<p>Felizmente com a evolução do desenvolvimento de <em>software</em>, surgiram muitas <em>frameworks</em> para Javascript como o <a title="jQuery" href="http://jquery.com" target="_blank">jQuery</a>, que trás uma infinidade de funções que facilitam a vida dos desenvolvedores além de contar com inúmeros <em>plugins</em>. O mais interessante é ver que a vasta gama de <em>plugins</em> existentes não se limita apenas a efeitos e <em>firulas</em> para nossas aplicações, existem solucões extremamente simples para problemas do dia-a-dia, como o <strong><a title="jQuery Cookie" href="http://plugins.jquery.com/project/Cookie" target="_blank">jQuery Cookie</a></strong>.</p>
+<p>A utilização deste componente é bem fácil e necessita apenas da última versão do jQuery instalado para que ele comece a funcionar:</p>
+<pre class="brush: html">
+&lt;script src=&#039;jquery.min.js&#039;&gt;&lt;/script&gt;
+&lt;script src=&#039;jquery.cookie.js&#039;&gt;&lt;/script&gt;
+</pre>
+<p>A declaração para criar um novo <em><strong>cookie</strong></em> na sessão é bastante simples. O primeiro parâmetro da função é o nome do cookie a ser criado e o segundo seu valor:</p>
+<pre class="brush: javascript">
+jQuery.cookie(&#039;usuario_logado&#039;, &#039;sim&#039;);
+</pre>
+<p>Uma vez o <em><strong>cookie</strong></em> armazenado na sessão, ele será destruído assim que o usuário finalizar seu navegador. Caso você deseje que este fique ativo por mais tempo, podemos definir o tempo de expiração (vamos definir em 7 dias):</p>
+<pre class="brush: javascript">
+jQuery.cookie(&#039;usuario_logado&#039;, &#039;sim&#039;, { expires: 7 });
+</pre>
+<p>Os exemplos acima aplicam o <em><strong>cookie</strong></em> na raiz do website. Porém se você quer aplicar um cookie apenas apartir de um endereço (para que este trate de casos específicos) defina o path (caminho) deste:</p>
+<pre class="brush: javascript">
+jQuery.cookie(&#039;usuario_logado&#039;, &#039;sim&#039;, { path: &#039;/admin&#039;, expires: 7 });
+</pre>
+<p>Trabalhar com o <strong><em>cookie</em></strong> já criado na sessão é bastante fácil, você pode acessar e manusear o valor deste a qualquer momento:</p>
+<pre class="brush: javascript">
+alert(jQuery.cookie(&#039;usuario_logado&#039;));
+</pre>
+<pre class="brush: javascript">
+if (jQuery.cookie(&#039;usuario_logado&#039;))
+alert(&#039;Usuário logado com sucesso!&#039;)
+</pre>
+<p>O último passo é deletar o valor do <strong><em>cookie</em></strong> gerado. Para isto, basta você sobreescrever o valor deste para nulo, com isso ele deixará de existir para o navegador e poderá ser escrito novamente quando necessário:</p>
+<pre class="brush: javascript">
+jQuery.cookie(&#039;usuario_logado&#039;, null);
+</pre>
+<p>Um fato interessante é que diferente das variáveis dos Javascript que perdem seu valor a cada execução da página em que se encontram, com os <strong><em>cookies</em></strong> podemos trabalhar com determinados dados em diferentes páginas. Mais uma vantagem da utilização do jQuery.</p>
+<p><small><a title="The Eletric Toolbox" href="http://www.electrictoolbox.com/" target="_blank">The Eletric Toolbox</a></small></p>
+<!-- PHP 5.x -->]]></content:encoded>
+			<wfw:commentRss>http://www.fricardo.com/manipulando-cookies-com-jquery/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Você empreende no seu ambiente de trabalho?</title>
+		<link>http://www.fricardo.com/voce-empreende-no-seu-ambiente-de-trabalho/</link>
+		<comments>http://www.fricardo.com/voce-empreende-no-seu-ambiente-de-trabalho/#comments</comments>
+		<pubDate>Wed, 29 Sep 2010 07:35:01 +0000</pubDate>
+		<dc:creator>Flávio Ricardo</dc:creator>
+				<category><![CDATA[Empreendedorismo]]></category>
+
+		<guid isPermaLink="false">http://www.fricardo.com/?p=331</guid>
+		<description><![CDATA[Trabalhar é a atividade e com certeza um dos verbos mais utilizados no mundo todo. Essa atividade que atravessa séculos de tradição e nunca sai da moda é fielmente difundida por nossos pais e avós (pelo menos se você nasceu &#8230; <a href="http://www.fricardo.com/voce-empreende-no-seu-ambiente-de-trabalho/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Trabalhar é a atividade e com certeza um dos verbos mais utilizados no mundo todo. Essa atividade que atravessa séculos de tradição e nunca sai da moda é fielmente difundida por nossos pais e avós (pelo menos se você nasceu na década de 80/90), como a fórmula para a segurança financeira.</p>
+<p>Porém, com a ascensão da <a title="Geração Y" href="http://pt.wikipedia.org/wiki/Gera%C3%A7%C3%A3o_Y" target="_blank">Geração Y</a> (sucedida pela <a title="Geração Z" href="http://pt.wikipedia.org/wiki/Gera%C3%A7%C3%A3o_Z" target="_blank">Geração Z</a>) esse pensamento vem sofrendo mutações e ganhando novos horizontes. Claro, os princípios e ideais não mudaram ou estão sendo deixados de lado, mas sim evoluindo. É notável o número de profissionais que estão buscando algo mais do que apenas trabalhar, a rotina muitas vezes massante e monótona dos empregos traz consigo uma vontade de mudança, <strong>uma vontade de empreender</strong>.</p>
+<p style="text-align: center;"><strong><img class="size-full wp-image-400  aligncenter" title="Você empreende no seu ambiente de trabalho?" src="http://www.fricardo.com/wp-content/uploads/2010/09/metting.jpg" alt="metting" width="640" height="478" /><br />
+</strong></p>
+<p>Quando falamos em empreender não se trata apenas de abrir o próprio negócio, muitas pessoas estão buscando melhorias dentro da empresa onde trabalham. É fato que ser dono próprio negócio é bem mais desafiador e instigante  que a rotina de ficar de segunda a sexta-feira, oito horas por dia trabalhando e ainda ser penalizado por atrasos, sofrer os descontos entre outras coisas.</p>
+<p>Mas felizmente isso não é regra nas empresas de desenvolvimento de software (ou qualquer outro segmento), existem vários empresários que tem uma visão moderna do ambiente de trabalho ideal e junto a seus funcionários buscam a inovação. Existem várias formas de se notar a inovação dentro do ambiente de trabalho. Na <a title="Agence" href="http://www.agence.com.br/" target="_blank">Agence Consultoria</a>, onde atualmente trabalho, toda quinta-feira existe algum tipo de treinamento (palestras, apresentação de novas tecnologias, mostra de sistemas desenvolvidos) partindo dos próprios desenvolvedores, exemplo seguido de grandes empresas como <a title="Locaweb" href="http://www.locaweb.com.br/" target="_blank">Locaweb</a>, <a title="BlueSoft" href="http://bluesoft.wordpress.com/" target="_blank">BlueSoft</a> e <a title="Caelum" href="http://www.caelum.com.br/" target="_blank">Caelum</a> que também realizam atividades assim buscando aperfeiçoamento e aproximação de seus funcionários.</p>
+<p>Conheço outras empresas onde existem treinamentos assim, sem contar a constante busca por um melhor ambiente de trabalho. Isso é instigante e motivador, mostra que estamos saindo da era do <em><abbr title="Expressão que designa uma pessoa viciada em trabalho">workaholic</abbr></em> onde trabalhar e trabalhar era a essência da vida e qualquer atividade que não estivesse única e diretamente relacionada a produção era abolida. Algumas empresas ainda contam com extras, posso citar como exemplo a <a title="Catwork Tecnologia" href="http://www.catwork.com.br/" target="_blank">Catwork Tecnologia</a> (primeira empresa do segmento em que trabalhei) que consegue adequar as necessidades do dia-a-dia com as especifidades de horário de cada funcionário, tornando as coisas mais flexíveis. Ou então a <a title="Jera" href="http://jera.com.br/" target="_blank">Jera &#8211; Software Ágil</a>, empresa nova no mercado, criada para atender não só nas necessidades do mercado mas também de cada um de seus sócios, com ambiente de trabalho descontraído e bem arquitetado.</p>
+<p>Os exemplos são muitos, não importa o quanto procuremos por um padrão, assim como as ideias o ambiente também é mutável e sofre mudanças conforme as nossas necessidades e melhora a cada dia. E você tem empreendido dentro do seu ambiente de trabalho?<br />
+<small><a href="http://www.flickr.com/photos/dpstyles/4835354126/">@dennis crowley</a></small></p>
+<!-- PHP 5.x -->]]></content:encoded>
+			<wfw:commentRss>http://www.fricardo.com/voce-empreende-no-seu-ambiente-de-trabalho/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Conheça o WordPress no Ciclo de palestras Hora Livre</title>
+		<link>http://www.fricardo.com/conheca-o-wordpress-no-ciclo-de-palestras-hora-livre/</link>
+		<comments>http://www.fricardo.com/conheca-o-wordpress-no-ciclo-de-palestras-hora-livre/#comments</comments>
+		<pubDate>Mon, 30 Aug 2010 17:31:34 +0000</pubDate>
+		<dc:creator>Flávio Ricardo</dc:creator>
+				<category><![CDATA[Eventos]]></category>
+		<category><![CDATA[WordPress]]></category>
+
+		<guid isPermaLink="false">http://www.fricardo.com/?p=361</guid>
+		<description><![CDATA[Acontecerá neste sábado (04/09/2010) às 15h na Milenium Informática mais uma palestra do Ciclo de palestras Hora Livre. A Milenium Informática é empresa atuante na área de Código Aberto com 16 anos de experiência na prestação de serviços no mercado &#8230; <a href="http://www.fricardo.com/conheca-o-wordpress-no-ciclo-de-palestras-hora-livre/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p><img class="alignright size-full wp-image-381" title="Conheça o WordPress no Ciclo de palestras Hora Livre" src="http://www.fricardo.com/wp-content/uploads/2010/08/blue-m.png" alt="blue m" width="100" height="100" />Acontecerá neste sábado (04/09/2010) às 15h na <a title="Milenium Informática" href="http://mileniuminformatica.com.br/home/" target="_blank">Milenium Informática</a> mais uma palestra do Ciclo de palestras Hora Livre. A Milenium Informática é empresa atuante na área de Código Aberto com 16 anos de experiência na prestação de serviços no mercado de TI de Campo Grande-MS e região.</p>
+<p>O <strong>Ciclo de palestras Hora Livre</strong> traz temas atuais e importantes, que geram dúvidas, expectativa e curiosidade, para os usuários e também para os profissionais de TI. As palestras são abertas e gratuitas, ministradas por profissionais com experiência na área.</p>
+<p>A convite da empresa estarei apresentando a palestra <a title="Informações e inscrições na palestra Conhecendo o WordPress" href="http://mileniuminformatica.com.br/palestras/palestra.php?palestra=6&amp;data=04/09/10" target="_blank">Conhecendo o WordPress</a> que irá abordar os conceitos básicos desse CMS (content management system) que vem ganhando bastante espaço no mercado de desenvolvimento e cativando cada vez mais os usuários finais devido a sua facilidade de uso e adaptação.</p>
+<p>Abaixo mais alguns informações liberadas no release da <a title="Informações e inscrições na palestra Conhecendo o WordPress" href="http://mileniuminformatica.com.br/palestras/palestra.php?palestra=6&amp;data=04/09/10" target="_blank">Milenium Informática</a>:</p>
+<blockquote><p>Essa palestra é ideal para quem nunca ouviu falar do WordPress ou deseja aprimorar seus conhecimentos sobre as operações básicas deste gerenciador de conteúdos. O WordPress é a ferramenta perfeita para aqueles que desejam criar blogs ou websites, para fins pessoais ou profissionais.</p>
+<ul>
+<li>O poder da publicação de conteúdo na internet</li>
+<li>Entendendo o que é um CMS</li>
+<li>A história do WordPress</li>
+<li>A famosa instalação de 5 minutos</li>
+<li>Visão geral do painel do WordPress</li>
+<li>Expandindo as funcionalidades com uso de plugins</li>
+</ul>
+</blockquote>
+<p>Para mais informações e inscrições <a title="Informações e inscrições na palestra Conhecendo o WordPress" href="http://mileniuminformatica.com.br/palestras/palestra.php?palestra=6&amp;data=04/09/10" target="_blank">acesse o site do Ciclo de palestras Hora Livre</a>. <img src='http://www.fricardo.com/wp-includes/images/smilies/icon_wink.gif' alt="icon wink" class='wp-smiley' title="Conheça o WordPress no Ciclo de palestras Hora Livre" /> </p>
+<!-- PHP 5.x -->]]></content:encoded>
+			<wfw:commentRss>http://www.fricardo.com/conheca-o-wordpress-no-ciclo-de-palestras-hora-livre/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Resultados do 1º Coding Dojo do PHPMS</title>
+		<link>http://www.fricardo.com/resultados-do-1%c2%ba-coding-dojo-do-phpms/</link>
+		<comments>http://www.fricardo.com/resultados-do-1%c2%ba-coding-dojo-do-phpms/#comments</comments>
+		<pubDate>Mon, 16 Aug 2010 17:39:43 +0000</pubDate>
+		<dc:creator>Flávio Ricardo</dc:creator>
+				<category><![CDATA[Eventos]]></category>
+		<category><![CDATA[PHP]]></category>
+
+		<guid isPermaLink="false">http://www.fricardo.com/?p=354</guid>
+		<description><![CDATA[Aconteceu no último sábado (14/08) no Senac/MS o primeiro Coding Dojo realizado pelo Grupo de Usuários PHP do Mato Grosso do Sul, o PHPMS. A ideia surgiu por iniciativa dos próprios membros através da lista de discussão, a mesma onde &#8230; <a href="http://www.fricardo.com/resultados-do-1%c2%ba-coding-dojo-do-phpms/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Aconteceu no último sábado (14/08) no Senac/MS o primeiro <a href="http://codingdojo.org/" target="_blank">Coding Dojo</a> realizado pelo Grupo de Usuários PHP do Mato Grosso do Sul, o <a href="http://phpms.org" target="_blank">PHPMS</a>.</p>
+<p style="text-align: center;"><img class="size-full wp-image-356 aligncenter" title="Resultados do 1º Coding Dojo do PHPMS" src="http://www.fricardo.com/wp-content/uploads/2010/08/dojophpms.jpg" alt="dojophpms" width="640" height="400" /></p>
+<p>A ideia surgiu por iniciativa dos próprios membros através da lista de discussão, a mesma onde foi previamente definido o tema e o tipo do dojo que seria realizado. Foi a primeira vez que acontece um encontro assim no grupo, escolhemos uma forma de dojo onde a participação de todos fosse maior, contrário um pouco do que acontece nos workshops e/ou palestras onde a atenção fica mais no palestrante. E deu certo. <img src='http://www.fricardo.com/wp-includes/images/smilies/icon_wink.gif' alt="icon wink" class='wp-smiley' title="Resultados do 1º Coding Dojo do PHPMS" /> </p>
+<p>Partindo do formato <a href="http://codingdojo.org/cgi-bin/wiki.pl?RandoriKata" target="_blank">RandoriKata</a>, escolhemos um problema de programação e utilizando as melhores técnicas de desenvolvimento (<abbr title="Desenvolvimento Guiado por Testes">TDD</abbr>, par programming, etc) procuramos a solução certa, utilizando do conhecimento e experiência dos envolvidos.</p>
+<p>O problema escolhido foi o <a href="http://code.google.com/codejam/contest/dashboard?c=32004" target="_blank">Old Magician do Google Code Jam</a>,  que aparentemente era simples mas nos deu bastante trabalho, foram 11 pessoas &#8220;colocando a cabeça para pensar&#8221; na solução. Tentando seguir as boas práticas de um dojo, utilizamos o <a href="http://www.phpunit.de/" target="_blank">PHPUnit</a> para criar os testes de cada passo da solução do problema.</p>
+<p>Utilizamos <a href="http://www.pomodorotechnique.com/" target="_blank">pomodoros</a> para contabilizar a troca entre piloto e copiloto, que ocorria a cada 5 minutos e após os 25 minutos fazíamos uma pausa e/ou discutíamos com mais afinco sobre o problema. No final, apesar de algumas pessoas já terem ido embora, fizemos uma retrospectiva e os resultados foram:</p>
+<p>O que foi bom?</p>
+<ul>
+<li> Participação dos membros foi bastante ativa</li>
+<li> O espaço cedido pelo Senac atendeu bem as expectativas</li>
+<li> O formato do dojo foi bastante produtivo</li>
+</ul>
+<p>O que você achou ruim?</p>
+<ul>
+<li> Falta de planejamento e organização</li>
+<li> Conhecimento do problema era pouco e isso prejudicou o começo</li>
+</ul>
+<p>Sugestão de melhorias</p>
+<ul>
+<li> O problema deve ser definido com antecedência e compartilhado na lista de discussão</li>
+<li> Melhorar o esquema da contagem de pomodoros e revezamento</li>
+<li> Deixar definido como vai ser a alimentação e/ou pós do dojo</li>
+</ul>
+<p>O <a href="http://www.josericardo.eti.br/2010/08/14/phpms-coding-dojo/" target="_blank">José Ricardo</a> também fez um <em>post</em> sobre o Dojo e <a href="http://www.flickr.com/photos/josericardodasilva/sets/72157624600561213/" target="_blank">colocou as fotos tiradas no Flickr</a>. Posso dizer que a experiência foi muito boa, espero que o PHPMS possa ser palco para que muitos outros Coding Dojo aconteçam.</p>
+<!-- PHP 5.x -->]]></content:encoded>
+			<wfw:commentRss>http://www.fricardo.com/resultados-do-1%c2%ba-coding-dojo-do-phpms/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

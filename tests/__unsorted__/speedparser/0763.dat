@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+         xmlns="http://purl.org/rss/1.0/">
+
+
+
+
+    
+
+
+
+<channel rdf:about="http://www.phil.muni.cz/wff/news/RSS">
+  <title>vyber Aktualne</title>
+  <link>http://www.phil.muni.cz/wff</link>
+  
+  <description>
+    
+       popis vyberu Aktualne
+       
+  </description>
+  
+  
+  
+            <syn:updatePeriod>daily</syn:updatePeriod>
+            <syn:updateFrequency>1</syn:updateFrequency>
+            <syn:updateBase>2008-09-06T16:44:37Z</syn:updateBase>
+        
+  
+  <image rdf:resource="http://www.phil.muni.cz/wff/logo.jpg"/>
+
+  <items>
+    <rdf:Seq>
+        
+            <rdf:li rdf:resource="http://www.phil.muni.cz/wff/home/News/2011/workshopu-skandinavske-lidove-hudby-koncert"/>
+        
+        
+            <rdf:li rdf:resource="http://www.phil.muni.cz/wff/home/News/2011/e-learning-2013-workshopy-cit-ff"/>
+        
+        
+            <rdf:li rdf:resource="http://www.phil.muni.cz/wff/home/News/2011/zkusebni-pristupy-k-odbornym-online-zdrojum"/>
+        
+    </rdf:Seq>
+  </items>
+
+</channel>
+
+    <item rdf:about="http://www.phil.muni.cz/wff/home/News/2011/workshopu-skandinavske-lidove-hudby-koncert">        <title>Workshop skandinávské lidové hudby + Koncert</title>        <link>http://www.phil.muni.cz/wff/home/News/2011/workshopu-skandinavske-lidove-hudby-koncert</link>        <description>14.10.2011 v době od 16:00 do 20:00 hodin.  V posluchárně C33 - AULA</description>        <dc:publisher>No publisher</dc:publisher>        <dc:creator>webeditor</dc:creator>        <dc:rights></dc:rights>                <dc:date>2011-09-25T17:14:45Z</dc:date>        <dc:type>News Item</dc:type>    </item>
+    <item rdf:about="http://www.phil.muni.cz/wff/home/News/2011/e-learning-2013-workshopy-cit-ff">        <title>E-learning – workshopy CIT FF</title>        <link>http://www.phil.muni.cz/wff/home/News/2011/e-learning-2013-workshopy-cit-ff</link>        <description>Workshopy a setkání k e-learningu na FF</description>        <dc:publisher>No publisher</dc:publisher>        <dc:creator>miksik</dc:creator>        <dc:rights></dc:rights>                <dc:date>2011-09-12T08:04:44Z</dc:date>        <dc:type>News Item</dc:type>    </item>
+    <item rdf:about="http://www.phil.muni.cz/wff/home/News/2011/zkusebni-pristupy-k-odbornym-online-zdrojum">        <title>Zkušební přístupy k odborným online zdrojům</title>        <link>http://www.phil.muni.cz/wff/home/News/2011/zkusebni-pristupy-k-odbornym-online-zdrojum</link>        <description>aktuálně probíhající zkušební přístupy</description>        <dc:publisher>No publisher</dc:publisher>        <dc:creator>webeditor</dc:creator>        <dc:rights></dc:rights>                <dc:date>2011-09-15T15:48:46Z</dc:date>        <dc:type>News Item</dc:type>    </item>
+
+
+
+
+</rdf:RDF>

@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/atom10full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><feed xmlns="http://www.w3.org/2005/Atom" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0"><title>SIGUSR2</title><link href="http://sigusr2.net/" /><updated>2011-08-09T15:40:06Z</updated><author><name>Andrew Gwozdziewycz</name></author><id>md5:ec2c8804a8dac6a866e1a43cfce32fc1</id><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/atom+xml" href="http://feeds.feedburner.com/SIGUSR2" /><feedburner:info uri="sigusr2" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><entry><title>Code Blogging: Call With Current Continuation for Python</title><link href="http://feedproxy.google.com/~r/SIGUSR2/~3/aGmCXcg3iVo/call-cc-for-python.html" /><id>md5:8500c32ef5f06561d93db07571665afe</id><updated>2011-08-09T00:00:00Z</updated><content type="html">&lt;p&gt;&lt;span class="preamble"&gt;&lt;a href="http://en.wikipedia.org/wiki/Continuation"&gt;Continuations&lt;/a&gt; are a snapshot of the programs control state at a given time. The concept exists in every language, but only some allow a programmer to bundle it up into an actual object to manipulate in some way.&lt;/p&gt;
+
+&lt;p&gt;That bundled, first-class, version of a continuation is applyable, like a function, and depending on the language is either invokable once (one-shot) or multiple times (multi-shot). In the case of multi-shot continuations, one can imagine a great number of use cases such as building coroutines, efficient backtracking and stateful web-servers.&lt;/p&gt;
+
+&lt;p&gt;For one-shot continuations, the number of things that can be done with them is more limited, but they are still extremely useful. &lt;strike&gt;These are often described as "escape-continuations" and are often compared to something like &lt;code class="inline"&gt;setjmp&lt;/code&gt; / &lt;code class="inline"&gt;longjmp&lt;/code&gt;&amp;mdash;they can "escape" back to a save point, but can never jump forward. As such, often the example given for uses of them is exception handling.&lt;/strike&gt;&lt;strong&gt;&lt;sup&gt;&lt;a href="#note-haste-in-writing"&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/strong&gt; For instance, one couldn't implement nondeterminism as in Prolog because the continuation needs to be invoked multiple times to collect multiple values&lt;sup&gt;&lt;a href="#note-one-shot"&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Anyway, most languages do not have either type of first class continuations, and more often than not, already have the common use cases of them as part of the language.&lt;/p&gt;
+
+&lt;p&gt;For example, Python has exception handling built in, as well as the &lt;code class="inline"&gt;yield&lt;/code&gt; statement which supports a limited coroutine mechanism. For actual coroutines, an extension called &lt;a href="http://pypi.python.org/pypi/greenlet"&gt;greenlet&lt;/a&gt; can be used, which implements symmetric coroutines&lt;sup&gt;&lt;a href="#note-symmetric-coroutines"&gt;[3]&lt;/a&gt;&lt;/sup&gt;.
+
+&lt;p&gt;What do coroutines have to do with continuations, aside from the fact that multi-shot continuations can be used to implement coroutines?&lt;/p&gt;
+
+&lt;p&gt;Well, it turns out&lt;sup&gt;&lt;a href="#note-revisiting-coroutines"&gt;[4]&lt;/a&gt;&lt;/sup&gt; that symmetric coroutines are all that is needed to support one-shot continuations, and with greenlet, this can be done in Python:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="python"&gt;import greenlet
+
+class ContinuationError(Exception): pass
+
+def callcc(f):
+    saved = [greenlet.getcurrent()]
+
+    def cont(val):
+        if saved[0] == None:
+            raise ContinuationError("one shot continuation called twice")
+        else:
+            return saved[0].switch(val)
+
+    def new_cr():
+        v = f(cont)
+        return cont(v)
+
+    value_cr = greenlet.greenlet(new_cr)
+    value = value_cr.switch()
+    saved[0] = None
+    return value
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Its use is illustrated in the following simple example which adds 3 numbers, but only when the first one is not 5. In that case, 0 is returned from the computation:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="python"&gt;def add3(x, y, z):
+    def add_x_but_not_when_5(cont):
+        if x == 5:
+            cont(0)
+        else:
+            cont(x + y + z)
+    return callcc(add_x_but_not_when_5)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="python"&gt;&amp;gt;&amp;gt;&amp;gt; add3(5, 6, 7)
+0
+&amp;gt;&amp;gt;&amp;gt; add3(6, 7, 8)
+21
+&amp;gt;&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;ol class="footnotes"&gt;
+    &lt;li id="note-haste-in-writing"&gt;My haste in writing caused me to write something that wasn't correct. One-shot continuations and escape continuations are not the same thing. Thanks to the commenter below who pointed out my error.&lt;/li&gt;
+    &lt;li id="note-one-shot"&gt;Carl Bruggeman, Oscar Waddell, and R. Kent Dybvig; "Representing control in the presence of one-shot continuations"; In Proceedings of the SIGPLAN '96 Conference on Programming Language Design and Implementation, 99-107, May 1996.&lt;/li&gt;
+    &lt;li id="note-symmetric-coroutines"&gt;Symmetric coroutines have a single control transfer which allows them individually to switch amongst themselves. In the Greenlet library, this is the &lt;code class="inline"&gt;switch&lt;/code&gt; method. Asymmetric coroutines, which is the other type, have two control operations, &lt;code class="inline"&gt;yield&lt;/code&gt; and &lt;code class="inline"&gt;resume&lt;/code&gt;, which makes them subordinates to their caller.&lt;/li&gt;
+    &lt;li id="note-revisiting-coroutines"&gt;Ana Lucia de Moura and Roberto Ierusalimschy; "Revisiting Coroutines"; 2004&lt;/li&gt; 
+&lt;/ol&gt;
+&lt;img src="http://feeds.feedburner.com/~r/SIGUSR2/~4/aGmCXcg3iVo" height="1" width="1"/&gt;</content><feedburner:origLink>http://sigusr2.net/2011/Aug/09/call-cc-for-python.html</feedburner:origLink></entry>
+<entry><title>Parser Combinators Made Simple</title><link href="http://feedproxy.google.com/~r/SIGUSR2/~3/OpMvsdGeEYs/parser-combinators-made-simple.html" /><id>md5:2d4da36bd3daa6959e8b4f79b8094fc4</id><updated>2011-04-18T00:00:00Z</updated><content type="html">&lt;p&gt;&lt;span class="preamble"&gt;Parsing theory has been around for quite a long time, but it is often thought of as magic by the swarms of people who haven't bothered to read about it, and see how plain and dry it actually is. Algorithms for parsing &lt;a href="http://en.wikipedia.org/wiki/LR_parser"&gt;LR(k)&lt;/a&gt; grammars (meaning Left-to-right, Right-most derivation, k tokens lookahead) for instance, normally just traverse a state machine that was computed before hand (either by hand, or by using a parser generator such as &lt;a href="http://www.gnu.org/software/bison/"&gt;bison&lt;/a&gt; or &lt;a href="http://en.wikipedia.org/wiki/Yacc"&gt;yacc&lt;/a&gt;). Sure, there are many things to trip on, tedious to track down ambiguities, and other issues, but the general theory of parsing has remained unchanged for years&amp;mdash;one might say, it is a solved problem.&lt;sup&gt;&lt;a id="return-solvedproblem" href="#note-solvedproblem"&gt;[1]&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;When learning about parsing for the first time though, the idea of a &lt;a href="http://en.wikipedia.org/wiki/Recursive_descent_parser"&gt;recursive descent parser&lt;/a&gt; is often taught first. Recursive descent parsers, are relatively simple to reason about, to write and to shoot yourself in the foot with. A simple &lt;a href="http://en.wikipedia.org/wiki/LL_parser"&gt;LL(1)&lt;/a&gt; parser (meaning Left-to-right, Left-most derivation, 1 token lookahead), for instance, can't parse &lt;a href="http://en.wikipedia.org/wiki/Left_recursion"&gt;left-recursive grammars&lt;/a&gt;, which is the most natural way to write certain types of grammars&lt;sup&gt;&lt;a id="return-leftrecursion" href="#note-leftrecursion"&gt;[2]&lt;/a&gt;&lt;/sup&gt;. Typically, when writing a recursive descent parser, the author takes the grammar and produces a function for each production (non-terminal). Each function then reads a token and recurses to the other non-terminals in the grammar reachable from the current production. And, eventually, at the end of the function the sub parts will be combined in such a way that a &lt;a href="http://en.wikipedia.org/wiki/Parse_tree"&gt;parse tree&lt;/a&gt; will be created.&lt;/p&gt;
+
+&lt;p&gt;This sounds boring and tedious, and in fact is. However, there is a useful technique for creating these types of parsers that was developed some time ago&lt;sup&gt;&lt;a id="return-hutton1989" href="#note-hutton1989"&gt;[3]&lt;/a&gt;&lt;/sup&gt;, which involves composing a small set of functions into more meaningful, more advanced parsers. They still suffer from the same problems as your typical recursive descent parser (as presented), but with some other trickery can be made to overcome those deficiencies (we won't discuss that in this article).&lt;/p&gt;
+
+&lt;p&gt;In order to build a parser from the ground up, we need to think about what a parser actually is. In some sense, it is really just a function that takes an input string and produces some result. That result, in order to make any progress should contain the leftover string after consuming some part of it, or in the case of error (i.e. incorrect input), return some value indicating failure. In Python, a natural way to encode both results would be to use &lt;code class="inline"&gt;(&lt;em&gt;"matched string"&lt;/em&gt;, &lt;em&gt;"leftover string"&lt;/em&gt;)&lt;/code&gt; or &lt;code class="inline"&gt;None&lt;/code&gt;. For sanity's sake, let us refer to functions which match this criteria as &lt;em&gt;parser functions&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;To start off, we'll write a useful parser function, which at first glance seems pointless, &lt;code class="inline"&gt;anychar&lt;/code&gt;. &lt;code class="inline"&gt;anychar&lt;/code&gt; matches &lt;em&gt;any&lt;/em&gt; (no trickery here!) character so long as there is at least one character left in the input string. (&lt;strong&gt;Note:&lt;/strong&gt; we'll use the variable &lt;code class="inline"&gt;strn&lt;/code&gt; to always refer to the input string, which represents the &lt;em&gt;string left to parse&lt;/em&gt;.)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def anychar(strn):
+    if strn == "":
+        return None
+    return (strn[0], strn[1:])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It is easy to see that the result of this parser function matches our encoding. If there are no characters left in &lt;code class="inline"&gt;strn&lt;/code&gt;, then we return the failure condition, &lt;code class="inline"&gt;None&lt;/code&gt;, otherwise we return a tuple of what we parsed, and the rest of the string which we didn't parse.&lt;/p&gt;
+
+&lt;p&gt;It becomes more useful when we pair &lt;code class="inline"&gt;anychar&lt;/code&gt; with a test against the character it consumes. Enter &lt;code class="inline"&gt;chartest&lt;/code&gt;, which is a function that creates another parser function, given a predicate (i.e. a function which returns &lt;code class="inline"&gt;True&lt;/code&gt; or &lt;code class="inline"&gt;False&lt;/code&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def chartest(pred):
+    def _(strn):
+        c = anychar(strn)
+        if c and pred(c[0]):
+            return (c[0], c[1])
+        return None
+    return _
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In order to use &lt;code class="inline"&gt;chartest&lt;/code&gt;, we pass it a predicate, like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; chartest(lambda x: x == 'a')('abc')
+('a', 'bc')
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To see what happened, remember that &lt;code class="inline"&gt;chartest&lt;/code&gt; &lt;em&gt;creates&lt;/em&gt; a new parser function. With that, we just call the new parser function with the rest of the input string &lt;code class="inline"&gt;'abc'&lt;/code&gt;. The result indicates success, because an &lt;code class="inline"&gt;'a'&lt;/code&gt; was discovered as the first character. If we were unsuccessful, just like in &lt;code class="inline"&gt;anychar&lt;/code&gt;, instead of &lt;code class="inline"&gt;('a', 'bc')&lt;/code&gt;, we'd have seen &lt;code class="inline"&gt;None&lt;/code&gt; returned.&lt;/p&gt;
+
+&lt;p&gt;It is a bit verbose to always create a &lt;code class="inline"&gt;lambda&lt;/code&gt; to match a single character, so &lt;code class="inline"&gt;matchchr&lt;/code&gt; gets a target character and calls &lt;code class="inline"&gt;chartest&lt;/code&gt; for us. (Remember, calling &lt;code class="inline"&gt;chartest&lt;/code&gt; creates a &lt;em&gt;new&lt;/em&gt; parser function, this is an important thing to note.)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def matchchr(targetchr):
+    return chartest(lambda x: x == targetchr)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we can match single characters against our input stream, which is a great starting point, but hardly makes for an easy to use library. One limitation is that there is no way to specify more than one character as a possible match, such as "all alpha numeric"&amp;mdash;for that, we use &lt;code class="inline"&gt;oneof&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def oneof(target):
+    chars = set([x for x in target])
+    return chartest(lambda x: x in chars)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code class="inline"&gt;oneof&lt;/code&gt; creates a new test function to pass to chartest, which instead of testing if a character is equal to a single target character, checks to see if the character is in the set of characters we're looking for. Some useful definitions follow, which make parser functions using &lt;code class="inline"&gt;oneof&lt;/code&gt;, and a set of characters.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;alpha = oneof('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+loweralpha = oneof('abcdefghijklmnopqrstuvwxyz')
+upperalpha = oneof('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+digit = oneof('0123456789')
+hexdigit = oneof('0123456789abcdefABCDEF')
+whitespace = oneof(' \t\n\r')
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;While matching a single character is useful, it would be much more useful if we could match a &lt;em&gt;token&lt;/em&gt;, like "&lt;code class="inline"&gt;while&lt;/code&gt;," or "Content-Type." Not to worry, &lt;code class="inline"&gt;matchstr&lt;/code&gt; produces a parser function that will combine the previously created &lt;code class="inline"&gt;matchchr&lt;/code&gt; for each character in the target string. It looks a bit complicated, so we'll go through it step by step.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def matchstr(target):
+    if not target:
+        return lambda strn: ("", strn)
+
+    def _(strn):
+        c = matchchr(target[0])(strn)
+        if c:
+            cs = matchstr(target[1:])(c[1])
+            if cs:
+                return (c[0] + cs[0], cs[1])
+        return None
+    return _
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code class="inline"&gt;target&lt;/code&gt;, just like &lt;code class="inline"&gt;targetchr&lt;/code&gt; in &lt;code class="inline"&gt;matchchr&lt;/code&gt; is the string we're eventually trying to match in full. If &lt;code class="inline"&gt;target&lt;/code&gt; is empty, then our parser function is simple&amp;mdash;it doesn't advance the input string, and doesn't consume anything.&lt;/p&gt;
+
+&lt;p&gt;Why don't we return &lt;code class="inline"&gt;None&lt;/code&gt; here? Well, if our target is empty, we're not asking &lt;code class="inline"&gt;matchstr&lt;/code&gt; to do any work at all, so there isn't a failure (indicated by &lt;code class="inline"&gt;None&lt;/code&gt;). It, however, also makes for a great base case to the recursion that follows.&lt;/p&gt;
+
+&lt;p&gt;If there &lt;em&gt;is&lt;/em&gt; a target string to match against, we attempt to match the first character within it. If that succeeds, we shorten the target string and recurse. We eventually return a combination of the result of &lt;code class="inline"&gt;matchchr&lt;/code&gt; and the result of the recursive call to &lt;code class="inline"&gt;matchstr&lt;/code&gt;. Take a minute to look over this and ensure you understand it&amp;mdash;it's actually pretty straightforward assuming understanding of the previous functions.&lt;/p&gt;
+
+&lt;p&gt;Let's take a look at how we use it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; matchwhile = matchstr('while')
+&amp;gt;&amp;gt;&amp;gt; matchwhile('while True:')
+('while', ' True:')
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we used &lt;code class="inline"&gt;matchstr&lt;/code&gt; to &lt;em&gt;build&lt;/em&gt; a parser function which matches the string "&lt;code class="inline"&gt;while&lt;/code&gt;"&amp;mdash;simple enough.&lt;/p&gt;
+
+&lt;p&gt;Ok, so what if we want to parse more complicated things, like say, the rest of the input string from the "while True:" example? We need some ways to combine these parser functions to make them more useful, otherwise, all we did was create the equivalent of:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if strn.startswith("while"):
+    return (strn[0:5], strn[5:])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Which, in Python, would be much more efficient!&lt;sup&gt;&lt;a id="return-efficiency" href="#note-efficiency"&gt;[4]&lt;/a&gt;&lt;/sup&gt;
+
+&lt;p&gt;Another parser function that we need to make this whole thing useful is &lt;code class="inline"&gt;optional&lt;/code&gt;. &lt;code class="inline"&gt;optional&lt;/code&gt; takes as an argument a parser function, and returns a new parser function that succeeds even if the original parser function does not. Essentially, if there is a failure, it returns the original input string.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def optional(parserfn):
+    def _(strn):
+        c = parserfn(strn)
+        if c:
+            return c
+        return ('', strn)
+    return _
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we make &lt;code class="inline"&gt;matchwhile&lt;/code&gt;, from above, optional we get this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; optional_matchwhile = optional(matchwhile)
+&amp;gt;&amp;gt;&amp;gt; optional_matchwhile('foo')
+('', 'foo')
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Without &lt;code class="inline"&gt;optional&lt;/code&gt;, attempting to call &lt;code class="inline"&gt;matchwhile&lt;/code&gt; on the input string &lt;code class="inline"&gt;'foo'&lt;/code&gt; would have resulted in &lt;code class="inline"&gt;None&lt;/code&gt;, the failure condition.&lt;/p&gt;
+
+&lt;p&gt;The presence of &lt;code class="inline"&gt;optional&lt;/code&gt; also leads us to &lt;code class="inline"&gt;repeat&lt;/code&gt; and &lt;code class="inline"&gt;repeat0&lt;/code&gt; which are mutually exclusive. &lt;code class="inline"&gt;repeat&lt;/code&gt; will attempt to match the parser function at least once, with no boundary. &lt;code class="inline"&gt;repeat0&lt;/code&gt; will match the parser function zero or more times:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def repeat(parser):
+    def _(strn):
+        c = parser(strn)
+        if c:
+            cs = repeat0(parser)(c[1])
+            return (c[0] + cs[0], cs[1])
+        return None
+    return _
+
+def repeat0(parser):
+    return optional(repeat(parser))
+&lt;/pre&gt;&lt;/code&gt;
+
+&lt;p&gt;Again, like &lt;code class="inline"&gt;optional&lt;/code&gt;, &lt;code class="inline"&gt;repeat&lt;/code&gt; and &lt;code class="inline"&gt;repeat0&lt;/code&gt; build parser functions from existing ones. This is very much a common pattern when building parsers of this type.&lt;/p&gt;
+
+&lt;p&gt;The implementation of &lt;code class="inline"&gt;repeat0&lt;/code&gt; and &lt;code class="inline"&gt;repeat&lt;/code&gt; is quite clever. Note that zero or more is the same as &lt;em&gt;optionally&lt;/em&gt; one or more. The implementation of both follows from that realization. &lt;code class="inline"&gt;repeat&lt;/code&gt; first attempts to call the passed in parser function. If it succeeds it calls &lt;code class="inline"&gt;repeat0&lt;/code&gt; on the rest of the input string after calling &lt;code class="inline"&gt;parser&lt;/code&gt; the first time. If &lt;code class="inline"&gt;repeat0&lt;/code&gt; succeeds, which it always will given &lt;code class="inline"&gt;optional&lt;/code&gt;, we combine the results and return.
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; optrepeat_while = repeat0(matchwhile)
+&amp;gt;&amp;gt;&amp;gt; optrepeat_while('whilewhilewhile')
+('whilewhilewhile', '')
+&amp;gt;&amp;gt;&amp;gt; optrepeat_while('foo')
+('', 'foo')
+&amp;gt;&amp;gt;&amp;gt; repeat_while = repeat(matchwhile)
+&amp;gt;&amp;gt;&amp;gt; repeat_while('foo')
+None
+&amp;gt;&amp;gt;&amp;gt; repeat_while('while foo')
+('while', ' foo')
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We still need the ability to do alternation, like "while" &lt;em&gt;or&lt;/em&gt; "if." For that we introduce &lt;code class="inline"&gt;alt&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def alt(*parsers):
+   def _(strn):
+       for p in parsers:
+           result = p(strn)
+           if result:
+               return result
+   return _
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is really simple. We take a list of parser functions and try them one by one, from left to right, until we find one that passes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; iforwhileorfor = alt(matchstr('if'), matchstr('while'), matchstr('for'))
+&amp;gt;&amp;gt;&amp;gt; iforwhileorfor('if')
+('if', '')
+&amp;gt;&amp;gt;&amp;gt; iforwhileorfor('while')
+('while', '')
+&amp;gt;&amp;gt;&amp;gt; iforwhileorfor('for')
+('for', '')
+&amp;gt;&amp;gt;&amp;gt; iforwhileorfor('foof')
+None
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Alternation is important, but it is maybe even &lt;em&gt;more&lt;/em&gt; important to ensure that many parser functions pass in order, a sequence of parser functions if you will. It is this operator that allows us to do something like &lt;code class="inline"&gt;whilestmt = sequence(whileToken, conditional, colonToken, codeBlock)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def sequence(*parsers):
+    def _(strn):
+        parsed = ''
+        rest = strn
+        for p in parsers:
+            result = p(rest)
+            if result:
+                rest = result[1]
+                parsed += result[0]
+            else:
+                return None
+        return (parsed, rest)
+    return _
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Assuming simplified definitions of the supporting rules, our &lt;code class="inline"&gt;whileStmt&lt;/code&gt; example looks something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; whileToken = matchstr("while")
+&amp;gt;&amp;gt;&amp;gt; conditional = oneof("&amp;gt;&amp;lt;=")
+&amp;gt;&amp;gt;&amp;gt; colonToken = matchchr(":")
+&amp;gt;&amp;gt;&amp;gt; codeBlock = alt(matchstr("if"), matchstr("for"))
+&amp;gt;&amp;gt;&amp;gt; whileStmt = sequence(whileToken, conditional, colonToken, codeBlock)
+&amp;gt;&amp;gt;&amp;gt; whileStmt('while&amp;lt;:if')
+('while&amp;lt;:if', '')
+&amp;gt;&amp;gt;&amp;gt; whileStmt('while&amp;gt;:if')
+('while&amp;gt;:if', '')
+&amp;gt;&amp;gt;&amp;gt; whileStmt('while&gt;:for')
+('while&amp;gt;:for', '')
+&amp;gt;&amp;gt;&amp;gt; whileStmt('while:for')
+None
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code class="inline"&gt;sequence&lt;/code&gt; looks complicated, but is rather simple. It is basically &lt;code class="inline"&gt;reduce&lt;/code&gt;, combining the results of each parser into the results of all of the parser function outputs together.&lt;/p&gt;
+
+&lt;p&gt;That's all we really need to construct more interesting parsers, so we'll now construct a simplified parser for JSON.&lt;sup&gt;&lt;a id="return-json" href="#note-json"&gt;[5]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;We'll start with some utility functions:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def betweenchrs(parser, left="(", right=")"):
+    def _(strn):
+        lres = matchchr(left)(strn)
+        if lres:
+            pres = parser(lres[1])
+            if pres:
+                rres = matchchr(right)(pres[1])
+                if rres:
+                    return (left + pres[0] + right, rres[1])
+        return None
+    return _
+
+betweenparens = lambda p: betweenchrs(p, left="(", right=")")
+betweenbrackets = lambda p: betweenchrs(p, left="[", right="]")
+betweencurlies = lambda p: betweenchrs(p, left="{", right="}")
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code class="inline"&gt;betweenchrs&lt;/code&gt; lets us easily create a parser function which attempts to parse, using &lt;code class="inline"&gt;parser&lt;/code&gt;, only if it is between &lt;code class="inline"&gt;left&lt;/code&gt; and &lt;code class="inline"&gt;right&lt;/code&gt;. This is useful in JSON, because of its list and dictionary data types, which are delimited by &lt;code class="inline"&gt;[]&lt;/code&gt; and &lt;code class="inline"&gt;{}&lt;/code&gt; respectively.&lt;/p&gt;
+
+&lt;p&gt;Strings in JSON are composed of a series of characters between &lt;code class="inline"&gt;"&lt;/code&gt;'s. But, if you want to actually use a &lt;code class="inline"&gt;"&lt;/code&gt; within the string, you can do that by preceding it with a &lt;code class="inline"&gt;\&lt;/code&gt;. We can make a parser function that satisfies these rules rather easily, making use of &lt;code class="inline"&gt;anychar&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def charorquoted(strn):
+    c = anychar(strn)
+    if c[0] == '"':
+        return None
+    elif c[0] == '\\':
+        c2 = chartest(lambda x: x in ('\\', '"'))(c[1])
+        if c2:
+            return (c[0] + c2[0], c2[1])
+    else:
+        return c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the case that we find a '"' character without a '\' character preceding it, it is a failure.&lt;/p&gt;
+
+&lt;p&gt;Whitespace doesn't much matter between tokens in JSON, so let us define something that ultimately ignores it. &lt;code class="inline"&gt;ignorews&lt;/code&gt; uses &lt;code class="inline"&gt;repeat0&lt;/code&gt; to strip the preceding whitespace, calls the parser function given using the left over input string. If the parser function passes, it calls &lt;code class="inline"&gt;repeat0&lt;/code&gt; again against whitespace and ultimately returns the passed in parser function's parsed result and the ignored whitespace's left over input string. That's a mouthful, but it's fairly easy to understand:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def ignorews(p):
+    def _(strn):
+        w = repeat0(whitespace)(strn)
+        if w:
+            pres = p(w[1])
+            if pres:
+                w2 = repeat0(whitespace)(pres[1])
+                if w2:
+                    return (pres[0], w2[1])
+        return None
+    return _
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code class="inline"&gt;anint&lt;/code&gt;, &lt;code class="inline"&gt;astring&lt;/code&gt;, &lt;code class="inline"&gt;acolon&lt;/code&gt; and &lt;code class="inline"&gt;acomma&lt;/code&gt; are just helper functions which do exactly what they describe. We're simplifying this implementation, as it is for demonstration purposes, so we're not taking into consideration floating point numbers, or integers specified using hexidecimal and other formulations of numbers.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;anint = sequence(optional(matchchr("-")), repeat(digit))
+astring = betweenchrs(repeat0(charorquoted), left='"', right='"')
+acolon = matchchr(':')
+acomma = matchchr(',')
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When we define dictionaries and lists, we run into a problem. Both lists and dictionaries can contain lists and dictionaries (as well as numbers and strings of course), which represents a problem for when we define these functions (we can't recursively define something that doesn't already exist!). One solution to this problem is to use a mutable object which acts as a "forward reference." When we finish defining the pieces we need, we update the forward reference, and then all is well.&lt;/p&gt;
+
+&lt;p&gt;For both aesthetic, and practical reasons, we'll use a class instance which overrides &lt;code class="inline"&gt;__call__&lt;/code&gt;, and  &lt;code class="inline"&gt;__ilshift__&lt;/code&gt;, which will allow us to use an instance of &lt;code class="inline"&gt;Forward&lt;/code&gt; as a parser function, and &lt;code class="inline"&gt;&amp;lt;&amp;lt;=&lt;/code&gt; (from __ilshift__) as a way to update the parser function that's contained within the reference.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Forward(object):
+    def __init__(self):
+        self.p = None
+
+    def __call__(self, *args, **kwargs):
+        return self.p(*args, **kwargs)
+
+    def __ilshift__(self, p):
+        self.p = p
+        return self
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To use a &lt;code class="inline"&gt;Forward&lt;/code&gt;, we simply create an instance of &lt;code class="inline"&gt;Forward&lt;/code&gt; and assign it to a variable, just as if we were creating a parser function. &lt;code class="inline"&gt;Forward&lt;/code&gt; is like a promise. "If you act like a parser function for me for a little bit, I promise I'll actually turn you into one later." If the promise is kept, and the &lt;code class="inline"&gt;Forward&lt;/code&gt; is updated, parsing will proceed as if nothing was ever not specified to begin with.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;avalue = Forward()
+akey = ignorews(alt(anint, astring))
+akeyvaluepair = sequence(akey, acolon, avalue)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Both lists and dictionaries have items that are separated by comma. &lt;code class="inline"&gt;commaseparated&lt;/code&gt; is essentially &lt;code class="inline"&gt;repeat0&lt;/code&gt; except that it ensures a comma appears after each item, except in the last item.
+
+&lt;pre&gt;&lt;code&gt;def commaseparated(parser):
+    def _(strn):
+        r = repeat0(sequence(parser, acomma))(strn)
+        if r:
+            r2 = parser(r[1])
+            if r2:
+                return (r[0] + r2[0], r2[1])
+        elif r:
+            return r
+        return None
+    return _
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now that we have all the pieces specified, we put a &lt;code class="inline"&gt;commaseparated&lt;/code&gt; key value pair between curly braces to parse a dictionary, and a &lt;code class="inline"&gt;commaseparated&lt;/code&gt; value parser function between square brackets to parse a list.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;adict = betweencurlies(commaseparated(akeyvaluepair))
+alist = betweenbrackets(commaseparated(avalue))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We still have our promise to keep for &lt;code class="inline"&gt;avalue&lt;/code&gt;, and with the definitions of &lt;code class="inline"&gt;alist&lt;/code&gt; and &lt;code class="inline"&gt;adict&lt;/code&gt;, we now can. &lt;code class="inline"&gt;avalue&lt;/code&gt;, as in JSON, should either be a number, a string, a list or a dictionary, and whitespace is ignored.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;avalue &lt;&lt;= alt(*map(ignorews, [adict, alist, anint, astring]))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To achieve alternation, we make use of &lt;code class="inline"&gt;alt&lt;/code&gt;, but before we do that, we wrap each parser function contained in &lt;code class="inline"&gt;avalue&lt;/code&gt; in an &lt;code class="inline"&gt;ignorews&lt;/code&gt; parser function builder to satisify that requirement. Finally, we shift the newly created parser function into the forward reference for &lt;code class="inline"&gt;avalue&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To parse a top level JSON document, we look for either a list, or a dictionary. The parser function to do that is quite easy to specify.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;json = alt(adict, alist)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Last, but certainly not least, let's actually use what we've constructed:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; json('''{"hello": {1: "how are you?"}, "i is": "fine", "how": "are you?", 1: ["these", "values", "work", 2]}''')
+('{"hello":{1:"how are you?"},"i is":"fine","how":"are you?",1:["these","values","work",2]}', '')
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Success!&lt;/p&gt;
+
+&lt;p&gt;While we haven't shown how to formulate an LL(k) grammar, or even talked about what that actually is formally, we have shown that with a few simple functions that build parser functions, we can build, quite easily, parsing functions which parse complicated things. However, we've only shown that the input is valid, actually constructing a parse tree, or acting upon it, is left as an exercise to the reader.&lt;/p&gt;
+
+&lt;p&gt;Source code for all this is &lt;a href="http://files.sigusr2.net/parser_functions.py"&gt;here&lt;/a&gt;
+
+&lt;ol class="footnotes"&gt;
+   &lt;li id="note-solvedproblem"&gt;I'm not sure if parsing is really "solved," but the algorithms we have work well enough in practice that there isn't a ton of interesting new research going on around it. &lt;a href="http://arxiv.org/abs/1010.5023"&gt;Yacc is Dead&lt;/a&gt;, for instance used the results of &lt;a href="http://portal.acm.org/citation.cfm?id=321249"&gt;a paper&lt;/a&gt; from 1964, but came &lt;a href="http://research.swtch.com/2010/12/yacc-is-not-dead.html"&gt;under fire&lt;/a&gt;. Can parsing be made trivially easy? Maybe, but it's likely that ambiguity will be somewhere&amp;mdash;which would be the unsolved in parsing.&lt;a href="#return-solvedproblem"&gt;&amp;crarr;&lt;/a&gt;&lt;/li&gt;
+   &lt;li id="note-leftrecursion"&gt;See &lt;a href="#note-leftrecursion"&gt;left&lt;/a&gt; &lt;a href="http://en.wikipedia.org/wiki/Left_recursion"&gt;recursion&lt;/a&gt;. All joking aside, left recursion occurs in a grammar when a non-terminal rule is used recursively and appears on the left. For example: &lt;code class="inline"&gt;expr = expr + tail&lt;/code&gt;. &lt;a href="#return-leftrecursion"&gt;&amp;crarr;&lt;/a&gt;&lt;/li&gt;
+   &lt;li id="note-hutton1989"&gt;Graham Hutton. Proceedings of the 1989 Glasgow Workshop on Functional Programming (Fraserburgh, Scotland), Springer-Verlag Series of Workshops in Computing, Springer-Verlag, Berlin, 1990.&lt;a href="#return-hutton1989"&gt;&amp;crarr;&lt;/a&gt;&lt;/li&gt;
+   &lt;li id="note-efficiency"&gt;The purpose of this article isn't to describe an efficient parsing technique for Python, but to rather demonstrate a useful technique that could be adapted and built upon, to build an efficient parsing framework for &lt;em&gt;any&lt;/em&gt; language that supports first class functions. There's a follow up article to this which shows just how much of this can actually be abstracted out in order to make it even more simple.&lt;a href="#return-efficiency"&gt;&amp;crarr;&lt;/a&gt;&lt;/li&gt;
+   &lt;li id="note-json"&gt;We limit our parser to strings, integers, dictionary and lists. The complete specification appears at &lt;a href="http://json.org"&gt;http://json.org&lt;/a&gt;&lt;a href="#return-json"&gt;&amp;crarr;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src="http://feeds.feedburner.com/~r/SIGUSR2/~4/OpMvsdGeEYs" height="1" width="1"/&gt;</content><feedburner:origLink>http://sigusr2.net/2011/Apr/18/parser-combinators-made-simple.html</feedburner:origLink></entry>
+<entry><title>Softserv Serves Requests</title><link href="http://feedproxy.google.com/~r/SIGUSR2/~3/uTXrh1mpp1Y/softserve-serves-requests.html" /><id>md5:093bb5e2a8d89cf283efb8984e24d0ab</id><updated>2011-01-07T00:00:00Z</updated><content type="html">&lt;p&gt;
+   &lt;span class="preamble"&gt;Anyone that knows me knows that I have a lot of projects, most of which are in some sort of unfinished but partially functional state. Then there are others that have a solid 0.1 release, maybe lacking documentation, but usable. There are yet others that never make it to 0.1, and despite my happy thoughts about how this piece of code will change the world, or be the future, it's as good as deadpooled.&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+One project that will certainly not be deadpooled is being developed in my 10% time at work, though on hiatus whilst I resolve some other issues that I inadvertently committed and finish up some other tasks that have higher priority.
+&lt;/p&gt;
+
+&lt;p&gt;But, I don't wanna discuss that project right now, it is in a sort of discovery phase where I'm attempting to iron out the network protocol, and what functionality it actually provides for its initial run&lt;sup&gt;&lt;a href="#note-nonblocking"&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;It does, however, do what many servers do&amp;mdash;listen to and accept requests via a socket.&lt;/p&gt;
+
+&lt;p&gt;Clojure comes with many ways, of course, to do just that. It is certainly possible to use one of the many frameworks for Java for writing servers, but clojure.contrib/server-socket, looked to be exactly what I needed, and I decided to have a look.&lt;/p&gt;
+
+&lt;p&gt;When evaluating any sort of library, the first thing I always do is create something simple that makes use of it. This is not uncommon of course, and the "Hello World" of network programming is the trusted echo server, in which, everything you say will be parroted back to you. That's pretty simple using server-socket:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="clojure"&gt;(ns echo
+  (:require [clojure.contrib.server-socket :as ss]
+            [clojure.contrib.duck-streams :as ds]))
+
+(defn echo-server [in out]
+  (binding [*in* (ds/reader in)] &lt;a href="#note-with-in-reader"&gt;&lt;sup&gt;[2]&lt;/sup&gt;&lt;/a&gt;
+     (ds/with-out-writer out
+        (println (read-line)))))
+
+(ss/create-server 1025 echo-server)
+
+(comment
+$ echo "HELLO WORLD" | nc 127.0.0.1 1025
+HELLO WORLD
+$ 
+)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Simple enough, but it is unfortunately &lt;em&gt;too&lt;/em&gt; simple. For one, it creates a thread per connection, which is just asking for trouble with a public server. Secondly, since it only gives you an &lt;code class="inline"&gt;InputStream&lt;/code&gt; (&lt;code class="inline"&gt;in&lt;/code&gt;) and an &lt;code class="inline"&gt;OutputStream&lt;/code&gt; (&lt;code class="inline"&gt;out&lt;/code&gt;), there isn't a way to log who connected, or anything about the user who connected other than time. Hell, there's nothing guaranteeing that you're even connecting via a network for this!&lt;/p&gt;
+
+&lt;p&gt;Now, I understand that &lt;code class="inline"&gt;server-socket&lt;/code&gt; was not really meant for production use&amp;mdash;it is meant for quick toying around, and testing out ideas as quickly as possible, something it does extremely well, but with a little bit of modification, I think it can be almost just as simple and still be suitable for production use.
+
+&lt;p&gt;Enter &lt;a href="http://github.com/apgwoz/softserv"&gt;softserv&lt;/a&gt;, a still simple, but slightly more complicated replacement for server-socket.&lt;/p&gt;
+
+&lt;p&gt;So what is more complicated about it? Let's look at "Hello World" and find out:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="clojure"&gt;(ns echo
+  (:use [softserv.core :only (create-server
+                              defservice
+                              defhandler
+                              with-shutdown)])
+  (:require [clojure.contrib.duck-streams :as ds]))
+
+(defn echo-parser [s]
+  (binding [*in* (ds/reader s)]
+    {:data (read-line) :type :echo}))
+
+(defservice echo-server :type echo-parser)
+
+(defhandler echo-server :echo
+  [s req]
+  (with-shutdown s
+    (ds/with-out-writer s
+      (println (:data req)))))
+
+(create-server 1025 echo-server 10)
+
+(comment
+$ echo "HELLO WORLD" | nc 127.0.0.1 1025
+HELLO WORLD
+)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Phew! That was a mess of code to write to get a simple echo server, surely softserv isn't so, well, soft? Just look at what we've gained, though!&lt;/p&gt;
+
+&lt;p&gt;First and foremost, we've gained the ability to specify a maximum number of threads to create. That's what the &lt;code class="inline"&gt;10&lt;/code&gt; is for in &lt;code class="inline"&gt;create-server&lt;/code&gt;. Softserv executes request handlers in a thread pool. This of course has some limitations over the thread-per-connection model (like making it harder to allow for long running session based servers), but for resource constrained single request services, it's probably a plus. Maybe relaxing this requirement and figuring out an appropriate way to handle long running connections is a good next step.&lt;/p&gt;
+
+&lt;p&gt;Secondly, and without any hit in the number of symbols or parentheses, we're passing an actual socket object to the function that does the handling. You'd think that we'd have to call &lt;code class="inline"&gt;(.getInputStream s)&lt;/code&gt;, but &lt;code class="inline"&gt;duck-streams&lt;/code&gt; knows how to get an &lt;code class="inline"&gt;InputStream&lt;/code&gt; for a &lt;code class="inline"&gt;Socket&lt;/code&gt;. This is almost identical to the original example.&lt;/p&gt;
+
+&lt;p&gt;Third, and most importantly, we've made it possible to dispatch based on the type of request. Softserv enforces what you'd have done anyway. The handler function that &lt;code class="inline"&gt;server-socket/create-server&lt;/code&gt; takes in almost all cases will end up being a &lt;code class="inline"&gt;cond&lt;/code&gt; statement dispatching to other functions. Softserv just makes that explicit and up front.&lt;/p&gt;
+
+&lt;p&gt;Enough chatter, how can I make use of it? Well, our echo server would be much more interesting if in fact we echoed back more interesting things. For instance, we could translate the input, or rot-13 the input, or for ease of illustrative purposes echo back the actual date, a more useful echo, when someone sends the string "DATE".&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="clojure"&gt;(ns echo
+   (:use [softserv.core :only (create-server
+                               defservice
+                               defhandler
+                               with-shutdown)])
+&lt;span style="color: red;"&gt;-  (:require [clojure.contrib.duck-streams :as ds]))&lt;/span&gt;
+&lt;span style="color: green;"&gt;+  (:require [clojure.contrib.duck-streams :as ds])&lt;/span&gt;
+&lt;span style="color: green;"&gt;+  (:import [java.util Date]))&lt;/span&gt;
+
+(defn echo-parser [s]
+  (binding [*in* (ds/reader s)]
+&lt;span style="color: red;"&gt;-    {:data (read-line) :type :echo}))&lt;/span&gt;
+&lt;span style="color: green;"&gt;+    (let [l (read-line)]&lt;/span&gt;
+&lt;span style="color: green;"&gt;+      (assoc {:data l} :type (if (= l "DATE") :date :echo)))))&lt;/span&gt;
+
+(defservice echo-server :type echo-parser)
+
+&lt;span style="color: green;"&gt;+(defhandler echo-server :date&lt;/span&gt;
+&lt;span style="color: green;"&gt;+  [s req]&lt;/span&gt;
+&lt;span style="color: green;"&gt;+  (with-shutdown s&lt;/span&gt;
+&lt;span style="color: green;"&gt;+    (ds/with-out-writer s&lt;/span&gt;
+&lt;span style="color: green;"&gt;+      (println (str (Date.))))))&lt;/span&gt;
+
+(create-server 1025 echo-server 10)
+
+(comment
+$ echo "HELLO WORLD" | nc 127.0.0.1 1025
+HELLO WORLD
+$ echo "DATE" | nc 127.0.0.1 1025
+Wed Jan 05 08:29:38 EST 2011
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using a single request parsing function of course has its limitations, but in general, network services are not the type of thing that really have diverse request types. The protocol normally allows you to tell within a few bytes what kind of request it is. In the case of softserv servers the handlers can then finish reading the request and taking the appropriate actions.&lt;/p&gt;
+
+&lt;p&gt;I'd really appreciate any feedback on this.&lt;/p&gt;
+
+&lt;ol class="footnotes"&gt;
+    &lt;li id="note-nonblocking"&gt;There's also the question of non-blocking vs. blocking, but the first pass will be blocking until there are real numbers to look at.&lt;/li&gt;
+    &lt;li id="note-with-in-reader"&gt;I'm not sure of the reasoning, but &lt;code class="inline"&gt;(with-in-reader s ...)&lt;/code&gt; throws an exception saying java.io.PushbackReader cannot be cast to java.io.BufferedReader. This doesn't seem right to me, since it'd work if it were a LineNumberingPushbackReader, but PushbackReader's don't have a &lt;code class="inline"&gt;.readLine&lt;/code&gt; method, and don't derive from BufferedReader. Nevertheless, I feel as though read-line should know how to handle it, or wrap the PushbackReader in a LineNumberingPushbackReader temporarily, if that's possible.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src="http://feeds.feedburner.com/~r/SIGUSR2/~4/uTXrh1mpp1Y" height="1" width="1"/&gt;</content><feedburner:origLink>http://sigusr2.net/2011/Jan/07/softserve-serves-requests.html</feedburner:origLink></entry>
+<entry><title>unipoint-mode: A minor-mode for Mathematical Unicode</title><link href="http://feedproxy.google.com/~r/SIGUSR2/~3/YqJl8erGP5c/unipoint-minor-mode-for-mathematical-unicode.html" /><id>md5:51002542f1e8ffaff3c09d17aea84c99</id><updated>2010-11-04T00:00:00Z</updated><content type="html">&lt;p&gt;&lt;span class="preamble"&gt;Last week I &lt;a href="http://fold.sigusr2.net/2010/10/sir-please-step-away-from-the-asr-33-acm-queue.html"&gt;reblogged&lt;/a&gt; Poul-Henning Kamp's article &lt;a href="http://queue.acm.org/detail.cfm?id=1871406"&gt;"Sir, Please Step away from the ASR-33"&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;If you haven't read it, do so. It has an interesting outlook on what it means to write code, and asks the question, "why the hell are we stuck in the 60s?" His basic premise is that we're married to ASCII, despite having all sorts of other characters at our disposal via unicode, which provides much clearer and concise possibilities for syntax. He also goes on about how none of us have monochromatic screens, so color could play some role in what our programs mean, as well as arguing that the vertical nature of code is unjustified, since we have column editing.&lt;/p&gt;
+
+&lt;p&gt;If you ask me, his other arguments are crap, but the unicode argument is completely valid. There's just one problem, have you ever tried to type unicode? It's a mess. In Emacs, to type &amp;rarr;, it's &lt;code class="inline"&gt;C-x 8 RET RIGHTWARDS ARROW RET&lt;/code&gt;, or if you know the hex value, &lt;code class="inline"&gt;C-x 8 RET 2192 RET&lt;/code&gt;. Sure, there are &lt;a href="http://xahlee.org/emacs/emacs_n_unicode.html"&gt;other options&lt;/a&gt;, but most editors aren't nearly as flexible to customize as Emacs is, so who knows what it's like outside of it&amp;mdash;I can't imagine it's any better.&lt;/p&gt;
+
+&lt;p&gt;But, when I commented on the fact that "typing unicode sucks," I was greeted by an email from a friend of mine:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;a href="http://racket-lang.org/"&gt;DrRacket&lt;/a&gt; lets you enter common Unicode characters by typing their
+LaTeX name followed by control-\. For example, you type &amp;isin; by typing
+"\", "i", "n", "control-\". It's easy enough that I use Unicode in my
+code all the time.
+
+I bet it wouldn't be too hard to hack something like this feature into Emacs.&lt;span class="closequote"&gt;&lt;/span&gt;
+&lt;cite&gt;&amp;mdash;&lt;a href="http://users.eecs.northwestern.edu/~clk800/"&gt;Casey Klein&lt;/a&gt;&lt;/cite&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This got me thinking about the problem, and in 20 minutes I had &lt;code class="inline"&gt;C-\&lt;/code&gt; bound to a function that would read a TeX symbol name from the minibuffer and looked up the unicode character in a table then spit it out. I then began to go on a typing spree, seeing how easy it actually was to use. Of course, this wasn't exactly what Casey had described, but it was close enough, and made it way better than before.&lt;/p&gt;
+
+&lt;p&gt;It actually had some great features of it's own, too. For one, it had TAB completion, to cut down on typing. DrRacket didn't have that.&lt;/p&gt;
+
+&lt;p&gt;I told Casey about my efforts and mentioned TAB completion and how "this isn't all that bad." Casey was intrigued by the TAB completion, and I wanted to see if &lt;code class="inline"&gt;C-\&lt;/code&gt; after typing \in was better&amp;mdash;it is, but there's still value some value in the prefixed entry.&lt;/p&gt;
+
+&lt;p&gt;So now I had a function bound that would do the right thing. If point was at the end of a word boundary with a \ to the left of it (the word), it'd attempt to convert the sequence to a symbol, otherwise it'd be left alone. If you were in empty space or the completion failed, you'd be asked for the symbol as if you were going the prefix route.&lt;/p&gt;
+
+&lt;p&gt;This all worked wonderfully well, and our conversation about why I don't like entering unicode went on; he was still convinced it was woefully easy. I, too, was beginning to see that it's not as painful with the proper tools as I originally thought.&lt;/p&gt;
+
+&lt;p&gt;The 43 message thread of back and forth sparked inspiration in him around the idea of completion for DrRacket. His idea was simple, hit &lt;code class="inline"&gt;C-\&lt;/code&gt; and it'd attempt to complete whatever was before it, or output the longest subsequence of the symbols, prefixed with whatever you typed, in the lookup table. In other words, if you had "\sub" it'd complete to "\subset" because both "\subset" and "\subseteq" are in the lookup table. Hit &lt;code class="inline"&gt;C-\&lt;/code&gt; again and the substitution to &amp;isin; takes place.&lt;/p&gt;
+
+&lt;p&gt;I couldn't help but be inspired to add that behavior to what I had now dubbed &lt;a href="http://github.com/apgwoz/unipoint"&gt;unipoint&lt;/a&gt;. His &lt;a href="https://github.com/plt/racket/commit/bd0ebc7511c7b66dfdd0b24d68dbe27077a9a7dd"&gt;changes&lt;/a&gt; went into DrRacket&lt;/a&gt;. We both found solace in the fact that typing symbols was a bit easier than it was before.&lt;/p&gt;
+
+&lt;p&gt;I'm a lot less scared now to see symbols in code, and certainly advocating for them, so long as they stay mathematical in nature. I can't help but feel, though, that most people see this still as a problem. It's because of this that I recorded a quick screencast tutorial (no audio) of how unipoint is used. Hopefully it does its job in showing that it doesn't have to be so painful, and Kamp's dream will eventually become a reality.&lt;/p&gt;
+
+&lt;iframe src="http://player.vimeo.com/video/16461894" width="400" height="300" frameborder="0"&gt;&lt;/iframe&gt;
+&lt;img src="http://feeds.feedburner.com/~r/SIGUSR2/~4/YqJl8erGP5c" height="1" width="1"/&gt;</content><feedburner:origLink>http://sigusr2.net/2010/Nov/04/unipoint-minor-mode-for-mathematical-unicode.html</feedburner:origLink></entry>
+<entry><title>ant.el: A Code Walkthrough</title><link href="http://feedproxy.google.com/~r/SIGUSR2/~3/iFglNdUaT2Q/ant-el-a-code-walkthrough.html" /><id>md5:190c53e1eb58b5488ccc339134ad7766</id><updated>2010-10-29T00:00:00Z</updated><content type="html">&lt;p&gt;&lt;span class="preamble"&gt;In April of last year, I blogged about &lt;a href="http://sigusr2.net/2009/Apr/30/the-power-that-is-gnu-emacs.html"&gt;how powerful Emacs&lt;/a&gt; is, and shared my enlightenment story.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Today, I'm even closer to Emacs than I was before, having an extra year and a half of experience than I did then. My daily interactions with Emacs are still very much in the same vain&amp;mdash;I am still a programmer after all, but I've also discovered some more frustrations which were fairly easy to rectify.&lt;/p&gt;
+
+&lt;p&gt;In July of this year, I started &lt;a href="http://www.meetup.com/"&gt;a new job&lt;/a&gt;&lt;sup&gt;&lt;a href="#hiring-1"&gt;[1]&lt;/a&gt;&lt;/sup&gt;. My role at Meetup has been different in many regards than my previous jobs. It's the first role I've had since entering into the industry that someone doesn't see the output of my code. In fact, if they do see the output of my code, I've sort of failed.&lt;sup&gt;&lt;a href="#output-2"&gt;[2]&lt;/a&gt;&lt;/sup&gt; It also represents the first time that I've primarily used a compiled language (outside of college), targetted the &lt;a href="http://en.wikipedia.org/wiki/JVM"&gt;JVM&lt;/a&gt; and used &lt;a href="http://java.sun.com/"&gt;Java&lt;/a&gt; for the bulk of my work.&lt;/p&gt;
+
+&lt;p&gt;Naturally, Emacs could help me. &lt;a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Compilation-Mode.html"&gt;Compilation Mode&lt;/a&gt;, for instance allows you to do &lt;code class="inline"&gt;M-x compile&lt;/code&gt; to run &lt;a href="http://en.wikipedia.org/wiki/Make_(software)"&gt;make&lt;/a&gt;, or &lt;a href="http://ant.apache.org/"&gt;ant&lt;/a&gt; (with &lt;code class="inline"&gt;-emacs&lt;/code&gt;) or some other build tool that generates compilation mode compatible output, that the mode will then mark up and allow you to easily jump to places the compiler thinks&lt;sup&gt;&lt;a href="#errors-3"&gt;[3]&lt;/a&gt;&lt;/sup&gt; are errors.&lt;/p&gt;
+
+&lt;p&gt;Compilation Mode by default is fine, but complicated Java source trees are normally nested quite complexly and ant isn't the greatest at locating a suitable build file. What I needed were some interactive functions that I could use to run ant properly, in Compilation Mode using the project's build file. What I &lt;a href="http://github.com/apgwoz/ant-el"&gt;came up with&lt;/a&gt; after a few hours, works fairly well.&lt;/p&gt;
+
+&lt;p&gt;Basically, instead of &lt;code class="inline"&gt;M-x compile&lt;/code&gt;, I type &lt;code class="inline"&gt;M-x ant&lt;/code&gt;, or &lt;code class="inline"&gt;M-x ant-compile&lt;/code&gt;, or &lt;code class="inline"&gt;M-x ant&lt;/code&gt; and then TAB complete all the available build targets. This allows me to save some typing, and save some precious brain cells, since I don't have to remember all 40 build targets.&lt;/p&gt;
+
+&lt;p&gt;The code is fairly simple, and I think it's a great candidate for a walk through on how to solve your own problems using Emacs Lisp, so I'd like to go through it here.&lt;/p&gt;
+
+&lt;p&gt;The code starts out simply enough:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="elisp"&gt;(defvar ant-last-task "compile")
+(defvar ant-build-file-name "build.xml")
+(defvar ant-command "ant -emacs")
+(defvar *ant-tasks-cache* '())
+(defvar *ant-tasks-command* "grep -e '&amp;lt;target.*name=\"[^\-][^\"]*.*$'")
+(defvar ant-tasks-default '("compile" "test" "clean"))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We just define a bunch of global variables that can be overridden by a user if they need to be. We do however create &lt;code class="inline"&gt;*ant-tasks-cache*&lt;/code&gt; and &lt;code class="inline"&gt;*ant-tasks-command*&lt;/code&gt; which are meant to be internal state. In elisp, and other Lisps, wrapping * around a variable normally indicates that the variable is special in someway, here it means it's a global and shouldn't be modified outside of the functions defined within.&lt;/p&gt;
+
+&lt;p&gt;Next we have a helper function, &lt;code class="inline"&gt;ant-find-tasks&lt;/code&gt;, which, given a directory, issues a shell command &lt;code class="inline"&gt;*ant-tasks-command*&lt;/code&gt; that is used to extract the lines from the ant build file that declare targets:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="elisp"&gt;(defun ant-find-tasks (directory)
+  (let ((output (shell-command-to-string (concat *ant-tasks-command* " "
+                                                 directory "/"
+                                                 ant-build-file-name))))
+    (if (&gt; (length output) 0)
+        (mapcar '(lambda (x) (replace-regexp-in-string ".*&amp;lt;target.*name=\"\\([^\-][^\"]*\\).*" "\\1" x)) 
+                (split-string output "[\n]"))
+      nil)))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Essentially, we first save the output of the shell command that gets built up to the variable &lt;code class="inline"&gt;output&lt;/code&gt;. If the length of &lt;code class="inline"&gt;output&lt;/code&gt; is greater than 0, we split the output (&lt;code class="inline"&gt;split-string&lt;/code&gt;) into individual lines, and iteratively replace the junk in the line with just the name of the target (&lt;code class="inline"&gt;replace-regexp-in-string&lt;/code&gt;). The only non-obvious thing in here is &lt;code class="inline"&gt;mapcar&lt;/code&gt; which is a fancy way of transforming a list into another list via the function passed as the first argument.&lt;/p&gt;
+
+&lt;p&gt;That gives us all the tasks defined in the build file&amp;mdash;well for most cases anyway. It doesn't handle all possible, valid build.xml files, but should work if the &lt;code class="inline"&gt;target&lt;/code&gt;'s declaration and name attribute appear on the same line.&lt;/p&gt;
+
+&lt;p&gt;When we need a list of tasks for a project, we call &lt;code class="inline"&gt;ant-tasks&lt;/code&gt;. This function really just caches the returned value of &lt;code class="inline"&gt;ant-find-tasks&lt;/code&gt; into the global variable &lt;code class="inline"&gt;*ant-tasks-cache*&lt;/code&gt; for the current project:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="elisp"&gt;(defun ant-tasks (directory)
+  (let ((tasks (assoc-string directory *ant-tasks-cache*)))
+    (or tasks
+        (progn 
+          (let ((newtasks (or (ant-find-tasks directory) ant-tasks-default)))
+            (setq *ant-tasks-cache*
+                  (cons (cons directory newtasks) *ant-tasks-cache*))
+          newtasks)))))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The only interesting thing about the above code is the use of &lt;code class="inline"&gt;or&lt;/code&gt;. In Lisp, &lt;code class="inline"&gt;or&lt;/code&gt; short circuits and returns the first truthy value&amp;mdash;it doesn't convert it to a boolean, so it can easily be used to select the first truthy value from a list of values. That's what's happening there.&lt;/p&gt;
+
+&lt;p&gt;I mentioned that I wanted TAB completion on task names so as to not clutter my brain matter with useless task names:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="elisp"&gt;(defun ant-get-task (directory)
+  (let ((task (completing-read-multiple (concat "Task (default): ") 
+                                        (ant-tasks directory))))
+    (if (&gt; (length task) 0)
+        (mapconcat 'identity task " ")
+      "")))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Well, here it is. Emacs has built in completion via the &lt;code class="inline"&gt;completing-read&lt;/code&gt; function. Here, we want the ability to issue one or more tasks, so we use &lt;code class="inline"&gt;completing-read-multiple&lt;/code&gt; to get the job done. Notice we're calling our function from above, &lt;code class="inline"&gt;ant-tasks&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You'll notice &lt;code class="inline"&gt;mapconcat&lt;/code&gt; above. It's like &lt;code class="inline"&gt;mapcar&lt;/code&gt; from above, in that it takes a list of things and transforms them, but instead of returning a new list, it concatenates the elements into a string using the last argument (here just a space) as a separator. &lt;code class="inline"&gt;completing-read-multiple&lt;/code&gt; returns to us a list, which we need to turn into a string with spaces between the targets in order to issue the build command.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="elisp"&gt;(defun ant-find-root (indicator)
+  (let ((cwd default-directory))
+    (while (and (not (file-exists-p (concat cwd indicator)))
+                (not (string-equal (expand-file-name cwd) "/")))
+      (setq cwd (concat cwd "../")))
+    (if (file-exists-p (concat cwd indicator))
+        (expand-file-name cwd)
+      nil)))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above function locates the base directory of the project, given the current file being edited. It just loops up the file system looking for the first directory it finds that has a build file in it. When I originally wrote this function, I didn't realize that Emacs already had this functionality built into it with the function &lt;code class="inline"&gt;locate-dominating-file&lt;/code&gt;.&lt;sup&gt;&lt;a href="#dominating-4"&gt;[4]&lt;/a&gt;&lt;/sup&gt;
+
+&lt;p&gt;&lt;code class="inline"&gt;ant-kill-cache&lt;/code&gt;,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="elisp"&gt;(defun ant-kill-cache ()
+  (interactive)
+  (setq *ant-tasks-cache* '()))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;does exactly what it says it does. It destroys the cache that is built up from &lt;code class="inline"&gt;ant-tasks&lt;/code&gt;.
+
+&lt;p&gt;The main entry point, &lt;code class="inline"&gt;ant&lt;/code&gt;, is fairly trivial as well. It sets the variable &lt;code class="inline"&gt;default-directory&lt;/code&gt;, which is Emacs' current working directory, to the project directory, reads a task from the reader (if being called interactively) and calls &lt;code class="inline"&gt;compile&lt;/code&gt;, which is the main entry point into Compilation Mode.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="elisp"&gt;(defun ant (&amp;optional task)
+  "Run ant `task` in project root directory."
+  (interactive)
+  (let ((default-directory (ant-find-root ant-build-file-name)))
+    (if default-directory
+        (let ((task (or task (ant-get-task default-directory))))
+          (setq ant-last-task task)
+          (compile (concat ant-command " " task)))
+      (message "Couldn't find an ant project."))))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the first code block, there was a variable, &lt;code class="inline"&gt;ant-last-task&lt;/code&gt;, defined that is used above to store the last target run. After a target is given, it's saved off in there.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="elisp"&gt;(defun ant-last ()
+  "Run the last ant task in project"
+  (interactive)
+  (ant (or ant-last-task "")))
+
+(defun ant-compile ()
+  (interactive)
+  (ant "compile"))
+
+(defun ant-clean ()
+  (interactive)
+  (ant "clean"))
+
+(defun ant-test ()
+  (interactive)
+  (ant "test"))&lt;/pre&gt;&lt;/code&gt;
+
+&lt;p&gt;The rest of the code above, just defines some convenient, interactive commands for common targets. &lt;code class="inline"&gt;M-x ant-compile&lt;/code&gt; will just issue the compile target, likewise for &lt;code class="inline"&gt;ant-clean&lt;/code&gt;. The only moderately interesting interactive command here is &lt;code class="inline"&gt;ant-last&lt;/code&gt; which reuses the variable &lt;code class="inline"&gt;ant-last-task&lt;/code&gt; from above to redo the last compilation.&lt;/p&gt;
+
+&lt;p&gt;It doesn't feel like much code, and in all reality it's not. However, it has saved me quite a bit of time, as I don't have to go running to a terminal (either switching buffers, or switching windows entirely) in order to issue an ant task. I just do something I've grown very accustomed to&amp;mdash;I issue another Emacs command, and let Emacs take care of it for me.&lt;/p&gt;
+
+&lt;ol class="footnotes"&gt;
+    &lt;li id="hiring-1"&gt;We're hiring for &lt;a href="http://www.meetup.com/jobs"&gt;most positions&lt;/a&gt;.&lt;/li&gt;
+    &lt;li id="output-2"&gt;Most of what I do is related to our product's infrastructure&amp;mdash;not interaction, and not engineering new features. My work would be visible if some error leaked to your browser, and that'd probably be bad.&lt;/li&gt; 
+    &lt;li id="errors-3"&gt;It's fairly difficult to trick the compiler, but in Java, for instance, you can write type-safe code using Generics that it can't prove is safe. If you do that though, you should make use the SuppressWarnings annotation to tell the compiler it's OK.&lt;/li&gt;
+    &lt;li id="dominating-4"&gt;Actually, I wasn't surprised that Emacs actually had the functionality, just that the name is non-trivial. I gave up looking for it after a couple of minutes and just rolled my own. I'll replace it in a future version, but the existing code works for now.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src="http://feeds.feedburner.com/~r/SIGUSR2/~4/iFglNdUaT2Q" height="1" width="1"/&gt;</content><feedburner:origLink>http://sigusr2.net/2010/Oct/29/ant-el-a-code-walkthrough.html</feedburner:origLink></entry>
+<entry><title>Clojure Conj Reading List</title><link href="http://feedproxy.google.com/~r/SIGUSR2/~3/dA5R59qQ_GY/clojure-conj-reading-list.html" /><id>md5:bf830f7059334bc6e2722078fa36fb07</id><updated>2010-10-24T00:00:00Z</updated><content type="html">&lt;p&gt;
+   &lt;span class="preamble"&gt;This past weekend, the first (hopefully annual) &lt;a href="http://first.clojure-conj.org"&gt;Clojure Conj&lt;/a&gt; took place in Durham, NC.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In my opinion, the conference was a great success, and was greatly inspirational, as well as enjoyable in many regards. I left the conference recharged with energy to better learn about and help improve the Clojure ecosystem, and just get more involved. But, that's not all I left with of course. I left with great information and even more pointers to new thoughts, opinions and ideas.&lt;/p&gt;
+
+&lt;p&gt;I've compiled a small reading list of things that were mentioned in talks. I also got a chance to (briefly) meet &lt;a href="http://fogus.me"&gt;Michael Fogus&lt;/a&gt;, whose talk discussed the influences of Clojure and asked him if it would be possible for him to make a reading list. I certainly hope he does. Anyway, here's my list:&lt;/p&gt;
+&lt;dl&gt;
+   &lt;dt&gt;
+      &lt;q&gt;&lt;a href="http://www.gdmc.nl/publications/2008/MonetDB.pdf"&gt;MonetDB, a novel spatial column-store DBMS&lt;/a&gt;&lt;/q&gt;&amp;mdash;Maarten Vermeij, Wilko Quak, Martin Kersten, Niels Nes
+   &lt;/dt&gt;
+   &lt;dd&gt;
+      &lt;em&gt;Abstract&lt;/em&gt;: Column-store database engines are a promising track in database research to handle data warehouses. In this paper we describe our experiences in extending the open-source database management system MonetDB with geo-spatial functionality. The approach taken is to leverage the existing geo-spatial software library GEOS through the extensibility features of this DBMS. The result is a high-performance solution using a software stack that enables future research and development improvements in many directions. In our paper we first give an overview of the MonetDB architecture then we describe how this architecture is beneficial for the handling of spatial data.
+   &lt;/dd&gt;
+   &lt;dt&gt;
+      &lt;q&gt;&lt;a href="http://www.st.cs.uni-saarland.de/edu/seminare/2005/advanced-fp/docs/huet-zipper.pdf"&gt;The Zipper&lt;/a&gt;&lt;/q&gt;&amp;mdash;Gerard Huet
+   &lt;/dt&gt;
+   &lt;dd&gt;
+      &lt;em&gt;Capsule Review&lt;/em&gt;: Almost every programmer has faced the problem of representing a tree together with a subtree that is the focus of attention, where that focus may move left, right, up or down the tree. The Zipper is Huet's nifty name for a nifty data structure which fulfills this need. I wish I had known of it when I faced this task, because the solution I came up with was not quite so efficient or elegant as the Zipper.
+   &lt;/dd&gt;
+   &lt;dt&gt;
+      &lt;q&gt;&lt;a href="http://www.amazon.com/gp/product/0465024114?ie=UTF8&amp;amp;tag=siusdesi2-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=0465024114"&gt;Finding Flow: The Psychology of Engagement with Everyday Life&lt;/a&gt;&lt;/q&gt;&amp;mdash;Mihaly Csikszentmihalyi
+   &lt;/dt&gt;
+   &lt;dt&gt;
+      &lt;q&gt;&lt;a href="http://www.amazon.com/gp/product/0716704633?ie=UTF8&amp;amp;tag=siusdesi2-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=0716704633"&gt;Computer Power and Human Reason&lt;/a&gt;&amp;mdash;Joseph Weizenbaum&lt;/q&gt;
+   &lt;/dt&gt;
+   &lt;dt&gt;
+      &lt;q&gt;&lt;a href="http://www.soi.city.ac.uk/~ross/papers/FingerTree.pdf"&gt;Finger Trees: A Simple General-purpose Data Structure&lt;/a&gt;&lt;/q&gt;&amp;mdash;Ralf Hinze, Ross Paterson
+   &lt;/dt&gt;
+   &lt;dd&gt;&lt;em&gt;Abstract&lt;/em&gt;:We present 2-3 finger trees, a functional representation of persistent sequences supporting access to the ends in amortized constant time, and concatenation and splitting in time logarithmic in the size of the smaller piece. Representations achieving these bounds have appeared previously, but 2-3 finger trees are much simpler, as are the operations on them. Further, by defining the split operation in a general form, we obtain a general purpose data structure that can serve as a sequence, priority queue, search tree, priority search queue and more.
+   &lt;/dd&gt;
+   &lt;dt&gt;
+      &lt;q&gt;&lt;a href="http://www.amazon.com/gp/product/0691023565?ie=UTF8&amp;amp;tag=siusdesi2-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=0691023565"&gt;How to Solve It: A New Aspect of Mathematical Method&lt;/a&gt;&lt;/q&gt;&amp;mdash;G. Polya
+   &lt;/dt&gt;
+   &lt;dt&gt;&lt;strong&gt;Updates and other suggestions&lt;/strong&gt;&lt;/dt&gt;
+   &lt;dt&gt;
+      &lt;q&gt;&lt;a href="http://www.amazon.com/gp/product/1589880366?ie=UTF8&amp;tag=siusdesi2-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1589880366"&gt;Infinity: Beyond the Beyond the Beyond&lt;/a&gt;&amp;mdash;Lillian R. Lieber&lt;/q&gt;
+   &lt;/dt&gt;
+   &lt;dt&gt;
+      &lt;q&gt;&lt;a href="http://www.amazon.com/gp/product/1589880331?ie=UTF8&amp;tag=siusdesi2-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1589880331"&gt;The Education of T.C. Mits: What modern mathematics means to you&lt;/a&gt;&amp;mdash;Lillian R. Lieber&lt;/q&gt;
+   &lt;/dt&gt;
+   &lt;dt&gt;
+      &lt;q&gt;&lt;a href="http://www.amazon.com/gp/product/1589880447?ie=UTF8&amp;tag=siusdesi2-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1589880447"&gt;The Einstein Theory of Relativity: A Trip to the Fourth Dimension&lt;/a&gt;&lt;/q&gt;&amp;mdash;Lillian R. Lieber
+   &lt;/dt&gt;
+&lt;/dl&gt;
+&lt;img src="http://feeds.feedburner.com/~r/SIGUSR2/~4/dA5R59qQ_GY" height="1" width="1"/&gt;</content><feedburner:origLink>http://sigusr2.net/2010/Oct/24/clojure-conj-reading-list.html</feedburner:origLink></entry>
+<entry><title>This is not the Freehackers Union...</title><link href="http://feedproxy.google.com/~r/SIGUSR2/~3/oL3hYJSESpc/this-is-not-the-freehackers-union.html" /><id>md5:39d499a59be2c0995aa1b553a103ed50</id><updated>2010-10-12T00:00:00Z</updated><content type="html">&lt;p&gt;&lt;em&gt;I work at &lt;a href="http://www.meetup.com/"&gt;Meetup&lt;/a&gt;, but the opinions expressed in here are my own, and do not necessarily represent the opinions of Meetup.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="preamble"&gt;Zed Shaw had a &lt;a href="http://www.zedshaw.com/essays/the_freehackers_union.html"&gt;dream&lt;/a&gt;, and that dream &lt;a href="http://www.zedshaw.com/blog/2009-03-16.html"&gt;failed&lt;/a&gt;, but I'm trying again and at least for now succeeding.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;When the &lt;a href="http://www.zedshaw.com/essays/the_freehackers_union.html"&gt;Freehackers Union post&lt;/a&gt; came out and it starting getting some attention, I was completely stoked. I couldn't wait to move to NYC (I was moving anyway) and show off my hack&lt;sup&gt;&lt;a href="#note-1"&gt;[1]&lt;/a&gt;&lt;/sup&gt; and gain acceptance into the group. Of course, by the time I actually got here, the F.U. had dissipated.&lt;/p&gt;
+
+&lt;p&gt;I have to be honest, I did think Zed was exaggerating quite a bit when he described his frustrations attending tech events, but as I started getting involved in the NYC tech scene, I too felt the same way.&lt;/p&gt;
+
+&lt;p&gt;But, Zed was right&amp;mdash;NYC tech groups and events suck. OK, maybe that's a bit harsh, because there &lt;a href="http://lispnyc.org/home.clp"&gt;are&lt;/a&gt; &lt;a href="http://nycpython.org/"&gt;great&lt;/a&gt; &lt;a href="http://www.meetup.com/Clojure-NYC/"&gt;ones&lt;/a&gt; &lt;a href="http://www.meetup.com/NYC-Tech-Talks/"&gt;out&lt;/a&gt; &lt;a href="http://www.meetup.com/ny-scala"&gt;there&lt;/a&gt;&lt;sup&gt;&lt;a href="#note-2"&gt;[2]&lt;/a&gt;&lt;/sup&gt;, but even the ones I like suffer from business people, and even worse, &lt;em&gt;horrible&lt;/em&gt; tech recruiters.&lt;/p&gt;
+
+&lt;p&gt;Tech events also suffer from too much company promotion and not enough about the actual tech. I can't count how many times I've sat through a 15 minute sermon on Product X that lasted &lt;em&gt;25 minutes&lt;/em&gt; due to the inability of the organizer, whether due to politeness or interest, to keep to the scheduled time slot. Worse yet, the speaker gives a sales pitch, hoping to get the audience on board to purchase it, or in the case of it being some Company X's "contribution to open source" to become contributors. It's just not useful to me&lt;sup&gt;&lt;a href="#note-3"&gt;[3]&lt;/a&gt;&lt;/sup&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;In fact, the best talks at any tech event I've ever been to are just 5 minutes (dubbed &lt;a href="http://en.wikipedia.org/wiki/Lightning_Talk"&gt;Lightning Talks&lt;/a&gt;). Five minutes isn't a lot of time, but it is more than enough time to convince an audience that they should check something out, or &lt;em&gt;show off&lt;/em&gt; something cool that they have built. It also happens to be the format that the F.U. used. Why? Because Zed is an intelligent guy&amp;mdash;he too knows that 5 minutes is a perfect amount of time for a talk.&lt;/p&gt;
+
+&lt;p&gt;But why? It's quite simple really. If the talk sucks, or doesn't interest you, it is only 5 minutes of your life gone. However, if the talk is good or of interest to you, there is always time later to get together and discuss it further.&lt;/p&gt;
+
+&lt;h3&gt;Hack and Tell&lt;/h3&gt;
+
+&lt;p&gt;In August, I started NYC's &lt;a href="http://hackandtell.org/"&gt;Hack and Tell&lt;/a&gt;, a show and tell for hackers. It's an experiment, attempting to answer the question: "Can a relaxed Freehackers Union, with a few new rules actually work?" So far the answer has been "Hell yeah! It can totally thrive!" All 3 events have had great turn outs, with great projects being presented.&lt;/p&gt;
+
+&lt;p&gt;The rules are simple. You get 5 minutes&lt;sup&gt;&lt;a href="#note-4"&gt;[4]&lt;/a&gt;&lt;/sup&gt;to show off whatever it is you are doing (hardware, library X, programming language, build tool, visualization, hack, whatever), and the audience gets 5 minutes to give you praise, tell you "you suck"&lt;sup&gt;&lt;a href="#note-5"&gt;[5]&lt;/a&gt;&lt;/sup&gt;, ask a question, or offer advice. The only other rules are "No Startup pitches", "No Deckware" and keep your work at work&amp;mdash;we want to see personal projects.&lt;/p&gt;
+
+&lt;p&gt;We also do not allow the resources of the group to be utilized for recruiting purposes. As a result, we see next to no recruiters&lt;sup&gt;&lt;a href="#note-6"&gt;[6]&lt;/a&gt;&lt;/sup&gt;, and I, on occasion, have received emails from members wanting to promote something, asking if it was OK to do so&lt;sup&gt;&lt;a href="#note-7"&gt;[7]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;I'm not sure how long the quiet time will last, (or even how long I can successfully keep it running) but my hope is that strict enforcement of the core rules will keep it fun and a great addition to the NYC tech community.&lt;/p&gt;
+
+&lt;h4&gt;This sounds wonderful, but what are the issues?&lt;/h4&gt;
+
+&lt;p&gt;Aside from the aforementioned recruiter, we've had very few interruptions to the flow and development of an awesome group, but I do see some problems starting to show.&lt;/p&gt;
+
+&lt;p&gt;For one, the group's membership, and attendance is starting to grow due to word of mouth and more exposure from local NYC mailing lists such as &lt;a href="http://www.garysguide.org/"&gt;Gary's Guide&lt;/a&gt; and &lt;a href="http://startupdigest.com/"&gt;Startup Digest&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is both a blessing and a curse. It is a blessing because we have a larger pool of developers to show off their projects. But, it is also a curse because not everyone that joins will become a presenter, whether due to lack of technical knowledge or lack of time outside of work to build things to show off. The curse actually can get worse of course, because there is not a clear reason for them (i.e. the non-contributors) to attend. What do these folks actually want to get from Hack and Tell?&lt;/p&gt;
+
+&lt;p&gt;It is quite possible that they'll become members for recruiting reasons, or other reasons that I have not quite discovered yet, but if they are not building stuff in their free time, do they belong? I don't know, but this question certainly on my mind, and it is certainly a worry.&lt;/p&gt;
+
+&lt;p&gt;Ultimately, I think that some pool of non-presenters is healthy, and I believe that the pool is ultimately contributing positively, at least in some cases. The group of non-presenters most likely has something else to contribute&amp;mdash;maybe they are well connected and can be a megaphone to people in other cities, or even within NYC&amp;mdash;which we certainly need, at least now, to attract more great projects to be presented. But, that can't be true of the entire non-presenter pool. There has to be leechers. Again, I don't have the answers.&lt;/p&gt;
+
+&lt;p&gt;I'm more than happy to hear anyone and everyone's thought on the matter, share more of my experiences and help other people get a Hack and Tell started in their city, if they'd like. I'm certainly willing to setup another means of conversation as well if anyone is interested.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;More discussion:&lt;/strong&gt; &lt;a href="http://news.ycombinator.com/item?id=1785627"&gt;Hacker News&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Zed responds&lt;/strong&gt; at &lt;a href="http://oppugn.us/posts/1286944278.html"&gt;FU NYC&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol class="footnotes"&gt;
+   &lt;li id="note-1"&gt;I didn't actually have a hack to show off, but I figured I'd come up with something, and hoped it'd be enough value to get me in&lt;/li&gt;
+   &lt;li id="note-2"&gt;And many more that are good but not great. Of course, I haven't been to &lt;em&gt;all&lt;/em&gt; the events or groups in NYC, so this is just my personal experience.&lt;/li&gt;
+   &lt;li id="note-3"&gt;The product &lt;em&gt;might&lt;/em&gt; actually be useful to me, but a 5 minute sales pitch with a link to more detail, it's design, some use cases etc. would be &lt;em&gt;more&lt;/em&gt; useful because the speaker probably isn't answering my lower-level questions anyway, and it's shorter so I'll actually listen.&lt;/li&gt;
+   &lt;li id="note-4"&gt;This is strictly enforced, and we normally use a &lt;a href="http://hackandtell.org/timer"&gt;timer&lt;/a&gt; (&lt;a href="http://github.com/apgwoz/timer/"&gt;source&lt;/a&gt;)&amp;mdash;it's a bit buggy but it works great most of the time) which claps at the end. This serves two purposes; it prompts the the audience to clap, and it means that no one has to be rude to stop the presenter.&lt;/li&gt;
+   &lt;li id="note-5"&gt;So far, this hasn't happened.&lt;/li&gt;
+   &lt;li id="note-6"&gt;One company tried, and were pummeled with a wall of text explaining how stupid it is to target intelligent developers&amp;mdash;the kind of people that'd almost certainly check the recruiting company's website if they were interested.&lt;/li&gt;
+   &lt;li id="note-7"&gt;In most cases, the post was inappropriate, as it related to promotion of a startup, which of course is work related.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;img src="http://feeds.feedburner.com/~r/SIGUSR2/~4/oL3hYJSESpc" height="1" width="1"/&gt;</content><feedburner:origLink>http://sigusr2.net/2010/Oct/12/this-is-not-the-freehackers-union.html</feedburner:origLink></entry>
+<entry><title>Google Spreadsheets: Game of Life</title><link href="http://feedproxy.google.com/~r/SIGUSR2/~3/YOJeTM0sZVc/google-spreadsheets-game-of-life.html" /><id>md5:026e9ae419696af7421a97f140a267e1</id><updated>2010-06-25T00:00:00Z</updated><content type="html">&lt;p&gt;&lt;span class="preamble"&gt;Google Docs has become an incredibly useful tool for businesses looking to cut costs on software and infrastructure, and it just keeps getting better.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;For years, many businesses were tied to Microsoft Windows due to macros that they made use of in Excel and Word, but that's about to change. Recently, Google Spreadsheets released "&lt;a href="http://www.google.com/google-d-s/scripts/scripts.html"&gt;Apps Script&lt;/a&gt;," which allows you to extend Spreadsheets and/or integrate other Google products like Calendar.&lt;/p&gt;
+
+&lt;p&gt;Apps Scripts are written in JavaScript and the environment provides you with a bunch of different &lt;a href="http://www.google.com/google-d-s/scripts/guide_chapter_01.html"&gt;services&lt;/a&gt;, which allow you to access your contacts, maps, XML, fetch URLs from the Internet, get Google finance information, send email&amp;mdash;all sorts of things that make it possible to create complicated workflows and applications. I can imagine that there will be a marketplace sometime soon, which will be bustling with great apps to buy and use.&lt;/p&gt;
+
+&lt;p&gt;For now though, you're on your own.&lt;/p&gt;
+
+&lt;p&gt;Anyway, yesterday, Google had a hackathon, and because I had no real business oriented application ideas I thought I'd make a game. The trouble is, all processing is done on the server side, so real time interaction is a bit difficult&amp;mdash;if not impossible. There are timer events, form events and menu events, but you can't bind a key or anything like that&amp;mdash;at least not that I know of.&lt;/p&gt;
+
+&lt;p&gt;So, a game like Tetris or Snake was out, but not Conway's classic &lt;a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life"&gt;Game of Life&lt;/a&gt;. The Game of Life is a zero-player game in which the initial board evolves to form interesting patterns or disappears into nothing. It's normally drawn on a grid of some sort, so I thought a spreadsheet was appropriate.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://files.sigusr2.net/images/game-of-life-gosper.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I've put the source code up on &lt;a href="http://github.com/apgwoz/app-script-game-of-life"&gt;GitHub&lt;/a&gt;, along with some more instructions if you wanna check it out. Fork it.&lt;/p&gt;
+&lt;img src="http://feeds.feedburner.com/~r/SIGUSR2/~4/YOJeTM0sZVc" height="1" width="1"/&gt;</content><feedburner:origLink>http://sigusr2.net/2010/Jun/25/google-spreadsheets-game-of-life.html</feedburner:origLink></entry>
+<entry><title>Code Blogging: ARGF in Python</title><link href="http://feedproxy.google.com/~r/SIGUSR2/~3/zdxqo9iC2nA/argf.html" /><id>md5:9d5ba6e7df3fe6f44b607a6a0be06952</id><updated>2010-06-23T00:00:00Z</updated><content type="html">&lt;pre&gt;&lt;code class="python"&gt;"""ARGF from Ruby in Python.
+Released into the public domain by Andrew Gwozdziewycz, 2010
+"""
+
+import sys, os
+
+
+class _ARGF(object):
+
+    def __init__(self):
+        self.lineno = 0
+        self.file = None
+
+    def __iter__(self):
+        return self.next()
+
+    def next(self):
+        files = filter(os.path.isfile, sys.argv[1:])
+        pairs = [(f, open(f)) for f in files] \
+            if files else [('STDIN', sys.stdin)]
+            
+        for name, fobj in pairs:
+            self.file = name
+
+            for line in fobj.xreadlines():
+                self.file = 'STDIN'
+                self.lineno += 1
+                yield line
+
+ARGF = _ARGF()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; It was pointed out that I didn't handle &lt;code class="inline"&gt;lineno&lt;/code&gt; correctly; I fixed it.&lt;/p&gt;
+&lt;img src="http://feeds.feedburner.com/~r/SIGUSR2/~4/zdxqo9iC2nA" height="1" width="1"/&gt;</content><feedburner:origLink>http://sigusr2.net/2010/Jun/23/argf.html</feedburner:origLink></entry>
+<entry><title>Maps are Broken, for Some Definition of Broken</title><link href="http://feedproxy.google.com/~r/SIGUSR2/~3/162FqnXEKiY/maps-are-broken-for-some-definition-of-broken.html" /><id>md5:ee8c78a17c21d8d986ea5f7e3bc78811</id><updated>2010-06-22T00:00:00Z</updated><content type="html">&lt;p&gt;&lt;span class="preamble"&gt;Map datatypes are extremely useful for a variety of tasks in programming. But, they are often painful to use; take for example the following task.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;In Java, I have a &lt;a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/HashMap.html"&gt;HashMap&lt;/a&gt; and I wish to get a random key. Well, &lt;a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/AbstractMap.html"&gt;AbstractMap&lt;/a&gt; doesn't define a way to get a random key, but it does provide a way to get a &lt;a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Set.html"&gt;Set&lt;/a&gt; of keys. Does Set have a way to get a random element? No, but you can create an Array from a Set with the &lt;code class="inline"&gt;toArray()&lt;/code&gt; method on Set.&lt;/p&gt;
+
+&lt;p&gt;We end up with the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public String randomKey() {
+    // Assuming: map = HashMap&amp;lt;String, String&amp;gt;;
+    Set&amp;lt;String&amp;gt; set = map.keySet();
+    Object[] strings = set.toArray();
+    Random random = new Random();
+    if (strings.length &amp;gt; 0) {
+        return (String)strings[random.nextInt(strings.length)];
+    }
+    return null;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, this isn't necessarily bad, but we have to create a new array, and a new set each time we want a random key. We can of course be smarter about this by caching the array and/or set, but then we run into synchronization issues. We also get screwed when we attempt to implement the &lt;code class="inline"&gt;popRandom()&lt;/code&gt; operation, which could be implemented like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public String popRandom() {
+    String key = randomKey();
+    if (key != null) {
+        String value = map.get(key);
+        map.remove(key);
+        return value;
+    }
+    return null; // or more appropriately, throw an exception
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So, we're doing all this extra copying, allocating and deleting, when all we really need is an iterator, to solve this generically in &lt;code class="inline"&gt;O(n)&lt;/code&gt; time.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public String randomKey() {
+    // randomKey method in O(n) using imaginary iterator() on AbstractMap
+    int size = map.size();
+    if (size &amp;gt; 0) {
+        int index = new Random().randInt(size);
+        Iterator&amp;lt;String&amp;gt; keys = map.iterator();
+        while (keys.hasNext()) {
+           if (index-- == 0) {
+               return keys.next();
+           }
+           keys.next();
+        }
+    }
+    return null;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;This sort of thing isn't necessarily true for dynamic languages like Python which normally have ways to iterate over keys in a map, dictionary or set. They still don't have a way to get a random element from either out of the box without resulting to the &lt;code class="inline"&gt;O(n)&lt;/code&gt; iteration method, or converting to a list and using a random index approach.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import random
+&amp;gt;&amp;gt;&amp;gt; random.choice(set([1, 2, 3]))
+Traceback (most recent call last):
+  File "&amp;lt;stdin&amp;gt;", line 1, in &amp;lt;module&amp;gt;
+  File "/System/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/random.py", line 248, in choice
+    return seq[int(self.random() * len(seq))]  # raises IndexError if seq is empty
+TypeError: 'set' object is unindexable
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; random.choice({'1': 'world', '2': 'galaxy', '3': 'universe'})
+Traceback (most recent call last):
+  File "&amp;lt;stdin&amp;gt;", line 1, in &amp;lt;module&amp;gt;
+  File "/System/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/random.py", line 248, in choice
+    return seq[int(self.random() * len(seq))]  # raises IndexError if seq is empty
+KeyError: 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And of course that makes sense given how &lt;code class="inline"&gt;random.choice&lt;/code&gt; is implemented, since there's not necessarily  an order for the elements of a set or dictionary, so you can't expect to subscript them. However they do provide an order when iterating over them and traversing the structure they exist in, so you could certainly use the same &lt;code class="inline"&gt;O(n)&lt;/code&gt; approach from above.&lt;/p&gt;
+
+&lt;p&gt;If there's some other less obvious way to do this in Java using a &lt;a href="http://en.wikipedia.org/w/index.php?title=Dependency_injection&amp;oldid=260831402#A_code_illustration_using_Java"&gt;EnterpriseFactoryObserverFactoryFactoryCreator&lt;/a&gt;, please leave a comment.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Update: I overlooked something important, which was pointed out by &lt;a href="http://news.ycombinator.com/item?id=1452619"&gt;gojomo&lt;/a&gt; on Hacker News. Set, which is returned from &lt;code class="inline"&gt;keySet()&lt;/code&gt; on HashMap, has an iterator. Thus:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public String randomKey() {
+    int index = random.nextInt(map.size());
+    for (String key: map.keySet()) {
+        if (index-- == 0) {
+            return key;
+        }
+    }
+    return null;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src="http://feeds.feedburner.com/~r/SIGUSR2/~4/162FqnXEKiY" height="1" width="1"/&gt;</content><feedburner:origLink>http://sigusr2.net/2010/Jun/22/maps-are-broken-for-some-definition-of-broken.html</feedburner:origLink></entry>
+
+</feed>

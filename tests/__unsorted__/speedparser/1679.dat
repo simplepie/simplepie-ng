@@ -1,0 +1,4116 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!-- this script must be the first element in the head -->
+<script src="https://sso.canada.com/sso.js" type="text/javascript"></script>
+<script type="text/javascript">
+	JANRAIN.SSO.CAPTURE.check_login({
+		sso_server: 'https://sso.canada.com',
+		client_id: 'vmy3xyw9g86txxqnps3a8fjv2xuthvfx',
+		redirect_uri: 'http://'+window.location.hostname+'/scripts/sso/postlogin.ashx',
+		logout_uri: 'http://'+window.location.hostname+'/scripts/sso/logout.ashx?type=providers',
+		xd_receiver: 'http://'+window.location.hostname+'/xdcomm.html'
+	});
+</script>
+
+ 
+
+
+
+<script type="text/javascript" src="/js/CDMScriptManager-1.0.js"></script>
+<script type="text/javascript">
+	CDMScriptManager.load('/js/jquery-1.2.6.min.js');
+	CDMScriptManager.load('/js/slider.js');
+	CDMScriptManager.load('/js/CurrentTopic.js');
+</script>
+<script type="text/javascript">
+     CDMScriptManager.load('/js/pluck/pluckLocal.js');
+</script>
+<script type="text/javascript">
+     CDMScriptManager.load(pluckScriptUrl);
+     CDMScriptManager.load('/js/pluck/pluck.js');
+</script>
+<script type="text/javascript" src="/js/jquery-hoverintent.js"></script>
+<script type="text/javascript" src="/js/headernav_tab.js"></script>
+<!-- membership js files -->
+<script type="text/javascript" src="/js/members/json.js"></script>
+<script type="text/javascript" src="/js/members/member.js"></script>
+
+<link rel="stylesheet" type="text/css" media="screen" href="/css/global.css" /><link rel="stylesheet" type="text/css" media="screen" href="/css/grid.css" /><link rel="stylesheet" type="text/css" media="screen" href="/css/header.css" /><link rel="stylesheet" type="text/css" media="screen" href="/css/header_nav.css" /><link rel="stylesheet" type="text/css" media="screen" href="/css/components.css" /><link rel="stylesheet" type="text/css" media="screen" href="/css/widgets.css" /><link rel="stylesheet" type="text/css" media="screen" href="/css/featurebox.css" /><link rel="stylesheet" type="text/css" media="screen" href="/css/footer.css" />
+<!-- membership css -->
+<link href="/css/members/member.css" type="text/css" rel="stylesheet" media="screen" />
+<!--[if IE 6]>
+<link href="/members/css/member_ie6.css" type="text/css" rel="stylesheet" media="screen" />
+<![endif]-->
+
+<!--/ottawacitizen/branding.inc -->
+
+		<link rel="stylesheet" type="text/css" media="screen" href="/css/branding.css" /><link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<!-- -----The following Coding is for the Advertising.com Web Beacon ---- -->
+<!-- ----------------- DO NOT REMOVE THIS CODING ------------------------ -->
+<img src="https://secure.ace-tag.advertising.com/action/type=830451604/bins=1/rich=0/mnum=1516/xsordnm=ottawacitizen/logs=0" height="1" width="1" border="0" style="display:none;" />
+<!-- -----The preceding Coding is for the Advertising.com Web Beacon ---- -->
+
+<!--/ottawacitizen/branding.inc -->
+
+<title>Opinion - Blogs - Our blogs have moved!</title>
+
+
+<style>
+.box_e5e5e5 {
+	margin-top:20px;
+}
+.box_content h3 span {
+	font-size:16px;
+}
+.box_content .text {
+	float:left;
+	font-size:14px;
+	margin-top:10px;
+	line-height:26px;
+}
+.box_content .text span {
+	display:inline;
+	font-size:16px;
+}
+#page .box_content .text a {
+	font-size:16px;
+	color:#035A91;
+	text-decoration:underline;
+}
+.section_title_bottom_border {
+	border-bottom: 1px solid #E8E8E8;
+	padding: 12px 0px 12px 0px;
+	font-family: Georgia;
+}
+
+.section_title_bottom_border a {
+    color: #035A91;
+    font-family: Georgia;
+    font-size: 11px;
+}
+.section_title_bottom_border h3 span { text-transform: uppercase; }
+
+.padding_10_0_0_0 { padding: 5px 0px 0px 0px; }
+</style><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><meta name="description" content="Find public opinion about news in Ottawa, Ontario and the world through newspaper columnists, editorials, blogs, cartoons and letters. Read blogs and reader comments." /><meta name="keywords" content="Editorials, blogs, columnists, editorial cartoons, reader comments, your letters, Ottawa, Ontario, letters, newspapers, opinions" /></head>
+
+<body class="opinion" >
+	<div id="page">
+		<div class="pagewrapper">
+
+			<div class="adwrapper">
+				<div id="leaderboard">
+				 	<!-- /leaderboard.inc -->
+<style>
+#leaderboard { text-align:right }
+#leaderboard .ad { text-align:right }
+</style>
+
+	<div class="ad">
+		<div class="bannerContainer">
+			<div id="dartad0">
+<!-- legoctl: ctl01 --><!-- NO CACHE: dartad0 -->
+
+                        <script type="text/javascript">
+                        function getCookies() { return ""; }
+                        </script>
+                        <script type="text/javascript">
+                        Array.prototype.uniqueAry = function ()
+                        {
+                            var r = new Array();
+                            o:for(var i = 0, n = this.length; i < n; i++)
+                            {
+                                for(var x = 0, y = r.length; x < y; x++)
+                                {
+                                    if(r[x]==this[i])
+                                    {
+                                        continue o;
+                                    }
+                                }
+                                r[r.length] = this[i];
+                            }
+                            return r;
+                        }
+
+                        function getCookie(cookieName)
+                        {
+                            var dc = document.cookie;
+
+                            //load external cookies from .canada.com if not currently on .canada.com
+                            if (location.hostname.match(/\.canada\.com$/gi) == null)
+                                dc += ";" + getCookies(); //append to existing document cookie
+
+                            var cookie_str = ""; //this string will contain the value of the cookie name
+                            var needle = "[A-Za-z0-9_-]*" + cookieName + "[A-Za-z0-9_-]*=[^;]+";
+                            var regex = new RegExp(needle, "gi");
+                            var matches = dc.match(regex);
+                            if (matches != null)
+                            {
+                                for (var x = 0; x < matches.length; x++)
+                                    matches[x] = matches[x].substring(matches[x].indexOf("=")+1).replace(new RegExp("[\\s]+$", "g"), ""); //remove keyname prefix and trim
+                                cookie_str = matches.join(",");
+                                matches = cookie_str.split(",");
+                                matches = matches.uniqueAry(); //remove duplicates
+                                cookie_str = matches.join(";") + ";";
+                            }
+                            return unescape(cookie_str);
+                        }
+
+                        function getAdCookie()
+                        {
+                            return getCookie("adcookie");
+                        }
+
+                        function setSurroundCookie(value)
+                        {
+                            document.cookie = "surroundId=" + escape(value) + "; path=/";
+                        }
+
+                        function getSurroundCookie()
+                        {
+                            var dc = document.cookie;
+                            var prefix = "surroundId=";
+                            var begin = dc.indexOf("; " + prefix);
+                            if (begin == -1)
+                            {
+                                begin = dc.indexOf(prefix);
+                                if (begin != 0) return null;
+                            }
+                            else
+                            {
+                                begin += 2;
+                            }
+                            var end = document.cookie.indexOf(";", begin);
+                            if (end == -1) end = dc.length;
+                            return unescape(dc.substring(begin + prefix.length, end));
+                        }
+
+                        // Setup for surround session.
+                        var adid = ""; // used in the ad to start a surround session
+                        var surroundTag = getSurroundCookie(); // Get surround session id from the cookie
+                        if(surroundTag == null) // check if there was a surround session id in the cookie
+                        {
+                            surroundTag = "";
+                        }
+                        else
+                        {
+                            surroundTag = "srnd="+surroundTag+";"; // finish setting up the key-value for the ad tags
+                        }
+
+                        //Setup for adcookie.
+                        var adcookieTag = getAdCookie(); // Get the ad cookie string
+                        </script>
+                    
+                        <script type="text/javascript">
+                        adcookieTag = typeof(adcookieTag) != 'undefined' ? adcookieTag : '';
+                        dartad_tile = typeof(dartad_tile) != 'undefined' ? dartad_tile + 1 : 1;
+                        var dartad_url = "http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=theTop;loc=top;sz=468x60,728x90;dcopt=ist;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile="+dartad_tile+";"+adcookieTag+surroundTag+"ord=27041593?"; // script ad code with adcookie, used for debug
+                        document.write('<script language="JavaScript1.1" src="http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=theTop;loc=top;sz=468x60,728x90;dcopt=ist;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile='+dartad_tile+';'+adcookieTag+surroundTag+'ord=27041593?"><\/script>');
+                        </script>
+                    
+                        <script type="text/javascript">
+                        if(adid != "") // check if the ad should start a surround session only if a surround session has not yet started
+                        {
+                            surroundTag = "srnd="+adid+";"; // setup the key-value for a surround session
+                            setSurroundCookie(adid); // store the surround session id in a cookie.
+                        }
+                        </script>
+                        <noscript>
+			    <a target="_blank" href="http://ad.ca.doubleclick.net/N3081/jump/oc_opin.com/opinion/blogs/blog-migration;loc=theTop;loc=top;sz=468x60,728x90;dcopt=ist;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?"><img align="TOP" border="0" vspace="0" hspace="0" src="http://ad.ca.doubleclick.net/N3081/ad/oc_opin.com/opinion/blogs/blog-migration;loc=theTop;loc=top;sz=468x60,728x90;dcopt=ist;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?" /></a>
+                </noscript>
+</div>
+
+		</div>
+	</div>
+
+<!-- /leaderboard.inc -->
+				</div>
+				<!-- leaderboard ends -->
+			</div>
+			<!-- adwrapper ends -->
+			<div class="headerwrapper">
+				<div id="networkbar">
+					<div class="networkbar">
+						<!--/ottawacitizen/header_networkbar.inc -->
+	
+	<span id="weatherfix">
+		<div id="weatherspot">
+			<!--/ottawacitizen/header_weather.inc -->
+
+		<div id="weather1" class="bubble bubbleweather">
+<!-- legoctl: ctl02 --><!-- CACHE HIT: weather1 -->
+<div class="bubble bubbleweather"><div class="top"><div class="left"> </div><div class="right"> </div></div><div class="center"><a href="/findit/weather/"><h4>Weather Centre</h4></a></div><div class="bottom"><div class="left"> </div><div class="right"> </div></div><div class="clear"> </div></div><div class="weather"><div class="img"><IMG hspace="2" width="72" height="39" src="/images/weather/large/hp_w_ir.gif"></div><div class="temperature">12&#176;C</div><div class="clear"> </div><div class="forecast"><div class="current">Light rain</div><a href="/weather/index.html?city=ottawa&amp;rg=on"><b>Ottawa</b></a><ul class="bullet"><li><a href="/weather/index.html?city=ottawa&amp;rg=on"><span>Detailed Forecast</span></a></li></ul></div><div class="clear"> </div></div></div>
+ 
+
+<!--/ottawacitizen/header_weather.inc -->
+		</div>
+	</span>
+	<!-- weatherspot ends -->
+	<!--/header_networkbar_global.inc -->
+
+		<ul class="network_dropdown">
+			<li class="ss-nopad">
+				<a href="https://contests.canada.com/ottawacitizen/subscribe/index.html"><span>Start Home Delivery</span></a>
+			</li>
+			<li><a href="/subscribe">Subscriber Services</a></li>
+			<li><a href="http://digital.ottawacitizen.com"><span>Digital Edition</span></a></li>
+			<li class="email-alert nodiv"><a href="/news/email-alerts.html"><span>Email Alerts</span></a></li>
+			<li>
+				<a href="/mobile-site/index.html"><span>Mobile Products</span></a>
+			</li>
+		</ul>
+		<!-- networkbar ends -->
+		<ul class="cc_dropdown">
+			<li class="cc">
+				<a href="http://www.canada.com/" class="ccn_network"><span>canada.com network</span></a>
+				<div class="cc-dropdown">
+					<div class="cc-dropdown-content">
+						<div class="wrapper_0_10_0_10">
+							<div class="col_170">
+								<div class="col_160 tagged">
+									<div class="section_title">
+										<h3><span>Newspapers</span></h3>
+										<div class="clear">&nbsp;</div>
+									</div>
+									<div class="clear">&nbsp;</div>
+									<div id="textlinks">
+										<div class="featurecontent">
+											<ul class="bullet">
+												<li><a href="http://www.nationalpost.com/"><span>National Post</span></a></li>
+												<li><a href="http://www.timescolonist.com/"><span>Victoria Times Colonist</span></a></li>
+												<li><a href="http://www.theprovince.com/"><span>The Province (Vancouver)</span></a></li>
+												<li><a href="http://www.vancouversun.com/"><span>Vancouver Sun</span></a></li>
+												<li><a href="http://www.edmontonjournal.com/"><span>Edmonton Journal</span></a></li>
+												<li><a href="http://www.calgaryherald.com/"><span>Calgary Herald</span></a></li>
+												<li><a href="http://www.leaderpost.com/"><span>Regina Leader-Post</span></a></li>
+												<li><a href="http://www.thestarphoenix.com/"><span>Saskatoon StarPhoenix</span></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col_160 tagged">
+								<div class="section_title">
+									<h3><span>&nbsp;</span></h3>
+									<div class="clear">&nbsp;</div>
+								</div>
+								<div class="clear">&nbsp;</div>
+								<div id="textlinks">
+									<div class="featurecontent">
+										<ul class="bullet">
+											<li><a href="http://www.windsorstar.com/"><span>Windsor Star</span></a></li>
+											<li><a href="http://www.ottawacitizen.com/"><span>Ottawa Citizen</span></a></li>
+											<li><a href="http://www.montrealgazette.com/"><span>The Gazette (Montreal)</span></a></li>
+											<li><a href="http://www.dose.ca/"><span>DOSE</span></a></li>
+											<li><a href="http://www.canada.com/postmediacommunitypublishing/"><span>Postmedia Community Publishing</span></a></li>
+											<li><a href="http://www.canada.com/nanaimodailynews/"><span>Nanaimo Daily News</span></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+						</div>
+						<!-- wrapper ends-->
+					</div>
+				</div>
+			</li>
+		</ul>
+
+<!--/header_networkbar_global.inc -->
+
+<!--/ottawacitizen/header_networkbar.inc -->
+					</div>
+					<!-- networkbar ends -->
+					<div id="loginstatusbar">
+						<!--/common/loginstatusbar.inc -->
+
+<div id="loginstatusbarchild"></div>
+
+<script>
+	function handlePostLogin() {
+		// change the login status bar to reflect a logged in state
+		jQuery.getScript("http://"+window.location.hostname+"/scripts/sso/user.ashx?format=json&callback=renderLoginStatusBar");
+
+		if((window.location+"").indexOf("/members/account-verified.html") > -1 || (window.location+"").indexOf("/members/cancel-deletion.html") > -1 || (window.location+"").indexOf("/members/reset-password-complete.html") > -1) window.location="/index.html";
+		else window.location.reload();
+	}
+
+	function handlePostLogout() {
+		// change the login status bar to reflect a logged out state
+		jQuery.getScript("http://"+window.location.hostname+"/scripts/sso/user.ashx?format=json&callback=renderLoginStatusBar");
+		
+		if((window.location+"").indexOf("edit-profile.html") > -1) window.location="/index.html";
+		else window.location.reload();
+	}
+
+	function dologout() {
+		// create the hidden logout iframe
+		var src = 'http://'+window.location.hostname+'/scripts/sso/logout.ashx?iframe=true';
+		jQuery('<iframe id="iframe_logout" style="visibility:hidden;display:none" frameborder="0" hspace="0" scrolling="no" src="' + src + '"></iframe>').appendTo('body');
+	}
+
+	function renderLoginStatusBar(user) {
+		var user = user.User;
+		var statusBarHtml = "";
+
+		if (user.IsLoggedIn) {
+			statusBarHtml += "<ul>";
+			statusBarHtml += "	<li>Hi " + user.DisplayName + "</li>";
+			statusBarHtml += "	<li><a href=\"http://"+window.location.hostname+"/members/edit-profile.html\">My Profile</a></li>";
+			statusBarHtml += "	<li><a href=\"javascript:dologout();\">Sign Out</a></li>";
+			statusBarHtml += "</ul>";
+		}
+		else {
+			statusBarHtml += "<ul>";
+			statusBarHtml += "	<li><a href=\"javascript:light.mask(jQuery('body'),light.getHtml('user_reg_internal_1t'));\">Log in</a></li>";
+			statusBarHtml += "	<li><a href=\"javascript:light.mask(jQuery('body'),light.getHtml('user_reg_internal_1t'));\">Register</a></li>";
+			statusBarHtml += "</ul>";
+		}
+		document.getElementById("loginstatusbarchild").innerHTML = statusBarHtml;
+	}
+</script>
+
+<script>jQuery.getScript("http://"+window.location.hostname+"/scripts/sso/user.ashx?format=json&callback=renderLoginStatusBar");</script>
+
+<!--/common/loginstatusbar.inc -->
+					</div>
+					<!-- loginstatusbar ends -->
+				</div>
+				<!-- networkbar ends -->
+				<div class="clear">&nbsp;</div>
+				<div class="logosearchbar">
+					<div id="logocol">
+						<!--/ottawacitizen/header_logo.inc -->
+
+		<div class="newspaperlogo">
+			<h1><a href="/index.html"><span>Ottawa Citizen</span></a></h1>
+			<div class="clear">&nbsp;</div>
+			<div class="label">
+				<a href="http://www.canwestglobal.com/brands/publishing.asp">
+					<span>Division of Canwest Publishing Inc. </span>
+				</a>
+			</div>
+			<!-- label ends -->
+		</div>
+		<!-- newspaperlogo ends -->
+		<div class="headersponsor">
+			<!--div class="logo">
+				<h2>
+					<a href="/sports/2010wintergames/index.html">
+						<span> 2010 Wintergames</span>
+					</a>
+				</h2>
+			</div-->
+			<!-- logo ends -->
+			<div class="clear">&nbsp;</div>
+		</div>
+		<!-- newspaperlogo ends -->
+
+<!--/ottawacitizen/header_logo.inc -->
+					</div>
+					<!-- logocol ends -->
+					<div id="weatherspot">
+						<!--/ottawacitizen/header_weather.inc -->
+
+		<div id="weather2" class="bubble bubbleweather">
+<!-- legoctl: ctl03 --><!-- CACHE HIT: weather2 -->
+<div class="bubble bubbleweather"><div class="top"><div class="left"> </div><div class="right"> </div></div><div class="center"><a href="/findit/weather/"><h4>Weather Centre</h4></a></div><div class="bottom"><div class="left"> </div><div class="right"> </div></div><div class="clear"> </div></div><div class="weather"><div class="img"><IMG hspace="2" width="72" height="39" src="/images/weather/large/hp_w_ir.gif"></div><div class="temperature">12&#176;C</div><div class="clear"> </div><div class="forecast"><div class="current">Light rain</div><a href="/weather/index.html?city=ottawa&amp;rg=on"><b>Ottawa</b></a><ul class="bullet"><li><a href="/weather/index.html?city=ottawa&amp;rg=on"><span>Detailed Forecast</span></a></li></ul></div><div class="clear"> </div></div></div>
+ 
+
+<!--/ottawacitizen/header_weather.inc -->
+					</div>
+					<!-- weatherspot ends -->
+					<div id="searchcol">
+						<div class="searchwrapper">
+							<!--/ottawacitizen/header_search_boxs.inc -->
+
+		<div id="headersearch" class="headersearch">
+			<div class="formrow">
+				<ul class="hr_items quicklinks">
+					<li class="q-links">Quick Links: <a href="http://www.ottawacitizen.com/shopping"><span>Shopping</span></a>, <a href="http://www.legacy.com/can-ottawa/Obituaries.asp"><span>Obituaries</span></a>, <a href="/life/diversions/"><span>Horoscopes</span></a></li>
+				</ul>
+				<div class="clear">&nbsp;</div>
+				<form name="searchform" action="http://www.ottawacitizen.com/search/search.html">
+					<ul class="form_newspaper">
+						<li class="forminput">
+							<input type="text" class="input_newspaper" id="q" name="q" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'Search ottawacitizen.com...':this.value;" value="Search ottawacitizen.com..." />
+						</li>
+						<li class="formbutton">
+							<a class="" href="Javascript:void(1);" onClick="doSearch();"><span>Search</span></a>
+						</li>
+					</ul>
+				</form>
+				<div class="clear">&nbsp;</div>
+				<ul class="hr_items">
+					<li class="ypg-icon"><a href="http://ottawacitizen.yellowpages.ca"><span>YellowPages</span></a></li>
+					<li class="ypg">Find a business or person on:&nbsp;</li>
+				</ul>
+			</div>
+		</div>
+		<!-- headersearch ends -->
+		<script language="javascript">
+			function doSearch() {
+				var q = document.getElementById("q").value.replace(/[^0-9a-zA-Z\s*]/g,"");
+				q = q.replace(/ /g,"+");
+				if (q.length == 0) {
+					alert("Please enter your search criteria");
+					return;
+				}
+				var dname = document.domain; 
+				if ( dname=="driving.ca") {
+					document.location.href="http://www.driving.ca/ottawa/search/search.html?q=" + escape(q);
+					}
+				else {
+					document.location.href="http://www.ottawacitizen.com/search/search.html?q=" + escape(q);
+				}
+			}
+		</script>
+							
+<!--/ottawacitizen/header_search_box.inc -->
+						</div>
+						<!-- Search  wrapper ends -->
+					</div>
+					<!-- searchcol ends -->
+				</div>
+				<!-- logosearchbar ends -->
+			</div>
+			<!-- headerwrapper ends -->
+			<div class="clear">&nbsp;</div>
+			<div class="navbar">
+				<div class="navbarwrapper">
+					<!--/ottawacitizen/header_nav.inc -->
+
+<ul id="navcontent">
+	<li id="home" class="mainnav">
+		<a class="navitem" href="/index.html"><span>Home</span></a>
+	</li>
+	<li id="news" class="mainnav">
+		<a class="navitem" href="/news/"><span>News</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>In News</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="/news/"><span>Home</span></a></li>
+										<li><a href="/news/ottawa/"><span>Ottawa &amp; Area</span></a></li>
+										<li><a href="/news/canada/"><span>Canada</span></a></li>
+										<li><a href="/news/world/"><span>World</span></a></li>
+										<li><a href="/news/blotter/"><span>The Blotter</span></a></li>
+										<li><a href="/news/weather-watch/"><span>Weather</span></a></li>
+										<li><a href="/news/todays-paper/"><span>Today's Paper &amp; Archive</span></a></li>
+										<li class="lastnoline"><a href="/news/diplomatica/"><span>Diplomatica</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Ottawa &amp; Area</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication3">
+<!-- legoctl: ctl04 --><!-- CACHE HIT: syndication3 -->
+<!-- Source="1767240.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="/news/Sisters+know+first+hand+cancer+beaten/5491319/story.html?cid=megadrop_story" class="feature01">
+          <span>Sisters know first-hand cancer can be beaten</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="/news/Sisters+know+first+hand+cancer+beaten/5491319/story.html?cid=megadrop_story">
+        <img border="0" src="5490981.bin?cid=megadrop_story&amp;size=130x88" alt="Doris Marineau (L) and Huguette Menard (R) are wearing brightly coloured hats as the annual Run for the Cure took place October  2, 2011, along the Western Parkway beginning at Canadian War Museum." title="Doris Marineau (L) and Huguette Menard (R) are wearing brightly coloured hats as the annual Run for the Cure took place October  2, 2011, along the Western Parkway beginning at Canadian War Museum.">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">Only three years after her sister Doris Marineau battled breast cancer, Huguette M&#233;nard was diagnosed with the disease. Sunday morning, the two sisters joined more than 9,000 people at the Canadian...</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+          <li class="application/vnd.ooyala">
+            <a href="/news/Video+Participants+annual+Cure+talk+about+they+running/5491046/story.html?cid=megadrop_story">
+              <span>Video: Participants of the annual Run for the Cure talk about why they are running.</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication4">
+<!-- legoctl: ctl05 --><!-- CACHE HIT: syndication4 -->
+<!-- Source="1767240.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="/news/Seniors+Summit+aims+make+Ottawa+better+place+elderly/5493504/story.html?cid=megadrop_story">
+          <span>‘Seniors Summit’ aims to make Ottawa a better place for the elderly</span>
+        </a>
+      </li>
+      <li>
+        <a href="/news/Photos+Cure/5490962/story.html?cid=megadrop_story">
+          <span>Photos: Run for the Cure</span>
+        </a>
+      </li>
+      <li>
+        <a href="/news/Pedestrian+struck+killed+vehicle/5491528/story.html?cid=megadrop_story">
+          <span>Pedestrian struck, killed by vehicle</span>
+        </a>
+      </li>
+      <li>
+        <a href="/news/Ottawa+good+place+stroke+victim/5491542/story.html?cid=megadrop_story">
+          <span>Ottawa good place to be for a stroke victim</span>
+        </a>
+      </li>
+      <li>
+        <a href="/news/seriously+hurt+blaze+destroys+trailer+home/5490770/story.html?cid=megadrop_story">
+          <span>Man seriously hurt as blaze destroys trailer home</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_160">
+						<div class="section_title">
+							<h3><span>Blogs</span></h3>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div class="no_section_title top-pad">
+							<div id="syndication5">
+<!-- legoctl: ctl06 --><!-- CACHE HIT: syndication5 -->
+<!-- Source="2482838.atom" --><div class="section_title">
+  <h3>
+    <span>Opinion</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="http://blogs.ottawacitizen.com/tag/bulldog/">
+          <span>The Bulldog</span>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="http://postmediaottawacitizen.wordpress.com/tag/greater-ottawa" rel="nofollow">
+          <span>Greater Ottawa</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://blogs.ottawacitizen.com/category/life/omnivores-ottawa">
+          <span>Omnivore's Ottawa</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://blogs.ottawacitizen.com/tag/the-ed-board">
+          <span>The Ed Board</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="view-more">
+						<div class="view-more-right"></div>
+						<div class="view-more-mid"><a href="/news">More in News</a></div>
+						<div class="view-more-left"></div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+	<li id="opinion" class="mainnav">
+		<a class="navitem" href="/opinion/"><span>Opinion</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>In Opinion</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="/opinion/"><span>Home</span></a></li>
+										<li><a href="/opinion/reader-comments/"><span>Reader Comments</span></a></li>
+										<li><a href="/opinion/letters/index.html"><span>Letters</span></a></li>
+										<li><a href="/columnists/"><span>Columnists</span></a></li>
+										<li><a href="/opinion/editorials/"><span>Editorials</span></a></li>
+										<li><a href="/opinion/op-ed/"><span>Op-Ed</span></a></li>
+										<li><a href="/opinion/blogs/"><span>Blogs</span></a></li>
+										<li class="lastnoline"><a href="/opinion/letters/letters-to-the-editor.html"><span>Submit Letters</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Editorials</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication6">
+<!-- legoctl: ctl07 --><!-- CACHE HIT: syndication6 -->
+<!-- Source="824900.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="/opinion/Ottawa+West+Nepean+endorsement+Denley+best+strong+group/5493366/story.html?cid=megadrop_story" class="feature01">
+          <span>Ottawa West-Nepean endorsement: Denley best in a strong group...</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="/opinion/Ottawa+West+Nepean+endorsement+Denley+best+strong+group/5493366/story.html?cid=megadrop_story">
+        <img border="0" src="5432489.bin?cid=megadrop_story&amp;size=130x88" alt="Ottawa West-Nepean" title="Ottawa West-Nepean">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">The riding of Ottawa West-Nepean puts this editorial board in an unusual position. One of the candidates is our colleague Randall Denley, on leave from the Citizen. We could have done the easy thing and...</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication7">
+<!-- legoctl: ctl08 --><!-- CACHE HIT: syndication7 -->
+<!-- Source="824900.atom" --><div class="section_title">
+  <h3>
+    <span>Endorsements</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="/opinion/Leeds+Grenville+endorsement+this+Steve+Clark+country/5493369/story.html?cid=megadrop_story">
+          <span>Leeds-Grenville endorsement: this is Steve Clark country</span>
+        </a>
+      </li>
+      <li>
+        <a href="/opinion/Ottawa+Centre+endorsement+Naqvi+tops+competitive+field/5493383/story.html?cid=megadrop_story">
+          <span>Ottawa Centre endorsement: Naqvi tops in competitive field</span>
+        </a>
+      </li>
+      <li>
+        <a href="/opinion/Glengarry+Prescott+Russell+endorsement+crack+should+keep+riding/5493398/story.html?cid=megadrop_story">
+          <span>Glengarry-Prescott-Russell endorsement: crack should keep riding red</span>
+        </a>
+      </li>
+      <li>
+        <a href="/opinion/Renfrew+Nipissing+Pembroke+endorsement+Yakabuski+large+presence/5482702/story.html?cid=megadrop_story">
+          <span>Renfrew-Nipissing-Pembroke endorsement: Yakabuski has a large presence</span>
+        </a>
+      </li>
+      <li>
+        <a href="/opinion/Carleton+Mississippi+Mills+endorsement+Cornell+impressive+candidate/5482595/story.html?cid=megadrop_story">
+          <span>Carleton-Mississippi Mills endorsement: Cornell’s an impressive candidate</span>
+        </a>
+      </li>
+      <li>
+        <a href="/opinion/a9ans+endorsement+Lister+looks+solve+riding+problems/5482695/story.html?cid=megadrop_story">
+          <span>Ottawa-Orléans endorsement: Lister looks to solve riding’s problems</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_160">
+						<div class="section_title">
+							<h3><span>Blogs</span></h3>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div id="textlinks" class="top-pad">
+							<div class="featurecontent">
+								<ul class="bullet">
+									<li><a href="http://blogs.ottawacitizen.com/tag/the-ed-board/"><span>The Ed Board</span></a></li>
+									<li><a href="http://blogs.ottawacitizen.com/tag/bulldog/"><span>The Bulldog</span></a></li>
+									<li><a href="http://blogs.ottawacitizen.com/tag/ideas-and-consequences/"><span>Ideas and Consequences</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="view-more">
+						<div class="view-more-right"></div>
+						<div class="view-more-mid"><a href="/opinion">More in Opinion</a></div>
+						<div class="view-more-left"></div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+	<li id="business" class="mainnav">
+		<a class="navitem" href="/business/"><span>Business</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>In Business</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="/business/"><span>Home</span></a></li>
+										<li><a href="/business/money/"><span>Money</span></a></li>
+										<li class="lastnoline"><a href="http://www.financialpost.com/markets/"><span>Markets on FP</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Top Stories</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication8">
+<!-- legoctl: ctl09 --><!-- CACHE HIT: syndication8 -->
+<!-- Source="873682.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="/business/lawmaker+wary+China+currency+bill/5494932/story.html?cid=megadrop_story" class="feature01">
+          <span>Top U.S. lawmaker wary on China currency bill</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="/business/lawmaker+wary+China+currency+bill/5494932/story.html?cid=megadrop_story">
+        <img border="0" src="5215232.bin?cid=megadrop_story&amp;size=130x88" alt="Chinese currency" title="Chinese currency">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">A top U.S. lawmaker warned Monday that a bill to punish China for alleged currency manipulation may unintentionally damage the brittle U.S. economy, in a sharp blow to the measure's hopes of becoming ...</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+          <li class="doc">
+            <a href="/business/Senate+take+China+currency+bill/5489482/story.html?cid=megadrop_story">
+              <span>US Senate to take up China currency bill</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication9">
+<!-- legoctl: ctl10 --><!-- CACHE HIT: syndication9 -->
+<!-- Source="873682.atom" --><div class="section_title">
+  <h3>
+    <span>OCRI</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="/business/boss+mandate+Ottawa+technology+development+agency/5485241/story.html?cid=megadrop_story">
+          <span>New boss, new mandate for Ottawa technology development agency</span>
+        </a>
+      </li>
+      <li>
+        <a href="/business/More+than+order+Senators+heritage+sweater+before+official+introduction/5485841/story.html?cid=megadrop_story">
+          <span>More than 3,000 order Senators ‘heritage’ sweater before official introduction</span>
+        </a>
+      </li>
+      <li>
+        <a href="/business/Lamphier+Spectre+another+recession+bears+down+investors/5485732/story.html?cid=megadrop_story">
+          <span>Lamphier: Spectre of another recession bears down on investors</span>
+        </a>
+      </li>
+      <li>
+        <a href="/business/declines+month+quarter/5482766/story.html?cid=megadrop_story">
+          <span>TSX declines for day, month and quarter</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_160">
+						<div class="section_title">
+							<h3><span>Money</span></h3>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div class="no_section_title top-pad">
+							<div id="syndication10">
+<!-- legoctl: ctl11 --><!-- CACHE HIT: syndication10 -->
+<!-- Source="17052.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="http://business.financialpost.com/category/personal-finance/">
+          <span>FP Personal Finance gets a makeover</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://business.financialpost.com/2011/09/30/live-large-now-or-retire-better-later/">
+          <span>Live la vida loca now and pay later</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://business.financialpost.com/2011/09/29/number-of-boomers-working-past-retirement-skyrockets/">
+          <span>Number of boomers working past retirement...</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="view-more">
+						<div class="view-more-right"></div>
+						<div class="view-more-mid"><a href="/business">More in Business</a></div>
+						<div class="view-more-left"></div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+	<li id="sports" class="mainnav">
+		<a class="navitem" href="/sports/"><span>Sports</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>In Sports</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="/sports/"><span>Home</span></a></li>
+										<li><a href="/sports/hockey/ottawa-senators/"><span>Hockey</span></a></li>
+											<li><a href="http://www.senatorsextra.com"><span>Senators Extra</span></a></li>
+										<li><a href="/sports/football/"><span>Football</span></a></li>
+										<li><a href="/sports/baseball/"><span>Baseball</span></a></li>
+										<li><a href="/sports/basketball/"><span>Basketball</span></a></li>
+										<li><a href="/sports/golf/"><span>Golf</span></a></li>
+										<li><a href="/sports/autoracing/"><span>Auto Racing</span></a></li>
+										<li><a href="/sports/amateur/"><span>High School Sports</span></a></li>
+										<li><a href="/sports/tennis/"><span>Tennis</span></a></li>
+										<li class="lastnoline"><a href="/sports/soccer/"><span>Soccer</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Top Stories</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication11">
+<!-- legoctl: ctl12 --><!-- CACHE HIT: syndication11 -->
+<!-- Source="824772.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="/sports/Players+owners+resume+talks+time+ticks+away/5494980/story.html?cid=megadrop_story" class="feature01">
+          <span>Players, owners resume talks as time ticks away</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="/sports/Players+owners+resume+talks+time+ticks+away/5494980/story.html?cid=megadrop_story">
+        <img border="0" src="5190151.bin?cid=megadrop_story&amp;size=130x88" alt="NBA commissioner David Stern" title="NBA commissioner David Stern">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">NBA club owner and player representatives resumed negotiations on Monday in small groups as talks continued to try and salvage the scheduled November 1 start of the upcoming season.</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+          <li class="doc">
+            <a href="/sports/Salary+still+stumbling+block+talks/5489278/story.html?cid=megadrop_story">
+              <span>Salary cap still a stumbling block in talks</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="/sports/owners+players+union+still+apart+labour+negotiations/5488976/story.html?cid=megadrop_story">
+              <span>NBA owners, players’ union still far apart in labour negotiations</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="/sports/postpones+training+camp+cancels+season+games/5448463/story.html?cid=megadrop_story">
+              <span>NBA postpones training camp, cancels pre-season games</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication12">
+<!-- legoctl: ctl13 --><!-- CACHE HIT: syndication12 -->
+<!-- Source="824772.atom" --><div class="section_title">
+  <h3>
+    <span>Basketball</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="/sports/Canadian+basketball+loop+looking+commissioner/5494867/story.html?cid=megadrop_story">
+          <span>Canadian basketball loop looking for new commissioner</span>
+        </a>
+      </li>
+      <li>
+        <a href="/sports/Penguins+Crosby+injured+reserve/5494940/story.html?cid=megadrop_story">
+          <span>Penguins put Crosby on injured reserve</span>
+        </a>
+      </li>
+      <li>
+        <a href="/sports/Countdown+season+Part+will+start+stop+they+hope+with+Craig+Anderson/5491441/story.html?cid=megadrop_story">
+          <span>Countdown to season 20: Part 2: It will all start and stop (they hope) with Craig Anderson</span>
+        </a>
+      </li>
+      <li>
+        <a href="/sports/London+2012+athletics+track+inaugurated/5494061/story.html?cid=megadrop_story">
+          <span>London 2012 athletics track inaugurated</span>
+        </a>
+      </li>
+      <li>
+        <a href="/sports/Jets+sign+Scheifele+entry+level+contract/5494124/story.html?cid=megadrop_story">
+          <span>Jets sign Scheifele to entry-level contract</span>
+        </a>
+      </li>
+      <li>
+        <a href="/sports/Cardinals+rally+series+with+Phillies/5491711/story.html?cid=megadrop_story">
+          <span>Cardinals rally to tie series with Phillies</span>
+        </a>
+      </li>
+      <li>
+        <a href="/sports/Tigers+beat+Yankees+level+playoff+series/5491308/story.html?cid=megadrop_story">
+          <span>Tigers beat Yankees to level playoff series 1-1</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://senatorsextra.com/main/poll-how-many-points-will-daniel-alfredsson-score-this-season/">
+          <span>Poll: How many points will Daniel Alfredsson score this season?</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_160">
+						<div class="section_title">
+							<h3><span>Sports Blogs</span></h3>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div class="no_section_title top-pad">
+							<div id="syndication13">
+<!-- legoctl: ctl14 --><!-- CACHE HIT: syndication13 -->
+<!-- Source="824767.atom" --><div class="section_title">
+  <h3>
+    <a href="http://SenatorsExtra.com">
+      <span>Sports
+		    »</span>
+    </a>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="http://www.senatorsextra.com">
+          <span>SenatorsExtra</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://blogs.ottawacitizen.com/tag/scouring-the-sidelines/">
+          <span>Scouring the Sidelines</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://blogs.ottawacitizen.com/category/sports/beautiful-game">
+          <span>The Beautiful Game</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://blogs.ottawacitizen.com/tag/par-for-the-course">
+          <span>Par for the Course</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="view-more">
+						<div class="view-more-right"></div>
+						<div class="view-more-mid"><a href="/sports">More in Sports</a></div>
+						<div class="view-more-left"></div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+	<li id="entertainment" class="mainnav">
+		<a class="navitem" href="/entertainment/"><span>Arts</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>In Arts</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="/entertainment/"><span>Home</span></a></li>
+										<li><a href="/entertainment/movie-guide/"><span>Movies</span></a></li>
+										<li><a href="/entertainment/television/"><span>Television</span></a></li>
+										<li><a href="/entertainment/events-listings/"><span>Event Listings</span></a></li>
+										<li><a href="/entertainment/television/tv-listings/"><span>TV Listings</span></a></li>
+										<li><a href="/entertainment/music/"><span>Music</span></a></li>
+										<li><a href="/entertainment/books/"><span>Books</span></a></li>
+										<li><a href="/entertainment/celebrity/"><span>Celebrity</span></a></li>
+										<li><a href="/entertainment/cappies/"><span>Capital Cappies</span></a></li>
+										<li class="lastnoline"><a href="/entertainment/music/downloads/index.html"><span>The Playlist</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Top Stories</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication14">
+<!-- legoctl: ctl15 --><!-- CACHE HIT: syndication14 -->
+<!-- Source="824564.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="/entertainment/Ottawa+Grace+Lynn+Kung+finds+InSecurity+good/5491550/story.html?cid=megadrop_story" class="feature01">
+          <span>Ottawa’s Grace Lynn Kung finds InSecurity good fit</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="/entertainment/Ottawa+Grace+Lynn+Kung+finds+InSecurity+good/5491550/story.html?cid=megadrop_story">
+        <img border="0" src="5491604.bin?cid=megadrop_story&amp;size=130x88" alt="photo" title="photo">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">Ottawa actress Grace Lynn Kung couldn&#8217;t have asked for a better gig than the CBC spy comedy InSecurity.</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication15">
+<!-- legoctl: ctl16 --><!-- CACHE HIT: syndication15 -->
+<!-- Source="824564.atom" --><div class="section_title">
+  <h3>
+    <span>Arts &amp; Life</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="/entertainment/Adapt+House/5491850/story.html?cid=megadrop_story">
+          <span>Adapt or die for Dr. House</span>
+        </a>
+      </li>
+      <li>
+        <a href="/entertainment/then+there/5491851/story.html?cid=megadrop_story">
+          <span>And then there was one</span>
+        </a>
+      </li>
+      <li>
+        <a href="/entertainment/Indian+soap+operas+step+closet/5493855/story.html?cid=megadrop_story">
+          <span>Indian TV soap operas step out of the closet</span>
+        </a>
+      </li>
+      <li>
+        <a href="/entertainment/great+American+divider/5489681/story.html?cid=megadrop_story">
+          <span>The great American divider</span>
+        </a>
+      </li>
+      <li>
+        <a href="/entertainment/Dolphin+Tale+leaps+movie+office/5491050/story.html?cid=megadrop_story">
+          <span>'Dolphin Tale' leaps to top of movie box office</span>
+        </a>
+      </li>
+      <li>
+        <a href="/entertainment/Gene+Simmons+marries+long+time+girlfriend+Shannon+Tweed/5491066/story.html?cid=megadrop_story">
+          <span>Gene Simmons marries long-time girlfriend Shannon Tweed</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_160">
+						<div class="section_title">
+							<h3><span>Arts Blogs</span></h3>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div id="textlinks" class="top-pad">
+							<div class="featurecontent">
+								<ul class="bullet">
+									<li><a href="http://blogs.ottawacitizen.com/tag/big-beat/"><span>The Big Beat</span></a></li>
+									<li><a href="http://blogs.ottawacitizen.com/tag/classical-ottawa/"><span>Classical Ottawa</span></a></li>
+									<li><a href="http://blogs.ottawacitizen.com/category/arts/jazzblog/"><span>Jazzblog.ca</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="view-more">
+						<div class="view-more-right"></div>
+						<div class="view-more-mid"><a href="/entertainment">More in Arts</a></div>
+						<div class="view-more-left"></div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+	<li id="life" class="mainnav">
+		<a class="navitem" href="/life/"><span>Life</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>In Life</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="/life/"><span>Home</span></a></li>
+										<li><a href="/health/"><span>Health</span></a></li>
+										<li><a href="/life/fashion-beauty/"><span>Fashion &amp; Beauty</span></a></li>
+										<li><a href="/life/food/"><span>Food &amp; Wine</span></a></li>
+										<li><a href="/life/parenting/"><span>Parenting</span></a></li>
+										<li><a href="/life/relationships/"><span>Relationships</span></a></li>
+
+		<li><a href="http://cycle.ottawacitizen.com"><span>CitizenCycle</span></a></li>
+										<li><a href="/life/faith-ethics/"><span>Faith &amp; Ethics</span></a></li>
+										<li><a href="/life/world-of-birds/"><span>World of Birds</span></a></li>
+										
+										<li><a href="/life/life-story/index.html"><span>Life Story</span></a></li>
+										<li><a href="/life/real-deal/index.html"><span>Real Deal</span></a></li>
+										<li class="lastnoline"><a href="/life/diversions/"><span>Diversions - Comics &amp; Games</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Top Stories</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication16">
+<!-- legoctl: ctl17 --><!-- CACHE HIT: syndication16 -->
+<!-- Source="2188220.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="/life/Designers+prove+nation+capital+does+have+style/5491545/story.html?cid=megadrop_story" class="feature01">
+          <span>Designers prove nation’s capital does have style</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="/life/Designers+prove+nation+capital+does+have+style/5491545/story.html?cid=megadrop_story">
+        <img border="0" src="5489614.bin?cid=megadrop_story&amp;size=130x88" alt="Designs by Ottawa based Jana Henzel and Emilia Torabi as Ottawa Fashion Week 2011 continues at the Ottawa Convention Centre, October  1, 2011, for the last day." title="Designs by Ottawa based Jana Henzel and Emilia Torabi as Ottawa Fashion Week 2011 continues at the Ottawa Convention Centre, October  1, 2011, for the last day.">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">Ottawa&#8217;s dented pride has been knocked back into shape by Ottawa Fashion Week&#8217;s dazzling spring-summer 2012 show.</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+          <li class="application/vnd.ooyala">
+            <a href="/life/Video+Fashion+week+ends/5491520/story.html?cid=megadrop_story">
+              <span>Video: Fashion week ends</span>
+            </a>
+          </li>
+          <li class="text/xml">
+            <a href="/life/Photos+Ottawa+Fashion+Week/5485847/story.html?cid=megadrop_story">
+              <span>Photos: Ottawa Fashion Week Day 2</span>
+            </a>
+          </li>
+          <li class="text/xml">
+            <a href="/life/Photos+Fashion+Week+Ottawa/5479760/story.html?cid=megadrop_story">
+              <span>Photos: Fashion Week Ottawa</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication17">
+<!-- legoctl: ctl18 --><!-- CACHE HIT: syndication17 -->
+<!-- Source="2188220.atom" --><div class="section_title">
+  <h3>
+    <span>Dog shows</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="/life/Kennel+Club+heels+growl+over+hairspray/5493973/story.html?cid=megadrop_story">
+          <span>Kennel Club heels to growl over hairspray</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/Cross+border+surgery/5491854/story.html?cid=megadrop_story">
+          <span>Cross-border surgery</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/Ottawa+good+place+stroke+victim/5491542/story.html?cid=megadrop_story">
+          <span>Ottawa good place to be for a stroke victim</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/Private+clinics+could+save+health+system/5489548/story.html?cid=megadrop_story">
+          <span>Private clinics could save health system: OMA</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/Pink+fatigue/5484442/story.html?cid=megadrop_story">
+          <span>Pink fatigue</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/Sacre+bleu+this+long+French+lunch/5485280/story.html?cid=megadrop_story">
+          <span>Sacre bleu: Is this the end of the long French lunch?</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/Twitterings+fine+lovebirds+human+kind/5483810/story.html?cid=megadrop_story">
+          <span>Twitterings are fine for lovebirds, but not the human kind</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_160">
+						<div class="section_title">
+							<h3><span>Life Blogs</span></h3>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div id="textlinks" class="top-pad">
+							<div class="featurecontent">
+								<ul class="bullet">
+									<li><a href="http://blogs.ottawacitizen.com/tag/adventures-of-a-working-mom/"><span>Adventures of a Working Mom</span></a></li>
+									<li><a href="http://blogs.ottawacitizen.com/category/life/omnivores-ottawa/"><span>Omnivore's Ottawa</span></a></li>
+									<li><a href="http://blogs.ottawacitizen.com/tag/real-deal/"><span>The Real Deal</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="view-more">
+						<div class="view-more-right"></div>
+						<div class="view-more-mid"><a href="/life">More in Life</a></div>
+						<div class="view-more-left"></div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+	<li id="technology" class="mainnav">
+		<a class="navitem" href="/technology/"><span>Technology</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>In Technology</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="/technology/"><span>Home</span></a></li>
+										<li><a href="/technology/personal-tech/"><span>Personal Tech</span></a></li>
+										<li><a href="/technology/gaming/"><span>Gaming</span></a></li>
+										<li><a href="/technology/tech-biz/"><span>Tech-Biz</span></a></li>
+										<li><a href="/technology/internet/"><span>Internet</span></a></li>
+										<li><a href="/technology/environment/"><span>Environment</span></a></li>
+										<li><a href="/technology/space/"><span>Space</span></a></li>
+										<li><a href="/technology/science/"><span>Science</span></a></li>
+										<li class="lastnoline"><a href="/technology/youtube/"><span>Best of YouTube</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Top Stories</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication18">
+<!-- legoctl: ctl19 --><!-- CACHE HIT: syndication18 -->
+<!-- Source="797532.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="/technology/Canadian+scientist+wins+Nobel+prize+days+after+death/5492973/story.html?cid=megadrop_story" class="feature01">
+          <span>Canadian scientist wins Nobel prize days after death</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="/technology/Canadian+scientist+wins+Nobel+prize+days+after+death/5492973/story.html?cid=megadrop_story">
+        <img border="0" src="5492993.bin?cid=megadrop_story&amp;size=130x88" alt="Ralph Steinman" title="Ralph Steinman">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">A Canadian-born scientist has received one of the world's most prestigious awards just days after his death.</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+          <li class="application/vnd.ooyala">
+            <a href="/technology/Video+Canadian+awarded+Nobel+Prize/5494536/story.html?cid=megadrop_story">
+              <span>Video: Canadian awarded Nobel Prize</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="/technology/Ralph+Steinman+subject+discovery/5494518/story.html?cid=megadrop_story">
+              <span>Ralph Steinman was a subject of his own discovery</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="/technology/Arab+bloggers+discuss+role+Arab+Spring/5494875/story.html?cid=megadrop_story">
+              <span>Arab bloggers discuss role in Arab Spring</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication19">
+<!-- legoctl: ctl20 --><!-- CACHE HIT: syndication19 -->
+<!-- Source="797532.atom" --><div class="section_title">
+  <h3>
+    <span>Apple iPhone 5</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="/technology/Cook+time+shine+with+Apple+iPhone/5493788/story.html?cid=megadrop_story">
+          <span>Cook's time to shine with new Apple iPhone</span>
+        </a>
+      </li>
+      <li>
+        <a href="/technology/Alibaba+chief+interested+buying+Yahoo+report/5493729/story.html?cid=megadrop_story">
+          <span>Alibaba chief 'interested' in buying Yahoo!: report</span>
+        </a>
+      </li>
+      <li>
+        <a href="/technology/denies+rumours+discontinuing+PlayBook/5483023/story.html?cid=megadrop_story">
+          <span>RIM denies rumours of discontinuing PlayBook</span>
+        </a>
+      </li>
+      <li>
+        <a href="/technology/Profound+change+Facebook+lock+users/5483118/story.html?cid=megadrop_story">
+          <span>Profound change for Facebook set to 'lock in' users</span>
+        </a>
+      </li>
+      <li>
+        <a href="/technology/Copyright+bill+digital+lock+rule+remains/5483078/story.html?cid=megadrop_story">
+          <span>Copyright bill's digital-lock rule remains as is</span>
+        </a>
+      </li>
+      <li>
+        <a href="/technology/Amazon+unveils+Kindle+Fire+Canadians+left+cold/5471835/story.html?cid=megadrop_story">
+          <span>Amazon unveils Kindle Fire, but Canadians left out in the cold</span>
+        </a>
+      </li>
+      <li>
+        <a href="/technology/Amazon+executive+discusses+Kindle+Fire+amazing+experience/5476878/story.html?cid=megadrop_story">
+          <span>Amazon executive discusses Kindle Fire's 'amazing experience'</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_160">
+						<div class="section_title">
+							<h3><span>Science</span></h3>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div class="no_section_title top-pad">
+							<div id="syndication20">
+<!-- legoctl: ctl21 --><!-- CACHE HIT: syndication20 -->
+<!-- Source="976675.atom" --><div class="section_title">
+  <h3>
+    <span>Science</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="/technology/power+Urine+loving+churns+space+fuel/5493625/story.html?cid=megadrop_story">
+          <span>Pee power: Urine-loving bug churns out space fuel</span>
+        </a>
+      </li>
+      <li>
+        <a href="/technology/Huge+hole+opens+Arctic+ozone+layer/5491071/story.html?cid=megadrop_story">
+          <span>Huge hole opens in Arctic ozone layer</span>
+        </a>
+      </li>
+      <li>
+        <a href="/technology/Wasabi+alarm+beetle+Nobel+spoof+prizes/5482558/story.html?cid=megadrop_story">
+          <span>Wasabi alarm, beetle sex win Ig Nobel spoof prizes</span>
+        </a>
+      </li>
+      <li>
+        <a href="/technology/Success+failure+Einstein+relative/5476904/story.html?cid=megadrop_story">
+          <span>Success or failure, for Einstein it's all relative</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="view-more">
+						<div class="view-more-right"></div>
+						<div class="view-more-mid"><a href="/technology">More in Technology</a></div>
+						<div class="view-more-left"></div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+	<li id="travel" class="mainnav">
+		<a class="navitem" href="/travel/"><span>Travel</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>In Travel</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="/travel/"><span>Home</span></a></li>
+										<li><a href="/travel/ideas/"><span>Trip Ideas</span></a></li>
+										<li><a href="/travel/tools/"><span>Tools &amp; Tips</span></a></li>
+										<li><a href="/travel/community/"><span>Community</span></a></li>
+										<li class="lastnoline"><a href="/travel/destinations/"><span>Destination Guides</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Top Stories</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication21">
+<!-- legoctl: ctl22 --><!-- CACHE HIT: syndication21 -->
+<!-- Source="991973.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="/travel/Winnipeg+taken+aback+Canada+shuns+downtown+hotel/5494171/story.html?cid=megadrop_story" class="feature01">
+          <span>Winnipeg taken aback as Air Canada shuns downtown hotel</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="/travel/Winnipeg+taken+aback+Canada+shuns+downtown+hotel/5494171/story.html?cid=megadrop_story">
+        <img border="0" src="5488635.bin?cid=megadrop_story&amp;size=130x88" alt="&quot;In this instance, we are acting out of an abundance of caution after conducting a security assessment with both local law enforcement officials in Winnipeg and our own security people,&quot; Air Canada spokesman Peter Fitzpatrick said in an email to Postmedia News." title="&quot;In this instance, we are acting out of an abundance of caution after conducting a security assessment with both local law enforcement officials in Winnipeg and our own security people,&quot; Air Canada spokesman Peter Fitzpatrick said in an email to Postmedia News.">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">Air Canada is taxiing its flight crews out of downtown Winnipeg due to safety concerns, but some Winnipeggers, tourists and downtown advocates think the airline should clip the wings on that move.</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication22">
+<!-- legoctl: ctl23 --><!-- CACHE HIT: syndication22 -->
+<!-- Source="991973.atom" --><div class="section_title">
+  <h3>
+    <span>Travel</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="/travel/dead+Mexico+tourist+hubs/5493872/story.html?cid=megadrop_story">
+          <span>12 dead in Mexico tourist hubs</span>
+        </a>
+      </li>
+      <li>
+        <a href="/travel/Lamu+fears+tourist+exodus+after+kidnaps/5493875/story.html?cid=megadrop_story">
+          <span>Lamu fears tourist exodus after kidnaps</span>
+        </a>
+      </li>
+      <li>
+        <a href="/travel/Rough+takeoff+Google+flight+site/5493888/story.html?cid=megadrop_story">
+          <span>Rough takeoff for Google's flight site</span>
+        </a>
+      </li>
+      <li>
+        <a href="/travel/WestJet+expands+reach+with+Emirates+agreement/5483405/story.html?cid=megadrop_story">
+          <span>WestJet expands reach with Emirates agreement</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_160">
+						<div class="section_title">
+							<h3><span>Photo Galleries</span></h3>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div class="no_section_title top-pad">
+							<div id="syndication23">
+<!-- legoctl: ctl24 --><!-- CACHE HIT: syndication23 -->
+<!-- Source="1419292.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="/travel/Travel+Photo/1328184/story.html?cid=megadrop_story">
+          <span>Travel Photo of the Day</span>
+        </a>
+      </li>
+      <li>
+        <a href="/travel/story.html?id=5458638&amp;tab=PHOT">
+          <span>Photo Gallery: Barcelona hosts its last bullfight</span>
+        </a>
+      </li>
+      <li>
+        <a href="/travel/Photo+Gallery+North+America+best+vacation+resorts+2011/5458942/story.html?cid=megadrop_story">
+          <span>Photo Gallery: North America's best vacation resorts...</span>
+        </a>
+      </li>
+      <li>
+        <a href="/travel/story.html?id=5423956&amp;tab=PHOT">
+          <span>Photo Gallery: Touring Bulgaria's Communist art museum...</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="view-more">
+						<div class="view-more-right"></div>
+						<div class="view-more-mid"><a href="/travel">More in Travel</a></div>
+						<div class="view-more-left"></div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+	<li id="topics" class="mainnav">
+		<a class="navitem" href="/topics/"><span>Topics</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>Topics</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="/topics/"><span>Home</span></a></li>
+										<li><a href="/topics/topic_browse.html?type=Person"><span>People</span></a></li>
+										<li><a href="/topics/topic_browse.html?type=City"><span>Places</span></a></li>
+										<li><a href="/topics/topic_browse.html?type=Misc"><span>Miscellaneous</span></a></li>
+										<li class="lastnoline"><a href="/topics/topic_browse.html?type=Organization"><span>Organizations</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Editor's Picks</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication24">
+<!-- legoctl: ctl25 --><!-- CACHE HIT: syndication24 -->
+<!-- Source="3638245.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="http://www.ottawacitizen.com/news/organization/parliament%20of%20canada/topic2.html" class="feature01">
+          <span>Hot Topic: Canadian Election</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="http://www.ottawacitizen.com/news/organization/parliament%20of%20canada/topic2.html">
+        <img border="0" src="3634430.bin?cid=megadrop_story&amp;size=130x88" alt="The Parliament Building." title="The Parliament Building.">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">The Conservatives have won a majority government with the NDP in opposition.</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication25">
+<!-- legoctl: ctl26 --><!-- CACHE HIT: syndication25 -->
+<!-- Source="3638245.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="http://www.ottawacitizen.com/news/bin-laden/index.html">
+          <span>Hot Topic: Osama Bin Laden</span>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="http://www.ottawacitizen.com/news/royal-wedding/index.html" rel="nofollow">
+          <span>The Royal Wedding</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+	<li id="jobs" class="mainnav">
+		<a class="navitem" href="http://www.working.com/ottawa/"><span>Jobs</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>In Jobs</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="http://www.working.com/ottawa/index.html"><span>Home</span></a></li>
+										<li><a href="http://jobs.ottawacitizen.com/careers/jobsearch?new=1&searchType=advanced"><span>Search Jobs</span></a></li>
+										<li><a href="http://www.working.com/ottawa/resources/index.html"><span>Resources</span></a></li>
+										<li><a href="http://jobs.ottawacitizen.com/careers/mediaKit/vert"><span>Post Jobs</span></a></li>
+										<li><a href="http://www.working.com/ottawa/myprofile/index.html"><span>My Profile</span></a></li>
+										<li class="lastnoline"><a href="http://shopping.ottawacitizen.com/SS/Page.aspx?ptype=SS_TILE&secid=96332&pagenum=1&facing=false"><span>Top Employers</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Top Stories</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication26">
+<!-- legoctl: ctl27 --><!-- CACHE HIT: syndication26 -->
+<!-- Source="829120.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="http://communities.canada.com/working/blogs/careerblogs/archive/2011/10/03/career-coach-picking-the-right-career-path-for-you.aspx" class="feature01">
+          <span>Career Coach: Picking the right career path for you</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="http://communities.canada.com/working/blogs/careerblogs/archive/2011/10/03/career-coach-picking-the-right-career-path-for-you.aspx">
+        <img border="0" src="5458902.bin?cid=megadrop_story&amp;size=130x88" alt="Job hunters" title="Job hunters">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">The best way to determine which road to take is to talk to someone who has walked that road before and has been successful getting there.</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+          <li class="doc">
+            <a href="http://jobs.working.com/jobs/search/advanced?new=1&amp;searchType=advanced">
+              <span>Find a job!</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://communities.canada.com/working/blogs/careerblogs/archive/2011/09/26/career-coach-set-the-tone-for-meetings.aspx">
+              <span>Working.com blog: Set the tone for meetings</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://communities.canada.com/working/blogs/careerblogs/archive/2011/08/18/career-coach-the-attitude-adjustment.aspx">
+              <span>Working.com blog: The attitude adjustment</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://communities.canada.com/working/blogs/careerblogs/archive/2011/08/26/career-coach-dealing-with-clashing-values.aspx">
+              <span>Working.com blog: Dealing with clashing values</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://communities.canada.com/working/blogs/careerblogs/archive/2011/08/15/career-coach-delegate-for-best-results.aspx">
+              <span>Working.com blog: Delegate for best results</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://communities.canada.com/working/blogs/careerblogs/archive/2011/08/03/career-coach-how-to-curb-that-anger.aspx">
+              <span>Working.com blog: How to curb that anger</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication27">
+<!-- legoctl: ctl28 --><!-- CACHE HIT: syndication27 -->
+<!-- Source="829120.atom" --><div class="section_title">
+  <h3>
+    <span>Job Search</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="http://www.working.com/ottawa/story.html?cid=megadrop_story&amp;id=5471795">
+          <span>Tackling the catch-22 of the job search</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.working.com/ottawa/story.html?cid=megadrop_story&amp;id=5494437">
+          <span>RIM voted most attractive employer in Canada</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_160">
+						<div class="section_title">
+							<h3><span>Features</span></h3>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div class="no_section_title top-pad">
+							<div id="syndication28">
+<!-- legoctl: ctl29 --><!-- CACHE HIT: syndication28 -->
+<!-- Source="829120.atom" --><div class="section_title">
+  <h3>
+    <span>Engaged Workers</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="http://www.working.com/ottawa/story.html?cid=megadrop_story&amp;id=5471784">
+          <span>Engaged staff boosts bottom line</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.working.com/ottawa/story.html?cid=megadrop_story&amp;id=5471817">
+          <span>Use "erotic capital" to get ahead at work</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.working.com/ottawa/story.html?cid=megadrop_story&amp;id=5471821">
+          <span>Passion for engineering runs in the family</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.working.com/ottawa/story.html?cid=megadrop_story&amp;id=5471774">
+          <span>Club improves odds of finding work</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="view-more">
+						<div class="view-more-right"></div>
+						<div class="view-more-mid"><a href="http://www.working.com/ottawa">More in Jobs</a></div>
+						<div class="view-more-left"></div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+	<li id="cars" class="mainnav">
+		<a class="navitem" href="http://www.driving.ca/ottawa/"><span>Cars</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>In Cars</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="http://www.driving.ca/ottawa/"><span>Home</span></a></li>
+										<li><a href="http://www.driving.ca/ottawa/buy-car/new/"><span>New</span></a></li>
+										<li><a href="http://www.driving.ca/ottawa/buy-car/used/"><span>Used</span></a></li>
+										<li><a href="/cardeals/"><span>Weekly Specials</span></a></li>
+										<li><a href="http://www.driving.ca/ottawa/sell-car/"><span>Sell</span></a></li>
+										<li><a href="http://www.driving.ca/ottawa/research-car/"><span>Research &amp; Compare</span></a></li>
+										<li><a href="http://www.driving.ca/ottawa/research-car/news/"><span>News &amp; Events</span></a></li>
+										<li><a href="http://www.driving.ca/ottawa/videos/"><span>Videos</span></a></li>
+										<li class="lastnoline"><a href="http://www.driving.ca/ottawa/special-features/"><span>Features</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Top Stories</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication29">
+<!-- legoctl: ctl30 --><!-- CACHE HIT: syndication29 -->
+<!-- Source="1011112.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="http://www.driving.ca/ottawa/Chrysler+Canada+sales+leap+Ford+keeps+crown/5494175/story.html?cid=megadrop_story" class="feature01">
+          <span>Chrysler Canada sales leap, but Ford keeps crown</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="http://www.driving.ca/ottawa/Chrysler+Canada+sales+leap+Ford+keeps+crown/5494175/story.html?cid=megadrop_story">
+        <img border="0" src="4791134.bin?cid=megadrop_story&amp;size=130x88" alt="A January 18, 2011 file photo of a worker helping to build a Chrysler Minivan on the assembly line at the Chrysler Windsor Assembly plant January 18, 2011 in Windsor, Ontario, Canada." title="A January 18, 2011 file photo of a worker helping to build a Chrysler Minivan on the assembly line at the Chrysler Windsor Assembly plant January 18, 2011 in Windsor, Ontario, Canada.">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">Chrysler Canada reported its best September sales total in a decade Monday. The Detroit automaker said it sold 19,255 vehicles in the country last month, up 19% year-over-year, marking its best performance...</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+          <li class="doc">
+            <a href="http://www.driving.ca/ottawa/Forget+electric+answer+diesel/5477801/story.html?cid=megadrop_story">
+              <span>Forget electric, the answer is diesel</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://www.driving.ca/ottawa/Irene+likely+dented+August+auto+retail+sales/5327450/story.html?cid=megadrop_story">
+              <span>Irene likely dented August auto, retail sales</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://www.driving.ca/ottawa/July+choppy+month+auto+sales/5200093/story.html?cid=megadrop_story">
+              <span>July a choppy month for auto sales</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://www.driving.ca/ottawa/Chrysler+passes+Ford+truck+sales/5126611/story.html?cid=megadrop_story">
+              <span>Chrysler passes Ford in truck sales</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://www.driving.ca/ottawa/sales+robust+despite+gloomy+economy/5464486/story.html?cid=megadrop_story">
+              <span>Car sales robust despite gloomy economy</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://www.driving.ca/ottawa/Fuel+efficient+vehicles+drive+Ford+sales/5064404/story.html?cid=megadrop_story">
+              <span>Fuel-efficient vehicles drive Ford sales</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://www.driving.ca/ottawa/Vehicle+sales+down+cent+July/5406941/story.html?cid=megadrop_story">
+              <span>Vehicle sales down 6.2 per cent in July</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://www.driving.ca/ottawa/Convertible+sales+slip+buyers+glass/5289651/story.html?cid=megadrop_story">
+              <span>Convertible sales slip; buyers opt for glass</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication30">
+<!-- legoctl: ctl31 --><!-- CACHE HIT: syndication30 -->
+<!-- Source="1011112.atom" --><div class="section_title">
+  <h3>
+    <span>Driving Life</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="http://www.driving.ca/ottawa/Britain+raise+highway+speeds+boost+economy/5484480/story.html?cid=megadrop_story">
+          <span>Britain to raise highway speeds to boost economy</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.driving.ca/ottawa/Ford+brings+back+recycle+your+ride+incentive/5484059/story.html?cid=megadrop_story">
+          <span>Ford brings back $3,000 recycle-your-ride incentive</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.driving.ca/ottawa/General+Motors+introduce+front+centre/5482740/story.html?cid=megadrop_story">
+          <span>General Motors to introduce front centre air bag</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.driving.ca/ottawa/delay+emissions+standards+gives+automakers+breathing+room/5470988/story.html?cid=megadrop_story">
+          <span>U.S. delay of new emissions standards gives automakers breathing room</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.driving.ca/ottawa/worst+cities+commuter+2011/5464635/story.html?cid=megadrop_story">
+          <span>IBM's 20 worst cities to be a commuter in 2011</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.driving.ca/ottawa/Automaker+reputations+rise+wake+Super+Bowl/5464512/story.html?cid=megadrop_story">
+          <span>Automaker reputations rise in wake of Super Bowl ads</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.driving.ca/ottawa/sales+robust+despite+gloomy+economy/5464486/story.html?cid=megadrop_story">
+          <span>Car sales robust despite gloomy economy</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.driving.ca/ottawa/Ottawa+commuter+takes+delivery+first+Nissan+Leaf/5458925/story.html?cid=megadrop_story">
+          <span>Ottawa commuter takes delivery of first Nissan Leaf</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_160">
+						<div class="section_title">
+							<h3><span>Features</span></h3>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div class="no_section_title top-pad">
+							<div id="syndication31">
+<!-- legoctl: ctl32 --><!-- CACHE HIT: syndication31 -->
+<!-- Source="1955187.atom" --><div class="section_title">
+  <h3>
+    <span>Used Cars</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="/microsites/used-car-guide/index.html">
+          <span>Special: Used Car Guide</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.driving.ca/microsites/autoshow/frankfurt/index.html">
+          <span>Auto shows</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.driving.ca/microsites/supercars/index.html">
+          <span>Special site: Sensational supercars</span>
+        </a>
+      </li>
+      <li>
+        <a href="/microsites/driver-education/index.html">
+          <span>Special: Driver Education</span>
+        </a>
+      </li>
+      <li>
+        <a href="/microsites/going-green/index.html">
+          <span>Going Green</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="view-more">
+						<div class="view-more-right"></div>
+						<div class="view-more-mid"><a href="http://www.driving.ca/ottawa">More in Cars</a></div>
+						<div class="view-more-left"></div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+	<li id="homes" class="mainnav">
+		<a class="navitem" href="http://www.househunting.ca/ottawa/index.html"><span>Homes</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>In Homes</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="http://www.househunting.ca/ottawa/index.html"><span>Home</span></a></li>
+										<li><a href="http://www.househunting.ca/ottawa/sale-and-rent/index.html"><span>For Sale/Rent</span></a></li>
+										<li><a href="http://www.househunting.ca/ottawa/Buying-Homes/index.html"><span>Tips for Buyer &amp; Sellers</span></a></li>
+										<li><a href="http://www.househunting.ca/ottawa/Home-Renovating/index.html"><span>Renovating</span></a></li>
+										<li><a href="http://www.househunting.ca/ottawa/decorating/index.html"><span>Decorating</span></a></li>
+										<li><a href="http://www.househunting.ca/ottawa/Homes-and-Gardens/index.html"><span>Gardening</span></a></li>
+										<li><a href="http://www.househunting.ca/ottawa/Condos/index.html"><span>Condo Living</span></a></li>
+										<li><a href="http://www.househunting.ca/ottawa/Vacation-Homes/index.html"><span>Vacation Homes</span></a></li>
+										<li><a href="http://www.househunting.ca/ottawa/Green-Homes/index.html"><span>Green Homes</span></a></li>
+										<li class="lastnoline"><a href="/mikeholmes/"><span>Mike Holmes</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Top Stories</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication32">
+<!-- legoctl: ctl33 --><!-- CACHE HIT: syndication32 -->
+<!-- Source="1816193.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="http://www.househunting.ca/ottawa/Choose+mortgage+that+fits+best/5464543/story.html?cid=megadrop_story" class="feature01">
+          <span>Choose mortgage that fits you the best</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="http://www.househunting.ca/ottawa/Choose+mortgage+that+fits+best/5464543/story.html?cid=megadrop_story">
+        <img border="0" src="5388174.bin?cid=megadrop_story&amp;size=130x88" alt="Mortgage" title="Mortgage">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">Be sure to discuss various options with your financial institution before choosing a mortgage.</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+          <li class="doc">
+            <a href="http://www.househunting.ca/ottawa/save+money+monthly/5388159/story.html?cid=megadrop_story">
+              <span>How to save money monthly</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://www.househunting.ca/ottawa/Expert+mortgage+game/4912615/story.html?cid=megadrop_story">
+              <span>Ask the Expert: The mortgage game</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://www.househunting.ca/ottawa/Protect+your+investment+with+seasonal+maintenance/5333134/story.html?cid=megadrop_story">
+              <span>Protect your investment with seasonal maintenance</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://www.househunting.ca/ottawa/Building+future/5425051/story.html?cid=megadrop_story">
+              <span>Building for the future</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://www.househunting.ca/ottawa/Reverse+mortgages/5424277/story.html?cid=megadrop_story">
+              <span>Reverse mortgages</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="http://www.househunting.ca/ottawa/choose+real+estate+agent/5299431/story.html?cid=megadrop_story">
+              <span>How to choose a real estate agent</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication33">
+<!-- legoctl: ctl34 --><!-- CACHE HIT: syndication33 -->
+<!-- Source="1816193.atom" --><div class="section_title">
+  <h3>
+    <span>Garden</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="http://www.househunting.ca/ottawa/garden+made+from+love+gratitude/5469796/story.html?cid=megadrop_story">
+          <span>A garden made from love and gratitude</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/Flushing+money+down+toilet/5464508/story.html?cid=megadrop_story">
+          <span>Flushing money down the toilet</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/cushy+condos+Boca+Raton/5469814/story.html?cid=megadrop_story">
+          <span>Sun, sea and cushy condos in Boca Raton</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/Photos+Most+expensive+houses+world/5484781/story.html?cid=megadrop_story">
+          <span>Photos: Most expensive houses in the world</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/versus+women+home+buying/5464517/story.html?cid=megadrop_story">
+          <span>Men versus women on home buying</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/Belt+real+estate+complicated/5464582/story.html?cid=megadrop_story">
+          <span>Sun Belt real estate can be complicated</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/From+beans+zucchini+harvest+time/5465036/story.html?cid=megadrop_story">
+          <span>From beans to zucchini, it's harvest time</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/Your+Part+ways+lower+your+lighting+costs/5464256/story.html?cid=megadrop_story">
+          <span>Do Your Part: 5 ways to lower your lighting costs</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/Draining+cottage+pipes+chore+necessary/5464532/story.html?cid=megadrop_story">
+          <span>Draining cottage pipes a chore, but necessary</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/Feds+focus+energy+efficiency/5460323/story.html?cid=megadrop_story">
+          <span>Feds focus on energy efficiency</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_160">
+						<div class="section_title">
+							<h3><span>Ottawa Homes</span></h3>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div class="no_section_title top-pad">
+							<div id="syndication34">
+<!-- legoctl: ctl35 --><!-- CACHE HIT: syndication34 -->
+<!-- Source="1483140.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="http://www.househunting.ca/ottawa/science+project+home/5482877/story.html?cid=megadrop_story">
+          <span>Not a ‘science project’ ... ... but a home</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/wood+finishes+here+stay/5483469/story.html?cid=megadrop_story">
+          <span>Low-VOC wood finishes here to stay</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/Home+design/5482986/story.html?cid=megadrop_story">
+          <span>Home design, the big-box way</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/Expert+Finance/5483460/story.html?cid=megadrop_story">
+          <span>Ask The Expert: Finance</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.househunting.ca/ottawa/Bulbs+offer+promise+spring/5483505/story.html?cid=megadrop_story">
+          <span>Bulbs offer promise of spring</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="view-more">
+						<div class="view-more-right"></div>
+						<div class="view-more-mid"><a href="http://www.househunting.ca/ottawa/index.html">More in Homes</a></div>
+						<div class="view-more-left"></div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+	<li id="classifieds" class="mainnav">
+		<a class="navitem" href="http://ottawacitizen.oodle.com/"><span>Classifieds</span></a>
+		<div class="subnav">
+			<a class="close-button"><img src="/images/button_close.jpg" alt="close" /></a>
+			<div class="subnavcontent">
+				<div class="wrapper_0_10_0_10">
+					<div class="col_170" style="overflow:hidden;">
+						<div class="col_160 tagged">
+							<div class="section_title">
+								<h3><span>In Classifieds</span></h3>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div id="textlinks">
+								<div class="featurecontent">
+									<ul class="bullet">
+										<li class="section_home"><a href="http://ottawacitizen.oodle.com/"><span>Home</span></a></li>
+										<li><a href="http://personals.ottawacitizen.oodle.com/"><span>Personals</span></a></li>
+										<li><a href="http://www.legacy.com/obituaries/ottawacitizen/"><span>Obituaries</span></a></li>
+										<li><a href="http://classifieds.canada.com/celebrating/ottawa/"><span>Announcements</span></a></li>
+										<li><a href="http://vehicles.ottawacitizen.oodle.com/"><span>Vehicles</span></a></li>
+										<li><a href="http://realestate.ottawacitizen.oodle.com/"><span>Real Estate</span></a></li>
+										<li><a href="http://apartments.ottawacitizen.oodle.com/"><span>Rentals</span></a></li>
+										<li><a href="http://jobs.ottawacitizen.oodle.com/"><span>Jobs</span></a></li>
+										<li><a href="http://pets.ottawacitizen.oodle.com/"><span>Pets</span></a></li>
+										<li><a href="http://forsale.ottawacitizen.oodle.com/"><span>For Sale</span></a></li>
+										<li><a href="http://www.ottawacitizen.com/shopping"><span>Shopping</span></a></li>
+										<li class="lastnoline"><a href="http://ottawacitizen.adperfect.com/"><span>Place an Ad</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_370" style="overflow:hidden;">
+						<div class="col_360">
+							<div class="section_title">
+								<h3><span>Top Stories</span></h3>
+							</div>
+							<div class="clear">&nbsp;</div>
+							<div class="no_section_title">
+								<div id="syndication35">
+<!-- legoctl: ctl36 --><!-- CACHE HIT: syndication35 -->
+<!-- Source="1011112.atom" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="topfeature03" class="topfeature03">
+  <div class="featurecontent">
+    <div class="headline">
+      <h1>
+        <a href="Chrysler+Canada+sales+leap+Ford+keeps+crown/5494175/story.html?cid=megadrop_story" class="feature01">
+          <span>Chrysler Canada sales leap, but Ford keeps crown</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"> </div>
+    <div class="col_image">
+      <a href="Chrysler+Canada+sales+leap+Ford+keeps+crown/5494175/story.html?cid=megadrop_story">
+        <img border="0" src="4791134.bin?cid=megadrop_story&amp;size=130x88" alt="A January 18, 2011 file photo of a worker helping to build a Chrysler Minivan on the assembly line at the Chrysler Windsor Assembly plant January 18, 2011 in Windsor, Ontario, Canada." title="A January 18, 2011 file photo of a worker helping to build a Chrysler Minivan on the assembly line at the Chrysler Windsor Assembly plant January 18, 2011 in Windsor, Ontario, Canada.">
+      </a>
+      <div class="clear"> </div>
+      <span class="photo_credit"></span>
+    </div>
+    <div class="col_content">
+      <div class="content">
+        <span class="text">Chrysler Canada reported its best September sales total in a decade Monday. The Detroit automaker said it sold 19,255 vehicles in the country last month, up 19% year-over-year, marking its best performance...</span>
+        <div class="clear"> </div>
+      </div>
+      <div class="relatedlinks">
+        <ul class="bullet">
+          <li class="doc">
+            <a href="Forget+electric+answer+diesel/5477801/story.html?cid=megadrop_story">
+              <span>Forget electric, the answer is diesel</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="Irene+likely+dented+August+auto+retail+sales/5327450/story.html?cid=megadrop_story">
+              <span>Irene likely dented August auto, retail sales</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="July+choppy+month+auto+sales/5200093/story.html?cid=megadrop_story">
+              <span>July a choppy month for auto sales</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="Chrysler+passes+Ford+truck+sales/5126611/story.html?cid=megadrop_story">
+              <span>Chrysler passes Ford in truck sales</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="sales+robust+despite+gloomy+economy/5464486/story.html?cid=megadrop_story">
+              <span>Car sales robust despite gloomy economy</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="Fuel+efficient+vehicles+drive+Ford+sales/5064404/story.html?cid=megadrop_story">
+              <span>Fuel-efficient vehicles drive Ford sales</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="Vehicle+sales+down+cent+July/5406941/story.html?cid=megadrop_story">
+              <span>Vehicle sales down 6.2 per cent in July</span>
+            </a>
+          </li>
+          <li class="doc">
+            <a href="Convertible+sales+slip+buyers+glass/5289651/story.html?cid=megadrop_story">
+              <span>Convertible sales slip; buyers opt for glass</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+ 
+								<div class="clear">&nbsp;</div>
+								<div class="rule_grey_solid">&nbsp;</div>
+								<div class="clear">&nbsp;</div>
+								<div class="textheadlines wrapper_10_0_0_0">
+									<div id="syndication36">
+<!-- legoctl: ctl37 --><!-- CACHE HIT: syndication36 -->
+<!-- Source="1011112.atom" --><div class="section_title">
+  <h3>
+    <span>Driving Life</span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="Britain+raise+highway+speeds+boost+economy/5484480/story.html?cid=megadrop_story">
+          <span>Britain to raise highway speeds to boost economy</span>
+        </a>
+      </li>
+      <li>
+        <a href="Ford+brings+back+recycle+your+ride+incentive/5484059/story.html?cid=megadrop_story">
+          <span>Ford brings back $3,000 recycle-your-ride incentive</span>
+        </a>
+      </li>
+      <li>
+        <a href="General+Motors+introduce+front+centre/5482740/story.html?cid=megadrop_story">
+          <span>General Motors to introduce front centre air bag</span>
+        </a>
+      </li>
+      <li>
+        <a href="delay+emissions+standards+gives+automakers+breathing+room/5470988/story.html?cid=megadrop_story">
+          <span>U.S. delay of new emissions standards gives automakers breathing room</span>
+        </a>
+      </li>
+      <li>
+        <a href="worst+cities+commuter+2011/5464635/story.html?cid=megadrop_story">
+          <span>IBM's 20 worst cities to be a commuter in 2011</span>
+        </a>
+      </li>
+      <li>
+        <a href="Automaker+reputations+rise+wake+Super+Bowl/5464512/story.html?cid=megadrop_story">
+          <span>Automaker reputations rise in wake of Super Bowl ads</span>
+        </a>
+      </li>
+      <li>
+        <a href="sales+robust+despite+gloomy+economy/5464486/story.html?cid=megadrop_story">
+          <span>Car sales robust despite gloomy economy</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col_160">
+						<div class="section_title">
+							<h3><span>Features</span></h3>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div class="no_section_title top-pad">
+							<div id="syndication37">
+<!-- legoctl: ctl38 --><!-- CACHE HIT: syndication37 -->
+<!-- Source="http://realestate.ottawacitizen.oodle.com/properties/commercial-property/?v=rss" --><div class="section_title">
+  <h3>
+    <span></span>
+  </h3>
+</div>
+<div class="clear"> </div>
+<div id="textlinks">
+  <div class="featurecontent">
+    <ul class="bullet">
+      <li>
+        <a href="http://ottawacitizen.oodle.com/u_rsxx_/2636444583-P211_2545p566,410/realestate.ottawacitizen.oodle.com___HJ4ftjduknRkawkqbThWfiwXvhoEEiFB_cyi9LYTv0hqMn1RBnEpf0sS_Fk6OML53R0UNABfczZ0k6AZjyq7VLOuolWeYI-HhZgnLH0BwdU33Ty9yH2lBw,,">
+          <span>2759 Fenton Road (Househunting.ca) $129,900</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://ottawacitizen.oodle.com/u_rsxx_/2325259597-P211_2545p566,410/realestate.ottawacitizen.oodle.com___HJ4ftjduknRkawkqbThWfiwXvhoEEiFB_cyi9LYTv0hqMn1RBnEpf1JBj9bRy6sdTsEulu4MPQfaoBa85CKooATAKPk-6d3NS7oiFZIQn1k33Ty9yH2lBw,,">
+          <span>75 Genest Street (Househunting.ca) $659,900</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://ottawacitizen.oodle.com/r_rsxx_/2672294688-2640p1096,410/comboads.adperfect.com___GIQUuk43BMuQSpFhBBAL2Sb9H33BMGFFHGAp9L66rCXkMXc64JiNrYWlUKkOlnkrDou2MnqrIaAysjSLphHWsJi1YGrhzWo8SpTdFFaU_mA,">
+          <span>For Sale or for Lease (Ottawa Citizen)</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://ottawacitizen.oodle.com/r_rsxx_/2096157187-1792u566,410/properties.househunting.ca___DwjWbvPFjI65p6VLyz5eFJ0Db9dIbG9ko7qNnshCntYfFjm7JoVw0mn-kr328DDAjEKIJM0WWZPVCGBSYYlAQA,,">
+          <span>Rideau/Waller St (househunting.ca) $215,000</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+					<div class="view-more">
+						<div class="view-more-right"></div>
+						<div class="view-more-mid"><a href="http://ottawacitizen.oodle.com">More in Classifieds</a></div>
+						<div class="view-more-left"></div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+				<div class="dottedline"></div>
+			</div>
+		</div>
+	</li>
+</ul>
+<div class="clear">&nbsp;</div>
+<div class="dmiss">
+	<div class="dmiss-word">Don't miss: </div>
+	<div id="syndication38">
+<!-- legoctl: ctl39 --><!-- CACHE HIT: syndication38 -->
+<!-- Source="974254.atom" --><ul class="bullet">
+  <li>
+    <a href="http://cycle.ottawacitizen.com ">
+      <span>CitizenCycle</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.ottawacitizen.com/news/weather-watch/index.html">
+      <span>Weather Watch</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.ottawacitizen.com/news/photos/home/index.html">
+      <span>Top Reader Photos</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.ottawacitizen.com/videos/index.html">
+      <span>Videos</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.ottawacitizen.com/news/photos/reader-photos/reader-photo-galleries/index.html">
+      <span>Reader Galleries</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://shopping.ottawacitizen.com/FSI/advertisers.aspx">
+      <span>This Week's Flyers</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://shopping.ottawacitizen.com/SS/Page.aspx?secid=107108&amp;pagenum=1&amp;sstarg=&amp;facing=false&amp;">
+      <span>Build magazine</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://shopping.ottawacitizen.com/SS/Page.aspx?ptype=SS_TILE&amp;secid=103387&amp;pagenum=1&amp;facing=false">
+      <span>Style Magazine</span>
+    </a>
+  </li>
+</ul>
+<div class="clear"> </div>
+<div class="morelinks">
+  <a href="">
+    <span></span>
+  </a> »
+			<a class="rss" href="http://www.ottawacitizen.com/974254.ATOM"><span>RSS</span></a></div></div>
+
+	<div class="clear">&nbsp;</div>
+</div>
+<!--/ottawacitizen/header_nav.inc -->
+				</div>
+				<!-- navbarwrapper ends -->
+			</div>
+			<!-- navabr ends -->
+			<div class="clear">&nbsp;</div>
+			<div class="contentbody">
+				<div class="bodywrapper">
+					
+					 
+<div class="col_640">
+  <div class="page_title">
+    <h3><span>Our blogs have moved!</span></h3>
+  </div>
+  <!-- page title ends -->
+  <div class="clear">&nbsp;</div>
+  <div class="col_620">
+    <div class="box_e5e5e5">
+      <div class="box_content">
+        <div class="section_title_no_line">
+          <h3><span></span></h3>
+          <div class="clear">&nbsp;</div>
+          <div class="text">Please use the list below to update your bookmarks and links. <br />
+            Click <a href="index.html">here</a> to go to the Ottawa Citizen blogs homepage.<br />
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <br />
+    <div class="section_title_bottom_border">
+      <h3><span>Defence Watch</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/category/news/defence-watch">http://blogs.ottawacitizen.com/category/news/defence-watch</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="section_title_bottom_border">
+      <h3><span>Omnivore's Ottawa</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/category/life/omnivores-ottawa/">http://blogs.ottawacitizen.com/category/life/omnivores-ottawa</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="section_title_bottom_border">
+      <h3><span>Greater Ottawa</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://postmediaottawacitizen.wordpress.com/tag/greater-ottawa/">http://postmediaottawacitizen.wordpress.com/tag/greater-ottawa</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="section_title_bottom_border">
+      <h3><span>Jazzblog</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/category/arts/jazzblog">http://blogs.ottawacitizen.com/category/arts/jazzblog</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="section_title_bottom_border">
+      <h3><span>Bulldog</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/tag/bulldog/">http://blogs.ottawacitizen.com/tag/bulldog</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="section_title_bottom_border">
+      <h3><span>The Big Beat</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/tag/big-beat/">http://blogs.ottawacitizen.com/tag/big-beat</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="section_title_bottom_border">
+      <h3><span>The Ed Board</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/tag/the-ed-board/">http://blogs.ottawacitizen.com/tag/the-ed-board</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="section_title_bottom_border">
+      <h3><span>Adventures of a Working Mom</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/tag/adventures-of-a-working-mom/">http://blogs.ottawacitizen.com/tag/adventures-of-a-working-mom</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+     <div class="section_title_bottom_border">
+      <h3><span>Par for the Course</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/tag/par-for-the-course/">http://blogs.ottawacitizen.com/tag/par-for-the-course</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+     <div class="section_title_bottom_border">
+      <h3><span>Classical Ottawa</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/tag/classical-ottawa/">blogs.ottawacitizen.com/tag/classical-ottawa</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+     <div class="section_title_bottom_border">
+      <h3><span>Festival goers</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://postmediaottawacitizen.wordpress.com/category/arts/festivals/">http://postmediaottawacitizen.wordpress.com/category/arts/festivals/</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="section_title_bottom_border">
+      <h3><span>The Beautiful Game</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/category/sports/beautiful-game">http://blogs.ottawacitizen.com/category/sports/beautiful-game</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="section_title_bottom_border">
+      <h3><span>Scouring the Sidelines</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/tag/scouring-the-sidelines/">http://blogs.ottawacitizen.com/tag/scouring-the-sidelines</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="section_title_bottom_border">
+      <h3><span>Critic's Room</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/tag/critics-room/">http://blogs.ottawacitizen.com/tag/critics-room</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="section_title_bottom_border">
+      <h3><span>Ideas & Consequences</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/tag/ideas-and-consequences/">http://blogs.ottawacitizen.com/tag/ideas-and-consequences</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="section_title_bottom_border">
+      <h3><span>Real Deal</span></h3>
+      <div class="clear padding_10_0_0_0">&nbsp;</div>
+      <a href="http://blogs.ottawacitizen.com/tag/real-deal/">http://blogs.ottawacitizen.com/tag/real-deal</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+  </div>
+  <!-- col_620 ends --> 
+</div>
+<!-- col_640 ends -->
+<div class="col_300">
+  <div class="bigboxwrapper">
+    <!-- /bigboxad.inc -->
+	
+	<div style="text-align:center;" class="bboxContainer">
+		<div id="dartad39">
+<!-- legoctl: ctl40 --><!-- NO CACHE: dartad39 -->
+
+                        <script type="text/javascript">
+                        adcookieTag = typeof(adcookieTag) != 'undefined' ? adcookieTag : '';
+                        dartad_tile = typeof(dartad_tile) != 'undefined' ? dartad_tile + 1 : 1;
+                        var dartad_url = "http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=top_box;loc=top;sz=250x250,300x250,300x600;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile="+dartad_tile+";"+adcookieTag+surroundTag+"ord=27041593?"; // script ad code with adcookie, used for debug
+                        document.write('<script language="JavaScript1.1" src="http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=top_box;loc=top;sz=250x250,300x250,300x600;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile='+dartad_tile+';'+adcookieTag+surroundTag+'ord=27041593?"><\/script>');
+                        </script>
+                    
+                        <script type="text/javascript">
+                        if(adid != "") // check if the ad should start a surround session only if a surround session has not yet started
+                        {
+                            surroundTag = "srnd="+adid+";"; // setup the key-value for a surround session
+                            setSurroundCookie(adid); // store the surround session id in a cookie.
+                        }
+                        </script>
+                        <noscript>
+			    <a target="_blank" href="http://ad.ca.doubleclick.net/N3081/jump/oc_opin.com/opinion/blogs/blog-migration;loc=top_box;loc=top;sz=250x250,300x250,300x600;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?"><img align="TOP" border="0" vspace="0" hspace="0" src="http://ad.ca.doubleclick.net/N3081/ad/oc_opin.com/opinion/blogs/blog-migration;loc=top_box;loc=top;sz=250x250,300x250,300x600;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?" /></a>
+                </noscript>
+</div>
+
+	</div>
+	<div class="clear">&nbsp;</div>
+<br />
+<br clear="all">
+	<!--/includes/swarmjam.inc -->
+
+	<div class="rightadwrapper">
+		<script>var cx_wdgms=7000;</script>
+		<script language="javascript" type="text/javascript" src="http://wdg.swarmjam.com/sj/sj/cn/wdgr300_125.jsp?_OWNERID=7"></script>  
+	</div>
+	
+<!--/includes/swarmjam.inc -->
+
+
+<!-- /bigboxad.inc -->
+  </div>
+  <!-- bigboxwrapper ends -->
+  <div class="clear">&nbsp;</div>
+  <!--/mostpopular.inc -->
+
+ <div class="tabbox_300">
+    <div class="top">
+      <div class="section_title">
+        <h3><span>Most Popular News</span></h3>
+      </div>
+      <!-- section title ends -->
+    </div>
+    <!-- top ends -->
+    <div class="center">
+		
+		<div id="mostpopular" class="tab_id_01">
+					<div class="textheadlines">
+						<div class="sectiontab">
+							<ul class="tab">
+								<li class="tab01"><a href="javascript:setClass('mostpopular','tab_id_01');"><span>Most Read</span></a></li>
+								<li class="tab02"><a href="javascript:setClass('mostpopular','tab_id_02');"><span>E-mailed</span></a></li>
+								<li class="tab03"><a href="javascript:setClass('mostpopular','tab_id_03');"><span>Commented </span></a></li>
+							</ul>
+							<!-- tab ends -->
+						</div>
+						<!-- sectiontab ends -->
+						<div class="clear">&nbsp;</div>
+						<div class="content content_01">
+							<div id="syndication40">
+<!-- legoctl: ctl41 --><!-- CACHE HIT: syndication40 -->
+<!-- Source="/scripts/mostpopular.aspx?stattype=story" --><ul class="bullet">
+  <li>
+    <a href="/Pedestrian+struck+killed+vehicle/5491528/story.html">
+      <span>Pedestrian struck, killed by vehicle</span>
+    </a>
+  </li>
+  <li>
+    <a href="/Dewar+call+politics+borne+faith/5489536/story.html">
+      <span>Dewar’s call to politics borne of his faith</span>
+    </a>
+  </li>
+  <li>
+    <a href="/seriously+hurt+blaze+destroys+trailer+home/5490770/story.html">
+      <span>Man seriously hurt as blaze destroys trailer home</span>
+    </a>
+  </li>
+  <li>
+    <a href="/Ottawa+West+Nepean+endorsement+Denley+best+strong+group/5493366/story.html">
+      <span>Ottawa West-Nepean endorsement: Denley best in a strong group</span>
+    </a>
+  </li>
+  <li>
+    <a href="/Dewar+confirms+leadership/5490935/story.html">
+      <span>Dewar confirms bid for NDP leadership</span>
+    </a>
+  </li>
+  <li>
+    <a href="/McGuinty+rules+coalition+with/5490929/story.html">
+      <span>McGuinty rules out coalition with NDP</span>
+    </a>
+  </li>
+</ul>
+<div class="clear"> </div>
+<div class="morelinks">
+  <a href="/most-popular-articles.html">
+    <span>more</span>
+  </a> »
+			<a class="rss" href="http://www.ottawacitizen.com/opinion/letters/Adult+diners+wish+beside+children/3236158/Chrysler+Canada+sales+leap+Ford+keeps+crown/5494175/story.html?id=5494175&amp;cid=megadrop_story"><span>RSS</span></a></div></div>
+
+						</div>
+						<!-- content ends -->
+						<div class="content content_02">
+							<div id="syndication41">
+<!-- legoctl: ctl42 --><!-- CACHE HIT: syndication41 -->
+<!-- Source="/scripts/mostpopular.aspx?stattype=email" --><ul class="bullet">
+  <li>
+    <a href="/Tories+ready+breaks+small+business/5491772/story.html">
+      <span>Tories ready tax breaks for small business</span>
+    </a>
+  </li>
+  <li>
+    <a href="/Pedestrian+struck+killed+vehicle/5491528/story.html">
+      <span>Pedestrian struck, killed by vehicle</span>
+    </a>
+  </li>
+  <li>
+    <a href="/Dewar+call+politics+borne+faith/5489536/story.html">
+      <span>Dewar’s call to politics borne of his faith</span>
+    </a>
+  </li>
+  <li>
+    <a href="/Seniors+Summit+aims+make+Ottawa+better+place+elderly/5493504/story.html">
+      <span>‘Seniors Summit’ aims to make Ottawa a better place for the elderly</span>
+    </a>
+  </li>
+  <li>
+    <a href="/Acting+best+medicine/5491849/story.html">
+      <span>Acting's the best medicine</span>
+    </a>
+  </li>
+  <li>
+    <a href="/Ontario+votes+Endorsements/5491799/story.html">
+      <span>Ontario votes our Endorsements</span>
+    </a>
+  </li>
+</ul>
+<div class="clear"> </div>
+<div class="morelinks">
+  <a href="/most-popular-articles.html">
+    <span>more</span>
+  </a> »
+			<a class="rss" href="http://www.ottawacitizen.com/opinion/letters/Adult+diners+wish+beside+children/3236158/Chrysler+Canada+sales+leap+Ford+keeps+crown/5494175/story.html?id=5494175&amp;cid=megadrop_story"><span>RSS</span></a></div></div>
+
+						</div>
+						<!-- content ends -->
+						<div class="content content_03">
+							<!-- cwi:syndication source="/scripts/mostpopular.aspx?stattype=comment&TimeRestriction=24" template="MostPopular" MoreViewer="/most-popular-articles.html" MoreTitle="more" StartAtDoc="1" maxdocs="6" / -->
+							<div id="mostCommented"></div>
+							<script>setMostCommented("mostCommented", 6, 15);</script>
+						</div>
+						<!-- content ends -->
+					</div>
+					<!-- textheadlines ends -->
+				</div>
+				<!-- mostpopular ends -->
+				<div class="clear">&nbsp;</div>
+				<!--/sponsor_hr.inc -->
+
+				<div class="sponsor_hr">
+					<div class="sponsor">
+						<div class="label">
+							<span>Sponsored By</span>
+						</div>
+						<div class="logo">
+							<!-- cwi:dartad Loc="sponsor,top" sz="80x30" / -->
+						</div>
+					</div>
+					<!-- sponsor ends-->
+				</div>
+				<!-- sponsor_hr ends-->
+
+<!--/sponsor_hr.inc -->
+    	</div>
+    	<!-- center ends -->
+	<div class="clear">&nbsp;</div>
+    <div class="bottom">&nbsp;</div>
+    <!-- bottom ends -->
+  </div>
+  <!-- tabbox_300 ends -->
+
+<!--/mostpopular.inc -->
+  <div class="clear">&nbsp;</div>
+  <div class="impulsewrapper_hr">
+    <!-- /adimpulse_hr.inc -->
+
+	<div style="text-align:center">
+		<div id="dartad42">
+<!-- legoctl: ctl43 --><!-- NO CACHE: dartad42 -->
+
+                        <script type="text/javascript">
+                        adcookieTag = typeof(adcookieTag) != 'undefined' ? adcookieTag : '';
+                        dartad_tile = typeof(dartad_tile) != 'undefined' ? dartad_tile + 1 : 1;
+                        var dartad_url = "http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=adimpulse;loc=top;sz=300x100;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile="+dartad_tile+";"+adcookieTag+surroundTag+"ord=27041593?"; // script ad code with adcookie, used for debug
+                        document.write('<script language="JavaScript1.1" src="http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=adimpulse;loc=top;sz=300x100;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile='+dartad_tile+';'+adcookieTag+surroundTag+'ord=27041593?"><\/script>');
+                        </script>
+                    
+                        <script type="text/javascript">
+                        if(adid != "") // check if the ad should start a surround session only if a surround session has not yet started
+                        {
+                            surroundTag = "srnd="+adid+";"; // setup the key-value for a surround session
+                            setSurroundCookie(adid); // store the surround session id in a cookie.
+                        }
+                        </script>
+                        <noscript>
+			    <a target="_blank" href="http://ad.ca.doubleclick.net/N3081/jump/oc_opin.com/opinion/blogs/blog-migration;loc=adimpulse;loc=top;sz=300x100;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?"><img align="TOP" border="0" vspace="0" hspace="0" src="http://ad.ca.doubleclick.net/N3081/ad/oc_opin.com/opinion/blogs/blog-migration;loc=adimpulse;loc=top;sz=300x100;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?" /></a>
+                </noscript>
+</div>
+
+	</div>
+
+<!-- /adimpulse_hr.inc -->
+  </div>
+  <!-- impulsewrapper_hr ends -->
+  <div class="clear">&nbsp;</div>
+  <!--/sponsoredlinks_hr.inc -->
+
+				<div id="sponsoredlinks" class="sponsoredlinks">
+					<div class="section_title_no_line">
+        				<h3><span>Sponsored Links</span></h3>
+     				</div>
+      				<!-- title_section ends -->
+      				<div class="clear">&nbsp;</div>
+					<div class="content">
+						<ul class="bullet">
+							<li><div id="dartad43">
+<!-- legoctl: ctl44 --><!-- NO CACHE: dartad43 -->
+
+                        <script type="text/javascript">
+                        adcookieTag = typeof(adcookieTag) != 'undefined' ? adcookieTag : '';
+                        dartad_tile = typeof(dartad_tile) != 'undefined' ? dartad_tile + 1 : 1;
+                        var dartad_url = "http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=textlink;loc=top;sz=125x125;kw=ron;kw=opinion;kw=blogs;kw=top;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile="+dartad_tile+";"+adcookieTag+surroundTag+"ord=27041593?"; // script ad code with adcookie, used for debug
+                        document.write('<script language="JavaScript1.1" src="http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=textlink;loc=top;sz=125x125;kw=ron;kw=opinion;kw=blogs;kw=top;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile='+dartad_tile+';'+adcookieTag+surroundTag+'ord=27041593?"><\/script>');
+                        </script>
+                    
+                        <script type="text/javascript">
+                        if(adid != "") // check if the ad should start a surround session only if a surround session has not yet started
+                        {
+                            surroundTag = "srnd="+adid+";"; // setup the key-value for a surround session
+                            setSurroundCookie(adid); // store the surround session id in a cookie.
+                        }
+                        </script>
+                        <noscript>
+			    <a target="_blank" href="http://ad.ca.doubleclick.net/N3081/jump/oc_opin.com/opinion/blogs/blog-migration;loc=textlink;loc=top;sz=125x125;kw=ron;kw=opinion;kw=blogs;kw=top;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?"><img align="TOP" border="0" vspace="0" hspace="0" src="http://ad.ca.doubleclick.net/N3081/ad/oc_opin.com/opinion/blogs/blog-migration;loc=textlink;loc=top;sz=125x125;kw=ron;kw=opinion;kw=blogs;kw=top;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?" /></a>
+                </noscript>
+</div>
+</li>
+							<li><div id="dartad44">
+<!-- legoctl: ctl45 --><!-- NO CACHE: dartad44 -->
+
+                        <script type="text/javascript">
+                        adcookieTag = typeof(adcookieTag) != 'undefined' ? adcookieTag : '';
+                        dartad_tile = typeof(dartad_tile) != 'undefined' ? dartad_tile + 1 : 1;
+                        var dartad_url = "http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=textlink;loc=mid;sz=125x125;kw=ron;kw=opinion;kw=blogs;kw=mid;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile="+dartad_tile+";"+adcookieTag+surroundTag+"ord=27041593?"; // script ad code with adcookie, used for debug
+                        document.write('<script language="JavaScript1.1" src="http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=textlink;loc=mid;sz=125x125;kw=ron;kw=opinion;kw=blogs;kw=mid;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile='+dartad_tile+';'+adcookieTag+surroundTag+'ord=27041593?"><\/script>');
+                        </script>
+                    
+                        <script type="text/javascript">
+                        if(adid != "") // check if the ad should start a surround session only if a surround session has not yet started
+                        {
+                            surroundTag = "srnd="+adid+";"; // setup the key-value for a surround session
+                            setSurroundCookie(adid); // store the surround session id in a cookie.
+                        }
+                        </script>
+                        <noscript>
+			    <a target="_blank" href="http://ad.ca.doubleclick.net/N3081/jump/oc_opin.com/opinion/blogs/blog-migration;loc=textlink;loc=mid;sz=125x125;kw=ron;kw=opinion;kw=blogs;kw=mid;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?"><img align="TOP" border="0" vspace="0" hspace="0" src="http://ad.ca.doubleclick.net/N3081/ad/oc_opin.com/opinion/blogs/blog-migration;loc=textlink;loc=mid;sz=125x125;kw=ron;kw=opinion;kw=blogs;kw=mid;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?" /></a>
+                </noscript>
+</div>
+</li>
+							<li><div id="dartad45">
+<!-- legoctl: ctl46 --><!-- NO CACHE: dartad45 -->
+
+                        <script type="text/javascript">
+                        adcookieTag = typeof(adcookieTag) != 'undefined' ? adcookieTag : '';
+                        dartad_tile = typeof(dartad_tile) != 'undefined' ? dartad_tile + 1 : 1;
+                        var dartad_url = "http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=textlink;loc=bot;sz=125x125;kw=ron;kw=opinion;kw=blogs;kw=bot;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile="+dartad_tile+";"+adcookieTag+surroundTag+"ord=27041593?"; // script ad code with adcookie, used for debug
+                        document.write('<script language="JavaScript1.1" src="http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=textlink;loc=bot;sz=125x125;kw=ron;kw=opinion;kw=blogs;kw=bot;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile='+dartad_tile+';'+adcookieTag+surroundTag+'ord=27041593?"><\/script>');
+                        </script>
+                    
+                        <script type="text/javascript">
+                        if(adid != "") // check if the ad should start a surround session only if a surround session has not yet started
+                        {
+                            surroundTag = "srnd="+adid+";"; // setup the key-value for a surround session
+                            setSurroundCookie(adid); // store the surround session id in a cookie.
+                        }
+                        </script>
+                        <noscript>
+			    <a target="_blank" href="http://ad.ca.doubleclick.net/N3081/jump/oc_opin.com/opinion/blogs/blog-migration;loc=textlink;loc=bot;sz=125x125;kw=ron;kw=opinion;kw=blogs;kw=bot;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?"><img align="TOP" border="0" vspace="0" hspace="0" src="http://ad.ca.doubleclick.net/N3081/ad/oc_opin.com/opinion/blogs/blog-migration;loc=textlink;loc=bot;sz=125x125;kw=ron;kw=opinion;kw=blogs;kw=bot;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?" /></a>
+                </noscript>
+</div>
+</li>
+						</ul>
+						<!-- bullet ends -->
+					</div>
+					<!-- content ends -->
+				</div>
+
+<!--/sponsoredlinks_hr.inc -->
+
+  <div class="clear">&nbsp;</div>
+      <div id="pollfeature">
+        <div id="poll46">
+<!-- legoctl: ctl47 --><!-- NO CACHE: poll46 -->
+<!-- poll loaded from cache --><div class="boxAll corner topLeft">&nbsp;</div>
+<div class="boxAll edge topMiddle ceilingFloor">&nbsp;</div>
+<div class="boxAll corner topRight">&nbsp;</div>
+<div class="boxAll edge pollStuff">
+<form method="post" name="poll" id="poll" action="http://www.ottawacitizen.com/opinion/blogs/blog-migration.html">
+<input type="hidden" name="poll" value="149315">
+<strong>Poll</strong>
+<div class="pollrule">&nbsp;</div>
+<div class="clear">&nbsp;</div>
+Do you think the way the Alberta Tories choose their leaders is flawed?<div class="ask radioHead">
+<input type="radio" name="answer" value="0"></div>
+<div class="ask doYou">Yes</div>
+<div class="clear">&nbsp;</div>
+<div class="ask radioHead">
+<input type="radio" name="answer" value="1"></div>
+<div class="ask doYou">No</div>
+<div class="clear">&nbsp;</div>
+<div class="ask vote">
+<input type="image" src="/images/buttons/en_poll_vote.gif">
+</div></form>
+<div class="pollrule">&nbsp;</div>
+<div class="clear">&nbsp;</div>
+</div>
+<div class="boxAll corner botLeft">&nbsp;</div>
+<div class="boxAll edge botMiddle ceilingFloor">&nbsp;</div>
+<div class="boxAll corner botRight">&nbsp;</div>
+</div>
+
+      </div>
+      <!-- poll ends -->
+      <div class="clear">&nbsp;</div>
+      <div class="section_title">
+        <h3><a href="/opinion/op-ed/index.html"><span>Op-Ed &#187;</span></a></h3>
+      </div>
+      <!-- section_title ends -->
+      <div class="clear">&nbsp;</div>
+      <div class="no_section_title">
+      <div id="shortfeature" class="shortfeature02"> 
+		<div id="syndication47">
+<!-- legoctl: ctl48 --><!-- CACHE HIT: syndication47 -->
+<!-- Source="824929.atom" --><div class="section_title"><h3><span>Arguments</span></h3></div><div class="clear"> </div><div id="shortfeature" class="shortfeature"><div class="featurecontent"><div class="newsimage"><a href="look+Ontario+future/5486271/story.html"><img border="0" src="5486272.bin?size=130x88" alt="Workers maintain solar panels on the roof of a warehouse in Buerstadt, Germany." title="Workers maintain solar panels on the roof of a warehouse in Buerstadt, Germany."></a></div><h1><a href="look+Ontario+future/5486271/story.html"><span>A look at Ontario's future</span></a></h1><p class="newscontent"><a href="look+Ontario+future/5486271/story.html"><span>When Ontario voters go to the polls this Thursday, they are participating to some degree in a referendum on the Green Energy Act, the ambitious policy passed by Dalton McGuinty's Liberal government in 2009 with the intent of vaulting Ontario into the front ranks of the global cleantech economy. <span class="morearrow">»</span></span></a></p></div><div class="featurecontent"><h1><a href="Dalton+fiscal+record+plain+lousy/5486273/story.html"><span>Dalton's fiscal record is plain lousy</span></a></h1><p class="newscontent"><a href="Dalton+fiscal+record+plain+lousy/5486273/story.html"><span>Next week's Ontario election could be a nail-biter. For those individuals leaning toward Premier Dalton McGuinty and the Liberals, you might want to look more closely at his economic record before casting a ballot. <span class="morearrow">»</span></span></a></p></div></div></div>
+ 
+	  </div>
+    </div>
+    <!-- no section title ends -->
+      <div class="clear">&nbsp;</div>
+      <div class="section_morelink">
+        <div class="featurecontent"> <a href="/opinion/op-ed/index.html"><span>Op-Ed &#187;</span></a> </div>
+        <!-- featurecontent ends -->
+      </div>
+      <!-- morelink ends -->
+	<div class="clear">&nbsp;</div>
+	<div class="bigboxwrapper">
+		<!-- /bigboxadlower.inc -->
+
+	<div id="bigboxlower" style="text-align:center;" class="bboxContainer">
+		<div id="dartad48">
+<!-- legoctl: ctl49 --><!-- NO CACHE: dartad48 -->
+
+                        <script type="text/javascript">
+                        adcookieTag = typeof(adcookieTag) != 'undefined' ? adcookieTag : '';
+                        dartad_tile = typeof(dartad_tile) != 'undefined' ? dartad_tile + 1 : 1;
+                        var dartad_url = "http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=bot_box;loc=bot;sz=250x250,300x250;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile="+dartad_tile+";"+adcookieTag+surroundTag+"ord=27041593?"; // script ad code with adcookie, used for debug
+                        document.write('<script language="JavaScript1.1" src="http://ad.ca.doubleclick.net/N3081/adj/oc_opin.com/opinion/blogs/blog-migration;loc=bot_box;loc=bot;sz=250x250,300x250;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;tile='+dartad_tile+';'+adcookieTag+surroundTag+'ord=27041593?"><\/script>');
+                        </script>
+                    
+                        <script type="text/javascript">
+                        if(adid != "") // check if the ad should start a surround session only if a surround session has not yet started
+                        {
+                            surroundTag = "srnd="+adid+";"; // setup the key-value for a surround session
+                            setSurroundCookie(adid); // store the surround session id in a cookie.
+                        }
+                        </script>
+                        <noscript>
+			    <a target="_blank" href="http://ad.ca.doubleclick.net/N3081/jump/oc_opin.com/opinion/blogs/blog-migration;loc=bot_box;loc=bot;sz=250x250,300x250;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?"><img align="TOP" border="0" vspace="0" hspace="0" src="http://ad.ca.doubleclick.net/N3081/ad/oc_opin.com/opinion/blogs/blog-migration;loc=bot_box;loc=bot;sz=250x250,300x250;kw=ron;kw=opinion;kw=blogs;nk=print;pr=oc;ck=opinion;sck=blogs;page=blog-migration;kw=oc;ord=27041593?" /></a>
+                </noscript>
+</div>
+
+	</div>
+
+<!-- /bigboxadlower.inc -->	
+	</div>
+</div>
+<!-- col_300 ends -->
+<div class="clear">&nbsp;</div>
+<!-- /footerfeature.inc --><div id="footerfeature" class="footerfeature">	<div class="footer_title">		<span class="start_quote">&nbsp;</span>		<span class="title">Inside Ottawa Citizen</span>		<span class="end_quote">&nbsp;</span>	</div>    <!-- footer_title ends -->	<div class="clear">&nbsp;</div>		 <div id="syndication49">
+<!-- legoctl: ctl50 --><!-- CACHE HIT: syndication49 -->
+<!-- Source="/Scripts/Aggregate.aspx?source=950760.atom,4&source=969791.atom,6" --><script>
+			   CDMScriptManager.load("/js/slider.js");
+			</script>
+<div class="col_67" style="position:relative;" id="FooterFeature_2_LeftNav">
+  <div class="nav" id="FooterFeature_2_LeftNavChild">
+    <a href="javascript: void(0)" id="FooterFeature_2_LeftNavButton">
+      <img style="position:relative;left:0px;top:0px;" alt="" title="" src="http://www.ottawacitizen.com/images/left_arrow_normal.gif" class="" onmouseover="javascript:this.src=&quot;http://www.ottawacitizen.com/images/left_arrow_hover.gif&quot;;" onmouseout="javascript:this.src=&quot;http://www.ottawacitizen.com/images/left_arrow_normal.gif&quot;;" onmousedown="javascript:this.src=&quot;http://www.ottawacitizen.com/images/left_arrow_active.gif&quot;;this.style.top='1px';this.style.left='1px';" onmouseup="javascript:this.src=&quot;http://www.ottawacitizen.com/images/left_arrow_normal.gif&quot;;this.style.top='0px';this.style.left='0px';">
+    </a>
+  </div>
+</div>
+<div class="contentwrapper" style="overflow:hidden;position:relative;float:left;" id="FooterFeature_2_Window">
+  <div style="position:relative;" id="FooterFeature_2_Content">
+    <div class="col_160" style="overflow:hidden;position:absolute;" id="FooterFeature_2_Entry_0">
+      <div class="wrapper_0_10_0_10">
+        <div class="col_140">
+          <div class="no_section_title">
+            <div class="clear"> </div>
+            <div id="featurewidget" class="smallfeature">
+              <div class="featurecontent">
+                <div class="newsimage">
+                  <a href="Obesity+debate+rages+talk+Christie+White+House/5494405/story.html">
+                    <img border="0" src="5494432.bin?size=140x95" alt="Christie" title="Christie">
+                  </a>
+                </div>
+                <h1>
+                  <a href="Obesity+debate+rages+talk+Christie+White+House/5494405/story.html">
+                    <span>
+                      <span>Obesity debate rages on talk of Christie White House bid</span>
+                    </span>
+                  </a>
+                </h1>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col_160" style="overflow:hidden;position:absolute;" id="FooterFeature_2_Entry_1">
+      <div class="wrapper_0_10_0_10">
+        <div class="col_140">
+          <div class="no_section_title">
+            <div class="clear"> </div>
+            <div id="featurewidget" class="smallfeature">
+              <div class="featurecontent">
+                <div class="newsimage">
+                  <a href="Outdoor+Life+When+things+bump+night/5489035/story.html">
+                    <img border="0" src="5489036.bin?size=140x95" alt="Playing outside when it’s dark is a lot of fun for the kids, especially if they get to use a flashlight." title="Playing outside when it’s dark is a lot of fun for the kids, especially if they get to use a flashlight.">
+                  </a>
+                </div>
+                <h1>
+                  <a href="Outdoor+Life+When+things+bump+night/5489035/story.html">
+                    <span>
+                      <span>Outdoor Life: When things go bump in the night</span>
+                    </span>
+                  </a>
+                </h1>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col_160" style="overflow:hidden;position:absolute;" id="FooterFeature_2_Entry_2">
+      <div class="wrapper_0_10_0_10">
+        <div class="col_140">
+          <div class="no_section_title">
+            <div class="clear"> </div>
+            <div id="featurewidget" class="smallfeature">
+              <div class="featurecontent">
+                <div class="newsimage">
+                  <a href="Kanye+West+makes+fashion+debut+Paris/5489192/story.html">
+                    <img border="0" src="5493748.bin?size=140x95" alt="Kanye West" title="Kanye West">
+                  </a>
+                </div>
+                <h1>
+                  <a href="Kanye+West+makes+fashion+debut+Paris/5489192/story.html">
+                    <span>
+                      <span>Kanye West makes fashion debut in Paris</span>
+                    </span>
+                  </a>
+                </h1>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col_160" style="overflow:hidden;position:absolute;" id="FooterFeature_2_Entry_3">
+      <div class="wrapper_0_10_0_10">
+        <div class="col_140">
+          <div class="no_section_title">
+            <div class="clear"> </div>
+            <div id="featurewidget" class="smallfeature">
+              <div class="featurecontent">
+                <div class="newsimage">
+                  <a href="Pink+fatigue/5484442/story.html">
+                    <img border="0" src="5484443.bin?size=140x95" alt="Laurie Kingston’s pinnie at last year’s CIBC Run for the Cure. 
+ Photo by Andrea Ross" title="Laurie Kingston’s pinnie at last year’s CIBC Run for the Cure. 
+ Photo by Andrea Ross">
+                  </a>
+                </div>
+                <h1>
+                  <a href="Pink+fatigue/5484442/story.html">
+                    <span>
+                      <span>Pink fatigue</span>
+                    </span>
+                  </a>
+                </h1>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col_160" style="overflow:hidden;position:absolute;" id="FooterFeature_2_Entry_4">
+      <div class="wrapper_0_10_0_10">
+        <div class="col_140">
+          <div class="no_section_title">
+            <div class="clear"> </div>
+            <div id="featurewidget" class="smallfeature">
+              <div class="featurecontent">
+                <div class="newsimage">
+                  <a href="/health/Denmark+levies+world+first/5488375/story.html">
+                    <img border="0" src="5488374.bin?size=140x95" alt="Denmark levies world's first fat tax" title="Denmark levies world's first fat tax">
+                  </a>
+                </div>
+                <h1>
+                  <a href="/health/Denmark+levies+world+first/5488375/story.html">
+                    <span>
+                      <span>Denmark levies world's first fat tax</span>
+                    </span>
+                  </a>
+                </h1>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col_160" style="overflow:hidden;position:absolute;" id="FooterFeature_2_Entry_5">
+      <div class="wrapper_0_10_0_10">
+        <div class="col_140">
+          <div class="no_section_title">
+            <div class="clear"> </div>
+            <div id="featurewidget" class="smallfeature">
+              <div class="featurecontent">
+                <div class="newsimage">
+                  <a href="/entertainment/Photos+Cirque+Michael+Jackson+show/5494272/story.html">
+                    <img border="0" src="5491256.bin?size=140x95" alt="Cirque du Soleil Michael Jackson The Immortal World Tour" title="Cirque du Soleil Michael Jackson The Immortal World Tour">
+                  </a>
+                </div>
+                <h1>
+                  <a href="/entertainment/Photos+Cirque+Michael+Jackson+show/5494272/story.html">
+                    <span>
+                      <span>Photos: Cirque's Michael Jackson show</span>
+                    </span>
+                  </a>
+                </h1>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col_160" style="overflow:hidden;position:absolute;" id="FooterFeature_2_Entry_6">
+      <div class="wrapper_0_10_0_10">
+        <div class="col_140">
+          <div class="no_section_title">
+            <div class="clear"> </div>
+            <div id="featurewidget" class="smallfeature">
+              <div class="featurecontent">
+                <div class="newsimage">
+                  <a href="/entertainment/Gene+Simmons+marries+long+time+girlfriend+Shannon+Tweed/5491066/story.html">
+                    <img border="0" src="5491067.bin?size=140x95" alt="Gene Simmons of the band KISS and partner Shannon Tweed have dinner at Al's Steakhouse on Elgin Street in Ottawa, Ont., Jul. 14, 2009" title="Gene Simmons of the band KISS and partner Shannon Tweed have dinner at Al's Steakhouse on Elgin Street in Ottawa, Ont., Jul. 14, 2009">
+                  </a>
+                </div>
+                <h1>
+                  <a href="/entertainment/Gene+Simmons+marries+long+time+girlfriend+Shannon+Tweed/5491066/story.html">
+                    <span>
+                      <span>Gene Simmons gets married</span>
+                    </span>
+                  </a>
+                </h1>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col_160" style="overflow:hidden;position:absolute;" id="FooterFeature_2_Entry_7">
+      <div class="wrapper_0_10_0_10">
+        <div class="col_140">
+          <div class="no_section_title">
+            <div class="clear"> </div>
+            <div id="featurewidget" class="smallfeature">
+              <div class="featurecontent">
+                <div class="newsimage">
+                  <a href="/life/Sacre+bleu+this+long+French+lunch/5485280/story.html">
+                    <img border="0" src="5471743.bin?size=140x95" alt="Warming Paris" title="Warming Paris">
+                  </a>
+                </div>
+                <h1>
+                  <a href="/life/Sacre+bleu+this+long+French+lunch/5485280/story.html">
+                    <span>
+                      <span>Long French lunch at an end?</span>
+                    </span>
+                  </a>
+                </h1>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col_160" style="overflow:hidden;position:absolute;" id="FooterFeature_2_Entry_8">
+      <div class="wrapper_0_10_0_10">
+        <div class="col_140">
+          <div class="no_section_title">
+            <div class="clear"> </div>
+            <div id="featurewidget" class="smallfeature">
+              <div class="featurecontent">
+                <div class="newsimage">
+                  <a href="/entertainment/Gallery+Canada+Walk+Fame/5490974/story.html">
+                    <img border="0" src="5489347.bin?size=140x95" alt="14th annual Canada's Walk of Fame" title="14th annual Canada's Walk of Fame">
+                  </a>
+                </div>
+                <h1>
+                  <a href="/entertainment/Gallery+Canada+Walk+Fame/5490974/story.html">
+                    <span>
+                      <span>Gallery: Canada's Walk of Fame</span>
+                    </span>
+                  </a>
+                </h1>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col_160" style="overflow:hidden;position:absolute;" id="FooterFeature_2_Entry_9">
+      <div class="wrapper_0_10_0_10">
+        <div class="col_140">
+          <div class="no_section_title">
+            <div class="clear"> </div>
+            <div id="featurewidget" class="smallfeature">
+              <div class="featurecontent">
+                <div class="newsimage">
+                  <a href="Weekend+Office/5491050/story.html">
+                    <img border="0" src="5448109.bin?size=140x95" alt="Dolphin Tale Review" title="Dolphin Tale Review">
+                  </a>
+                </div>
+                <h1>
+                  <a href="Weekend+Office/5491050/story.html">
+                    <span>
+                      <span>Weekend Box Office</span>
+                    </span>
+                  </a>
+                </h1>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col_67" style="position:relative;" id="FooterFeature_2_RightNav">
+  <div class="nav" id="FooterFeature_2_RightNavChild">
+    <a href="javascript: void(0)" id="FooterFeature_2_RightNavButton">
+      <img style="position:relative;left:0px;top:0px;" alt="" title="" src="http://www.ottawacitizen.com/images/right_arrow_normal.gif" class="" onmouseover="javascript:this.src=&quot;http://www.ottawacitizen.com/images/right_arrow_hover.gif&quot;;" onmouseout="javascript:this.src=&quot;http://www.ottawacitizen.com/images/right_arrow_normal.gif&quot;;" onmousedown="javascript:this.src=&quot;http://www.ottawacitizen.com/images/right_arrow_active.gif&quot;;this.style.top='1px';this.style.left='1px';" onmouseup="javascript:this.src=&quot;http://www.ottawacitizen.com/images/right_arrow_normal.gif&quot;;this.style.top='0px';this.style.left='0px';">
+    </a>
+  </div>
+</div>
+<script language="javascript">
+
+		var FooterFeature_2_Object = null;
+                jQuery(function() {
+			FooterFeature_2_Object = new MultiSlider2('FooterFeature_2_Window', 'FooterFeature_2_Content', 'FooterFeature_2_Entry', 10, 5, 1500, 5);
+
+			jQuery('#FooterFeature_2_LeftNavButton').click(function() { FooterFeature_2_Object.slideLeft('FooterFeature_2_Object');}) ;
+			jQuery('#FooterFeature_2_RightNavButton').click(function() { FooterFeature_2_Object.slideRight('FooterFeature_2_Object');}) ;
+		});
+	    </script></div>
+		 <div class="clear">&nbsp;</div></div><!-- /footerfeature.inc -->
+
+					
+				</div>
+				<!-- bodywrapper ends -->
+			</div>
+			<!-- contentbody ends -->
+			<div class="clear">&nbsp;</div>
+			<div class="footer">
+				<!-- /footer.inc -->
+
+	<div class="clear">&nbsp;</div>
+	<div id="footer">
+		<div class="footer_top">
+			<ul class="footer_list_top">
+				<li><a href="/index.html"><span>Home</span></a></li>
+				<li><a href="/news/index.html"><span>News</span></a></li>
+				<li><a href="/opinion/index.html"><span>Opinion</span></a></li>
+				<li><a href="/business/index.html"><span>Business</span></a></li>
+				<li><a href="/sports/index.html"><span>Sports</span></a></li>
+				<li><a href="/entertainment/index.html"><span>Entertainment</span></a></li>
+				<li><a href="/life/index.html"><span>Life</span></a></li>
+				<li><a href="/health/index.html"><span>Health</span></a></li>
+				<li><a href="/technology/index.html"><span>Technology</span></a></li>
+				<li><a href="/travel/index.html"><span>Travel</span></a></li>
+				<li class="footerclassifieds"><a href="/jobs/index.html"><span>Jobs</span></a></li>
+				<li class="footerclassifieds"><a href="/cars/index.html"><span>Cars</span></a></li>
+				<li class="footerclassifieds"><a href="http://www.househunting.ca/index.html?branding=ottawacitizen"><span>Homes</span></a></li>
+				<li class="footerclassifieds"><a href="http://ottawacitizen.oodle.com/"><span>Classifieds</span></a></li>
+			</ul>
+		</div>
+		<!-- footer_top ends -->
+		<div class="clear">&nbsp;</div>
+		<div class="wrapper_0_10_0_10">
+			<div class="col_160">
+				<div class="col_140">
+					<ul class="footer_list_middle">
+						<li><div class="section_title"><h3><span>Don't Miss</span></h3></div></li>
+					</ul>
+					<div id="syndication50">
+<!-- legoctl: ctl51 --><!-- CACHE HIT: syndication50 -->
+<!-- Source="974254.atom" --><ul class="bullet">
+  <li>
+    <a href="http://cycle.ottawacitizen.com ">
+      <span>CitizenCycle</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.ottawacitizen.com/news/weather-watch/index.html">
+      <span>Weather Watch</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.ottawacitizen.com/news/photos/home/index.html">
+      <span>Top Reader Photos</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.ottawacitizen.com/videos/index.html">
+      <span>Videos</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.ottawacitizen.com/news/photos/reader-photos/reader-photo-galleries/index.html">
+      <span>Reader Galleries</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://shopping.ottawacitizen.com/FSI/advertisers.aspx">
+      <span>This Week's Flyers</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://shopping.ottawacitizen.com/SS/Page.aspx?secid=107108&amp;pagenum=1&amp;sstarg=&amp;facing=false&amp;">
+      <span>Build magazine</span>
+    </a>
+  </li>
+  <li>
+    <a href="http://shopping.ottawacitizen.com/SS/Page.aspx?ptype=SS_TILE&amp;secid=103387&amp;pagenum=1&amp;facing=false">
+      <span>Style Magazine</span>
+    </a>
+  </li>
+</ul>
+<div class="clear"> </div>
+<div class="morelinks">
+  <a href="">
+    <span></span>
+  </a> »
+			<a class="rss" href="http://www.ottawacitizen.com/974254.ATOM"><span>RSS</span></a></div></div>
+
+				</div>
+				<!-- col_140 ends -->
+			</div>
+			<!-- col_160 ends -->
+			<div class="col_160">
+				<div class="col_140">
+					<ul class="footer_list_middle">
+						<li><div class="section_title"><h3><span>Most Popular</span></h3></div></li>
+					</ul>
+					<div id="syndication51">
+<!-- legoctl: ctl52 --><!-- CACHE HIT: syndication51 -->
+<!-- Source="/scripts/mostpopular.aspx?stattype=story" --><ul class="bullet">
+  <li>
+    <a href="Pedestrian+struck+killed+vehicle/5491528/story.html">
+      <span>Pedestrian struck, killed by vehicle</span>
+    </a>
+  </li>
+  <li>
+    <a href="Dewar+call+politics+borne+faith/5489536/story.html">
+      <span>Dewar’s call to politics borne of his faith</span>
+    </a>
+  </li>
+  <li>
+    <a href="seriously+hurt+blaze+destroys+trailer+home/5490770/story.html">
+      <span>Man seriously hurt as blaze destroys trailer home</span>
+    </a>
+  </li>
+</ul>
+<div class="clear"> </div>
+<div class="morelinks">
+  <a href="/news/most-popular-articles.html">
+    <span></span>
+  </a> »
+			<a class="rss" href="http://www.ottawacitizen.com/entertainment/celebrity/Gallery+Canada+Walk+Fame/5490974/story.html?id=5490974"><span>RSS</span></a></div></div>
+
+				</div>
+				<!-- col_140 ends -->
+			</div>
+			<!-- col_160 ends -->
+			<div class="col_160">
+				<div class="col_140">
+					<ul class="footer_list_middle">
+						<li><div class="section_title"><h3><span>Formats</span></h3></div></li>
+						<li><a href="/about-ottawa-citizen/sitemap.html"><span>Sitemap / RSS</span></a></li>
+						<li><a href="http://ottawacitizen.com/contests/"><span>Contests</span></a></li>
+						<li><a href="/opinion/blogs/index.html"><span>Blogs</span></a></li>
+						<li><a href="/columnists/index.html"><span>Columnists</span></a></li>
+						<li><a href="/news/photos/index.html"><span>Photo Galleries</span></a></li>
+						<li><a href="/news/videos/index.html"><span>Videos</span></a></li>
+						<li><a href="/mobile-site/"><span>Mobile</span></a></li>
+						<li><a href="http://itunes.apple.com/ca/app/ottawa-citizen/id406384672?mt=8" target="_blank"><span>iPad App</span></a></li>
+					</ul>
+				</div>
+				<!-- col_140 ends -->
+			</div>
+			<!-- col_160 ends -->
+			<div class="col_160">
+				<div class="col_140">
+					<ul class="footer_list_middle">
+						<li><div class="section_title"><h3><span>Ottawa Citizen</span></h3></div></li>
+						<li><a href="/about-ottawa-citizen/aboutus.html"><span>About Us</span></a></li>
+						<li><a href="/about-ottawa-citizen/contactus.html"><span>Contact Us</span></a></li>
+						<li><a href="http://jobs.ottawacitizen.com/careers/jobsearch/results?kAndEntire=Postmedia&city=Ottawa&state=ON&radius=15"><span>Work for Us</span></a></li>
+						<li><a href="/about-ottawa-citizen/advertising.html"><span>Advertise with Us</span></a></li>
+						<li><a href="https://contests.canada.com/ottawacitizen/subscribe/index.html"><span>Subscribe to the Print Edition</span></a></li>
+						<li><a href="http://www.ottawacitizen.com/subscribe/"><span>Subscriber Services</span></a></li>
+					</ul>
+				</div>
+				<!-- col_140 ends -->
+			</div>
+			<!-- col_160 ends -->
+			<div class="col_300">
+				<ul class="footer_list_middle">
+					<li><div class="section_title"><h3><span>Tools</span></h3></div></li>
+					<li>
+						<div class="formsearchbar">
+							<form name="searchform" onSubmit="footerSearch();return false;">
+								<input type="text" id="f" name="f" maxlength="1024" onclick="this.value='';" onblur="this.value=!this.value?'Search ottawacitizen.com...':this.value;" value="Search ottawacitizen.com..." />
+								<div class="formbutton">
+									<a class="" href="Javascript:void(1);" onClick="footerSearch();"><span>Search</span></a>
+								</div>
+							</form>
+							<!-- formbutton ends -->
+						</div>
+						<!-- formsearchbar ends -->
+					</li>
+				</ul>
+				<div class="clear">&nbsp;</div>
+				<div class="col_160">
+					<div class="col_140">
+						<ul class="footer_list_middle">
+							<li><a href="http://www.working.com/ottawa/index.html"><span>Search for a Job</span></a></li>
+							<li><a href="http://www.driving.ca/ottawa/"><span>Buy/Sell a Car</span></a></li>
+							<li><a href="http://www.househunting.ca/ottawa/sale-and-rent/index.html"><span>Real Estate Listings</span></a></li>
+							<li><a href="http://www.swarmjam.com/waf.srv/sj/sj/cn?_SWCATID=10150489&_TRK=101" target="_blank"><span>SwarmJam Sweet Deals</span></a></li>
+						</ul>
+					</div>
+					<!-- col_140 ends -->
+				</div>
+				<!-- col_160 ends -->
+				<div class="col_140">
+					<ul class="footer_list_middle">
+						<li><a href="http://classifieds.canada.com/ottawa/placead/placead_index.html"><span>Place a Classified Ad</span></a></li>
+						<li><a href="/news/email-alerts.html"><span>E-mail Alerts</span></a></li>
+					</ul>
+				</div>
+				<!-- col_140 ends -->
+			</div>
+			<!-- col_300 ends -->
+		</div>
+		<!-- wrapper_0_10_0_10 ends -->
+		<div class="clear">&nbsp;</div>
+		<div class="rule">&nbsp;</div>
+		<div class="clear">&nbsp;</div>
+		<div class="footer_bottom">
+			<ul class="footer_list_bottom">
+				<li class="footer_canadacom no_background"><a href="http://www.canada.com"><span>canada.com Logo</span></a></li>
+				<li><a href="http://www.canada.com/aboutus/index.html"><span>About canada.com</span></a></li>
+				<li><a href="http://www.canada.com/aboutus/privacy.html"><span>Privacy Statement</span></a></li>
+				<li><a href="http://www.canada.com/aboutus/termsofservice.html"><span>Terms</span></a></li>
+				<li class="no_background"><a href="http://www.canada.com/aboutus/copyright.html"><span>Copyright &amp; Permissions</span></a></li>
+				<li class="footer_copyright no_background">
+					&copy; 2008 - 2011 Postmedia Network Inc. All rights reserved.
+					<div class="clear">&nbsp;</div>
+					Unauthorized distribution, transmission or republication strictly prohibited.
+				</li>
+			</ul>
+		</div>
+		<!-- footer_bottom ends -->
+	</div>
+	<!-- footer ends -->
+	<div class="clear">&nbsp;</div>
+	<script language="javascript">
+		function footerSearch() {
+			var q = document.getElementById("f").value.replace(/ /g,"+");
+			if (q.length == 0) {
+				alert("Please enter your search criteria");
+				return;
+			}
+			document.location.href="/search/search.html?q=" + escape(q);
+		}
+	</script>
+	<script language="javascript">
+		document.getElementById("f").value = document.getElementById("q").value;
+	</script>
+
+<!-- /footer.inc -->
+
+			</div>
+			<!-- footer ends -->
+
+		</div>
+		<!-- pagewrapper ends -->
+	</div>
+	<!-- page ends -->
+<form name="frmPage" method="post" action="blog-migration.html" id="frmPage">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTMwMTUwMzYwN2RkfJqCXBz+lgKhBTnRAF2SDa/Zm7A=" />
+</form>
+                        <!-- SiteCatalyst code version: H.17.
+                        Copyright 1997-2008 Omniture, Inc. More info available at
+                        http://www.omniture.com -->
+
+                        <script language='JavaScript' type='text/javascript' src='/js/account_s_code.js'></script>
+                        <script language='JavaScript' type='text/javascript' src='http://www.canada.com/js/global_canwest_s_code.js'></script>
+                        <script language='JavaScript' type='text/javascript' src='/js/local_s_code.js'></script>
+                
+                        <script language='JavaScript' type='text/javascript'>
+                        <!--
+                        /* You may give each page an identifying name, server, and channel on
+                        the next lines. */
+                        s.pageName='/opinion/blogs/blog-migration.html';
+                        s.server=window.location.hostname.toLowerCase();
+                        s.channel='opinion';
+                        s.pageType='';
+                        s.prop1='opinion/blogs';
+                        s.prop2='opinion/blogs';
+                        s.prop3='canwest';
+                        s.prop4='Non-Registered';
+                        s.prop5=s.prop4 + ': ' + s.pageName;
+                        s.prop6='';
+                        s.prop7='';
+                        s.prop8='';
+                        s.prop9='';
+                        s.prop10='';
+                        s.prop11='';
+                        s.prop13='';
+                        s.prop23=document.title;
+                        s.prop24=s.prop8;
+                        s.prop25='blog-migration';
+                        s.prop26='opinion';            
+                        s.prop27='opinion/blogs';  
+                        s.prop28=''; 
+                        s.prop29='';
+                        s.prop36=''; 
+                        s.prop37='oc_opin.com'; 
+                        s.prop43='';
+                        s.prop44='';
+                        /* E-commerce Variables */
+                        
+                        s.events='';
+                        s.products='';
+                        s.purchaseID='';
+                        s.transactionID = s.purchaseID;
+                        /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+                        var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+                        <script language='JavaScript' type='text/javascript'><!--
+                        if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+                        //--></script><noscript><a href='http://www.omniture.com/' title='Web Analytics'>
+                        <img src='http://canwest.112.207.net/b/ss/canwestglobal,canottowa/5/18935103?pageName=/opinion/blogs/blog-migration.html&g=http%3a%2f%2fwww.ottawacitizen.com%2fopinion%2fblogs%2fblog-migration.html&ch=opinion&sv=www.ottawacitizen.com&c1=opinion/blogs&c2=opinion/blogs&c7=&c8=&c23=Opinion+-+Blogs+-+Our+blogs+have+moved!&c25=blog-migration&c26=opinion&c27=opinion/blogs&c28=&c35=ottawa+citizen&c41=canwestglobal,canottowa' alt='' width='5' height='5' /></a></noscript><!--/DO NOT REMOVE/-->
+                        <!-- End SiteCatalyst code version: H.17. --></body>
+</html>
+<!-- WPGCCWEB45 31 -->

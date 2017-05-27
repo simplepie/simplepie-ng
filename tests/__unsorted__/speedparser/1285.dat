@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <rdf:RDF xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:syn="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/">
+  <channel rdf:about="http://pinboard.in">
+    <title>Pinboard (swinton)</title>
+    <link>http://pinboard.in/u:swinton</link>
+    <description>recent bookmarks from swinton</description>
+    <items>
+      <rdf:Seq>	<rdf:li rdf:resource="http://theleanstartup.com/"/>
+	<rdf:li rdf:resource="http://mapbox.com/demo/visiblemap/"/>
+	<rdf:li rdf:resource="http://blip.tv/djangocon/making-interactive-maps-for-the-web-5573888"/>
+	<rdf:li rdf:resource="http://www.dailyi.org/blogFiles/RTutorialSeries/plotExamples.txt"/>
+	<rdf:li rdf:resource="http://www.dailyi.org/blogFiles/RTutorialSeries/sumStatsAnalysisExample.txt"/>
+	<rdf:li rdf:resource="http://rtutorialseries.blogspot.com/2010/03/r-tutorial-series-r-beginners-guide-and.html?"/>
+	<rdf:li rdf:resource="https://trello.com/"/>
+	<rdf:li rdf:resource="http://www.guardian.co.uk/news/datablog/interactive/2011/sep/13/boundary-changes-constituency-map"/>
+	<rdf:li rdf:resource="http://en.wikipedia.org/wiki/File:2010UKElectionMap.svg"/>
+	<rdf:li rdf:resource="http://www.gorissen.info/Pierre/maps/googleMapLocation.php?lat=50.810679&amp;lon=-0.508461"/>
+	<rdf:li rdf:resource="http://lanyrd.com/2011/djangocon-us/shcpk/"/>
+	<rdf:li rdf:resource="http://goalfinch.com/blog/2011/03/building-interactive-maps-with-polymaps-tilestache-and-mongodb-part-2/"/>
+	<rdf:li rdf:resource="http://nfarina.com/post/9868516270/git-is-simpler"/>
+	<rdf:li rdf:resource="https://developer.mozilla.org/en/IndexedDB/IndexedDB_primer"/>
+	<rdf:li rdf:resource="http://www.zambetti.com/projects/seriality/"/>
+	<rdf:li rdf:resource="http://sketch.processing.org/"/>
+	<rdf:li rdf:resource="http://processingjs.org/learning/topic/circlecollision"/>
+	<rdf:li rdf:resource="http://mlkshk.com/p/69H1"/>
+	<rdf:li rdf:resource="javascript:%20(function(){for%20(i%20in%20document.forms)%20if%20(document.forms.hasOwnProperty(i))%20document.forms[i].onsubmit%20=%20function(){return%20false;};})();"/>
+	<rdf:li rdf:resource="javascript:(function(){%20loc%20=%20location.href;%20debugStr%20=%20'XDEBUG_SESSION_START=1';%20if%20(loc.indexOf(debugStr)%20&amp;gt;=%200)%20location.href=loc;%20else%20if%20(loc.indexOf('?')==-1)%20loc%20=%20loc%20+%20'?'%20+%20debugStr;%20else%20loc%20=%20loc%20+%20'&amp;'%20+%20debugStr;%20location.href=loc;%20})()"/>
+	<rdf:li rdf:resource="javascript:%20(function(){var%20el=document.createElement('div'),b=document.getElementsByTagName('body')[0];otherlib=false,msg='';el.style.position='fixed';el.style.height='32px';el.style.width='220px';el.style.marginLeft='-110px';el.style.top='0';el.style.left='50%';el.style.padding='5px%2010px';el.style.zIndex=1001;el.style.fontSize='12px';el.style.color='#222';el.style.backgroundColor='#f99';if(typeof%20jQuery!='undefined'){msg='This%20page%20already%20using%20jQuery%20v'+jQuery.fn.jquery;return%20showMsg();}else%20if(typeof%20$=='function'){otherlib=true;}%20function%20getScript(url,success){var%20script=document.createElement('script');script.src=url;var%20head=document.getElementsByTagName('head')[0],done=false;script.onload=script.onreadystatechange=function(){if(!done&amp;&amp;(!this.readyState||this.readyState=='loaded'||this.readyState=='complete')){done=true;success();script.onload=script.onreadystatechange=null;head.removeChild(script);}};head.appendChild(script);}%20getScript('http://code.jquery.com/jquery-latest.min.js',function(){if(typeof%20jQuery=='undefined'){msg='Sorry,%20but%20jQuery%20wasn\'t%20able%20to%20load';}else{msg='This%20page%20is%20now%20jQuerified%20with%20v'+jQuery.fn.jquery;if(otherlib){msg+='%20and%20noConflict().%20Use%20$jq(),%20not%20$().';}}%20return%20showMsg();});function%20showMsg(){el.innerHTML=msg;b.appendChild(el);window.setTimeout(function(){if(typeof%20jQuery=='undefined'){b.removeChild(el);}else{jQuery(el).fadeOut('slow',function(){jQuery(this).remove();});if(otherlib){$jq=jQuery.noConflict();}}},2500);}})();"/>
+	<rdf:li rdf:resource="javascript:function%20iprl5(){var%20d=document,z=d.createElement('scr'+'ipt'),b=d.body,l=d.location;try{if(!b)throw(0);d.title='(Saving...)%20'+d.title;z.setAttribute('src',l.protocol+'//www.instapaper.com/j/cwdegJw2m1Iy?u='+encodeURIComponent(l.href)+'&amp;t='+(new%20Date().getTime()));b.appendChild(z);}catch(e){alert('Please%20wait%20until%20the%20page%20has%20loaded.');}}iprl5();void(0)"/>
+	<rdf:li rdf:resource="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://pinboard.in/add?url='+encodeURIComponent(q)+'&amp;description='+encodeURIComponent(d)+'&amp;title='+encodeURIComponent(p),'Pinboard',%20'toolbar=no,width=700,height=350'));"/>
+	<rdf:li rdf:resource="http://news.ycombinator.com/item?id=2892205"/>
+	<rdf:li rdf:resource="http://edwardboches.com/the-most-important-job-in-advertising"/>
+	<rdf:li rdf:resource="http://j4mie.github.com/idiormandparis/"/>
+	<rdf:li rdf:resource="https://github.com/swinton/Web-Science-Summer-School-2011"/>
+	<rdf:li rdf:resource="http://www.csc.liv.ac.uk/~molyneux/"/>
+	<rdf:li rdf:resource="http://berglondon.com/"/>
+	<rdf:li rdf:resource="http://www.bothsidesofthetable.com/2011/07/10/why-im-doubling-down-on-the-twitter-ecosystem/?awesm=bothsid.es_Csv"/>
+	<rdf:li rdf:resource="http://flare.prefuse.org/"/>
+	<rdf:li rdf:resource="https://simple-note.appspot.com/publish/ckpk7p"/>
+	<rdf:li rdf:resource="http://slidecastr.heroku.com/"/>
+	<rdf:li rdf:resource="http://www.learningjquery.com/2009/04/better-stronger-safer-jquerify-bookmarklet#comments-title"/>
+	<rdf:li rdf:resource="http://shrub.appspot.com/#xspf"/>
+	<rdf:li rdf:resource="http://www.facebook.com/add.php?api_key=[INSERT-API-KEY-FOR-YOUR-APP-HERE]&amp;pages"/>
+	<rdf:li rdf:resource="http://evan.borgstrom.ca/post/845359613/python-2-6-on-debian-lenny-5-0"/>
+	<rdf:li rdf:resource="http://databrewery.org/"/>
+	<rdf:li rdf:resource="http://jessenoller.com/2009/07/24/django-mod_wsgi-apache-and-os-x-do-it/"/>
+	<rdf:li rdf:resource="http://www.quora.com/Iconic-Images/Whats-the-most-epic-photo-ever-taken"/>
+	<rdf:li rdf:resource="http://www.quora.com/Photography/Whats-the-most-epic-photo-ever-taken"/>
+	<rdf:li rdf:resource="http://www.opencalais.com/"/>
+	<rdf:li rdf:resource="http://www.mnot.net/blog/2011/05/18/http_benchmark_rules"/>
+	<rdf:li rdf:resource="http://blog.jitbit.com/2011/05/what-if-drivers-were-hired-like.html"/>
+	<rdf:li rdf:resource="http://sethgodin.typepad.com/seths_blog/2011/05/the-future-of-the-library.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+typepad%2Fsethsmainblog+%28Seth%27s+Blog%29&amp;utm_content=Google+Reader"/>
+	<rdf:li rdf:resource="https://wincent.com/wiki/Testing_memcached_with_telnet"/>
+	<rdf:li rdf:resource="http://www.petefreitag.com/item/689.cfm"/>
+	<rdf:li rdf:resource="http://support.apple.com/kb/HT2420?viewlocale=en_US"/>
+	<rdf:li rdf:resource="https://simple-note.appspot.com/publish/CQKNQ2"/>
+	<rdf:li rdf:resource="http://www.franciscosouza.com/2010/08/flying-with-flask-on-google-app-engine/"/>
+      </rdf:Seq>
+    </items>
+  </channel><item rdf:about="http://theleanstartup.com/">
+    <title>The Lean Startup</title>
+    <dc:date>2011-10-02T22:47:19+00:00</dc:date>
+    <link>http://theleanstartup.com/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA["The Lean Startup isn't just about how to create a more successful entrepreneurial business... it's about what we can learn from those businesses to improve virtually everything we do. I imagine Lean Startup principles applied to government programs, to healthcare, and to solving the world's great problems. It's ultimately an answer to the question 'How can we learn more quickly what works, and discard what doesn't?'"]]></description>
+<dc:subject>agile books business ebooks entrepreneurial innovation</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:d763a294ccc8/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:agile"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:books"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:business"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:ebooks"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:entrepreneurial"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:innovation"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://mapbox.com/demo/visiblemap/">
+    <title>Visible map</title>
+    <dc:date>2011-09-27T16:15:11+00:00</dc:date>
+    <link>http://mapbox.com/demo/visiblemap/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[How does the mbtiles spec and UTFGrid really work? Play with the map and learn!]]></description>
+<dc:subject>mapbox UTFGrid mbtiles gis geo geodata mapsmdata interactivity maps</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:77e18dc67e41/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:mapbox"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:UTFGrid"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:mbtiles"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:gis"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geo"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geodata"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:mapsmdata"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:interactivity"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:maps"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://blip.tv/djangocon/making-interactive-maps-for-the-web-5573888">
+    <title>Making interactive maps for the web | DjangoCon 2011</title>
+    <dc:date>2011-09-27T16:02:38+00:00</dc:date>
+    <link>http://blip.tv/djangocon/making-interactive-maps-for-the-web-5573888</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA["When tasked with displaying geo-data, most developers decide to put some big red markers on an embeddable Google Map and call it a day. If you're interested in creating maps that are more beautiful, more interactive, and more usable, this talk is for you."]]></description>
+<dc:subject>djangocon geodjango polymaps python javascript tilestache gis geo geodata interactivity data visualisation maps</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:589027a271c7/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:djangocon"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geodjango"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:polymaps"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:python"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:tilestache"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:gis"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geo"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geodata"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:interactivity"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:data"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:visualisation"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:maps"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.dailyi.org/blogFiles/RTutorialSeries/plotExamples.txt">
+    <title>R Tutorial | Plot Example</title>
+    <dc:date>2011-09-18T12:01:55+00:00</dc:date>
+    <link>http://www.dailyi.org/blogFiles/RTutorialSeries/plotExamples.txt</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[//Plot Examples
+//created by John M. Quick
+//http://www.johnmquick.com
+//November 12, 2009
+
+> #read the data into an R variable
+> datavar <- read.csv("dataset_readingTests.csv")
+> #attach the data variable
+> attach(datavar)
+> #display all data in set
+> datavar
+   Subject Group PRE1 PRE2 POST1 POST2 POST3
+1        1 Basal    4    3     5     4    41
+2        2 Basal    6    5     9     5    41
+3        3 Basal    9    4     5     3    43
+4        4 Basal   12    6     8     5    46
+5        5 Basal   16    5    10     9    46
+6        6 Basal   15   13     9     8    45
+7        7 Basal   14    8    12     5    45
+8        8 Basal   12    7     5     5    32
+9        9 Basal   12    3     8     7    33
+10      10 Basal    8    8     7     7    39
+11      11 Basal   13    7    12     4    42
+12      12 Basal    9    2     4     4    45
+13      13 Basal   12    5     4     6    39
+14      14 Basal   12    2     8     8    44
+15      15 Basal   12    2     6     4    36
+16      16 Basal   10   10     9    10    49
+17      17 Basal    8    5     3     3    40
+18      18 Basal   12    5     5     5    35
+19      19 Basal   11    3     4     5    36
+20      20 Basal    8    4     2     3    40
+21      21 Basal    7    3     5     4    54
+22      22 Basal    9    6     7     8    32
+23      23  DRTA    7    2     7     6    31
+24      24  DRTA    7    6     5     6    40
+25      25  DRTA   12    4    13     3    48
+26      26  DRTA   10    1     5     7    30
+27      27  DRTA   16    8    14     7    42
+28      28  DRTA   15    7    14     6    48
+29      29  DRTA    9    6    10     9    49
+30      30  DRTA    8    7    13     5    53
+31      31  DRTA   13    7    12     7    48
+32      32  DRTA   12    8    11     6    43
+33      33  DRTA    7    6     8     5    55
+34      34  DRTA    6    2     7     0    55
+35      35  DRTA    8    4    10     6    57
+36      36  DRTA    9    6     8     6    53
+37      37  DRTA    9    4     8     7    37
+38      38  DRTA    8    4    10    11    50
+39      39  DRTA    9    5    12     6    54
+40      40  DRTA   13    6    10     6    41
+41      41  DRTA   10    2    11     6    49
+42      42  DRTA    8    6     7     8    47
+43      43  DRTA    8    5     8     8    49
+44      44  DRTA   10    6    12     6    49
+45      45 Strat   11    7    11    12    53
+46      46 Strat    7    6     4     8    47
+47      47 Strat    4    6     4    10    41
+48      48 Strat    7    2     4     4    49
+49      49 Strat    7    6     3     9    43
+50      50 Strat    6    5     8     5    45
+51      51 Strat   11    5    12     8    50
+52      52 Strat   14    6    14    12    48
+53      53 Strat   13    6    12    11    49
+54      54 Strat    9    5     7    11    42
+55      55 Strat   12    3     5    10    38
+56      56 Strat   13    9     9     9    42
+57      57 Strat    4    6     1    10    34
+58      58 Strat   13    8    13     1    48
+59      59 Strat    6    4     7     9    51
+60      60 Strat   12    3     5    13    33
+61      61 Strat    6    6     7     9    44
+62      62 Strat   11    4    11     7    48
+63      63 Strat   14    4    15     7    49
+64      64 Strat    8    2     9     5    33
+65      65 Strat    5    3     6     8    45
+66      66 Strat    8    3     4     6    42
+
+> #create a scatterplot of Y on X using plot(XVAR, YVAR)
+> #what does the relationship between pretest 1 and posttest 1 look like?
+> plot(PRE1, POST1)
+
+> #create scatterplots of all variables using plot(DATAVAR)
+> #what do all of the relationships in the data look like?
+> plot(data)
+
+> #create a detailed scatterplot of Y on X incorporating the optional arguments of the plot() function
+> #set axis scales for x and y to range between 0 and 20
+> #set main title and subtitle
+> #set x and y axis labels
+> plot(PRE1, POST1, xlim = c(0, 20), ylim = c(0, 20), main = "Posttest 1 on Pretest 1", sub = "A Scattered Tale", xlab = "Pretest 1 Score", ylab = "Posttest 1 Score")
+
+> #create a scatterplot of Y on X incorporating the custom aesthetic parameters of the plot() function
+> #set point colors to dark green, red, and orange
+> #set point markers to circle, square, and diamond
+> #set point size to three times the default
+> #set lines to be solid and three times the default thickness
+> plot(PRE1, POST1, xlim = c(0, 20), ylim = c(0, 20), main = "Posttest 1 on Pretest 1", sub = "A Scattered Tale", xlab = "Pretest 1 Score", ylab = "Posttest 1 Score", col = c("dark green", "red", "orange"), pch = c(21, 22, 23), cex = 3, lty = "solid", lwd = 3)]]></description>
+<dc:subject>R R-project plot statistics example code</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:07f64e9ad1b2/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:R"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:R-project"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:plot"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:statistics"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:example"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:code"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.dailyi.org/blogFiles/RTutorialSeries/sumStatsAnalysisExample.txt">
+    <title>R Tutorial | Summary Statistics Analysis Example</title>
+    <dc:date>2011-09-18T11:51:20+00:00</dc:date>
+    <link>http://www.dailyi.org/blogFiles/RTutorialSeries/sumStatsAnalysisExample.txt</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[//Summary Statistics Analysis Example
+//created by John M. Quick
+//http://www.johnmquick.com
+//October 31, 2009
+
+#read data into variable
+> datavar <- read.csv("dataset_ageIncome.csv")
+
+#attach data variable
+> attach(datavar)
+
+> #calculate the mean of a variable with mean(VAR)
+> #what is the mean Age in the sample?
+> mean(Age)
+[1] 32.3
+
+> #calculate the mean of all variables in a dataset with mean(DATAVAR)
+> #what is the mean of each variable in the dataset?
+> mean(datavar)
+    Age  Income 
+   32.3 34000.0 
+
+> #calculate the standard deviation of a variable with sd(VAR)
+> #what is the standard deviation of Age in the sample?
+> sd(Age)
+[1] 19.45602
+
+> #calculate the standard deviation of all variables in a dataset with sd(DATAVAR)
+> #what is the standard deviation of each variable in the dataset?
+> sd(datavar)
+        Age      Income 
+   19.45602 32306.10175 
+
+> #calculate the min of a variable with min(VAR)
+> #what is the minimum age found in the sample?
+> min(Age)
+[1] 5
+
+> #calculate the max of a variable with max(VAR)
+> #what is the maximum age found in the sample?
+> max(Age)
+[1] 70
+
+> #calculate the range of a variable with range(VAR)
+> #what range of age values is found in the sample?
+> range(Age)
+[1]  5 70
+
+> #calculate desired percentile values using quantile(VAR, c(PROB1, PROB2,...))
+> #what are the 25th and 75th percentiles for age in the sample?
+> quantile(Age, c(0.25, 0.75))
+  25%   75% 
+17.75 44.25 
+
+> #calculate the default percentile values using quantile(VAR)
+> #what are the 0, 25, 50, 75, and 100 percentiles for age in the sample?
+> quantile(Age)
+   0%   25%   50%   75%  100% 
+ 5.00 17.75 30.00 44.25 70.00 
+
+> #calculate the percentile rank for a given value using the custom formula: length(VAR[VAR <= VAL]) / length(VAR) * 100
+> #in the sample, an age of 45 is at what percentile rank?
+> length(Age[Age <= 45]) / length(Age) * 100
+[1] 75
+
+> #summarize a variable with summary(VAR)
+> summary(Age)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   5.00   17.75   30.00   32.30   44.25   70.00 
+> #summarize a dataset with summary(DATAVAR)
+> summary(dataset)
+      Age            Income      
+ Min.   : 5.00   Min.   :     0  
+ 1st Qu.:17.75   1st Qu.:     0  
+ Median :30.00   Median : 27500  
+ Mean   :32.30   Mean   : 34000  
+ 3rd Qu.:44.25   3rd Qu.: 56250  
+ Max.   :70.00   Max.   :100000
+
+> #there are many uses for the summary(X) function - try it out as you encounter new objects in R]]></description>
+<dc:subject>R R-project summary statistics example code</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:8e645acfb6f9/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:R"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:R-project"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:summary"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:statistics"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:example"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:code"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://rtutorialseries.blogspot.com/2010/03/r-tutorial-series-r-beginners-guide-and.html?">
+    <title>R Tutorial Series: R Beginner's Guide</title>
+    <dc:date>2011-09-18T10:39:05+00:00</dc:date>
+    <link>http://rtutorialseries.blogspot.com/2010/03/r-tutorial-series-r-beginners-guide-and.html?</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[An introduction to the R Project for statistical computing, and other fascinating articles! :)]]></description>
+<dc:subject>R R-project statistics tutorial data visualisation visualization beginners guide rtutorialseries</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:7281e3d2d220/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:R"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:R-project"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:statistics"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:tutorial"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:data"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:visualisation"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:visualization"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:beginners"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:guide"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:rtutorialseries"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="https://trello.com/">
+    <title>Organize anything, together. | Trello</title>
+    <dc:date>2011-09-14T13:17:59+00:00</dc:date>
+    <link>https://trello.com/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA["Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a process."]]></description>
+<dc:subject>trello spolsky productivity collaboration web software toinvestigate needsinvestigation hackernews</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:f4582e841b86/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:trello"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:spolsky"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:productivity"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:collaboration"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:web"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:software"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:toinvestigate"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:needsinvestigation"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:hackernews"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.guardian.co.uk/news/datablog/interactive/2011/sep/13/boundary-changes-constituency-map">
+    <title>Boundary changes: the first map of England's new constituencies | News | guardian.co.uk</title>
+    <dc:date>2011-09-13T11:35:52+00:00</dc:date>
+    <link>http://www.guardian.co.uk/news/datablog/interactive/2011/sep/13/boundary-changes-constituency-map</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Now with 2010 election constituency comparison: the new election map of England ]]></description>
+<dc:source>http://twitter.com/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:6913b2f9af23/</dc:identifier>
+</item>
+<item rdf:about="http://en.wikipedia.org/wiki/File:2010UKElectionMap.svg">
+    <title>Map of United Kingdom Parliament constituencies</title>
+    <dc:date>2011-09-09T13:27:45+00:00</dc:date>
+    <link>http://en.wikipedia.org/wiki/File:2010UKElectionMap.svg</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[The map shows the final results of the 2010 general election by constituency.
+
+SVG here: http://upload.wikimedia.org/wikipedia/commons/f/f7/2010UKElectionMap.svg]]></description>
+<dc:subject>svg uk 2010 wikimedia map constituencies generalelection politics</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:c6301ad6b825/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:svg"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:uk"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:2010"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:wikimedia"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:map"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:constituencies"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:generalelection"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:politics"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.gorissen.info/Pierre/maps/googleMapLocation.php?lat=50.810679&amp;lon=-0.508461">
+    <title>Google Maps Latitude, Longitude Popup</title>
+    <dc:date>2011-09-09T12:07:03+00:00</dc:date>
+    <link>http://www.gorissen.info/Pierre/maps/googleMapLocation.php?lat=50.810679&amp;lon=-0.508461</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Click on the map to reveal the lat,lon! :)
+
+Rustington = (50.810679,-0.508461)]]></description>
+<dc:subject>tool maps geocode latitude longitude google free useful gorissen data map mapping coordinates rustington</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:586ec2b50fc7/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:tool"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:maps"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geocode"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:latitude"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:longitude"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:google"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:free"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:useful"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:gorissen"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:data"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:map"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:mapping"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:coordinates"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:rustington"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://lanyrd.com/2011/djangocon-us/shcpk/">
+    <title>Making Interactive Maps for the Web | DjangoCon US 2011</title>
+    <dc:date>2011-09-08T16:06:25+00:00</dc:date>
+    <link>http://lanyrd.com/2011/djangocon-us/shcpk/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Hour 1: The back-end
+
+    Storing geodata in PostgreSQL
+    Querying geodata with GeoDjango
+    Ways to customize GeoDjango's admin
+
+Hour 2: The front-end
+
+    Displaying geodata on a map with Polymaps
+    Creating and designing map tiles with TileStache
+
+Hour 3: Dessert
+
+    Adding interactivity to maps
+    How to make geodata pretty
+]]></description>
+<dc:subject>geodjango djangocon django gis maps polymaps tilestache 2011 conferences talks</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:7d1706e01aac/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geodjango"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:djangocon"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:django"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:gis"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:maps"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:polymaps"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:tilestache"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:2011"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:conferences"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:talks"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://goalfinch.com/blog/2011/03/building-interactive-maps-with-polymaps-tilestache-and-mongodb-part-2/">
+    <title>Building Interactive Maps With Polymaps and TileStache</title>
+    <dc:date>2011-09-08T14:47:46+00:00</dc:date>
+    <link>http://goalfinch.com/blog/2011/03/building-interactive-maps-with-polymaps-tilestache-and-mongodb-part-2/</link>
+    <dc:creator>swinton</dc:creator><dc:subject>polymaps tilestache gis python development javascript</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:bb4642e19ae0/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:polymaps"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:tilestache"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:gis"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:python"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:development"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://nfarina.com/post/9868516270/git-is-simpler">
+    <title>Git Is Simpler Than You Think</title>
+    <dc:date>2011-09-07T18:30:41+00:00</dc:date>
+    <link>http://nfarina.com/post/9868516270/git-is-simpler</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[An accessible look under Git's hood.
+
+“What if two different objects compute the same SHA1 hash code? Won’t this happen someday?”
+
+...
+
+“A higher probability exists that every member of your programming team will be attacked and killed by wolves in unrelated incidents on the same night.”
+
+awesome :)]]></description>
+<dc:subject>git github howto reference tutorial cli scm sourcecontrol</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:c49b7be51ea9/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:git"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:github"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:howto"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:reference"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:tutorial"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:cli"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:scm"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:sourcecontrol"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="https://developer.mozilla.org/en/IndexedDB/IndexedDB_primer">
+    <title>IndexedDB Primer | Mozilla Developer Network</title>
+    <dc:date>2011-08-26T09:56:48+00:00</dc:date>
+    <link>https://developer.mozilla.org/en/IndexedDB/IndexedDB_primer</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[This tutorial walks you through using the asynchronous API of IndexedDB.]]></description>
+<dc:subject>database html5 javascript firefox indexedDB</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:d264dd3d5a12/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:database"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:html5"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:firefox"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:indexedDB"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.zambetti.com/projects/seriality/">
+    <title>Seriality | Physicality for the web</title>
+    <dc:date>2011-08-25T18:14:48+00:00</dc:date>
+    <link>http://www.zambetti.com/projects/seriality/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA["Seriality is a browser plug-in that enables electronic devices to speak directly with web pages."]]></description>
+<dc:subject>arduino browser javascript plugin seriality physicality serial</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:5f1cf2e9d281/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:arduino"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:browser"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:plugin"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:seriality"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:physicality"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:serial"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://sketch.processing.org/">
+    <title>Browser-based Processing(.js) IDE</title>
+    <dc:date>2011-08-22T21:35:19+00:00</dc:date>
+    <link>http://sketch.processing.org/</link>
+    <dc:creator>swinton</dc:creator><dc:subject>browser javascript online processing programming canvas html5 processing.js ide</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:d589588a3744/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:browser"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:online"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:processing"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:programming"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:canvas"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:html5"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:processing.js"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:ide"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://processingjs.org/learning/topic/circlecollision">
+    <title>Processing.js | Circle Collision</title>
+    <dc:date>2011-08-19T16:17:30+00:00</dc:date>
+    <link>http://processingjs.org/learning/topic/circlecollision</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Awesome circle collision example, written in Processing.js.]]></description>
+<dc:subject>processing javascript processing.js canvas physics animation motion collision detection</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:b74ec7bc02b9/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:processing"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:processing.js"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:canvas"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:physics"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:animation"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:motion"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:collision"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:detection"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://mlkshk.com/p/69H1">
+    <title>best wedding pictures ever... scroll down - mlkshk</title>
+    <dc:date>2011-08-19T11:05:29+00:00</dc:date>
+    <link>http://mlkshk.com/p/69H1</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[zOMG!!!1!]]></description>
+<dc:subject>mlkshk wedding pictures twitter zombie funny awesome</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:db113a0af44d/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:mlkshk"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:wedding"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:pictures"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:twitter"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:zombie"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:funny"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:awesome"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="javascript:%20(function(){for%20(i%20in%20document.forms)%20if%20(document.forms.hasOwnProperty(i))%20document.forms[i].onsubmit%20=%20function(){return%20false;};})();">
+    <title>Disable forms</title>
+    <dc:date>2011-08-17T07:50:08+00:00</dc:date>
+    <link>javascript:%20(function(){for%20(i%20in%20document.forms)%20if%20(document.forms.hasOwnProperty(i))%20document.forms[i].onsubmit%20=%20function(){return%20false;};})();</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[My bookmarklet for disabling all forms on a web page]]></description>
+<dc:subject>bookmarklet browser html javascript forms disable webdev development work firefox</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:a1f4a9f601be/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:bookmarklet"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:browser"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:html"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:forms"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:disable"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:webdev"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:development"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:firefox"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="javascript:(function(){%20loc%20=%20location.href;%20debugStr%20=%20'XDEBUG_SESSION_START=1';%20if%20(loc.indexOf(debugStr)%20&amp;gt;=%200)%20location.href=loc;%20else%20if%20(loc.indexOf('?')==-1)%20loc%20=%20loc%20+%20'?'%20+%20debugStr;%20else%20loc%20=%20loc%20+%20'&amp;'%20+%20debugStr;%20location.href=loc;%20})()">
+    <title>Debug (PHP/XDebug)</title>
+    <dc:date>2011-08-17T07:47:36+00:00</dc:date>
+    <link>javascript:(function(){%20loc%20=%20location.href;%20debugStr%20=%20'XDEBUG_SESSION_START=1';%20if%20(loc.indexOf(debugStr)%20&amp;gt;=%200)%20location.href=loc;%20else%20if%20(loc.indexOf('?')==-1)%20loc%20=%20loc%20+%20'?'%20+%20debugStr;%20else%20loc%20=%20loc%20+%20'&amp;'%20+%20debugStr;%20location.href=loc;%20})()</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[My bookmarklet for debugging websites with PHP and XDebug]]></description>
+<dc:subject>bookmarklet php xdebug development browser webdev javascript firefox</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:1a0f0e463949/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:bookmarklet"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:php"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:xdebug"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:development"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:browser"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:webdev"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:firefox"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="javascript:%20(function(){var%20el=document.createElement('div'),b=document.getElementsByTagName('body')[0];otherlib=false,msg='';el.style.position='fixed';el.style.height='32px';el.style.width='220px';el.style.marginLeft='-110px';el.style.top='0';el.style.left='50%';el.style.padding='5px%2010px';el.style.zIndex=1001;el.style.fontSize='12px';el.style.color='#222';el.style.backgroundColor='#f99';if(typeof%20jQuery!='undefined'){msg='This%20page%20already%20using%20jQuery%20v'+jQuery.fn.jquery;return%20showMsg();}else%20if(typeof%20$=='function'){otherlib=true;}%20function%20getScript(url,success){var%20script=document.createElement('script');script.src=url;var%20head=document.getElementsByTagName('head')[0],done=false;script.onload=script.onreadystatechange=function(){if(!done&amp;&amp;(!this.readyState||this.readyState=='loaded'||this.readyState=='complete')){done=true;success();script.onload=script.onreadystatechange=null;head.removeChild(script);}};head.appendChild(script);}%20getScript('http://code.jquery.com/jquery-latest.min.js',function(){if(typeof%20jQuery=='undefined'){msg='Sorry,%20but%20jQuery%20wasn\'t%20able%20to%20load';}else{msg='This%20page%20is%20now%20jQuerified%20with%20v'+jQuery.fn.jquery;if(otherlib){msg+='%20and%20noConflict().%20Use%20$jq(),%20not%20$().';}}%20return%20showMsg();});function%20showMsg(){el.innerHTML=msg;b.appendChild(el);window.setTimeout(function(){if(typeof%20jQuery=='undefined'){b.removeChild(el);}else{jQuery(el).fadeOut('slow',function(){jQuery(this).remove();});if(otherlib){$jq=jQuery.noConflict();}}},2500);}})();">
+    <title>jQuerify</title>
+    <dc:date>2011-08-17T07:39:58+00:00</dc:date>
+    <link>javascript:%20(function(){var%20el=document.createElement('div'),b=document.getElementsByTagName('body')[0];otherlib=false,msg='';el.style.position='fixed';el.style.height='32px';el.style.width='220px';el.style.marginLeft='-110px';el.style.top='0';el.style.left='50%';el.style.padding='5px%2010px';el.style.zIndex=1001;el.style.fontSize='12px';el.style.color='#222';el.style.backgroundColor='#f99';if(typeof%20jQuery!='undefined'){msg='This%20page%20already%20using%20jQuery%20v'+jQuery.fn.jquery;return%20showMsg();}else%20if(typeof%20$=='function'){otherlib=true;}%20function%20getScript(url,success){var%20script=document.createElement('script');script.src=url;var%20head=document.getElementsByTagName('head')[0],done=false;script.onload=script.onreadystatechange=function(){if(!done&amp;&amp;(!this.readyState||this.readyState=='loaded'||this.readyState=='complete')){done=true;success();script.onload=script.onreadystatechange=null;head.removeChild(script);}};head.appendChild(script);}%20getScript('http://code.jquery.com/jquery-latest.min.js',function(){if(typeof%20jQuery=='undefined'){msg='Sorry,%20but%20jQuery%20wasn\'t%20able%20to%20load';}else{msg='This%20page%20is%20now%20jQuerified%20with%20v'+jQuery.fn.jquery;if(otherlib){msg+='%20and%20noConflict().%20Use%20$jq(),%20not%20$().';}}%20return%20showMsg();});function%20showMsg(){el.innerHTML=msg;b.appendChild(el);window.setTimeout(function(){if(typeof%20jQuery=='undefined'){b.removeChild(el);}else{jQuery(el).fadeOut('slow',function(){jQuery(this).remove();});if(otherlib){$jq=jQuery.noConflict();}}},2500);}})();</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[My bookmarklet for jQuerify]]></description>
+<dc:subject>jquerify bookmarklet browser javascript firefox</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:17eaa03525cb/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:jquerify"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:bookmarklet"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:browser"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:firefox"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="javascript:function%20iprl5(){var%20d=document,z=d.createElement('scr'+'ipt'),b=d.body,l=d.location;try{if(!b)throw(0);d.title='(Saving...)%20'+d.title;z.setAttribute('src',l.protocol+'//www.instapaper.com/j/cwdegJw2m1Iy?u='+encodeURIComponent(l.href)+'&amp;t='+(new%20Date().getTime()));b.appendChild(z);}catch(e){alert('Please%20wait%20until%20the%20page%20has%20loaded.');}}iprl5();void(0)">
+    <title>Read Later</title>
+    <dc:date>2011-08-17T07:38:30+00:00</dc:date>
+    <link>javascript:function%20iprl5(){var%20d=document,z=d.createElement('scr'+'ipt'),b=d.body,l=d.location;try{if(!b)throw(0);d.title='(Saving...)%20'+d.title;z.setAttribute('src',l.protocol+'//www.instapaper.com/j/cwdegJw2m1Iy?u='+encodeURIComponent(l.href)+'&amp;t='+(new%20Date().getTime()));b.appendChild(z);}catch(e){alert('Please%20wait%20until%20the%20page%20has%20loaded.');}}iprl5();void(0)</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[My bookmarklet for Instapaper]]></description>
+<dc:subject>instapaper bookmarklet browser javascript firefox</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:e0cb5efd9ed3/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:instapaper"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:bookmarklet"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:browser"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:firefox"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://pinboard.in/add?url='+encodeURIComponent(q)+'&amp;description='+encodeURIComponent(d)+'&amp;title='+encodeURIComponent(p),'Pinboard',%20'toolbar=no,width=700,height=350'));">
+    <title>Bookmark</title>
+    <dc:date>2011-08-17T07:35:02+00:00</dc:date>
+    <link>javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('http://pinboard.in/add?url='+encodeURIComponent(q)+'&amp;description='+encodeURIComponent(d)+'&amp;title='+encodeURIComponent(p),'Pinboard',%20'toolbar=no,width=700,height=350'));</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[My bookmarklet for bookmarking with Pinboard]]></description>
+<dc:subject>bookmarklet pinboard bookmarking browser javascript firefox</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:133e3f64331d/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:bookmarklet"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:pinboard"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:bookmarking"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:browser"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:firefox"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://news.ycombinator.com/item?id=2892205">
+    <title>Hacker News | Where is a good place to learn the ins and outs of contracts? Is there a compreh...</title>
+    <dc:date>2011-08-16T21:49:24+00:00</dc:date>
+    <link>http://news.ycombinator.com/item?id=2892205</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA["He liked our proposal for a few reasons: One, the other 3 bids were just Word documents or PDFs attached to email. Ours was printed in color, bound, and sent FedEx overnight. Another, we had detailed writeups of 3 previous projects with testimonials and phone numbers of the clients (used with permission). Lastly, we had suggestions for additional features to add, with a cost/benefits analysis on each, along with suggestions of features that could be cut to reduce the timeline or cost."]]></description>
+<dc:subject>proposals contracts advice sitepoint freelance legal clients work</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:9ca36e790ea8/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:proposals"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:contracts"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:advice"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:sitepoint"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:freelance"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:legal"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:clients"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://edwardboches.com/the-most-important-job-in-advertising">
+    <title>The most important job in advertising</title>
+    <dc:date>2011-08-01T10:07:15+00:00</dc:date>
+    <link>http://edwardboches.com/the-most-important-job-in-advertising</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[The most important job in advertising... is the Creative Technologist.]]></description>
+<dc:subject>creative technologist technology work inspiration advertising pr web</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:92ab33956eaa/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:creative"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:technologist"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:technology"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:inspiration"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:advertising"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:pr"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:web"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://j4mie.github.com/idiormandparis/">
+    <title>Idiorm and Paris</title>
+    <dc:date>2011-07-25T21:48:34+00:00</dc:date>
+    <link>http://j4mie.github.com/idiormandparis/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[A minimalist database toolkit for PHP5.]]></description>
+<dc:subject>database library opensource php orm code github php5 activerecord</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:8fd49a738def/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:database"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:library"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:opensource"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:php"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:orm"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:code"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:github"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:php5"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:activerecord"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="https://github.com/swinton/Web-Science-Summer-School-2011">
+    <title>Graph and Network Analysis using Python and NetworkX</title>
+    <dc:date>2011-07-25T21:11:26+00:00</dc:date>
+    <link>https://github.com/swinton/Web-Science-Summer-School-2011</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Supporting material for the tutorial "Graph and Network Analysis" by Dr. Derek Greene from the Clique Research Cluster, providing an introduction to social network analysis, with examples using the Python NetworkX library.
+
+(Via http://mlg.ucd.ie/summer)]]></description>
+<dc:subject>python networkx code network analysis graphs graphtheory tutorial mapping communities data geek research</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:29796775c2d1/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:python"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:networkx"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:code"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:network"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:analysis"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:graphs"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:graphtheory"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:tutorial"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:mapping"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:communities"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:data"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geek"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:research"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.csc.liv.ac.uk/~molyneux/">
+    <title>Hyperset Approach to Semi-structured Databases and the Experimental Implementation of the Query Language Delta</title>
+    <dc:date>2011-07-19T12:30:40+00:00</dc:date>
+    <link>http://www.csc.liv.ac.uk/~molyneux/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Molyneux, R.: 2009, Hyperset Approach to Semi-structured Databases and the Experimental Implementation of the Query Language Delta. PhD thesis. University of Liverpool.
+
+http://www.csc.liv.ac.uk/~molyneux/publications/Thesis_Molyneux.pdf]]></description>
+<dc:subject>phd molyneux hadoop cloudera whitepaper graphs graphquerylanguage work</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:12035297a93d/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:phd"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:molyneux"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:hadoop"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:cloudera"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:whitepaper"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:graphs"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:graphquerylanguage"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://berglondon.com/">
+    <title>BERG</title>
+    <dc:date>2011-07-12T12:26:43+00:00</dc:date>
+    <link>http://berglondon.com/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA["BERG is a design consultancy, working hands-on with companies to research and develop their technologies and strategy, primarily by finding opportunities in networks and physical things"]]></description>
+<dc:subject>design london research berg inspiration work awesome technology</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:79998e5f65a1/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:design"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:london"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:research"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:berg"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:inspiration"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:awesome"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:technology"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.bothsidesofthetable.com/2011/07/10/why-im-doubling-down-on-the-twitter-ecosystem/?awesm=bothsid.es_Csv">
+    <title>Why I’m Doubling Down on the Twitter Ecosystem | Both Sides of the Table</title>
+    <dc:date>2011-07-12T10:38:25+00:00</dc:date>
+    <link>http://www.bothsidesofthetable.com/2011/07/10/why-im-doubling-down-on-the-twitter-ecosystem/?awesm=bothsid.es_Csv</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA["In a world where real-time data is exploding, those that can provider synthesis, insights & structure out of information will have an edge"]]></description>
+<dc:subject>data twitter datasift bigdata dikw bothsidesofthetable realtime</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:44708af27e25/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:data"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:twitter"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:datasift"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:bigdata"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:dikw"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:bothsidesofthetable"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:realtime"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://flare.prefuse.org/">
+    <title>Flare | Flash-based Data Visualization for the Web</title>
+    <dc:date>2011-07-12T10:25:08+00:00</dc:date>
+    <link>http://flare.prefuse.org/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA["Flare is an ActionScript library for creating visualizations that run in the Adobe Flash Player"]]></description>
+<dc:subject>actionscript flash graphics library visualization opensource dataviz data</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:1169e0196fda/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:actionscript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:flash"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:graphics"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:library"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:visualization"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:opensource"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:dataviz"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:data"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="https://simple-note.appspot.com/publish/ckpk7p">
+    <title>HOWTO: Run a Django-powered Facebook app through Facebook, but develop locally, using Charles Web Debugging Proxy.</title>
+    <dc:date>2011-07-07T14:48:22+00:00</dc:date>
+    <link>https://simple-note.appspot.com/publish/ckpk7p</link>
+    <dc:creator>swinton</dc:creator><dc:subject>howto work charles facebook proxy django webdev geek osx</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:7c86a1f84246/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:howto"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:charles"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:facebook"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:proxy"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:django"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:webdev"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geek"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:osx"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://slidecastr.heroku.com/">
+    <title>Slidecastr</title>
+    <dc:date>2011-07-01T10:31:01+00:00</dc:date>
+    <link>http://slidecastr.heroku.com/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Present your Slideshare presentations, remotely, in REAL-TIME! ]]></description>
+<dc:subject>slideshare slidecastr heroku node.js nodejs javascript realtime web work webdev</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:da6ed67f5ee9/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:slideshare"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:slidecastr"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:heroku"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:node.js"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:nodejs"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:realtime"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:web"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:webdev"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.learningjquery.com/2009/04/better-stronger-safer-jquerify-bookmarklet#comments-title">
+    <title>jQueryify</title>
+    <dc:date>2011-07-01T10:21:29+00:00</dc:date>
+    <link>http://www.learningjquery.com/2009/04/better-stronger-safer-jquerify-bookmarklet#comments-title</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[A bookmarklet that adds jQuery to web pages. Simple.
+
+Source code: https://gist.github.com/1058246]]></description>
+<dc:subject>jquery jquerify javascript web webdev work bookmarklet code</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:b29457dc9cd9/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:jquery"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:jquerify"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:javascript"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:web"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:webdev"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:bookmarklet"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:code"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://shrub.appspot.com/#xspf">
+    <title>Shrub / Amazon S3 Proxy</title>
+    <dc:date>2011-06-30T15:03:29+00:00</dc:date>
+    <link>http://shrub.appspot.com/#xspf</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Turns an S3 bucket into a XSPF playlist, e.g. http://shrub.appspot.com/m1xes/sub-pop-mix-1/?format=tape]]></description>
+<dc:subject>amazon s3 bucket xspf music playlist browser streaming audio cool geek web</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:3feae7ec7093/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:amazon"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:s3"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:bucket"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:xspf"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:music"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:playlist"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:browser"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:streaming"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:audio"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:cool"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geek"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:web"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.facebook.com/add.php?api_key=[INSERT-API-KEY-FOR-YOUR-APP-HERE]&amp;pages">
+    <title>Facebook - shortcut for installing an app on a page you administer</title>
+    <dc:date>2011-06-22T09:59:39+00:00</dc:date>
+    <link>http://www.facebook.com/add.php?api_key=[INSERT-API-KEY-FOR-YOUR-APP-HERE]&amp;pages</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Just remember to replace "[INSERT-API-KEY-FOR-YOUR-APP-HERE]" with the, err, API key for your app, duh.]]></description>
+<dc:subject>facebook admin page app shortcut hack work geek</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:861b2cf2640f/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:facebook"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:admin"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:page"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:app"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:shortcut"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:hack"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geek"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://evan.borgstrom.ca/post/845359613/python-2-6-on-debian-lenny-5-0">
+    <title>Python 2.6 on Debian Lenny (5.0)</title>
+    <dc:date>2011-06-10T11:31:56+00:00</dc:date>
+    <link>http://evan.borgstrom.ca/post/845359613/python-2-6-on-debian-lenny-5-0</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Some pretty concise instructions for getting Python 2.6 up and running on Debian Lenny (5.0).]]></description>
+<dc:subject>debian python lenny geek</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:835c5c9d661d/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:debian"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:python"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:lenny"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geek"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://databrewery.org/">
+    <title>Data Brewery and Cubes | analytical data streams &amp; online analytical processing</title>
+    <dc:date>2011-06-08T19:18:17+00:00</dc:date>
+    <link>http://databrewery.org/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Brewery is a Python framework and collection of tools for analysing and mining data. Goal is to provide functions and tools for:
+
+    * streaming and processing structured data from various sources, such as CSV, XLS files, Google spreadsheets, relational (SQL) databases, MongoDB (no-sql database),...
+    * data quality auditing
+    * data mining]]></description>
+<dc:subject>analysis data python olap brewery databrewery cubes</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:2a6b4f7e000d/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:analysis"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:data"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:python"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:olap"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:brewery"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:databrewery"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:cubes"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://jessenoller.com/2009/07/24/django-mod_wsgi-apache-and-os-x-do-it/">
+    <title>Django, mod_wsgi, Apache and OS X</title>
+    <dc:date>2011-05-31T14:00:26+00:00</dc:date>
+    <link>http://jessenoller.com/2009/07/24/django-mod_wsgi-apache-and-os-x-do-it/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[wonder if it works with MAMP?]]></description>
+<dc:subject>apache django osx python wsgi oneday readlater geek work mod_wsgi</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:bc9a46bf0798/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:apache"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:django"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:osx"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:python"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:wsgi"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:oneday"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:readlater"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geek"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:mod_wsgi"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.quora.com/Iconic-Images/Whats-the-most-epic-photo-ever-taken">
+    <title>Iconic Images: What's the most epic photo ever taken? - Quora</title>
+    <dc:date>2011-05-31T10:58:40+00:00</dc:date>
+    <link>http://www.quora.com/Iconic-Images/Whats-the-most-epic-photo-ever-taken</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[3.7 billion miles from home, the most epic photo ever taken >  /via @mikesten, @quora]]></description>
+<dc:source>http://twitter.com/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:2feae8f59fbf/</dc:identifier>
+</item>
+<item rdf:about="http://www.quora.com/Photography/Whats-the-most-epic-photo-ever-taken">
+    <title>(500) http://www.quora.com/Photography/Whats-the-most-epic-photo-ever-taken</title>
+    <dc:date>2011-05-31T10:58:40+00:00</dc:date>
+    <link>http://www.quora.com/Photography/Whats-the-most-epic-photo-ever-taken</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[3.7 billion miles from home, the most epic photo ever taken >  /via @mikesten, @quora]]></description>
+<dc:source>http://twitter.com/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:faa95c7bd7a6/</dc:identifier>
+</item>
+<item rdf:about="http://www.opencalais.com/">
+    <title>OpenCalais - semantic engine, bringing structure out of unstructured text</title>
+    <dc:date>2011-05-27T10:54:17+00:00</dc:date>
+    <link>http://www.opencalais.com/</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Wonder how well it copes with tweets?]]></description>
+<dc:subject>api metadata semanticweb tagging data nlp work twitter reuters thomsonreuters webdev geek</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:d2cb885855b0/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:api"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:metadata"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:semanticweb"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:tagging"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:data"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:nlp"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:twitter"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:reuters"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:thomsonreuters"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:webdev"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geek"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.mnot.net/blog/2011/05/18/http_benchmark_rules">
+    <title>mnot’s blog: On HTTP Load Testing</title>
+    <dc:date>2011-05-23T15:12:09+00:00</dc:date>
+    <link>http://www.mnot.net/blog/2011/05/18/http_benchmark_rules</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Some good advice on how to go about performing load tests on HTTP servers.]]></description>
+<dc:subject>http performance testing advice geek benchmarking loadtesting work webdev</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:0de0cf811021/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:http"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:performance"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:testing"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:advice"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geek"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:benchmarking"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:loadtesting"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:webdev"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://blog.jitbit.com/2011/05/what-if-drivers-were-hired-like.html">
+    <title>What If Drivers Were Hired Like Programmers?</title>
+    <dc:date>2011-05-22T21:48:37+00:00</dc:date>
+    <link>http://blog.jitbit.com/2011/05/what-if-drivers-were-hired-like.html</link>
+    <dc:creator>swinton</dc:creator><dc:subject>lol rofl geek humour funny</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:19eb76a60afe/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:lol"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:rofl"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geek"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:humour"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:funny"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://sethgodin.typepad.com/seths_blog/2011/05/the-future-of-the-library.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+typepad%2Fsethsmainblog+%28Seth%27s+Blog%29&amp;utm_content=Google+Reader">
+    <title>Seth's Blog: The future of the library</title>
+    <dc:date>2011-05-22T21:40:09+00:00</dc:date>
+    <link>http://sethgodin.typepad.com/seths_blog/2011/05/the-future-of-the-library.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+typepad%2Fsethsmainblog+%28Seth%27s+Blog%29&amp;utm_content=Google+Reader</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA["Post-Gutenberg, the scarce resource is knowledge and insight, not access to data"]]></description>
+<dc:subject>sethgodin library future data books society inspiration quote quotation</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:56d35d42b86b/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:sethgodin"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:library"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:future"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:data"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:books"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:society"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:inspiration"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:quote"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:quotation"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="https://wincent.com/wiki/Testing_memcached_with_telnet">
+    <title>Testing memcached with telnet</title>
+    <dc:date>2011-05-17T15:44:05+00:00</dc:date>
+    <link>https://wincent.com/wiki/Testing_memcached_with_telnet</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[$ telnet localhost 11211
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+set greeting 1 0 11 
+Hello world
+STORED]]></description>
+<dc:subject>memcached telnet geek l337</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:5eddfe8cb7e7/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:memcached"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:telnet"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geek"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:l337"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.petefreitag.com/item/689.cfm">
+    <title>Using Apache Bench for Simple Load Testing</title>
+    <dc:date>2011-05-17T14:17:06+00:00</dc:date>
+    <link>http://www.petefreitag.com/item/689.cfm</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Suppose we want to see how fast Yahoo can handle 100 requests, with a maximum of 10 requests running concurrently:
+
+ab -n 100 -c 10 http://www.yahoo.com/]]></description>
+<dc:subject>apache ab apachebench loadtesting webdev work howto benchmark concurrency webserver</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:42eca61d49dc/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:apache"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:ab"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:apachebench"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:loadtesting"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:webdev"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:work"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:howto"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:benchmark"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:concurrency"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:webserver"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://support.apple.com/kb/HT2420?viewlocale=en_US">
+    <title>Mac OS X: Creating a login hook</title>
+    <dc:date>2011-05-17T11:14:54+00:00</dc:date>
+    <link>http://support.apple.com/kb/HT2420?viewlocale=en_US</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[Did you know that you can have Mac OS X run a script whenever you log in to your computer? You can if you create a "login hook." A login hook tells Mac OS X to execute a certain script when a user logs in. Unlike Startup Items that open when a user logs in, a login hook is a script that executes as root. This advanced article shows you how to set up a login hook.]]></description>
+<dc:subject>howto login mac osx bash shell scripting loginhook geek</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:d2f3b94ec7b0/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:howto"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:login"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:mac"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:osx"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:bash"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:shell"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:scripting"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:loginhook"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:geek"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="https://simple-note.appspot.com/publish/CQKNQ2">
+    <title>Installing MySQLdb on OS X Snow Leopard</title>
+    <dc:date>2011-05-17T10:10:13+00:00</dc:date>
+    <link>https://simple-note.appspot.com/publish/CQKNQ2</link>
+    <dc:creator>swinton</dc:creator><description><![CDATA[My own notes on how to do this...]]></description>
+<dc:subject>python notes mysqldb mac osx snowleopard mysql</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:186a9f9e617c/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:python"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:notes"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:mysqldb"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:mac"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:osx"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:snowleopard"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:mysql"/>
+</rdf:Bag></taxo:topics>
+</item>
+<item rdf:about="http://www.franciscosouza.com/2010/08/flying-with-flask-on-google-app-engine/">
+    <title>Flying with Flask on Google App Engine</title>
+    <dc:date>2011-05-03T11:46:31+00:00</dc:date>
+    <link>http://www.franciscosouza.com/2010/08/flying-with-flask-on-google-app-engine/</link>
+    <dc:creator>swinton</dc:creator><dc:subject>appengine flask google programming python</dc:subject>
+<dc:source>http://pinboard.in/</dc:source>
+<dc:identifier>http://pinboard.in/u:swinton/b:633349343d99/</dc:identifier>
+<taxo:topics><rdf:Bag>	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:appengine"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:flask"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:google"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:programming"/>
+	<rdf:li rdf:resource="http://pinboard.in/u:swinton/t:python"/>
+</rdf:Bag></taxo:topics>
+</item>
+</rdf:RDF>

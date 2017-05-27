@@ -1,0 +1,335 @@
+<br />
+<b>Warning</b>:  include_once(/kunden/homepages/29/d238840399/htdocs/wp-content/plugins/sodahead-polls/sodahead/js/lib/yui/container/assets/style.css.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: Permission denied in <b>/homepages/29/d238840399/htdocs/index.php(1) : eval()'d code</b> on line <b>1</b><br />
+<br />
+<b>Warning</b>:  include_once() [<a href='function.include'>function.include</a>]: Failed opening '/kunden/homepages/29/d238840399/htdocs/wp-content/plugins/sodahead-polls/sodahead/js/lib/yui/container/assets/style.css.php' for inclusion (include_path='.:/usr/lib/php5') in <b>/homepages/29/d238840399/htdocs/index.php(1) : eval()'d code</b> on line <b>1</b><br />
+<br />
+<b>Warning</b>:  Cannot modify header information - headers already sent by (output started at /homepages/29/d238840399/htdocs/index.php(1) : eval()'d code:1) in <b>/homepages/29/d238840399/htdocs/wp-includes/feed-rss2.php</b> on line <b>9</b><br />
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+	xmlns:media="http://search.yahoo.com/mrss/"
+>
+
+<channel>
+	<title>Tristan au quotidien</title>
+	<atom:link href="http://www.tristanauquotidien.com/?feed=rss2" rel="self" type="application/rss+xml" />
+	<link>http://www.tristanauquotidien.com</link>
+	<description>réflexions, petits textes, et découverte du web</description>
+	<pubDate>Sat, 11 Dec 2010 15:03:35 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.6.5</generator>
+	<language>fr</language>
+		<!-- podcast_generator="podPress/8.8" -->
+		<copyright>&#xA9; </copyright>
+		<managingEditor>blog@tristanauquotidien.com ()</managingEditor>
+		<webMaster>blog@tristanauquotidien.com()</webMaster>
+		<category></category>
+		<itunes:keywords></itunes:keywords>
+		<itunes:subtitle></itunes:subtitle>
+		<itunes:summary>reacute;flexions, petits textes et deacute;couvertes du Web</itunes:summary>
+		<itunes:author></itunes:author>
+		<itunes:category text="Society &amp; Culture"/>
+		<itunes:owner>
+			<itunes:name></itunes:name>
+			<itunes:email>blog@tristanauquotidien.com</itunes:email>
+		</itunes:owner>
+		<itunes:block>No</itunes:block>
+		<itunes:explicit>no</itunes:explicit>
+		<itunes:image href="http://www.tristanauquotidien.com/wp-content/plugins/podpress/images/powered_by_podpress_large.jpg" />
+		<image>
+			<url>http://www.tristanauquotidien.com/wp-content/plugins/podpress/images/powered_by_podpress.jpg</url>
+			<title>Tristan au quotidien</title>
+			<link>http://www.tristanauquotidien.com</link>
+			<width>144</width>
+			<height>144</height>
+		</image>
+		<item>
+		<title>Venez me lire sur digitaltrend.fr</title>
+		<link>http://www.tristanauquotidien.com/2010/12/venez-me-lire-sur-digitaltrendfr/</link>
+		<comments>http://www.tristanauquotidien.com/2010/12/venez-me-lire-sur-digitaltrendfr/#comments</comments>
+		<pubDate>Sat, 11 Dec 2010 15:03:35 +0000</pubDate>
+		<dc:creator>tristan</dc:creator>
+		
+		<category><![CDATA[découverte du Web]]></category>
+
+		<guid isPermaLink="false">http://www.tristanauquotidien.com/?p=1253</guid>
+		<description><![CDATA[Non, je ne relance pas ce blog, mais je tenais juste à dire ici que j&#8217;en lance justement un nouveau (au cas où certains me suivaient pas flux RSS).
+Je vais essayer d&#8217;y prendre le temps de réfléchir et d&#8217;écrire des billets un peu longs, un peu plus documentés, gardant mon blog perso pour des news [...]]]></description>
+			<content:encoded><![CDATA[<p>Non, je ne relance pas ce blog, mais je tenais juste à dire ici que j&#8217;en lance justement un nouveau (au cas où certains me suivaient pas flux RSS).</p>
+<p>Je vais essayer d&#8217;y prendre le temps de réfléchir et d&#8217;écrire des billets un peu longs, un peu plus documentés, gardant mon blog perso pour des news un peu plus courtes. (le blog perso se trouve sur <a href="http://tristannicolas.com/" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/tristannicolas.com');">tristannicolas.com</a> au cas où)</p>
+<p>Le blog se trouve là: <a href="http://blog.digitaltrend.fr/" onclick="javascript:urchinTracker ('/outbound/article/blog.digitaltrend.fr');">Digital Trend</a>, et le premier billet parle d&#8217;usage du Web, pour vous expliquer pourquoi je pense que <a href="http://blog.digitaltrend.fr/usage-du-web/pourquoi-la-curation-va-faire-partie-des-prochains-grands-usages-du-web/" onclick="javascript:urchinTracker ('/outbound/article/blog.digitaltrend.fr');">la curation sera un des prochains grands usages du Web.</a></p>
+<p>Bonne lecture.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.tristanauquotidien.com/2010/12/venez-me-lire-sur-digitaltrendfr/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>On ferme.</title>
+		<link>http://www.tristanauquotidien.com/2010/10/on-ferme/</link>
+		<comments>http://www.tristanauquotidien.com/2010/10/on-ferme/#comments</comments>
+		<pubDate>Sun, 24 Oct 2010 16:22:16 +0000</pubDate>
+		<dc:creator>tristan</dc:creator>
+		
+		<category><![CDATA[parlerais-je de moi ?]]></category>
+
+		<category><![CDATA[fin d'un blog]]></category>
+
+		<guid isPermaLink="false">http://www.tristanauquotidien.com/?p=1248</guid>
+		<description><![CDATA[Après un rythme de publication un peu faible, j&#8217;ai décidé d&#8217;arrêter de publier mes articles ici.
+Mais je n&#8217;arrête pour autant pas le blogging pour autant.
+Je publie maintenant sur un blog qui porte un nom très simple à retenir: tristannicolas.com.
+J&#8217;écris également dans un magazine en ligne qui rassemble des gens d&#8217;univers assez différents. Le magazine s&#8217;appelle [...]]]></description>
+			<content:encoded><![CDATA[<p style="text-align: justify;">Après un rythme de publication un peu faible, j&#8217;ai décidé d&#8217;arrêter de publier mes articles ici.</p>
+<p style="text-align: justify;">Mais je n&#8217;arrête pour autant pas le blogging pour autant.</p>
+<p style="text-align: justify;">Je publie maintenant sur un blog qui porte un nom très simple à retenir: <a href="http://tristannicolas.com/" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/tristannicolas.com');">tristannicolas.com</a>.</p>
+<p style="text-align: justify;">J&#8217;écris également dans un magazine en ligne qui rassemble des gens d&#8217;univers assez différents. Le magazine s&#8217;appelle <a href="http://tout-ca.com/" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/tout-ca.com');">Tout Ça</a>. Vous pouvez trouvez mes article <a href="http://tout-ca.com/author/tristann/" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/tout-ca.com');">ici</a>.</p>
+<p style="text-align: justify;">Evidemment, je tweete encore beaucoup sur <a href="http://twitter.com/#!/tristan_" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/twitter.com');">twitter.com/tristan_</a> et on peut encore me trouver sur <a href="http://www.facebook.com/tristan.nicolas" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/www.facebook.com');">facebook.com/tristan.nicolas</a>. Et évidemment, on peut toujours savoir ce que je fais dans la vie sur <a href="http://fr.linkedin.com/in/tristannicolas" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/fr.linkedin.com');">linkedin.com/tristannicolas</a>.</p>
+<p style="text-align: justify;">Le blog reste ouvert pour une période indéterminée, mais les commentaires sont désormais modérés à priori, avec un délais de modération fortement aléatoire.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.tristanauquotidien.com/2010/10/on-ferme/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Chez Coca, on sait parler aux fans</title>
+		<link>http://www.tristanauquotidien.com/2010/08/chez-coca-on-sait-parler-aux-fans/</link>
+		<comments>http://www.tristanauquotidien.com/2010/08/chez-coca-on-sait-parler-aux-fans/#comments</comments>
+		<pubDate>Mon, 23 Aug 2010 20:01:19 +0000</pubDate>
+		<dc:creator>tristan</dc:creator>
+		
+		<category><![CDATA[parlerais-je de moi ?]]></category>
+
+		<guid isPermaLink="false">http://www.tristanauquotidien.com/?p=1241</guid>
+		<description><![CDATA[Si vous vous intéressez un peu au marketing digital, vous devez savoir que les fanpages sur Facebook sont un des outils digitaux à destinations des marques pour toucher leurs différents publics et essayer de créer de la conversation avec ceux-ci.
+Je dois avouer que je suis vraiment amusé par la gestion de sa fanpage par Coca-Cola [...]]]></description>
+			<content:encoded><![CDATA[<p>Si vous vous intéressez un peu au marketing digital, vous devez savoir que les fanpages sur Facebook sont un des outils digitaux à destinations des marques pour toucher leurs différents publics et essayer de créer de la conversation avec ceux-ci.</p>
+<p>Je dois avouer que je suis vraiment amusé par la gestion de sa fanpage par Coca-Cola et surtout par leur vidéos crées par Dusty et Mickaël, les deux prétendus fondateurs de la fanpage.</p>
+<p>Cette astuce, des deux fondateurs de la fanpage, permet à Coca-Cola d&#8217;incarner la fanpage et de faire des petites sketchs émissions en mettant en scène ces deux personnages.</p>
+<p>Ils appellent le premier fan de la fanpage (le gag est bon et je pense très vrai).</p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="640" height="385" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/xUJI6qrjB6g?fs=1&amp;hl=fr_FR&amp;rel=0" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/xUJI6qrjB6g?fs=1&amp;hl=fr_FR&amp;rel=0" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+<p>On remercie les nouveaux fans:</p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="640" height="385" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/pJPeUNTSbMs?fs=1&amp;hl=fr_FR&amp;rel=0" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/pJPeUNTSbMs?fs=1&amp;hl=fr_FR&amp;rel=0" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+<p>On visite le plus grand Driv&#8217;in du monde (où l&#8217;on sert le plus de Coca):</p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="640" height="385" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/Rc2yUjd4euU?fs=1&amp;hl=fr_FR&amp;rel=0" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/Rc2yUjd4euU?fs=1&amp;hl=fr_FR&amp;rel=0" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+<p>Ou on visite les archives de Coca:</p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="640" height="385" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/4njnNaChnB8?fs=1&amp;hl=fr_FR&amp;rel=0" /><embed type="application/x-shockwave-flash" width="640" height="385" src="http://www.youtube.com/v/4njnNaChnB8?fs=1&amp;hl=fr_FR&amp;rel=0" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+<p>Fun, non ?</p>
+<p>Tout ça réunit sur un <a href="http://www.facebook.com/cocacola?v=app_132920893413852&amp;__a=12&amp;" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/www.facebook.com');">onglet sur la fanpage</a>, et les mecs, ils ont même leur propre <a href="http://www.facebook.com/DustyandMichael" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/www.facebook.com');">fanpage</a>.</p>
+<p>Cette astuce permet de raconter différentes histoires sur la fanpage (on peut imaginer beaucoup d&#8217;épisodes autour de ces deux personnages, les faire participer à des évènements, les faire visiter des endroits mythiques de Coca-Cola&#8230;ok, c&#8217;est ce qu&#8217;ils font) et d&#8217;engager les fans autour d&#8217;une série dont ils vont attendre le prochain épisode. Que vont encore inventer Dusty et Mickaël ?</p>
+<p>Avec Coca, la fanpage n&#8217;est pas le relai d&#8217;une opération plus grande mais le centre du dispositif, le but étant d&#8217;arriver à engager durablement les fans. Bien joué.</p>
+<p>Après, si vous étiez fans de Coca, vous l&#8217;aviez vu, non ?</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.tristanauquotidien.com/2010/08/chez-coca-on-sait-parler-aux-fans/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Les jeux vidéos pour apprendre la vraie vie ?</title>
+		<link>http://www.tristanauquotidien.com/2010/08/les-jeux-videos-pour-apprendre-la-vraie-vie/</link>
+		<comments>http://www.tristanauquotidien.com/2010/08/les-jeux-videos-pour-apprendre-la-vraie-vie/#comments</comments>
+		<pubDate>Mon, 23 Aug 2010 10:53:15 +0000</pubDate>
+		<dc:creator>tristan</dc:creator>
+		
+		<category><![CDATA[parlerais-je de moi ?]]></category>
+
+		<guid isPermaLink="false">http://www.tristanauquotidien.com/?p=1237</guid>
+		<description><![CDATA[Les jeux vidéos font perdre la notion de la réalité ? Vraiment ? Cela n&#8217;a pas été le point de vue de l&#8217;Université de Floride qui a décidé d&#8217;utiliser Starcraft 2 pour dispenser des cours de management.
+L&#8217;explication:
+In StarCraft you’re managing a lot of different units and groups of  different capacities. It’s not a stretch [...]]]></description>
+			<content:encoded><![CDATA[<p>Les jeux vidéos font perdre la notion de la réalité ? Vraiment ? Cela n&#8217;a pas été le point de vue de l&#8217;Université de Floride qui a décidé d&#8217;utiliser Starcraft 2 pour dispenser des cours de management.</p>
+<p>L&#8217;explication:</p>
+<blockquote><p><em>In StarCraft you’re managing a lot of different units and groups of  different capacities. It’s not a stretch to think of that in the  business world or in the work of a healthcare administrator.</em></p></blockquote>
+<p>Traduction: Dans StarCraft, vous devez gérer un tas d&#8217;unités différentes et de groupes aux capacités différentes. Ce n&#8217;est pas très différent du monde des affaires ou du travail d&#8217;un cadre dans le monde de la santé.<em></em></p>
+<p>Et si de la même façon que les pilotes s&#8217;entraînent dans un simulateur, les futurs managers pouvaient s&#8217;entraîner dans les jeux vidéos. Après tout, les écoles de commerce le font depuis longtemps dans les business games (moins fun que des jeux vidéos, mais tout aussi prenant)</p>
+<p>Mais allons plus loin, est-ce que les problèmes de société (pauvreté, pollution,&#8230;) pouvaient être résolus grâce aux jeux vidéo ?</p>
+<p>Je vous à regarder cette conférence de Ted, où une game designer vous partage sa vision, et c&#8217;est plutôt sympa:</p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="446" height="326" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="wmode" value="transparent" /><param name="bgColor" value="#ffffff" /><param name="flashvars" value="vu=http://video.ted.com/talks/dynamic/JaneMcGonigal_2010-medium.flv&amp;su=http://images.ted.com/images/ted/tedindex/embed-posters/JaneMcGonigal-2010.embed_thumbnail.jpg&amp;vw=432&amp;vh=240&amp;ap=0&amp;ti=799&amp;introDuration=15330&amp;adDuration=4000&amp;postAdDuration=830&amp;adKeys=talk=jane_mcgonigal_gaming_can_make_a_better_world;year=2010;theme=what_s_next_in_tech;theme=the_rise_of_collaboration;theme=media_that_matters;theme=a_taste_of_ted2010;theme=art_unusual;theme=design_like_you_give_a_damn;event=TED2010;&amp;preAdTag=tconf.ted/embed;tile=1;sz=512x288;" /><param name="src" value="http://video.ted.com/assets/player/swf/EmbedPlayer.swf" /><embed type="application/x-shockwave-flash" width="446" height="326" src="http://video.ted.com/assets/player/swf/EmbedPlayer.swf" flashvars="vu=http://video.ted.com/talks/dynamic/JaneMcGonigal_2010-medium.flv&amp;su=http://images.ted.com/images/ted/tedindex/embed-posters/JaneMcGonigal-2010.embed_thumbnail.jpg&amp;vw=432&amp;vh=240&amp;ap=0&amp;ti=799&amp;introDuration=15330&amp;adDuration=4000&amp;postAdDuration=830&amp;adKeys=talk=jane_mcgonigal_gaming_can_make_a_better_world;year=2010;theme=what_s_next_in_tech;theme=the_rise_of_collaboration;theme=media_that_matters;theme=a_taste_of_ted2010;theme=art_unusual;theme=design_like_you_give_a_damn;event=TED2010;&amp;preAdTag=tconf.ted/embed;tile=1;sz=512x288;" bgcolor="#ffffff" wmode="transparent" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+<p>Serious gaming vous avez dit ?</p>
+<p><a href="http://www.geek.com/articles/games/university-of-florida-to-offer-starcraft-management-class-20100819/" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/www.geek.com');">via</a> et <a href="http://www.regardssurlenumerique.com/vu-sur-le-web" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/www.regardssurlenumerique.com');">via</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.tristanauquotidien.com/2010/08/les-jeux-videos-pour-apprendre-la-vraie-vie/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Qui a peur des gitans ?</title>
+		<link>http://www.tristanauquotidien.com/2010/07/qui-a-peur-des-gitans/</link>
+		<comments>http://www.tristanauquotidien.com/2010/07/qui-a-peur-des-gitans/#comments</comments>
+		<pubDate>Sun, 25 Jul 2010 09:15:09 +0000</pubDate>
+		<dc:creator>tristan</dc:creator>
+		
+		<category><![CDATA[commentaire de l'actualité]]></category>
+
+		<category><![CDATA[école]]></category>
+
+		<category><![CDATA[éducation des filles]]></category>
+
+		<category><![CDATA[connaissance mutuelle]]></category>
+
+		<category><![CDATA[Education]]></category>
+
+		<category><![CDATA[gitans]]></category>
+
+		<category><![CDATA[saint aignan]]></category>
+
+		<category><![CDATA[télé libre]]></category>
+
+		<guid isPermaLink="false">http://www.tristanauquotidien.com/?p=1232</guid>
+		<description><![CDATA[Pre-scriptum: je ne connais rien personnellement au monde des gitans, l&#8217;important, ce sont les liens et la vidéo.
+Je prends à peine connaissance de l&#8217;histoire de Saint-Aignan, dont on peut lire un résumé dans cet article du Figaro. Plus que des explications sur l&#8217;histoire, ce sont les retombées qui vont être importantes à suivre: la réaction [...]]]></description>
+			<content:encoded><![CDATA[<p>Pre-scriptum: je ne connais rien personnellement au monde des gitans, l&#8217;important, ce sont les liens et la vidéo.</p>
+<p>Je prends à peine connaissance de l&#8217;histoire de Saint-Aignan, dont on peut lire un résumé dans <a href="http://www.lefigaro.fr/actualite-france/2010/07/22/01016-20100722ARTFIG00608-saint-aignan-le-conducteur-se-rend.php" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/www.lefigaro.fr');">cet article du Figaro</a>. Plus que des explications sur l&#8217;histoire, ce sont les retombées qui vont être importantes à suivre: la réaction de Nicolas Sarkozy, l&#8217;espace médiatique qui va être consacré à ce qui va sans doute être appelé &#8220;le problème gitan&#8221;, &#8230;</p>
+<p>Les gitans me fascinent, comme tout ce que je ne comprends pas vraiment, ces gens si proches de nous mais qui n&#8217;aspirent pas aux mêmes rêves, pas aux mêmes valeurs (J&#8217;ai comme l&#8217;impression que beaucoup d&#8217;entres nous abandonnons un peu de notre liberté pour la sécurité, pas eux: notre prêt sur vingt ans pour un appartement dans une zone résidentielle tranquille). Cette fascination est fait de fantasmes, de mythes qui montrent bien à quel point nous ne les connaissons pas. Alors deux liens:</p>
+<p>Le témoignage de la directrice de l&#8217;école de Saint-Aignan où allaient les gitans à l&#8217;école, c&#8217;est <a href="http://www.mediapart.fr/club/blog/dianne/240710/les-gitans-de-saint-aignan" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/www.mediapart.fr');">sur médiapart.</a></p>
+<p>Extrait:</p>
+<blockquote><p>Leur vie était difficile ,ponctuée de descentes de gendarmes à l&#8217;aube dans les caravanes rassemblées sur un terrain inondable équipé d&#8217;un unique robinet d&#8217;eau pour une douzaine de familles riches d&#8217;enfants;oui ils volaient pour vivre,du métal ,des fringues ,de la nourriture.Mais jamais ils n&#8217;ont rien pris à l&#8217;école.<br />
+Je ne voyais guère les pères ,mais les mères si,elles sont devenues de plus en plus confiantes,elles me racontaient leur vie de femmes ,de mères passionnées toujours en attente de leurs hommes ,jamais certaines de les voir rentrer entiers:la peur des &#8220;schmitts&#8221; (flics) est omniprésente .</p></blockquote>
+<p>Et le deuxième lien est un documentaire de la Télé Libre où John Paul Lepers* part à la rencontre des gitans. A voir jusqu&#8217;au bout. La page du documentaire avec l&#8217;interview de John Paul Lepers <a href="http://latelelibre.fr/index.php/2009/10/doc-qui-a-peur-des-gitans/" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/latelelibre.fr');">est là</a> et voici le documentaire:</p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="270" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="src" value="http://www.dailymotion.com/swf/video/xao6hb_doc-qui-a-peur-des-gitans-y_news?additionalInfos=0" /><embed type="application/x-shockwave-flash" width="480" height="270" src="http://www.dailymotion.com/swf/video/xao6hb_doc-qui-a-peur-des-gitans-y_news?additionalInfos=0" allowscriptaccess="always" allowfullscreen="true"></embed></object><br />
+<strong><a href="http://www.dailymotion.com/video/xao6hb_doc-qui-a-peur-des-gitans-y_news" onclick="javascript:urchinTracker ('/outbound/article/www.dailymotion.com');">DOC: QUI A PEUR DES GITANS ?</a></strong><br />
+<em>envoyé par <a href="http://www.dailymotion.com/latelelibre" onclick="javascript:urchinTracker ('/outbound/article/www.dailymotion.com');">latelelibre</a>. - <a href="http://www.dailymotion.com/fr/channel/news" onclick="javascript:urchinTracker ('/outbound/article/www.dailymotion.com');">L&#8217;actualité du moment en vidéo.</a></em></p>
+<p>Bien sûr, j&#8217;ai un avis sur quel est le problème et sur les solutions mais en regardant le reportage, je pense qu&#8217;on sera tous d&#8217;accord. Indice dans les tags de l&#8217;article.</p>
+<p>*: on pourra rediscuter de la façon dont il interviewe (dans d&#8217;autres reportages notamment), mais pour arriver à faire parler les gens, il est très fort.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.tristanauquotidien.com/2010/07/qui-a-peur-des-gitans/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Qui sont les analphabètes du Web ?</title>
+		<link>http://www.tristanauquotidien.com/2010/07/qui-sont-les-analphabetes-du-web/</link>
+		<comments>http://www.tristanauquotidien.com/2010/07/qui-sont-les-analphabetes-du-web/#comments</comments>
+		<pubDate>Mon, 19 Jul 2010 22:28:52 +0000</pubDate>
+		<dc:creator>tristan</dc:creator>
+		
+		<category><![CDATA[parlerais-je de moi ?]]></category>
+
+		<category><![CDATA[Education]]></category>
+
+		<category><![CDATA[François Taddei]]></category>
+
+		<category><![CDATA[internet]]></category>
+
+		<category><![CDATA[social media]]></category>
+
+		<guid isPermaLink="false">http://www.tristanauquotidien.com/?p=1221</guid>
+		<description><![CDATA[Suite à un tweet de François Taddéi (pour ceux qui ne savent pas encore qui est ce monsieur, je vous encourage à écouter son intervention à TEDxParis, en bas de l&#8217;article), je me permets de vous faire un petit résumé d&#8217;un excellent article sur les nouveaux analphabètes d&#8217;internet, en y rajoutant quelques remarques personnels.
+L&#8217;article part [...]]]></description>
+			<content:encoded><![CDATA[<p style="text-align: justify;">Suite à un <a href="http://twitter.com/FrancoisTaddei/status/18826537971" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/twitter.com');">tweet </a>de François Taddéi (pour ceux qui ne savent pas encore qui est ce monsieur, je vous encourage à écouter son intervention à TEDxParis, en bas de l&#8217;article), je me permets de vous faire un petit résumé d&#8217;un excellent article sur les nouveaux analphabètes d&#8217;internet, en y rajoutant quelques remarques personnels.</p>
+<p style="text-align: justify;">L&#8217;article part du constat qu&#8217;aujourd&#8217;hui, l&#8217;ordinateur est tellement facile à utiliser que tout le monde en est capable, surtout parmi les adolescents. Le fait de savoir utiliser les fonctions simples d&#8217;un ordinateur, les moteurs de recherches, les mails, n&#8217;est plus un élément discriminant, et ne doit par exemple plus être mentionné sur un CV. Tout le monde sait aujourd&#8217;hui utiliser mozilla firefox, google, word et excel (les fonctions de bases), pourquoi le mentionner ?</p>
+<p style="text-align: justify;">Le nouvel élément différenciant est maintenant l&#8217;utilisation qui est faite de ces nouvelles technologies et la compréhension des concepts derrière ces technologies. La nouvelle compétence n&#8217;est pas le fait de savoir utiliser techniquement facebook mais savoir en limiter son usage ou en tout cas questionner son usage: ne pas dire publiquement &#8220;j&#8217;étais bourré hier soir, je me suis vomi dessus&#8221; alors qu&#8217;on est &#8220;ami&#8221; sur facebook avec son employeur. L&#8217;autre exemple cité dans l&#8217;article, plus pertinent encore, est l&#8217;utilisation de google par les étudiants (ou de manière générale, la crédulité de certains face à ce que l&#8217;on trouve sur internet*). Google ne dit pas forcément la vérité, on doit vérifier la véracité des sources, avoir trouver un lien sur google n&#8217;est pas une preuve suffisante.</p>
+<p style="text-align: justify;">La conclusion de l&#8217;article est que ces concepts (comment marche google, pourquoi on ne doit pas dire tout ce qui nous passe par la tête sur facebook) doit être appris à l&#8217;école. En tout cas, vous comprendrez que si sur Twitter, vous avez dit qu&#8217;hier, vous avez &#8220;trop bu pour oublier votre idiot de chef&#8221;, on comprendra juste que vous n&#8217;avez pas certaines compétences.</p>
+<p style="text-align: justify;">L&#8217;article originale est disponible ici: <a href="http://www.insidehighered.com/news/2010/07/16/techliteracy" target="_blank" onclick="javascript:urchinTracker ('/outbound/article/www.insidehighered.com');">Tech litteracy sur Inside Highered</a></p>
+<p style="text-align: justify;">L&#8217;intervention de François Taddei au TEDxParis, l&#8217;introduction est excellente:</p>
+<p style="text-align: justify;">
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="640" height="505" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/60_xXe5IAkI&amp;hl=fr_FR&amp;fs=1?rel=0" /><embed type="application/x-shockwave-flash" width="640" height="505" src="http://www.youtube.com/v/60_xXe5IAkI&amp;hl=fr_FR&amp;fs=1?rel=0" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+<p>*: cette phrase est à lire, en connaissant tout l&#8217;amour que je porte à Internet, hein, pas de malentendu.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.tristanauquotidien.com/2010/07/qui-sont-les-analphabetes-du-web/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Trop d&#8217;amis tag son mur via @sandralorenzo</title>
+		<link>http://www.tristanauquotidien.com/2010/07/trop-damis-tag-son-mur-via-sandralorenzo/</link>
+		<comments>http://www.tristanauquotidien.com/2010/07/trop-damis-tag-son-mur-via-sandralorenzo/#comments</comments>
+		<pubDate>Tue, 13 Jul 2010 14:39:01 +0000</pubDate>
+		<dc:creator>tristan</dc:creator>
+		
+		<category><![CDATA[parlerais-je de moi ?]]></category>
+
+		<guid isPermaLink="false">http://www.tristanauquotidien.com/2010/07/trop-damis-tag-son-mur-via-sandralorenzo/</guid>
+		<description><![CDATA[
+ 
+via storage.canalblog.com
+Le blog est là http://oakoak.canalblog.com/
+
+  Posted via email   from Tristan&#8217;s posterous  
+
+]]></description>
+			<content:encoded><![CDATA[<div class='posterous_autopost'>
+<div class="posterous_bookmarklet_entry"> <a href='http://posterous.com/getfile/files.posterous.com/tristannicolas/AjHfGkykECcrFHIkrludodmokqqtoglHHbafrdjghAvzcmFodkcvfxfxerFg/media_httpstoragecana_rIFre.jpg.scaled1000.jpg'><img src="http://posterous.com/getfile/files.posterous.com/tristannicolas/AjHfGkykECcrFHIkrludodmokqqtoglHHbafrdjghAvzcmFodkcvfxfxerFg/media_httpstoragecana_rIFre.jpg.scaled500.jpg" width="500" height="375"/></a>
+<div class="posterous_quote_citation">via <a href="http://storage.canalblog.com/81/25/687427/52506252.jpg" onclick="javascript:urchinTracker ('/outbound/article/storage.canalblog.com');">storage.canalblog.com</a></div>
+<p>Le blog est là <a href="http://oakoak.canalblog.com/" onclick="javascript:urchinTracker ('/outbound/article/oakoak.canalblog.com');">http://oakoak.canalblog.com/</a></p>
+</div>
+<p style="font-size: 10px;">  <a href="http://posterous.com" onclick="javascript:urchinTracker ('/outbound/article/posterous.com');">Posted via email</a>   from <a href="http://tristannicolas.posterous.com/trop-damis-tag-son-mur-via-sandralorenzo" onclick="javascript:urchinTracker ('/outbound/article/tristannicolas.posterous.com');">Tristan&#8217;s posterous</a>  </p>
+</p></div>
+]]></content:encoded>
+			<wfw:commentRss>http://www.tristanauquotidien.com/2010/07/trop-damis-tag-son-mur-via-sandralorenzo/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Intéragissez-vous avec vos voisins sur les réseaus sociaux ?</title>
+		<link>http://www.tristanauquotidien.com/2010/07/interagissez-vous-avec-vos-voisins-sur-les-reseaus-sociaux/</link>
+		<comments>http://www.tristanauquotidien.com/2010/07/interagissez-vous-avec-vos-voisins-sur-les-reseaus-sociaux/#comments</comments>
+		<pubDate>Tue, 13 Jul 2010 12:45:16 +0000</pubDate>
+		<dc:creator>tristan</dc:creator>
+		
+		<category><![CDATA[parlerais-je de moi ?]]></category>
+
+		<guid isPermaLink="false">http://www.tristanauquotidien.com/2010/07/interagissez-vous-avec-vos-voisins-sur-les-reseaus-sociaux/</guid>
+		<description><![CDATA[
+ 
+via flowtown.com
+Il a deux notions intéressantes: Parlez-vous avec vos voisins et interagissez-vous avec eux sur les réseaux sociaux ? Et vous servez-vous des réseaux sociaux pour vous tenir au courant de l&#8217;actualité de vos voisinage, de votre quartier ? Pour régler les problèmes de quartier ? 
+Les résultats ne sont pas surprenants, et en [...]]]></description>
+			<content:encoded><![CDATA[<div class='posterous_autopost'>
+<div class="posterous_bookmarklet_entry"> <img src="http://posterous.com/getfile/files.posterous.com/tristannicolas/jemjrpfeJalHupsemIBpibFBwACCeniqjhppfkijzelglbdvrkodIaywjbdC/media_httpwwwflowtown_Bsllw.png.scaled500.png" width="500" height="1762"/>
+<div class="posterous_quote_citation">via <a href="http://www.flowtown.com/blog/how-do-neighbors-interact-online?display=wide" onclick="javascript:urchinTracker ('/outbound/article/www.flowtown.com');">flowtown.com</a></div>
+<p>Il a deux notions intéressantes: Parlez-vous avec vos voisins et interagissez-vous avec eux sur les réseaux sociaux ? Et vous servez-vous des réseaux sociaux pour vous tenir au courant de l&#8217;actualité de vos voisinage, de votre quartier ? Pour régler les problèmes de quartier ? </p>
+<p>Les résultats ne sont pas surprenants, et en vrai, qui connait ses voisins ?</p>
+</div>
+<p style="font-size: 10px;">  <a href="http://posterous.com" onclick="javascript:urchinTracker ('/outbound/article/posterous.com');">Posted via email</a>   from <a href="http://tristannicolas.posterous.com/interagissez-vous-avec-vos-voisins-sur-les-re" onclick="javascript:urchinTracker ('/outbound/article/tristannicolas.posterous.com');">Tristan&#8217;s posterous</a>  </p>
+</p></div>
+]]></content:encoded>
+			<wfw:commentRss>http://www.tristanauquotidien.com/2010/07/interagissez-vous-avec-vos-voisins-sur-les-reseaus-sociaux/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>L&#8217;histoire du FPS</title>
+		<link>http://www.tristanauquotidien.com/2010/07/lhistoire-du-fps/</link>
+		<comments>http://www.tristanauquotidien.com/2010/07/lhistoire-du-fps/#comments</comments>
+		<pubDate>Tue, 06 Jul 2010 21:41:44 +0000</pubDate>
+		<dc:creator>tristan</dc:creator>
+		
+		<category><![CDATA[parlerais-je de moi ?]]></category>
+
+		<guid isPermaLink="false">http://www.tristanauquotidien.com/2010/07/lhistoire-du-fps/</guid>
+		<description><![CDATA[
+ 
+via cache.gawker.com
+Je me vois encore jouer à Descent, Quake, CS, Wolfestein (pas celui-là, mais Return to Castle Wolfestein), Half Life. Un petit geek. Puis, internet est arrivé par adsl, et j&#8217;ai tout arrêté.
+
+  Posted via email   from Tristan&#8217;s posterous  
+
+]]></description>
+			<content:encoded><![CDATA[<div class='posterous_autopost'>
+<div class="posterous_bookmarklet_entry"> <img src="http://posterous.com/getfile/files.posterous.com/tristannicolas/AHDJnewedHdBDqyEflkIanCkepFfvrukucgudbyxcpaznEoBumsIJomapBia/media_httpcachegawker_IdniJ.jpg.scaled500.jpg" width="500" height="1367"/>
+<div class="posterous_quote_citation">via <a href="http://cache.gawker.com/assets/images/kotaku/2010/07/shooterguidemegazero.jpg" onclick="javascript:urchinTracker ('/outbound/article/cache.gawker.com');">cache.gawker.com</a></div>
+<p>Je me vois encore jouer à Descent, Quake, CS, Wolfestein (pas celui-là, mais Return to Castle Wolfestein), Half Life. Un petit geek. Puis, internet est arrivé par adsl, et j&#8217;ai tout arrêté.</p>
+</div>
+<p style="font-size: 10px;">  <a href="http://posterous.com" onclick="javascript:urchinTracker ('/outbound/article/posterous.com');">Posted via email</a>   from <a href="http://tristannicolas.posterous.com/lhistoire-du-fps" onclick="javascript:urchinTracker ('/outbound/article/tristannicolas.posterous.com');">Tristan&#8217;s posterous</a>  </p>
+</p></div>
+]]></content:encoded>
+			<wfw:commentRss>http://www.tristanauquotidien.com/2010/07/lhistoire-du-fps/feed/</wfw:commentRss>
+		</item>
+		<item>
+		<title>Les réseaux par trouble du comportement</title>
+		<link>http://www.tristanauquotidien.com/2010/07/les-reseaux-par-trouble-du-comportement/</link>
+		<comments>http://www.tristanauquotidien.com/2010/07/les-reseaux-par-trouble-du-comportement/#comments</comments>
+		<pubDate>Tue, 06 Jul 2010 12:09:56 +0000</pubDate>
+		<dc:creator>tristan</dc:creator>
+		
+		<category><![CDATA[parlerais-je de moi ?]]></category>
+
+		<guid isPermaLink="false">http://www.tristanauquotidien.com/2010/07/les-reseaux-par-trouble-du-comportement/</guid>
+		<description><![CDATA[
+ 
+via thenextweb.com
+Si quelqu&#8217;un veut m&#8217;offrir le tee-shirt, ça se passe là. http://www.despair.com/somevedi.html
+
+  Posted via email   from Tristan&#8217;s posterous  
+
+]]></description>
+			<content:encoded><![CDATA[<div class='posterous_autopost'>
+<div class="posterous_bookmarklet_entry"> <img src="http://posterous.com/getfile/files.posterous.com/tristannicolas/yczsGcjptffwnvbxBrAuIfwIktxibrykbxdaFyGymjbvshCcJqqbjHlpACxg/media_httpthenextwebc_wesnD.jpg.scaled500.jpg" width="500" height="443"/>
+<div class="posterous_quote_citation">via <a href="http://thenextweb.com/shareables/2010/07/02/social-media-behavioral-disorders/" onclick="javascript:urchinTracker ('/outbound/article/thenextweb.com');">thenextweb.com</a></div>
+<p>Si quelqu&#8217;un veut m&#8217;offrir le tee-shirt, ça se passe là. <a href="http://www.despair.com/somevedi.html" onclick="javascript:urchinTracker ('/outbound/article/www.despair.com');">http://www.despair.com/somevedi.html</a></p>
+</div>
+<p style="font-size: 10px;">  <a href="http://posterous.com" onclick="javascript:urchinTracker ('/outbound/article/posterous.com');">Posted via email</a>   from <a href="http://tristannicolas.posterous.com/les-reseaux-par-trouble-du-comportement" onclick="javascript:urchinTracker ('/outbound/article/tristannicolas.posterous.com');">Tristan&#8217;s posterous</a>  </p>
+</p></div>
+]]></content:encoded>
+			<wfw:commentRss>http://www.tristanauquotidien.com/2010/07/les-reseaux-par-trouble-du-comportement/feed/</wfw:commentRss>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,934 @@
+<?xml version="1.0"?><feed xmlns:media="http://search.yahoo.com/mrss/" xmlns:gr="http://www.google.com/schemas/reader/atom/" xmlns:idx="urn:atom-extension:indexing" xmlns="http://www.w3.org/2005/Atom" idx:index="no" gr:dir="ltr"><!--
+Content-type: Preventing XSRF in IE.
+
+--><generator uri="http://www.google.com/reader">Google Reader</generator><id>tag:google.com,2005:reader/user/14464663693417561968/label/sanya_aix_unix_it</id><link rel="hub" href="http://pubsubhubbub.appspot.com/"/><title>"sanya_aix_unix_it" via Sanya in Google Reader</title><gr:continuation>CIG5xorssqsC</gr:continuation><link rel="self" href="http://www.google.com/reader/public/atom/user%2F14464663693417561968%2Flabel%2Fsanya_aix_unix_it"/><author><name>Sanya</name></author><updated>2011-10-03T12:47:06Z</updated><entry gr:crawl-timestamp-msec="1317646026269"><id gr:original-id="urn:lsid:ibm.com:blogs:entry-edebef03-570f-41ac-bf2a-3206578a223f">tag:google.com,2005:reader/item/3e08ee23f7ef0150</id><category term="ibm"/><category term="scripting"/><category term="aix"/><title type="html">Fileset Differences.</title><published>2011-10-03T11:25:57Z</published><updated>2011-10-03T11:25:57Z</updated><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/fileset_differences2?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/ibm?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/scripting?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/aix?lang=en" type="text/html"/><link rel="replies" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/feed/entrycomments/fileset_differences2/atom?lang=en" type="application/atom+xml"/><content xml:base="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/fileset_differences2" xml:lang="en-US" type="html">&lt;div&gt;Ever have two servers that are at the same TL, or same SP but there is just something different about it? Maybe the levels are a little off, or you know that there are filesets different across the two servers?&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;I wrote a script that goes out and figures out the differences in filesets between servers. This is different from the previous script, as it doesn't compare directories - it compares the filesets that are install on the two servers: &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;p&gt;#!/usr/bin/ksh&lt;/p&gt;
+
+&lt;p&gt;###########################################################&lt;/p&gt;
+
+&lt;p&gt;# Map out the differences in filesets across AIX servers. #&lt;/p&gt;
+
+&lt;p&gt;###########################################################&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;# Variables&lt;/p&gt;
+
+&lt;p&gt;_date=`date +&amp;quot;%y%m%d%H%M%S&amp;quot;`&lt;/p&gt;
+
+&lt;p&gt;_work_dir=/home/shellscripts/fileset_differences&lt;/p&gt;
+
+&lt;p&gt;_data=${_work_dir}/data&lt;/p&gt;
+
+&lt;p&gt;_tmp=${_workdir}/tmp&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;clear&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;Enter two servers; space delimited&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;E.G. servers_was_1 servers_was_2&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;read _servers&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;# Check to make sure there are two servers and set our
+_server variable.&lt;/p&gt;
+
+&lt;p&gt;_server_1=`echo &amp;quot;${_servers}&amp;quot; | awk &amp;#39;{ print $1
+}&amp;#39;`&lt;/p&gt;
+
+&lt;p&gt;_server_2=`echo &amp;quot;${_servers}&amp;quot; | awk &amp;#39;{ print $2
+}&amp;#39;`&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;# Make sure there isn't a third server.&lt;/p&gt;
+
+&lt;p&gt;_third_check=`echo &amp;quot;${_servers}&amp;quot; | awk &amp;#39;{ print $3
+}&amp;#39;`&lt;/p&gt;
+
+&lt;p&gt;if [ ! -z &amp;quot;${_third_check}&amp;quot; ]; then&lt;/p&gt;
+
+&lt;p&gt;  echo &amp;quot;You cannot have a third server.
+Exiting&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;  exit 1&lt;/p&gt;
+
+&lt;p&gt;fi&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;# Make sure our data directory exists. &lt;/p&gt;
+
+&lt;p&gt;if [ ! -e ${_data} ]; then&lt;/p&gt;
+
+&lt;p&gt;  mkdir -p ${_data}&lt;/p&gt;
+
+&lt;p&gt;fi&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;# Make sure our tmp directory exists. &lt;/p&gt;
+
+&lt;p&gt;if [ ! -e ${_tmp} ]; then&lt;/p&gt;
+
+&lt;p&gt;  mkdir -p ${_tmp}&lt;/p&gt;
+
+&lt;p&gt;fi&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;# Main.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;_dated=${_data}/${_date}&lt;/p&gt;
+
+&lt;p&gt;mkdir -p ${_dated}&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;# Dump our lslpp in comma delimited format.&lt;/p&gt;
+
+&lt;p&gt;ssh ${_server_1} &amp;quot;lslpp -L -c&amp;quot; &amp;gt;
+${_tmp}/${_server_1}&lt;/p&gt;
+
+&lt;p&gt;ssh ${_server_2} &amp;quot;lslpp -L -c&amp;quot; &amp;gt;
+${_tmp}/${_server_2}&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;# Strip out just the fileset and see what filesets do not
+appear to be on server 2.&lt;/p&gt;
+
+&lt;p&gt;cat ${_tmp}/${_server_1} | awk -F: &amp;#39;{ print
+$1&amp;quot;:&amp;quot;$2 }&amp;#39; &amp;gt; ${_tmp}/${_server_1}.fs&lt;/p&gt;
+
+&lt;p&gt;cat ${_tmp}/${_server_2} | awk -F: &amp;#39;{ print
+$1&amp;quot;:&amp;quot;$2 }&amp;#39; &amp;gt; ${_tmp}/${_server_2}.fs&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;\n\n&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;Begin Analysis.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;---------------------------&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;# Loop through our filesets on sys1 and see what we do not
+have on sys2.&lt;/p&gt;
+
+&lt;p&gt;for _fs in `cat ${_tmp}/${_server_1}.fs`&lt;/p&gt;
+
+&lt;p&gt;do&lt;/p&gt;
+
+&lt;p&gt;  _check=`grep &amp;quot;${_fs}&amp;quot;
+${_tmp}/${_server_2}.fs`&lt;/p&gt;
+
+&lt;p&gt;  if [ -z &amp;quot;${_check}&amp;quot; ]; then&lt;/p&gt;
+
+&lt;p&gt;    echo &amp;quot;${_fs} is present on
+${_server_1} but not on ${_server_2}.&amp;quot; | tee -a ${_dated}/report&lt;/p&gt;
+
+&lt;p&gt;  fi&lt;/p&gt;
+
+&lt;p&gt;done; unset _fs&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;# Put a spacer between this and our next loop&lt;/p&gt;
+
+&lt;p&gt;if [ -e &amp;quot;${_dated}/report&amp;quot; ]; then&lt;/p&gt;
+
+&lt;p&gt;  echo &amp;quot;\n\n\n&amp;quot; | tee -a ${_dated}/report&lt;/p&gt;
+
+&lt;p&gt;fi&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;# Loop through our filesets on sys1 and see what we do not
+have on sys2.&lt;/p&gt;
+
+&lt;p&gt;for _fs in `cat ${_tmp}/${_server_2}.fs`&lt;/p&gt;
+
+&lt;p&gt;do&lt;/p&gt;
+
+&lt;p&gt;  _check=`grep &amp;quot;${_fs}&amp;quot;
+${_tmp}/${_server_1}.fs`&lt;/p&gt;
+
+&lt;p&gt;  if [ -z &amp;quot;${_check}&amp;quot; ]; then&lt;/p&gt;
+
+&lt;p&gt;    echo &amp;quot;${_fs} is present on
+${_server_2} but not on ${_server_1}.&amp;quot; | tee -a ${_dated}/report&lt;/p&gt;
+
+&lt;p&gt;  fi&lt;/p&gt;
+
+&lt;p&gt;done; unset _fs&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;---------------------------&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;Analysis complete. Copied output to
+${_dated}/report for your review.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;div&gt;rm
+/home/shellscripts/filesystem_differences/tmp/* 2&amp;gt;/dev/null &lt;/div&gt;</content><author><name>awojo</name></author><source gr:stream-id="feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en"><id>tag:google.com,2005:reader/feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en</id><title type="html">Andrew Wojnarek</title><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo?lang=en" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317626975485"><id gr:original-id="urn:lsid:ibm.com:blogs:entry-9dbec892-ecdb-4fef-be9b-cf1ea01a0bf8">tag:google.com,2005:reader/item/ed25fed416941718</id><category term="aix"/><category term="ibm"/><category term="scripting"/><title type="html">Compare directories / filesystems across two different servers.</title><published>2011-10-03T03:48:18Z</published><updated>2011-10-03T03:48:18Z</updated><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/compare_directories_filesystems_across_two_different_servers6?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/aix?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/ibm?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/scripting?lang=en" type="text/html"/><link rel="replies" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/feed/entrycomments/compare_directories_filesystems_across_two_different_servers6/atom?lang=en" type="application/atom+xml"/><content xml:base="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/compare_directories_filesystems_across_two_different_servers6" xml:lang="en-US" type="html">&lt;div&gt;Ever have an issue where you have two servers that are similar? For example, if you have two WAS servers, but you seem to be having a problem. You suspect that there are major differences in some filesystems that should be similar. Well I wrote this script that will tell you the exact differences between like directories:&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;- Number of files.&lt;/div&gt;&lt;div&gt;- Files that exist on server A but not on server B and vice versa. &lt;/div&gt;&lt;div&gt;- Files that are the same, but have different filesizes (great for finding corrupt files / files that were updated on one but not the other). &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;It's nothing special, and I wrote it in a hurry but it works well for me. &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;p&gt;#!/usr/bin/ksh &lt;/p&gt;
+
+&lt;p&gt;####################################################################&lt;/p&gt;
+
+&lt;p&gt;# Compare two file directories on remote machines for
+differences. #&lt;/p&gt;
+
+&lt;p&gt;####################################################################&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;## Variables #######&lt;/p&gt;
+
+&lt;p&gt;_tmp=/tmp/comparedir &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;## Cosmetic ########&lt;/p&gt;
+
+&lt;p&gt;clear&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;banner &amp;quot;CompareDir&amp;quot;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;## Main #########&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;Enter the first server&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;--&amp;gt; \c&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;read _server1 &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;Enter the directory you want to compare on
+${SERVER1}&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;--&amp;gt; \c&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;read _dir1&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;Enter the second server&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;--&amp;gt; \c&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;read _server2&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;Enter the directory you want to compare on
+${SERVER2}&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;--&amp;gt; \c&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;read _dir2&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;## Make a temporary directory&lt;/p&gt;
+
+&lt;p&gt;mkdir -p /tmp/comparedir&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;\n&amp;quot;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;#########################&lt;/p&gt;
+
+&lt;p&gt;# Compare list of files #&lt;/p&gt;
+
+&lt;p&gt;######################### &lt;/p&gt;
+
+&lt;p&gt;# Get a list of files.&lt;/p&gt;
+
+&lt;p&gt;ssh ${_server1} &amp;quot;find ${_dir1} -type f&amp;quot; &amp;gt;
+${_tmp}/${_server1}.file.lst&lt;/p&gt;
+
+&lt;p&gt;ssh ${_server2} &amp;quot;find ${_dir2} -type f&amp;quot; &amp;gt;
+${_tmp}/${_server2}.file.lst&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;# Combine and unique&lt;/p&gt;
+
+&lt;p&gt;cat ${_tmp}/${_server1}.file.lst
+${_tmp}/${_server2}.file.lst | sort | uniq &amp;gt; ${_tmp}/combined.lst&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;_line1=`wc -l ${_tmp}/${_server1}.file.lst | awk '{ print $1
+}'`&lt;/p&gt;
+
+&lt;p&gt;_line2=`wc -l ${_tmp}/${_server2}.file.lst | awk '{ print $1
+}'`&lt;/p&gt;
+
+&lt;p&gt;if [[ ${_line1} &amp;gt; ${_line2} ]]; then&lt;/p&gt;
+
+&lt;p&gt;        _diff=`expr
+${_line1} - ${_line2}`&lt;/p&gt;
+
+&lt;p&gt;else&lt;/p&gt;
+
+&lt;p&gt;        _diff=`expr
+${_line2} - ${_line1}`&lt;/p&gt;
+
+&lt;p&gt;fi&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;The difference of files between ${_server1} and
+${_server2} is ${_diff}:&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;Number of files[${_server1}]: ${_line1}&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;Number of files[${_server2}]: ${_line2}&amp;quot;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;\n\n&amp;quot;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;###########################################&lt;/p&gt;
+
+&lt;p&gt;# Files that exist on one but not another #&lt;/p&gt;
+
+&lt;p&gt;###########################################&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;Files that exist on ${_server1} but not
+${_server2}:&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;while read _file &lt;/p&gt;
+
+&lt;p&gt;do&lt;/p&gt;
+
+&lt;p&gt;        _check=`cat
+${_tmp}/${_server2}.file.lst | grep ${_file}`&lt;/p&gt;
+
+&lt;p&gt;        if [[ -z
+&amp;quot;${_check}&amp;quot; ]]; then&lt;/p&gt;
+
+&lt;p&gt;               
+echo &amp;quot;${_file}&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;        fi&lt;/p&gt;
+
+&lt;p&gt;done &amp;lt; ${_tmp}/${_server1}.file.lst&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;\n\n\n&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;Files that exist on ${_server2} but not
+${_server1}:&amp;quot;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;while read _file&lt;/p&gt;
+
+&lt;p&gt;do&lt;/p&gt;
+
+&lt;p&gt;        _check=`cat
+${_tmp}/${_server1}.file.lst | grep ${_file}`&lt;/p&gt;
+
+&lt;p&gt;        if [[ -z
+&amp;quot;${_check}&amp;quot; ]]; then&lt;/p&gt;
+
+&lt;p&gt;               
+echo &amp;quot;${_file}&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;        fi&lt;/p&gt;
+
+&lt;p&gt;done &amp;lt; ${_tmp}/${_server2}.file.lst&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;\n\n&amp;quot;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;####################################&lt;/p&gt;
+
+&lt;p&gt;# Same files, different
+size       #&lt;/p&gt;
+
+&lt;p&gt;####################################&lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;Comparing like files for filesizes:&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;while read _file &lt;/p&gt;
+
+&lt;p&gt;do&lt;/p&gt;
+
+&lt;p&gt;        _check=`grep
+${_file} ${_tmp}/${_server2}.file.lst`&lt;/p&gt;
+
+&lt;p&gt;        if [[ ! -z
+&amp;quot;${_check}&amp;quot; ]]; then&lt;/p&gt;
+
+&lt;p&gt;               
+_size1=`ssh ${_server1} &amp;quot;du ${_file}&amp;quot; | awk &amp;#39;{ print $1 }&amp;#39;`&lt;/p&gt;
+
+&lt;p&gt;               
+_size2=`ssh ${_server2} &amp;quot;du ${_file}&amp;quot; | awk &amp;#39;{ print $1 }&amp;#39;`&lt;/p&gt;
+
+&lt;p&gt;               
+if [[ &amp;quot;${_size1}&amp;quot; -ne &amp;quot; ${_size2}&amp;quot; ]]; then&lt;/p&gt;
+
+&lt;p&gt;                       
+echo &amp;quot;File size difference ${_file}:&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;                       
+echo &amp;quot;${_server1}: ${_size1}&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;                       
+echo &amp;quot;${_server2}: ${_size2}&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;                       
+echo &amp;quot;\n\n&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;               
+fi&lt;/p&gt;
+
+&lt;p&gt;        fi&lt;/p&gt;
+
+&lt;p&gt;done &amp;lt; ${_tmp}/${_server1}.file.lst&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;echo &amp;quot;All complete.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;rm -r ${_tmp}/*&lt;/p&gt;</content><author><name>awojo</name></author><source gr:stream-id="feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en"><id>tag:google.com,2005:reader/feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en</id><title type="html">Andrew Wojnarek</title><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo?lang=en" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317538366911"><id gr:original-id="http://dilbert.com/strips/comic/2011-10-02/">tag:google.com,2005:reader/item/9955f3beb945a9e1</id><title type="html">Comic for October 2, 2011</title><published>2011-10-02T05:00:00Z</published><updated>2011-10-02T05:00:00Z</updated><link rel="alternate" href="http://feed.dilbert.com/~r/dilbert/daily_strip/~3/C2vH1YHq5D0/" type="text/html"/><summary xml:base="http://dilbert.com/" type="html">&lt;img src="http://dilbert.com/dyn/str_strip/000000000/00000000/0000000/100000/30000/3000/100/133184/133184.strip.print.gif" border="0"&gt;&lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/pju0ln72osnmk13cu4658u8bq0/468/60#http%3A%2F%2Fdilbert.com%2Fstrips%2Fcomic%2F2011-10-02%2F" width="100%" height="60" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/dilbert/daily_strip/~4/C2vH1YHq5D0" height="1" width="1"&gt;</summary><author gr:unknown-author="true"><name>(author unknown)</name></author><gr:likingUser>06515890073914441310</gr:likingUser><gr:likingUser>14298926834408922932</gr:likingUser><gr:likingUser>06817433470401520927</gr:likingUser><gr:likingUser>01174399654804580001</gr:likingUser><gr:likingUser>02157750386652703904</gr:likingUser><gr:likingUser>02553187492777695000</gr:likingUser><gr:likingUser>06110145644792143837</gr:likingUser><gr:likingUser>17571209807102601870</gr:likingUser><gr:likingUser>08124241349828494034</gr:likingUser><gr:likingUser>11599566472913125928</gr:likingUser><gr:likingUser>12091407383976408473</gr:likingUser><gr:likingUser>04604208203727429294</gr:likingUser><gr:likingUser>16072630099116825834</gr:likingUser><gr:likingUser>17820200400579879752</gr:likingUser><gr:likingUser>18108675324538789180</gr:likingUser><gr:likingUser>13729070586434779026</gr:likingUser><gr:likingUser>09891565748509499104</gr:likingUser><gr:likingUser>07074907355101556987</gr:likingUser><gr:likingUser>04866447909956135650</gr:likingUser><gr:likingUser>12789947075722337951</gr:likingUser><gr:likingUser>16530169013173476212</gr:likingUser><gr:likingUser>09599458336039196219</gr:likingUser><gr:likingUser>14227406537520927657</gr:likingUser><gr:likingUser>09457131601893087930</gr:likingUser><gr:likingUser>04061822913865390244</gr:likingUser><gr:likingUser>17768052448074875128</gr:likingUser><gr:likingUser>12671127857385674823</gr:likingUser><gr:likingUser>09872613066777889013</gr:likingUser><gr:likingUser>13923413484060698045</gr:likingUser><gr:likingUser>04641392457539804994</gr:likingUser><gr:likingUser>10587403428259073970</gr:likingUser><gr:likingUser>02492069864561963971</gr:likingUser><gr:likingUser>15612731038889341800</gr:likingUser><gr:likingUser>06443495303717495670</gr:likingUser><gr:likingUser>14889439505307010065</gr:likingUser><gr:likingUser>05963436769699426443</gr:likingUser><gr:likingUser>17558790034225412283</gr:likingUser><gr:likingUser>17032034058715483361</gr:likingUser><gr:likingUser>12762196651456605964</gr:likingUser><gr:likingUser>07855735812141613710</gr:likingUser><gr:likingUser>01998877376985863540</gr:likingUser><gr:likingUser>03806391159614345480</gr:likingUser><gr:likingUser>09012014573230017425</gr:likingUser><gr:likingUser>07280287731593783022</gr:likingUser><gr:likingUser>18215892127876226854</gr:likingUser><gr:likingUser>17496413169992209605</gr:likingUser><gr:likingUser>11153898478183027426</gr:likingUser><gr:likingUser>09331634265695577642</gr:likingUser><gr:likingUser>09111735813751765506</gr:likingUser><gr:likingUser>05063641530879544802</gr:likingUser><gr:likingUser>06452440784858988745</gr:likingUser><gr:likingUser>13314072713689861234</gr:likingUser><gr:likingUser>15301740037257249352</gr:likingUser><gr:likingUser>05554575370990308419</gr:likingUser><gr:likingUser>09389119861790978250</gr:likingUser><gr:likingUser>10036292304183399978</gr:likingUser><gr:likingUser>06370370862177741422</gr:likingUser><gr:likingUser>00618570676063645453</gr:likingUser><gr:likingUser>00077513903028432464</gr:likingUser><gr:likingUser>17693798574167314400</gr:likingUser><gr:likingUser>10398993033939456565</gr:likingUser><gr:likingUser>16613745964542000441</gr:likingUser><gr:likingUser>13126768683341316413</gr:likingUser><gr:likingUser>17534822757538019914</gr:likingUser><gr:likingUser>03505855981708770348</gr:likingUser><gr:likingUser>15285145683552332130</gr:likingUser><gr:likingUser>06308317144250665614</gr:likingUser><gr:likingUser>04855617302591439203</gr:likingUser><gr:likingUser>06549739005223206500</gr:likingUser><gr:likingUser>13434480763178565547</gr:likingUser><gr:likingUser>05916293113491959923</gr:likingUser><gr:likingUser>00682925458834944701</gr:likingUser><gr:likingUser>11789877263484375748</gr:likingUser><gr:likingUser>01359067237583326918</gr:likingUser><gr:likingUser>02527474739386250641</gr:likingUser><gr:likingUser>16778449963294214152</gr:likingUser><gr:likingUser>16496309674792700321</gr:likingUser><gr:likingUser>11147862439691346560</gr:likingUser><gr:likingUser>03818183896499114625</gr:likingUser><gr:likingUser>15128267198393041414</gr:likingUser><gr:likingUser>08591352236539100505</gr:likingUser><gr:likingUser>16230077089114155369</gr:likingUser><gr:likingUser>17826279653606824127</gr:likingUser><gr:likingUser>12929014488824793761</gr:likingUser><gr:likingUser>00715817779351368837</gr:likingUser><source gr:stream-id="feed/http://feed.dilbert.com/dilbert/daily_strip"><id>tag:google.com,2005:reader/feed/http://feed.dilbert.com/dilbert/daily_strip</id><title type="html">Dilbert Daily Strip</title><link rel="alternate" href="http://dilbert.com/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317455267106"><id gr:original-id="http://www.aixmind.com/?p=2285">tag:google.com,2005:reader/item/3cc6cc8e27383989</id><category term="AIX"/><category term="debug boot log"/><category term="SAN boot"/><title type="html">How to Capture SAN Boot Debug for Virtual I/O Server and AIX on P6 Systems</title><published>2011-09-30T23:34:02Z</published><updated>2011-09-30T23:34:02Z</updated><link rel="alternate" href="http://www.aixmind.com/?p=2285" type="text/html"/><content xml:base="http://www.aixmind.com/" type="html">&lt;table width="611" border="0" cellspacing="0" cellpadding="0"&gt;
+&lt;tbody&gt;
+&lt;tr valign="top"&gt;
+&lt;td width="438"&gt;
+&lt;table width="443" border="0" cellspacing="0" cellpadding="0"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td valign="bottom" width="443" height="20"&gt;&lt;strong&gt;Problem(Abstract)&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="443"&gt;How to capture boot debug of a SAN boot PowerVM Virtual I/O Server or AIX/NPIV client partition that is failing to boot.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td valign="bottom" width="443" height="20"&gt;&lt;strong&gt;Symptom&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="443"&gt;NPIV/AIX Client or VIOS fails to boot from SAN.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr valign="top"&gt;
+&lt;td width="438"&gt;&lt;img src="https://www-304.ibm.com/support/docview.wss?uid=isg3T1012199&amp;amp;aid=1" alt="" width="1" height="1" border="0"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr valign="top"&gt;
+&lt;td width="438"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td valign="bottom" width="443" height="20"&gt;&lt;strong&gt;Environment&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="443"&gt;&lt;strong&gt;REQUIREMENTS&lt;/strong&gt;1. POWER6 System
+&lt;p&gt;2. A program where console terminal logging can be enabled will be needed. The following procedure uses PuTTY (a Windows ssh client program) as the means to open a console session to capture the boot debug data to a file. It’s available for download at &lt;a href="http://www.putty.org/"&gt;&lt;span style="text-decoration:underline"&gt;http://www.putty.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr valign="top"&gt;
+&lt;td width="438"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td valign="bottom" width="443" height="20"&gt;&lt;strong&gt;Diagnosing the problem&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="443"&gt;&lt;strong&gt;Things to check PRIOR to gathering the debug&lt;/strong&gt;&lt;span style="text-decoration:underline"&gt;For a NEW NPIV/AIX Client Install&lt;/span&gt;
+&lt;p&gt;1. Ensure NPIV mapping is correct&lt;br&gt;
+2. Ensure SAN swtich is zoned correctly to the NPIV client’s WWPN&lt;br&gt;
+3. Ensure resources (LUN) is assigned from the storage directly to the client’s WWPN&lt;br&gt;
+4. Ensure Installation media meet minimum level required by the storage&lt;/p&gt;
+&lt;p&gt;&lt;span style="text-decoration:underline"&gt;For previously running LPAR&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;1. Check if boot device can be set in SMS&lt;br&gt;
+2. Check if rootvg is accessible in Service Mode.&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr valign="top"&gt;
+&lt;td width="438"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td valign="bottom" width="443" height="20"&gt;&lt;strong&gt;Resolving the problem&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width="443"&gt;
+1. &lt;span style="text-decoration:underline"&gt;To capture a boot debug to a file, open an ssh session via PuTTY to the HMC as follows&lt;/span&gt;Under Category&lt;br&gt;
+Session&lt;br&gt;
+-&amp;gt; click on Logging&lt;br&gt;
+-&amp;gt; select “All session output” on the right&lt;br&gt;
+-&amp;gt; specify the filename in the “Log file name” box as shown in Figure 1
+&lt;p&gt;Terminal&lt;br&gt;
+-&amp;gt; click on Keyboard&lt;br&gt;
+-&amp;gt; select Control-H for the Backspace key&lt;/p&gt;
+&lt;p&gt;Click on Session&lt;br&gt;
+-&amp;gt; Type in the full domain to the HMC in the Host Name and Saved Sessions box&lt;br&gt;
+-&amp;gt; select SSH protocol (HMC must be configured to accept ssh connections)&lt;br&gt;
+-&amp;gt; Click on Open (See Figure 2). You will get a PuTTY Security Alert Window&lt;br&gt;
+-&amp;gt; Click No to connect just once&lt;/p&gt;
+&lt;p&gt;-&amp;gt; Login as hscroot and type ‘vtmenu’ to open a console session to the partition in question&lt;br&gt;
+-&amp;gt; Select the Managed System name&lt;br&gt;
+-&amp;gt; Select the partition in question =&amp;gt;You may or may not see activity at this point depending on the status of the partition.&lt;/p&gt;
+&lt;p&gt;2. &lt;span style="text-decoration:underline"&gt;Boot the partition to Open Firmware (0 &amp;gt;) prompt, run ioinfo utility, and select the FCINFO option as follows&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;0 &amp;gt; &lt;strong&gt;ioinfo&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;!!! IOINFO: FOR IBM INTERNAL USE ONLY !!!&lt;br&gt;
+This tool gives you information about SCSI,IDE,SATA,SAS,and USB devices attached to the&lt;br&gt;
+system&lt;/p&gt;
+&lt;p&gt;Select a tool from the following&lt;/p&gt;
+&lt;ul&gt;
+&lt;ul&gt;1. SCSIINFO&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;2. IDEINFO&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;3. SATAINFO&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;4. SASINFO&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;5. USBINFO&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;6. FCINFO &amp;lt;=====&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;7. VSCSIINFO&lt;/ul&gt;
+&lt;p&gt;q – quit/exit&lt;/p&gt;
+&lt;p&gt;==&amp;gt; &lt;strong&gt;6&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3. &lt;span style="text-decoration:underline"&gt;Select the desired path&lt;/span&gt;. In this example, we are selected the 2nd virtual Fibre Channel path:&lt;/p&gt;
+&lt;p&gt;FCINFO Main Menu&lt;br&gt;
+Select a FC Node from the following list:&lt;/p&gt;
+&lt;ul&gt;# Location Code Pathname&lt;/ul&gt;
+&lt;p&gt;—————————————————————&lt;/p&gt;
+&lt;ul&gt;
+&lt;ul&gt;1. U9117.MMA.65EBF8C-V32-C5-T1 /vdevice/vfc-client@30000005&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;2. U9117.MMA.65EBF8C-V32-C6-T1 /vdevice/vfc-client@30000006&lt;/ul&gt;
+&lt;p&gt;q – Quit/Exit&lt;/p&gt;
+&lt;p&gt;==&amp;gt; 2&lt;/p&gt;
+&lt;p&gt;4. &lt;span style="text-decoration:underline"&gt;Select a FC Device&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;FC Node Menu&lt;br&gt;
+FC Node String: /vdevice/vfc-client@30000006&lt;br&gt;
+FC Node WorldWidePortName: c05076001ab6003a&lt;br&gt;
+—————————————————————–&lt;br&gt;
+1. List Attached FC Devices&lt;br&gt;
+2. Select a FC Device &amp;lt;=====&lt;br&gt;
+3. Enable/Disable FC Adapter Debug flags&lt;/p&gt;
+&lt;p&gt;q – Quit/Exit&lt;/p&gt;
+&lt;p&gt;==&amp;gt; &lt;strong&gt;2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;5. &lt;span style="text-decoration:underline"&gt;Select the appropriate LUN&lt;/span&gt;. In this example option 1 happens to be the bootable device:&lt;/p&gt;
+&lt;p&gt;1. 50060e801530f310,0 – 10240 MB Disk drive (bootable)&lt;br&gt;
+2. 50060e801530f310,1000000000000 – 35840 MB Disk drive&lt;/p&gt;
+&lt;p&gt;Select a FC Device : 1&lt;/p&gt;
+&lt;p&gt;FC Device Menu&lt;br&gt;
+FC Target Address ==&amp;gt; 50060e801530f310 FC Lun Address ==&amp;gt; 0&lt;br&gt;
+FC Device String: /vdevice/vfc-client@30000006/disk@50060e801530f310,0:0&lt;br&gt;
+FC Device: 10240 MB Disk drive (bootable)&lt;br&gt;
+———————————————————————-&lt;/p&gt;
+&lt;p&gt;6. &lt;span style="text-decoration:underline"&gt;Select “Display Inquiry Data”&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;ul&gt;1. Display Inquiry Data &amp;lt;=====&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;2. Spin up Drive&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;3. Spin down Drive&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;4. Continuous random Reads ( hit any key to stop )&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;5. Enable/Disable FC Device Debug flags&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;98. Boot from this Device&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;q – Quit/Exit&lt;/ul&gt;
+&lt;p&gt;==&amp;gt; &lt;strong&gt;1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;INQUIRY DATA FOR : TARGET ==&amp;gt; 50060e801530f310 LUN ==&amp;gt; 0 – 10240 MB Disk drive (bootable)&lt;br&gt;
+000002f4cd00: 00 00 03 32 cf 00 00 02 48 49 54 41 43 48 49 20 :…2….HITACHI :&lt;br&gt;
+000002f4cd10: 4f 50 45 4e 2d 56 20 20 20 20 20 20 20 20 20 20 :OPEN-V :&lt;br&gt;
+000002f4cd20: 36 30 30 34 35 30 20 31 33 30 46 33 33 30 33 33 :600450 130F33033:&lt;br&gt;
+000002f4cd30: 20 32 41 20 01 01 01 01 00 00 00 00 00 00 00 00 : 2A …………:&lt;br&gt;
+000002f4cd40: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 :…………….:&lt;br&gt;
+000002f4cd50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 :…………….:&lt;br&gt;
+000002f4cd60: 05 01 05 70 30 30 ff 00 c0 50 76 00 1a b6 00 3a :…p00…Pv….::&lt;br&gt;
+000002f4cd70: c0 50 76 00 1a b6 00 3a 00 00 00 0f 00 00 00 00 :.Pv….:……..:&lt;br&gt;
+000002f4cd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 :…………….:&lt;br&gt;
+000002f4cd90: 01 01 01 01 00 00 00 00 01 01 01 01 01 01 01 01 :…………….:&lt;br&gt;
+000002f4cda0: 01 01 01 01 01 01 01 01 55 55 55 55 55 55 55 55 :……..UUUUUUUU:&lt;br&gt;
+000002f4cdb0: 55 55 55 55 00 00 00 00 ff ff ff ff 00 00 00 00 :UUUU…………:&lt;br&gt;
+000002f4cdc0: 00 00 00 03 00 00 00 01 00 00 00 01 00 01 99 40 :……………@:&lt;br&gt;
+000002f4cdd0: 00 00 71 a3 00 00 00 00 00 00 00 00 00 00 00 00 :..q………….:&lt;br&gt;
+000002f4cde0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 :…………….:&lt;br&gt;
+000002f4cdf0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 :……………:&lt;br&gt;
+Hit a key to continue…&lt;/p&gt;
+&lt;p&gt;FC Device Menu&lt;br&gt;
+FC Target Address ==&amp;gt; 50060e801530f310 FC Lun Address ==&amp;gt; 0&lt;br&gt;
+FC Device String: /vdevice/vfc-client@30000006/disk@50060e801530f310,0:0&lt;br&gt;
+FC Device: 10240 MB Disk drive (bootable)&lt;br&gt;
+———————————————————————-&lt;/p&gt;
+&lt;p&gt;7. &lt;span style="text-decoration:underline"&gt;Select to “Boot from this Device”&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;ul&gt;1. Display Inquiry Data&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;2. Spin up Drive&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;3. Spin down Drive&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;4. Continuous random Reads ( hit any key to stop )&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;5. Enable/Disable FC Device Debug flags&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;ul&gt;98. Boot from this Device&lt;/ul&gt;
+&lt;p&gt;q – Quit/Exit&lt;/p&gt;
+&lt;p&gt;==&amp;gt; &lt;strong&gt;98&lt;/strong&gt;&lt;/p&gt;
+&lt;div align="center"&gt;———————————————————————————————————&lt;br&gt;
+Welcome to AIX.&lt;br&gt;
+boot image timestamp: 06:26 10/01&lt;br&gt;
+The current time and date: 09:46:20 10/01/2009&lt;br&gt;
+processor count: 1; memory size: 8192MB; kernel size: 23463042&lt;br&gt;
+boot device: /vdevice/vfc-client@30000006/disk@50060e801530f310,0&lt;br&gt;
+———————————————————————————————————-&lt;/div&gt;
+&lt;p&gt;8. Rename the putty.log file to reflect the PMR#, Branch#, and Country Code (i.e 12345.678.000.SAN_boot_debug.log) and upload it to:&lt;br&gt;
+ftp testcase.software.ibm.com&lt;br&gt;
+login: anonymous&lt;br&gt;
+password: &amp;lt;your email address&amp;gt;&lt;br&gt;
+ftp&amp;gt; cd /toibm/aix&lt;br&gt;
+ftp&amp;gt; prompt&lt;br&gt;
+ftp&amp;gt; binary&lt;br&gt;
+ftp&amp;gt; put &amp;lt;filename&amp;gt;.log&lt;br&gt;
+ftp&amp;gt; quit&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.aixmind.com/wp-content/uploads/2011/09/putty1.gif"&gt;&lt;img title="putty1" src="http://www.aixmind.com/wp-content/uploads/2011/09/putty1.gif" alt="" width="456" height="435"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.aixmind.com/wp-content/uploads/2011/09/putty2.gif"&gt;&lt;img title="putty2" src="http://www.aixmind.com/wp-content/uploads/2011/09/putty2.gif" alt="" width="456" height="435"&gt;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>admin</name></author><source gr:stream-id="feed/http://www.aixmind.com/?feed=rss2"><id>tag:google.com,2005:reader/feed/http://www.aixmind.com/?feed=rss2</id><title type="html">AIX Solaris HPUX UNIX Linux system storage administration ksh/perl scripting</title><link rel="alternate" href="http://www.aixmind.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317382607332"><id gr:original-id="urn:lsid:ibm.com:blogs:entry-af1b48d4-de1f-4360-92ae-a55e3ee760b8">tag:google.com,2005:reader/item/fd7a1f7ee3430821</id><category term="ibm"/><category term="aix"/><category term="perfpmr"/><title type="html">Using perfpmr to your advantage</title><published>2011-08-10T14:25:32Z</published><updated>2011-08-10T14:27:24Z</updated><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/using_perfpmr_to_your_advantage?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/ibm?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/aix?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/perfpmr?lang=en" type="text/html"/><link rel="replies" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/feed/entrycomments/using_perfpmr_to_your_advantage/atom?lang=en" type="application/atom+xml"/><content xml:base="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/using_perfpmr_to_your_advantage" xml:lang="en-US" type="html">&lt;span style="color:rgb(85, 85, 85);font-family:Verdana, &amp;#39;BitStream vera Sans&amp;#39;, Tahoma, Helvetica, sans-serif;line-height:17px;background-color:rgb(255, 255, 255)"&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;This is a very cool and easy way to debug a problem that is happening in your environment. This is particular useful with highly complex application servers, that are doing and connecting to &lt;strong&gt;a lot&lt;/strong&gt; of different stuff under the hood. I’ve used this method dozens of times to solve problems, where WebSphere was trying to open a file that didn’t exist, and was causing major performance problems for the application underneath. Very cool stuff.&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;By running perfpmr (IBM performance diagnostics tool) it gathers about 500MB of information.&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;./perfpmr.sh 600&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;This will spit out a ton of data that you cannot read, and some you can, because it is compiled in a RAW format.&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;curt -i trace.raw-0&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;This will read the &lt;em&gt;compiled raw data&lt;/em&gt;. In the application summary, halfway through the file, you will see what PID (and it’s TID – which is what we’re interested in), is containing the highest amount of system CPU time. In this case it looks like:&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;100.7497       6.6511      94.0986      49.3480       3.2578      46.0903  (&lt;strong&gt;667738&lt;/strong&gt; &lt;strong&gt;4042975&lt;/strong&gt;)&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;^ PID       ^ TID&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;Once we have located the PID n TID that is hogging up our system CPU cycles, we need to check out the interval traces which are also compiled and unreadable.&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;./perfpmr.sh –r&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;This will output a file called &lt;strong&gt;trace.int.&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;&lt;strong&gt;Inside you’ll see exactly what the application was doing. What files it was trying to open etc.&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/span&gt;&lt;span style="color:rgb(85, 85, 85);font-family:Verdana, &amp;#39;BitStream vera Sans&amp;#39;, Tahoma, Helvetica, sans-serif;line-height:17px;background-color:rgb(255, 255, 255)"&gt;Find out what PID you want to debug (one that’s hung).&lt;/span&gt;&lt;span style="color:rgb(85, 85, 85);font-family:Verdana, &amp;#39;BitStream vera Sans&amp;#39;, Tahoma, Helvetica, sans-serif;line-height:17px;background-color:rgb(255, 255, 255)"&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/span&gt;&lt;span style="color:rgb(85, 85, 85);font-family:Verdana, &amp;#39;BitStream vera Sans&amp;#39;, Tahoma, Helvetica, sans-serif;line-height:17px;background-color:rgb(255, 255, 255)"&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;Once you have that PID, type: &lt;strong&gt;dbx –a &lt;/strong&gt;&lt;strong&gt;&lt;em&gt;THAT_PID&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;This will bring you into the dbx command line.&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;Type in &lt;strong&gt;thread&lt;/strong&gt;, you’ll see something similar to:&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;em&gt;&amp;gt;$t1     run                          blocked   417997   k   no   pro  _event_sleep&lt;/em&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;em&gt;$t2     wait      0xf10002000101ca08 running   401633   k   no   pro  _ptrgl&lt;/em&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;em&gt;$t3     wait      0xf10002000101a208 running   438487   k   no   pro  _ptrgl&lt;/em&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;em&gt;&lt;br&gt;&lt;/em&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;If the PID has threaded, it will give you a list of TID’s (Thread ID’s).&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;You’ll want to look for threads that look abnormal I.E that are in a abnormal state, or in a WAIT or DEADLOCK condition.&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;&lt;/strong&gt;To examine a thread, type: &lt;strong&gt;thread current&lt;/strong&gt; and then the number right in front of the $t.&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;&lt;/strong&gt;E.G: &lt;strong&gt;thread current 2&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;This will really do nothing, it just sets the attention to that thread.&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;&lt;/strong&gt;Next type in &lt;strong&gt;x&lt;/strong&gt; this will give you a thread dump, and you can sometimes see where it is hanging.&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;Next type in &lt;strong&gt;where&lt;/strong&gt; this can also give you an idea of where it is hanging.&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;When you are done, type &lt;strong&gt;detach&lt;/strong&gt; to exit out of the dbx session. If you type &lt;strong&gt;quit&lt;/strong&gt; it will exit you out of the session but also kill the original PID.&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt; &lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;I have used this to solve a lot of problems where things are hanging. Half of the time it’ll tell me EXACTLY where it is hanging. The one time I did this I found out the process was trying to read a file it didn’t have permission to and two threads were in a dead lock because of it.&lt;/p&gt;&lt;/span&gt;&lt;strong&gt;&lt;strong&gt;
+
+
+&lt;/strong&gt;&lt;/strong&gt;</content><author><name>awojo</name></author><source gr:stream-id="feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en"><id>tag:google.com,2005:reader/feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en</id><title type="html">Andrew Wojnarek</title><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo?lang=en" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317382534642"><id gr:original-id="urn:lsid:ibm.com:blogs:entry-b13f4203-7efd-4a19-8e24-30c429293f35">tag:google.com,2005:reader/item/c94f154a346ff50a</id><category term="hdisk"/><category term="aix"/><category term="rendev"/><title type="html">Change device name</title><published>2011-08-10T14:37:29Z</published><updated>2011-08-10T14:37:29Z</updated><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/change_device_name?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/hdisk?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/aix?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/rendev?lang=en" type="text/html"/><link rel="replies" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/feed/entrycomments/change_device_name/atom?lang=en" type="application/atom+xml"/><content xml:base="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/change_device_name" xml:lang="en-US" type="html">&lt;span style="color:rgb(85, 85, 85);font-family:Verdana, &amp;#39;BitStream vera Sans&amp;#39;, Tahoma, Helvetica, sans-serif;line-height:17px;background-color:rgb(255, 255, 255)"&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;Previous to AIX 6.1 TL6, if you wanted to change hdisk5 to hdisk1337, you’d have to do some messy ODM cuts in order to change the name.&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;There is a new command in AIX 6.1 TL6 that allows you change the name of the device as long as it’s not in a VG. This can be VERY useful when setting up HACMP disks, having them the same on both nodes etc.&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;&lt;strong&gt;rendev -l hdisk5 -n hdisk1337&lt;/strong&gt;&lt;/p&gt;&lt;/span&gt;</content><author><name>awojo</name></author><source gr:stream-id="feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en"><id>tag:google.com,2005:reader/feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en</id><title type="html">Andrew Wojnarek</title><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo?lang=en" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317382197823"><id gr:original-id="urn:lsid:ibm.com:blogs:entry-934c69be-4572-4ecc-934d-7fe64fa7b785">tag:google.com,2005:reader/item/d3e2ff6e94a45d78</id><category term="linux"/><category term="aix"/><category term="speeds"/><category term="network"/><category term="sysadmin"/><title type="html">Pure network speed testing</title><published>2011-08-10T14:46:32Z</published><updated>2011-08-10T14:46:32Z</updated><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/pure_network_speed_testing?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/linux?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/aix?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/speeds?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/network?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/sysadmin?lang=en" type="text/html"/><link rel="replies" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/feed/entrycomments/pure_network_speed_testing/atom?lang=en" type="application/atom+xml"/><content xml:base="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/pure_network_speed_testing" xml:lang="en-US" type="html">&lt;span style="color:rgb(85, 85, 85);font-family:Verdana, &amp;#39;BitStream vera Sans&amp;#39;, Tahoma, Helvetica, sans-serif;line-height:17px;background-color:rgb(255, 255, 255)"&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;Want to see how fast your network speeds are between machines/LPARs/etc? This can always be a little tricky to do because there are a lot of factors in plan – and a lot of potential bottlenecks; such as disks.&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;You can bypass disks ever being touched in your test by connecting via FTP to another server, and sending a block of data directly to /dev/null. This will stop the server from writing it to disk, and therefore give you pure network speeds:&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;1. Connect to a server via FTP from another server.&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;2. Enter: &lt;strong&gt;put “|dd if=/dev/zero bs=3M count=1000″ /dev/null&lt;/strong&gt;&lt;/p&gt;&lt;p style="margin-top:0px;margin-bottom:10px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"&gt;3. Monitor the speeds with your favorite monitoring solution topas, top etc.&lt;/p&gt;&lt;div style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;font-size:0px;height:0px;line-height:0px;clear:both"&gt;&lt;/div&gt;&lt;div style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:2px;padding-right:0px;padding-bottom:2px;padding-left:0px;height:33px;clear:both"&gt;&lt;/div&gt;&lt;/span&gt;</content><author><name>awojo</name></author><source gr:stream-id="feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en"><id>tag:google.com,2005:reader/feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en</id><title type="html">Andrew Wojnarek</title><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo?lang=en" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317382020147"><id gr:original-id="urn:lsid:ibm.com:blogs:entry-b14cb5be-ccc4-4be6-b22e-5b1c9ff344b4">tag:google.com,2005:reader/item/ecae75ab2bde96c2</id><category term="hmc"/><category term="vio"/><category term="ivm"/><category term="aix"/><title type="html">Running VIO commands from the HMC</title><published>2011-08-10T18:20:50Z</published><updated>2011-08-10T18:20:50Z</updated><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/running_vio_commands_from_the_hmc8?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/hmc?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/vio?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/ivm?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/aix?lang=en" type="text/html"/><link rel="replies" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/feed/entrycomments/running_vio_commands_from_the_hmc8/atom?lang=en" type="application/atom+xml"/><content xml:base="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/running_vio_commands_from_the_hmc8" xml:lang="en-US" type="html">&lt;div&gt;I find interesting you can run commands on your VIO server from an HMC:&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;user@hmc22:~&amp;gt; viosvrcmd -m SN2014AE-FSE -p vio33 -c &amp;quot;lsdev -virtual&amp;quot;&lt;/div&gt;&lt;div&gt;name             status      description&lt;/div&gt;&lt;div&gt;ent4             Available   Virtual I/O Ethernet Adapter (l-lan)&lt;/div&gt;&lt;div&gt;ent5             Available   Virtual I/O Ethernet Adapter (l-lan)&lt;/div&gt;&lt;div&gt;vasi0            Available   Virtual Asynchronous Services Interface (VASI)&lt;/div&gt;&lt;div&gt;vbsd0            Available   Virtual Block Storage Device (VBSD)&lt;/div&gt;&lt;div&gt;vfchost0         Available   Virtual FC Server Adapter&lt;/div&gt;&lt;div&gt;vfchost1         Available   Virtual FC Server Adapter&lt;/div&gt;&lt;div&gt;vsa0             Available   LPAR Virtual Serial Adapter&lt;/div&gt;&lt;div&gt;name             status      description&lt;/div&gt;&lt;div&gt;ent6             Available   EtherChannel / IEEE 802.3ad Link Aggregation&lt;/div&gt;&lt;div&gt;ent7             Available   EtherChannel / IEEE 802.3ad Link Aggregation&lt;/div&gt;&lt;div&gt;ent8             Available   Shared Ethernet Adapter&lt;/div&gt;&lt;div&gt;ent9             Available   Shared Ethernet Adapter&lt;/div&gt;&lt;div&gt;name             status      description&lt;/div&gt;&lt;div&gt;ent10            Available   VLAN&lt;/div&gt;&lt;div&gt;ent11            Available   VLAN &lt;/div&gt;</content><author><name>awojo</name></author><source gr:stream-id="feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en"><id>tag:google.com,2005:reader/feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en</id><title type="html">Andrew Wojnarek</title><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo?lang=en" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317381983158"><id gr:original-id="urn:lsid:ibm.com:blogs:entry-fcd394ee-6aad-4c4b-8da5-682f0e3dfc28">tag:google.com,2005:reader/item/d399a8dc741afc8f</id><title type="html">Using dbx to troubleshoot hung proccesses</title><published>2011-09-29T12:08:28Z</published><updated>2011-09-29T12:08:28Z</updated><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/using_dbx_to_troubleshoot_hung_proccesses2?lang=en" type="text/html"/><link rel="replies" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/feed/entrycomments/using_dbx_to_troubleshoot_hung_proccesses2/atom?lang=en" type="application/atom+xml"/><content xml:base="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/using_dbx_to_troubleshoot_hung_proccesses2" xml:lang="en-US" type="html">&lt;p style="margin-left:1.0in"&gt;&lt;span&gt;&lt;span&gt;&lt;br&gt;In this example we'll debug a problem where sshd is hanging. &lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style="margin-left:1.0in"&gt;&lt;span&gt;&lt;span&gt;&lt;b&gt;a.&lt;/b&gt;&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;&lt;b&gt;  &lt;/b&gt;     &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;Find
+out your exit PID that is hanging by &lt;b&gt;ps –ef | grep exit | egrep –v grep&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&lt;b&gt;&lt;span&gt;&lt;span&gt;b.&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;      &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;Once
+you have that PID, type: &lt;b&gt;dbx –a &lt;i&gt;THAT_PID&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&lt;b&gt;&lt;span&gt;&lt;span&gt;c.&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;       &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;This
+will bring you into the dbx command line.&lt;b&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&lt;b&gt;&lt;span&gt;&lt;span&gt;d.&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;      &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;Type
+in &lt;b&gt;thread&lt;/b&gt;, you’ll see something similar to:&lt;b&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&lt;b&gt; &lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&amp;gt;$t1    
+run                         
+blocked   417997   k   no   pro 
+_event_sleep&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt; $t2    
+wait      0xf10002000101ca08 running  
+401633   k   no   pro  _ptrgl&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt; $t3    
+wait      0xf10002000101a208 running  
+438487   k   no   pro  _ptrgl&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&lt;b&gt; &lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&lt;b&gt;&lt;span&gt;&lt;span&gt;e.&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;      &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;If
+the PID has threaded, it will give you a list of TID’s (Thread ID’s).&lt;b&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&lt;b&gt;&lt;span&gt;&lt;span&gt;f.&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;       
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;You’ll want to look for threads that look
+abnormal I.E that are in a abnormal state, or in a WAIT or DEADLOCK condition.&lt;b&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&lt;b&gt;&lt;span&gt;&lt;span&gt;g.&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;       &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;To
+examine a thread, type: &lt;b&gt;thread current&lt;/b&gt; and then the number right in
+front of the $t.&lt;b&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.5in"&gt;&lt;b&gt;&lt;span&gt;&lt;span&gt;&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;                                                             
+&lt;/span&gt;i.&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;     
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;E.G: &lt;b&gt;thread current 2&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&lt;b&gt;&lt;span&gt;&lt;span&gt;h.&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;      &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;This
+will really do nothing, it just sets the attention to that thread.&lt;b&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&lt;b&gt;&lt;span&gt;&lt;span&gt;i.&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;       
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;Next type in &lt;b&gt;x&lt;/b&gt; this will give you a
+thread dump, and you can sometimes see where it is hanging.&lt;b&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&lt;b&gt;&lt;span&gt;&lt;span&gt;j.&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;       
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;Next type in &lt;b&gt;where&lt;/b&gt; this can also give
+you an idea of where it is hanging.&lt;b&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;&lt;b&gt;&lt;span&gt;&lt;span&gt;k.&lt;span style="font:7.0pt &amp;quot;Times New Roman&amp;quot;"&gt;       &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;When
+you are done, type &lt;b&gt;detach&lt;/b&gt; to exit out of the dbx session. If you type &lt;b&gt;quit&lt;/b&gt;
+it will exit you out of the session but also kill the original PID.&lt;b&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt; &lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt; &lt;/p&gt;
+
+&lt;p style="margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:1.0in"&gt;I have used this to solve a lot of problems where
+things are hanging. Half of the time it’ll tell me EXACTLY where it is hanging.
+The one time I did this I found out the process was trying to read a file it
+didn’t have permission to and two threads were in a dead lock because of it.&lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt; &lt;/p&gt;
+
+&lt;p style="margin-left:1.0in"&gt;If the PID of exit doesn’t
+work, try the parent ssh PID.&lt;b&gt;&lt;/b&gt;&lt;/p&gt;</content><author><name>awojo</name></author><source gr:stream-id="feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en"><id>tag:google.com,2005:reader/feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en</id><title type="html">Andrew Wojnarek</title><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo?lang=en" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317381500838"><id gr:original-id="urn:lsid:ibm.com:blogs:entry-59ae1b90-7dd5-4606-88b3-0420f88cbbcf">tag:google.com,2005:reader/item/857d46fbe53b7988</id><category term="aix"/><category term="ssh"/><title type="html">ssh key debug</title><published>2011-09-29T15:20:21Z</published><updated>2011-09-29T15:20:21Z</updated><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/ssh_key_debug1?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/aix?lang=en" type="text/html"/><link rel="related" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/tags/ssh?lang=en" type="text/html"/><link rel="replies" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/feed/entrycomments/ssh_key_debug1/atom?lang=en" type="application/atom+xml"/><content xml:base="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo/entry/ssh_key_debug1" xml:lang="en-US" type="html">&lt;div&gt;There is nothing more infuriating then connecting to a server and having your key not work. You've checked that the key is there, and looks right. &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;I wrote this script to help debug this problem.. it checks the integrity of the key, permissions of the directories etc and makes recommendations. &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;It might not work in all environments, but maybe it'll help someone: &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;#!/usr/bin/ksh &lt;/div&gt;&lt;div&gt;##########################################&lt;/div&gt;&lt;div&gt;# Debug ssh key settings.                #&lt;/div&gt;&lt;div&gt;##########################################&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;#############&lt;/div&gt;&lt;div&gt;# Variables #&lt;/div&gt;&lt;div&gt;#############&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;########&lt;/div&gt;&lt;div&gt;# Main #&lt;/div&gt;&lt;div&gt;######## &lt;/div&gt;&lt;div&gt;clear&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;echo &amp;quot;\n&amp;quot;&lt;/div&gt;&lt;div&gt;echo &amp;quot;Enter the user you wish to verify / test SSH keys with: &amp;quot;&lt;/div&gt;&lt;div&gt;echo &amp;quot;--&amp;gt; \c&amp;quot;&lt;/div&gt;&lt;div&gt;read _user&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;_home=`finger ${_user} | grep Directory | awk '{ print $2 }'`&lt;/div&gt;&lt;div&gt;_home_dir_permissions=`perl -e&amp;#39;printf &amp;quot;%o\n&amp;quot;,(stat shift)[2] &amp;amp; 07777&amp;#39; ${_home}`&lt;/div&gt;&lt;div&gt;_home_dir_ownership=`ls -ld ${_home} | awk '{ print $3 }'`&lt;/div&gt;&lt;div&gt;_ssh_dir=${_home}/.ssh&lt;/div&gt;&lt;div&gt;_ssh_dir_permission=`perl -e&amp;#39;printf &amp;quot;%o\n&amp;quot;,(stat shift)[2] &amp;amp; 07777&amp;#39; ${_ssh_dir}`&lt;/div&gt;&lt;div&gt;_ssh_dir_ownership=`ls -ld ${_ssh_dir} | awk '{ print $3 }'`&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;echo &amp;quot;\n\n&amp;quot;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;##################&lt;/div&gt;&lt;div&gt;# Check for .ssh #&lt;/div&gt;&lt;div&gt;##################&lt;/div&gt;&lt;div&gt;if [[ ! -e &amp;quot;${_ssh_dir}&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;        echo &amp;quot;The ssh key directory ${_ssh_dir} does not exist.&amp;quot; &lt;/div&gt;&lt;div&gt;fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;##############################&lt;/div&gt;&lt;div&gt;# Check for .ssh permissions #&lt;/div&gt;&lt;div&gt;##############################&lt;/div&gt;&lt;div&gt;if [[ &amp;quot;${_ssh_dir_permission}&amp;quot; -gt &amp;quot;700&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;        echo &amp;quot;The ${_ssh_dir} permissions are higher than they can be. They need to be 700 or lower, they are currently ${_ssh_dir_permission}.&amp;quot;&lt;/div&gt;&lt;div&gt;fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;############################&lt;/div&gt;&lt;div&gt;# Check for .ssh ownership #&lt;/div&gt;&lt;div&gt;############################&lt;/div&gt;&lt;div&gt;if [[ &amp;quot;${_ssh_dir_ownership}&amp;quot; != &amp;quot;${_user}&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;        echo &amp;quot;The ownership for ${_ssh_dir} is not correct. It needs to be ${_user} it is currently set at ${_ssh_dir_ownership}&amp;quot;&lt;/div&gt;&lt;div&gt;fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;######################################&lt;/div&gt;&lt;div&gt;# Check for home directory ownership #&lt;/div&gt;&lt;div&gt;######################################&lt;/div&gt;&lt;div&gt;if [[ &amp;quot;${_home_dir_ownership}&amp;quot; != &amp;quot;${_user}&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;        echo &amp;quot;The ownership for ${_home} is not correct. It needs to be ${_user} it is currently set at ${_home_dir_ownership}&amp;quot;&lt;/div&gt;&lt;div&gt;fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;########################################&lt;/div&gt;&lt;div&gt;# Check for home directory permissions #&lt;/div&gt;&lt;div&gt;########################################&lt;/div&gt;&lt;div&gt;if [[ &amp;quot;${_home_dir_permission}&amp;quot; -gt &amp;quot;755&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;        echo &amp;quot;The ${_home} permissions are higher than they can be. They need to be 755 or lower, they are currently ${_home_dir_permission}.&amp;quot;&lt;/div&gt;&lt;div&gt;fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;##############################&lt;/div&gt;&lt;div&gt;# Check for keys permissions #&lt;/div&gt;&lt;div&gt;##############################&lt;/div&gt;&lt;div&gt;if [[ -e ${_ssh_dir}/id_rsa ]]; then&lt;/div&gt;&lt;div&gt;        _perm=`perl -e&amp;#39;printf &amp;quot;%o\n&amp;quot;,(stat shift)[2] &amp;amp; 07777&amp;#39; ${_ssh_dir}/id_rsa`&lt;/div&gt;&lt;div&gt;        if [[ &amp;quot;${_perm}&amp;quot; -gt &amp;quot;600&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;                echo &amp;quot;${_ssh_dir}/id_rsa permissions are not correct. They need to be at 600, they are currently at ${_perm}&amp;quot;&lt;/div&gt;&lt;div&gt;        fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;  _own=`ls -la ${_ssh_dir}/id_rsa | awk '{ print $3 }'`&lt;/div&gt;&lt;div&gt;  if [[ &amp;quot;${_own}&amp;quot; != &amp;quot;${_user}&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;    echo &amp;quot;${_ssh_dir}/id_rsa ownership are not correct. They need to be ${_user}, they are currently at ${_own}&amp;quot;&lt;/div&gt;&lt;div&gt;  fi&lt;/div&gt;&lt;div&gt;fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;if [[ -e ${_ssh_dir}/authorized_keys ]]; then&lt;/div&gt;&lt;div&gt;        _perm=`perl -e&amp;#39;printf &amp;quot;%o\n&amp;quot;,(stat shift)[2] &amp;amp; 07777&amp;#39; ${_ssh_dir}/authorized_keys`&lt;/div&gt;&lt;div&gt;        if [[ &amp;quot;${_perm}&amp;quot; -gt &amp;quot;644&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;                echo &amp;quot;${_ssh_dir}/authorized_keys permissions are not correct. They need to be at 644, they are currently at ${_perm}&amp;quot;&lt;/div&gt;&lt;div&gt;        fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;        _own=`ls -la ${_ssh_dir}/authorized_keys | awk '{ print $3 }'`&lt;/div&gt;&lt;div&gt;        if [[ &amp;quot;${_own}&amp;quot; != &amp;quot;${_user}&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;                echo &amp;quot;${_ssh_dir}/authorized_keys ownership are not correct. They need to be ${_user}, they are currently at ${_own}&amp;quot;&lt;/div&gt;&lt;div&gt;        fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;if [[ -e ${_ssh_dir}/authorized_keys2 ]]; then&lt;/div&gt;&lt;div&gt;        _perm=`perl -e&amp;#39;printf &amp;quot;%o\n&amp;quot;,(stat shift)[2] &amp;amp; 07777&amp;#39; ${_ssh_dir}/authorized_keys2`&lt;/div&gt;&lt;div&gt;        if [[ &amp;quot;${_perm}&amp;quot; -gt &amp;quot;644&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;                echo &amp;quot;${_ssh_dir}/authorized_keys2 permissions are not correct. They need to be at 644, they are currently at ${_perm}&amp;quot;&lt;/div&gt;&lt;div&gt;        fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;  _own=`ls -la ${_ssh_dir}/authorized_keys2 | awk '{ print $3 }'`&lt;/div&gt;&lt;div&gt;  if [[ &amp;quot;${_own}&amp;quot; != &amp;quot;${_user}&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;    echo &amp;quot;${_ssh_dir}/authorized_keys2 ownership are not correct. They need to be ${_user}, they are currently at ${_own}&amp;quot;&lt;/div&gt;&lt;div&gt;  fi&lt;/div&gt;&lt;div&gt;fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;###########################&lt;/div&gt;&lt;div&gt;# Check for key integrity #&lt;/div&gt;&lt;div&gt;###########################&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;if [[ -e ${_ssh_dir}/authorized_keys ]]; then&lt;/div&gt;&lt;div&gt;  _lines=`wc -l ${_ssh_dir}/authorized_keys | awk '{ print $1 }'`&lt;/div&gt;&lt;div&gt;  if [[ &amp;quot;${_lines}&amp;quot; -gt &amp;quot;1&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;    echo &amp;quot;Integrity of ${_ssh_dir}/authorized_keys is incorrect. It all needs to be one one line, there are currently ${_lines} lines&amp;quot;&lt;/div&gt;&lt;div&gt;  fi&lt;/div&gt;&lt;div&gt;fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;if [[ -e ${_ssh_dir}/authorized_keys2 ]]; then&lt;/div&gt;&lt;div&gt;  _lines=`wc -l ${_ssh_dir}/authorized_keys2 | awk '{ print $1 }'`&lt;/div&gt;&lt;div&gt;  if [[ &amp;quot;${_lines}&amp;quot; -gt &amp;quot;1&amp;quot; ]]; then&lt;/div&gt;&lt;div&gt;    echo &amp;quot;Integrity of ${_ssh_dir}/authorized_keys is incorrect. It all needs to be one one line, there are currently ${_lines} lines&amp;quot;&lt;/div&gt;&lt;div&gt;  fi&lt;/div&gt;&lt;div&gt;fi&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;echo &amp;quot;\n\n&amp;quot;&lt;/div&gt;&lt;div&gt;echo &amp;quot;All done! If there was nothing outputted on the screen, everything looks correct.&amp;quot; &lt;/div&gt;</content><author><name>awojo</name></author><source gr:stream-id="feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en"><id>tag:google.com,2005:reader/feed/https://www.ibm.com/developerworks/mydeveloperworks/blogs/roller-ui/rendering/feed/AWojo/entries/atom?lang=en</id><title type="html">Andrew Wojnarek</title><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/AWojo?lang=en" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317368878863"><id gr:original-id="http://www.aixmind.com/?p=2280">tag:google.com,2005:reader/item/ee75fb3c2399e024</id><category term="AIX"/><category term="0516-021"/><category term="HDLM"/><category term="Hitachi"/><category term="major number"/><category term="mkvg"/><category term="VG"/><category term="volume-group"/><title type="html">0516-021 /usr/sbin/varyonvg: The varyonvg failed because the volume group’s major number was already used by another device.</title><published>2011-09-29T18:49:42Z</published><updated>2011-09-29T18:49:42Z</updated><link rel="alternate" href="http://www.aixmind.com/?p=2280" type="text/html"/><content xml:base="http://www.aixmind.com/" type="html">&lt;h2&gt;Problem:&lt;/h2&gt;
+&lt;p&gt;On an AIX server with Hitach HDLM fileset installed, trying to create a Volume Group on Hitachi LUN,&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family:Courier New;font-size:x-small"&gt;mkvg -y’datavg’ hdisk4&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family:Courier New;font-size:x-small"&gt;      datavg&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family:Courier New;font-size:x-small"&gt;      0516-021 /usr/sbin/varyonvg: The varyonvg failed because the volume group’s&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family:Courier New;font-size:x-small"&gt;              major number was already used by another device.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family:Courier New;font-size:x-small"&gt;      0516-862 mkvg: Unable to create volume group.&lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Cause and Solution:&lt;/h2&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;HDLM creates it’s own special devices. The device files were already in /dev and in the ODM, but not in the kernel. At some point, HDLM recreated the kernel device entries with new major numbers, but did not correct the ODM and the device files. At that point, the major numbers got out of sync and things went downhill from there.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; The fix is to remove and re-install HDLM.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family:Courier New;font-size:x-small"&gt;&lt;br&gt;
+&lt;/span&gt;&lt;/p&gt;</content><author><name>admin</name></author><gr:likingUser>01616680140155928033</gr:likingUser><source gr:stream-id="feed/http://www.aixmind.com/?feed=rss2"><id>tag:google.com,2005:reader/feed/http://www.aixmind.com/?feed=rss2</id><title type="html">AIX Solaris HPUX UNIX Linux system storage administration ksh/perl scripting</title><link rel="alternate" href="http://www.aixmind.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317234071577"><id gr:original-id="tag:typepad.com,2003:post-6a00d83545a5d153ef014e8bd54efd970d">tag:google.com,2005:reader/item/f61b79142d7236cf</id><category term="Fibre cards" scheme="http://www.sixapart.com/ns/types#category"/><title type="html">Logging Fibre Cards into a Switch</title><published>2011-09-27T13:14:00Z</published><updated>2011-09-27T13:14:00Z</updated><link rel="alternate" href="http://ibmsystemsmag.blogs.com/aixchange/2011/09/logging-fibre-cards-into-a-switch.html" type="text/html"/><link rel="replies" href="http://ibmsystemsmag.blogs.com/aixchange/2011/09/logging-fibre-cards-into-a-switch.html" type="text/html"/><summary xml:base="http://ibmsystemsmag.blogs.com/aixchange/" type="html">I recently worked with a customer that was trying to figure out how to log their fibre cards into a switch before loading an OS...</summary><author gr:unknown-author="true"><name>(author unknown)</name></author><source gr:stream-id="feed/http://ibmsystemsmag.blogs.com/aixchange/atom.xml"><id>tag:google.com,2005:reader/feed/http://ibmsystemsmag.blogs.com/aixchange/atom.xml</id><title type="html">AIXchange</title><link rel="alternate" href="http://ibmsystemsmag.blogs.com/aixchange/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317233902364"><id gr:original-id="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/entry/local_near_far_memory_part_9_firmware_updates69">tag:google.com,2005:reader/item/d1d6b47f46115610</id><category term="vm"/><category term="entitlement"/><category term="virtual"/><category term="power7"/><category term="aix"/><category term="placement"/><category term="processor"/><category term="lpar"/><category term="cpu"/><category term="powervm"/><title type="html">Local, Near &amp;amp; Far Memory part 9 - Firmware Updates</title><published>2011-09-27T12:29:27Z</published><updated>2011-09-27T12:29:27Z</updated><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/entry/local_near_far_memory_part_9_firmware_updates69" type="text/html"/><summary xml:base="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert" xml:lang="en-US" type="html">&lt;div&gt;The Hypervisor makes the virtual machine (LPAR) placement decisions and changes during DLPAR. The Hypervisor is part of the Power Systems Firmware.  The POWER7 machines first arrived in the early months of 2010. Since then we have had a lot of field experience with the larger machines with large configurations with large applications and tens of thousands of processes running and in particularly the machines with all three layers of memory - which are the Power 770, Power 780 and Power 795.  From this experience, the POWER developers have refined the performance and VM placement algorithms, thresholds and tuning options. Some of this is reflected in the newer versions and service packs of AIX since the announcement, in particular AIX 6.1 TL05 and latest service pack and any AIX 7.1.  But it is easy to forget or postpone the updating of system firmware (and Hypervisor) due to the outages this can cause.  Of course, if you have gone for Live Partition Mobility (LPM) then system firmware upgrades are very simple and very easy to schedule ... OK simpler and easier!&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;&lt;font color="#0000ff"&gt;&lt;b&gt;Firmware Marketing&lt;/b&gt;&lt;/font&gt; &lt;br&gt;&lt;/div&gt;&lt;div&gt;I would like to highlight that the POWER7 firmware developers don&amp;#39;t have a marketing department :-)  This means there are not a lot of web pages, presentations or Technical University sessions with details of the new features or improvements in each release. You can read the &amp;quot;um&amp;quot; README Fix History but the one line descriptions there are vague.  I could find no official website page describing CPU and Memory Affinity improvements in recent firmware level releases but from talking to developers I know there are lots and lots. These are in the areas of&lt;br&gt;&lt;ol&gt;&lt;li&gt;Concurrent hot add/repair maintenance firmware fixes&lt;/li&gt;&lt;li&gt;Bug fixes for particular circumstances, &lt;/li&gt;&lt;li&gt;Some performance tweaks including Affinity, &lt;/li&gt;&lt;li&gt;More flexible way of handling Capacity Upgrade on Demand CPUs and memory to improve VM placement - a further reason to take CUoD&lt;/li&gt;&lt;li&gt;Addition of new hardware and SDMC support&lt;br&gt;&lt;/li&gt;&lt;/ol&gt;From knowing what is new in the latest POWER7 firmware and I have just reread the README history - I can see them in the one line description but only because I know what to look for.  I noticed some have the word &amp;quot;associate or associated&amp;quot; in them and a few with the word &amp;quot;performance&amp;quot;. I never told out that - OK! &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;&lt;font color="#0000ff"&gt;&lt;b&gt;Best Practice&lt;/b&gt;&lt;/font&gt; &lt;/div&gt;&lt;div&gt;It has been one year since the last POWER7 machine was Generally 
+Available (IBM speak for shipping) and the lessons learnt in that year 
+are in the latest systems firmware.&lt;br&gt;Given the lack of official information that I can share publicly,  all I can say is: &lt;br&gt;&lt;br&gt;&lt;font color="#ff0000"&gt;&lt;b&gt;I STRONGLY ENCOURAGE ALL POWER7 MACHINES TO BE UPGRADED TO A MINIMUM OF FIRMWARE 730&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;which has been out for months (May 2011) or any further updates after that.  Oh and it includes HIPER fixes - which everyone should want as soon as possible.&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;&lt;hr size="2" width="100%"&gt; &lt;/div&gt;&lt;div&gt;Firmware README - history with descriptions of improvements:&lt;br&gt;&lt;ul&gt;&lt;li&gt;Low-End (Power 710 to Power 750)- ftp://ftp.boulder.ibm.com/software/server/firmware/AL-Firmware-Hist.html&lt;/li&gt;&lt;li&gt;Mid-range (Power 770/780) - ftp://ftp.boulder.ibm.com/software/server/firmware/AM-Firmware-Hist.html&lt;/li&gt;&lt;li&gt;High-End (Power 795) -  ftp://ftp.boulder.ibm.com/software/server/firmware/AH-Firmware-Hist.html&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt; &lt;/div&gt;</summary><author><name>nagger</name></author><source gr:stream-id="feed/http://www-03.ibm.com/developerworks/blogs/rss/aixpert?flavor=rssdw"><id>tag:google.com,2005:reader/feed/http://www-03.ibm.com/developerworks/blogs/rss/aixpert?flavor=rssdw</id><title type="html">AIXpert Blog</title><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317233890467"><id gr:original-id="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/entry/local_near_far_memory_part_8_dynamic_lpar_changes_can_mess_up_your_placement149">tag:google.com,2005:reader/item/7112bf019c5dff59</id><category term="dlpar"/><category term="entitlement"/><category term="cpu"/><category term="ram"/><category term="virtual"/><category term="vm"/><category term="power7"/><category term="lpar"/><category term="processor"/><category term="aix"/><category term="placement"/><category term="power6"/><category term="powervm"/><category term="lmb"/><title type="html">Local, Near &amp;amp; Far Memory part 8 - Dynamic LPAR changes can mess up your placement</title><published>2011-09-27T10:07:29Z</published><updated>2011-09-27T10:07:29Z</updated><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/entry/local_near_far_memory_part_8_dynamic_lpar_changes_can_mess_up_your_placement149" type="text/html"/><summary xml:base="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert" xml:lang="en-US" type="html">&lt;div&gt;After you have started and used your virtual machine (VM) for a while, you may decide to change its size using a Dynamic LPAR (DLPAR) change from the HMC (or SDMC or IVM, of course). This has virtual machine placement implications.  &lt;br&gt;&lt;ul&gt;&lt;li&gt;When shrinking your VM, the hypervisor will decide which CPU or memory (LBM) to release and it might not select what you think is the obvious choice.  &lt;/li&gt;&lt;li&gt;When enlarging your VM, we might thing there is an obvious way to grow in a balanced way but we can't see:&lt;/li&gt;&lt;li&gt;1) where physically our virtual machine is placed in the physical machine - note: the lssrad command output is relative and always starts from SRAD 0&lt;/li&gt;&lt;li&gt;2) we don't know where there are free resources&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;When playing with DLPAR on my non-production box, I frequently was scratching my head thinking: Why it was doing certain things? and then later suddenly working it out.  Examples: I worked out the second SRAD was empty (must not have any LPAR using CPUs nor memory) and that is why it keeps getting more CPU+RAM to it. Or I was asking for 32 GB and realised it can't make a single SRAD VM because there is a little overhead but it could make a 31 GB one.  In practice, I have found the hypervisor is making good choices but often the reasons are a little mysterious and not every one can spend half a day experimenting to work out why.&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;In the Advanced Technical Support group, we tend to have the latest HMC, firmware (hypervisor) and operating systems installed - in fact, we often have early beta versions as we get involved with testing, user experience feedback, improving the documentation etc.  When I was first experimenting with early POWER7 machines and looking at CPU and Memory Affinity, we were on an older firmware level and I found the shrinking and enlarging virtual machines got into some odd situations and more asymmetric placements over time. But today, when I went to capture some examples, of shrinking a 16 virtual processor + 32 GB of memory virtual machine down to just to 2 CPUs and 4 GB and back again it was quite well behaved.  We have, of course, updated the firmware in between the testing.&lt;br&gt;&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;It is good practice to keep the CPU to memory ratio about the same for our workloads but this requires two Dynamic LPAR operations (we can&amp;#39;t remove CPU and memory at the same time - if you try this you will fine it locks the virtual machine during the first operation so not further changes are possible until it completes) - this makes it harder work for the hypervisor as it can&amp;#39;t guess your intentions or what you will or may do in the near future. Those that have been around since POWER4 days will know that it is recommended best practice not to make very large memory reductions in one go but to take say 4 GB a few times. Releasing memory from the virtual machine requires AIX to empty the memory first. If the memory is in use it means paging the content out and that can take a considerable time. My test VM was not using the memory so it was quick but on a busy server it can take many minutes or an hour if you use a draconian removal size.  I noticed that on large memory reductions, the HMC shows the Reference Code 2003. If you click on the code it tells you a &amp;quot;Dynamic LPAR Memory Removal&amp;quot; is in progress.&lt;br&gt;&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;An example:&lt;br&gt;Starting with Entitlement=16 (note that is not important), virtual processors=16 and desired memory=32 GB&lt;/div&gt;&lt;blockquote&gt;&lt;div&gt;
+
+&lt;div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;# lssrad -av
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;REF1&lt;span&gt;   &lt;/span&gt;SRAD&lt;span&gt;        &lt;/span&gt;MEM&lt;span&gt;      &lt;/span&gt;CPU
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;0
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;0&lt;span&gt;   &lt;/span&gt;15824.31&lt;span&gt;      &lt;/span&gt;0-7 12-15 20-23 28-31 36-39 44-47 56-59
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;1
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;1&lt;span&gt;   &lt;/span&gt;12325.50&lt;span&gt;      &lt;/span&gt;8-11 16-19 24-27 32-35 40-43 52-55
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;2&lt;span&gt;    &lt;/span&gt;3610.50&lt;span&gt;      &lt;/span&gt;48-51 60-63
+&lt;/span&gt;&lt;/div&gt;
+
+
+
+&lt;/div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;#&lt;/span&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt; This was taken down in various stages to E=2, VP=2 and RAM=8 GB&lt;/div&gt;&lt;blockquote&gt;&lt;div&gt;
+
+&lt;div&gt;
+
+&lt;div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;# lssrad -av
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;REF1&lt;span&gt;   &lt;/span&gt;SRAD&lt;span&gt;        &lt;/span&gt;MEM&lt;span&gt;      &lt;/span&gt;CPU
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;0
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;0&lt;span&gt;    &lt;/span&gt;4121.31&lt;span&gt;      &lt;/span&gt;56-59
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;1
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;1&lt;span&gt;    &lt;/span&gt;4108.50&lt;span&gt;      &lt;/span&gt;52-55
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;2&lt;span&gt;     &lt;/span&gt;124.50&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;#&lt;/span&gt; &lt;br&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt; Then boosted up to E=24, VP=24, RAM=48 GB&lt;/div&gt;&lt;blockquote&gt;&lt;div&gt;
+
+&lt;div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;# lssrad -av
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;REF1&lt;span&gt;   &lt;/span&gt;SRAD&lt;span&gt;        &lt;/span&gt;MEM&lt;span&gt;      &lt;/span&gt;CPU
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;0
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;0&lt;span&gt;   &lt;/span&gt;19932.81&lt;span&gt;      &lt;/span&gt;0-7 12-15 20-23 28-31 36-39 44-47 56-59 64-67 72-75 80-83 88-91
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;3&lt;span&gt;    &lt;/span&gt;3859.50
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;1
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;1&lt;span&gt;   &lt;/span&gt;21289.50&lt;span&gt;      &lt;/span&gt;8-11 16-19 24-27 32-35 40-43 52-55 68-71 76-79 84-87
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;2&lt;span&gt;    &lt;/span&gt;2614.50&lt;span&gt;      &lt;/span&gt;48-51 60-63 92-95
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;#&lt;/span&gt; 
+
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt; Followed by going back to the start position of E=16, VP=16 and RAM=32 GB&lt;/div&gt;&lt;blockquote&gt;&lt;div&gt;
+
+&lt;div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;# lssrad -av
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;REF1&lt;span&gt;   &lt;/span&gt;SRAD&lt;span&gt;        &lt;/span&gt;MEM&lt;span&gt;      &lt;/span&gt;CPU
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;0
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;0&lt;span&gt;   &lt;/span&gt;14828.31&lt;span&gt;      &lt;/span&gt;28-31 36-39 44-47 56-59 64-67 72-75 80-83 88-91
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;3&lt;span&gt;       &lt;/span&gt;0.00
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;1
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;1&lt;span&gt;   &lt;/span&gt;14317.50&lt;span&gt;      &lt;/span&gt;24-27 32-35 40-43 52-55 68-71 76-79 84-87
+&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;&lt;span&gt;          &lt;/span&gt;2&lt;span&gt;    &lt;/span&gt;2614.50&lt;span&gt;      &lt;/span&gt;48-51
+&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span lang="NO-BOK" style="font-size:8pt;color:black"&gt;#&lt;/span&gt; &lt;br&gt;&lt;/div&gt;
+
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt;Comments:&lt;br&gt;&lt;ol&gt;&lt;li&gt;We have ended up with four SRADs instead of three but SRAD 3 is actually empty (I guess here that they are not removed completely once they have been used).&lt;/li&gt;&lt;li&gt;We have SRAD 2 with less memory and only one CPU now (logical CPUs 48 to 51 are one physical CPU) compared the start position where it had an extra GB and two CPUs.&lt;/li&gt;&lt;li&gt;The bulk of the virtual machine is in two SRADs with near equal memory and differ by only on CPU  8 and 7 CPUs) - I am guessing here that SRAD 1 has a CPU allocated to another VM so it can't be 8.&lt;/li&gt;&lt;/ol&gt;&lt;span style="font-weight:bold"&gt;I think the current placement is pretty good - full marks to the hypervisor algorithms and their developers. It can't be easy to make a set of rules to cover all the combinations and permutations that it could encounter.&lt;/span&gt;&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;&lt;span style="font-weight:bold;color:rgb(0, 0, 255)"&gt;Further experiments:&lt;/span&gt;&lt;br&gt;&lt;br&gt;I took the VM down to an extremely (from 16 CPUs and 32 GB ) small one to just VP=2 and RAM=4 GB and then started adding 1 GB at a time:&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;blockquote&gt;&lt;div&gt;# lssrad -av&lt;br&gt;REF1   SRAD        MEM      CPU&lt;br&gt;0&lt;br&gt;          0    1382.31      56-59&lt;br&gt;          3       0.00&lt;br&gt;1&lt;br&gt;          1    1245.00      68-71&lt;br&gt;          2    1245.00&lt;br&gt;ADD 1 GB&lt;br&gt;# lssrad -av&lt;br&gt;REF1   SRAD        MEM      CPU&lt;br&gt;0&lt;br&gt;          0    2378.31      56-59&lt;br&gt;          3       0.00&lt;br&gt;1&lt;br&gt;          1    1245.00      68-71&lt;br&gt;          2    1245.00&lt;br&gt;ADD 1 GB&lt;br&gt;# lssrad -av&lt;br&gt;REF1   SRAD        MEM      CPU&lt;br&gt;0&lt;br&gt;          0    3374.31      56-59&lt;br&gt;          3       0.00&lt;br&gt;1&lt;br&gt;          1    1245.00      68-71&lt;br&gt;          2    1245.00&lt;br&gt;ADD 1 GB&lt;br&gt;# lssrad -av&lt;br&gt;REF1   SRAD        MEM      CPU&lt;br&gt;0&lt;br&gt;          0    4370.31      56-59&lt;br&gt;          3       0.00&lt;br&gt;1&lt;br&gt;          1    1245.00      68-71&lt;br&gt;          2    1245.00&lt;br&gt;ADD 1 GB&lt;br&gt;# lssrad -av&lt;br&gt;REF1   SRAD        MEM      CPU&lt;br&gt;0&lt;br&gt;          0    5366.31      56-59&lt;br&gt;          3       0.00&lt;br&gt;1&lt;br&gt;          1    1245.00      68-71&lt;br&gt;          2    1245.00&lt;br&gt;# &lt;br&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt; Now we have orphaned memory in SRAD 2 and a rather unbalanced memory with 5.3 GB to one CPU and 1.2 GB for the others. Also I think the two CPUs are in different Power 770 CEC drawers - indicated with REF0 and REF1.&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;&lt;span style="font-weight:bold;color:rgb(0, 0, 255)"&gt;Now I ask the impossible&lt;/span&gt; - while our experimental virtual machine is tiny I start up a large virtual machine that takes up all the resources of the machine except enough left over for our test VM to grow back to its original size.  This means this new large VM has probably got the CPU&amp;#39;s and memory that was used in out test VM so the test VM has to get the &amp;quot;left overs&amp;quot; - there was no way the hypervisor would know we would grow again.&lt;br&gt;&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;First, I add back the memory to 32 GB&lt;br&gt;&lt;br&gt;&lt;blockquote&gt;# lssrad -av&lt;br&gt;REF1   SRAD        MEM      CPU&lt;br&gt;0&lt;br&gt;          0   12836.31      56-59&lt;br&gt;          3       0.00&lt;br&gt;1&lt;br&gt;          1    1618.50      68-71&lt;br&gt;          2   17305.50&lt;br&gt;#&lt;br&gt;&lt;/blockquote&gt;&lt;br&gt;This is not a pleasant VM placement at all - but the hypervisor has no real options as nearly all the machines memory is in use now. &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;Second, I add back the CPUs to VP=16:&lt;br&gt;&lt;br&gt;&lt;blockquote&gt;# lssrad -av&lt;br&gt;REF1   SRAD        MEM      CPU&lt;br&gt;0&lt;br&gt;          0   12836.31      0-7 12-15 20-23 28-31 36-39 44-47 56-59&lt;br&gt;          3       0.00&lt;br&gt;1&lt;br&gt;          1    1618.50      8-11 16-19 24-27 32-35 40-43 52-55 68-71&lt;br&gt;          2   17305.50      48-51&lt;br&gt;#&lt;br&gt;&lt;/blockquote&gt;&lt;br&gt;As expected the memory is the same and the CPUs with their &amp;quot;sticky&amp;quot; nature (you tend to get the same every time were added back as they were.  If I have started and stops a dozen other VM&amp;#39;s on this VM&amp;#39;s CPUs I suspect that may not be the case - I have not tested that idea.  The worst aspects of our latest placement is memory in SRAD2. Did you spot SRAD 0 has one more CPU than SRAD 1?  Also note that we have gaps in the CPU numbers and have a top Logical CPU number of 71 for 16 physical CPUs with SMT=4 that gives us 64 Logical CPUs. Can you spot the missing ones?&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;&lt;font color="#228b22" style="color:rgb(255, 0, 0);font-weight:bold"&gt;In the case above, the warning is clear that 
+drastic DLPAR changes and starting new virtual machines in between can 
+lead to sub-optimal VM placement.&lt;br&gt;Of course, smaller changes or temporary boost will not have such a dramatic effect as this deliberately extreme test case.&lt;/font&gt; &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;&lt;hr style="width:100%;height:2px"&gt; &lt;font color="#228b22"&gt;&lt;b&gt;Get Out of Jail Free Card&lt;/b&gt;:&lt;/font&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;font color="#228b22"&gt;Just
+ to remind readers the POWER7 based system have excellent memory 
+sub-systems, excellent inter-node memory bandwidth and the machines will
+ still perform well with heavy use of Far memory accesses. In addition, 
+AIX will place processes and take action to minimise Far memory access. 
+ But it is not optimal and with planning and care we can get the 
+performance a bit higher.  &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;hr style="width:100%;height:2px"&gt; &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><author><name>nagger</name></author><source gr:stream-id="feed/http://www-03.ibm.com/developerworks/blogs/rss/aixpert?flavor=rssdw"><id>tag:google.com,2005:reader/feed/http://www-03.ibm.com/developerworks/blogs/rss/aixpert?flavor=rssdw</id><title type="html">AIXpert Blog</title><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317233878051"><id gr:original-id="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/entry/local_near_far_memory_part_7_vm_placement_also_needs_ram206">tag:google.com,2005:reader/item/c0c2e7bce5dc716f</id><category term="aix"/><category term="entitlement"/><category term="cpu"/><category term="power6"/><category term="processor"/><category term="placement"/><category term="vm"/><category term="virtual"/><category term="power7"/><category term="lmb"/><category term="lpar"/><category term="ram"/><category term="powervm"/><title type="html">Local, Near &amp;amp; Far Memory part 7 - VM placement also needs RAM</title><published>2011-09-26T14:23:16Z</published><updated>2011-09-26T14:23:16Z</updated><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/entry/local_near_far_memory_part_7_vm_placement_also_needs_ram206" type="text/html"/><summary xml:base="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert" xml:lang="en-US" type="html">&lt;div&gt;We all tend to concentrate on the CPU first and the memory second. CPUs, as the &amp;quot;brains&amp;quot; of the machine, does get a high focus and have a lot of extreme technology within it but the RAM is the &amp;quot;guts&amp;quot; of the machine to &amp;quot;feed&amp;quot; the CPU with nutrient data. OK, let us stop the analogy there :-)  Along with reducing the number of CPUs via a lower virtual processor count, we also need to have the CPUs matching the memory - so AIX has a fighting change to localise a running process to its home SRAD and thus have it&amp;#39;s data local for maximum speed. &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;&lt;font color="#0000ff"&gt;&lt;b&gt;Logical Memory Block size&lt;/b&gt;&lt;/font&gt; &lt;br&gt;&lt;/div&gt;&lt;div&gt;At the SRAD level, we deal with whole CPUs but memory is finer grain in many MB terms. The smallest memory chunk is the Logical Memory Block, often just called LMB. This is set to a default size depending on the install memory when the machine booted up for the first time. I think the intention is to end up with something like 1000 chunks of memory for flexibility in assigning memory to a virtual machine, for Dynamic memory changes in sensible sizes but not too much waste in tracking millions of little memory chunks. On my medium and large POWER7 machines, I have seen LBM defaults of 64 MB (Power 750) to 256 MB (Power 795).  After trying Live Partition Mobility, you quickly realise that the source and target machine have to have the same LMB size - so we standardised on 128 MB in our computer room.  &lt;br&gt;&lt;br&gt;&lt;font color="#0000ff"&gt;&lt;b&gt;How to set the LMB?&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;This size is set in the ASMI Service Processor menu. On the HMC, select the machine then Operations and &amp;quot;Launch Advanced Systems Management&amp;quot;, login in and find Performance Setting and then Logical Memory Block - unfortunately this need a cold reboot of the machine. So &lt;b&gt;get this right during the initial machine setup&lt;/b&gt; or it can be very painful to change while in production mode.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;font color="#0000ff"&gt;&lt;b&gt;Assigning memory to virtual machines ad SRADs&lt;/b&gt;&lt;/font&gt;&lt;br&gt;When starting your virtual machine the Hypervisor will have to decide the optimal placement for both the CPU and memory. I have customers that have for similar workloads a fixed CPU to RAM ratio of say 1 CPU to 32 GB of memory - if the machine was configured to have this ratio and the virtual machines do too. then there can be a good chance there is RAM available with with each processor - it depends if you feel lucky!  I am thinking here of a machine that is say 80% allocated to running virtual machines and we are adding a further one.   If instead there is no fixed ratio and the ratio is decided based on needs then I think you are likely to have more situations where there are CPU and memory islands - by which I mean&lt;br&gt;&lt;ul&gt;&lt;li&gt;some SRADs have spare CPUs but no RAM but &lt;/li&gt;&lt;li&gt;other SRADs have no CPUs but do have RAM available&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt; In diagram form:&lt;/div&gt;&lt;div&gt;&lt;a href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/resource/BLOGS_UPLOADED_IMAGES/CPU_RAM_islands.gif"&gt;&lt;img alt="image" src="https://dw1.s81c.com/developerworks/mydeveloperworks/blogs/aixpert/resource/BLOGS_UPLOADED_IMAGES/CPU_RAM_islands.gif" style="display:block;margin:0pt auto;text-align:center"&gt;&lt;/a&gt;  &lt;/div&gt;&lt;div&gt;This (above) is a worst case and what we want to avoid, if at all possible.&lt;br&gt;&lt;/div&gt;&lt;div&gt; &lt;hr size="2" width="100%"&gt;&lt;/div&gt;&lt;div&gt;&lt;font color="#0000ff"&gt;&lt;b&gt;Virtual machine persistent placement&lt;/b&gt;: &lt;/font&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;It might not be obvious but when you cold stop and start a virtual machine - it is usually started on the same CPUs and memory. This is to provide consistency of performance. This has been true for many years and not introduced with POWER7. We would not want a simple cold restart to change the virtual machine placement and so give you different performance - that would be very hard to live with and nearly impossible to explain.  This does limit some of the choices in virtual machine placement.  Removing this &amp;quot;sticky&amp;quot; feature is difficult - you can make a profile with very little in it, then start the virtual machine until is starts loading AIX and then stop immediate it.  I think a cold reboot of the machine might get the allocation removed too.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;hr size="2" width="100%"&gt;&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;&lt;font color="#0000ff"&gt;&lt;b&gt;A few examples of good, bad and &amp;quot;oh dear&amp;quot;&lt;/b&gt;&lt;/font&gt; &lt;br&gt;&lt;/div&gt;&lt;div&gt;I have seen some customer virtual machines that have ended up with bad layouts in SRAD placement terms.&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;First here is my &lt;b&gt;20 Virtual Processor&lt;/b&gt; virtual machine (&lt;font color="#ff0000"&gt;&lt;b&gt;remember Entitlement is irrelevant&lt;/b&gt;&lt;/font&gt;) as it started up after a 7 hour power outage (which took down a 2 mile radius block of London - not our fault!) so it was definitely a cold boot.&lt;br&gt;&lt;/div&gt;&lt;div&gt; &lt;a href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/resource/BLOGS_UPLOADED_IMAGES/lssrad_good.gif"&gt;&lt;img alt="image" src="https://dw1.s81c.com/developerworks/mydeveloperworks/blogs/aixpert/resource/BLOGS_UPLOADED_IMAGES/lssrad_good.gif" style="display:block;margin:0pt auto;text-align:center"&gt;&lt;/a&gt; &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;ul&gt;&lt;li&gt;SRAD 0 - 7 virtual processors with 21195.25 MB RAM = 3028 MB per CPU-core&lt;/li&gt;&lt;li&gt;SRAD 1 - 6 virtual processors with 20027.0 MB RAM = 3338 MB per CPU-core&lt;/li&gt;&lt;li&gt;SRAD 2 - 4 virtual processors with 11827.5 MB RAM = 2957 MB per CPU-core&lt;/li&gt;&lt;li&gt;SRAD 3 - 3 virtual processors with 10582.5 MB RAM =  3528 MB per CPU-core &lt;/li&gt;&lt;/ul&gt;&lt;div&gt;The machine only has 32 CPUs in two CEC drawers of the Power 770 and it has decided to lay it out across all four SRADs with a pretty even spread across them and fairly even memory to match.  This virtual machine was started after three Virtual I/O Servers, an NIM server and my Systems Director virtual machine. This might explain why it is not absolutely consistent but will be fairly typical of a largish virtual machine started when the machine was (guessing here 25% already running other smallish virtual machines. I am please with this placement.&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;Update: I then tried a few experiments.&lt;br&gt;I dropped the VP to 16 thinking it would use less SRADs than all four of my Power 770 and got the following:&lt;/div&gt;&lt;div&gt;  &lt;a href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/resource/BLOGS_UPLOADED_IMAGES/lssrad_good16.gif"&gt;&lt;img alt="image" src="https://dw1.s81c.com/developerworks/mydeveloperworks/blogs/aixpert/resource/BLOGS_UPLOADED_IMAGES/lssrad_good16.gif" style="display:block;margin:0pt auto;text-align:center"&gt;&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Above is still using all four SRAD but then I remembered this virtual machine has 64 GB of RAM. The machine has 128 in total so that is 32 GB per POWER7 - as I have other LPARs running some memory of each SRAD was probably used so it could not go for 100% of the memory of two SRADs and was thus spreading out the VM.  I then dropped the memory from 64 GB to 32 GB with the same 16 virtual processors and restarted the VM and got ... &lt;br&gt;&lt;a href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/resource/BLOGS_UPLOADED_IMAGES/lssrad_good16small.gif"&gt;&lt;img alt="image" src="https://dw1.s81c.com/developerworks/mydeveloperworks/blogs/aixpert/resource/BLOGS_UPLOADED_IMAGES/lssrad_good16small.gif" style="display:block;margin:0pt auto;text-align:center"&gt;&lt;/a&gt;&lt;/div&gt;&lt;div&gt; Above we now have &lt;br&gt;&lt;ul&gt;&lt;li&gt;only 3 SRADs (good), &lt;/li&gt;&lt;li&gt;not an even CPU split across SRADs (8 CPUs, 5 CPUs and 3 CPUs) - looks odd but perhaps it does not have 8 CPUs in a further SRAD (i.e. a whole empty POWER7) for this VM so it splits the CPUs between SRADs&lt;br&gt;&lt;/li&gt;&lt;li&gt;even memory split of 2 GB per CPU-core balanced (good).&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;This is not the way I would planned it but it is not bad.&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;&lt;font color="#ff0000"&gt;&lt;b&gt;What have we learnt?&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;&lt;font color="#ff0000"&gt;You can't decide where the virtual machine goes in absolute physical terms.&lt;/font&gt;&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;&lt;font color="#ff0000"&gt;You may not get the layout balance you would prefer (like above two whole POWER7 chips and 16 GB of RAM each) due to existing virtual machines.&lt;/font&gt;&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;&lt;font color="#ff0000"&gt;Given the options (free resources) the Hypervisor does something sensible.&lt;/font&gt;&lt;/b&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt; Here is a &amp;quot;not to bad&amp;quot; example of a smaller 8 Virtual Processor virtual machine: &lt;/div&gt;&lt;div&gt;&lt;a href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/resource/BLOGS_UPLOADED_IMAGES/lssrad_unbalanced.gif"&gt;&lt;img alt="image" src="https://dw1.s81c.com/developerworks/mydeveloperworks/blogs/aixpert/resource/BLOGS_UPLOADED_IMAGES/lssrad_unbalanced.gif" style="display:block;margin:0pt auto;text-align:center"&gt;&lt;/a&gt;  &lt;br&gt;above most of the virtual machine (Logical (SMT) CPUs 0 - 27 = 28 in total = 7 physical CPUs) is in one SRAD but I can only guess but the last CPU was allocated forcing one in a different SRAD.  The memory is not balanced either &lt;/div&gt;&lt;ul&gt;&lt;li&gt;SRAD 0 - 7 virtual processors with 21195.25 MB RAM = 4318MB per CPU-core&lt;/li&gt;&lt;li&gt;SRAD 1 - 1 virtual processors with 20027.0 MB RAM = 1490 MB per CPU-core - this is rather low&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt; Now here is a pretty bad example, from a customer Power 795 (no names and it has subsequently but addresses):&lt;/div&gt;&lt;div&gt; &lt;a href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/resource/BLOGS_UPLOADED_IMAGES/lssrad_bad.gif"&gt;&lt;img alt="image" src="https://dw1.s81c.com/developerworks/mydeveloperworks/blogs/aixpert/resource/BLOGS_UPLOADED_IMAGES/lssrad_bad.gif" style="display:block;margin:0pt auto;text-align:center"&gt;&lt;/a&gt; &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt; Above  we see first that the Power 795 can have four SRADs per Processor book as it contains four POWER7 chips to make up the 32 per book. There is clearly five SRADs with one CPU-core and no memory at all. &lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;SRAD 0 - 3 virtual processors with 13677.5 MB RAM = 4560 MB per CPU-core&lt;/li&gt;&lt;li&gt;SRAD 1 - 8 virtual processors with 35808 MB RAM = 4476 MB per CPU-core&lt;/li&gt;&lt;li&gt;SRAD 2 - 1 virtual processors with 4731 MB RAM = 4731  MB per CPU-core&lt;/li&gt;&lt;li&gt;SRAD 3 - 1 virtual processors with 0 MB RAM =  0 MB per CPU-core &lt;/li&gt;&lt;li&gt;SRAD 4 - 1 virtual processors with 0 MB RAM =  0 MB per CPU-core &lt;/li&gt;&lt;li&gt;SRAD 5 - 1 virtual processors with 0 MB RAM =  0 MB per CPU-core &lt;/li&gt;&lt;li&gt;SRAD 6 - 1 virtual processors with 0 MB RAM =  0 MB per CPU-core &lt;/li&gt;&lt;li&gt;SRAD 7 - 1 virtual processors with 0 MB RAM =  0 MB per CPU-core &lt;/li&gt;&lt;/ul&gt; 
+Above the first three SRADs look OK with a fair sharing out of the memory but the last five are not good news - with no memory at all processes running here will have 100% of their memory Near (SRAD 1) or Far (SRADs 4, 5, 6 &amp;amp; 7). This is not a disaster but we could do better - at least SRAD 0 and 1 have the bulk of the CPUs and memory.&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;So have a look at your virtual machines with lssrad -av and decide if you like the look of them. This may influence the VM start-up order next time you restart your machine (after you have reduced you VP count, of course).  There is one way to make your placement much worse (covered in part 8) but no simple way to improve it, unless you are on old firmware and have Capacity Upgrade on Demand (covered in part 9).&lt;br&gt;&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;&lt;hr size="2" width="100%"&gt;&lt;font color="#228b22"&gt;&lt;b&gt;Get Out of Jail Free Card&lt;/b&gt;:&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color="#228b22"&gt;Just to remind readers again the POWER7 based system have excellent memory sub-systems, excellent inter-node memory bandwidth and the machines will still perform well with heavy use of Far memory accesses. In addition, AIX will place processes and take action to minimise Far memory access.  But it is not optimal and with planning and care we can get the performance a bit higher.  In the case above, I could see AIX trying not to use the last five SRAD's until absolutely necessary but we have already seen that the first SMT thread on each physical CPU-core is used before other threads.  Unfortunately, I don't have the above layout to experiment on to find out which algorithm takes wins.&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;hr size="2" width="100%"&gt; &lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt; &lt;/div&gt;</summary><author><name>nagger</name></author><source gr:stream-id="feed/http://www-03.ibm.com/developerworks/blogs/rss/aixpert?flavor=rssdw"><id>tag:google.com,2005:reader/feed/http://www-03.ibm.com/developerworks/blogs/rss/aixpert?flavor=rssdw</id><title type="html">AIXpert Blog</title><link rel="alternate" href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317233699184"><id gr:original-id="">tag:google.com,2005:reader/item/b779bf2f308a1712</id><title type="html">IBM server consolidation comparison tool</title><published>2011-09-28T18:14:59Z</published><updated>2011-09-28T18:14:59Z</updated><link rel="alternate" href="http://www-03.ibm.com/systems/power/advantages/x86/tool/?lmk=ushomepromo2&amp;lsr=nonsmbserverconsoltool031511&amp;cmp=101AR&amp;ct=101AR12W&amp;cr=tipsheet&amp;csr=power&amp;cm=h&amp;ccy=us&amp;cpb=stg&amp;S_TACT=101AR12W&amp;cd=20110920" type="text/html"/><link rel="related" href="http://www-03.ibm.com/systems/power/advantages/x86/tool/?lmk=ushomepromo2&amp;lsr=nonsmbserverconsoltool031511&amp;cmp=101AR&amp;ct=101AR12W&amp;cr=tipsheet&amp;csr=power&amp;cm=h&amp;ccy=us&amp;cpb=stg&amp;S_TACT=101AR12W&amp;cd=20110920" title="www-03.ibm.com"/><author gr:unknown-author="true"><name>(author unknown)</name></author><source gr:stream-id="user/14464663693417561968/source/com.google/link"><id>tag:google.com,2005:reader/user/14464663693417561968/source/com.google/link</id><title type="html">www-03.ibm.com</title><link rel="alternate" href="http://www-03.ibm.com/systems/power/advantages/x86/tool/?lmk=ushomepromo2&amp;lsr=nonsmbserverconsoltool031511&amp;cmp=101AR&amp;ct=101AR12W&amp;cr=tipsheet&amp;csr=power&amp;cm=h&amp;ccy=us&amp;cpb=stg&amp;S_TACT=101AR12W&amp;cd=20110920" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317220717580"><id gr:original-id="http://poweritpro.comhttp//www.poweritpro.com/Blogs/tabid/62/entryid/132/SMIT-Keyboard-Shortcuts.aspx">tag:google.com,2005:reader/item/92e443782918b805</id><category term="Administration" scheme="http://poweritpro.com/blogs/tabid/62/categoryid/30/default.aspx"/><title type="html">SMIT Keyboard Shortcuts</title><published>2011-09-27T09:07:00Z</published><updated>2011-09-27T09:07:00Z</updated><link rel="alternate" href="http://www.poweritpro.com/Blogs/tabid/62/entryid/132/SMIT-Keyboard-Shortcuts.aspx" type="text/html"/><summary xml:base="http://poweritpro.com/Blogs/tabid/62/blogid/2/Default.aspx" type="html">One of the most popular features of AIX is the Systems Management Interface Tool, better known as SMIT. SMIT is an interactive menu-based system which can be used for almost all systems management tasks. That makes SMIT an indispensable tool for AIX sys admins. Although many people use SMIT every day, they're not always aware of the keyboard shortcuts which can really save keystrokes and time. Here are a few of the most helpful ones. . . .</summary><author><name>Anthony English</name></author><source gr:stream-id="feed/http://poweritpro.com/Blogs/tabid/62/rssid/2/Default.aspx"><id>tag:google.com,2005:reader/feed/http://poweritpro.com/Blogs/tabid/62/rssid/2/Default.aspx</id><title type="html">Hot News</title><link rel="alternate" href="http://poweritpro.com/Blogs/tabid/62/blogid/2/Default.aspx" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317220613998"><id gr:original-id="http://www.aixmind.com/?p=2272">tag:google.com,2005:reader/item/844c9b66b51530b3</id><category term="AIX"/><category term="gateway"/><category term="ODM"/><category term="route"/><title type="html">Change default route in odm</title><published>2011-09-27T14:56:07Z</published><updated>2011-09-27T14:56:07Z</updated><link rel="alternate" href="http://www.aixmind.com/?p=2272" type="text/html"/><content xml:base="http://www.aixmind.com/" type="html">&lt;pre&gt;chdev -l inet0 -a addroute=net,-hopcount,1,-netmask,255.255.255.0,10.10.10.0,192.168.1.1
+
+where 10.10.10.0 is the network and 192.168.1.1 is the gateway
+
+the argument to the addroute attribute is exactly the output of lsattr -El inet0 -a route
+awk '{ print $2 }' when you've added the route using smit.
+
+When you only have one static route (usually the default) then lsattr -El inet0
+-a route prints it but when you have more than one route you need to grep to
+get only one.
+
+A corresponding -a delroute=... will delete the route.
+
+This chdev command changes both the ODM (thus survives a reboot) as well as the live system (similar to a manual 'route add' command).
+&lt;/pre&gt;</content><author><name>admin</name></author><source gr:stream-id="feed/http://www.aixmind.com/?feed=rss2"><id>tag:google.com,2005:reader/feed/http://www.aixmind.com/?feed=rss2</id><title type="html">AIX Solaris HPUX UNIX Linux system storage administration ksh/perl scripting</title><link rel="alternate" href="http://www.aixmind.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317220562577"><id gr:original-id="http://www.aixmind.com/?p=2275">tag:google.com,2005:reader/item/1ae859132669f9c2</id><category term="AIX"/><category term="9D035E4D"/><category term="DATA STORAGE INTERRUPT"/><category term="IZ89362"/><title type="html">AIX 6.1 TL6 Crashed with error: 9D035E4D – DATA STORAGE INTERRUPT, PROCESSOR</title><published>2011-09-27T17:53:50Z</published><updated>2011-09-27T17:53:50Z</updated><link rel="alternate" href="http://www.aixmind.com/?p=2275" type="text/html"/><content xml:base="http://www.aixmind.com/" type="html">&lt;h2&gt;Problem:&lt;/h2&gt;
+&lt;p&gt;After migrating an AIX server to AIX TL6 SP4, it crashed and rebooted on its own a few time.&lt;/p&gt;
+&lt;p&gt;Found the following error is in errpt:&lt;/p&gt;
+&lt;p&gt;&lt;span style="color:navy;font-family:Arial;font-size:x-small"&gt;9D035E4D   0926010711 P S SYSVMM         DATA STORAGE INTERRUPT, PROCESSOR&lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Solution:&lt;/h2&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;The system looks like it crashed due to a defect on Power 7 systems in a new feature called CPU Folding.&lt;br&gt;
+You can read about this feature here:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://publib.boulder.ibm.com/infocenter/aix/v6r1/index.jsp?topic=/com.ibm.aix.prftungd/doc/prftungd/virtual_proc_mngmnt_part.htm"&gt;http://publib.boulder.ibm.com/infocenter/aix/v6r1/index.jsp?topic=/com.ibm.aix.prftungd/doc/prftungd/virtual_proc_mngmnt_part.htm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Or a blog that explains CPU folding in the much better way:&lt;/p&gt;
+&lt;h1&gt;&lt;a href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/aixpert/entry/aix_virtual_processor_folding_in_misunderstood110?lang=en"&gt;AIX Virtual Processor Folding is Misunderstood&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;This defect causes some processors to become disabled, resulting in a&lt;br&gt;
+system crash.&lt;br&gt;
+The apar for this is IZ89362, VPM SERIALIZATION CRASH.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www-304.ibm.com/support/docview.wss?uid=isg1IZ89362"&gt;https://www-304.ibm.com/support/docview.wss?uid=isg1IZ89362&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The easiest way to quickly deal with this issuse and avoid any further outtages would be to implement the workaround:&lt;br&gt;
+#schedo -o vpm_xvcpus=-1&lt;/p&gt;
+&lt;p&gt;This is a dynamic configuration change that will take effect immediately upon running the command.  To make the change permanent across reboots run:&lt;br&gt;
+#schedo -p  -o vpm_xvcpus=-1&lt;/p&gt;
+&lt;p&gt;The work around disables CPU folding. This is a new feature and is not required.&lt;/p&gt;
+&lt;p&gt;IZ89362 is available in TL06- SP05 if you wish to install it and re-enable the processor folding feature.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</content><author><name>admin</name></author><gr:likingUser>08701814948057097731</gr:likingUser><source gr:stream-id="feed/http://www.aixmind.com/?feed=rss2"><id>tag:google.com,2005:reader/feed/http://www.aixmind.com/?feed=rss2</id><title type="html">AIX Solaris HPUX UNIX Linux system storage administration ksh/perl scripting</title><link rel="alternate" href="http://www.aixmind.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1316787469584"><id gr:original-id="http://www.wmduszyk.com/?p=7287&amp;langswitch_lang=en">tag:google.com,2005:reader/item/ec7c4ca4443cd1cf</id><category term="Real life AIX"/><category term="not"/><category term="prng"/><category term="random"/><category term="randomctl"/><category term="seeded"/><category term="sshd"/><category term="urandom"/><title type="html">new sshd issues – it keeps dying…</title><published>2011-09-22T17:07:31Z</published><updated>2011-09-22T17:07:31Z</updated><link rel="alternate" href="http://www.wmduszyk.com/?p=7287&amp;langswitch_lang=en&amp;utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=new-ssh-issues-sshd-keeps-dying" type="text/html"/><summary xml:base="http://www.wmduszyk.com/" type="html">Today, I was made aware that users cannot login (using the Putty/ssh) to one of wpars. Thanks God for the clogin command which allows root logins from the parent partition to any of its wpars (children). So after I logged in the parent lpar, and executed the clogin followed with the appropriate wpar name I [...]</summary><author><name>MarkD:-)</name></author><gr:likingUser>01652749172334397374</gr:likingUser><source gr:stream-id="feed/http://www.wmduszyk.com/?feed=rss2&amp;langswitch_lang=en"><id>tag:google.com,2005:reader/feed/http://www.wmduszyk.com/?feed=rss2&amp;langswitch_lang=en</id><title type="html">Waldemar Mark Duszyk</title><link rel="alternate" href="http://www.wmduszyk.com" type="text/html"/></source></entry></feed>

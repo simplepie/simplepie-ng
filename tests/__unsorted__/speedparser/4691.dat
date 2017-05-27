@@ -1,0 +1,52 @@
+<style>
+body, textarea, input, #fb, #fb p {font-family: Helvetica, sans-serif; line-height: 18px; font-size: 12px}
+textarea {line-height: 16px}
+a {outline: none}
+body, textarea, input, #fb {color: #414141}
+.dialog_buttons input {color: #fff}
+a {color: #0084bf; font-weight: bold; text-decoration: none}
+ol, ul {list-style: none; margin: 0px; padding: 0px}
+ol li, ul li {margin-left: 0px}
+caption, th, td {font-weight:normal; text-align:left}
+h1, h2, h3, h4, h5 {color: #005270; font-family: Georgia}
+h5 {text-transform: uppercase; color:#9CAD3A; font-size:14px; margin-bottom: 5px}
+.comment-submitter textarea {width: 90%}
+.fb-bookmark {margin: 0px}
+#fb .fb-bookmark {width: 760px !important;}
+.fb-bookmark .UIButton {margin-top: 20px;}
+#break-cache {}
+</style>
+      <style>
+#deprecated {
+width:80%;
+margin:0 auto;
+padding:40px 20px 5px 20px;
+}
+#d-logo {background: url(http://a1.ak.icdn.livingsocial.com/images/new-logos/logo-livingsocial-on-white.gif) 0px 0px; height:67px; width:373px;}
+#d-header {font-size:300%; float:left; color:#000;padding:39px 0px 0px 31px;padding:9px;margin-top:30px}
+#d-story {font-size:18px;color:#000;line-height:25px; padding:10px}
+#d-story {margin-bottom:10px;}
+</style>
+
+		<div id="body" class="external books external-books people-login minimalist">
+
+			<div id="deprecated">
+				<div id="d-logo"></div>
+				<div id="d-header">It's not you. It's us.</div>
+				<div style="clear:both"></div>
+
+				<div id="d-story">
+					<p>First of all, thank you for your enthusiastic support over the past four years. Your continued engagement 
+						with our these applications means a lot to us here at LivingSocial, and we're sad that we haven't been able to
+						dedicate the time and effort you deserve to keep this community alive and thriving.	</p>
+						<p>It's not you. It's us. You see — about two years ago — we tried a new idea, which has taken our team and company 
+							in a new direction. This community needs tools and products that are fully supported and continually improved, and unfortunately, this is
+							something we just can't support right now.</p>
+							<p>We know your data is important to you. Before we discontinue the service, we gave you 30 days to save it.</p>
+							<p>We have helped many of you do just that and migrate to other applications around the internet, such as GoodReads, LibraryThing, etc. </p>
+							<p>On August 12th, 2011, we shut down this suite of applications. </p>
+							<p style="margin-top:10px">If you have any concerns/questions or just want to say hi (or grr!), you can reach us at  interests@livingsocial.com</p>
+				</div>
+			</div>
+		</div>
+

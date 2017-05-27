@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns="http://purl.org/rss/1.0/">
+
+<channel>
+  <title>Normalization</title>
+  <description>Paf</description>
+  <link>http://alexx.ikse.org/blog</link>
+  <dc:language>fr</dc:language>
+  <dc:creator></dc:creator>
+  <dc:rights></dc:rights>
+  <dc:date>2004-06-18T15:14:04+00:00</dc:date>
+  <admin:generatorAgent rdf:resource="http://www.dotclear.net/" />
+  
+  <sy:updatePeriod>daily</sy:updatePeriod>
+  <sy:updateFrequency>1</sy:updateFrequency>
+  <sy:updateBase>2004-06-18T15:14:04+00:00</sy:updateBase>
+  
+</channel>
+
+<item>
+  <title>content:encoded</title>
+  <content:encoded><![CDATA[<p>Ceci est test&eacute;&#xc3a9;&#201;. Je parle d'&lt;html&gt;.</p>]]></content:encoded>
+</item>
+
+<item>
+  <title>HTML direct</title>
+  <description>
+  		<p>Ceci est test&eacute;&#xc3a9;&#201;. Je parle d'&lt;html&gt;.</p>
+	</description>
+</item>
+
+<item>
+  <title>Escaped</title>
+  <description>&lt;p&gt;Ceci est test&amp;eacute;&amp;#xc3a9;&amp;#201;. Je parle d'&amp;lt;html&amp;gt;.&lt;/p&gt;
+	</description>
+</item>
+</rdf:RDF>

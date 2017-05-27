@@ -1,0 +1,1415 @@
+<?xml version="1.0"?><feed xmlns:media="http://search.yahoo.com/mrss/" xmlns:gr="http://www.google.com/schemas/reader/atom/" xmlns:idx="urn:atom-extension:indexing" xmlns="http://www.w3.org/2005/Atom" idx:index="no" gr:dir="ltr"><!--
+Content-type: Preventing XSRF in IE.
+
+--><generator uri="http://www.google.com/reader">Google Reader</generator><id>tag:google.com,2005:reader/user/01929839637590403836/state/com.google/broadcast</id><link rel="hub" href="http://pubsubhubbub.appspot.com/"/><title>bwl's shared items in Google Reader</title><gr:continuation>CPyr9-KO4p4C</gr:continuation><link rel="self" href="http://www.google.com/reader/public/atom/user%2F01929839637590403836%2Fstate%2Fcom.google%2Fbroadcast"/><author><name>bwl</name></author><updated>2010-03-31T17:18:31Z</updated><entry gr:crawl-timestamp-msec="1270055911037"><id gr:original-id="http://net.tutsplus.com/?p=10607">tag:google.com,2005:reader/item/3b48fdb495798892</id><category term="Other"/><category term="Twitter"/><category term="twitter api"/><title type="html">Diving into the Twitter API</title><published>2010-03-30T10:30:07Z</published><updated>2010-03-30T10:30:07Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/nettuts/~3/vcOns9QRdlY/" type="text/html"/><content xml:base="http://net.tutsplus.com/" type="html">&lt;p&gt;Twitter’s astonishing growth is rivaled only by its intuitive, developer friendly API. In this second part of the series, we are going to learn more about Twitter’s API and how to work with it.
+&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Too much abstraction is never a good thing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In this Web 2.0 era, web applications which have an easy to use, intuitive API have a distinct advantage as it lets developers exploit and build for the platform and thus capture more users. As we move towards the social web and mashups, a good API is not a nice addition anymore: it is downright necessary. And remember, too much abstraction is never a good thing. While there are a number of API kits out there to simplify working with the API in question, wouldn’t it be cool to know what is actually going on under the hood? Wouldn’t it be exciting to deconstruct the actual voodoo going on between the kit and the API? Yeah, I thought so! &lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Before we Begin&lt;/h2&gt;
+&lt;p&gt;For each functionality, I am going to show you how to achieve it in two ways: the first using a server side language, PHP in this case, and the second using only a client side language, JavaScript. Each implementation will function separately and achieve the required functionality. Feel free to mix and match these solutions to create a hybrid. The JavaScript examples will use JSON as the format for the payload while for the PHP example I’ve chosen XML.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Twitter API Basics&lt;/h2&gt;
+&lt;p&gt;The first thing you need to know about the Twitter API is that it is RESTful. To cut the jargon, it means you access appropriate URLs using GET or POST requests to modify, request or manipulate the data exposed by the API.  &lt;/p&gt;
+&lt;p&gt;There are three separate Twitter APIs actually. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The normal REST based API&lt;/li&gt;
+&lt;li&gt;The Search API&lt;/li&gt;
+&lt;li&gt;The Stream API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; Each of these APIs have their own distinct set of functionality, quirks, advantages and disadvantages. &lt;/p&gt;
+&lt;h3&gt;REST API&lt;/h3&gt;
+&lt;p&gt;The REST methods constitute the core of the Twitter API, and are written by the devs at Twitter itself. It allows other developers to access and manipulate all of Twitter’s main data. You’d use this API to do all the usual stuff you’d want to do with Twitter including retrieving statuses, updating statuses, showing a user’s timeline, sending direct messages and so on. &lt;/p&gt;
+&lt;h3&gt;Search API&lt;/h3&gt;
+&lt;p&gt;The search API is actually the brainchild of the guys over at Summize Inc, a company which Twitter acquired for its API. The search API lets you look beyond you and your followers. You need this API if you are looking to view trending topics and so on. &lt;/p&gt;
+&lt;h3&gt;Stream API&lt;/h3&gt;
+&lt;p&gt;Finally we have the stream API. This API lets developers sample huge amounts of real time data. Since this API is only available to approved users, we aren’t going to go over this today. &lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Authentication and all that Boohockey&lt;/h2&gt;
+&lt;p&gt;Public data can be freely accessed without an API key. When requesting private data and/or user specific data, Twitter requires authentication. You can authenticate with Twitter using either of two methods.&lt;/p&gt;
+&lt;h3&gt;Basic Authentication&lt;/h3&gt;
+&lt;p&gt;This is the default method of authentication Twitter initially launched with and still uses. In this method, you pass the user name and password as Bse64 encoded strings in the header of the HTTP request. A sample GET request would look like so. &lt;/p&gt;
+&lt;pre name="code"&gt;GET /somefolder/index.html HTTP/1.1
+Host: net.tutsplus.com
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+&lt;/pre&gt;
+&lt;p&gt;Looks a tiny bit complicated doesn’t it? Let me explain. The first two lines are part of a standard GET request. The third line is where all of magic happens. We make sure the server knows we are using basic auth to authenticate with it, and then pass in the base 64 encoded string of &lt;em&gt;username:password&lt;/em&gt; as the value. The server can then decode the credentials, check them and provide access if everything matches.&lt;/p&gt;
+&lt;p&gt;Twitter supporting basic auth is probably one of the reasons it got so big since it let a multitude of developers develop for the platform since the barrier of entry is relatively low. Basic auth is sufficient to retrieve all parts of the API.&lt;/p&gt;
+&lt;h3&gt;OAuth&lt;/h3&gt;
+&lt;p&gt;Twitter started supporting OAuth in the second quarter of 2009. Users using OAuth enabled application need not divulge their passwords to the program and can also delegate control to the program with multiple levels of access. However, we’ll not look at Twitter’s OAuth implementation today. OAuth and implementing its workflow is a rather complex topic and requires an article of its own. I’d rather skip over OAuth for this article rather than throw out some half baked explanations and writing code based on those explanations. &lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Caution&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;
+“Twitter only lets you make a predefined number of calls to its API.”
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Before we delve in to the coding part, I need to make one thing absolutely clear: Twitter only lets you make a predefined number of calls to its API. The REST API’s limit is 150 for an hour, while the search API’s limit is undisclosed as of now. For authenticated calls, the call is deducted from the authenticating user’s limit, while for unauthenticated calls it is deducted from the calling IP’s quota. &lt;/p&gt;
+&lt;p&gt;Remember, when developing an application, make sure you either cache the information or respect the limit and stay within it. If you think the preset limit is insufficient for your application, you could always apply for white listing. &lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;The Most Common Tasks&lt;/h2&gt;
+&lt;p&gt;Instead of looking at a number of methods you probably won’t ever use, I’ve decided to show you how to do the three most common tasks. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Retrieving your status&lt;/li&gt;
+&lt;li&gt;Updating your status&lt;/li&gt;
+&lt;li&gt;Searching Twitter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I think this is a proper subset of the API which directly covers what the API is most used for without spreading itself too thin by covering a ton of methods. With that out of the way, let’s get started!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Retrieving your Status&lt;/h2&gt;
+&lt;p&gt;The first functionality we are going to look at is displaying a user’s status. This is the most popular use of the API if a web developer wants to display a given user’s status without resorting to a Twitter badge.  &lt;/p&gt;
+&lt;h3&gt;PHP Method #1: Direct Retrieval&lt;/h3&gt;
+&lt;pre name="code"&gt;
+&amp;lt;?php
+$response = new SimpleXMLElement(&amp;#39;http://twitter.com/users/show/userid.xml&amp;#39;,NULL,TRUE);
+echo $response-&amp;gt;status-&amp;gt;text.&amp;#39; - &amp;#39;.date(&amp;quot;g:i: A D, F jS Y&amp;quot;,strtotime($response-&amp;gt;status-&amp;gt;created_at));
+?&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;The first method utilizes PHP. It’s a relatively simple method where we just grab the user specific XML file, and then parse it to display the current status. &lt;/p&gt;
+&lt;p&gt;We first convert the XML file into an object so we can easily traverse through it using the SimpleXML extension which comes standard with PHP. Now that the object has been created, we just find the &lt;em&gt;status&lt;/em&gt; node, and print out the status text and creation time.&lt;/p&gt;
+&lt;p&gt;Remember, this only displays the current status of the user. If you want a list of recent updates, see below. &lt;/p&gt;
+&lt;h3&gt;PHP Method #2: cURL&lt;/h3&gt;
+&lt;p&gt;cURL is a command line tool and comes enabled on most hosted servers. To quote Wikipedia:&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;In computing, cURL functions as a command-line tool for transferring files with URL syntax.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;It is a library designed to allow users to connect to different types of servers using different protocols. Using cURL is the method of choice for all the Twitter libraries out there and we’ll be using the same. &lt;/p&gt;
+&lt;pre name="code"&gt;
+&amp;lt;?php
+
+     $username = &amp;#39;xxx&amp;#39;;
+	 $password = &amp;#39;yyy&amp;#39;;
+     $curlhandle = curl_init();
+	 curl_setopt($curlhandle, CURLOPT_URL, &amp;quot;http://twitter.com/statuses/user_timeline.xml&amp;quot;);
+	 curl_setopt($curlhandle, CURLOPT_USERPWD, $username.&amp;#39;:&amp;#39;.$password);
+     curl_setopt($curlhandle, CURLOPT_RETURNTRANSFER, 1);
+     $response = curl_exec($curlhandle);
+     curl_close($curlhandle);
+     $xmlobj = new SimpleXMLElement($response); 
+
+	 foreach ($xmlobj-&amp;gt;status as $status)
+	 {
+    echo $status-&amp;gt;text.&amp;#39;&amp;lt;br /&amp;gt; by&amp;#39;.$status-&amp;gt;user-&amp;gt;screen_name.&amp;#39; at &amp;#39;
+    .date(&amp;quot;g:i: A D, F jS Y&amp;quot;,strtotime($status-&amp;gt;created_at)).&amp;#39;&amp;lt;br /&amp;gt; &amp;lt;br /&amp;gt; &amp;#39; ;
+    }
+?&amp;gt; 
+&lt;/pre&gt;
+&lt;p&gt;Let me explain. First, we assign our username and password to separate variables to be used later. I then set the URL to the value mentioned above. Since the method requires authentication, we send in our username and password. &lt;/p&gt;
+&lt;p&gt;Next, we execute our call and store the response in a seperate variable. We then convert it into a valid XML object and then parse the data, printing out the status and when it was posted. &lt;/p&gt;
+&lt;p&gt;I’ve formatted the data and time to look the way I want. If you want fancy dates and times like &lt;em&gt;3 hours ago&lt;/em&gt; or &lt;em&gt;12 days ago,&lt;/em&gt; you either need to look for a snippet or code one yourselves. Twitter only returns normally formatted data and time.&lt;/p&gt;
+&lt;p&gt;You’ll receive an output, similar to this:&lt;/p&gt;
+&lt;pre name="code"&gt;
+I am stupid. Didn't use an IDE and missed a comma wasting 110 minutes.
+Remind me not to try debugging when I am sleepy or tired.
+at 6:01: PM Fri, February 14th 2010
+
+Flood of traffic. :O I must have budgeted for this many visitors. Argh! Hope nothing breaks.
+at 8:51: PM Thu, February 13th 2010
+&lt;/pre&gt;
+&lt;h3&gt;JavaScript&lt;/h3&gt;
+&lt;p&gt;Using JavaScript to display your status is the most elegant way to go forward since you can load it asynchronously after the page has loaded, which means, even if Twitter is downm or being tardy, your site functions the same.&lt;/p&gt;
+&lt;p&gt;We are going to use jQuery’s ajax method to do all our dirty work today. &lt;/p&gt;
+&lt;pre name="code"&gt;
+ $.ajax({
+    		url : &amp;quot;http://twitter.com/statuses/user_timeline/userid.json?callback=?&amp;quot;,
+			dataType : &amp;quot;json&amp;quot;,
+			timeout:15000,
+
+			success : function(data)
+			{
+				  $(&amp;quot;#data&amp;quot;).html(&amp;quot;Data successfully obtained! &amp;lt;br /&amp;gt;&amp;quot;);
+  for (i=0; i&amp;lt;data.length; i++)
+				{
+  $(&amp;quot;#data&amp;quot;).append(&amp;quot;&amp;lt;p&amp;gt;&amp;quot; + data[i].text) +&amp;quot;&amp;lt;/p&amp;gt;&amp;quot;;
+  $(&amp;quot;#data&amp;quot;).append(&amp;quot;&amp;lt;p&amp;gt;&amp;quot; + data[i].created_at +&amp;quot;&amp;lt;/p&amp;gt;&amp;quot;);
+				}
+			},
+
+			error : function()
+			{
+				alert(&amp;quot;Failure!&amp;quot;);
+			},
+
+		});
+&lt;/pre&gt;
+&lt;p&gt;Again, a big chunk of code but, broken down, it’s simple really. We use jQuery’s lowest level AJAX function instead of the getJSON method, since the low level call seems to be more versatile.&lt;/p&gt;
+&lt;p&gt;First up, we define the URL and the datatype. We also add a callback function to the URL to circumvent the cross domain restriction on most browsers. Without this callback, our script wouldn’t run; it’d just return an error and quit.&lt;/p&gt;
+&lt;p&gt;I’ve chosen not to authenticate, because we are specifying an ID in the URL, and hence don’t need authentication – that and because basic auth is not really safe for sensitive information. You don’t want to send out your password over an insecure line. &lt;/p&gt;
+&lt;p&gt;Finally, the success function which is called when no errors are encountered. We just parse the returned JSON object and print out the text and the creation time. &lt;em&gt;#data&lt;/em&gt; is just a container where we put all our data.&lt;/p&gt;
+&lt;h3&gt;A Quick Note&lt;/h3&gt;
+&lt;p&gt;This code is the template for all your methods which access data. Very minimal change is required to modify it to work with other API methods.&lt;/p&gt;
+&lt;p&gt;For the PHP example, all you’d need to do is change URL value to point to a new method, and you should be mostly done. If the method requires parameters, you just add them directly to the URL itself. Simple as that. &lt;/p&gt;
+&lt;p&gt;Same with the JavaScript example. All you’d need to do is change the URL that the methods request, and you should be done. Be sure to fetch only public data with the JavaScript method.&lt;/p&gt;
+&lt;p&gt;Remember, this code is the base for all your other methods which retrieve data. This includes methods getting your direct messages, timelines, friends, followers and mentioned tweets. Just change the url, add in a parameter as needed, and you’re all set! Easy, no?&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Updating your Status&lt;/h2&gt;
+&lt;p&gt;With any Twitter application you are creating, letting users update their status through it is a no-brainer. Remember, previously applications using basic auth were able to use a custom source string for all tweets sent from their application. Now, implementing OAuth is the only way you get a custom string. In short, if you want all tweets sent from your application to have a link back to your app, use OAuth. With that out of the way, let’s see the code.&lt;/p&gt;
+&lt;h3&gt;PHP&lt;/h3&gt;
+&lt;pre name="code"&gt;
+&amp;lt;?php
+
+    $username = &amp;#39;xxx&amp;#39;;
+	 $password = &amp;#39;yyy&amp;#39;;
+    $status= &amp;#39;Testing out cURL with the Twitter API&amp;#39;;
+    $curlhandle = curl_init();
+	 curl_setopt($curlhandle, CURLOPT_URL, &amp;quot;http://twitter.com/statuses/update.xml&amp;quot;);
+	 curl_setopt($curlhandle, CURLOPT_USERPWD, $username.&amp;#39;:&amp;#39;.$password);
+    curl_setopt($curlhandle, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curlhandle, CURLOPT_POST, 1);
+	 curl_setopt($curlhandle, CURLOPT_POSTFIELDS, &amp;quot;status=$status&amp;quot;);
+    $response = curl_exec($curlhandle);
+    curl_close($curlhandle);
+
+?&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;We can use cURL just as easily to post to Twitter. The code is almost the same as before except we change the url to the appropriate one. Also, we make sure posting is enabled, and set the fields to be posted. The API method requires a status parameters, and so we set the value of the status variable to this parameter. &lt;/p&gt;
+&lt;p&gt;Do remember to make sure the text to be posted is UTF-8 encoded. Otherwise, we’d run into needless errors. &lt;/p&gt;
+&lt;p&gt;We now save the response to be used for later. In this example, I’ve chosen to do nothing. But in a practical application you’d definitely want to display a success/error message and/or display the response. &lt;/p&gt;
+&lt;h3&gt;JavaScript&lt;/h3&gt;
+&lt;p&gt;Posting a status update to Twitter using only JavaScript seems to be impossible right now since there is no way to pass the user’s id and password. With Flickr, those credentials are passed on as part of the POST request itself. With Twitter, this data needs to be sent in the HTTP headers, and there doesn’t seem to be a way of doing that.  &lt;/p&gt;
+&lt;p&gt;Even disregarding the fact that you can’t send credentials over to the service, there is still the problem of not being able to make cross domain POST requests with the XMLHttp object. These two points make API methods which require a POST request a strict no-no with JavaScript.&lt;/p&gt;
+&lt;p&gt;In case you are interested, a successful post nets you this response. &lt;/p&gt;
+&lt;pre name="code"&gt;
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;status&amp;gt;
+  &amp;lt;created_at&amp;gt;Fri Aug 14 21:31:53 +0000 2009&amp;lt;/created_at&amp;gt;
+  &amp;lt;id&amp;gt;3316091255&amp;lt;/id&amp;gt;
+  &amp;lt;text&amp;gt;Testing out cURL with the Twitter API&amp;lt;/text&amp;gt;
+  &amp;lt;source&amp;gt;&amp;lt;a href=&amp;quot;http://apiwiki.twitter.com/&amp;quot; rel=&amp;quot;nofollow&amp;quot;&amp;gt;API&amp;lt;/a&amp;gt;&amp;lt;/source&amp;gt;
+  &amp;lt;truncated&amp;gt;false&amp;lt;/truncated&amp;gt;
+
+  &amp;lt;in_reply_to_status_id&amp;gt;&amp;lt;/in_reply_to_status_id&amp;gt;
+  &amp;lt;in_reply_to_user_id&amp;gt;&amp;lt;/in_reply_to_user_id&amp;gt;
+  &amp;lt;favorited&amp;gt;false&amp;lt;/favorited&amp;gt;
+  &amp;lt;in_reply_to_screen_name&amp;gt;&amp;lt;/in_reply_to_screen_name&amp;gt;
+  &amp;lt;user&amp;gt;
+    &amp;lt;id&amp;gt;18118645&amp;lt;/id&amp;gt;
+    &amp;lt;name&amp;gt;Tony / Siddharth&amp;lt;/name&amp;gt;
+
+    &amp;lt;screen_name&amp;gt;lordtottuu&amp;lt;/screen_name&amp;gt;
+    &amp;lt;location&amp;gt;India&amp;lt;/location&amp;gt;
+    &amp;lt;description&amp;gt;Gamer, developer, web designer, writer, geek. &amp;lt;/description&amp;gt;
+    &amp;lt;profile_image_url&amp;gt;http://s3.amazonaws.com/twitter_production/profile_images/300532536/NVAGSoNIpS_o5XxbmB4pl-boGheY6JBASaiLiieGIAO6JTitHnRMNJa6ktCPRMQW_normal.jpg&amp;lt;/profile_image_url&amp;gt;
+    &amp;lt;url&amp;gt;http://ssiddharth.com&amp;lt;/url&amp;gt;
+    &amp;lt;protected&amp;gt;false&amp;lt;/protected&amp;gt;
+
+  &amp;lt;/user&amp;gt;
+
+&amp;lt;/status&amp;gt;
+&lt;/pre&gt;
+&lt;h3&gt;A Quick Note&lt;/h3&gt;
+&lt;p&gt;The code techniques discussed above consist of the base for all your data which sends data to Twitter. This includes methods which lets you follow/unfollow someone, send direct messages, creating favorites, blocking people, and so on and so forth. &lt;/p&gt;
+&lt;p&gt;The only thing you’d need to do is change out these URLs, see whether they require extra parameters, and add them as needed. Nothing else required. &lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Searching Twitter&lt;/h2&gt;
+&lt;p&gt;Letting users search through Twitter for information is potentially an important need of an application. For this purpose, we can use the search API to query Twitter.  &lt;/p&gt;
+&lt;h3&gt;PHP&lt;/h3&gt;
+&lt;pre name="code"&gt;
+&amp;lt;?php
+
+    $searchstring = &amp;quot;Envato&amp;quot;;
+    $curlhandle = curl_init();
+	curl_setopt($curlhandle, CURLOPT_URL, &amp;quot;http://search.twitter.com/search.json?q=$searchstring&amp;quot;);
+    curl_setopt($curlhandle, CURLOPT_RETURNTRANSFER, 1);
+
+    $response = curl_exec($curlhandle);
+    curl_close($curlhandle);
+
+    $json = json_decode($response);
+	foreach ($json-&amp;gt;results as $result)
+	{
+	echo $result-&amp;gt;text;
+	}
+
+?&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;The above code lets you search Twitter for tweets which reference Envato. As usual, we change the URL to point to the correct API method and proceed. Since this method is only available in either JSON or ATOM formats, I’ve chosen to go with JSON. &lt;/p&gt;
+&lt;p&gt;I’ve used PHP’s built-in &lt;em&gt;json_decode&lt;/em&gt; function to convert it into an object so we could parse the response easily. In this example, I’ve only printed out the tweets themselves. In your applications, you’d probably want to display more. A sample response is below.&lt;/p&gt;
+&lt;pre name="code"&gt;
+[text] =&amp;gt; @nsethi check out http://www.envato.com/ if you want some sick tuts...I&amp;#39;m gonna blog about it later.
+[to_user_id] =&amp;gt; 1273919
+[to_user] =&amp;gt; nsethi
+[from_user] =&amp;gt; thinklime
+[id] =&amp;gt; 3315720513
+[from_user_id] =&amp;gt; 33020944
+[iso_language_code] =&amp;gt; en
+source] =&amp;gt; &lt;a href="http://www.atebits.com/" rel="nofollow"&gt;Tweetie&lt;/a&gt;
+[profile_image_url] =&amp;gt; http://s3.amazonaws.com/twitter_production/profile_images/201032569/idTwitter_normal.jpg
+[created_at] =&amp;gt; Fri, 14 Aug 2009 21:10:42 +0000
+&lt;/pre&gt;
+&lt;p&gt;As you can see, a lot of info about the user and the tweet itself is available. Feel free to mix and match. &lt;/p&gt;
+&lt;h3&gt;JavaScript&lt;/h3&gt;
+&lt;pre name="code"&gt;
+ $.ajax({
+
+    		url : &amp;quot;http://search.twitter.com/search.json?q=somestring&amp;amp;callback=?&amp;quot;,
+			dataType : &amp;quot;json&amp;quot;,
+			timeout:15000,
+
+			success : function(data)
+			{
+				  // parse data here
+			},
+
+			error : function()
+			{
+				alert(&amp;quot;Failure!&amp;quot;);
+			},
+
+		});
+&lt;/pre&gt;
+&lt;p&gt;As usual, we use the ajax method to ping Twitter’s search service. Just as in the previous example, we’ve included a callback function to get over the cross domain restriction.&lt;/p&gt;
+&lt;p&gt;A sample response, plucked directly from Twitter, looks like so. &lt;/p&gt;
+&lt;pre name="code"&gt;
+{&amp;quot;results&amp;quot;:[
+
+     {&amp;quot;text&amp;quot;:&amp;quot;@twitterapi  http:\/\/tinyurl.com\/ctrefg&amp;quot;,
+
+     &amp;quot;to_user_id&amp;quot;:396524,
+
+     &amp;quot;to_user&amp;quot;:&amp;quot;TwitterAPI&amp;quot;,
+
+     &amp;quot;from_user&amp;quot;:&amp;quot;jkoum&amp;quot;,
+
+     &amp;quot;id&amp;quot;:1478555574,   
+
+     &amp;quot;from_user_id&amp;quot;:1833773,
+
+     ... truncated ...],
+
+     &amp;quot;since_id&amp;quot;:0,
+
+     &amp;quot;max_id&amp;quot;:1480307926,
+
+     &amp;quot;refresh_url&amp;quot;:&amp;quot;?since_id=1480307926&amp;amp;q=%40twitterapi&amp;quot;,
+
+     &amp;quot;results_per_page&amp;quot;:15,
+
+     &amp;quot;next_page&amp;quot;:&amp;quot;?page=2&amp;amp;max_id=1480307926&amp;amp;q=%40twitterapi&amp;quot;,
+
+     &amp;quot;completed_in&amp;quot;:0.031704,
+
+     &amp;quot;page&amp;quot;:1,
+
+     &amp;quot;query&amp;quot;:&amp;quot;%40twitterapi&amp;quot;}
+}
+&lt;/pre&gt;
+&lt;p&gt;As a side note, the search method can be used in a variety of ways really. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;?q=Envato&lt;/em&gt; – Searches for tweets containing the string Envato&lt;/li&gt;
+&lt;li&gt;?&lt;em&gt;q=#Envato&lt;/em&gt; – Searches for hashtags of Envato&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;?phrase=Envato+marketplace&lt;/em&gt; – Searches for tweets containing the phrase Envato marketplace&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;?q=from:NETTUTS&lt;/em&gt; – Returns all tweets from NETTUTS&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;?q=to:NETTUTS&lt;/em&gt; – Returns for all tweets to NETTUTS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Why Other Methods Aren’t Covered&lt;/h2&gt;
+&lt;p&gt;I’ve decided to limit myself to showing how to read from and write to a service using its API. This way, I can focus only on those specific methods. And also because most methods build on these basics. If you want to return a friend’s timeline, you’d just change the URL and parse through the response with minimal fuss.&lt;/p&gt;
+&lt;p&gt;The same occurs if you want to send a direct message to another user or mention another user. The basics of posting is still there. You just need to add in a parameter or two to make it all happen. It doesn’t make sense to cover all that when I can just explain the basics a lot more clearly. &lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I hope you’ve learned more about how to work with Twitter’s API today. As always, let me know, via the comments, if you need any help!&lt;/p&gt;
+&lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/8olmjno1k05rb1som1frr6u854/468/60#http%3A%2F%2Fnet.tutsplus.com%2Ftutorials%2Fother%2Fdiving-into-the-twitter-api%2F" width="100%" height="60" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=vcOns9QRdlY:-eUgE-z8zrM:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=vcOns9QRdlY:-eUgE-z8zrM:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?i=vcOns9QRdlY:-eUgE-z8zrM:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=vcOns9QRdlY:-eUgE-z8zrM:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?i=vcOns9QRdlY:-eUgE-z8zrM:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=vcOns9QRdlY:-eUgE-z8zrM:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?i=vcOns9QRdlY:-eUgE-z8zrM:gIN9vFwOqvQ" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=vcOns9QRdlY:-eUgE-z8zrM:TzevzKxY174"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?d=TzevzKxY174" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/nettuts/~4/vcOns9QRdlY" height="1" width="1"&gt;</content><author><name>Siddharth</name></author><gr:likingUser>13984622925400493469</gr:likingUser><gr:likingUser>16802677063922186043</gr:likingUser><gr:likingUser>07116366329957002395</gr:likingUser><gr:likingUser>03072641343554974045</gr:likingUser><gr:likingUser>03545964666694920486</gr:likingUser><gr:likingUser>07298849834636987863</gr:likingUser><source gr:stream-id="feed/http://nettuts.com/feed/"><id>tag:google.com,2005:reader/feed/http://nettuts.com/feed/</id><title type="html">Nettuts+</title><link rel="alternate" href="http://net.tutsplus.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1269702205553"><id gr:original-id="http://sixrevisions.com/?p=2890">tag:google.com,2005:reader/item/449787ce208f2004</id><category term="Web Development"/><title type="html">How to Make an HTML5 iPhone App</title><published>2010-03-26T14:10:11Z</published><updated>2010-03-26T14:10:11Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/SixRevisions/~3/RzIKLfo30B0/" type="text/html"/><content xml:base="http://sixrevisions.com/" type="html">&lt;p&gt;&lt;a href="http://sixrevisions.com/web-development/html5-iphone-app/"&gt;&lt;img src="http://images.sixrevisions.com/2010/03/27-01_offline_html5_iphone_app_lead_image.jpg" width="550" height="200" alt="How to Make an HTML5 iPhone App"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You’ve been depressed for like a year now, I know. All the hardcore Objective-C developers have been having a hay-day writing apps for the iPhone. You might have even tried reading a tutorial or two about developing for the iPhone, but its C—or a form of it—and it’s really hard to learn.&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I don’t want to say that you should give up on the objective: you can get it eventually. But in the meantime, there is something else that you can do.&lt;/p&gt;
+&lt;p&gt;You can create a native  app that lives with all the other apps, and for the most part, it’s going to be a pitch-perfect imitation.&lt;/p&gt;
+&lt;p&gt;You can do this with the skill set you probably already have: HTML(5),  CSS, and JavaScript.&lt;/p&gt;
+&lt;p&gt;I’ll show you how to create an &lt;strong&gt;offline HTML5 iPhone application&lt;/strong&gt;. More specifically, I’ll walk you through the process of building a Tetris game.&lt;/p&gt;
+&lt;h3&gt;Offline?&lt;/h3&gt;
+&lt;p&gt;What am I talking about when I say &amp;quot;offline&amp;quot;? Well, it means that we have a custom icon, a custom startup screen, a native look-and-feel, and you can use the app even when the phone isn’t connected to the Internet.&lt;/p&gt;
+&lt;p&gt;The app should be as functional as it can when it is offline, just like normal native mobile apps.&lt;/p&gt;
+&lt;p&gt;This is a tutorial specifically for iPhones but most of these techniques apply to all phones that have HTML5-capable browsers.&lt;/p&gt;
+&lt;p&gt;Yeah, I mean it, check out the following image. It has no URL bar and no navigation at the bottom. It looks just like a native mobile application.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://images.sixrevisions.com/2010/03/27-02_final_result_html5_iphone.jpg" width="320" height="480" alt="Final result"&gt;&lt;/p&gt;
+&lt;h3&gt;Prework&lt;/h3&gt;
+&lt;p&gt;You are going to need access to a server where you can change the &lt;a href="http://en.wikipedia.org/wiki/List_of_HTTP_headers"&gt;HTTP Headers&lt;/a&gt; on your files. This is because we need to take advantage of HTML5’s offline caching (more on this later down the page).&lt;/p&gt;
+&lt;p&gt;Apache does this really well and you can just add something to a .htaccess file and it will just work. Here’s a tutorial on &lt;a href="http://www.askapache.com/htaccess/using-http-headers-with-htaccess.html"&gt;modifying HTTP headers using htaccess&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The other thing you need to do is to enable the debug bar in Safari’s web browser on your iPhone unit. Go to the Settings.app &amp;gt; Safari &amp;gt; Developer on your iPhone, then turn on the debug console. This will help you spot potential JavaScript errors.&lt;/p&gt;
+&lt;p&gt;Once you’ve built your app, you should turn this off so that you will get the full experience when testing your HTML5 iPhone app.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://images.sixrevisions.com/2010/03/27-03_debug_console_iphone.jpg" width="320" height="480" alt="Prework"&gt;&lt;/p&gt;
+&lt;h3&gt;About the App&lt;/h3&gt;
+&lt;h4&gt;Icon and Startup Screen&lt;/h4&gt;
+&lt;p&gt;The icon needs to be 57px x 57px.&lt;/p&gt;
+&lt;p&gt;The iPhone will round the corners of your icon, create a dropshadow, and add a shine to whatever icon you use.&lt;/p&gt;
+&lt;p&gt;It should be in PNG  or JPG format.&lt;/p&gt;
+&lt;p&gt;Here is what I used for the tetris game.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://images.sixrevisions.com/2010/03/27-04_iphone_icon.jpg" width="57" height="57" alt="Icon and Startup Screen"&gt;&lt;/p&gt;
+&lt;p&gt;The startup screen needs to be 320px x 460px and should also be in PNG or JPG format.&lt;/p&gt;
+&lt;p&gt;Here is what I used for the startup screen.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://images.sixrevisions.com/2010/03/27-05_opening_screen.jpg" width="320" height="460" alt="Icon and Startup Screen"&gt;&lt;/p&gt;
+&lt;h4&gt;Some tips before you start&lt;/h4&gt;
+&lt;p&gt;Stay small, sparse and simple.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Small: This is mobile app development so even though you are caching your stuff, it’s still a smart idea to keep your file sizes lean.&lt;/li&gt;
+&lt;li&gt;Sparse: You should try to keep the amount of files you deal with as low as possible.&lt;/li&gt;
+&lt;li&gt;Simple: Start with a few simple ideas and execute it. By keeping your scope small, you can get things done faster.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Application Cache&lt;/h4&gt;
+&lt;p&gt;This is a new standard, you can read the spec &lt;a href="http://dev.w3.org/html5/spec/offline.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Application caching  allows browsers to determine in advance all the files a web page will need for the web page to work.&lt;/p&gt;
+&lt;p&gt;It will cache those files (to a fault, sometimes). The syntax of this file is simple: just list the locations of your files in either absolute (e.g. &lt;code&gt;http://yourwebserver.com/picture.png&lt;/code&gt;) or relative to the manifest file (&lt;code&gt;/picture.png&lt;/code&gt;). The browser will keep those files offline.&lt;/p&gt;
+&lt;p&gt;You can also list a few URLs that should not be cached, but this isn’t pertinent for our offline app (if you’re interested, read about this in the &lt;a href="http://dev.w3.org/html5/spec/offline.html"&gt;documentation&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;One tricky part to this whole thing is that the manifest (the list of files that need to be cached offline) has to be passed with a &lt;code&gt;filetype&lt;/code&gt; Header set to &lt;code&gt;text/manifest&lt;/code&gt;. That is why you need access to a web server that can set HTTP headers.&lt;/p&gt;
+&lt;h4&gt;Screen Size&lt;/h4&gt;
+&lt;p&gt;A quick note when designing your application: When you are in app mode, you have a screen size of 320px x 460px. When you are in web mode, it has a screen size of 320px x 356px. This can affect the user interface of your offline HTML5 app.&lt;/p&gt;
+&lt;p&gt;Here you can see the difference side by side.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://images.sixrevisions.com/2010/03/27-06_in_iphone_ui_sidecomp.png" width="550" height="413" alt="Screen Size"&gt;&lt;/p&gt;
+&lt;h4&gt;HTML&lt;/h4&gt;
+&lt;p&gt;It’s a real browser so your HTML is exactly the same. The iPhone browser is also in the forefront of HTML5, so dig into the spec.&lt;/p&gt;
+&lt;p&gt;For more in-depth detail, check out the Safari Developer’s corner: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://17.254.2.129/safari/library/documentation/AppleApplications/Reference/SafariHTMLRef/Introduction.html"&gt;Safari HTML Reference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://17.254.2.129/safari/library/documentation/AppleApplications/Reference/SafariCSSRef/Introduction.html"&gt;Safari CSS Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Let’s get coding&lt;/h3&gt;
+&lt;p&gt;The app starts by defining your markup. here is the  markup for my Tetris app.&lt;/p&gt;
+&lt;pre&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html manifest=&amp;quot;tetris.manifest&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+
+    &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0&amp;quot;/&amp;gt;
+    &amp;lt;meta name=&amp;quot;apple-mobile-web-app-capable&amp;quot; content=&amp;quot;yes&amp;quot; /&amp;gt;
+
+    &amp;lt;meta name=&amp;quot;apple-mobile-web-app-status-bar-style&amp;quot; content=&amp;quot;black&amp;quot; /&amp;gt;
+    &amp;lt;link rel=&amp;quot;apple-touch-icon&amp;quot; href=&amp;quot;iphon_tetris_icon.png&amp;quot;/&amp;gt;
+
+    &amp;lt;link rel=&amp;quot;apple-touch-startup-image&amp;quot; href=&amp;quot;startup.png&amp;quot; /&amp;gt;
+    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;tetris.css&amp;quot; type=&amp;quot;text/css&amp;quot; media=&amp;quot;screen, mobile&amp;quot; title=&amp;quot;main&amp;quot; charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+
+    &amp;lt;title&amp;gt;offline Tetris&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+   &amp;lt;!-- Put your Markup Here --&amp;gt;
+   &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;tetris.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;First, notice the &lt;code&gt;Doctype&lt;/code&gt;. Isn’t HTML5  awesome? &lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;manifest=&amp;quot;cache.manifest&amp;quot;&lt;/code&gt; property on the &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; tag is how the browser knows that we want to cache this web page offline.&lt;/p&gt;
+&lt;p&gt;There’s proprietary Apple markup on our HTML5 page. A brief explanation of each:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;apple-mobile-web-app-capable&lt;/code&gt;: This is another tip-off that we want to be an offline app.		&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;apple-mobile-web-app-status-bar-style&lt;/code&gt;: This hides the status bar, and nav bar when the app is offline.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;apple-touch-icon&lt;/code&gt;:This is the pointer to the image that want to be the icon.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;apple-touch-startup-image&lt;/code&gt;: This is a url pointing to the startup image.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Also note that you should put CSS at the top and JavaScript at the bottom (best practices still apply here).&lt;/p&gt;
+&lt;h4&gt;CSS&lt;/h4&gt;
+&lt;p&gt;It’s almost the same as a normal web page. There are some specific &lt;code&gt;-webkit&lt;/code&gt; CSS rules that you can use that  do some really cool things like animation, but this is a quick-and-dirty guide and that’s outside of the scope of this article.&lt;/p&gt;
+&lt;p&gt;The CSS is just Plain Jane.&lt;/p&gt;
+&lt;pre&gt;
+body {
+    overflow:hidden;
+    background: #d7d7d7;
+    margin:0;
+    padding:0;
+}
+#tetris {
+    width: 320px;
+    height: 460px;
+    background:#000;
+}
+&lt;/pre&gt;
+&lt;p&gt;The style is really just to the &lt;code&gt;div&lt;/code&gt; element on our web page to make sure it fits in the iPhone’s viewport properly.&lt;/p&gt;
+&lt;h4&gt;JavaScript&lt;/h4&gt;
+&lt;p&gt;I used a modded version of a JavaScript from &lt;a href="http://www.daltonridenhour.com"&gt;Dalton Ridenhour&lt;/a&gt;; I found it on &lt;a href="http://github.com/daltonridenhour/DOM-Tetris"&gt;Github&lt;/a&gt;. The JS was written originally for a normal web browser. The only modifications I had to make was to support not having a keyboard.&lt;/p&gt;
+&lt;p&gt;In general, JS functions work just fine on the iPhone—there are exceptions though. Think about something like a mouseover, the event exists on the iPhone, but I am not sure how helpful it is when you don’t have a standard pointing device (such as a mouse). Quirksmode posted an article about &lt;a href="http://www.quirksmode.org/blog/archives/2008/08/iphone_events.html"&gt;events on the iPhone&lt;/a&gt; that is really helpful.&lt;/p&gt;
+&lt;p&gt;When you have all of that, you can test it out but opening your &lt;code&gt;index.html&lt;/code&gt; in an iPhone, and you should be able to see everything work. &lt;/p&gt;
+&lt;p&gt;Then, next step is to server it from an actual webserver that can set the proper settings on the &lt;code&gt;cache.manifest&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Then you could be able to add it to the home screen and have all the extras, and see the offline mode.&lt;/p&gt;
+&lt;p&gt;You can see a working version I have set up at:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://tetris.alexkessinger.net"&gt;http://tetris.alexkessinger.net&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Bonus Section: Offline Data&lt;/h3&gt;
+&lt;p&gt;Along with the ability to keep files that are needed offline, you can also store user data in an offline database.  There are two major APIs for per user and/or per page data. The first is &lt;code&gt;localStorage&lt;/code&gt;. &lt;code&gt;localStorage&lt;/code&gt;, is an easy to use key-value store with a dead simple API.&lt;/p&gt;
+&lt;pre&gt;
+localStorage.dataToStore = 5;
+console.log(localStorage.dataToStore); // 5
+&lt;/pre&gt;
+&lt;p&gt;You can use this for storing the user’s score, for example.&lt;/p&gt;
+&lt;p&gt;The second is actually an offline SQL engine, a &lt;a href="http://dev.w3.org/html5/webdatabase/#databases"&gt;webdatabase&lt;/a&gt;. The APIs are a little more advanced. Here is a little of you will see.&lt;/p&gt;
+&lt;pre&gt;
+// Try and get a database object
+var db;
+
+try {
+    if (window.openDatabase) {
+        db = openDatabase(&amp;quot;NoteTest&amp;quot;, &amp;quot;1.0&amp;quot;, &amp;quot;HTML5 Database API example&amp;quot;, 200000);
+        if (!db)
+            alert(&amp;quot;Failed to open the database on disk.  This is probably because the version was /
+            bad or there is not enough space left in this domain&amp;#39;s quota&amp;quot;);
+    } else
+        alert(&amp;quot;Couldn&amp;#39;t open the database.  Please try with a WebKit nightly with this feature enabled&amp;quot;);
+} catch(err) { }
+
+// Check and see if you need to initalize the DB
+db.transaction(function(tx) {
+    tx.executeSql(&amp;quot;SELECT COUNT(*) FROM WebkitStickyNotes&amp;quot;, [], function(result) {
+        loadNotes();
+    }, function(tx, error) {
+        tx.executeSql(&amp;quot;CREATE TABLE WebKitStickyNotes (id REAL UNIQUE, note TEXT, timestamp /
+        REAL, left TEXT, top TEXT, zindex REAL)&amp;quot;, [], function(result) {
+            loadNotes();
+        });
+    });
+});
+
+// Insert a test Note.
+var note = {
+    id: &amp;quot;1&amp;quot;,
+    text:&amp;quot; This is a test note&amp;quot;,
+    timestamp: &amp;quot;112123000&amp;quot;,
+    left:10,
+    top:10,
+    zIndex:2
+};
+db.transaction(function (tx)
+{
+    tx.executeSql(&amp;quot;INSERT INTO WebKitStickyNotes (id, note, timestamp, left, top, zindex) VALUES /
+    (?, ?, ?, ?, ?, ?)&amp;quot;, [note.id, note.text, note.timestamp, note.left, note.top, note.zIndex]);
+}); 
+
+// Get all the notes out of the database.
+db.transaction(function(tx) {
+    tx.executeSql(&amp;quot;SELECT id, note, timestamp, left, top, zindex /
+    FROM WebKitStickyNotes&amp;quot;, [], function(tx, result) {
+        for (var i = 0; i &amp;lt; result.rows.length; ++i) {
+            var row = result.rows.item(i);
+            var note = new Note();
+            note.id = row[&amp;#39;id&amp;#39;];
+            note.text = row[&amp;#39;note&amp;#39;];
+            note.timestamp = row[&amp;#39;timestamp&amp;#39;];
+            note.left = row[&amp;#39;left&amp;#39;];
+            note.top = row[&amp;#39;top&amp;#39;];
+            note.zIndex = row[&amp;#39;zindex&amp;#39;];
+
+            if (row[&amp;#39;id&amp;#39;] &amp;gt; highestId)
+                highestId = row[&amp;#39;id&amp;#39;];
+            if (row[&amp;#39;zindex&amp;#39;] &amp;gt; highestZ)
+                highestZ = row[&amp;#39;zindex&amp;#39;];
+        }
+
+        if (!result.rows.length)
+            newNote();
+    }, function(tx, error) {
+        alert(&amp;#39;Failed to retrieve notes from database - &amp;#39; + error.message);
+        return;
+    });
+});
+&lt;/pre&gt;
+&lt;h3&gt;Wrap Up&lt;/h3&gt;
+&lt;p&gt;There is lot that can be done with offline HTML apps. Games, like tetris, are even possible, but you would probably want to consider what you want to do and make sure its right for an offline app. Quake 3 Arena, probably not. A to-do list app, definitely.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Let thousands apps bloom!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Resources&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://dev.w3.org/html5/spec/offline.html"&gt;W3C Offline Application Cache docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.thecssninja.com/javascript/how-to-create-offline-webapps-on-the-iphone"&gt;How to create offline webapps on the iPhone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://developer.apple.com/safari/library/documentation/iPhone/Conceptual/SafariJSDatabaseGuide/OfflineApplicationCache/OfflineApplicationCache.html"&gt;The HTML5 offline cache safari&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://kentbrewster.com/backchannel/"&gt;Backchannel: an Offline-Capable Web App for the iPhone&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.slideshare.net/Berttimmermans/iphone-offline-webapps"&gt;iPhone offline webapps&lt;/a&gt; – a desk on iPhone apps.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://ejohn.org/blog/offline-events/"&gt;A disscussion of offline events by John Resig&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://17.254.2.129/safari/library/referencelibrary/GettingStarted/GS_iPhoneWebApp/index.html#//apple_ref/doc/uid/TP40008134"&gt;Getting Started with iPhone Web Apps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Related Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://sixrevisions.com/tools/useful_gadgets_mobile_computing/"&gt;10 Useful Gadgets for Mobile Computing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://sixrevisions.com/user-interface/a-quick-look-at-mobile-web-designs/"&gt;A Quick Look at Mobile Web Designs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://sixrevisions.com/project-management/the-remote-designer-how-to-work-while-on-the-road/"&gt;The Remote Designer: How to Work While on the Road&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Related categories&lt;/em&gt;: &lt;a href="http://sixrevisions.com/category/web-development/"&gt;Web Development&lt;/a&gt; and &lt;a href="http://sixrevisions.com/category/user-interface/"&gt;User Interface&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;About the Author&lt;/h3&gt;
+&lt;p&gt;&lt;img src="http://images.sixrevisions.com/authors/alex_kessinger_small.jpg" alt="" width="80" height="80"&gt;&lt;span&gt;&lt;strong&gt;Alex Kessinger&lt;/strong&gt; works for Yahoo! as a front-end engineer. Elsewhere, he likes to curate great stuff from the web on his blog, &lt;a href="http://alexkessinger.net"&gt;&lt;strong&gt;alexkessinger.net&lt;/strong&gt;&lt;/a&gt;. He is also a founding member of the &lt;a href="http://tastestalkr.com"&gt;&lt;strong&gt;Tastestalkr Network&lt;/strong&gt;&lt;/a&gt;, a brand group. When not working, Alex lives in the bay area and enjoys really good food.&lt;/span&gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/SixRevisions?a=RzIKLfo30B0:wCbmx9_kOpw:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/SixRevisions?i=RzIKLfo30B0:wCbmx9_kOpw:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/SixRevisions?a=RzIKLfo30B0:wCbmx9_kOpw:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/SixRevisions?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/SixRevisions?a=RzIKLfo30B0:wCbmx9_kOpw:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/SixRevisions?d=qj6IDK7rITs" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/SixRevisions?a=RzIKLfo30B0:wCbmx9_kOpw:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/SixRevisions?i=RzIKLfo30B0:wCbmx9_kOpw:gIN9vFwOqvQ" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/SixRevisions?a=RzIKLfo30B0:wCbmx9_kOpw:7Q72WNTAKBA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/SixRevisions?d=7Q72WNTAKBA" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/SixRevisions/~4/RzIKLfo30B0" height="1" width="1"&gt;</content><author><name>Jacob Gube</name></author><gr:likingUser>10309887133559368348</gr:likingUser><gr:likingUser>01694494552780990260</gr:likingUser><gr:likingUser>01378362922825043920</gr:likingUser><gr:likingUser>15938349700315246081</gr:likingUser><gr:likingUser>02508319771731836425</gr:likingUser><gr:likingUser>15402698410055161977</gr:likingUser><gr:likingUser>06593863335816523439</gr:likingUser><gr:likingUser>12882361725222608882</gr:likingUser><gr:likingUser>17959305948508351143</gr:likingUser><gr:likingUser>01508741310733467208</gr:likingUser><gr:likingUser>14862241603992271880</gr:likingUser><gr:likingUser>00843446338571808070</gr:likingUser><gr:likingUser>14730711531422321586</gr:likingUser><gr:likingUser>13623630974265391886</gr:likingUser><gr:likingUser>04976057895655096789</gr:likingUser><gr:likingUser>16894639442874464615</gr:likingUser><gr:likingUser>05184719433178684143</gr:likingUser><gr:likingUser>17365284859316475862</gr:likingUser><gr:likingUser>01493088331701014324</gr:likingUser><gr:likingUser>16819060057004838414</gr:likingUser><gr:likingUser>11380781826991439821</gr:likingUser><gr:likingUser>00746191174916669909</gr:likingUser><gr:likingUser>05466538143809740749</gr:likingUser><gr:likingUser>09494031125189828553</gr:likingUser><gr:likingUser>01353689641839669044</gr:likingUser><gr:likingUser>08710656750366955714</gr:likingUser><gr:likingUser>17074186101585230806</gr:likingUser><gr:likingUser>00251463095758313507</gr:likingUser><gr:likingUser>07184975249829419070</gr:likingUser><gr:likingUser>04961260939626863818</gr:likingUser><gr:likingUser>15393464464644185558</gr:likingUser><gr:likingUser>02080717021406217972</gr:likingUser><gr:likingUser>05441046481636337061</gr:likingUser><gr:likingUser>03655759070555913155</gr:likingUser><gr:likingUser>02557172137924914010</gr:likingUser><gr:likingUser>18176404415205956534</gr:likingUser><gr:likingUser>14191255914576477993</gr:likingUser><gr:likingUser>02958686984955856394</gr:likingUser><gr:likingUser>05323734236739858143</gr:likingUser><gr:likingUser>00303823932296768805</gr:likingUser><gr:likingUser>05712416922204805454</gr:likingUser><gr:likingUser>02935100473271240868</gr:likingUser><gr:likingUser>02220058273359534291</gr:likingUser><gr:likingUser>04871790471003288532</gr:likingUser><gr:likingUser>08835047637809717221</gr:likingUser><gr:likingUser>18128188283731284887</gr:likingUser><gr:likingUser>05206281886015490759</gr:likingUser><gr:likingUser>03658597455233485075</gr:likingUser><gr:likingUser>06237807188294559369</gr:likingUser><gr:likingUser>03608158139862330201</gr:likingUser><gr:likingUser>15041330178329314107</gr:likingUser><gr:likingUser>09131729515493266450</gr:likingUser><gr:likingUser>16614270172403336416</gr:likingUser><gr:likingUser>15121233344264480905</gr:likingUser><gr:likingUser>11102911874341439252</gr:likingUser><gr:likingUser>03446348398671188413</gr:likingUser><gr:likingUser>04200924281343814538</gr:likingUser><gr:likingUser>11357199450723838060</gr:likingUser><gr:likingUser>02825734142572929634</gr:likingUser><gr:likingUser>06635696623916836799</gr:likingUser><gr:likingUser>11217346725026199024</gr:likingUser><gr:likingUser>04095857846269639802</gr:likingUser><gr:likingUser>07175748313606115207</gr:likingUser><gr:likingUser>00252292387329593763</gr:likingUser><gr:likingUser>12383885861782034405</gr:likingUser><gr:likingUser>06568078284961871181</gr:likingUser><gr:likingUser>09134947457247839398</gr:likingUser><gr:likingUser>05153744281020142784</gr:likingUser><gr:likingUser>01601453078120824269</gr:likingUser><gr:likingUser>05453546356001227318</gr:likingUser><gr:likingUser>04114951877527369857</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/SixRevisions"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/SixRevisions</id><title type="html">Six Revisions</title><link rel="alternate" href="http://sixrevisions.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1269405036478"><id gr:original-id="http://www.adaptivepath.com/blog/?p=4518">tag:google.com,2005:reader/item/defbbebbe24f6e38</id><category term="Adaptive Path"/><category term="Adaptive Path Staff"/><category term="Communication"/><category term="Community"/><category term="Design Research"/><category term="Experience Design"/><category term="Perspective"/><category term="Podcasts"/><category term="Tips &amp; Tricks"/><category term="90 mobiles in 90 days"/><category term="ben chun"/><category term="galileo high school"/><category term="high school"/><category term="Jesse James Garrett"/><category term="rachel hinman"/><category term="user experience design"/><category term="UX"/><title type="html">Explaining User Experience Design to High Schoolers (and other new audiences)</title><published>2010-03-12T22:10:21Z</published><updated>2010-03-12T22:10:21Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/adaptivepath/~3/NhZJp4FLvRU/" type="text/html"/><content xml:base="http://adaptivepath.com/ideas/" type="html">&lt;p&gt;How do user experience designers tell their story in a relevant, meaningful way, to audiences who have no exposure to &lt;a href="http://en.wikipedia.org/wiki/User_experience_design"&gt;user experience design&lt;/a&gt; (UX)? UX practitioners are keenly aware that everything we use in our lives was designed by someone. But, outside of our industry (and related ones), most people aren’t aware of the many decisions that were made (or not made) on their behalf when a product or service was designed. &lt;/p&gt;
+&lt;p&gt;I starting exploring this issue about communicating the value of UX a little over a year ago in my podcast, &lt;a href="http://www.teawithteresa.com/podcasts"&gt;Tea with Teresa&lt;/a&gt;.  One of the highlights from my show was a conversation with&lt;a href="http://www.adaptivepath.com/aboutus/jjg.php"&gt; Jesse James Garrett&lt;/a&gt; called “&lt;a href="http://www.teawithteresa.com/podcasts/what-the-heck-is-user-experience-design"&gt;What the Heck Is User Experience Design??!! (And Why Should I Care?)&lt;/a&gt;“.  That podcast laid a great foundation for explaining UX to new audiences. But, I decided I wanted to push the challenge of communication even further and see if I could explain user experience design to a particularly difficult audience: high schoolers.  I figured if I could make UX meaningful and relevant to these kids, I could probably explain it to anyone.&lt;/p&gt;
+&lt;p&gt;So, I approached my friend &lt;a href="http://itmoves.wordpress.com/2010/03/01/green-tea-and-sticky-notes/"&gt;Ben Chun&lt;/a&gt; about doing a presentation to his Introduction to Programming class at Galileo High School in San Francisco, CA. He thought this would be a great start to a project they’d embark upon this year:  designing an educational computer game for 5th graders.  My goal was to prepare them for that project by communicating two key things:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Make things for people.&lt;br&gt;
+2. Those people aren’t you.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Before the class, Ben warned me about the attention span of his students, and boy was he right. The thing about high school kids is they won’t pretend to be interested if you’ve lost them. Adults at a conference will gaze forward in your general direction, but high school kids will just put their head on the table and go to sleep. If you ever want to get a real gauge of how interesting a speaker you are (or how well you’re really communicating), I highly recommend it, humbling as it is. &lt;/p&gt;
+&lt;p&gt;Not everything I tried worked (I got some heads on the table a few times), but a few tactics and explanations seemed to strike a chord with them, and I thought I’d share them here with you:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Funny examples of design failing out in the world (from &lt;a href="http://failblog.org/"&gt;FailBlog.com&lt;/a&gt;)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.adaptivepath.com/blog/wp-content/uploads/2010/03/epic-fail-pepsi-machine-fail1.jpg"&gt;&lt;img src="http://www.adaptivepath.com/blog/wp-content/uploads/2010/03/epic-fail-pepsi-machine-fail1-300x288.jpg" alt="" title="epic-fail-pepsi-machine-fail" width="300" height="288"&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Interacting with a product or service should feel like a good conversation.&lt;/strong&gt;&lt;br&gt;
+Who wants to deal with a person or thing that acts like &lt;strong&gt;&lt;em&gt;this&lt;/em&gt;&lt;/strong&gt; when you interact with it:&lt;/p&gt;
+&lt;p&gt;(Ignores you)&lt;br&gt;
+&lt;a href="http://www.adaptivepath.com/blog/wp-content/uploads/2010/03/Ignore1.jpg"&gt;&lt;img src="http://www.adaptivepath.com/blog/wp-content/uploads/2010/03/Ignore1-300x225.jpg" alt="" title="Ignore" width="300" height="225"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;(Is self-absorbed)&lt;br&gt;
+&lt;a href="http://www.adaptivepath.com/blog/wp-content/uploads/2010/03/SelfAbsorbed1.png"&gt;&lt;img src="http://www.adaptivepath.com/blog/wp-content/uploads/2010/03/SelfAbsorbed1-300x209.png" alt="" title="SelfAbsorbed" width="300" height="209"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;For an adult audience I would have used a date as an example — an idea I got from &lt;a href="http://www.adaptivepath.com/aboutus/jjg.php"&gt;Jesse James Garrett &lt;/a&gt;– but since high school kids don’t really go on formal dates (or so their teacher told me!), I changed it to a conversation.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. Before you make something, learn about the people who will use it. &lt;/strong&gt;&lt;br&gt;
+Otherwise, it’ll feel and turn out like:&lt;/p&gt;
+&lt;p&gt;Trying to buy a present for someone you don’t know (like your uncle’s boss).&lt;br&gt;
+&lt;a href="http://www.adaptivepath.com/blog/wp-content/uploads/2010/03/PResent2.png"&gt;&lt;img src="http://www.adaptivepath.com/blog/wp-content/uploads/2010/03/PResent2.png" alt="" title="PResent" width="263" height="249"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Making dinner for someone you don’t know (What if they are vegetarian but you made steak?).&lt;br&gt;
+&lt;a href="http://www.adaptivepath.com/blog/wp-content/uploads/2010/03/Dinner1.png"&gt;&lt;img src="http://www.adaptivepath.com/blog/wp-content/uploads/2010/03/Dinner1-300x222.png" alt="" title="Dinner" width="300" height="222"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. People like and need different things.&lt;/strong&gt;&lt;br&gt;
+So it’s important to find out what those wants and needs are. For example, during &lt;a href="http://www.rachelhinman.com/"&gt;Rachel Hinman’s&lt;/a&gt; project “90 Mobiles in 90 Days”, her niece designed a mobile phone with the features she really wanted, like:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.adaptivepath.com/blog/wp-content/uploads/2010/03/90Mobilesin90Days1.jpg"&gt;&lt;img src="http://www.adaptivepath.com/blog/wp-content/uploads/2010/03/90Mobilesin90Days1-300x229.jpg" alt="" title="90Mobilesin90Days" width="300" height="229"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1.  Snail button that turns into Barbie when pushed&lt;br&gt;
+2.  Screen with swimming pool inside&lt;br&gt;
+3.  Snow White always attached by golden string&lt;br&gt;
+4.  A red button that when pushed, makes the phone turn into anything&lt;br&gt;
+5.  Snow White store and candy store attached&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Key point: Not everyone wants a snail button that turns into Barbie!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5. The user is not you, so don’t design for yourself.&lt;/strong&gt;&lt;br&gt;
+Activity to show how different we are:&lt;br&gt;
+1. Three people are asked to leave the room and are not told why.&lt;br&gt;
+2. One at a time they are invited back in, asked to sit and close their eyes, then asked to describe the room in detail.&lt;br&gt;
+3. The rest of the class takes note of how each person values/pays attention to very different things.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6. Finding out what the user really wants or needs (user research)&lt;/strong&gt;&lt;br&gt;
+Sticky note activity:&lt;br&gt;
+1. Everyone gets a sticky note pad and has 5 minutes to write as many questions as they can for the potential users of a pretend product they are making.&lt;br&gt;
+2. Post all questions on a wall together, cluster questions that are about the same topic, discuss, and agree upon a key set of 10 questions.  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Turns out the kids loved the race to write as many questions as they could in a time limit. Ben said you almost never have a room of focused, quiet teenagers like we had during that activity. He also wrote about this exercise on his blog, &lt;a href="http://itmoves.wordpress.com/2010/03/01/green-tea-and-sticky-notes/"&gt;And It Moves: Adventures In Teaching and Technology&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Those are some of the highlights from my attempt to make the complex simple for an audience that had never heard of user experience before.  I learned a lot about which of my explanations really make sense to others.  And as I continue in this exploration of communicating UX, I’d love to expand my tool kit by hearing about exercises, analogies, and other approaches any of you have had success with! Please share here! &lt;/p&gt;
+&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/adaptivepath?a=NhZJp4FLvRU:XcZ1EcgnfXo:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/adaptivepath?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/adaptivepath?a=NhZJp4FLvRU:XcZ1EcgnfXo:JEwB19i1-c4"&gt;&lt;img src="http://feeds.feedburner.com/~ff/adaptivepath?i=NhZJp4FLvRU:XcZ1EcgnfXo:JEwB19i1-c4" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/adaptivepath?a=NhZJp4FLvRU:XcZ1EcgnfXo:D7DqB2pKExk"&gt;&lt;img src="http://feeds.feedburner.com/~ff/adaptivepath?i=NhZJp4FLvRU:XcZ1EcgnfXo:D7DqB2pKExk" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/adaptivepath/~4/NhZJp4FLvRU" height="1" width="1"&gt;</content><author><name>Teresa Brazen</name></author><gr:likingUser>16364355786231999733</gr:likingUser><gr:likingUser>00481043411684345237</gr:likingUser><gr:likingUser>05093498198697383935</gr:likingUser><gr:likingUser>09689571963667574300</gr:likingUser><gr:likingUser>14256635795274639540</gr:likingUser><gr:likingUser>09110409156044093628</gr:likingUser><gr:likingUser>08182868098745637359</gr:likingUser><gr:likingUser>14458209572174770663</gr:likingUser><gr:likingUser>05729768125917223668</gr:likingUser><gr:likingUser>06137556293774055336</gr:likingUser><gr:likingUser>05226845232781030423</gr:likingUser><gr:likingUser>14585839158418784742</gr:likingUser><gr:likingUser>03280096779860763908</gr:likingUser><gr:likingUser>18310750088318964476</gr:likingUser><gr:likingUser>02848039997193907980</gr:likingUser><gr:likingUser>16086689751907424778</gr:likingUser><gr:likingUser>06181689225540554771</gr:likingUser><gr:likingUser>05507000639157729277</gr:likingUser><gr:likingUser>16390689927778829025</gr:likingUser><gr:likingUser>05391203960854652911</gr:likingUser><gr:likingUser>12147899042657588270</gr:likingUser><gr:likingUser>09146696625984767496</gr:likingUser><gr:likingUser>05017742414452471874</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/adaptivepath"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/adaptivepath</id><title type="html">Adaptive Path</title><link rel="alternate" href="http://adaptivepath.com/ideas/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1269319326659"><id gr:original-id="http://ajaxian.com/?p=8730">tag:google.com,2005:reader/item/3dfceb395eeb4bb9</id><category term="Front Page"/><category term="JavaScript"/><category term="Performance"/><title type="html">RequireJS: Asynchronous JavaScript loading</title><published>2010-03-18T11:15:12Z</published><updated>2010-03-18T11:15:12Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/ajaxian/~3/Rhv2mXvGvDc/requirejs-asynchronous-javascript-loading" type="text/html"/><content xml:base="http://ajaxian.com/" type="html">&lt;p&gt;A certain someone was talking to me about how they find it interesting that node.js, the JavaScript server framework du jour which loves all things async, starts life with a bunch of synchronous &lt;code&gt;require()&lt;/code&gt; calls. Now, this is actually quite fine since the startup of the server is not the issue at hand.&lt;/p&gt;
+&lt;p&gt;However, if you are running &lt;code&gt;require()&lt;/code&gt;-esque loader code in the browser you want to avoid blocking calls else Steve Souders will come over and beat you up.&lt;/p&gt;
+&lt;p&gt;I have seen a couple of interesting items in this area:&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;RequireJS&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;James Burke of Mozilla Messaging has spent a lot of time in the depths of &lt;code&gt;dojo.require()&lt;/code&gt;. He has taken another look at the problem and &lt;a href="http://requirejs.org/"&gt;RequireJS&lt;/a&gt; a solution that offers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;some sort of #include/import/require&lt;/li&gt;
+&lt;li&gt;ability to load nested dependencies&lt;/li&gt;
+&lt;li&gt;ease of use for developer but then backed by an optimization tool that helps deployment
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;He &lt;a href="http://requirejs.org/docs/why.html"&gt;walks through the problem&lt;/a&gt; and why other solutions like LABjs, CommonJS require, and Dojo itself don't cover all of his bases.&lt;/p&gt;
+&lt;p&gt;The end result is:&lt;/p&gt;
+&lt;div&gt;&lt;a href="javascript:void(0);"&gt;PLAIN TEXT&lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000;font-weight:bold"&gt;JAVASCRIPT:&lt;/span&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt; &lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;&lt;span style="color:#009900;font-style:italic"&gt;// code that runs asynchronously when the library is loaded&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;require&lt;span style="color:#006600;font-weight:bold"&gt;(&lt;/span&gt;&lt;span style="color:#006600;font-weight:bold"&gt;[&lt;/span&gt;&lt;span style="color:#3366CC"&gt;"some/script.js"&lt;/span&gt;&lt;span style="color:#006600;font-weight:bold"&gt;]&lt;/span&gt;, &lt;span style="color:#003366;font-weight:bold"&gt;function&lt;/span&gt;&lt;span style="color:#006600;font-weight:bold"&gt;(&lt;/span&gt;&lt;span style="color:#006600;font-weight:bold"&gt;)&lt;/span&gt; &lt;span style="color:#006600;font-weight:bold"&gt;{&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;    &lt;span style="color:#009900;font-style:italic"&gt;//This function is called after some/script.js has loaded.&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;&lt;span style="color:#006600;font-weight:bold"&gt;}&lt;/span&gt;&lt;span style="color:#006600;font-weight:bold"&gt;)&lt;/span&gt;;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt; &lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;&lt;span style="color:#009900;font-style:italic"&gt;// defining the module and dependencies&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;require.&lt;span style="color:#006600"&gt;def&lt;/span&gt;&lt;span style="color:#006600;font-weight:bold"&gt;(&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;    &lt;span style="color:#009900;font-style:italic"&gt;// The name of this module&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;    &lt;span style="color:#3366CC"&gt;"types/Manager"&lt;/span&gt;,&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt; &lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;    &lt;span style="color:#009900;font-style:italic"&gt;// The array of dependencies&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;    &lt;span style="color:#006600;font-weight:bold"&gt;[&lt;/span&gt;&lt;span style="color:#3366CC"&gt;"types/Employee"&lt;/span&gt;&lt;span style="color:#006600;font-weight:bold"&gt;]&lt;/span&gt;,&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt; &lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;    &lt;span style="color:#009900;font-style:italic"&gt;// The function to execute when all dependencies have loaded. The arguments&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;    &lt;span style="color:#009900;font-style:italic"&gt;// to this function are the array of dependencies mentioned above.&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;    &lt;span style="color:#003366;font-weight:bold"&gt;function&lt;/span&gt; &lt;span style="color:#006600;font-weight:bold"&gt;(&lt;/span&gt;Employee&lt;span style="color:#006600;font-weight:bold"&gt;)&lt;/span&gt; &lt;span style="color:#006600;font-weight:bold"&gt;{&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;        &lt;span style="color:#003366;font-weight:bold"&gt;function&lt;/span&gt; Manager &lt;span style="color:#006600;font-weight:bold"&gt;(&lt;/span&gt;&lt;span style="color:#006600;font-weight:bold"&gt;)&lt;/span&gt; &lt;span style="color:#006600;font-weight:bold"&gt;{&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;            &lt;span style="color:#000066;font-weight:bold"&gt;this&lt;/span&gt;.&lt;span style="color:#006600"&gt;reports&lt;/span&gt; = &lt;span style="color:#006600;font-weight:bold"&gt;[&lt;/span&gt;&lt;span style="color:#006600;font-weight:bold"&gt;]&lt;/span&gt;;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;        &lt;span style="color:#006600;font-weight:bold"&gt;}&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt; &lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;        &lt;span style="color:#009900;font-style:italic"&gt;// This will now work&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;        Manager.&lt;span style="color:#006600"&gt;prototype&lt;/span&gt; = &lt;span style="color:#003366;font-weight:bold"&gt;new&lt;/span&gt; Employee&lt;span style="color:#006600;font-weight:bold"&gt;(&lt;/span&gt;&lt;span style="color:#006600;font-weight:bold"&gt;)&lt;/span&gt;;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt; &lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;        &lt;span style="color:#009900;font-style:italic"&gt;// return the Manager constructor function so it can be used by other modules.&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;        &lt;span style="color:#000066;font-weight:bold"&gt;return&lt;/span&gt; Manager;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;    &lt;span style="color:#006600;font-weight:bold"&gt;}&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-weight:bold;color:#26536A"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt;&lt;span style="color:#006600;font-weight:bold"&gt;)&lt;/span&gt;;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li style="font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;color:black;font-weight:normal;font-style:normal;color:#3A6A8B"&gt;
+&lt;div style="color:#000000;font-family:&amp;#39;Courier New&amp;#39;, Courier, monospace;font-weight:normal"&gt; &lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;b&gt;Google Analytics "async add to []" Pattern&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;When talking to Davis Frank of Pivotal about some Google Analytics code, he pointed me to &lt;a href="http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html"&gt;details about the new GA asynchronous loader&lt;/a&gt; that we very &lt;a href="http://ajaxian.com/archives/google-analytics-unblocks-the-web-w-async-support"&gt;excitedly blogged about&lt;/a&gt; since GA was such a blocking offender on the Web.&lt;/p&gt;
+&lt;p&gt;Part of the asynchronous API is that you, the developer create an array, and use the &lt;code&gt;push()&lt;/code&gt; method to put commands on a queue. This means that you can start pushing commands immediately.&lt;/p&gt;
+&lt;p&gt;Then, when the GA code loads asynchronously, it takes over that array and wraps those standard methods. Now it can take the commands and fire them back to GA and &lt;code&gt;push()&lt;/code&gt; can do more. Freaking brilliant.&lt;/p&gt;
+&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/ajaxian?a=Rhv2mXvGvDc:0cgNPekfjy4:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/ajaxian?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/ajaxian?a=Rhv2mXvGvDc:0cgNPekfjy4:7Q72WNTAKBA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/ajaxian?d=7Q72WNTAKBA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/ajaxian?a=Rhv2mXvGvDc:0cgNPekfjy4:D7DqB2pKExk"&gt;&lt;img src="http://feeds.feedburner.com/~ff/ajaxian?i=Rhv2mXvGvDc:0cgNPekfjy4:D7DqB2pKExk" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;</content><author><name>Dion Almaer</name></author><gr:likingUser>05503502365699690940</gr:likingUser><gr:likingUser>00797186294002336634</gr:likingUser><gr:likingUser>10038339145452536641</gr:likingUser><gr:likingUser>16717092169330009019</gr:likingUser><gr:likingUser>02493361864459897726</gr:likingUser><gr:likingUser>01498332575508092081</gr:likingUser><gr:likingUser>04351319232315673927</gr:likingUser><gr:likingUser>01960847033826660063</gr:likingUser><gr:likingUser>14730072827152467487</gr:likingUser><gr:likingUser>03027677480804790549</gr:likingUser><gr:likingUser>02354404336995335379</gr:likingUser><gr:likingUser>11744001960463177102</gr:likingUser><gr:likingUser>17796562442174829953</gr:likingUser><gr:likingUser>09983111993260693973</gr:likingUser><gr:likingUser>05334282977497251653</gr:likingUser><gr:likingUser>12729433603558520003</gr:likingUser><gr:likingUser>11664077425926596270</gr:likingUser><gr:likingUser>08684813710698774005</gr:likingUser><gr:likingUser>01545600050577936604</gr:likingUser><gr:likingUser>07607191457032118444</gr:likingUser><gr:likingUser>01114922742564691285</gr:likingUser><gr:likingUser>07874758680650443141</gr:likingUser><gr:likingUser>10694329201095105288</gr:likingUser><gr:likingUser>09135215047020197527</gr:likingUser><gr:likingUser>07216110166393928899</gr:likingUser><gr:likingUser>13772940807697599256</gr:likingUser><gr:likingUser>02169556169826099484</gr:likingUser><gr:likingUser>11641427018177182548</gr:likingUser><gr:likingUser>03413947380326616718</gr:likingUser><gr:likingUser>05831622107312883470</gr:likingUser><gr:likingUser>01893735498862716381</gr:likingUser><gr:likingUser>15059732264001365694</gr:likingUser><gr:likingUser>02193447919425749287</gr:likingUser><gr:likingUser>04786494106707769342</gr:likingUser><gr:likingUser>12873201414798074619</gr:likingUser><gr:likingUser>12564306142697517519</gr:likingUser><gr:likingUser>00712164126571682477</gr:likingUser><gr:likingUser>16319990666168826778</gr:likingUser><gr:likingUser>16213748732808311936</gr:likingUser><gr:likingUser>17787364726690920763</gr:likingUser><gr:likingUser>10340389594411745738</gr:likingUser><source gr:stream-id="feed/http://ajaxian.com/index.xml"><id>tag:google.com,2005:reader/feed/http://ajaxian.com/index.xml</id><title type="html">Ajaxian » Front Page</title><link rel="alternate" href="http://ajaxian.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1269313225570"><id gr:original-id="http://lukeredpath.co.uk/blog/synching-web-services-with-core-data">tag:google.com,2005:reader/item/524cd23104723afa</id><title type="html">Synching web services with Core Data</title><published>2010-03-21T00:00:00Z</published><updated>2010-03-21T00:00:00Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/LukeRedpath/~3/z8tfAVSzuKE/synching-web-services-with-core-data.html" type="text/html"/><content xml:base="http://lukeredpath.co.uk/" type="html">&lt;p&gt;When creating iPhone and iPad apps that communicate with web services (typically some kind of REST API), it is often desirable to cache data wherever you can - your app shouldn't be dependent on a network connection when it doesn't have to be.&lt;/p&gt;
+
+&lt;h3&gt;To cache or not to cache&lt;/h3&gt;
+
+&lt;p&gt;Caching is a notoriously difficult issue (or rather, cache expiration is) and there are many ways of going about it. One way of doing it would be to create a mirror of the remote objects in a local Core Data store. This would allow you to take advantage of everything that Core Data has to offer and lets you more easily create apps that work offline, as they have their own object model to work with and are not dependent on the remote API.&lt;/p&gt;
+
+&lt;p&gt;The biggest issue with this approach is keeping the local and remote objects in sync with each other. You would need to be able to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Populate your Core Data store initially with data from the API&lt;/li&gt;
+&lt;li&gt;Keep local objects updated with remote changes&lt;/li&gt;
+&lt;li&gt;Keep the server updated with local changes either immediately (if a network connection is available), or in the future (when a network connection becomes available).&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;The ideal solution would be relatively seamless. Your application would deal with its own object model and the synching would &lt;em&gt;just work&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3&gt;On possible solution: Core Resource&lt;/h3&gt;
+
+&lt;p&gt;Whilst there are number of solutions to synchronzing Core Data stores across devices (such as Apple's own Sync Services framework, and &lt;a href="http://www.zarrastudios.com/ZSync/ZSync.html"&gt;Zsync&lt;/a&gt;), the only attempt to solve the issue of synching with a web service is &lt;a href="http://coreresource.org/"&gt;Core Resource&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Core Resource seems like a cool project, but based on my initial impressions, it makes some design decisions that I felt were inappropriate:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Core Resource knows too much about your remote resource. My preferred solution would be completely agnostic to how your remote resource is fetched. My preferred solution doesn't prescribe a particular type of web service (REST, SOAP etc.) nor how that data should be fetched.&lt;/li&gt;
+&lt;li&gt;Related to the above, because Core Resource concerns itself with fetching the remote data, it has a dependency on &lt;a href="http://allseeing-i.com/ASIHTTPRequest/"&gt;ASIHTTPRequest&lt;/a&gt;. ASIHTTPRequest is a pretty cool library, but what if I want to use the awesome &lt;a href="http://labratrevenge.com/httpriot/"&gt;HTTPRiot&lt;/a&gt; instead?&lt;/li&gt;
+&lt;li&gt;Core Resource depends on inheritance. All of your entities need to inherit from &lt;code&gt;CoreResource&lt;/code&gt;, which in turn inherits from &lt;code&gt;NSManagedObject&lt;/code&gt;. My preferred solution makes no assumptions about your class hierarchy and doesn't force unnecessary coupling; I feel that protocols would be the better, more Cocoa-centric approach.&lt;/li&gt;
+&lt;li&gt;Core Resource has some cool user-interface related widgets (such as a custom UITableViewController) but I'd prefer if my synching library focussed on just one thing - synching - whilst allowing your app to hook into certain events using notifications and delegation.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Working towards a solution, current progress&lt;/h3&gt;
+
+&lt;p&gt;Over the past week, I've been working on my own solution to this problem. It's in the &lt;em&gt;very&lt;/em&gt; early stages and has changed a lot already. I've made decisions which turned out to naïve or just plain stupid. But that's OK.&lt;/p&gt;
+
+&lt;p&gt;So far, I've got basic synching with a single entity in place. Fetching, creating, updating and deleting works as you'd expect. Association support is non-existent. The code is up &lt;a href="http://github.com/lukeredpath/RestfulCoreData"&gt;on GitHub&lt;/a&gt; - I encourage you to look not only at the code, but the commit log too, as it is a reasonably good account of the various decisions I've made and then changed my mind about as I've worked on this.&lt;/p&gt;
+
+&lt;p&gt;The code is all wrapped up in an example app that uses HTTPRiot to interact with a bundled Rails 3 app which provides a REST interface (using standard Rails scaffolding) to its object model (currently just one entity).&lt;/p&gt;
+
+&lt;p&gt;All code that relates to synchronisation is agnostic of how and where the remote data comes from and that should be clear from the design. I've chosen to use a Rails app and HTTPRiot for convenience only. Over time, I will start to separate out the synching components from the main application.&lt;/p&gt;
+
+&lt;h3&gt;Moving forward, a request for feedback&lt;/h3&gt;
+
+&lt;p&gt;With the advent of the iPad, I think apps that interact with remote services are going to take an even more prominent role. I have a few ideas of my own that I hope would be able to use the code that I am writing now. I'd love it if others were able to eventually start using my code to write their own Core Data backed, web resource synched apps too.&lt;/p&gt;
+
+&lt;p&gt;I'd love to get some community involvement with this project. One of the reason I pushed it to GitHub so soon was to get it out there and make it real. I have so many projects in the dark corners of my file system that never see the light of day and I didn't want this to be one of them.&lt;/p&gt;
+
+&lt;p&gt;I wanted the decisions I make in the development of this to be as public as possible. I encourage other developers - especially those with good Core Data experience (which I lack) - to get involved. Use the GitHub Issues page to ask questions and leave feedback. Fork the project and see where you can take it.&lt;/p&gt;
+
+&lt;h3&gt;Postscript: comments&lt;/h3&gt;
+
+&lt;p&gt;Comments on this blog are still disabled, so if you want to make your thoughts known, as well as using the aforementioned GitHub issues page, I encourage you write your own blog post and @message me the link &lt;a href="http://twitter.com/lukeredpath"&gt;on Twitter&lt;/a&gt; and I'll happily update this post with links to interesting feedback.&lt;/p&gt;
+
+&lt;p&gt;Now what are you waiting for? Get forking!&lt;/p&gt;
+&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/LukeRedpath?a=z8tfAVSzuKE:4rrWy0uFVVM:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/LukeRedpath?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/LukeRedpath?a=z8tfAVSzuKE:4rrWy0uFVVM:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/LukeRedpath?i=z8tfAVSzuKE:4rrWy0uFVVM:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/LukeRedpath?a=z8tfAVSzuKE:4rrWy0uFVVM:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/LukeRedpath?i=z8tfAVSzuKE:4rrWy0uFVVM:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/LukeRedpath/~4/z8tfAVSzuKE" height="1" width="1"&gt;</content><author gr:unknown-author="true"><name>(author unknown)</name></author><source gr:stream-id="feed/http://feeds.feedburner.com/LukeRedpath"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/LukeRedpath</id><title type="html">Luke Redpath</title><link rel="alternate" href="http://lukeredpath.co.uk/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1269313177892"><id gr:original-id="http://lukeredpath.co.uk/blog/pushing-events-to-your-iphone-using-websockets-and-pusher">tag:google.com,2005:reader/item/f36476a1eafa20cc</id><title type="html">Pushing events to your iPhone using WebSockets and Pusher</title><published>2010-03-22T00:00:00Z</published><updated>2010-03-22T00:00:00Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/LukeRedpath/~3/lnW5d2AwI9c/pushing-events-to-your-iphone-using-websockets-and-pusher.html" type="text/html"/><content xml:base="http://lukeredpath.co.uk/" type="html">&lt;p&gt;Earlier today, New Bamboo announced their new &lt;a href="http://pusherapp.com/"&gt;Pusher&lt;/a&gt; service. Pusher is a centralized service that allows you to distribute real-time events from your web apps to the browser using HTML5 WebSockets.&lt;/p&gt;
+
+&lt;p&gt;It immediately struck me: why limit yourself to the browser? What if your iPhone (or iPad) app could receive those events too? Sure, you could use the Apple Push Notification Service, but why go through all the hassle that entails just to send events from your server?&lt;/p&gt;
+
+&lt;p&gt;If you could use the same event-distribution mechanism for your real-time HTML5 browser interface as your iPhone/iPad (or any other) interface, that's an instant win.&lt;/p&gt;
+
+&lt;h3&gt;Getting started with the Pusher Objective-C client&lt;/h3&gt;
+
+&lt;p&gt;So, with just the existing &lt;a href="http://pusherapp.com/js/v1/pusher.js"&gt;Javascript reference client&lt;/a&gt; to go on, I set about trying to create an Objective-C client. I've tried to mirror the Javascript API where it makes sense, but using a more Cocoa-centric approach (e.g. target/selector binding and notifications).&lt;/p&gt;
+
+&lt;p&gt;Using the library is fairly straightforward and there are principally two ways of using it, which I'll explain here. If you haven't already, you might want to &lt;a href="http://pusherapp.com/docs"&gt;read up on how Pusher works&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;First of all, you need to create an instance of &lt;code&gt;PTPusher&lt;/code&gt; for the channel you want to monitor.&lt;/p&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;span&gt;-&lt;/span&gt; &lt;span&gt;(&lt;/span&gt;&lt;span&gt;void&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;applicationDidFinishLaunching:&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;UIApplication&lt;/span&gt; &lt;span&gt;*&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;application&lt;/span&gt; &lt;span&gt;{&lt;/span&gt;
+  &lt;span&gt;// pusher is an instance variable in my app delegate&lt;/span&gt;
+  &lt;span&gt;pusher&lt;/span&gt; &lt;span&gt;=&lt;/span&gt; &lt;span&gt;[[&lt;/span&gt;&lt;span&gt;PTPusher&lt;/span&gt; &lt;span&gt;alloc&lt;/span&gt;&lt;span&gt;]&lt;/span&gt; &lt;span&gt;initWithKey:&lt;/span&gt;&lt;span&gt;@&amp;quot;YOUR_API_KEY&amp;quot;&lt;/span&gt; 
+                                 &lt;span&gt;channel:&lt;/span&gt;&lt;span&gt;@&amp;quot;THE_CHANNEL_NAME&amp;quot;&lt;/span&gt;&lt;span&gt;];&lt;/span&gt;
+&lt;span&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Once you have a &lt;code&gt;PTPusher&lt;/code&gt; instance, you can start registering for events. Each event listener requires a &lt;code&gt;target&lt;/code&gt; and a &lt;code&gt;selector&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;span&gt;[&lt;/span&gt;&lt;span&gt;pusher&lt;/span&gt; &lt;span&gt;addEventListener:&lt;/span&gt;&lt;span&gt;@&amp;quot;my-event&amp;quot;&lt;/span&gt; 
+  &lt;span&gt;target:&lt;/span&gt;&lt;span&gt;self&lt;/span&gt; &lt;span&gt;selector:&lt;/span&gt;&lt;span&gt;@selector&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;handleEvent:&lt;/span&gt;&lt;span&gt;)];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;The event callback method will receive a single argument, the &lt;code&gt;PTPusherEvent&lt;/code&gt; object representing the event. Here's what &lt;code&gt;handleEvent:&lt;/code&gt; might look like:&lt;/p&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;span&gt;-&lt;/span&gt; &lt;span&gt;(&lt;/span&gt;&lt;span&gt;void&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;handleEvent:&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;PTPusherEvent&lt;/span&gt; &lt;span&gt;*&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;event&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;
+&lt;span&gt;{&lt;/span&gt;
+  &lt;span&gt;// lets just log the event name and data&lt;/span&gt;
+  &lt;span&gt;NSLog&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;@&amp;quot;Received event %@, data: %@&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt; &lt;span&gt;event&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span&gt;name&lt;/span&gt;&lt;span&gt;,&lt;/span&gt; &lt;span&gt;event&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span&gt;data&lt;/span&gt;&lt;span&gt;);&lt;/span&gt;
+&lt;span&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;As you can see, &lt;code&gt;PTPusherEvent&lt;/code&gt; has two properties: &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;data&lt;/code&gt;. The &lt;code&gt;data&lt;/code&gt; property will return the deserialized JSON data as a native Objective-C object, typically an NSDictionary.&lt;/p&gt;
+
+&lt;p&gt;The second approach is to use notifications. Whenever PTPusher receives an event, it will post a &lt;code&gt;PTPusherEventReceivedNotification&lt;/code&gt;. This will allow you to respond to events across your application without necessarily knowing about a specific &lt;code&gt;PTPusher&lt;/code&gt; instance:&lt;/p&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;span&gt;// register for event received events&lt;/span&gt;
+&lt;span&gt;[[&lt;/span&gt;&lt;span&gt;NSNotificationCenter&lt;/span&gt; &lt;span&gt;defaultCenter&lt;/span&gt;&lt;span&gt;]&lt;/span&gt; &lt;span&gt;addObserver:&lt;/span&gt;&lt;span&gt;self&lt;/span&gt;
+  &lt;span&gt;selector:&lt;/span&gt;&lt;span&gt;@selector&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;handlePusherEvent:&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;
+      &lt;span&gt;name:&lt;/span&gt;&lt;span&gt;PTPusherEventReceivedNotification&lt;/span&gt;
+    &lt;span&gt;object:&lt;/span&gt;&lt;span&gt;nil&lt;/span&gt;&lt;span&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;In your notification handler, you will be able to get the &lt;code&gt;PTPusherEvent&lt;/code&gt; from the NSNotification's &lt;code&gt;object&lt;/code&gt; property.&lt;/p&gt;
+
+&lt;p&gt;Because your notification handler might not know anything about the &lt;code&gt;PTPusher&lt;/code&gt; that sent it, you might want to check the channel from which the event arrived before deciding how to handle it. You can do this by using the &lt;code&gt;channel&lt;/code&gt; property of &lt;code&gt;PTPusherEvent&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;span&gt;-&lt;/span&gt; &lt;span&gt;(&lt;/span&gt;&lt;span&gt;void&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;handlePusherEvent:&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;NSNotification&lt;/span&gt; &lt;span&gt;*&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;note&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;
+&lt;span&gt;{&lt;/span&gt;
+  &lt;span&gt;PTPusherEvent&lt;/span&gt; &lt;span&gt;*&lt;/span&gt;&lt;span&gt;event&lt;/span&gt; &lt;span&gt;=&lt;/span&gt; &lt;span&gt;note&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span&gt;object&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;
+  &lt;span&gt;if&lt;/span&gt;&lt;span&gt;([&lt;/span&gt;&lt;span&gt;event&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span&gt;channel&lt;/span&gt; &lt;span&gt;isEqualToString:&lt;/span&gt;&lt;span&gt;@&amp;quot;some_channel&amp;quot;&lt;/span&gt;&lt;span&gt;])&lt;/span&gt; &lt;span&gt;{&lt;/span&gt;
+    &lt;span&gt;NSLog&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;@&amp;quot;Received event %@, data: %@&amp;quot;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt; &lt;span&gt;event&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span&gt;name&lt;/span&gt;&lt;span&gt;,&lt;/span&gt; &lt;span&gt;event&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span&gt;data&lt;/span&gt;&lt;span&gt;);&lt;/span&gt; 
+  &lt;span&gt;}&lt;/span&gt;
+&lt;span&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Obviously, both Pusher and the Objective-C client are still in their early stages. There is still some work to be done with the client, including proper error handling, but there's a lot of potential to create some interesting, cool applications using this. I already have some plans to integrate it with the work I've been doing on &lt;a href="http://lukeredpath.co.uk/blog/synching-web-services-with-core-data.html"&gt;synching web services with Core Data&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I've recorded &lt;a href="http://screenr.com/yYg"&gt;a small screencast&lt;/a&gt; that shows the library in action. Grab yourself a Pusher account and API key and have a play. As always, the code is &lt;a href="http://github.com/lukeredpath/libPusher"&gt;available on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/LukeRedpath?a=lnW5d2AwI9c:ce-VBY1sunM:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/LukeRedpath?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/LukeRedpath?a=lnW5d2AwI9c:ce-VBY1sunM:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/LukeRedpath?i=lnW5d2AwI9c:ce-VBY1sunM:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/LukeRedpath?a=lnW5d2AwI9c:ce-VBY1sunM:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/LukeRedpath?i=lnW5d2AwI9c:ce-VBY1sunM:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/LukeRedpath/~4/lnW5d2AwI9c" height="1" width="1"&gt;</content><author gr:unknown-author="true"><name>(author unknown)</name></author><source gr:stream-id="feed/http://feeds.feedburner.com/LukeRedpath"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/LukeRedpath</id><title type="html">Luke Redpath</title><link rel="alternate" href="http://lukeredpath.co.uk/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1267895296209"><id gr:original-id="tag:typepad.com,2003:post-6a0105361a0fa1970b01310f6e78fe970c">tag:google.com,2005:reader/item/58a448ce79e7e2ac</id><title type="html">Three weeks of iPhone development</title><published>2010-03-06T06:18:23Z</published><updated>2010-03-06T06:18:23Z</updated><link rel="alternate" href="http://blog.leahculver.com/2010/03/three-weeks-of-iphone-development.html" type="text/html"/><link rel="replies" href="http://blog.leahculver.com/2010/03/three-weeks-of-iphone-development.html" type="text/html"/><content xml:base="http://blog.leahculver.com/" xml:lang="en-US" type="html">&lt;div&gt;&lt;p&gt;I&amp;#39;m three weeks into developing my first iPhone application, for &lt;a href="http://plancast.com/"&gt;Plancast&lt;/a&gt;. It&amp;#39;s been crazy and fun to try to learn something new so quickly! In case you are thinking of getting started with iPhone development, here&amp;#39;s how I got started...&lt;/p&gt;&lt;p&gt;First I picked up a copy of the book, &lt;a href="http://oreilly.com/catalog/9780596523190"&gt;iPhone SDK Application Development&lt;/a&gt;, by &lt;a href="http://twitter.com/JZDZIARSKI"&gt;Jonathan Zdziarski&lt;/a&gt;. I pretty much picked it up randomly - I made a last-minute stop at borders to get a book on iPhone development to read on a flight. Zdziarski&amp;#39;s book looked good and was the skinniest one I could find. Turns out that for such terse text, it gets the job done. More impressive is that half the text are tutorials and I love (love love love) tutorials. My first day of iPhone development was spent typing out these tutorials and running them in the simulator.&lt;/p&gt;&lt;p&gt;Next, for general good iPhone stuff, I tried out Facebook&amp;#39;s &lt;a href="http://github.com/facebook/three20"&gt;Three20&lt;/a&gt; project. It&amp;#39;s a bit skimpy on &lt;a href="http://three20.info/"&gt;documentation&lt;/a&gt; but there&amp;#39;s some great UI stuff in there. It&amp;#39;s actually a whole framework but so far I&amp;#39;m only using a tiny part of the library for the Plancast app (tabs and loading spinners).&lt;/p&gt;&lt;p&gt;For connecting to the web, I&amp;#39;m using &lt;a href="http://allseeing-i.com/ASIHTTPRequest/"&gt;ASIHTTPRequest&lt;/a&gt; which is fantastic. It has a &lt;a href="http://allseeing-i.com/ASIHTTPRequest/How-to-use"&gt;lovely page of documentation&lt;/a&gt; and handles most use-cases for making requests including authorization and asynchronous requests.&lt;/p&gt;&lt;p&gt;Early on my app was running very slowly because it was loading lots of images from the web. I complained of this issue to &lt;a href="http://twitter.com/cathye"&gt;Cathy&lt;/a&gt; from &lt;a href="http://chompapps.com/"&gt;Chomp&lt;/a&gt; and she pointed me to this &lt;a href="http://www.markj.net/iphone-asynchronous-table-image/"&gt;blog post&lt;/a&gt; on loading images in the background. The Three20 library also has this functionality.&lt;/p&gt;&lt;p&gt;Overall I&amp;#39;ve really enjoyed iPhone development so far. After working on web apps for so long it&amp;#39;s nice to have a different set of pain points. Memory management in Objective-C isn&amp;#39;t nearly as terrifying as I thought it would be but it is very frustrating to see the non-descriptive EXEC BAD ACCESS. I always make a ton of mistakes when trying out new things. Luckily, I&amp;#39;m good at debugging!&lt;/p&gt;&lt;/div&gt;</content><author><name>Leah Culver</name></author><gr:likingUser>14279105971932433017</gr:likingUser><gr:likingUser>03560200052926293134</gr:likingUser><gr:likingUser>15473077635867806138</gr:likingUser><gr:likingUser>15289713586238835978</gr:likingUser><gr:likingUser>03348488072458747777</gr:likingUser><gr:likingUser>14383969961635638863</gr:likingUser><gr:likingUser>02538765299713813945</gr:likingUser><gr:likingUser>02234676048665779238</gr:likingUser><gr:likingUser>12887672284212816976</gr:likingUser><gr:likingUser>04369581016522279417</gr:likingUser><gr:likingUser>03966890447437798436</gr:likingUser><gr:likingUser>05392157420137609799</gr:likingUser><source gr:stream-id="feed/http://blog.leahculver.com/atom.xml"><id>tag:google.com,2005:reader/feed/http://blog.leahculver.com/atom.xml</id><title type="html">Leah Culver&amp;#39;s Blog</title><link rel="alternate" href="http://blog.leahculver.com/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1265852229402"><id gr:original-id="http://www.appleinsider.com/articles/10/02/10/hulu_to_make_videos_available_on_ipad_without_flash_rumor.html">tag:google.com,2005:reader/item/f2ad9c26f39a3f92</id><title type="html">Hulu to make videos available on iPad without Flash - rumor</title><published>2010-02-11T00:00:00Z</published><updated>2010-02-11T00:00:00Z</updated><link rel="alternate" href="http://www.appleinsider.com/articles/10/02/10/hulu_to_make_videos_available_on_ipad_without_flash_rumor.html" type="text/html"/><summary xml:base="http://www.appleinsider.com/" type="html">Hulu is rumored to be working on an iPad-friendly version of its site which could be ready by the iPad's March launch date.</summary><author gr:unknown-author="true"><name>(author unknown)</name></author><gr:likingUser>15104234238114773682</gr:likingUser><gr:likingUser>15440342726075812239</gr:likingUser><gr:likingUser>14701545461338272501</gr:likingUser><gr:likingUser>03999065344673788363</gr:likingUser><gr:likingUser>13918250687054064926</gr:likingUser><gr:likingUser>10910308696794325813</gr:likingUser><gr:likingUser>12319896070482991985</gr:likingUser><gr:likingUser>05443220773977392079</gr:likingUser><gr:likingUser>07010974520969007709</gr:likingUser><gr:likingUser>10071638343361715481</gr:likingUser><gr:likingUser>12662297460108141167</gr:likingUser><gr:likingUser>12642695686906862308</gr:likingUser><gr:likingUser>06760259893674793930</gr:likingUser><gr:likingUser>00114650730030435074</gr:likingUser><gr:likingUser>18415829495891028128</gr:likingUser><gr:likingUser>00250614372456234850</gr:likingUser><gr:likingUser>09110409156044093628</gr:likingUser><gr:likingUser>12716667927703060942</gr:likingUser><gr:likingUser>06128961955920085438</gr:likingUser><gr:likingUser>17919436869719237977</gr:likingUser><gr:likingUser>12300667986421819218</gr:likingUser><gr:likingUser>12935220262459564239</gr:likingUser><gr:likingUser>16697249542891719126</gr:likingUser><gr:likingUser>13784095401383665357</gr:likingUser><gr:likingUser>04649568174526151414</gr:likingUser><gr:likingUser>11479574095940072025</gr:likingUser><gr:likingUser>07290323438109009770</gr:likingUser><gr:likingUser>00933172957724881846</gr:likingUser><gr:likingUser>12528299502638811676</gr:likingUser><gr:likingUser>06755933086251727657</gr:likingUser><gr:likingUser>10695153861190951585</gr:likingUser><gr:likingUser>06687312581178478540</gr:likingUser><gr:likingUser>17441980576375244597</gr:likingUser><gr:likingUser>12721400459072715606</gr:likingUser><gr:likingUser>05898403659533007290</gr:likingUser><gr:likingUser>12465002271035567078</gr:likingUser><gr:likingUser>17716479087696836915</gr:likingUser><gr:likingUser>16779204434920759450</gr:likingUser><gr:likingUser>00203077831143447644</gr:likingUser><gr:likingUser>08736240529615627797</gr:likingUser><gr:likingUser>06533703700190337472</gr:likingUser><gr:likingUser>12104981934264865593</gr:likingUser><gr:likingUser>15425516374748737790</gr:likingUser><gr:likingUser>03598382356895131161</gr:likingUser><gr:likingUser>04829332654685122149</gr:likingUser><gr:likingUser>15148244799004062816</gr:likingUser><gr:likingUser>03075147922213864805</gr:likingUser><gr:likingUser>17298190258553022230</gr:likingUser><gr:likingUser>06750534272635302334</gr:likingUser><gr:likingUser>00080081166097651653</gr:likingUser><gr:likingUser>15014138099417337163</gr:likingUser><source gr:stream-id="feed/http://www.appleinsider.com/appleinsider.rss"><id>tag:google.com,2005:reader/feed/http://www.appleinsider.com/appleinsider.rss</id><title type="html">AppleInsider</title><link rel="alternate" href="http://www.appleinsider.com/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1265741733938"><id gr:original-id="http://www.zeldman.com/?p=3557">tag:google.com,2005:reader/item/ca187642507b16bd</id><category term="Web Design"/><category term="Web Standards"/><category term="Websites"/><category term="links"/><category term="webtype"/><category term="nicewebtype"/><category term="twitterverse"/><category term="typekit"/><category term="curates"/><category term="fetish"/><category term="controversies"/><category term="innovations"/><category term="nice"/><title type="html">Nice Web Type For iPhone</title><published>2010-01-28T23:02:20Z</published><updated>2010-01-28T23:02:20Z</updated><link rel="alternate" href="http://www.zeldman.com/2010/01/28/nice-web-type-for-iphone/" type="text/html"/><content xml:base="http://www.zeldman.com/" type="html">&lt;div style="float:right;margin-left:10px;margin-right:5px"&gt;&lt;a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.zeldman.com%2F2010%2F01%2F28%2Fnice-web-type-for-iphone%2F"&gt;&lt;img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.zeldman.com%2F2010%2F01%2F28%2Fnice-web-type-for-iphone%2F" height="61" width="51"&gt;&lt;/a&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="http://www.zeldman.com/i/2010.gif" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://m.nicewebtype.com/"&gt;&lt;span&gt;m&lt;/span&gt;.nicewebtype.com&lt;/a&gt; is a light yet essential mobile site for people who design websites, love type, and struggle to keep up with the dizzying world of &lt;a href="http://www.zeldman.com/category/webtype/"&gt;web fonts&lt;/a&gt;. In it, Tim Brown, author of &lt;a href="http://nicewebtype.com/"&gt;Nice Web Type&lt;/a&gt;, creator of &lt;a href="http://webfontspecimen.com/"&gt;Web Font Specimen&lt;/a&gt; (&lt;a href="http://www.alistapart.com/articles/real-web-type-in-real-web-context/"&gt;what’s that?&lt;/a&gt;), and latterly type manager for  &lt;a href="http://typekit.com/"&gt;Typekit&lt;/a&gt;, curates the Design Twitterverse to share the latest insights, innovations, quips, and controversies regarding everyone’s favorite new web design fetish.&lt;/p&gt;
+&lt;p&gt;Don’t leave home without it.&lt;/p&gt;
+
+
+
+
+	&lt;a rel="nofollow" href="http://twitter.com/home?status=Nice%20Web%20Type%20For%20iPhone%20-%20http%3A%2F%2Fwww.zeldman.com%2F2010%2F01%2F28%2Fnice-web-type-for-iphone%2F" title="Twitter"&gt;&lt;img src="http://www.zeldman.com/wp-content/plugins/sociable/images/twitter.png" title="Twitter" alt="Twitter"&gt;&lt;/a&gt;
+	&lt;a rel="nofollow" href="http://www.tumblr.com/share?v=3&amp;amp;u=http%3A%2F%2Fwww.zeldman.com%2F2010%2F01%2F28%2Fnice-web-type-for-iphone%2F&amp;amp;t=Nice%20Web%20Type%20For%20iPhone&amp;amp;s=%0D%0A%0D%0Am.nicewebtype.com%20is%20a%20light%20yet%20essential%20mobile%20site%20for%20people%20who%20design%20websites%2C%20love%20type%2C%20and%20struggle%20to%20keep%20up%20with%20the%20dizzying%20world%20of%20web%20fonts.%20In%20it%2C%20Tim%20Brown%2C%20author%20of%20Nice%20Web%20Type%2C%20creator%20of%20Web%20Font%20Specimen%20%28what%27s%20that%3F%29" title="Tumblr"&gt;&lt;img src="http://www.zeldman.com/wp-content/plugins/sociable/images/tumblr.png" title="Tumblr" alt="Tumblr"&gt;&lt;/a&gt;
+	&lt;a rel="nofollow" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.zeldman.com%2F2010%2F01%2F28%2Fnice-web-type-for-iphone%2F&amp;amp;t=Nice%20Web%20Type%20For%20iPhone" title="Facebook"&gt;&lt;img src="http://www.zeldman.com/wp-content/plugins/sociable/images/facebook.png" title="Facebook" alt="Facebook"&gt;&lt;/a&gt;
+	&lt;a rel="nofollow" href="http://delicious.com/post?url=http%3A%2F%2Fwww.zeldman.com%2F2010%2F01%2F28%2Fnice-web-type-for-iphone%2F&amp;amp;title=Nice%20Web%20Type%20For%20iPhone&amp;amp;notes=%0D%0A%0D%0Am.nicewebtype.com%20is%20a%20light%20yet%20essential%20mobile%20site%20for%20people%20who%20design%20websites%2C%20love%20type%2C%20and%20struggle%20to%20keep%20up%20with%20the%20dizzying%20world%20of%20web%20fonts.%20In%20it%2C%20Tim%20Brown%2C%20author%20of%20Nice%20Web%20Type%2C%20creator%20of%20Web%20Font%20Specimen%20%28what%27s%20that%3F%29" title="del.icio.us"&gt;&lt;img src="http://www.zeldman.com/wp-content/plugins/sociable/images/delicious.png" title="del.icio.us" alt="del.icio.us"&gt;&lt;/a&gt;
+	&lt;a rel="nofollow" href="http://digg.com/submit?phase=2&amp;amp;url=http%3A%2F%2Fwww.zeldman.com%2F2010%2F01%2F28%2Fnice-web-type-for-iphone%2F&amp;amp;title=Nice%20Web%20Type%20For%20iPhone&amp;amp;bodytext=%0D%0A%0D%0Am.nicewebtype.com%20is%20a%20light%20yet%20essential%20mobile%20site%20for%20people%20who%20design%20websites%2C%20love%20type%2C%20and%20struggle%20to%20keep%20up%20with%20the%20dizzying%20world%20of%20web%20fonts.%20In%20it%2C%20Tim%20Brown%2C%20author%20of%20Nice%20Web%20Type%2C%20creator%20of%20Web%20Font%20Specimen%20%28what%27s%20that%3F%29" title="Digg"&gt;&lt;img src="http://www.zeldman.com/wp-content/plugins/sociable/images/digg.png" title="Digg" alt="Digg"&gt;&lt;/a&gt;
+	&lt;a rel="nofollow" href="http://www.friendfeed.com/share?title=Nice%20Web%20Type%20For%20iPhone&amp;amp;link=http%3A%2F%2Fwww.zeldman.com%2F2010%2F01%2F28%2Fnice-web-type-for-iphone%2F" title="FriendFeed"&gt;&lt;img src="http://www.zeldman.com/wp-content/plugins/sociable/images/friendfeed.png" title="FriendFeed" alt="FriendFeed"&gt;&lt;/a&gt;
+	&lt;a rel="nofollow" href="http://www.google.com/bookmarks/mark?op=edit&amp;amp;bkmk=http%3A%2F%2Fwww.zeldman.com%2F2010%2F01%2F28%2Fnice-web-type-for-iphone%2F&amp;amp;title=Nice%20Web%20Type%20For%20iPhone&amp;amp;annotation=%0D%0A%0D%0Am.nicewebtype.com%20is%20a%20light%20yet%20essential%20mobile%20site%20for%20people%20who%20design%20websites%2C%20love%20type%2C%20and%20struggle%20to%20keep%20up%20with%20the%20dizzying%20world%20of%20web%20fonts.%20In%20it%2C%20Tim%20Brown%2C%20author%20of%20Nice%20Web%20Type%2C%20creator%20of%20Web%20Font%20Specimen%20%28what%27s%20that%3F%29" title="Google Bookmarks"&gt;&lt;img src="http://www.zeldman.com/wp-content/plugins/sociable/images/googlebookmark.png" title="Google Bookmarks" alt="Google Bookmarks"&gt;&lt;/a&gt;
+	&lt;a rel="nofollow" href="http://www.newsvine.com/_tools/seed&amp;amp;save?u=http%3A%2F%2Fwww.zeldman.com%2F2010%2F01%2F28%2Fnice-web-type-for-iphone%2F&amp;amp;h=Nice%20Web%20Type%20For%20iPhone" title="NewsVine"&gt;&lt;img src="http://www.zeldman.com/wp-content/plugins/sociable/images/newsvine.png" title="NewsVine" alt="NewsVine"&gt;&lt;/a&gt;
+	&lt;a rel="nofollow" href="http://slashdot.org/bookmark.pl?title=Nice%20Web%20Type%20For%20iPhone&amp;amp;url=http%3A%2F%2Fwww.zeldman.com%2F2010%2F01%2F28%2Fnice-web-type-for-iphone%2F" title="Slashdot"&gt;&lt;img src="http://www.zeldman.com/wp-content/plugins/sociable/images/slashdot.png" title="Slashdot" alt="Slashdot"&gt;&lt;/a&gt;
+	&lt;a rel="nofollow" href="http://www.zeldman.com/feed/" title="RSS"&gt;&lt;img src="http://www.zeldman.com/wp-content/plugins/sociable/images/rss.png" title="RSS" alt="RSS"&gt;&lt;/a&gt;
+
+
+&lt;br&gt;&lt;br&gt;</content><author><name>Jeffrey Zeldman</name></author><gr:likingUser>07803639457955864603</gr:likingUser><source gr:stream-id="feed/http://www.zeldman.com/feed/zeldman.xml"><id>tag:google.com,2005:reader/feed/http://www.zeldman.com/feed/zeldman.xml</id><title type="html">Jeffrey Zeldman Presents The Daily Report</title><link rel="alternate" href="http://www.zeldman.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1264574450868"><id gr:original-id="2190@http://www.cssbeauty.com/">tag:google.com,2005:reader/item/7d320577f4d322dc</id><category term="News and Announcements"/><title type="html">FontFriend Bookmarklet</title><published>2010-01-26T04:08:02Z</published><updated>2010-01-26T04:08:02Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/CssBeautyNewsFeed/~3/5uuybOoX2_8/" type="text/html"/><summary xml:base="http://www.cssbeauty.com/" type="html">FontFriend Bookmarklet.  Enables for rapid checking of fonts and font styles directly in the browser without editing code and refreshing pages.&lt;img src="http://feeds.feedburner.com/~r/CssBeautyNewsFeed/~4/5uuybOoX2_8" height="1" width="1"&gt;</summary><author gr:unknown-author="true"><name>(author unknown)</name></author><gr:likingUser>06218163076464292720</gr:likingUser><gr:likingUser>03545964666694920486</gr:likingUser><gr:likingUser>10490790042391256923</gr:likingUser><gr:likingUser>03622451805226554914</gr:likingUser><source gr:stream-id="feed/http://www.cssbeauty.com/rss/news/"><id>tag:google.com,2005:reader/feed/http://www.cssbeauty.com/rss/news/</id><title type="html">CSS Beauty News Feed</title><link rel="alternate" href="http://www.cssbeauty.com/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1264443915139"><id gr:original-id="http://www.webstandards.org/?p=1836">tag:google.com,2005:reader/item/fd070ca05fa61b90</id><category term="Browsers"/><title type="html">France and Germany call for the end of IE6</title><published>2010-01-20T15:29:39Z</published><updated>2010-01-20T15:29:39Z</updated><link rel="alternate" href="http://www.webstandards.org/2010/01/20/france-and-germany-call-for-the-end-of-ie6/" type="text/html"/><content xml:base="http://www.webstandards.org/" type="html">&lt;p&gt;As you may have heard, &lt;a href="http://www.informationweek.com/news/security/vulnerabilities/showArticle.jhtml?articleID=222301222"&gt;the “Operation Aurora” cyber attack&lt;/a&gt; that occurred in December has prompted the &lt;a href="http://www.certa.ssi.gouv.fr/site/CERTA-2010-ALE-001/index.html"&gt;formal&lt;/a&gt; &lt;a href="https://www.bsi.bund.de/cln_165/sid_09B9BC7CE3D9FD58C5ED82D17D74898B/ContentBSI/presse/Pressemitteilungen/Sicherheitsluecke_IE_150110.html"&gt;warnings&lt;/a&gt; from both the French and German governments about the use of IE6 (and 7 and 8, for that matter) because of its security vulnerabilities.&lt;/p&gt;
+&lt;p&gt;This leads me to two questions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Will these warnings have an impact on the use of IE6 in France and Germany?&lt;/li&gt;
+&lt;li&gt;What about the rest of the world?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;What do you think?&lt;/p&gt;</content><author><name>agustafson</name></author><gr:likingUser>05811184787797974732</gr:likingUser><gr:likingUser>00796819211123213791</gr:likingUser><gr:likingUser>14498237903244847975</gr:likingUser><gr:likingUser>08136846399219442832</gr:likingUser><gr:likingUser>13984622925400493469</gr:likingUser><gr:likingUser>06194996923569734308</gr:likingUser><gr:likingUser>16201248972188854441</gr:likingUser><gr:likingUser>02848039997193907980</gr:likingUser><gr:likingUser>07047921015073810834</gr:likingUser><gr:likingUser>11550547634238751671</gr:likingUser><gr:likingUser>15838731088431799552</gr:likingUser><gr:likingUser>16457385786853709912</gr:likingUser><source gr:stream-id="feed/http://www.webstandards.org/feed/"><id>tag:google.com,2005:reader/feed/http://www.webstandards.org/feed/</id><title type="html">The Web Standards Project</title><link rel="alternate" href="http://www.webstandards.org" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1263926683722"><id gr:original-id="http://scriptandstyle.com/?p=25431">tag:google.com,2005:reader/item/3540ce49e65c979e</id><category term="Submissions" scheme="http://scriptandstyle.com"/><title type="html">jQuery Tool That Generates External Stylesheets From Your HTML Structure</title><published>2010-01-19T17:07:57Z</published><updated>2010-01-19T17:07:57Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/ScriptAndStyle/~3/xzX9HLkUuVA/jquery-tool-that-generates-external-stylesheets-from-your-html-structure" type="text/html"/><link rel="replies" href="http://scriptandstyle.com/submissions/jquery-tool-that-generates-external-stylesheets-from-your-html-structure#comments" type="text/html"/><link rel="replies" href="http://scriptandstyle.com/submissions/jquery-tool-that-generates-external-stylesheets-from-your-html-structure/feed/atom" type="application/atom+xml"/><content xml:base="http://scriptandstyle.com/submissions/jquery-tool-that-generates-external-stylesheets-from-your-html-structure" xml:lang="en" type="html">&lt;p&gt;Save time converting mockups to HTML &amp;amp; CSS with this tool written in jQuery. It will scan your HTML for elements with IDs, classes or inline CSS and create a finished stylesheet.&lt;/p&gt;
+ &lt;p&gt;&lt;a href="http://www.nealgrosskopf.com/tech/thread.php?pid=63"&gt;&lt;img src="http://scriptandstyle.com/images/directlink.png" alt="Direct Link"&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/ScriptAndStyle/~4/xzX9HLkUuVA" height="1" width="1"&gt;</content><author><name>Script_And_Style</name></author><gr:likingUser>17488230394522250397</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/ScriptAndStyle"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/ScriptAndStyle</id><title type="html">Script &amp;amp; Style</title><link rel="alternate" href="http://scriptandstyle.com/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1263658379456"><id gr:original-id="http://37signals.com/svn/posts/2106-you-can-always-do-less">tag:google.com,2005:reader/item/03b7428c2d01c522</id><title type="html">You can always do less</title><published>2010-01-14T17:16:00Z</published><updated>2010-01-14T17:16:00Z</updated><link rel="alternate" href="http://37signals.com/svn/posts/2106-you-can-always-do-less" type="text/html"/><summary xml:base="http://37signals.com/svn/posts" type="html">&lt;p&gt;The hardest part about making good software that ships on time is knowing what and when to sacrifice. As programmers and designers, we often fall in love with our requirements and are unable to kill our darlings. We mistake what we said we’ll do with what must be done. It’s rarely so; you can always do less.&lt;/p&gt;
+
+
+	&lt;p&gt;What stops most people from doing less is the fear of failure. The misconception that if you don’t get it all done, the rest is worth nothing at all. That without this feature or that tweak, nobody will want to use it at all. Bollocks. Most software has a tiny essence that justifies its existence, everything after that is wants and desires mistaken for needs and necessities.&lt;/p&gt;
+
+
+	&lt;p&gt;The easiest way to force the insight of what can be lived without is by playing a game of constraints: You have to ship on Friday, you can’t add more people, you can’t work nights. Fixed resources, fixed time. All that’s left to give is scope. It’s amazing how creative the cuts and sharp the sacrifices become when you’re backed into a corner. It’s when you have to choose that you make the best choices.&lt;/p&gt;
+
+
+	&lt;p&gt;For every 1 day estimates of a task, there’s a simpler version of that you can do in 3 hours, and an even simpler still you can do in 30 minutes. Back yourself into a corner and these versions will vividly appear before your eye. You can always do less.&lt;/p&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/37signals/beMH?a=SMEpl0kUErU:kdSXcNffats:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/37signals/beMH?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/37signals/beMH?a=SMEpl0kUErU:kdSXcNffats:7Q72WNTAKBA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/37signals/beMH?d=7Q72WNTAKBA" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;</summary><author><name>David</name></author><gr:likingUser>11822496793097396577</gr:likingUser><gr:likingUser>06542178106309125826</gr:likingUser><gr:likingUser>13649791834078121487</gr:likingUser><gr:likingUser>04128997850933916229</gr:likingUser><gr:likingUser>12143789145453314359</gr:likingUser><gr:likingUser>00777939951689159322</gr:likingUser><gr:likingUser>01631561733662965249</gr:likingUser><gr:likingUser>00707614470112961686</gr:likingUser><gr:likingUser>05110201764566074088</gr:likingUser><gr:likingUser>06238163113682602381</gr:likingUser><gr:likingUser>15512025284087782502</gr:likingUser><gr:likingUser>05451960092782787344</gr:likingUser><gr:likingUser>16622741669291392851</gr:likingUser><gr:likingUser>01358458184534316570</gr:likingUser><gr:likingUser>10698394518252635591</gr:likingUser><gr:likingUser>07273684035617377500</gr:likingUser><gr:likingUser>09230239754980252928</gr:likingUser><gr:likingUser>09803560590397646034</gr:likingUser><gr:likingUser>05558018483015752342</gr:likingUser><gr:likingUser>07156656147672411257</gr:likingUser><gr:likingUser>17935362554208829901</gr:likingUser><gr:likingUser>01943180894796275966</gr:likingUser><gr:likingUser>02723208689475507306</gr:likingUser><gr:likingUser>11653805869338032700</gr:likingUser><gr:likingUser>09572553282745885898</gr:likingUser><gr:likingUser>06742432430228669017</gr:likingUser><gr:likingUser>18144538140929120857</gr:likingUser><gr:likingUser>16702090311615250288</gr:likingUser><gr:likingUser>03803924921904594863</gr:likingUser><gr:likingUser>09745646289169838851</gr:likingUser><gr:likingUser>06392663836114737770</gr:likingUser><gr:likingUser>00043861996638064267</gr:likingUser><gr:likingUser>01889389287719159309</gr:likingUser><gr:likingUser>13875032097431634751</gr:likingUser><gr:likingUser>09880825622092416209</gr:likingUser><gr:likingUser>07536226548889710969</gr:likingUser><gr:likingUser>01258664253935905693</gr:likingUser><gr:likingUser>18253276447546087020</gr:likingUser><gr:likingUser>10440297436336528410</gr:likingUser><gr:likingUser>00471372238712551260</gr:likingUser><gr:likingUser>00363647479470519434</gr:likingUser><gr:likingUser>14376266292062380570</gr:likingUser><gr:likingUser>02265052492972624150</gr:likingUser><gr:likingUser>11470338653666032371</gr:likingUser><gr:likingUser>11977684754500599245</gr:likingUser><gr:likingUser>16651855101427682942</gr:likingUser><gr:likingUser>06134073700480172924</gr:likingUser><gr:likingUser>05098151052623247476</gr:likingUser><gr:likingUser>15171912905469536285</gr:likingUser><gr:likingUser>08977242675298226326</gr:likingUser><gr:likingUser>04349028209439150110</gr:likingUser><gr:likingUser>11331137397216118012</gr:likingUser><gr:likingUser>13743037244925047359</gr:likingUser><gr:likingUser>05765280603101517395</gr:likingUser><gr:likingUser>02312663050956036083</gr:likingUser><gr:likingUser>14537923607623480721</gr:likingUser><gr:likingUser>11703739301577671630</gr:likingUser><gr:likingUser>10249513362956005021</gr:likingUser><gr:likingUser>18309891385794056555</gr:likingUser><gr:likingUser>12730163584171398262</gr:likingUser><gr:likingUser>01757079489509521262</gr:likingUser><gr:likingUser>10517308641901089372</gr:likingUser><gr:likingUser>05317506684979383577</gr:likingUser><gr:likingUser>09786939547951682134</gr:likingUser><gr:likingUser>16936997144838819113</gr:likingUser><gr:likingUser>00667297224522952230</gr:likingUser><gr:likingUser>01368244364313771044</gr:likingUser><gr:likingUser>04473320551115994558</gr:likingUser><gr:likingUser>07839492369525335653</gr:likingUser><gr:likingUser>11320963709709929773</gr:likingUser><gr:likingUser>07526227900240914225</gr:likingUser><gr:likingUser>14796314171668227851</gr:likingUser><gr:likingUser>08478270579419469721</gr:likingUser><gr:likingUser>16946917812242460300</gr:likingUser><gr:likingUser>08305546274718780438</gr:likingUser><gr:likingUser>11568246253259298890</gr:likingUser><gr:likingUser>15360599111992307859</gr:likingUser><gr:likingUser>01777182139999820553</gr:likingUser><gr:likingUser>13211946033250521232</gr:likingUser><gr:likingUser>05314763687120854629</gr:likingUser><gr:likingUser>10988187040395647596</gr:likingUser><gr:likingUser>01160681210550362242</gr:likingUser><gr:likingUser>17381816441180707911</gr:likingUser><gr:likingUser>09375019275224095873</gr:likingUser><gr:likingUser>01653863542825326231</gr:likingUser><gr:likingUser>05945964276979573861</gr:likingUser><gr:likingUser>09228660293930066575</gr:likingUser><gr:likingUser>16064823897981999388</gr:likingUser><gr:likingUser>04605841360574369872</gr:likingUser><gr:likingUser>03712786346780299164</gr:likingUser><gr:likingUser>11495468935544173143</gr:likingUser><gr:likingUser>04313174718762009486</gr:likingUser><gr:likingUser>12513028546399921131</gr:likingUser><gr:likingUser>02195294431377468397</gr:likingUser><gr:likingUser>17575579017359042587</gr:likingUser><gr:likingUser>12261122925534900843</gr:likingUser><gr:likingUser>15444306893002992075</gr:likingUser><gr:likingUser>01454983084391069613</gr:likingUser><gr:likingUser>05026281999497025135</gr:likingUser><gr:likingUser>14966703517335572892</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/37signals/beMH"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/37signals/beMH</id><title type="html">Signal vs. Noise</title><link rel="alternate" href="http://37signals.com/svn/posts" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1263655152869"><id gr:original-id="http://woorkup.com/?p=2275">tag:google.com,2005:reader/item/96b6c71e36d04264</id><category term="Popular"/><category term="Web Design"/><category term="development"/><category term="html"/><category term="OAuth"/><category term="oEmbed"/><title type="html">Emerging Techniques Every Web Developer Should Know</title><published>2010-01-16T14:37:45Z</published><updated>2010-01-16T14:37:45Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/Woork/~3/38TyafHkRY4/" type="text/html"/><content xml:base="http://woorkup.com/" type="html">&lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/6j9i6k59v0g3vioir1cq4q80js/300/250?ca=1&amp;amp;fh=280#http%3A%2F%2Fwoorkup.com%2F2010%2F01%2F16%2Femerging-techniques-every-web-developer-should-know%2F" width="100%" height="280" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;p&gt;The Web is evolving fast: new features, formats, user needs, continuously change the way we interact with websites. In this post I want to suggest you some interesting emerging techniques every web developer should know in order to build modern web applications. &lt;/p&gt;
+&lt;h2&gt;HTML 5 Offline Application&lt;/h2&gt;
+&lt;p&gt;The HTML 5 specification introduces a lot of new features that radically improve the way users interact with websites and web applications. With HTML 5 developers can build easily offline web applications by using a SQL database API and an offline application caching API for storing data locally (by using a client-side SQL database) and allowing applications are available even when users are offline. This technique use a &lt;strong&gt;.manifest&lt;/strong&gt; file and JavaScript to get an update of the cached files when is not available a connection to the server.&lt;/p&gt;
+&lt;p&gt;You can enable offline application caching by using the &lt;em&gt;&lt;code&gt;manifest&lt;/code&gt;&lt;/em&gt; attribute on the &lt;em&gt;&lt;code&gt;html&lt;/code&gt;&lt;/em&gt; tag:&lt;/p&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;html manifest=&amp;quot;cache-manifest&amp;quot;&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You have to create a &lt;strong&gt;.manifest&lt;/strong&gt; file that specifies which files are to be cached offline. Here is a typical structure of a manifest file:&lt;/p&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;CACHE MANIFEST
+index.html
+about.html
+style.css
+logo.png
+...
+
+NETWORK:
+server.cgi&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;According to the W3C Working Group Note about &lt;a href="http://www.w3.org/TR/offline-webapps"&gt;Offline Web Applications&lt;/a&gt; topic,  &lt;code&gt;server.cgi&lt;/code&gt; should never be cached in order to continuously get updates from the server.&lt;/p&gt;
+&lt;p&gt;Apple Developer Connection provides a full detailed, step-by-step guide to help you learning how to buit modern offline web applications. You can &lt;a href="http://developer.apple.com/safari/library/documentation/iPhone/Conceptual/SafariJSDatabaseGuide/OfflineApplicationCache/OfflineApplicationCache.html#//apple_ref/doc/uid/TP40007256-CH7-SW1"&gt;read the full guide here.&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;oEmbed&lt;/h2&gt;
+&lt;p&gt;&lt;img src="http://woorkup.com/wp-content/uploads/2010/01/oembed.jpg" width="274" height="310" style="float:right;margin-left:14px"&gt; oEmbed is basically an open format for allowing an embedded representation of a URL on webpages. Facebook probably has one of the most popular implementation of oEmbed API. For example, when you copy a link from YouTube, Vimeo, Flickr, into your status bar, Facebook converts this link into a movie or image embedded on your profile. &lt;/p&gt;
+&lt;p&gt;Previously on Woork Up I wrote this interesting post “&lt;a href="http://woorkup.com/2009/12/29/learning-oembed-convert-links-into-embedded-content/"&gt;Learning oEmbed: Convert Links Into Embedded Content&lt;/a&gt;” where I explained how to use oEmbed API to implement a Facebook-like link-to-embedded-content feature. The tutorial is really simple, easy to customize and reuse on your projects. A working example is also available.&lt;/p&gt;
+&lt;h2&gt;HTML 5 contentEditable&lt;/h2&gt;
+&lt;p&gt;The HTML 5 &lt;em&gt;&lt;code&gt;contentditable&lt;/code&gt;&lt;/em&gt; attribute allows to make editable the content within a HTML element with the &lt;strong&gt;&lt;code&gt;contenteditable&lt;/code&gt;&lt;/strong&gt; state set to “true”. This attribute is useful for example for easily developing edit in-place features or advanced rich text editors without using third party resources. All major browsers (IE, Firefox, Safari, Chrome) implement this attribute and here is a sample usage: &lt;/p&gt;
+&lt;div&gt;&lt;code&gt;&amp;lt;div id=&amp;quot;editableLayer&amp;quot; contenteditable=&amp;quot;true&amp;quot;&amp;gt;...&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/div&gt;
+&lt;p&gt;You can use &lt;strong&gt;&lt;code&gt;document.execCommand&lt;/code&gt;&lt;/strong&gt; to add some basic features to your custom editor simply adding this code in the &lt;strong&gt;&lt;code&gt;head&lt;/code&gt;&lt;/strong&gt; tag of your webpage:&lt;/p&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;script language=&amp;quot;javascript&amp;quot;&amp;gt;
+function formatText(cmd){
+    document.execCommand(cmd, null, null);
+}
+&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is the result:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bold&lt;/strong&gt; &lt;i&gt;Italic&lt;/i&gt; &lt;span style="text-decoration:underline"&gt;Underline&lt;/span&gt;  &lt;/p&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div style="height:200px;border:1px solid #999"&gt;Try to change the code within this layer&lt;/div&gt;
+&lt;p&gt;Here is an example of button to format the selected text:&lt;/p&gt;
+&lt;div&gt;&lt;code&gt;&amp;lt;button onclick=&amp;quot;formatText(&amp;#39;bold&amp;#39;);&amp;quot;&amp;gt;&lt;/code&gt;&lt;/div&gt;
+&lt;p&gt;The previous code is only an example. I suggest you to use &lt;a href="http://en.wikipedia.org/wiki/Unobtrusive_JavaScript"&gt;unobtrusive approach&lt;/a&gt; for separating HTML structure from JavaScript code (in this case the &lt;strong&gt;&lt;code&gt;onclick&lt;/code&gt;&lt;/strong&gt; event).&lt;/p&gt;
+&lt;h2&gt;OAuth&lt;/h2&gt;
+&lt;p&gt;&lt;img src="http://woorkup.com/wp-content/uploads/2010/01/oauth.jpg" width="325" height="298" style="float:left;margin-right:14px"&gt;&lt;a href="http://oauth.net/"&gt;oAuth&lt;/a&gt; is an open protocol that implements an authorization model for allowing websites and web applications to publish and access data stored in third party websites without sharing user login information. Yahoo! Developer Network provides an interesting and detailed tutorial that illustrates &lt;a href="http://developer.yahoo.com/oauth/guide/creating_oauth_app.html"&gt;how to create an OAuth application&lt;/a&gt; for accessing Yahoo! services.&lt;/p&gt;
+&lt;p&gt;If you want to implement OAuth protocol on your application also take a look at the following links:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://code.google.com/apis/accounts/docs/OAuth.html"&gt;Implement OAuth for Google&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://apiwiki.twitter.com/OAuth-FAQ"&gt;Implement OAuth for Twitter&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://developer.yahoo.com/oauth/"&gt;Implement OAuth for Yahoo&lt;/a&gt;&lt;/p&gt;
+
+&lt;div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both"&gt;&lt;/div&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/Woork?a=38TyafHkRY4:6ih97Jp5Cr0:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Woork?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Woork?a=38TyafHkRY4:6ih97Jp5Cr0:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Woork?i=38TyafHkRY4:6ih97Jp5Cr0:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Woork?a=38TyafHkRY4:6ih97Jp5Cr0:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Woork?i=38TyafHkRY4:6ih97Jp5Cr0:gIN9vFwOqvQ" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Woork?a=38TyafHkRY4:6ih97Jp5Cr0:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Woork?i=38TyafHkRY4:6ih97Jp5Cr0:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Woork?a=38TyafHkRY4:6ih97Jp5Cr0:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Woork?d=qj6IDK7rITs" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Woork/~4/38TyafHkRY4" height="1" width="1"&gt;</content><author><name>Antonio Lupetti</name></author><gr:likingUser>03083771080487868223</gr:likingUser><gr:likingUser>01213165286915603730</gr:likingUser><gr:likingUser>13673043198198785876</gr:likingUser><gr:likingUser>13212294576020736145</gr:likingUser><gr:likingUser>09861010378999536985</gr:likingUser><gr:likingUser>10688844787250549187</gr:likingUser><gr:likingUser>07490776409238289122</gr:likingUser><gr:likingUser>18281847282686570686</gr:likingUser><gr:likingUser>05441046481636337061</gr:likingUser><gr:likingUser>18009229326120049027</gr:likingUser><gr:likingUser>13219633049152583172</gr:likingUser><gr:likingUser>12199199867730153453</gr:likingUser><gr:likingUser>04237348208691683742</gr:likingUser><gr:likingUser>09125003400284741303</gr:likingUser><gr:likingUser>12414214935395669838</gr:likingUser><gr:likingUser>06790877580424984478</gr:likingUser><gr:likingUser>05103350982138202008</gr:likingUser><gr:likingUser>00738453652140988176</gr:likingUser><gr:likingUser>07587846607542205743</gr:likingUser><gr:likingUser>18342378950579519070</gr:likingUser><gr:likingUser>10335624940090495159</gr:likingUser><gr:likingUser>05227572673050020910</gr:likingUser><gr:likingUser>07958266726433105629</gr:likingUser><gr:likingUser>00985975514375672249</gr:likingUser><gr:likingUser>01929839637590403836</gr:likingUser><gr:likingUser>00538505031009844866</gr:likingUser><gr:likingUser>04605841360574369872</gr:likingUser><gr:likingUser>18026584912440477432</gr:likingUser><gr:likingUser>00322679213672383786</gr:likingUser><gr:likingUser>15969563547830886364</gr:likingUser><gr:likingUser>14778993901569235562</gr:likingUser><gr:likingUser>17938564538035475497</gr:likingUser><gr:likingUser>12091263754880530752</gr:likingUser><gr:likingUser>05939261266784530098</gr:likingUser><gr:likingUser>06211492723813742501</gr:likingUser><gr:likingUser>07524272730661097951</gr:likingUser><gr:likingUser>11654923426924263811</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/Woork"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/Woork</id><title type="html">Woork Up</title><link rel="alternate" href="http://woorkup.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1263624610314"><id gr:original-id="http://www.readwriteweb.com/archives/powerone_this_iphone_app_builds_iphone_apps.php">tag:google.com,2005:reader/item/af2e748d47d7228b</id><category term="NYT"/><title type="html">PowerOne: This iPhone App Builds iPhone Apps</title><published>2010-01-15T21:22:19Z</published><updated>2010-01-15T21:22:19Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/readwriteweb/~3/4yuDHQUdWOQ/powerone_this_iphone_app_builds_iphone_apps.php" type="text/html"/><summary xml:base="http://www.readwriteweb.com/" type="html">&lt;p&gt;&lt;img src="http://img.skitch.com/20100115-jcbmg39t33bp8988qksidsm1t7.jpg"&gt;Elia Freedman used to have it made.  He was a mobile app developer in the days of the Palm Pilot and he scored bundling deals that got his sophisticated calculator software into the hands of more than 15 million people.  Differentiating his product from competitors "wasn't something we had to deal with for years," he says, because of the favored position his app got in pre-loaded bundles.&lt;/p&gt;
+
+&lt;p&gt;Now those days are gone.  Today Freedman's &lt;a href="http://www.infinitysw.com/products/iphone"&gt;PowerOne Professional Calculator&lt;/a&gt; (&lt;a href="http://www.infinitysw.com/apple"&gt;$5.99 in iTunes&lt;/a&gt;) was accepted into the very crowded iTunes App Store, where competition for visibility is fierce.  Freedman's strategy: PowerOne now focuses on being a tool-building app.  Template creation for complex custom calculators in sales, medical, real estate and other markets is what the app is all about.  He says he wants to solve the "there's not an App for that" problem that many professionals experience when they try to use their iPhones at work.&lt;/p&gt;
+&lt;p align="right"&gt;&lt;em&gt;Sponsor&lt;/em&gt;&lt;br&gt;&lt;a href="http://d.ads.readwriteweb.com/ck.php?n=a6d5ead9&amp;amp;cb=17794"&gt;&lt;img src="http://d.ads.readwriteweb.com/avw.php?zoneid=14&amp;amp;cb=17794&amp;amp;n=a6d5ead9" border="0" alt=""&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Calculators: Not Just For Nerds Anymore&lt;/h2&gt;
+
+&lt;p&gt;Our phones are becoming increasingly capable of finding meaning from and adding value to more types of data than most of us could have imagined just a few years ago.  Our physical location, the direction we're facing, our proximity to other peoples' phones and soon the temperature our phone finds itself in are all fields of data that have become platforms for developers to build usable tools on top of.   &lt;/p&gt;
+
+&lt;p&gt;Now imagine training your phone to perform the complex calculations that you need while out in the field for your unique occupation, just by entering new spreadsheet-style functions into a program and saving them as a template.  &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://img.skitch.com/20100115-1ci3hx1pxdib27heaa6mjh7upq.jpg" align="right" hspace="5px" vspace="5px"&gt;Freedman says he's talked with a crash-test engineer who finds the custom calculator he's built with PowerOne far more useful than carrying a clip board.  Commercial real-estate agents in the field with clients have standard operations they can perform, but often have to pull out and enter printed formulae that slow them down and introduce a risk of error.  There are millions of equations used in the medical industry, and miscalculation by nurses, doctors and pharmacists cost a shocking number of people their lives.  Put the particular equations they need into their hands along with the ability to easily run equations on the fly in the field, and it could be a changed experience for all kinds of people.  A phone you can train to perform the specific calculations you need in the field is a smart phone.  A calculator app that helps you build calculator apps is very meta.&lt;/p&gt;
+
+&lt;h2&gt;Possible Next Steps&lt;/h2&gt;
+
+&lt;p&gt;Freedman says he's working on developing a more robust Web-based back end where users can share the templates.  (Right now he's making-do with &lt;a href="http://www.getsatisfaction.com/infinitysw"&gt;a GetSatisfaction page&lt;/a&gt; for sharing.)&lt;/p&gt;
+
+&lt;p&gt;He's hoping to enable a feature where organizations can push out formulae and updates to multiple users.  These kinds of social features and network effects could increase the value of the service substantially, but remain a separate challenge to implement effectively.  A marketplace for reselling custom-developed equation templates?  Freedman says he's been contacted by multiple people inquiring about just that.&lt;/p&gt;
+
+&lt;p&gt;Could PowerOne function like a social, mobile, customizable version of &lt;a href="http://www.wolframalpha.com/"&gt;Wolfram|Alpha&lt;/a&gt;?  That seems like one possibility as well.&lt;/p&gt;
+
+&lt;p&gt;The app comes today with more than 50 pre-built templates, some quite sophisticated.  Calculation results can easily be emailed to yourself or a client. &lt;/p&gt;
+
+&lt;p&gt;A customizable, mobile, computation application is a great example of the kind of lightweight platform that will come in handy in an increasingly data-centric future.  That's the kind of development that makes this era of mobile applications so much more exciting than the old days of bundled incumbents, no matter how good that period was for Elia Freedman.  You've got to hand it to him, though - &lt;a href="http://www.infinitysw.com/products/iphone"&gt;his new iPhone app&lt;/a&gt; is thought provoking relative to the challenges of the day.&lt;/p&gt;
+&lt;strong&gt;&lt;a href="http://www.readwriteweb.com/archives/powerone_this_iphone_app_builds_iphone_apps.php#comments-open"&gt;Discuss&lt;/a&gt;&lt;/strong&gt;&lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/bh8m03d07dnj95a0qa1ma5k32c/468/60#http%3A%2F%2Fwww.readwriteweb.com%2Farchives%2Fpowerone_this_iphone_app_builds_iphone_apps.php" width="100%" height="60" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/readwriteweb?a=4yuDHQUdWOQ:_RllBJWU9Xg:FFnlKYwJmN0"&gt;&lt;img src="http://feeds.feedburner.com/~ff/readwriteweb?d=FFnlKYwJmN0" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/readwriteweb?a=4yuDHQUdWOQ:_RllBJWU9Xg:Ij26kaj3iuU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/readwriteweb?d=Ij26kaj3iuU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/readwriteweb?a=4yuDHQUdWOQ:_RllBJWU9Xg:C2pbw5bZMiI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/readwriteweb?d=C2pbw5bZMiI" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/readwriteweb?a=4yuDHQUdWOQ:_RllBJWU9Xg:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/readwriteweb?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/readwriteweb?a=4yuDHQUdWOQ:_RllBJWU9Xg:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/readwriteweb?i=4yuDHQUdWOQ:_RllBJWU9Xg:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/readwriteweb?a=4yuDHQUdWOQ:_RllBJWU9Xg:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/readwriteweb?i=4yuDHQUdWOQ:_RllBJWU9Xg:gIN9vFwOqvQ" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/readwriteweb?a=4yuDHQUdWOQ:_RllBJWU9Xg:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/readwriteweb?i=4yuDHQUdWOQ:_RllBJWU9Xg:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/readwriteweb?a=4yuDHQUdWOQ:_RllBJWU9Xg:OqabYuBsmOY"&gt;&lt;img src="http://feeds.feedburner.com/~ff/readwriteweb?d=OqabYuBsmOY" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/readwriteweb/~4/4yuDHQUdWOQ" height="1" width="1"&gt;</summary><author><name>Marshall Kirkpatrick</name></author><gr:likingUser>15218633955327620808</gr:likingUser><gr:likingUser>15927763213682958723</gr:likingUser><gr:likingUser>02093488933711437740</gr:likingUser><gr:likingUser>02541696794775745875</gr:likingUser><gr:likingUser>15313050409628817157</gr:likingUser><gr:likingUser>12095906287410342016</gr:likingUser><source gr:stream-id="feed/http://www.readwriteweb.com/rss.xml"><id>tag:google.com,2005:reader/feed/http://www.readwriteweb.com/rss.xml</id><title type="html">ReadWriteWeb</title><link rel="alternate" href="http://www.readwriteweb.com/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1263624384805"><id gr:original-id="http://woorkup.com/?p=1775">tag:google.com,2005:reader/item/2eccc8a7533e75eb</id><category term="Development"/><category term="html"/><category term="Video"/><title type="html">3 Must-See Video Presentations About HTML 5</title><published>2009-12-26T17:47:31Z</published><updated>2009-12-26T17:47:31Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/Woork/~3/w4i-ofCtn7U/" type="text/html"/><content xml:base="http://woorkup.com/" type="html">&lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/6j9i6k59v0g3vioir1cq4q80js/300/250?ca=1&amp;amp;fh=280#http%3A%2F%2Fwoorkup.com%2F2009%2F12%2F26%2F3-must-see-video-presentations-about-html-5%2F" width="100%" height="280" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;p&gt;Here is a must-see collection of three interesting video presentations about HTML 5 by Google. If you are a web developer you can’t miss them!&lt;/p&gt;
+&lt;h2&gt;Introduction to HTML 5&lt;/h2&gt;
+&lt;p&gt;&lt;iframe src="http://reader.googleusercontent.com/reader/embediframe?src=http://www.youtube.com/v/siOHh0uzcuY%26hl%3Den_US%26fs%3D1%26rel%3D0&amp;amp;width=658&amp;amp;height=344" width="658" height="344"&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;h2&gt;Google I/O 2009 – Google’s HTML 5 Work: What’s Next?&lt;/h2&gt;
+&lt;p&gt;&lt;iframe src="http://reader.googleusercontent.com/reader/embediframe?src=http://www.youtube.com/v/AusOPz8Ww80%26hl%3Den_US%26fs%3D1%26rel%3D0&amp;amp;width=658&amp;amp;height=344" width="658" height="344"&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;h2&gt;HTML 5: Features you want desperately but still can’t use&lt;/h2&gt;
+&lt;p&gt;&lt;iframe src="http://reader.googleusercontent.com/reader/embediframe?src=http://www.youtube.com/v/xIxDJof7xxQ%26hl%3Den_US%26fs%3D1%26rel%3D0&amp;amp;width=658&amp;amp;height=344" width="658" height="344"&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both"&gt;&lt;/div&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/Woork?a=w4i-ofCtn7U:CpQXMJqMqEc:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Woork?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Woork?a=w4i-ofCtn7U:CpQXMJqMqEc:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Woork?i=w4i-ofCtn7U:CpQXMJqMqEc:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Woork?a=w4i-ofCtn7U:CpQXMJqMqEc:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Woork?i=w4i-ofCtn7U:CpQXMJqMqEc:gIN9vFwOqvQ" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Woork?a=w4i-ofCtn7U:CpQXMJqMqEc:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Woork?i=w4i-ofCtn7U:CpQXMJqMqEc:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Woork?a=w4i-ofCtn7U:CpQXMJqMqEc:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Woork?d=qj6IDK7rITs" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Woork/~4/w4i-ofCtn7U" height="1" width="1"&gt;</content><author><name>Antonio Lupetti</name></author><gr:likingUser>16754624814762828682</gr:likingUser><gr:likingUser>08440596312204172335</gr:likingUser><gr:likingUser>18281847282686570686</gr:likingUser><gr:likingUser>18009229326120049027</gr:likingUser><gr:likingUser>16261240735728469315</gr:likingUser><gr:likingUser>11065736327274178186</gr:likingUser><gr:likingUser>05823064435205376311</gr:likingUser><gr:likingUser>00879565357723627896</gr:likingUser><gr:likingUser>18342378950579519070</gr:likingUser><gr:likingUser>11504855709814309236</gr:likingUser><gr:likingUser>01308725959181509672</gr:likingUser><gr:likingUser>14778993901569235562</gr:likingUser><gr:likingUser>10237018484887726920</gr:likingUser><gr:likingUser>06440444248249374700</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/Woork"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/Woork</id><title type="html">Woork Up</title><link rel="alternate" href="http://woorkup.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1263624373008"><id gr:original-id="http://yehudakatz.com/?p=399">tag:google.com,2005:reader/item/cfcbbaa58f3eb7b2</id><category term="Other" scheme="http://yehudakatz.com"/><title type="html">The Maximal Usage Doctrine for Open Source</title><published>2010-01-05T23:36:35Z</published><updated>2010-01-05T23:36:36Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/KatzGotYourTongue/~3/WP0DM5qPt2I/" type="text/html"/><link rel="replies" href="http://yehudakatz.com/2010/01/05/the-maximal-usage-doctrine-for-open-source/#comments" type="text/html"/><link rel="replies" href="http://yehudakatz.com/2010/01/05/the-maximal-usage-doctrine-for-open-source/feed/atom/" type="application/atom+xml"/><content xml:base="http://yehudakatz.com/2010/01/05/the-maximal-usage-doctrine-for-open-source/" xml:lang="en" type="html">&lt;p&gt;I’ve worked on a number of open source projects over the past several years (the most prominent being Merb, Ruby on Rails and jQuery) and have begun to form some thoughts about the usage (aka adoption) of open source projects and the practical effects of license styles.&lt;/p&gt;
+&lt;h2&gt;The Playing Field&lt;/h2&gt;
+&lt;p&gt;There are essentially two kinds of licenses popularly used in open source[1]. &lt;/p&gt;
+&lt;p&gt;The type I’ve worked with most extensively in the BSD or MIT-style license. This license allows unlimited usage, modification, distribution, and commercialization of the source code, with two caveats. First, the copyright notice must be distributed with the source code. Second, to the extent legally enforceable, if you use my MIT-licensed source code, you may not sue me for the effects of using the source.&lt;/p&gt;
+&lt;p&gt;The other major license type is called copyleft, and essentially leverages copyright law to insist that any modifications to the original source must themselves be made public. The practical effect of this license could not be effected without government-enforced copyright laws. &lt;/p&gt;
+&lt;p&gt;The most popular copyleft license is GPL, which is used by Linux, and which also has viral characteristics. In short, if you link code covered by the GPL into your own code, you are required to open your code as well (if you distribute it). The GPL is not very clear about what this means for more dynamic languages (is requiring a Ruby file “linking”?).&lt;/p&gt;
+&lt;p&gt;A less viral version of the GPL, the LGPL, requires that any modifications you make to the software itself be released, but drops the “linking” requirement.&lt;/p&gt;
+&lt;p&gt;Because of the uncertainty surrounding the viral characteristics of the GPL, legal departments in big corporations are very hostile to the GPL license. Software covered by the LGPL license is more likely to get approval by corporate legal, and MIT/BSD licenses are the most well-liked (probably because they don’t confer any obligations on the corporation).&lt;/p&gt;
+&lt;h2&gt;What I Want When I Write Open Source&lt;/h2&gt;
+&lt;p&gt;When I work on a serious open source project, like Ruby on Rails or jQuery, I have relatively simple desires.&lt;/p&gt;
+&lt;p&gt;One. I want as many people as possible to use the software I am working on. This is probably a selfish, egoist desire, but it may also be a desire to see useful software actually used.&lt;/p&gt;
+&lt;p&gt;Two. I want some subset of the many users to be willing to report bugs, and for the varied situations the code is used in to help improve the quality of the software as a result. This is essentially “given enough eyeballs, all bugs are shallow”.&lt;/p&gt;
+&lt;p&gt;Three. I want people who are interested in improving the software to submit patches. Specifically, I want to receive patches from people who have thought through the problem the bug is trying to fix, and want to receive fewer patches from people who have hacked together a solution just to get it to work. In essence, a high signal-to-noise ratio of patches is more important than a high volume of patches.&lt;/p&gt;
+&lt;p&gt;Four. I want people who are interested in improving the software long term to become long-term contributors and eventually committers.&lt;/p&gt;
+&lt;p&gt;Of these concerns, numbers two and three are the highest priorities. I want to expose the code to as much real-world pressure as possible, and I want as many high-quality patches to fix those bugs as possible. If I had to choose between those two, I would pick number two: exposing my code to real-world stress is the best way to rapidly ferret out bugs and incorrect design assumptions that I know of.&lt;/p&gt;
+&lt;h2&gt;Meeting Those Requirements&lt;/h2&gt;
+&lt;p&gt;Starting out with the easiest, my first desire, to have my software used as much as possible, is most easily satisfied by an extremely liberal usage policy. Adding restrictions on the use of software I write reduces its adoption almost by definition.&lt;/p&gt;
+&lt;p&gt;Much more importantly, the same can be said about exposing code to real world stresses. By far the most important way to achieve this goal is to make it as easy as possible for as many people as possible to use the code.&lt;/p&gt;
+&lt;p&gt;If only 1% of all proprietary users of the source ever report bugs, that’s 1% of potentially thousands of users, as opposed to 100% of the zero proprietary users who were able to use the software under a more restrictive usage scheme. In practice, this number is much more than 1%, as proprietary users of software experience and report bugs just like open source users do.&lt;/p&gt;
+&lt;p&gt;The only real counter-argument to this is that by forcing users to contribute, some number of proprietary users will be forced to become open source users, and their contributions will outweigh the smaller contributions of proprietary users. In practice, proprietary users choose proprietary solutions instead when they are forced to choose between restrictive open source usage schemes and other proprietary software.&lt;/p&gt;
+&lt;p&gt;There is also much to be said for exposing open source tools into proprietary environments. &lt;/p&gt;
+&lt;p&gt;There is also much to be said for introducing proprietary developers to the open source ecosystem. Proprietary developers have access to things like paid time, access to obscure usage scenarios, and access to markets with low open source penetration that the open source community lacks.&lt;/p&gt;
+&lt;p&gt;The next major desire I have while working on open source is a steady stream of high-quality patches. This should be advantage copyleft, because all users of the software are forced to contribute back. However, since copyleft licenses are not used in proprietary environments anyway, the patches to open source projects from those environments under more permissive licenses are much more numerous. Again, even if only a few percent of proprietary users contribute back to the project, that is significantly more contributions than the 100% of zero proprietary users.&lt;/p&gt;
+&lt;p&gt;Also importantly, the patches are contributed by much more dedicated users of the software, instead of being force-contributions. I have never heard a team member on an open source project say that inadequate patches are received by permissive-license software, and that this problem would be solved by going to a more restrictive model.&lt;/p&gt;
+&lt;p&gt;Finally, I can only speak for jQuery and Rails (and other smaller open source projects I work on), but a large number of new long-term contributors became involved while working on corporate projects, where a permissive license made the decision to use the software in the first place feasible.&lt;/p&gt;
+&lt;h2&gt;Lower Barrier to Entry Helps Meet Open Source Goals&lt;/h2&gt;
+&lt;p&gt;Regardless of how much of the above argument you agree with, it is clear that copyleft licenses intentionally impose a higher barrier to entry for usage than more permissive licenses.&lt;/p&gt;
+&lt;p&gt;For projects that use more permissive licenses, the fact that many proprietary users of their software do not contribute back changes is a feature, not a bug.&lt;/p&gt;
+&lt;p&gt;That’s because we don’t focus on all of the people who use our software without contributing back. Instead, we focus on all the users, bug reports, patches, and long term contributors we have &lt;strong&gt;gained&lt;/strong&gt; by keeping the barrier to entry as low as possible.&lt;/p&gt;
+&lt;p&gt;In the end, the world of ubiquitous open source is here. And we made it without having to resort to coercion or the formation of an entirely self-contained set of software. We made it by building great software and convincing real users that it was better than the alternative.&lt;/p&gt;
+&lt;h2&gt;Postscript: Linux&lt;/h2&gt;
+&lt;p&gt;Linux is a peculiar example because its license has not impeded its usage much. In part, that is because most users of Linux do not make changes to it, and the linking characteristics of the GPL license rarely come into play.&lt;/p&gt;
+&lt;p&gt;In cases like this, I would argue that copyleft licenses are close enough to usage maximization to get most of the benefits of more permissive licenses. However, it’s not clear to me what benefits the copyleft licenses provide in those (relatively rare) cases.&lt;/p&gt;
+&lt;p&gt;[1] There are other kinds of licenses, like the Affero license, which is even more restrictive than the GPL license. I would classify Affero as copyleft.&lt;/p&gt;
+
+&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/KatzGotYourTongue?a=WP0DM5qPt2I:m1Dpa6Lqy8A:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/KatzGotYourTongue?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/KatzGotYourTongue/~4/WP0DM5qPt2I" height="1" width="1"&gt;</content><author><name>wycats</name></author><gr:likingUser>09859392453417972285</gr:likingUser><gr:likingUser>13267015223143858001</gr:likingUser><gr:likingUser>04313174718762009486</gr:likingUser><gr:likingUser>17938564538035475497</gr:likingUser><gr:likingUser>03647295969831490601</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/KatzGotYourTongue"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/KatzGotYourTongue</id><title type="html">Katz Got Your Tongue?</title><link rel="alternate" href="http://yehudakatz.com/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1263623456382"><id gr:original-id="http://robertnyman.com/?p=1577">tag:google.com,2005:reader/item/38f1b42d1c42a3e5</id><category term="CSS"/><category term="Developing"/><category term="Technology"/><category term="Web browsers"/><title type="html">CSS background transparency without affecting child elements, through RGBa and filters</title><published>2010-01-11T10:57:21Z</published><updated>2010-01-11T10:57:21Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/robertnyman/~3/Dsj9mHGmaps/" type="text/html"/><content xml:base="http://robertnyman.com/" type="html">&lt;p&gt;Looking at the design of most web pages today, almost exclusively all of them include some semi-transparency of elements. However, getting the desired effect in CSS is harder than one might think.&lt;/p&gt;
+&lt;h2&gt;The problem&lt;/h2&gt;
+&lt;p&gt;If we want an element to have a semi-transparent background, and let whatever is behind it shine through, we have two options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Using CSS and opacity&lt;/li&gt;
+&lt;li&gt;Creating a 24-bit PNG background image&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The problem with using opacity in CSS, besides &lt;a href="http://robertnyman.com/2008/09/16/you-want-css-opacity-to-go-with-that-well-suit-yourself/"&gt;the annoying syntax to cater to all web browsers&lt;/a&gt;, is that not only the background of the element will have transparency, but all of its child elements as well. This means that any text within will have the same opacity, which I would dare to venture is &lt;em&gt;very seldom&lt;/em&gt; the result one wants. You can cater to this problem with creating redundant elements, some tricky CSS positioning and such, but really, it’s a mess.&lt;/p&gt;
+&lt;p&gt;The problem with PNG images is, beside a superfluous HTTP request, that images are way, way more larger in file size than one or two lines of CSS code – especially considering that the image has to be a bit larger to avoid &lt;a href="http://robertnyman.com/2009/05/26/serious-memory-leak-issue-with-24-bit-png-images-with-alpha-transparency-in-internet-explorer/"&gt;serious memory leak issues with 24-bit PNG images with alpha transparency in Internet Explorer&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;The solution!&lt;/h2&gt;
+&lt;p&gt;Therefore, I can happily offer an alternative for you: &lt;a href="http://en.wikipedia.org/wiki/RGBA_color_space"&gt;RGBa colors&lt;/a&gt;. The beauty in this is that you declare the normal RGB values + values for the level of transparency you want, resulting in a very easy way to declare transparency for a color. Making this happen with CSS, with a fallback for those web browsers that doesn’t support it, would look like this:&lt;/p&gt;
+&lt;pre&gt;
+	.alpha60 {
+		/* Fallback for web browsers that doesn't support RGBa */
+		background: rgb(0, 0, 0);
+		/* RGBa with 0.6 opacity */
+		background: rgba(0, 0, 0, 0.6);
+	}
+&lt;/pre&gt;
+&lt;p&gt;The transparency will only be applied to the background – fantastic, isn’t it?! &lt;img src="http://robertnyman.com/wp-includes/images/smilies/icon_smile.gif" alt=":-)"&gt; &lt;/p&gt;
+&lt;h3&gt;A little caveat&lt;/h3&gt;
+&lt;p&gt;Shockingly enough (erm), no version of Internet Explorer supports RGBa colors (i.e. not IE 6, IE 7 or IE 8 at the time of this writing). However, and lucky for us, in year 2000 Microsoft went crazy with implementing various filters in IE. One of them are &lt;a href="http://msdn.microsoft.com/en-us/library/ms532997(VS.85).aspx"&gt;the gradient filter&lt;/a&gt;, and what we can do is use that and just define the same start and end color. “Ok, but how do I get the transparency”, you might be thinking now. The answer to that is that you will declare that as part of the color hex value. A CSS gradient filter achieving the same effect as the CSS code above would look like this:&lt;/p&gt;
+&lt;pre&gt;
+	.alpha60 {
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+	}
+&lt;/pre&gt;
+&lt;p&gt;As you can see, it is actually declared as part of an 8-digit hex value, where the first two numbers is the alpha hex value, the next two is Red, and so on. The difference between how we do it with RGBa is that the hex value will range from 0 to 255, just as any color value. So, how do we convert an alpha level of &lt;code&gt;0.6&lt;/code&gt; to its hex value?&lt;/p&gt;
+&lt;p&gt;This where a little Math comes in the picture. Basically, we take our desired alpha level, &lt;code&gt;0.6&lt;/code&gt;, and multiplies it with 255 – then we convert that result into hex. One very easy way to do this is make use of &lt;a href="http://www.google.com/help/features.html"&gt;Google’s Search Features&lt;/a&gt;, and just &lt;a href="http://www.google.se/search?q=0.6+*+255+in+hex"&gt;search google for 0.6 * 255 in hex&lt;/a&gt;. Unfortunately, though, Google’s calculator seems to only handle integers, hence &lt;a href="http://www.google.se/search?q=0.3+*+255+in+hex"&gt;0.3 * 255 in hex&lt;/a&gt; won’t give you a result.&lt;/p&gt;
+&lt;p&gt;An alternative, or quicker way altogether, is to use the beauty of JavaScript. Just open up Firebug and type this into the console:&lt;/p&gt;
+&lt;pre&gt;
+	// Replace 0.6 with your desired alpha level
+	Math.floor(0.6 * 255).toString(16);
+&lt;/pre&gt;
+&lt;p&gt;99 is then corresponding to 0.6, and becomes the first two digits of the start and end colors for the gradient filter.&lt;/p&gt;
+&lt;h2&gt;Combining it all&lt;/h2&gt;
+&lt;p&gt;With all techniques learned above, let’s put it together in a working CSS rule:&lt;/p&gt;
+&lt;pre&gt;
+	.alpha60 {
+		/* Fallback for web browsers that doesn't support RGBa */
+		background: rgb(0, 0, 0);
+		/* RGBa with 0.6 opacity */
+		background: rgba(0, 0, 0, 0.6);
+		/* For IE 5.5 - 7*/
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+		/* For IE 8*/
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+	}
+&lt;/pre&gt;
+&lt;p&gt;NOTE! In addition to this, you have to declare &lt;code&gt;background: transparent&lt;/code&gt; for IE web browsers, preferably served via conditional comments or similar!&lt;/p&gt;
+&lt;h2&gt;Web browser support&lt;/h2&gt;
+&lt;p&gt;RGBa support is available in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Firefox 3+&lt;/li&gt;
+&lt;li&gt;Safari 2+&lt;/li&gt;
+&lt;li&gt;Opera 10&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Filters in Internet Explorer are available since Internet Explorer 5.5.&lt;/p&gt;
+&lt;p&gt;This means that this will work for virtually everyone!&lt;/p&gt;
+&lt;h3&gt;Acknowledgements&lt;/h3&gt;
+&lt;p&gt;Thanks to &lt;a href="http://css-tricks.com/rgba-browser-support/"&gt;RGBa Browser Support&lt;/a&gt; and &lt;a href="http://leaverou.me/2009/02/bulletproof-cross-browser-rgba-backgrounds/"&gt;Bulletproof, cross-browser RGBA backgrounds, today&lt;/a&gt; for the information and inspiration.&lt;/p&gt;
+&lt;p&gt;Thanks to &lt;a href="http://friendlybit.com/"&gt;Emil Stenström&lt;/a&gt; and &lt;a href="http://kodfabrik.se/"&gt;Pelle Wessman&lt;/a&gt; for coming up with countless alternatives for hex conversion, and explaining basic math to stupid me. &lt;img src="http://robertnyman.com/wp-includes/images/smilies/icon_smile.gif" alt=":-)"&gt; &lt;/p&gt;
+&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/robertnyman?a=Dsj9mHGmaps:_oD8sqb4IZU:7Q72WNTAKBA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/robertnyman?d=7Q72WNTAKBA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/robertnyman?a=Dsj9mHGmaps:_oD8sqb4IZU:I2FUP0JpNAM"&gt;&lt;img src="http://feeds.feedburner.com/~ff/robertnyman?i=Dsj9mHGmaps:_oD8sqb4IZU:I2FUP0JpNAM" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/robertnyman?a=Dsj9mHGmaps:_oD8sqb4IZU:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/robertnyman?d=I9og5sOYxJI" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;</content><author><name>Robert Nyman</name></author><gr:likingUser>12474056715635038738</gr:likingUser><gr:likingUser>09326461790744608180</gr:likingUser><gr:likingUser>02470404479601224062</gr:likingUser><gr:likingUser>12738799126247614170</gr:likingUser><gr:likingUser>04628701017200920927</gr:likingUser><gr:likingUser>12601796887252625061</gr:likingUser><gr:likingUser>04022740372801722189</gr:likingUser><gr:likingUser>04491938585879244718</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/robertnyman"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/robertnyman</id><title type="html">Robert&amp;#39;s talk</title><link rel="alternate" href="http://robertnyman.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1262917837192"><id gr:original-id="http://www.wait-till-i.com/?p=1276">tag:google.com,2005:reader/item/7bb92098eebfab1f</id><category term="General"/><category term="dom"/><category term="generator"/><category term="headings"/><category term="HTML"/><category term="javascript"/><category term="outline"/><category term="php"/><category term="tableofcontents"/><category term="toc"/><category term="word"/><category term="YUI3"/><title type="html">The Table of Contents script – my old nemesis</title><published>2010-01-06T13:57:20Z</published><updated>2010-01-06T13:57:20Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/wait-till-i/gwZf/~3/mW5bHGYHED8/" type="text/html"/><content xml:base="http://www.wait-till-i.com/" type="html">&lt;p&gt;One thing I like about – let me rephrase that – one of the amazingly few things that I like about Microsoft Word is that you can generate a Table of Contents from a document. Word would go through the headings and create a nested &lt;span&gt;TOC &lt;/span&gt;from them for you:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.flickr.com/photos/codepo8/4248376478/in/photostream/"&gt;&lt;img src="http://farm5.static.flickr.com/4019/4248376478_93c8ed1812.jpg" alt="Adding a TOC to a Word Document"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.flickr.com/photos/codepo8/4247605643/"&gt;&lt;img src="http://farm5.static.flickr.com/4045/4247605643_6364209e8c.jpg" alt="Microsoft Word generated Table of Contents."&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, I always like to do that for documents I write in &lt;span&gt;HTML, &lt;/span&gt;too, but maintaining them by hand is a pain. I normally write my document outline first:&lt;/p&gt;
+
+
+
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;h1 id=&amp;quot;cute&amp;quot;&amp;gt;Cute things on the Interwebs&amp;lt;/h1&amp;gt;
+&amp;lt;h2 id=&amp;quot;rabbits&amp;quot;&amp;gt;Rabbits&amp;lt;/h2&amp;gt;
+&amp;lt;h2 id=&amp;quot;puppies&amp;quot;&amp;gt;Puppies&amp;lt;/h2&amp;gt;
+&amp;lt;h3 id=&amp;quot;labs&amp;quot;&amp;gt;Labradors&amp;lt;/h3&amp;gt;
+&amp;lt;h3 id=&amp;quot;alsatians&amp;quot;&amp;gt;Alsatians&amp;lt;/h3&amp;gt;
+&amp;lt;h3 id=&amp;quot;corgies&amp;quot;&amp;gt;Corgies&amp;lt;/h3&amp;gt;
+&amp;lt;h3 id=&amp;quot;retrievers&amp;quot;&amp;gt;Retrievers&amp;lt;/h3&amp;gt;
+&amp;lt;h2 id=&amp;quot;kittens&amp;quot;&amp;gt;Kittens&amp;lt;/h2&amp;gt;
+&amp;lt;h2 id=&amp;quot;gerbils&amp;quot;&amp;gt;Gerbils&amp;lt;/h2&amp;gt;
+&amp;lt;h2 id=&amp;quot;ducklings&amp;quot;&amp;gt;Ducklings&amp;lt;/h2&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;I then collect those, copy and paste them and use search and replace to turn all the h&lt;em&gt;n&lt;/em&gt; to &lt;code&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/code&gt; and the &lt;code&gt;id=&amp;quot;&lt;/code&gt; to &lt;code&gt;href=&amp;quot;#&lt;/code&gt;:&lt;/p&gt;
+
+
+
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#cute&amp;quot;&amp;gt;Cute things on the Interwebs&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#rabbits&amp;quot;&amp;gt;Rabbits&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#puppies&amp;quot;&amp;gt;Puppies&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#labs&amp;quot;&amp;gt;Labradors&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#alsatians&amp;quot;&amp;gt;Alsatians&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#corgies&amp;quot;&amp;gt;Corgies&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#retrievers&amp;quot;&amp;gt;Retrievers&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#kittens&amp;quot;&amp;gt;Kittens&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#gerbils&amp;quot;&amp;gt;Gerbils&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#ducklings&amp;quot;&amp;gt;Ducklings&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+
+&amp;lt;h1 id=&amp;quot;cute&amp;quot;&amp;gt;Cute things on the Interwebs&amp;lt;/h1&amp;gt;
+&amp;lt;h2 id=&amp;quot;rabbits&amp;quot;&amp;gt;Rabbits&amp;lt;/h2&amp;gt;
+&amp;lt;h2 id=&amp;quot;puppies&amp;quot;&amp;gt;Puppies&amp;lt;/h2&amp;gt;
+&amp;lt;h3 id=&amp;quot;labs&amp;quot;&amp;gt;Labradors&amp;lt;/h3&amp;gt;
+&amp;lt;h3 id=&amp;quot;alsatians&amp;quot;&amp;gt;Alsatians&amp;lt;/h3&amp;gt;
+&amp;lt;h3 id=&amp;quot;corgies&amp;quot;&amp;gt;Corgies&amp;lt;/h3&amp;gt;
+&amp;lt;h3 id=&amp;quot;retrievers&amp;quot;&amp;gt;Retrievers&amp;lt;/h3&amp;gt;
+&amp;lt;h2 id=&amp;quot;kittens&amp;quot;&amp;gt;Kittens&amp;lt;/h2&amp;gt;
+&amp;lt;h2 id=&amp;quot;gerbils&amp;quot;&amp;gt;Gerbils&amp;lt;/h2&amp;gt;
+&amp;lt;h2 id=&amp;quot;ducklings&amp;quot;&amp;gt;Ducklings&amp;lt;/h2&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;Then I need to look at the weight and order of the headings and add the nesting of the &lt;span&gt;TOC &lt;/span&gt;list accordingly.&lt;/p&gt;
+
+
+
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;ul&amp;gt;
+  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#cute&amp;quot;&amp;gt;Cute things on the Interwebs&amp;lt;/a&amp;gt;
+    &amp;lt;ul&amp;gt;
+      &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#rabbits&amp;quot;&amp;gt;Rabbits&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+      &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#puppies&amp;quot;&amp;gt;Puppies&amp;lt;/a&amp;gt;
+        &amp;lt;ul&amp;gt;
+          &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#labs&amp;quot;&amp;gt;Labradors&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+          &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#alsatians&amp;quot;&amp;gt;Alsatians&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+          &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#corgies&amp;quot;&amp;gt;Corgies&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+          &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#retrievers&amp;quot;&amp;gt;Retrievers&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+        &amp;lt;/ul&amp;gt;
+      &amp;lt;/li&amp;gt;
+      &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#kittens&amp;quot;&amp;gt;Kittens&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+      &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#gerbils&amp;quot;&amp;gt;Gerbils&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+      &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#ducklings&amp;quot;&amp;gt;Ducklings&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;/ul&amp;gt;
+  &amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+
+&amp;lt;h1 id=&amp;quot;cute&amp;quot;&amp;gt;Cute things on the Interwebs&amp;lt;/h1&amp;gt;
+&amp;lt;h2 id=&amp;quot;rabbits&amp;quot;&amp;gt;Rabbits&amp;lt;/h2&amp;gt;
+&amp;lt;h2 id=&amp;quot;puppies&amp;quot;&amp;gt;Puppies&amp;lt;/h2&amp;gt;
+&amp;lt;h3 id=&amp;quot;labs&amp;quot;&amp;gt;Labradors&amp;lt;/h3&amp;gt;
+&amp;lt;h3 id=&amp;quot;alsatians&amp;quot;&amp;gt;Alsatians&amp;lt;/h3&amp;gt;
+&amp;lt;h3 id=&amp;quot;corgies&amp;quot;&amp;gt;Corgies&amp;lt;/h3&amp;gt;
+&amp;lt;h3 id=&amp;quot;retrievers&amp;quot;&amp;gt;Retrievers&amp;lt;/h3&amp;gt;
+&amp;lt;h2 id=&amp;quot;kittens&amp;quot;&amp;gt;Kittens&amp;lt;/h2&amp;gt;
+&amp;lt;h2 id=&amp;quot;gerbils&amp;quot;&amp;gt;Gerbils&amp;lt;/h2&amp;gt;
+&amp;lt;h2 id=&amp;quot;ducklings&amp;quot;&amp;gt;Ducklings&amp;lt;/h2&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;Now, wouldn’t it be nice to have that done automatically for me? The way to do that in JavaScript and &lt;span&gt;DOM &lt;/span&gt;is actually a much trickier problem than it looks like at first sight (I always love to ask this as an interview question or in &lt;span&gt;DOM &lt;/span&gt;scripting workshops). &lt;/p&gt;
+
+&lt;p&gt;Here are some of the issues to consider:&lt;/p&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;You can easily get elements with &lt;code&gt;getElementsByTagName()&lt;/code&gt; but you can’t do a &lt;code&gt;getElementsByTagName('h*')&lt;/code&gt; sadly enough. &lt;/li&gt;
+&lt;li&gt;Headings in &lt;span&gt;XHTML &lt;/span&gt;and &lt;span&gt;HTML&lt;/span&gt; 4 do not have the elements they apply to as child elements (XHTML2 was proposing that and &lt;span&gt;HTML5 &lt;/span&gt;has it to a degree – &lt;a href="http://www.brucelawson.co.uk/2009/headings-in-html-5-and-accessibility/"&gt;Bruce Lawson write a nice post about this&lt;/a&gt; and there’s also a &lt;a href="http://code.google.com/p/h5o/"&gt;pretty nifty &lt;span&gt;HTML5 &lt;/span&gt;outliner&lt;/a&gt; available).&lt;/li&gt;
+&lt;li&gt;You can do a &lt;code&gt;getElementsByTagName()&lt;/code&gt; for each of the heading levels and then concatenate a collection of all of them. However, that does not give you their order in the source of the document.&lt;/li&gt;
+&lt;li&gt;To this end &lt;span&gt;PPK &lt;/span&gt;wrote an infamous &lt;a href="http://www.quirksmode.org/dom/toc.html"&gt;&lt;span&gt;TOC &lt;/span&gt;script&lt;/a&gt; used on his site a long time ago using his &lt;a href="http://www.quirksmode.org/dom/getElementsByTagNames.html"&gt;getElementsByTagNames()&lt;/a&gt; function which works with things not every browser supports. Therefore it doesn’t quite do the job either. He also “cheats” at the assembly of the &lt;span&gt;TOC &lt;/span&gt;list as he adds classes to indent them visually rather than really nesting lists.&lt;/li&gt;
+&lt;li&gt;It seems that the only way to achieve this for all the browsers using the &lt;span&gt;DOM &lt;/span&gt;is painful: do a &lt;code&gt;getElementsByTagName('*')&lt;/code&gt; and walk the whole &lt;span&gt;DOM &lt;/span&gt;tree, comparing &lt;code&gt;nodeName&lt;/code&gt; and getting the headings that way.&lt;/li&gt;
+&lt;li&gt;Another solution I thought of reads the &lt;code&gt;innerHTML&lt;/code&gt; of the document body and then uses regular expressions to match the headings.&lt;/li&gt;
+&lt;li&gt;As you cannot assume that every heading has an ID we need to add one if needed.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+&lt;p&gt;So here are some solutions to that problem:&lt;/p&gt;
+
+&lt;h2&gt;Using the &lt;span&gt;DOM&lt;/span&gt;:&lt;/h2&gt;
+
+
+
+&lt;pre&gt;&lt;code&gt;(function(){
+  var headings = [];
+  var herxp = /h\d/i;
+  var count = 0;
+  var elms = document.getElementsByTagName(&amp;#39;*&amp;#39;);
+  for(var i=0,j=elms.length;i&amp;lt;j;i++){
+    var cur = elms[i];
+    var id = cur.id;
+    if(herxp.test(cur.nodeName)){
+      if(cur.id===&amp;#39;&amp;#39;){
+        id = &amp;#39;head&amp;#39;+count;
+        cur.id = id;
+        count++;
+      }
+      headings.push(cur);
+    }
+  }
+  var out = &amp;#39;&amp;lt;ul&amp;gt;&amp;#39;;
+  for(i=0,j=headings.length;i&amp;lt;j;i++){
+    var weight = headings[i].nodeName.substr(1,1);
+    if(weight &amp;gt; oldweight){
+      out += &amp;#39;&amp;lt;ul&amp;gt;&amp;#39;; 
+    }
+    out += &amp;#39;&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;#39;+headings[i].id+&amp;#39;&amp;quot;&amp;gt;&amp;#39;+
+           headings[i].innerHTML+&amp;#39;&amp;lt;/a&amp;gt;&amp;#39;;
+    if(headings[i+1]){
+      var nextweight = headings[i+1].nodeName.substr(1,1);
+      if(weight &amp;gt; nextweight){
+        out+=&amp;#39;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;lt;/li&amp;gt;&amp;#39;; 
+      }
+      if(weight == nextweight){
+        out+=&amp;#39;&amp;lt;/li&amp;gt;&amp;#39;; 
+      }
+    }
+    var oldweight = weight;
+  }
+  out += &amp;#39;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;#39;;
+  document.getElementById(&amp;#39;toc&amp;#39;).innerHTML = out;
+})();&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;You can &lt;a href="http://isithackday.com/demos/tocit/toc_dom.html"&gt;see the &lt;span&gt;DOM &lt;/span&gt;solution in action here&lt;/a&gt;. The problem with it is that it can become very slow on large documents and in &lt;span&gt;MSIE6. &lt;/span&gt;&lt;/p&gt;
+
+&lt;h2&gt;The regular expressions solution&lt;/h2&gt;
+
+&lt;p&gt;To work around the need to traverse the whole &lt;span&gt;DOM,&lt;/span&gt; I thought it might be a good idea to use regular expressions on the &lt;code&gt;innerHTML&lt;/code&gt; of the &lt;span&gt;DOM &lt;/span&gt;and write it back once I added the IDs and assembled the &lt;span&gt;TOC&lt;/span&gt;:&lt;/p&gt;
+
+
+
+&lt;pre&gt;&lt;code&gt;
+(function(){
+  var bd = document.body,
+      x = bd.innerHTML,
+      headings = x.match(/&amp;lt;h\d[^&amp;gt;]*&amp;gt;[\S\s]*?&amp;lt;\/h\d&amp;gt;$/mg),
+      r1 = /&amp;gt;/,
+      r2 = /&amp;lt;(\/)?h(\d)/g,
+      toc = document.createElement(&amp;#39;div&amp;#39;),
+      out = &amp;#39;&amp;lt;ul&amp;gt;&amp;#39;,
+      i = 0,
+      j = headings.length,
+      cur = &amp;#39;&amp;#39;,
+      weight = 0,
+      nextweight = 0,
+      oldweight = 2,
+      container = bd;
+  for(i=0;i&amp;lt;j;i++){
+    if(headings[i].indexOf(&amp;#39;id=&amp;#39;)==-1){
+      cur = headings[i].replace(r1,&amp;#39; id=&amp;quot;h&amp;#39;+i+&amp;#39;&amp;quot;&amp;gt;&amp;#39;);
+      x = x.replace(headings[i],cur);
+    } else {
+      cur = headings[i];
+    }
+    weight = cur.substr(2,1);
+    if(i&amp;lt;j-1){
+      nextweight = headings[i+1].substr(2,1);
+    }
+    var a = cur.replace(r2,&amp;#39;&amp;lt;$1a&amp;#39;);
+    a = a.replace(&amp;#39;id=&amp;quot;&amp;#39;,&amp;#39;href=&amp;quot;#&amp;#39;);
+    if(weight&amp;gt;oldweight){ out+=&amp;#39;&amp;lt;ul&amp;gt;&amp;#39;; }
+    out+=&amp;#39;&amp;lt;li&amp;gt;&amp;#39;+a;
+    if(nextweight&amp;lt;weight){ out+=&amp;#39;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;lt;/li&amp;gt;&amp;#39;; }
+    if(nextweight==weight){ out+=&amp;#39;&amp;lt;/li&amp;gt;&amp;#39;; }
+    oldweight = weight;
+  }
+  bd.innerHTML = x;
+  toc.innerHTML = out +&amp;#39;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;#39;;
+  container = document.getElementById(&amp;#39;toc&amp;#39;) || bd;
+  container.appendChild(toc);
+})();
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;You can &lt;a href="http://isithackday.com/demos/tocit/toc_js.html"&gt;see the regular expressions solution in action here&lt;/a&gt;. The problem with it is that reading &lt;code&gt;innerHTML&lt;/code&gt; and then writing it out might be expensive (this needs testing) and if you have event handling attached to elements it might leak memory as my colleage Matt Jones pointed out (again, this needs testing). &lt;a href="http://arapehlivanian.com/"&gt;Ara Pehlivavian&lt;/a&gt; also mentioned that a mix of both approaches might be better – match the headings but don’t write back the innerHTML – instead use &lt;span&gt;DOM &lt;/span&gt;to add the IDs.&lt;/p&gt;
+
+&lt;h2&gt;Libraries to the rescue – a &lt;span&gt;YUI3 &lt;/span&gt;example&lt;/h2&gt;
+
+&lt;p&gt;Talking to another colleague – &lt;a href="http://blog.davglass.com/"&gt;Dav Glass&lt;/a&gt; – about the &lt;span&gt;TOC &lt;/span&gt;problem he pointed out that the &lt;span&gt;YUI3 &lt;/span&gt;selector engine happily takes a list of elements and returns them in the right order. This makes things very easy:&lt;/p&gt;
+
+
+
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;http://yui.yahooapis.com/3.0.0/build/yui/yui-min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script&amp;gt;
+YUI({combine: true, timeout: 10000}).use(&amp;quot;node&amp;quot;, function(Y) {
+  var nodes = Y.all(&amp;#39;h1,h2,h3,h4,h5,h6&amp;#39;);
+  var out = &amp;#39;&amp;lt;ul&amp;gt;&amp;#39;;
+  var weight = 0,nextweight = 0,oldweight;
+  nodes.each(function(o,k){
+    var id = o.get(&amp;#39;id&amp;#39;);
+    if(id === &amp;#39;&amp;#39;){
+      id = &amp;#39;head&amp;#39; + k;
+      o.set(&amp;#39;id&amp;#39;,id);
+    };
+    weight = o.get(&amp;#39;nodeName&amp;#39;).substr(1,1);
+    if(weight &amp;gt; oldweight){ out+=&amp;#39;&amp;lt;ul&amp;gt;&amp;#39;; }
+    out+=&amp;#39;&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;#39;+o.get(&amp;#39;id&amp;#39;)+&amp;#39;&amp;quot;&amp;gt;&amp;#39;+o.get(&amp;#39;innerHTML&amp;#39;)+&amp;#39;&amp;lt;/a&amp;gt;&amp;#39;;
+    if(nodes.item(k+1)){
+      nextweight = nodes.item(k+1).get(&amp;#39;nodeName&amp;#39;).substr(1,1);
+      if(weight &amp;gt; nextweight){ out+=&amp;#39;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;lt;/li&amp;gt;&amp;#39;; }
+      if(weight == nextweight){ out+=&amp;#39;&amp;lt;/li&amp;gt;&amp;#39;; }
+    }
+    oldweight = weight;
+  });
+  out+=&amp;#39;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;#39;;
+  Y.one(&amp;#39;#toc&amp;#39;).set(&amp;#39;innerHTML&amp;#39;,out);
+});&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;There is probably a cleaner way to assemble the &lt;span&gt;TOC &lt;/span&gt;list. &lt;/p&gt;
+
+&lt;h2&gt;Performance considerations &lt;/h2&gt;
+
+&lt;blockquote&gt;There is more to life than simply increasing its speed. – Gandhi&lt;/blockquote&gt;
+
+&lt;p&gt;Some of the code above can be very slow. That said, whenever we talk about performance and JavaScript, it is important to consider the context of the implementation: a table of contents script would normally be used on a text-heavy, but simple, document. There is no point in measuring and judging these scripts running them over gmail or the Yahoo homepage. That said, faster and less memory consuming is always better, but I am always a bit sceptic about performance tests that consider edge cases rather than the one the solution was meant to be applied to.&lt;/p&gt;
+
+&lt;h2&gt;Moving server side.&lt;/h2&gt;
+
+&lt;p&gt;The other thing I am getting more and more sceptic about are client side solutions for things that actually also make sense on the server. Therefore I thought I could use the regular expressions approach above and move it server side.&lt;/p&gt;
+
+&lt;p&gt;The first version is a &lt;span&gt;PHP &lt;/span&gt;script you can loop an &lt;span&gt;HTML &lt;/span&gt;document through. You can &lt;a href="http://isithackday.com/demos/tocit/tocit.php?file=plain.html"&gt;see the outcome of tocit.php here&lt;/a&gt;:&lt;/p&gt;
+
+
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+$file = $_GET[&amp;#39;file&amp;#39;];
+if(preg_match(&amp;#39;/^[a-z0-9\-_\.]+$/i&amp;#39;,$file)){
+$content = file_get_contents($file);
+preg_match_all(&amp;quot;/&amp;lt;h([1-6])[^&amp;gt;]*&amp;gt;.*&amp;lt;\/h.&amp;gt;/Us&amp;quot;,$content,$headlines);
+$out = &amp;#39;&amp;lt;ul&amp;gt;&amp;#39;;
+foreach($headlines[0] as $k=&amp;gt;$h){
+ if(strstr($h,&amp;#39;id&amp;#39;)===false){
+   $x = preg_replace(&amp;#39;/&amp;gt;/&amp;#39;,&amp;#39; id=&amp;quot;head&amp;#39;.$k.&amp;#39;&amp;quot;&amp;gt;&amp;#39;,$h,1);
+   $content = str_replace($h,$x,$content);
+   $h = $x;
+ };
+ $link = preg_replace(&amp;#39;/&amp;lt;(\/)?h\d/&amp;#39;,&amp;#39;&amp;lt;$1a&amp;#39;,$h);
+ $link = str_replace(&amp;#39;id=&amp;quot;&amp;#39;,&amp;#39;href=&amp;quot;#&amp;#39;,$link);
+ if($k&amp;gt;0 &amp;amp;&amp;amp; $headlines[1][$k-1]&amp;lt;$headlines[1][$k]){
+   $out.=&amp;#39;&amp;lt;ul&amp;gt;&amp;#39;;
+ }
+ $out .= &amp;#39;&amp;lt;li&amp;gt;&amp;#39;.$link.&amp;#39;&amp;#39;;
+ if($headlines[1][$k+1] &amp;amp;&amp;amp; $headlines[1][$k+1]&amp;lt;$headlines[1][$k]){
+   $out.=&amp;#39;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;lt;/li&amp;gt;&amp;#39;;
+ }
+ if($headlines[1][$k+1] &amp;amp;&amp;amp; $headlines[1][$k+1] == $headlines[1][$k]){
+   $out.=&amp;#39;&amp;lt;/li&amp;gt;&amp;#39;;
+ }
+}
+$out.=&amp;#39;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;#39;;
+echo str_replace(&amp;#39;&amp;lt;div id=&amp;quot;toc&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;,$out,$content);
+}else{
+  die(&amp;#39;only files like text.html please!&amp;#39;);
+}
+?&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;This is nice, but instead of having another file to loop through, we can also &lt;a href="http://isithackday.com/demos/tocit/toc_ob.php"&gt;use the output buffer of &lt;span&gt;PHP&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+
+
+
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;?php
+function tocit($content){
+  preg_match_all(&amp;quot;/&amp;lt;h([1-6])[^&amp;gt;]*&amp;gt;.*&amp;lt;\/h.&amp;gt;/Us&amp;quot;,$content,$headlines);
+  $out = &amp;#39;&amp;lt;ul&amp;gt;&amp;#39;;
+  foreach($headlines[0] as $k=&amp;gt;$h){
+   if(strstr($h,&amp;#39;id&amp;#39;)===false){
+     $x = preg_replace(&amp;#39;/&amp;gt;/&amp;#39;,&amp;#39; id=&amp;quot;head&amp;#39;.$k.&amp;#39;&amp;quot;&amp;gt;&amp;#39;,$h,1);
+     $content = str_replace($h,$x,$content);
+     $h = $x;
+   };
+   $link = preg_replace(&amp;#39;/&amp;lt;(\/)?h\d/&amp;#39;,&amp;#39;&amp;lt;$1a&amp;#39;,$h);
+   $link = str_replace(&amp;#39;id=&amp;quot;&amp;#39;,&amp;#39;href=&amp;quot;#&amp;#39;,$link);
+   if($k&amp;gt;0 &amp;amp;&amp;amp; $headlines[1][$k-1]&amp;lt;$headlines[1][$k]){
+     $out.=&amp;#39;&amp;lt;ul&amp;gt;&amp;#39;;
+   }
+   $out .= &amp;#39;&amp;lt;li&amp;gt;&amp;#39;.$link.&amp;#39;&amp;#39;;
+   if($headlines[1][$k+1] &amp;amp;&amp;amp; $headlines[1][$k+1]&amp;lt;$headlines[1][$k]){
+     $out.=&amp;#39;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;lt;/li&amp;gt;&amp;#39;;
+   }
+   if($headlines[1][$k+1] &amp;amp;&amp;amp; $headlines[1][$k+1] == $headlines[1][$k]){
+     $out.=&amp;#39;&amp;lt;/li&amp;gt;&amp;#39;;
+   }
+  }
+  $out.=&amp;#39;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;#39;;
+  return str_replace(&amp;#39;&amp;lt;div id=&amp;quot;toc&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;,$out,$content);
+}
+ob_start(&amp;quot;tocit&amp;quot;);
+?&amp;gt;
+[... the document ...]
+&amp;lt;?php ob_end_flush();?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;The server side solutions have a few benefits: they always work, and you can also cache the result if needed for a while. I am sure the &lt;span&gt;PHP &lt;/span&gt;can be sped up, though.&lt;/p&gt;
+
+&lt;h2&gt;See all the solutions and get the source code&lt;/h2&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://isithackday.com/demos/tocit/index.html"&gt;See all the solutions&lt;/a&gt; and &lt;a href="http://github.com/codepo8/TocIt"&gt;get the source code on GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+&lt;h2&gt;I showed you mine, now show me yours! &lt;/h2&gt;
+
+&lt;p&gt;All of these solutions are pretty much rough and ready. What do you think how they can be improved? How about doing a version for different libraries? Go ahead, fork the project on GitHub and show me what you can do. &lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/wait-till-i/gwZf/~4/mW5bHGYHED8" height="1" width="1"&gt;</content><author><name>Chris</name></author><source gr:stream-id="feed/http://www.wait-till-i.com/wp-rss2.php"><id>tag:google.com,2005:reader/feed/http://www.wait-till-i.com/wp-rss2.php</id><title type="html">Christian Heilmann&amp;#39;s blog</title><link rel="alternate" href="http://www.wait-till-i.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1262917832481"><id gr:original-id="http://www.wait-till-i.com/?p=1269">tag:google.com,2005:reader/item/5d3e8c3ebea9340f</id><category term="General"/><category term="cpp"/><category term="maths"/><category term="passwords"/><category term="statistics"/><category term="survey"/><category term="telegraph"/><title type="html">16m Britons use the same password for every website – or do they?</title><published>2010-01-03T22:16:37Z</published><updated>2010-01-03T22:16:37Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/wait-till-i/gwZf/~3/hs5DkhLs1b4/" type="text/html"/><content xml:base="http://www.wait-till-i.com/" type="html">&lt;p&gt;I am right now writing a primer on web security for a blog and doing my research on passwords I came across The Telegraph’s article &lt;a href="http://www.telegraph.co.uk/technology/news/6922207/Almost-16-million-use-same-password-for-every-website-study-finds.html"&gt;Almost 16 million use same password for every website, study finds&lt;/a&gt; is actually full of cool figures and I was very tempted to use some quotes like:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;The average internet user is asked for a password by 23 websites a month. &lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;blockquote&gt;&lt;p&gt;The research found 46 per cent of British internet users, 15.6 million, have the same password for most web-based accounts and five per cent, or 1.7 million, use the same password for every single website. &lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;According to the Telegraph, the study was done by &lt;a href="http://www.cppgroupplc.com/"&gt;&lt;span&gt;CPP&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;This could lead to money being stolen from bank accounts, fraudulent purchases via online shops or identity theft, according to life assistance company &lt;span&gt;CPP. &lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;What puzzled me is that there is no link to be found on the &lt;span&gt;CPP &lt;/span&gt;site. Their &lt;a href="https://www.cpp.co.uk/press/request"&gt;last press release is from November&lt;/a&gt; and a site search for password doesn’t yield any results. &lt;/p&gt;
+
+&lt;p&gt;The Telegraph does not list the source of the figures or where to see the original survey – actually this would mean the article would get deleted from Wikipedia!&lt;/p&gt;
+
+&lt;p&gt;It gets really interesting when you do a Google search for the same survery. You then &lt;a href="http://news.xinhuanet.com/english/2009-09/04/content_11997421.htm"&gt;find an article on based on data of chinaview.cn&lt;/a&gt; that reveals just how many people were asked in the survey:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;More worrying was that of &lt;strong&gt;1,661 Britons questioned&lt;/strong&gt;, nearly 40 per cent of adults admitted that at least one other person knows their passwords, ranging from children, colleagues and friends. With phishing and smishing attacks, as well as malicious software attacks, on the rise, consumers and Internet users need to be more careful with their personal data. &lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;I am all for scaling, but using 1661 people and multiplying that up to 16 million is a bit of stretch of the imagination, don’t you think? Seeing that the survey is from September also gives me the idea that there was a slow news day to cover. This is another annoyance as you cannot research what other news sites have said at that time as they delete content after 31 days. So much for “cool links never change”.&lt;/p&gt;
+
+&lt;p&gt;That said, I am happy that mainstream media is at least covering the topic of bad passwords. We can do a lot in security, but if end users still consider “password” or “letmein” a good idea as a password we are doomed. &lt;/p&gt;
+
+&lt;p&gt;I would love to see the &lt;span&gt;CPP &lt;/span&gt;survey, and I’d also love to have a way to comment on The Telegraph. Alas…&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt; As reported by &lt;a href="http://twitter.com/marksteward/statuses/7346259595"&gt;marksteward on Twitter&lt;/a&gt; the Telegraph already reported &lt;a href="http://www.telegraph.co.uk/technology/news/6125081/Security-risk-as-people-use-same-password-on-all-websites.html"&gt;about the survey in September&lt;/a&gt; – mentioning the 1661 number and there is &lt;a href="http://www.cpp.co.uk/press/article.xhtml?textId=1249"&gt;a report on the &lt;span&gt;CPP &lt;/span&gt;site talking about the survey in more detail&lt;/a&gt; – thanks!&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/wait-till-i/gwZf/~4/hs5DkhLs1b4" height="1" width="1"&gt;</content><author><name>Chris</name></author><source gr:stream-id="feed/http://www.wait-till-i.com/wp-rss2.php"><id>tag:google.com,2005:reader/feed/http://www.wait-till-i.com/wp-rss2.php</id><title type="html">Christian Heilmann&amp;#39;s blog</title><link rel="alternate" href="http://www.wait-till-i.com" type="text/html"/></source></entry></feed>

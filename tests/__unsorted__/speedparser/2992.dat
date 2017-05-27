@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>w00t!</title>
+	<atom:link href="http://w00t.filmsonthefly.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://w00t.filmsonthefly.com</link>
+	<description>The Films on the Fly Tech Blog.</description>
+	<lastBuildDate>Wed, 10 Aug 2011 13:34:16 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.2.1</generator>
+		<item>
+		<title>How to waste a $35K grant</title>
+		<link>http://w00t.filmsonthefly.com/2011/08/how-to-waste-a-35k-grant/</link>
+		<comments>http://w00t.filmsonthefly.com/2011/08/how-to-waste-a-35k-grant/#comments</comments>
+		<pubDate>Tue, 09 Aug 2011 13:56:35 +0000</pubDate>
+		<dc:creator>w00t</dc:creator>
+				<category><![CDATA[FotF]]></category>
+
+		<guid isPermaLink="false">http://w00t.filmsonthefly.com/?p=111</guid>
+		<description><![CDATA[This is a post about money&#8230; Or more specifically the grants and investments in the Australian Startup scene. This is based on my own experience and I may be completely wrong. I&#8217;m interested in a dialogue, so please let me &#8230; <a href="http://w00t.filmsonthefly.com/2011/08/how-to-waste-a-35k-grant/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>This is a post about money&#8230; Or more specifically the grants and investments in the Australian Startup scene. This is based on my own experience and I may be completely wrong. I&#8217;m interested in a dialogue, so please let me know if my assumptions or experiences differ from yours.</p>
+<p><a href="http://w00t.filmsonthefly.com/wp-content/uploads/2011/08/Burning-Money.jpg"><img class="aligncenter size-full wp-image-117" title="Burning Money" src="http://w00t.filmsonthefly.com/wp-content/uploads/2011/08/Burning-Money.jpg" alt="[Picture] Burning Money" width="368" height="343" /></a></p>
+<p><span id="more-111"></span></p>
+<h2>History</h2>
+<p>I used to work at an ISP on the Help desk.</p>
+<p>During that time I was spending my spare time (especially weekends) running my own little multimedia company, <a title="Grey Phoenix Productions - Michael Kubler's old multimedia company" href="http://www.greyphoenix.biz/" target="_blank"><strong>G</strong>rey <strong>P</strong>hoenix <strong>P</strong>roductions</a>. Mainly doing studio portrait photography.</p>
+<p>Then at the start of 2009 I met an amazing woman, <a title="Fee" href="http://www.banffcentre.ca/faculty/faculty-member/555/fee-plumley.mvc" target="_blank">Fee Plumley</a> who taught me about Non-Linear Narrative and also got me a spot on the MEGA course. The <a title="MEGA website" href="http://www.mega.org.au/" target="_blank">Mobile Enterprise Growth Alliance</a> course was a semester long, after hours course which taught the basics of entrepreneurship with a focus on mobile phone apps. It&#8217;s since pivoted to being more general with media and web dev.</p>
+<p>During MEGA I met <strong>Sunny Wu</strong> and <strong>John Willanski</strong>, together we formed <span style="color: #800000;"><strong>Films on the Fly</strong></span><span style="color: #000000;">. A company to commercialise the Non-Linear Narrative concept. We didn&#8217;t really know what it was, but we knew it was going to be awesome. Over the next few months of MEGA we struggled with the NLN concept, then we struggled with explaining it. Eventually we hit upon the &#8216;Choose-Your-Own-Adventure but as online video and expanded further&#8217; explanation. Then we had to work out how to commercialise the idea. I realised that the best way would likely be to create multiple communities based around the concept, which we now called Multipath Storytelling.</span></p>
+<p><span style="color: #000000;">We completed the MEGA course with a rather decent pitch presentation, although only came 2</span><span style="color: #000000;"><sup>nd</sup></span><span style="color: #000000;">.</span></p>
+<p><span style="color: #000000;">It&#8217;s been nearly 2 years from that point. It seems so long ago, yet it feels like we&#8217;ve achieved so little.</span></p>
+<p><span style="color: #000000;">After the MEGA course here&#8217;s some of the assumptions and ideas I had :</span></p>
+<ul>
+<li><span style="color: #000000;">We would get lots of funding, enough we wouldn&#8217;t have to worry about earning money ourselves until the platform was ready.</span></li>
+<li><span style="color: #000000;">Within 2 years we&#8217;d be a multi-million dollar company and have more than 20 staff.</span></li>
+<li><span style="color: #000000;">We&#8217;d have just released a public version of the platform.</span></li>
+</ul>
+<p><span style="color: #000000;">Ohh how wrong I was.</span></p>
+<p><span style="color: #000000;">In the past 2 years we did get funding. Last year we got a $35,000 development grant. However I feel we wasted it.</span></p>
+<p><span style="color: #000000;">What I found weird with the grant money was that it wasn&#8217;t allowed to be spent on capital expenditure, only production expenses. This meant we could buy ink, but not a printer, we could buy toast but not a toaster. Buy Hard drives, but not a computer.</span></p>
+<p><span style="color: #000000;">Overall, we wasted $12,287 of the grant on a web developer, and nearly another $12K on an office.</span></p>
+<p><span style="text-decoration: underline;"><strong><span style="color: #000000;">Office Costs</span></strong></span><span style="color: #000000;"> (a little over 1yrs worth)</span></p>
+<ul>
+<li><span class="Apple-style-span" style="color: #000000;">$706 in Electricity</span></li>
+<li>$1,988 in Internet (It&#8217;s an online film company, needs good Internets)</li>
+<li>$8,760 in Rent (an office large enough for 6 people, although 95% of the time it was just me)</li>
+</ul>
+<p>Total : <strong>$11,454</strong></p>
+<p>We also spent :</p>
+<ul>
+<li>$1,694.00 on Legal Fees (doesn&#8217;t include the $850+ for incorporation)</li>
+<li>$1,245.5 on accounting and book keeping fees</li>
+<li>$1,165.00 in Insurance (Public Liability which was mandatory for the grant and office)</li>
+</ul>
+<p>Total : <strong>$4,304.5</strong> in other expenses</p>
+<h2>Web Developer</h2>
+<p>Even though I&#8217;m a gun at Linux sys admin and bash scripting, have decent PHP, html and css skills and I&#8217;ve got enough understanding of MySQL design, we still employed a web developer.<br />
+I needed someone to bounce ideas off of and talk to. But in reality he came in for a day or two, spent nearly a week trying to get up to date with the php framework, then did a bit of work on a flex (flash) based visualisation app which didn&#8217;t end up working quite as needed and is now broken and basically useless but we ran out of money and he got another job before we could complete an MVP.</p>
+<p>I did it wrong. Back then I didn&#8217;t even know about lean startup and was only just learning about Agile development.</p>
+<p>We didn&#8217;t need one person to bounce ideas off, we should have had 5 people all working in an intense short period of time. If I could do it again I would have solidified my understanding of the Yii PHP framework, then hired 2 other programmers, a designer and a UX (user experience/usability) expert with the explicit aim of getting not just a proof-of-concept, but an MVP&#8230; Minimum Viable Product.</p>
+<h1 align="CENTER"><span style="color: #800000;"><span style="font-size: large;">In hindsight</span></span></h1>
+<h2>Commit 100% when you can</h2>
+<p>I continued to work at ANAT despite us having gotten the grant. I was doing some very important work for them so wasn&#8217;t really in the position to leave, but <span style="color: #800000;"><strong>Films on the Fly</strong></span> would likely have been better if I stopped all commitments (mainly ANAT and the Zeitgeist Movement). I didn&#8217;t do this until a year later. I&#8217;m now in the situation where I want to commit 100% but now don&#8217;t have the money. The timing was bad.</p>
+<p>If you do get money, spend as little of it as possible. I recently met the founders of GradConnect, a successful Australian start-up who described what they did after receiving grant money – worked full time on it and ate 2 minute noodles and frozen vegies for every meal while calling everyone they could think of to sponsor their company&#8230;although the noodles sound kind of gross, the lesson is not to spend your grant money on anything that doesn&#8217;t provide value to the business.</p>
+<h2>Lean Startup</h2>
+<p>The lean startup methodology goes hand in hand with the <a title="Scrum Master in Under 10 Minutes" href="http://www.youtube.com/watch?v=Q5k7a9YEoUI" target="_blank">Scrum, agile development</a> principles. Know them and understand the alternatives and when to apply them. If you&#8217;re building a medical apparatus the waterfall method will likely be more useful, but for a web platform, the rapid iterations of scrum sprints are awesome.</p>
+<p>If you want to learn more about Lean Startup go through the free online course : <a href="http://www.socrated.com/courses/226">http://www.socrated.com/courses/226</a></p>
+<h2>Do things in spurts and with other people</h2>
+<p>If you can&#8217;t commit fully as you don&#8217;t have the money, don&#8217;t try and pay people. Pitch the company idea at a local <a href="http://startupweekend.org/">Startup Weekend</a> or similar &#8216;create a company really quickly&#8217; event. If it catches on then great, if not, join the 2<sup>nd</sup> most popular group.</p>
+<p>If you can&#8217;t attend a Startup Weekend (consider flying across the country if you have to) get your friends together for a long weekend and work on it. Pay them in food and beer (not money, you need to use social norms, not market norms).</p>
+<p>If you don&#8217;t know enough people with the skills willing to help you out, then you probably aren&#8217;t ready to be an entrepreneur, or the environment isn&#8217;t yet ready. Join a startup group of some sort in your area and keep networking.</p>
+<p>If you do need to pay people, make sure you&#8217;ve saved enough to hire not just one person, but at least 4 (my suggestion is to save up at least $20K), get them together for a few days and make something. If you have good people you should be able to build a proof-of-concept in a weekend. Then give it a fortnight for everyone to recover and for you to gather lots of valuable feedback from potential customers. Ask them what problems they see with it. Get the team back and after spending a week or two&#8217;s worth of work you should have a MVP – Minimum Viable Product. Now you can actually get people using it and get real feedback and possibly even some income.</p>
+<p>After that, continue getting product-market-fit, get people paying for your product and then when you look like you need to jump into another market or might need money to cope with scaling, then start looking for investment. But understand that people usually only invest when the company is successful and doesn&#8217;t actually need the money to survive<span style="color: #000000;">. Also, the process of getting investment is a very long complicated process which will be the equivalent of a full time job for quite a few months.</span></p>
+<h2><strong><span style="color: #000000;">Some other suggestions</span></strong></h2>
+<p><span style="color: #000000;">Use the free online and collaborative tools. There&#8217;s lots of them and they rock.<br />
+</span><a title="Dropbox - Synchronised folders " href="http://www.dropbox.com/" target="_blank">Dropbox</a> and <a title="Google Apps" href="http://www.google.com/apps/intl/en/group/index.html" target="_blank">Google Apps</a> (domain branded Gmail and Google Docs) are particularly awesome.<br />
+<span class="Apple-style-span" style="color: #000000;"><a title="Wordpress - Open Source Blogging Platform." href="http://wordpress.org/" target="_blank">WordPress</a> and the like are other good general tools.</span></p>
+]]></content:encoded>
+			<wfw:commentRss>http://w00t.filmsonthefly.com/2011/08/how-to-waste-a-35k-grant/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Sydney Startup Weekend &#8211; Classmate</title>
+		<link>http://w00t.filmsonthefly.com/2011/08/sydney-startup-weekend-classmate/</link>
+		<comments>http://w00t.filmsonthefly.com/2011/08/sydney-startup-weekend-classmate/#comments</comments>
+		<pubDate>Fri, 05 Aug 2011 06:47:20 +0000</pubDate>
+		<dc:creator>w00t</dc:creator>
+				<category><![CDATA[Michael Kubler]]></category>
+		<category><![CDATA[Sydney]]></category>
+		<category><![CDATA[Tech]]></category>
+
+		<guid isPermaLink="false">http://w00t.filmsonthefly.com/?p=101</guid>
+		<description><![CDATA[OK, so I participated in the Sydney Startup Weekend (29th to 31st of July, 2011) and was the web developer for the winning team : www.getclassmate.com Classmate is creating a web platform to help let teachers share their smart whiteboard &#8230; <a href="http://w00t.filmsonthefly.com/2011/08/sydney-startup-weekend-classmate/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>OK, so I participated in the <a href="http://sydney.startupweekend.org/" target="_blank">Sydney Startup Weekend</a> (29th to 31st of July, 2011) and was the web developer for the winning team : <a title="Classmate : Let teachers share their smart whiteboard lesson plans with other teachers" href="http://www.getclassmate.com" target="_blank">www.getclassmate.com</a></p>
+<p style="text-align: center;"><a href="http://www.getclassmate.com/" target="_blank"><img class="aligncenter size-medium wp-image-105" title="GETCLASSMATE logo" src="http://w00t.filmsonthefly.com/wp-content/uploads/2011/08/GETCLASSMATE-logo-300x110.jpg" alt="GETCLASSMATE logo" width="300" height="110" /></a></p>
+<p>Classmate is creating a web platform to help let teachers share their smart whiteboard lesson plans with other teachers.</p>
+<p>It was an awesome time and working with the other people in the team was particularly awesome. Something I haven&#8217;t had a chance to do like that before.</p>
+<p>I setup a Dropbox folder for the web development and had Dropbox running on the server with a hacked together cp script which we&#8217;d manually run to copy the newly changed Dropbox files onto the web server folder. It worked amazingly well. There was myself and Michael I coding in Netbeans at the same time, using the <a title="Yii" href="Yii PHP framework" target="_blank">Yii PHP framework</a>.</p>
+<p>Silvio was working on the MySQL database and also reverse engineering the .notebook smart whiteboard file format. Turns out it&#8217;s a zip file and that inside it is a preview.png file which is perfect for us to grab and use as the preview image of the project (it just shows the first page of the lesson).</p>
+<p>We worked on two main models : <strong>Lessons </strong>and <strong>Teachers</strong>.</p>
+<p><a title="Michael Imstepf" href="http://michaelimstepf.com/cms/website.php" target="_blank">Michael Imstepf</a> did most of the front end work. Setting up a jQuery carousel on the front page, writing some of the CSS, etc.. I mainly worked on the back end, getting the right information to be displayed, to automate some of the object saving. E.g To automatically add the createdAt timestamp or update the updatedAt timestamp when edited.</p>
+<p>I also created a widget to display the updated/created at time in a nice human readable format. For example it would show &#8220;<em>Updated 23 seconds ago</em>&#8220;, or &#8220;<em>Updated 19 minutes ago</em>&#8221; and so on, for hours, days and weeks  (I&#8217;ll have to add months and years when I next look at it). Creating the widget in Yii took a little longer than maybe it should have as I had to learn all the different ways to extend Yii and the most appropriate way. I simply wanted to create a static class function that I could call, but from a generic class that anything can access, but the two standard models are extending CActiveRecord or CFormModel which isn&#8217;t what I wanted. Widgets seemed designed for the task and made sense at the time. Although I&#8217;ll re-evaluate that at a later date.</p>
+<p>The most powerful part of the whole experience was that we had such a great range of people all working together so well. I really enjoyed Mary&#8217;s UX/UI expert advice. Especially when creating wireframes and helping with layout suggestions.<br />
+The ability for people like Vik and Silvio to quickly add content to the Dropbox was a boon. They could easily just copy a picture of someone into the right folder and create a new teacher or lesson to fill out our sample very quickly.</p>
+<p>Unfortunately during the weekend we only reached the proof-of-concept stage as the actual upload and download functionality didn&#8217;t work properly. We faked it for the pitch, not that it mattered as the pitch didn&#8217;t have time to show off the actual platform, which made me a little sad having only slept 3 hours cause I was working my ass off on it, but Treffyn, Jesse, Ehon and the others did an AMAZING job and created the most amazing pitch. Also, big ups to Mark for suggesting <a title="Unbounce - Landing Pages" href="http://unbounce.com/" target="_blank">unbounce</a> and creating an awesome landing page. David was also full of ideas.</p>
+<p>Overall the team rocked and we are still kicking. We are actively emailing, Skyping and Google Docs&#8217;ing. We also got into the beta of <a title="Asana - Task List Management" href="http://asana.com/" target="_blank">Asana</a> the collaborative task list manager thanks to Ehon&#8217;s fantastically vast network of contacts. He seems to know nearly everyone in the web business/startup space from Sydney to Brisbane!</p>
+<p>Anyway, that&#8217;s enough ranting from me.</p>
+<p>Cheers!</p>
+<p>[Update] Starcast have put up a video of the <a title="Startcast + Startup Weekend Sydney" href="http://www.startcast.com.au/videos/startcast-startup-weekend-sydney/" target="_blank">Startup Weekend</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://w00t.filmsonthefly.com/2011/08/sydney-startup-weekend-classmate/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Interesting posts 23rd July 2011</title>
+		<link>http://w00t.filmsonthefly.com/2011/07/interesting-posts-23rd-july-2011/</link>
+		<comments>http://w00t.filmsonthefly.com/2011/07/interesting-posts-23rd-july-2011/#comments</comments>
+		<pubDate>Sat, 23 Jul 2011 03:43:47 +0000</pubDate>
+		<dc:creator>w00t</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://w00t.filmsonthefly.com/?p=98</guid>
+		<description><![CDATA[Here&#8217;s a bunch of interesting posts, articles and videos I&#8217;ve come across over the past week. It&#8217;s quite a mix-mash [Tech articles of interest] http://engineering.tumblr.com/post/7658008285/efficiently-copying-files-to-multiple-destinations &#8212; How to copy files between multiple computers (in a streaming fashion) which is especially &#8230; <a href="http://w00t.filmsonthefly.com/2011/07/interesting-posts-23rd-july-2011/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Here&#8217;s a bunch of interesting posts, articles and videos I&#8217;ve come across over the past week. It&#8217;s quite a mix-mash</p>
+<p><strong>[Tech articles of interest]<br />
+</strong><a href="http://engineering.tumblr.com/post/7658008285/efficiently-copying-files-to-multiple-destinations" target="_blank">http://engineering.tumblr.com/post/7658008285/efficiently-copying-files-to-multiple-destinations</a> &#8212; How to copy files between multiple computers (in a streaming fashion) which is especially useful when starting up a number of new server instances.</p>
+<p><a href="http://blog.backblaze.com/2009/09/01/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/" target="_blank">http://blog.backblaze.com/2009/09/01/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/</a> &#8212; An oldie, but some people might not have seen it. Build your own storage racks full of HDDs, probably only useful for really high storage applications, and would require a decent amount of CapEx compared to S3, but lower OpEx.</p>
+<p><a href="http://www.smashingmagazine.com/2011/07/18/seven-guidelines-for-designing-high-performance-mobile-user-experiences/" target="_blank">http://www.smashingmagazine.com/2011/07/18/seven-guidelines-for-designing-high-performance-mobile-user-experiences/</a> &#8212; I enjoyed this article as it highlights the fact that design and UI decisions have an effect on performance and reliability.</p>
+<p>The 7 guidelines for designing high performance mobile user experiences are :</p>
+<ol>
+<li>Define UI Brand Signatures</li>
+<li>Focus the Portfolio of Products</li>
+<li>Identify the Core User Stories</li>
+<li>Optimize UI Flows and Elements</li>
+<li>Define UI Scaling Rules</li>
+<li>Use a Performance Dashboard</li>
+<li>Champion Dedicated UI Engineering Skills</li>
+</ol>
+<p><strong>[Business Articles]</strong><br />
+<a href="http://blog.thomvest.com/youhavetwoyears/" target="_blank">http://blog.thomvest.com/youhavetwoyears/</a> &#8212; According to previous patterns we have 2 years until the latest version of the dot com bubble bursts.<a href="http://cameronkeng.com/hn-how-do-i-pull-a-google/" target="_blank">http://cameronkeng.com/hn-how-do-i-pull-a-google/</a> &#8212; Google, Microsoft, Facebook and the like only have an effective tax rate of 2.4%. This explains the current loop holes and how.</p>
+<p><a href="http://www.avc.com/a_vc/2011/07/financing-options-preferred-stock.htm" target="_blank">http://www.avc.com/a_vc/2011/07/financing-options-preferred-stock.htm</a> &#8211; Talking about preferred stock (preference shares). Which is used a lot in startup circles.</p>
+<p><a href="http://timbull.com/adventures-with-venture-capital-outside-the-v" target="_blank">http://timbull.com/adventures-with-venture-capital-outside-the-v</a> &#8212; This is a story I&#8217;ve heard a couple of times. Getting 95% through a VC funding deal then it goes flat. Sounds nasty <img src='http://w00t.filmsonthefly.com/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /> </p>
+<p><a href="http://www.uxbooth.com/blog/psychological-manipulation-in-ecommerce-design/" target="_blank">http://www.uxbooth.com/blog/psychological-manipulation-in-ecommerce-design/</a> &#8212; How to use tricks like lowering the friction and increasing the pressure to make people more interested in buying your products.</p>
+<p>Anyone else on the <a title="Startup Digest" href="http://startupdigest.com/" target="_blank">Startup Digest</a>? It&#8217;s where I got some of the links from.</p>
+<p><a href="http://startupdigest.com/" target="_blank">http://startupdigest.com/</a> Some cool article links emailed to you weekly.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://w00t.filmsonthefly.com/2011/07/interesting-posts-23rd-july-2011/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Photobox</title>
+		<link>http://w00t.filmsonthefly.com/2011/07/photobox/</link>
+		<comments>http://w00t.filmsonthefly.com/2011/07/photobox/#comments</comments>
+		<pubDate>Thu, 21 Jul 2011 13:24:51 +0000</pubDate>
+		<dc:creator>w00t</dc:creator>
+				<category><![CDATA[Idea]]></category>
+		<category><![CDATA[project]]></category>
+
+		<guid isPermaLink="false">http://w00t.filmsonthefly.com/?p=82</guid>
+		<description><![CDATA[This is an idea for a new company which I will be pitching at the Sydney Startup Weekend. Situation : Pro and Prosumer Photographers create vast quantities of photos. e.g after an intense photoshoot or wedding they can end up &#8230; <a href="http://w00t.filmsonthefly.com/2011/07/photobox/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>This is an idea for a new company which I will be pitching at the <a title="Sydney Startup Weekend : 29th-31st July 2011" href="http://sydney.startupweekend.org/" target="_blank">Sydney Startup Weekend</a>.</p>
+<p><strong>Situation </strong>: Pro and Prosumer Photographers create vast quantities of photos. e.g after an intense photoshoot or wedding they can end up with 64GB+ of data.</p>
+<p><strong>Problem </strong>: Backing up 1TB or more of photos is a daunting task. Most photographers don&#8217;t do a good job at this and usually have to do very manual processes.</p>
+<p><strong>Solution </strong>: <span style="color: #0000ff;">Photobox</span>. An online backup system with a combination of local storage that synchronises small changes using the Internet, but uses a couriered Hard drive for allowing uploading of large quantities of data.</p>
+<h2>Background</h2>
+<p>Backing up data is harder than most people think. If you don&#8217;t have at least 3 copies of the data in at least 2 geographically separate places then you are going to lose your photos, it is just a matter of when.  But it is harder than just that, as <a title="The Tao of Backup" href="http://w00t.anat.org.au/2010/10/14/the-tao-of-backup/" target="_blank">the TAO of backup</a> explains :</p>
+<ol>
+<li><strong>Coverage</strong> — Backup everything you can.</li>
+<li><strong>Frequency</strong> — Backup as often as you are making changes.</li>
+<li><strong>Separation</strong> — <a title="Amazon : S3" href="http://aws.amazon.com/s3/#protecting">Geographically redundant</a> storage.</li>
+<li><strong>History</strong> — Versioning/<a title="Rsnapshot" href="http://rsnapshot.org/">snapshots</a> of data changes over time. This helps recover from corruption, virus infiltration and <a title="Problem Exists Between Keyboard and Chair" href="http://www.kodyaz.com/images/pics/pebkac-problem-exists-between-keyboard-and-chair.gif">PEBKAC</a>.</li>
+<li><strong>Testing</strong> — If you haven’t tested your backups then Murphy’s law says they will likely fail when you need them the most.</li>
+<li><strong>Security</strong> — If I want to hack you, I’ll go for your unsecured backups.</li>
+<li><strong>Integrity</strong> — If your original data has been <a title="Internode : PIR - Storage Area Network Failure" href="http://advisories.internode.on.net/pir/5691/">corrupted without you knowing</a> then your copies of it are useless.</li>
+</ol>
+<p>Most photographers (at least the one&#8217;s I have sampled) use a basic HDD or raid array (especially good is something like a <a title="Data Robotics" href="http://www.drobo.com/resources/drobodemo.php" target="_blank">DROBO</a>).  The Photobox software would work similar to Dropbox, in that files on the drive would be synchronised with an online backup service. However, if a large number of new files were added, or edited (especially PSDs), they will be couriered a portable hard drive.  Connect the drive up, it encrypts and stores the images for transport then put the drive into the return addressed packaging and drop it off at the nearest post box.</p>
+<h2><span style="color: #000000; font-size: 23px; line-height: 35px;">Business model</span></h2>
+<p>This is based off the awesome Business Model Generation canvas : <a href="http://www.businessmodelgeneration.com/downloads/business_model_canvas_poster.pdf">http://www.businessmodelgeneration.com/downloads/business_model_canvas_poster.pdf</a></p>
+<p><a href="http://www.businessmodelgeneration.com/downloads/business_model_canvas_poster.pdf"></a> <strong>Value Proposition</strong> : An easier way for photographers to backup large quantities of data using a combination of Internet and couriered hard drives.</p>
+<p><strong>Customer Segments</strong> : Professional and prosumer photographers. Especially those taking lots of photos in Raw mode and don&#8217;t have a robust, automated, geographically redundant storage system.</p>
+<p><strong>Customer Relationships</strong> : Primarily the relationship is around ensuring the automated software application is working properly and backing up small changes or suggesting they send in the portable HDD for faster, safer, backup. As we are maintaining a copy of their photos and data it should be a long term relationship with good customer service</p>
+<p><strong>Channels</strong> : Possible options include Photography websites, Photog magazines (e.g <a title="Digital Photo Pro Magazine" href="http://www.digitalphotopro.com/" target="_blank">Digital</a><a title="Digital Photo Pro Magazine" href="http://www.digitalphotopro.com/" target="_blank">Photo Pro</a>), local photography shops (In Adelaide : <a title="Total Photo - Formerly L&amp;P Photographic in Kent Town, South Australia" href="http://totalphoto.com.au/" target="_blank">Total Photo</a>, <a title="Twin City Camera House" href="http://www.twincitycamerahouse.com.au/" target="_blank">Twin City Camera House</a>, <a title="Pro AV - Used to be AV Central" href="http://www.proavsolutions.com.au/" target="_blank">ProAV solutions</a>,  <a title="Diamonds Cameras" href="http://www.diamondscamera.com.au/" target="_blank">Diamonds</a>, <a title="TEDs cameras" href="http://www.teds.com.au/" target="_blank">TEDs</a>, <a title="Photographic Wholesalers" href="http://www.photowholesalers.com.au/" target="_blank">Photographic Wholesalers</a> In the US : <a title="Adorama Cameras" href="http://www.adorama.com/" target="_blank">Adorama</a>, <a title="B&amp;H Photo" href="http://www.bhphotovideo.com/" target="_blank">B&amp;H</a>).</p>
+<p><strong>Revenue Streams</strong> : This will have to be tested and worked out with first customers. A monthly tiered pricing structure, a pay for what you use system (cost per HDD courier and cost of online storage), or a bundled pack with something like a Drobo.</p>
+<p><strong>Cost Structure</strong> : The cost of storage for the backups, the courier costs, portable HDD costs and application development costs. One option for helping the courier costs could be by partnering with a delivery company. Even Domino&#8217;s Pizza. Order a pizza and they&#8217;ll take your drive.</p>
+<p><strong>Key Partners</strong> : <a title="Amazon Web Services" href="http://aws.amazon.com/">Amazon Web Services</a> (especially for the S3 storage and AWS Import/Export). A courier company (such as <a title="Federal Express" href="http://fedex.com/au/" target="_blank">FedEx</a>, <a title="Toll IPEC - If It's Urgent" href="http://www.tollipec.com.au/" target="_blank">Toll IPEC</a>, <a title="Australian Air Express" href="http://www.aae.com.au/" target="_blank">AAE</a>) and hopefully an existing backup app developer (<a title="Memory Box" href="http://memorybox.com.au/" target="_blank">MemoryBox</a>, <a title="BackBlaze" href="http://www.backblaze.com/" target="_blank">BackBlaze</a>, <a title="Jungle Disk" href="https://www.jungledisk.com/" target="_blank">Jungle Disk</a>, <a title="Dropbox - Effectively SVN and Rsync to S3" href="http://www.dropbox.com/" target="_blank">Dropbox</a>?).</p>
+<p><strong>Key Activities</strong> : Occasionally couriering a Hard Drive to customers, with drives received from them having their data uploaded to the cloud for backup. Also running a desktop application to help upload smaller changes and detect larger data changes which get encrypted and copied onto the external hard drive which gets sent.</p>
+<p><strong>Key Resources</strong> : Being about data storage the biggest requirement is hard drives, lots and lots of them.<br />
+Spare Portable Hard drives will likely be kept at the Photographers premises, connected up to their computer until they need to send it off.</p>
+<p><strong>Growth Model</strong> : Once the service has taken off it can be scaled by going to cheaper storage, although that requires some CapEx.</p>
+<h2>Lean Startup</h2>
+<p>Start small. No coding, just a landing page. Then get some photogs on board and get them to send you an hard drive. If they do then start uploading their data to the cloud (can be done via Amazon Web Services batch import).  It&#8217;s trivial to write or rebrand a web app which lets them view their S3 bucket (each photog would have their own).  Can start working on a backup app, possibly partnering with an existing backup provider (Backblaze, Memory Box, etc..), or with a Drobo app.</p>
+<ul>
+<li>Encrypt couriered HDD.</li>
+<li>Add online album/gallery option.</li>
+<li>Print from album (people viewing a wedding album for example can order prints which get sent to a local print ).</li>
+<li>Add online processing options (e.g face detection and tagging).</li>
+<li>Start looking into using <a title="Backblaze storage pods" href="http://blog.backblaze.com/2009/09/01/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/" target="_blank">BackBlaze style storage pods</a> (which would require running your own data centre equipment, but could dramatically reduce storage costs).</li>
+</ul>
+<h2><a href="http://blog.backblaze.com/2009/09/01/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/"><img class="aligncenter" title="BackBlaze - Cost of storage" src="http://blog.backblaze.com/wp-content/uploads/2009/08/cost-of-a-petabyte-chart.jpg" alt="[Diagram] BackBlaze : Cost of storage" width="560" height="642" /></a> <span style="color: #000000; font-size: 23px; line-height: 35px;">Evolution</span></h2>
+<p>After creating a working business which is successfully dealing with photographers the service can be expanded to videographers, researchers and other data intensive applications.</p>
+<h2>Collections and organising photos</h2>
+<p>So far of the 4 photographers I&#8217;ve talked to (including myself), Adobe Lightroom seems to be the most convenient way of organising and dealing with large quantities photos.</p>
+<p>The ability to utilise a photographers lightroom collection and create an online album from stared (or rated/tagged) photos would be very useful.</p>
+<h2>Customer Validation and Understanding</h2>
+<p>I&#8217;ve talked to some potential customers so far. The first being Benjamin Liew, a photographer in Adelaide. Another being an event photographer in Sydney.  Ben currently has a collection of about 3 or 4 portable/external HDDs, some of which he tries to keep at his office with others at his home, plus whatever he is working on is on the CF cards and on his Macbook.</p>
+<p>The photographer in Sydney meets up with a friend every week or two and they exchange hard drives, so each has a copy of the others. But what happens when his friend goes away for a while? Or what happens if the office burns down and his friend happens to get broken into at about the same time? Unlikely, yes. But Murphy&#8217;s law has a habit of striking when you are down.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://w00t.filmsonthefly.com/2011/07/photobox/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>The problem with teaching Mastery</title>
+		<link>http://w00t.filmsonthefly.com/2011/07/the-problem-with-teaching-mastery/</link>
+		<comments>http://w00t.filmsonthefly.com/2011/07/the-problem-with-teaching-mastery/#comments</comments>
+		<pubDate>Fri, 15 Jul 2011 13:00:50 +0000</pubDate>
+		<dc:creator>w00t</dc:creator>
+				<category><![CDATA[future]]></category>
+
+		<guid isPermaLink="false">http://w00t.filmsonthefly.com/?p=75</guid>
+		<description><![CDATA[The problem with teaching Mastery of a craft is that those who have it can&#8217;t explain it. Imagine this, you are a budding animator. You are trying to learn how to create amazing visual animations (2d, 3d, puppetry.. take your &#8230; <a href="http://w00t.filmsonthefly.com/2011/07/the-problem-with-teaching-mastery/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p><em>The problem with teaching Mastery of a craft is that those who have it can&#8217;t explain it.</em></p>
+<p>Imagine this, you are a budding animator. You are trying to learn how to create amazing visual animations (2d, 3d, puppetry.. take your pick). You join a forum and find there are a range of articles and information of interest. Occasionally you come across some real nuggets of information. But after a year you realise that those people with real mastery of the craft aren&#8217;t on the forums and rarely do they even post something more than a couple of tips or an interview. The people you are spending most of your time talking to and learning from are maybe only a year or two more advanced than yourself.</p>
+<p>It&#8217;s been widely established that to be particularly amazing at a craft you need to have been passionately doing it for 10 years.</p>
+<p>To have a proper mastery of your craft, be it cooking, programming, sales or engineering, you need to have been actively learning and getting better at it for about a decade.</p>
+<p>The problem seems to be in trying to explain and teach other people the techniques things that you do. When you have achieved such a mastery of the craft you go into what is known as <strong>a state of Flow</strong>. So much of your brain power is being dedicated to the task at hand that it is like you are having an out of body experience.</p>
+<p>My suggestion and I don&#8217;t know how well it would work, but is probably worth a try, is to assign a documenting trainee to people who have achieved such mastery. Those pushing the edge of their field should have someone who is maybe only 4 or 5 years into their learning of the craft to not just be a trainee, but to document what they are learning and hopefully attempt to understand what the master is doing and why. Then to share those insights online.</p>
+<p><img class="aligncenter" title="Mastery - Knowing the missing piece" src="http://www.hireauthorityaz.com/images/missing-puzzle-piece.jpg" alt="Mastery - Knowing the missing piece" width="340" height="225" /></p>
+<p>Documenting can obviously be done in a wide range of ways. From simple notes to photos and a full audio/video recording.<br />
+My guess is that the skills that such people have honed aren&#8217;t something that can be shared with just a couple of hints and tips. <strong>A master cook&#8217;s secrets aren&#8217;t hidden in his recipe</strong>, <em>a master programmers abilities extend beyond just the final code</em>. It is the underlying process of getting to the final product which is what a new trainee should be interested in learning and sharing with others.</p>
+<p>If someone is interested in trying to document a master of their craft, I&#8217;d be interested in how well it works!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://w00t.filmsonthefly.com/2011/07/the-problem-with-teaching-mastery/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Do it smart and do it with passion and purpose</title>
+		<link>http://w00t.filmsonthefly.com/2011/07/do-it-smart-and-with-passion/</link>
+		<comments>http://w00t.filmsonthefly.com/2011/07/do-it-smart-and-with-passion/#comments</comments>
+		<pubDate>Wed, 13 Jul 2011 12:00:09 +0000</pubDate>
+		<dc:creator>w00t</dc:creator>
+				<category><![CDATA[Michael Kubler]]></category>
+
+		<guid isPermaLink="false">http://w00t.filmsonthefly.com/?p=61</guid>
+		<description><![CDATA[My new mantra is &#8221;If I am going to do it, I&#8217;m going to do it smart and with passion and purpose&#8220;. For many years I&#8217;ve meditated. I would quite often do it when stressed or tired in order to motivate me. Whilst meditating &#8230; <a href="http://w00t.filmsonthefly.com/2011/07/do-it-smart-and-with-passion/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<blockquote>
+<p style="text-align: left;">My new mantra is &#8221;<span style="color: #800000;"><strong>If I am going to do it, I&#8217;m going to do it smart and with passion and purpose</strong></span>&#8220;.</p>
+</blockquote>
+<p>For many years I&#8217;ve meditated. I would quite often do it when stressed or tired in order to motivate me.<br />
+Whilst meditating it is best to do something, or think about something and keep repeating that. Some people make &#8220;Ooohm&#8221; like noises, others picture a ball circling around. <strong>I would think to myself &#8220;<span style="color: #333399;">I can do it</span>&#8220;</strong>.</p>
+<p>There are some issues with thinking that and thus I have decided my new mantra is &#8220;<strong>If I am going to do it, I&#8217;m going to <span style="color: #000080;">do it smart</span> and with <span style="color: #000080;">passion and purpose</span></strong>&#8220;.</p>
+<p>This invariably gets shortened to &#8220;<span style="color: #800000;"><strong>Do it smart and with passion and purpose</strong></span>&#8220;.</p>
+<p><span id="more-61"></span></p>
+<p>The issues with the &#8216;<em>I can do it</em>&#8216; mantra is that <strong>you get a feeling that you can do pretty much anything</strong>. This certainly seems to have formed who I am today as I&#8217;ve done lots of things, from getting my Private Pilots License (flying single engine <a title="Google Image : Piper Warriors" href="http://www.google.com.au/search?q=piper+warrior&amp;tbm=isch" target="_blank">Piper Warriors</a>), through to joining the Air Force Reserves for a small stint, working at an <a title="Internode : South Australian Based Internet Service Provider" href="http://internode.on.net/" target="_blank">ISP</a>, working as the Technology officer at <a title="Australian Network for Art and Technology" href="http://www.anat.org.au/" target="_blank">ANAT</a>, plus doing everything from <a title="Some old Aura 3D animation plugin examples" href="http://www.greyphoenix.biz/Aura/" target="_blank">3D Animation</a> (3D Studio Max) through to <a title="Robocup Australia (and did the International competition in Padua, Italy)" href="http://www.robocupjunior.org.au/" target="_blank">robotics</a>, photography (<a title="Grey Phoenix Productions : Michael Kubler's old Multimedia production company" href="http://www.greyphoenix.biz/" target="_blank">studio portrait</a>), film making (Vegas Video), and web development (PHP). Now I&#8217;ve reached the point that I am trying to launch <strong>Films on the Fly</strong>.</p>
+<p>The side effect of thinking you can do anything is that you want to try and do a lot. So you start a lot of projects, complete the challenge, but then you get the sense of accomplishment so you don&#8217;t continue and complete the project so you can actually show everyone. Instead you&#8217;ve already started 3 more projects.</p>
+<p>So given the issues with &#8216;I can do it&#8217; let&#8217;s break down the new mantra.</p>
+<p style="text-align: center;">&#8220;<strong>If I am going to do it, I&#8217;m going to do it smart and with passion and purpose</strong>&#8220;.</p>
+<p><em>If I am going to do it</em> : This means you think about the job and don&#8217;t just blindly saying yes. It doesn&#8217;t mean you have to say no (although it&#8217;s a word I need to use more often), you  might decide to delegate the job, or outsource it.</p>
+<p><em>I&#8217;m going to do it smart</em> : Doing it smart can be taken quite a few ways. Firstly it means you don&#8217;t do it drunk, sleep deprived or stupidly. It is very hard to work properly if you can&#8217;t think straight. This means you need to get your environment and schedule correct. You need to ensure you have enough un-interrupted time*. You should also research and understand what it is you are doing, the ramifications it will have and how you can do it in a higher quality or more automated way.</p>
+<p><em>With passion</em> : This means that you put your heart and soul into it. You are excited about it. You want to talk to other people about it. It is something that will get you out of a warm bed on a cold morning.</p>
+<p><em>and purpose</em> : This is about doing it for the right reasons. Money is rarely a decent purpose. Helping change the world for the better is a good one, although something more specific is usually better, such as <a title="Fishburners - Shared (Co-working) startup space in Sydney, Australia" href="http://fishburners.org/" target="_blank">fostering a new startup community</a>, or <span style="color: #800000;"><strong>Films on the Fly</strong></span>&#8216;s aim of fostering paradigm changes in entertainment and education.<br />
+The other side of the purpose coin is having goals. Quantifiable objectives which you must achieve in order to say that the project has been completed. Maybe it&#8217;s that you&#8217;ve published the blog post, or maybe it&#8217;s that you&#8217;ve fostered the organisation to the point that you can walk away from it and it continues to run.</p>
+<p>* When I talk about un-interrupted time I usually refer to Jason Fried&#8217;s awesome TED talk on <a title="TED : Why work doesn't happen at work" href="http://www.ted.com/talks/jason_fried_why_work_doesn_t_happen_at_work.html" target="_blank">why work doesn&#8217;t happen at work</a>.</p>
+<p><object width="584" height="354"><param name="movie" value="http://www.youtube.com/v/5XD2kNopsUs?version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/5XD2kNopsUs?version=3" type="application/x-shockwave-flash" width="584" height="354" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+]]></content:encoded>
+			<wfw:commentRss>http://w00t.filmsonthefly.com/2011/07/do-it-smart-and-with-passion/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Update &#8211; Lean Startup, Interface Options and a need to change.</title>
+		<link>http://w00t.filmsonthefly.com/2011/06/update-lean-startup-interface-options-and-a-need-to-change/</link>
+		<comments>http://w00t.filmsonthefly.com/2011/06/update-lean-startup-interface-options-and-a-need-to-change/#comments</comments>
+		<pubDate>Tue, 21 Jun 2011 21:06:34 +0000</pubDate>
+		<dc:creator>w00t</dc:creator>
+				<category><![CDATA[FotF]]></category>
+		<category><![CDATA[Michael Kubler]]></category>
+		<category><![CDATA[Sydney]]></category>
+
+		<guid isPermaLink="false">http://w00t.filmsonthefly.com/?p=52</guid>
+		<description><![CDATA[So. I was reading the 37 Signals online book &#8216;Getting Real&#8216;, which is very much about Lean Startup when it finally struck me how I can use the lean startup approach to get the web platform working TOMORROW (which was &#8230; <a href="http://w00t.filmsonthefly.com/2011/06/update-lean-startup-interface-options-and-a-need-to-change/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>So. I was reading the 37 Signals online book &#8216;<a title="Getting Real" href="http://gettingreal.37signals.com/toc.php" target="_blank">Getting Real</a>&#8216;, which is very much about Lean Startup when it finally struck me how I can use the lean startup approach to get the web platform working TOMORROW (which was actually 2 days ago).<br />
+We have a Flash application, a modified version of the <span style="color: #000000;"><a title="RaVis Explorer - Open Source Flex based relational visualiser" href="http://code.google.com/p/birdeye/wiki/RaVis" target="_blank">RaVis explorer</a></span>, which would allow us to create the imagery for the Nodemap relationship, however it isn&#8217;t working 100% and I couldn&#8217;t get the required Javascript mouseover, and click events with the extra information of which ID the video thumbnail the person was hovering over was.<br />
+I fixed this by screenshotting the Nodemap then using an <a title="Image Maps" href="http://www.image-maps.com/" target="_blank">Imagemapping</a> application to create the require Img map.</p>
+<p>For those that don&#8217;t know an Image Map is a piece of HTML which has the co-ordinates of the various shapes on the image and allows you to click on the different areas and go to different links. By adding the videoID information to each area, in this case as a data-videoid attribute, (although could have grabbed it from the href), then using some jQuery magic I finally got exactly what I wanted. A Nodemap which I could play with.</p>
+<p>I&#8217;m now in the process of creating 4 different Nodemap views (by manually creating different layouts then screenshotting them and Image Mapping them), plus 4 different interfaces.</p>
+<p><span style="text-decoration: underline;">Interface Options :</span></p>
+<p><strong>Infobox </strong>- When you hover over a film thumbnail a section of the webpage which I call the Infobox shows the information about that film. If you click the infobox it&#8217;ll load up <span style="color: #ffcc00;"><a title="Flowplayer - Flash based video player" href="http://flowplayer.org/" target="_blank">Flowplayer</a> </span>and you can watch the video. Currently if you are watching a video but then hover over another thumbnail then the Infobox changes and the video disappears. This is the only version I&#8217;ve implemented so far.</p>
+<p><strong>Light Box</strong> &#8211; Displays the video over top of the page.</p>
+<p><strong>Video Page</strong> &#8211; Hover over a thumbnail and it&#8217;ll display information about the video. Click it and it&#8217;ll take you directly to the video page.</p>
+<p><strong>Playlist</strong> &#8211; Allows you to drag and drop the videos into your playlist.</p>
+<div id="attachment_55" class="wp-caption aligncenter" style="width: 650px"><a href="http://w00t.filmsonthefly.com/wp-content/uploads/2011/06/Linkr-Infobox-Tree-Multipath-storytelling_1308688489716.png"><img class="size-large wp-image-55" title="Linkr - Infobox Tree - Multipath storytelling_1308688489716" src="http://w00t.filmsonthefly.com/wp-content/uploads/2011/06/Linkr-Infobox-Tree-Multipath-storytelling_1308688489716-988x1024.png" alt="Linkr - Infobox Tree" width="640" height="663" /></a><p class="wp-caption-text">Platform Staging Site - Yes, I know the Nodemap goes over the site width, will fix that.</p></div>
+<p>Right now the site needs a good overhaul regarding the styling and look and feel. I&#8217;ve been putting out <a title="FotF : Wanted - UI Designer plus Flex and PHP programmers. Reward : New Entertainment Paradigm" href="http://www.filmsonthefly.com/wp/2011/05/business/webgraphic-designer-wanted/" target="_blank">a call for a UI designer</a>, asking everyone I got business cards from at the<span style="color: #000000;"> <a title="X Media Lab - Global Media Ideas" href="http://www.xmedialab.com/events/2011/xml-global-media-ideas-2011/" target="_blank">X Media Lab</a></span>, however haven&#8217;t had any luck, although have had a lot of people forwarding the request onto their friends and have at least had a decent response rate since putting the <span style="color: #000000;"><a title="w00t : Putting the WHY into the conversation" href="http://w00t.filmsonthefly.com/2011/06/some-interesting-ted-talks-flow-and-why/" target="_blank">WHY</a> </span>in front of the explanation (as per the previous post).</p>
+<p>I started to get a bit depressed and pretty much wasted all of yesterday just watching some online videos and not doing any programming. I felt myself starting to loose enthusiasm and energy. Starting to feel stressed and lethargic, yet am so close to getting it ready for a limited beta trial. I realised that I hadn&#8217;t been getting enough exercise and after doing something akin to the beep test for 5mins (running between two points), I already started to feel a lot better. Now I feel like I just need someone to bounce ideas off. <strong>A Technical co-founder.</strong></p>
+<p>Actually, my girlfriend and I talked and we realised that something needs to change or else I&#8217;ll run out of money before the end of August and I&#8217;ll have burnt out before then anyway. Meaning I&#8217;ll likely have to go back to film production work and will miss the current window of opportunity.</p>
+<p>To make things happen I really need to change the environment I&#8217;m in, get some help and also get some more finances</p>
+<p><strong>Environment</strong> &#8211; Currently I&#8217;m either sitting in bed programming on the laptop, or occasionally going to the office in the city, although usually then end up having to do other work such as networking with people or basic admin stuff so don&#8217;t get much programming done.<br />
+What I really need is what I came to Sydney for. <strong>I need to be around other web developers</strong>. I need to talk to them, hear their problems, bounce ideas off them. I came here wanting to have a spare seat at the <span style="color: #000000;"><a title="Pollenzier : Web2.0 Startup Incubator" href="http://www.pollenizer.com/" target="_blank">Pollenizer</a> </span>office, but they were busy moving. I then wanted to get a place at <span style="color: #000000;"><a title="Fishburners : Shared office space for Tech startups" href="http://www.fishburners.org/" target="_blank">Fishburners</a></span>, but they wouldn&#8217;t let me stay cause I was only going to be there for 3 months and they wanted me to commit to 6 months. I think things would be very different (and likely far more advanced) if they could&#8217;ve made an exception. They wanted someone for longer so that they could have people who contribute to the atmosphere. I could have whipped up a storm in there if they needed. Ohh well. Instead I&#8217;m staying at the office RIGHT NEXT to Fishburners, it is a decently sized open office with a couple of sales staff, but I usually only go there from 6pm until midnight as there is no one there and I can concentrate slightly more.<br />
+All of this means that the feeling of being alone is creeping up on me and taking hold of me. I especially miss my girlfriend and can&#8217;t wait to see her at the start of next month as she visits Sydney <img src='http://w00t.filmsonthefly.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p><strong>Help </strong>- As mentioned above, I need someone to bounce ideas off, I also need a graphic, web or UI designer to help with the site. I have a very good understanding of design, but I&#8217;m channelling my creativity into programming not design. Another PHP developer would also be really awesome, although it would likely take a while to get them up to speed on everything. In the near future I&#8217;ll also need some help redoing the database design to make it more flexible so we can try out a whole lot more stuff.</p>
+<p><strong>Finances</strong> &#8211; My savings have nearly run out and I&#8217;m starting on my Credit Card debt. I accidentally went over my mobile phone cap so instead of paying $69 for the month it&#8217;s now over $450. That, plus some other bills means I no longer have the $500 earmarked for a designer. I&#8217;m also questioning if I&#8217;ll be able to stay in Sydney much longer. Whilst I&#8217;d love <strong>$150K to actually get this platform off the ground</strong>, I will at least need a few grand to be able to show its potential. <strong>Even $5K would make an awesome difference.</strong><br />
+Unfortunately the next Sydney Angels meeting isn&#8217;t until ~30th of August and the next  Adelaide meeting is in July but I doubt I&#8217;ll be able to make it back in time even if I somehow managed to get accepted to be seen. I was hoping to put up an online video of me explaining the Business Model, however the hard drive with that on it got wiped as I travelled from Adelaide to Sydney so I&#8217;ll have to re-film it when my girlfriend comes to visit.</p>
+<p>If anyone knows of any Angel investors who are interested in Web 2.0 startups and want to help change the face of Entertainment and Education (and be <a title="FotF : Aims and Principles" href="http://www.filmsonthefly.com/wp/aims-and-principles/" target="_blank">a thought leader in economics</a>) then let me know <img src='http://w00t.filmsonthefly.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>I&#8217;m not going to give up. I might be temporarily subdued. But the real problem is that if things don&#8217;t start changing soon then <strong>we are going to miss the window of opportunity</strong> and the next wave likely won&#8217;t have the same impact as catching this one will.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://w00t.filmsonthefly.com/2011/06/update-lean-startup-interface-options-and-a-need-to-change/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Some Interesting TED talks &#8211; Flow and WHY?</title>
+		<link>http://w00t.filmsonthefly.com/2011/06/some-interesting-ted-talks-flow-and-why/</link>
+		<comments>http://w00t.filmsonthefly.com/2011/06/some-interesting-ted-talks-flow-and-why/#comments</comments>
+		<pubDate>Tue, 14 Jun 2011 18:52:50 +0000</pubDate>
+		<dc:creator>w00t</dc:creator>
+				<category><![CDATA[FotF]]></category>
+		<category><![CDATA[Video]]></category>
+
+		<guid isPermaLink="false">http://w00t.filmsonthefly.com/?p=48</guid>
+		<description><![CDATA[Flow and happiness Flow is the state of being whereby you are working with such concentration that you almost don&#8217;t feel like you are controlling yourself, the work is just flowing through you. However this only happens when you are a &#8230; <a href="http://w00t.filmsonthefly.com/2011/06/some-interesting-ted-talks-flow-and-why/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p style="text-align: center;"><a title="Mihaly Csikszentmihalyi on Flow" href="http://www.ted.com/talks/mihaly_csikszentmihalyi_on_flow.html" target="_blank"><br />
+Flow and happiness</a></p>
+<p>Flow is the state of being whereby you are working with such concentration that you almost don&#8217;t feel like you are controlling yourself,<strong> the work is just flowing through you</strong>. However this only happens when you are a master in your field. When you have been honing your skill for over 10 years. I&#8217;ve still got a couple more years before I get to this point when programming in PHP, although have very nearly reached it when bash scripting.</p>
+<div style="text-align: center;"><!--copy and paste--><object width="446" height="326"><param name="movie" value="http://video.ted.com/assets/player/swf/EmbedPlayer.swf" /><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="wmode" value="transparent" /><param name="bgColor" value="#ffffff" /><param name="flashvars" value="vu=http://video.ted.com/talks/dynamic/MihalyCsikszentmihalyi_2004-medium.flv&amp;su=http://images.ted.com/images/ted/tedindex/embed-posters/MihalyCsikszentmihalyi-2004.embed_thumbnail.jpg&amp;vw=432&amp;vh=240&amp;ap=0&amp;ti=366&amp;lang=eng&amp;introDuration=15330&amp;adDuration=4000&amp;postAdDuration=830&amp;adKeys=talk=mihaly_csikszentmihalyi_on_flow;year=2004;theme=how_the_mind_works;theme=unconventional_explanations;theme=the_creative_spark;event=TED2004;tag=Culture;tag=Global+Issues;tag=happiness;tag=music;tag=psychology;tag=work;&amp;preAdTag=tconf.ted/embed;tile=1;sz=512x288;" /><embed type="application/x-shockwave-flash" width="446" height="326" src="http://video.ted.com/assets/player/swf/EmbedPlayer.swf" pluginspace="http://www.macromedia.com/go/getflashplayer" wmode="transparent" bgcolor="#ffffff" allowfullscreen="true" allowscriptaccess="always" flashvars="vu=http://video.ted.com/talks/dynamic/MihalyCsikszentmihalyi_2004-medium.flv&amp;su=http://images.ted.com/images/ted/tedindex/embed-posters/MihalyCsikszentmihalyi-2004.embed_thumbnail.jpg&amp;vw=432&amp;vh=240&amp;ap=0&amp;ti=366&amp;lang=eng&amp;introDuration=15330&amp;adDuration=4000&amp;postAdDuration=830&amp;adKeys=talk=mihaly_csikszentmihalyi_on_flow;year=2004;theme=how_the_mind_works;theme=unconventional_explanations;theme=the_creative_spark;event=TED2004;tag=Culture;tag=Global+Issues;tag=happiness;tag=music;tag=psychology;tag=work;"></embed></object></div>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><a title="How Great Leaders Inspire Inspire Action" href="http://www.ted.com/talks/lang/eng/simon_sinek_how_great_leaders_inspire_action.html" target="_blank">Simon Sinek: How great leaders inspire action</a></p>
+<p style="text-align: left;">Whist Simon talks about money too much in this talk for my liking the core point has very interesting ramifications for any marketing department. The core concept is that you need to talk about WHY you are doing something before talking about how you are doing it and what you are doing. As an aside I think it is even more important when teaching Maths.</p>
+<p style="text-align: left;">I particularly like the line about <strong>a leader is someone who holds a position of power or authority, but those who lead inspire us.</strong> In this case I&#8217;ve realised that I&#8217;ve not been able to inspire people nearly as much as I&#8217;d hoped because I was going about it the wrong way.</p>
+<p style="text-align: left;">Previously at a conference when people asked what I do I&#8217;d explain the Multipath storytelling concept then explain that I was writing a web platform for that. But always in the back of my mind I was thinking of the why as my motivator.<br />
+Now I should change it and explain that I am trying to <strong>foster new paradigm changes in entertainment, education and economics</strong>. Entertainment through the Multipath concept, education through the collaborative communities and economics through the for-benefit  principles.</p>
+<div style="text-align: center;"><!--copy and paste--><object width="446" height="326"><param name="movie" value="http://video.ted.com/assets/player/swf/EmbedPlayer.swf" /><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="wmode" value="transparent" /><param name="bgColor" value="#ffffff" /><param name="flashvars" value="vu=http://video.ted.com/talks/dynamic/SimonSinek_2009X-medium.flv&amp;su=http://images.ted.com/images/ted/tedindex/embed-posters/SimonSinek-2009X.embed_thumbnail.jpg&amp;vw=432&amp;vh=240&amp;ap=0&amp;ti=848&amp;lang=eng&amp;introDuration=15330&amp;adDuration=4000&amp;postAdDuration=830&amp;adKeys=talk=simon_sinek_how_great_leaders_inspire_action;year=2009;theme=a_taste_of_tedx;theme=unconventional_explanations;theme=not_business_as_usual;event=TEDxPuget+Sound+;tag=Business;tag=bullseye;tag=entrepreneur;tag=leadership;tag=sales;tag=selling;tag=success;&amp;preAdTag=tconf.ted/embed;tile=1;sz=512x288;" /><embed type="application/x-shockwave-flash" width="446" height="326" src="http://video.ted.com/assets/player/swf/EmbedPlayer.swf" pluginspace="http://www.macromedia.com/go/getflashplayer" wmode="transparent" bgcolor="#ffffff" allowfullscreen="true" allowscriptaccess="always" flashvars="vu=http://video.ted.com/talks/dynamic/SimonSinek_2009X-medium.flv&amp;su=http://images.ted.com/images/ted/tedindex/embed-posters/SimonSinek-2009X.embed_thumbnail.jpg&amp;vw=432&amp;vh=240&amp;ap=0&amp;ti=848&amp;lang=eng&amp;introDuration=15330&amp;adDuration=4000&amp;postAdDuration=830&amp;adKeys=talk=simon_sinek_how_great_leaders_inspire_action;year=2009;theme=a_taste_of_tedx;theme=unconventional_explanations;theme=not_business_as_usual;event=TEDxPuget+Sound+;tag=Business;tag=bullseye;tag=entrepreneur;tag=leadership;tag=sales;tag=selling;tag=success;"></embed></object></div>
+]]></content:encoded>
+			<wfw:commentRss>http://w00t.filmsonthefly.com/2011/06/some-interesting-ted-talks-flow-and-why/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Changing Torrent &#8211; Bigger than Dropbox?</title>
+		<link>http://w00t.filmsonthefly.com/2011/06/torrent-folder-bigger-than-dropbox/</link>
+		<comments>http://w00t.filmsonthefly.com/2011/06/torrent-folder-bigger-than-dropbox/#comments</comments>
+		<pubDate>Fri, 03 Jun 2011 09:30:11 +0000</pubDate>
+		<dc:creator>w00t</dc:creator>
+				<category><![CDATA[FotF]]></category>
+		<category><![CDATA[future]]></category>
+		<category><![CDATA[Michael Kubler]]></category>
+		<category><![CDATA[Tech]]></category>
+
+		<guid isPermaLink="false">http://w00t.filmsonthefly.com/?p=35</guid>
+		<description><![CDATA[As part of my work with the Zeitgeist Movement and in thinking about collaborative communities, one of the tools we currently use to share files is Dropbox. It&#8217;s a great way of transferring files between computers. It keeps old versions, &#8230; <a href="http://w00t.filmsonthefly.com/2011/06/torrent-folder-bigger-than-dropbox/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>As part of my work with the <a title="Zeitgeist-Info Website" href="http://zeitgeist-info.com/" target="_blank">Zeitgeist Movement</a> and in thinking about collaborative communities, one of the tools we currently use to share files is <strong>Dropbox</strong>.</p>
+<p>It&#8217;s a great way of transferring files between computers. It keeps old versions, lets you undelete and automatically synchronises the files between the computers. You can also share the folders with other Dropbox users, which is what is especially useful in a collaborative community environment.</p>
+<p><img class="aligncenter" title="Dropbox Logo" src="https://www.dropbox.com/static/16890/images/logo.png" alt="" width="231" height="60" /></p>
+<p>The problem is that the entire structure of Dropbox means that your files get saved to the cloud (Amazon S3) and require servers to synchronise the changes. The system effectively uses a combination of rSync and SVN. Rsync only transfers the small changes you&#8217;ve made to a file and SVN allows you to keep versioning information.<br />
+However there are still storage, bandwidth and processing costs involved which make the system reasonably hard to scale at near free prices.</p>
+<p>I had a thought. <strong>What if you created a Dropbox style system, but based on Bittorent?</strong></p>
+<p><strong><a href="http://www.bittorrent.com/"><img class="aligncenter" title="Bittorent Logo" src="http://thenextweb.com/eu/files/2010/03/bittorrent-logo.png" alt="Bittorent Logo" width="300" height="74" /></a><br />
+</strong></p>
+<p>Currently if you upload file(s) using Bittorent you need to create a .torrent manifest file, which can&#8217;t really allow changes to the group of files without invalidating them. But imagine an ever changing .torrent file. Files could be updated and the updates transferred between peers&#8230; actually I would think of it like a Bittorent folder. You put new files in the folder and instead of being directly uploaded to the cloud, they are peered to your friends. Instead of being limited to a default 2GB or so free account, you would be limited by your Internet connection&#8217;s quota and your hard drive space.<br />
+My guess is that a combination of rSync for minor file changes and bittorent for new files or large file changes would be the most appropriate. Versioning control would be the hardest as running SVN on files of such size would be a pain. Git would likely be a  better alternative.</p>
+<p><a href="http://www.utorrent.com/"><img class="aligncenter" title="old uTorrent Logo" src="http://www.fanhow.com/images/a/aa/UTorrent_logo.png" alt="uTorrent Logo" width="189" height="68" /></a></p>
+<p>This will be especially useful for video and audio data or anything which is usually far too big to transfer normally.</p>
+<p>Some use cases :</p>
+<p><strong>Video Editors</strong> : Sunny Wu and I often film a project, but have issues editing it. Even miniDV (SD or HDV) footage is 12GB per hour. When you are trying to edit 3 hours of footage down to a 5min video that&#8217;s not something you can put on the Dropbox. We currently use a draft version of the video, exported as ~iPod sized. It looks shite but we get enough of an idea that we can critique it. The down side is that even though we both have a copy of the raw video, I don&#8217;t have his copy of the Vegas Video project. Whilst the project file could be stored in the Dropbox, we both keep the video files in different places on our computer. Now thankfully Vegas is good at re-mapping where the files are stored, however having to do this every time I wanted to make a change would make us go crazy. However if we had a Bittorent/rSync style synchronisation, then we would both be able to edit the video very easily. Your usually only changing the project file and occasionally adding in some extra audio and images, maybe 50-500MB worth.<br />
+In this case, the ability to create multiple torrent shared folders anywhere on your computer is important.</p>
+<p><strong>Audio Engineers or narrators </strong>: Lets say I&#8217;ve got a video file that someone&#8217;s exported for me. From 50MB to 1GB in size. I now need to record a high quality voice over (i.e uncompressed raw). This could be a few GB in size. The Audio Engineer has to first add some filters and sound effects before the video editor can use them. These three people would be able to easily access the shared folder and work together.</p>
+<p><strong>Collaborative Communities</strong> : With the <span style="color: #800000;"><strong>Films on the Fly</strong></span> platform there will be various sites, communities, groups and organisations. These will want to collaborate in different ways. On top of that each film, or even film in planning (project), will be able to upload various resources associated with the film. These could be the 3D Animation files, the script, headshots of the actors,  even the raw video footage. By letting people download these they can use the content to extend and support the rich stories and information being created and shared. In this case the <span style="color: #800000;"><strong>Films on the Fly</strong></span> servers would likely act as a seeder. Ensuring no project resources end up dead.</p>
+<p><strong>Libraries</strong> : You want to share your (creative commons licensed) music library with your friends. You want them to contribute to it as well. Or maybe you run an actual library and want to synchronise new ebooks between the 500 other libraries in the network.</p>
+<p><strong>Quick Test</strong> : An easy way to test if this is something worth pursuing is to use Dropbox or similar tech and let people put .torrent files into a folder. Others can then run a bittorent client on their machine which monitors the folder and loads new torrents from it.<br />
+I already use such a system for general torrents. But to have the level of control I&#8217;m advocating would require creating new .torrent files and running your own torrent server.</p>
+<p><strong>Existing Dropbox Alternatives</strong></p>
+<p>These are just some of the many alternatives to Dropbox.</p>
+<p style="padding-left: 30px;"><span style="font-size: 16px; font-family: Georgia, 'Bitstream Charter', serif; line-height: 24px;"><br />
+<img class="aligncenter" title="Sparkle Share" src="http://sparkleshare.org/wp-content/themes/sparkleshare/img/sparkleshare-logo.png" alt="Sparkle Share" width="168" height="58" /> <strong>Sparkles Share</strong> &#8211; <a title="Sparkle Share" href="http://sparkleshare.org" target="_blank">http://sparkleshare.org</a> : Free and Open Source, but Linux and Mac only. Can use Github or you can run your own server.</span></p>
+<p style="padding-left: 30px;"><span style="font-size: 16px; font-family: Georgia, 'Bitstream Charter', serif; line-height: 24px;"><img class="aligncenter size-full wp-image-39" title="Memory Box Logo" src="http://w00t.filmsonthefly.com/wp-content/uploads/2011/06/MemoryBoxLogo.png" alt="Memory Box Logo" width="177" height="54" /><strong>Memory Box</strong> &#8211; <a href="http://www.memorybox.net.au/">http://www.memorybox.net.au</a> : Peer to Peer Distributed hard drive backups. A similar use case to <a title="BackBlaze" href="http://www.backblaze.com/">Backblaze</a>, but the data is encrypted and stored on other peoples computers.</span></p>
+<p style="padding-left: 30px;"><span style="font-size: 16px; font-family: Georgia, 'Bitstream Charter', serif; line-height: 24px;"><img class="aligncenter" title="Box.net logo" src="http://ak3.boxcdn.net/resources/z4gloe49no/img/sales/box_logo.gif" alt="Box.net logo" width="83" height="46" /><strong>Box.net</strong> &#8211; <a href="http://box.net/">http://box.net/</a> : Similar to Dropbox but aimed more at the Enterprise market so is more extensible.</span></p>
+<p>Note : I know Dropbox has paid accounts. I have one myself. I still love Dropbox and even if such a peer to peer synchronisation system was setup, I&#8217;d likely still use Dropbox for a number of things.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://w00t.filmsonthefly.com/2011/06/torrent-folder-bigger-than-dropbox/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Ignite : Open versus Closed</title>
+		<link>http://w00t.filmsonthefly.com/2011/05/ignite-open-versus-closed/</link>
+		<comments>http://w00t.filmsonthefly.com/2011/05/ignite-open-versus-closed/#comments</comments>
+		<pubDate>Wed, 25 May 2011 06:27:31 +0000</pubDate>
+		<dc:creator>w00t</dc:creator>
+				<category><![CDATA[FotF]]></category>
+		<category><![CDATA[Multipath]]></category>
+
+		<guid isPermaLink="false">http://w00t.filmsonthefly.com/?p=23</guid>
+		<description><![CDATA[I&#8217;ve started watching the Google I/O 2011 videos and there&#8217;s some great stuff, especially if you are a bit of a nerd. One that I&#8217;d like to highlight is the last speaker of Ignite. Kevin Marks has a great talk &#8230; <a href="http://w00t.filmsonthefly.com/2011/05/ignite-open-versus-closed/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve started watching the <a title="Google I/O 2011" href="http://www.google.com/events/io/2011/sessions.html" target="_blank">Google I/O 2011 videos</a> and there&#8217;s some great stuff, especially if you are a bit of a nerd.</p>
+<p>One that I&#8217;d like to highlight is the <a title="Google I/O 2011 - Ignite : Kevin Marks" href="http://www.youtube.com/watch?v=52Ml_zax4A0&amp;feature=player_detailpage#t=2779s">last speaker of Ignite</a>. Kevin Marks has a great talk about Open Versus closed.</p>
+<p><object width="584" height="354"><param name="movie" value="http://www.youtube.com/v/52Ml_zax4A0?start=2779&#038;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/52Ml_zax4A0?start=2779&#038;version=3" type="application/x-shockwave-flash" width="584" height="354" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+<p>He makes the points that :</p>
+<p><span style="font-size: 16px; font-family: Georgia, 'Bitstream Charter', serif; line-height: 24px;"> </span></p>
+<ul>
+<li>Ownership is the enemy of control</li>
+<li>The assumption of patents and copyright is that excluding people is the key to extracting value (which is incorrect).</li>
+<li>Exclusivity is the enemy of culture.</li>
+<li>Closed source and secret information is fragile. An example is that the Internet Archive is trying to store everything made public. If a company tries to store private information it&#8217;ll cost them thousands of dollars.</li>
+<li>Another example of loosing private data was the BBCs archive which deteriorated over time. They&#8217;ve had to collect viewers personal VHS recordings of shows.</li>
+<li>LOCKSS &#8211; Lots of copies keep stuff safe.</li>
+<li>He mentions 3D Atlas which was a CD-Rom app.</li>
+<li>An app demo for the net was created (which was effectively Google Maps), but the company killed that department and because of patents Kevin couldn&#8217;t work on that project himself.</li>
+<li>Another keyholed application is Hypercard for the Apple Mac.</li>
+<li>The main point is that closed software is Fragile. Open source isn&#8217;t just great for engineers, but also for companies.</li>
+<li>&#8220;No one owns it.<br />
+Everyone can use it.<br />
+Anyone can improve it.&#8221; &#8212; Doc Searls, 2003.</li>
+</ul>
+<p>I agree with Kevin, which is why, when Multipath is proven, I want to make it open. It will be free as in speech, but probably won&#8217;t be completely financially free. As an example, watching videos costs money, making them costs even more. If that money is recovered via online advertising, or via pay-per-view, pay-per-feature, fremium, or by the site-owner, that will likely depend on the type of community it is. An open film community creating amazing online stories, will be different to a closed share trading community which charges a subscription fee so you can access presentations on the latest ways to <span style="text-decoration: line-through;">cheat</span> earn money through the stock market.</p>
+<p>FYI : <a title="Wiki : Ignite Event" href="http://en.wikipedia.org/wiki/Ignite_(event)" target="_blank">Ignite</a> is a technique of presentation whereby the speakers have 20 slides and 15 seconds per slide. The slides advance automatically and the presenter has no control over that. So presentations last 5mins.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://w00t.filmsonthefly.com/2011/05/ignite-open-versus-closed/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

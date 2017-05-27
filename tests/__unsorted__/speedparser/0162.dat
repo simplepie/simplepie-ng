@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/atom10full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><feed xmlns="http://www.w3.org/2005/Atom" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" xml:lang="en">
+
+    <title type="text">FortySeven Media</title>
+    <subtitle type="text">FortySeven Media:Peek inside the minds of FortySeven Media with posts about design, business and even tutorials.</subtitle>
+    <link rel="alternate" type="text/html" href="http://fortysevenmedia.com/blog/" />
+    
+    <updated>2011-09-30T02:48:52Z</updated>
+    <rights>Copyright (c) 2011, Jonathan Longnecker</rights>
+    <generator uri="http://www.expressionengine.com/" version="1.6.7">ExpressionEngine</generator>
+    <id>tag:fortysevenmedia.com,2011:09:29</id>
+
+
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/atom+xml" href="http://feeds.feedburner.com/47m" /><feedburner:info uri="47m" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><entry>
+      <title>Blog Pagination, Categories and Comments with Structure in ExpressionEngine</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oMXiQguS1MQ/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.366</id>
+      <published>2011-09-29T21:45:51Z</published>
+      <updated>2011-09-30T02:48:52Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="ExpressionEngine" scheme="http://fortysevenmedia.com/blog/category/expressionengine/" label="ExpressionEngine" />
+      <content type="html">
+        &lt;p&gt;If we haven't made it plain before, we love &lt;a href="http://www.expressionengine.com/index.php?affiliate=47m" title="ExpressionEngine"&gt;ExpressionEngine&lt;/a&gt; and &lt;a href="http://buildwithstructure.com/" title="Structure"&gt;Structure&lt;/a&gt;. When betrothed together in holy matrimony they make a beautiful pair. But as with any relationship there are some snags. More specifically – &lt;strong&gt;blog pagination&lt;/strong&gt;, &lt;strong&gt;categories&lt;/strong&gt; and &lt;strong&gt;comments&lt;/strong&gt;. Let's take a look at the problems they have and then some quick tips I've stumbled across on how to fix them.&lt;/p&gt;
+
+&lt;h2&gt;Basic Structure Setup&lt;/h2&gt;
+
+&lt;p&gt;Before we jump in I'm assuming you know a bit about Structure. It lets you create pages based on URL's not templates. But it does use templates. Confused yet!? Ok. If you're creating a blog you will need to do a few things.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;img src="http://fortysevenmedia.com/images/uploads/structurelisting.png" border="0" alt="Structure Blog Listing" width="257" height="168" class="right" /&gt;Create two templates - A&lt;strong&gt; "show a list of my entries" template&lt;/strong&gt; and an &lt;strong&gt;"individual article" template&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;In your Structure tree, go to settings and add your blog channel as a listing and set it to the individual article template.&lt;/li&gt;
+&lt;li&gt;Create the main blog page with Structure, but choose your list of entries template instead of the default template. Also choose to make the page have listings and choose the Blog channel.&lt;/li&gt;
+&lt;li&gt;Now back in your Structure tree you've got the blog page in your navigation and the option to edit or add new blog entries as listings.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here's basic versions of what the two templates should look like:&lt;/p&gt;
+
+&lt;h3&gt;Example List Template&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt; &amp;lt;!doctype html&amp;gt;
+ &amp;lt;head&amp;gt;
+     &amp;lt;title&amp;gt;&amp;#123;exp:structure:titletrail separator="|"&amp;#125;&amp;lt;/title&amp;gt;
+ &amp;lt;/head&amp;gt;
+ &amp;lt;body&amp;gt;
+&amp;lt;div id="content"&amp;gt;
+
+    &amp;#123;exp:channel:entries channel="blog" dynamic="no" limit="10"&amp;#125;
+    &amp;lt;article&amp;gt;
+        &amp;lt;h1&amp;gt;&amp;lt;a href="&amp;#123;page_url&amp;#125;"&amp;gt;&amp;#123;title&amp;#125;&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+        &amp;#123;body&amp;#125;
+    &amp;lt;/article&amp;gt;
+        &amp;#123;/exp:channel:entries&amp;#125;
+
+    &amp;#123;paginate&amp;#125;&amp;lt;div class="paginate"&amp;gt;
+            View More: &amp;#123;pagination_links&amp;#125;&amp;lt;/div&amp;gt;&amp;#123;/paginate&amp;#125;
+
+    &amp;#123;if no_results&amp;#125;&amp;#123;redirect="404"&amp;#125;&amp;#123;/if&amp;#125;
+    &amp;#123;/exp:channel:entries&amp;#125;    
+
+
+&amp;lt;/div&amp;gt;&amp;lt;!--End Content--&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Example Article Template&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt; &amp;lt;!doctype html&amp;gt;
+ &amp;lt;head&amp;gt;
+     &amp;#123;exp:channel:entries channel="blog" limit="1"&amp;#125;
+    &amp;#123;if desc&amp;#125;&amp;lt;meta name="description" content="&amp;#123;desc&amp;#125;" /&amp;gt;&amp;#123;/if&amp;#125;
+    &amp;#123;if keywords&amp;#125;&amp;lt;meta name="keywords" content="&amp;#123;keywords&amp;#125;" /&amp;gt;&amp;#123;/if&amp;#125;
+    &amp;lt;title&amp;gt;&amp;#123;title&amp;#125; | Blog | &amp;#123;site_name&amp;#125;&amp;lt;/title&amp;gt;
+    &amp;#123;if no_results&amp;#125;&amp;#123;redirect="404"&amp;#125;&amp;#123;/if&amp;#125;
+ &amp;#123;/exp:channel:entries&amp;#125;
+ &amp;lt;/head&amp;gt;
+ &amp;lt;body&amp;gt;
+&amp;lt;div id="content"&amp;gt;
+
+    &amp;#123;exp:channel:entries channel="blog" dynamic="no" limit="10"&amp;#125;
+    &amp;lt;article&amp;gt;
+        &amp;lt;h1&amp;gt;&amp;lt;a href="&amp;#123;page_url&amp;#125;"&amp;gt;&amp;#123;title&amp;#125;&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+        &amp;#123;body&amp;#125;
+    &amp;lt;/article&amp;gt;
+    &amp;#123;/exp:channel:entries&amp;#125;
+
+    &amp;lt;div id="comments"&amp;gt;
+
+        &amp;lt;h2&amp;gt;Comments&amp;lt;/h2&amp;gt;
+
+        &amp;#123;exp:comment:entries channel="blog"&amp;#125;
+            &amp;lt;blockquote&amp;gt;
+                &amp;lt;cite&amp;gt;
+                    &amp;#123;url_or_email_as_author&amp;#125;&amp;lt;br /&amp;gt;
+                    &amp;#123;comment_date format='%M %d, %Y'&amp;#125;
+                &amp;lt;/cite&amp;gt;
+                &amp;lt;article&amp;gt;&amp;#123;comment&amp;#125;&amp;lt;/article&amp;gt;
+            &amp;lt;/blockquote&amp;gt;
+
+            &amp;#123;/exp:comment:entries&amp;#125;
+
+        &amp;lt;/div&amp;gt;&amp;lt;!--End Comments--&amp;gt;
+
+    &amp;lt;h2&amp;gt;Form Header Here&amp;lt;/h2&amp;gt;
+        &amp;#123;exp:comment:form channel="blog"&amp;#125;
+
+            &amp;lt;label for="name"&amp;gt;Name&amp;lt;/label&amp;gt;
+            &amp;lt;input name="name" id="name" type="text" /&amp;gt;
+
+            &amp;lt;label for="email"&amp;gt;Email Address&amp;lt;/label&amp;gt;
+            &amp;lt;input name="email" type="text" id="email" /&amp;gt;
+
+            &amp;lt;label  for="comment"&amp;gt;Write your message here.&amp;lt;/label&amp;gt;
+            &amp;lt;textarea name="comment" id="comment"&amp;gt;&amp;#123;comment&amp;#125;&amp;lt;/textarea&amp;gt;
+
+            &amp;lt;input name="submit" type="submit" value="Submit" /&amp;gt;
+            &amp;#123;/exp:comment:form&amp;#125;
+
+    &amp;#123;if no_results&amp;#125;&amp;#123;redirect="404"&amp;#125;&amp;#123;/if&amp;#125;
+    &amp;#123;/exp:channel:entries&amp;#125;    
+
+&amp;lt;/div&amp;gt;&amp;lt;!--End Content--&amp;gt;
+
+ &amp;lt;/body&amp;gt;
+ &amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;The Problems&lt;/h2&gt;
+
+&lt;h3&gt;Pagination&lt;/h3&gt;
+
+&lt;p&gt;Doesn't work at all. Why? Because if you have a URL like &lt;a href="http://site.com/blog/P1"&gt;http://site.com/blog/P1&lt;/a&gt; Structure doesn't recognize the P1 segment and will either serve up a blank page or go to a 404. You could use &lt;a href="http://devot-ee.com/add-ons/freebie" title="Freebie"&gt;Freebie&lt;/a&gt; and rebuild pagination yourself, but honestly...why? That's too much work.&lt;/p&gt;
+
+&lt;h3&gt;Categories&lt;/h3&gt;
+
+&lt;p&gt;This doesn't work either for the exact same reason. Structure doesn't recognize the category URL's. Obviously category pagination doesn't work either. Again, you could use Freebie and rebuild categories with a bunch of if-statements. This would be a bit easier – but then if you needed to paginate categories with Freebie....well that sound you just heard was my head exploding.&lt;/p&gt;
+
+&lt;h3&gt;Comments &amp;amp; URL Titles&lt;/h3&gt;
+
+&lt;p&gt;Finally, because Structure uses the &lt;code&gt;&amp;#123;page_url&amp;#125;&lt;/code&gt; variable instead of &lt;code&gt;&amp;#123;url_title&amp;#125;&lt;/code&gt; EE seems to have a lot of trouble doing things like comments on the article page because it can't find the Entry ID from the URL. My past solution is to make clients enter both the &lt;code&gt;&amp;#123;url_title&amp;#125;&lt;/code&gt; and the &lt;code&gt;&amp;#123;page_url&amp;#125;&lt;/code&gt; making sure they match. That's a huge opportunity for mistakes, though and your clients have no idea what the heck you're talking about.&lt;/p&gt;
+
+&lt;h2&gt;Solutions&lt;/h2&gt;
+
+&lt;h3&gt;Pagination and Categories Solution&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://fortysevenmedia.com/images/uploads/structureblogtemplategroup.png" border="0" alt="Blog Template Group" width="360" height="134" class="right" /&gt;To fix our category and pagination problem we are going to need to trick Structure. How do we do that? With a third template. Did you know that if Structure can't find a &lt;code&gt;&amp;#123;page_url&amp;#125;&lt;/code&gt;, but there is a template at the root of that directory it will try to read that instead? So in our blog example – if we setup our Structure page at &lt;a href="http://site.com/blog"&gt;http://site.com/blog&lt;/a&gt; we can go create a "blog" template group and copy the &lt;strong&gt;"list all your entries" template&lt;/strong&gt; to the index template. Then we make a few modifications.&lt;/p&gt;
+
+&lt;h3&gt;Modified List Template&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;#123;if segment_2 == "category"&amp;#125;
+&amp;#123;exp:channel:category_heading channel="blog"&amp;#125;
+&amp;lt;meta name="description" content="
+    Blog entries in the &amp;#123;category_name&amp;#125; category." /&amp;gt;
+&amp;lt;title&amp;gt;&amp;#123;category_name&amp;#125; | Blog | &amp;#123;site_name&amp;#125;&amp;lt;/title&amp;gt;
+&amp;#123;/exp:channel:category_heading&amp;#125;
+&amp;#123;if:else&amp;#125;
+&amp;#123;redirect="404"&amp;#125;
+&amp;#123;/if&amp;#125;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;div id="content"&amp;gt;
+
+    &amp;#123;if segment_2 == "category"&amp;#125;
+    &amp;#123;exp:channel:category_heading channel="blog"&amp;#125;
+        &amp;lt;h2&amp;gt;Viewing entries in the 
+                    &amp;lt;strong&amp;gt;&amp;#123;category_name&amp;#125;&amp;lt;/strong&amp;gt; category.&amp;lt;/h2&amp;gt;
+    &amp;#123;/exp:channel:category_heading&amp;#125;
+    &amp;#123;/if&amp;#125;
+
+    &amp;#123;if segment_2 == "" OR segment_2 == "category"&amp;#125;
+    &amp;#123;exp:channel:entries channel="blog" limit="10"&amp;#125;
+    &amp;lt;article&amp;gt;
+        &amp;lt;h1&amp;gt;&amp;lt;a href="&amp;#123;page_url&amp;#125;"&amp;gt;&amp;#123;title&amp;#125;&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+        &amp;#123;body&amp;#125;
+    &amp;lt;/article&amp;gt;
+
+        &amp;#123;paginate&amp;#125;&amp;lt;div class="paginate"&amp;gt;
+                    View More: &amp;#123;pagination_links&amp;#125;&amp;lt;/div&amp;gt;&amp;#123;/paginate&amp;#125;
+    &amp;#123;/exp:channel:entries&amp;#125;    
+    &amp;#123;if:else&amp;#125;
+    &amp;#123;redirect="404"&amp;#125;
+    &amp;#123;/if&amp;#125; 
+
+&amp;lt;/div&amp;gt;&amp;lt;!--End Content--&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We just add some if statements to check the segment for the category trigger in the URL. So now if Structure couldn't find the &lt;a href="http://site.com/blog/P1"&gt;http://site.com/blog/P1&lt;/a&gt; or &lt;a href="http://site.com/blog/category/category-name"&gt;http://site.com/blog/category/category-name&lt;/a&gt; URL the fall back template will know what to do with it. Extra awesome bonus points: not only do pagination and categories work, but so does pagination in categories. I don't know how I found this out, but it works great!&lt;/p&gt;
+
+&lt;h3&gt;Comments and URL Title Solution&lt;/h3&gt;
+
+&lt;p&gt;This one's actually pretty easy and I think I ran across it in the Structure forums. There's a special Structure tag to grab the ID out of the &lt;code&gt;&amp;#123;page_url&amp;#125;&lt;/code&gt; so you can pass it to the comments and comment form.&lt;/p&gt;
+
+&lt;h3&gt;Modified Article Template&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;#123;exp:channel:entries channel="blog" limit="1"&amp;#125;
+&amp;#123;if desc&amp;#125;&amp;lt;meta name="description" content="&amp;#123;desc&amp;#125;" /&amp;gt;&amp;#123;/if&amp;#125;
+&amp;#123;if keywords&amp;#125;&amp;lt;meta name="keywords" content="&amp;#123;keywords&amp;#125;" /&amp;gt;&amp;#123;/if&amp;#125;
+&amp;lt;title&amp;gt;&amp;#123;title&amp;#125; | Blog | &amp;#123;site_name&amp;#125;&amp;lt;/title&amp;gt;
+&amp;#123;if no_results&amp;#125;&amp;#123;redirect="404"&amp;#125;&amp;#123;/if&amp;#125;
+&amp;#123;/exp:channel:entries&amp;#125;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;div id="content"&amp;gt;
+
+    &amp;#123;exp:channel:entries channel="blog" dynamic="no" limit="10"&amp;#125;
+    &amp;lt;article&amp;gt;
+        &amp;lt;h1&amp;gt;&amp;lt;a href="&amp;#123;page_url&amp;#125;"&amp;gt;&amp;#123;title&amp;#125;&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+        &amp;#123;body&amp;#125;
+    &amp;lt;/article&amp;gt;
+
+    &amp;lt;div id="comments"&amp;gt;
+
+        &amp;lt;h2&amp;gt;Comments&amp;lt;/h2&amp;gt;
+
+        &amp;#123;exp:comment:entries channel="blog" 
+              entry_id="&amp;#123;exp:structure:page_id&amp;#125;" parse="inward"&amp;#125;
+            &amp;lt;blockquote&amp;gt;
+                &amp;lt;cite&amp;gt;
+                    &amp;#123;url_or_email_as_author&amp;#125;&amp;lt;br /&amp;gt;
+                    &amp;#123;comment_date format='%M %d, %Y'&amp;#125;
+                &amp;lt;/cite&amp;gt;
+                &amp;lt;article&amp;gt;&amp;#123;comment&amp;#125;&amp;lt;/article&amp;gt;
+            &amp;lt;/blockquote&amp;gt;
+
+            &amp;#123;/exp:comment:entries&amp;#125;
+
+        &amp;lt;/div&amp;gt;&amp;lt;!--End Comments--&amp;gt;
+
+    &amp;lt;h2&amp;gt;Form Header Here&amp;lt;/h2&amp;gt;
+        &amp;#123;exp:comment:form channel="blog"
+          entry_id="&amp;#123;exp:structure:page_id&amp;#125;" parse="inward"&amp;#125;
+
+            &amp;lt;label for="name"&amp;gt;Name&amp;lt;/label&amp;gt;
+            &amp;lt;input name="name" id="name" type="text" /&amp;gt;
+
+            &amp;lt;label for="email"&amp;gt;Email Address&amp;lt;/label&amp;gt;
+            &amp;lt;input name="email" type="text" id="email" /&amp;gt;
+
+            &amp;lt;label  for="comment"&amp;gt;Write your message here.&amp;lt;/label&amp;gt;
+            &amp;lt;textarea name="comment" id="comment"&amp;gt;&amp;#123;comment&amp;#125;&amp;lt;/textarea&amp;gt;
+
+            &amp;lt;input name="submit" type="submit" value="Submit" /&amp;gt;
+            &amp;#123;/exp:comment:form&amp;#125;
+
+
+    &amp;#123;if no_results&amp;#125;&amp;#123;redirect="404"&amp;#125;&amp;#123;/if&amp;#125;
+    &amp;#123;/exp:channel:entries&amp;#125;    
+
+&amp;lt;/div&amp;gt;&amp;lt;!--End Content--&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Just add &lt;code&gt;entry_id="&amp;#123;exp:structure:page_id&amp;#125;" parse="inward"&lt;/code&gt; to the &lt;code&gt;exp:comment:form&lt;/code&gt; and &lt;code&gt;exp:comment:entries&lt;/code&gt; tags. Like I said, easy. Once I started using this my clients didn't have to put in two URL Titles anymore! Much better. Did you find this useful? Am I doing it totally wrong and there's a better way? &lt;em&gt;Let us know in the comments.&lt;/em&gt;&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=oMXiQguS1MQ:_BkQANh8dfQ:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=oMXiQguS1MQ:_BkQANh8dfQ:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=oMXiQguS1MQ:_BkQANh8dfQ:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=oMXiQguS1MQ:_BkQANh8dfQ:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=oMXiQguS1MQ:_BkQANh8dfQ:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=oMXiQguS1MQ:_BkQANh8dfQ:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=oMXiQguS1MQ:_BkQANh8dfQ:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=oMXiQguS1MQ:_BkQANh8dfQ:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=oMXiQguS1MQ:_BkQANh8dfQ:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oMXiQguS1MQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/blog_pagination_categories_and_comments_with_structure_in_expressionengine/</feedburner:origLink></entry>
+
+    <entry>
+      <title>The Kick Awesome Show: Episode 30</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/Vt0KK2LLcQE/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.365</id>
+      <published>2011-09-29T19:04:54Z</published>
+      <updated>2011-09-29T19:06:55Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Kick Awesome Show" scheme="http://fortysevenmedia.com/blog/category/kick_awesome_show/" label="Kick Awesome Show" />
+      <content type="html">
+        &lt;p&gt;This week we&amp;#8217;re looking at Due for your iPhone, Aperture Triggers, the Mini Donut Factory, Google&amp;#8217;s Page Speed Service, Chosen by Harvest and our picks from DesignersMusic. Vivo the Muchacho!&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe width="568" height="353" src="http://www.youtube.com/embed/jZHTlL03lOY?hd=1" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://kickawesome.tv/show/episode30" title="Watch it on kickawesome.tv"&gt;Watch it on kickawesome.tv &amp;rarr;&lt;/a&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=Vt0KK2LLcQE:D_uFMcmBMiU:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=Vt0KK2LLcQE:D_uFMcmBMiU:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=Vt0KK2LLcQE:D_uFMcmBMiU:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=Vt0KK2LLcQE:D_uFMcmBMiU:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=Vt0KK2LLcQE:D_uFMcmBMiU:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=Vt0KK2LLcQE:D_uFMcmBMiU:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=Vt0KK2LLcQE:D_uFMcmBMiU:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=Vt0KK2LLcQE:D_uFMcmBMiU:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=Vt0KK2LLcQE:D_uFMcmBMiU:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/Vt0KK2LLcQE" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/tkas_episode_30/</feedburner:origLink></entry>
+
+    <entry>
+      <title>Making Music from Anything</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/m0LNVUPq-DM/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.364</id>
+      <published>2011-09-21T14:05:45Z</published>
+      <updated>2011-09-21T14:12:46Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Music" scheme="http://fortysevenmedia.com/blog/category/music/" label="Music" />
+      <content type="html">
+        &lt;p&gt;&lt;a href="http://vimeo.com/29273575" title="Music from a Dry Cleaner"&gt;Music from a Dry Cleaner &amp;rarr;&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe src="http://player.vimeo.com/video/29273575?title=0&amp;amp;byline=0&amp;amp;portrait=0" width="568" height="320" frameborder="0" webkitAllowFullScreen allowFullScreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;There are so many lessons we can gain from Diego Stocco's ingenuity here. I'll try to spell out a few for you. In the meantime, enjoy the music!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Don't be too busy to notice the beautiful things around us&lt;/li&gt;
+&lt;li&gt;Always be looking for new ways to use what you've already got&lt;/li&gt;
+&lt;li&gt;Don't be afraid to fail miserably&lt;/li&gt;
+&lt;li&gt;Music, art and creativity can come from the most unexpected places&lt;/li&gt;
+&lt;/ul&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=m0LNVUPq-DM:OlgKmsynBAQ:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=m0LNVUPq-DM:OlgKmsynBAQ:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=m0LNVUPq-DM:OlgKmsynBAQ:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=m0LNVUPq-DM:OlgKmsynBAQ:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=m0LNVUPq-DM:OlgKmsynBAQ:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=m0LNVUPq-DM:OlgKmsynBAQ:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=m0LNVUPq-DM:OlgKmsynBAQ:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=m0LNVUPq-DM:OlgKmsynBAQ:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=m0LNVUPq-DM:OlgKmsynBAQ:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/m0LNVUPq-DM" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/making_music_from_anything/</feedburner:origLink></entry>
+
+    <entry>
+      <title>The Apple Product</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/i24J42wI0B0/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.363</id>
+      <published>2011-09-14T19:34:35Z</published>
+      <updated>2011-09-14T19:42:36Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Apple" scheme="http://fortysevenmedia.com/blog/category/apple/" label="Apple" />
+      <content type="html">
+        &lt;p&gt;&lt;a href="http://shawnblanc.net/2011/09/apples-four-year-product-rollout/" title="Apple's Four-Year Product Rollout &amp;amp;rarr:"&gt;Apple&amp;#8217;s Four-Year Product Rollout &amp;rarr;&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Up until recently, they have been selling tangible products: devices with software. Soon, Apple will be selling universal, ubiquitous access. Or: all your stuff on all your devices in any place.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;This is such a great post. It captures all the things that have been in the edges of my mind for a while, but I&amp;#8217;ve never been able to articulate it as well as Shawn Blanc has. I will say that what&amp;#8217;s truly amazing is that Apple has been able to build towards this &amp;#8220;one product&amp;#8221; with off the charts success for the individual products. iPhones, iPads, the MacBook Air and even the Mac App Store and OS X Lion have created this steamroller of profit and awesomeness. We&amp;#8217;re on the verge of what I know most of us have wanted with all our Apple devices..for them all to truly work seamlessly together from media to apps to content. It&amp;#8217;s exciting times, folks.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=i24J42wI0B0:imn6zGQkzpk:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=i24J42wI0B0:imn6zGQkzpk:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=i24J42wI0B0:imn6zGQkzpk:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=i24J42wI0B0:imn6zGQkzpk:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=i24J42wI0B0:imn6zGQkzpk:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=i24J42wI0B0:imn6zGQkzpk:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=i24J42wI0B0:imn6zGQkzpk:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=i24J42wI0B0:imn6zGQkzpk:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=i24J42wI0B0:imn6zGQkzpk:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/i24J42wI0B0" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/the_apple_product/</feedburner:origLink></entry>
+
+    <entry>
+      <title>Chipotle Stop Motion Ad - Back to the Start</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/v0LOeWeDv6E/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.362</id>
+      <published>2011-09-09T13:52:36Z</published>
+      <updated>2011-09-09T14:08:37Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Design" scheme="http://fortysevenmedia.com/blog/category/design/" label="Design" />
+      <category term="Music" scheme="http://fortysevenmedia.com/blog/category/music/" label="Music" />
+      <content type="html">
+        &lt;p&gt;&lt;iframe width="568" height="349" src="http://www.youtube.com/embed/aMfSGt6rHos" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;Created by &lt;a href="http://www.nexusproductions.com/directors/johnny-kelly" title="John Kelly"&gt;John Kelly&lt;/a&gt; for &lt;a href="http://www.chipotle.com/" title="Chipotle"&gt;Chipotle&lt;/a&gt; and featuring a &lt;a href="http://www.willienelson.com/" title="Willie Nelson"&gt;Willie Nelson&lt;/a&gt; cover of &lt;a href="http://coldplay.com/" title="Coldplay"&gt;Coldplay&lt;/a&gt; song &amp;#8220;The Scientist&amp;#8221; this awesome stop motion short film hits all the right notes. &lt;/p&gt;
+
+&lt;p&gt;All the proceeds from the single are going to benefit the &lt;a href="http://cultivatefoundation.org/" title="Chipotle Cultivate Foundation"&gt;Chipotle Cultivate Foundation&lt;/a&gt; so if you like the song and want to help &lt;a href="http://itunes.apple.com/us/album/the-scientist-single/id458479961" title="go get it on iTunes"&gt;go get it on iTunes&lt;/a&gt;.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=v0LOeWeDv6E:w_g3uUanVCE:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=v0LOeWeDv6E:w_g3uUanVCE:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=v0LOeWeDv6E:w_g3uUanVCE:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=v0LOeWeDv6E:w_g3uUanVCE:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=v0LOeWeDv6E:w_g3uUanVCE:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=v0LOeWeDv6E:w_g3uUanVCE:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=v0LOeWeDv6E:w_g3uUanVCE:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=v0LOeWeDv6E:w_g3uUanVCE:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=v0LOeWeDv6E:w_g3uUanVCE:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/v0LOeWeDv6E" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/chipotle_stop_motion_ad_-_back_to_the_start/</feedburner:origLink></entry>
+
+    <entry>
+      <title>The Kick Awesome Show: Episode 29</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/lAIqctjH6Dg/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.361</id>
+      <published>2011-09-08T14:12:00Z</published>
+      <updated>2011-09-08T14:14:01Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Kick Awesome Show" scheme="http://fortysevenmedia.com/blog/category/kick_awesome_show/" label="Kick Awesome Show" />
+      <content type="html">
+        &lt;p&gt;Watch what happens when we try to do a whole episode in one take with no editing! We talk about making web apps in Lion, Mutemath&amp;#8217;s remixing contest, CSS text shadows, Losttype, and our picks from DesignersMusic. Whew!&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe width="568" height="353" src="http://www.youtube.com/embed/pgqJyF_MGYU?hd=1" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://kickawesome.tv/show/episode29" title="Watch it on kickawesome.tv"&gt;Watch it on kickawesome.tv &amp;rarr;&lt;/a&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=lAIqctjH6Dg:_56TRZZ7yfA:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=lAIqctjH6Dg:_56TRZZ7yfA:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=lAIqctjH6Dg:_56TRZZ7yfA:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=lAIqctjH6Dg:_56TRZZ7yfA:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=lAIqctjH6Dg:_56TRZZ7yfA:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=lAIqctjH6Dg:_56TRZZ7yfA:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=lAIqctjH6Dg:_56TRZZ7yfA:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=lAIqctjH6Dg:_56TRZZ7yfA:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=lAIqctjH6Dg:_56TRZZ7yfA:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/lAIqctjH6Dg" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/tkas_episode_29/</feedburner:origLink></entry>
+
+    <entry>
+      <title>Wired Magazine Typeface</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/Z0lIYDeaPUw/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.360</id>
+      <published>2011-09-08T02:30:39Z</published>
+      <updated>2011-09-08T02:40:40Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Design" scheme="http://fortysevenmedia.com/blog/category/design/" label="Design" />
+      <content type="html">
+        &lt;p&gt;&lt;img src="http://fortysevenmedia.com/images/uploads/WIREDTYPE_005.jpg" border="0" alt="Wired Typeface" width="578" height="385" class="full"/&gt; &lt;/p&gt;
+
+&lt;p&gt;Wicked cool custom typeface for Wired by the geniuses at Studio8 Design.&lt;/p&gt;
+
+&lt;p&gt;I love how flexible it is with minimal color differences. Plus that 3D effect is great! &lt;a href="http://www.studio8design.co.uk/project/typefaces/wired-magazine-typeface/" title="Wired Typeface"&gt;Go see it in all it&amp;#8217;s glory &amp;rarr;&lt;/a&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=Z0lIYDeaPUw:QsuefTbMy38:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=Z0lIYDeaPUw:QsuefTbMy38:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=Z0lIYDeaPUw:QsuefTbMy38:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=Z0lIYDeaPUw:QsuefTbMy38:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=Z0lIYDeaPUw:QsuefTbMy38:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=Z0lIYDeaPUw:QsuefTbMy38:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=Z0lIYDeaPUw:QsuefTbMy38:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=Z0lIYDeaPUw:QsuefTbMy38:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=Z0lIYDeaPUw:QsuefTbMy38:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/Z0lIYDeaPUw" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/wired_magazine_typeface/</feedburner:origLink></entry>
+
+    <entry>
+      <title>Adaptive Images Made Easy</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/C8SVTqd8q_I/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.359</id>
+      <published>2011-09-05T15:07:15Z</published>
+      <updated>2011-09-05T15:20:16Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Design" scheme="http://fortysevenmedia.com/blog/category/design/" label="Design" />
+      <content type="html">
+        &lt;p&gt;&lt;a href="http://adaptive-images.com/" title="http://adaptive-images.com/ &amp;rarr;"&gt;Adaptive Images &amp;rarr;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As we&amp;#8217;re working on a new version of the ol&amp;#8217; FortySeven Media site, we&amp;#8217;re looking at putting together one of those fancy adaptive/responsive layouts. The one thing that has always seemed difficult was images. Even if you can scale an image down, you&amp;#8217;re still probably loading the full size image on mobile which defeats the whole purpose.&lt;/p&gt;
+
+&lt;p&gt;This looks like a nice, easy solution.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;- via &lt;a href="http://css-tricks.com/13982-adaptive-images/" title="Chris Coyier"&gt;Chris Coyier&lt;/a&gt;&lt;/em&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=C8SVTqd8q_I:5Hqi1L1aryc:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=C8SVTqd8q_I:5Hqi1L1aryc:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=C8SVTqd8q_I:5Hqi1L1aryc:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=C8SVTqd8q_I:5Hqi1L1aryc:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=C8SVTqd8q_I:5Hqi1L1aryc:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=C8SVTqd8q_I:5Hqi1L1aryc:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=C8SVTqd8q_I:5Hqi1L1aryc:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=C8SVTqd8q_I:5Hqi1L1aryc:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=C8SVTqd8q_I:5Hqi1L1aryc:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/C8SVTqd8q_I" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/adaptive_images_made_easy/</feedburner:origLink></entry>
+
+    <entry>
+      <title>The Web Type Revolution</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/1a5lpn5imX4/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.358</id>
+      <published>2011-09-01T18:02:02Z</published>
+      <updated>2011-09-01T18:09:03Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Design" scheme="http://fortysevenmedia.com/blog/category/design/" label="Design" />
+      <content type="html">
+        &lt;p&gt;&lt;a href="http://sethgodin.typepad.com/seths_blog/2011/08/the-web-hates-typography.html" title="The Web Leaders Hate Typography (but not for long) &amp;rarr;"&gt;The Web Leaders Hate Typography &amp;rarr;&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;The choice of a typeface, the care given to kerning and to readability—it all sends a powerful signal. When your business card is nothing but Arial on a piece of cardboard, you’ve just told people how they ought to think about you… precisely the opposite of what you were trying to do when you made the card in the first place.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;I love that Seth Godin is bringing this sort of awareness to people who never thought about it before. And thankfully we&amp;#8217;re smack in the middle of a type revolution on the web. It&amp;#8217;s only going to get better from here.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=1a5lpn5imX4:XilxxFRdnIM:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=1a5lpn5imX4:XilxxFRdnIM:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=1a5lpn5imX4:XilxxFRdnIM:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=1a5lpn5imX4:XilxxFRdnIM:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=1a5lpn5imX4:XilxxFRdnIM:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=1a5lpn5imX4:XilxxFRdnIM:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=1a5lpn5imX4:XilxxFRdnIM:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=1a5lpn5imX4:XilxxFRdnIM:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=1a5lpn5imX4:XilxxFRdnIM:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/1a5lpn5imX4" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/the_web_type_revolution/</feedburner:origLink></entry>
+
+    <entry>
+      <title>Industrial Bike Magic</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/b3C8BO65Du4/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.357</id>
+      <published>2011-08-31T22:01:56Z</published>
+      <updated>2011-08-31T22:03:57Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Design" scheme="http://fortysevenmedia.com/blog/category/design/" label="Design" />
+      <category term="Personal" scheme="http://fortysevenmedia.com/blog/category/personal/" label="Personal" />
+      <content type="html">
+        &lt;p&gt;No explanation needed here. Just watch and revel in the immense talent and beautiful video.&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe width="568" height="349" src="http://www.youtube.com/embed/ShbC5yVqOdI" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;- via &lt;a href="http://joshspear.com/item/danny-macaskill-industrial-revolutions/" title="Josh Spear"&gt;Josh Spear&lt;/a&gt;&lt;/em&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=b3C8BO65Du4:bv7P41O_T0k:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=b3C8BO65Du4:bv7P41O_T0k:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=b3C8BO65Du4:bv7P41O_T0k:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=b3C8BO65Du4:bv7P41O_T0k:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=b3C8BO65Du4:bv7P41O_T0k:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=b3C8BO65Du4:bv7P41O_T0k:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=b3C8BO65Du4:bv7P41O_T0k:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=b3C8BO65Du4:bv7P41O_T0k:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=b3C8BO65Du4:bv7P41O_T0k:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/b3C8BO65Du4" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/industrial_bike_magic/</feedburner:origLink></entry>
+
+    <entry>
+      <title>Get Rid of Pesky Zip Files After Unzipping in OS X</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/eJkNtML_4FY/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.356</id>
+      <published>2011-08-30T16:39:50Z</published>
+      <updated>2011-08-30T16:49:51Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Design" scheme="http://fortysevenmedia.com/blog/category/design/" label="Design" />
+      <category term="Apple" scheme="http://fortysevenmedia.com/blog/category/apple/" label="Apple" />
+      <content type="html">
+        &lt;p&gt;&lt;img src="http://fortysevenmedia.com/images/uploads/unzip.png" border="0" alt="Remove zip file after unzipping" width="568" height="344" class="full" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://loneplacebo.com/quick-tip-remove-zip-files-in-mac-os-x-after-unzipping/" title="Quick Tip: Remove Zip Files in Mac OS X After Unzipping"&gt;Quick Tip: Remove Zip Files in Mac OS X After Unzipping &amp;rarr;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Mac OS X’s built-in Archive Utility is a handy tool that lets you easily expand ZIP files downloaded to your computer. However, the zip files by default stay behind, leaving your Downloads folder cluttered. Luckily, there’s a way to modify the preferences and have the downloaded zip files sent to your Trash.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;This has always bugged me, and I&amp;#8217;m glad to finally have those zip files magically disappear after unzipping. Sometimes it&amp;#8217;s the little things, you know? Thanks, Tony!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href="https://twitter.com/chriscoyier/status/105055892466180096" title="via Chris Coyier"&gt;via Chris Coyier&lt;/a&gt;&lt;/em&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=eJkNtML_4FY:RG7Ur-yUdnI:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=eJkNtML_4FY:RG7Ur-yUdnI:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=eJkNtML_4FY:RG7Ur-yUdnI:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=eJkNtML_4FY:RG7Ur-yUdnI:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=eJkNtML_4FY:RG7Ur-yUdnI:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=eJkNtML_4FY:RG7Ur-yUdnI:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=eJkNtML_4FY:RG7Ur-yUdnI:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=eJkNtML_4FY:RG7Ur-yUdnI:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=eJkNtML_4FY:RG7Ur-yUdnI:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/eJkNtML_4FY" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/get_rid_of_pesky_zip_files_after_unzipping_in_os_x/</feedburner:origLink></entry>
+
+    <entry>
+      <title>The Kick Awesome Show: Episode 28</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/T6mJQs9Lnck/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.355</id>
+      <published>2011-08-15T16:00:26Z</published>
+      <updated>2011-08-15T16:16:27Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Kick Awesome Show" scheme="http://fortysevenmedia.com/blog/category/kick_awesome_show/" label="Kick Awesome Show" />
+      <content type="html">
+        &lt;p&gt;Behold, episode 28 is upon us! We&amp;#8217;re looking at sweet hand drawn vector icons, the Magic Bullet &amp;#8220;Plot Device&amp;#8221; promo, thoughts on the Invisible crossroads and our picks from DesignersMusic.&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe width="568" height="353" src="http://www.youtube.com/embed/owrzMC6SWAQ?hd=1" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://kickawesome.tv/show/episode28" title="Watch it on kickawesome.tv"&gt;Watch it on kickawesome.tv &amp;rarr;&lt;/a&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=T6mJQs9Lnck:MyFDxH-XR3I:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=T6mJQs9Lnck:MyFDxH-XR3I:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=T6mJQs9Lnck:MyFDxH-XR3I:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=T6mJQs9Lnck:MyFDxH-XR3I:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=T6mJQs9Lnck:MyFDxH-XR3I:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=T6mJQs9Lnck:MyFDxH-XR3I:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=T6mJQs9Lnck:MyFDxH-XR3I:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=T6mJQs9Lnck:MyFDxH-XR3I:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=T6mJQs9Lnck:MyFDxH-XR3I:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/T6mJQs9Lnck" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/tkas_episode_28/</feedburner:origLink></entry>
+
+    <entry>
+      <title>The Kick Awesome Show: Episode 27</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/N6ZfzLfyzXY/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.354</id>
+      <published>2011-08-05T18:42:33Z</published>
+      <updated>2011-08-05T18:44:35Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Kick Awesome Show" scheme="http://fortysevenmedia.com/blog/category/kick_awesome_show/" label="Kick Awesome Show" />
+      <content type="html">
+        &lt;p&gt;This week we&amp;#8217;re bringing you Assets from Pixel &amp;amp; Tonic, Dropp app, and phasers! Yes, the Star Trek kind! Our music picks will rock you like old people on the front porch, and Jon does some interpretive mime.&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe width="568" height="353" src="http://www.youtube.com/embed/zAyqPiSDmwE?hd=1" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://kickawesome.tv/show/episode27" title="Watch it on kickawesome.tv"&gt;Watch it on kickawesome.tv &amp;rarr;&lt;/a&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=N6ZfzLfyzXY:soKVIU_n7wg:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=N6ZfzLfyzXY:soKVIU_n7wg:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=N6ZfzLfyzXY:soKVIU_n7wg:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=N6ZfzLfyzXY:soKVIU_n7wg:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=N6ZfzLfyzXY:soKVIU_n7wg:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=N6ZfzLfyzXY:soKVIU_n7wg:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=N6ZfzLfyzXY:soKVIU_n7wg:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=N6ZfzLfyzXY:soKVIU_n7wg:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=N6ZfzLfyzXY:soKVIU_n7wg:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/N6ZfzLfyzXY" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/tkas_episode_27/</feedburner:origLink></entry>
+
+    <entry>
+      <title>The Kick Awesome Show: Episode 26</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/C0eFmCqxkb8/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.350</id>
+      <published>2011-07-22T11:48:04Z</published>
+      <updated>2011-07-22T11:50:05Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Kick Awesome Show" scheme="http://fortysevenmedia.com/blog/category/kick_awesome_show/" label="Kick Awesome Show" />
+      <content type="html">
+        &lt;p&gt;Join us as we look at a new book by Derek Sivers, Espresso 2, a question about our Like button, what happens when we turn a spam comment into a song, and our picks from DesignersMusic.&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe width="568" height="353" src="http://www.youtube.com/embed/Wub--oOvNf8?hd=1" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://kickawesome.tv/show/episode26" title="Watch it on kickawesome.tv"&gt;Watch it on kickawesome.tv &amp;rarr;&lt;/a&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=C0eFmCqxkb8:4O8hah3pkbU:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=C0eFmCqxkb8:4O8hah3pkbU:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=C0eFmCqxkb8:4O8hah3pkbU:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=C0eFmCqxkb8:4O8hah3pkbU:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=C0eFmCqxkb8:4O8hah3pkbU:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=C0eFmCqxkb8:4O8hah3pkbU:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=C0eFmCqxkb8:4O8hah3pkbU:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=C0eFmCqxkb8:4O8hah3pkbU:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=C0eFmCqxkb8:4O8hah3pkbU:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/C0eFmCqxkb8" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/tkas_episode_26/</feedburner:origLink></entry>
+
+    <entry>
+      <title>Truth in Advertising. Or Not.</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/_sy7OoxwQcU/" />
+      <id>tag:fortysevenmedia.com,2011:blog/5.349</id>
+      <published>2011-07-22T04:00:45Z</published>
+      <updated>2011-07-22T11:45:47Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <category term="Business" scheme="http://fortysevenmedia.com/blog/category/business/" label="Business" />
+      <content type="html">
+        &lt;p&gt;&lt;img class="full" src="http://fortysevenmedia.com/images/uploads/anyitemnot1.jpg" border="0" alt="Save 20% on any one regular-priced baby item" width="568" height="426" /&gt;&lt;/p&gt;
+
+&lt;p&gt;We got this coupon in the mail the other day from Babies-&amp;#8220;R&amp;#8221;-Us &amp;amp; Toys-&amp;#8220;R&amp;#8221;-Us. Notice it says, &amp;#8220;Save 20% of &lt;strong&gt;ANY&lt;/strong&gt; one regular priced baby item.&amp;#8221; Great! Fantastic! Then we turned it over.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class="full" src="http://fortysevenmedia.com/images/uploads/anyitemnot2.jpg" border="0" alt="excludes basically everything" width="568" height="426" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;&lt;em&gt;&lt;strong&gt;Excludes ALL toys&lt;/strong&gt;, baby food, diapers, formula, wipes, strollers, car seats, high chairs, swings, play yards, bassinets, infant carriers, safety gates, monitors, breast pumps, furniture, Ameda, Baby Brezza, Baby Jogger, BOB, Britax, Bugaboo, Cybex, ERGObaby, Mamas &amp;amp; Papas, Motherhood Maternity, Nap Nanny, Pediped, Peg Pérego, Phil &amp;amp; Teds, Robeez, Tommee Tippee, Under Armour, electronic learning toys, netbooks, tablets, video game hardware, video games, Apple products, fAO products, RobotGalaxy, Buyer Protection Plana, gift cards, photo studios, phone orders, Special Orders, assembly fee, breast-pump rental fee, delivery fee, and shipping &amp;amp; handling.&lt;/em&gt;&amp;#8221;&lt;/p&gt;
+
+&lt;p&gt;Really? Seriously? First of all this is ridiculous. Is there anything left in the store? Apparently &amp;#8220;Thousands of Items&amp;#8221; according to the hot pink circle, but seriously&amp;#8230;what? Second of all why was there no indication that there was any fine print? Look, I did print work for a long time and I&amp;#8217;m very familiar with the &amp;#8220;asterisk.&amp;#8221; You know the - Here&amp;#8217;s a great deal, but there&amp;#8217;s a few exceptions - and I&amp;#8217;m ok with those usually. I think what irks me the most about this is that it specifically says &amp;#8220;&lt;em&gt;ANY item&lt;/em&gt;&amp;#8221; without any visual cue that it&amp;#8217;s not actually any item. It&amp;#8217;s horribly misleading. And then the fact that it excludes almost everything you&amp;#8217;d want to use the coupon for.&lt;/p&gt;
+
+&lt;p&gt;And finally, why even bother with this coupon? Why not reword it so you say exactly what it&amp;#8217;s good for? I guarantee they&amp;#8217;re going to have a ton of pissed off people who bring this in and realize they can&amp;#8217;t use it on what they wanted to. Tricking people is no way to get ahead. Disappointed &amp;#8220;R&amp;#8221;-Uses. Disappointed.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/47m?a=_sy7OoxwQcU:rzC5OBdw-Kc:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=_sy7OoxwQcU:rzC5OBdw-Kc:V_sGLiPBpWU" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=_sy7OoxwQcU:rzC5OBdw-Kc:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=qj6IDK7rITs" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=_sy7OoxwQcU:rzC5OBdw-Kc:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=yIl2AUoC8zA" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=_sy7OoxwQcU:rzC5OBdw-Kc:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=_sy7OoxwQcU:rzC5OBdw-Kc:F7zBnMyn0Lo" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=_sy7OoxwQcU:rzC5OBdw-Kc:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?i=_sy7OoxwQcU:rzC5OBdw-Kc:gIN9vFwOqvQ" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/47m?a=_sy7OoxwQcU:rzC5OBdw-Kc:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/47m?d=I9og5sOYxJI" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/_sy7OoxwQcU" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archives/truth_in_advertising_or_not/</feedburner:origLink></entry>
+
+
+
+    <entry>
+      <title>Cool Designs for Churches</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.268</id>
+      <published>2009-07-24T22:09:32Z</published>
+      <updated>2009-07-24T22:12:33Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;&lt;a href="http://bestchristiandesign.com/" target="_blank" title="BestChristianDesign"&gt;BestChristianDesign&lt;/a&gt; is helping give churches inspiration for their next project. Good call, guys.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>Winning on the Uphills</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.266</id>
+      <published>2009-07-21T13:23:38Z</published>
+      <updated>2009-07-21T13:24:39Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;Seth Godin reminds us to &lt;a href="http://sethgodin.typepad.com/seths_blog/2009/07/winning-on-the-uphills.html" target="_blank" title="Seth Godin - Winning on the Uphills"&gt;enjoy and take advantage of the uphills&lt;/a&gt;.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>Quit Talking and Do It!</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.257</id>
+      <published>2009-06-17T11:58:24Z</published>
+      <updated>2009-06-17T11:59:25Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;Stop announcing your new project. &lt;a href="http://sivers.org/zipit" target="_blank" title="Just do it"&gt;Just do it&lt;/a&gt;.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>It Might Get Loud Trailer</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.256</id>
+      <published>2009-06-17T11:56:29Z</published>
+      <updated>2009-06-17T11:57:30Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;Rock and Roll people, &lt;a href="http://www.apple.com/trailers/sony/itmightgetloud/" target="_blank" title="It Might Get Loud"&gt;Rock and Roll&lt;/a&gt;.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>Proper Care and Feeding of a Graphic Designer</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.255</id>
+      <published>2009-06-15T15:40:26Z</published>
+      <updated>2009-06-15T15:42:27Z</updated>
+      <author>
+            <name>Nate Croft</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;To all you staff designers out there, here&amp;#8217;s &lt;a href="http://jefffisherlogomotives.blogspot.com/2007/10/proper-care-and-feeding-of-in-house.html" title="a link for you"&gt;a link for you&lt;/a&gt;. (via @ryanlascano)
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>Make Your Own Success - Then Ask for Help</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.254</id>
+      <published>2009-06-11T20:09:32Z</published>
+      <updated>2009-06-11T20:11:33Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;Fascinating &lt;a href="http://sivers.org/success-first" target="_blank" title="Success First"&gt;look&lt;/a&gt; into the music business.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>How Do You Spend Your Time?</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.253</id>
+      <published>2009-06-05T13:33:30Z</published>
+      <updated>2009-06-05T13:35:31Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;Derek Sivers &lt;a href="http://sivers.org/time/" target="_blank" title="posts some great advice"&gt;posts some great advice&lt;/a&gt; about balancing your life.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>Small Talk With a Web Designer</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.244</id>
+      <published>2009-05-27T20:31:57Z</published>
+      <updated>2009-05-27T20:32:58Z</updated>
+      <author>
+            <name>Nate Croft</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;&lt;a href="http://www.themaninblue.com/images/writing/perspective/2008/08/12/small_talk.gif" title="Small Talk With a Web Designer"&gt;Small Talk With a Web Designer&lt;/a&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>Seth Godin Open Source</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.239</id>
+      <published>2009-05-13T13:46:04Z</published>
+      <updated>2009-05-13T13:48:05Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;&lt;a href="http://sethgodin.typepad.com/seths_blog/2009/05/what-kind-of-open-are-you-looking-for.html" title="Open and Shut"&gt;&lt;strong&gt;Open &amp;amp; Shut:&lt;/strong&gt; the kind of answer you rarely get.&lt;/a&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>Spotlight Video from Mute Math</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.230</id>
+      <published>2009-04-23T15:00:52Z</published>
+      <updated>2009-04-23T15:06:53Z</updated>
+      <author>
+            <name>Nate Croft</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;&lt;a href="http://www.youtube.com/watch?v=GSsb087cbQg" title="Rolling around in the back of a van, rockin out!"&gt;Rolling around in the back of a van, rockin out!&lt;/a&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>Spinal Tap is Back!</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.227</id>
+      <published>2009-04-14T21:20:34Z</published>
+      <updated>2009-04-14T21:21:35Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;Spinal Tap&amp;#8217;s making it &lt;a href="http://www.macworld.com/article/140001/2009/04/spinaltap.html" title="Spinal Tap"&gt;go to 11 again&lt;/a&gt;. With Macs, of course.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>Transactions for iPhone</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.225</id>
+      <published>2009-04-14T13:14:32Z</published>
+      <updated>2009-04-14T13:15:33Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;I know this has been around for a while, but it&amp;#8217;s such a great idea. Take credit &lt;a href="http://transactionsapp.com/" target="_blank" title="card payments with your iPhone"&gt;card payments with your iPhone&lt;/a&gt;.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>More New Math</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.222</id>
+      <published>2009-04-09T15:53:33Z</published>
+      <updated>2009-04-09T15:54:34Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;Very funny + Beautifully Simple = &lt;a href="http://www.morenewmath.com/" title="MoreNewMath"&gt;MoreNewMath&lt;/a&gt;
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>Where the Wild Things Are</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.216</id>
+      <published>2009-03-24T03:38:44Z</published>
+      <updated>2009-03-24T03:40:45Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;&lt;a href="http://www.usatoday.com/life/l090319_wildthings/flash.htm?gid=920&amp;amp;aid=4368" target="_blank" title="&amp;quot;Where the Wild Things Are&amp;quot;"&gt;&amp;#8220;Where the Wild Things Are&amp;#8221;&lt;/a&gt; looks insanely intriguing. Oozing feel from just the photographs. Can&amp;#8217;t wait to see it.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+    <entry>
+      <title>Return on Design</title>
+      <link rel="alternate" type="text/html" href="http://feedproxy.google.com/~r/47m/~3/oJL2pIF_odQ/" />
+      <id>tag:fortysevenmedia.com,2009:index.php/2.214</id>
+      <published>2009-03-12T14:45:24Z</published>
+      <updated>2009-03-12T14:46:26Z</updated>
+      <author>
+            <name>Jonathan Longnecker</name>
+      </author>
+
+      <content type="html">
+        &lt;p&gt;Hey look, Seth Godin &lt;a href="http://sethgodin.typepad.com/seths_blog/2009/03/return-on-design.html" target="_blank" title="Seth Godin - Return on Design"&gt;understands design is important&lt;/a&gt;.
+&lt;/p&gt;
+      &lt;div class="feedflare"&gt;
+&lt;a href="http://feeds.feedburner.com/~f/47m?a=2qm2Px4Q"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=2qm2Px4Q" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=Qk1vcPUv"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=52" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=yzecVKrB"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?d=41" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=7QFoK8si"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=7QFoK8si" border="0"&gt;&lt;/img&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~f/47m?a=SGST4cOH"&gt;&lt;img src="http://feeds.feedburner.com/~f/47m?i=SGST4cOH" border="0"&gt;&lt;/img&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/47m/~4/oJL2pIF_odQ" height="1" width="1"/&gt;</content>
+    <feedburner:origLink>http://fortysevenmedia.com/blog/archive_list/#stufflove</feedburner:origLink></entry>
+
+
+</feed>

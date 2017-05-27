@@ -1,0 +1,260 @@
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Perlcast</title>
+    <link>http://www.perlcast.com</link>
+    <description>Perl News, Reviews and More.</description>
+    <language>en-us</language>
+    <copyright></copyright>
+    <pubDate>Sun, 18 Jun 2006 23:00:00 CST</pubDate>
+    <lastBuildDate>Sun, 18 Jun 2006 23:30:00 CST</lastBuildDate>
+    <category>Podcast</category>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>vim</generator>
+    <managingEditor>perlcast@gmail.com</managingEditor>
+    <webMaster>perlcast@gmail.com</webMaster>
+    <ttl>1440</ttl>
+    
+    <itunes:author>Josh McAdams</itunes:author>
+    <itunes:owner>
+      <itunes:name>Josh McAdams</itunes:name>
+      <itunes:email>pNeOrSlPcAaMst@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:explicit>No</itunes:explicit>
+    <itunes:subtitle>Perlcast: Perl News, Reviews, and More</itunes:subtitle>
+    <itunes:summary>Perlcast: Weekly Perl news summaries, periodic interviews with the people that keep the Perl community thriving, and regular giveaways of books and software.</itunes:summary>
+    <itunes:image href="http://perlcast.com/images/perlcast_itunes.gif"></itunes:image>
+    <image>
+    <url>http://www.perlcast.com/images/perlcast_small.gif</url>
+    <title> - Perlcast - </title>
+    <link>http://www.perlcast.com</link>
+    </image>
+		<itunes:category text="Technology"><itunes:category text="Developers"/></itunes:category>
+		<itunes:keywords>Perl, News, Programming, Scripting, Development, Computers</itunes:keywords>
+
+    <item>
+      <title>Robert Spier on the Perl NOC</title>
+      <link>http://www.perlcast.com</link>
+      <description>Perlcast interview with Robert Spier about the Perl Network Operations Center</description>
+      <pubDate>Thu, 18 Jun 2006 23:00:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_030.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_030.mp3" length="10921210" type="audio/mpeg"/>
+      <itunes:duration>15:10</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, Scripting, NOC, Network Operations Center</itunes:keywords>
+    </item>
+
+    <item>
+      <title>Perlcast Interview with brian d foy on The Perl Review 2.3- 06.08.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>Perlcast interview with brian d foy about The Perl Review version 2.3.</description>
+      <pubDate>Thu, 08 Jun 2006 21:40:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_029.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_029.mp3" length="5111684" type="audio/mpeg"/>
+      <itunes:duration>7:05</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, Scripting, Glade, Perl Critic, Perl6</itunes:keywords>
+    </item>
+
+    <item>
+      <title>Perlcast Interview with JT Smith on WebGUI - 05.25.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>Perlcast interview with JT Smith about WebGUI, a hybrid CMS, intranet suite, and web application frameworkd.</description>
+      <pubDate>Thu, 25 May 2006 07:40:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_028_JTSmith.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_028_JTSmith.mp3" length="23618951" type="audio/mpeg"/>
+      <itunes:duration>32:48</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, Scripting, Web Development, Content Management System, WebGUI</itunes:keywords>
+    </item>
+
+    <item>
+      <title>Perlcast Interview with Jesse Vincent on Jifty - 05.01.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>Perlcast interview with Jesse Vincent about his new web application framework, Jifty.</description>
+      <pubDate>Mon, 01 May 2006 23:50:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_027_Jifty.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_027_Jifty.mp3" length="32833364" type="audio/mpeg"/>
+      <itunes:duration>45:36</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, Scripting, Web Development, Ruby on Rails, Seaside</itunes:keywords>
+    </item>
+ 
+    <item>
+      <title>Perlcast Interview with Steve Oualline - 04.17.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>Perlcast interview with Steve Oualline, the author of "Wicked Cool Perl Scripts".</description>
+      <pubDate>Tue, 17 Apr 2006 23:00:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_026_Oualline.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_026_Oualline.mp3" length="13561563" type="audio/mpeg"/>
+      <itunes:duration>18:50</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, Wicked Cool Perl Scripts, Scripting</itunes:keywords>
+    </item>
+
+     <item>
+      <title>Perlcast Interview with Bob Walsh - 04.11.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>This Perlcast interview is with Bob Walsh, the owner of Safari Software, moderator for the Joel on Software: The Business of Software website, and author of "Micro ISV: From Vision to Reality" published by Apress.  In the interview we talk about the book and about some of the issues that Micro ISVs face today.</description>
+      <pubDate>Tue, 11 Apr 2006 00:45:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_025_walsh.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_025_walsh.mp3" length="25649361" type="audio/mpeg"/>
+      <itunes:duration>35:37</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, Micro ISV, Software, Programmer, Business, Technology</itunes:keywords>
+    </item>
+
+     <item>
+      <title>Perlcast Interview with Audrey Tang - 03.28.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>The Perlcast interview this week is with Audrey Tang.  Audrey is the creator of the Pugs project, maintainter of numerous CPAN modules and general open source contributor</description>
+      <pubDate>Tue, 28 Mar 2006 23:55:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_024_tang.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_024_tang.mp3" length="8900564" type="audio/mpeg"/>
+      <itunes:duration>12:21</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, Pugs, Perl6</itunes:keywords>
+    </item>
+
+     <item>
+      <title>Perlcast Interview with Chia-liang Kao - 03.06.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>
+The Perlcast interview for this week is with Chia-liang, the creator of svk.  The interview is conducted by guest interviewers Jose Castro and BooK.
+      </description>
+      <pubDate>Mon, 06 Mar 2006 23:30:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_023_svk.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_023_svk.mp3" length="12007753" type="audio/mpeg"/>
+      <itunes:duration>16:40</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, Subversion, svk</itunes:keywords>
+    </item>
+
+     <item>
+      <title>Perlcast Interview with brian d foy - 02.15.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>
+        This week, Perlcast is featuring another podcast interview with brian d foy.  In this interview we talk about the newly renamed book, "Intermediate Perl".  We also discuss a new project that brian is working on, "Mastering Perl".  Listen to find out how you can help be a part of this developing book.
+      </description>
+      <pubDate>Wed, 15 Feb 2006 23:30:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_022_foy.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_022_foy.mp3" length="17843461" type="audio/mpeg"/>
+      <itunes:duration>18:35</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, Intermediate Perl, Mastering Perl</itunes:keywords>
+    </item>
+
+   <item>
+      <title>Perlcast Interview with Tom Limoncelli - 02.07.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>
+        Perlcast interviewed Tom Limoncelli about his book, "Time Management for System Administrators".
+      </description>
+      <pubDate>Wed, 07 Feb 2006 22:00:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_021_Limoncelli.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_021_Limoncelli.mp3" length="42097434" type="audio/mpeg"/>
+      <itunes:duration>43:51</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, System Administration, Time, Programming</itunes:keywords>
+    </item>
+
+    <item>
+      <title>Perlcast Interview with Chris Pine - 02.01.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>
+        Perlcast interviewed Chris Pine about his book, "Learn to Program", an introduction to programming using Ruby.
+      </description>
+      <pubDate>Wed, 01 Feb 2006 22:00:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_020_Pine.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_020_Pine.mp3" length="21895097" type="audio/mpeg"/>
+      <itunes:duration>22:48</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, Ruby, Programming</itunes:keywords>
+    </item>
+
+    <item>
+      <title>Perlcast Interview with Chad Fowler - 01.26.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>
+				Perlcast interviewed Chad Fowler about his book, "My Job Went to India: 52 Ways to Save Your Job"
+      </description>
+      <pubDate>Thu, 26 Jan 2006 00:05:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_019_Fowler.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_019_Fowler.mp3" length="25290664" type="audio/mpeg"/>
+      <itunes:duration>35:08</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, Outsourcing, India, Programming</itunes:keywords>
+    </item>
+
+
+    <item>
+      <title>Perlcast Interview with brian d foy - 01.17.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>
+				Perlcast interviewed brian d foy on the Winter 2005 issue of The Perl Review.
+      </description>
+      <pubDate>Tue, 17 Jan 2006 00:05:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_018_foy.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_018_foy.mp3" length="11483910" type="audio/mpeg"/>
+      <itunes:duration>15:56</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>The Perl Review, brian d foy, PerlWar, Antipatterns, Objects</itunes:keywords>
+    </item>
+    
+    <item>
+      <title>Perlcast Interview with Chris Nandor - 01.05.2006</title>
+      <link>http://www.perlcast.com</link>
+      <description>
+				Perlcast interviewed Chris Nandor about his involvement with Slashdot, Use Perl, MacPerl, and more.
+      </description>
+      <pubDate>Thu, 05 Jan 2006 22:25:00 CST</pubDate>
+      <guid>http://www.perlcast.com/audio/Perlcast_Interview_017_Nandor.mp3</guid>
+      <author>perlcast@gmail.com</author>
+      <category>Perl</category>
+      <enclosure url="http://www.perlcast.com/audio/Perlcast_Interview_017_Nandor.mp3" length="14586563" type="audio/mpeg"/>
+      <itunes:duration>20:15</itunes:duration>
+      <itunes:author>Josh McAdams</itunes:author>
+      <itunes:explicit>No</itunes:explicit>
+      <itunes:keywords>Perl, Programming, Slashdot, Slashcode, Chris Nandor, Mac Carbon, Mac Glue</itunes:keywords>
+    </item>
+
+  </channel>
+</rss>

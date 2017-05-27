@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query=all:electron&amp;id_list=&amp;start=0&amp;max_results=10" rel="self" type="application/atom+xml"/>
+  <title>ArXiv Query: search_query=all:electron&amp;id_list=&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/WyBPOs+pRgzCTXTMWhtnbcOmk6g</id>
+  <updated>2009-05-05T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/cond-mat/0102536v1</id>
+    <updated>2001-02-28T15:12:09-05:00</updated>
+    <published>2001-02-28T15:12:09-05:00</published>
+    <title>Impact of Electron-Electron Cusp on Configuration Interaction Energies</title>
+    <summary>  The effect of the electron-electron cusp on the convergence of configuration
+interaction (CI) wave functions is examined. By analogy with the
+pseudopotential approach for electron-ion interactions, an effective
+electron-electron interaction is developed which closely reproduces the
+scattering of the Coulomb interaction but is smooth and finite at zero
+electron-electron separation. The exact many-electron wave function for this
+smooth effective interaction has no cusp at zero electron-electron separation.
+We perform CI and quantum Monte Carlo calculations for He and Be atoms, both
+with the Coulomb electron-electron interaction and with the smooth effective
+electron-electron interaction. We find that convergence of the CI expansion of
+the wave function for the smooth electron-electron interaction is not
+significantly improved compared with that for the divergent Coulomb interaction
+for energy differences on the order of 1 mHartree. This shows that, contrary to
+popular belief, description of the electron-electron cusp is not a limiting
+factor, to within chemical accuracy, for CI calculations.
+</summary>
+    <author>
+      <name>David Prendergast</name>
+      <arxiv:affiliation xmlns:arxiv="http://arxiv.org/schemas/atom">Department of Physics</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Nolan</name>
+      <arxiv:affiliation xmlns:arxiv="http://arxiv.org/schemas/atom">NMRC, University College, Cork, Ireland</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Claudia Filippi</name>
+      <arxiv:affiliation xmlns:arxiv="http://arxiv.org/schemas/atom">Department of Physics</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Stephen Fahy</name>
+      <arxiv:affiliation xmlns:arxiv="http://arxiv.org/schemas/atom">Department of Physics</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. C. Greer</name>
+      <arxiv:affiliation xmlns:arxiv="http://arxiv.org/schemas/atom">NMRC, University College, Cork, Ireland</arxiv:affiliation>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">11 pages, 6 figures, 3 tables, LaTeX209, submitted to The Journal of
+  Chemical Physics</arxiv:comment>
+    <arxiv:journal_ref xmlns:arxiv="http://arxiv.org/schemas/atom">J. Chem. Phys. 115, 1626 (2001)</arxiv:journal_ref>
+    <link href="http://arxiv.org/abs/cond-mat/0102536v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/cond-mat/0102536v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/astro-ph/0608371v1</id>
+    <updated>2006-08-17T10:05:46-04:00</updated>
+    <published>2006-08-17T10:05:46-04:00</published>
+    <title>Electron thermal conductivity owing to collisions between degenerate
+  electrons</title>
+    <summary>  We calculate the thermal conductivity of electrons produced by
+electron-electron Coulomb scattering in a strongly degenerate electron gas
+taking into account the Landau damping of transverse plasmons. The Landau
+damping strongly reduces this conductivity in the domain of ultrarelativistic
+electrons at temperatures below the electron plasma temperature. In the inner
+crust of a neutron star at temperatures T &lt; 1e7 K this thermal conductivity
+completely dominates over the electron conductivity due to electron-ion
+(electron-phonon) scattering and becomes competitive with the the electron
+conductivity due to scattering of electrons by impurity ions.
+</summary>
+    <author>
+      <name>P. S. Shternin</name>
+      <arxiv:affiliation xmlns:arxiv="http://arxiv.org/schemas/atom">Ioffe Physico-Technical Institute</arxiv:affiliation>
+    </author>
+    <author>
+      <name>D. G. Yakovlev</name>
+      <arxiv:affiliation xmlns:arxiv="http://arxiv.org/schemas/atom">Ioffe Physico-Technical Institute</arxiv:affiliation>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">8 pages, 3 figures</arxiv:comment>
+    <arxiv:journal_ref xmlns:arxiv="http://arxiv.org/schemas/atom">Phys.Rev. D74 (2006) 043004</arxiv:journal_ref>
+    <link href="http://arxiv.org/abs/astro-ph/0608371v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/astro-ph/0608371v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/0707.4225v1</id>
+    <updated>2007-07-28T05:32:22-04:00</updated>
+    <published>2007-07-28T05:32:22-04:00</published>
+    <title>Electron-Electron Bremsstrahlung Emission and the Inference of Electron
+  Flux Spectra in Solar Flares</title>
+    <summary>  Although both electron-ion and electron-electron bremsstrahlung contribute to
+the hard X-ray emission from solar flares, the latter is normally ignored. Such
+an omission is not justified at electron (and photon) energies above $\sim 300$
+keV, and inclusion of the additional electron-electron bremsstrahlung in
+general makes the electron spectrum required to produce a given hard X-ray
+spectrum steeper at high energies.
+  Unlike electron-ion bremsstrahlung, electron-electron bremsstrahlung cannot
+produce photons of all energies up to the maximum electron energy involved. The
+maximum possible photon energy depends on the angle between the direction of
+the emitting electron and the emitted photon, and this suggests a diagnostic
+for an upper cutoff energy and/or for the degree of beaming of the accelerated
+electrons.
+  We analyze the large event of January 17, 2005 observed by RHESSI and show
+that the upward break around 400 keV in the observed hard X-ray spectrum is
+naturally accounted for by the inclusion of electron-electron bremsstrahlung.
+Indeed, the mean source electron spectrum recovered through a regularized
+inversion of the hard X-ray spectrum, using a cross-section that includes both
+electron-ion and electron-electron terms, has a relatively constant spectral
+index $\delta$ over the range from electron kinetic energy $E = 200$ keV to $E
+= 1$ MeV. However, the level of detail discernible in the recovered electron
+spectrum is not sufficient to determine whether or not any upper cutoff energy
+exists.
+</summary>
+    <author>
+      <name>Eduard P. Kontar</name>
+    </author>
+    <author>
+      <name>A. Gordon Emslie</name>
+    </author>
+    <author>
+      <name>Anna Maria Massone</name>
+    </author>
+    <author>
+      <name>Michele Piana</name>
+    </author>
+    <author>
+      <name>John C. Brown</name>
+    </author>
+    <author>
+      <name>Marco Prato</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">7 pages, 5 figures, submitted to Astrophysical Journal</arxiv:comment>
+    <link href="http://arxiv.org/abs/0707.4225v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/0707.4225v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/astro-ph/9904306v1</id>
+    <updated>1999-04-22T11:54:59-04:00</updated>
+    <published>1999-04-22T11:54:59-04:00</published>
+    <title>Improved scenario of baryogenesis</title>
+    <summary>  It is assumed that, in the primordial plasma, at the temperatures above the
+mass of electron, fermions are in the neutral state being the superposition of
+particle and antiparticle. There exists neutral proton-electron symmetry.
+Proton-electron equilibrium is defined by the proton-electron mass difference.
+At the temperature equal to the mass of electron, pairs of neutral electrons
+annihilate into photons, and pairs of neutral protons and electrons survive as
+protons and electrons.
+</summary>
+    <author>
+      <name>D. L. Khokhlov</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">3 pages LaTeX</arxiv:comment>
+    <link href="http://arxiv.org/abs/astro-ph/9904306v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/astro-ph/9904306v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/cond-mat/0310615v1</id>
+    <updated>2003-10-27T03:59:02-05:00</updated>
+    <published>2003-10-27T03:59:02-05:00</published>
+    <title>Exact Electron-Pairing Ground States of Tight-Binding Models with Local
+  Attractive Interactions</title>
+    <summary>  We present a class of exactly solvable models of correlated electrons. The
+models are defined in any dimension $d$ and consist of electron-hopping terms
+and local attractive interactions between electrons. For each even number of
+electrons less than or equal to $1/(d+1)$-filling, we find the exact ground
+state in which all electrons form pairs of a certain type, and thus the models
+exhibit an electron-pair condensation.
+</summary>
+    <author>
+      <name>Akinori Tanaka</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">4 pages, 1 figure</arxiv:comment>
+    <link href="http://arxiv.org/abs/cond-mat/0310615v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/cond-mat/0310615v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/cond-mat/0205001v1</id>
+    <updated>2002-04-30T16:00:18-04:00</updated>
+    <published>2002-04-30T16:00:18-04:00</published>
+    <title>Electron-electron interactions in a weakly screened two-dimensional
+  electron system</title>
+    <summary>  We probe the strength of electron-electron interactions using
+magnetoconductivity measurements of two-dimensional non-degenerate electrons on
+liquid helium at 1.22 K. Our data extend to electron densities that are two
+orders of magnitude smaller than previously reported. We span both the
+independent-electron regime where the data are qualitatively described by the
+self-consistent Born approximation (SCBA), and the strongly-interacting
+electron regime. At finite fields we observe a crossover from SCBA to Drude
+theory as a function of electron density.
+</summary>
+    <author>
+      <name>I. Karakurt</name>
+    </author>
+    <author>
+      <name>A. J. Dahm</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">4 pages, 5 figures</arxiv:comment>
+    <link href="http://arxiv.org/abs/cond-mat/0205001v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/cond-mat/0205001v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/cond-mat/0002322v1</id>
+    <updated>2000-02-21T06:53:06-05:00</updated>
+    <published>2000-02-21T06:53:06-05:00</published>
+    <title>First-principles calculations of hot-electron lifetimes in metals</title>
+    <summary>  First-principles calculations of the inelastic lifetime of low-energy
+electrons in Al, Mg, Be, and Cu are reported. Quasiparticle damping rates are
+evaluated from the knowledge of the electron self-energy, which we compute
+within the GW approximation of many-body theory. Inelastic lifetimes are then
+obtained along various directions of the electron wave vector, with full
+inclusion of the band structure of the solid. Average lifetimes are also
+reported, as a function of the electron energy. In Al and Mg, splitting of the
+band structure over the Fermi level yields electron lifetimes that are smaller
+than those of electrons in a free-electron gas. Larger lifetimes are found in
+Be, as a result of the characteristic dip that this material presents in the
+density of states near the Fermi level. In Cu, a major contribution from $d$
+electrons participating in the screening of electron-electron interactions
+yields electron lifetimes which are well above those of electrons in a
+free-electron gas with the electron density equal to that of valence ($4s^1$)
+electrons.
+</summary>
+    <author>
+      <name>I. Campillo</name>
+    </author>
+    <author>
+      <name>V. M. Silkin</name>
+    </author>
+    <author>
+      <name>J. M. Pitarke</name>
+    </author>
+    <author>
+      <name>E. V. Chulkov</name>
+    </author>
+    <author>
+      <name>A. Rubio</name>
+    </author>
+    <author>
+      <name>P. M. Echenique</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">8 pages, 10 figures, to appear in Phys. Rev. B</arxiv:comment>
+    <arxiv:journal_ref xmlns:arxiv="http://arxiv.org/schemas/atom">Phys. Rev. B 61, 13484 (2000)</arxiv:journal_ref>
+    <link href="http://arxiv.org/abs/cond-mat/0002322v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/cond-mat/0002322v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/cond-mat/9610058v1</id>
+    <updated>1996-10-08T10:08:55-04:00</updated>
+    <published>1996-10-08T10:08:55-04:00</published>
+    <title>Electronic Properties Of Buckminsterfullerenes: Degeneracies and
+  Surprises</title>
+    <summary>  Buckminsterfullerene compounds exibit remarkable physics at low temperatures,
+e.g. high temperature superconductivity in alkali-fullerenes, and
+ferromagnetism in TDAE -C60. Here we review recent theoretical studies of
+electron correlations in these compounds. In particular, we discuss models of
+electron-vibron interactions, electron-electron interactions, and
+intermolecular hopping. We show that the origin of novel electronic phases lies
+in {\em local} degeneracies of C60; a direct consequence of the high molecular
+symmetry.
+</summary>
+    <author>
+      <name>Assa Auerbach</name>
+      <arxiv:affiliation xmlns:arxiv="http://arxiv.org/schemas/atom">Technion, Israel</arxiv:affiliation>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Latex, to appear in Fullerene Science and Technology</arxiv:comment>
+    <link href="http://arxiv.org/abs/cond-mat/9610058v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/cond-mat/9610058v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/0708.0523v1</id>
+    <updated>2007-08-03T10:34:40-04:00</updated>
+    <published>2007-08-03T10:34:40-04:00</published>
+    <title>Energy relaxation in the spin-polarized disordered electron liquid</title>
+    <summary>  The energy relaxation in the spin-polarized disordered electron systems is
+studied in the diffusive regime. We derived the quantum kinetic equation in
+which the kernel of electron-electron collision integral explicitly depends on
+the electron magnetization. As the consequence, the inelastic scattering rate
+is found to have non-monotonic dependence on the spin polarization of the
+electron system.
+</summary>
+    <author>
+      <name>N. M. Chtchelkatchev</name>
+    </author>
+    <author>
+      <name>I. S. Burmistrov</name>
+    </author>
+    <arxiv:doi xmlns:arxiv="http://arxiv.org/schemas/atom">10.1103/PhysRevLett.100.206804</arxiv:doi>
+    <arxiv:journal_ref xmlns:arxiv="http://arxiv.org/schemas/atom">Phys. Rev. Lett. 100, 206804 (2008)</arxiv:journal_ref>
+    <link href="http://arxiv.org/abs/0708.0523v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/0708.0523v1" rel="related" type="application/pdf"/>
+    <link title="doi" href="http://dx.doi.org/10.1103/PhysRevLett.100.206804" rel="related"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cond-mat.mes-hall" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.mes-hall" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/0803.3893v1</id>
+    <updated>2008-03-27T07:38:09-04:00</updated>
+    <published>2008-03-27T07:38:09-04:00</published>
+    <title>Shear viscosity of degenerate electron matter</title>
+    <summary>  We calculate the partial electron shear viscosity $\eta_{ee}$ limited by
+electron-electron collisions in a strongly degenerate electron gas taking into
+account the Landau damping of transverse plasmons. The Landau damping strongly
+suppresses $\eta_{ee}$ in the domain of ultrarelativistic degenerate electrons
+and modifies its %asymptotic temperature behavior. The efficiency of the
+electron shear viscosity in the cores of white dwarfs and envelopes of neutron
+stars is analyzed.
+</summary>
+    <author>
+      <name>P. S. Shternin</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">16 pages, 4 figures, accepted to Journal of Physics A</arxiv:comment>
+    <link href="http://arxiv.org/abs/0803.3893v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/0803.3893v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

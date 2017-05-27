@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>Peter Bihr on Social Media, Web 2.0 &amp; Digital Life [www.thewavingcat.com]</title>
+	
+	<link>http://www.thewavingcat.com</link>
+	<description>Peter Bihr on Social Media, Web 2.0 &amp; Digital Life. Please visit www.thewavingcat.com for more information. All contents (unless stated otherwise or embedded from external sources) licensed under Creative Commons (by-nc-sa 3.0). Visit www.creativecommons.org for more details.</description>
+	<lastBuildDate>Tue, 20 Sep 2011 13:01:22 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.2.1</generator>
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/thewavingcat" /><feedburner:info uri="thewavingcat" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license><feedburner:emailServiceId>thewavingcat</feedburner:emailServiceId><feedburner:feedburnerHostname>http://feedburner.google.com</feedburner:feedburnerHostname><item>
+		<title>German startup Gigalocal screws privacy, tweets personal information</title>
+		<link>http://feedproxy.google.com/~r/thewavingcat/~3/5KPQXDa3iNI/</link>
+		<comments>http://www.thewavingcat.com/2011/09/20/gigalocal-privacy-fail/#comments</comments>
+		<pubDate>Tue, 20 Sep 2011 13:00:33 +0000</pubDate>
+		<dc:creator>Peter Bihr</dc:creator>
+				<category><![CDATA[digital rights]]></category>
+		<category><![CDATA[How to work the internets (not)]]></category>
+		<category><![CDATA[product design]]></category>
+		<category><![CDATA[address]]></category>
+		<category><![CDATA[data protection]]></category>
+		<category><![CDATA[fail]]></category>
+		<category><![CDATA[gigalocal]]></category>
+		<category><![CDATA[local]]></category>
+		<category><![CDATA[privacy]]></category>
+
+		<guid isPermaLink="false">http://www.thewavingcat.com/?p=3568</guid>
+		<description><![CDATA[A few weeks ago, I tried out Gigalocal. It&#8217;s a platform that lets users announce jobs they would like to see done, and how much they&#8217;re willing to pay for it. (&#8220;Clean my apartment for 20 Euros&#8221;-style jobs.) I signed up so a journalist friend of mine could try out the process in a controlled [...]]]></description>
+			<content:encoded><![CDATA[<p>A few weeks ago, I tried out <a href="http://gigalocal.de/">Gigalocal</a>. It&#8217;s a platform that lets users announce jobs they would like to see done, and how much they&#8217;re willing to pay for it. (&#8220;Clean my apartment for 20 Euros&#8221;-style jobs.) I signed up so a journalist friend of mine could try out the process in a controlled environment, and without having to clean someone else&#8217;s apartment. Yet, there was a bit of a problem.</p>
+
+<p>The minute I put up a test job offer for my friend (&#8220;I&#8217;d like a cold soft drink, now, delivered&#8221;), the service tweeted the job. Makes sense, I guess, as it makes it easier to track jobs out and about waiting for jobs. (If the users of said service have smartphones, that is.) But they didn&#8217;t keep it to the job description.</p>
+
+<p>Gigalocal tweeted my full address, down to the house number.</p>
+
+<p>That&#8217;s right. They didn&#8217;t restrict the location info to the neighborhood (close enough to figure out if that job&#8217;s a good fit for you), or next subway stop, or street level, or a 500m radius. No, they tweeted the full address.</p>
+
+<p>I canceled my account and mentioned in the cancellation form that I find publicly tweeting addresses quite unacceptable, as I hadn&#8217;t been aware before that the company might do that.</p>
+
+<p>Here&#8217;s the reply (translation below):</p>
+
+<blockquote>Grundsätzlich kann jeder User seine Daten selbst schützen. Niemand ist gezwungen seinen Wohnort anzugeben. Ein User kann einen Gig überall erstellen, seine aktuelle Position wird vom GPS Modul (Smartphone) oder durch die IP (Website) vorgegeben. Diese Ortung hat man schon wenn man auf Google Maps geht und dem Browser erlaubt den Standort zu erkennen.
+
+Jedem User steht es frei wo er seinen Gig erstellt, er kann ihn also gerne 4 Straßen weiter erstellen und sich dort mit dem Gig Erfüller treffen.</blockquote>
+
+<p><em>Translation: 
+Generally, every user can protect their own data. Nobody is forced to input their home address. A user can submit a gig wherever they like, their current position is read through the GPS module (smart phone) or IP address (website). This triangulation takes place even if you just go to Google Maps and allow the browser to read your location.</p>
+
+<p>Every user is free to set up their gig wherever they like, so they can set it up 4 streets down and meet up with the job fulfiller there.</em></p>
+
+<p>I was shocked. Shocked at this level of ignorance in building a user service that requires granular privacy. (Home addresses!) Shocked at how the staff didn&#8217;t even seem to consider they might have made a grave mistake. And shocked at myself for being even surprised by the two aforementioned failures.</p>
+
+<p>Gigalocal, here&#8217;s a hint: You want your &#8220;job fulfillers&#8221; to know if a job is close enough to make it worth the trip. You don&#8217;t want to show the world people&#8217;s home and office addresses. And you never, ever want to tweet personal information without asking permission first.</p>
+
+<p>Now go back to the drawing board and don&#8217;t come back before you know what you&#8217;re doing.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/thewavingcat?a=5KPQXDa3iNI:O2XO8a237Lc:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=5KPQXDa3iNI:O2XO8a237Lc:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=5KPQXDa3iNI:O2XO8a237Lc:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=5KPQXDa3iNI:O2XO8a237Lc:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=5KPQXDa3iNI:O2XO8a237Lc:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=5KPQXDa3iNI:O2XO8a237Lc:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=5KPQXDa3iNI:O2XO8a237Lc:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=5KPQXDa3iNI:O2XO8a237Lc:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/thewavingcat/~4/5KPQXDa3iNI" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.thewavingcat.com/2011/09/20/gigalocal-privacy-fail/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://www.thewavingcat.com/2011/09/20/gigalocal-privacy-fail/</feedburner:origLink></item>
+		<item>
+		<title>Berlin votes</title>
+		<link>http://feedproxy.google.com/~r/thewavingcat/~3/oM8ewwE8_sk/</link>
+		<comments>http://www.thewavingcat.com/2011/09/18/berlin-votes/#comments</comments>
+		<pubDate>Sun, 18 Sep 2011 13:50:23 +0000</pubDate>
+		<dc:creator>Peter Bihr</dc:creator>
+				<category><![CDATA[politics]]></category>
+		<category><![CDATA[2011]]></category>
+		<category><![CDATA[berlin]]></category>
+		<category><![CDATA[campaigns]]></category>
+		<category><![CDATA[landtagswahl]]></category>
+		<category><![CDATA[state elections]]></category>
+
+		<guid isPermaLink="false">http://www.thewavingcat.com/?p=3562</guid>
+		<description><![CDATA[I just cast my vote in the Berlin state elections (Wikipedia de/en). No worries, I&#8217;m not going to go into politics here. And yet, I think there is something to elections, particularly those on state and local level. I have an almost romantic notion of these elections. Not so much because I think the act [...]]]></description>
+			<content:encoded><![CDATA[<p>I just cast my vote in the Berlin state elections (<a href="http://de.wikipedia.org/wiki/Wahl_zum_Abgeordnetenhaus_von_Berlin_2011">Wikipedia de</a>/<a href="http://en.wikipedia.org/wiki/Berlin_state_election,_2011">en</a>). No worries, I&#8217;m not going to go into politics here. And yet, I think there is something to elections, particularly those on state and local level.</p>
+
+<p>I have an almost romantic notion of these elections. Not so much because I think the act of casting the vote in person is a particularly symbolic thing to do; it might be, who knows. No, it&#8217;s more because of the nature of the voting process that might just be the most unsexy of all elections.</p>
+
+<p>The ballot boxes are placed in public schools, or nursery homes, or community centers. While there is absolutely nothing wrong with these places, it makes the process &#8211; or rather the setting, atmosphere &#8211; almost gorgeously unglamorous, fantastically functional.</p>
+
+<p>It&#8217;s not that the volunteers on the ground run the show unprofessionally &#8211; far from it! It is the complete lack of polish that stands out. No show, no ads, no speeches. Nothing overly patriotic either. Just a few tables, makeshift stands to make your crosses on the ballot out of sight (to speak of privacy would be euphemistic). On some wall or closet or shelf, some flags are attached: Germany, Berlin, Europe. Even the flags look comfortingly small and unglamorous.</p>
+
+<p>Elections on state level are tricky. While very important, they tend to be somewhat low-interest. If you polled folks about any party&#8217;s concrete positions on any issue, I&#8217;m fairly certain the answers would be based on the national party positions rather than state level, if anything at all. As someone who was involved in political campaigns before, this pains me, yet I&#8217;m not immune to it either; far from it, in fact.</p>
+
+<p>And yet. When I got to the local church community center, in shorts and t-shirt as I was on my way to a run, there was a line there. There was a nun, a young dad with his daughter, several people who looked as if they might have come straight out of a club, an old man in a leather jacket and many others. They all stood there in line, paying little attention to the churchy advertisements in the hallway that smelled slightly of canteen food. They all went there, on a rainy Sunday, despite the alleged lack of interest in politics, and cast their votes.</p>
+
+<p>There is something to that.</p>
+
+<p>Being the politics geek that I am, I&#8217;ll watch an episode of The West Wing before the first election results will be published from 18h onwards. Plenty of glamor there.</p>
+
+<p>ps. A shout-out: <a href="http://www.annalenaschiller.com/">Anna-Lena</a> will provide some waffle-based visualizations of the results at <a href="http://wahlwaffeln.tumblr.com/">Wahlwaffeln.tumblr.com</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/thewavingcat?a=oM8ewwE8_sk:u9kBj6LRcto:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=oM8ewwE8_sk:u9kBj6LRcto:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=oM8ewwE8_sk:u9kBj6LRcto:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=oM8ewwE8_sk:u9kBj6LRcto:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=oM8ewwE8_sk:u9kBj6LRcto:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=oM8ewwE8_sk:u9kBj6LRcto:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=oM8ewwE8_sk:u9kBj6LRcto:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=oM8ewwE8_sk:u9kBj6LRcto:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/thewavingcat/~4/oM8ewwE8_sk" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.thewavingcat.com/2011/09/18/berlin-votes/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.thewavingcat.com/2011/09/18/berlin-votes/</feedburner:origLink></item>
+		<item>
+		<title>Joining the /mentoring movement</title>
+		<link>http://feedproxy.google.com/~r/thewavingcat/~3/GL9MitmUbuY/</link>
+		<comments>http://www.thewavingcat.com/2011/09/17/joining-the-mentoring-movement/#comments</comments>
+		<pubDate>Fri, 16 Sep 2011 23:09:11 +0000</pubDate>
+		<dc:creator>Peter Bihr</dc:creator>
+				<category><![CDATA[collaboration]]></category>
+		<category><![CDATA[mentoring]]></category>
+
+		<guid isPermaLink="false">http://www.thewavingcat.com/?p=3559</guid>
+		<description><![CDATA[Following David No&#235;l&#8217;s lead and Diana Kimball&#8217;s great example, I decided to become a part of a distributed mentoring movement. And while I personally find the term &#8220;mentoring&#8221;, when spelled out so explicitly, somewhat awkward, I truly believe in the idea. Every major step forward in my life so far has been inspired and encouraged [...]]]></description>
+			<content:encoded><![CDATA[<p>Following <a href="http://david-noel.com/post/10244682058/joining-diana-kimballs-mentoring-movement">David No&euml;l&#8217;s lead</a> and <a href="http://blog.dianakimball.com/mentoring">Diana Kimball&#8217;s</a> great example, I decided to become a part of a <a href="http://github.com/dianakimball/mentoring">distributed mentoring movement</a>. And while I personally find the term &#8220;mentoring&#8221;, when spelled out so explicitly, somewhat awkward, I truly believe in the idea.</p>
+
+<p>Every major step forward in my life so far has been inspired and encouraged by the mentors I’ve been fortunate enough to have. I believe that hopes, dreams, and advice are best shared in ongoing, personal relationships, and it’s important to me to pay it forward.</p>
+
+<p>I’ve had so many great experiences in my life, and I’d love to share them if you’re considering pursuing a similar path.</p>
+
+<p>So, here&#8217;s my <a href="http://thewavingcat.com/mentoring">/mentoring page</a>, as much an experiment for me as it might be for you.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/thewavingcat?a=GL9MitmUbuY:U4nnIvHkauM:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=GL9MitmUbuY:U4nnIvHkauM:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=GL9MitmUbuY:U4nnIvHkauM:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=GL9MitmUbuY:U4nnIvHkauM:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=GL9MitmUbuY:U4nnIvHkauM:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=GL9MitmUbuY:U4nnIvHkauM:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=GL9MitmUbuY:U4nnIvHkauM:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=GL9MitmUbuY:U4nnIvHkauM:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/thewavingcat/~4/GL9MitmUbuY" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.thewavingcat.com/2011/09/17/joining-the-mentoring-movement/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://www.thewavingcat.com/2011/09/17/joining-the-mentoring-movement/</feedburner:origLink></item>
+		<item>
+		<title>Translation layers</title>
+		<link>http://feedproxy.google.com/~r/thewavingcat/~3/zXHpodFXMWw/</link>
+		<comments>http://www.thewavingcat.com/2011/09/15/translation-layers/#comments</comments>
+		<pubDate>Thu, 15 Sep 2011 18:10:22 +0000</pubDate>
+		<dc:creator>Peter Bihr</dc:creator>
+				<category><![CDATA[connected world]]></category>
+		<category><![CDATA[How to work the internets]]></category>
+		<category><![CDATA[company]]></category>
+		<category><![CDATA[disruption]]></category>
+		<category><![CDATA[identity]]></category>
+		<category><![CDATA[third wave]]></category>
+		<category><![CDATA[translation layer]]></category>
+
+		<guid isPermaLink="false">http://www.thewavingcat.com/?p=3542</guid>
+		<description><![CDATA[If you follow this blog or my company Third Wave, you know that we keep trying to find the best way to frame what we do and how we work. Recently, a blog post hit a nerve, in the best sense &#8211; here are some early thoughts on this, as a sketch and reminder for [...]]]></description>
+			<content:encoded><![CDATA[<p>If you follow this blog or my company <a href="http://thirdwaveberlin.com">Third Wave</a>, you know that we keep trying to find the best way to frame what we do and how we work. Recently, a blog post hit a nerve, in the best sense &#8211; here are some early thoughts on this, as a sketch and reminder for myself more than anyone else.</p>
+
+<p>Back to the blog post I mentioned: The great Ben Hammersley with his uncanny talent of phrasing things <em>just right</em> described his own role as that of a <a href="http://www.benhammersley.com/2011/09/my-speech-to-the-iaac/">translation layer</a>.</p>
+
+<blockquote><p>I’ve taken it upon myself to be the translation layer. The guy who tells the older guys what’s going on with the younger guys, and explains to the younger guys why the weird decisions the older guys are coming up with are being made. (&#8230;)</p>
+
+<p>In the time of revolution, and believe me this is a revolution – easily on a par with the renaissance, or the Enlightenment – the translator has a very important role to play. The communicator, the person who makes the facts palatable to all sides, is the only conduit through which real change can be made.</p></blockquote>
+
+<p>I fully agree with Ben when he stresses the absolute importance of this role. This is a way of framing his role that I think describes our work very well, too. In Ben&#8217;s example, the translation serves to bridge a generational gap, and in a political context; It could of course be framed in various other way, too, as there are other segments/layers/parts of society (vague, yes, I know) that need to be connected through translation layers.</p>
+
+<p>Let&#8217;s look at the <a href="http://en.wikipedia.org/wiki/Diffusion_of_innovations">diffusion of innovations</a>, the good old bell curve you all know well. It identifies five groups/stages of adopting new technologies: innovators, early adopters, early majority, late majority and laggards.</p>
+
+<p>I&#8217;m thinking that we (meaning Third Wave) act as translators at mainly two points on that adoption curve:</p>
+
+<p><a href="http://www.flickr.com/photos/thewavingcat/6150778696/" title="Translation layers by the waving cat, on Flickr"><img src="http://farm7.static.flickr.com/6064/6150778696_6c0eaa8d4f.jpg" width="500" height="375" alt="Translation layers"></a></p>
+
+<p>We dig into emerging topics and surface innovators and their insights, explore their thoughts, and try to make them more accessible to early adopters. This usually is <strong>not connected to client work, but driven by interest, curiosity, and a desire to understand</strong> the change we should expect through technology. This is where I&#8217;d pinpoint <a href="http://conference.cognitivecities.com">Cognitive Cities Conference</a>, where we invited a whole bunch of really smart people to share their ideas and thoughts. This is also where our digging into the Quantified Self, Internet of Things, secondary screens and many other far-from-mainstream topics come in. This is also the stuff we like to explore in conference talks and workshops, like <a href="http://quantifiedcities.tumblr.com/">our workshop at PICNIC</a> yesterday.</p>
+
+<p>Then, one step over on the adaption curve, comes our <strong>client work: helping companies understand and harness this change</strong>. In other words, we look at commercial use, or at disruption, or at staying competitive in some way or another &#8211; either on the organizational or on the team level. This is also where interviews and articles as well as talks at more mainstream conferences come in.</p>
+
+<p>(As far as I can tell, we haven&#8217;t really worked in any of the other two segments.)</p>
+
+<p>Makes sense? Thoughts?</p>
+
+<p>ps. Thanks to <a href="https://twitter.com/bopuc">Boris</a> for a nudge in the right direction!</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/thewavingcat?a=zXHpodFXMWw:LAkW_S4JXY0:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=zXHpodFXMWw:LAkW_S4JXY0:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=zXHpodFXMWw:LAkW_S4JXY0:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=zXHpodFXMWw:LAkW_S4JXY0:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=zXHpodFXMWw:LAkW_S4JXY0:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=zXHpodFXMWw:LAkW_S4JXY0:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=zXHpodFXMWw:LAkW_S4JXY0:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=zXHpodFXMWw:LAkW_S4JXY0:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/thewavingcat/~4/zXHpodFXMWw" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.thewavingcat.com/2011/09/15/translation-layers/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.thewavingcat.com/2011/09/15/translation-layers/</feedburner:origLink></item>
+		<item>
+		<title>Defending the German copycat</title>
+		<link>http://feedproxy.google.com/~r/thewavingcat/~3/33wHSndv4v4/</link>
+		<comments>http://www.thewavingcat.com/2011/09/03/defending-the-german-copycat/#comments</comments>
+		<pubDate>Sat, 03 Sep 2011 15:00:04 +0000</pubDate>
+		<dc:creator>Peter Bihr</dc:creator>
+				<category><![CDATA[product design]]></category>
+		<category><![CDATA[copycat]]></category>
+		<category><![CDATA[innovation]]></category>
+		<category><![CDATA[web service]]></category>
+
+		<guid isPermaLink="false">http://www.thewavingcat.com/?p=3531</guid>
+		<description><![CDATA[We&#8217;ve been talking a lot about copycats in the web scene, and how the wealth of copycats has given Germany a bad rep. I&#8217;ve been part of this bashing, too. But maybe it&#8217;s time to switch perspective for a moment and look at this thing from another angle. And so I present you: A Defense [...]]]></description>
+			<content:encoded><![CDATA[<p><img src="http://farm2.static.flickr.com/1328/1251593501_2b0b565cf2.jpg" alt="photo by dotdean" /></p>
+
+<p>We&#8217;ve been talking a lot about <a href="http://www.6wunderkinder.com/blog/2011/08/09/founders-stand-up-the-anti-copycat-revolution-starts-now/">copycats in the web scene</a>, and how the wealth of copycats has given Germany a bad rep. I&#8217;ve been <a href="http://www.thewavingcat.com/?s=copycat">part</a> of this bashing, too. But maybe it&#8217;s time to switch perspective for a moment and look at this thing from another angle. And so I present you:</p>
+
+<p><strong>A Defense of the German Copycat</strong></p>
+
+<p>As a silly joke goes, &#8220;you know your startup is successful if there is a German copycat.&#8221; There is a grain of truth in the joke.</p>
+
+<p><strong>Copycats help internationalize!</strong>
+Yet, these copycats are an expression of demand in a market that is underserved by those companies that focus too strongly on the US instead of thinking globally. The StudiVZs, Hyves and Orkuts of the worlds only grew to their peak reach because Facebook didn&#8217;t care for, or at least didn&#8217;t target, most other countries. Interfaces stayed untranslated, cultural specifics and legal requirements were ignored. As soon as Facebook actually had even weak (machine-translated? crowdsourced?) interfaces in other languages, they easily pulled ahead of everyone else in the game and crushed them. (Except for the legal requirements, which they still ignore. Let&#8217;s see where that will go.)</p>
+
+<p><strong>Copycats foster diversity!</strong>
+Often, while copying the basic premise (or even layout) of a service, the copycat tweaks the idea slightly, adapting to a specific need that wasn&#8217;t targeted by the original service. This way, they foster diversity &#8211; think of them as a user feature request.</p>
+
+<p><strong>Copycats foster innovation!</strong>
+Most importantly, though, think of the mechanic behind innovator and copycat. If no one was chasing the original service, do you think they would keep innovating, or maybe slow down in their development? If you know a well-funded copycat is playing a permanent game of catch-up and has the added advantage of being able to learn from your failures, you know that you&#8217;d better keep getting better. Once you have an army of clones chasing you, you won&#8217;t stop innovating. This means better outcomes for the users. (Maybe, just like monopolies are kept in check by anti-trust action, a similar mechanism should kick in and a few copycats should be publicly funded to keep the original web service on their toes?)</p>
+
+<p>Discuss!</p>
+
+<p><em>Update: For the record, I wasn&#8217;t serious about this. (In fact, I&#8217;m almost shocked how many people took me serious here.) I do see how these points could be legitimately made, and how there is a role that copycats play. As I commented on <a href="http://parkerhiggins.net/2011/09/on-defense-of-german-copycat/">Parker&#8217;s blogpost</a>, I wrote this &#8220;&#8230;with a bit of a wink. While there’s a legit role for building on the work of others, I still don’t quite get how people get up in the morning to build a clone of another service.&#8221; He rightly points out how important it is not to mix up the &#8220;copycats&#8221; with the &#8220;inspired-bys&#8221;.</em></p>
+
+<p><em><a href="http://www.flickr.com/photos/dotdean/1251593501/">Photo</a> by <a href="http://www.flickr.com/photos/dotdean/">dotdean</a> (<a href="http://creativecommons.org/licenses/by-nc/2.0/deed.en">some rights reserved: CC-by-nc</a>)</em></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/thewavingcat?a=33wHSndv4v4:K_R4f2Qa2EU:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=33wHSndv4v4:K_R4f2Qa2EU:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=33wHSndv4v4:K_R4f2Qa2EU:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=33wHSndv4v4:K_R4f2Qa2EU:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=33wHSndv4v4:K_R4f2Qa2EU:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=33wHSndv4v4:K_R4f2Qa2EU:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=33wHSndv4v4:K_R4f2Qa2EU:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=33wHSndv4v4:K_R4f2Qa2EU:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/thewavingcat/~4/33wHSndv4v4" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.thewavingcat.com/2011/09/03/defending-the-german-copycat/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		<feedburner:origLink>http://www.thewavingcat.com/2011/09/03/defending-the-german-copycat/</feedburner:origLink></item>
+		<item>
+		<title>What keeps me up</title>
+		<link>http://feedproxy.google.com/~r/thewavingcat/~3/4wrO-8evjSs/</link>
+		<comments>http://www.thewavingcat.com/2011/08/28/what-keeps-me-up/#comments</comments>
+		<pubDate>Sun, 28 Aug 2011 11:40:13 +0000</pubDate>
+		<dc:creator>Peter Bihr</dc:creator>
+				<category><![CDATA[connected world]]></category>
+		<category><![CDATA[challenges]]></category>
+		<category><![CDATA[global]]></category>
+		<category><![CDATA[institutions]]></category>
+		<category><![CDATA[politics]]></category>
+		<category><![CDATA[quantified self]]></category>
+		<category><![CDATA[screens]]></category>
+
+		<guid isPermaLink="false">http://www.thewavingcat.com/?p=3521</guid>
+		<description><![CDATA[Sitting down with a cup of coffee brewed from the excellent Balzac&#8217;s beans that an even more excellent person brought me from Toronto, my mind started wandering. There are a whole number of challenges &#8211; big and small &#8211; that I keep thinking over. Some of them seem rather insolvable, others not so much. Here&#8217;s [...]]]></description>
+			<content:encoded><![CDATA[<p>Sitting down with a cup of coffee brewed from the excellent Balzac&#8217;s beans that an even more excellent person brought me from Toronto, my mind started wandering. There are a whole number of challenges &#8211; big and small &#8211; that I keep thinking over. Some of them seem rather insolvable, others not so much. Here&#8217;s a brief, entirely incomplete and pretty much unstructured snapshot of some of the things that keep me awake at night, and get me going in the morning.</p>
+
+<p>How can we get the <strong>insights from the Quantified Self community</strong> to work for more people, more easily? How can we use them for medical purposes on a much more mainstream level? And how can this work in government-run health systems &#8211; think interfacing with the institutions etc. This is big, and there&#8217;s a lot of potential here on many levels (societal, individual health, institutional organization etc).</p>
+
+<p>On the one hand, there&#8217;s this huge startup hype going around in Berlin welcoming expat technologists. On the other hand, a creeping anti-foreigner attitude that creeps in disguised in an <strong>&#8220;anti party tourist&#8221; rhetoric</strong>. Dangerous and annoying &#8211; what can we do about it? And how come the Green party seems like they&#8217;re in on it? Looking at my personal environment, it&#8217;s all about this diversity: I share offices with people from four countries; my girlfriend is American; a large chunk of my friends are from abroad. Where gentrification is used as a proxy argument against global exchange, my sympathy stops.</p>
+
+<p>Speaking of global exchange, there&#8217;s all kinds of global problems that need global solutions, but there are currently no institutions that could tackle them. It&#8217;s the incredible <strong>complexity of global economics</strong> and the speed the world changes that seems to break institutions. This goes down to the personal level and my previous point: the small but growing number of people who live lives on a global or multi-local level (as opposed to nation-based, the state is almost reduced to a backdrop and issuer of identity) almost falls out of the governance structures. At the same time, while totally privileged to work that way, and also contributing lots to local economies and communities, this group faces all kinds of hurdles while moving back and forth. Just ask anyone who tries to work for a few months from another country while on a project of sorts, or founding a company. Again, others have written at much more depth about this &#8211; I recommend starting reading <a href="http://www.benhammersley.com/2011/06/bigend-draperism-a-memoir-and-a-desk/">Ben Hammersley&#8217;s</a> <a href="http://www.benhammersley.com/2011/06/infrastructure-and-the-state/">excellent blog</a>.</p>
+
+<p>At least in Germany (but also in many other developed countries), the <strong>job market</strong> is doomed almost by definition. Demographics look dark for both jobs and pension plans, education can&#8217;t keep up, immigration restrictions are tough even for super skilled workers. We produce more as a society/economy, yet still aim for full employment, which only half makes sense. How can we make sure everybody can get by and participate fully (particularly those whose jobs have been made redundant by technology) without getting into early-20th-century capitalism v communism debates that help no one? (This, of course, is kind of the big question here.)</p>
+
+<p>Globally, <strong>trust in institutions is way down</strong>, including political parties. As someone who majored in political science and worked in election campaigning, this is particularly tough, yet totally understandable. However, how to fix this? No real alternatives to parties have emerged. (Personally, I&#8217;m disappointed by the Pirate Party that seemed to take an ambitious stand on this issue, yet ended up combining the worst of both worlds.) We kinda need a quick fix for this, too, as a strong disconnect in politics leads to the rise of dangerous freaks &#8211; of which the Tea Party is only one. (Not to invoke <a href="http://en.wikipedia.org/wiki/Godwin's_law">Godwin&#8217;s Law</a> too early on in the discussion, but having grown up in Germany I&#8217;m somewhat sensitive to populism.)</p>
+
+<p>Besides those heavyweight questions, there&#8217;s <strong>lighter &amp; more positive challenges</strong> ahead, too. Funnily, they tie right into the same mechanics as the rest above.</p>
+
+<p>Why can we still not get a <strong>decent video streaming</strong> service in Germany? (Netflix, I&#8217;m looking at you!) As long as national borders &#8211; here in shape of licensing deals &#8211; delay the global distribution of inherently global services, we all lose. There are many, many, many examples of this, and truly, it&#8217;s 2011 &#8211; this is a problem of the past that just sticks around because we&#8217;re all used to it. Let&#8217;s tackle that. Seems doable.</p>
+
+<p>Infrastructure! The apartments I know are still relatively (!) barebones in terms of network infrastructure. Yet, both offices and apartments alike have an <strong>abundance of screens large and small</strong>. (I&#8217;m aware of five in my household &#8211; two phones, two laptops, one under-utilized TV. Not counting some smaller gadgets, disused phones etc.) There&#8217;s huge potential and so little going on. The good folks at <a href="http://berglondon.com/blog/tag/screens/">BERG</a> and <a href="http://thirdwaveberlin.com/2011/06/patterns-for-multiscreen-strategies/">others</a> have been digging into this for awhile. There&#8217;s so much more to do there yet.</p>
+
+<p>And then, of course, there&#8217;s always the <strong>loveliest of Sunday questions</strong>: Who to meet for coffee, and where? And that&#8217;s where I&#8217;m off to now. Enjoy your Sunday.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/thewavingcat?a=4wrO-8evjSs:R3lEvGZHFOs:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=4wrO-8evjSs:R3lEvGZHFOs:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=4wrO-8evjSs:R3lEvGZHFOs:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=4wrO-8evjSs:R3lEvGZHFOs:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=4wrO-8evjSs:R3lEvGZHFOs:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=4wrO-8evjSs:R3lEvGZHFOs:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=4wrO-8evjSs:R3lEvGZHFOs:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=4wrO-8evjSs:R3lEvGZHFOs:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/thewavingcat/~4/4wrO-8evjSs" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.thewavingcat.com/2011/08/28/what-keeps-me-up/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.thewavingcat.com/2011/08/28/what-keeps-me-up/</feedburner:origLink></item>
+		<item>
+		<title>5 years ago</title>
+		<link>http://feedproxy.google.com/~r/thewavingcat/~3/aq2MkaHlH6E/</link>
+		<comments>http://www.thewavingcat.com/2011/08/23/5-years-ago/#comments</comments>
+		<pubDate>Mon, 22 Aug 2011 22:23:02 +0000</pubDate>
+		<dc:creator>Peter Bihr</dc:creator>
+				<category><![CDATA[connected world]]></category>
+		<category><![CDATA[note to self]]></category>
+		<category><![CDATA[5yearsago]]></category>
+		<category><![CDATA[life]]></category>
+		<category><![CDATA[my stuff]]></category>
+
+		<guid isPermaLink="false">http://www.thewavingcat.com/?p=3502</guid>
+		<description><![CDATA[&#35;5yearsago We don&#8217;t take the time to reflect often. Taking the hint from Ariel Waldman, I&#8217;d like to do just that. Reflect for a minute &#8211; on where I was five years ago, and how I came to be where I am at the moment. It&#8217;s both a snapshot of my life and a reminder [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.flickr.com/photos/thewavingcat/5514474743"><img src="http://farm6.static.flickr.com/5019/5514474743_4d761fa0cc.jpg" alt="past &#038; future" /></a></p>
+
+<p>&#35;5yearsago</p>
+
+<p>We don&#8217;t take the time to reflect often. Taking the hint from <a href="http://arielwaldman.com/2011/08/16/5-years-ago/">Ariel Waldman</a>, I&#8217;d like to do just that. Reflect for a minute &#8211; on where I was five years ago, and how I came to be where I am at the moment. It&#8217;s both a snapshot of my life and a reminder for a future self, five years from now.</p>
+
+<p><strong>5 years ago</strong>, in early 2006, I had just come back from a year of studying in Sydney followed by a trip through South-East Asia. After settling back in in Berlin, in August 2006, I was about to start my masters thesis when I was offered a job as an editor at <a href="http://politik-digital.de">politik-digital.de</a>, a non-profit think tank/magazine where I had interned several years prior. Excitedly, I accepted and started studying hundreds of &#8220;web 2.0&#8243; services for a study we conducted. (I found Twitter to be the most useless of the bunch. Ahem&#8230;) In parallel, I was still building websites with my friend <a href="http://wetware80.net/">Thomas</a> and helped companies learn about the internet. I left an old blog behind and started to blog at <a href="http://thewavingcat.com">thewavingcat.com</a>. Three months after starting my editor job, after it had became obvious that I wouldn&#8217;t be able to find the time to write my thesis, I quit and started my thesis for real.</p>
+
+<p><strong>4 years ago</strong>, I had just finished my masters degree and was undecided about my future: Find a job? Go freelance? Maybe even a PhD? I got a call out of the blue and was offered a job as editor-in-chief of <a href="http://netzpiloten.de">Netzpiloten.de</a> (then Blogpiloten.de), a young online magazine. It was a freelance gig, part-time, and the basis for the freelance career I would pursue for the next few years. This phone call quite literally changed my life. I&#8217;m still grateful for that call, and still work very closely with the person that made it. Just a few months later, my friends <a href="http://maxsenges.com">Max Senges</a>, <a href="http://stylewalker.net">Thomas Praus</a> and I would write the textbook for a Spanish university course on virtual identities.</p>
+
+<p><strong>3 years ago</strong>, my business card said: &#8220;I do web stuff&#8221;. As a freelance web strategist I was feeling more and more at home in my role. I had moved in with <a href="http://p3000.net">Panorama3000</a>, a good friend&#8217;s agency, and was learning the ropes. Besides my regular work, I blogged a lot both here and on a number of conference live blogs (including <a href="http://berlinblase.de">Berlinblase</a>). At a conference, I interviewed a pretty <a href="http://thornet.wordpress.com">free culture activist</a>. (Three years later, we&#8217;re living together.)</p>
+
+<p><strong>2 years ago</strong>, in 2009, things really took off. In a crazy year, my job brought me all kinds of awesome internet-y gigs (including as a moderator, an artist, and an election campaigner), I spent one month in New York and another in France, and organized <a href="http://www.thewavingcat.com/about/events/">atoms&amp;bits Festival and the first TEDxKreuzberg</a>.</p>
+
+<p><strong>1 year ago</strong>, besides work, <a href="http://hackdiary.com">Matt Biddulph</a> and I put another event &#8211; Ignite Berlin &#8211; where among others Igor Schwarzmann spoke about smart cities. Also, another <a href="http://tedxkreuzberg.org">TEDxKreuzberg</a>. In March, I went to SXSW with <a href="http://wiredvanity.com">Igor Schwarzmann</a>. I covered for someone&#8217;s session, thus having my first SXSW workshop on 48 hour notice. Igor and I got infected with the SXSW energy and started talking. We decided to start a company along with our buddy <a href="http://johanneskleske.com">Johannes Kleske</a>. Six months later, Igor and Johannes moved to Berlin and we launched <a href="http://thirdwaveberlin.com">Third Wave</a>.</p>
+
+<p>Today, Third Wave is heading towards its first anniversary, and moving at high speed. We organized another conference, this time together, about smart cities (<a href="http://conference.cognitivecities.com">Cognitive Cities Conference</a>). I&#8217;m fully employed by my own company and yet again learning the ropes. And I&#8217;m as excited as ever for what the future holds. These are good, exciting days.</p>
+
+<p>And yes, it freaks me out to think where I was 5 years ago.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/thewavingcat?a=aq2MkaHlH6E:ELDKebgeU6U:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=aq2MkaHlH6E:ELDKebgeU6U:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=aq2MkaHlH6E:ELDKebgeU6U:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=aq2MkaHlH6E:ELDKebgeU6U:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=aq2MkaHlH6E:ELDKebgeU6U:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=aq2MkaHlH6E:ELDKebgeU6U:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=aq2MkaHlH6E:ELDKebgeU6U:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=aq2MkaHlH6E:ELDKebgeU6U:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/thewavingcat/~4/aq2MkaHlH6E" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.thewavingcat.com/2011/08/23/5-years-ago/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.thewavingcat.com/2011/08/23/5-years-ago/</feedburner:origLink></item>
+		<item>
+		<title>Something is happening in Berlin (you can feel it in the streets)</title>
+		<link>http://feedproxy.google.com/~r/thewavingcat/~3/6E9e8uk3sUY/</link>
+		<comments>http://www.thewavingcat.com/2011/08/11/something-is-happening-in-berlin-you-can-feel-it-in-the-streets/#comments</comments>
+		<pubDate>Thu, 11 Aug 2011 13:42:32 +0000</pubDate>
+		<dc:creator>Peter Bihr</dc:creator>
+				<category><![CDATA[berlin]]></category>
+		<category><![CDATA[How to work the internets]]></category>
+		<category><![CDATA[copycat]]></category>
+		<category><![CDATA[startups]]></category>
+
+		<guid isPermaLink="false">http://www.thewavingcat.com/?p=3474</guid>
+		<description><![CDATA[It&#8217;s no secret that I&#8217;ve been a fan of Berlin for a long time. (That didn&#8217;t happen until after I moved here, but that&#8217;s a different story.) So far, that was mostly for personal reasons: I moved here to study, I have friends here, the city is interesting and quality of life is fantastic &#8211; [...]]]></description>
+			<content:encoded><![CDATA[<p>It&#8217;s no secret that I&#8217;ve been a fan of Berlin for a long time. (That didn&#8217;t happen until after I moved here, but that&#8217;s a different story.) So far, that was mostly for personal reasons: I moved here to study, I have friends here, the city is interesting and quality of life is fantastic &#8211; that is, if you like the run-down, alternative charm and everything-goes attitude of Berlin.</p>
+
+<p>Besides, Berlin is a city of layer upon layer &#8211; of history, of social issues, of politics, of subcultures. Economically Berlin has been a wrack for ages &#8211; largely because of the separation and its effects that you can still feel today even though the Wall has been gone for 20 years: This is, after all, a city where &#8220;real&#8221; (read: brick and mortar) industries hardly had a chance. So even today, the biggest sectors besides tourism are politics and media.</p>
+
+<p>More recently, though, another layer has been been added, and another sector is emerging, and strongly. Tech startups. While it has become a bit of a running joke that if a web service exists, there is a German copy cat of it, Berlin has become a place where young entrepreneurs (both German and international) come to build their new companies. The reasons are manifold, but there is a common pattern: Relatively cheap rent, high quality of life, good nightlife and a laid-back atmosphere take a lot of the hassles away that you have to deal with in other places.</p>
+
+<p>That&#8217;s worth something. Maybe even enough to put up with the iconic German bureaucracy.</p>
+
+<p>As many of my friends work in this new startup environment I&#8217;ve been watching this space closely, and there&#8217;s fantastic energy there. Now the press is catching up, and so are VCs: Hardly a week without some article about Berlin as a new European startup hub, or news that this VC or that plan to open an office here. There are closed-door, intimate lunches and open networking meetups galore, parties, everything.</p>
+
+<p>There are two sides to that coin, obviously. Yes, there is tremendous stuff going on right now, which is fantastic. But it also shows (painfully, I&#8217;m tempted to add) all the things that hadn&#8217;t been happening before. That said, the trend points to a good, healthy future as this ecosystem is emerging.</p>
+
+<p>So when I read this announcement about an <a href="http://www.6wunderkinder.com/blog/2011/08/09/founders-stand-up-the-anti-copycat-revolution-starts-now/" title="Berlin anti-copycat alliance">anti-copycat alliance</a> of Berlin-based startups it made me smile. I had heard the conversations before, but it&#8217;s good to see this made explicit, and to see so many friends directly involved. This shows that there&#8217;s a common denominator, a common spirit that ties this scene together more strongly. They &#8211; we &#8211; are getting bolder here.</p>
+
+<p>Can&#8217;t wait to see where we can take this.</p>
+
+<p><em>Update: Derk Marseille, a Dutch journalist who has been working from our office on and off for a little while, has kicked off a neat new podcast to capture that spirit: <a href="http://fat6berlin.tumblr.com/">Radio F@6</a> &#8211; not to be confused with our after work drinkup <a href="https://twitter.com/search/%23fatsix">#FatSIX</a>.</em></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/thewavingcat?a=6E9e8uk3sUY:0Ard9jmTZ20:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=6E9e8uk3sUY:0Ard9jmTZ20:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=6E9e8uk3sUY:0Ard9jmTZ20:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=6E9e8uk3sUY:0Ard9jmTZ20:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=6E9e8uk3sUY:0Ard9jmTZ20:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=6E9e8uk3sUY:0Ard9jmTZ20:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=6E9e8uk3sUY:0Ard9jmTZ20:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=6E9e8uk3sUY:0Ard9jmTZ20:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/thewavingcat/~4/6E9e8uk3sUY" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.thewavingcat.com/2011/08/11/something-is-happening-in-berlin-you-can-feel-it-in-the-streets/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://www.thewavingcat.com/2011/08/11/something-is-happening-in-berlin-you-can-feel-it-in-the-streets/</feedburner:origLink></item>
+		<item>
+		<title>Third Wave in 7 slides</title>
+		<link>http://feedproxy.google.com/~r/thewavingcat/~3/VgEN47ipl58/</link>
+		<comments>http://www.thewavingcat.com/2011/08/04/third-wave-in-7-slides/#comments</comments>
+		<pubDate>Thu, 04 Aug 2011 08:16:09 +0000</pubDate>
+		<dc:creator>Peter Bihr</dc:creator>
+				<category><![CDATA[How to work the internets]]></category>
+		<category><![CDATA[presentation]]></category>
+		<category><![CDATA[slides]]></category>
+		<category><![CDATA[third wave]]></category>
+		<category><![CDATA[thirdwaveberlin]]></category>
+
+		<guid isPermaLink="false">http://www.thewavingcat.com/?p=3469</guid>
+		<description><![CDATA[My partners in crime Johannes and Igor and I had been trying to explain what it actually is that our company Third Wave does. It&#8217;s not complex, really, it&#8217;s just that often we can&#8217;t talk about client projects. So we experimented a bit with different ways of presenting the company &#8211; and ended up going [...]]]></description>
+			<content:encoded><![CDATA[<p>My partners in crime Johannes and Igor and I had been trying to explain what it actually is that our company <a href="http://thirdwaveberlin.com">Third Wave</a> does. It&#8217;s not complex, really, it&#8217;s just that often we can&#8217;t talk about client projects. So we experimented a bit with different ways of presenting the company &#8211; and ended up going all traditional: a slide deck. Here it is.</p>
+
+<div style="width:510px" id="__ss_8752725"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/thirdwaveberlin/third-wave-introduction" title="Third Wave Introduction" target="_blank">Third Wave Introduction</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/8752725" width="510" height="426" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/thirdwaveberlin" target="_blank">Third Wave GmbH</a> </div> </div>
+
+<p>(If you&#8217;re into that kind of thing, you can find a <a href="http://www.slideshare.net/thirdwaveberlin/third-wave-vorstellung">German version here</a>.)</p>
+
+<p>Curious to hear your feedback, and thanks again for those of you who already helped us polish this thing!</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/thewavingcat?a=VgEN47ipl58:GiPWutntxaM:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=VgEN47ipl58:GiPWutntxaM:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=VgEN47ipl58:GiPWutntxaM:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=VgEN47ipl58:GiPWutntxaM:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=VgEN47ipl58:GiPWutntxaM:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=VgEN47ipl58:GiPWutntxaM:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=VgEN47ipl58:GiPWutntxaM:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=VgEN47ipl58:GiPWutntxaM:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/thewavingcat/~4/VgEN47ipl58" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.thewavingcat.com/2011/08/04/third-wave-in-7-slides/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.thewavingcat.com/2011/08/04/third-wave-in-7-slides/</feedburner:origLink></item>
+		<item>
+		<title>Visiting Berlin? Check out these restaurants.</title>
+		<link>http://feedproxy.google.com/~r/thewavingcat/~3/Ry3rif-afaE/</link>
+		<comments>http://www.thewavingcat.com/2011/07/15/visiting-berlin-check-out-these-restaurants/#comments</comments>
+		<pubDate>Fri, 15 Jul 2011 09:29:34 +0000</pubDate>
+		<dc:creator>Peter Bihr</dc:creator>
+				<category><![CDATA[berlin]]></category>
+		<category><![CDATA[coffee]]></category>
+		<category><![CDATA[food]]></category>
+		<category><![CDATA[foodie]]></category>
+		<category><![CDATA[kreuzberg]]></category>
+		<category><![CDATA[list]]></category>
+		<category><![CDATA[mitte]]></category>
+		<category><![CDATA[restaurants]]></category>
+
+		<guid isPermaLink="false">http://www.thewavingcat.com/?p=3449</guid>
+		<description><![CDATA[For those visiting Berlin, here&#8217;s a few all time favorite restaurants of mine. Absolutely personal list, I don&#8217;t claim that this is complete by any means. Unless noted otherwise, they&#8217;re all pretty much down-to-earth, low-to-mid price restaurants with meal prices ranging from 8-20 Euros. Also, please note that it&#8217;s not uncommon for restaurants in Berlin [...]]]></description>
+			<content:encoded><![CDATA[<p>For those visiting Berlin, here&#8217;s a few all time favorite restaurants of mine. Absolutely personal list, I don&#8217;t claim that this is complete by any means. Unless noted otherwise, they&#8217;re all pretty much down-to-earth, low-to-mid price restaurants with meal prices ranging from 8-20 Euros. Also, please note that it&#8217;s not uncommon for restaurants in Berlin not to accept credit cards, so make sure to bring cash.</p>
+
+<iframe width="500" height="413" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?msa=0&amp;ie=UTF8&amp;ll=52.510425,13.372381&amp;spn=0.03751,0.133442&amp;msid=208708603531200170871.0004a81812a3ec2a91ece&amp;output=embed"></iframe>
+
+<p><br /><small>View <a href="http://maps.google.com/maps/ms?msa=0&amp;ie=UTF8&amp;ll=52.510425,13.372381&amp;spn=0.03751,0.133442&amp;msid=208708603531200170871.0004a81812a3ec2a91ece&amp;source=embed" style="color:#0000FF;text-align:left">Restaurants in Berlin</a> in a larger map</small></p>
+
+<p><strong>Cocolo</strong>
+Top-notch ramen in Mitte. Never having been to Japan, Cocolo serves hands-down the best ramen I&#8217;ve ever had. I&#8217;m told it&#8217;s also an insider tipp for Japanese expats and travelers. It&#8217;s tiny, so expect to be standing in line for a while. Also, after you finished your meal, be fair to the others in the line and give up your table quickly. There&#8217;s very decent bars in the neighborhood. 
+[<a href="https://foursquare.com/venue/233003">Foursquare link</a>]</p>
+
+<p><strong>Schwarzwaldstuben</strong>
+Quite popular with the tourist crowd but still great, Schwarzwaldstuben serve south German specialties. (Schwarzwald = Black Forest). I grew up in that region and vouch for authenticity. Strangely enough, recently they also started serving Bavarian beer in 1 liter beersteins. That shouldn&#8217;t stop you from going. For larger groups make sure to reserve a table.
+[<a href="https://foursquare.com/venue/189786">Foursquare link</a>]</p>
+
+<p><strong>3Schwestern</strong>
+Located in a former hospital-turned-squat-house-turned-art-space-turned-whatever it is it has turned into, and right on the spot where the annual Kreuzberg riots used to start, you&#8217;ll find a large restaurant that serves excellent meals &#8211; Pan-European maybe? French- or German-inspired? It really depends, but it&#8217;s always great. If you plan on spending lunch in a nice garden, or have dinner before going to see a movie in the open air theater next door, this is the place. They also cater to large groups easily.
+[<a href="https://foursquare.com/venue/6731709">Foursquare link</a>]</p>
+
+<p><strong>Nansen</strong>
+Located right on the canal in Kreuzkölln (the hip northern tip of Neukölln that probes into Kreuzberg), Nansen serves German food on a high level and a strong focus on organic and vegetarian food. 
+[<a href="https://foursquare.com/venue/218571">Nansen</a>]</p>
+
+<p><strong>Santa Maria/Santa Peligro</strong>
+Until just a few years ago, decent Mexican food was hard to find in this town. The <strike>Santa</strike>* Maria mini chain changed that and kicked off a whole wave of Mexican and Californian food. My two faves out of them: Santa Maria for lunch, Santa Peligro for dinner. Don&#8217;t miss the Margaritas.
+[Foursquare links: <a href="https://foursquare.com/venue/3421712">Santa Maria</a>, <a href="https://foursquare.com/venue/1042151">Santa Peligro</a>]<br />
+* Thanks for the hint, <a href="http://parkerhiggins.net/">Parker</a>!</p>
+
+<p><strong>Hot Spot</strong>
+Don&#8217;t be deceived by the generic name and awkward location. This place serves fantastic Szechuan food (numbing spice! yum!) and the staff can recommend the perfect German white wine to go with it. I once stumbled upon this place through a New York Times article and I promise: it&#8217;s worth the detour.
+[<a href="https://foursquare.com/venue/602548">Foursquare link</a>]</p>
+
+<p><strong>Cookies Cream</strong>
+A tad bit more prices and a lot more stylish, Cookies Cream is a vegetarian-only, absolutely delicious restaurant on top of Cookies, the famous Berlin club. Enter through a hotel backyard among trash cans, this is not a place you&#8217;d randomly stumble into. Ring the bell, find your way through the corridors. And you&#8217;ll be awarded with fantastic food and great service.
+[<a href="https://foursquare.com/venue/204465">Foursquare link</a>]</p>
+
+<p><strong>Kreuzburger</strong>
+There are many great burger places in Berlin. One of my favorites is Kreuzburger in the heart of Kreuzberg. Serving everything in regular or fair trade, burgers (make sure to add extra bacon, although veggie options are also available) is pretty much a greasy hole in the wall, but in the best sense of the word. It&#8217;s tiny, it&#8217;s always packed, and it&#8217;s yummy. The perfect way to kick of a long night of bar hopping in the hood.
+[<a href="https://foursquare.com/venue/190853">Foursquare link</a>]</p>
+
+<p><strong>Babanbe &amp; Co Co</strong>
+Banh Mi, the Vietnamese flavor of sandwiches, have been going strong in Berlin for the better part of a year. The trend was probably kicked off by Co Co in Mitte, but Babanbe in Kreuzberg is also exquisite. Expect baguette bread with a yummy filling of beef, mushrooms or tofu, served with a variety of sauces. Sandwiches have never been better.
+[Foursquare links: <a href="https://foursquare.com/venue/10327782">Babanbe</a>, <a href="https://foursquare.com/venue/11260291">Co Co</a>]</p>
+
+<p><strong>Kimchi Princess</strong>
+We&#8217;ve had many good group dinners at this Korean BBQ place. Expect to leave hours later smelling like someone BBQ&#8217;d something in front of you (duh!), stuffed and with a happy, happy glow on your face. If you dare, venture through the fried chicken place next door after dinner (where during the day Angry Angry Chicken Wings are served) and go through the back door to find a well-hidden, slick Korean cocktail bar that transports you straight to the neon-lit back alleys of Seoul where you can indulge in  Soju-based cocktails.
+[<a href="https://foursquare.com/venue/361833">Foursquare link</a>]</p>
+
+<p>I missed your fave? Send me more in the comments! Also, any Indian or Sushi places not to be missed?</p>
+
+<p>I&#8217;ll be updating and extending this list as I go along.</p>
+
+<p><strong>Update:</strong> Check out this fantastic list of <a href="https://foursquare.com/thisisparker/list/great-coffee-in-berlin">the best coffee shops in Berlin</a> by <a href="http://parkerhiggins.net/">Parker</a>.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/thewavingcat?a=Ry3rif-afaE:MJoJ5-56CrY:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=Ry3rif-afaE:MJoJ5-56CrY:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=Ry3rif-afaE:MJoJ5-56CrY:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=Ry3rif-afaE:MJoJ5-56CrY:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=Ry3rif-afaE:MJoJ5-56CrY:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=Ry3rif-afaE:MJoJ5-56CrY:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/thewavingcat?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/thewavingcat?a=Ry3rif-afaE:MJoJ5-56CrY:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/thewavingcat?i=Ry3rif-afaE:MJoJ5-56CrY:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/thewavingcat/~4/Ry3rif-afaE" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.thewavingcat.com/2011/07/15/visiting-berlin-check-out-these-restaurants/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://www.thewavingcat.com/2011/07/15/visiting-berlin-check-out-these-restaurants/</feedburner:origLink></item>
+	</channel>
+</rss>

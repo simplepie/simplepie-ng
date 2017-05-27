@@ -1,0 +1,1097 @@
+<meta http-equiv="x-dns-prefetch-control" content="off"/><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+
+    <!-- DEFAULT VARIABLES -->
+
+    <meta name="color:Accent" content="#ffff01" />
+    <meta name="color:Background" content="#ffffff" />
+    <meta name="color:Text" content="#000000" />
+    <meta name="color:Link" content="#666666" />
+    
+    <meta name="color:Sidebar" content="#e4e4e4" />
+    <meta name="color:SidebarLinks" content="#000000" />
+    <meta name="color:Search" content="#f8f8f8" />
+    
+    
+    <meta name="if:Show Search" content="1" />
+    <meta name="if:Show Archive Link" content="1" />
+    <meta name="if:Show Tags" content="1" />
+    <meta name="if:Show Album Art on Audio Posts" content="1" />
+    <meta name="text:Google Analytics ID" content=""/>
+  	
+ 
+
+    <link rel="alternate" type="application/rss+xml" href="http://lurkdattwerkdat.tumblr.com/rss">
+    <link rel="shortcut icon" href="http://30.media.tumblr.com/avatar_1ed8b5f3753b_16.png">
+    
+    <title>   @LURKDAT AZZ</title>
+    
+         <meta name="description" content="" />
+     
+    
+    <script type="text/javascript" src="/tweets.js"></script>
+    
+    
+    
+    <style type="text/css">
+    html {min-height: 100%;}
+    body {background: #e4e4e4; min-height: 100%}
+
+    /* Structure */
+
+    .wrap2 {
+      width: 1000px;
+      margin: 0 auto;
+      min-height: 100%;
+    }
+    .wrap1 {
+        float:left;
+        width:100%;
+        background-color: #ffffff;
+        min-height: 100%;
+        position: relative;
+        right: 33%;
+    }
+
+    .left_wrap {
+      float:left;
+      min-height: 100%;
+      width:67%;
+      position:relative;
+      left: 33%;
+    }
+
+    .right_wrap{
+       float:left;
+       width:33%;
+       position:relative;
+       left: 33%;
+     }
+     
+
+    .left_col {width: 630px; float: right; min-height: 100%; #000000;}
+    .right_col {width: 310px; margin-top: 140px; padding-left: 20px;}
+
+
+
+    /* Right Column */
+
+    .right_col a {font-weight: bold; color: #000000;}
+    .right_col p {margin-left: 10px;}
+
+    .right_col .description {font-size: 23px; font-weight: bold; font-family: Helvetica, Arial; margin-bottom: 30px;}
+    .right_col h2 {font-size: 20px; clear: both; float: left; margin-bottom: 10px;}
+    #twitter p {margin-left:10px; font-weight: bold; clear: both; margin-bottom: 40px;}
+    #twitterwrapper {background-color: #ffff01; padding: 10px;}
+    #tweetcontainer .content {margin-bottom: 9px;}
+    #tweetcontainer a {font-weight: normal}
+    .tweet_triangle {width: 0px;
+                    margin-left: 20px;
+                    height: 0px;
+                    border-left: 19px solid transparent;
+                    border-right: 0px solid transparent;
+                    border-top: 12px solid #ffff01;}
+
+    .search input {width:255px; height: 44px; padding: 15px 5px 5px 45px; font-size: 16px;  border: none;
+                   -webkit-border-radius: 24px;
+                    -moz-border-radius: 24px;
+                    border-radius: 24px; background: url('http://26.media.tumblr.com/tumblr_lhq8q0SO0h1qztnxqo1_100.png') no-repeat 10px; background-color: #f8f8f8; }
+
+
+
+    /* Left Column */
+
+    .accent {width: 500px; height: 10px; background-color: #ffff01;}
+
+    .title h1 {font-size: 60px;}
+    .title {margin-bottom: 39px; margin-top: 35px; padding-right: 20px}
+
+    .post {width: 595px; position: relative;}
+
+    .info{position: absolute; left: 520px; top: 0; color: #7c7c7c; }
+    .notecontainer{margin-top: 20px;}
+
+
+    .date {margin-bottom: 10px;}
+    
+    .post .go {font-size: 20px;}
+    
+    .footer {padding-top: 10px;}
+    .footer p {margin: 5px 0;}
+    
+    #searchresults {font-size: 18px; padding-bottom: 30px; font-weight: bold; }
+    #tagresults {font-size: 18px; padding-bottom: 30px; font-weight: bold; }
+
+    /* Post Types  */
+
+    .quote {width: 500px;}
+    .quote blockquote {font-size: 20px; line-height: 23px; font-weight: bold;}
+    big.quote {font-size: 60px; color: #e4e4e4; line-height: 34px;}
+
+    .photo {width: 500px;}
+
+    .conversation {width: 500px;}
+
+    .audio {width: 500px;}
+
+    .link {width: 500px;}
+    a.link {font-size: 28px;}
+
+    .regular {width: 500px;}
+
+    .text img {
+     max-width: 500px;
+    }
+
+    .text blockquote img {
+     max-width: 150px;
+    }
+
+    .left_col a {color: #666666;}
+    
+    a:hover {text-decoration: underline;}
+
+    #disqus_thread {
+       padding: 20px 0;
+       clear: both;
+    }
+
+    #head h1 {font-size: 60px;}
+
+    /* Notes  */
+    
+    ol.notes {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      clear: both;
+    }
+    
+    li.note {
+      margin-bottom: 7px;
+      vertical-align: middle;
+      float: left;
+      clear: both;
+    }
+    
+    li.note img {
+      margin-right: 5px;
+      float: left;
+    }
+    
+    .clearfix {
+      clear: both;
+      height: 0;
+    }
+    
+    .source_url {
+      margin-top: 5px;
+    }
+
+
+    /* Stil CSS framework */
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:400}code{font-family:monospace}em{font-style:italic}strong{font-weight:700}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}q:before,q:after{content:''}fieldset,img,abbr,acronym{border:0}a{outline:0}body{font:13px 'Helvetica Neue',Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif}p{margin:10px 0}p + p{margin-top:0}abbr,acronym{border-bottom:#000 1px dotted}h1,h2,h3,h4,h5,h6{margin:0 0 10px 0;font-weight:bold}h1{font-size:500%}h2{font-size:300%}h3{font-size:200%}h4{font-size:150%}h5{font-size:130%}h6{font-size:100%}ul,ol{margin:10px 0 10px 30px}ul{list-style:disc}ol{list-style:decimal}fieldset{border:#ccc 1px solid;padding:0px 10px}legend{padding:5px}form{margin:10px 0}form label{font-weight:bold;margin:0 0 3px 0;display:block}form input,form textarea,form select{margin:0 0 10px 0;padding:3px;width:500px;font:12px 'Helvetica Neue',Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif}form input:focus,form textarea:focus,form select:focus{}form textarea{height:150px}form select{width:auto}form input[type="radio"],form input[type="checkbox"],form input[type="submit"]{width:auto}code,pre,tt,kbd{font:11px Monaco,'Andale Mono','Liberation Mono','Courier New',monotype}
+
+    body{color:#000000;}
+    h1,h2{font-size:14px;display:inline;margin:0 5px 0 0;}
+    h1 a:link,h1 a:visited,h1 a:active{color:#000000; text-decoration: none; line-height: 60px; letter-spacing: -2px}
+    a:link {text-decoration: none;}
+    a:hover {text-decoration: underline;}
+
+    #pro{color:#aaa; margin-left: 133px;}
+    #nav{font-size:14px;font-weight:bold;}
+    #desc{background:#eee;padding:10px;margin-top:10px;font-size:11px;width:100%;}
+
+    .post{margin:0 0 20px 0;border-bottom:#e4e4e4 1px solid; padding:0 0 20px 0;}
+    .quote blockquote{margin:0 0 0 10px;}
+    blockquote{margin-left: 10px;}
+    .quote cite{display:block;text-align:right;margin:10px 0 0 0;font-weight:bold;}
+    .quote .deco{float:left;margin:0 5px 0 0;font-weight:bold;font-size:14px;}
+    .link .go{font-weight:bold;font-size:20px;}
+    .chat ul{list-style:none;margin:0;}
+    .chat ul li {margin-bottom: 3px;}
+    .photo img,.audio object,.video object,.video embed{margin:0 0 10px 0;display:block;}
+    .prev{float:left;}
+    .next{float:right;}
+    .clr{clear:both;}
+    iframe{margin-right:120px;}
+    .source_url{margin-top: 10px;}
+    
+    /* Footer  */
+    
+    #footer {width: 500px; background-color: #ffff01; font-size: 22px; font-weight: bold; height: 90px;}
+    
+    #footer .previous {float: left; padding-left: 95px; padding-top: 32px; padding-bottom: 31px; padding-right: 48px;}
+    #footer .next {float: right; padding-right: 120px; padding-top: 32px; padding-bottom: 31px; padding-left: 48px;}
+    #footer .previous:hover , #footer .next:hover {background-color: #e4e4e4;}
+    #footer a:hover, #footer a {text-decoration: none; color:#000000;}
+
+
+    
+    </style>
+ 
+
+<body>
+    <div class="wrap2">
+        <div class="wrap1">
+            <div class="left_wrap">
+                <div class="left_col">
+                    
+                    <div class="accent"></div>
+                    
+                    <div class="title">
+                        <h1><a href="/">@LURKDAT AZZ</a></h1>
+                    </div>        
+                    
+                   
+                    
+                   
+                    
+                  
+                    
+                    
+                    
+                    
+                        <div class="post">
+                            
+        
+                            
+                                <div class="photo">     
+                                  <a href="http://instagr.am/p/PAPX7/"><img alt="I already told you how much I hate your street art &amp;#8216;installations&amp;#8217;. (Taken with instagram)" src="http://30.media.tumblr.com/tumblr_lsi3tddegB1qzd1u3o1_500.jpg"/></a>
+                                  <p>I already told you how much I hate your street art &#8216;installations&#8217;. (Taken with <a href="http://instagr.am">instagram</a>)</p>
+                                  
+                                      <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10984470768">10/3/11</a>
+                                      </div>
+                                  
+                                </div>
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+                                <div class="photo">     
+                                  <a href="http://instagr.am/p/PAO7Y/"><img alt="The places you&amp;#8217;ll go, the faces you&amp;#8217;ll kiss. (Taken with instagram)" src="http://27.media.tumblr.com/tumblr_lsi3qiPY9V1qzd1u3o1_500.jpg"/></a>
+                                  <p>The places you&#8217;ll go, the faces you&#8217;ll kiss. (Taken with <a href="http://instagr.am">instagram</a>)</p>
+                                  
+                                      <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10984424837">10/3/11</a>
+                                      </div>
+                                  
+                                </div>
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+                                <div class="photo">     
+                                  <a href="http://instagr.am/p/PANBz/"><img alt="Who needs a fake ID? (Taken with instagram)" src="http://25.media.tumblr.com/tumblr_lsi3fesHXG1qzd1u3o1_500.jpg"/></a>
+                                  <p>Who needs a fake ID? (Taken with <a href="http://instagr.am">instagram</a>)</p>
+                                  
+                                      <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10984246132">10/3/11</a>
+                                      </div>
+                                  
+                                </div>
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+                                <div class="photo">     
+                                  <a href="http://instagr.am/p/PAJc5/"><img alt="Veggie chicken banh mi + tomato basil.  (Taken with instagram)" src="http://24.media.tumblr.com/tumblr_lsi2t9qwG31qzd1u3o1_500.jpg"/></a>
+                                  <p>Veggie chicken banh mi + tomato basil.  (Taken with <a href="http://instagr.am">instagram</a>)</p>
+                                  
+                                      <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10983893831">10/3/11</a>
+                                      </div>
+                                  
+                                </div>
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                  <p>
+                                  <a href="http://lurkdattwerkdat.tumblr.com/post/10983893831">1 note</a>
+                                  </p>
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                                <div class="video">
+                                    <script type="text/javascript" language="javascript" src="http://assets.tumblr.com/javascript/tumblelog.js?649"></script><span id="video_player_10983125725">[<a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">Flash 10</a> is required to watch video]</span><script type="text/javascript">renderVideo("video_player_10983125725",'http://lurkdattwerkdat.tumblr.com/video_file/10983125725/tumblr_lsi1g6ndpM1qzd1u3',500,889,'portrait=true\x26amp;w=500\x26amp;orientation=portrait\x26amp;poster=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_lsi1g6ndpM1qzd1u3_r1_frame1.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_lsi1g6ndpM1qzd1u3_r1_frame2.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_lsi1g6ndpM1qzd1u3_r1_frame3.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_lsi1g6ndpM1qzd1u3_r1_frame4.jpg,http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_lsi1g6ndpM1qzd1u3_r1_frame5.jpg')</script>
+                                    <p>Doin that @LURKHARD work, slappin that @LIVELOVEASAP.</p>
+                                
+                                  <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10983125725">10/3/11</a>
+                                  </div>
+                                
+                                </div>
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                  <p>
+                                  <a href="http://lurkdattwerkdat.tumblr.com/post/10983125725">2 notes</a>
+                                  </p>
+                                
+                                    
+                                        <div class="tags"><a href="http://lurkdattwerkdat.tumblr.com/tagged/Lurk_Hard">Lurk Hard</a><span class="tag-commas">&nbsp; </span><a href="http://lurkdattwerkdat.tumblr.com/tagged/Design">Design</a><span class="tag-commas">&nbsp; </span><a href="http://lurkdattwerkdat.tumblr.com/tagged/Skateboards">Skateboards</a><span class="tag-commas">&nbsp; </span><a href="http://lurkdattwerkdat.tumblr.com/tagged/Asap_Rocky">Asap Rocky</a><span class="tag-commas">&nbsp; </span></div>
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                                <div class="audio">
+                                
+                                
+                                    
+                                        <div class="album_art">
+                                            <img src="http://28.media.tumblr.com/tumblr_lshlu64CtY1qzd1u3o1_1317640493_cover.jpg" alt="lurkdat - lurkdat" style="margin-bottom:10px;" />
+                                        </div>
+                                    
+                                
+                                <span id="audio_player_10976840510">[<a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">Flash 9</a> is required to listen to audio.]</span><script type="text/javascript">replaceIfFlash(9,"audio_player_10976840510",'\x3cdiv class=\x22audio_player\x22\x3e<embed type="application/x-shockwave-flash" src="http://assets.tumblr.com/swf/audio_player.swf?audio_file=http://www.tumblr.com/audio_file/10976840510/tumblr_lshlu64CtY1qzd1u3&color=E4E4E4" height="27" width="207" quality="best"></embed>\x3c/div\x3e')</script>
+                                  <p><img src="http://farm7.static.flickr.com/6155/6167819949_bc14e48807.jpg" width="500" height="337"/></p>
+                                  
+                                  11 plays
+                              
+                                
+                                  <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10976840510">10/3/11</a>
+                                  </div>
+                                
+                                </div>
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                    
+                                        <div class="tags"><a href="http://lurkdattwerkdat.tumblr.com/tagged/lurkdat">lurkdat</a><span class="tag-commas">&nbsp; </span><a href="http://lurkdattwerkdat.tumblr.com/tagged/lurkdat_twerkdat">lurkdat twerkdat</a><span class="tag-commas">&nbsp; </span><a href="http://lurkdattwerkdat.tumblr.com/tagged/lushy">lushy</a><span class="tag-commas">&nbsp; </span><a href="http://lurkdattwerkdat.tumblr.com/tagged/lushy_lurkdat">lushy lurkdat</a><span class="tag-commas">&nbsp; </span></div>
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+                                <div class="photo">     
+                                  <a href="http://instagr.am/p/O6fwX/"><img alt="Mi Vida Lurkdat. (Taken with instagram)" src="http://29.media.tumblr.com/tumblr_lsgg5b1bCg1qzd1u3o1_500.jpg"/></a>
+                                  <p>Mi Vida Lurkdat. (Taken with <a href="http://instagr.am">instagram</a>)</p>
+                                  
+                                      <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10948174165">10/2/11</a>
+                                      </div>
+                                  
+                                </div>
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                  <p>
+                                  <a href="http://lurkdattwerkdat.tumblr.com/post/10948174165">1 note</a>
+                                  </p>
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+                                <div class="photo">     
+                                  <a href="http://instagr.am/p/O6dp9/"><img alt="Whoever invented Sriracha sauce is a genius / rich as fuck. (Taken with instagram)" src="http://26.media.tumblr.com/tumblr_lsgg1p3fvw1qzd1u3o1_500.jpg"/></a>
+                                  <p>Whoever invented Sriracha sauce is a genius / rich as fuck. (Taken with <a href="http://instagr.am">instagram</a>)</p>
+                                  
+                                      <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10948071570">10/2/11</a>
+                                      </div>
+                                  
+                                </div>
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                  <p>
+                                  <a href="http://lurkdattwerkdat.tumblr.com/post/10948071570">3 notes</a>
+                                  </p>
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+        
+                            
+                        
+                            
+                                  <div class="link"> 
+                                      <a class="go" href="http://www.brobible.com/bronews/story/10-facts-you-didnt-know-about-new-york-city-prostitutes">70% of those sex workers surveyed use a BlackBerry, while just 19% use an iPhone.</a>
+                                      <p>10 Facts You Didn’t Know About New York City Prostitutes.</p>
+<p><img src="http://www.gambling911.com/files/publisher/Prostitute-011209L_2.jpg?0"/></p>
+                                  
+                                      
+                                        <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10940899928">10/2/11</a>
+                                        </div>
+                                    
+                                
+                                  </div>
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                  <p>
+                                  <a href="http://lurkdattwerkdat.tumblr.com/post/10940899928">8 notes</a>
+                                  </p>
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                                <div class="video">
+                                    <object width="500" height="279"><param name="movie" value="http://www.youtube.com/v/NIG0PtFtXfw&amp;rel=0&amp;egm=0&amp;showinfo=0&amp;fs=1"></param><param name="wmode" value="transparent"></param><param name="allowFullScreen" value="true"></param><embed src="http://www.youtube.com/v/NIG0PtFtXfw&amp;rel=0&amp;egm=0&amp;showinfo=0&amp;fs=1" type="application/x-shockwave-flash" width="500" height="279" allowFullScreen="true" wmode="transparent"></embed></object>
+                                    <p>I sign my name, I take an S &amp; draw two lines thru it, gettin money like I knew it. </p>
+                                
+                                  <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10939139628">10/2/11</a>
+                                  </div>
+                                
+                                </div>
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+        
+                            
+                        
+                            
+                                  <div class="link"> 
+                                      <a class="go" href="http://twitpic.com/6tanw6">LURKDAT: http://twitpic.com/6tanw6 $20 tip 4 hailing these black dudes a cab, what&amp;#039;s really tho.</a>
+                                      
+                                  
+                                      
+                                        <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10894177456">10/1/11</a>
+                                        </div>
+                                    
+                                
+                                  </div>
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+                                <div class="photo">     
+                                  <a href="http://instagr.am/p/OxyAj/"><img alt="Black napkinz (Taken with instagram)" src="http://27.media.tumblr.com/tumblr_lsegbabZLL1qzd1u3o1_500.jpg"/></a>
+                                  <p>Black napkinz (Taken with <a href="http://instagr.am">instagram</a>)</p>
+                                  
+                                      <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10897452368">10/1/11</a>
+                                      </div>
+                                  
+                                </div>
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                  <p>
+                                  <a href="http://lurkdattwerkdat.tumblr.com/post/10897452368">1 note</a>
+                                  </p>
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+                                <div class="photo">     
+                                  <a href="http://instagr.am/p/OxuPp/"><img alt="2pac, Pez, Massan. DFW (Taken with instagram)" src="http://28.media.tumblr.com/tumblr_lsefwrATTe1qzd1u3o1_500.jpg"/></a>
+                                  <p>2pac, Pez, Massan. DFW (Taken with <a href="http://instagr.am">instagram</a>)</p>
+                                  
+                                      <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10897110910">10/1/11</a>
+                                      </div>
+                                  
+                                </div>
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+                                <div class="photo">     
+                                  <a href="http://instagr.am/p/Ot6-N/"><img alt="Pigtails &amp;amp; hello kitty ribbons. (Taken with Instagram at San Loco)" src="http://26.media.tumblr.com/tumblr_lsdgr9fCml1qzd1u3o1_500.jpg"/></a>
+                                  <p>Pigtails &amp; hello kitty ribbons. (Taken with <a href="http://instagr.am">Instagram</a> at San Loco)</p>
+                                  
+                                      <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10878995650">09/30/11</a>
+                                      </div>
+                                  
+                                </div>
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                  <p>
+                                  <a href="http://lurkdattwerkdat.tumblr.com/post/10878995650">4 notes</a>
+                                  </p>
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                        <div class="post">
+                            
+        
+                            
+                                <div class="photo">     
+                                  <a href="http://instagr.am/p/Ot15w/"><img alt="I&amp;#8217;m on a bus on a psychedelic trip. Reading murder books tryin&amp;#8217; to stay hip. (Taken with Instagram at San Loco)" src="http://25.media.tumblr.com/tumblr_lsdfz7TLz41qzd1u3o1_500.jpg"/></a>
+                                  <p>I&#8217;m on a bus on a psychedelic trip. Reading murder books tryin&#8217; to stay hip. (Taken with <a href="http://instagr.am">Instagram</a> at San Loco)</p>
+                                  
+                                      <div class="info"><a href="http://lurkdattwerkdat.tumblr.com/post/10878552622">09/30/11</a>
+                                      </div>
+                                  
+                                </div>
+                            
+        
+                            
+                        
+                            
+                        
+                           
+                        
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                        
+        
+                            
+                        
+                                <div class="footer">
+                                
+                                    
+                                        
+                                    
+                                    
+                                    
+
+                                    
+                            
+                            </div>
+                        </div>
+                      
+                    
+                    
+<p style="font-size: 11px; margin-left: 165px">Accent theme by <a href="http://handsomecode.tumblr.com">Handsome Code</a></p>
+
+                    
+                      <div id="footer">
+                    
+                          
+                           <a href="/page/2" class="next">Next&rarr;</a> 
+                      </div>                      
+                    
+                      
+                    
+       
+                    
+                    
+            </div>
+       </div>
+
+        <div class="right_wrap">
+            <div class="right_col">
+                
+                <div class="description">
+                  
+                      <img src="http://dygz78ls5cy51.cloudfront.net/823c1f2df00444af9a12b46a0a871d77"><br>
+<a href="http://lurkdat.4ormat.com" target="_blank"><img src="http://28.media.tumblr.com/tumblr_ls8t8pY47A1qzd1u3o1_250.png" width="300"></a><br><script type="text/javascript" src="http://widgets.twitpic.com/j/2/widget.js?username=LURKDAT&colorbg=E2E2E2&colorborder=E2E2E2&colorlinks=E2E2E2&colortweetbg=E2E2E2&colortweets=E2E2E2&theme=grid_vertical&width=300&count=18&timestamp=0"></script>
+                                  
+                </div>
+                
+                
+                    <div id="twitter">
+                 
+                                
+                                
+                                <div id="twitterwrapper">
+                                    <div id="tweetcontainer"></div>
+                                    <script type="text/javascript">
+                                        function recent_tweets(data) {
+                                            document.getElementById("twitterwrapper").style.display = "block";
+                                            for(i = 0; i < data.length; i++) {
+                                                document.getElementById("tweetcontainer").innerHTML = document.getElementById("tweetcontainer").innerHTML + '<a href="http://twitter.com/LURKDAT/status/' + (data[i].id_str ? data[i].id_str : data[i].id) + '"><div class="content">' + data[i].text + '</div></a>';
+                                            }
+                                        }
+                                    </script>
+                                </div>
+
+                                
+         
+
+                        <div class="tweet_triangle"></div>
+
+                        <p><a href="http://twitter.com/LURKDAT">twitter.com/LURKDAT</a><p>
+                                
+
+                    </div>
+
+               
+                
+                  <div class="search">
+                      <form action="/search" method="get">
+                          <input type="text" name="q" value="" placeholder="Search">
+                          <button type="submit" style="display: none"></button>
+                      </form>
+                  </div>
+                
+                
+                
+                  <p>
+                      <a href="/archive">view archive</a>
+                  </p>
+                
+                
+                
+                <br>
+                <br>
+                
+                
+                    
+                        <h2>
+                            <a href="/twitterlurkdat">FOLLOW: @LURKDAT</a>
+                        </h2>
+                    
+                        <h2>
+                            <a href="/facebook">'LIKE': FACEBOOK</a>
+                        </h2>
+                    
+                        <h2>
+                            <a href="/bandcamp">BANDCAMP</a>
+                        </h2>
+                    
+                        <h2>
+                            <a href="/formspring">FORMSPRING</a>
+                        </h2>
+                    
+                
+                
+                
+                
+                  <h2>
+                    <a href="/ask">Ask me anything</a>
+                  </h2>
+                
+                  
+                
+
+
+            </div>
+         </div>
+         
+      </div>
+   </div>       
+   
+    
+    
+        <script type="text/javascript" src="/tweets.js"></script>
+       
+
+    
+
+<!-- BEGIN TUMBLR CODE --><iframe src="http://assets.tumblr.com/iframe.html?10&src=http%3A%2F%2Flurkdattwerkdat.tumblr.com%2F%3Ffeed%3Drss2&amp;lang=en_US&amp;name=lurkdattwerkdat&amp;brag=0" scrolling="no" width="330" height="25" frameborder="0" style="position:absolute; z-index:1337; top:0px; right:0px; border:0px; background-color:transparent; overflow:hidden;" id="tumblr_controls"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('tumblr_controls').allowTransparency=true;</script><![endif]--><script type="text/javascript">_qoptions={qacct:"p-19UtqE8ngoZbM"};</script><script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script><noscript><img src="http://pixel.quantserve.com/pixel/p-19UtqE8ngoZbM.gif" style="display:none; border-width:0px; height:1px; width:1px;" alt=""/></noscript><!-- END TUMBLR CODE --></body>
+
+
+</html>

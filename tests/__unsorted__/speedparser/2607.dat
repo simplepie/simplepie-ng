@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>supersonicfeet.com</title>
+    <link>http://supersonicfeet.com/posts</link>
+    <description>Supersonic Feet - the blog of Adam Perfect</description>
+    <item>
+      <title>Goodwood Festival of Speed 2011 video</title>
+      <link>http://supersonicfeet.com/standard/goodwood-festival-of-speed-2011-video</link>
+      <description>&lt;p&gt;
+    At this year's Goodwood Festival of Speed I took my photography a bit more seriously, lugging around 
+    not one but two SLRs (Canon 5D Mark II and Canon 40D).
+&lt;/p&gt;
+&lt;p&gt;
+    The main reason for two cameras was to use the higher burst rate of the 40D to get action shots of 
+    the cars going up the hill or round the rally stage, while using the 5D for wider shots and cars in 
+    the paddocks, but I also used the 5D to get some video when I stopped long enough to set up the tripod.
+&lt;/p&gt;
+&lt;p&gt;
+    Check out the video below. It's best viewd full screen and loud. You can also download the full 2.3GB 1080p version from the &lt;a href="http://www.vimeo.com/26027289"&gt;video page on Vimeo&lt;/a&gt;.
+&lt;/p&gt;
+&lt;div class="article-image"&gt;
+    &lt;iframe src="http://player.vimeo.com/video/26027289?byline=0&amp;amp;portrait=0&amp;amp;color=E35C00" width="940" height="529" frameborder="0"&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+      <guid>http://supersonicfeet.com/standard/goodwood-festival-of-speed-2011-video</guid>
+    </item>
+    <item>
+      <title>Griddle.it - generate your grid background helper images</title>
+      <link>http://supersonicfeet.com/standard/griddleit---generate-your-grid-background-helper-images</link>
+      <description>&lt;p&gt;
+    &lt;a href="http://griddle.it/"&gt;Griddle.it&lt;/a&gt; is a cool web service to generate grid backgrounds, which 
+    are useful when developing a site to make sure everything lines up correctly.
+&lt;/p&gt;
+&lt;p&gt;
+    Found via &lt;a href="http://cameronmoll.tumblr.com/post/4339401006/griddle-it"&gt;Cameron Moll&lt;/a&gt;.
+&lt;/p&gt;</description>
+      <guid>http://supersonicfeet.com/standard/griddleit---generate-your-grid-background-helper-images</guid>
+    </item>
+    <item>
+      <title>A website is born</title>
+      <link>http://supersonicfeet.com/article/a-website-is-born</link>
+      <description>&lt;p class="article-image"&gt;
+    &lt;a href="http://adamperfect.com"&gt;
+        &lt;img src="/images/articles/adamperfect_com/home-240.jpg" alt="Screenshot of the adamperfect.com homepage" /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    For a while now, I've wanted a place to show off my photography in a better way than the odd article 
+    on this blog coupled with my &lt;a href="http://flickr.com/photos/aperfect"&gt;flickr account&lt;/a&gt;. Today I 
+    launched just such a place: my new site, &lt;a href="http://adampefect.com"&gt;adamperfect.com&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;Some background&lt;/h2&gt;
+&lt;p&gt;
+    A month or so ago, some ideas I'd been mulling over combined into inspiration and I started planning out 
+    a whole new website that would act as a kind of personal hub: showcasing my photography and design work 
+    as well as some more 'life stream' stuff like tweets, bookmarks and Dribbble shots. 
+&lt;/p&gt;
+
+&lt;p&gt;
+    During the course of building the site, I remembered my original idea to simply have somewhere nice 
+    to display my photographs. Even without having explicitly focussed on that, the site was already 
+    heavily weighted towards photography and so I decided to pare down and remove the other stuff. 
+&lt;/p&gt;
+
+&lt;p&gt;
+    This was definitely a good decision, as it's left me with a site that focuses on a single thing: my 
+    photography. The other stuff is still interesting to me, but I'll end up putting it elsewhere, possibly 
+    some of it on this site. 
+&lt;/p&gt;
+
+&lt;h2&gt;The site&lt;/h2&gt;
+&lt;p&gt;
+    So what does the new site do? At its root, the site is a hopefully more nicely-presented copy of all 
+    the photographs I upload to flickr, indeed the photos on adamperfect.com are imported from flickr. This 
+    also means the site acts as a nice backup of my photographs (or flickr does, depending on how you look 
+    at it).
+&lt;/p&gt;
+
+&lt;p&gt;
+    I'll be writing a journal of my photography-related exploits and thoughts. I've added a 
+    couple of journal posts already, based on a couple of recent photography sessions and linked to their 
+    related photo sets.
+&lt;/p&gt;
+
+&lt;p class="article-image alt"&gt;
+    &lt;img src="/images/articles/adamperfect_com/photo-detail.png" alt="Crop of the photo detail page" /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    There's a featured photos section where my favourite photos get the 'view big' treatment and go 
+    full-screen. Every photo on the site also has its own page with Exif data listed alongside and the key 
+    data like shuter speed, aperture, exposure bias and ISO listed under the photo.
+&lt;/p&gt;
+
+&lt;h2&gt;Under the hood&lt;/h2&gt;
+&lt;p&gt;
+    As I want to shift Supersonic Feet back to focus on design and web dev, I should mention a little 
+    bit about the build of the new site&amp;hellip;
+&lt;/p&gt;
+
+&lt;p&gt;
+    The site uses some funky CSS3 stuff like text/box-shadows and the odd rounded corner or gradient, but 
+    I also created a nifty photo stack effect using just CSS. I came up with the effect a couple of months 
+    ago based on &lt;a href="http://matthamm.com/box-shadow-curl.html"&gt;Matt Hamm's CSS page curl&lt;/a&gt; demo and 
+    posted a &lt;a href="http://dribbble.com/shots/109162-CSS-photo-stack"&gt;preview shot on Dribbble&lt;/a&gt;. I'll 
+    try to write it up at some point, but a combination of Matt's orginal and viewing source on my site 
+    should show how it's done in the meantime.
+&lt;/p&gt;
+
+&lt;p&gt;
+    On a more techy front, I intially used MongoDB as the data store for the new site. It seemed like a good 
+    idea as the site is effectively just serving up documents (photos or journal posts) and I'd been wanting 
+    to have agood play with MongoDB. I used Mongoid as the ORM with Ruby on Rails.
+&lt;/p&gt;
+
+&lt;p&gt;
+    It was all going quite well, but as I added things like photo sets (where a photo can be in multiple 
+    sets), my lack of MongoDB experience and the data looking more and more relational triggered me to 
+    switch back to good ol' MySQL. Again, I might write this up at some point in the future.
+&lt;/p&gt;
+
+&lt;h2&gt;Go look at the new&lt;/h2&gt;
+&lt;p&gt;
+    Anyway, I've rambled as usual. Go and &lt;a href="http://adamperfect.com"&gt;check out the new site&lt;/a&gt; and 
+    let me know what you think!
+&lt;/p&gt;
+
+&lt;p&gt;
+    PS: I wrote most of his post on my iPad. A year into owning it and it's the first time I've really 
+    attempted any long form writing on it. It was pretty smooth apart from all the extra key strokes 
+    required to write HTML tags. 
+&lt;/p&gt;</description>
+      <guid>http://supersonicfeet.com/article/a-website-is-born</guid>
+    </item>
+    <item>
+      <title>The video that sold me on buying a Canon 5D Mark II</title>
+      <link>http://supersonicfeet.com/article/the-video-that-sold-me-on-buying-a-canon-5d-mark-ii</link>
+      <description>&lt;p&gt;
+    A couple of years ago, just before I was due to go on holiday to the States (for an awesome road trip 
+    from Denver to Yellowstone and back) I started getting antsy for a camera upgrade. I had a Canon 40D 
+    (which I still keep as my second camera): a fantastic piece of kit, but being a gadget freak I 
+    was keen to move up a level. 
+&lt;/p&gt;
+&lt;p&gt;
+    While umm-ing and ahh-ing about whether to shell out a couple of grand on a 5D, I came across two videos 
+    that sealed the deal in my mind. The first was a snowboarding video filmed on 'Powder Mountain'in Utah. 
+    The second, and the one that really knocked my socks off, was the video below by Michael Fletcher: 
+    Images of Western Australias's Kimberley. It's 14 minutes of pure beauty and every time I watch it I get 
+    a huge longing to visit Australia. 
+&lt;/p&gt;
+&lt;div class="article-image"&gt;
+    &lt;iframe src="http://player.vimeo.com/video/4685373?byline=0&amp;amp;portrait=0&amp;amp;color=E35C00" width="940" height="529" frameborder="0"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;
+    I'm delighted with the 5D by the way. Especially for landscape shots it's just an amazing camera. That's 
+    not to say I haven't got my eye on a 1D Mark IV now, though that would be more for sport and wildlife 
+    photography. 
+&lt;/p&gt;</description>
+      <guid>http://supersonicfeet.com/article/the-video-that-sold-me-on-buying-a-canon-5d-mark-ii</guid>
+    </item>
+    <item>
+      <title>GuideGuide: useful guide placement tool for Photoshop</title>
+      <link>http://supersonicfeet.com/standard/guideguide-useful-guide-placement-tool-for-photoshop</link>
+      <description>&lt;div class="article-image alt"&gt;
+    &lt;img src="/images/guideguide/guideguide.jpg" alt="Blank Photoshop document next to document with guides applied in grid structure." /&gt;
+    &lt;p&gt;Screenshot of grid guides being applied, from Cameron's site.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;
+    I'm posting this as much for my own future reference as anything, but &lt;a href="http://www.cameronmcefee.com/guideguide/"&gt;GuideGuide&lt;/a&gt; 
+    by Cameron McEfee is a really useful guide generator plugin for Photoshop.
+&lt;/p&gt;
+&lt;p&gt;
+    It does stuff like applying guides to mark the centre of the document as well as guides for a whole 
+    grid layout, complete with rows, columns and gutters.
+&lt;/p&gt;
+&lt;p&gt;
+    If you design with grids, this should save you a good amount of time when first creating your 
+    design files in Photoshop.
+&lt;/p&gt;</description>
+      <guid>http://supersonicfeet.com/standard/guideguide-useful-guide-placement-tool-for-photoshop</guid>
+    </item>
+    <item>
+      <title>2010: A Year in Pictures</title>
+      <link>http://supersonicfeet.com/article/2010-a-year-in-pictures</link>
+      <description>&lt;p&gt;
+    I recently decided to look back at my photographic output for the past year and 
+    decided I didn't get out with my camera anywhere near often enough. This much I already knew, 
+    but I did manage to get out and take some every month, except October which was an all-round 
+    terrible month for me.
+&lt;/p&gt;
+&lt;p&gt;
+    Anyway, here's a round-up of the photos I &lt;em&gt;did&lt;/em&gt; take, with a bit of text summing up 
+    each months photography with links to the matching flickr sets.
+&lt;/p&gt;
+
+&lt;h2&gt;January: Snow &amp;amp; Style&lt;/h2&gt;
+&lt;div class="article-image month"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4234243841/in/set-72157622991117563/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/january-durham-snow.jpg" alt="Durham Cathedral in the snow" /&gt;&lt;/a&gt;
+    &lt;p&gt;Durham Cathedral, Durham. 1 January.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4298829583/in/set-72157623146618293/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/january-design-museum.jpg" alt="Design Museum, London at night" /&gt;&lt;/a&gt;
+    &lt;p&gt;Design Museum, London. 24 January.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4299551772/in/set-72157623146618293/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/january-stall.jpg" alt="Coffee stand by the London Eye at night" /&gt;&lt;/a&gt;
+    &lt;p&gt;Coffee stand at the Southbank, London. 24 January.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class="month-lead"&gt;
+    The year started up North with my family. On &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157622991117563/"&gt;New 
+    Year&#226;&#8364;&#8482;s Day I went into Durham&lt;/a&gt; with my Dad to take photos while there was still plenty of 
+    snow lying.
+&lt;/p&gt;
+&lt;p&gt;
+    My &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157623146618293/"&gt;other photo outing of the month&lt;/a&gt; was a quite successful one walking along the Thames from the 
+    Southbank to the Tate Modern one evening. I was really pleased with how a few of these photos 
+    came out and it got me into doing a bit more post-processing on my photos. This photo of the 
+    Design Museum is still one of my favourite photos I&#226;&#8364;&#8482;ve taken.
+&lt;/p&gt;
+
+&lt;h2&gt;February: Geek Foosball&lt;/h2&gt;
+&lt;div class="article-image month"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4352759316/in/set-72157623423667642/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/febraury-geek-foosball-final.jpg" alt="The Geek Foosball Final, with everyone huddled around one foosball table to watch" /&gt;&lt;/a&gt;
+    &lt;p&gt;Geek Foosball Final. Bar Kick, London. 11 February.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4352015945/in/set-72157623423667642/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/february-foosball-table.jpg" alt="Close-up of a foosball table in use" /&gt;&lt;/a&gt;
+    &lt;p&gt;Bar Kick, London. 11 February.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/5340692532/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/february-vintage-cameras.jpg" alt="Vintage cameras lined up" /&gt;&lt;/a&gt;
+    &lt;p&gt;Notting Hill, London. 6 February.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class="month-lead"&gt;
+    February saw the return of the great London Lebowski events organised by &lt;a href="http://twitter.com/cyberdees"&gt;Dees&lt;/a&gt;.
+    This time the theme was &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157623423667642/"&gt;Geek Foosball&lt;/a&gt;, with a mini foosball tournament at Bar Kick in Shoreditch. Not 
+    only was it great fun, I managed to get some pretty decent photos as well.
+&lt;/p&gt;
+&lt;p&gt;
+    A few days earlier I'd been to Notting Hill when my Mum and one of my brothers 
+    came down to stay. I didn't get any particularly good photos, but have included one of some cool 
+    old cameras in Notting Hill market. Later in the month I went to the British Library and took a 
+    set of photos so uninspiring I've never uploaded them.
+&lt;/p&gt;
+
+&lt;h2&gt;March: London Lebowski 2&lt;/h2&gt;
+&lt;div class="article-image month"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4467334876/in/set-72157623713444898/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/march-london-lebowski.jpg" alt="People chatting in the sports bar at the Trocadero" /&gt;&lt;/a&gt;
+    &lt;p&gt;London Lebowski 2. Trocadero, London. 23 March.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4466564731/in/set-72157623713444898/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/march-bowling-score.jpg" alt="Close-up of bowling score screen" /&gt;&lt;/a&gt;
+    &lt;p&gt;Trocadero, London. 23 March.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class="month-lead"&gt;
+    It seems the only time I got my camera out of the house in March was for another London Lebowki event, 
+    this time the eponymous &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157623713444898/with/4467334876/"&gt;London Lebowki 2&lt;/a&gt;: geek bowling at its finest!
+&lt;/p&gt;
+&lt;p&gt;
+    More top fun had, but not a great evening for my photography skills. Still, here are a couple of photos.
+&lt;/p&gt;
+
+&lt;h2&gt;April: The North&lt;/h2&gt;
+&lt;div class="article-image month"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/5341332196/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/april-climbing.jpg" alt="Climbing a fence" /&gt;&lt;/a&gt;
+    &lt;p&gt;Climbing a fence somewhere. Ahem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/5340716347/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/april-max.jpg" alt="Max, my dog, lying on a rug." /&gt;&lt;/a&gt;
+    &lt;p&gt;Max. Washington. 4 April.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/5341361768/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/april-dibi.jpg" alt="Dan Rubin talking at DIBI" /&gt;&lt;/a&gt;
+    &lt;p&gt;Sage Gateshead. 28 April.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/5341364964/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/april-north-shields.jpg" alt="Max, my dog, lying on a rug." /&gt;&lt;/a&gt;
+    &lt;p&gt;North Shields. 30 April.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class="month-lead"&gt;
+    In April I made two trips back home (the North East of England): at the start of the month 
+    for my Mum's birthday and again towards the end for the excellent &lt;a href="http://www.dibiconference.com/"&gt;DIBI conference&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+    It was great to spend some time with my family. There'd be more photos online but I'm forbidden from 
+    uploading photos of my Mum!
+&lt;/p&gt;
+&lt;p&gt;
+    DIBI was a really good conference and looking at this year's lineup I can't wait to go again. It's 
+    great to see the North East starting to show signs of having a decent web design/development scene and 
+    the Sage Gateshead is a great venue for a conference.
+&lt;/p&gt;
+&lt;p&gt;
+    While I was home for DIBI I also managed to get in a quick photo mission with 
+    &lt;a href="http://bishnavitch.tumblr.com/"&gt;Krishna&lt;/a&gt;. We headed 
+    to an abandoned old railway building we've known about for years so I could get some stills and 
+    he could get some video. It was a glorious sunny day and I'd 
+    been hoping to get nice atmospheric shots of what is a quite scary building when it's 
+    dark. By the time we got there I just wasn't really in the photo-taking mood which was a shame.
+&lt;/p&gt;
+&lt;p&gt;
+    It was however, still a reminder to me of the cool 'missions' I used to go on with my mates 
+    back home, whether it be for photography, skating or just a laugh, and how I don't get up to anything 
+    like that now I'm living in London.
+&lt;/p&gt;
+
+&lt;h2&gt;May: Night Safaris &amp;amp; Sunshine&lt;/h2&gt;
+&lt;div class="article-image month"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4598850779/in/set-72157624041322680/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/may-natural-history-museum.jpg" alt="Inside the Natural History Museum at night" /&gt;&lt;/a&gt;
+    &lt;p&gt;Natural History Museum, London. 11 May.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4664330322/in/set-72157624066073521/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/may-checked-building.jpg" alt="Building with checkerboard walls" /&gt;&lt;/a&gt;
+    &lt;p&gt;London. 22 May.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4663682921/in/set-72157624066073521/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/may-buckingham-palace.jpg" alt="Gardens around Buckingham Palace" /&gt;&lt;/a&gt;
+    &lt;p&gt;London. 22 May.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/5340809517/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/may-kielder.jpg" alt="Building with checkerboard walls" /&gt;&lt;/a&gt;
+    &lt;p&gt;Kielder. 31 May.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class="month-lead"&gt;
+    May was a decent month for me taking photos. It started with the first &lt;a href="http://www.nhm.ac.uk/visit-us/whats-on/events/programs/nhm/night_safari.html"&gt;Night Safari at the Natural 
+    History Museum&lt;/a&gt; in London: a great late-night tour of the museum where scientists from the museum 
+    give a talk on their specialist fields and show items not normally on display. While the tour and the 
+    talks were hugely interesting, it was almost a bigger plus for me to be in the museum at night, with 
+    very few other people. The &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157624041322680/"&gt;photographic opportunity&lt;/a&gt; was worth the ticket alone!
+&lt;/p&gt;
+&lt;p&gt;
+    The weekend of my birthday I &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157624066073521/"&gt;went into London to take photos&lt;/a&gt; with my flatmate, Ken. It was a 
+    ridiculously sunny, hot day and it was fantastic. We started at Trafalgar Square and worked our way up 
+    to Buckingham Palace, then back down to the Southbank and the Aquarium.
+&lt;/p&gt;
+&lt;p&gt;
+    To finish the month off, I went back up North again to celebrate my birthday with family and friends 
+    from home. We worked in a little &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157624081270537/"&gt;trip up to Kielder Reservoir&lt;/a&gt; 
+    on another lovely sunny day. Looking back at these photos, the UK actually got a pretty decent amount 
+    of sunshine this year!
+&lt;/p&gt;
+
+&lt;h2&gt;June: Skating&lt;/h2&gt;
+&lt;div class="article-image month"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4739556452/in/set-72157624369874338/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/june-dlr-canary-wharf.jpg" alt="View from the front of a DLR train passing Canary Wharf" /&gt;&lt;/a&gt;
+    &lt;p&gt;On the DLR. Canary Wharf, London. 23 June.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4738927365/in/set-72157624369874338/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/june-krishna-skating.jpg" alt="Krishna running with his skateboard" /&gt;&lt;/a&gt;
+    &lt;p&gt;Canary Wharf, London. 23 June.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class="month-lead"&gt;
+    For some reason I can't remember, I didn't take many photos at all in June; in fact the only set I 
+    have is when Krishna was down in London and I took a few photos of him &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157624369874338/"&gt;skating in Canary Wharf&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;July: Summer!&lt;/h2&gt;
+&lt;div class="article-image month"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4739556452/in/set-72157624369874338/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/july-goodwood-fulvia.jpg" alt="A Lancia Fulvia driving towards the camera on the forest rally stage at the Goodwood Festival of Speed." /&gt;&lt;/a&gt;
+    &lt;p&gt;Goodwood Festival of Speed, Goodwood. 2 July.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4756630498/in/set-72157624284873543/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/july-rally.jpg" alt="Spectators watch the rally stage at Goodwood" /&gt;&lt;/a&gt;
+    &lt;p&gt;Goodwood Festival of Speed, Goodwood. 2 July.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4783536660/in/set-72157624470728898/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/july-piano.jpg" alt="A pianist playing to a small crowd outdoors" /&gt;&lt;/a&gt;
+    &lt;p&gt;St Paul's, London. 10 July.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class="month-lead"&gt;
+    The fine weather continued in July and with it a couple of good photo opportunities: the &lt;a href="http://supersonicfeet.com/article/goodwood-festival-of-speed"&gt;Goodwood 
+    Festival of Speed&lt;/a&gt; and another beautiful sunny day in London.
+&lt;/p&gt;
+&lt;p&gt;
+    I was actually going to give the FoS a miss, but then some family friends offered a pair of free 
+    tickets they had and I wasn't going to pass those up. Ken and I drove down for the day (another 
+    sunny one!) and the festival was just as fun as I remembered. We spent so long up on the forest rally 
+    stage that we ran out of time to see much of the rest of the show in the one day we had tickets for. 
+    &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157624284873543/"&gt;Many photos were taken&lt;/a&gt; and 
+    I did a &lt;a href="http://supersonicfeet.com/article/goodwood-festival-of-speed"&gt;write-up of the event&lt;/a&gt; on this blog.
+&lt;/p&gt;
+&lt;p&gt;
+    The following weekend the weather was even better, so I &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157624470728898/"&gt;headed into London&lt;/a&gt; for a walk around the 
+    shops and to take pictures. I walked for hours and eventually wound up on the St Paul's side of the 
+    Millenium Bridge where one of the &lt;a href="http://supersonicfeet.com/photograph/play-me-im-yours"&gt;Play 
+    Me, I'm Yours&lt;/a&gt; pianos was set up. It was a perfect scene, with some really talented pianists 
+    entertaining the small crowd with their varying styles and I ended up sitting there for over an hour 
+    listening and taking photos.
+&lt;/p&gt;
+
+&lt;h2&gt;August: Castles&lt;/h2&gt;
+&lt;div class="article-image month"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4917013572/in/set-72157624657465103/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/august-eastbourne.jpg" alt="Eastbourne Pier as the sun is going down" /&gt;&lt;/a&gt;
+    &lt;p&gt;Eastbourne Pier, Eastbourne. 21 August.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4916381235/in/set-72157624657465103/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/august-bodiam-castle.jpg" alt="Looking down on Bodiam Castle" /&gt;&lt;/a&gt;
+    &lt;p&gt;Bodiam Castle. 21 August.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4916330503/in/set-72157624657465103/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/august-dog.jpg" alt="A very cute dog at Bodiam Castle" /&gt;&lt;/a&gt;
+    &lt;p&gt;Bodiam Castle. 21 August.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class="month-lead"&gt;
+    At the start of August I bought a new car, a 3.2l V6 Alfa Romeo GT (see September below for picture) 
+    so I clearly needed to get it out for a drive and it was a great excuse to go and take some pictures. 
+    &lt;a href="http://twitter.com/bayek"&gt;Radek&lt;/a&gt;, an ex-Gumtree colleague, hadn't been to a proper English 
+    castle yet so we drove down to &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157624657465103/"&gt;Bodiam Castle 
+    and then Eastbourne&lt;/a&gt;. Bodiam is almost a picture perfect imagination of a defensive castle: square, big 
+    defensive turrets and surrounded by a moat. In other words, very cool.
+&lt;/p&gt;
+&lt;p&gt;
+    I went up to Newcastle again for the bank holiday weekend and took a few photos on the &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157624859459528/"&gt;beach at 
+    Alnmouth&lt;/a&gt;, just before it started to rain.
+&lt;/p&gt;
+
+&lt;h2&gt;September: To Spain&lt;/h2&gt;
+&lt;div class="article-image month"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/5047740029/in/set-72157624950056808/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/september-alhambra.jpg" alt="The Alhambra, Granada, Spain" /&gt;&lt;/a&gt;
+    &lt;p&gt;Alhambra, Granada, Spain. 19 September.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4959847804/in/set-72157624758118933/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/september-alfa-gt.jpg" alt="Alfa Romeo GT in shade under a tree" /&gt;&lt;/a&gt;
+    &lt;p&gt;Scotney Castle. 4 September.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/5341638188/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/september-capucines.jpg" alt="Capucines" /&gt;&lt;/a&gt;
+    &lt;p&gt;Millau, France. 24 September.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class="month-lead"&gt;
+    Aside from a quick afternoon trip to &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157624758118933/"&gt;Scotney Castle&lt;/a&gt; at 
+    the start of the month, most of September was spent on a three week road trip to Spain with my brother, 
+    &lt;a href="http://twitter.com/christianp"&gt;Christian&lt;/a&gt;. I'm still planning to do a full 
+    write-up of the holiday, but you can &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157624950056808/"&gt;check out the photos at flickr&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;November: Ice Skating&lt;/h2&gt;
+&lt;div class="article-image month"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/5234094971/in/set-72157625408278339/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/november-ice-skating.jpg" alt="Ice rink at Somerset House" /&gt;&lt;/a&gt;
+    &lt;p&gt;Somerset House, London. 26 November.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4959847804/in/set-72157624758118933/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/november-ice-skating-2.jpg" alt="People ice skating at Somerset House" /&gt;&lt;/a&gt;
+    &lt;p&gt;Somerset House, London. 26 November.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class="month-lead"&gt;
+    I went to a second, Halloween-themed Night Safari at the Natural History Museum at the start of November, 
+    but sadly don't seem to have got any better photos than I did the first time out. I got a surprise 
+    reward of a &lt;a href="http://www.flickr.com/photos/aperfect/5341659904/"champagne trip on the London Eye&lt;/a&gt; thanks to Gumtree and then at the end of the month Dees 
+    organised another London Lebowski event: &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157625408278339/"&gt;ice skating&lt;/a&gt; this time, which was awesome.
+&lt;/p&gt;
+
+&lt;h2&gt;December: Snow&lt;/h2&gt;
+&lt;div class="article-image month"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/5347060007/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/december-penshaw-duck.jpg" alt="Duck in the snow" /&gt;&lt;/a&gt;
+    &lt;p&gt;Penshaw. 27 December.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/5346959907/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/december-gumtree.jpg" alt="Dressing the Christmas tree at Gumtree HQ" /&gt;&lt;/a&gt;
+    &lt;p&gt;Gumtree, Richmond, London. 15 December.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="article-image alt small"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/5346965503/"&gt;&lt;img src="/images/articles/2010-a-year-in-photos/december-white-christmas.jpg" alt="White Xmas written in the snow on the back of a car" /&gt;&lt;/a&gt;
+    &lt;p&gt;Washington. 24 December.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class="month-lead"&gt;
+    December was the coldest on record in the UK and thankfully that was mitigated by lots of lovely 
+    snow fall. That said, by the time I got up North for Christmas with my family, I didn't get a chance 
+    to get out and take many pictures before most of the snow was gone.
+&lt;/p&gt;
+&lt;p&gt;
+    We did go out for a &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157625803204950/"&gt;lovely 
+    walk in the park by Penshaw Monument&lt;/a&gt; on the 27th though, while there was 
+    still a load of snow, and I got a couple of decent shots. I was playing with my newly-acquired Canon 
+    S95 and ended up taking more video than stills. It's a great little camera though and will hopefully 
+    mean I take more photos when I don't have the 5D handy.
+&lt;/p&gt;
+
+&lt;h2&gt;2011&lt;/h2&gt;
+&lt;p&gt;
+    This year I'm setting myself a target of taking more photos than I did last year and of course to get 
+    &lt;em&gt;better&lt;/em&gt; at taking pictures. I've got the fancy Canon 5D Mark II and some decent lenses, I just 
+    need to train myself to be better at using them which will only come with more practice.
+&lt;/p&gt;
+&lt;p&gt;
+    I also spent much of last year saying I'd go on a photography course of some sort too, but never did. 
+    This year I plan to change that.
+&lt;/p&gt;
+&lt;p&gt;
+    January has started reasonably well on the photography front, with a walk round Saltwell Park in Gateshead on New 
+    Year's Day (photos not yet online) and a &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157625682909055/"&gt;tour of Highgate Cemetery&lt;/a&gt; 
+    with &lt;a href="http://twitter.com/turbotastical"&gt;Jodi&lt;/a&gt; last Sunday.
+&lt;/p&gt;
+&lt;p&gt;
+    Now I just have to keep it up!
+&lt;/p&gt;</description>
+      <guid>http://supersonicfeet.com/article/2010-a-year-in-pictures</guid>
+    </item>
+    <item>
+      <title>Git GUI client for Mac OS X</title>
+      <link>http://supersonicfeet.com/standard/git-gui-client-for-mac-os-x</link>
+      <description>&lt;p&gt;
+    Since I switched to primarily using a Mac a couple of years ago, I've been on the occasional lookout 
+    for a GUI client for Git without much success.
+&lt;/p&gt;
+
+&lt;p&gt;
+    Late last year &lt;a href="http://www.git-tower.com/"&gt;Tower&lt;/a&gt; launched in beta and is looking quite 
+    promising. I haven't had much chance to play with it yet, but have been impressed with what I've 
+    seen so far.
+&lt;/p&gt;
+
+&lt;p&gt;
+    Aside from Tower, I've found the built-in Git interface to Jetbrains' awesome Ruby IDE, 
+    &lt;a href="http://www.jetbrains.com/ruby/"&gt;RubyMine&lt;/a&gt;, to be really nice as it's built in as part of 
+    the development workflow. It's far less visual, but probably more useful as you work on stuff (assuming 
+    that's Ruby!).
+&lt;/p&gt;
+
+&lt;p&gt;
+    Related: &lt;a href="http://supersonicfeet.com/article/git-gui-client-for-windows"&gt;Git GUI client for 
+    Windows&lt;/a&gt;.
+&lt;/p&gt;</description>
+      <guid>http://supersonicfeet.com/standard/git-gui-client-for-mac-os-x</guid>
+    </item>
+    <item>
+      <title>Play Me, I'm Yours</title>
+      <link>http://supersonicfeet.com/photograph/play-me-im-yours</link>
+      <description>&lt;p&gt;
+    While the weather was still gorgeously hot last month, I went for a wander round London and ended up at St Paul's where I came across one of the &lt;a href="http://news.bbc.co.uk/1/hi/england/london/8114859.stm"&gt;Play Me, I'm Yours&lt;/a&gt; pianos being played to a large crowd.
+&lt;/p&gt;
+&lt;p&gt;
+    It was an almost perfect scene: beautiful music being played enthusiastically, a crowd that had gathered round naturally and St Paul's cathedral as a backdrop. I ended up staying for over an hour listening to various players having a go, each with their own style.
+&lt;/p&gt;
+&lt;p&gt;
+    What a brilliant idea these pianos were.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157624470728898/with/4783537724/"&gt;More photos over on flickr&lt;/a&gt;.
+&lt;/p&gt;</description>
+      <guid>http://supersonicfeet.com/photograph/play-me-im-yours</guid>
+    </item>
+    <item>
+      <title>Goodwood Festival of Speed</title>
+      <link>http://supersonicfeet.com/article/goodwood-festival-of-speed</link>
+      <description>&lt;p class="article-image"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4755965333/in/set-72157624284873543/lightbox/"&gt;&lt;img src="http://farm5.static.flickr.com/4076/4755965333_e4776eca5e_m.jpg" alt="Car ready to start the rally stage at Goodwood" /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    This year I was lucky enough to be given a couple of free tickets to the Goodwood Festival of Speed 
+    by some friends of the family and not having been in a couple of years I jumped at them.
+&lt;/p&gt;
+&lt;p&gt;
+    The tickets were for the Friday, the quietest (and perhaps best) day to go to Goodwood if you can 
+    only do one, so I took the day off work and headed down to Goodwood with my flatmate, Ken.
+&lt;/p&gt;
+&lt;p&gt;
+    When we eventually escaped London traffic and got to Goodwood it was lunch time, but a quick burger and 
+    we were on our way up to the forest rally stage at the top of the hill. There was a WRC event on 
+    elsewhere in the world that weekend, so there weren't as many modern contemporary rally cars as the last 
+    time I went, or the star drivers, but there were still plenty of classics, including a Lancia Stratos.
+&lt;/p&gt;
+&lt;p class="article-image alt"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4756626384/in/set-72157624284873543/lightbox/"&gt;&lt;img src="http://farm5.static.flickr.com/4137/4756626384_b63f51f698.jpg" alt="Lancia Fulvia exiting a corner on the Goodwood rally stage" /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    We spent a couple of hours in the forest stage, watching the cars fly round and taking loads of pictures. 
+    The jump towards the end of the stage was great, but as ever quite hard to get a good vantage point for 
+    taking pictures. The festival happened amidst a heat wave this year, so the mostly-chalk stage was 
+    massively dusty.
+&lt;/p&gt;
+&lt;p&gt;
+    With only one-day passes time was quickly getting on, so we headed back down the hill to the main marquees and 
+    pavillions.
+&lt;/p&gt;
+&lt;P&gt;
+    It was clearly an 'austerity drive' year as none of the manufacturer pavillions were 
+    particularly lavish this time round, though Alfa Romeo (celebrating its centenary) and Peugeot did 
+    the best jobs.
+&lt;/p&gt;
+&lt;p class="article-image"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4756633102/in/set-72157624284873543/lightbox/"&gt;&lt;img src="http://farm5.static.flickr.com/4079/4756633102_112d2ff120_m.jpg" alt="The Alfa Romeo pavillion" /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    I got another chance to drool over the most stunning car of the past couple of decades: the Alfa Romeo 
+    8C Competizione. This is very definitely my current dream car. Alfa was also showing off the new 
+    Giulietta, which looks nice enough but I can't say I lust after. I'll be sticking to saving up for a 
+    second-hand 3.2 V6 Alfa GT I think.
+&lt;/p&gt;
+&lt;p class="article-image alt"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4756642246/in/set-72157624284873543/lightbox/"&gt;&lt;img src="http://farm5.static.flickr.com/4123/4756642246_c4c778dec0_m.jpg" alt="Peugeot SR-1 concept car" /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    The Peugeot SR-1 concept car looked pretty stunning, though the dashboard was a bit 70s sci-fi from 
+    what I could see peeking over the shoulder line (it was on a high stand).
+&lt;/p&gt;
+&lt;p&gt;
+    Peugeot was really pushing the new RCZ to the full, though seeing it for real it looks a bit too much 
+    like an Audi TT. The sculpted glass 'cockpit' roof is a nice touch but seems like it's been toned down 
+    from the concept car I remember seeing a couple of years ago and other than that it's a bit bland.
+&lt;/p&gt;
+&lt;p class="article-image alt"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4756018079/in/set-72157624284873543/lightbox/"&gt;&lt;img src="http://farm5.static.flickr.com/4123/4756018079_4831d5ea8f_m.jpg" alt="Alfa Romeo sculpture in front of Goodwood House" /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    I felt the main show-piece sculpture in front of Goodwood House was a bit poor compared to previous years 
+    as well. The cars involved were lovely of course (including my old fave the 8C), but I didn't get it. 
+    I read afterwards that it's apparently supposed to represent the Alfa clover symbol, but it was lost on 
+    me at the time.
+&lt;/p&gt;
+&lt;h2&gt;Great fun&lt;/h2&gt;
+&lt;p&gt;
+    All of this is not to say the Festival of Speed wasn't fun this year; it was great fun!
+&lt;/p&gt;
+&lt;p&gt;
+    The rally stage is always fantastic and catching a glimpse of Formula 1 cars blasting (or smoking) 
+    their way up the hill at such close proximity is something you don't get elsewhere.
+&lt;/p&gt;
+&lt;p&gt;
+    The Style et Luxe concours had some stunning cars in it and I even ran into an old friend of my Dad's 
+    who was displaying his Maserati Quattroporte II. There was also a Maserati A6GCS which, apart from the 
+    slightly dodgy two-tone blue colour scheme, was beautiful and a load of Alfa Romeo supercars.
+&lt;/p&gt;
+&lt;p class="article-image alt"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4756081605/in/set-72157624284873543/lightbox/"&gt;&lt;img src="http://farm5.static.flickr.com/4098/4756081605_c44de2ce75.jpg" alt="Alfa Romeo Tipo 33 Stradale Prototipo" /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    I think my favourite car from the Style et Luxe section has to be the Alfa Romeo Tipo 33 Stradale 
+    prototype; just a stunning car.
+&lt;/p&gt;
+&lt;p&gt;
+    Moving round from the concours we headed to the paddock where you can get right up to the cars that 
+    have been launching themselves up the hill at speed all day. It's a chance to see some amazing cars 
+    up close, as well as catch some famous names (for example, we passed Jason Plato and Matt Neal having a chat on 
+    the way in).
+&lt;/p&gt;
+&lt;p&gt;
+    In the paddock I found one of my favourite cars from my childhood: Gabriele Tarquini's BTCC-winning Alfa 
+    Romeo 155. I had a couple of Duke Video VHS tapes of the couple of seasons when the Alfa 155s dominated 
+    the British Touring Car Championship when I was younger and pretty much hero-worshipped them.
+&lt;/p&gt;
+&lt;p class="article-image"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4756730882/in/set-72157624284873543/lightbox/"&gt;&lt;img src="http://farm5.static.flickr.com/4099/4756730882_295d345b7a_m.jpg" alt="Gabriele Tarquini's Alfa Romeo 155" /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    By the time we had made our way round the paddock, the show was coming to an end for the day and the sun 
+    finally crept out from behind the clouds. This was probably a good thing as I still got a bit sun-burnt 
+    despite the cloud cover.
+&lt;/p&gt;
+&lt;p class="article-image alt"&gt;
+    &lt;a href="http://www.flickr.com/photos/aperfect/4756099659/in/set-72157624284873543/lightbox/"&gt;&lt;img src="http://farm5.static.flickr.com/4096/4756099659_b02e97cff6_m.jpg" alt="" /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    The Festival of Speed was great as ever, but it definitely confirmed to me that you need to take a couple 
+    of days to do it properly (we didn't spend any time watching cars go up the hill!) and that the rather 
+    large amount of money I shelled out two years ago to be in the Kinrara enclosure was also worth it, dress 
+    code and all.
+&lt;/p&gt;
+&lt;p&gt;
+    There are more photos from the day in my &lt;a href="http://www.flickr.com/photos/aperfect/sets/72157624284873543/with/4756730882/"&gt;Goodwood 2010&lt;/a&gt; 
+    set on flickr. I also cobbled together some of the video I caught on my 5D during the day, which you can 
+    see below.
+&lt;/p&gt;
+&lt;object width="780" height="439"&gt;&lt;param name="allowfullscreen" value="true" /&gt;&lt;param name="allowscriptaccess" value="always" /&gt;&lt;param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=13248782&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=0&amp;amp;show_portrait=0&amp;amp;color=c9ff23&amp;amp;fullscreen=1" /&gt;&lt;embed src="http://vimeo.com/moogaloop.swf?clip_id=13248782&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=0&amp;amp;show_portrait=0&amp;amp;color=c9ff23&amp;amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="780" height="439"&gt;&lt;/embed&gt;&lt;/object&gt;
+</description>
+      <guid>http://supersonicfeet.com/article/goodwood-festival-of-speed</guid>
+    </item>
+    <item>
+      <title>Internet Explorer 6 z-index bug</title>
+      <link>http://supersonicfeet.com/article/internet-explorer-6-z-index-bug</link>
+      <description>&lt;p&gt;
+    Internet Explorer has a minor bug with z-index that often crops up when you have an element which 
+    is displayed as an overlay on top of other elements (e.g. lightboxes, drop-down menus and the 
+    like).
+&lt;/p&gt;
+&lt;p class="article-image"&gt;
+    &lt;img src="/images/articles/z-index/IE-z-index.png" alt="Example of overlay being hidden behind another element" /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    The problem is caused when the element you want to overlay is nested inside a parent element, 
+    which in turn has sibling elements. Normally, we just give it a z-index to force it higher in 
+    the display order but IE6 doesn't seem to pay attention. 
+    See the figure to the left or &lt;a href="/article-examples/z-index/index.html"&gt;a live example&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+    Luckily the solution is quite simple: just add a z-index to the parent element that's at the same 
+    level in the source as the other elements that need to be hidden under the overlay, 
+    &lt;a href="/article-examples/z-index/solution.html"&gt;comme &amp;ccedil;a&lt;/a&gt;
+&lt;/p&gt;</description>
+      <guid>http://supersonicfeet.com/article/internet-explorer-6-z-index-bug</guid>
+    </item>
+  </channel>
+</rss>

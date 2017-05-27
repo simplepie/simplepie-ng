@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:bandsintown="http://www.bandsintown.com/docs/rssns" version="2.0">
+  <channel>
+    <title>Sentiflect's Upcoming Shows</title>
+    <link>http://www.bandsintown.com/Sentiflect</link>
+    <description>Bandsintown :: Search | Share | Discover Live Music</description>
+    <language>en-us</language>
+    <image>
+      <url>http://www.bandsintown.com/images/rssLogo.gif</url>
+      <link>http://www.bandsintown.com</link>
+      <title>Bandsintown.com</title>
+    </image>
+    <item>
+      <title>This artist has no upcoming shows.</title>
+      <link>http://www.bandsintown.com</link>
+      <bandsintown:images>
+        <bandsintown:image>http://www.bandsintown.com/images/artists/1109305223482522_small.jpg</bandsintown:image>
+      </bandsintown:images>
+    </item>
+  </channel>
+</rss>

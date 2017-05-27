@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Quacos</title>
+	<atom:link href="http://www.quacos.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.quacos.com</link>
+	<description>Web development, Open Source e informatica divertente</description>
+	<lastBuildDate>Tue, 20 Sep 2011 13:33:47 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.2.1</generator>
+		<item>
+		<title>jQuery è ormai imbattibile?</title>
+		<link>http://www.quacos.com/2011/08/02/jquery-e-ormai-imbattibile/</link>
+		<comments>http://www.quacos.com/2011/08/02/jquery-e-ormai-imbattibile/#comments</comments>
+		<pubDate>Tue, 02 Aug 2011 14:24:42 +0000</pubDate>
+		<dc:creator>Giovanni Cappellini</dc:creator>
+				<category><![CDATA[Web development]]></category>
+		<category><![CDATA[ajax]]></category>
+		<category><![CDATA[framework]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[jQuery]]></category>
+		<category><![CDATA[prototype]]></category>
+
+		<guid isPermaLink="false">http://www.quacos.com/?p=2505</guid>
+		<description><![CDATA[<a href="http://www.quacos.com/2011/08/02/jquery-e-ormai-imbattibile/"><img align="left" hspace="5" width="120" src="http://farm3.static.flickr.com/2117/1817034358_f9d6278934.jpg" class="alignleft wp-post-image tfe" alt="Honk!!! Honk!!! Honk!!! :)))" title="Honk!!! Honk!!! Honk!!! :)))" /></a>Ho mosso i miei primi passi con Ajax nel 2005 grazie a Spaghetti Ajax, a quel tempo l'unico documento in italiano disponibile in materia, per poi basare il mio CMS su questa tecnologia scegliendo la combinazione Prototype e Script.aculo.us come framework. Poi sono rimasto folgorato da jQuery, al punto da diventarne dipendente per qualsiasi cosa, [...]]]></description>
+		<wfw:commentRss>http://www.quacos.com/2011/08/02/jquery-e-ormai-imbattibile/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Non è vero ma ci credo</title>
+		<link>http://www.quacos.com/2011/07/18/non-e-vero-ma-ci-credo/</link>
+		<comments>http://www.quacos.com/2011/07/18/non-e-vero-ma-ci-credo/#comments</comments>
+		<pubDate>Mon, 18 Jul 2011 07:40:51 +0000</pubDate>
+		<dc:creator>Giovanni Cappellini</dc:creator>
+				<category><![CDATA[Off-Topic]]></category>
+		<category><![CDATA[consegna]]></category>
+		<category><![CDATA[lavoro]]></category>
+		<category><![CDATA[tempo]]></category>
+
+		<guid isPermaLink="false">http://www.quacos.com/?p=2503</guid>
+		<description><![CDATA[<a href="http://www.quacos.com/2011/07/18/non-e-vero-ma-ci-credo/"><img align="left" hspace="5" width="120" src="http://farm1.static.flickr.com/22/36791306_c6447a29c3.jpg" class="alignleft wp-post-image tfe" alt="I met up with her on my veranda.." title="I met up with her on my veranda.." /></a>Proseguendo sulla scia di "Come guadagnare tempo sulla consegna di un lavoro", ecco un altro espediente che ho scoperto per caso e che affonda le sue radici nella superstizione. Non so se come cosa sia diffusa a livello nazionale, ma almeno nella mia zona si dice che Di Venere e di Marte non si compra [...]]]></description>
+		<wfw:commentRss>http://www.quacos.com/2011/07/18/non-e-vero-ma-ci-credo/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Trovare le differenze fra due immagini</title>
+		<link>http://www.quacos.com/2011/07/15/trovare-le-differenze-fra-due-immagini/</link>
+		<comments>http://www.quacos.com/2011/07/15/trovare-le-differenze-fra-due-immagini/#comments</comments>
+		<pubDate>Fri, 15 Jul 2011 12:19:14 +0000</pubDate>
+		<dc:creator>Giovanni Cappellini</dc:creator>
+				<category><![CDATA[Link del giorno]]></category>
+		<category><![CDATA[Web development]]></category>
+		<category><![CDATA[GIMP]]></category>
+		<category><![CDATA[hard disk]]></category>
+		<category><![CDATA[html css]]></category>
+		<category><![CDATA[programma]]></category>
+		<category><![CDATA[settimana enigmistica]]></category>
+
+		<guid isPermaLink="false">http://www.quacos.com/?p=2497</guid>
+		<description><![CDATA[<a href="http://www.quacos.com/2011/07/15/trovare-le-differenze-fra-due-immagini/"><img align="left" hspace="5" width="120" height="120" src="http://www.quacos.com/wp-content/uploads/trovalediff1-150x150.jpg" class="alignleft wp-post-image tfe" alt="" title="trovalediff1" /></a>Avete presente com'è lavorare con i grafici? A me chiaramente capita spesso quando devo convertire le loro grafiche in HTML+CSS. Nel loro lavoro tendono ad accumulare cataste di file, in cui ci sono piccole differenze sia nel nome che nel contenuto. Il primo passo è difficile capire qual'è il template definitivo in mezzo ad una [...]]]></description>
+		<wfw:commentRss>http://www.quacos.com/2011/07/15/trovare-le-differenze-fra-due-immagini/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Forse ho imparato ad acquistare prodotti informatici</title>
+		<link>http://www.quacos.com/2011/06/20/forse-ho-imparato-ad-acquistare-prodotti-informatici/</link>
+		<comments>http://www.quacos.com/2011/06/20/forse-ho-imparato-ad-acquistare-prodotti-informatici/#comments</comments>
+		<pubDate>Mon, 20 Jun 2011 11:05:46 +0000</pubDate>
+		<dc:creator>Giovanni Cappellini</dc:creator>
+				<category><![CDATA[Android]]></category>
+		<category><![CDATA[Apple]]></category>
+		<category><![CDATA[Open Source]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[amico]]></category>
+		<category><![CDATA[collaborazione]]></category>
+		<category><![CDATA[disco]]></category>
+		<category><![CDATA[hard disk]]></category>
+		<category><![CDATA[lavoro]]></category>
+		<category><![CDATA[miti]]></category>
+		<category><![CDATA[passione]]></category>
+		<category><![CDATA[rules of thumb]]></category>
+		<category><![CDATA[shopping]]></category>
+		<category><![CDATA[velocità]]></category>
+
+		<guid isPermaLink="false">http://www.quacos.com/?p=2488</guid>
+		<description><![CDATA[<a href="http://www.quacos.com/2011/06/20/forse-ho-imparato-ad-acquistare-prodotti-informatici/"><img align="left" hspace="5" width="120" src="http://farm4.static.flickr.com/3140/2637009704_6224df1c95_m.jpg" class="alignleft wp-post-image tfe" alt="Every once in a while I take pictures when Sarah is shopping for obscure hardware in a computer warehouse store, wearing a tank top that shows off her super-heroes tattoos, and talking to me about our recent trip to Comic-Con…." title="Every once in a while I take pictures when Sarah is shopping for obscure hardware in a computer warehouse store, wearing a tank top that shows off her super-heroes tattoos, and talking to me about our recent trip to Comic-Con…." /></a>Tutti noi abbiamo avuto un amico "tecnologico" che ci ha guidato nei nostri primi acquisti presso le grandi catene di distribuzione dove non è sempre possibile avere a disposizione un commesso preparato che abbiano a cuore esigenze che neanche noi conosciamo fino in fondo. Processori e RAM cambiano continuamente, e spesso i parametri per confrontarli [...]]]></description>
+		<wfw:commentRss>http://www.quacos.com/2011/06/20/forse-ho-imparato-ad-acquistare-prodotti-informatici/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Ancora su WordPress e Lighttpd: la cache è controproducente?</title>
+		<link>http://www.quacos.com/2011/05/30/ancora-su-wordpress-e-lighttpd-la-cache-e-controproducente/</link>
+		<comments>http://www.quacos.com/2011/05/30/ancora-su-wordpress-e-lighttpd-la-cache-e-controproducente/#comments</comments>
+		<pubDate>Mon, 30 May 2011 12:54:27 +0000</pubDate>
+		<dc:creator>Giovanni Cappellini</dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Wordpress]]></category>
+		<category><![CDATA[apc]]></category>
+		<category><![CDATA[disco]]></category>
+		<category><![CDATA[hosting]]></category>
+		<category><![CDATA[opcode]]></category>
+		<category><![CDATA[ottimizzazione]]></category>
+		<category><![CDATA[Plugin]]></category>
+		<category><![CDATA[vps]]></category>
+
+		<guid isPermaLink="false">http://www.quacos.com/?p=2480</guid>
+		<description><![CDATA[<a href="http://www.quacos.com/2011/05/30/ancora-su-wordpress-e-lighttpd-la-cache-e-controproducente/"><img align="left" hspace="5" width="120" src="http://farm2.static.flickr.com/1399/1464915106_516e8a4c9b.jpg" class="alignleft wp-post-image tfe" alt="no limits" title="no limits" /></a>Ci sono dei limiti che bisognerebbe conoscere e che non devono essere superati: questo vale in tutti i campi compreso quello dell'ottimizzazione di WordPress. Oggi ho fatto un piccolo passo indietro e ho disinstallato il plugin W3 Total Cache, ma non perché ce n'è uno migliore nel suo settore, anzi. Io avevo installato APC sul [...]]]></description>
+		<wfw:commentRss>http://www.quacos.com/2011/05/30/ancora-su-wordpress-e-lighttpd-la-cache-e-controproducente/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>I comandi che uso più spesso amministrando un server Linux</title>
+		<link>http://www.quacos.com/2011/05/23/i-comandi-che-uso-piu-spesso-amministrando-un-server-linux/</link>
+		<comments>http://www.quacos.com/2011/05/23/i-comandi-che-uso-piu-spesso-amministrando-un-server-linux/#comments</comments>
+		<pubDate>Mon, 23 May 2011 14:40:48 +0000</pubDate>
+		<dc:creator>Giovanni Cappellini</dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[apache]]></category>
+		<category><![CDATA[Database]]></category>
+		<category><![CDATA[errore]]></category>
+		<category><![CDATA[server]]></category>
+		<category><![CDATA[tempo reale]]></category>
+		<category><![CDATA[vps]]></category>
+		<category><![CDATA[xargs]]></category>
+
+		<guid isPermaLink="false">http://www.quacos.com/?p=2463</guid>
+		<description><![CDATA[Con questo articolo condivido una lista dei comandi più importanti della bash history dei miei VPS. Vorrei dare credito a tutte le fonti da cui ho attinto, ma è impossibile. Ad ogni modo... Trovare un file dalla directory corrente sapendo il nome find . -type f &#124; grep nomefile Per trovare una directory, usare "type d". [...]]]></description>
+		<wfw:commentRss>http://www.quacos.com/2011/05/23/i-comandi-che-uso-piu-spesso-amministrando-un-server-linux/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Selezionare elementi con un ordine a piacere in MySQL</title>
+		<link>http://www.quacos.com/2011/05/12/selezionare-elementi-con-un-ordine-a-piacere-in-mysql/</link>
+		<comments>http://www.quacos.com/2011/05/12/selezionare-elementi-con-un-ordine-a-piacere-in-mysql/#comments</comments>
+		<pubDate>Thu, 12 May 2011 08:57:32 +0000</pubDate>
+		<dc:creator>Giovanni Cappellini</dc:creator>
+				<category><![CDATA[MySQL]]></category>
+		<category><![CDATA[arbitrario]]></category>
+		<category><![CDATA[elementi]]></category>
+		<category><![CDATA[ordine]]></category>
+		<category><![CDATA[tabella]]></category>
+
+		<guid isPermaLink="false">http://www.quacos.com/?p=2459</guid>
+		<description><![CDATA[Se è necessario presentare degli elementi provenienti da una tabella MySQL in un ordine completamente arbitrario, in teoria si può fare anche un'elaborazione intermedia in PHP, ma conoscendo la giusta condizione in MySQL si può risparmiare un po' di tempo. Basta decidere il campo ed elencare i suoi valori nell'ordine desiderato all'interno della funzione FIELD, [...]]]></description>
+		<wfw:commentRss>http://www.quacos.com/2011/05/12/selezionare-elementi-con-un-ordine-a-piacere-in-mysql/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Il segreto per capire il design</title>
+		<link>http://www.quacos.com/2011/05/10/il-segreto-per-capire-il-design/</link>
+		<comments>http://www.quacos.com/2011/05/10/il-segreto-per-capire-il-design/#comments</comments>
+		<pubDate>Tue, 10 May 2011 12:16:56 +0000</pubDate>
+		<dc:creator>Giovanni Cappellini</dc:creator>
+				<category><![CDATA[Web development]]></category>
+		<category><![CDATA[bianco e nero]]></category>
+		<category><![CDATA[iPhone]]></category>
+		<category><![CDATA[microsoft]]></category>
+		<category><![CDATA[multimediale]]></category>
+		<category><![CDATA[persone]]></category>
+		<category><![CDATA[semplice]]></category>
+		<category><![CDATA[successo]]></category>
+		<category><![CDATA[trendsetter]]></category>
+
+		<guid isPermaLink="false">http://www.quacos.com/?p=2424</guid>
+		<description><![CDATA[<a href="http://www.quacos.com/2011/05/10/il-segreto-per-capire-il-design/"><img align="left" hspace="5" width="120" height="120" src="http://www.quacos.com/wp-content/uploads/breath01-150x150.gif" class="alignleft wp-post-image tfe" alt="" title="breath01" /></a>[Quello che segue è un articolo di Thomas Baekdal, intitolato originariamente The secret to understanding design e da me tradotto con il permesso dell'autore. L'articolo è del 2007 e quindi i tempi vanno rapportati a quell'epoca] Parliamo spesso di design, se deve essere semplice o complesso, pieno di colori o in bianco e nero, non [...]]]></description>
+		<wfw:commentRss>http://www.quacos.com/2011/05/10/il-segreto-per-capire-il-design/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Come guadagnare tempo sulla consegna di un lavoro</title>
+		<link>http://www.quacos.com/2011/05/06/come-guadagnare-tempo-sulla-consegna-di-un-lavoro/</link>
+		<comments>http://www.quacos.com/2011/05/06/come-guadagnare-tempo-sulla-consegna-di-un-lavoro/#comments</comments>
+		<pubDate>Fri, 06 May 2011 11:54:25 +0000</pubDate>
+		<dc:creator>Giovanni Cappellini</dc:creator>
+				<category><![CDATA[Link del giorno]]></category>
+		<category><![CDATA[capo]]></category>
+		<category><![CDATA[documento word]]></category>
+		<category><![CDATA[persone]]></category>
+
+		<guid isPermaLink="false">http://www.quacos.com/?p=2426</guid>
+		<description><![CDATA[<a href="http://www.quacos.com/2011/05/06/come-guadagnare-tempo-sulla-consegna-di-un-lavoro/"><img align="left" hspace="5" width="120" src="http://farm2.static.flickr.com/1389/4721798240_0beb2a46ab_m.jpg" class="alignleft wp-post-image tfe" alt="21-06-10 Cause I´d Rather Pretend I´ll Still Be There At The End ~ Explored #1" title="21-06-10 Cause I´d Rather Pretend I´ll Still Be There At The End ~ Explored #1" /></a>Mi sono imbattuto in un trucco geniale che può rivelarsi vitale quando ci si trova nella situazione di aver promesso a qualcuno (professore, capo...) un documento Word e si ha bisogno di almeno un giorno di tempo in più. Non è una bella cosa incentivare la disonestà, e sarebbe molto meglio evitare di creare false [...]]]></description>
+		<wfw:commentRss>http://www.quacos.com/2011/05/06/come-guadagnare-tempo-sulla-consegna-di-un-lavoro/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>L&#8217;evoluzione della modalità di comunicazione online</title>
+		<link>http://www.quacos.com/2011/04/26/levoluzione-della-modalita-di-comunicazione-online/</link>
+		<comments>http://www.quacos.com/2011/04/26/levoluzione-della-modalita-di-comunicazione-online/#comments</comments>
+		<pubDate>Tue, 26 Apr 2011 10:27:30 +0000</pubDate>
+		<dc:creator>Giovanni Cappellini</dc:creator>
+				<category><![CDATA[Email]]></category>
+		<category><![CDATA[Facebook]]></category>
+		<category><![CDATA[Internet e Reti]]></category>
+		<category><![CDATA[Web]]></category>
+		<category><![CDATA[chat]]></category>
+		<category><![CDATA[dialup]]></category>
+		<category><![CDATA[persone]]></category>
+
+		<guid isPermaLink="false">http://www.quacos.com/?p=2418</guid>
+		<description><![CDATA[<a href="http://www.quacos.com/2011/04/26/levoluzione-della-modalita-di-comunicazione-online/"><img align="left" hspace="5" width="120" src="http://farm3.static.flickr.com/2319/2162610423_53ac7bf19a.jpg" class="alignleft wp-post-image tfe" alt="A lone hen escapes the battery cages" title="A lone hen escapes the battery cages" /></a>1994: Internet e BBS: è necessario abbonarsi per avere una connessione dialup. Si collegano solo i guru. 2000: HTTP, Email, Newsgroup e IRC: abbonamenti dialup gratuiti, si paga solo il costo della telefonata. Prima di collegarsi si preparano le email da spedire e si scelgono i siti da visitare. 2005: Web, Webmail, Forum e Chat: ADSL [...]]]></description>
+		<wfw:commentRss>http://www.quacos.com/2011/04/26/levoluzione-della-modalita-di-comunicazione-online/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

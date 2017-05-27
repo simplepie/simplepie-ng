@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+	<channel>
+		<title>Flowinn&#039;s blog</title>
+		<link>http://flowinn.net/</link>
+		<description>행복을 찾아서...</description>
+		<language>ko</language>
+		<pubDate>Wed, 17 Aug 2011 07:14:36 +0900</pubDate>
+		<generator>Tistory 1.1 (http://www.tistory.com/)</generator>
+		<image>
+		<title>Flowinn&#039;s blog</title>
+		<url><![CDATA[http://cfile1.uf.tistory.com/image/16665C264A39F4C6725487]]></url>
+		<link>http://flowinn.net/</link>
+		<description>행복을 찾아서...</description>
+		</image>
+		<item>
+			<title>Eclipse PermGen space 오류</title>
+			<link>http://flowinn.net/entry/Eclipse-PermGen-space-%EC%98%A4%EB%A5%98</link>
+			<description>&lt;FONT color=#ff0103 size=2&gt;OutOfMemoryError: PermGen space 관련 메세지 
+&lt;HR&gt;
+&lt;/FONT&gt;
+&lt;P&gt;&amp;nbsp;가끔 프로젝트가 많아지거나 하면 이런애러가 나는경우가 있고&lt;/P&gt;
+&lt;P&gt;나의 경우는 안드로이드 개발세팅후에 한번 껏다 키니 바로 생기더라..&lt;/P&gt;
+&lt;P&gt;이럴때 eclipse.ini 에&amp;nbsp;몇줄 추가해준다.&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;-Xverify:none&lt;br /&gt;
+-XX:PermSize=64M&lt;br /&gt;
+-XX:MaxPermSize=256M&lt;/P&gt;
+&lt;P&gt;여기서 맨마지막항목이 256이면&amp;nbsp;실행이 안되는 애러가 발생할때도 있다.&lt;/P&gt;
+&lt;P&gt;그 유명한&amp;nbsp;&lt;SPAN style=&quot;COLOR: #ff0103&quot;&gt;JVM terminated. exit code -1&lt;/SPAN&gt; 오류...&lt;/P&gt;
+&lt;P&gt;이럴땐 -XX:MaxPermSize=128M 로 해결~&lt;br /&gt;
+&lt;br /&gt;검색해보면&lt;br /&gt;
+&lt;br /&gt;vm을 아에 썬꺼가 아닌 타사꺼로 바꾸는것도 방법이라 한다...&lt;br /&gt;
+&lt;br /&gt;&lt;/P&gt;</description>
+			<category>Rapping</category>
+			<category>Eclipse</category>
+			<category>error</category>
+			<category>permgen</category>
+			<author>flowinn</author>
+			<guid>http://flowinn.net/95</guid>
+			<comments>http://flowinn.net/entry/Eclipse-PermGen-space-%EC%98%A4%EB%A5%98#entry95comment</comments>
+			<pubDate>Thu, 14 Jan 2010 16:59:49 +0900</pubDate>
+		</item>
+		<item>
+			<title>아바타의 네이티리역.</title>
+			<link>http://flowinn.net/entry/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94</link>
+			<description>&lt;table key=&quot;42148&quot; category=&quot;cinema_detail&quot; openpost=&quot;false&quot; width=&quot;374&quot; height=&quot;120&quot; cellpadding=&quot;12&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border:1px #F3F3F3 solid; background-color:#ffffff; line-height:17px !important;&quot;&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td style=&quot;padding-bottom:0px&quot;&gt;
+ &lt;table width=&quot;350&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
+ &lt;tbody&gt;&lt;tr&gt;
+  &lt;td width=&quot;60&quot; valign=&quot;top&quot;&gt;&lt;a href=&quot;http://movie.daum.net/moviedetail/moviedetailMain.do?movieId=42148&quot; target=&quot;_blank&quot;&gt;&lt;img width=&quot;60&quot; height=&quot;87&quot; src=&quot;http://cfile189.uf.daum.net/C110x160/17417A144B29EF696A18A2&quot; border=&quot;0&quot;&gt;&lt;/a&gt;&lt;/td&gt;
+ 
+  &lt;td width=&quot;12&quot;&gt;&lt;/td&gt;
+  &lt;td width=&quot;278&quot; valign=&quot;top&quot;&gt;
+   &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
+   &lt;tbody&gt;&lt;tr&gt;
+    &lt;th height=&quot;18&quot; colspan=&quot;2&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;span style=&quot;height:17px; font-size:12px; overflow:hidden; font-weight:bold; font-family:굴림,gulim,sans-serif;&quot;&gt;&lt;a style=&quot;color:#333333 !important;text-decoration:none !important;&quot; href=&quot;http://movie.daum.net/moviedetail/moviedetailMain.do?movieId=42148&quot; target=&quot;_blank&quot;&gt;아바타&lt;/a&gt;&lt;/span&gt;
+    &lt;/th&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td width=&quot;40&quot; height=&quot;18&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;span style=&quot;height:17px; font-size:12px; font-family:굴림,gulim,sans-serif; color:#999;&quot;&gt;감독&lt;/span&gt;
+    &lt;/td&gt;
+    &lt;td height=&quot;18&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;span style=&quot;height:17px; font-size:12px; font-family:굴림,gulim,sans-serif; color:#333;display:block; overflow:hidden; text-overflow:ellipsis;&quot;&gt;제임스 카메론 (2009 / 미국)&lt;/span&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td width=&quot;40&quot; height=&quot;36&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;span style=&quot;height:17px; font-size:12px; font-family:굴림,gulim,sans-serif; color:#999;&quot;&gt;출연&lt;/span&gt;
+    &lt;/td&gt;
+    &lt;td height=&quot;36&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;span style=&quot;height:34px; font-size:12px; font-family:굴림,gulim,sans-serif; color:#333;display:block; overflow:hidden; text-overflow:ellipsis;&quot;&gt;샘 워딩튼, 조이 살디나, 시고니 위버, 스티븐 랭&lt;/span&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;a style=&quot;padding:0px 5px 0px 0px; background:url(http://deco.daum-img.net/contents/info/ic_more.gif) no-repeat 100% 3px; font-size:11px; color:#999999 !important; font-family:돋움,dotum,verdana; text-decoration:underline;&quot; href=&quot;http://movie.daum.net/moviedetail/moviedetailMain.do?movieId=42148&quot; target=&quot;_blank&quot;&gt;상세보기&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;/tbody&gt;&lt;/table&gt;
+  &lt;/td&gt;
+ 
+ &lt;/tr&gt;
+&lt;/tbody&gt;
+ &lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+비록 3D로 아직 못봤지만 정말 올만에 잼나게 본 영화.&lt;div&gt;
+영화 이야기 하려는건 아니고 영화에 나오는 네이티리가 보면볼수록 매력있어서 누구를 모델링 한것일까 궁금했는데&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+바로 이분.&lt;br /&gt;
+&lt;table key=&quot;68T&quot; category=&quot;people_detail&quot; openpost=&quot;false&quot; width=&quot;374&quot; height=&quot;120&quot; cellpadding=&quot;12&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border:1px #F3F3F3 solid; background-color:#ffffff; line-height:16px !important;&quot;&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td style=&quot;padding-bottom:0px&quot;&gt;
+ &lt;table width=&quot;350&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
+ &lt;tbody&gt;&lt;tr&gt;
+  &lt;td width=&quot;66&quot; valign=&quot;top&quot;&gt;&lt;a href=&quot;http://search.daum.net/cgi-bin/nsp/search.cgi?q=%EC%A1%B0%20%EC%83%90%EB%8B%A4%EB%82%98%20%28Zoe%20Yadira%20Zaldana%20Nazario%29+%EC%99%B8%EA%B5%AD%EB%B0%B0%EC%9A%B0&quot; target=&quot;_blank&quot;&gt;&lt;img width=&quot;66&quot; height=&quot;82&quot; src=&quot;http://img.search.daum-img.net/profilethumb/68T-1.jpg&quot; border=&quot;0&quot;&gt;&lt;/a&gt;&lt;/td&gt;
+ 
+  &lt;td width=&quot;12&quot;&gt;&lt;/td&gt;
+  &lt;td width=&quot;278&quot; valign=&quot;top&quot;&gt;
+   &lt;table width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
+   &lt;tbody&gt;&lt;tr&gt;
+    &lt;th height=&quot;18&quot; colspan=&quot;2&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;font style=&quot;font-size:12px; font-weight:bold; color:#333333; font-family:굴림,gulim,sans-serif;&quot;&gt;&lt;a style=&quot;color:#333333 !important;text-decoration:none !important;&quot; href=&quot;http://search.daum.net/cgi-bin/nsp/search.cgi?q=%EC%A1%B0%20%EC%83%90%EB%8B%A4%EB%82%98%20%28Zoe%20Yadira%20Zaldana%20Nazario%29+%EC%99%B8%EA%B5%AD%EB%B0%B0%EC%9A%B0&quot; target=&quot;_blank&quot;&gt;조 샐다나 (Zoe Yadira Zaldana Nazario)&lt;/a&gt;&lt;/font&gt;
+     &lt;font style=&quot;font-size:12px; font-weight:normal; color:#999999; font-family:굴림,gulim,sans-serif;&quot;&gt; / 외국배우&lt;/font&gt;
+    &lt;/th&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td width=&quot;40&quot; height=&quot;18&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;font style=&quot;font-size:12px; color:#999999; font-family:굴림,gulim,sans-serif; line-height:1.4;&quot;&gt;출생&lt;/font&gt;
+    &lt;/td&gt;
+    &lt;td height=&quot;18&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;span style=&quot;display:block; float:left; height:14px; overflow:hidden; text-overflow:ellipsis;&quot;&gt;&lt;font style=&quot;font-size:12px; color:#333333; font-family:굴림,gulim,sans-serif; line-height:1.4;&quot;&gt;1978년 6월 19일&lt;/font&gt;&lt;/span&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td width=&quot;40&quot; height=&quot;18&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;font style=&quot;font-size:12px; color:#999999; font-family:굴림,gulim,sans-serif; line-height:1.4;&quot;&gt;신체&lt;/font&gt;
+    &lt;/td&gt;
+    &lt;td height=&quot;18&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;span style=&quot;display:block; float:left; height:14px; overflow:hidden; text-overflow:ellipsis;&quot;&gt;&lt;font style=&quot;font-size:12px; color:#333333; font-family:굴림,gulim,sans-serif; line-height:1.4;&quot;&gt;&lt;/font&gt;&lt;/span&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td width=&quot;40&quot; height=&quot;18&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;font style=&quot;font-size:12px; color:#999999; font-family:굴림,gulim,sans-serif; line-height:1.4;&quot;&gt;팬카페&lt;/font&gt;
+    &lt;/td&gt;
+    &lt;td height=&quot;18&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;span style=&quot;display:block; float:left; height:14px; overflow:hidden; text-overflow:ellipsis;&quot;&gt;&lt;font style=&quot;font-size:12px; color:#333333; font-family:굴림,gulim,sans-serif; line-height:1.4;&quot;&gt;&lt;/font&gt;&lt;/span&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot; align=&quot;left&quot; valign=&quot;top&quot;&gt;
+     &lt;a style=&quot;padding:0px 5px 0px 0px; background:url(http://deco.daum-img.net/contents/info/ic_more.gif) no-repeat 100% 3px; font-size:11px; color:#999999 !important; font-family:돋움,dotum,verdana; text-decoration:underline;&quot; href=&quot;http://search.daum.net/cgi-bin/nsp/search.cgi?q=%EC%A1%B0%20%EC%83%90%EB%8B%A4%EB%82%98%20%28Zoe%20Yadira%20Zaldana%20Nazario%29+%EC%99%B8%EA%B5%AD%EB%B0%B0%EC%9A%B0&quot; target=&quot;_blank&quot;&gt;상세보기&lt;/a&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;/tbody&gt;&lt;/table&gt;
+  &lt;/td&gt;
+ 
+ &lt;/tr&gt;
+&lt;/tbody&gt;
+ &lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br /&gt;
+흠 사실 입모양이랑 두툼한 입술때문에 영화보면서 안젤리나 졸리를 떠올리긴 했었는데 전혀 의외의 인물이었다.&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+그런데 이름이 조이 살디나야 조 살디나야 조 샐다나야 조이 샐다나야-_-;;;;&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+그러고 보니 스타트렉에서 우후라역으로 출연하셨고....&lt;/div&gt;
+&lt;div&gt;
+검색하다 보니 캐리비안의 해적 블랙펄저주에서 아나마리아 로 출연하셨다는데...&lt;/div&gt;
+&lt;div&gt;
+아나마리아라고 하면 그 주술사를 이야기 하는것인가;; ㅎㄷㄷㄷ...&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+여튼 아바타를 보면서... &#039;음... 외계인 여자도 섹시할수 있구나&#039; 라는 생각을 하면서 봤었는데 ㅋㅋㅋ&lt;/div&gt;
+&lt;div&gt;
+우후라생각해봐도 그렇고 나름 매력있는 배우인거 같다...(근데 정말 그 주술사가 맞나.;;;)&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+아바타를 제대로 리뷰해보고 싶지만... 그럴 엄두가 나질 않아 뻘글로 대체함 ㅎㅎ&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+과연 3D버젼은 볼수 있을것인가.. 없을것인가..;;;&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;</description>
+			<category>Rapping</category>
+			<category>아바타</category>
+			<category>조이 샐다나</category>
+			<author>flowinn</author>
+			<guid>http://flowinn.net/94</guid>
+			<comments>http://flowinn.net/entry/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94#entry94comment</comments>
+			<pubDate>Mon, 11 Jan 2010 13:20:09 +0900</pubDate>
+		</item>
+		<item>
+			<title>Wade 의 전율의 드라이브인이 인상적인 탑10플~</title>
+			<link>http://flowinn.net/entry/Wade-%EC%9D%98-%EC%A0%84%EC%9C%A8%EC%9D%98-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%EC%9D%B8%EC%9D%B4-%EC%9D%B8%EC%83%81%EC%A0%81%EC%9D%B8-%ED%83%9110%ED%94%8C</link>
+			<description>&lt;br /&gt;
+&lt;object width=&quot;388&quot; height=&quot;394&quot; classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; id=&quot;ep&quot;&gt;&lt;param name=&quot;allowfullscreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allows-cripaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;wmode&quot; value=&quot;transparent&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://i.cdn.turner.com/nba/nba/.element/swf/1.1/cvp/nba_embed_container.swf?context=nba&amp;amp;videoId=channels/top_plays/2009/11/01/20091101_top10.nba&quot; /&gt;&lt;param name=&quot;bgcolor&quot; value=&quot;#000000&quot; /&gt;&lt;embed src=&quot;http://i.cdn.turner.com/nba/nba/.element/swf/1.1/cvp/nba_embed_container.swf?context=nba&amp;amp;videoId=channels/top_plays/2009/11/01/20091101_top10.nba&quot; type=&quot;application/x-shockwave-flash&quot; bgcolor=&quot;#000000&quot; allowfullscreen=&quot;true&quot; allows-cripaccess=&quot;always&quot; width=&quot;388&quot; wmode=&quot;transparent&quot; height=&quot;394&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+정말 대박인거 같다~&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+오랜만에 소름돋는다!!!! 2k10도 재밌지만 실농하고싶다!!!!!!!&lt;/div&gt;
+&lt;div&gt;&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;</description>
+			<category>Showing</category>
+			<category>Dwayne Wade</category>
+			<category>NBA</category>
+			<category>Top10</category>
+			<author>flowinn</author>
+			<guid>http://flowinn.net/92</guid>
+			<comments>http://flowinn.net/entry/Wade-%EC%9D%98-%EC%A0%84%EC%9C%A8%EC%9D%98-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%EC%9D%B8%EC%9D%B4-%EC%9D%B8%EC%83%81%EC%A0%81%EC%9D%B8-%ED%83%9110%ED%94%8C#entry92comment</comments>
+			<pubDate>Tue, 03 Nov 2009 12:52:22 +0900</pubDate>
+		</item>
+		<item>
+			<title>XBOX360 하드업그레이드(개조) HDDHACKR 1.22버젼 방법</title>
+			<link>http://flowinn.net/entry/XBOX360-%ED%95%98%EB%93%9C%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C%EA%B0%9C%EC%A1%B0-HDDHACKR-122%EB%B2%84%EC%A0%BC-%EB%B0%A9%EB%B2%95</link>
+			<description>&lt;br /&gt;
+&lt;div&gt;
+인터넷을 검색해 보아도 새로운 HDDHACKR 버젼의 방법은 잘 정리된게 찾기 쉽지 않아 적어 봅니다.&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+구버전(0.9x대) 과 비교해 보았을때 많이 편리해 졌으며 저처럼 구버전 튜터를 보다가 혼동이 될수도 있을거 같습니다.&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+준비물 : 개조하실 새하드(BEVT,BEVS다됩니다), 별드라이버(인터넷이나 근처 철물점), USB메모리(부팅용)&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+준비 프로그램 및 파일 : BootFlashDos(간단하게 USB를 부팅용으로 만들어줍니다.) , &amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;HDDSS.BIN(최근 120기가 이상짜리도 나왔다고 하는거 같더군요 알아서 구하시길...)&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;HDDHACKR v1.22 (검색해 보시면 쉽게 구해집니다.)&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Xplorer360 extreme2 (이것역시 검색 ㅎㅎㅎ XBOX360 기존데이터 백업용입니다.)&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+예전 방법에 필요하던 WinHex 라던지 헥사값을 수정할수있는 유틸이 필요 없어졌습니다. 새로운 HDDHACKR이 다해주기 때분이지요~ 포맷도 다해주기 때문에 중간에 때서 XBOX에 연결하여 포맷하고 할 필요가 없어 무지 간단해 졌습니다.&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+1. USB메모리를 BootFlashDos를 이용해 부팅이 가능하게 만듭니다. 그후 HDDHACKR 과, 구하신 HDDSS.BIN을 USB&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; 에 넣습니다.&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+2. 컴퓨터에 개조하실 새 하드만! 연결 합니다. 부디 쓰시던 하드를 연결하여 실수로 날려먹지 맙시다. 연결하실때 주의&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; 하실점은 primary로 연결안되면 HDDHACKR에서 인식을 못하더군요. 참고하세요~&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+3. hddhackr 을 실행합니다.&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; ex) C:\hddhackr &amp;nbsp; 엔터~&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; 예전처럼 -f의 옵션이 필요없습니다.&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; 그러면 알아서 하드를 쫙 인식해 옵니다. 0번부터 번호가 매겨져 출력됩니다. 새 개조 하드의 모델명이 찍힌 번호를&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; 써주시면 됩니다.&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; 그 뒤에 옵션을 물어보는데 처음 하시는거면 그냥 f누르고 넘어가세요~&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; 그러면 파일명을 쓰게됩니다. 같은 폴더 내에 HDDSS.BIN 을 넣어두셨다면 그대로 써주시면 되겠습니다.&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; 그다음은 백업용 파일이름을 쓰시면 되는데(혹시나 잘못되었을때 하드를 되돌리기 위해서 입니다.) 이건 뭐 알아서&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; xxxxx.bin 형식으로 써주시면 되겠습니다.&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; 이러면 끝입니다. 알아서 펌업하고 HEX값 까지 변경해주며 포맷까지 해줍니다. 포맷을 해주기때문에 xbox에 다시&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; 연결할 필요가 없어지는 거지요.&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+4. 기존에 쓰시던 하드를 컴퓨터에 연결해서 윈도우로 부팅합니다. Xplorer360 extreme2로 하드를 불러옵니다.(자세한 &amp;nbsp; &amp;nbsp; &amp;nbsp;설명은 다른 튜텨를 참고하시길...) 파티션2 전체와 파티션3의 contents폴더만 자신의 컴퓨터로 드래그하여 복사하시&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; 면 됩니다.(contents폴더에 뭐가 많이 들어있으신 분들은 시간이 꽤걸립니다.)&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+5. 다시 기존의 하드를 제거하고 개조한 하드를 연결하여 윈도우 부팅. Xplorer를 이용해 하드를 불러오시고 복사 해&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp; 두었던 파일들을 똑같은 파티션에 배치해 주시면 완료입니다.&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp;이렇게 하시면 기존에 쓰던 파일이나 계정들을 그대로 다시 쓸수 있더군요.&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp;단, 하드설치하셨던 게임들은 다시 설치해야 하는거 같습니다. 고로 처음에 백업하실때 그런것들을 지우시고 하시면&lt;/div&gt;
+&lt;div&gt;
+&amp;nbsp;&amp;nbsp;시간이 훨씬 단축 되실겁니다.&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+20기가 하드쓴다고 허덕였는데 완죤 좋아요~~&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;/div&gt;</description>
+			<category>Rapping</category>
+			<category>1.22</category>
+			<category>HDDHACKR</category>
+			<category>xbox360 하드개조</category>
+			<category>하드업그레이드</category>
+			<author>flowinn</author>
+			<guid>http://flowinn.net/91</guid>
+			<comments>http://flowinn.net/entry/XBOX360-%ED%95%98%EB%93%9C%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C%EA%B0%9C%EC%A1%B0-HDDHACKR-122%EB%B2%84%EC%A0%BC-%EB%B0%A9%EB%B2%95#entry91comment</comments>
+			<pubDate>Mon, 26 Oct 2009 10:36:58 +0900</pubDate>
+		</item>
+		<item>
+			<title>위대하다 우리 선수들!!!</title>
+			<link>http://flowinn.net/entry/%EC%9C%84%EB%8C%80%ED%95%98%EB%8B%A4-%EC%9A%B0%EB%A6%AC-%EC%84%A0%EC%88%98%EB%93%A4</link>
+			<description>정말 잘했다.&lt;BR&gt;&lt;BR&gt;지난번 WBC대회에 이어 이번에도 난 정말 감동받았다.&lt;BR&gt;&lt;BR&gt;일본에 패해 정말 아쉽지만 난 정말 만족할만큼 충분히 잘싸웠다고 본다.&lt;BR&gt;&lt;BR&gt;추신수의 동점 홈런이 전율이었고, 꽃범호의 동점안타에 눈물흘렸다.&lt;BR&gt;&lt;BR&gt;비록 정말 맞지 말아야할 이치로에게 역전 2루타를 허용해 패했지만,&lt;BR&gt;&lt;BR&gt;그래도 내 벅찬 가슴은 우리 선수들을 향해 뛰고있다.&lt;BR&gt;&lt;BR&gt;멋지다.&lt;BR&gt;&lt;BR&gt;고교야구팀 1% 밖에 안되는 우리나라가 일본에게, 아니 세계에게 이정도로 무서운 팀 이라는 것&lt;BR&gt;&lt;BR&gt;그것 자체가 기적이다.&lt;BR&gt;&lt;BR&gt;그것에 비해 그저 지기 싫어 비열한 짓을 일삼는 일본은&lt;BR&gt;&lt;BR&gt;이번에 우리나라 선수들을 보고 좀 배우고, 성숙해지길 바란다.&lt;BR&gt;&lt;BR&gt;이치로는 이번에 마지막에 또 좀했다고 경솔한 입을 놀리지 말았으면 한다. &lt;BR&gt;&lt;BR&gt;이미 니입은 시궁창 된지 오래니, 더이상 놀려보았자 시궁창 냄새밖에는 나질 않는다.&lt;BR&gt;&lt;BR&gt;다시한번 우리선수들의 파이팅 넘치는 플레이에 박수를 보내며,&lt;BR&gt;&lt;BR&gt;정말 수고많으셨습니다. 감독님, 모든 스텝, 선수분들... 꾸벅(__)&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;div class=&quot;imageblock center&quot; style=&quot;text-align: center; clear: both;&quot;&gt;&lt;a href=&quot;http://cfile24.uf.tistory.com/original/1167C4264A39F4D766202E&quot; rel=&quot;lightbox&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http://cfile24.uf.tistory.com/image/1167C4264A39F4D766202E&quot; alt=&quot;태극기&quot; height=&quot;354&quot; width=&quot;531&quot;/&gt;&lt;/a&gt;&lt;/div&gt;&lt;BR&gt;&lt;BR&gt;
+&lt;DIV style=&quot;FONT-SIZE: 15px; TEXT-ALIGN: center&quot;&gt;&lt;STRONG&gt;대한민국은 준우승 했다. 그어떠한 팀 보다 더 위대하게...&lt;/STRONG&gt;&lt;/DIV&gt;</description>
+			<category>Rapping</category>
+			<category>WBC</category>
+			<category>야구</category>
+			<category>우리나라</category>
+			<category>최고</category>
+			<author>flowinn</author>
+			<guid>http://flowinn.net/63</guid>
+			<comments>http://flowinn.net/entry/%EC%9C%84%EB%8C%80%ED%95%98%EB%8B%A4-%EC%9A%B0%EB%A6%AC-%EC%84%A0%EC%88%98%EB%93%A4#entry63comment</comments>
+			<pubDate>Tue, 24 Mar 2009 15:34:45 +0900</pubDate>
+		</item>
+		<item>
+			<title>드디어 나오는 구나 MAFIA II!!!!!!!</title>
+			<link>http://flowinn.net/entry/%EB%93%9C%EB%94%94%EC%96%B4-%EB%82%98%EC%98%A4%EB%8A%94-%EA%B5%AC%EB%82%98-MAFIA-II</link>
+			<description>&lt;br /&gt;&lt;BR&gt;
+&lt;P align=center&gt;동영상이 바뀌어 링크 삭제-_-;;;;;;&lt;BR&gt;&lt;/P&gt;
+&lt;P align=left&gt;&lt;BR&gt;2002년 당시&lt;BR&gt;조용히 아는사람만 알게 나와주셨던 게임..&lt;BR&gt;MAFIA..&lt;BR&gt;우리나라 정발이 안되서 아는사람만 아는 그게임.&lt;BR&gt;내 생에 최고의 게임중 하나.&lt;BR&gt;그래픽, 음악, 스토리, 게임성 모두 최고였던 게임이&lt;BR&gt;드디어 후속편이 나온단다.&lt;BR&gt;&lt;BR&gt;1편 나왔을 당시도 실제 배우같은 모델링과 표정등으로 나를 놀라게 했던 게임이였는데...&lt;BR&gt;이번건 더욱더 엄청나다..&lt;BR&gt;물론 CG라는 설이 강하지만... 난 인게임이라고 믿고싶다.&lt;BR&gt;으... 군대 때문에 나오면 바로 접하고 즐길수 있으련지...&lt;BR&gt;&lt;BR&gt;여튼 오랜만에 흥분시키네~&lt;BR&gt;&lt;BR&gt;2007.09.09 &lt;BR&gt;스크린샷을 발견~ 더해드린다!!&lt;BR&gt;이거보면 웬지 위에 동영상도 인게임영상일수도 있다는 희망이!&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;/P&gt;</description>
+			<category>Showing</category>
+			<category>Mafia</category>
+			<category>게임</category>
+			<category>후속작</category>
+			<author>flowinn</author>
+			<guid>http://flowinn.net/19</guid>
+			<comments>http://flowinn.net/entry/%EB%93%9C%EB%94%94%EC%96%B4-%EB%82%98%EC%98%A4%EB%8A%94-%EA%B5%AC%EB%82%98-MAFIA-II#entry19comment</comments>
+			<pubDate>Wed, 05 Sep 2007 19:50:35 +0900</pubDate>
+		</item>
+		<item>
+			<title>스위스전 패전요인</title>
+			<link>http://flowinn.net/entry/%ED%8C%A8%EC%A0%84%EC%9A%94%EC%9D%B8</link>
+			<description>&lt;p&gt;&lt;br /&gt;
+수비시 조직력의 문제.. 여전한 문제..&lt;br /&gt;
+여전히 안되는 압박... 부제....유기적인 도움수비 실종.&lt;br /&gt;
+&lt;br /&gt;
+늘 있어왔던 심판의 기행... 어웨이경기와 다름없는 환경에서 2002년도의 기억만 떠올린듯..&lt;br /&gt;
+심판의 판정 이전에 우리의 흐름을 가져오지 못한게 아쉬움..&lt;br /&gt;
+&lt;br /&gt;
+수비조직력 적인 문제에서 스위스는 우리를 흔들어 놨고..&lt;br /&gt;
+우리 공격진은 스위스수비조직력을 무너 뜨릴만한 장면을 별로 연출하지 못함..&lt;br /&gt;
+&lt;br /&gt;
+전체적으로 조직력으로 승부하는 스위스에게 자기 경기를 펼치게 만들면 어려울것으로 예상했는데, 그대로 전개 됬음&lt;br /&gt;
+&lt;br /&gt;
+전반 초반 스위스의 몇차례 오프사이드를 범하면서 그들의 경기를 펼치지 못하게 하는게 성공하나 했으나 결과적으로 무의미한 파울에이은 세트피스상황에서 골을 허용하며 무위에 그침..&lt;br /&gt;
+&lt;br /&gt;
+공격시에 결과적으로는 프랑스전과 너무나 같은 패턴을 보임.&lt;br /&gt;
+조재진의 헤딩경합과 따내는 모습까지는 좋으나 그뒤가 문제.&lt;br /&gt;
+결국 프랑스전과 같은 공격패턴보다는 좀더 스피드를 이용한 뒷공간 침투가 이루어 졌어야 하는데 그렇지 못함.&lt;br /&gt;
+수비진에서 뻥차는 뒷공간패스는 장신수비수들에게는 오히려 도움.&lt;br /&gt;
+미드필드진에서 짧은패스와 유기적으로 이루어지면서 윙에게 내주는 뒷공간 침투패턴이 아쉬움. 이것역시 흐름을 가져 오지 못한데서 온 결과인듯함.&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;padding-right: 1px; padding-left: 1px; padding-bottom: 0px; color: #202020; padding-top: 3px; background-color: #ffdaed&quot;&gt;우리의 장기인 중원장악이 전혀 없었기 때문에 이것이 가장 큰 패배의 요인. 스위스의 조직력을 방관한 경기라 볼수 있음. 몇몇 장면, 결정적인 상황에서의 심판의 오심과 맞물려 완패분위기로 가게됨.&lt;br /&gt;
+&lt;/span&gt;&lt;br /&gt;
+우리나라 선수들 수고했음. 평가전분위기와 예선통과 과정등을 볼때 나름대로 분전한 결과라 생각됨.&lt;br /&gt;
+이미끝난 경기보다는 앞으로가 중요함.&lt;br /&gt;
+이젠 케이리그의 수준 업그레이드를 생각할때. 더이상 2002년은 없음.&lt;br /&gt;
+&lt;br /&gt;
+P.S: 경기끝난 직후, 생각나는대로 적은 글이라 두서가 없으니 양해 바랍니다.&lt;br /&gt;
+&lt;/p&gt;</description>
+			<category>Rapping</category>
+			<category>대표팀</category>
+			<category>월드컵</category>
+			<category>축구</category>
+			<author>flowinn</author>
+			<guid>http://flowinn.net/4</guid>
+			<comments>http://flowinn.net/entry/%ED%8C%A8%EC%A0%84%EC%9A%94%EC%9D%B8#entry4comment</comments>
+			<pubDate>Sat, 24 Jun 2006 06:16:31 +0900</pubDate>
+		</item>
+		<item>
+			<title>블로그 메인 사진에 대하여...</title>
+			<link>http://flowinn.net/entry/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A9%94%EC%9D%B8-%EC%82%AC%EC%A7%84%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC</link>
+			<description>&lt;p&gt;&lt;div class=&quot;imageblock right&quot; style=&quot;float: right; margin-left: 10px;&quot;&gt;&lt;a href=&quot;http://cfile1.uf.tistory.com/original/1465E5264A39F4C769C9FF&quot; rel=&quot;lightbox&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http://cfile1.uf.tistory.com/image/1465E5264A39F4C769C9FF&quot; alt=&quot;&quot; height=&quot;331&quot; width=&quot;252&quot;/&gt;&lt;/a&gt;&lt;p class=&quot;cap1&quot; style=&quot;width: 252px&quot;&gt;클릭하면 좀더 크게보입니다.&lt;/p&gt;&lt;/div&gt; &lt;/p&gt;&lt;p&gt;아는 사람은 알겠지만...&lt;br /&gt;
+&lt;br /&gt;
+작년 3,4월을 기점으로,&lt;br /&gt;
+&lt;br /&gt;
+한달간 인도여행을 했었다.&lt;br /&gt;
+&lt;br /&gt;
+그때 찍은 사진중에,&lt;br /&gt;
+&lt;br /&gt;
+내가 찍고 싶은 느낌,장면, 그자체가 잘 &lt;br /&gt;
+&lt;br /&gt;
+살아준 몇장 안되는 사진중 하나이다.&lt;br /&gt;
+&lt;br /&gt;
+물론 내가 보기에 그렇다는 이야기다...&lt;br /&gt;
+&lt;br /&gt;
+꼴까따 라는 곳이고, 다녀오기전에는 &lt;br /&gt;
+&lt;br /&gt;
+켈커타라는 이름이 더 익숙했던 대도시..&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+숙소로 돌아가는 길이었다. 소나기가 한차례 내린뒤라 그런지.. 골목들이 운치 있었다.&lt;br /&gt;
+&lt;br /&gt;
+이 골목에 다다랐을때, 지금 이풍경이 너무 멋지다는 생각이 들었고, 어떻게든 이 골목을 &lt;br /&gt;
+&lt;br /&gt;
+담아가고 싶었다. 그래서 여행 내내 해왔던 대로, 무작정 들고있던, 디카의 셔터를 눌렀다. &lt;br /&gt;
+&lt;br /&gt;
+내가 찍을 당시에 왼쪽 편에 앉아있는 할아버지의 존재를 의식하고 찍었는지는 잘 기억나질&lt;br /&gt;
+&lt;br /&gt;
+않지만, 지금보면 이 사진의 주인공은 그할아버지라 해도 무방할거 같다.&lt;br /&gt;
+&lt;br /&gt;
+조금 지친 모습으로, 양 옆에는 목발과, 짐보따리를 내려놓고, 어딘가를 응시하며 쉬고 있는&lt;br /&gt;
+&lt;br /&gt;
+할아버지... &lt;span style=&quot;padding-right: 1px; padding-left: 1px; padding-bottom: 0px; color: #202020; padding-top: 3px; background-color: #e4e4e4&quot;&gt;&#039;마치, 인도사람들의 삶을 대변하고 있는듯 하다&#039; &lt;/span&gt;라면 너무 비약이 심한가?&lt;br /&gt;
+&lt;br /&gt;
+어쨌든,&lt;br /&gt;
+&lt;br /&gt;
+&lt;span style=&quot;padding-right: 1px; padding-left: 1px; padding-bottom: 0px; color: #202020; padding-top: 3px; background-color: #c9edff&quot;&gt;우연히 비가내렸었고, 우연히 할아버지는 그곳에서 쉬고있었고, 우연히 나는 그곳을 지나가&lt;br /&gt;
+&lt;br /&gt;
+고 있었다. 그리고 그 모든게 우연히 한장의 사진에 담겼다.&lt;br /&gt;
+&lt;/span&gt;&lt;br /&gt;
+하지만, 그사진은.. 놓치고 싶지 않았던, 인도의 풍경과, 그때의 내 심정까지.. 아직도 생생하&lt;br /&gt;
+&lt;br /&gt;
+게 전해주고 있다. &lt;br /&gt;
+&lt;br /&gt;
+그렇다.&lt;br /&gt;
+&lt;br /&gt;
+우연히 찍은 사진이라고 하기엔 너무 멋지단 말이 하고 싶은거다.ㅡ_-+&lt;br /&gt;
+&lt;/p&gt;</description>
+			<category>Rapping</category>
+			<category>사진</category>
+			<category>여행</category>
+			<category>인도</category>
+			<author>flowinn</author>
+			<guid>http://flowinn.net/3</guid>
+			<comments>http://flowinn.net/entry/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A9%94%EC%9D%B8-%EC%82%AC%EC%A7%84%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC#entry3comment</comments>
+			<pubDate>Thu, 22 Jun 2006 23:46:38 +0900</pubDate>
+		</item>
+	</channel>
+</rss>

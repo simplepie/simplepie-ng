@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" version="2.0">
+
+<channel>
+	<title>All Marked Up</title>
+	
+	<link>http://allmarkedup.com/journal</link>
+	<description>Just another WordPress weblog</description>
+	<lastBuildDate>Sun, 22 Aug 2010 15:33:16 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.9.1</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/allmarkedup" /><feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="allmarkedup" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><item>
+		<title>Code moved to Github</title>
+		<link>http://allmarkedup.com/journal/2010/08/code-moved-to-github/</link>
+		<comments>http://allmarkedup.com/journal/2010/08/code-moved-to-github/#comments</comments>
+		<pubDate>Sun, 22 Aug 2010 15:33:16 +0000</pubDate>
+		<dc:creator>Mark</dc:creator>
+				<category><![CDATA[Notes]]></category>
+		<category><![CDATA[github]]></category>
+		<category><![CDATA[jQuery]]></category>
+		<category><![CDATA[plugins]]></category>
+
+		<guid isPermaLink="false">http://allmarkedup.com/journal/?p=569</guid>
+		<description><![CDATA[I&#8217;ve finally managed to make some time to move my jQuery plugins and other code over to Github, after having signed up to the service some 11 months ago. Everything should now be at http://github.com/allmarkedup &#8211; drop me an email if you can&#8217;t find something that you are looking for.
+Over the last few months I&#8217;ve [...]]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve finally managed to make some time to move my jQuery plugins and other code over to Github, after having signed up to the service some 11 months ago. Everything should now be at http://github.com/allmarkedup &#8211; drop me an email if you can&#8217;t find something that you are looking for.</p>
+<p>Over the last few months I&#8217;ve received a fair few suggestions and amends that I haven&#8217;t had time to incorporate into the plugins yet, but hopefully having it all up on Github will make the collaborative process a bit easier (and less time-consuming!) for me to manage.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://allmarkedup.com/journal/2010/08/code-moved-to-github/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>jQuery Event-Driven Pagination plugin &amp; more</title>
+		<link>http://allmarkedup.com/journal/2010/02/jquery-event-driven-pagination-plugin-more/</link>
+		<comments>http://allmarkedup.com/journal/2010/02/jquery-event-driven-pagination-plugin-more/#comments</comments>
+		<pubDate>Sun, 07 Feb 2010 17:00:28 +0000</pubDate>
+		<dc:creator>Mark</dc:creator>
+				<category><![CDATA[Notes]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[jQuery]]></category>
+		<category><![CDATA[projects]]></category>
+
+		<guid isPermaLink="false">http://allmarkedup.com/journal/?p=540</guid>
+		<description><![CDATA[I have just released a replacement for my Quick Paginate jQuery plugin &#8211; it has similar functionality but uses a custom event-driven API for much more flexibility! It&#8217;s been re-thought and re-written from the ground up, and although the documentation is still a bit lacking there are a few demos up that should help to get [...]]]></description>
+			<content:encoded><![CDATA[<p>I have just released a replacement for my Quick Paginate jQuery plugin &#8211; it has similar functionality but uses a custom event-driven API for much more flexibility! It&#8217;s been re-thought and re-written from the ground up, and although the documentation is still a bit lacking there are a <a href="http://projects.allmarkedup.com/jquery_evtpaginate/demo_basic.html">few demos</a> up that should help to get you started.</p>
+<p><a href="http://projects.allmarkedup.com/jquery_evtpaginate/index.php">View the documentation and download the Event-driven Pagination plugin here</a></p>
+<p>I have also decided put up some links to some of my undocumented and alpha/beta code on the <a href="http://projects.allmarkedup.com/">landing page of my projects area</a>. Feel free to have a poke around but don&#8217;t be surprised if what you find there is a little on the buggy side!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://allmarkedup.com/journal/2010/02/jquery-event-driven-pagination-plugin-more/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>It should be about people, not channels.</title>
+		<link>http://allmarkedup.com/journal/2010/02/it-should-be-about-people-not-channels/</link>
+		<comments>http://allmarkedup.com/journal/2010/02/it-should-be-about-people-not-channels/#comments</comments>
+		<pubDate>Sat, 06 Feb 2010 16:58:21 +0000</pubDate>
+		<dc:creator>Mark</dc:creator>
+				<category><![CDATA[Notes]]></category>
+		<category><![CDATA[Facebook]]></category>
+		<category><![CDATA[social networking]]></category>
+		<category><![CDATA[Twitter]]></category>
+
+		<guid isPermaLink="false">http://allmarkedup.com/journal/?p=533</guid>
+		<description><![CDATA[Social networking is failing me.
+I use Twitter everyday. I love it dearly, and it has allowed me to get to know a lot of cool people that I would (in all likeliness) have never come across without it.
+But the majority of my &#8216;in real life&#8217; friends &#8211; the people I grew up with, the people [...]]]></description>
+			<content:encoded><![CDATA[<p>Social networking is failing me.</p>
+<p>I use Twitter everyday. I love it dearly, and it has allowed me to get to know a lot of cool people that I would (in all likeliness) have never come across without it.</p>
+<p>But the majority of my &#8216;in real life&#8217; friends &#8211; the people I grew up with, the people I went to uni with &#8211; don&#8217;t use Twitter. Most of them are pretty active on Facebook &#8211; but Facebook really isn&#8217;t my thing. I can&#8217;t deal with the noise.</p>
+<p>So I find myself in a situation where, thanks to a social networking tool mis-match between myself and my closest friends, I know <em>nothing</em> about what they are up to every day, and <em>everything</em> about the lives of people who I have never met. Seems a bit odd, doesn&#8217;t it?</p>
+<p>Because even though social networking feels <em>people-centric </em>while we&#8217;re interacting with it, in reality it is <em>channel-centric</em>. You can only be friends with your friends if they play in the same channel as you. Even if you and your friends all spend the hours of the day on the internet, if you are not using the same tools you can pass each other by like two ships in the night.</p>
+<p>In my mind this is really the main problem that the next generation of &#8217;social networking&#8217; tools need to solve. The emphasis needs to move away from the <em>tools</em> and onto the <em>people </em>- so I can keep up with my &#8216;IRL&#8217; friends just as well as I can my digital acquaintances, without having to chain myself to a dozen social networking tools that i really have no interest in, just to cover all my bases.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://allmarkedup.com/journal/2010/02/it-should-be-about-people-not-channels/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>SublimeVideo</title>
+		<link>http://allmarkedup.com/journal/2010/02/sublimevideo/</link>
+		<comments>http://allmarkedup.com/journal/2010/02/sublimevideo/#comments</comments>
+		<pubDate>Wed, 03 Feb 2010 09:02:42 +0000</pubDate>
+		<dc:creator>Mark</dc:creator>
+				<category><![CDATA[Links]]></category>
+		<category><![CDATA[HTML5]]></category>
+		<category><![CDATA[javascript]]></category>
+
+		<guid isPermaLink="false">http://allmarkedup.com/journal/?p=531</guid>
+		<description><![CDATA[SublimeVideo. Webkit only &#8211; at the moment &#8211; but very cool taste of the things that can be done with a little HTML5 video, JavaScript and some clever coding. Great stuff.
+]]></description>
+			<content:encoded><![CDATA[<p><a href="http://jilion.com/sublime/video">SublimeVideo</a>. Webkit only &#8211; at the moment &#8211; but very cool taste of the things that can be done with a little HTML5 video, JavaScript and some clever coding. Great stuff.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://allmarkedup.com/journal/2010/02/sublimevideo/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Gordon – An open source Flash runtime in JavaScript</title>
+		<link>http://allmarkedup.com/journal/2010/01/gordon-an-open-source-flash-runtime-in-javascript/</link>
+		<comments>http://allmarkedup.com/journal/2010/01/gordon-an-open-source-flash-runtime-in-javascript/#comments</comments>
+		<pubDate>Thu, 14 Jan 2010 08:57:39 +0000</pubDate>
+		<dc:creator>Mark</dc:creator>
+				<category><![CDATA[Links]]></category>
+		<category><![CDATA[javascript]]></category>
+
+		<guid isPermaLink="false">http://allmarkedup.com/journal/?p=526</guid>
+		<description><![CDATA[Gordon &#8211; An open source Flash runtime in JavaScript &#8211; Very cool indeed. Totally blows my mind what people are doing in JavaScript these days &#8211; it&#8217;s ability to do seemingly anything is one of the reasons I love it so much.
+]]></description>
+			<content:encoded><![CDATA[<p><a href="http://paulirish.com/work/gordon/demos/">Gordon &#8211; An open source Flash runtime in JavaScript</a> &#8211; Very cool indeed. Totally blows my mind what people are doing in JavaScript these days &#8211; it&#8217;s ability to do seemingly <em>anything </em>is one of the reasons I love it so much.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://allmarkedup.com/journal/2010/01/gordon-an-open-source-flash-runtime-in-javascript/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>I (heart) FreeAgent</title>
+		<link>http://allmarkedup.com/journal/2010/01/i-heart-freeagent/</link>
+		<comments>http://allmarkedup.com/journal/2010/01/i-heart-freeagent/#comments</comments>
+		<pubDate>Thu, 07 Jan 2010 14:18:30 +0000</pubDate>
+		<dc:creator>Mark</dc:creator>
+				<category><![CDATA[Notes]]></category>
+		<category><![CDATA[freelancing]]></category>
+		<category><![CDATA[recommendations]]></category>
+
+		<guid isPermaLink="false">http://allmarkedup.com/journal/?p=508</guid>
+		<description><![CDATA[It&#8217;s a bit of a mission of mine to always try and spread the word to other people about great products or services that I come across. I think it is really important that the users of these products and services help to promote them &#8211; as more often than not they are smaller companies [...]]]></description>
+			<content:encoded><![CDATA[<p>It&#8217;s a bit of a mission of mine to always try and spread the word to other people about great products or services that I come across. I think it is really important that the users of these products and services help to promote them &#8211; as more often than not they are smaller companies without trillion-dollar marketing budgets to spend on flashy ad campaigns and endorsements.</p>
+<p>One such quality service that I have been using recently is <a href="http://www.freeagentcentral.com/?referrer=31crg0ak">FreeAgent.</a> It&#8217;s basically an online accounting web app for freelancers and small businesses, and I&#8217;ve been very impressed with both the product itself and the people behind it.</p>
+<p>I started using it about nine months or so ago to track the odd bits of on-the-side work I was doing whilst employed at my last job, and now that I am freelancing &#8216;proper&#8217; I&#8217;ve been getting a bit deeper into it. It&#8217;s straightforward, easy-to-use and it has really changed the way I look at my personal book-keeping, making it <strong>much </strong>easier for me to track my finances, expenses, tax liabilities and so on.</p>
+<p>I&#8217;m not going to go into detail on all the functionality here &#8211; instead I would urge you to go and try the demo and/or the 30 day free trial available over at <a href="http://www.freeagentcentral.com/?referrer=31crg0ak">their website</a> to see if it would fit your needs. But for the vast majority of freelancers (especially UK based ones) and small businesses I think that it should cover pretty much all your bases as far as bookkeeping, invoicing and time tracking are concerned. And more importantly it does it in a straightforward, easy to use and understand manner: no Quickbooks-style crap here.</p>
+<p>But no app stands up on merit alone these days &#8211; it&#8217;s the support and openness of the companies behind them that really makes a product great. And the guys and girls behind FreeAgent have very much impressed me here too! Updates to the app are well planned, users are well notified of any (rare) scheduled downtime, the staff are helpful and responsive on Get Satisfaction (which they use for their <a href="http://community.freeagentcentral.com/freeagentcentral">customer service enquiries</a>) and active on Twitter &#8211; in fact yesterday, after I posted a tweet about how nice it would be to be able to more easily customise the CSS for invoices, they tweeted back to say that this functionaliy was actually a beta feature in testing, and they had enabled it for my account! Legendary.</p>
+<p>So, go check it out, I&#8217;m sure you won&#8217;t be disappointed. And thanks to the magic of their referral system, if you do sign up and put in the code &#8216;31crg0ak&#8217; (without the apostrophes!) or <a href="http://www.freeagentcentral.com/?referrer=31crg0ak">use this link to go there</a> we&#8217;ll both get 10% off the monthly cost &#8211; another nice touch that is available to to all users (and which means if you refer 10 people you would get the service free!).</p>
+<p>Great work, <a href="http://twitter.com/freeagentapp">@freeagentapp</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://allmarkedup.com/journal/2010/01/i-heart-freeagent/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Introduction to Google Public DNS</title>
+		<link>http://allmarkedup.com/journal/2009/12/introduction-to-google-public-dns/</link>
+		<comments>http://allmarkedup.com/journal/2009/12/introduction-to-google-public-dns/#comments</comments>
+		<pubDate>Fri, 04 Dec 2009 09:12:47 +0000</pubDate>
+		<dc:creator>Mark</dc:creator>
+				<category><![CDATA[Links]]></category>
+		<category><![CDATA[miscellaneous]]></category>
+		<category><![CDATA[The Web]]></category>
+
+		<guid isPermaLink="false">http://allmarkedup.com/journal/?p=455</guid>
+		<description><![CDATA[Introduction to Google Public DNS. I switched over to this yesterday and it seems pretty damn speedy. Also, none of the weird redirection behaviour that OpenDNS forces on you in order to show you ads on mistyped URL lookups, which I hated.
+]]></description>
+			<content:encoded><![CDATA[<p><a href="http://code.google.com/speed/public-dns/docs/intro.html">Introduction to Google Public DNS</a>. I switched over to this yesterday and it seems pretty damn speedy. Also, none of the weird redirection behaviour that OpenDNS forces on you in order to show you ads on mistyped URL lookups, which I <em>hated.</em></p>
+]]></content:encoded>
+			<wfw:commentRss>http://allmarkedup.com/journal/2009/12/introduction-to-google-public-dns/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Google Analytics Launches Asynchronous Tracking</title>
+		<link>http://allmarkedup.com/journal/2009/12/google-analytics-launches-asynchronous-tracking/</link>
+		<comments>http://allmarkedup.com/journal/2009/12/google-analytics-launches-asynchronous-tracking/#comments</comments>
+		<pubDate>Thu, 03 Dec 2009 13:46:21 +0000</pubDate>
+		<dc:creator>Mark</dc:creator>
+				<category><![CDATA[Links]]></category>
+		<category><![CDATA[analytics]]></category>
+		<category><![CDATA[javascript]]></category>
+
+		<guid isPermaLink="false">http://allmarkedup.com/journal/?p=453</guid>
+		<description><![CDATA[Google Analytics Launches Asynchronous Tracking. Excellent news! The old GA code was a real killer for slowing down site loading. This makes so much more sense.
+]]></description>
+			<content:encoded><![CDATA[<p><a href="http://googlecode.blogspot.com/2009/12/google-analytics-launches-asynchronous.html">Google Analytics Launches Asynchronous Tracking</a>. Excellent news! The old GA code was a real killer for slowing down site loading. This makes so much more sense.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://allmarkedup.com/journal/2009/12/google-analytics-launches-asynchronous-tracking/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Node.js is genuinely exciting</title>
+		<link>http://allmarkedup.com/journal/2009/11/node-js-is-genuinely-exciting/</link>
+		<comments>http://allmarkedup.com/journal/2009/11/node-js-is-genuinely-exciting/#comments</comments>
+		<pubDate>Mon, 23 Nov 2009 13:39:50 +0000</pubDate>
+		<dc:creator>Mark</dc:creator>
+				<category><![CDATA[Links]]></category>
+		<category><![CDATA[javascript]]></category>
+
+		<guid isPermaLink="false">http://allmarkedup.com/journal/?p=451</guid>
+		<description><![CDATA[Node.js is genuinely exciting. Nice overview of Node.js from Simon Willison, extracted from his talk at Full Frontal last Friday. Exciting stuff indeed.
+]]></description>
+			<content:encoded><![CDATA[<p><a href="http://simonwillison.net/2009/Nov/23/node/#c55493">Node.js is genuinely exciting</a>. Nice overview of Node.js from Simon Willison, extracted from his talk at <a href="http://2009.full-frontal.org/">Full Frontal</a> last Friday. Exciting stuff indeed.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://allmarkedup.com/journal/2009/11/node-js-is-genuinely-exciting/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>On variables and mixins in CSS</title>
+		<link>http://allmarkedup.com/journal/2009/11/on-variables-and-mixin-in-css/</link>
+		<comments>http://allmarkedup.com/journal/2009/11/on-variables-and-mixin-in-css/#comments</comments>
+		<pubDate>Sun, 22 Nov 2009 21:28:13 +0000</pubDate>
+		<dc:creator>Mark</dc:creator>
+				<category><![CDATA[Notes]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[css3]]></category>
+
+		<guid isPermaLink="false">http://allmarkedup.com/journal/?p=406</guid>
+		<description><![CDATA[So in a previous post I talked briefly about my &#8216;wishlist&#8217; for CSS3 (or beyond) &#8211; additions to the language that I would really like to see implemented in order to give us a better, more flexible way of tackling  a wide variety of issues.
+Out of the five things I mentioned &#8211; Basic math, delegation, [...]]]></description>
+			<content:encoded><![CDATA[<p>So in a <a href="http://allmarkedup.com/journal/2009/11/css3-and-beyond/">previous post</a> I talked briefly about my &#8216;wishlist&#8217; for CSS3 (or beyond) &#8211; additions to the language that I would really like to see implemented in order to give us a better, more flexible way of tackling  a wide variety of issues.</p>
+<p>Out of the five things I mentioned &#8211; Basic math, delegation, positioning model tweaks, constants, mixins &#8211; the last two are perhaps the most straightforward. Whilst in the post I talked about better tools for <em>problem solving</em>, variables and mixins are really more about being able to write cleaner, more maintainable and flexible CSS code with a better separation from the associated HTML.</p>
+<p>I&#8217;m going to go into a little more detail on what I actually mean when I talk about variables and mixins in CSS, how they could help us write better code, and why they haven&#8217;t yet been (and may never be) implemented.</p>
+<h2>Constant Variables</h2>
+<p>Before I start talking about variables in CSS, a quick word on terminology: I use the term &#8216;variables&#8217; here because it has gained some popularity, but it would really be more correct to describe them as &#8216;constants&#8217;; their value, once assigned, is not expected to be mutable over the course of the document.</p>
+<p>So, the basic concept is that you would be able to define a variable that holds a value (such as a hex colour, or a width) and then be able to use the name of that variable to refer to it later on in the stylesheet. So you could do something like this:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="css" style="font-family:monospace;"><span style="color: #a1a100;">@variables {</span>
+    myCompanyBrandingColour<span style="color: #00AA00;">:</span> <span style="color: #cc00cc;">#F00</span><span style="color: #00AA00;">;</span>
+    myCompanyFonts<span style="color: #00AA00;">:</span> <span style="color: #ff0000;">'Comic Sans'</span><span style="color: #00AA00;">,</span> Arial<span style="color: #00AA00;">,</span> <span style="color: #993333;">sans-serif</span><span style="color: #00AA00;">;</span>
+<span style="color: #00AA00;">&#125;</span>
+&nbsp;
+<span style="color: #cc00cc;">#header</span> <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">background-color</span><span style="color: #00AA00;">:</span> var<span style="color: #00AA00;">&#40;</span>myCompanyBrandingColour<span style="color: #00AA00;">&#41;</span><span style="color: #00AA00;">;</span>
+<span style="color: #00AA00;">&#125;</span>
+&nbsp;
+p <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">font-family</span><span style="color: #00AA00;">:</span> var<span style="color: #00AA00;">&#40;</span>myCompanyFonts<span style="color: #00AA00;">&#41;</span><span style="color: #00AA00;">;</span>
+<span style="color: #00AA00;">&#123;</span></pre></div></div>
+
+<p>That way, when your company rebrands, to change the branding colours and fonts throughout the site you would be able to update the value of just one or two variables, rather than having to trawl through your stylesheets looking for instances of that colour or font-family.</p>
+<p>Sounds good doesn&#8217;t it? This idea is <a href="http://www.w3.org/TR/NOTE-CSS-potential#id05684046681">certainly not new</a>, and has cropped up repeatedly in one form or another over the last ten years or so. A few members of the W3C have even <a href="http://disruptive-innovations.com/zoo/cssvariables/">written a detailed spec</a> for it, and it was even implemented in Webkit nightlies for a while (it was removed because it&#8217;s implementation in Safari would have been &#8220;<a href="http://lists.w3.org/Archives/Public/www-style/2008Sep/0194.html">hugely popular</a>&#8220;, but they didn&#8217;t feel confident enough that the spec wouldn&#8217;t change in the future and thus leave them having to support an outdated implementation).</p>
+<p>Yet this concept keeps on getting repeatedly <a href="http://lists.w3.org/Archives/Public/www-style/2003Jun/0072.html">shot down on mailing lists</a> and influential people in the W3C such as Bert Bos (one of the original formulators of CSS, nonetheless) have <a href="http://www.w3.org/People/Bos/CSS-variables">written at length</a> about why this idea will not get included in the spec anytime soon, if ever.</p>
+<p>This is a real shame, in my opinion. There is a clear demand for this feature in CSS, and the arguments made against it just don&#8217;t work for me. Some of Bert Bos&#8217; arguments in the aforelinked essay seem almost laughable:</p>
+<blockquote><p>&#8220;…it is quite likely that somebody who is trying to learn CSS will give up learning it when he sees that style sheets that occur on the Web don&#8217;t actually look like the tutorials he started from.&#8221;</p></blockquote>
+<p>…which sounds like an argument against progress in <em>any</em> web development language (or in any other programming language at all for that matter!) and is clearly nonsense &#8211; what about all the new additions to CSS to be implemented as part of the CSS3 spec, for instance?</p>
+<p>He also talks about the &#8216;implementation effort&#8217; of including variables/constants in CSS. This is another argument that I have no time for &#8211; I just don&#8217;t think that (within reasonable limits) the W3C should be concerned with how difficult features are to implement. The Webkit nightlies implementation has already shown that this is achievable, and if this was to be included as part of the official CSS spec then I have no doubt that browsers manufacturers would scramble to implement it, effort required or not.</p>
+<p>The only serious issue with this idea, in my mind, is backwards-compatibility. Older browsers that didn&#8217;t support this feature would ignore rules specified in this way, so there would need to be some way of providing a fallback. I&#8217;m confident an acceptable solution can be found to this; and in the meantime at least if there was a officially supported spec then the gap could be temporarily filled with &#8217;standards compliant&#8217; CSS pre-processors, rather than having the mishmash of non-compatible CSS pre-processor implementations that we have today.</p>
+<h2>Mixin it up</h2>
+<p>So, on to mixins. A mixin is an author-defined rule-set that can be &#8216;mixed-in&#8217; to other sets of rules for particular selectors. The <a href="http://lesscss.org/">LESS CSS </a>pre-processor implementation of mixins looks like this (from their documentation):</p>
+
+<div class="wp_syntax"><div class="code"><pre class="css" style="font-family:monospace;"><span style="color: #6666ff;">.bordered</span> <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">border-top</span><span style="color: #00AA00;">:</span> <span style="color: #993333;">dotted</span> <span style="color: #933;">1px</span> <span style="color: #000000; font-weight: bold;">black</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-bottom</span><span style="color: #00AA00;">:</span> <span style="color: #993333;">solid</span> <span style="color: #933;">2px</span> <span style="color: #000000; font-weight: bold;">black</span><span style="color: #00AA00;">;</span>
+<span style="color: #00AA00;">&#125;</span>
+&nbsp;
+<span style="color: #6666ff;">.post</span> a <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">color</span><span style="color: #00AA00;">:</span> <span style="color: #993333;">red</span><span style="color: #00AA00;">;</span>
+    .bordered<span style="color: #00AA00;">;</span>
+<span style="color: #00AA00;">&#125;</span></pre></div></div>
+
+<p>What is happening here? Well firstly, we are defining a rule-set with a class selector of &#8216;bordered&#8217; in the usual fashion. Then, in the <code>.post a</code> rule-set you can see that the class name has been used inside the braces &#8211; indicating that the rules defined in the <code>.bordered</code> class are to be imported into the <code>.post a</code> rules at that point.</p>
+<p>It&#8217;s possible to do something very similar to this today; in fact I use it all the time &#8211; I split my rule-sets up into discrete chunks using class names, and then apply those one or more of those classes in the HTML markup to achieve the desired result. However, this has one big problem associated with it: it breaks the paradigm of the separation of style and content, and ties our markup and styles together in a way that wouldn&#8217;t be necessary if we could use mixins in our CSS.</p>
+<p>Again, there are many people both for and against the ideas of mixins being added to the CSS spec. In fact, Bert Bos&#8217;s arguments in <a href="http://www.w3.org/People/Bos/CSS-variables">his article</a> could probably be equally applied to mixins. However the advantages  of having the ability to be able to define class-based style rules and then have them available to use as part of compound rule-sets seem obvious to me; helping us stick closer to <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> principles, reducing maintenance, helping to ensure consistency within sites, and removing a common dependence on markup would all be good things, would they not?</p>
+<h2>In summary</h2>
+<p>What I would like to see is a way to cut down on the amount of CSS I write, and make it more portable, more flexible and more maintainable. I think that variables and mixins in CSS would help that become an achievable goal. There are many others <a href="http://www.stubbornella.org/content/2009/11/09/css-wish-list/">who feel similarly</a>; I just wish that it didn&#8217;t seem like the W3C had completely closed out the subject of additions such as these to the CSS language.</p>
+<div class="footnote">
+<h3>A quick footnote on CSS pre-processors:</h3>
+<p>I have mentioned &#8216;CSS pre-processing&#8217; various times above; basically this refers to the server-side parsing of CSS code before it is output to the browser (cached, hopefully!). This is a way that some of these features can be used today &#8211; the rules are included in the stylesheet, they are converted to &#8216;normal&#8217; CSS by the pre-processor, and then the browser can parse the stylesheet as per usual.</p>
+<p>Pre-processing has been recommended by various members of the W3C and others as the preferred way to use features like these without them having to be added to the spec. Which is fine, except many people don&#8217;t want to use a server-side technology to do this, or can&#8217;t, for technical or access reasons. And another problem with them is that they are not working to any particular spec &#8211; all the implementations vary greatly, so your CSS code instantly becomes non-portable and your knowledge non-transferable.</p>
+</div>
+]]></content:encoded>
+			<wfw:commentRss>http://allmarkedup.com/journal/2009/11/on-variables-and-mixin-in-css/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss><!-- Dynamic page generated in 0.186 seconds. --><!-- Cached page generated by WP-Super-Cache on 2010-11-25 15:50:09 -->

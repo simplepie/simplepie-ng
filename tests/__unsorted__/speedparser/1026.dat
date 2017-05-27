@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>braindump_</title>
+ <link href="http://sevas.github.com/atom.xml" rel="self"/>
+ <updated>2011-09-25T14:36:52-07:00</updated>
+ <id>http://sevas.github.com/</id>
+ <author>
+   <name>Frederic De Groef</name>
+ </author>
+ 
+ 
+ <entry>
+   <title>Managing multiple python installations on Mac OS X - A  minor update</title>
+   <link href="http://sevas.github.com//2011/07/31/multiple-python-osx-update.html"/>
+   <updated>2011-07-31T00:00:00-07:00</updated>
+   <id>http://sevas.github.com//2011/07/31/multiple-python-osx-update</id>
+   <content type="html">&lt;h3 id='digression_enthought_python_distribution_considered_awesome'&gt;Digression: Enthought Python Distribution considered awesome&lt;/h3&gt;
+
+&lt;p&gt;The main reason I made this program is because, alongside the Apple-supplied python and the vanilla pythons from &lt;a href='http://python.org'&gt;python.org&lt;/a&gt;, I use a &lt;a href='http://www.enthought.com/products/epd.php'&gt;pretty badass python distribution&lt;/a&gt; dedicated to scientific work.&lt;/p&gt;
+
+&lt;p&gt;Anyone who ever lost an afternoon trying to install &lt;a href='http://www.scipy.org/Installing_SciPy'&gt;numpy and scipy&lt;/a&gt; from sources should make herself a favor and try this instead. It&amp;#8217;s not merely a collection of compiled packages. It&amp;#8217;s a damn platform.&lt;/p&gt;
+
+&lt;p&gt;You should be thankful for this. I know I am.&lt;/p&gt;
+
+&lt;h3 id='alright_alright_so_whats_new'&gt;Alright, alright. So what&amp;#8217;s new?&lt;/h3&gt;
+
+&lt;p&gt;Well, the program described in &lt;a href='/2011/06/14/multiple-python-osx.html'&gt;my latest entry&lt;/a&gt; suffered from at least one major flaw: it did not detect the 64bits builds of EPD.&lt;/p&gt;
+
+&lt;p&gt;The reason for this is that they are installed under yet another directory (namely, &lt;code&gt;/Library/Frameworks/EPD64.framework&lt;/code&gt;.)&lt;/p&gt;
+
+&lt;p&gt;That&amp;#8217;s it. It&amp;#8217;s still a really simple program, but serves its purpose. Grab it on &lt;a href='https://github.com/sevas/dotfiles/blob/0.2.1/scripts/update_python_switchers.py'&gt;github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id='whats_next'&gt;What&amp;#8217;s next?&lt;/h3&gt;
+
+&lt;p&gt;I realize that this is a really simple and, perhaps, clumsy way to switch between multiple python runtimes.&lt;/p&gt;
+
+&lt;p&gt;Ideally, this should be built into the OS. For every interpreter or compiler you might want concurrent versions of. Something along the lines of the &amp;#8216;alternatives&amp;#8217; system you can find in some linux distros.&lt;/p&gt;
+
+&lt;p&gt;But for now, that&amp;#8217;s all there is.&lt;/p&gt;
+
+&lt;p&gt;Priorities.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Managing multiple python installations on Mac OS X</title>
+   <link href="http://sevas.github.com//2011/06/14/multiple-python-osx.html"/>
+   <updated>2011-06-14T00:00:00-07:00</updated>
+   <id>http://sevas.github.com//2011/06/14/multiple-python-osx</id>
+   <content type="html">&lt;h3 id='there_is_a_party_in_my_osx'&gt;There is a party in my OSX&lt;/h3&gt;
+
+&lt;p&gt;And all the pythons got invited.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls -l /System/Library/Frameworks/Python.framework/Versions/
+total 8
+drwxr-xr-x   8 root  wheel  272 Mar 29 19:20 2.3
+drwxr-xr-x  12 root  wheel  408 Apr 11 13:48 2.5
+drwxr-xr-x  12 root  wheel  408 Apr 11 13:48 2.6
+lrwxr-xr-x   1 root  wheel    3 Mar 29 19:20 Current -&amp;gt; 2.6
+
+
+$ ls -l /Library/Frameworks/Python.framework/Versions/
+total 8
+drwxrwxr-x  10 root  admin  340 Nov 30  2010 2.7
+drwxrwxr-x   9 root  admin  306 Nov 30  2010 3.1
+drwxrwxr-x   9 root  admin  306 Feb 20 20:14 3.2
+drwxrwxr-x  19 root  admin  646 Jan 15 19:26 6.3
+lrwxr-xr-x   1 root  admin    3 Jan 15 19:21 Current -&amp;gt; 6.3&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Alright.&lt;/p&gt;
+
+&lt;h3 id='fast_switching'&gt;Fast switching&lt;/h3&gt;
+
+&lt;p&gt;What I want, is an easy way to switch between all these different python installations from my shell. For instance, going from the OSX python 2.6 installation to python 3.1:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ select_macpython31    
+Setting environment for MacPython 3.1
+
+$ python3
+Python 3.1.3 (r313:86882M, Nov 30 2010, 09:55:56) 
+[GCC 4.0.1 (Apple Inc. build 5494)] on darwin
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; exit()&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And then, I could switch to the new python 3.2 I just got from &lt;a href='http://www.python.org/download/'&gt;python.org&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ select_macpython32
+Setting environment for MacPython 3.2
+
+$ python3    
+Python 3.2 (r32:88452, Feb 20 2011, 11:12:31) 
+[GCC 4.2.1 (Apple Inc. build 5664)] on darwin
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That would be nice. And that&amp;#8217;s exactly what this page is about.&lt;/p&gt;
+
+&lt;h3 id='show_me_the_code'&gt;Show me the code&lt;/h3&gt;
+
+&lt;p&gt;What we need is a bunch of bash functions to update the &lt;code&gt;PATH&lt;/code&gt; environment variable, so that the selected python installation is the default. If you had 3 pythons, it would look like this:&lt;/p&gt;
+&lt;script src='https://gist.github.com/1021380.js?file=gistfile1.bash'&gt; &lt;/script&gt;&lt;br /&gt;
+&lt;p&gt;But because I&amp;#8217;m lazy, I don&amp;#8217;t want to write a switching function everytime I add a python, I made &lt;a href='https://github.com/sevas/dotfiles/blob/0.1/scripts/update_python_switchers.py'&gt;this&lt;/a&gt; instead.&lt;/p&gt;
+
+&lt;p&gt;This script looks in the directories where python is usually installed, detects all the versions, and generates a &lt;code&gt;.python_switchers.sh&lt;/code&gt; file. This file will have all the switching functions.&lt;/p&gt;
+
+&lt;p&gt;If you download and run it, you should see something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ update_python_switchers.py 
+Using generic prompt
+Adding System Python 2.3
+Adding System Python 2.5
+Adding System Python 2.6
+Adding MacPython 2.7
+Adding MacPython 3.1
+Adding MacPython 3.2
+Adding EPD 6.3
+Saved python switcher bash functions to /Users/sevas/.python_switchers.sh&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, you will need to add this to your &lt;code&gt;$HOME/.bash_profile&lt;/code&gt;:&lt;/p&gt;
+&lt;script src='https://gist.github.com/1021386.js?file=gistfile1.bash'&gt; &lt;/script&gt;&lt;br /&gt;
+&lt;p&gt;Now you will be able to use the switching functions from your shell, like I showed earlier&lt;/p&gt;
+
+&lt;h3 id='what_have_you_done_to_my_prompt'&gt;What have you done to my prompt?&lt;/h3&gt;
+
+&lt;p&gt;If you read until now, maybe you tried it, and noticed your prompt was different. The reason is that the generated switchers actually look more like this:&lt;/p&gt;
+&lt;script src='https://gist.github.com/1021391.js?file=gistfile1.bash'&gt; &lt;/script&gt;&lt;br /&gt;
+&lt;p&gt;This is because I find it useful to know at a glance in which environment I&amp;#8217;m working, so I modified the &lt;code&gt;PS1&lt;/code&gt; variable accordingly.&lt;/p&gt;
+
+&lt;h3 id='fancy_colors_for_fancy_people'&gt;Fancy colors for fancy people&lt;/h3&gt;
+
+&lt;p&gt;If you run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $ update_python_switchers.py --use-fancy-prompt&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;you will get my carefully crafted prompt with fancy colors.&lt;/p&gt;
+
+&lt;p&gt;This is how it looks:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src='http://dl.dropbox.com/u/260262/blog/2011-06-14/fancy_prompt.png' alt='Alt Text' /&gt;&lt;/p&gt;
+
+&lt;p&gt;You will find the color variables in my &lt;a href='https://github.com/sevas/dotfiles/blob/master/.bash_profile
+'&gt;&lt;code&gt;.bash_profile&lt;/code&gt;&lt;/a&gt; file.&lt;/p&gt;
+
+&lt;p&gt;If you already have a custom prompt, just go ahead and edit the function generation template in &lt;code&gt;update_python_switchers.py&lt;/code&gt; to your liking.&lt;/p&gt;
+
+&lt;p&gt;And if you don&amp;#8217;t like it, well, it&amp;#8217;s pretty easy to remove anyway. This could obviously be improved. Maybe I will.&lt;/p&gt;
+
+&lt;h3 id='you_should_use_virtualenv_and_virtualenvwrapper'&gt;You should use &lt;a href='http://www.virtualenv.org/en/latest/index.html'&gt;virtualenv&lt;/a&gt; and &lt;a href='http://www.doughellmann.com/projects/virtualenvwrapper/'&gt;virtualenvwrapper&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Well I do. These switchers are working on another level. virtualenv is mostly about having many concurrent &lt;code&gt;site-packages&lt;/code&gt; directories.&lt;/p&gt;
+
+&lt;h3 id='one_more_thing'&gt;One more thing&lt;/h3&gt;
+
+&lt;p&gt;This script requires the &lt;a href='http://code.google.com/p/argparse/'&gt;&lt;code&gt;argparse&lt;/code&gt;&lt;/a&gt; module, so you should go ahead and install it with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ easy_install argparse&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;if it&amp;#8217;s not part of your python, which will be the case if you&amp;#8217;re not running python 2.7 or 3.2.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Solarized Light color scheme for PyCharm</title>
+   <link href="http://sevas.github.com//2011/04/26/pycharm-colors.html"/>
+   <updated>2011-04-26T00:00:00-07:00</updated>
+   <id>http://sevas.github.com//2011/04/26/pycharm-colors</id>
+   <content type="html">&lt;h3 id='a_matter_of_taste'&gt;A matter of taste&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href='http://www.jetbrains.com/pycharm/'&gt;PyCharm&lt;/a&gt; is a neat development environment, especially if you&amp;#8217;re working with &lt;a href='http://code.google.com/appengine/'&gt;Google App Engine&lt;/a&gt; or &lt;a href='http://www.djangoproject.com/'&gt;Django&lt;/a&gt;. But the default color scheme is pretty horrendous, and their effort to bundle additional schemes has been less than fruitful, in my opinion (seriously, &lt;a href='http://dl.dropbox.com/u/260262/blog/2011-04-26-pycharm-colors/warmneon.png'&gt;WarmNeon&lt;/a&gt;?)&lt;/p&gt;
+
+&lt;p&gt;In addition, I find that using dark color schemes in a environment where a significant area will stay white and bright is pretty idiotic. And I know this because I did it for a year.&lt;/p&gt;
+
+&lt;h3 id='enters_solarized_light'&gt;Enters Solarized (Light)&lt;/h3&gt;
+
+&lt;p&gt;Recently, the &lt;a href='http://ethanschoonover.com/solarized'&gt;Solarized&lt;/a&gt; color schemes were picked on by &lt;a href='http://news.ycombinator.com/item?id=2393976'&gt;Hacker News&lt;/a&gt;, and several people ported it to their favourite editor. However, I could not find anything good enough for PyCharm (or any other &lt;a href='http://www.jetbrains.com/'&gt;IntelliJ&lt;/a&gt;-based IDE). It was often wrong, incomplete, or both.&lt;/p&gt;
+
+&lt;p&gt;This is my attempt to make a coherent theme from these colors, for all the file types supported by PyCharm: python, of course, but also HTML, css, YAML, django templates, and so on.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s just one XML file to download. Grab it on &lt;a href='https://github.com/sevas/pycharm-color-schemes'&gt;github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id='installation'&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;The downloaded file should be copied to the following directory:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MacOS X: &lt;code&gt;~/Library/Preferences/PyCharm10/colors&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;GNU/Linux: &lt;code&gt;~/.PyCharm10/config/color&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;Windows Vista and 7: &lt;code&gt;C:\Users\$USER\.PyCharm10\config\colors&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;Windows XP: &lt;code&gt;C:\Documents and Settings\$USER\.PyCharm10\config\colors&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Restart PyCharm, change the editor colors in the settings, and you&amp;#8217;re gold.&lt;/p&gt;
+
+&lt;h3 id='final_note'&gt;Final note&lt;/h3&gt;
+
+&lt;p&gt;I try not to be a typography nerd or anything, but I do like when things look nice.&lt;/p&gt;
+
+&lt;p&gt;Because I mainly use PyCharm on MacOS X, the font used is Menlo. This font ships with OS X, but is not likely to be on your Windows or Linux computer.&lt;/p&gt;
+
+&lt;p&gt;On modern Windows systems, tasteful people use &lt;a href='http://en.wikipedia.org/wiki/Consolas'&gt;Consolas&lt;/a&gt; (I know I do.) On a GNU/Linux box, you&amp;#8217;re probably good with the default monospace font shipping with your desktop environment.&lt;/p&gt;
+
+&lt;p&gt;But stay away from Courier New.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>EuroScipy 2010 Lightning Talks</title>
+   <link href="http://sevas.github.com//2010/11/27/euroscipy2010-lightning-talks.html"/>
+   <updated>2010-11-27T00:00:00-08:00</updated>
+   <id>http://sevas.github.com//2010/11/27/euroscipy2010-lightning-talks</id>
+   <content type="html">&lt;p&gt;&lt;em&gt;Notes taken during the lightning talks session EuroScipy 2010 conference in Paris. Most talks were about presenting a new scientific python module or software package. This was also an opportunity for the authors to make a call for contributions.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id='glumpy'&gt;&lt;a href='http://code.google.com/p/glumpy/'&gt;glumpy&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;A lightweight visualization library based on PyOpenGL and numpy. Does not attempt to replace &lt;a href='http://code.enthought.com/projects/mayavi/'&gt;Mayavi&lt;/a&gt; and serves a different purpose. A nice way to have fast animations for figures rendered with &lt;a href='http://matplotlib.sourceforge.net/'&gt;matplotlib&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id='joblib'&gt;&lt;a href='http://github.com/GaelVaroquaux/joblib'&gt;joblib&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;A lightweight pipelining library. Syntatic sugar over the &lt;a href='http://docs.python.org/library/multiprocessing.html'&gt;multiprocessing&lt;/a&gt; module&lt;/p&gt;
+
+&lt;h3 id='npk_20'&gt;&lt;a href='http://abcis.cbs.cnrs.fr/NPK/index.html'&gt;NPK 2.0&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;A nuclear magnetic resonance processing kernel. The current version uses a Java GUI with some &lt;a href='http://www.jython.org/'&gt;Jython&lt;/a&gt; . It does not currently use numpy/scipy, but there is an ongoing rewrite in that direction.&lt;/p&gt;
+
+&lt;h3 id='fermhub'&gt;fermhub&lt;/h3&gt;
+
+&lt;p&gt;Multiple notebooks for &lt;a href='http://www.sagemath.org/'&gt;SAGE&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id='peewit'&gt;&lt;a href='http://www.ke.tu-darmstadt.de/resources/peewit'&gt;peewit&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;An agnostic machine learning framework. Rather than focusing on the actual computations, peewit aims to do the housekeeping of running the experiments.&lt;/p&gt;
+
+&lt;h3 id='scikitslearn'&gt;&lt;a href='http://scikit-learn.sourceforge.net/'&gt;scikits.learn&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;A machine learning library, implements general-purpose ML algorithms. It has efficient bindings to &lt;a href='http://www.csie.ntu.edu.tw/~cjlin/liblinear/'&gt;libSVM&lt;/a&gt; and &lt;a href='http://www.csie.ntu.edu.tw/~cjlin/liblinear/'&gt;LibLinear&lt;/a&gt;. Many examples on the site.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;From the audience :&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;How does it compare to &lt;a href='http://www.ailab.si/orange/'&gt;Orange&lt;/a&gt;?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Orange is a GUI over many algorithms. It also has many dependencies. scikits.learn aims to be an easy to install, easy to use API.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;There are many machine learning libraries currently being developed. There should be an effort to unify everything.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Author does not disagree.&lt;/p&gt;
+
+&lt;h3 id='rstsphinx_based_thesis_authoring_toolchain'&gt;RST/Sphinx based thesis authoring tool-chain&lt;/h3&gt;
+
+&lt;p&gt;This is more a wish than an actual implementation. &lt;a href='http://en.wikipedia.org/wiki/LaTeX'&gt;LaTeX&lt;/a&gt; has many great features and beautiful typography, for text and equations, but is too complicated. Any self-respecting scientist won&amp;#8217;t use Word to publish her work.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='http://docutils.sourceforge.net/rst.html'&gt;reStructuredText&lt;/a&gt; and &lt;a href='http://sphinx.pocoo.org/'&gt;Sphinx&lt;/a&gt; fit nicely in the middle of this spectrum. However, as a tool originally developed for making documentation and manuals, it currently lacks some basic functionality to author scientific work. The most critical one being proper support for citations.&lt;/p&gt;
+
+&lt;p&gt;An RST-based presentation tool would also be nice. An audience member pointed to the &lt;a href='http://www.agapow.net/software/rst2beamer'&gt;rst2beamer&lt;/a&gt; package.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Personal note : It&amp;#8217;s not RST, but the &lt;a href='http://daringfireball.net/projects/markdown/'&gt;markdown&lt;/a&gt;-based &lt;a href='https://github.com/schacon/showoff'&gt;showoff&lt;/a&gt; presentation system is pretty enjoyable.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id='uncertainties'&gt;&lt;a href='http://packages.python.org/uncertainties/'&gt;uncertainties&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;A python module to handle calculations on numbers with uncertainties. Uses error propagation theory.&lt;/p&gt;
+
+&lt;h3 id='upy'&gt;&lt;a href='https://github.com/friedrichromstedt/upy'&gt;upy&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Another python module to handle error propagation and uncertainty in computations. Uses Gaussian error propagation.&lt;/p&gt;
+
+&lt;h3 id='snpedia'&gt;&lt;a href='http://www.snpedia.com/index.php/SNPedia'&gt;SNPedia&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;An effort to centralize informations about &lt;a href='http://www.snpedia.com/index.php/SNP'&gt;SNPs&lt;/a&gt; (&lt;em&gt;&amp;#8220;snips&amp;#8221;&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;For every SNP, SNPedia links to related research papers. The database is used by the &lt;a href='http://www.snpedia.com/index.php/Promethease'&gt;Promethease&lt;/a&gt; reporting tool, which can import data data from genetic testing services like &lt;a href='https://www.23andme.com/'&gt;23andme&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The slides are still available as a &lt;a href='http://tinyurl.com/mydna123'&gt;Google Docs presentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id='interfacing_with_instruments_for_experimental_physics'&gt;Interfacing with instruments for experimental physics&lt;/h3&gt;
+
+&lt;p&gt;This is call for feedback on how python could help replacing &lt;a href='http://www.ni.com/labview/'&gt;Labview&lt;/a&gt;, to interface with measurements and control hardware used in experimental physics. Vendors rarely ships a python API. And a GUI tool like Labview does not shine to run batch experiments, where a script would be great.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Questions :&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Why and when did you leave matlab and labview?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The speaker did not leave matlab. Only the &lt;em&gt;&amp;#8220;nightmare&amp;#8221;&lt;/em&gt; (sic) that is Labview.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If you get a binary vendor DLL, why not use ctypes ?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ctypes works well with DLLs written in C, not so much when they are written in C++. In that case, you need to write a C wrapper first.&lt;/p&gt;
+
+&lt;h3 id='matplotlib_and_html5canvas'&gt;matplotlib and HTML5/Canvas&lt;/h3&gt;
+
+&lt;p&gt;As of version 1.0, the popular python plotting library &lt;a href='http://matplotlib.sourceforge.net/'&gt;matplotlib&lt;/a&gt; got a&lt;br /&gt;&lt;a href='http://en.wikipedia.org/wiki/Canvas_element'&gt;HTML5 Canvas&lt;/a&gt; backend. Really useful for SAGE. A nice step to make &lt;a href='http://www.apple.com/ipad/'&gt;anything with a modern browser&lt;/a&gt; a decent platform for scientific work. The 3D plot demo wasn&amp;#8217;t really convincing though.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>EuroScipy 2010 Keynote Talk - Advanced Teaching and Research with Python</title>
+   <link href="http://sevas.github.com//2010/11/20/euroscipy2010-keynote-1.html"/>
+   <updated>2010-11-20T00:00:00-08:00</updated>
+   <id>http://sevas.github.com//2010/11/20/euroscipy2010-keynote-1</id>
+   <content type="html">&lt;p&gt;&lt;em&gt;These are some notes taken during the keynote talk of Prof. &lt;a href='http://vefur.simula.no/~hpl/'&gt;Hans Petter Langtangen&lt;/a&gt; at the EuroScipy 2010 conference in Paris.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id='teaching_science_and_engineering'&gt;Teaching science and engineering&lt;/h2&gt;
+
+&lt;h3 id='case_study__university_of_oslo_norway'&gt;Case study : University of Oslo, Norway&lt;/h3&gt;
+
+&lt;p&gt;Mathematics and engineering sciences should be taught with a very hands-on approach. Students need to launch simulations, tinker with parameters, vizualize outcomes from day one. This is the future of science education.&lt;/p&gt;
+
+&lt;p&gt;Undergrads mathematics and mathematical modeling courses were recently redesigned at University of Oslo. The current, revamped cursus includes calculus, numerical calculus, scientific programming using python, vector calculus and linear algebra, mechanics with simulation.&lt;/p&gt;
+
+&lt;p&gt;There is a very strong focus on experimentation. An example of first year project is the numerical simulation of a pendulum with friction. This is fairly advanced material that wasn&amp;#8217;t covered by previous undergrad courses. This approach was really well received by the students.&lt;/p&gt;
+
+&lt;h3 id='why_python_is_the_language_of_choice_'&gt;Why python is the language of choice ?&lt;/h3&gt;
+
+&lt;p&gt;Python is a great tool for quick prototyping, unlike Java. It also is a general purpose programming language, suitable for many kinds of computing tasks, unlike matlab. In previous years, students were doing matlab after an introduction course with Java. It was hard to establish a connection between what was learned in the programming course, and all the apparent magic going on in matlab. Python offers a natural transition from matlab-style flat scripts, to full fledged object-oriented applications with complex GUIs, data processing and results reporting.&lt;/p&gt;
+
+&lt;p&gt;Python is executable pseudo-code. This helps students focus on the problem to solve, rather than deal with the syntax. Producing an algorithmic solution improves how student effectively understands the material. This is what should matter first.&lt;/p&gt;
+
+&lt;h3 id='fighting_deployment_hell'&gt;Fighting deployment hell&lt;/h3&gt;
+
+&lt;p&gt;One of the biggest problem with a python scientific stack, is the pain involved when deploying an application with its dependencies, or just setting up the right development environment for scientific computing. There are several distributions (&lt;a href='http://www.enthought.com/products/epd.php'&gt;Enthought Python Distribution&lt;/a&gt;, &lt;a href='http://www.pythonxy.com/'&gt;python(x,y)&lt;/a&gt;, &lt;a href='http://www.sagemath.org/'&gt;SAGE&lt;/a&gt;, linux distribution package systems, &amp;#8230;). This is a lot to maintain in parallel. Throw in some C and FORTRAN extensions (which are ubiquituous as soon as you&amp;#8217;re using python for science) and you&amp;#8217;re in for hell of a ride.&lt;/p&gt;
+
+&lt;p&gt;To prevent spending too much time on this, the course officially supports Ubuntu as the only platform (dualboot or &lt;a href='http://www.virtualbox.org/'&gt;virtualbox&lt;/a&gt;). Students can then get all the required software through a dedicated package repository (e.g. &lt;code&gt;apt-get install
+mycourse&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Install parties are organized to help beginners get their setup ready. Experience shows that people are more happy with this approach.&lt;/p&gt;
+
+&lt;p&gt;People who don&amp;#8217;t like Ubuntu will need to figure out the installation by themselves.&lt;/p&gt;
+
+&lt;h2 id='research__high_performance_computing'&gt;Research &amp;amp; High Performance Computing&lt;/h2&gt;
+
+&lt;h3 id='python_is_slow'&gt;&lt;em&gt;&amp;#8220;Python is slow&amp;#8221;&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;Addressing the myth: it turns out all you really need is to compile your number crunching loops and call it a day. Popular strategies for this includes &lt;a href='http://www.cython.org/'&gt;cython&lt;/a&gt; and &lt;a href='http://www.scipy.org/Weave'&gt;scipy.weave&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id='large_scale_projects'&gt;Large scale projects&lt;/h3&gt;
+
+&lt;p&gt;Python is not just suitable for small school projects. &lt;a href='http://www.fenicsproject.org'&gt;fenics&lt;/a&gt;, &lt;a href='https://adh.usace.army.mil/pyadh/'&gt;pyadh&lt;/a&gt;, &lt;a href='http://www.ctcms.nist.gov/fipy/'&gt;fipy&lt;/a&gt;, &lt;a href='http://mathema.tician.de/software/hedge'&gt;hedge&lt;/a&gt;, &lt;a href='https://wiki.fysik.dtu.dk/gpaw/'&gt;gpaw&lt;/a&gt;, &lt;a href='http://obswww.unige.ch/~revaz/pNbody/'&gt;pNbody&lt;/a&gt; are examples of python-based software packages aimed at solving real-world engineering problems.&lt;/p&gt;
+
+&lt;h3 id='parallel_computing'&gt;Parallel computing&lt;/h3&gt;
+
+&lt;p&gt;Scientists often need to launch long computations on computer clusters. &lt;a href='http://mpi4py.scipy.org/docs/usrman/index.html'&gt;mpi4py&lt;/a&gt; are python bindings for the popular message passing library &lt;a href='http://www.mpi-forum.org/'&gt;MPI&lt;/a&gt;, which is one way to enable exploitation of multiprocessor architectures.&lt;/p&gt;
+
+&lt;p&gt;A typical scenario would be using python to control the pipeline, set the simulation parameters, and let the high-performance, often legacy FORTRAN code, do the number crunching. Numpy and scipy can also be used for that kind of heavy lifting.&lt;/p&gt;
+
+&lt;h3 id='further_improving_the_adoption_of_python_in_science'&gt;Further improving the adoption of python in science&lt;/h3&gt;
+
+&lt;p&gt;One of the strong points of matlab is the ubiquity of code samples available. We need that for the python scientific stack.&lt;/p&gt;
+
+&lt;p&gt;Unification of interfaces between ODE solvers, linear algebra packages, visualization packages is much needed.&lt;/p&gt;
+
+&lt;p&gt;There are still skeptics about whether a &amp;#8220;scripting language&amp;#8221; can be a fitting choice for high-performance computations. Finding and referencing real-world examples in which python was succesfully used helps. The bottom line being that one doesn&amp;#8217;t need to write the whole application in C or C++ for it to be fast.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Managing multiple python installations on Windows</title>
+   <link href="http://sevas.github.com//2010/09/12/multiple-python-windows.html"/>
+   <updated>2010-09-12T00:00:00-07:00</updated>
+   <id>http://sevas.github.com//2010/09/12/multiple-python-windows</id>
+   <content type="html">&lt;h3 id='problem'&gt;Problem&lt;/h3&gt;
+
+&lt;p&gt;So sometimes, it might be good idea to keep several sandboxed python installations. Here are some examples where such a scenario may occur:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;My default python installation is 2.7&lt;/li&gt;
+
+&lt;li&gt;I want to keep my &lt;a href='http://www.enthought.com/products/epd.php'&gt;EPD&lt;/a&gt; distribution clean&lt;/li&gt;
+
+&lt;li&gt;The &lt;a href='http://www.pythonogre.com/'&gt;Ogre3D bindings&lt;/a&gt; are only available for Python2.6 at the moment&lt;/li&gt;
+
+&lt;li&gt;What about using python3 alongside everything else?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id='a_solution'&gt;A Solution&lt;/h3&gt;
+
+&lt;p&gt;The idea here is to create a command prompt shortcut for every concurrent python installation.&lt;/p&gt;
+
+&lt;p&gt;First, you need a &lt;code&gt;.bat&lt;/code&gt; file that will set various environment variables. Here is an example file, targetted at my EPD installation, which is installed in &lt;code&gt;C:\Python26_EPD622&lt;/code&gt;:&lt;/p&gt;
+&lt;script src='http://gist.github.com/575989.js?file=epd62.bat'&gt; &lt;/script&gt;
+&lt;p&gt;Copy this, and change the &lt;code&gt;PYTHON_ROOT&lt;/code&gt; variable to the root folder of the python installation you&amp;#8217;re configuring. Put the file anywhere you want to.&lt;/p&gt;
+
+&lt;p&gt;Next, we will create a shortcut to a windows command prompt that will automatically call that script, and setup your environmnent.&lt;/p&gt;
+
+&lt;p&gt;Locate the folder containing the original &lt;em&gt;Command Prompt&lt;/em&gt; shortcut. On Windows Vista/7, it should be in: &lt;code&gt;C:\Users\&amp;lt;username&amp;gt;\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Copy it, and rename it, for example to &lt;code&gt;Python26 (EPD 6.2) Command Prompt&lt;/code&gt;. Rigth click on it, select &lt;em&gt;Properties&lt;/em&gt;. This should appear:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src='http://dl.dropbox.com/u/260262/blog/2010-09-12/lnk_before.png' alt='' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Change the target to: &lt;code&gt;%comspec% /k &amp;quot;&amp;quot;c:\path\to\epd62.bat&amp;quot;&amp;quot;&lt;/code&gt; and click &lt;em&gt;OK&lt;/em&gt;. Notice the two pairs of double quotes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src='http://dl.dropbox.com/u/260262/blog/2010-09-12/lnk_after.png' alt='' /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can now move this shortcut wherever you see fit. You can keep it in the start menu, create a special start menu folder for all your python prompts, move it to the quicklaunch bar, and so on.&lt;/p&gt;
+
+&lt;p&gt;Once this is done, you can now:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Launch a (i)python shell&lt;/li&gt;
+
+&lt;li&gt;Install packages with &lt;code&gt;easy_install&lt;/code&gt; or &lt;code&gt;pip&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;Launch any binary third party tool shipped with your python distribution&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src='http://dl.dropbox.com/u/260262/blog/2010-09-12/success.png' alt='' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Repeat for every python installation.&lt;/p&gt;
+
+&lt;h3 id='final_note'&gt;Final note&lt;/h3&gt;
+
+&lt;p&gt;This is not a mean to register several python distribution with your IDE. Any decent python IDE, such as &lt;a href='http://pydev.org/'&gt;Pydev&lt;/a&gt; for eclipse or &lt;a href='http://www.jetbrains.com/pycharm/'&gt;PyCharm&lt;/a&gt; let you register several python interpreters.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Making pdb work with psyco</title>
+   <link href="http://sevas.github.com//2010/09/11/pdb-psyco.html"/>
+   <updated>2010-09-11T00:00:00-07:00</updated>
+   <id>http://sevas.github.com//2010/09/11/pdb-psyco</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;em&gt;This is a rewrite of an old blog post from way back, it still might be useful so I&amp;#8217;m throwing it on here.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='http://docs.python.org/library/pdb.html'&gt;Pdb&lt;/a&gt; (the python debugger) does not play nice with &lt;a href='http://psyco.sourceforge.net/'&gt;psyco&lt;/a&gt;. Or maybe it&amp;#8217;s the opposite. To illustrate this, let&amp;#8217;s start with a simple python program, that will surely provoke a breakpoint:&lt;/p&gt;
+&lt;script src='http://gist.github.com/575083.js?file=hello_pdb.py'&gt; &lt;/script&gt;
+&lt;p&gt;A debugging session with pdb should look like that:&lt;/p&gt;
+&lt;script src='http://gist.github.com/575099.js?file=pdb_psyco_session'&gt;
+&lt;/script&gt;
+&lt;p&gt;So, what happenned here?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We start a pdb debugging session on the hello_pdb.py file&lt;/li&gt;
+
+&lt;li&gt;the pdb command &lt;code&gt;c&lt;/code&gt; (continue) starts the program&lt;/li&gt;
+
+&lt;li&gt;The program throws a &lt;code&gt;ZeroDivisionError&lt;/code&gt;, pdb enters post-mortem debugging&lt;/li&gt;
+
+&lt;li&gt;We try to inspect the environment : the variable &lt;code&gt;arg&lt;/code&gt; does not exist, the &lt;code&gt;locals()&lt;/code&gt; dictionnary is empty.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The reason for that is, when psyco is active, all your psyco-compiled functions, along with their stack frames, are stored away in a secret place which poor pdb is not aware of.&lt;/p&gt;
+
+&lt;p&gt;At least 2 solutions exist. First, you could comment out the &lt;code&gt;psyco.full()&lt;/code&gt; statement for every debug session. However, this isn&amp;#8217;t always an option, as some libraries always makes the use of psyco(1) if it is available. Uncommenting and recommenting in every third party library is not a reasonable option.&lt;/p&gt;
+
+&lt;p&gt;So, how do I seamlessly disable psyco while debugging a module with Pdb ? After some research, it seemed like the &lt;a href='http://pydev.sourceforge.net'&gt;pydev&lt;/a&gt; eclipse extension had just the workaround I needed. First, we need a fake psyco module, implementing the psyco interface. Something like this :&lt;/p&gt;
+&lt;script src='http://gist.github.com/575112.js?file=pdb_psyco_stub.py'&gt;
+&lt;/script&gt;
+&lt;p&gt;This is just a copy of the pydevd_psyco_stub.py file shipped with pydev, I&amp;#8217;m not taking credit for anything here.&lt;/p&gt;
+
+&lt;p&gt;Next, we need to tell pdb to replace the psyco entry in &lt;code&gt;sys.modules&lt;/code&gt; with that fake module. This is done through the &lt;code&gt;.pdbrc&lt;/code&gt; configuration file. Conveniently, the &lt;code&gt;.pdbrc&lt;/code&gt; file accepts plain python code, so it&amp;#8217;s like super easy and stuff. Here&amp;#8217;s my &lt;code&gt;.pdbrc&lt;/code&gt; :&lt;/p&gt;
+&lt;script src='http://gist.github.com/575176.js?file=dotpdbrc'&gt; &lt;/script&gt;
+&lt;p&gt;And that&amp;#8217;s it.&lt;/p&gt;
+
+&lt;p&gt;A few remarks :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Both &lt;code&gt;.pdbrc&lt;/code&gt; and &lt;code&gt;pydevd_psyco_stub.py&lt;/code&gt; need to be in your home directory&lt;/li&gt;
+
+&lt;li&gt;On Windows, this means(2) putting them in an arbitrary folder, and then create a %HOME% environment variable pointing to that directory(3)&lt;/li&gt;
+
+&lt;li&gt;I strongly recommend the use of the &lt;code&gt;pprint&lt;/code&gt; function (especially for inspecting your data while debugging)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So what does it mean for our test module from earlier ? Let me show it to you :&lt;/p&gt;
+&lt;script src='http://gist.github.com/575180.js?file=pdb_psyco_stub_session'&gt; &lt;/script&gt;
+&lt;p&gt;Great success.&lt;/p&gt;
+
+&lt;p&gt;(1) This is actually my primary motivation&lt;br /&gt;(2) Among other options, but I find this one easy enough&lt;br /&gt;(3) And windows users should use &lt;a href='http://www.rapidee.com/en/about'&gt;Rapid Environment Editor&lt;/a&gt; for such a task&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>first post</title>
+   <link href="http://sevas.github.com//2010/09/11/first-post.html"/>
+   <updated>2010-09-11T00:00:00-07:00</updated>
+   <id>http://sevas.github.com//2010/09/11/first-post</id>
+   <content type="html">&lt;p&gt;Goodbye shitty visual html editors, hello markdown&lt;/p&gt;</content>
+ </entry>
+ 
+ 
+</feed>

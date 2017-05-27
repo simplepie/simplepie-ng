@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>XEWeb</title>
+	<atom:link href="http://www.xeweb.net/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.xeweb.net</link>
+	<description>XEWeb blog, PHP scripts and more...</description>
+	<lastBuildDate>Thu, 14 Jul 2011 11:05:03 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.2.1</generator>
+		<item>
+		<title>Flintstone &#8211; A key/value database store using flat files for PHP</title>
+		<link>http://www.xeweb.net/2011/07/14/flintstone-a-keyvalue-database-store-using-flat-files-for-php/</link>
+		<comments>http://www.xeweb.net/2011/07/14/flintstone-a-keyvalue-database-store-using-flat-files-for-php/#comments</comments>
+		<pubDate>Thu, 14 Jul 2011 11:04:53 +0000</pubDate>
+		<dc:creator>Jason</dc:creator>
+				<category><![CDATA[Company]]></category>
+		<category><![CDATA[MySQL]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[nosql flintstone]]></category>
+
+		<guid isPermaLink="false">http://www.xeweb.net/?p=133</guid>
+		<description><![CDATA[XEWeb are proud to announce the release of Flintstone, a key/value database store using flat files for PHP. Some of the features include: Memory efficient File locking Caching Gzip compression Easy to use All it requires is PHP 5 and read/write file permissions. Take a look at example usage below: try &#123; &#160; &#160; &#160; [...]]]></description>
+			<content:encoded><![CDATA[<p>XEWeb are proud to announce the release of <a href="http://www.xeweb.net/flintstone/">Flintstone</a>, a key/value database store using flat files for PHP.</p>
+<p>Some of the features include:</p>
+<ul>
+<li>Memory efficient</li>
+<li>File locking</li>
+<li>Caching</li>
+<li>Gzip compression</li>
+<li>Easy to use</li>
+</ul>
+<p>All it requires is PHP 5 and read/write file permissions.</p>
+<p>Take a look at example usage below:</p>
+<div class="php geshi no php" style="font-family:monospace;">try <span style="color: #009900;">&#123;</span><br />
+&nbsp;<br />
+&nbsp; &nbsp; <span style="color: #666666; font-style: italic;">// Load flintstone</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$db</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Flintstone<span style="color: #009900;">&#40;</span><span style="color: #990000;">array</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;dir&#39;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&#39;/path/to/database/dir/&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp;<br />
+&nbsp; &nbsp; <span style="color: #666666; font-style: italic;">// Set keys</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">load</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;users&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">set</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;bob&#39;</span><span style="color: #339933;">,</span> <span style="color: #990000;">array</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;email&#39;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&#39;bob@site.com&#39;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&#39;password&#39;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&#39;123456&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">load</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;users&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">set</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;joe&#39;</span><span style="color: #339933;">,</span> <span style="color: #990000;">array</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;email&#39;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&#39;joe@site.com&#39;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&#39;password&#39;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">&#39;test&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">load</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;settings&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">set</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;site_offline&#39;</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">load</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;settings&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">set</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;site_back&#39;</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&#39;3 days&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp;<br />
+&nbsp; &nbsp; <span style="color: #666666; font-style: italic;">// Retrieve keys</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$user</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">load</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;users&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">get</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;bob&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #b1b100;">echo</span> <span style="color: #0000ff;">&#39;Bob, your email is &#39;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$user</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">&#39;email&#39;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp;<br />
+&nbsp; &nbsp; <span style="color: #000088;">$offline</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">load</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;settings&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">get</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;site_offline&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$offline</span> <span style="color: #339933;">==</span> <span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">echo</span> <span style="color: #0000ff;">&#39;Sorry, the website is offline&lt;br&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #b1b100;">echo</span> <span style="color: #0000ff;">&#39;We will be back in &#39;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">load</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;settings&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">get</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;site_back&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp;<br />
+&nbsp; &nbsp; <span style="color: #666666; font-style: italic;">// Delete a key</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">load</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;users&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">delete</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;joe&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp;<br />
+&nbsp; &nbsp; <span style="color: #666666; font-style: italic;">// Flush database</span><br />
+&nbsp; &nbsp; <span style="color: #000088;">$db</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">load</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;users&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">flush</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+catch <span style="color: #009900;">&#40;</span>Exception <span style="color: #000088;">$e</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #b1b100;">echo</span> <span style="color: #0000ff;">&#39;Exception: &#39;</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$e</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getMessage</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div>
+<p>For more information and to download visit <a href="http://www.xeweb.net/flintstone/">http://www.xeweb.net/flintstone/</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.xeweb.net/2011/07/14/flintstone-a-keyvalue-database-store-using-flat-files-for-php/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Generate a random string A-Z, 0-9 in PHP</title>
+		<link>http://www.xeweb.net/2011/02/11/generate-a-random-string-a-z-0-9-in-php/</link>
+		<comments>http://www.xeweb.net/2011/02/11/generate-a-random-string-a-z-0-9-in-php/#comments</comments>
+		<pubDate>Fri, 11 Feb 2011 10:36:04 +0000</pubDate>
+		<dc:creator>Jason</dc:creator>
+				<category><![CDATA[PHP]]></category>
+
+		<guid isPermaLink="false">http://www.xeweb.net/?p=128</guid>
+		<description><![CDATA[Often I find that generating a random string can be tedious, there seem to be so many ways to do this. I wrote this simple function to do the work, and it can be easily modified. /* &#160;* Create a random string &#160;* @author XEWeb &#60;http://www.xeweb.net&#62; &#160;* @param $length the length of the string to [...]]]></description>
+			<content:encoded><![CDATA[<p>Often I find that generating a random string can be tedious, there seem to be so many ways to do this.</p>
+<p>I wrote this simple function to do the work, and it can be easily modified.</p>
+<div class="php geshi no php" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">/*<br />
+&nbsp;* Create a random string<br />
+&nbsp;* @author XEWeb &lt;http://www.xeweb.net&gt;<br />
+&nbsp;* @param $length the length of the string to create<br />
+&nbsp;* @return $str the string<br />
+&nbsp;*/</span><br />
+<span style="color: #000000; font-weight: bold;">function</span> randomString<span style="color: #009900;">&#40;</span><span style="color: #000088;">$length</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">6</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp;<span style="color: #000088;">$str</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;&quot;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000088;">$characters</span> <span style="color: #339933;">=</span> <span style="color: #990000;">array_merge</span><span style="color: #009900;">&#40;</span><span style="color: #990000;">range</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;A&#39;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&#39;Z&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #990000;">range</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;a&#39;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&#39;z&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #990000;">range</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&#39;0&#39;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&#39;9&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000088;">$max</span> <span style="color: #339933;">=</span> <span style="color: #990000;">count</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$characters</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">-</span> <span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$i</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span> <span style="color: #339933;">&lt;</span> <span style="color: #000088;">$length</span><span style="color: #339933;">;</span> <span style="color: #000088;">$i</span><span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000088;">$rand</span> <span style="color: #339933;">=</span> <span style="color: #990000;">mt_rand</span><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #339933;">,</span> <span style="color: #000088;">$max</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000088;">$str</span> <span style="color: #339933;">.=</span> <span style="color: #000088;">$characters</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$rand</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp;<span style="color: #b1b100;">return</span> <span style="color: #000088;">$str</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div>
+<p>You can remove any of the ranges in $characters (for example if you didn&#8217;t want uppercase letters delete the <code>range('A','Z')</code>) or put in your own array of characters.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.xeweb.net/2011/02/11/generate-a-random-string-a-z-0-9-in-php/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Bash commands to detect script injections and malware</title>
+		<link>http://www.xeweb.net/2010/08/16/bash-commands-to-detect-script-injections-and-malware/</link>
+		<comments>http://www.xeweb.net/2010/08/16/bash-commands-to-detect-script-injections-and-malware/#comments</comments>
+		<pubDate>Mon, 16 Aug 2010 15:05:23 +0000</pubDate>
+		<dc:creator>Jason</dc:creator>
+				<category><![CDATA[Security]]></category>
+
+		<guid isPermaLink="false">http://www.xeweb.net/?p=126</guid>
+		<description><![CDATA[Not so long ago this site and other domains hosted on my server were injected with malware PHP scripts that caused all sorts of damage, including amending javascript files to display ads to people who visited my sites. These 2 bash commands saved my life and I would like to share them with the world. [...]]]></description>
+			<content:encoded><![CDATA[<p>Not so long ago this site and other domains hosted on my server were injected with malware PHP scripts that caused all sorts of damage, including amending javascript files to display ads to people who visited my sites.</p>
+<p>These 2 bash commands saved my life and I would like to share them with the world.</p>
+<p>The first one will find any javascript file that contains the string &#8220;eval(unescape&#8221; which is the most common way of injecting malicious code. The second is a similar method for PHP files.</p>
+<div class="text geshi no text" style="font-family:monospace;">find . -name &quot;*.js&quot; | xargs grep -l &quot;eval(unescape&quot;<br />
+find . -name &quot;*.php&quot; | xargs grep -l &quot;eval(base64_decode&quot;</div>
+<p>Seek and destroy!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.xeweb.net/2010/08/16/bash-commands-to-detect-script-injections-and-malware/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Thumbnail opacity hover with CSS and jQuery</title>
+		<link>http://www.xeweb.net/2010/03/22/thumbnail-opacity-hover-with-css-and-jquery/</link>
+		<comments>http://www.xeweb.net/2010/03/22/thumbnail-opacity-hover-with-css-and-jquery/#comments</comments>
+		<pubDate>Mon, 22 Mar 2010 16:32:38 +0000</pubDate>
+		<dc:creator>Jason</dc:creator>
+				<category><![CDATA[CSS]]></category>
+		<category><![CDATA[jQuery]]></category>
+
+		<guid isPermaLink="false">http://www.xeweb.net/?p=123</guid>
+		<description><![CDATA[A nice effect when hovering over thumbnails is to change the opacity, so that it has that fade in and out effect. &#60;ul class=&#34;thumbnails&#34;&#62; &#160;&#60;li&#62;&#60;a href=&#34;#&#34;&#62;&#60;img src=&#34;thumb-1.jpg&#34; alt=&#34;&#34; /&#62;&#60;/a&#62;&#60;/li&#62; &#160;&#60;li&#62;&#60;a href=&#34;#&#34;&#62;&#60;img src=&#34;thumb-2.jpg&#34; alt=&#34;&#34; /&#62;&#60;/a&#62;&#60;/li&#62; &#160;&#60;li&#62;&#60;a href=&#34;#&#34;&#62;&#60;img src=&#34;thumb-3.jpg&#34; alt=&#34;&#34; /&#62;&#60;/a&#62;&#60;/li&#62; &#160;&#60;li&#62;&#60;a href=&#34;#&#34;&#62;&#60;img src=&#34;thumb-4.jpg&#34; alt=&#34;&#34; /&#62;&#60;/a&#62;&#60;/li&#62; &#160;&#60;li&#62;&#60;a href=&#34;#&#34;&#62;&#60;img src=&#34;thumb-5.jpg&#34; alt=&#34;&#34; /&#62;&#60;/a&#62;&#60;/li&#62; &#60;/ul&#62; Take the above example, a [...]]]></description>
+			<content:encoded><![CDATA[<p>A nice effect when hovering over thumbnails is to change the opacity, so that it has that fade in and out effect.</p>
+<div class="html4strict geshi no html4strict" style="font-family:monospace;"><span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">ul</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;thumbnails&quot;</span>&gt;</span><br />
+&nbsp;<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">li</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">a</span> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;#&quot;</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">img</span> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;thumb-1.jpg&quot;</span> <span style="color: #000066;">alt</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #66cc66;">/</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">a</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">li</span>&gt;</span><br />
+&nbsp;<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">li</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">a</span> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;#&quot;</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">img</span> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;thumb-2.jpg&quot;</span> <span style="color: #000066;">alt</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #66cc66;">/</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">a</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">li</span>&gt;</span><br />
+&nbsp;<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">li</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">a</span> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;#&quot;</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">img</span> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;thumb-3.jpg&quot;</span> <span style="color: #000066;">alt</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #66cc66;">/</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">a</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">li</span>&gt;</span><br />
+&nbsp;<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">li</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">a</span> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;#&quot;</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">img</span> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;thumb-4.jpg&quot;</span> <span style="color: #000066;">alt</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #66cc66;">/</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">a</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">li</span>&gt;</span><br />
+&nbsp;<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">li</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">a</span> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;#&quot;</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">img</span> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;thumb-5.jpg&quot;</span> <span style="color: #000066;">alt</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #66cc66;">/</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">a</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">li</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">ul</span>&gt;</span></div>
+<p>Take the above example, a simple list of images. Let&#8217;s apply the basic styling for it&#8230;</p>
+<div class="css geshi no css" style="font-family:monospace;">ul<span style="color: #6666ff;">.thumbnails</span> <span style="color: #00AA00;">&#123;</span> <span style="color: #000000; font-weight: bold;">list-style</span><span style="color: #00AA00;">:</span> <span style="color: #993333;">none</span><span style="color: #00AA00;">;</span> <span style="color: #000000; font-weight: bold;">margin</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span> <span style="color: #000000; font-weight: bold;">padding</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span> <span style="color: #00AA00;">&#125;</span><br />
+ul<span style="color: #6666ff;">.thumbnails</span> li <span style="color: #00AA00;">&#123;</span> <span style="color: #000000; font-weight: bold;">float</span><span style="color: #00AA00;">:</span> <span style="color: #000000; font-weight: bold;">left</span><span style="color: #00AA00;">;</span> <span style="color: #000000; font-weight: bold;">margin</span><span style="color: #00AA00;">:</span> <span style="color: #933;">10px</span><span style="color: #00AA00;">;</span> <span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span> <span style="color: #933;">50px</span><span style="color: #00AA00;">;</span> <span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span> <span style="color: #933;">50px</span><span style="color: #00AA00;">;</span> <span style="color: #00AA00;">&#125;</span><br />
+ul<span style="color: #6666ff;">.thumbnails</span> li img <span style="color: #00AA00;">&#123;</span> filter<span style="color: #00AA00;">:</span> alpha<span style="color: #00AA00;">&#40;</span>opacity<span style="color: #00AA00;">=</span><span style="color: #cc66cc;">60</span><span style="color: #00AA00;">&#41;</span><span style="color: #00AA00;">;</span> <span style="color: #808080; font-style: italic;">/* IE only */</span> opacity<span style="color: #00AA00;">:</span> .60<span style="color: #00AA00;">;</span> <span style="color: #808080; font-style: italic;">/* All other browsers */</span> <span style="color: #00AA00;">&#125;</span></div>
+<p>As you can see all of the thumbnails will have a default opacity of 60%. Now comes the jQuery script to add the fade effect&#8230;</p>
+<div class="javascript geshi no javascript" style="font-family:monospace;">$<span style="color: #009900;">&#40;</span>document<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">ready</span><span style="color: #009900;">&#40;</span><span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp;$<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&#39;ul.thumbnails li&#39;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">hover</span><span style="color: #009900;">&#40;</span><span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&#39;img&#39;</span><span style="color: #339933;">,</span> <span style="color: #000066; font-weight: bold;">this</span><span style="color: #009900;">&#41;</span>.<span style="color: #000066;">stop</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">animate</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span>opacity<span style="color: #339933;">:</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span><span style="color: #339933;">,</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&#39;img&#39;</span><span style="color: #339933;">,</span> <span style="color: #000066; font-weight: bold;">this</span><span style="color: #009900;">&#41;</span>.<span style="color: #000066;">stop</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">animate</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span>opacity<span style="color: #339933;">:</span> <span style="color: #CC0000;">0.6</span><span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div>
+<p>And that&#8217;s all there is to it!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.xeweb.net/2010/03/22/thumbnail-opacity-hover-with-css-and-jquery/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Pure CSS coke can spin</title>
+		<link>http://www.xeweb.net/2010/02/20/pure-css-coke-can-spin/</link>
+		<comments>http://www.xeweb.net/2010/02/20/pure-css-coke-can-spin/#comments</comments>
+		<pubDate>Sat, 20 Feb 2010 10:40:51 +0000</pubDate>
+		<dc:creator>Jason</dc:creator>
+				<category><![CDATA[CSS]]></category>
+
+		<guid isPermaLink="false">http://www.xeweb.net/?p=121</guid>
+		<description><![CDATA[This just goes to show what you can do with CSS these days as Rom&#225;n Cort&#233;s demonstrates with his awesome spinning coke can example. I found out that by a combination of the CSS1 properties background-attachment and background-position, 2D displacement maps could be created and, by scrolling, the displacement map would be applied to different [...]]]></description>
+			<content:encoded><![CDATA[<p><img src="http://www.xeweb.net/wp-content/uploads/css-coke-can.jpg" alt="Pure CSS coke can spin" width="180" height="134" class="alignleft size-full wp-image-122" />This just goes to show what you can do with CSS these days as Rom&aacute;n Cort&eacute;s demonstrates with his awesome spinning coke can example.</p>
+<blockquote><p>I found out that by a combination of the CSS1 properties background-attachment  and background-position, 2D displacement maps could be created and, by scrolling, the displacement map would be applied to different parts of the texture (a background image).</p>
+<p>With displacement maps lots of cool effects could be done, but thinking that the complexity of the displacement map would directly affect the CSS and markup size, choosing a good example took me some time. I thought in sea waves reflections, underwater distortions, magnifying glass, a rotating Earth… but the final thing I did was just right in my desktop: a Coke can &#8211; my favourite drink.</p>
+<p>Due the cilindrical shape of a can, the displacement map is very simple with the parallel projection I did, so the code is very little &#8211; below 5kb &#8211; and easy to understand I hope.</p>
+<p>Even if this effect is mainly CSS1 and some bits of CSS2 &#8211; for the scrolling div, overflow: auto property -, it is not going to work in IE6, because it doesn’t support background-attachment: fixed. I’ve tested it and it works in IE8, Firefox 3.5, Chrome 3, Safari 4 and Opera 10. Also, the code validates.</p></blockquote>
+<p>Check it out at <a href="http://www.romancortes.com/blog/pure-css-coke-can/">http://www.romancortes.com/blog/pure-css-coke-can/</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.xeweb.net/2010/02/20/pure-css-coke-can-spin/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>3D carousel using jQuery</title>
+		<link>http://www.xeweb.net/2010/02/02/3d-carousel-using-jquery/</link>
+		<comments>http://www.xeweb.net/2010/02/02/3d-carousel-using-jquery/#comments</comments>
+		<pubDate>Tue, 02 Feb 2010 16:47:12 +0000</pubDate>
+		<dc:creator>Jason</dc:creator>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[jQuery]]></category>
+
+		<guid isPermaLink="false">http://www.xeweb.net/?p=119</guid>
+		<description><![CDATA[Inspired by Andrew Sellick&#8217;s Simple 3D Carousel using Mootools I needed a jQuery version of the script, source code of which is below (tested with jQuery 1.4). Please refer to the original tutorial for instructions and a working demo. var count = 0; var baseSpeed = 0.05; var radiusX = 190; var radiusY = 40; [...]]]></description>
+			<content:encoded><![CDATA[<p><img src="http://www.xeweb.net/wp-content/uploads/small-simple-3d-carousel-150x122.png" alt="3D carousel using jQuery" width="150" height="122" class="alignleft size-thumbnail wp-image-120" />Inspired by Andrew Sellick&#8217;s <a href="http://www.andrewsellick.com/75/simple-3d-carousel-using-mootools">Simple 3D Carousel using Mootools</a> I needed a jQuery version of the script, source code of which is below (tested with jQuery 1.4).</p>
+<p>Please refer to the <a href="http://www.andrewsellick.com/75/simple-3d-carousel-using-mootools">original tutorial</a> for instructions and a working demo.</p>
+<div class="javascript geshi no javascript" style="font-family:monospace;"><span style="color: #003366; font-weight: bold;">var</span> count <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> <br />
+<span style="color: #003366; font-weight: bold;">var</span> baseSpeed <span style="color: #339933;">=</span> <span style="color: #CC0000;">0.05</span><span style="color: #339933;">;</span> <br />
+<span style="color: #003366; font-weight: bold;">var</span> radiusX <span style="color: #339933;">=</span> <span style="color: #CC0000;">190</span><span style="color: #339933;">;</span><br />
+<span style="color: #003366; font-weight: bold;">var</span> radiusY <span style="color: #339933;">=</span> <span style="color: #CC0000;">40</span><span style="color: #339933;">;</span><br />
+<span style="color: #003366; font-weight: bold;">var</span> centerX <span style="color: #339933;">=</span> <span style="color: #CC0000;">300</span><span style="color: #339933;">;</span> <br />
+<span style="color: #003366; font-weight: bold;">var</span> centerY <span style="color: #339933;">=</span> <span style="color: #CC0000;">190</span><span style="color: #339933;">;</span><br />
+<span style="color: #003366; font-weight: bold;">var</span> speed <span style="color: #339933;">=</span> <span style="color: #CC0000;">0.3</span><span style="color: #339933;">;</span><br />
+<span style="color: #003366; font-weight: bold;">var</span> imageDivs <span style="color: #339933;">=</span> <span style="color: #3366CC;">&#39;&#39;</span><span style="color: #339933;">;</span><br />
+<span style="color: #003366; font-weight: bold;">var</span> numberOfElements <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">;</span><br />
+<span style="color: #003366; font-weight: bold;">var</span> carousel <span style="color: #339933;">=</span> <span style="color: #3366CC;">&#39;&#39;</span><span style="color: #339933;">;</span><br />
+<span style="color: #003366; font-weight: bold;">var</span> speedTest <span style="color: #339933;">=</span> <span style="color: #3366CC;">&#39;&#39;</span><span style="color: #339933;">;</span></p>
+<p>$<span style="color: #009900;">&#40;</span>document<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">ready</span><span style="color: #009900;">&#40;</span><span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; <br />
+&nbsp;carousel <span style="color: #339933;">=</span> $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&#39;#carousel&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;imageDivs <span style="color: #339933;">=</span> $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&#39;#carousel div&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;numberOfElements <span style="color: #339933;">=</span> imageDivs.<span style="color: #660066;">length</span><span style="color: #339933;">;</span> </p>
+<p>&nbsp;setInterval<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&#39;startCarousel()&#39;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">40</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp;carousel.<span style="color: #660066;">mousemove</span><span style="color: #009900;">&#40;</span><span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>event<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; tempX <span style="color: #339933;">=</span> event.<span style="color: #660066;">clientX</span><span style="color: #339933;">;</span><br />
+&nbsp; speed <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>tempX <span style="color: #339933;">-</span> centerX<span style="color: #009900;">&#41;</span> <span style="color: #339933;">/</span> <span style="color: #CC0000;">2500</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></p>
+<p><span style="color: #003366; font-weight: bold;">function</span> startCarousel<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp;<br />
+&nbsp;<span style="color: #000066; font-weight: bold;">for</span><span style="color: #009900;">&#40;</span>i<span style="color: #339933;">=</span><span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> numberOfElements<span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span></p>
+<p>&nbsp; angle <span style="color: #339933;">=</span> i <span style="color: #339933;">*</span> <span style="color: #009900;">&#40;</span> Math.<span style="color: #660066;">PI</span> <span style="color: #339933;">*</span> <span style="color: #CC0000;">2</span> <span style="color: #009900;">&#41;</span> <span style="color: #339933;">/</span> numberOfElements<span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; posX <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span> Math.<span style="color: #660066;">sin</span><span style="color: #009900;">&#40;</span> count <span style="color: #339933;">*</span> <span style="color: #009900;">&#40;</span> baseSpeed <span style="color: #339933;">*</span> speed <span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> angle <span style="color: #009900;">&#41;</span><span style="color: #339933;">*</span> radiusX <span style="color: #339933;">+</span> centerX <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; posY <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span> Math.<span style="color: #660066;">cos</span><span style="color: #009900;">&#40;</span> count <span style="color: #339933;">*</span> <span style="color: #009900;">&#40;</span> baseSpeed <span style="color: #339933;">*</span> speed <span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> angle <span style="color: #009900;">&#41;</span><span style="color: #339933;">*</span> radiusY <span style="color: #339933;">+</span> centerY <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<br />
+&nbsp; imageDivWidth <span style="color: #339933;">=</span> posY<span style="color: #339933;">/</span><span style="color: #CC0000;">3</span><span style="color: #339933;">;</span><br />
+&nbsp; imageDivZIndex <span style="color: #339933;">=</span> Math.<span style="color: #660066;">round</span><span style="color: #009900;">&#40;</span>imageDivWidth<span style="color: #009900;">&#41;</span><span style="color: #339933;">+</span><span style="color: #CC0000;">100</span><span style="color: #339933;">;</span><br />
+&nbsp; <br />
+&nbsp; $<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&#39;#carousel div&#39;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">eq</span><span style="color: #009900;">&#40;</span>i<span style="color: #009900;">&#41;</span>.<span style="color: #660066;">css</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span><span style="color: #3366CC;">&#39;position&#39;</span><span style="color: #339933;">:</span> <span style="color: #3366CC;">&#39;absolute&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;left&#39;</span><span style="color: #339933;">:</span> posX <span style="color: #339933;">+</span> <span style="color: #3366CC;">&#39;px&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;top&#39;</span><span style="color: #339933;">:</span> posY <span style="color: #339933;">+</span> <span style="color: #3366CC;">&#39;px&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;width&#39;</span><span style="color: #339933;">:</span> imageDivWidth <span style="color: #339933;">+</span> <span style="color: #3366CC;">&#39;px&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;zIndex&#39;</span><span style="color: #339933;">:</span> imageDivZIndex<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></p>
+<p>&nbsp; angle <span style="color: #339933;">+=</span> speed<span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #009900;">&#125;</span><br />
+&nbsp;count<span style="color: #339933;">++;</span><br />
+<span style="color: #009900;">&#125;</span></div>
+]]></content:encoded>
+			<wfw:commentRss>http://www.xeweb.net/2010/02/02/3d-carousel-using-jquery/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Tweet the Tube &#8211; Live train updates on twitter</title>
+		<link>http://www.xeweb.net/2010/01/22/tweet-the-tube-live-train-updates-on-twitter/</link>
+		<comments>http://www.xeweb.net/2010/01/22/tweet-the-tube-live-train-updates-on-twitter/#comments</comments>
+		<pubDate>Fri, 22 Jan 2010 12:56:38 +0000</pubDate>
+		<dc:creator>Jason</dc:creator>
+				<category><![CDATA[Company]]></category>
+
+		<guid isPermaLink="false">http://www.xeweb.net/?p=118</guid>
+		<description><![CDATA[I find it frustrating getting into London these days as there are always problems on the tube that causes delays. To take action we have launched a new service dubbed &#8220;Tweet the Tube&#8221; which provides live updates whenever a tube service changes status, pulled straight from the Transport for London website and checked every 5 [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://twitter.com/tweetthetube"><img src="http://www.xeweb.net/wp-content/uploads/tweetthetube.jpg" alt="Tweet the Tube" width="200" height="200" class="alignleft size-full wp-image-116" /></a><br />
+I find it frustrating getting into London these days as there are always problems on the tube that causes delays.</p>
+<p>To take action we have launched a new service dubbed &#8220;Tweet the Tube&#8221; which provides live updates whenever a tube service changes status, pulled straight from the Transport for London website and checked every 5 minutes.</p>
+<p>All you have to do is follow &#8220;tweetthetube&#8221; on twitter: <a href="http://twitter.com/tweetthetube">http://twitter.com/tweetthetube</a></p>
+<p>Feel free to leave comments/suggestions on <a href="http://www.xeweb.net/tweet-the-tube/">this page</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.xeweb.net/2010/01/22/tweet-the-tube-live-train-updates-on-twitter/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Simple PHP caching</title>
+		<link>http://www.xeweb.net/2010/01/15/simple-php-caching/</link>
+		<comments>http://www.xeweb.net/2010/01/15/simple-php-caching/#comments</comments>
+		<pubDate>Fri, 15 Jan 2010 15:29:11 +0000</pubDate>
+		<dc:creator>Jason</dc:creator>
+				<category><![CDATA[PHP]]></category>
+
+		<guid isPermaLink="false">http://www.xeweb.net/?p=115</guid>
+		<description><![CDATA[There are many tools around that will help cache your website to increase speed and performance, such as eAccelerator and APC. However these usually require installation on your web server, thus rendering them useless for people who use shared hosting and don&#8217;t have access to the server. Using some simple PHP code we can quite [...]]]></description>
+			<content:encoded><![CDATA[<p>There are many tools around that will help cache your website to increase speed and performance, such as <a href="http://eaccelerator.net/">eAccelerator</a> and <a href="http://pecl.php.net/package/APC">APC</a>. However these usually require installation on your web server, thus rendering them useless for people who use shared hosting and don&#8217;t have access to the server.</p>
+<p>Using some simple PHP code we can quite effectively cache a webpage, useful for sites that are database driven and have a large amount of queries or high volumes of traffic.</p>
+<p>First we need to setup the folder where the cached files are stored, making sure it has read/write permissions (CHMOD to 0777 &#8211; see your FTP client documentation on how to do this).</p>
+<p>Next create a file called cache.php which contains the following code:</p>
+<div class="php geshi no php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #666666; font-style: italic;">// Number of seconds a page should remain cached for</span><br />
+<span style="color: #000088;">$cache_expires</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">3600</span><span style="color: #339933;">;</span></p>
+<p><span style="color: #666666; font-style: italic;">// Path to the cache folder</span><br />
+<span style="color: #000088;">$cache_folder</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">&quot;/home/usr/www/cache/&quot;</span><span style="color: #339933;">;</span></p>
+<p><span style="color: #666666; font-style: italic;">// Checks whether the page has been cached or not</span><br />
+<span style="color: #000000; font-weight: bold;">function</span> is_cached<span style="color: #009900;">&#40;</span><span style="color: #000088;">$file</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp;<span style="color: #000000; font-weight: bold;">global</span> <span style="color: #000088;">$cache_folder</span><span style="color: #339933;">,</span> <span style="color: #000088;">$cache_expires</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000088;">$cachefile</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$cache_folder</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$file</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000088;">$cachefile_created</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #990000;">file_exists</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$cachefile</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> ? <span style="color: #339933;">@</span><span style="color: #990000;">filemtime</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$cachefile</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #b1b100;">return</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#40;</span><span style="color: #990000;">time</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">-</span> <span style="color: #000088;">$cache_expires</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&lt;</span> <span style="color: #000088;">$cachefile_created</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></p>
+<p><span style="color: #666666; font-style: italic;">// Reads from a cached file</span><br />
+<span style="color: #000000; font-weight: bold;">function</span> read_cache<span style="color: #009900;">&#40;</span><span style="color: #000088;">$file</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp;<span style="color: #000000; font-weight: bold;">global</span> <span style="color: #000088;">$cache_folder</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000088;">$cachefile</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$cache_folder</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$file</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #b1b100;">return</span> <span style="color: #990000;">file_get_contents</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$cachefile</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></p>
+<p><span style="color: #666666; font-style: italic;">// Writes to a cached file</span><br />
+<span style="color: #000000; font-weight: bold;">function</span> write_cache<span style="color: #009900;">&#40;</span><span style="color: #000088;">$file</span><span style="color: #339933;">,</span> <span style="color: #000088;">$out</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp;<span style="color: #000000; font-weight: bold;">global</span> <span style="color: #000088;">$cache_folder</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000088;">$cachefile</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$cache_folder</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$file</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #000088;">$fp</span> <span style="color: #339933;">=</span> <span style="color: #990000;">fopen</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$cachefile</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">&#39;w&#39;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #990000;">fwrite</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$fp</span><span style="color: #339933;">,</span> <span style="color: #000088;">$out</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #990000;">fclose</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$fp</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></p>
+<p><span style="color: #666666; font-style: italic;">// Let&#39;s begin, first work out the cached filename</span><br />
+<span style="color: #000088;">$cache_file</span> <span style="color: #339933;">=</span> <span style="color: #990000;">md5</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_SERVER</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">&#39;REQUEST_URI&#39;</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">.</span> <span style="color: #0000ff;">&quot;.html&quot;</span><span style="color: #339933;">;</span></p>
+<p><span style="color: #666666; font-style: italic;">// Check if it has already been cached and not expired</span><br />
+<span style="color: #666666; font-style: italic;">// If true then we output the cached file contents and finish</span><br />
+<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>is_cached<span style="color: #009900;">&#40;</span><span style="color: #000088;">$cache_file</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp;<span style="color: #b1b100;">echo</span> read_cache<span style="color: #009900;">&#40;</span><span style="color: #000088;">$cache_file</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp;<span style="color: #990000;">exit</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></p>
+<p><span style="color: #666666; font-style: italic;">// Ok so the page needs to be cached</span><br />
+<span style="color: #666666; font-style: italic;">// Turn on output buffering</span><br />
+<span style="color: #990000;">ob_start</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div>
+<p>Now in your page you would include cache.php on the <strong>first line</strong> before you do anything else. This is because if the page is cached we don&#8217;t want it to do anything else other than output the cache to the page. If you are still including other files or connecting to databases before checking for the cache you are putting additional load on the server, making this exercise pointless.</p>
+<p>Finally create a file called cache_footer.php which contains the following code:</p>
+<div class="php geshi no php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #666666; font-style: italic;">// Grab the uncached page contents</span><br />
+<span style="color: #000088;">$cache_contents</span> <span style="color: #339933;">=</span> <span style="color: #990000;">ob_get_contents</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></p>
+<p><span style="color: #666666; font-style: italic;">// Save it to the cache for next time</span><br />
+write_cache<span style="color: #009900;">&#40;</span><span style="color: #000088;">$cache_file</span><span style="color: #339933;">,</span> <span style="color: #000088;">$cache_contents</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span></div>
+<p>You would include this file on the <strong>last line</strong> of your page, which saves the page in the cache if required.</p>
+<p>Putting it altogether a typical page would look like this:</p>
+<div class="php geshi no php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #666666; font-style: italic;">// Load the cache process</span><br />
+<span style="color: #b1b100;">include</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;cache.php&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></p>
+<p><span style="color: #666666; font-style: italic;">// Connect to database</span><br />
+<span style="color: #b1b100;">include</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;config.php&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #990000;">mysql_connect</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$db_host</span><span style="color: #339933;">,</span> <span style="color: #000088;">$db_username</span><span style="color: #339933;">,</span> <span style="color: #000088;">$db_password</span><span style="color: #009900;">&#41;</span> or <span style="color: #990000;">die</span><span style="color: #009900;">&#40;</span><span style="color: #990000;">mysql_error</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #990000;">mysql_select_db</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$db_name</span><span style="color: #009900;">&#41;</span> or <span style="color: #990000;">die</span><span style="color: #009900;">&#40;</span><span style="color: #990000;">mysql_error</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span><br />
+<span style="color: #339933;">&lt;</span>html<span style="color: #339933;">&gt;</span><br />
+<span style="color: #339933;">&lt;</span>body<span style="color: #339933;">&gt;</span><br />
+<span style="color: #339933;">&lt;</span>h1<span style="color: #339933;">&gt;</span>Articles<span style="color: #339933;">&lt;/</span>h1<span style="color: #339933;">&gt;</span><br />
+<span style="color: #339933;">&lt;</span>ul<span style="color: #339933;">&gt;</span><br />
+<span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #666666; font-style: italic;">// Some query</span><br />
+<span style="color: #000088;">$q</span> <span style="color: #339933;">=</span> <span style="color: #990000;">mysql_query</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;SELECT * FROM articles ORDER BY id&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #b1b100;">while</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$r</span> <span style="color: #339933;">=</span> <span style="color: #990000;">mysql_fetch_array</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$q</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #b1b100;">echo</span> <span style="color: #0000ff;">&#39;&lt;li&gt;&lt;a href=&quot;view_article.php?id=&#39;</span><span style="color: #339933;">.</span><span style="color: #000088;">$r</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">&#39;id&#39;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">.</span><span style="color: #0000ff;">&#39;&quot;&gt;&#39;</span><span style="color: #339933;">.</span><span style="color: #000088;">$r</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">&#39;title&#39;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">.</span><span style="color: #0000ff;">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span><br />
+<span style="color: #339933;">&lt;/</span>ul<span style="color: #339933;">&gt;</span><br />
+<span style="color: #339933;">&lt;/</span>body<span style="color: #339933;">&gt;</span><br />
+<span style="color: #339933;">&lt;/</span>html<span style="color: #339933;">&gt;</span><br />
+<span style="color: #000000; font-weight: bold;">&lt;?php</span><br />
+<span style="color: #666666; font-style: italic;">// Save the cache</span><br />
+<span style="color: #b1b100;">include</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;cache_footer.php&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #000000; font-weight: bold;">?&gt;</span></div>
+]]></content:encoded>
+			<wfw:commentRss>http://www.xeweb.net/2010/01/15/simple-php-caching/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>GoLinks &#8211; PHP/MySQL Links Directory Script</title>
+		<link>http://www.xeweb.net/2010/01/14/golinks-php-mysql-links-directory-script/</link>
+		<comments>http://www.xeweb.net/2010/01/14/golinks-php-mysql-links-directory-script/#comments</comments>
+		<pubDate>Thu, 14 Jan 2010 13:07:47 +0000</pubDate>
+		<dc:creator>Jason</dc:creator>
+				<category><![CDATA[Company]]></category>
+
+		<guid isPermaLink="false">http://www.xeweb.net/?p=111</guid>
+		<description><![CDATA[Here at XEWeb we are cracking open a bottle of champagne as we announce the new version of GoLinks. GoLinks is a simple yet powerful and efficient links directory script with many features including unlimited categories, link submission, search engine friendly URL&#8217;s, multiple themes and language support with completely customizable templates. Take a look at [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.golinks-script.com/"><img src="http://www.xeweb.net/wp-content/uploads/golinkslogo.jpg" alt="GoLinks" width="150" height="21" class="alignleft size-full wp-image-113" /></a>Here at XEWeb we are cracking open a bottle of champagne as we announce the new version of <a href="http://www.golinks-script.com/">GoLinks</a>.</p>
+<p>GoLinks is a simple yet powerful and efficient links directory script with many features including unlimited categories, link submission, search engine friendly URL&#8217;s, multiple themes and language support with completely customizable templates.</p>
+<p>Take a look at <a href="http://www.golinks-script.com">http://www.golinks-script.com</a> to download, order and view a demo online.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.xeweb.net/2010/01/14/golinks-php-mysql-links-directory-script/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>A simple and lightweight Javascript calendar</title>
+		<link>http://www.xeweb.net/2010/01/07/a-simple-and-lightweight-javascript-calendar/</link>
+		<comments>http://www.xeweb.net/2010/01/07/a-simple-and-lightweight-javascript-calendar/#comments</comments>
+		<pubDate>Thu, 07 Jan 2010 12:35:30 +0000</pubDate>
+		<dc:creator>Jason</dc:creator>
+				<category><![CDATA[Javascript]]></category>
+
+		<guid isPermaLink="false">http://www.xeweb.net/?p=110</guid>
+		<description><![CDATA[This Javascript code will display a calendar in a table, useful for date picking&#8230; // these are labels for the days of the week cal_days_labels = &#91;&#39;Sun&#39;, &#39;Mon&#39;, &#39;Tue&#39;, &#39;Wed&#39;, &#39;Thu&#39;, &#39;Fri&#39;, &#39;Sat&#39;&#93;; // these are human-readable month name labels, in order cal_months_labels = &#91;&#39;January&#39;, &#39;February&#39;, &#39;March&#39;, &#39;April&#39;, &#160; &#160; &#160; &#160; &#160; &#160; &#160; [...]]]></description>
+			<content:encoded><![CDATA[<p>This Javascript code will display a calendar in a table, useful for date picking&#8230;</p>
+<div class="javascript geshi no javascript" style="font-family:monospace;"><span style="color: #006600; font-style: italic;">// these are labels for the days of the week</span><br />
+cal_days_labels <span style="color: #339933;">=</span> <span style="color: #009900;">&#91;</span><span style="color: #3366CC;">&#39;Sun&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;Mon&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;Tue&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;Wed&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;Thu&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;Fri&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;Sat&#39;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span></p>
+<p><span style="color: #006600; font-style: italic;">// these are human-readable month name labels, in order</span><br />
+cal_months_labels <span style="color: #339933;">=</span> <span style="color: #009900;">&#91;</span><span style="color: #3366CC;">&#39;January&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;February&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;March&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;April&#39;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&#39;May&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;June&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;July&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;August&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;September&#39;</span><span style="color: #339933;">,</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #3366CC;">&#39;October&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;November&#39;</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">&#39;December&#39;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span></p>
+<p><span style="color: #006600; font-style: italic;">// these are the days of the week for each month, in order</span><br />
+cal_days_in_month <span style="color: #339933;">=</span> <span style="color: #009900;">&#91;</span><span style="color: #CC0000;">31</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">28</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">31</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">30</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">31</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">30</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">31</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">31</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">30</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">31</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">30</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">31</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span></p>
+<p><span style="color: #006600; font-style: italic;">// this is the current date</span><br />
+<span style="color: #003366; font-weight: bold;">var</span> cal_current_date <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">new</span> Date<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></p>
+<p><span style="color: #003366; font-weight: bold;">function</span> Calendar<span style="color: #009900;">&#40;</span>month<span style="color: #339933;">,</span> year<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>isNaN<span style="color: #009900;">&#40;</span>month<span style="color: #009900;">&#41;</span> <span style="color: #339933;">||</span> month <span style="color: #339933;">==</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">?</span> cal_current_date.<span style="color: #660066;">getMonth</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> month<span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">year</span> &nbsp;<span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>isNaN<span style="color: #009900;">&#40;</span>year<span style="color: #009900;">&#41;</span> <span style="color: #339933;">||</span> year <span style="color: #339933;">==</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">?</span> cal_current_date.<span style="color: #660066;">getFullYear</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> year<span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></p>
+<p>Calendar.<span style="color: #660066;">prototype</span>.<span style="color: #660066;">generateHTML</span> <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span></p>
+<p>&nbsp; <span style="color: #006600; font-style: italic;">// get first day of month</span><br />
+&nbsp; <span style="color: #003366; font-weight: bold;">var</span> firstDay <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">new</span> Date<span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">year</span><span style="color: #339933;">,</span> <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #003366; font-weight: bold;">var</span> startingDay <span style="color: #339933;">=</span> firstDay.<span style="color: #660066;">getDay</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <br />
+&nbsp; <span style="color: #006600; font-style: italic;">// find number of days in month</span><br />
+&nbsp; <span style="color: #003366; font-weight: bold;">var</span> monthLength <span style="color: #339933;">=</span> cal_days_in_month<span style="color: #009900;">&#91;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; <br />
+&nbsp; <span style="color: #006600; font-style: italic;">// compensate for leap year</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span> <span style="color: #339933;">==</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <span style="color: #006600; font-style: italic;">// February only!</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">year</span> <span style="color: #339933;">%</span> <span style="color: #CC0000;">4</span> <span style="color: #339933;">==</span> <span style="color: #CC0000;">0</span> <span style="color: #339933;">&amp;&amp;</span> <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">year</span> <span style="color: #339933;">%</span> <span style="color: #CC0000;">100</span> <span style="color: #339933;">!=</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">||</span> <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">year</span> <span style="color: #339933;">%</span> <span style="color: #CC0000;">400</span> <span style="color: #339933;">==</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; monthLength <span style="color: #339933;">=</span> <span style="color: #CC0000;">29</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span></p>
+<p>&nbsp; <span style="color: #006600; font-style: italic;">// get todays date</span><br />
+&nbsp; <span style="color: #003366; font-weight: bold;">var</span> cal_today_date <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">new</span> Date<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; checkDay <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>cal_today_date.<span style="color: #660066;">getMonth</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span> <span style="color: #339933;">&amp;&amp;</span> cal_today_date.<span style="color: #660066;">getFullYear</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">==</span> <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">year</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">?</span> <span style="color: #003366; font-weight: bold;">true</span> <span style="color: #339933;">:</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">;</span><br />
+&nbsp; <br />
+&nbsp; <span style="color: #006600; font-style: italic;">// do the header</span><br />
+&nbsp; <span style="color: #003366; font-weight: bold;">var</span> monthName <span style="color: #339933;">=</span> cal_months_labels<span style="color: #009900;">&#91;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span><span style="color: #009900;">&#93;</span><br />
+&nbsp; <span style="color: #003366; font-weight: bold;">var</span> html <span style="color: #339933;">=</span> <span style="color: #3366CC;">&#39;&lt;table class=&quot;calendar-table&quot; cellpadding=&quot;4&quot; cellspacing=&quot;0&quot;&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; html <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&#39;&lt;tr&gt;&lt;th&gt;&lt;a href=&quot;javascript:cal.prevMonth()&quot;&gt;&amp;#171;&lt;/a&gt;&lt;/th&gt;&lt;th colspan=&quot;5&quot;&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; html <span style="color: #339933;">+=</span> &nbsp;monthName <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;&amp;nbsp;&quot;</span> <span style="color: #339933;">+</span> <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">year</span><span style="color: #339933;">;</span><br />
+&nbsp; html <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&#39;&lt;/th&gt;&lt;th&gt;&lt;a href=&quot;javascript:cal.nextMonth()&quot;&gt;&amp;#187;&lt;/a&gt;&lt;/th&gt;&lt;/tr&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; html <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&#39;&lt;tr class=&quot;calendar-header&quot;&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">for</span><span style="color: #009900;">&#40;</span><span style="color: #003366; font-weight: bold;">var</span> i <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;=</span> <span style="color: #CC0000;">6</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span> <span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; html <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&#39;&lt;td class=&quot;calendar-header-day&quot;&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; html <span style="color: #339933;">+=</span> cal_days_labels<span style="color: #009900;">&#91;</span>i<span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; html <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&#39;&lt;/td&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; html <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&#39;&lt;/tr&gt;&lt;tr&gt;&#39;</span><span style="color: #339933;">;</span></p>
+<p>&nbsp; <span style="color: #006600; font-style: italic;">// fill in the days</span><br />
+&nbsp; <span style="color: #003366; font-weight: bold;">var</span> day <span style="color: #339933;">=</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #006600; font-style: italic;">// this loop is for is weeks (rows)</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #003366; font-weight: bold;">var</span> i <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> <span style="color: #CC0000;">9</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #006600; font-style: italic;">// this loop is for weekdays (cells)</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #003366; font-weight: bold;">var</span> j <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> j <span style="color: #339933;">&lt;=</span> <span style="color: #CC0000;">6</span><span style="color: #339933;">;</span> j<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <br />
+&nbsp; &nbsp; &nbsp; html <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&#39;&lt;td class=&quot;calendar-day&quot;&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>day <span style="color: #339933;">&lt;=</span> monthLength <span style="color: #339933;">&amp;&amp;</span> <span style="color: #009900;">&#40;</span>i <span style="color: #339933;">&gt;</span> <span style="color: #CC0000;">0</span> <span style="color: #339933;">||</span> j <span style="color: #339933;">&gt;=</span> startingDay<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; ts <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">generateTimestamp</span><span style="color: #009900;">&#40;</span>day<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>checkDay <span style="color: #339933;">==</span> <span style="color: #003366; font-weight: bold;">true</span> <span style="color: #339933;">&amp;&amp;</span> day <span style="color: #339933;">==</span> cal_today_date.<span style="color: #660066;">getDate</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; html <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&#39;&lt;a class=&quot;today&quot; href=&quot;javascript:void(0)&quot;&gt;&#39;</span> <span style="color: #339933;">+</span> day <span style="color: #339933;">+</span> <span style="color: #3366CC;">&#39;&lt;/a&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">else</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; html <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&#39;&lt;a href=&quot;javascript:void(0)&quot;&gt;&#39;</span> <span style="color: #339933;">+</span> day <span style="color: #339933;">+</span> <span style="color: #3366CC;">&#39;&lt;/a&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; day<span style="color: #339933;">++;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; html <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&#39;&lt;/td&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; &nbsp; <span style="color: #006600; font-style: italic;">// stop making rows if we&#39;ve run out of days</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>day <span style="color: #339933;">&gt;</span> monthLength<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">break</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span> <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; html <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&#39;&lt;/tr&gt;&lt;tr&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; html <span style="color: #339933;">+=</span> <span style="color: #3366CC;">&#39;&lt;/tr&gt;&lt;/table&gt;&#39;</span><span style="color: #339933;">;</span><br />
+&nbsp; document.<span style="color: #660066;">getElementById</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&#39;calendar-holder&#39;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">innerHTML</span> <span style="color: #339933;">=</span> html<span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></p>
+<p>Calendar.<span style="color: #660066;">prototype</span>.<span style="color: #660066;">generateTimestamp</span> <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span>day<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; month <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span> <span style="color: #339933;">+</span> <span style="color: #CC0000;">1</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">return</span> <span style="color: #3366CC;">&quot;&#39;&quot;</span> <span style="color: #339933;">+</span> day <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;&#39;,&#39;&quot;</span> <span style="color: #339933;">+</span> month <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;&#39;,&#39;&quot;</span> <span style="color: #339933;">+</span> <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">year</span> <span style="color: #339933;">+</span> <span style="color: #3366CC;">&quot;&#39;&quot;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></p>
+<p>Calendar.<span style="color: #660066;">prototype</span>.<span style="color: #660066;">prevMonth</span> <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span> <span style="color: #339933;">==</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span> <span style="color: #339933;">=</span> <span style="color: #CC0000;">12</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">year</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">year</span> <span style="color: #339933;">-</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span> <span style="color: #339933;">-</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">generateHTML</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></p>
+<p>Calendar.<span style="color: #660066;">prototype</span>.<span style="color: #660066;">nextMonth</span> <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span> <span style="color: #339933;">==</span> <span style="color: #CC0000;">11</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span> <span style="color: #339933;">=</span> <span style="color: #339933;">-</span><span style="color: #CC0000;">1</span><span style="color: #339933;">;</span><br />
+&nbsp; &nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">year</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">year</span> <span style="color: #339933;">+</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #009900;">&#125;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">month</span> <span style="color: #339933;">+</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+&nbsp; <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">generateHTML</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span><br />
+<span style="color: #009900;">&#125;</span></div>
+<p>To display the calendar for example&#8230;</p>
+<div class="html4strict geshi no html4strict" style="font-family:monospace;"><span style="color: #00bbdd;">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;</span><br />
+<span style="color: #00bbdd;"> &nbsp; &nbsp;&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">html</span> xmlns<span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;http://www.w3.org/1999/xhtml&quot;</span> xml:<span style="color: #000066;">lang</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;en&quot;</span> <span style="color: #000066;">lang</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;en&quot;</span> <span style="color: #000066;">dir</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;ltr&quot;</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">head</span>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">title</span>&gt;</span>Select date<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">title</span>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">meta</span> <span style="color: #000066;">http-equiv</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;Content-Type&quot;</span> <span style="color: #000066;">content</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text/html; charset=utf-8&quot;</span> <span style="color: #66cc66;">/</span>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">link</span> <span style="color: #000066;">rel</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;stylesheet&quot;</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text/css&quot;</span> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;css/calendar.css&quot;</span> <span style="color: #66cc66;">/</span>&gt;</span><br />
+&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">script</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text/javascript&quot;</span> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;scripts/calendar.js&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">script</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">head</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">body</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">div</span> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;calendar-holder&quot;</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">script</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text/javascript&quot;</span>&gt;</span><br />
+// <span style="color: #009900;">&lt;!<span style="color: #66cc66;">&#91;</span>CDATA<span style="color: #66cc66;">&#91;</span></span><br />
+<span style="color: #009900;"> &nbsp;var cal <span style="color: #66cc66;">=</span> new Calendar<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>;</span><br />
+<span style="color: #009900;"> &nbsp;cal.generateHTML<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>;</span><br />
+<span style="color: #009900;"><span style="color: #66cc66;">//</span> <span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">script</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">div</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">body</span>&gt;</span><br />
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">html</span>&gt;</span></div>
+]]></content:encoded>
+			<wfw:commentRss>http://www.xeweb.net/2010/01/07/a-simple-and-lightweight-javascript-calendar/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

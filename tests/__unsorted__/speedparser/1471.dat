@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<?xml-stylesheet href="http://d.hatena.ne.jp/nanamine_7/rssxsl" type="text/xsl" media="screen"?>
+
+
+<rdf:RDF
+	xmlns="http://purl.org/rss/1.0/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xml:lang="ja">
+<channel rdf:about="http://d.hatena.ne.jp/nanamine_7/rss">
+	<title>ななみねだいありー。</title>
+	<link>http://d.hatena.ne.jp/nanamine_7/</link>
+	<description>ななみねだいありー。</description>
+	
+	<dc:creator>nanamine_7</dc:creator>
+	<dc:date>2010-04-14T21:11:51+09:00</dc:date>
+	<items>
+	<rdf:Seq>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/nanamine_7/20100413/1271243850"/>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/nanamine_7/20100401/1271244807"/>
+	</rdf:Seq>
+	</items>
+</channel>
+
+
+
+<item rdf:about="http://d.hatena.ne.jp/nanamine_7/20100413/1271243850">
+	<title>[日記][散財]GF1買いました。</title>
+	<link>http://d.hatena.ne.jp/nanamine_7/20100413/1271243850</link>
+	<description> 梅田のヨドバシカメラで衝動買いしてしまいました。 本体+レンズキット(20mm)+SDHCカード(4GB)+ソフトケース+レンズフィルター(プロテクター)で、8万円ちょっと。 10％のポイント還元で、大体7万5千円ぐらいで買えたみたい。 鞄にしのばせてそっと取り出して写真を撮れるよ</description>
+
+	<content:encoded><![CDATA[
+		<div class="section">
+			<p>梅田のヨドバシカメラで衝動買いしてしまいました。</p>
+			<p>本体+レンズキット(20mm)+SDHCカード(4GB)+ソフトケース+レンズフィルター(プロテクター)で、8万円ちょっと。</p>
+			<p>10％のポイント還元で、大体7万5千円ぐらいで買えたみたい。</p>
+			<p><a href="http://f.hatena.ne.jp/nanamine_7/20100414195834" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/n/nanamine_7/20100414/20100414195834.jpg" alt="f:id:nanamine_7:20100414195834j:image" title="f:id:nanamine_7:20100414195834j:image" class="hatena-fotolife"></a></p>
+			<p>鞄にしのばせてそっと取り出して写真を撮れるようになったらいいなと思う。</p>
+		</div>
+]]></content:encoded>
+	<dc:creator>nanamine_7</dc:creator>
+	<dc:date>2010-04-14T20:17:30+09:00</dc:date>
+	<dc:subject>日記</dc:subject>
+	<dc:subject>散財</dc:subject>
+</item>
+<item rdf:about="http://d.hatena.ne.jp/nanamine_7/20100401/1271244807">
+	<title>[めも]20010年以前の記事を削除しました。</title>
+	<link>http://d.hatena.ne.jp/nanamine_7/20100401/1271244807</link>
+	<description> 心機一転ということで、ここの2010年以前の記事を削除しました。 読んでくれた方、はてなスターをつけてくださった方ありがとうございました。 また、少しずつ書いていきます。 </description>
+
+	<content:encoded><![CDATA[
+		<div class="section">
+			<p>心機一転ということで、ここの2010年以前の記事を削除しました。</p>
+			<p>読んでくれた方、はてなスターをつけてくださった方ありがとうございました。</p>
+			<p>また、少しずつ書いていきます。</p>
+		</div>
+]]></content:encoded>
+	<dc:creator>nanamine_7</dc:creator>
+	<dc:date>2010-04-14T20:33:27+09:00</dc:date>
+	<dc:subject>めも</dc:subject>
+</item>
+</rdf:RDF>

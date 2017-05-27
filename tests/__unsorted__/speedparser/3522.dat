@@ -1,0 +1,4 @@
+<br />
+<b>Warning</b>:  require_once(Mail.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in <b>/public/sites/www.mynameisamal.com/wp-content/plugins/automatic-newsletter/autonews.php</b> on line <b>10</b><br />
+<br />
+<b>Fatal error</b>:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'Mail.php' (include_path='.:/usr/share/php:/usr/share/pear') in <b>/public/sites/www.mynameisamal.com/wp-content/plugins/automatic-newsletter/autonews.php</b> on line <b>10</b><br />

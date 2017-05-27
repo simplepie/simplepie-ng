@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:glue="http://gluenow.com">
+  <channel>
+    <ttl>121</ttl>
+    <glue:gluepage></glue:gluepage><glue:gluepage_count>2</glue:gluepage_count><title>Drewbie Wan Blog</title>
+    <atom:link href="http://www.drewbiewan.com" rel="self" type="application/rss+xml" />
+    <webMaster>glue@drewbiewan.gluenow.com (Glue)</webMaster>
+    <description>Another great posts feed made with Glue - gluenow.com</description>
+    <link>http://www.drewbiewan.com</link>
+    <language>en-us</language>
+    <pubDate>Wed, 19 Nov 2008 23:07:43 +0000</pubDate>
+    <lastBuildDate>Wed, 19 Nov 2008 23:07:43 +0000</lastBuildDate>
+    <docs>http://gluesupport.com/docs/rss</docs>
+    <generator>Made with Glue - gluenow.com</generator>
+    <item>
+      <title>Setting Up a Local Web Development Environment in Mac OS X Snow Leopard</title>
+      <link>http://www.drewbiewan.com#56468</link>
+      <guid>http://www.drewbiewan.com#56468</guid>
+      <pubDate>Thu, 24 Feb 2011 06:06:00 +0000</pubDate>
+      <dc:creator>Drew Eckhardt</dc:creator>
+      <description>&lt;p&gt;Through all my scouring of the internet trying to find a complete solution to getting my Mac set up for developing websites locally, I have yet to find one that is comprehensive enough for a beginner or thorough enough that I didn&amp;#8217;t have to use multiple tutorials. This tutorial aims to solve that problem. Before we get started you should know that there is a &amp;#8220;quick and easy&amp;#8221; solution called &lt;span class="caps"&gt;MAMP&lt;/span&gt;, but why install and run a 3rd party application in the background when your operating system can handle the same task with less &lt;span class="caps"&gt;CPU&lt;/span&gt; usage. Lets get started.&lt;/p&gt;&lt;p&gt;First we need to enable Web Sharing&lt;/p&gt;&lt;p&gt;This is pretty strait forward, Open System Preference &amp;gt; Sharing and click the check box next to Web Sharing.&lt;/p&gt;&lt;p&gt;Now to enable &lt;span class="caps"&gt;PHP&lt;/span&gt;&lt;br /&gt; This requires some tinkering in terminal, but nothing a noobie can&amp;#8217;t handle. Open a new shell window and navigate and open your apache configuration file by typing&lt;/p&gt; sudo nano /etc/apache2/httpd.conf &lt;p&gt;Find the line that says&lt;/p&gt; #LoadModule php5_module libexec/apache2/libphp5.so &lt;p&gt;(you can do a quick look for this by pressing control + w) and remove the # symbol.&lt;/p&gt; LoadModule php5_module libexec/apache2/libphp5.so &lt;p&gt;Don&amp;#8217;t write out the file just yet, we need to set our server root and enable virtual hosts.&lt;/p&gt;&lt;p&gt;Virtual hosts allow you type a domain into your web browser (ex: local.mydomain.com) instead of having to navigate to localhost or 127.0.0.1. This is handy for working on multiple sites like local.mydomain.com/project1 loca.mydomain.com/project2 or you can even set a different virtual host per project like local.project1.com and local.project2.com. To enable Virtual Hosts find the line that says:&lt;/p&gt; #Include /private/etc/apache2/extra/httpd-vhost.conf &lt;p&gt;( quick look is control + w) and remove the # symbol.&lt;/p&gt; Include /private/etc/apache2/extra/httpd-vhost.conf &lt;p&gt;Now we need to set the document root. By default OS X looks to /Library/WebServer/Documents/ for your website file. I like to keep my files in the Sites folder but you can put them anywhere you want. Find the line that says:&lt;/p&gt; DocumentRoot &amp;#8220;/Library/WebServer/Documents&amp;#8221; &lt;p&gt;and change it to read&lt;/p&gt; DocumentRoot &amp;#8220;/Users/yourusername/Sites&amp;#8221; &lt;p&gt;or wherever you want to keep your site files. (remember to change &amp;#8220;yourusername&amp;#8221; to whatever your short name is.&lt;/p&gt;&lt;p&gt;Go ahead and press control + o to write the changes you&amp;#8217;ve made and press enter. Then press control + x to exit.&lt;/p&gt;&lt;p&gt;Next we need to edit our hosts file to point our virtual hosts to our localhost so it doesn&amp;#8217;t try finding our domain on the web. In terminal type:&lt;/p&gt; sudo nano /etc/hosts &lt;p&gt;add this line to the file&lt;/p&gt; 127.0.0.1 local.mydomain.com &lt;p&gt;(or whatever you want to use for your virtual host domain).&lt;/p&gt;&lt;p&gt;Write out your changes (control + o) and exit (control + x)&lt;/p&gt;&lt;p&gt;Now we need to actually create our virtual host. This can be done by editing the vhost configuration file. In terminal open up the virtual host configuration file by typing:&lt;/p&gt; sudo nano /etc/apache2/extra/httpd-vhosts.conf &lt;p&gt;Now create a new vhost entry. Enter the following:&lt;/p&gt; &amp;lt;VirtualHost *:80&amp;gt; ServerAdmin email@yourdomain.com DocumentRoot &amp;#8220;/Users/yourusername/Sites&amp;#8221; ServerName local.mydomain.com &lt;/VirtualHost&gt; &lt;p&gt;Remeber to change &amp;#8220;yourusername&amp;#8221; to your whatever your short name is. &lt;span class="caps"&gt;IMPORTANT&lt;/span&gt;: ServerName &lt;span class="caps"&gt;MUST&lt;/span&gt; be the same as the domain you specified in your hosts file!&lt;/p&gt;&lt;p&gt;Write out your changes (control + o) and exit (control + x)&lt;/p&gt;&lt;p&gt;If you are running &lt;span class="caps"&gt;OSX&lt;/span&gt; 10.6.5 or later, we need to make a change to the apachectl script otherwise it will throw an error when you try starting apache. In terminal type:&lt;/p&gt; sudo nano /usr/sbin/apachectl &lt;p&gt;Find the line that says&lt;/p&gt; ULIMIT_MAX_FILES=&amp;#8220;ulimit -S -n `ulimit -H -n`&amp;#8221; &lt;p&gt;and change it to say&lt;/p&gt; ULIMIT_MAX_FILES=&amp;quot;&amp;quot; &lt;p&gt;Write out your changes (control + o) and exit (control + x).&lt;/p&gt;&lt;p&gt;Now restart apache and test it! To restart apache in terminal type:&lt;/p&gt; sudo apachectl restart &lt;p&gt;Now lets test it!! Create a new file in your Sites folder called index.php and add the following code:&lt;/p&gt; &amp;lt;?php phpinfo(); ?&amp;gt; &lt;p&gt;Now open a web browser and go to the domain you set in your hosts file and vhost config fileand you should see a php information page. Success!&lt;/p&gt;&lt;p&gt;Now to get the most out of our new local web development environment we should install MySql. This is a little bit more tricky. First we need to download a copy of MySql. You can get a &lt;span class="caps"&gt;DMG&lt;/span&gt; installer from here http://dev.mysql.com/downloads/mysql.&lt;/p&gt;</description>
+      <source url="http://gluenow.com/source/?id=56468">Glue</source>
+    </item>
+    <item>
+      <title>Posting from the glue iPhone app.</title>
+      <link>http://www.drewbiewan.com#18556</link>
+      <guid>http://www.drewbiewan.com#18556</guid>
+      <pubDate>Sun, 01 Nov 2009 10:10:00 +0000</pubDate>
+      <dc:creator>Drew Eckhardt</dc:creator>
+      <description>&lt;p&gt;Pretty sweet deal! Good job Jordan Dobson and the Glue crew!&lt;/p&gt;</description>
+      <source url="http://gluenow.com/source/?id=18556">Glue</source>
+    </item>
+    <item>
+      <title>First go with xCode and Cocoa</title>
+      <link>http://www.drewbiewan.com#15708</link>
+      <guid>http://www.drewbiewan.com#15708</guid>
+      <pubDate>Sun, 30 Aug 2009 20:20:00 +0000</pubDate>
+      <dc:creator></dc:creator>
+      <description>&lt;p&gt;After spending my entire Friday upgrading to os x 10.6 snow leopard, and reinstalling my apps, I realized my messenger client Adium, didnt have the right look and feel to tie it in well with Snow Leopard. Here is the end results of my first go around with xcode and editing a cocoa application.&lt;/p&gt;&lt;p&gt;&lt;a href="blogimages/screenshot.png" rel="shadowbox"&gt;&lt;img src="blogimages/screenshot-thumb.png" alt="Screenshot" /&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;As you can see I changed the chat window to a hud window to give it a darker, more integrated feel with the OS. The buddy list window also has a hud feel which was easily replaceable with a few tweaks of an Adium Xtra.&lt;/p&gt;&lt;p&gt;Still to do is to tweak the text input, and fix the tabs at the bottom. Adiums Message area is standard html and css, so changing the format which messages come in is fairly straight forward.&lt;/p&gt;&lt;p&gt;I may post a tutorial as soon as i tweak the input and tabs.&lt;/p&gt;</description>
+      <source url="http://gluenow.com/source/?id=15708">Glue</source>
+    </item>
+    <item>
+      <title>New Layout Maybe?</title>
+      <link>http://www.drewbiewan.com#14943</link>
+      <guid>http://www.drewbiewan.com#14943</guid>
+      <pubDate>Thu, 30 Jul 2009 19:19:00 +0000</pubDate>
+      <dc:creator></dc:creator>
+      <description>&lt;p&gt;New layout in the works. hopefully i will have time to get it up soon.&lt;/p&gt;&lt;p&gt;&lt;a href="blogimages/layout.jpg" rel="shadowbox"&gt;&lt;img src="blogimages/thumb.png" alt="layout" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="http://gluenow.com/source/?id=14943">Glue</source>
+    </item>
+    <item>
+      <title>The John Cusack Challenge</title>
+      <link>http://www.drewbiewan.com#13279</link>
+      <guid>http://www.drewbiewan.com#13279</guid>
+      <pubDate>Sat, 28 Mar 2009 06:06:00 +0000</pubDate>
+      <dc:creator>Drew Eckhardt</dc:creator>
+      <description>&lt;p&gt;I love John Cusack. Like man crush status. So I have decided to take the Cusack Challenge. Im going to watch every John Cusack movie to date. &lt;br /&gt; I will be scratching them off the list one by one.&lt;/p&gt;&lt;p&gt;&lt;strike&gt;2012&lt;/strike&gt;&lt;br /&gt; &lt;strike&gt;Igor &lt;/strike&gt;&lt;br /&gt; &lt;strike&gt;War, Inc.&lt;/strike&gt;&lt;br /&gt; Summerhood&lt;br /&gt; &lt;strike&gt;Martian Child&lt;/strike&gt;&lt;br /&gt; &lt;strike&gt;1408&lt;/strike&gt;&lt;br /&gt; Grace Is Gone&lt;br /&gt; &lt;strike&gt;The Contract&lt;/strike&gt;&lt;br /&gt; &lt;strike&gt;The Ice Harvest&lt;/strike&gt;&lt;br /&gt; &lt;strike&gt;Must Love Dogs&lt;/strike&gt;&lt;br /&gt; &lt;strike&gt;Runaway Jury&lt;/strike&gt;&lt;br /&gt; &lt;strike&gt;Identity&lt;/strike&gt;&lt;br /&gt; Max&lt;br /&gt; &lt;strike&gt;Serendipity&lt;/strike&gt;&lt;br /&gt; &lt;strike&gt;America&amp;#8217;s Sweethearts&lt;/strike&gt;&lt;br /&gt; &lt;strike&gt;High Fidelity&lt;/strike&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;strike&gt;Being John Malkovich&lt;/strike&gt;&lt;br /&gt; &lt;strike&gt;Cradle Will Rock&lt;/strike&gt;&lt;br /&gt; Pushing Tin &lt;br /&gt; The Jack Bull&lt;br /&gt; The Thin Red Line&lt;br /&gt; This Is My Father &lt;br /&gt; Midnight in the Garden of Good and Evil &lt;br /&gt; Anastasia&lt;br /&gt; Chicago Cab&lt;br /&gt; &lt;strike&gt;Con Air &lt;/strike&gt;&lt;br /&gt; &lt;strike&gt;Grosse Pointe Blank&lt;/strike&gt; &lt;br /&gt; City Hall&lt;br /&gt; The Road to Wellville&lt;br /&gt; Bullets Over Broadway&lt;br /&gt; Floundering &lt;br /&gt; Money for Nothing&lt;br /&gt; Map of the Human Heart&lt;br /&gt; Bob Roberts &lt;br /&gt; Roadside Prophets &lt;br /&gt; Shadows and Fog &lt;br /&gt; True Colors &lt;br /&gt; The Grifters &lt;br /&gt;&lt;/p&gt;&lt;p&gt;Fat Man and Little Boy&lt;br /&gt; &lt;strike&gt;Say Anything&lt;/strike&gt;&lt;br /&gt; Elvis Stories&lt;br /&gt; &lt;strike&gt;Eight Men Out&lt;/strike&gt;&lt;br /&gt; Tapeheads&lt;br /&gt; Broadcast News &lt;br /&gt; Hot Pursuit &lt;br /&gt; &lt;strike&gt;One Crazy Summer&lt;/strike&gt;&lt;br /&gt; &lt;strike&gt;Stand by Me &lt;/strike&gt;&lt;br /&gt; The Journey of Natty Gann &lt;br /&gt; &lt;strike&gt;Better Off Dead&lt;/strike&gt;&lt;br /&gt; The Sure Thing &lt;br /&gt; Grandview, U.S.A. &lt;br /&gt; &lt;strike&gt;Sixteen Candles&lt;/strike&gt; &lt;br /&gt; Class &lt;br /&gt;&lt;/p&gt;</description>
+      <source url="http://gluenow.com/source/?id=13279">Glue</source>
+    </item>
+    <item>
+      <title>More glue twitter testing</title>
+      <link>http://drewbiewan.com#13252</link>
+      <guid>http://drewbiewan.com#13252</guid>
+      <pubDate>Wed, 25 Mar 2009 04:04:59 +0000</pubDate>
+      <dc:creator>Drew Eckhardt</dc:creator>
+      <description>&lt;p&gt;testing the new glue twitter feature from firefox 3 on mac os 10.5.&lt;/p&gt;</description>
+      <source url="http://gluenow.com/source/?id=13252">Glue</source>
+    </item>
+    <item>
+      <title>Myspace Finally Does Something Right.</title>
+      <link>http://www.drewbiewan.com#13199</link>
+      <guid>http://www.drewbiewan.com#13199</guid>
+      <pubDate>Thu, 19 Mar 2009 07:07:09 +0000</pubDate>
+      <dc:creator>Drew Eckhardt</dc:creator>
+      <description>&lt;p&gt;Ok, maybe I got ahead of myself.&lt;/p&gt;&lt;p&gt;I am currently cranking out a project for a company called &lt;a href="http://www.surfitlocal.com"&gt;Surf It Local&lt;/a&gt;&amp;quot;. They are a rad business search engine based in Cali. Well as I am coding their myspace page, I realized myspace kind of updated the whole profile coding thing. so far things are going quicker than normal. I&amp;#8217;ll take it!!&lt;/p&gt;&lt;p&gt;Oh yeah, add me on xbox Live! &lt;br /&gt; drewbiwankenobi&lt;/p&gt;</description>
+      <source url="http://gluenow.com/source/?id=13199">Glue</source>
+    </item>
+    <item>
+      <title>I&#39;ve got more change than a wishing well. </title>
+      <link>http://www.drewbiewan.com#13178</link>
+      <guid>http://www.drewbiewan.com#13178</guid>
+      <pubDate>Mon, 16 Mar 2009 16:16:39 +0000</pubDate>
+      <dc:creator>Drew Eckhardt</dc:creator>
+      <description>&lt;p&gt;So apparently when 2009 came, it forgot to send me the memo that he was going to be making some changes around the office. Here is a brief run down of the last 6 months. (wow, doesnt seem that long at all).&lt;/p&gt;&lt;p&gt;In November I started working at a company called myContactCard. I clawed my way from Designer to Sr. Designer/ Jr. Art Director in 3 months, and just a few weeks after moving into my new spacious office with chewbacca, the company decided they couldn&amp;#8217;t make payroll anymore.&lt;/p&gt;&lt;p&gt;Which brings us to February. Back on unemployment. On the upside, I started a new marketing firm with a few of the guys from &lt;span class="caps"&gt;MCC&lt;/span&gt; and stuff is coming together nicely, and pretty fast. Which is great considering in 8 more months I am going to be a daddy:)&lt;/p&gt;&lt;p&gt;I moved back in with my parents, they were nice enough to give me my old rooom back, and i turned it into a make shift office/bedroom. I will have to post pics later. I think my interior design skills are off the chain.&lt;/p&gt;&lt;p&gt;Baseball season starts in t-minus like 3 weeks or something!&lt;/p&gt;</description>
+      <source url="http://gluenow.com/source/?id=13178">Glue</source>
+    </item>
+    <item>
+      <title>Octobeard</title>
+      <link>http://www.drewbiewan.com#12756</link>
+      <guid>http://www.drewbiewan.com#12756</guid>
+      <pubDate>Mon, 13 Oct 2008 00:00:00 +0000</pubDate>
+      <dc:creator>Drew Eckhardt</dc:creator>
+      <description>&lt;p&gt;October is here, the Cubs are out of the playoffs, and the Seahawks are losing weekly. On a plus note, just finished up a rad project for the band &lt;a href="http://www.myspace.com/thrashunreal"&gt;Thrash Unreal&lt;/a&gt;&lt;/p&gt;</description>
+      <source url="http://gluenow.com/source/?id=12756">Glue</source>
+    </item>
+    <item>
+      <title>New Skate Deck for sale.</title>
+      <link>http://www.drewbiewan.com#12168</link>
+      <guid>http://www.drewbiewan.com#12168</guid>
+      <pubDate>Tue, 09 Sep 2008 00:00:00 +0000</pubDate>
+      <dc:creator>Drew Eckhardt</dc:creator>
+      <description>&lt;h5 class="NewsArticleLinks"&gt;&lt;a href="http://drewbiewan.gluenow.com/images/1908_deck_preview_221406131008.jpg" target="_new" title="View Post Image" &gt;View Image&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;br /&gt;The 1908 zombie illustration skateboard is now for sale. you can order one here:&lt;/p&gt;&lt;p&gt;&lt;a href="http://lostpenguinstudios.deckpeck.com"&gt;lostpenguinstudios.deckpeck.com&lt;/a&gt;&lt;/p&gt;&lt;p&gt;they are $55 dollars plus s&amp;amp;h.&lt;/p&gt;&lt;p&gt;I will be adding a few more designs within the next week or too. a series of zombie ones to come as well. I would post a picture of the deck but for some reason glue is formatting everything really wierd, I&amp;#8217;ll try figuring it out in the morning.&lt;/p&gt;&lt;p&gt;On a side note:&lt;br /&gt; The cubs are slipping and lost again. :(&lt;/p&gt;</description>
+      <source url="http://gluenow.com/source/?id=12168">Glue</source>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0">
+	<channel>
+		<title>Webárna  - RSS odběr</title>
+		<description>
+&lt;p&gt;Zápisník o věcech webových zapisuje &lt;a href=&quot;http://langi.cz&quot;&gt;Peter
+Láng&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- by Texy2! --&gt;</description>
+		<link>http://langi.cz/webarna/</link>
+
+		<item>
+			<title>Readme Driven Development</title>
+			<pubDate>Wed, 14 Sep 2011 12:22:13 GMT</pubDate>
+			<link>http://langi.cz/webarna/readme-driven-development</link>
+			<description>
+&lt;p&gt;&lt;a
+href=&quot;http://tom.preston-werner.com/2010/08/23/readme-driven-development.html&quot;&gt;Readme
+Driven Development&lt;/a&gt; v podstatě říká, že první věc, kterou byste na
+začátku jakéhokoliv projektu měli udělat, je sepsat si k němu README.
+Dřív než cokoliv jiného, než první příkaz v kódu, nebo testu, prostě
+úplně nejdřív. Tenhle postup může mít hodně výhod, doporučuju
+přečíst &lt;a
+href=&quot;http://tom.preston-werner.com/2010/08/23/readme-driven-development.html&quot;&gt;celý
+článek&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Stává se totiž, že vývojáře přepadne prostá myšlenka „udělám
+bookmarkovací službu“ a už přemýšlí nad kódem, jaké knihovny použije
+a tak dále. Kdyby si předtím napsal kvalitní README, donutilo by ho to
+přemýšlet například nad tím, jestli a jak bude zrovna ta jeho
+bookmarkovací služba jiná než stovky dalších.&lt;/p&gt;
+
+&lt;p&gt;Když si napíšu (třeba) do README co aplikace má dělat a jak to má
+dělat, mám hned na začátku něco, nad čím můžu dumat, nezapomenu to,
+můžu to s někým konzultovat, můžu dokonce představu upravovat, aniž
+bych musel draze přeprogramovávat. Mám &lt;em&gt;todo list&lt;/em&gt; podle kterého
+můžu postupovat – a to s lepší šancí, že se mi funkce aplikace
+nekontrolovaně nerozlezou někam mimo hlavní záměr aplikace.&lt;/p&gt;
+
+&lt;p&gt;Readme Driven Development vidím jako nezbytný doplněk ostatních
+&lt;em&gt;Driven Developmentů&lt;/em&gt; a to hlavně proto, že na rozdíl od nich ukazuje
+&lt;strong&gt;co&lt;/strong&gt; je potřeba vyvíjet a ne to &lt;strong&gt;jak&lt;/strong&gt; se bude
+vyvíjet.&lt;/p&gt;
+</description>
+			<guid>http://langi.cz/webarna/readme-driven-development</guid>
+		</item>
+		<item>
+			<title>S čím si hraju - Fórum s CouchDB</title>
+			<pubDate>Thu, 08 Sep 2011 19:56:42 GMT</pubDate>
+			<link>http://langi.cz/webarna/s-cim-si-hraju-forum-s-couchdb</link>
+			<description>
+&lt;p&gt;Open source a placených fór je strašná spousta a všechny jsou na jedno
+brdo. Myslím, že je na nich hodně co napravovat. Namátkou ovládání,
+použitelnost, funkčnost, koncept. Když jsem naposled viděl administraci
+phpBB, nestačil jsem se divit. Kdokoliv udělá &lt;strong&gt;nové fórum
+s kvalitním UI&lt;/strong&gt;, bude podle mě mít „úspěch“ a „zásluhy“.
+Bude to ten, kdo z kabiny raketoplánu dokáže udělat joystick (nebo spíš
+iPhone?).&lt;/p&gt;
+
+&lt;p&gt;Takže jsem se do toho taky z hecu pustil. Měl jsem, a stále mám, tři
+hlavní cíle – pocvičit se s &lt;a
+href=&quot;http://couchdb.apache.org/&quot;&gt;CouchDB&lt;/a&gt;, udělat ovládání kterému
+porozumí BBU (Běžná Babička Uživatelka) a zajistit vysokou rychlost,
+která s přibývajícími záznamy v databázi nebude klesat. Mám na mysli
+dvěstě třista tisíc záznámů a dál.&lt;/p&gt;
+
+&lt;p&gt;Mám úplně první nástřel a zatím jsem si na tom vyzkoušel dvě
+věci – CouchDB hosting &lt;a href=&quot;https://cloudant.com/&quot;&gt;Cloudant&lt;/a&gt; (ten je
+super) a css „framework“ &lt;a
+href=&quot;http://twitter.github.com/bootstrap/&quot;&gt;Twitter Bootstrap&lt;/a&gt; (ten není až
+tak super).&lt;/p&gt;
+
+&lt;p&gt;Výsledek je prozatím ten, že &lt;strong&gt;rychlé to fórum tedy
+není&lt;/strong&gt;, protože se připojuje ke vzdálené databázi a to něco
+stojí. PHP server je v ČR, db server nejspíš v USA – nic dobrého.&lt;/p&gt;
+
+&lt;p&gt;S tím souvisí další „problém“ – výběr databáze. CouchDB je
+pořád ve srovnání s MySQL trochu exotika vzhledem k hostování. Pokud
+bych chtěl, aby to moje fórum někdo používal, připojování ke vzdálené
+databázi asi nebude to pravé, i když tím na druhou stranu provozovateli
+fóra odpadají starosti s db serverem.&lt;/p&gt;
+
+&lt;p&gt;Pořád tedy zvažuji možnost použít klasické MySQL a rychlost zajistit
+třeba s pomocí &lt;a href=&quot;http://www.notorm.com/&quot;&gt;NotORM&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;… pokračování příště …&lt;/em&gt;&lt;/p&gt;
+</description>
+			<guid>http://langi.cz/webarna/s-cim-si-hraju-forum-s-couchdb</guid>
+		</item>
+		<item>
+			<title>Makra v Sublime Text editoru</title>
+			<pubDate>Wed, 07 Sep 2011 22:00:00 GMT</pubDate>
+			<link>http://langi.cz/webarna/makra-v-sublime-text-editoru</link>
+			<description>
+&lt;p&gt;Psát pořád dokola ty stejné příkazy je jednoduše opruz a proto
+existují makra. Do makra si uložíte nějakou sekvenci a klávesovou zkratkou
+potom takovou sekvenci vyvoláte bez nutnosti ji psát.&lt;/p&gt;
+
+&lt;p&gt;Příklad – v nette dost často používám třeba
+&lt;code&gt;NDebug::dump();&lt;/code&gt; a psát to pořád dokola je na hlavu. V novém
+nette je myslím ten příkaz ještě delší. Takže si v Sublime Text editoru
+uděláme makro.&lt;/p&gt;
+
+&lt;p&gt;Nahrávání krátkodobého makra, co nepřežije zavření editoru, se
+spustí klávesami &lt;code&gt;ctrl+q&lt;/code&gt; → normálně píšete svůj příkaz
+→ a zastavíte &lt;code&gt;ctrl+q&lt;/code&gt;. Vkládáte potom makro pomocí
+&lt;code&gt;ctrl+shift+q&lt;/code&gt;. To my ale nechceme, my chceme trvalé makro.&lt;/p&gt;
+
+&lt;p&gt;Takže – vytvořte a otevřete si (na linuxu) soubor&lt;/p&gt;
+
+&lt;pre&gt;/home/you/.con­fig/sublime-text-2/Packages/User/nde­bugdump.subli­me-macro&lt;/pre&gt;
+
+&lt;p&gt;a vložte do něj toto&lt;/p&gt;
+
+&lt;pre&gt;[ { „args“: { „characters“: „ndebug::dump“ }, „command“: „insert“ }, { „args“: { „contents“: „($0)“ }, „command“: „insert_snippet“ }, { „args“: { „by“: „characters“, „forward“: true }, „command“: „move“ }, { „args“: { „characters“: „;“ }, „command“: „insert“ } ]&lt;/pre&gt;
+
+&lt;p&gt;Posléze otevřete soubor&lt;/p&gt;
+
+&lt;pre&gt;/home/you/.con­fig/sublime-text-2/Packages/User/De­fault (Linux).sublime-keymap&lt;/pre&gt;
+
+&lt;p&gt;a vložte do něj toto&lt;/p&gt;
+
+&lt;pre&gt;[ { „keys“: [„alt+d“], „command“: „run_macro_file“, „args“: {„file“: „Packages/User/nde­bugdump.subli­me-macro“} } ]&lt;/pre&gt;
+
+&lt;p&gt;Hotovo. alt+d krásně píše NDebug::dump() za nás a my jsme zase o kousek
+spokojenější, že.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt; o deset minut později: pohodlně prohlížet obsah
+mé Packages složky, kde se dějí tyhle úpravy můžete &lt;a
+href=&quot;https://github.com/czlang/sublime-text&quot;&gt;na githubu&lt;/a&gt;.&lt;/p&gt;
+</description>
+			<guid>http://langi.cz/webarna/makra-v-sublime-text-editoru</guid>
+		</item>
+		<item>
+			<title>Zvolte si uživatelské jméno a heslo</title>
+			<pubDate>Tue, 06 Sep 2011 13:15:38 GMT</pubDate>
+			<link>http://langi.cz/webarna/zvolte-si-uzivatelske-jmeno-a-heslo</link>
+			<description>
+&lt;p&gt;Jedním z nejotravnějších &lt;strong&gt;problémů&lt;/strong&gt; internetových
+stránek a aplikací, je &lt;strong&gt;velmi častá nutnost registrace&lt;/strong&gt; pod
+jménem a heslem. Příliš mnoho účtů na příliš mnoha místech snižuje
+&lt;strong&gt;pohodlnost užívání&lt;/strong&gt; pro uživatele a zvyšuje
+&lt;strong&gt;bezpečnostní riziko&lt;/strong&gt; – člověk si pravděpodobněji
+vymyslí jedno slabé heslo, které použije kde se dá.&lt;/p&gt;
+
+&lt;p&gt;K heslům a jejich složitosti jsem poměrně nedávno narazil na zajímavý
+matematický rozbor, který ale nemůžu najít, tak alespoň jeho komiksový
+výcuc &lt;a href=&quot;http://xkcd.com/936/&quot;&gt;http://xkcd.com/936/&lt;/a&gt;. Zjednodušeně
+řečeno: heslo „kytara s intarziemi“ je &lt;strong&gt;obtížnější na
+prolomení a daleko lépe zapamatovatelné&lt;/strong&gt;, než třeba
+„XjžzH54a“. Zdá se, že tento přístup k tvorbě hesel by mohl
+částečně „vyřešit“ problém mnoha účtů na internetu, ale
+samozřejmě lze jít dál.&lt;/p&gt;
+
+&lt;h2&gt;Registrace bez vyplňování emailu a hesla&lt;/h2&gt;
+
+&lt;p&gt;&lt;a
+href=&quot;http://www.codinghorror.com/blog/2011/09/cutting-the-gordian-knot-of-web-identity.html&quot;&gt;Jeff
+Atwood&lt;/a&gt; (spoluautor &lt;a
+href=&quot;http://stackoverflow.com/&quot;&gt;http://stackoverflow.com/&lt;/a&gt;) například sní
+o systému, který by uživatele odstínil od neustálého zadávání jména a
+hesla. Jak?&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;stránka vyžadující registraci by obsahovala speciální
+	&lt;code&gt;meta&lt;/code&gt; tagy, které by označovaly, že stránka podporuje
+	automatický login&lt;/li&gt;
+
+	&lt;li&gt;váš prohlížeč by podle tohoto tagu rozpoznal, že se má pokusit
+	automaticky vyplnit registrační/přih­lašovací údaje, které by získal
+	z nějakého bezpečného „cloud“ úložiště skrze zabezpečené https.
+	Prohlížeč také vymyslí heslo.&lt;/li&gt;
+
+	&lt;li&gt;uživatel by nejspíš musel vyplnit nějaký druh captcha kontroly&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Doporučuji si přečíst &lt;a
+href=&quot;http://www.codinghorror.com/blog/2011/09/cutting-the-gordian-knot-of-web-identity.html&quot;&gt;celý
+článek&lt;/a&gt;, ačkoliv si myslím, že Jeff Atwood celý nápad nazývá
+„svým snem“ celkem oprávněně.&lt;/p&gt;
+</description>
+			<guid>http://langi.cz/webarna/zvolte-si-uzivatelske-jmeno-a-heslo</guid>
+		</item>
+		<item>
+			<title>Problémy s git-flow</title>
+			<pubDate>Sun, 04 Sep 2011 10:39:48 GMT</pubDate>
+			<link>http://langi.cz/webarna/problemy-s-git-flow</link>
+			<description>
+&lt;p&gt;&lt;a href=&quot;http://scottchacon.com/&quot;&gt;Scott Chacon&lt;/a&gt; (git evangelista, pracuje
+v GitHubu) sepsal velmi zajímavý článek o tom, &lt;a
+href=&quot;http://scottchacon.com/2011/08/31/github-flow.html&quot;&gt;jakým způsobem
+v GitHubu pracují s gitem&lt;/a&gt;, jaké mají pracovní flow. Protože git
+umožňuje celou plejádu způsobů jak řídit verzování, vzniká mnoho
+takzvaných flow a jeden z těch známých, propracovaných a používaných je
+&lt;a
+href=&quot;http://nvie.com/posts/a-successful-git-branching-model/&quot;&gt;git-flow&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;V githubu to ale dělají trochu jinak, protože &lt;strong&gt;hodně&lt;/strong&gt;
+často dělají deploy na ostrou aplikaci. Hlavní body tohoto GitHub
+flow jsou&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;všechno v master větvi je vždy připraveno na deploy&lt;/li&gt;
+
+	&lt;li&gt;když chcete pracovat na něčem novém, vytvořte si novou větev
+	s popisným názvem vedle master větve&lt;/li&gt;
+
+	&lt;li&gt;komitujte lokálně a a pushujte svou práci do vaší větve na
+	serveru&lt;/li&gt;
+
+	&lt;li&gt;když potřebujete zpětnou vazbu, nebo radu, nebo když si myslíte, že
+	větev je připravena k mergi, otevřete nový pull request&lt;/li&gt;
+
+	&lt;li&gt;potom co někdo jiný zkontroloval a podepsal novou funkčnost, můžete ji
+	včlenit do master větve&lt;/li&gt;
+
+	&lt;li&gt;jakmile je včleněno a pushnuto do master větve, můžete a &lt;em&gt;měli
+	byste&lt;/em&gt; udělat okamžitě deploy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;GitHub má zhruba 15–20 vývojářů pracujících na jednom projektu a
+toto flow jim zdá se svědčí.&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://scottchacon.com/2011/08/31/github-flow.html&quot;&gt;Issues with
+	git-flow&lt;/a&gt;&lt;/li&gt;
+
+	&lt;li&gt;&lt;a href=&quot;http://scottchacon.com/&quot;&gt;scottchacon.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+			<guid>http://langi.cz/webarna/problemy-s-git-flow</guid>
+		</item>
+		<item>
+			<title>Appstorm.net - o webových aplikacích</title>
+			<pubDate>Tue, 30 Aug 2011 21:10:25 GMT</pubDate>
+			<link>http://langi.cz/webarna/appstorm-net-o-webovych-aplikacich</link>
+			<description>
+&lt;p&gt;Mám trochu úchylku na webové aplikace. Nebo je to profesionální
+deformace, jak chcete. Když na nějakou webovou aplikaci náhodou (!) narazím
+a líbí se mi, pěkně si uložím odkaz s popiskem a je moje. Koukám jak
+jsou udělané, přemýšlím co se mi na nich líbí a proč. Co by se z nich
+dalo využít a kde.&lt;/p&gt;
+
+&lt;p&gt;Tak mě přirozeně napadlo přetavit tuhle úch…eh zálibu v něco
+konkrétního. Napadaly mě takové ty klasické nesmysly typu „katalog“
+webových aplikací, nebo blog o webových aplikacích a tak podobně. Už jsem
+ve svém věku přece jen o něco moudřejší než v patnácti a tak nic
+takového z mé ruky (zatím) nevyšlo.&lt;/p&gt;
+
+&lt;p&gt;No a dneska jsem objevil &lt;a
+href=&quot;http://web.appstorm.net/&quot;&gt;http://web.appstorm.net/&lt;/a&gt; což je vlastně
+blog o webových aplikacích, ha!&lt;/p&gt;
+
+&lt;p&gt;Hlavní důvod, proč o tom všem píšu, je ale způsob provedení toho
+blogu. On má takovou vlastnost, která se mi zdá zajímavá a nejspíš by mě
+nenapadla.&lt;/p&gt;
+
+&lt;p&gt;O co jde: mají tam rubriku Quick Look, do které si za
+&lt;strong&gt;poplatek&lt;/strong&gt; může kdokoliv poslat svoji webovou aplikaci, kluci a
+holky z appstorm o ní napíší krátkou představovačku a dají
+&lt;strong&gt;hlasovat&lt;/strong&gt; zda je v publiku zájem o její recenzi.&lt;/p&gt;
+
+&lt;p&gt;No nezlobte se na mě, ale mě to prostě připadá geniální.&lt;/p&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;nové webové aplikace se objevují dnes a denně&lt;/li&gt;
+
+	&lt;li&gt;každý chce tu svoji zviditelnit&lt;/li&gt;
+
+	&lt;li&gt;redakce ušetří nějakou tu práci s hledáním aplikací&lt;/li&gt;
+
+	&lt;li&gt;dostanou zaplaceno&lt;/li&gt;
+
+	&lt;li&gt;čtenáři si sami řeknou co je zajímá a co ne&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Prostě nápad jsme měli stejný, ale (představu) provedení odlišné.&lt;/p&gt;
+</description>
+			<guid>http://langi.cz/webarna/appstorm-net-o-webovych-aplikacich</guid>
+		</item>
+		<item>
+			<title>Přednastavení syntax highlight v Sublime Text editoru</title>
+			<pubDate>Wed, 17 Aug 2011 11:03:08 GMT</pubDate>
+			<link>http://langi.cz/webarna/prednastaveni-syntax-highlight-v-sublime-text-editoru</link>
+			<description>Jak změnit přednastavení zvýraznění syntaxe podle koncovky souborů
+v Sublime Text editoru.
+&lt;p&gt;Když třeba používáte &lt;a href=&quot;http://lesscss.org/&quot;&gt;LESS&lt;/a&gt; při psaní
+stylů, tak soubor ve kterém pracujete má koncovku .less, čili vám ho editor
+neobarví. Aby &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime&lt;/a&gt; obarvoval co
+chcete, nastavte v:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Preferences  → Browse Packages…  → CSS (složka)  → CSS.tmLanguage (soubor)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre
+class=&quot;xml&quot;&gt;&lt;code&gt;&amp;lt;dict&amp;gt; &amp;lt;key&amp;gt;comment&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;&amp;lt;/string&amp;gt; &amp;lt;key&amp;gt;fileTypes&amp;lt;/ke­y&amp;gt; &amp;lt;array&amp;gt; &amp;lt;string&amp;gt;css&amp;lt;/strin­g&amp;gt; &amp;lt;string&amp;gt;css.er­b&amp;lt;/string&amp;gt; &amp;lt;string&amp;gt;less&amp;lt;/strin­g&amp;gt; &amp;lt;!-- tohle je ta změna  → &amp;lt;/array&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+</description>
+			<guid>http://langi.cz/webarna/prednastaveni-syntax-highlight-v-sublime-text-editoru</guid>
+		</item>
+		<item>
+			<title>Historky z natáčení - CouchDB 3. - PHP knihovny</title>
+			<pubDate>Sun, 14 Aug 2011 16:30:29 GMT</pubDate>
+			<link>http://langi.cz/webarna/historky-z-nataceni-couchdb-3-php-knihovny</link>
+			<description>Neladem a neskladem naházené knihovny a třídy pro zpříjemnění práce
+s CouchDB z PHP. Je-li tedy někdy názoru, že je to třeba.
+&lt;p&gt;Na &lt;a href=&quot;http://wiki.apache.org/couchdb/Getting_started_with_PHP&quot;&gt;wiki
+CouchDB&lt;/a&gt; se pro příklad používá jednoduchá sada tříd z rodinky
+&lt;code&gt;CouchSimple&lt;/code&gt; – pro začátek rozhodně postačí.&lt;/p&gt;
+
+&lt;p&gt;Může to pak vypadat třeba nějak takhle (v Nette)&lt;/p&gt;
+
+&lt;pre
+class=&quot;php&quot;&gt;&lt;code&gt;$options = NEnvironment::get­Config(‚couchdb‘); $resp = $this-&amp;gt;couchdb()-&amp;gt;send(‚GET‘, ‚/‘ . $this-&amp;gt;couchdb()-&amp;gt;db . ‚/_design/foo/_vi­ew/bar?include_doc­s=true&amp;amp;descen­ding=true‘); $doc = json_decode($res­p);$rows = array(); foreach ($doc-&amp;gt;rows as $row){ $rows[] = $row-&amp;gt;doc; }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nějakou dobu jsem takhle vydržel, při připojování k databázi na &lt;a
+href=&quot;https://cloudant.com/&quot;&gt;cloudant.com&lt;/a&gt; mě to ale zlobilo, takže jsem
+zkoušel dál a celkem se zadařilo s &lt;a
+href=&quot;https://github.com/jakubkulhan/couchdb-php&quot;&gt;českou knihovnou&lt;/a&gt; &lt;a
+href=&quot;http://kulhan.info/&quot;&gt;Jakuba Kulhana&lt;/a&gt;. Potom to může vypadat zase
+třeba takhle:&lt;/p&gt;
+
+&lt;pre
+class=&quot;php&quot;&gt;&lt;code&gt;$couchdb = CouchDB::open(‚fsoc­k://account.clou­dant.com‘); $db = $couchdb-&amp;gt;db(‚some_data­base‘); $params = array( ‚include_docs‘ =&amp;gt;‚true‘ ); $items = $db-&amp;gt;view(‚some_de­sign‘, ‚some_view‘, $params); if(isset($items-&amp;gt;rows)){ foreach (items-&amp;gt;rows as $item) { echo $item-&amp;gt;doc-&amp;gt;some; } }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Komu by stačilo si zjednodušit práci s HTTP, v článku na &lt;a
+href=&quot;http://www.couchbase.com/case-studies/relational-to-couchdb&quot;&gt;Couchbase.com&lt;/a&gt;
+se doporučuje &lt;a
+href=&quot;http://pear.php.net/package/HTTP_Request2/docs/2.0.0RC1/HTTP_Request2/HTTP_Request2.html&quot;&gt;HTTP_Request2&lt;/a&gt;
+a &lt;a href=&quot;http://framework.zend.com/manual/en/zend.http.html&quot;&gt;Zend_Http&lt;/a&gt;.
+Současně tam, jistě zkušený, autor podotýká, že zatím nenarazil na PHP
+knihovnu, kterou by mohl doporučit pro všechny případy a k tomu se
+přidávám.&lt;/p&gt;
+</description>
+			<guid>http://langi.cz/webarna/historky-z-nataceni-couchdb-3-php-knihovny</guid>
+		</item>
+		<item>
+			<title>Historky z natáčení - CouchDB 2.</title>
+			<pubDate>Fri, 12 Aug 2011 09:07:53 GMT</pubDate>
+			<link>http://langi.cz/webarna/historky-z-nataceni-couchdb-2</link>
+			<description>Může být nevědomost zdrojem dobrých nápadů? Myslím, že určitě, jen
+nevím jestli je to tenhle případ.
+&lt;p&gt;Mějme blog s CouchDb databází (například). Chtějme na hlavní stránce
+blogu zobrazovat počet komentářů u každého článku s tím, že články
+a komentáře máme v oddělených dokumentech.&lt;/p&gt;
+
+&lt;p&gt;Jsme u toho, že potřebujeme dělat něco jako JOIN, že? V MySQL denní
+chléb, v NoSQL trochu špunt v hlavě. Tenhle &lt;a
+href=&quot;http://www.cmlenz.net/archives/2007/10/couchdb-joins&quot;&gt;článek&lt;/a&gt;
+perfektně osvětluje, jak třeba udělat „JOIN“ v případě zobrazení
+článku s komentáři. Ok. Jenže to je případ kdy „taháme“ a
+zobrazujeme jak článek tak komentáře. Naproti tomu v případě ze
+začátku článku nechceme „tahat“ ani zobrazovat komentáře. Chceme jen
+jejich počet.&lt;/p&gt;
+
+&lt;p&gt;Zkrátím to – nevím jak to udělat. Nevědomost. Ale musím to nějak
+udělat. A mozek běží…&lt;/p&gt;
+
+&lt;p&gt;Co takhle udělat další typ dokumentu – meta dokument? Meta dokument,
+který by uchovával data o článku. Počet zobrazení, počet komentářů
+atd. Dost pravděpodobně je to nápad blbý a po pravdě řečeno se mi moc
+nelíbí, ale na druhou stranu, výpočetní výkon je dražší, než
+úložiště, čili počítat počet komentářů je dražší než ho
+ukládat.&lt;/p&gt;
+
+&lt;p&gt;Jenže zase ty vazby a určitá hrozba nekonzistencí a náchylnost
+k chybám…&lt;/p&gt;
+</description>
+			<guid>http://langi.cz/webarna/historky-z-nataceni-couchdb-2</guid>
+		</item>
+		<item>
+			<title>Historky z natáčení - CouchDB</title>
+			<pubDate>Thu, 11 Aug 2011 22:51:59 GMT</pubDate>
+			<link>http://langi.cz/webarna/historky-z-nataceni-couchdb</link>
+			<description>Jestli si říkáte, že už vás vážně nebaví jak MySQL tuhne, když má
+trochu víc záznamů (mě třeba k nespokojenosti stačí 70 000) a vy
+potřebujete změnit schéma a že teda příště radši nějaké to
+bezschémové NoSQL pošušňání, tak to ještě prozkoumejte. Protože
+bezschémové NoSQL je vlastně taky schémové. Cožeto?
+&lt;p&gt;CouchDB má, jak jistě víte, takzvaná views. Lidsky bych řekl, že to
+jsou v podstatě masky, přes které se díváte na svoje data. Tu hromadu
+dokumentů řazených po sobě si prostě musíte nějak roztřídit. Něco má
+&lt;code&gt;type=post&lt;/code&gt; tak uděláme view jen na posty. Něco má
+&lt;code&gt;type=contact&lt;/code&gt; tak to bude ve view na kontakty.&lt;/p&gt;
+
+&lt;p&gt;No a právě tady leží to schéma v bezschémové CouchDB. A když máte
+třeba 200 GB databázi, tak vám taková změna view zabere docela dost času.
+Třeba jako změna tabulky v MySQL.&lt;/p&gt;
+
+&lt;p&gt;A ještě jedna věc. Normálně se všude na webu ukazují
+příklady jako&lt;/p&gt;
+
+&lt;pre
+class=&quot;JavaScript&quot;&gt;&lt;code&gt;function(doc) { if(doc.type == „foo“){ emit(doc._id, doc); } }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ale alternativa k prozkoumání je&lt;/p&gt;
+
+&lt;pre
+class=&quot;JavaScript&quot;&gt;&lt;code&gt;function(doc) { if(doc.type == „foo“){ emit(doc._id, null); //tadyhle ten null je rozdíl } }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;a potom žádat skrze http s parametrem &lt;code&gt;?include_docs=tru­e&lt;/code&gt;.
+Vypadá to, že první varianta duplikuje data na disku a druhá nutí disk
+hledat. Ještě tomu úplně nerozumím.&lt;/p&gt;
+
+&lt;p&gt;Karmi &lt;a href=&quot;http://vimeo.com/16650609&quot;&gt;tady&lt;/a&gt; o tom v jedné chvíli
+(kolem 42 minuty) cosi šustí, ale já to slyšel až napodesátý. Ještě
+jeden &lt;a
+href=&quot;http://till.klampaeckel.de/blog/archives/61-Small-notes-on-CouchDBs-views.html&quot;&gt;podklad&lt;/a&gt;
+a dobrou noc.&lt;/p&gt;
+</description>
+			<guid>http://langi.cz/webarna/historky-z-nataceni-couchdb</guid>
+		</item>
+	</channel>
+</rss>

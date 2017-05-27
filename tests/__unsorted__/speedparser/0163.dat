@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<rss version="2.0"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dcterms="http://purl.org/dc/terms/" >
+<channel>
+<title>blog</title>
+<link>http://miguel.cc//blog/</link>
+<description>miguel.cc</description>
+<item>
+
+	<title>mongrel2 development</title>
+
+
+	<guid isPermaLink="no">http://miguel.cc//blog/entry/mongrel2_development/</guid>
+
+	<link>http://miguel.cc//blog/entry/mongrel2_development/</link>
+
+	<pubDate>Fri, 30 Jul 2010 12:12:29 -0430</pubDate>
+	<dcterms:modified>2010-07-30T19:31:40Z</dcterms:modified>
+
+	<description>&lt;p&gt;In my opinion you can learn a lot &lt;a href=&quot;http://twitter.com/zedshaw&quot;&gt;following the development process&lt;/a&gt;
+of &lt;a href=&quot;http://mongrel2.org/&quot;&gt;Mongrel2&lt;/a&gt;. Mongrel2 is a redesign of Mongrel web server and it
+is a project that have as goal to provide an application, language, and network
+architecture agnostic web server.&lt;/p&gt;
+
+&lt;p&gt;This is probably the most interesting project that I could find right now on
+the web, because it is under heavy development, it is using new concepts and
+ideas, it is written in C (&lt;a href=&quot;http://mongrel2.org/artifact?name=0222d9bb954be5237b1f6be69ef62d9a53a1e4dd&quot;&gt;very clear and legible code&lt;/a&gt; if you ask
+me), the development process is totally in the open, and this could benefit
+many people if successfully achieve its goal.&lt;/p&gt;
+
+&lt;p&gt;Because of that, and because of the very big bold goal of this project I&amp;#39;m
+following its progress, I&amp;#39;m testing it and I plan to contribute with Mongrel2
+if possible. By now, I&amp;#39;m only contributing from the distribution side of
+things, so I prepared some packages necessary to test Mongrel2 in Debian
+(despite Mr. Zed Shaw is very critic of the ``slowness&amp;#39;&amp;#39; of Linux distributions
+picking new software).&lt;/p&gt;
+
+&lt;p&gt;Anyway, below are some links to binary and source packages for Mongrel2 and a
+couple of dependencies, if anyone besides me is interested in testing this
+in Debian (or Ubuntu). I already asked for review to have those packages
+included officially in Debian.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;mongrel2:
+&lt;a href=&quot;http://alioth.debian.org/~nomadium-guest/debian/unstable/mongrel2_0.9.20100730+fossil2037a497b7-1_amd64.deb&quot;&gt;binary&lt;/a&gt;, &lt;a href=&quot;http://alioth.debian.org/~nomadium-guest/debian/unstable/mongrel2_0.9.20100730+fossil2037a497b7-1.dsc&quot;&gt;source&lt;/a&gt;, &lt;a href=&quot;http://git.debian.org/?p=collab-maint/mongrel2.git&quot;&gt;git&lt;/a&gt;,
+&lt;a href=&quot;http://mongrel2.org/wiki?name=GettingStarted&quot;&gt;upstream&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;python-storm (needed to use m2sh):
+&lt;a href=&quot;http://alioth.debian.org/~nomadium-guest/debian/unstable/python-storm_0.16.0-1_amd64.deb&quot;&gt;binary&lt;/a&gt;, &lt;a href=&quot;http://alioth.debian.org/~nomadium-guest/debian/unstable/storm_0.16.0-1.dsc&quot;&gt;source&lt;/a&gt;, &lt;a href=&quot;http://git.debian.org/?p=users/nomadium-guest/storm.git&quot;&gt;git&lt;/a&gt;,
+&lt;a href=&quot;https://storm.canonical.com/#Download&quot;&gt;upstream&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;python-zmq (needed to run the examples included with mongrel2):
+&lt;a href=&quot;http://alioth.debian.org/~nomadium-guest/debian/unstable/python-pyzmq_0.1.20100703+git18f5d06155-1_amd64.deb&quot;&gt;binary&lt;/a&gt;, &lt;a href=&quot;http://alioth.debian.org/~nomadium-guest/debian/unstable/pyzmq_0.1.20100703+git18f5d06155-1.dsc&quot;&gt;source&lt;/a&gt;, &lt;a href=&quot;http://git.debian.org/?p=users/nomadium-guest/pyzmq.git&quot;&gt;git&lt;/a&gt;,
+&lt;a href=&quot;http://github.com/zeromq/pyzmq&quot;&gt;upstream&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+
+
+</item>
+<item>
+
+	<title>ikiwiki + github pages = EPIC win!</title>
+
+
+	<guid isPermaLink="no">http://miguel.cc//blog/entry/ikiwiki_and_github_pages_equals_epic_win/</guid>
+
+	<link>http://miguel.cc//blog/entry/ikiwiki_and_github_pages_equals_epic_win/</link>
+
+	<pubDate>Mon, 26 Jul 2010 18:41:32 -0430</pubDate>
+	<dcterms:modified>2010-07-26T23:11:32Z</dcterms:modified>
+
+	<description>&lt;p&gt;Since a while ago I was aware of the possibility of hosting an ikiwiki
+generated website at github using &lt;a href=&quot;http://pages.github.com/&quot;&gt;github pages&lt;/a&gt;.
+This is described with great detail on &lt;a href=&quot;http://ikiwiki.info/tips/github/&quot;&gt;tips section of ikiwiki website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Later, it was &lt;a href=&quot;http://github.com/blog/315-cname-support-for-github-pages&quot;&gt;announced the possibility of using custom domains&lt;/a&gt; with github pages, but unfortunately this feature was
+available only to paying customers. Don&amp;#39;t get me wrong, github is fantastic
+and they provide a service really worth paying for (especially for private
+projects), but for a &lt;a href=&quot;http://en.wikipedia.org/wiki/CADIVI&quot;&gt;dollar starved guy like me&lt;/a&gt;, I try to
+avoid any expense in foreign currency.&lt;/p&gt;
+
+&lt;p&gt;So, it was cool to find out that the custom domain feature for github pages
+now is free. I decided to give a try and migrate this website hosting there.
+I could save a few bucks with hosting and gained the feature of updating my
+website using git standard tools (pretty awesome and convenient if you ask me,
+with one push you can publish updates or revert changes).&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m going to investigate options about how to implement the dynamic portion of
+ikiwiki (ikiwiki.cgi, and maybe comments), but for now my main use case of
+ikiwiki is covered with github pages provided hosting.&lt;/p&gt;
+</description>
+
+
+</item>
+<item>
+
+	<title>your own kernel with amazon ec2</title>
+
+
+	<guid isPermaLink="no">http://miguel.cc//blog/entry/your_own_kernel_with_amazon_ec2/</guid>
+
+	<link>http://miguel.cc//blog/entry/your_own_kernel_with_amazon_ec2/</link>
+
+
+	<category>debian</category>
+
+
+	<pubDate>Mon, 19 Jul 2010 23:07:34 -0430</pubDate>
+	<dcterms:modified>2010-07-20T03:37:34Z</dcterms:modified>
+
+	<description>&lt;p&gt;Recently,
+&lt;a href=&quot;http://aws.typepad.com/aws/2010/07/use-your-own-kernel-with-amazon-ec2.html&quot;&gt;Amazon announced support&lt;/a&gt;
+for user provided Linux kernels in Amazon EC2.&lt;/p&gt;
+
+&lt;p&gt;Since they provided a list of supported distributions but Debian was not
+included, I decided to give a try to this new feature to see if I could boot a
+Linux kernel provided by Debian.&lt;/p&gt;
+
+&lt;p&gt;Following the instructions available in
+&lt;a href=&quot;http://ec2-downloads.s3.amazonaws.com/user_specified_kernels.pdf&quot;&gt;EC2 documentation&lt;/a&gt;
+and the recommendations for &lt;a href=&quot;http://wiki.debian.org/Xen&quot;&gt;Xen usage&lt;/a&gt; at Debian
+wiki, I could boot an AMI using &lt;code&gt;linux-image-2.6.32-5-686-bigmem&lt;/code&gt; kernel
+included with upcoming Debian 6.0 (squeeze, right now at testing stage).&lt;/p&gt;
+
+&lt;p&gt;You just have to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Indicate in &lt;code&gt;/boot/grub/menu.lst&lt;/code&gt; &lt;code&gt;root=/dev/xvda1&lt;/code&gt; as root device.&lt;/li&gt;
+&lt;li&gt;Make sure &lt;code&gt;/etc/fstab&lt;/code&gt; contains the correct device names.&lt;/li&gt;
+&lt;li&gt;Bundle your image with &lt;code&gt;linux-image-2.6.32-5-686-bigmem&lt;/code&gt; and &lt;code&gt;grub-legacy&lt;/code&gt; packages
+installed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In the &lt;a href=&quot;http://wiki.debian.org/Xen&quot;&gt;Xen entry&lt;/a&gt; at Debian wiki is mentioned that
+domU instances can boot with a Linux image Xen flavor, but I could not boot
+&lt;code&gt;linux-image-2.6.32-5-xen-686&lt;/code&gt; in Amazon EC2. I&amp;#39;ll investigate why that&amp;#39;s
+happening.&lt;/p&gt;
+</description>
+
+
+</item>
+
+</channel>
+</rss>

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>arnorhs</title>
+	
+	<link>http://arnorhs.com</link>
+	<description>Web Development Blog</description>
+	<lastBuildDate>Sun, 25 Sep 2011 22:50:34 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.2.1</generator>
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/arnorhs" /><feedburner:info uri="arnorhs" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><feedburner:emailServiceId>arnorhs</feedburner:emailServiceId><feedburner:feedburnerHostname>http://feedburner.google.com</feedburner:feedburnerHostname><item>
+		<title>A git power feature that helped me 10 mins ago</title>
+		<link>http://feedproxy.google.com/~r/arnorhs/~3/xtOqBHtTL8o/</link>
+		<comments>http://arnorhs.com/2011/09/25/a-git-power-feature-that-helped-me-10-mins-ago/#comments</comments>
+		<pubDate>Sun, 25 Sep 2011 22:50:34 +0000</pubDate>
+		<dc:creator>arnorhs</dc:creator>
+				<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[programming]]></category>
+
+		<guid isPermaLink="false">http://arnorhs.com/?p=1011</guid>
+		<description><![CDATA[I was setting up a new git repository (more on that in a later post) and I was using a wrong author, so the name was wrong on all the commits. I googled around and found this command which allow you to basically rename all the authors: It&#8217;s deep in dirty-commit-territory, so if there are [...]]]></description>
+			<content:encoded><![CDATA[<p>I was setting up a new git repository (more on that in a later post) and I was using a wrong author, so the name was wrong on all the commits. I googled around and found this command which allow you to basically rename all the authors:</p>
+<p>It&#8217;s deep in dirty-commit-territory, so if there are more people who have pulled from you repo, you&#8217;ll have all kinds of nasty issues, but if it&#8217;s a new repo which hasn&#8217;t been pulled/forked by anybody, you shouldn&#8217;t have problems with pushing with &#8220;git push -f origin branchname&#8221;</p>
+<p>Here is the blog entry that describes the method: <a href="http://coffee.geek.nz/node/22723">http://coffee.geek.nz/node/22723</a></p>
+<p>There&#8217;s also some helpful discussions on Stack Overflow: <a href="http://stackoverflow.com/questions/750172/how-do-i-change-the-author-of-a-commit-in-git">http://stackoverflow.com/questions/750172/how-do-i-change-the-author-of-a-commit-in-git</a>
+<div class="tweetmeme_button" style="float: right; margin-left: 10px;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Farnorhs.com%2F2011%2F09%2F25%2Fa-git-power-feature-that-helped-me-10-mins-ago%2F"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Farnorhs.com%2F2011%2F09%2F25%2Fa-git-power-feature-that-helped-me-10-mins-ago%2F&amp;source=arnorhs&amp;style=normal&amp;service=bit.ly&amp;service_api=R_ebacc772d5e3c0910d27e631f5e64487&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<img src="http://feeds.feedburner.com/~r/arnorhs/~4/xtOqBHtTL8o" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://arnorhs.com/2011/09/25/a-git-power-feature-that-helped-me-10-mins-ago/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://arnorhs.com/2011/09/25/a-git-power-feature-that-helped-me-10-mins-ago/</feedburner:origLink></item>
+		<item>
+		<title>I have arrived in Palo Alto</title>
+		<link>http://feedproxy.google.com/~r/arnorhs/~3/QmG2WVgQu1U/</link>
+		<comments>http://arnorhs.com/2011/09/13/i-have-arrived-in-palo-alto/#comments</comments>
+		<pubDate>Tue, 13 Sep 2011 05:15:16 +0000</pubDate>
+		<dc:creator>arnorhs</dc:creator>
+				<category><![CDATA[Personal]]></category>
+		<category><![CDATA[california]]></category>
+		<category><![CDATA[palo alto]]></category>
+		<category><![CDATA[personal]]></category>
+
+		<guid isPermaLink="false">http://arnorhs.com/?p=1007</guid>
+		<description><![CDATA[Good news. I have finally arrived in Palo Alto.
+
+I just got to my hotel and I'm getting my apartment later this week (hopefully), so you could say that I've officially moved.]]></description>
+			<content:encoded><![CDATA[<p>Good news. I have finally arrived in Palo Alto.</p>
+<p>I just got to my hotel and I&#8217;m getting my apartment later this week (hopefully), so you could say that I&#8217;ve officially moved.
+<div class="tweetmeme_button" style="float: right; margin-left: 10px;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Farnorhs.com%2F2011%2F09%2F13%2Fi-have-arrived-in-palo-alto%2F"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Farnorhs.com%2F2011%2F09%2F13%2Fi-have-arrived-in-palo-alto%2F&amp;source=arnorhs&amp;style=normal&amp;service=bit.ly&amp;service_api=R_ebacc772d5e3c0910d27e631f5e64487&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<img src="http://feeds.feedburner.com/~r/arnorhs/~4/QmG2WVgQu1U" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://arnorhs.com/2011/09/13/i-have-arrived-in-palo-alto/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://arnorhs.com/2011/09/13/i-have-arrived-in-palo-alto/</feedburner:origLink></item>
+		<item>
+		<title>Best vim Cheat Sheet in the World / Planet / Solar system</title>
+		<link>http://feedproxy.google.com/~r/arnorhs/~3/O1fk59qeyYQ/</link>
+		<comments>http://arnorhs.com/2011/09/09/best-vim-cheat-sheet-in-the-world-planet-solar-system/#comments</comments>
+		<pubDate>Fri, 09 Sep 2011 08:51:48 +0000</pubDate>
+		<dc:creator>arnorhs</dc:creator>
+				<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[cheat sheet]]></category>
+		<category><![CDATA[editors]]></category>
+		<category><![CDATA[vim]]></category>
+
+		<guid isPermaLink="false">http://arnorhs.com/?p=997</guid>
+		<description><![CDATA[This is awesome for all Vimsters out there. A guy named Michael Pohoreski seems to have had a similar problem to almost every other vim user/beginner out there. He couldn't find a good vim cheat sheet, so he made the mother of all cheat sheets. It's damn ugly, but pretty good:]]></description>
+			<content:encoded><![CDATA[<p>This is awesome for all Vimsters out there. A guy named Michael Pohoreski seems to have had a similar problem to almost every other vim user/beginner out there. He couldn&#8217;t find a good vim cheat sheet, so he made the mother of all cheat sheets. It&#8217;s damn ugly, but pretty good:</p>
+<blockquote><p>I couldn&#8217;t find a good Vim cheat sheet that:</p>
+<ul>
+<li>Listed all the useful Vim configuation/settings in one place that a programmer would be interested in using, and</li>
+<li>Listed every Ctrl key combination so you could tell which keys were available for your own mapping(s).</li>
+</ul>
+<p>Solution: So after looking at the Vim source, I made my own cheat sheet. The top half lists all the keys, the bottom half is organized by categories with bold entries designating common tasks. The red strike-out text above the keys show all the Ctrl keys that Vim doesn&#8217;t recognize &#8212; you can&#8217;t map Caps to your favorite command(s) for example.</p></blockquote>
+<p>When I started using vim, I also couldn&#8217;t find a good cheat sheet. This is definitely now the best one, although it could probably use some design work.</p>
+<p><a href="http://michael.peopleofhonoronly.com/vim/"><img class="alignnone" title="vim cheat sheet" src="http://michael.peopleofhonoronly.com/vim/vim_cheat_sheet_for_programmers_screen.png" alt="" width="646" height="499" /></a>
+<div class="tweetmeme_button" style="float: right; margin-left: 10px;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Farnorhs.com%2F2011%2F09%2F09%2Fbest-vim-cheat-sheet-in-the-world-planet-solar-system%2F"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Farnorhs.com%2F2011%2F09%2F09%2Fbest-vim-cheat-sheet-in-the-world-planet-solar-system%2F&amp;source=arnorhs&amp;style=normal&amp;service=bit.ly&amp;service_api=R_ebacc772d5e3c0910d27e631f5e64487&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<img src="http://feeds.feedburner.com/~r/arnorhs/~4/O1fk59qeyYQ" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://arnorhs.com/2011/09/09/best-vim-cheat-sheet-in-the-world-planet-solar-system/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://arnorhs.com/2011/09/09/best-vim-cheat-sheet-in-the-world-planet-solar-system/</feedburner:origLink></item>
+		<item>
+		<title>Commands for converting from TextMate to Vim</title>
+		<link>http://feedproxy.google.com/~r/arnorhs/~3/lKGllFKOsQ0/</link>
+		<comments>http://arnorhs.com/2011/09/05/commands-for-converting-from-textmate-to-vim/#comments</comments>
+		<pubDate>Mon, 05 Sep 2011 17:11:16 +0000</pubDate>
+		<dc:creator>arnorhs</dc:creator>
+				<category><![CDATA[Web Development]]></category>
+
+		<guid isPermaLink="false">http://arnorhs.com/?p=985</guid>
+		<description><![CDATA[I saw this post on Hacker News today and thought it might be interesting to the TextMate users out there.
+
+It's written by this person, Jack Kinsella and he goes very much in-depth into how to convert yourself from being a TextMates to a vim user.
+
+<a href="http://www.jackkinsella.ie/2011/09/05/textmate-to-vim.html">http://www.jackkinsella.ie/2011/09/05/textmate-to-vim.html</a>]]></description>
+			<content:encoded><![CDATA[<p>I saw this post on Hacker News today and thought it might be interesting to the TextMate users out there.</p>
+<p>It&#8217;s written by this person, Jack Kinsella and he goes very much in-depth into how to convert yourself from being a TextMates to a vim user.</p>
+<p><a href="http://www.jackkinsella.ie/2011/09/05/textmate-to-vim.html">http://www.jackkinsella.ie/2011/09/05/textmate-to-vim.html</a>
+<div class="tweetmeme_button" style="float: right; margin-left: 10px;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Farnorhs.com%2F2011%2F09%2F05%2Fcommands-for-converting-from-textmate-to-vim%2F"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Farnorhs.com%2F2011%2F09%2F05%2Fcommands-for-converting-from-textmate-to-vim%2F&amp;source=arnorhs&amp;style=normal&amp;service=bit.ly&amp;service_api=R_ebacc772d5e3c0910d27e631f5e64487&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<img src="http://feeds.feedburner.com/~r/arnorhs/~4/lKGllFKOsQ0" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://arnorhs.com/2011/09/05/commands-for-converting-from-textmate-to-vim/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://arnorhs.com/2011/09/05/commands-for-converting-from-textmate-to-vim/</feedburner:origLink></item>
+		<item>
+		<title>How to Draw an Equilateral Triangle in Photoshop CS5 (updated)</title>
+		<link>http://feedproxy.google.com/~r/arnorhs/~3/vmADyP4iUIg/</link>
+		<comments>http://arnorhs.com/2011/09/04/how-to-draw-an-equilateral-triangle-in-photoshop-cs5/#comments</comments>
+		<pubDate>Sun, 04 Sep 2011 10:54:51 +0000</pubDate>
+		<dc:creator>arnorhs</dc:creator>
+				<category><![CDATA[design]]></category>
+		<category><![CDATA[photoshop]]></category>
+		<category><![CDATA[create]]></category>
+		<category><![CDATA[draw]]></category>
+		<category><![CDATA[equilateral]]></category>
+		<category><![CDATA[hacks]]></category>
+		<category><![CDATA[triangle]]></category>
+		<category><![CDATA[triangles]]></category>
+
+		<guid isPermaLink="false">http://arnorhs.com/?p=930</guid>
+		<description><![CDATA[An <a href="http://en.wikipedia.org/wiki/Equilateral_triangle">equilateral triangle</a>, in case you've forgotten, is a triangle composed of lines that are all of the same length.
+
+For some reason I started thinking about those kinds of triangles the other day and wanted to create one, for use in a pattern or something.
+
+I could have opted to just google for an image of one, but I wanted to draw one by hand. I started by creating a shape using the pen tool (p), but I found out quickly that it's not intuitively easy.]]></description>
+			<content:encoded><![CDATA[<p>An <a href="http://en.wikipedia.org/wiki/Equilateral_triangle">equilateral triangle</a>, in case you&#8217;ve forgotten, is a triangle composed of sides that are all of the same length.</p>
+<p>For some reason I started thinking about those kinds of triangles the other day and wanted to create one, for use in a pattern or something very creative.</p>
+<p>I could have opted to just google for an image of one, but I wanted to draw one by hand. I started by creating a shape using the pen tool (p), but I found out quickly that it&#8217;s not intuitively easy (at least if you&#8217;ve forgotten all your grade school math, like I have).</p>
+<p>I managed to draw one by iteratively measuring each side and dragging the corners, but that seemed hacky and thought there must be a more grade-school math way of doing it.</p>
+<p>Of course the Wikipedia entry had the formula for calculating the height of it, and that&#8217;s just what I needed:</p>
+<p><a href="http://en.wikipedia.org/wiki/Equilateral_triangle"><img alt="Formula for calculating the height of an equilateral triangle" src="http://f.cl.ly/items/1F3c3333291N0g0p3D2I/Image%202011-08-31%20at%202.48.31%20AM.png" title="Formula for calculating the height of an equilateral triangle" class="alignnone" width="283" height="52" /></a><br />
+(Where the length of each side is &#8220;a&#8221;. ie. any length you want.)</p>
+<h3>Update: The easiest and best way to draw an equilateral triangle</h3>
+<p>In the method below, you can see that I went into a lot of trouble making one of these triangles by hand. However, I learn yet again a) how stupid I can be, b) how valuable the comments on my blog can be, and c) how useless twitter is for asking questions when you don&#8217;t have +10k followers.</p>
+<p>Like somebody mentioned in the comments, I could have used the polygon tool in Photoshop to create one of these:</p>
+<p><img src="http://arnorhs.com/wp-content/uploads/2011/09/polygon-tool.png" alt="using the polygon tool in photoshop" title="using the polygon tool in photoshop" width="350" height="107" class="alignnone size-full wp-image-979" /></p>
+<p>By setting sides to 3, you have essentially made a equilateral triangle.</p>
+<p>For some reason, I have never used the polygon tool. I always saw it as a hexagon and never really tried clicking on it. This is also another example of how you&#8217;re always learning new stuff in Photoshop.</p>
+<p>The commentator posted anonymously, so I have no idea who it was, but I&#8217;d like to take the chance to thank that mysterious person.</p>
+<p>However, if you still wish to learn how to do it by hand, you can follow this guide:</p>
+<h3>Drawing the equilateral triangle &#8211; the hard way</h3>
+<p>Using the information from the Wikipedia entry, this is how I drew the triangle in Photoshop:</p>
+<p>I placed a guide for the baseline of the triangle, one for the center of the triangle and two for the desired length I wanted the sides to have.</p>
+<p><img src="http://arnorhs.com/wp-content/uploads/2011/08/eqtri-01.png" alt="Placing guides" title="Placing guides" width="510" height="445" class="alignnone size-full wp-image-959" /></p>
+<p>The length of each side of the triangle is supposed to be 220 pixels long, so we can apply the formula in the Wikipedia article like so:</p>
+<pre><code>h = (square root of 3 * 220) / 2
+   = 190.5 (or 191, since we're using pixels)</code></pre>
+<p>If we want to do this often, and mathematical perfectness is not needed, we could actually also create a constant from the square root divided by 2, which is: 0.866</p>
+<pre><code>h = 220 * 0.866
+  = 190.5 (or 191)</code></pre>
+<p>So if we make a selection using the marquee tool (m) which is of that height and drag it so it aligns with the bottom guide, we can place the guide we&#8217;ll use for the height of the triangle:</p>
+<p><img src="http://arnorhs.com/wp-content/uploads/2011/08/eqtri-02.png" alt="Placing top guide using the marquee tool" title="Placing top guide using the marquee tool" width="510" height="445" class="alignnone size-full wp-image-960" /></p>
+<p>Now we just need to select the pen tool (p) and click each corner of the guides:</p>
+<p><img src="http://arnorhs.com/wp-content/uploads/2011/08/eqtri-03.png" alt="Using the pen tool to draw a triangle by clicking on the guide intersections" title="Using the pen tool to draw a triangle by clicking on the guide intersections" width="510" height="445" class="alignnone size-full wp-image-961" /></p>
+<p>Then it should look something like this:</p>
+<p><img src="http://arnorhs.com/wp-content/uploads/2011/08/eqtri-04.png" alt="completed equilateral triangle" title="completed equilateral triangle" width="510" height="445" class="alignnone size-full wp-image-962" /></p>
+<p>And now we can try rotating it and we see that each side has the same length (just to make sure we did everything right) &#8211; press escape to cancel:</p>
+<p><img src="http://arnorhs.com/wp-content/uploads/2011/08/eqtri-05.png" alt="making sure the height of the triangle was correct by rotating the image" title="making sure the height of the triangle was correct by rotating the image" width="510" height="445" class="alignnone size-full wp-image-963" /></p>
+<p>Now we&#8217;re actually done. We can either use the triangle like this, we can define a custom shape out of it so we could use it as any other shape in Photoshop &#8212; or we could even create an interesting pattern using the triangle&#8230;</p>
+<h3>Creating a pattern from the equilateral triangle</h3>
+<p><small>(Note: I&#8217;m using Photoshop CS5, but this should work in most modern versions of Photoshop (CS2, 3, 4 etc)</small></p>
+<p>Now you can be really clever and use this awesome creation as a base for a pattern for use in any Photoshop document by following these steps.</p>
+<p>Make the triangle black and make sure that your background is white.</p>
+<p>Rasterize the layer by right clicking on the layer (in the layers panel) and choosing &#8220;rasterize layer&#8221;:</p>
+<p><img src="http://arnorhs.com/wp-content/uploads/2011/08/eqtri-06.png" alt="rasterizing the layer by right clicking on it" title="rasterizing the layer by right clicking on it" width="365" height="541" class="alignnone size-full wp-image-964" /></p>
+<p>Make sure that your document is tall enough for a second triangle directly below this one (using Image -> Canvas size)</p>
+<p><img src="http://arnorhs.com/wp-content/uploads/2011/08/eqtri-07.png" alt="cropping the document so that is big enough for two triangles" title="cropping the document so that is big enough for two triangles" width="510" height="445" class="alignnone size-full wp-image-965" /></p>
+<p>Duplicate the triangle, by picking the arrow tool (I have no idea what it&#8217;s called &#8212; maybe just the drag-stuff-around tool) and holding down the ALT key and dragging the triangle so it&#8217;s top corner snaps to the guide on the baseline of the upper triangle.</p>
+<p>Then add a new guide at the baseline of the new triangle. And create a selection using the rectangle marquee tool around the second one following the guides.</p>
+<p><img src="http://arnorhs.com/wp-content/uploads/2011/08/eqtri-08.png" alt="placing the second triangle so that it snaps to the guide of the bottom one" title="placing the second triangle so that it snaps to the guide of the bottom one" width="510" height="445" class="alignnone size-full wp-image-966" /></p>
+<p>Crop the document around the guides, by using the crop tool (c) and pressing enter when it seems right:</p>
+<p><img src="http://arnorhs.com/wp-content/uploads/2011/08/eqtri-09.png" alt="cropping the document by it&#039;s guides" title="cropping the document by it&#039;s guides" width="510" height="445" class="alignnone size-full wp-image-967" /></p>
+<p>Make sure the lower layer is selected and use the offset tool (Filter -> Other -> Offset) to add a horizontal offset of 110 (half of the width of the triangle) and make sure vertical is 0 and that &#8220;wrap around&#8221; is selected below:</p>
+<p><img src="http://arnorhs.com/wp-content/uploads/2011/08/eqtri-10.png" alt="using the offset tool to move the lower triangle so that it&#039;s center is exactly on the edge of the document" title="using the offset tool to move the lower triangle so that it&#039;s center is exactly on the edge of the document" width="510" height="445" class="alignnone size-full wp-image-968" /></p>
+<p>Merge all layers by choosing Layer -> Flatten Image from the file menu. </p>
+<p>The only thing left is to define the pattern. Go to Edit -> Define Pattern and give it an epic name, like &#8220;equilateral triangle done right&#8221; <img src='http://arnorhs.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p><img src="http://arnorhs.com/wp-content/uploads/2011/08/eqtri-11.png" alt="Defining a pattern out our triangle" title="Defining a pattern out our triangle" width="510" height="445" class="alignnone size-full wp-image-969" /></p>
+<p>You&#8217;re done. Now you can create masterpieces such as this one:</p>
+<p><a href="http://arnorhs.com/2011/09/04/how-to-draw-an-equilateral-triangle-in-photoshop-cs5/masterpiece/" rel="attachment wp-att-933"><img src="http://arnorhs.com/wp-content/uploads/2011/08/masterpiece.png" alt="" title="masterpiece" width="646" height="300" class="alignnone size-full wp-image-933" /></a></p>
+<div class="tweetmeme_button" style="float: right; margin-left: 10px;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Farnorhs.com%2F2011%2F09%2F04%2Fhow-to-draw-an-equilateral-triangle-in-photoshop-cs5%2F"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Farnorhs.com%2F2011%2F09%2F04%2Fhow-to-draw-an-equilateral-triangle-in-photoshop-cs5%2F&amp;source=arnorhs&amp;style=normal&amp;service=bit.ly&amp;service_api=R_ebacc772d5e3c0910d27e631f5e64487&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<img src="http://feeds.feedburner.com/~r/arnorhs/~4/vmADyP4iUIg" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://arnorhs.com/2011/09/04/how-to-draw-an-equilateral-triangle-in-photoshop-cs5/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://arnorhs.com/2011/09/04/how-to-draw-an-equilateral-triangle-in-photoshop-cs5/</feedburner:origLink></item>
+		<item>
+		<title>Palo Alto</title>
+		<link>http://feedproxy.google.com/~r/arnorhs/~3/to0PXfYpxdc/</link>
+		<comments>http://arnorhs.com/2011/09/03/palo-alto/#comments</comments>
+		<pubDate>Sat, 03 Sep 2011 14:15:25 +0000</pubDate>
+		<dc:creator>arnorhs</dc:creator>
+				<category><![CDATA[Personal]]></category>
+		<category><![CDATA[Startups]]></category>
+		<category><![CDATA[california]]></category>
+		<category><![CDATA[palo alto]]></category>
+		<category><![CDATA[personal]]></category>
+		<category><![CDATA[startups]]></category>
+
+		<guid isPermaLink="false">http://arnorhs.com/?p=939</guid>
+		<description><![CDATA[<a href="http://arnorhs.com/2011/09/03/palo-alto/" rel="attachment wp-att-946"><img src="http://arnorhs.com/wp-content/uploads/2011/09/Stanford_University_Palm_Drive_facing_Palo_Alto-150x150.jpg" alt="Picture from Palo Alto, Stanford University Palm Drive" title="Click to read the post" width="150" height="150" class="alignleft size-thumbnail wp-image-946" /></a>
+
+On a professional level, the last year and a half has been pretty interesting. I've been managing my own projects, doing freelancing work, did some traveling, even some classes at a university, tried to work on a lot of side projects, etc. I can't say I did everything I wanted to, but it's still been pretty great.
+
+However, times are going to get even more interesting in the coming months...
+
+
+]]></description>
+			<content:encoded><![CDATA[<p>On a professional level, the last year and a half has been pretty interesting. I&#8217;ve been managing my own projects, doing freelancing work, did some traveling, even some classes at a university, tried to work on a lot of side projects, etc. I can&#8217;t say I did everything I wanted to, but it&#8217;s still been pretty great.</p>
+<p>However, times are going to get even more interesting in the coming months.</p>
+<h3>The next chapter in my life</h3>
+<p>(Yeah I know, dramatic headline) On the coming 12th of September, I&#8217;ll be moving to California to join a new startup based in Palo Alto.</p>
+<p>I have my visa in place and I&#8217;m all set to go. I still haven&#8217;t found a place to stay, but hopefully I&#8217;ve worked that out by the time I get there.</p>
+<p><a href="http://arnorhs.com/2011/09/03/palo-alto/stanford_university_palm_drive_facing_palo_alto/" rel="attachment wp-att-946"><img src="http://arnorhs.com/wp-content/uploads/2011/09/Stanford_University_Palm_Drive_facing_Palo_Alto-646x484.jpg" alt="Picture from Palo Alto, Stanfor University Palm Drive" title="Stanford_University_Palm_Drive_facing_Palo_Alto" width="646" height="484" class="alignnone size-medium wp-image-946" /></a></p>
+<p>Given how fond of the Bay Area and the vibe in Silicon Valley in <a href="http://arnorhs.com/2011/05/30/my-trip-to-california-usa/">my recent trip there</a>, this is a really exciting opportunity. It&#8217;s also a bit scary to be moving to a different country and I guess you could say I&#8217;m getting a bit nervous.</p>
+<p>The hardest part will probably be that my girlfriend, Helga, won&#8217;t be joining me until the beginning of next year, but thankfully we have Skype and she&#8217;ll come and visit me in November.</p>
+<p>However, everybody I know and everybody within the company has been really supportive, so I think this will just be great.</p>
+<p>Stay tuned for updates from Silicon Valley <img src='http://arnorhs.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<div class="tweetmeme_button" style="float: right; margin-left: 10px;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Farnorhs.com%2F2011%2F09%2F03%2Fpalo-alto%2F"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Farnorhs.com%2F2011%2F09%2F03%2Fpalo-alto%2F&amp;source=arnorhs&amp;style=normal&amp;service=bit.ly&amp;service_api=R_ebacc772d5e3c0910d27e631f5e64487&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<img src="http://feeds.feedburner.com/~r/arnorhs/~4/to0PXfYpxdc" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://arnorhs.com/2011/09/03/palo-alto/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://arnorhs.com/2011/09/03/palo-alto/</feedburner:origLink></item>
+		<item>
+		<title>VimConf is hopefully coming</title>
+		<link>http://feedproxy.google.com/~r/arnorhs/~3/lwlFbRKEOvc/</link>
+		<comments>http://arnorhs.com/2011/08/31/vimconf-is-hopefully-coming/#comments</comments>
+		<pubDate>Wed, 31 Aug 2011 10:18:48 +0000</pubDate>
+		<dc:creator>arnorhs</dc:creator>
+				<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[editorwars]]></category>
+		<category><![CDATA[vi]]></category>
+		<category><![CDATA[vim]]></category>
+
+		<guid isPermaLink="false">http://arnorhs.com/?p=936</guid>
+		<description><![CDATA[As a big fan of the text editor vim. I'm also a bit of a newbie and I'm constantly seeking out some new stuff to learn. Either some key combination I didn't know, some nice nifty plugin to help out, etc.
+
+<a href="http://www.vimconf.org/?s=2E4"><img alt="" src="http://cl.ly/2h4625433e0i1Y3B3I0w/Image_2011-08-31_at_10.14.36_AM.png" title="VimConf" class="aligncenter" width="368" height="117" /></a>
+
+That's why I'm excited about this possible online vim conference. It hasn't been planned properly yet and I believe he/they are still seeking people to participate and help. If you're interested you should check it out.]]></description>
+			<content:encoded><![CDATA[<p>As a big fan of the text editor vim. I&#8217;m also a bit of a newbie and I&#8217;m constantly seeking out some new stuff to learn. Either some key combination I didn&#8217;t know, some nice nifty plugin to help out, etc.</p>
+<p><a href="http://www.vimconf.org/?s=2E4"><img alt="" src="http://cl.ly/2h4625433e0i1Y3B3I0w/Image_2011-08-31_at_10.14.36_AM.png" title="VimConf" class="aligncenter" width="368" height="117" /></a></p>
+<p>That&#8217;s why I&#8217;m excited about this possible online vim conference. It hasn&#8217;t been planned properly yet and I believe he/they are still seeking people to participate and help. If you&#8217;re interested you should check it out.</p>
+<p><a href="http://www.vimconf.org/?s=2E4">http://www.vimconf.org/?s=2E4</a>
+<div class="tweetmeme_button" style="float: right; margin-left: 10px;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Farnorhs.com%2F2011%2F08%2F31%2Fvimconf-is-hopefully-coming%2F"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Farnorhs.com%2F2011%2F08%2F31%2Fvimconf-is-hopefully-coming%2F&amp;source=arnorhs&amp;style=normal&amp;service=bit.ly&amp;service_api=R_ebacc772d5e3c0910d27e631f5e64487&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<img src="http://feeds.feedburner.com/~r/arnorhs/~4/lwlFbRKEOvc" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://arnorhs.com/2011/08/31/vimconf-is-hopefully-coming/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://arnorhs.com/2011/08/31/vimconf-is-hopefully-coming/</feedburner:origLink></item>
+		<item>
+		<title>New Vodafone in Iceland website launched</title>
+		<link>http://feedproxy.google.com/~r/arnorhs/~3/6QtuJ5eWwGU/</link>
+		<comments>http://arnorhs.com/2011/08/25/new-vodafone-in-iceland-website-launched/#comments</comments>
+		<pubDate>Thu, 25 Aug 2011 09:03:15 +0000</pubDate>
+		<dc:creator>arnorhs</dc:creator>
+				<category><![CDATA[Client work]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[css3]]></category>
+		<category><![CDATA[development]]></category>
+		<category><![CDATA[javascript]]></category>
+
+		<guid isPermaLink="false">http://arnorhs.com/?p=916</guid>
+		<description><![CDATA[The <a href="http://vodafone.is/" title="Visit the Vodafone website" target="_blank">Vodafone website in Iceland</a> has just undergone a redesign. It was designed by the amazing web agency <a href="http://www.kosmosogkaos.is/" title="Kosmos &#038; Kaos website" target="_blank">Kosmos &#038; Kaos</a>, which is also based in Iceland.
+
+I'm very grateful to have been able to partake in the project. I helped with the CSS, initial HTML and most of the Javascript interactions on the website, and I've got to say I'm pretty proud of the work. That includes some nice CSS3 effects, a custom parallax slider, the modern dropdown menu etc.]]></description>
+			<content:encoded><![CDATA[<p>The <a href="http://vodafone.is/" title="Visit the Vodafone website" target="_blank">Vodafone website in Iceland</a> has just undergone a redesign. It was designed by the amazing web agency <a href="http://www.kosmosogkaos.is/" title="Kosmos &#038; Kaos website" target="_blank">Kosmos &#038; Kaos</a>, which is also based in Iceland.</p>
+<p>I&#8217;m very grateful to have been able to partake in the project. I helped with the CSS, initial HTML and most of the Javascript interactions on the website on behalf of K&#038;K, and I&#8217;ve got to say I&#8217;m pretty proud of the work. That includes some nice CSS3 effects, a custom parallax slider, the modern dropdown menu etc.</p>
+<p><a href="http://arnorhs.com/2011/08/25/new-vodafone-in-iceland-website-launched/vodafone-front-page/" rel="attachment wp-att-924"><img src="http://arnorhs.com/wp-content/uploads/2011/08/vodafone-front-page-646x538.png" alt="Vodafone Iceland front page" title="Vodafone Iceland front page" width="646" height="538" class="alignnone size-medium wp-image-924" /></a></p>
+<p>You have to congratulate Vodafone in Iceland for being willing to embrace new web standards and doing something this forward looking.</p>
+<p><a href="http://snerpa.is/" title="Snepra, web developers" target="_blank">Snerpa</a> also did their part. They set up the website in a CMS and probably reworked some of my initial HTML and CSS. It&#8217;s probably no easy task for such a big, content rich website.</p>
+<p><a href="http://arnorhs.com/2011/08/25/new-vodafone-in-iceland-website-launched/vodafone-subpage/" rel="attachment wp-att-925"><img src="http://arnorhs.com/wp-content/uploads/2011/08/vodafone-subpage-646x402.png" alt="Vodafone Iceland front page" title="Vodafone Iceland front page" width="646" height="402" class="alignnone size-medium wp-image-925" /></a></p>
+<p>Vodafone in Iceland: <a href="http://vodafone.is/" title="Vodafone in Iceland's website" target="_blank">Check out the website</a><br />
+Also check out: <a href="http://www.kosmosogkaos.is/" title="Modern web design and development agency" target="_blank">Kosmos &#038; Kaos, web agency</a></p>
+<div class="tweetmeme_button" style="float: right; margin-left: 10px;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Farnorhs.com%2F2011%2F08%2F25%2Fnew-vodafone-in-iceland-website-launched%2F"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Farnorhs.com%2F2011%2F08%2F25%2Fnew-vodafone-in-iceland-website-launched%2F&amp;source=arnorhs&amp;style=normal&amp;service=bit.ly&amp;service_api=R_ebacc772d5e3c0910d27e631f5e64487&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<img src="http://feeds.feedburner.com/~r/arnorhs/~4/6QtuJ5eWwGU" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://arnorhs.com/2011/08/25/new-vodafone-in-iceland-website-launched/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://arnorhs.com/2011/08/25/new-vodafone-in-iceland-website-launched/</feedburner:origLink></item>
+		<item>
+		<title>Interesting perspective from a refactoring rails guy</title>
+		<link>http://feedproxy.google.com/~r/arnorhs/~3/0bz10kSSaCo/</link>
+		<comments>http://arnorhs.com/2011/08/23/interesting-perspective-from-a-refactoring-rails-guy/#comments</comments>
+		<pubDate>Tue, 23 Aug 2011 01:27:39 +0000</pubDate>
+		<dc:creator>arnorhs</dc:creator>
+				<category><![CDATA[Web Development]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[ror]]></category>
+		<category><![CDATA[ruby]]></category>
+
+		<guid isPermaLink="false">http://arnorhs.com/?p=913</guid>
+		<description><![CDATA[I ran into this post on HN today. It's from a guy who often gets brought in to help teams refactor old ruby on rails code.
+
+My experience with rails has been that it's pretty good at abstracting most of the crap away from your code base and gives you a nice clean structure for your code, but his argument seems to be that as soon as you start doing some spaghetti stuff, you get into trouble.]]></description>
+			<content:encoded><![CDATA[<p>I ran into this post on HN today. It&#8217;s from a guy who often gets brought in to help teams refactor old ruby on rails code.</p>
+<p>My experience with rails has been that it&#8217;s pretty good at abstracting most of the crap away from your code base and gives you a nice clean structure for your code, but his argument seems to be that as soon as you start doing some spaghetti stuff, you get into trouble.</p>
+<p>Probably not exactly Rails&#8217; fault.</p>
+<p>It&#8217;s interesting to read, if you find that kind of stuff interesting <img src='http://arnorhs.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<blockquote><p>In the days before I got paid to write Ruby, I worked on some legacy codebases that had histories spanning multiple decades and 100s of KLOCs. That’s a lot of opportunity for bad code to accumulate; and in some cases, the accumulations were impressive.</p>
+<p>But here’s the dirty little secret of Rails development: the messiest, nastiest big-ball-of-mud code I have seen in my entire career has been in Ruby on Rails projects. I’ve seen Rails projects that accumulated enough technical debt and waste in two years to make 10 year-old C/C++ programs look clean and elegant by comparison. And it wasn’t just one project. I’ve seen it over and over.</p></blockquote>
+<p>via <a href="http://avdi.org/devblog/2011/08/22/your-code-is-my-hell/">Your Code is My Hell</a>
+<div class="tweetmeme_button" style="float: right; margin-left: 10px;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Farnorhs.com%2F2011%2F08%2F23%2Finteresting-perspective-from-a-refactoring-rails-guy%2F"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Farnorhs.com%2F2011%2F08%2F23%2Finteresting-perspective-from-a-refactoring-rails-guy%2F&amp;source=arnorhs&amp;style=normal&amp;service=bit.ly&amp;service_api=R_ebacc772d5e3c0910d27e631f5e64487&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<img src="http://feeds.feedburner.com/~r/arnorhs/~4/0bz10kSSaCo" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://arnorhs.com/2011/08/23/interesting-perspective-from-a-refactoring-rails-guy/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://arnorhs.com/2011/08/23/interesting-perspective-from-a-refactoring-rails-guy/</feedburner:origLink></item>
+		<item>
+		<title>Apple’s design inspired by Dieter Rams</title>
+		<link>http://feedproxy.google.com/~r/arnorhs/~3/TVx2dkhnv4E/</link>
+		<comments>http://arnorhs.com/2011/07/13/apples-design-inspired-by-dieter-rams/#comments</comments>
+		<pubDate>Wed, 13 Jul 2011 11:25:22 +0000</pubDate>
+		<dc:creator>arnorhs</dc:creator>
+				<category><![CDATA[design]]></category>
+		<category><![CDATA[products]]></category>
+
+		<guid isPermaLink="false">http://arnorhs.com/?p=895</guid>
+		<description><![CDATA[Somebody tweeted this link out today: 1960s Braun Products Hold the Secrets to Apple&#8217;s Future. The title is link bait and inaccurate, but I found the article fascinating.]]></description>
+			<content:encoded><![CDATA[<p>Somebody tweeted this link out today:</p>
+<p><a href="http://gizmodo.com/343641/1960s-braun-products-hold-the-secrets-to-apples-future">1960s Braun Products Hold the Secrets to Apple&#8217;s Future</a>.</p>
+<p>The title is link bait and inaccurate, but I found the article fascinating.
+<div class="tweetmeme_button" style="float: right; margin-left: 10px;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Farnorhs.com%2F2011%2F07%2F13%2Fapples-design-inspired-by-dieter-rams%2F"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Farnorhs.com%2F2011%2F07%2F13%2Fapples-design-inspired-by-dieter-rams%2F&amp;source=arnorhs&amp;style=normal&amp;service=bit.ly&amp;service_api=R_ebacc772d5e3c0910d27e631f5e64487&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<img src="http://feeds.feedburner.com/~r/arnorhs/~4/TVx2dkhnv4E" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://arnorhs.com/2011/07/13/apples-design-inspired-by-dieter-rams/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://arnorhs.com/2011/07/13/apples-design-inspired-by-dieter-rams/</feedburner:origLink></item>
+	</channel>
+</rss><!-- Served from: arnorhs.com @ 2011-09-30 15:36:58 by W3 Total Cache -->

@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>The Griffin Technology Blog</title>
+	
+	<link>http://blog.griffintechnology.com</link>
+	<description>Your window to the world of Griffin Technology</description>
+	<lastBuildDate>Mon, 03 Oct 2011 14:00:00 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=</generator>
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/griffintechnology" /><feedburner:info uri="griffintechnology" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><creativeCommons:license>http://creativecommons.org/licenses/by-nc-nd/3.0/</creativeCommons:license><feedburner:emailServiceId>griffintechnology</feedburner:emailServiceId><feedburner:feedburnerHostname>http://feedburner.google.com</feedburner:feedburnerHostname><item>
+		<title>Have you ever asked, How do I make an app?</title>
+		<link>http://feedproxy.google.com/~r/griffintechnology/~3/KhYbzZP3bmE/have-you-ever-asked-how-do-i-make-an-app</link>
+		<comments>http://blog.griffintechnology.com/archives/have-you-ever-asked-how-do-i-make-an-app#comments</comments>
+		<pubDate>Mon, 03 Oct 2011 14:00:00 +0000</pubDate>
+		<dc:creator>Dave</dc:creator>
+				<category><![CDATA[Products]]></category>
+		<category><![CDATA[app development]]></category>
+		<category><![CDATA[cocoacontrols]]></category>
+		<category><![CDATA[Dropbox]]></category>
+		<category><![CDATA[github]]></category>
+		<category><![CDATA[iOS]]></category>
+		<category><![CDATA[iOS Recipes]]></category>
+		<category><![CDATA[italk]]></category>
+		<category><![CDATA[iTalk Recorder]]></category>
+		<category><![CDATA[iTunes File Sharing]]></category>
+		<category><![CDATA[iTunes U]]></category>
+		<category><![CDATA[Jamin]]></category>
+		<category><![CDATA[SDK]]></category>
+		<category><![CDATA[Stack Overflow]]></category>
+		<category><![CDATA[TapWorthy]]></category>
+
+		<guid isPermaLink="false">http://blog.griffintechnology.com/?p=9352</guid>
+		<description><![CDATA[iTalk Recorder, our popular iOS voice recording iPhone app has recently surpassed 2 million downloads in the app store. To celebrate, the app has been updated with an improved user interface and easier access to sharing. You can even access your files via iTunes File Sharing. Rather than just talk about the app, I thought [...]
+
+
+Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/italk-recorder-premium-now-with-dropbox' rel='bookmark' title='iTalk Recorder Premium now with Dropbox!'>iTalk Recorder Premium now with Dropbox!</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/the-new-italk-not-quite-bionic-but' rel='bookmark' title='The New iTalk, Not Quite Bionic But&#8230;'>The New iTalk, Not Quite Bionic But&#8230;</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/italk-recorder-still-rules' rel='bookmark' title='iTalk Recorder Still Rules!'>iTalk Recorder Still Rules!</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p><span style="font-size: medium;"><strong><a title="iTalk Recorder" href="https://store.griffintechnology.com/catalogsearch/result/?q=italk&amp;op=Search&amp;form_build_id=form-028a85c035f97385086c1d7d8a79ea1f&amp;form_token=6ca236784a16ba7f360ec8b09d27fb67&amp;form_id=search_theme_form">iTalk Recorder</a></strong></span>, our popular iOS voice recording iPhone app has recently surpassed 2 million downloads in the app store. To celebrate, the app has been updated with an improved user interface and easier access to sharing. You can even access your files via iTunes File Sharing.</p>
+<p>Rather than just talk about the app, I thought it would be more fun to share an interview with it&#8217;s creator, Jamin Guy. If you&#8217;ve ever asked &#8220;How do I make an app?&#8221; this post is for you!</p>
+<div>
+<div>
+<div><span style="font-size: small;"><strong><em>Who are you and what do you do?</em></strong></span></div>
+<p dir="ltr"><img class="alignnone" style="float: right; margin: 10px;" title="Jamin Guy" src="http://blog.griffintechnology.com/wp-content/uploads/2010/12/jamin.jpeg" alt="Jamin Guy" width="168" height="166" />My name is Jamin Guy and I’m a Senior Product Developer here at Griffin Technology. I work on various software projects from mobile native and web apps to web services. Some of the projects make it out into the wild but others are tools for internal use only.</p>
+<div><span style="font-size: small;"><strong><em>How did you learn app development?</em></strong></span></div>
+<p dir="ltr">The very first exposure I had to iOS programming was actually on the unofficial jailbreak SDK which was out for a few months before Apple announced the official iOS SDK 1.0. I started with a solid foundation in software engineering and object oriented programming so it wasn’t too far of a leap to go to iOS development. The next Spring when Apple released the official SDK I continued learning Obj-C and the Cocoa frameworks, by playing around with iOS sample code and reading as much as I could from Apple’s documentation, books, and blog posts. I basically just tried to soak in as much knowledge as I could and learned by trial and error.</p>
+<div><strong><em>What gave you the idea to create iTalk Recorder?</em></strong></div>
+<p dir="ltr"><img class="alignnone" style="float: right; margin: 10px; border: 1px solid black;" title="Photo from Flickr by: The Blake Slate" src="http://farm1.static.flickr.com/6/5437543_8fd33cd08c.jpg" alt="Photo from Flickr by: The Blake Slate" width="175" height="198" />I was playing guitar at my house a lot back then and really needed a way to quickly and easily record song ideas. After trying a few of the recording apps available then, I got discouraged with either their lack of features or the nasty bugs they had. Griffin had a hardware product called <a title="iTalk" href="http://www.flickr.com/photos/johnblake/5437543/">iTalk</a> from several years before that allowed you to record audio to iPods so it was a natural extension for us to create a recording app. I realized that there was an opportunity to create a simple recorder that had just the features I wanted without being bloated and hard to use. The main feature that iTalk had that others didn’t was the ability to pause and append to recordings. It also had a very clean and intuitive UI/UX. It seems trivial now but remember this was back in 2008 when there were far fewer apps than today.</p>
+<div><strong><em>What was the biggest challenge developing iTalk Recorder?</em></strong></div>
+<p dir="ltr">When I started developing iTalk it was the first big iOS project that I had ever done and my lack of knowledge of both Obj-C and the platform were big hurdles. The official iOS SDK had also only been out for a couple of months so there wasn’t a lot of information outside of Apple’s documentation, which was sparse at the time. When we went to develop version 2.0 of the app a year later I ended up refactoring a ton of code from the first version. Looking back on it there was a pile of nasty code in version 1.0. It’s a wonder it worked as well as it did back then!</p>
+<div><em></em><strong><em>What&#8217;s the difference between the free version and iTalk Premium?</em></strong></div>
+<p dir="ltr">When we first started out the main difference between the 2 versions was that one had ads and one didn’t. Apple didn’t allow background processing back then so both versions stopped recording when pushed to the background. Over time as Apple opened up more functionality in the SDK we added background recording and playback to the Premium version. We also added <a title="Dropbox support for iTalk Recorder" href="http://blog.griffintechnology.com/archives/italk-recorder-premium-now-with-dropbox#comments">Dropbox support</a> to the Premium version as well, which has been a really popular feature. In the latest versions we added iTunes File Sharing support which allows users to transfer recordings directly to their computers through iTunes. Some of the recordings can get very large so this feature makes getting recordings off of your device a breeze.</p>
+<div><strong><em>How many downloads have we had of each one?</em></strong></div>
+<p dir="ltr">We’ve ha<em><a title="Download iTalk Recorder" href="https://store.griffintechnology.com/catalogsearch/result/?q=italk&amp;op=Search&amp;form_build_id=form-028a85c035f97385086c1d7d8a79ea1f&amp;form_token=6ca236784a16ba7f360ec8b09d27fb67&amp;form_id=search_theme_form"><img class="alignright size-full wp-image-9386" style="float: right; margin: 10px;" title="iTalk Recorder" src="../wp-content/uploads/2011/09/Screen-shot-2011-09-22-at-2.51.05-PM.png" alt="iTalk Recorder" width="275" height="172" /></a></em>d over 2 million downloads of the free version and we’ve now passed the 100,000 mark on Premium. I think the most downloads we had in one day was 30,000 or 40,000 back when it first came out. When Apple released iOS 2.0 they included a built in recorder app so we thought that iTalk’s days were numbered but surprisingly it has continued to do very well over time.</p>
+<div>
+<p><strong><em>Where would you point developers to learn to code for iOS?</em></strong></p>
+</div>
+<p dir="ltr">As I mentioned before the Apple docs and sample code are a great place to start. Apple has done an excellent job of updating both of these over time and they remain my number one spot for finding out information. There are some great books as well such as <a title="TapWorthy iPhone apps book" href="http://www.amazon.com/Tapworthy-Designing-Great-iPhone-Apps/dp/1449381650"><em>TapWorthy</em></a> and <a title="iOS Recipes " href="http://www.amazon.com/iOS-Recipes-Awesome-Pragmatic-Programmers/dp/1934356743"><em>iOS Recipes</em></a>. You can also get some great knowledge from <a title="iTunes U Standford iOS development for apps" href="http://itunes.apple.com/us/itunes-u/developing-apps-for-ios-sd/id395631522">iTunes U where Stanford has free video lectures</a> from their iOS development class. <a title="Stack Overflow" href="http://stackoverflow.com/">StackOverflow</a> is a great place to find answers to many questions. If you’re running up against a problem, chances are that someone else has run into the same thing before and there’s no use reinventing the wheel! Now you can also find a ton of open source stuff on <a href="http://github.com/" target="_blank">github.com</a> and other places like <a href="http://cocoacontrols.com/" target="_blank">http://cocoacontrols.com</a>. The bottom line is that there are a plethora of places to find good information and it’s up to you to take the plunge!</p>
+<p dir="ltr"><strong><em>Thanks Jamin!</em></strong></p>
+<p dir="ltr"><strong><span style="font-size: large;">Get iTalk Recorder</span></strong></p>
+<p dir="ltr">Now head to the App Store to <a title="iTalk voice recorder" href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=293673304&amp;mt=8">download iTalk Lite for free</a>. If you like it and you&#8217;d like the bonus features pick up <a title="iTalk Premium" href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=296271871&amp;mt=8">iTalk Premium</a> for just $1.99.<strong><em><br />
+</em></strong></p>
+<p dir="ltr"><span style="font-size: x-small;">Photo of iTrip from Flickr by: <a href="http://www.flickr.com/photos/johnblake/">The Blake Slate</a></span></p>
+</div>
+</div>
+<div class="tweetmeme_button" style="float: left;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fhave-you-ever-asked-how-do-i-make-an-app"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fhave-you-ever-asked-how-do-i-make-an-app&amp;source=griffintech&amp;style=compact&amp;service=bit.ly&amp;service_api=R_289e7ce084dc6c672b4d08eae8d752ef&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<div class="facebook_like_button"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fhave-you-ever-asked-how-do-i-make-an-app&amp;layout=standard&amp;show-faces=true&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="padding: 0px 0px; border:none; overflow:hidden; width:450px; height:70px;"></iframe></div>
+
+<p>Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/italk-recorder-premium-now-with-dropbox' rel='bookmark' title='iTalk Recorder Premium now with Dropbox!'>iTalk Recorder Premium now with Dropbox!</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/the-new-italk-not-quite-bionic-but' rel='bookmark' title='The New iTalk, Not Quite Bionic But&#8230;'>The New iTalk, Not Quite Bionic But&#8230;</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/italk-recorder-still-rules' rel='bookmark' title='iTalk Recorder Still Rules!'>iTalk Recorder Still Rules!</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/griffintechnology?a=KhYbzZP3bmE:8MKtBxVwJHE:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=KhYbzZP3bmE:8MKtBxVwJHE:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=KhYbzZP3bmE:8MKtBxVwJHE:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=KhYbzZP3bmE:8MKtBxVwJHE:gIN9vFwOqvQ" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=KhYbzZP3bmE:8MKtBxVwJHE:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=KhYbzZP3bmE:8MKtBxVwJHE:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=KhYbzZP3bmE:8MKtBxVwJHE:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/griffintechnology/~4/KhYbzZP3bmE" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.griffintechnology.com/archives/have-you-ever-asked-how-do-i-make-an-app/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.griffintechnology.com/archives/have-you-ever-asked-how-do-i-make-an-app</feedburner:origLink></item>
+		<item>
+		<title>October Reviewers</title>
+		<link>http://feedproxy.google.com/~r/griffintechnology/~3/vK9izESs5rY/october-reviewers</link>
+		<comments>http://blog.griffintechnology.com/archives/october-reviewers#comments</comments>
+		<pubDate>Fri, 30 Sep 2011 13:30:00 +0000</pubDate>
+		<dc:creator>Dave</dc:creator>
+				<category><![CDATA[Review]]></category>
+		<category><![CDATA[PowerBlock]]></category>
+		<category><![CDATA[reviewers]]></category>
+		<category><![CDATA[reviews]]></category>
+		<category><![CDATA[wall charger]]></category>
+
+		<guid isPermaLink="false">http://blog.griffintechnology.com/?p=9423</guid>
+		<description><![CDATA[Each month 10 new reviewers are randomly selected to receive our products for free to review on their blogs, podcasts and YouTube channels. We&#8217;re always excited to see what you think of our products. This month is no different! I&#8217;m pleased to write to announce our October reviewers. If you wish to apply to the [...]
+
+
+Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/april-reviewers-2' rel='bookmark' title='April Reviewers'>April Reviewers</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/december-reviewers' rel='bookmark' title='December Reviewers'>December Reviewers</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/august-reviewers-2' rel='bookmark' title='August Reviewers'>August Reviewers</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p>Each month 10 new reviewers are randomly selected to receive our products for free to review on their blogs, podcasts and YouTube channels. We&#8217;re always excited to see what you think of our products. This month is no different!</p>
+<p>I&#8217;m pleased to write to announce our October reviewers. If you wish to apply to the program please <a title="Griffin Technology Reviewers" href="http://www.griffintechnology.com/contact/reviewers">do so here</a>.</p>
+<p><span style="font-size: large;"><strong>October Reviewers</strong></span></p>
+<p><a title="TechGReviewer" href="http://www.YouTube.com/user/TechGReviewer">TechGReviewer</a><br />
+<a title="kojobolazy1" href="http://www.youtube.com/user/kojobolazy1">kojobolazy1</a><br />
+<a title="Cutting Edge Reviews" href="http://cuttingedgereviews.blogspot.com/">Cutting Edge Reviews </a><br />
+<a title="UnboxTechnology" href="http://www.youtube.com/UnboxTechnology">UnboxTechnology</a><br />
+<a title="iUnboxU" href="http://www.youtube.com/user/iUnboxU?feature=mhee">iUnboxU</a><br />
+<a title="randomreviewer132" href="http://www.YouTube.com/user/randomreviewer132">randomreviewer132</a><br />
+<a title="MadMooseMedia" href="http://www.youtube.com/user/MadMooseMedia?feature=mhee">Mad Moose Media</a><br />
+<a title="That Tech Show" href="http://www.YouTube.com/ThatTechShow">That Tech Show</a><br />
+<a title="itsmylife4" href="http://www.itsmylife4.com">itsmylife4</a><br />
+<a title="camonkey momma" href="http://www.camonkeymomma.com">camonkeymomma</a></p>
+<p>One of our favorite reviews from September is <a title="myiappreview" href="http://www.youtube.com/watch?v=sCuR5YBMhKI">MyiAppReview</a>&#8216;s extensive review of <a title="PowerBlock wall charger for iPad, iPhone and iPod" href="http://store.griffintechnology.com/powerblock-2011">PowerBlock</a> wall charger for iPad, iPhone and iPod.</p>
+<p><span class="youtube">
+<object width="480" height="403">
+<param name="movie" value="http://www.youtube.com/v/sCuR5YBMhKI?color1=2b405b&amp;color2=6b8ab6&amp;border=1&amp;fs=1&amp;hl=en&amp;modestbranding=1&amp;loop=0&amp;showinfo=0&amp;showsearch=0&amp;rel=0" />
+<param name="allowFullScreen" value="true" />
+<embed wmode="opaque" src="http://www.youtube.com/v/sCuR5YBMhKI?color1=2b405b&amp;color2=6b8ab6&amp;border=1&amp;fs=1&amp;hl=en&amp;modestbranding=1&amp;loop=0&amp;showinfo=0&amp;showsearch=0&amp;rel=0" type="application/x-shockwave-flash" allowfullscreen="true" width="480" height="403"></embed>
+<param name="wmode" value="opaque" />
+</object>
+</span><p><a href="http://www.youtube.com/watch?v=sCuR5YBMhKI"><img src="http://img.youtube.com/vi/sCuR5YBMhKI/default.jpg" width="130" height="97" border=0></a></p><p><a href="http://www.youtube.com/watch?v=sCuR5YBMhKI">www.youtube.com/watch?v=sCuR5YBMhKI</a></p>
+<div class="tweetmeme_button" style="float: left;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Foctober-reviewers"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Foctober-reviewers&amp;source=griffintech&amp;style=compact&amp;service=bit.ly&amp;service_api=R_289e7ce084dc6c672b4d08eae8d752ef&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<div class="facebook_like_button"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Foctober-reviewers&amp;layout=standard&amp;show-faces=true&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="padding: 0px 0px; border:none; overflow:hidden; width:450px; height:70px;"></iframe></div>
+
+<p>Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/april-reviewers-2' rel='bookmark' title='April Reviewers'>April Reviewers</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/december-reviewers' rel='bookmark' title='December Reviewers'>December Reviewers</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/august-reviewers-2' rel='bookmark' title='August Reviewers'>August Reviewers</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/griffintechnology?a=vK9izESs5rY:0f5EJ2SqPMo:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=vK9izESs5rY:0f5EJ2SqPMo:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=vK9izESs5rY:0f5EJ2SqPMo:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=vK9izESs5rY:0f5EJ2SqPMo:gIN9vFwOqvQ" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=vK9izESs5rY:0f5EJ2SqPMo:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=vK9izESs5rY:0f5EJ2SqPMo:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=vK9izESs5rY:0f5EJ2SqPMo:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/griffintechnology/~4/vK9izESs5rY" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.griffintechnology.com/archives/october-reviewers/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.griffintechnology.com/archives/october-reviewers</feedburner:origLink></item>
+		<item>
+		<title>Charge 10 iPads at once!</title>
+		<link>http://feedproxy.google.com/~r/griffintechnology/~3/7X6eUtLuUls/charge-10-ipads-at-once</link>
+		<comments>http://blog.griffintechnology.com/archives/charge-10-ipads-at-once#comments</comments>
+		<pubDate>Thu, 29 Sep 2011 18:45:00 +0000</pubDate>
+		<dc:creator>Dave</dc:creator>
+				<category><![CDATA[New]]></category>
+		<category><![CDATA[Adventure Science Center]]></category>
+		<category><![CDATA[Business Solutions]]></category>
+		<category><![CDATA[MutliDock]]></category>
+
+		<guid isPermaLink="false">http://blog.griffintechnology.com/?p=9411</guid>
+		<description><![CDATA[Our Business Solutions department have been keeping busy developing solutions for educators, healthcare professionals, sales executives and others. It&#8217;s anyone&#8217;s guess what amazing product they are going to create next. The MultiDock, a station that charges, syncs, and stores up to 10 iPads, iPhones or iPods, is a perfect example of this. Our friends at The [...]
+
+
+Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/ipad-underwhelmed' rel='bookmark' title='Enter to win iPads and more!'>Enter to win iPads and more!</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/how-we-use-our-ipads' rel='bookmark' title='How we use our iPads'>How we use our iPads</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/stephen-colbert-and-david-letterman-play-with-their-ipads' rel='bookmark' title='Stephen Colbert and David Letterman play with their iPads'>Stephen Colbert and David Letterman play with their iPads</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p><a title="MultiDock" href="http://www.griffintechnology.com/business/multidock"><img class="alignright size-full wp-image-9512" title="MultiDock " src="http://blog.griffintechnology.com/wp-content/uploads/2011/09/MultiDock_ChargeSync_PR_header.jpeg" alt="MultiDock " width="625" height="291" /></a></p>
+<p>Our <a title="Griffin Technology Business Solutions" href="http://www.griffintechnology.com/business">Business Solutions</a> department have been keeping busy developing solutions for educators, healthcare professionals, sales executives and others. It&#8217;s anyone&#8217;s guess what amazing product they are going to create next.</p>
+<p>The <strong><a title="MultiDock" href="http://www.griffintechnology.com/business/multidock">MultiDock</a></strong>, a station that charges, syncs, and stores up to 10 iPads, iPhones or iPods, is a perfect example of this.</p>
+<p>Our friends at <a title="The Adventure Science Center in Nashville" href="http://www.adventuresci.com/">The Adventure Science Center</a>, a children’s museum located in Nashville, has deployed the MultiDock charging station for the last 4 months. They have found it to be a valuable tool to save their staff time and energy.</p>
+<p>MultiDock can accommodate 10, 20, or 30 iPads at prices ranging from $699.99 to $1799.99. Up to 3 MultiDocks can be linked and synced at once using the provided USB hub that connects to the Mac host computer via a single USB connection.</p>
+<p>You can learn more about our new <a title="Griffin Technology Business Solutions" href="http://www.griffintechnology.com/business">Business Solutions</a> on our site. <a title="MultiDock " href="http://www.griffintechnology.com/business/multidock">MultiDock is now available</a>.</p>
+<p>&nbsp;
+<div class="tweetmeme_button" style="float: left;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fcharge-10-ipads-at-once"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fcharge-10-ipads-at-once&amp;source=griffintech&amp;style=compact&amp;service=bit.ly&amp;service_api=R_289e7ce084dc6c672b4d08eae8d752ef&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<div class="facebook_like_button"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fcharge-10-ipads-at-once&amp;layout=standard&amp;show-faces=true&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="padding: 0px 0px; border:none; overflow:hidden; width:450px; height:70px;"></iframe></div>
+
+<p>Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/ipad-underwhelmed' rel='bookmark' title='Enter to win iPads and more!'>Enter to win iPads and more!</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/how-we-use-our-ipads' rel='bookmark' title='How we use our iPads'>How we use our iPads</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/stephen-colbert-and-david-letterman-play-with-their-ipads' rel='bookmark' title='Stephen Colbert and David Letterman play with their iPads'>Stephen Colbert and David Letterman play with their iPads</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/griffintechnology?a=7X6eUtLuUls:0hDTHLa25XY:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=7X6eUtLuUls:0hDTHLa25XY:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=7X6eUtLuUls:0hDTHLa25XY:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=7X6eUtLuUls:0hDTHLa25XY:gIN9vFwOqvQ" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=7X6eUtLuUls:0hDTHLa25XY:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=7X6eUtLuUls:0hDTHLa25XY:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=7X6eUtLuUls:0hDTHLa25XY:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/griffintechnology/~4/7X6eUtLuUls" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.griffintechnology.com/archives/charge-10-ipads-at-once/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.griffintechnology.com/archives/charge-10-ipads-at-once</feedburner:origLink></item>
+		<item>
+		<title>We survived the Warrior Dash</title>
+		<link>http://feedproxy.google.com/~r/griffintechnology/~3/HZd0vjLXY0k/we-survived-the-warrior-dash</link>
+		<comments>http://blog.griffintechnology.com/archives/we-survived-the-warrior-dash#comments</comments>
+		<pubDate>Wed, 28 Sep 2011 14:00:00 +0000</pubDate>
+		<dc:creator>Dave</dc:creator>
+				<category><![CDATA[Special Events]]></category>
+		<category><![CDATA[Warrior Dash]]></category>
+		<category><![CDATA[WarriorDash]]></category>
+
+		<guid isPermaLink="false">http://blog.griffintechnology.com/?p=9349</guid>
+		<description><![CDATA[A couple of weeks ago we sponsored the Tennessee Warrior Dash event. Cam and Daniel participated representing the mighty Griffin. You probably heard about this on our Griffin Loves Nashville blog, if you&#8217;re subscribed there too. Head over to our Flickr feed if you&#8217;re interested in seeing photos from the event. Rustic White Photography also [...]
+
+
+Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/why-i-love-where-i-work' rel='bookmark' title='Why I Love Where I Work'>Why I Love Where I Work</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/sharing-your-clarifi-photos' rel='bookmark' title='Sharing Your Clarifi Photos'>Sharing Your Clarifi Photos</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p>A couple of weeks ago we sponsored the Tennessee <a title="Warrior Dash" href="http://warriordash.com/register2011_tennessee.php">Warrior Dash</a> event. Cam and Daniel participated representing the mighty Griffin. You probably heard about this on our <a title="Griffin Loves Nashville" href="http://griffinlovesnashville.com/post/8694469596/our-very-own-daniel-and-cam-are-participating-in">Griffin Loves Nashville blog</a>, if you&#8217;re subscribed there too.</p>
+<p>Head over to our <a title="Warrior Dash" href="http://www.flickr.com/photos/griffintech/sets/72157627715848338/">Flickr feed</a> if you&#8217;re interested in seeing photos from the event. <a title="Rustic White Photography" href="http://www.rusticwhitephotography.com/blog/?p=4659">Rustic White Photography</a> also snapped some incredible shots from within the race itself.</p>
+<p>The guys made us proud as they survived the 3.15 mile race through mud, fire and an array of obstacles.</p>
+<p>Have you done a Warrior Dash? They seem to be popping up everywhere!</p>
+<p><img class="alignnone" style="border: 1px solid black;" title="Daniel survives Warrior Dash!" src="http://farm7.static.flickr.com/6179/6167663630_aee25aac5d_z.jpg" alt="Daniel survives Warrior Dash!" width="300" height="450" /><img class="alignnone" style="border: 1px solid black;" title="Cam survives Warrior Dash!" src="http://farm7.static.flickr.com/6171/6167137927_6326d18a0d_z.jpg" alt="Cam survives Warrior Dash!" width="300" height="450" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;
+<div class="tweetmeme_button" style="float: left;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fwe-survived-the-warrior-dash"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fwe-survived-the-warrior-dash&amp;source=griffintech&amp;style=compact&amp;service=bit.ly&amp;service_api=R_289e7ce084dc6c672b4d08eae8d752ef&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<div class="facebook_like_button"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fwe-survived-the-warrior-dash&amp;layout=standard&amp;show-faces=true&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="padding: 0px 0px; border:none; overflow:hidden; width:450px; height:70px;"></iframe></div>
+
+<p>Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/why-i-love-where-i-work' rel='bookmark' title='Why I Love Where I Work'>Why I Love Where I Work</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/sharing-your-clarifi-photos' rel='bookmark' title='Sharing Your Clarifi Photos'>Sharing Your Clarifi Photos</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/griffintechnology?a=HZd0vjLXY0k:SsiCjEyVWHA:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=HZd0vjLXY0k:SsiCjEyVWHA:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=HZd0vjLXY0k:SsiCjEyVWHA:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=HZd0vjLXY0k:SsiCjEyVWHA:gIN9vFwOqvQ" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=HZd0vjLXY0k:SsiCjEyVWHA:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=HZd0vjLXY0k:SsiCjEyVWHA:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=HZd0vjLXY0k:SsiCjEyVWHA:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/griffintechnology/~4/HZd0vjLXY0k" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.griffintechnology.com/archives/we-survived-the-warrior-dash/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.griffintechnology.com/archives/we-survived-the-warrior-dash</feedburner:origLink></item>
+		<item>
+		<title>How to stop iPad thieves</title>
+		<link>http://feedproxy.google.com/~r/griffintechnology/~3/0UbyEQ3XDkc/how-to-stop-ipad-thieves</link>
+		<comments>http://blog.griffintechnology.com/archives/how-to-stop-ipad-thieves#comments</comments>
+		<pubDate>Tue, 27 Sep 2011 16:15:00 +0000</pubDate>
+		<dc:creator>Dave</dc:creator>
+				<category><![CDATA[New]]></category>
+		<category><![CDATA[Find My iPad]]></category>
+		<category><![CDATA[iPad 2 lock]]></category>
+		<category><![CDATA[iPad lock]]></category>
+		<category><![CDATA[TechSafe]]></category>
+		<category><![CDATA[TechSafe Case for iPad]]></category>
+
+		<guid isPermaLink="false">http://blog.griffintechnology.com/?p=9412</guid>
+		<description><![CDATA[I&#8217;ve heard plenty of amazing stories of people retrieving their stolen iPads using the Find My iPad app. Here&#8217;s a way to avoid having it stolen in the first place. Our TechSafe Case for iPad will lock your cherished tablet down and protect it from the bad guys. It&#8217;s not just a protective case, TechSafe [...]
+
+
+Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/techsafe-laptop-locks' rel='bookmark' title='TechSafe Laptop Locking System'>TechSafe Laptop Locking System</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/giveaway-techsafe' rel='bookmark' title='@griffintech knows security! #techsafe'>@griffintech knows security! #techsafe</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/djcable' rel='bookmark' title='iPad DJs need this!'>iPad DJs need this!</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p><a title="TechSafe Case for iPad" href="http://store.griffintechnology.com/techsafe-case"><img class="alignright size-full wp-image-9426" style="float: right; margin-left: 10px; margin-right: 10px;" title="TechSafe Case for iPad 2" src="http://blog.griffintechnology.com/wp-content/uploads/2011/09/Screen-shot-2011-09-26-at-1.39.48-PM.png" alt="Case with security anchor point for iPad 2" width="600" height="187" /></a></p>
+<p>I&#8217;ve heard plenty of amazing <a title="The Find my iPad app leads Police to Thieves" href="http://www.ipadngravy.com/the-find-my-ipad-app-leads-police-to-thieves/7527/">stories</a> of people retrieving their stolen iPads using the <a title="Find My iPad" href="http://www.apple.com/ipad/built-in-apps/find-my-ipad.html">Find My iPad</a> app. Here&#8217;s a way to avoid having it stolen in the first place. Our<strong> <a title="TechSafe Case for iPad" href="http://store.griffintechnology.com/techsafe-case">TechSafe Case for iPad</a></strong> will lock your cherished tablet down and protect it from the bad guys.</p>
+<p>It&#8217;s not just a protective case, TechSafe provides a vital anchor point that enables the security of a desktop cable locking system.</p>
+<p>Made from protective polycarbonate, the TechSafe Case locks around your iPad and provides a secure anchor point for the included 4-digit combination-lock security cable. Key in the code, press the lock’s plunger, and it instantly releases your iPad and the case for carrying; it’s the perfect balance of security and convenience. We also have online storage for your unique 4-digit combination-lock code, store it on <a title="Griffin Technology" href="http://www.griffintechnology.com">our site</a> and access it whenever you like.</p>
+<p>The case provides not just security and protection, but usability, as well. It features two foldout workstands, one inclined for typing and tapping, and one for upright landscape viewing.</p>
+<p><strong><a title="TechSafe Case for iPad" href="http://store.griffintechnology.com/techsafe-case">Grab our TechSafe Case and Cable Lock</a></strong> now, before someone else grabs your iPad.
+<div class="tweetmeme_button" style="float: left;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fhow-to-stop-ipad-thieves"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fhow-to-stop-ipad-thieves&amp;source=griffintech&amp;style=compact&amp;service=bit.ly&amp;service_api=R_289e7ce084dc6c672b4d08eae8d752ef&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<div class="facebook_like_button"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fhow-to-stop-ipad-thieves&amp;layout=standard&amp;show-faces=true&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="padding: 0px 0px; border:none; overflow:hidden; width:450px; height:70px;"></iframe></div>
+
+<p>Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/techsafe-laptop-locks' rel='bookmark' title='TechSafe Laptop Locking System'>TechSafe Laptop Locking System</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/giveaway-techsafe' rel='bookmark' title='@griffintech knows security! #techsafe'>@griffintech knows security! #techsafe</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/djcable' rel='bookmark' title='iPad DJs need this!'>iPad DJs need this!</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/griffintechnology?a=0UbyEQ3XDkc:i6zCwBnxP1s:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=0UbyEQ3XDkc:i6zCwBnxP1s:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=0UbyEQ3XDkc:i6zCwBnxP1s:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=0UbyEQ3XDkc:i6zCwBnxP1s:gIN9vFwOqvQ" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=0UbyEQ3XDkc:i6zCwBnxP1s:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=0UbyEQ3XDkc:i6zCwBnxP1s:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=0UbyEQ3XDkc:i6zCwBnxP1s:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/griffintechnology/~4/0UbyEQ3XDkc" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.griffintechnology.com/archives/how-to-stop-ipad-thieves/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.griffintechnology.com/archives/how-to-stop-ipad-thieves</feedburner:origLink></item>
+		<item>
+		<title>Fact or Crap</title>
+		<link>http://feedproxy.google.com/~r/griffintechnology/~3/3pL3npQBTvw/fact-or-crap</link>
+		<comments>http://blog.griffintechnology.com/archives/fact-or-crap#comments</comments>
+		<pubDate>Mon, 26 Sep 2011 15:00:00 +0000</pubDate>
+		<dc:creator>Dave</dc:creator>
+				<category><![CDATA[New]]></category>
+		<category><![CDATA[Fact or Crap]]></category>
+		<category><![CDATA[game]]></category>
+		<category><![CDATA[iPad app]]></category>
+		<category><![CDATA[iPhone app]]></category>
+
+		<guid isPermaLink="false">http://blog.griffintechnology.com/?p=9325</guid>
+		<description><![CDATA[There are trivia games. Then there&#8217;s Fact or Crap, the trivia game with attitude. In this fast-paced game for iPhone, iPad or iPod touch, your aim is to wow your opponents with how much you know. From day-to-day facts to the edges of the truly bizarre, you have just seconds to judge whether or not [...]
+
+
+Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/would-you-rather' rel='bookmark' title='Would You Rather?'>Would You Rather?</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/battle-of-the-sexes-on-sale' rel='bookmark' title='Battle of the Sexes on Sale!'>Battle of the Sexes on Sale!</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/battle-of-the-sexes-bosapp' rel='bookmark' title='Battle of the Sexes #bosapp'>Battle of the Sexes #bosapp</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p><a title="Fact or Crap game app" href="http://store.griffintechnology.com/fact-or-crap"><img class="alignnone" title="Fact or Crap game app" src="http://cdn-store.griffintechnology.com/media/catalog/product/f/a/fact_crap-1.jpg" alt="Fact or Crap game app" width="600" height="239" /></a></p>
+<p>There are trivia games. Then there&#8217;s <strong><a title="Fact or Crap" href="http://store.griffintechnology.com/ipad/fact-or-crap">Fact or Crap</a></strong>, the trivia game with attitude. In this fast-paced game for iPhone, iPad or iPod touch, your aim is to wow your opponents with how much you know. From day-to-day facts to the edges of the truly bizarre, you have just seconds to judge whether or not the question before you is Fact? Or Crap?</p>
+<p>We&#8217;re introducing Fact or Crap at just $1.99*! Fact? Or Crap?</p>
+<p>Answer quickly and correctly, win all the tokens and triumph. Answer too many questions incorrectly, pay out your tokens and hang your head in shame. Play against a partner or take on Fact or Crap&#8217;s built-in opponents. Fact or Crap tracks your wins and challenges you with unlockable Achievements along the way.</p>
+<p><a title="Fact or Crap game app" href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=465777598"><strong>Download Fact or Crap</strong></a> today and begin your quest for world trivial domination.</p>
+<p>*The answer is true, but just for a limited time.
+<div class="tweetmeme_button" style="float: left;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Ffact-or-crap"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Ffact-or-crap&amp;source=griffintech&amp;style=compact&amp;service=bit.ly&amp;service_api=R_289e7ce084dc6c672b4d08eae8d752ef&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<div class="facebook_like_button"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Ffact-or-crap&amp;layout=standard&amp;show-faces=true&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="padding: 0px 0px; border:none; overflow:hidden; width:450px; height:70px;"></iframe></div>
+
+<p>Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/would-you-rather' rel='bookmark' title='Would You Rather?'>Would You Rather?</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/battle-of-the-sexes-on-sale' rel='bookmark' title='Battle of the Sexes on Sale!'>Battle of the Sexes on Sale!</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/battle-of-the-sexes-bosapp' rel='bookmark' title='Battle of the Sexes #bosapp'>Battle of the Sexes #bosapp</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/griffintechnology?a=3pL3npQBTvw:n0wip6OUc8k:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=3pL3npQBTvw:n0wip6OUc8k:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=3pL3npQBTvw:n0wip6OUc8k:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=3pL3npQBTvw:n0wip6OUc8k:gIN9vFwOqvQ" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=3pL3npQBTvw:n0wip6OUc8k:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=3pL3npQBTvw:n0wip6OUc8k:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=3pL3npQBTvw:n0wip6OUc8k:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/griffintechnology/~4/3pL3npQBTvw" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.griffintechnology.com/archives/fact-or-crap/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.griffintechnology.com/archives/fact-or-crap</feedburner:origLink></item>
+		<item>
+		<title>HELO TC wins!</title>
+		<link>http://feedproxy.google.com/~r/griffintechnology/~3/MCSNKjYvVjQ/helo-tc-wins</link>
+		<comments>http://blog.griffintechnology.com/archives/helo-tc-wins#comments</comments>
+		<pubDate>Fri, 23 Sep 2011 13:00:00 +0000</pubDate>
+		<dc:creator>Dave</dc:creator>
+				<category><![CDATA[Awards]]></category>
+		<category><![CDATA[AIGA]]></category>
+		<category><![CDATA[AIGA Nashville]]></category>
+		<category><![CDATA[CASE awards]]></category>
+		<category><![CDATA[Helo TC]]></category>
+
+		<guid isPermaLink="false">http://blog.griffintechnology.com/?p=9351</guid>
+		<description><![CDATA[We were thrilled last Saturday to receive the CASE awards merit award for brand identity design for our HELO TC campaign. The award is for the combination of our HELO TC packaging design, landing page and action-packed videos. You saw them right? Thanks to the judges and CASE awards organizers at AIGA Nashville. &#160; &#160; [...]
+
+
+Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/helo-tc-video-round-up' rel='bookmark' title='HELO TC video round up'>HELO TC video round up</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/helo-tc-the-exciting-conclusion-you-must-not-miss' rel='bookmark' title='HELO TC the exciting conclusion you must not miss'>HELO TC the exciting conclusion you must not miss</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/do-you-like-what-were-doing' rel='bookmark' title='Do You Like What We&#8217;re Doing?'>Do You Like What We&#8217;re Doing?</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p><a href="http://farm7.static.flickr.com/6178/6172592731_0ce95c983f_o.jpg"><img class="alignnone" style="float: right; margin: 0px 10px;" title="CASE Awards AIGA Nashville" src="http://farm7.static.flickr.com/6178/6172592731_0ce95c983f_o.jpg" alt="CASE Awards AIGA Nashville" width="300" height="300" /></a>We were thrilled last Saturday to receive the <a title="CASE awards" href="http://www.caseawards.com/">CASE awards</a> merit award for brand identity design for our HELO TC campaign.</p>
+<p>The award is for the combination of our HELO TC packaging design, <a title="Helo TC RC Helicopter" href="http://www.griffintechnology.com/helotc">landing page</a> and <a title="HELO TC videos" href="http://www.youtube.com/playlist?list=PL6C578F0BC3646205&amp;feature=viewall">action-packed videos</a>. You saw them right?</p>
+<p>Thanks to the judges and CASE awards organizers at <a title="AIGA Nashville" href="http://nashville.aiga.org/">AIGA Nashville</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;
+<div class="tweetmeme_button" style="float: left;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fhelo-tc-wins"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fhelo-tc-wins&amp;source=griffintech&amp;style=compact&amp;service=bit.ly&amp;service_api=R_289e7ce084dc6c672b4d08eae8d752ef&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<div class="facebook_like_button"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fhelo-tc-wins&amp;layout=standard&amp;show-faces=true&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="padding: 0px 0px; border:none; overflow:hidden; width:450px; height:70px;"></iframe></div>
+
+<p>Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/helo-tc-video-round-up' rel='bookmark' title='HELO TC video round up'>HELO TC video round up</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/helo-tc-the-exciting-conclusion-you-must-not-miss' rel='bookmark' title='HELO TC the exciting conclusion you must not miss'>HELO TC the exciting conclusion you must not miss</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/do-you-like-what-were-doing' rel='bookmark' title='Do You Like What We&#8217;re Doing?'>Do You Like What We&#8217;re Doing?</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/griffintechnology?a=MCSNKjYvVjQ:tw9Xb_nklEQ:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=MCSNKjYvVjQ:tw9Xb_nklEQ:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=MCSNKjYvVjQ:tw9Xb_nklEQ:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=MCSNKjYvVjQ:tw9Xb_nklEQ:gIN9vFwOqvQ" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=MCSNKjYvVjQ:tw9Xb_nklEQ:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=MCSNKjYvVjQ:tw9Xb_nklEQ:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=MCSNKjYvVjQ:tw9Xb_nklEQ:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/griffintechnology/~4/MCSNKjYvVjQ" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.griffintechnology.com/archives/helo-tc-wins/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.griffintechnology.com/archives/helo-tc-wins</feedburner:origLink></item>
+		<item>
+		<title>Color Fall for a chance to win an iPad 2, Crayola ColorStudio HD and more!</title>
+		<link>http://feedproxy.google.com/~r/griffintechnology/~3/auivQJGeIE8/color-fall-for-a-chance-to-win-an-ipad-2-crayola-colorstudio-hd-and-more</link>
+		<comments>http://blog.griffintechnology.com/archives/color-fall-for-a-chance-to-win-an-ipad-2-crayola-colorstudio-hd-and-more#comments</comments>
+		<pubDate>Thu, 22 Sep 2011 14:00:00 +0000</pubDate>
+		<dc:creator>Dave</dc:creator>
+				<category><![CDATA[Contests / Giveaways / Promotions]]></category>
+		<category><![CDATA[Color Fall]]></category>
+		<category><![CDATA[ColorStudio HD]]></category>
+		<category><![CDATA[Crayola]]></category>
+		<category><![CDATA[GeekDad]]></category>
+		<category><![CDATA[GeekJack]]></category>
+		<category><![CDATA[iPad]]></category>
+		<category><![CDATA[sweepstakes]]></category>
+		<category><![CDATA[Wired]]></category>
+
+		<guid isPermaLink="false">http://blog.griffintechnology.com/?p=9355</guid>
+		<description><![CDATA[Fall &#8212; the most colorful season of the year! What Crayola colors say &#8220;autumn&#8221; to you? Cerulean skies? Yellow-gold leaves? What colors evoke memories of marshmallows toasting over an open fire? Or the promise of frost in the air? Your kids can draw us a picture of their favorite things about fall for a chance to win an iPad [...]
+
+
+Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/how-to-let-your-kids-color-on-your-ipad' rel='bookmark' title='How to let your kids color on your iPad'>How to let your kids color on your iPad</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/we-have-partnered-with-crayola' rel='bookmark' title='We have partnered with Crayola!'>We have partnered with Crayola!</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/12-in-the-app-store' rel='bookmark' title='#12 in the App Store!'>#12 in the App Store!</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p><a title="Color Fall" href="http://www.griffintechnology.com/crayola-colorstudiohd"><img class="alignright size-full wp-image-9361" title="Color the sights, sounds and smells of fall for your chance to win an iPad 2 and more from Griffin and Crayola" src="http://blog.griffintechnology.com/wp-content/uploads/2011/09/email_colorfall.jpg" alt="Color the sights, sounds and smells of fall for your chance to win an iPad 2 and more from Griffin and Crayola" width="599" height="253" /></a></p>
+<p>Fall &#8212; the most colorful season of the year! What Crayola colors say &#8220;autumn&#8221; to you? Cerulean skies? Yellow-gold leaves? What colors evoke memories of marshmallows toasting over an open fire? Or the promise of frost in the air?</p>
+<p>Your kids can draw us a picture of their favorite things about fall for a chance to win an iPad 2, <a title="Crayola ColorStudio HD" href="http://www.griffintechnology.com/crayola-colorstudiohd">Crayola ColorStudio HD</a>, Griffin iPad 2 accessories and Crayola prizes!</p>
+<p>Just <a title="Color Fall" href=" http://www.griffintechnology.com/crayola/colorstudiohd#colorfall">download the coloring page</a>, color fall and send it to us. We&#8217;ll enter their drawing for a chance to win one of three great prize packages. And each week, the prize pack gets bigger!</p>
+<ul>
+<li>Oct. 6: Third Prize &#8211; Crayola ColorStudio HD with iMarker</li>
+<li>Oct. 13: Second Prize &#8211; Crayola ColorStudio HD with iMarker AND a $50 Crayola Prize Pack</li>
+<li>Oct. 20: Grand Prize &#8211; 16GB Wi-Fi iPad 2 AND Crayola ColorStudio HD with iMarker AND iPad 2 essential accessories from Griffin AND a $150 Crayola Prize Pack</li>
+</ul>
+<p>But hurry. Because just like these crisp autumn days, our <a title="Color Fall Sweepstakes" href="http://www.griffintechnology.com/crayola/colorstudiohd#colorfall"><strong>Color Fall Sweepstakes</strong></a> won&#8217;t last forever.</p>
+<p>Don&#8217;t miss <a title="GeekJack's review of ColorStudio HD" href="http://www.wired.com/geekdad/2011/09/geekjack-reviews-crayola-for-the-ipad-%E2%80%94-old-school-crayons-with-new-school-technology/">this video</a> review by Wired&#8217;s very own GeekJack. Too cute!</p>
+<p><object id="flashObj" width="404" height="436" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="flashVars" value="videoId=1170677792001&amp;playerID=1813626064&amp;playerKey=AQ~~,AAAAAF1BIQQ~,g5cZB_aGkYZXG-DCZXT7a-c4jcGaSdDQ&amp;domain=embed&amp;dynamicStreaming=true" /><param name="base" value="http://admin.brightcove.com" /><param name="seamlesstabbing" value="false" /><param name="allowFullScreen" value="true" /><param name="swLiveConnect" value="true" /><param name="allowScriptAccess" value="always" /><param name="src" value="http://c.brightcove.com/services/viewer/federated_f9?isVid=1" /><param name="flashvars" value="videoId=1170677792001&amp;playerID=1813626064&amp;playerKey=AQ~~,AAAAAF1BIQQ~,g5cZB_aGkYZXG-DCZXT7a-c4jcGaSdDQ&amp;domain=embed&amp;dynamicStreaming=true" /><param name="allowfullscreen" value="true" /><param name="swliveconnect" value="true" /><param name="allowscriptaccess" value="always" /><param name="pluginspage" value="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" /><embed id="flashObj" width="404" height="436" type="application/x-shockwave-flash" src="http://c.brightcove.com/services/viewer/federated_f9?isVid=1" flashVars="videoId=1170677792001&amp;playerID=1813626064&amp;playerKey=AQ~~,AAAAAF1BIQQ~,g5cZB_aGkYZXG-DCZXT7a-c4jcGaSdDQ&amp;domain=embed&amp;dynamicStreaming=true" base="http://admin.brightcove.com" seamlesstabbing="false" allowFullScreen="true" swLiveConnect="true" allowScriptAccess="always" flashvars="videoId=1170677792001&amp;playerID=1813626064&amp;playerKey=AQ~~,AAAAAF1BIQQ~,g5cZB_aGkYZXG-DCZXT7a-c4jcGaSdDQ&amp;domain=embed&amp;dynamicStreaming=true" allowfullscreen="true" swliveconnect="true" allowscriptaccess="always" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" /></object>
+<div class="tweetmeme_button" style="float: left;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fcolor-fall-for-a-chance-to-win-an-ipad-2-crayola-colorstudio-hd-and-more"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fcolor-fall-for-a-chance-to-win-an-ipad-2-crayola-colorstudio-hd-and-more&amp;source=griffintech&amp;style=compact&amp;service=bit.ly&amp;service_api=R_289e7ce084dc6c672b4d08eae8d752ef&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<div class="facebook_like_button"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fcolor-fall-for-a-chance-to-win-an-ipad-2-crayola-colorstudio-hd-and-more&amp;layout=standard&amp;show-faces=true&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="padding: 0px 0px; border:none; overflow:hidden; width:450px; height:70px;"></iframe></div>
+
+<p>Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/how-to-let-your-kids-color-on-your-ipad' rel='bookmark' title='How to let your kids color on your iPad'>How to let your kids color on your iPad</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/we-have-partnered-with-crayola' rel='bookmark' title='We have partnered with Crayola!'>We have partnered with Crayola!</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/12-in-the-app-store' rel='bookmark' title='#12 in the App Store!'>#12 in the App Store!</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/griffintechnology?a=auivQJGeIE8:-RT7-536WHc:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=auivQJGeIE8:-RT7-536WHc:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=auivQJGeIE8:-RT7-536WHc:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=auivQJGeIE8:-RT7-536WHc:gIN9vFwOqvQ" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=auivQJGeIE8:-RT7-536WHc:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=auivQJGeIE8:-RT7-536WHc:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=auivQJGeIE8:-RT7-536WHc:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/griffintechnology/~4/auivQJGeIE8" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.griffintechnology.com/archives/color-fall-for-a-chance-to-win-an-ipad-2-crayola-colorstudio-hd-and-more/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://blog.griffintechnology.com/archives/color-fall-for-a-chance-to-win-an-ipad-2-crayola-colorstudio-hd-and-more</feedburner:origLink></item>
+		<item>
+		<title>Canadian Wireless Trade Show 2011</title>
+		<link>http://feedproxy.google.com/~r/griffintechnology/~3/VdAv7NrNJ8s/canadian-wireless-trade-show-2011</link>
+		<comments>http://blog.griffintechnology.com/archives/canadian-wireless-trade-show-2011#comments</comments>
+		<pubDate>Tue, 20 Sep 2011 12:00:00 +0000</pubDate>
+		<dc:creator>Dave</dc:creator>
+				<category><![CDATA[Special Events]]></category>
+		<category><![CDATA[Canadian Wireless Trade Show 2011]]></category>
+		<category><![CDATA[ColorStudio HD]]></category>
+		<category><![CDATA[Helo TC]]></category>
+		<category><![CDATA[MarketNews]]></category>
+
+		<guid isPermaLink="false">http://blog.griffintechnology.com/?p=9329</guid>
+		<description><![CDATA[Last week our sales team attended the Canadian Wireless Trade Show in Toronto. Were you there? MarketNews caught one of our sales team, John, as he took to the sky in our iOS remote-controlled helicopter, HELO TC. Griffin caught show-goers attention with its Helo TC helicopter that works with an iPhone and partner iPhone app. [...]
+
+
+Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/can-a-helicopter-cure-office-boredom' rel='bookmark' title='Can a helicopter cure office boredom?'>Can a helicopter cure office boredom?</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/helo-tc-the-exciting-conclusion-you-must-not-miss' rel='bookmark' title='HELO TC the exciting conclusion you must not miss'>HELO TC the exciting conclusion you must not miss</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/how-to-retrieve-a-helicopter-from-the-boss' rel='bookmark' title='How to retrieve a helicopter from the boss'>How to retrieve a helicopter from the boss</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.marketnews.ca/LatestNewsHeadlines/CanadianWirelessTradeShow2011:Styli,Multi-ChargersMore.html"><img class="alignnone" style="float: right; margin-left: 10px; margin-right: 10px; border: 1px solid black;" title="Photo from MarketNews.ca" src="http://www.marketnews.ca/upload/media/09162011_cwts-helo.jpg" alt="Photo from MarketNews.ca" width="279" height="279" /></a>Last week our sales team attended the <a title="Canadian Wireless Trade Show" href="http://www.cwts.ca/">Canadian Wireless Trade Show</a> in Toronto. Were you there?</p>
+<p><a title="MarketNews.ca" href="http://www.marketnews.ca/LatestNewsHeadlines/CanadianWirelessTradeShow2011:Styli,Multi-ChargersMore.html">MarketNews</a> caught one of our sales team, John, as he took to the sky in our iOS remote-controlled helicopter, <a title="HELO TC" href="http://www.griffintechnology.com/helotc">HELO TC</a>.</p>
+<blockquote><p>Griffin caught show-goers attention with its Helo TC helicopter that works with an iPhone and partner iPhone app. Just connect the smartphone to the included controller, which communicates with the aircraft via Bluetooth. At just $49.99, it&#8217;s probably one of the most affordable options we&#8217;ve seen in this space.</p></blockquote>
+<p>In addition to covering HELO TC, our <a title="Crayola ColorStudio HD" href="http://www.griffintechnology.com/crayola/colorstudiohd">Crayola ColorStudio HD</a> stylus received lots of great attention!
+<div class="tweetmeme_button" style="float: left;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fcanadian-wireless-trade-show-2011"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fcanadian-wireless-trade-show-2011&amp;source=griffintech&amp;style=compact&amp;service=bit.ly&amp;service_api=R_289e7ce084dc6c672b4d08eae8d752ef&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<div class="facebook_like_button"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Fcanadian-wireless-trade-show-2011&amp;layout=standard&amp;show-faces=true&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="padding: 0px 0px; border:none; overflow:hidden; width:450px; height:70px;"></iframe></div>
+
+<p>Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/can-a-helicopter-cure-office-boredom' rel='bookmark' title='Can a helicopter cure office boredom?'>Can a helicopter cure office boredom?</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/helo-tc-the-exciting-conclusion-you-must-not-miss' rel='bookmark' title='HELO TC the exciting conclusion you must not miss'>HELO TC the exciting conclusion you must not miss</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/how-to-retrieve-a-helicopter-from-the-boss' rel='bookmark' title='How to retrieve a helicopter from the boss'>How to retrieve a helicopter from the boss</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/griffintechnology?a=VdAv7NrNJ8s:y_gMbzofLFw:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=VdAv7NrNJ8s:y_gMbzofLFw:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=VdAv7NrNJ8s:y_gMbzofLFw:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=VdAv7NrNJ8s:y_gMbzofLFw:gIN9vFwOqvQ" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=VdAv7NrNJ8s:y_gMbzofLFw:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=VdAv7NrNJ8s:y_gMbzofLFw:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=VdAv7NrNJ8s:y_gMbzofLFw:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/griffintechnology/~4/VdAv7NrNJ8s" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.griffintechnology.com/archives/canadian-wireless-trade-show-2011/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.griffintechnology.com/archives/canadian-wireless-trade-show-2011</feedburner:origLink></item>
+		<item>
+		<title>Fresh air and a punchy reminder for iPhone 4</title>
+		<link>http://feedproxy.google.com/~r/griffintechnology/~3/JfBf9gl1YA0/fresh-air-and-a-punchy-reminder-for-iphone-4</link>
+		<comments>http://blog.griffintechnology.com/archives/fresh-air-and-a-punchy-reminder-for-iphone-4#comments</comments>
+		<pubDate>Mon, 19 Sep 2011 12:00:00 +0000</pubDate>
+		<dc:creator>Dave</dc:creator>
+				<category><![CDATA[Products]]></category>
+		<category><![CDATA[cases]]></category>
+		<category><![CDATA[cases for iPhone 4]]></category>
+		<category><![CDATA[FlexGrip Punch]]></category>
+		<category><![CDATA[iClear Air]]></category>
+		<category><![CDATA[iPhone 4 cases]]></category>
+
+		<guid isPermaLink="false">http://blog.griffintechnology.com/?p=9304</guid>
+		<description><![CDATA[Ready for a breath of fresh air and a punchy reminder? iClear Air These hard-shell polycarbonate cases with perforated patterns protect the sides and back of your iPhone 4. iClear Air allows easy access to the Multi-touch display, connectors, camera and controls. Fresh colors include: acid green, azalia, curacao, and lavender. Find them now on [...]
+
+
+Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/more-iphone-4-case-choices' rel='bookmark' title='More iPhone 4 case choices'>More iPhone 4 case choices</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/were-getting-ready-to-wrap-your-new-ipod' rel='bookmark' title='We&#8217;re getting ready to wrap your new iPod'>We&#8217;re getting ready to wrap your new iPod</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/new-elan-form-cases-for-iphone-4' rel='bookmark' title='New Elan Form cases for iPhone 4'>New Elan Form cases for iPhone 4</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p>Ready for a breath of fresh air and a punchy reminder?</p>
+<p><span style="font-size: large;"><strong>iClear Air</strong></span></p>
+<p><a title="iClear Air iPhone 4 cases" href="http://store.griffintechnology.com/iclear-air"><img class="alignnone" title="iClear Air case for iPhone 4" src="http://cdn-store.griffintechnology.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/i/c/iclear-air-1.jpg" alt="iClear Air case for iPhone 4" width="600" height="239" /></a></p>
+<p>These hard-shell polycarbonate cases with perforated patterns protect the sides and back of your iPhone 4. <a title="iClear Air cases for iPhone 4" href="http://store.griffintechnology.com/iclear-air">iClear Air</a> allows easy access to the Multi-touch display, connectors, camera and controls. Fresh colors include: acid green, azalia, curacao, and lavender. <a title="iClear Air cases for iPhone 4" href="http://store.griffintechnology.com/iclear-air">Find them now on the store</a>.</p>
+<p><span style="font-size: large;"><strong>FlexGrip Punch</strong></span></p>
+<p>&nbsp;</p>
+<p><a title="FlexGrip Punch iPhone 4 case" href="http://store.griffintechnology.com/flexgrip-punch"><img src="http://cdn-store.griffintechnology.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/l/flexgrip-pnch-k-1.jpg" alt="FlexGrip Punch case for iPhone 4" width="600" height="239" /></a></p>
+<p>Don&#8217;t forget about <a title="FlexGrip Punch iPhone 4 case" href="http://store.griffintechnology.com/flexgrip-punch">FlexGrip Punch</a>! This popular case protects the back and sides of your iPhone in one continuous piece of silicone, ventilated throughout with 1 mm holes for a unique tactile sensation. The rim wraps around to the front to make sure your Multi-Touch display never comes in contact with hard surfaces. Strategically-placed cutouts give access to camera lens, mic, speaker, ports and controls. <a title="FlexGrip Punch iPhone 4 case" href="http://store.griffintechnology.com/flexgrip-punch">FlexGrip Punch</a> is available in black or white. <a title="FlexGrip Punch iPhone 4 case" href="http://store.griffintechnology.com/flexgrip-punch">Grab one now</a>.</p>
+<p>&nbsp;
+<div class="tweetmeme_button" style="float: left;">
+			<a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Ffresh-air-and-a-punchy-reminder-for-iphone-4"><br />
+				<img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Ffresh-air-and-a-punchy-reminder-for-iphone-4&amp;source=griffintech&amp;style=compact&amp;service=bit.ly&amp;service_api=R_289e7ce084dc6c672b4d08eae8d752ef&amp;b=2" height="61" width="50" /><br />
+			</a>
+		</div>
+<div class="facebook_like_button"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.griffintechnology.com%2Farchives%2Ffresh-air-and-a-punchy-reminder-for-iphone-4&amp;layout=standard&amp;show-faces=true&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="padding: 0px 0px; border:none; overflow:hidden; width:450px; height:70px;"></iframe></div>
+
+<p>Related posts:<ol><li><a href='http://blog.griffintechnology.com/archives/more-iphone-4-case-choices' rel='bookmark' title='More iPhone 4 case choices'>More iPhone 4 case choices</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/were-getting-ready-to-wrap-your-new-ipod' rel='bookmark' title='We&#8217;re getting ready to wrap your new iPod'>We&#8217;re getting ready to wrap your new iPod</a></li>
+<li><a href='http://blog.griffintechnology.com/archives/new-elan-form-cases-for-iphone-4' rel='bookmark' title='New Elan Form cases for iPhone 4'>New Elan Form cases for iPhone 4</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/griffintechnology?a=JfBf9gl1YA0:z1GzmKq9REY:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=JfBf9gl1YA0:z1GzmKq9REY:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=JfBf9gl1YA0:z1GzmKq9REY:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=JfBf9gl1YA0:z1GzmKq9REY:gIN9vFwOqvQ" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=JfBf9gl1YA0:z1GzmKq9REY:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/griffintechnology?i=JfBf9gl1YA0:z1GzmKq9REY:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/griffintechnology?a=JfBf9gl1YA0:z1GzmKq9REY:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/griffintechnology?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/griffintechnology/~4/JfBf9gl1YA0" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.griffintechnology.com/archives/fresh-air-and-a-punchy-reminder-for-iphone-4/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.griffintechnology.com/archives/fresh-air-and-a-punchy-reminder-for-iphone-4</feedburner:origLink></item>
+	</channel>
+</rss><!-- Dynamic page generated in 1.260 seconds. --><!-- Cached page generated by WP-Super-Cache on 2011-10-03 09:12:30 -->

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">novra</title>
+  <id>http://www.plurk.com/user/novra.xml</id>
+  <updated>2009-12-25T16:00:34Z</updated>
+  <link href="http://www.plurk.com/" />
+  <link href="http://www.plurk.com/user/novra.xml" rel="self" />
+  <generator>Werkzeug</generator>
+  <entry xml:base="http://www.plurk.com/user/novra.xml">
+    <title type="text">novra : hello world!</title>
+    <id>tag:plurk.com;novra;188739747</id>
+    <updated>2009-12-25T16:00:34Z</updated>
+    <published>2009-12-25T16:00:34Z</published>
+    <link href="/p/34dcir" />
+    <author>
+      <name>novra</name>
+    </author>
+    <content type="html">novra : hello world!</content>
+  </entry>
+</feed>

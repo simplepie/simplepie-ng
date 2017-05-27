@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     >
+  <channel>
+    <title>from __future__ import *</title>
+    <link>http://bob.pythonmac.org</link>
+    <description>from __future__ import *</description>
+    <pubDate>Thu, 12 May 2011 23:20:43 GMT</pubDate>
+    <generator>Blogofile</generator>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>statebox, an eventually consistent data model for Erlang (and Riak)</title>
+      <link>http://bob.pythonmac.org/archives/2011/03/17/statebox/</link>
+      <pubDate>Mon, 09 May 2011 09:00:00 PDT</pubDate>
+      <category><![CDATA[erlang]]></category>
+      <category><![CDATA[mochi]]></category>
+      <guid>http://bob.pythonmac.org/archives/2011/03/17/statebox/</guid>
+      <description>statebox, an eventually consistent data model for Erlang (and Riak)</description>
+      <content:encoded><![CDATA[<div class="document">
+<p><em>Cross-posted from the Mochi Labs blog</em>: <a class="reference external" href="http://labs.mochimedia.com/archive/2011/05/08/statebox/">statebox, an eventually consistent data model for Erlang (and Riak)</a>.</p>
+<p>A few weeks ago when I was on call at work I was chasing down a bug in
+friendwad <a class="footnote-reference" href="#id6" id="id1">[1]</a> and I realized that we had made a big mistake. The data
+model was broken, it could only work with transactions but we were using
+<a class="reference external" href="http://www.basho.com/products_riak_overview.php">Riak</a>. The original prototype was built with Mnesia, which would've
+been able to satisfy this constraint, but when it was refactored for
+an eventually consistent data model it just wasn't correct anymore.
+Given just a little bit of concurrency, such as a popular user, it would
+produce inconsistent data. Soon after this discovery, I found another
+service built with the same invalid premise and I also realized
+that a general solution to this problem would allow us to migrate several
+applications from Mnesia to Riak.</p>
+<p>When you choose an eventually consistent data store you're
+prioritizing availability and partition tolerance over consistency,
+but this doesn't mean your application has to be inconsistent. What it
+does mean is that you have to move your conflict resolution from
+writes to reads. <a class="reference external" href="http://www.basho.com/products_riak_overview.php">Riak</a> does almost all of the hard work for you <a class="footnote-reference" href="#id7" id="id2">[2]</a>,
+but if it's not acceptable to discard some writes then you will have to
+set <tt class="docutils literal">allow_mult</tt> to <tt class="docutils literal">true</tt> on your bucket(s) and handle siblings
+<a class="footnote-reference" href="#id8" id="id3">[3]</a> from your application. In some cases, this might be trivial.
+For example, if you have a set and only support adding to that set,
+then a merge operation is just the union of those two sets.</p>
+<p><a class="reference external" href="http://github.com/mochi/statebox">statebox</a> is my solution to this problem. It bundles the value with
+repeatable operations <a class="footnote-reference" href="#id9" id="id4">[4]</a> and provides a means to automatically
+resolve conflicts. Usage of statebox feels much more declarative
+than imperative. Instead of modifying the values yourself, you
+provide statebox with a list of operations and it will apply them
+to create a new statebox. This is necessary because it may apply
+this operation again at a later time when resolving a conflict between
+siblings on read.</p>
+<p>Design goals (and non-goals):</p>
+<ul class="simple">
+<li>The intended use case is for data structures such as dictionaries
+and sets</li>
+<li>Direct support for counters is not required</li>
+<li>Applications must be able to control the growth of a statebox so that
+it does not grow indefinitely over time</li>
+<li>The implementation need not support platforms other than Erlang and
+the data does not need to be portable to nodes that do not share
+code</li>
+<li>It should be easy to use with Riak, but not be dependent on it
+(clear separation of concerns)</li>
+<li>Must be comprehensively tested, mistakes at this level are very expensive</li>
+<li>It is ok to require that the servers' clocks are in sync with NTP
+(but it should be aware that timestamps can be in the future or past)</li>
+</ul>
+<p>Here's what typical statebox usage looks like for a trivial
+application (note: Riak metadata is not merged <a class="footnote-reference" href="#id10" id="id5">[5]</a>). In this case we
+are storing an orddict in our statebox, and this orddict has the keys
+<tt class="docutils literal">following</tt> and <tt class="docutils literal">followers</tt>.</p>
+<pre class="erlang literal-block">
+-module(friends).
+-export([add_friend/2, get_friends/1]).
+
+-define(BUCKET, &lt;&lt;&quot;friends&quot;&gt;&gt;).
+-define(STATEBOX_MAX_QUEUE, 16).     %% Cap on max event queue of statebox
+-define(STATEBOX_EXPIRE_MS, 300000). %% Expire events older than 5 minutes
+-define(RIAK_HOST, &quot;127.0.0.1&quot;).
+-define(RIAK_PORT, 8087).
+
+-type user_id() :: atom().
+-type orddict(T) :: [T].
+-type ordsets(T) :: [T].
+-type friend_pair() :: {followers, ordsets(user_id())} |
+                       {following, ordsets(user_id())}.
+
+-spec add_friend(user_id(), user_id()) -&gt; ok.
+add_friend(FollowerId, FolloweeId) -&gt;
+    statebox_riak:apply_bucket_ops(
+    ?BUCKET,
+    [{[friend_id_to_key(FollowerId)],
+          statebox_orddict:f_union(following, [FolloweeId])},
+     {[friend_id_to_key(FolloweeId)],
+          statebox_orddict:f_union(followers, [FollowerId])}],
+    connect()).
+
+-spec get_friends(user_id()) -&gt; [] | orddict(friend_pair()).
+get_friends(Id) -&gt;
+    statebox_riak:get_value(?BUCKET, friend_id_to_key(Id), connect()).
+
+
+%% Internal API
+
+connect() -&gt;
+    {ok, Pid} = riakc_pb_client:start_link(?RIAK_HOST, ?RIAK_PORT),
+    connect(Pid).
+
+connect(Pid) -&gt;
+    statebox_riak:new([{riakc_pb_client, Pid},
+                       {max_queue, ?STATEBOX_MAX_QUEUE},
+                       {expire_ms, ?STATEBOX_EXPIRE_MS},
+                       {from_values, fun statebox_orddict:from_values/1}]).
+
+friend_id_to_key(FriendId) when is_atom(FriendId) -&gt;
+    %% NOTE: You shouldn't use atoms for this purpose, but it makes the
+    %% example easier to read!
+    atom_to_binary(FriendId, utf8).
+</pre>
+<p>To show how this works a bit more clearly, we'll use the following
+sequence of operations:</p>
+<pre class="light erlang literal-block">
+add_friend(alice, bob),       %% AB
+add_friend(bob, alice),       %% BA
+add_friend(alice, charlie).   %% AC
+</pre>
+<p>Each of these add_friend calls can be broken up into four separate
+atomic operations, demonstrated in this pseudocode:</p>
+<pre class="light erlang literal-block">
+%% add_friend(alice, bob)
+Alice = get(alice),
+put(update(Alice, following, [bob])),
+Bob = get(bob),
+put(update(Bob, followers, [alice])).
+</pre>
+<p>Realistically, these operations may happen with some concurrency and
+cause conflict. For demonstration purposes we will have <em>AB</em> happen
+concurrently with <em>BA</em> and the conflict will be resolved during <em>AC</em>.
+For simplicity, I'll only show the operations that modify the key for
+<tt class="docutils literal">alice</tt>.</p>
+<pre class="light erlang literal-block">
+AB = get(alice),                              %% AB (Timestamp: 1)
+BA = get(alice),                              %% BA (Timestamp: 2)
+put(update(AB, following, [bob])),            %% AB (Timestamp: 3)
+put(update(BA, followers, [bob])),            %% BA (Timestamp: 4)
+AC = get(alice),                              %% AC (Timestamp: 5)
+put(update(AC, following, [charlie])).        %% AC (Timestamp: 6)
+</pre>
+<dl class="docutils">
+<dt>Timestamp 1:</dt>
+<dd>There is no data for <tt class="docutils literal">alice</tt> in Riak yet, so
+<tt class="docutils literal"><span class="pre">statebox_riak:from_values([])</span></tt> is called and we get a statebox
+with an empty orddict.</dd>
+</dl>
+<pre class="light erlang literal-block">
+Value = [],
+Queue = [].
+</pre>
+<dl class="docutils">
+<dt>Timestamp 2:</dt>
+<dd>There is no data for <tt class="docutils literal">alice</tt> in Riak yet, so
+<tt class="docutils literal"><span class="pre">statebox_riak:from_values([])</span></tt> is called and we get a statebox
+with an empty orddict.</dd>
+</dl>
+<pre class="light erlang literal-block">
+Value = [],
+Queue = [].
+</pre>
+<dl class="docutils">
+<dt>Timestamp 3:</dt>
+<dd>Put the updated <em>AB</em> statebox to Riak with the updated value.</dd>
+</dl>
+<pre class="light erlang literal-block">
+Value = [{following, [bob]}],
+Queue = [{3, {fun op_union/2, following, [bob]}}].
+</pre>
+<dl class="docutils">
+<dt>Timestamp 4:</dt>
+<dd>Put the updated <em>BA</em> statebox to Riak with the updated value. Note
+that this will be a sibling of the value stored by <em>AB</em>.</dd>
+</dl>
+<pre class="light erlang literal-block">
+Value = [{followers, [bob]}],
+Queue = [{4, {fun op_union/2, followers, [bob]}}].
+</pre>
+<dl class="docutils">
+<dt>Timestamp 5:</dt>
+<dd>Uh oh, there are two stateboxes in Riak now... so
+<tt class="docutils literal"><span class="pre">statebox_riak:from_values([AB,</span> BA])</tt> is called. This will apply
+all of the operations from both of the event queues to one of the
+current values and we will get a single statebox as a result.</dd>
+</dl>
+<pre class="light erlang literal-block">
+Value = [{followers, [bob]},
+         {following, [bob]}],
+Queue = [{3, {fun op_union/2, following, [bob]}},
+         {4, {fun op_union/2, followers, [bob]}}].
+</pre>
+<dl class="docutils">
+<dt>Timestamp 6:</dt>
+<dd>Put the updated <em>AC</em> statebox to Riak. This will resolve siblings
+created at Timestamp 3 by <em>BA</em>.</dd>
+</dl>
+<pre class="light erlang literal-block">
+Value = [{followers, [bob]},
+         {following, [bob, charlie]}],
+Queue = [{3, {fun op_union/2, following, [bob]}},
+         {4, {fun op_union/2, followers, [bob]}},
+         {6, {fun op_union/2, following, [charlie]}}].
+</pre>
+<p>Well, that's about it! <tt class="docutils literal">alice</tt> is following both <tt class="docutils literal">bob</tt> and
+<tt class="docutils literal">charlie</tt> despite the concurrency. No locks were harmed during this
+experiment, and we've arrived at eventual consistency by using
+<a class="reference external" href="http://github.com/mochi/statebox_riak">statebox_riak</a>, <a class="reference external" href="http://github.com/mochi/statebox">statebox</a>, and <a class="reference external" href="http://www.basho.com/products_riak_overview.php">Riak</a> without having to write any
+conflict resolution code of our own.</p>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>friendwad manages our social graph for Mochi Social and MochiGames.
+It is also evidence that naming things is a hard problem in
+computer science.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>See Basho's articles on <a class="reference external" href="http://blog.basho.com/2010/01/29/why-vector-clocks-are-easy/">Why Vector Clocks are Easy</a> and
+<a class="reference external" href="http://blog.basho.com/2010/04/05/why-vector-clocks-are-hard/">Why Vector Clocks are Hard</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>When multiple writes happen to the same place and they have
+branching history, you'll get multiple values back on read.
+These are called siblings in <a class="reference external" href="http://www.basho.com/products_riak_overview.php">Riak</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>An operation <tt class="docutils literal">F</tt> is repeatable if and only if <tt class="docutils literal">F(V) = F(F(V))</tt>.
+You could also call this an <a class="reference external" href="http://en.wikipedia.org/wiki/Idempotence#Unary_operation">idempotent unary operation</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td>The default conflict resolution algorithm in statebox_riak
+chooses metadata from one sibling arbitrarily. If you use
+metadata, you'll need to come up with a clever way to merge it
+(such as putting it in the statebox and specifying a custom
+<tt class="docutils literal">resolve_metadatas</tt> in your call to <tt class="docutils literal">statebox_riak:new/1</tt>).</td></tr>
+</tbody>
+</table>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Playing with PyPy</title>
+      <link>http://bob.pythonmac.org/archives/2011/03/17/playing-with-pypy/</link>
+      <pubDate>Thu, 17 Mar 2011 14:00:00 PDT</pubDate>
+      <category><![CDATA[python]]></category>
+      <guid>http://bob.pythonmac.org/archives/2011/03/17/playing-with-pypy/</guid>
+      <description>Playing with PyPy</description>
+      <content:encoded><![CDATA[<div class="document">
+<p>I've been following the <a class="reference external" href="http://pypy.org/">PyPy</a> project since I first heard of it in 2003 or
+so. The concept behind it is fascinating; it's a Python interpreter written
+in (a subset of) Python. It's actually a lot more than that because the
+language front-ends (e.g. Python) are quite separate from the backends
+(e.g. C, JVM, CLI, Python). This makes it a unique platform for language
+research because coding Python is typically easier than C, and so much
+of the work is already done for you.</p>
+<p>It's clear that PyPy is very useful for academic research, but it's also
+quickly becoming a practical target for developing and deploying Python
+code. At the <a class="reference external" href="http://speed.pypy.org/">PyPy Speed Center</a> you can see that it's already several
+times faster than CPython, and has the potential to fix most of the more
+fundamental flaws of the CPython VM.</p>
+<p>What's awesome right now:</p>
+<ul class="simple">
+<li>PyPy has a modern garbage collector, not ref counting</li>
+<li>PyPy's JIT can run string mangling and numerics code
+very quickly, which removes the need for most C extensions</li>
+<li>PyPy is already fast, and is getting faster all the time</li>
+</ul>
+<p>How it can be more awesome (just my opinion, I don't speak for the PyPy
+team and their implementation goals):</p>
+<ul class="simple">
+<li>PyPy has an alpha quality <a class="reference external" href="http://pypy.org/compat.html">cpyext</a> that will allow you to use CPython
+extensions (requires a recompile), and when that's polished it will be very
+easy for CPython users to migrate en masse, even though they may have
+complicated dependencies such as NumPy, SciPy, PIL, etc.</li>
+<li>PyPy has the potential to eventually remove the GIL, and/or
+have multiple VMs in the same OS process</li>
+<li>PyPy could add M:N threading and concurrency constructs to the
+language (some stackless support already exists, but is not
+currently compatible with the JIT and doesn't take advantage
+of multiple cores)</li>
+<li>PyPy could simultaneously support Python 2.x and 3.x code in the
+same process, making it practical to actually make the transition
+(note: this is a crazy idea that would be terribly difficult)</li>
+</ul>
+<div class="section" id="playing-with-pypy">
+<h1>Playing with PyPy</h1>
+<p>I've been working on helping the PyPy team with some real world benchmarks
+for JSON, and helping sort out Mac OS X issues. I've also been tuning a
+branch of <a class="reference external" href="http://simplejson.github.com/simplejson/">simplejson</a> to run efficiently on PyPy. I'll write more about
+this in a follow up post, but here's how you can get started.</p>
+<p>If you're a library author or an advanced user you should be experimenting
+with PyPy right now. In these instructions we'll install PyPy in <tt class="docutils literal">~/opt</tt>
+and create a virtualenv for it in <tt class="docutils literal">~/virtualenv</tt>.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites</h2>
+<p>Install <a class="reference external" href="http://mercurial.selenic.com/">Mercurial</a> 1.7 or newer.</p>
+<p>Install Xcode 3.2.x (gcc-4.0 is currently required for building PyPy).</p>
+<p>Download virtualenv 1.5.2 (or later):</p>
+<pre class="literal-block">
+mkdir -p ~/src
+(cd ~/src; curl -s http://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.5.2.tar.gz | tar zxf -)
+</pre>
+<p>Clone jitviewer and pypy:</p>
+<pre class="literal-block">
+# Make a ~/src to store all of these clones
+mkdir -p ~/src
+
+# Get the PyPy jitviewer application (install to ~/src/jitviewer)
+(cd ~/src; hg clone https://bitbucket.org/pypy/jitviewer)
+
+# Clone PyPy source, this will take a while
+(cd ~/src; hg clone https://bitbucket.org/pypy/pypy)
+</pre>
+</div>
+<div class="section" id="installing-from-binary">
+<h2>Installing from binary</h2>
+<p>Follow the link on <a class="reference external" href="http://pypy.org/download.html">http://pypy.org/download.html</a> to download one of the
+Mac OS X binaries (either 32-bit or 64-bit), the current version at this
+time is 1.4.1.</p>
+<p>This will install PyPy to <tt class="docutils literal">~/opt</tt> and create a virtualenv:</p>
+<pre class="literal-block">
+# Unpack PyPy and &quot;install&quot; to ``~/opt``
+mkdir -p ~/opt
+cd ~/opt
+tar jxvf ~/Downloads/pypy-1.4.1-osx64.tar.bz2
+
+# Install virtualenv to this PyPy build, and create a new virtualenv.
+# I also like to create a symlink ``~/virtualenv/pypy-env`` to the
+# version I am currently working with::
+
+PKG=pypy-1.4.1-osx64
+PYPY=~/opt/$PKG/bin/pypy
+
+# install virtualenv
+(cd ~/src/virtualenv-1.5.2; $PYPY setup.py install)
+
+# create virtualenv
+mkdir -p ~/virtualenv
+rm -rf ~/virtualenv/$PKG
+~/opt/$PKG/bin/virtualenv --distribute ~/virtualenv/$PKG
+
+# update symlink
+(cd ~/virtualenv; rm -f pypy-env; ln -s $PKG pypy-env)
+
+# install jitviewer
+(source ~/virtualenv/pypy-env/bin/activate; \
+     pip install flask pygments simplejson; \
+     cd ~/src/jitviewer; pypy setup.py develop )
+</pre>
+<p>When you want to use PyPy, just activate the virtualenv:</p>
+<pre class="literal-block">
+source ~/virtualenv/pypy-env/bin/activate
+# now you can use PyPy! both &quot;python&quot; and &quot;pypy&quot; will work
+</pre>
+</div>
+<div class="section" id="tuning-for-pypy-1-4-1">
+<h2>Tuning for PyPy 1.4.1</h2>
+<p>On Mac OS X, PyPy 1.4.1 (and current default) does not choose optimal tuning
+values for the GC. You will get ~30% better performance by setting this
+environment variable:</p>
+<pre class="literal-block">
+export PYPY_GC_NURSERY=1M
+</pre>
+<p>Note that 1M is a machine specific value, so if your Mac isn't the same model
+as mine there might be a better default for you. The value is very likely to
+be dependent on the amount of L2/L3 cache and how
+many physical cores you have, and you can get those values from sysctl:</p>
+<pre class="literal-block">
+$ sysctl hw.l3cachesize hw.l2cachesize hw.physicalcpu
+hw.l3cachesize: 4194304
+hw.l2cachesize: 262144
+hw.physicalcpu: 2
+</pre>
+<p>From the pypy source directory, with a pypy virtualenv activated, you can run
+this script to see what a good value might be (lowest time is best):</p>
+<pre class="literal-block">
+#!/bin/bash
+for ((procs=1; procs &lt;= 4 ; procs++)); do
+    for ram in 128K 256K 512K 768K 1M 2M 3M 4M; do
+        echo &quot;export PYPY_GC_NURSERY=$ram # procs=$procs&quot;
+        export PYPY_GC_NURSERY=$ram
+        for ((p=1; p &lt;= $procs; p++)); do
+            (cd pypy/translator/goal; pypy gcbench.py | grep 'Completed in') &amp;
+        done
+        wait
+    done
+done
+</pre>
+<p>The PyPy team is very interested in knowing what the sysctl values are for your
+machine and the output of the GC benchmark, so if you get this far please send it
+along to me or the PyPy mailing list! Having output from many different models of
+Mac will help us come up with a better algorithm for choosing sane defaults.</p>
+</div>
+<div class="section" id="building-pypy-from-source">
+<h2>Building PyPy from source</h2>
+<p>Make sure to install a binary first. Since translating PyPy is CPU bound,
+this runs a lot faster if you use PyPy.</p>
+<p>These commands will build PyPy, create a release based on the hg revision,
+update <tt class="docutils literal"><span class="pre">~/virtualenv/pypy-env</span></tt>, etc.:</p>
+<pre class="literal-block">
+# Translate PyPy (expect this a while, at least an hour for me)
+(cd pypy/translator/goal; pypy translate.py -Ojit)
+
+# Build the release
+BRANCH=$(hg branch)
+PKG=pypy-$(hg branches|grep &quot;^$BRANCH &quot; | cut -d: -f2)-osx64
+mkdir -p ~/opt
+(cd pypy/tool/release; /usr/bin/python package.py ../../.. $PKG)
+rm -rf ~/opt/$PKG
+mv $TMPDIR/usession-$BRANCH-$USER/build/$PKG ~/opt/$PKG
+
+# install virtualenv
+PYPY=~/opt/$PKG/bin/pypy
+(cd ~/src/virtualenv-1.5.2; $PYPY setup.py install)
+
+# create virtualenv
+mkdir -p ~/virtualenv
+rm -rf ~/virtualenv/$PKG
+~/opt/$PKG/bin/virtualenv --distribute ~/virtualenv/$PKG
+
+# make default
+(cd ~/virtualenv; rm -f pypy-env; ln -s $PKG pypy-env)
+
+# install jitviewer
+(source ~/virtualenv/pypy-env/bin/activate; \
+ pip install flask pygments simplejson; \
+ cd ~/src/jitviewer; pypy setup.py develop )
+</pre>
+</div>
+<div class="section" id="running-jitviewer">
+<h2>Running jitviewer</h2>
+<p>jitviewer is an awesome web app for reading PyPy logs, it will help you
+optimize your code for PyPy (once you have a basic understanding of the
+output, which is beyond the scope of this post).</p>
+<p>Run your code with JIT logging turned on:</p>
+<pre class="literal-block">
+# log to pypy-jit.log
+PYPYLOG=jit-log-opt,jit-backend-counts:pypy-jit.log pypy benchmark.py
+
+# start the jitviewer server with pypy-jit.log
+PYTHONPATH=~/src/pypy jitviewer.py pypy-jit.log
+</pre>
+<p>After jitviewer is started, open a web browser to <a class="reference external" href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a></p>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Browser Tab Visible Event</title>
+      <link>http://bob.pythonmac.org/archives/2010/04/25/tab-visible-event/</link>
+      <pubDate>Sun, 25 Apr 2010 21:15:00 PDT</pubDate>
+      <category><![CDATA[javascript]]></category>
+      <guid>http://bob.pythonmac.org/archives/2010/04/25/tab-visible-event/</guid>
+      <description>Browser Tab Visible Event</description>
+      <content:encoded><![CDATA[<p>Sadly there's no web standard that I could find to determine when a tab
+   becomes visible. My use case was to delay loading of Flash content until
+   the tab is visible for the first time. Safari seems to do this by default,
+   but none of the other browsers do.
+</p>
+<p>Chrome is the absolute worst offender here, it does not fire
+   window.onmouseover until the mouse has been moved over the page and it
+   does not fire window.onfocus until you switch to that tab... so if the
+   tab was started as a foreground tab, you will not get this event. The
+   only way I managed to detect a tab being active was to poll
+   the window.screenX and window.screenY properties. They are always
+   0 for a background tab. There is an obvious false positive if the
+   browser happens to be in the screen origin, but in that case a
+   window.onmouseover event will fire once the mouse has moved.
+</p>
+<p>Safari is slightly less bad because it will fire window.onmouseover
+   immediately when the tab is active. This works great but was a less
+   obvious find than window.onfocus.
+</p>
+<p>Firefox and IE8 have the least surprising behavior in that they fire
+   window.onfocus immediately whenever a tab becomes visible, even if
+   it was the foreground tab. I think this was the very first browser
+   compatibility experiment where I've spent less time with IE than
+   any other browser, although to be fair I didn't test anything
+   other than IE8.
+</p>
+<p>For maximum compatibility/longevity I've just provided some raw
+   JavaScript code here. No framework. Feel free to translate this
+   into a snippet or plugin for the framework of your choice. I'd
+   also be interested if someone else does the testing for other
+   browsers such as Opera and older versions of IE.
+</p>
+<p>Tested with:
+</p>
+<ul>
+ <li>
+     Google Chrome 5.0.342.9 (Mac)
+ </li>
+
+ <li>
+     Safari 4.0.5 (Mac)
+ </li>
+
+ <li>
+     Firefox 3.6.3 (Mac)
+ </li>
+
+ <li>
+     Internet Explorer 8.0.6001.18702
+ </li>
+</ul>
+<div class="pygments_murphy"><pre><span class="kd">var</span> <span class="nx">timer</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">tabVisible</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">timer</span><span class="p">)</span> <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+    <span class="nx">timer</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">onfocus</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">onmouseover</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="cm">/* your code to dispatch event here */</span>
+<span class="p">}</span>
+<span class="c1">// Firefox, IE8</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">onfocus</span> <span class="o">=</span> <span class="nx">tabVisible</span><span class="p">;</span>
+<span class="c1">// Safari</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">onmouseover</span> <span class="o">=</span> <span class="nx">tabVisible</span><span class="p">;</span>
+<span class="c1">// dirty hack for Chrome</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39; Chrome/&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">dirtyChromePoll</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">screenX</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">screenY</span><span class="p">)</span> <span class="nx">tabVisible</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="nx">dirtyChromePoll</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>simplejson 2.1.1</title>
+      <link>http://bob.pythonmac.org/archives/2010/03/31/simplejson-211/</link>
+      <pubDate>Wed, 31 Mar 2010 17:30:00 PDT</pubDate>
+      <category><![CDATA[python]]></category>
+      <category><![CDATA[simplejson]]></category>
+      <guid>http://bob.pythonmac.org/archives/2010/03/31/simplejson-211/</guid>
+      <description>simplejson 2.1.1</description>
+      <content:encoded><![CDATA[<p><a href="http://undefined.org/python/#simplejson">simplejson</a> (<a href="http://simplejson.googlecode.com/svn/tags/simplejson-2.1.0/docs/index.html">documentation</a>) is a simple, fast, complete, correct and extensible <a href="http://json.org/">JSON</a> (<a href="http://www.ietf.org/rfc/rfc4627.txt">RFC 4627</a>) encoder/decoder for Python 2.5+.  It is pure Python code with no dependencies, but features an optional C extension for speed-ups.
+</p>
+<p><a href="http://undefined.org/python/#simplejson">simplejson</a> 2.1.1 is a minor update with several bug-fixes:
+</p>
+<ul>
+ <li>
+     Change how setup.py imports ez_setup.py to try and workaround old versions
+       of setuptools.
+     <br />
+<a href="http://code.google.com/p/simplejson/issues/detail?id=75">http://code.google.com/p/simplejson/issues/detail?id=75</a>
+ </li>
+
+ <li>
+     Fix compilation on Windows platform (and other platforms with very
+       picky compilers)
+     <br />
+<a href="http://code.google.com/p/simplejson/issues/detail?id=74">http://code.google.com/p/simplejson/issues/detail?id=74</a>
+ </li>
+
+ <li>
+     Corrected simplejson.__version__ and other minor doc changes.
+ </li>
+
+ <li>
+     Do not fail speedups tests if speedups could not be built.
+     <br />
+<a href="http://code.google.com/p/simplejson/issues/detail?id=73">http://code.google.com/p/simplejson/issues/detail?id=73</a>
+ </li>
+</ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Py3k Unified Numeric Hash Proposal</title>
+      <link>http://bob.pythonmac.org/archives/2010/03/23/py3k-unified-numeric-hash</link>
+      <pubDate>Tue, 23 Mar 2010 08:30:00 PDT</pubDate>
+      <category><![CDATA[python]]></category>
+      <category><![CDATA[hash]]></category>
+      <category><![CDATA[math]]></category>
+      <guid>http://bob.pythonmac.org/archives/2010/03/23/py3k-unified-numeric-hash</guid>
+      <description>Py3k Unified Numeric Hash Proposal</description>
+      <content:encoded><![CDATA[<p>There has been a recent and interesting set of discussions on python-dev
+   <a href="http://mail.python.org/pipermail/python-dev/2010-March/thread.html#98437" title="[Python-Dev] Decimal &lt;-&gt; float comparisons in py3k.">(Decimal &lt;-&gt; float comparisons)</a>
+   for what the best behavior for numeric type interoperability would be. The
+   most prominent "mistake" in the current implementation is that certain float
+   and int/long values compare equal, and certain Decimal and int/long values
+   compare equal, but all float and Decimal comparison operations
+   raise TypeError. Other operations between float and Decimal also
+   raise TypeError. Python 2.x behavior is such that comparison operations
+   between float and Decimal return nonsense results and other operations
+   raise TypeError.
+</p>
+<p>Guido recently pronounced <a href="http://mail.python.org/pipermail/python-dev/2010-March/thread.html#98575" title="[Python-Dev] Mixing float and Decimal -- thread reboot">(Mixing float and Decimal)</a> that he'd like to
+   consider changing the behavior to match the principle of least surprise;
+   all operations for all of the numeric types should return correct results.
+   One of the most difficult problems to solve with such a unification is the
+   hash invariant:
+</p>
+<p>   for all a and b such that a == b: hash(a) == hash(b).
+</p>
+<p>While this is relatively simple to implement for the integer cases, it's
+   much tricker to do efficiently for Decimal and float (and Fraction!) because
+   Decimals are base 10 and float are base 2.
+</p>
+<p>Note that I started writing this post yesterday after studying version 3
+   of the patch. I have altered the inline quotes to reflect version 4,
+   which contains vastly improved comments that make most of my post redundant.
+   However, it may still help in some way because it is an independent
+   explanation and it provides some Python code.
+</p>
+<p>Mark Dickinson proposed a very clever algorithm with an efficient
+   implementation in <a href="http://bugs.python.org/issue8188" title="issue8188">issue8188</a>, which he summarized as follows
+   in the comments of the patch:
+</p>
+<blockquote><p>  For numeric types, the hash of a number x is based on the reduction
+     of x modulo the prime P = 2**_PyHASH_BITS - 1.  It's designed so that
+     hash(x) == hash(y) whenever x and y are numerically equal, even if
+     x and y have different types.
+</p>
+<p>  A quick summary of the hashing strategy:
+</p>
+<p>  (1) First define the 'reduction of x modulo P' for any rational
+     number x; this is a standard extension of the usual notion of
+     reduction modulo P for integers.  If x == p/q (written in lowest
+     terms), the reduction is interpreted as the reduction of p times
+     the inverse of the reduction of q, all modulo P; if q is exactly
+     divisible by P then define the reduction to be infinity.  So we've
+     got a well-defined map
+</p>
+<pre><code> reduce : { rational numbers } -&gt; { 0, 1, 2, ..., P-1, infinity }.
+</code></pre><p>  (2) Now for a rational number x, define hash(x) by:
+</p>
+<pre><code> reduce(x)   if x &gt;= 0
+ -reduce(-x) if x &lt; 0
+</code></pre><p>  If the result of the reduction is infinity (this is impossible for
+     integers, floats and Decimals) then use the predefined hash value
+   <br />
+_PyHASH_INF instead.<br />
+_PyHASH_INF, _PyHASH_NINF and _PyHASH_NAN are also
+     used for the hashes of float and Decimal infinities and nans.
+</p>
+<p>  A selling point for the above strategy is that it makes it possible
+     to compute hashes of decimal and binary floating-point numbers
+     efficiently, even if the exponent of the binary or decimal number
+     is large.  The key point is that
+</p>
+<pre><code> reduce(x * y) == reduce(x) * reduce(y) (modulo _PyHASH_MASK)
+</code></pre><p>  provided that {reduce(x), reduce(y)} != {0, infinity}.  The reduction of a
+     binary or decimal float is never infinity, since the denominator is a power
+     of 2 (for binary) or a divisor of a power of 10 (for decimal).  So we have,
+     for nonnegative x,
+</p>
+<pre><code> reduce(x * 2**e) == reduce(x) * reduce(2**e) % _PyHASH_MASK
+
+ reduce(x * 10**e) == reduce(x) * reduce(10**e) % _PyHASH_MASK
+</code></pre><p>  and reduce(10**e) can be computed efficiently by the usual modular
+     exponentiation algorithm.  For reduce(2**e) it's even better: since
+     P is of the form 2**n-1, reduce(2**e) is 2**(e mod n), and multiplication
+     by 2**(e mod n) modulo 2**n-1 just amounts to a rotation of bits.
+</p>
+</blockquote><p>The choices of P for his implementation are (2**31)-1 for 32-bit platforms and
+   (2**61)-1 for 64-bit platforms. These numbers are interesting because they are
+   the eighth and ninth <a href="http://en.wikipedia.org/wiki/Mersenne_prime" title="Mersenne prime">Mersenne prime</a>
+   numbers. I'm not entirely sure yet if these numbers being prime is essential
+   or not, but it's definitely conventional for a hash modulus to be prime. A
+   very important feature of these numbers is that P+1 is a power of two.
+</p>
+<p>One thing that wasn't immediately obvious to me was how to define modulus of
+   a (rational) number f such that 0 &lt; f &lt; 1. We know from the above that in
+   the floating point case we can break f into its mantissa and exponent:
+</p>
+<pre><code>reduce(m * (2**e)) == reduce(reduce(m) * reduce(2**e))
+</code></pre><p>but that leaves the cases where 0 &lt; 2**e &lt; 1. Well, because we are working
+   with a modulus of P, we know that P+1 is the multiplicative identity, so
+   we can find some number n such that ((P+1)**n) * (2**e) is an integer. We
+   also know that ((P+1)**n) * (2**e) mod P must be non-zero because P is prime.
+</p>
+<p>We can demonstrate that reduce(x) where x = 2**e is quite a trivial
+   task for a typical CPU as follows (k is log2(P+1), which is 61 or 31).
+   All of the following expressions mod P are equivalent to x mod P.
+</p>
+<pre><code>(x * (P+1)**n)              # multiplicative identity
+(x * (2**k)**n)             # P+1 == 2**k
+(x * (2**(k*n))             # (a**b)**c == a**(b*c)
+((2**e) * (2**(k*n)))       # x == 2**e
+(2**(e + (k * n)))          # (a**b)*(a**c) == a**(b+c)
+(2**((e + (k * n)) % k))    # 2**k is identity, so exponent is mod k
+(2**(e % k))                # (k * n) % k == 0
+1 &lt;&lt; (e % k)                # a * (2**b) == a &lt;&lt; b
+</code></pre><p>In Python the naive algorithms would be as follows (ignoring inf and NaN):
+</p>
+<pre><code>from math import frexp
+
+# Doesn't matter whether we use 61 or 31.
+HASH_SHIFT = 61
+HASH_MODULUS = (2 ** HASH_SHIFT) - 1
+
+def hash_int(n):
+    if n == 0:
+        return 0
+    elif n &lt; 0:
+        rval = -((-n) % HASH_MODULUS)
+        return -2 if rval == -1 else rval
+    else:
+        return n % HASH_MODULUS
+
+def hash_float(f):
+    if f == 0.0:
+        return 0
+    elif f &lt; 0.0:
+        rval = -hash_float(-f)
+        return -2 if rval == -1 else rval
+    # m = mantissa (float), e = exponent of 2 (integer)
+    m, e = frexp(f)
+    # "arbitrarily" process 28 bits at a time. For a normal float,
+    # this loop will iterate no more than twice since the mantissa
+    # is 53 bits in a 64-bit IEEE-754 double.
+    # After the loop, n will be some integer such that n ** e = f
+    n = 0
+    BITS = 28
+    while m:
+        m *= (2.0 ** BITS)
+        e -= BITS
+        m_floor = int(m)
+        n = (n &lt;&lt; BITS) | m_floor
+        m -= m_floor
+    # see above "proof" for this definition of reduce(2**e)
+    return hash_int(hash_int(n) &lt;&lt; (e % HASH_SHIFT))
+</code></pre><p>You might notice the strange intentional mapping of -1 to -2, the reason for
+   this is simply that the convention of Python's C API is such that return
+   values of -1 mean that an exception may have occurred (and a global variable
+   must be checked). If -1 is never returned on success then there are no
+   false positives so the general case is faster. Essentially Python is trading
+   this known worst case for a potential hash collision, which is probably the
+   right call.
+</p>
+<p>If you read the actual C implementation there are a few additional math tricks
+   at play, the most important of which is this implementation of long_hash from
+   longobject.c:
+</p>
+<pre><code>static long
+long_hash(PyLongObject *v)
+{
+    unsigned long x;
+    Py_ssize_t i;
+    int sign;
+
+    i = Py_SIZE(v);
+    switch(i) {
+    case -1: return v-&gt;ob_digit[0]==1 ? -2 : -(sdigit)v-&gt;ob_digit[0];
+    case 0: return 0;
+    case 1: return v-&gt;ob_digit[0];
+    }
+    sign = 1;
+    x = 0;
+    if (i &lt; 0) {
+        sign = -1;
+        i = -(i);
+    }
+    while (--i &gt;= 0) {
+        /* Here x is a quantity in the range [0, _PyHASH_MASK); we
+           want to compute x * 2**PyLong_SHIFT + v-&gt;ob_digit[i] modulo
+           _PyHASH_MASK.
+
+           The computation of x * 2**PyLong_SHIFT % _PyHASH_MASK
+           amounts to a rotation of the bits of x.  To see this, write
+
+             x * 2**PyLong_SHIFT = y * 2**_PyHASH_BITS + z
+
+           where y = x &gt;&gt; (_PyHASH_BITS - PyLong_SHIFT) gives the top
+           PyLong_SHIFT bits of x (those that are shifted out of the
+           original _PyHASH_BITS bits, and z = (x &lt;&lt; PyLong_SHIFT) &amp;
+           _PyHASH_MASK gives the bottom _PyHASH_BITS - PyLong_SHIFT
+           bits of x, shifted up.  Then since 2**_PyHASH_BITS is
+           congruent to 1 modulo _PyHASH_MASK, y*2**_PyHASH_BITS is
+           congruent to y modulo _PyHASH_MASK.  So
+
+             x * 2**PyLong_SHIFT = y + z (mod _PyHASH_MASK).
+
+           The right-hand side is just the result of rotating the
+           _PyHASH_BITS bits of x left by PyLong_SHIFT places; since
+           not all _PyHASH_BITS bits of x are 1s, the same is true
+           after rotation, so 0 &lt;= y+z &lt; _PyHASH_MASK and y + z is the
+           reduction of x*2**PyLong_SHIFT modulo _PyHASH_MASK. */
+        x = ((x &lt;&lt; PyLong_SHIFT) &amp; _PyHASH_MASK) |
+            (x &gt;&gt; (_PyHASH_BITS - PyLong_SHIFT));
+        x += v-&gt;ob_digit[i];
+        if (x &gt;= _PyHASH_MASK)
+            x -= _PyHASH_MASK;
+    }
+    x = x * sign;
+    if (x == (unsigned long)-1)
+        x = (unsigned long)-2;
+    return (long)x;
+}
+</code></pre><p>In order to understand this better we'll translate this to Python first, but
+   to do that we need to understand the layout of integers in py3k. In py3k
+   integers are represented as a sequence of zero or more digits, where a
+   digit is 2**sys.int_info.bits_per_digit bits wide, and the least
+   significant digit is first in the array. I'm not aware of any Python function
+   to see integers at this level so we'll craft our own way to "disassemble" an
+   integer in the way that the C implementation will see it. Instead of tracking
+   the sign and size as one integer we will track the sign on its own and use
+   the length of the list to track size.
+</p>
+<pre><code>import sys
+# Doesn't matter whether we use 61 or 31.
+HASH_SHIFT = 61
+# The modulus can be used as a bit mask, all bits are set
+HASH_MODULUS = (2 ** HASH_SHIFT) - 1
+
+def disassemble_int(i):
+    bits_per_digit = sys.int_info.bits_per_digit
+    bit_mask = (1 &lt;&lt; bits_per_digit) - 1
+    if i &lt; 0:
+        sign = -1
+        i *= -1
+    else:
+        sign = 1
+    digits = []
+    # see reassemble_int for inverse of this operation
+    while i:
+        digits.append(i &amp; bit_mask)
+        i &gt;&gt;= bits_per_digit
+    return sign, digits
+
+def reassemble_int(sign, digits):
+    # demonstrate similar method for just reassembling the integer
+    bits_per_digit = sys.int_info.bits_per_digit
+    if sign == -1:
+        return -reassemble_int(1, digits)
+    size = len(digits)
+    if size == 0:
+        return 0
+    elif size == 1:
+        # just an optimization for small numbers
+        return digits[0]
+    x = 0
+    # traverse digits from most to least significant
+    # n = bits_per_digit
+    # d[i] = digit with index of i
+    # x = d[0] + d[1]*(2**n) + ... + d[i]*(2**(n*i))
+    # x = d[0] + (2**n)*(d[1] + (2**n)*(d[2] + ...))
+    # x = d[0] + (d[1] + ((d[2] + (...)) &lt;&lt; n) &lt;&lt; n
+    for digit in reversed(digits):
+        x = x &lt;&lt; bits_per_digit
+        x += digit
+    return x
+
+def hash_long(sign, digits):
+    bits_per_digit = sys.int_info.bits_per_digit
+    if sign == -1:
+        rval = -hash_long(1, digits)
+        return -2 if rval == -1 else rval
+    size = len(digits)
+    if size == 0:
+        return 0
+    elif size == 1:
+        # just an optimization for small numbers
+        # since we assume bits_per_digit &lt; HASH_SHIFT
+        return digits[0]
+    x = 0
+    # traverse digits from most to least significant
+    for digit in reversed(digits):
+        # rotate the bottom HASH_SHIFT bits left by bits_per_digit,
+        # in effect this multiplies by 2**bits_per_digit mod HASH_MODULUS
+        x = (((x &lt;&lt; bits_per_digit) &amp; HASH_MODULUS) |
+             (x &gt;&gt; (HASH_SHIFT - bits_per_digit)))
+        x += digit
+        # If the addition overflowed we compensate by decrementing, which
+        # preserves the value mod HASH_MODULUS.
+        if x &gt; HASH_MODULUS:
+            x -= HASH_MODULUS
+    return x
+</code></pre><p>Now that we have a Python implementation the only trick left to decipher is
+   why the heck are these equivalent for our choices of modulus P
+   (k is log2(P+1), which is 61 or 31):
+</p>
+<pre><code>x * (2**n) % P
+((x &lt;&lt; n) &amp; P) | (x &gt;&gt; (k - n))
+</code></pre><p>I think that one way to "prove" that multiplying by a power of 2 in mod P is
+   equivalent to bit rotation of a k bit integer would be to decompose x into
+   binary digits as follows (k is log2(P+1)):
+</p>
+<pre><code>for all x such that 0 &lt;= x &lt; P, x == x % P
+any x mod P can be decomposed into binary digits (d[0] * 2**0 + d[1] * 2**1 + ... + d[k-1] * 2**(k-1))
+# 2**k is a multiplicative identity mod P
+2**k mod P == 2**0 == 1
+# just decompose x into binary digits
+x * (2**0) mod P == (d[0] * 2**(0) + d[1] * 2**(1) + ... + d[k-1] * 2**(k-1))
+# show multiply by 2 is a bit rotate left of k bits
+x * (2**1) mod P == (d[0] * 2**(1) + d[1] * 2**(2) + ... + d[k-1] * 2**(0))
+# generalize into n multiplications of 2
+x * (2**n) mod P == (d[0] * 2**((0 + n) % k) + d[1] + 2**((1 + n) % k) + ... + d[k-1] * 2**((k - 1 + n) % k))
+x * (2**n) mod P == (d[0] * 2**((0 + n) % k) + d[1] + 2**((1 + n) % k) + ... + d[k-1] * 2**((-1 + n) % k))
+</code></pre><p>I'm definitely not Tim Peters or even a mathematician but I found this problem
+   interesting enough to dive into, especially because Guido didn't find this
+   obvious either <a href="http://codereview.appspot.com/660042/diff/19001/11011#newcode2577" title="Objects/longobject.c - Issue 660042: Compatible numeric hashes - Code Review">(Objects/longobject.c)</a>. I think I've covered it in sufficient depth for me to believe
+   that it works and the patch is good, but if I'm missing something please let
+   me know!
+</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>PyCon 2010, Analysis: The Other Kind of Testing</title>
+      <link>http://bob.pythonmac.org/archives/2010/03/10/pycon-2010-analysis-the-other-kind-of-testing/</link>
+      <pubDate>Wed, 10 Mar 2010 22:45:00 PST</pubDate>
+      <category><![CDATA[python]]></category>
+      <category><![CDATA[PyCon]]></category>
+      <guid>http://bob.pythonmac.org/archives/2010/03/10/pycon-2010-analysis-the-other-kind-of-testing/</guid>
+      <description>PyCon 2010, Analysis: The Other Kind of Testing</description>
+      <content:encoded><![CDATA[<p>I gave a talk at <a href="http://us.pycon.org/2010/conference/">PyCon 2010</a> in Atlanta last month called <a href="http://bitbucket.org/etrepum/analysis_pycon_2010/">Analysis: The Other Kind of Testing</a> (<a href="http://blip.tv/file/3321657">video</a>). It's a very simple overview of techniques such as split testing (AB testing) and a call to action to improve <a href="http://bitbucket.org/akoha/django-lean/">django-lean</a>.
+</p>
+<p>Atlanta was a fantastic location for PyCon 2010, and I look forward to returning next year. Hopefully if I give another talk I'll be able to put a little more time into it :)
+</p>
+<p>As per usual, I've been incredibly lazy about updating this blog, so you're much better off following <a href="http://twitter.com/etrepum">@etrepum</a> on <a href="http://twitter.com/etrepum">Twitter</a>.
+</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>simplejson 2.1.0</title>
+      <link>http://bob.pythonmac.org/archives/2010/03/10/simplejson-210/</link>
+      <pubDate>Wed, 10 Mar 2010 20:24:00 PST</pubDate>
+      <category><![CDATA[python]]></category>
+      <category><![CDATA[simplejson]]></category>
+      <guid>http://bob.pythonmac.org/archives/2010/03/10/simplejson-210/</guid>
+      <description>simplejson 2.1.0</description>
+      <content:encoded><![CDATA[<p><a href="http://undefined.org/python/#simplejson">simplejson</a> (<a href="http://simplejson.googlecode.com/svn/tags/simplejson-2.1.0/docs/index.html">documentation</a>) is a simple, fast, complete, correct and extensible <a href="http://json.org/">JSON</a> (<a href="http://www.ietf.org/rfc/rfc4627.txt">RFC 4627</a>) encoder/decoder for Python 2.5+.  It is pure Python code with no dependencies, but features an optional C extension for speed-ups.
+</p>
+<p><a href="http://undefined.org/python/#simplejson">simplejson</a> 2.1.0 is a major update with several new features and bug-fixes:
+</p>
+<ul>
+ <li>
+     Decimal serialization officially supported for encoding with use_decimal=True. For encoding this encodes Decimal objects and for decoding it implies parse_float=Decimal
+ </li>
+
+ <li>
+     Python 2.4 no longer supported (may still work, but no longer tested)
+ </li>
+
+ <li>
+     Decoding performance and memory utilization enhancements <a href="http://bugs.python.org/issue7451">http://bugs.python.org/issue7451</a>
+ </li>
+
+ <li>
+     JSONEncoderForHTML class for escaping &amp;, &lt;, &gt; <a href="http://code.google.com/p/simplejson/issues/detail?id=66">http://code.google.com/p/simplejson/issues/detail?id=66</a>
+ </li>
+
+ <li>
+     Memoization of object keys during encoding (when using speedups)
+ </li>
+
+ <li>
+     Encoder changed to use PyIter_Next for list iteration to avoid potential threading issues
+ </li>
+
+ <li>
+     Encoder changed to use iteritems rather than PyDict_Next in order to support dict subclasses that have a well defined ordering <a href="http://bugs.python.org/issue6105">http://bugs.python.org/issue6105</a>
+ </li>
+
+ <li>
+     indent encoding parameter changed to be a string rather than an integer (integer use still supported for backwards compatibility) <a href="http://code.google.com/p/simplejson/issues/detail?id=56">http://code.google.com/p/simplejson/issues/detail?id=56</a>
+ </li>
+
+ <li>
+     Test suite (python setup.py test) now automatically runs with and without speedups <a href="http://code.google.com/p/simplejson/issues/detail?id=55">http://code.google.com/p/simplejson/issues/detail?id=55</a>
+ </li>
+
+ <li>
+     Fixed support for older versions of easy_install (e.g. stock Mac OS X config) <a href="http://code.google.com/p/simplejson/issues/detail?id=54">http://code.google.com/p/simplejson/issues/detail?id=54</a>
+ </li>
+
+ <li>
+     Fixed str/unicode mismatches when using ensure_ascii=False <a href="http://code.google.com/p/simplejson/issues/detail?id=48">http://code.google.com/p/simplejson/issues/detail?id=48</a>
+ </li>
+
+ <li>
+     Fixed error message when parsing an array with trailing comma with speedups <a href="http://code.google.com/p/simplejson/issues/detail?id=46">http://code.google.com/p/simplejson/issues/detail?id=46</a>
+ </li>
+
+ <li>
+     Refactor decoder errors to raise JSONDecodeError instead of ValueError <a href="http://code.google.com/p/simplejson/issues/detail?id=45">http://code.google.com/p/simplejson/issues/detail?id=45</a>
+ </li>
+
+ <li>
+     New ordered_pairs_hook feature in decoder which makes it possible to preserve key order. <a href="http://bugs.python.org/issue5381">http://bugs.python.org/issue5381</a>
+ </li>
+
+ <li>
+     Fixed containerless unicode float decoding (same bug as 2.0.4, oops!) <a href="http://code.google.com/p/simplejson/issues/detail?id=43">http://code.google.com/p/simplejson/issues/detail?id=43</a>
+ </li>
+
+ <li>
+     Share PosInf definition between encoder and decoder
+ </li>
+
+ <li>
+     Minor reformatting to make it easier to backport simplejson changes to Python 2.7/3.1 json module
+ </li>
+</ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>PyCon 2009, Drop ACID and think about data</title>
+      <link>http://bob.pythonmac.org/archives/2009/04/01/pycon-2009-drop-acid-and-think-about-data/</link>
+      <pubDate>Wed, 01 Apr 2009 14:11:45 PDT</pubDate>
+      <category><![CDATA[python]]></category>
+      <category><![CDATA[PyCon]]></category>
+      <guid>http://bob.pythonmac.org/?p=266</guid>
+      <description>PyCon 2009, Drop ACID and think about data</description>
+      <content:encoded><![CDATA[
+
+
+
+<!-- -*- mode: rst -*- -->
+<p>I'm getting increasingly lazy about updating my blog these days, probably best to follow me on twitter: <a class="reference external" href="http://twitter.com/etrepum">http://twitter.com/etrepum</a></p>
+<p>Anyway, I gave a talk at <a class="reference external" href="http://us.pycon.org/2009/conference/">PyCon 2009</a> in Rosemont (&quot;Chicago&quot;) last week called <a class="reference external" href="http://bitbucket.org/etrepum/drop_acid_pycon_2009/">Drop ACID and think about data</a>. Basically it is a survey of some of the various kinds of non-traditional database technologies I've been looking at the past few years. Notable technologies NOT talked about are object databases and graph databases. *UPDATE* Video available here: <a class="reference external" href="http://blip.tv/file/1949416">http://blip.tv/file/1949416</a></p>
+<p>Slides are on <a class="reference external" href="http://bitbucket.org/">BitBucket</a> for now: <a class="reference external" href="http://bitbucket.org/etrepum/drop_acid_pycon_2009/">Drop ACID and think about data</a></p>
+<p>I'll be giving a (hopefully updated) version of this talk at <a class="reference external" href="http://opensourcebridge.org/">OpenSourceBridge</a>, which is in Portland, OR June 17-19.</p>
+<p>If you're interested in the content of this talk there is far more insightful information on <a class="reference external" href="http://spyced.blogspot.com/">Jonathan Ellis' Programming Blog</a>, one of the developers working on <a class="reference external" href="http://incubator.apache.org/cassandra/">Cassandra</a>.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>simplejson 2.0.9</title>
+      <link>http://bob.pythonmac.org/archives/2009/02/18/simplejson-209/</link>
+      <pubDate>Wed, 18 Feb 2009 16:00:57 PST</pubDate>
+      <category><![CDATA[python]]></category>
+      <category><![CDATA[simplejson]]></category>
+      <guid>http://bob.pythonmac.org/?p=264</guid>
+      <description>simplejson 2.0.9</description>
+      <content:encoded><![CDATA[
+
+
+
+<!-- -*- mode: rst -*- -->
+<p><a class="reference external" href="http://undefined.org/python/#simplejson">simplejson</a> (<a class="reference external" href="http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html">documentation</a>) is a simple, fast, complete, correct and extensible <a class="reference external" href="http://json.org/">JSON</a> (<a class="reference external" href="http://www.ietf.org/rfc/rfc4627.txt">RFC 4627</a>) encoder/decoder for Python 2.4+.  It is pure Python code with no dependencies, but features an optional C extension for speed-ups.</p>
+<p><a class="reference external" href="http://undefined.org/python/#simplejson">simplejson</a> 2.0.9 is a major bug-fix update:</p>
+<ul class="simple">
+<li>Adds cyclic GC to the Encoder and Scanner speedups, which could've caused uncollectible cycles in some cases when using custom parser or encoder functions</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>simplejson 2.0.8</title>
+      <link>http://bob.pythonmac.org/archives/2009/02/15/simplejson-208/</link>
+      <pubDate>Sun, 15 Feb 2009 16:56:05 PST</pubDate>
+      <category><![CDATA[python]]></category>
+      <category><![CDATA[simplejson]]></category>
+      <guid>http://bob.pythonmac.org/?p=260</guid>
+      <description>simplejson 2.0.8</description>
+      <content:encoded><![CDATA[
+
+
+
+<!-- -*- mode: rst -*- -->
+<p><a class="reference external" href="http://undefined.org/python/#simplejson">simplejson</a> (<a class="reference external" href="http://simplejson.googlecode.com/svn/tags/simplejson-2.0.8/docs/index.html">documentation</a>) is a simple, fast, complete, correct and extensible <a class="reference external" href="http://json.org/">JSON</a> (<a class="reference external" href="http://www.ietf.org/rfc/rfc4627.txt">RFC 4627</a>) encoder/decoder for Python 2.4+.  It is pure Python code with no dependencies, but features an optional C extension for speed-ups.</p>
+<p><a class="reference external" href="http://undefined.org/python/#simplejson">simplejson</a> 2.0.8 is a minor bug-fix update:</p>
+<ul class="simple">
+<li>Documentation fixes</li>
+<li>Fixes encoding True and False as keys</li>
+<li>Fixes checking for True and False by identity for several parameters</li>
+</ul>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

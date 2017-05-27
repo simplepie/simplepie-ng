@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
+	>
+
+<channel>
+	<title>/webdev</title>
+	<atom:link href="http://andreiabohner.wordpress.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://andreiabohner.wordpress.com</link>
+	<description></description>
+	<lastBuildDate>Wed, 27 Jul 2011 12:45:40 +0000</lastBuildDate>
+	<language>pt-br</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.com/</generator>
+<cloud domain='andreiabohner.wordpress.com' port='80' path='/?rsscloud=notify' registerProcedure='' protocol='http-post' />
+<image>
+		<url>http://s2.wp.com/i/buttonw-com.png</url>
+		<title>/webdev</title>
+		<link>http://andreiabohner.wordpress.com</link>
+	</image>
+	<atom:link rel="search" type="application/opensearchdescription+xml" href="http://andreiabohner.wordpress.com/osd.xml" title="/webdev" />
+	<atom:link rel='hub' href='http://andreiabohner.wordpress.com/?pushpress=hub'/>
+		<item>
+		<title>Symfony2 Cheat-Sheet: Forms</title>
+		<link>http://andreiabohner.wordpress.com/2011/04/13/symfony2-cheat-sheet-forms/</link>
+		<comments>http://andreiabohner.wordpress.com/2011/04/13/symfony2-cheat-sheet-forms/#comments</comments>
+		<pubDate>Wed, 13 Apr 2011 01:35:17 +0000</pubDate>
+		<dc:creator>Andréia Bohner</dc:creator>
+				<category><![CDATA[symfony]]></category>
+		<category><![CDATA[symfony2]]></category>
+		<category><![CDATA[cheat sheet]]></category>
+		<category><![CDATA[forms]]></category>
+
+		<guid isPermaLink="false">http://andreiabohner.wordpress.com/?p=356</guid>
+		<description><![CDATA[Symfony2 Cheat-Sheet: Forms &#8211; [PDF] &#8211; English Official documentation about the form component: http://symfony.com/doc/2.0/book/forms/index.html<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=356&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p><a href='http://andreiabohner.files.wordpress.com/2011/04/forms.pdf'><img src="http://andreiabohner.files.wordpress.com/2011/04/sf2cs.jpg?w=500&#038;h=314" alt="" title="Symfony2 Forms" width="500" height="314" class="alignnone size-full wp-image-359" /></a><br />
+Symfony2 Cheat-Sheet: Forms &#8211; <a href='http://andreiabohner.files.wordpress.com/2011/04/forms.pdf'>[PDF] &#8211; English</a></p>
+<p>Official documentation about the form component: <a href="http://symfony.com/doc/2.0/book/forms/index.html">http://symfony.com/doc/2.0/book/forms/index.html</a></p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/andreiabohner.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/andreiabohner.wordpress.com/356/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/andreiabohner.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/andreiabohner.wordpress.com/356/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/andreiabohner.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/andreiabohner.wordpress.com/356/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/andreiabohner.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/andreiabohner.wordpress.com/356/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/andreiabohner.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/andreiabohner.wordpress.com/356/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/andreiabohner.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/andreiabohner.wordpress.com/356/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/andreiabohner.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/andreiabohner.wordpress.com/356/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=356&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://andreiabohner.wordpress.com/2011/04/13/symfony2-cheat-sheet-forms/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/1584ed901fd1cfe1aba51564166e5e32?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">Andréia Bohner</media:title>
+		</media:content>
+
+		<media:content url="http://andreiabohner.files.wordpress.com/2011/04/sf2cs.jpg" medium="image">
+			<media:title type="html">Symfony2 Forms</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Contribuindo com a tradução da documentação oficial do Symfony2</title>
+		<link>http://andreiabohner.wordpress.com/2010/11/27/contribuindo-com-a-traducao-da-documentacao-oficial-do-symfony2/</link>
+		<comments>http://andreiabohner.wordpress.com/2010/11/27/contribuindo-com-a-traducao-da-documentacao-oficial-do-symfony2/#comments</comments>
+		<pubDate>Sat, 27 Nov 2010 02:18:14 +0000</pubDate>
+		<dc:creator>Andréia Bohner</dc:creator>
+				<category><![CDATA[symfony]]></category>
+		<category><![CDATA[symfony2]]></category>
+		<category><![CDATA[documentation]]></category>
+
+		<guid isPermaLink="false">http://andreiabohner.wordpress.com/?p=287</guid>
+		<description><![CDATA[Interessado(a) em contribuir com a tradução da documentação oficial do Symfony2? Seja bem-vindo(a)! Este post traz as orientações de como proceder e como estamos nos organizando para a tradução dos documentos. A seguinte thread da lista de discussões sobre o &#8230; <a href="http://andreiabohner.wordpress.com/2010/11/27/contribuindo-com-a-traducao-da-documentacao-oficial-do-symfony2/">Continue lendo <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=287&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>Interessado(a) em contribuir com a tradução da documentação <a href="http://symfony.com">oficial do Symfony2</a>? Seja bem-vindo(a)!</p>
+<p>Este post traz as orientações de como proceder e como estamos nos organizando para a tradução dos documentos. A seguinte <a href="http://groups.google.com/group/symfony-pt/browse_thread/thread/85326256883e566b">thread da lista de discussões sobre o symfony</a> tem as informações iniciais, conforme as <a href="http://docs.symfony-reloaded.org/contributing/documentation/translations.html">instruções da página oficial</a>. </p>
+<p>No ano passado, traduzimos o livro &#8220;<strong>Mais com o symfony 1.3 &amp; 1.4</strong>&#8221; que foi publicado e está a venda na <a href="http://www.amazon.com/Mais-com-o-symfony-Portuguese/dp/2918390259">Amazon</a>.</p>
+<p>Então, vamos lá! <img src='http://s0.wp.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<h3>Informando os documentos que deseja traduzir</h3>
+<p>Para melhor organização, primeiro informar o(s) documento(s) que pretende ajudar na tradução e/ou revisão na <a href="https://spreadsheets.google.com/ccc?key=0AtX-XMIXR2DAdFBMekh4UktObUNOMy1NX2RSMjJMUUE">planilha de tradutores/revisores</a>.</p>
+<p>Se ainda não possuir acesso de edição nesta planilha, solicitar acesso para <em>andreiabohner at gmail dot com</em>.</p>
+<h3>Utilizando o Git e o github</h3>
+<p>Agora, para nos auxiliar, temos a nossa disposição o github, uma ferramenta fantástica, onde encontra-se a documentação.<br />
+Abaixo está uma descrição sucinta de como utilizar o git e o github.</p>
+<p>Para começar, fazer o fork do repositório <em>master</em> da tradução para o português no github:</p>
+<ul>
+<li>Acessar o <a href="https://github.com/andreia/symfony-docs-pt-BR">repositório master no github</a></li>
+<li>Clicar no botão fork:<br />
+<img class="alignnone size-full wp-image-292" title="fork" src="http://andreiabohner.files.wordpress.com/2010/11/fork.jpg?w=70&#038;h=36" alt="" width="70" height="36" /></li>
+</ul>
+<p>Agora, você irá <em>“clonar”</em> o projeto para a sua máquina local:<br />
+Copiar a URL do repositório do seu fork (semelhante a imagem abaixo), para utilizá-la com o comando <em>git clone</em>:<br />
+<img src="http://andreiabohner.files.wordpress.com/2010/11/git.png?w=437&#038;h=34" alt="" title="git clone" width="437" height="34" class="alignnone size-full wp-image-353" /><br />
+<code>$ git clone git@github.com:seuusername/symfony-docs-pt-BR.git</code></p>
+<p>Após completar o clone do repositório, ele terá o nome remoto &#8220;<em>origin</em>&#8220;. Não confundir, apesar do nome ser <em>origin</em> ele não está apontando para o repo <em>master</em>, mas sim para o <strong>seu fork no github</strong>.  </p>
+<p>Pronto, agora é só trabalhar na tradução do(s) documento(s).</p>
+<p>Finalizadas as traduções e/ou revisões, faça o commit das alterações no seu repositório local:<br />
+<code>$ git commit –a –m "pt_BR translation"</code></p>
+<p>E atualize o seu repositório no servidor github com as alterações realizadas localmente:<br />
+<code>$ git push origin master</code></p>
+<p>O último passo é informar sobre as suas alterações ao responsável pelo repositório de origem para que ele faça um pull das alterações no repositório. Para isso, acesse a página do repositório original no github, em: <a href="https://github.com/andreia/symfony-docs-pt-BR">https://github.com/andreia/symfony-docs-pt-BR</a> e envie um <strong>pull request</strong> (clicando no botão <strong>“Pull Request”</strong>):<br />
+<img class="alignnone size-full wp-image-313" title="pullrequest" src="http://andreiabohner.files.wordpress.com/2010/11/pullrequest.jpg?w=113&#038;h=34" alt="" width="113" height="34" /></p>
+<h3>Mantendo seu repositório local atualizado</h3>
+<p>Sempre antes de fazer as suas alterações locais, lembrar de executar o comando <em>pull</em> para manter atualizado o seu repositório local trazendo as alterações do repositório de origem (o repositório que você fez o fork):<br />
+<code>$ git remote add upstream git://github.com/andreia/symfony-docs-pt-BR.git</code><br />
+<code>$ git pull upstream master</code></p>
+<h3>Formato da documentação</h3>
+<p>A documentação do <strong>Symfony2</strong> utiliza a linguagem markup <strong>reStructuredText</strong> juntamente com o <strong>Sphinx</strong>, ao invés do <strong>markdown</strong>. Segue a referência: <a href="http://symfony.com/doc/2.0/contributing/documentation/format.html">http://symfony.com/doc/2.0/contributing/documentation/format.html</a><br />
+Se preferir, existe um editor online, que pode auxiliar em: <a href="http://rst.ninjs.org/">http://rst.ninjs.org/</a></p>
+<h3>Referências sobre o Git / github</h3>
+<p><a href="http://help.github.com/git-cheat-sheets/">Git Cheat Sheet</a><br />
+<a href="http://help.github.com/remotes/">Working with remotes</a><br />
+<a href="http://progit.org/book/">Pro Git</a><br />
+<a href="http://yehudakatz.com/2010/05/13/common-git-workflows/">My Common Git Workflow</a></p>
+<p><strong>[UPDATE 08/04/2011]</strong> Alterado o repositório de http://github.com/andreia/symfony-docs para <strong>https://github.com/andreia/symfony-docs-pt-BR</strong></p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/andreiabohner.wordpress.com/287/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/andreiabohner.wordpress.com/287/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/andreiabohner.wordpress.com/287/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/andreiabohner.wordpress.com/287/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/andreiabohner.wordpress.com/287/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/andreiabohner.wordpress.com/287/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/andreiabohner.wordpress.com/287/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/andreiabohner.wordpress.com/287/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/andreiabohner.wordpress.com/287/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/andreiabohner.wordpress.com/287/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/andreiabohner.wordpress.com/287/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/andreiabohner.wordpress.com/287/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/andreiabohner.wordpress.com/287/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/andreiabohner.wordpress.com/287/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=287&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://andreiabohner.wordpress.com/2010/11/27/contribuindo-com-a-traducao-da-documentacao-oficial-do-symfony2/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/1584ed901fd1cfe1aba51564166e5e32?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">Andréia Bohner</media:title>
+		</media:content>
+
+		<media:content url="http://andreiabohner.files.wordpress.com/2010/11/fork.jpg" medium="image">
+			<media:title type="html">fork</media:title>
+		</media:content>
+
+		<media:content url="http://andreiabohner.files.wordpress.com/2010/11/git.png" medium="image">
+			<media:title type="html">git clone</media:title>
+		</media:content>
+
+		<media:content url="http://andreiabohner.files.wordpress.com/2010/11/pullrequest.jpg" medium="image">
+			<media:title type="html">pullrequest</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Dica: Definindo um nome personalizado para as tabelas i18n do Doctrine</title>
+		<link>http://andreiabohner.wordpress.com/2010/10/06/dica-definindo-um-nome-personalizado-para-as-tabelas-i18n-no-doctrine/</link>
+		<comments>http://andreiabohner.wordpress.com/2010/10/06/dica-definindo-um-nome-personalizado-para-as-tabelas-i18n-no-doctrine/#comments</comments>
+		<pubDate>Wed, 06 Oct 2010 02:06:54 +0000</pubDate>
+		<dc:creator>Andréia Bohner</dc:creator>
+				<category><![CDATA[doctrine]]></category>
+		<category><![CDATA[schema]]></category>
+		<category><![CDATA[symfony]]></category>
+		<category><![CDATA[i18n]]></category>
+
+		<guid isPermaLink="false">http://andreiabohner.wordpress.com/?p=260</guid>
+		<description><![CDATA[Pesquisando na documentação do Doctrine e em blogs *around the web* a resposta não encontra-se tão facilmente, então deixo aqui a dica para quem pretende utilizar a internacionalização do banco de dados com o symfony e o behaviour i18n do &#8230; <a href="http://andreiabohner.wordpress.com/2010/10/06/dica-definindo-um-nome-personalizado-para-as-tabelas-i18n-no-doctrine/">Continue lendo <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=260&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>Pesquisando na documentação do Doctrine e em blogs *around the web* a resposta não encontra-se tão facilmente, então deixo aqui a dica para quem pretende utilizar a internacionalização do banco de dados com o symfony e o behaviour i18n do Doctrine e precisa personalizar o nome das classes para as tabelas i18n <img src='http://s1.wp.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>A palavra mágica é <strong>tableName</strong>. Ela é uma opção do behaviour i18n para definir o nome da classe personalizado, em seu schema do banco:</p>
+<pre>
+<code>
+BlogPost:
+  actAs:
+    I18n:
+      tableName: custom_table_name_translation
+      fields: [title]
+  columns:
+    title: string(255)
+</code>
+</pre>
+<p>A solução está em uma <a href="http://groups.google.com/group/doctrine-user/browse_thread/thread/84d2cf734491c695">thread no grupo do Doctrine </a>que faz referência ao <a href="http://trac.doctrine-project.org/ticket/1000">ticket 1000</a>, onde encontra-se a resposta.</p>
+<p>Na <a href="http://www.doctrine-project.org/documentation/manual/1_2/en/behaviors#core-behaviors:i18n">documentação do Doctrine sobre o behaviour i18n</a>, onde temos a lista de opções disponíveis para o behaviour, encontramos a opção <strong>className</strong> (%CLASS%Translation) com a qual podemos definir o nome padrão para utilizar nas classes geradas, porém, esta opção não funcionará se você deseja utilizar um nome para sua tabela que não contenha a palavra <strong>Translation</strong> no final, como por exemplo, na situação em que você está trabalhando com um sistema legado, e o nome das suas tabelas mais a palavra &#8220;Translation&#8221;, ultrapassarem o limite do tamanho do banco de dados para tabelas, como no caso do Oracle, por exemplo, que é de 30 caracteres (para todos os seus identificadores). </p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/andreiabohner.wordpress.com/260/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/andreiabohner.wordpress.com/260/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/andreiabohner.wordpress.com/260/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/andreiabohner.wordpress.com/260/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/andreiabohner.wordpress.com/260/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/andreiabohner.wordpress.com/260/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/andreiabohner.wordpress.com/260/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/andreiabohner.wordpress.com/260/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/andreiabohner.wordpress.com/260/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/andreiabohner.wordpress.com/260/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/andreiabohner.wordpress.com/260/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/andreiabohner.wordpress.com/260/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/andreiabohner.wordpress.com/260/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/andreiabohner.wordpress.com/260/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=260&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://andreiabohner.wordpress.com/2010/10/06/dica-definindo-um-nome-personalizado-para-as-tabelas-i18n-no-doctrine/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/1584ed901fd1cfe1aba51564166e5e32?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">Andréia Bohner</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Symfony 1.4 Cheat-Sheet: Formulários &#8211; sfForm (Primeira Parte)</title>
+		<link>http://andreiabohner.wordpress.com/2010/09/28/symfony-1-4-cheat-sheet-formularios-sfform-primeira-parte/</link>
+		<comments>http://andreiabohner.wordpress.com/2010/09/28/symfony-1-4-cheat-sheet-formularios-sfform-primeira-parte/#comments</comments>
+		<pubDate>Tue, 28 Sep 2010 02:44:59 +0000</pubDate>
+		<dc:creator>Andréia Bohner</dc:creator>
+				<category><![CDATA[cheat sheet]]></category>
+		<category><![CDATA[symfony]]></category>
+		<category><![CDATA[forms]]></category>
+
+		<guid isPermaLink="false">http://andreiabohner.wordpress.com/?p=251</guid>
+		<description><![CDATA[O symfony 1.4 possui um framework MVC de formulários poderoso, que pode, inclusive, ser utilizado independentemente em outros projetos. Esta primeira parte das referências sobre os formulários do symfony, exibe um esquema exemplo sobre a utilização de um formulário simples &#8230; <a href="http://andreiabohner.wordpress.com/2010/09/28/symfony-1-4-cheat-sheet-formularios-sfform-primeira-parte/">Continue lendo <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=251&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>O symfony 1.4 possui um <a href="http://fabien.potencier.org/article/3/symfony-1-1-form-framework-and-the-mvc-pattern">framework MVC de formulários</a> poderoso, que pode, inclusive, ser utilizado independentemente em outros projetos.</p>
+<p>Esta primeira parte das referências sobre os formulários do symfony, exibe um esquema exemplo sobre a utilização de um formulário simples e as possíveis configurações relativas aos campos do formulário que podem ser realizadas através do método configure().</p>
+<p>Idiomas disponíveis:</p>
+<ul>
+<li>English:     Forms &#8211; sfForm (Part I)          <a href='http://andreiabohner.files.wordpress.com/2010/09/cheatsheet14formspartone_enus.pdf'>[PDF]</a></li>
+<li>Português: Formulários &#8211; sfForm (Parte I) <a href='http://andreiabohner.files.wordpress.com/2010/09/cheatsheet14formspartone_ptbr.pdf'>[PDF] </a></li>
+</ul>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/andreiabohner.wordpress.com/251/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/andreiabohner.wordpress.com/251/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/andreiabohner.wordpress.com/251/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/andreiabohner.wordpress.com/251/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/andreiabohner.wordpress.com/251/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/andreiabohner.wordpress.com/251/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/andreiabohner.wordpress.com/251/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/andreiabohner.wordpress.com/251/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/andreiabohner.wordpress.com/251/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/andreiabohner.wordpress.com/251/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/andreiabohner.wordpress.com/251/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/andreiabohner.wordpress.com/251/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/andreiabohner.wordpress.com/251/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/andreiabohner.wordpress.com/251/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=251&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://andreiabohner.wordpress.com/2010/09/28/symfony-1-4-cheat-sheet-formularios-sfform-primeira-parte/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/1584ed901fd1cfe1aba51564166e5e32?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">Andréia Bohner</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Doctrine + symfony 1.4 &#8211; Alterando o nome das sequences do Oracle utilizadas pelo Doctrine</title>
+		<link>http://andreiabohner.wordpress.com/2010/02/17/doctrine-symfony-1-4-alterando-o-nome-das-sequences-do-oracle-utilizadas-pelo-doctrine/</link>
+		<comments>http://andreiabohner.wordpress.com/2010/02/17/doctrine-symfony-1-4-alterando-o-nome-das-sequences-do-oracle-utilizadas-pelo-doctrine/#comments</comments>
+		<pubDate>Wed, 17 Feb 2010 12:57:06 +0000</pubDate>
+		<dc:creator>Andréia Bohner</dc:creator>
+				<category><![CDATA[doctrine]]></category>
+		<category><![CDATA[symfony]]></category>
+		<category><![CDATA[oracle]]></category>
+		<category><![CDATA[sequences]]></category>
+
+		<guid isPermaLink="false">http://andreiabohner.wordpress.com/?p=236</guid>
+		<description><![CDATA[A seguir veremos como alterar no symfony o nome das sequences utilizadas pelo Doctrine. Por padrão, os nomes das sequences são gerados automaticamente pelo Doctrine seguindo o formato: nomeTabela_seq (&#8216;%s_seq&#8217;) Mas, onde e como posso alterar o nome das sequences, &#8230; <a href="http://andreiabohner.wordpress.com/2010/02/17/doctrine-symfony-1-4-alterando-o-nome-das-sequences-do-oracle-utilizadas-pelo-doctrine/">Continue lendo <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=236&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>A seguir veremos como alterar no symfony o nome das sequences utilizadas pelo Doctrine.</p>
+<p>Por padrão, os nomes das sequences são gerados automaticamente pelo Doctrine seguindo o formato: <strong>nomeTabela_seq </strong>(&#8216;<em>%s_seq&#8217;</em>)</p>
+<p>Mas, onde e como posso alterar o nome das sequences, por um novo padrão ou definir um nome para cada modelo independentemente de um formato fixo, para meu banco de dados existente?</p>
+<p>Para definir um nome diferenciado de sequence para cada modelo, você deve informar o parâmetro<em> &#8220;sequence&#8221;</em> na chave primária do modelo desejado em seu esquema do banco de dados (schema.yml). Por exemplo, digamos que o nome de sua sequence para o modelo (tabela) Area seja SEQ_AREA:</p>
+<pre><code>
+Area:
+  tableName: AREA
+  columns:
+    cd_area:      { type: integer(3), primary: true, sequence: SEQ_AREA}
+    descricao:    { type: string(255) }
+</code></pre>
+<p>Ao verificar o SQL da sequence na <em>barra de ferramentas para debug web</em> o nome da sequence ainda continua incorreto, pois será adicionado o padrão do Doctrine <em>%s_seq</em>:</p>
+<p><code>SELECT SEQ_AREA_seq.nextval FROM DUAL</code></p>
+<p>O Doctrine nos permite modificar uma série de configurações antes de carregar os modelos através das configurações globais. Você pode verificar as configurações disponíveis na <a href="http://www.doctrine-project.org/documentation/manual/1_0/hu/configuration">documentação do Doctrine</a>.</p>
+<p>O atributo que precisamos alterar agora é o <strong>ATTR_SEQNAME_FORMAT</strong> que, como o nome sugere, modifica o formato do nome das sequences.<br />
+Os atributos globais são setados através da instância <em>singleton </em><strong>Doctrine_Manager</strong>.</p>
+<p>No symfony, as <a href="http://www.symfony-project.org/doctrine/1_2/en/03-Configuration">configurações globais do Doctrine</a> são definidas na classe<strong> config/ProjectConfiguration.class.php</strong><br />
+através do método <strong>configureDoctrine</strong>.</p>
+<p>Vamos modificar então o atributo <strong>ATTR_SEQNAME_FORMAT</strong>, onde podemos definir o formato para aceitar qualquer<br />
+nome de sequence informado com o atributo &#8220;<em>sequence</em>&#8221; no <em>schema</em>:</p>
+<pre>
+<code>
+&lt;?php
+
+require_once '/var/www/lib/vendor/symfony/lib/autoload/sfCoreAutoload.class.php';
+sfCoreAutoload::register();
+
+class ProjectConfiguration extends sfProjectConfiguration{
+
+  public function setup(){
+    $this-&gt;enablePlugins('sfDoctrinePlugin', 'sfDoctrineGuardPlugin');
+  }
+
+  public function configureDoctrine(Doctrine_Manager $manager){
+    $manager-&gt;setAttribute(Doctrine::ATTR_SEQNAME_FORMAT, '%s');
+  }
+}
+</code>
+</pre>
+<p><strong>Observação: </strong>Ao definir o nome da sequence com o atributo &#8220;<em>sequence</em>&#8221; no esquema do banco de dados, não deve-se utilizar o atributo <em>&#8220;autoincrement: true&#8221;</em>.</p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/andreiabohner.wordpress.com/236/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/andreiabohner.wordpress.com/236/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/andreiabohner.wordpress.com/236/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/andreiabohner.wordpress.com/236/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/andreiabohner.wordpress.com/236/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/andreiabohner.wordpress.com/236/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/andreiabohner.wordpress.com/236/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/andreiabohner.wordpress.com/236/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/andreiabohner.wordpress.com/236/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/andreiabohner.wordpress.com/236/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/andreiabohner.wordpress.com/236/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/andreiabohner.wordpress.com/236/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/andreiabohner.wordpress.com/236/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/andreiabohner.wordpress.com/236/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=236&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://andreiabohner.wordpress.com/2010/02/17/doctrine-symfony-1-4-alterando-o-nome-das-sequences-do-oracle-utilizadas-pelo-doctrine/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/1584ed901fd1cfe1aba51564166e5e32?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">Andréia Bohner</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Directory Structure and CLI Cheat-Sheet &#8211; symfony 1.4</title>
+		<link>http://andreiabohner.wordpress.com/2009/12/27/directory-structure-and-cli-cheat-sheet-symfony-1-4/</link>
+		<comments>http://andreiabohner.wordpress.com/2009/12/27/directory-structure-and-cli-cheat-sheet-symfony-1-4/#comments</comments>
+		<pubDate>Sun, 27 Dec 2009 03:11:56 +0000</pubDate>
+		<dc:creator>Andréia Bohner</dc:creator>
+				<category><![CDATA[cli]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[symfony]]></category>
+		<category><![CDATA[cheat sheet]]></category>
+
+		<guid isPermaLink="false">http://andreiabohner.wordpress.com/?p=223</guid>
+		<description><![CDATA[pt_BR: Muitos leitores do /webdev tem perguntado sobre as atualizações das referências rápidas (cheat-sheets) para as novas versões do framework PHP symfony. Bem, aqui vai a primeira com a estrutura de diretório e as tarefas da linha de comando (CLI) &#8230; <a href="http://andreiabohner.wordpress.com/2009/12/27/directory-structure-and-cli-cheat-sheet-symfony-1-4/">Continue lendo <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=223&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p><span style="color:#008000;">pt_BR</span><span style="color:#000000;">:</span> Muitos leitores do <strong>/webdev</strong> tem perguntado sobre as atualizações das referências rápidas (cheat-sheets) para as novas versões do framework PHP symfony.</p>
+<p>Bem, aqui vai a primeira com a estrutura de diretório e as tarefas da linha de comando (CLI) do symfony, muito mais poderosa agora na versão 1.4 do framework.</p>
+<p>As cheat-sheets serão atualizadas para a versão 1.4, porque esta é a versão LTS atual (<a title="versões do symfony" href="http://www.symfony-project.org/installation">com suporte de longo tempo</a>).</p>
+<hr />
+<p><span style="color:#008000;">en_US</span>: Many readers of the <strong>/webdev</strong> have asked me about the updates of the cheat-sheets for new versions of the symfony framework.</p>
+<p>Well, here&#8217;s the first one with the directory structure and tasks of the command line interface (CLI), much more powerful now in version 1.4 of the framework.</p>
+<p>The cheat-sheets will be updated to version 1.4, because this is the current LTS version (<a title="symfony versions" href="http://www.symfony-project.org/installation">Long Term Support</a>).</p>
+<hr /><strong>Idiomas:</strong></p>
+<ul>
+<li>English <a href="http://andreiabohner.files.wordpress.com/2009/12/cheatsheet14directorystructureandcli1.pdf">[PDF]</a> &#8211; 4 pages</li>
+<li>Italiano <a href='http://andreiabohner.files.wordpress.com/2009/12/cheatsheetsymfony14directorystructureandcli_it.pdf'>[PDF]</a> &#8211; 4 pagine &#8211; traduzione di <a href="http://www.zen.pn.it">Vittore Zen</a> </li>
+</ul>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/andreiabohner.wordpress.com/223/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/andreiabohner.wordpress.com/223/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/andreiabohner.wordpress.com/223/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/andreiabohner.wordpress.com/223/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/andreiabohner.wordpress.com/223/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/andreiabohner.wordpress.com/223/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/andreiabohner.wordpress.com/223/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/andreiabohner.wordpress.com/223/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/andreiabohner.wordpress.com/223/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/andreiabohner.wordpress.com/223/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/andreiabohner.wordpress.com/223/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/andreiabohner.wordpress.com/223/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/andreiabohner.wordpress.com/223/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/andreiabohner.wordpress.com/223/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=223&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://andreiabohner.wordpress.com/2009/12/27/directory-structure-and-cli-cheat-sheet-symfony-1-4/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/1584ed901fd1cfe1aba51564166e5e32?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">Andréia Bohner</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Calendário de Advento symfony: construindo a aplicação web 2.0 Jobeet em 24 dias</title>
+		<link>http://andreiabohner.wordpress.com/2008/12/07/calendario-de-advento-symfony-construindo-a-aplicacao-web-20-jobeet-em-24-dias/</link>
+		<comments>http://andreiabohner.wordpress.com/2008/12/07/calendario-de-advento-symfony-construindo-a-aplicacao-web-20-jobeet-em-24-dias/#comments</comments>
+		<pubDate>Sun, 07 Dec 2008 19:17:02 +0000</pubDate>
+		<dc:creator>Andréia Bohner</dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[symfony]]></category>
+		<category><![CDATA[webdev]]></category>
+		<category><![CDATA[advent calendar]]></category>
+		<category><![CDATA[jobeet]]></category>
+		<category><![CDATA[open-source]]></category>
+		<category><![CDATA[tutoriais]]></category>
+		<category><![CDATA[web 2.0]]></category>
+
+		<guid isPermaLink="false">http://andreiabohner.wordpress.com/?p=126</guid>
+		<description><![CDATA[Isso mesmo! Neste ano de 2008 temos um novo calendário de advento symfony! Novamente uma ótima oportunidade para aprender o framework symfony, agora na versão 1.2, através de uma série de tutoriais publicados todos os dias, entre o dia primeiro &#8230; <a href="http://andreiabohner.wordpress.com/2008/12/07/calendario-de-advento-symfony-construindo-a-aplicacao-web-20-jobeet-em-24-dias/">Continue lendo <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=126&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<div class="mceTemp">
+<dl class="wp-caption alignnone">
+<dt class="wp-caption-dt"><img class="size-full wp-image-216" title="jobeet1" src="http://andreiabohner.files.wordpress.com/2008/12/jobeet1.jpg?w=480&#038;h=93" alt="Jobeet" width="480" height="93" /></dt>
+</dl>
+</div>
+<p>Isso mesmo! Neste ano de 2008 temos um novo calendário de advento symfony!</p>
+<p>Novamente uma ótima oportunidade para aprender o framework symfony, agora na versão 1.2, através de uma série de tutoriais publicados todos os dias, entre o dia primeiro de dezembro e o Natal.</p>
+<p>O objetivo é, a exemplo do <a href="http://www.symfony-project.org/askeet/1_0/en/">askeet</a> (publicado em 2005), termos no dia 24 a conclusão de uma aplicação web 2.0, dedicando 1 hora diária para ler os tutoriais e praticar. O nome desta aplicação é <strong>Jobeet </strong>e será um software de <em><strong>Job Board</strong></em>, ou quadro de vagas, de código aberto. Na aplicação será possível procurar por um trabalho ou propor um.</p>
+<p>Os tutoriais, em inglês, são disponibilizados no seguinte endereço:<br />
+<a href="http://www.symfony-project.org/jobeet/1_2/en/">http://www.symfony-project.org/jobeet/1_2/en/</a></p>
+<p>E, para quem não está familiarizado com o inglês, estou trabalhando nas traduções para o português e disponibilizando no site oficial em:<br />
+<a href="http://www.symfony-project.org/jobeet/1_2/pt_BR/">http://www.symfony-project.org/jobeet/1_2/pt_BR/</a></p>
+<p>Aproveite! <img src='http://s0.wp.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/andreiabohner.wordpress.com/126/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/andreiabohner.wordpress.com/126/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/andreiabohner.wordpress.com/126/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/andreiabohner.wordpress.com/126/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/andreiabohner.wordpress.com/126/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/andreiabohner.wordpress.com/126/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/andreiabohner.wordpress.com/126/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/andreiabohner.wordpress.com/126/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/andreiabohner.wordpress.com/126/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/andreiabohner.wordpress.com/126/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/andreiabohner.wordpress.com/126/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/andreiabohner.wordpress.com/126/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/andreiabohner.wordpress.com/126/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/andreiabohner.wordpress.com/126/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=126&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://andreiabohner.wordpress.com/2008/12/07/calendario-de-advento-symfony-construindo-a-aplicacao-web-20-jobeet-em-24-dias/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/1584ed901fd1cfe1aba51564166e5e32?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">Andréia Bohner</media:title>
+		</media:content>
+
+		<media:content url="http://andreiabohner.files.wordpress.com/2008/12/jobeet1.jpg" medium="image">
+			<media:title type="html">jobeet1</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Firefox Download Day, é hoje!!</title>
+		<link>http://andreiabohner.wordpress.com/2008/06/17/firefox-download-day-e-hoje/</link>
+		<comments>http://andreiabohner.wordpress.com/2008/06/17/firefox-download-day-e-hoje/#comments</comments>
+		<pubDate>Tue, 17 Jun 2008 10:56:01 +0000</pubDate>
+		<dc:creator>Andréia Bohner</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[firefox]]></category>
+
+		<guid isPermaLink="false">http://andreiabohner.wordpress.com/?p=119</guid>
+		<description><![CDATA[Recado para todos os fans do browser Firefox: hoje é o dia oficial do lançamento da versão 3 e, baixando a sua cópia do Firefox hoje, você está ajudando a estabelecer um recorde mundial no Livro dos Recordes Guinness, como &#8230; <a href="http://andreiabohner.wordpress.com/2008/06/17/firefox-download-day-e-hoje/">Continue lendo <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=119&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.spreadfirefox.com/node&amp;id=0&amp;t=264"><img src='http://www.spreadfirefox.com/files/images/affiliates_banners/dday_badge_fox.png' alt='Firefox Download Day' class='alignnone' /></a></p>
+<p>Recado para todos os fans do browser Firefox: hoje é o dia oficial do lançamento da versão 3 e, baixando a sua cópia do Firefox hoje, você está ajudando a estabelecer um recorde mundial no <a href="http://www.guinnessworldrecords.com/">Livro dos Recordes Guinness</a>, como o software mais baixado em 24 horas.</p>
+<p>Mais detalhes no site do <a href="http://www.spreadfirefox.com/pt-BR/worldrecord">Download Day 2008</a>.</p>
+<br /><img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/andreiabohner.wordpress.com/119/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/andreiabohner.wordpress.com/119/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/andreiabohner.wordpress.com/119/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/andreiabohner.wordpress.com/119/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/andreiabohner.wordpress.com/119/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/andreiabohner.wordpress.com/119/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/andreiabohner.wordpress.com/119/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/andreiabohner.wordpress.com/119/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/andreiabohner.wordpress.com/119/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/andreiabohner.wordpress.com/119/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/andreiabohner.wordpress.com/119/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/andreiabohner.wordpress.com/119/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/andreiabohner.wordpress.com/119/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/andreiabohner.wordpress.com/119/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/andreiabohner.wordpress.com/119/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/andreiabohner.wordpress.com/119/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=119&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://andreiabohner.wordpress.com/2008/06/17/firefox-download-day-e-hoje/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/1584ed901fd1cfe1aba51564166e5e32?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">Andréia Bohner</media:title>
+		</media:content>
+
+		<media:content url="http://www.spreadfirefox.com/files/images/affiliates_banners/dday_badge_fox.png" medium="image">
+			<media:title type="html">Firefox Download Day</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>symfony Q&amp;A</title>
+		<link>http://andreiabohner.wordpress.com/2008/01/23/symfony-qa/</link>
+		<comments>http://andreiabohner.wordpress.com/2008/01/23/symfony-qa/#comments</comments>
+		<pubDate>Wed, 23 Jan 2008 20:09:26 +0000</pubDate>
+		<dc:creator>Andréia Bohner</dc:creator>
+				<category><![CDATA[PHP]]></category>
+		<category><![CDATA[symfony]]></category>
+
+		<guid isPermaLink="false">http://andreiabohner.wordpress.com/2008/01/23/symfony-qa/</guid>
+		<description><![CDATA[Adicionada hoje, uma nova página ao blog, com o título symfony Q&#38;A. Esta página é dedicada ao registro de dúvidas e respostas sobre o framework symfony, com o objetivo de compartilhar conhecimento com outros desenvolvedores, divulgar este espetacular framework aqui &#8230; <a href="http://andreiabohner.wordpress.com/2008/01/23/symfony-qa/">Continue lendo <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=114&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>Adicionada hoje, uma nova página ao blog, com o título <a href="http://andreiabohner.wordpress.com/symfony-qa/" title="symfony Q&amp;A"><b>symfony Q&amp;A</b></a>. Esta página é dedicada ao registro de dúvidas e respostas sobre o <a href="http://www.symfony-project.org" title="symfony">framework symfony</a>, com o objetivo de compartilhar conhecimento com outros desenvolvedores, divulgar este espetacular framework aqui no Brasil e, também, para referências futuras.</p>
+<p>Por enquanto é apenas uma lista inicial, mas estarei sempre atualizando com novos tópicos.</p>
+<br /><img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/andreiabohner.wordpress.com/114/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/andreiabohner.wordpress.com/114/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/andreiabohner.wordpress.com/114/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/andreiabohner.wordpress.com/114/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/andreiabohner.wordpress.com/114/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/andreiabohner.wordpress.com/114/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/andreiabohner.wordpress.com/114/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/andreiabohner.wordpress.com/114/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/andreiabohner.wordpress.com/114/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/andreiabohner.wordpress.com/114/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/andreiabohner.wordpress.com/114/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/andreiabohner.wordpress.com/114/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/andreiabohner.wordpress.com/114/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/andreiabohner.wordpress.com/114/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/andreiabohner.wordpress.com/114/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/andreiabohner.wordpress.com/114/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=114&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://andreiabohner.wordpress.com/2008/01/23/symfony-qa/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/1584ed901fd1cfe1aba51564166e5e32?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">Andréia Bohner</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Yahoo! e OpenID</title>
+		<link>http://andreiabohner.wordpress.com/2008/01/18/yahoo-e-openid/</link>
+		<comments>http://andreiabohner.wordpress.com/2008/01/18/yahoo-e-openid/#comments</comments>
+		<pubDate>Fri, 18 Jan 2008 17:41:46 +0000</pubDate>
+		<dc:creator>Andréia Bohner</dc:creator>
+				<category><![CDATA[news]]></category>
+		<category><![CDATA[openID]]></category>
+
+		<guid isPermaLink="false">http://andreiabohner.wordpress.com/2008/01/18/yahoo-e-openid/</guid>
+		<description><![CDATA[A Yahoo! anunciou que estará disponibilizando (em beta) seu novo serviço como provedor OpenID a partir de 30 de janeiro. E o Blogger anunciou ontem que está com o serviço de provedor OpenID disponível. Para quem ainda não está familiarizado &#8230; <a href="http://andreiabohner.wordpress.com/2008/01/18/yahoo-e-openid/">Continue lendo <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=112&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>A <a href="http://www.yahoo.com/" title="Yahoo!">Yahoo!</a> anunciou que <a href="http://openid.yahoo.com/" title="Yahoo OpenID">estará disponibilizando (em beta)</a> seu novo serviço como provedor <a href="http://openid.net/" title="OpenID">OpenID</a>  a partir de 30 de janeiro.</p>
+<p>E o <a href="http://bloggerindraft.blogspot.com/2008/01/new-feature-blogger-as-openid-provider.html" title="Blogger OpenID">Blogger anunciou ontem</a> que está com o serviço de provedor OpenID disponível.</p>
+<p>Para quem ainda não está familiarizado com o termo, <a href="http://en.wikipedia.org/wiki/Openid" title="OpenID">OpenID é um sistema de autenticação descentralizado</a>.</p>
+<br /><img alt="" border="0" src="http://feeds.wordpress.com/1.0/categories/andreiabohner.wordpress.com/112/" /> <img alt="" border="0" src="http://feeds.wordpress.com/1.0/tags/andreiabohner.wordpress.com/112/" /> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/andreiabohner.wordpress.com/112/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/andreiabohner.wordpress.com/112/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/andreiabohner.wordpress.com/112/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/andreiabohner.wordpress.com/112/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/andreiabohner.wordpress.com/112/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/andreiabohner.wordpress.com/112/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/andreiabohner.wordpress.com/112/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/andreiabohner.wordpress.com/112/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/andreiabohner.wordpress.com/112/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/andreiabohner.wordpress.com/112/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/andreiabohner.wordpress.com/112/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/andreiabohner.wordpress.com/112/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/andreiabohner.wordpress.com/112/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/andreiabohner.wordpress.com/112/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=andreiabohner.wordpress.com&amp;blog=394364&amp;post=112&amp;subd=andreiabohner&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://andreiabohner.wordpress.com/2008/01/18/yahoo-e-openid/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/1584ed901fd1cfe1aba51564166e5e32?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">Andréia Bohner</media:title>
+		</media:content>
+	</item>
+	</channel>
+</rss>

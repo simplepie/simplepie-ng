@@ -1,0 +1,1741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>Jayway Team Blog</title>
+	
+	<link>http://blog.jayway.com</link>
+	<description>Sharing Experience</description>
+	<lastBuildDate>Mon, 03 Oct 2011 16:34:43 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.2.1</generator>
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/jayway/posts" /><feedburner:info uri="jayway/posts" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><item>
+		<title>Scala Type Variances – Part one</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/UZBGKCsOWF8/</link>
+		<comments>http://blog.jayway.com/2011/10/03/scala-type-variances-part-one/#comments</comments>
+		<pubDate>Mon, 03 Oct 2011 16:34:43 +0000</pubDate>
+		<dc:creator>Amir Moulavi</dc:creator>
+				<category><![CDATA[Java]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9867</guid>
+		<description><![CDATA[I remember when I started to learn Scala, I usually come up with brackets in the Scala API doc that have plus and minus characters inside. Honestly that scared me a little bit! But after I learned a bit about Scala type system, I know the purpose of theses type declarations and I appreciate their [...]]]></description>
+			<content:encoded><![CDATA[<p>I remember when I started to learn Scala, I usually come up with brackets in the Scala API doc that have plus and minus characters inside. Honestly that scared me a little bit! But after I learned a bit about Scala type system, I know the purpose of theses type declarations and I appreciate their designer <img src='http://blog.jayway.com/wordpress/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>In this series of posts I will try my best to clear out type variance annotations in Scala; a powerful tool to handle type orderings from specific to generic and vice verca.</p>
+<h3>Covariant Subtyping</h3>
+<p>We start by covariant subtyping. If you don't know what it is, please be patient. First consider the following code in Scala:</p>
+<pre><strong>class</strong> Company[T](<strong>val</strong> company:T)
+
+<strong>class</strong> BigCompany
+
+<strong>class</strong> SmallCompany <strong>extends</strong> BigCompany
+
+<strong>class</strong> Investor(<strong>val</strong> company: Company[BigCompany])</pre>
+<p>We have a <em>Company</em> class that has type parameter T. This class accepts a value of type T for its constructor.  We have two companies defined here: <em>BigCompany</em> and <em>SmallCompany</em>. As it is obvious from the code <em>SmallCompany</em> is a subtype of <em>BigCompany</em>. Finally we have a class Investor that accepts only companies of type <em>BigCompany</em> so it invests only on big ones!</p>
+<p>Now let's do some constructions in REPL:</p>
+<pre>scala&gt; val littleCompany: Company[SmallCompany] = new Company[SmallCompany](new SmallCompany)
+littleCompany: Company[SmallCompany] = Company@1e70822
+
+scala&gt; val bigCompany: Company[BigCompany] = new Company[BigCompany](new BigCompany)
+bigCompany: Company[BigCompany] = Company@9bb740
+
+scala&gt; val bigInvestor:Investor = new Investor(bigCompany)
+bigInvestor: Investor = Investor@1004566</pre>
+<p>So far so good. After a while it is decided that we need investors that can take care of small companies. We don't want to define a new brand of investor thus we use the existing one. So we try to construct:</p>
+<pre>scala&gt; val smallInvestor:Investor = new Investor(littleCompany)</pre>
+<p>But we get:</p>
+<pre>&lt;console&gt;:8: error: type mismatch;
+ found   : Company[SmallCompany]
+ required: Company[BigCompany]
+Note: SmallCompany &lt;: BigCompany, but class Company is invariant in type T.
+You may wish to define T as +T instead. (SLS 4.5)
+       val smallInvestor:Investor = new Investor(littleCompany)
+                                                 ^</pre>
+<p>Bang! What happened? Compile error!</p>
+<p>Let's see what happened exactly here. We know by definition that <em>SmallCompany</em> is subtype of <em>BigCompany</em>. But what is the relation between <em>Company</em>[<em>SmallCompany</em>] and <em>Company</em>[<em>BigCompany</em>] ? It is not defined by default and we need somehow to tell compiler about this. In order to solve this we change class <em>Company</em> to the following:</p>
+<pre><strong>class</strong> Company[+T](<strong>val</strong> company:T)</pre>
+<p>The only thing that is changed is the type parameter that has a + sign in front. This means that subtyping is covariant (flexible) in paramter T.</p>
+<p>Covariant subtyping means: <strong>if <em>S</em> is a subtype of <em>T</em> then Company[<em>S</em>] is subtype of Company[<em>T</em>]</strong>.</p>
+<p style="text-align: center;"><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/10/convariantSubTyping1.png" rel="lightbox"><img class="size-medium wp-image-9892 aligncenter" title="convariantSubTyping" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/10/convariantSubTyping1-300x191.png" alt="" width="300" height="191" /></a></p>
+<p>Remember that covariant orders types from more <em>specific</em> to more <em>generic</em>.</p>
+<p>Let's construct a small investor again with new <em>Company</em> definition:</p>
+<pre>scala&gt; val smallInvestor:Investor = new Investor(littleCompany)
+smallInvestor: Investor = Investor@9fad9c</pre>
+<p>Great! We could solve this by Scala variance subtyping. By a single + sign you could tell Scala compiler that you want <em>Company</em>[<em>SmallCompany</em>] be a subtype of <em>Company</em>[<em>BigCompany</em>].</p>
+<p>In the next post, we will investigate contravariant subtyping.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=UZBGKCsOWF8:4FCeBYEpBKo:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=UZBGKCsOWF8:4FCeBYEpBKo:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=UZBGKCsOWF8:4FCeBYEpBKo:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=UZBGKCsOWF8:4FCeBYEpBKo:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/UZBGKCsOWF8" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/10/03/scala-type-variances-part-one/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/10/03/scala-type-variances-part-one/</feedburner:origLink></item>
+		<item>
+		<title>Using s3cmd to Backup your WordPress Installation</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/aMsYE6bAisA/</link>
+		<comments>http://blog.jayway.com/2011/10/02/using-s3cmd-to-backup-your-wordpress-data/#comments</comments>
+		<pubDate>Sun, 02 Oct 2011 21:05:18 +0000</pubDate>
+		<dc:creator>Henrik Bernström</dc:creator>
+				<category><![CDATA[Cloud]]></category>
+		<category><![CDATA[Tips & Tricks]]></category>
+		<category><![CDATA[amazon]]></category>
+		<category><![CDATA[backupwordpress]]></category>
+		<category><![CDATA[cron]]></category>
+		<category><![CDATA[crontab]]></category>
+		<category><![CDATA[ec2]]></category>
+		<category><![CDATA[s3]]></category>
+		<category><![CDATA[s3cmd]]></category>
+		<category><![CDATA[shell scripting]]></category>
+		<category><![CDATA[ubuntu]]></category>
+		<category><![CDATA[wordpress]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9849</guid>
+		<description><![CDATA[This article will explain, in a few short steps, how to backup your WordPress installation to Amazon S3 service. It will deal with Ubuntu as operating system and Amazon EC2 for hosting but is not limited to such an environment. Prerequisits are an Amazon account for the S3 service, a WordPress installation and knowledge of [...]]]></description>
+			<content:encoded><![CDATA[<p>This article will explain, in a few short steps, how to backup your WordPress installation to Amazon S3 service. It will deal with Ubuntu as operating system and Amazon EC2 for hosting but is not limited to such an environment. Prerequisits are an Amazon account for the S3 service, a WordPress installation and knowledge of these products.</p>
+<h2>How to backup WordPress</h2>
+<p>There are numerous plugins for WordPress when it comes to backup. I have learnt to appreciate the plugin BackUpWordPress as it not only backs up your database but also all the files within the installation. </p>
+<p><a href="http://hmn.md/backupwordpress/" title="BackUpWordPress">http://hmn.md/backupwordpress/</a></p>
+<p>There are a few number (though quite complete) of configuration options like</p>
+<p>- manual or daily scheduled backups<br />
+- number of backups to keep<br />
+- whether to include files or database or both</p>
+<p>The backups are stored on disk on the path of your choice and could also be attempted to be emailed. Having this kind of backup data makes it very comfortable to restore your WordPress installation.</p>
+<p>But what if your complete machine/instance is failing? On, for example Amazon EC2 one should take snapshots of instances when the setup of these change but this does not apply to content changes. Restoring from a snapshot does not bring back newly created or updated content from, for example WordPress. That is, moving those WordPress backup files to a safer place becomes vital. So, s3cmd to the rescue.</p>
+<h2>What is s3cmd?</h2>
+<p>Extracted from its' homepage:</p>
+<p><em>"S3cmd is a command line tool for uploading, retrieving and managing data in Amazon S3. It is best suited for power users who don't fear command line. It is also ideal for scripts, automated backups triggered from cron, etc."</em></p>
+<p><a href="http://s3tools.org/s3cmd" title="s3cmd">http://s3tools.org/s3cmd</a></p>
+<p>At the time of writing s3cmd requires Python 2.4 or newer and some pretty common Python modules. Installing it is merely a matter of running:</p>
+<pre class="brush: shell; ruler: true; auto-links: false; smart-tabs: false;">sudo apt-get install s3cmd</pre>
+<p>To configure it run</p>
+<pre class="brush: shell; ruler: true; auto-links: false; smart-tabs: false;">s3cmd --configure</pre>
+<p>You will be asked for the two keys of your Amazon account - copy and paste them from your confirmation email or from your Amazon account page.</p>
+<p>To list all your buckets run</p>
+<pre class="brush: shell; ruler: true; auto-links: false; smart-tabs: false;">s3cmd ls</pre>
+<p>and to list the content of a bucket run</p>
+<pre class="brush: shell; ruler: true; auto-links: false; smart-tabs: false;">s3cmd ls s3://[bucket name]</pre>
+<p>Now, you could use 's3cmd put' to upload and 's3cmd remove' to remotely remove specific files but then you would have to do some scripting to select these specific files and to keep the bucket contents to an acceptable size. There is another option that simply syncs the content of your local directory to the remote bucket, doing the removal automatically, namely 's3cmd sync'.</p>
+<pre class="brush: shell; ruler: true; auto-links: false; smart-tabs: false;">s3cmd sync --delete-removed [source directory] s3://[bucket name]</pre>
+<p>The source directory is naturally replaced with the directory of where you put your WordPress backups. </p>
+<h2>Scheduling it</h2>
+<p>To make it a little easier to schedule via crontab you preferrably put the sync command in a shell script, for example 'sync-wp-backups.sh'</p>
+<pre class="brush: bash/shell; ruler: true; auto-links: false; smart-tabs: false;">#!/bin/bash
+
+/usr/bin/s3cmd sync --delete-removed [source directory] s3://[bucket name]</pre>
+<p>To schedule this script run</p>
+<pre class="brush: bash/shell; ruler: true; auto-links: false; smart-tabs: false;">crontab -e</pre>
+<p>which brings you into editing the cron job with the editor of your choice. For example you could edit the crontab file to schedule it to run daily at 23:30 (11:30 PM)</p>
+<pre class="brush: bash/shell; ruler: true; auto-links: false; smart-tabs: false;">30 23 * * * /home/ubuntu/sync-wp-backups.sh >> /home/ubuntu/s3-backup.log</pre>
+<p>which logs the output to file (s3-backup.log).</p>
+<p>That's it! Now I have a number of days of backup automatically synced from the Amazon instance running WordPress to a more fail safe S3 bucket. At least I sleep a lot better with this in place.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=aMsYE6bAisA:yXwRfEXQ0vY:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=aMsYE6bAisA:yXwRfEXQ0vY:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=aMsYE6bAisA:yXwRfEXQ0vY:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=aMsYE6bAisA:yXwRfEXQ0vY:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/aMsYE6bAisA" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/10/02/using-s3cmd-to-backup-your-wordpress-data/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/10/02/using-s3cmd-to-backup-your-wordpress-data/</feedburner:origLink></item>
+		<item>
+		<title>Experimenting with Scala Parallel Collections</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/xaL5qTdsMls/</link>
+		<comments>http://blog.jayway.com/2011/10/02/experimenting-with-scala-parallel-collections/#comments</comments>
+		<pubDate>Sun, 02 Oct 2011 15:26:13 +0000</pubDate>
+		<dc:creator>Amir Moulavi</dc:creator>
+				<category><![CDATA[Java]]></category>
+		<category><![CDATA[collection]]></category>
+		<category><![CDATA[parallel]]></category>
+		<category><![CDATA[scala]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9802</guid>
+		<description><![CDATA[In this short post, I want to show you how you can avail from Scala parallel collections in your application and under which conditions it makes sense to use it. Parallel Collections were introduced in Scala 2.9 release which are built on the same abstractions and provide the same interfaces as existing collection implementation. It [...]]]></description>
+			<content:encoded><![CDATA[<p>In this short post, I want to show you how you can avail from Scala parallel collections in your application and under which conditions it makes sense to use it.</p>
+<p>Parallel Collections were introduced in <a title="Scala 2.9" href="http://www.scala-lang.org/node/9483">Scala 2.9</a> release which are built on the same abstractions and provide the same interfaces as existing collection implementation. It follows the model proposed by Doug Lea in his Fork/Join framework [1]. They are really easy to use and this is one of the advantages you can see for them. If you are familiar with parallel programming, it is quite difficult to convert a sequential program into a parallel one. This difficulty comes from the fact that each has its own paradigm, algorithm and data structure.</p>
+<p>Scala enables you to invoke a method called <strong>par</strong> on a collection to get a parallel collection. This parallel collection then employs all the available cores on the target system. You can easily try this out in REPL:</p>
+<pre>scala&gt; List(1,2,3,4,5).par.filter { _ % 2 == 0 }
+res1: scala.collection.parallel.immutable.ParSeq[Int] = ParVector(2, 4)</pre>
+<p>This is a simple filtering on a list. The only new thing I added is 'par' after list definition.</p>
+<p>Now let's have a comparison between sequential and parallel versions and see how parallel collection can help us. Consider that we have a Data class with some data as follows:</p>
+<pre><strong>class</strong> Data(<strong>val</strong> a:Int = 0 , <strong>val</strong> b:Int = 0)</pre>
+<p>and a companion object to construct Data instances:</p>
+<pre><strong>object</strong> Data {
+  <strong>def</strong> apply(n:Int):List[Data] = {
+    <strong>val</strong> r = <strong>new</strong> Random
+    <strong>val</strong> lists = <strong>for</strong> { i &lt;- 0 to n } <strong>yield</strong> <strong>new</strong> Data(r.nextInt(10000), r.nextInt(10000))
+    lists.toList
+  }
+}</pre>
+<p>Now we define computation trait to perform some operations on the aforementioned data class:</p>
+<pre><strong>trait</strong> Computation {
+  <strong>def</strong> f(data:Data):Int =  {
+    Thread.sleep(10)
+    data.a + data.b
+  }
+  <strong>def</strong> compute(list:List[Data]):Int
+}</pre>
+<p>This trait has two implementations:</p>
+<pre><strong>object</strong> SequentialImplementation <strong>extends</strong> Computation {
+  <strong>def</strong> compute(list:List[Data]):Int = list.map{f}.max
+}
+
+<strong>object</strong> ParallelImplementation <strong>extends</strong> Computation {
+  <strong>def</strong> compute(list:List[Data]):Int = list.par.map{f}.par.max
+}</pre>
+<p>In each implementation, method compute applies a map with function f and then calculate the maximum element in the list. The only difference between these two implementations is the use of 'par' method. Now let's run and time each implementation:</p>
+<pre><strong>object</strong> ParallelExperiment {
+  <strong>def</strong> main(args: Array[String]) {
+    <strong>val</strong> list = Data(args(0).toInt)
+    <strong>var</strong> t1 = currentTimeMillis()
+    SequentialImplementation.compute(list)
+    <strong>var</strong> t2 = currentTimeMillis()
+    println("Sequential " + (t2-t1) + " (ms)")
+    t1 = currentTimeMillis()
+    ParallelImplementation.compute(list)
+    t2 = currentTimeMillis()
+    println("Parallel " + (t2-t1) + " (ms)")
+  }
+}</pre>
+<p>Running the code with SBT on a machine with 4 CPU cores:</p>
+<pre>&gt; run 3
+[info] Running com.jayway.parallel.ParallelExperiment 3
+Sequential 44 (ms)
+Parallel 14 (ms)</pre>
+<p>&nbsp;</p>
+<pre>&gt; run 100
+[info] Running com.jayway.parallel.ParallelExperiment 100
+Sequential 1020 (ms)
+Parallel 268 (ms)</pre>
+<p>As expected, we gained speed up in parallel version. Results for a couple of run with different list sizes is depicted in the following fgure:</p>
+<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/10/parallel-result_htm_88dfb8f1.jpg" rel="lightbox"><img class="aligncenter size-full wp-image-9833" title="parallel-result_htm_88dfb8f" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/10/parallel-result_htm_88dfb8f1.jpg" alt="" width="580" height="397" /></a></p>
+<p>Now let's change function f to the following:</p>
+<pre>  def f(data:Data):Int =  {
+    data.a + data.b
+  }</pre>
+<p>I removed the Thread.sleep so the method returns immediately. Now let's have a look at results for different runs again:</p>
+<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/10/parallel-result_21.jpeg" rel="lightbox"><img class="aligncenter size-full wp-image-9837" title="parallel-result_2" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/10/parallel-result_21.jpeg" alt="" width="583" height="407" /></a><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/10/parallel-result_2.jpeg"><br />
+</a></p>
+<p>Interestingly, this time the result is not good at all! It's even vice versa and sequential implementation has lower running time for the first 5 runs. This is because using parallel collection has some overhead for distributing (fork) and gathering (join) the data between cores. Thus one can conclude having heavy computations (which is the case in most applications), parallel collections can be of great performance improvement. But there might be scenarios (like the second scenario we discussed) where sequential collection is faster <img src='http://blog.jayway.com/wordpress/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>For a better understanding of Scala Parallel Collection internals, please watch <a title="Aleksander Prokopec's presentation" href="http://days2010.scala-lang.org/node/138/140">Aleksander Prokopec's presentation</a> from Scala Days 2010. If you are interested to know more then you can read [2].</p>
+<h3>References:</h3>
+<p>[1]: Doug Lea, A Java Fork/Join Framework, 2000.<br />
+[2]: Aleksandar Prokopec, Tiark Rompf, Phil Bagwell, Martin Odersky, "A Generic Parallel Collection Framework", Euro-Par 2011</p>
+<p>&nbsp;</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=xaL5qTdsMls:vYeAF8lxMSs:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=xaL5qTdsMls:vYeAF8lxMSs:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=xaL5qTdsMls:vYeAF8lxMSs:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=xaL5qTdsMls:vYeAF8lxMSs:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/xaL5qTdsMls" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/10/02/experimenting-with-scala-parallel-collections/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/10/02/experimenting-with-scala-parallel-collections/</feedburner:origLink></item>
+		<item>
+		<title>A post about software craftmanship  (stop me if you think you’ve heard this one before)</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/v-zDSss7WBE/</link>
+		<comments>http://blog.jayway.com/2011/10/02/a-post-about-software-craftmanship-stop-me-if-you-think-youve-heard-this-one-before/#comments</comments>
+		<pubDate>Sun, 02 Oct 2011 12:57:40 +0000</pubDate>
+		<dc:creator>Christian Jacobsen</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[clean code]]></category>
+		<category><![CDATA[craftmanship]]></category>
+		<category><![CDATA[software engineering]]></category>
+		<category><![CDATA[software maintenance costs]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9816</guid>
+		<description><![CDATA[During lunch at a Progressive.Net event a discussion came up on why code more often than not ends up messy and ugly with large maintenance costs as a consequence. Every single developer now a days know about TDD, SOLID, CI, DI, DDD, OOP, XP etc., etc. which are all meant to make our code maintainable, [...]]]></description>
+			<content:encoded><![CDATA[<p>During lunch at a <a style="text-decoration: none;" href="http://groups.google.com/group/sweden-progressive-dot-net/topics">Progressive.Net</a> event a discussion came up on why code more often than not ends up messy and ugly with large maintenance costs as a consequence. Every single developer now a days know about TDD, SOLID, CI, DI, DDD, OOP, XP etc., etc. which are all meant to make our code maintainable, readable, testable, extensible and so on and so forth. Obviously, not many programmers practice these fine principles since there wouldn’t be the massive amount of smelly code out there (just ask 10 of your colleagues what they’ve seen more of, clean code or ugly code or for a quantitative answer look <a style="text-decoration: none;" href="http://users.jyu.fi/~koskinen/smcosts.htm">here</a>).</p>
+<p>Anyway, the discussion went on about how to enforce the practice of writing clean code and several suggestions were laid forward; practice pair-programming, do TDD, follow boy-scout rule etc. which are all great things and you should use it. However, I believe that these practices are useless unless the programmer has the right attitude, i.e., wants to produce high-quality software. But isn’t that every programmer’s desire? Sadly not. Some programmers “only” do this for a living, not actually interested in building software, let alone well-crafted software and some programmers are more interested in writing code fast but without much concern for the quality. Delivering fast might get them a chance to work on yet another green-field project (you might call this kind a <a style="text-decoration: none;" href="http://www.joelonsoftware.com/items/2009/09/23.html">duct tape programmer</a>). Of course, the ones who gets to clean up afterwards aren't too happy.</p>
+<p>Another reason that code ends up ugly even though intentions are the best is time constraints or rather bad planning and project steering. Under pressure it's very easy to take short cuts and easy turns to get the code working, i.e. skipping unit tests, code reviews and even basic testing just to have something to show the customer in time - let's take the hit later right? I've been there and probably you too. This is alright as long as you try to figure out what went wrong at the review and learn from the mistakes made.</p>
+<p>I’m not pointing any fingers though (well maybe just a little but I’m pointing at myself as well so it’s ok), we’re all guilty of writing crappy code, especially when time is short and the customer is screaming for a new delivery on the other side of the fence. My point is just that in the end, it’s the developer’s attitude that decides whether software ends up crappy or awesome.</p>
+<p>A relevant question is though; is it always desirable to have clean, well-crafted, code? For example, if the planned lifetime of a product is only a couple of years you might want to prioritize short time to market over quality and maintainability. Or if you’re racing against some competitors you might produce a ‘hack’ as the first version in order to pass the finishing line first, otherwise you might be put out of business.</p>
+<p>Some people think that software engineering isn’t actually engineering since there are very few standards, that it is actually more adequate to compare it to <a style="text-decoration: none;" href="http://chrisaitchison.com/2011/05/03/you-are-not-a-software-engineer">gardening</a> than to 'real' engineering. You could of course argue that the huge software maintenance costs out there proves this point but I’m not convinced. The Engineers Council for Professional Development has a <a style="text-decoration: none;" href="http://www.britannica.com/EBchecked/topic/187549/engineering">definition</a> of engineering that a lot of software do not live up to. However, I don’t believe that software intrinsically suck, I think we as software developers suck at making great software. Compared to traditional engineering diciplines like building construction, the construction of software has a lot more degrees of freedom attached to it and therefore it is much easier to screw up. And let’s not forget that our industry is just a baby compared to many of the ‘real’ engineering diciplines and is still in it’s early developing phase.</p>
+<p>There are a great deal of really smart people who over the years have spent a lot of time to figure out how to make awesome software. Why not take a part of and apply some of their wisdom in our code?</p>
+<p>Whether you want to call it <a style="text-decoration: none;" href="http://www.codinghorror.com/blog/2009/07/software-engineering-dead.html">engineering or craftmanship</a> or art for that matter, it all boils down to this: without the right attitude the outcome will always be junk. Having the right attitude, i.e. wanting to create awesome products won't make it automatically happen, but it will make it possible.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=v-zDSss7WBE:BxIeT8dPXNU:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=v-zDSss7WBE:BxIeT8dPXNU:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=v-zDSss7WBE:BxIeT8dPXNU:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=v-zDSss7WBE:BxIeT8dPXNU:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/v-zDSss7WBE" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/10/02/a-post-about-software-craftmanship-stop-me-if-you-think-youve-heard-this-one-before/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/10/02/a-post-about-software-craftmanship-stop-me-if-you-think-youve-heard-this-one-before/</feedburner:origLink></item>
+		<item>
+		<title>An example of a testable Azure Table Storage</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/UFbmlRrlW58/</link>
+		<comments>http://blog.jayway.com/2011/09/29/an-example-of-a-testable-azure-table-storage/#comments</comments>
+		<pubDate>Thu, 29 Sep 2011 11:11:00 +0000</pubDate>
+		<dc:creator>Peter von Lochow</dc:creator>
+				<category><![CDATA[.Net]]></category>
+		<category><![CDATA[Cloud]]></category>
+		<category><![CDATA[azure]]></category>
+		<category><![CDATA[IoC]]></category>
+		<category><![CDATA[testing]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9771</guid>
+		<description><![CDATA[Testability and the means to abstract away your persistence layer in Windows Azure - two things that you don’t get for free. But you can get it really cheap, you just need some generics, interfaces. an IoC container and ~10 minutes. While coding for this post I used StructureMap (can be downloaded from NuGet) and [...]]]></description>
+			<content:encoded><![CDATA[<p>Testability and the means to abstract away your persistence layer in Windows Azure - two things that you don’t get for free. But you can get it really cheap, you just need some generics, interfaces. an IoC container and ~10 minutes. </p>
+<p>While coding for this post I used <a href="http://structuremap.net/structuremap/">StructureMap</a> (can be downloaded from NuGet) and <a href="http://www.microsoft.com/windowsazure/sdk/">Windows Azure SDK 1.5</a>. Should work just fine with an older version of the SDK though.</p>
+<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/sheep.jpg" rel="lightbox"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="Get it? Sorry, long week..." border="0" alt="Really cheap" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/sheep_thumb.jpg" width="339" height="243" /></a></p>
+<h2>Wrapping up TableServiceContext</h2>
+<p>As you know you’ll need to extend <a href="http://msdn.microsoft.com/en-us/library/ee758694.aspx">TableServiceContext</a> in order to save our entities in Azure Table Storage. Each and every example that I’ve seen is creating a specific ServiceContext for every entity type that needs to be saved. We’ll, I’m not going to do that. </p>
+<p>We start with our interface.</p>
+<pre class="brush: csharp; ruler: true; auto-links: false; smart-tabs: false;">
+
+public interface IServiceContext&lt;TEntity&gt;
+{
+    IQueryable&lt;TEntity&gt; QueryableEntities { get; }
+
+    void Create(TEntity entity);
+
+    void Update(TEntity entity);
+
+    void Delete(TEntity entity);
+}
+
+</pre>
+<p>Easy enough, right? A basic interface exposing CRUD capabilities. The implementation is not much harder.</p>
+<pre style="width: 653px; height: 679px" class="brush: csharp; ruler: true; auto-links: false; smart-tabs: false;">
+
+public class ServiceContext&lt;TEntity&gt; : TableServiceContext, IServiceContext&lt;TEntity&gt;
+    where TEntity : TableServiceEntity
+{
+    private readonly string tableName;
+
+    public ServiceContext()
+        : base(AzureProvider.TableEndpoint, AzureProvider.Credentials)
+    {
+        tableName = typeof(TEntity).Name;
+    }
+
+    public IQueryable&lt;TEntity&gt; QueryableEntities
+    {
+        get
+        {
+             return CreateQuery&lt;TEntity&gt;(tableName);
+        }
+    }
+
+    public void Create(TEntity entity)
+    {
+        AddObject(tableName, entity);
+        SaveChanges();
+    }
+
+    public void Update(TEntity entity)
+    {
+        UpdateObject(entity);
+        SaveChanges();
+    }
+
+    public void Delete(TEntity entity)
+    {
+        DeleteObject(entity);
+        SaveChanges();
+    }
+}
+</pre>
+<p>So we create our own ServiceContext, extending <a href="http://msdn.microsoft.com/en-us/library/ee758694.aspx">TableServiceContext</a> as well as implementing our very own IServiceContext&lt;TEntity&gt;. As you can see, in the base constructor, we use a static helper class AzureProvider which basically just exposes values from CloudStorageAccount. This is just for readability and really not necessary. </p>
+<p>Also worth mentioning is that we use whatever type name TEntity has as the table name. So if we create a ServiceContext&lt;Dog&gt;, our table would be “Dog”. This makes life easier and also solves a nasty performance issue.</p>
+<blockquote>
+<p>Due to a known performance issue with the ADO.NET Data Services client library, it is recommended that you use the table name for the class definition or define the ResolveType delegate on the DataServiceContext. If this is not used and when the entity class name is not the same as table name, query performance degrades with number of entities returned in the result.</p>
+<p>- <a href="http://windowsclient.net/blogs/anshulee/archive/2010/05/27/best-practices-for-ado-net-dataservices-when-using-azure-table-storage.aspx">WindowsClient.net</a></p>
+</blockquote>
+<p>The ServiceContext class is basically the only code that will be <em>untestable</em>, but honestly… there are no actual logic or business rules inside that class. I would never strive for 100% coverage. As far as I’m concerned that’s a waste of time.</p>
+<h2>Now what?</h2>
+<p>First of all, in order to actually use our shiny new interface in a decent manner we need to register it with our IoC container of choice. As usual, I prefer <a href="http://structuremap.net/structuremap/">StructureMap</a>.</p>
+<pre style="width: 681px; height: 201px" class="brush: csharp; ruler: true; auto-links: false; smart-tabs: false;">ObjectFactory.Initialize(x =&gt;
+{
+    x.Scan(scanner =&gt;
+    {
+        scanner.TheCallingAssembly();
+        scanner.ConnectImplementationsToTypesClosing(typeof(IServiceContext&lt;&gt;));
+    });
+    x.For(typeof (IServiceContext&lt;&gt;)).Use(typeof (ServiceContext&lt;&gt;));
+});</pre>
+<p>This little piece of code allows to instantiate a new class such as:</p>
+<pre style="width: 653px; height: 257px" class="brush: csharp; ruler: true; auto-links: false; smart-tabs: false;">public class Foo : IFoo
+{
+    private readonly IServiceContext&lt;Person&gt; personContext;
+    private readonly IServiceContext&lt;Dog&gt; dogContext;
+
+    public Foo(IServiceContext&lt;Person&gt; personContext, IServiceContext&lt;Dog&gt; dogContext)
+    {
+        this.personContext = personContext;
+        this.dogContext = dogContext;
+    }
+}</pre>
+<p>Our IoC container will be able to create it without any problems. This class will be completely ignorant what’s behind IServiceContext&lt;TEntity&gt;, it could just as well be a database. Since we inject all dependencies via the constructor this class is quite easy to test. </p>
+<h2>So?</h2>
+<p>Really, the point that I’m trying to make is that it’s not hard to wrap the not-very-testable parts of Windows Azure SDK. Just do it from start and you’ll be a happy (unit test writing) camper. </p>
+<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/highfive.jpg" rel="lightbox"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="highfive" border="0" alt="highfive" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/highfive_thumb.jpg" width="275" height="275" /></a></p>
+<p>Happy testing!</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=UFbmlRrlW58:sFJsuNFKwdU:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=UFbmlRrlW58:sFJsuNFKwdU:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=UFbmlRrlW58:sFJsuNFKwdU:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=UFbmlRrlW58:sFJsuNFKwdU:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/UFbmlRrlW58" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/29/an-example-of-a-testable-azure-table-storage/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/29/an-example-of-a-testable-azure-table-storage/</feedburner:origLink></item>
+		<item>
+		<title>Debugging Picture Viewer App Connect on WP7</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/PgEurjCbIQA/</link>
+		<comments>http://blog.jayway.com/2011/09/28/debugging-picture-viewer-app-connect-on-wp7/#comments</comments>
+		<pubDate>Wed, 28 Sep 2011 13:40:37 +0000</pubDate>
+		<dc:creator>Andreas Hammar</dc:creator>
+				<category><![CDATA[.Net]]></category>
+		<category><![CDATA[emulator]]></category>
+		<category><![CDATA[windows phone 7]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9768</guid>
+		<description><![CDATA[The 7.5 update for Windows Phone 7, codenamed “Mango” has finally been released to the public and adds a ton of new features both for end users as well as developers. One of these features is called App Connect. App Connect can put your app in selected places within the OS and make your app [...]]]></description>
+			<content:encoded><![CDATA[<p>The 7.5 update for Windows Phone 7, codenamed “Mango” has finally been released to the public and adds a ton of new features both for end users as well as developers. One of these features is called <em>App Connect</em>. App Connect can put your app in selected places within the OS and make your app more integrated with the system than ever before.</p>
+<h2>Extending the Picture Viewer</h2>
+<p>Described in the <a href="http://msdn.microsoft.com/en-us/library/ff817010.aspx">MSDN docs here</a>, adding this extension to your app will put it in the list of apps available when looking at pictures.</p>
+<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/IC513020.png" rel="lightbox"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="IC513020" border="0" alt="IC513020" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/IC513020_thumb.png" width="639" height="279" /></a></p>
+<p>To activate this feature, you need to add the following code to your WMAppManifest.xml, as a child of the &lt;App&gt; element.</p>
+<pre class="brush: xml;">
+
+&lt;Extensions&gt;
+  &lt;Extension
+    ExtensionName=&quot;Photos_Extra_Viewer&quot;
+    ConsumerID=&quot;{5B04B775-356B-4AA0-AAF8-6491FFEA5632}&quot;
+    TaskID=&quot;_default&quot; /&gt;
+&lt;/Extensions&gt;
+</pre>
+<p>You are then ready to begin receiving pictures to your app. To detect and accept the picture sent to you, you examine the “token” key of the NavigationContext, something like:</p>
+<pre class="brush: xml;">IDictionary&lt;string, string&gt; queryStrings =
+    this.NavigationContext.QueryString;
+
+Stream photoStream = null;
+if (queryStrings.ContainsKey(&quot;token&quot;))
+{
+    var library = new MediaLibrary();
+    Picture picture = library.GetPictureFromToken(queryStrings[&quot;token&quot;]);
+    photoStream = picture.GetImage();
+}</pre>
+<h2>Gotcha 1 - Navigation &amp; the token parameter</h2>
+<p>Invoking the app from the Picture Viewer starts your app and navigates to the main page. I think the most common scenario for handling a new picture is to do this on some other page than the main page. In my app that I’m writing (a photo diary app), I directly navigate away from the main page to the details page, thus creating a diary entry for the new picture. This is all easily done, but the quirk comes when navigating back to the main page – the “token” parameter is not cleared! So, my so simple code immediately creates yet another entry and takes me straight back to the details page.</p>
+<p><strong>Fix - </strong>Clear the “token” parameter after fetching the picture.</p>
+<pre class="brush: xml;">if (queryStrings.ContainsKey(&quot;token&quot;))
+{
+    var library = new MediaLibrary();
+    Picture picture = library.GetPictureFromToken(queryStrings[&quot;token&quot;]);
+    photoStream = picture.GetImage();
+    <b>queryString.Remove(&quot;token&quot;);</b>
+}</pre>
+<h2>Gotcha 2 – You can’t debug</h2>
+<p>I really hope someone proves me wrong here. Please do <img style="border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none" class="wlEmoticon wlEmoticon-smile" alt="Smile" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/wlEmoticon-smile.png" /></p>
+<p>The problem:</p>
+<blockquote>
+<p><strong>emulator </strong>– the picture hub does not exist, neither the camera app</p>
+</blockquote>
+<blockquote>
+<p><strong>device</strong> – you’re now allowed to access the picture hub while connected to the computer (not even the <em>PhotoChooserTask</em> will launch)</p>
+</blockquote>
+<p>So, how can we debug this? Well, I found a way, a tedious way, but still a way.</p>
+<p><strong>Fix 2 - </strong>Put an image in the isolated storage, then feed this image to your code on the main page. </p>
+<p>An even more realistic test would be to put the exact same token in the queryStrings collection – but I’m not sure that the app would have privileges to read that picture from the picture hub then.</p>
+<p><strong>2a. </strong>Take a snapshot of the isolated storage from the emulator using ISETOOL (<a href="http://msdn.microsoft.com/en-us/library/hh286408(v=vs.92).aspx">Isolated Storage Explorer</a>). The app guid is the “&lt;App ProductID=” from WMAppManifest.xml.</p>
+<pre>isetool ts xd &lt;app-guid&gt; .</pre>
+<p><strong>2b. </strong>Put an image in the root (or wherever) of the isolated storage file structure</p>
+<p><strong>2c. </strong>Restore the snapshot to the emulator (note the folder name here, should the child folder of the folder specified in the “take snapshot command)</p>
+<pre>isetool rs xd &lt;app-guid&gt; IsolatedStore</pre>
+<p><strong>2d. </strong>Fake AppConnect by reading your file</p>
+<p>Here I read the image to a MemoryStream and hand away, to interfere with IsolatedStorage as little as possible. </p>
+<p>The high-level code that will not change looks like:</p>
+<pre class="brush: csharp;">
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    base.OnNavigatedTo(e);
+    HandleImageFromAppConnect();
+}
+
+private void HandleImageFromAppConnect()
+{
+    var stream = GetPictureStream();
+
+    if (stream != null)
+    {
+        ViewModel.HandleAddWithImageInvoked(stream);
+        NavigateToDetails();
+    }
+}
+</pre>
+<p>And the method to get the stream:</p>
+<pre class="brush: csharp;">
+
+private Stream GetPictureStream()
+{
+    IDictionary&lt;string, string&gt; queryStrings =
+        this.NavigationContext.QueryString;
+
+    Stream photoStream = null;
+    if (queryStrings.ContainsKey(&quot;token&quot;))
+    {
+        var library = new MediaLibrary();
+        Picture picture = library.GetPictureFromToken(queryStrings[&quot;token&quot;]);
+        queryStrings.Remove(&quot;token&quot;);
+        photoStream = picture.GetImage();
+    }
+
+#if DEBUG
+    var isFakingImageFromAppConnect = false;
+    if (isFakingImageFromAppConnect)
+    {
+        MemoryStream manualStream = null;
+        using (var store = IsolatedStorageFile.
+            GetUserStoreForApplication())
+        {
+            if (store.FileExists(&quot;/pic.jpg&quot;))
+            {
+                using (var file = store.OpenFile(&quot;/pic.jpg&quot;, FileMode.Open))
+                {
+                    var bytes = new byte[file.Length];
+                    file.Read(bytes, 0, bytes.Length);
+                    manualStream = new MemoryStream(bytes);
+                }
+            }
+        }
+
+        photoStream = manualStream;
+    }
+#endif
+
+</pre>
+<p>That does it – we can debug-stop on the bool, set it, then let the code spin and debug away.</p>
+<p>Finally – please – find an easier way and tell me about it <img style="border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none" class="wlEmoticon wlEmoticon-smile" alt="Smile" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/wlEmoticon-smile.png" /></p>
+<p>Bye for now!</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=PgEurjCbIQA:AH9j5_W9y6s:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=PgEurjCbIQA:AH9j5_W9y6s:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=PgEurjCbIQA:AH9j5_W9y6s:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=PgEurjCbIQA:AH9j5_W9y6s:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/PgEurjCbIQA" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/28/debugging-picture-viewer-app-connect-on-wp7/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/28/debugging-picture-viewer-app-connect-on-wp7/</feedburner:origLink></item>
+		<item>
+		<title>IntelliJ IDEA performance improvement</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/7qiptWB35-I/</link>
+		<comments>http://blog.jayway.com/2011/09/26/intellij-idea-performance-improvement/#comments</comments>
+		<pubDate>Mon, 26 Sep 2011 17:26:58 +0000</pubDate>
+		<dc:creator>Mattias Severson</dc:creator>
+				<category><![CDATA[Java]]></category>
+		<category><![CDATA[Tips & Tricks]]></category>
+		<category><![CDATA[home directory]]></category>
+		<category><![CDATA[idea]]></category>
+		<category><![CDATA[intellij]]></category>
+		<category><![CDATA[performance]]></category>
+		<category><![CDATA[tools]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9443</guid>
+		<description><![CDATA[Working as a consultant, it is not unusual that I am referred to customer specific software environment with regard to computers, operating systems, networks and other configurations. However, since I work with Java, most tools are available online and they can easily be downloaded and installed on different platforms. IntelliJ IDEA is no exception, but [...]]]></description>
+			<content:encoded><![CDATA[<p>Working as a consultant, it is not unusual that I am referred to customer specific software environment with regard to computers, operating systems, networks and other configurations. However, since I work with Java, most tools are available online and they can easily be downloaded and installed on different platforms. IntelliJ IDEA is no exception, but before you start coding you should make sure you know how the <a href="http://en.wikipedia.org/wiki/Home_directory">home directory</a> of your computer is setup and configure IntelliJ IDEA accordingly. From the <a href="http://devnet.jetbrains.net/docs/DOC-181">documentation</a>:</p>
+<blockquote><p>
+In some environments user's home directory is located on the mapped network drive which in unacceptable for IntelliJ IDEA. You'll notice the huge performance degradation.
+</p></blockquote>
+<h2>What is the problem?</h2>
+<p>There are some good motives for keeping the home directory mounted to a network folder rather than on the local hard drive. For example, all user settings and user documents can be backed up centrally, and the user could potentially log in to any computer and have the same user environment. However, there are also some drawbacks. Depending on how the home folder is configured, there will either be a remote network call for each file access, or the file changes will be executed as a batch job at scheduled intervals or specific events such as logging off the computer.</p>
+<p>The second part of the problem is that IntelliJ IDEA produces quite a lot of data, typically several hundred megabytes, besides the anticipated artifacts. The data consists of IDE plugins, configuration files, log files, but the vast majority is internal cache files. By default, the data is written to a hidden <i>.IntelliJIdea10/</i> folder in your home directory.</p>
+<p>If you combine these two factors, the performance will suffer. How much depends on the bandwidth of your network, something that I became painfully aware of when I logged in remotely to the customer's network via a slow VPN connection.</p>
+<h2>Solution</h2>
+<p>Avoid network overhead by configuring IntelliJ IDEA to cache data on your local computer instead of in your home folder. A recent customer used Windows XP as their working environment, the instructions below are based on that experience.</p>
+<ol>
+<li>
+Create a new directory on a <i>local</i> harddrive that IntelliJ IDEA can use, e.g. <i>C:/.IntelliJIdea10/</i>. Hint, you cannot create a library starting with a "." from Windows Explorer, you have to use the <code>mkdir</code> command from the terminal.
+</li>
+<li>
+Locate the <i>idea.properties</i> file in the <i>bin</i> directory in IntelliJ IDEA's installation directory. The default location is <i>C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 10.5.1\bin</i>.
+</li>
+<li>
+Change the relevant properties to point to the recently created directory:</p>
+<pre class="brush:xml">
+# path to IDEA config folder. Make sure you're using forward slashes
+idea.config.path=C:/.IntelliJIdea10/config
+
+# path to IDEA system folder. Make sure you're using forward slashes
+idea.system.path=C:/.IntelliJIdea10/system
+
+# path to user installed plugins folder. Make sure you're using forward slashes
+idea.plugins.path=C:/.IntelliJIdea10/config/plugins
+</pre>
+</li>
+</ol>
+<h2>Considerations</h2>
+<p>Consider <i>not</i> to change the <i>idea.config.path</i> property if you are using several different computers and you would like to have the same configuration on all machines. Additionally, if you are using IntelliJ IDEA Ultimate, i.e. the commercial version of the tool, you should also make a cautious decision about whether or not to keep this property unchanged, because the license file is stored in the denoted directory. On the other hand, if you always use the same computer you might as well change this property together with the other properties, so that all IntelliJ IDEA files are stored in the same location.</p>
+<h2>References</h2>
+<ul>
+<li>IDEA files location: <a href="http://devnet.jetbrains.net/docs/DOC-181">http://devnet.jetbrains.net/docs/DOC-181</a></li>
+<li>IDEA license key: <a href="http://devnet.jetbrains.net/docs/DOC-200">http://devnet.jetbrains.net/docs/DOC-200</a></li>
+</ul>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=7qiptWB35-I:2dPkFwHsfSQ:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=7qiptWB35-I:2dPkFwHsfSQ:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=7qiptWB35-I:2dPkFwHsfSQ:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=7qiptWB35-I:2dPkFwHsfSQ:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/7qiptWB35-I" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/26/intellij-idea-performance-improvement/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/26/intellij-idea-performance-improvement/</feedburner:origLink></item>
+		<item>
+		<title>Storing double.NaN in a WP7 SQLCE database</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/DjAC8cwiJZ8/</link>
+		<comments>http://blog.jayway.com/2011/09/23/storing-double-nan-in-a-wp7-sqlce-database/#comments</comments>
+		<pubDate>Fri, 23 Sep 2011 12:02:13 +0000</pubDate>
+		<dc:creator>Andreas Hammar</dc:creator>
+				<category><![CDATA[.Net]]></category>
+		<category><![CDATA[Tips & Tricks]]></category>
+		<category><![CDATA[sqlce]]></category>
+		<category><![CDATA[windows phone 7]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9667</guid>
+		<description><![CDATA[Summary double.NaN gives me update issues (ChangeConflictException) in SQL Compact, my fallback was to set the value to zero instead: double.IsNaN(value.Altitude) ? 0 : value.Altitude where ‘Alt’ is the property on my SQLCE entity object. Of course NaN is not the same as zero – but that does not matter to me. Background For a [...]]]></description>
+			<content:encoded><![CDATA[<h2>Summary</h2>
+<p>double.NaN gives me update issues (ChangeConflictException) in SQL Compact, my fallback was to set the value to zero instead:</p>
+<p>double.IsNaN(value.Altitude) ? 0 : value.Altitude</p>
+<p>where ‘Alt’ is the property on my SQLCE entity object. Of course NaN is not the same as zero – but that does not matter to me.</p>
+<h2>Background</h2>
+<p>For a Windows Phone 7 demo app that I’m writing, I’ve been trying to store GPS locations in a SQL Compact database. The GeoCoordinate data type is not supported by SQLCE, so I just took the Latitude, Longitude and Altitude and stored those as doubles in the db. (<a href="http://msdn.microsoft.com/en-us/library/ms172424(SQL.110).aspx">here's a list of SQL Compact supported data types</a>)</p>
+<p>And, this was not my first my first version of the app (hence db), so I had to make the properties nullable – otherwise the SQLCE engine cannot add columns for them, <a href="http://msdn.microsoft.com/en-us/library/hh202860(VS.92).aspx">read more about wp7 databases here</a>. I do not think the nullable thing was a part of my problem, but you never know…</p>
+<h2>The problem</h2>
+<p>So, I happily took data from the GPS in the emulator, got double.NaN as the Altitude and saved that to the DB, all fine so far… Then when updating the database record with other values and trying to save the entry again, I kept getting the error: </p>
+<p>ChangeConflictException {&quot;Row not found or changed.&quot;}</p>
+<p>Since this problem appeared when I added the Altitude to the database, it was my prime suspect and when I removed it again all was fine.</p>
+<p>I’m not sure of the inner workings of this problem, but I suspect it having to do with the fact that when trying to compare a double with double.NaN, VS hints with:</p>
+<p><em>A NaN does not compare equal with any floating point number</em></p>
+<p>I can perfectly understand that NaN is a special case so I’m fine with sidestepping it like this.</p>
+<h2>The fix</h2>
+<pre class="brush: csharp;">Alt = double.IsNaN(value.Altitude) ? 0 : value.Altitude;</pre>
+<p>The code in the [Table] class:</p>
+<pre class="brush: csharp;">private double? _alt;
+[Column(CanBeNull = true)]
+public double? Alt
+{
+    get { return _alt; }
+    set
+    {
+        OnPropertyChanging(&quot;Alt&quot;);
+        _alt = value;
+        OnPropertyChanged(&quot;Alt&quot;);
+    }
+}
+
+public GeoCoordinate Location
+{
+    get { return new GeoCoordinate(
+        Lat.GetValueOrDefault(),
+        Lng.GetValueOrDefault(),
+        Alt.GetValueOrDefault()); }
+    set
+    {
+        Lat = value.Latitude;
+        Lng = value.Longitude;
+
+        //just setting the double.NaN value, this gave me trouble
+        //Alt = value.Altitude;
+
+        //my fix: replacing NaN with zero
+        Alt = double.IsNaN(value.Altitude) ? 0 : value.Altitude;
+
+        _location = value;
+    }            </pre>
+<p>And the code where I update the Item entity from my view model:</p>
+<pre class="brush: csharp;">private void SaveEntry()
+{
+    var item = (from i in db.Items
+                where i.Id == ViewModel.Id
+                select i).First();
+
+    db.Refresh(RefreshMode.OverwriteCurrentValues, item);
+
+    item.PhotoUrl = ViewModel.PhotoUrl;
+    item.Text = ViewModel.LongText;
+    item.Title = ViewModel.Title;
+    item.Location = ViewModel.Location;
+    db.SubmitChanges();
+}</pre>
+<p>I have of course tried the different RefreshModes, with the same result.</p>
+<p>I hope this helped someone out there with weird SQL errors and NaN values.</p>
+<p>Bye!</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=DjAC8cwiJZ8:7pcpf8-Uwd8:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=DjAC8cwiJZ8:7pcpf8-Uwd8:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=DjAC8cwiJZ8:7pcpf8-Uwd8:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=DjAC8cwiJZ8:7pcpf8-Uwd8:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/DjAC8cwiJZ8" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/23/storing-double-nan-in-a-wp7-sqlce-database/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/23/storing-double-nan-in-a-wp7-sqlce-database/</feedburner:origLink></item>
+		<item>
+		<title>Kinect – First steps</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/uR52oeIN8pE/</link>
+		<comments>http://blog.jayway.com/2011/09/22/kinect-first-steps/#comments</comments>
+		<pubDate>Thu, 22 Sep 2011 21:49:34 +0000</pubDate>
+		<dc:creator>Christian Jacobsen</dc:creator>
+				<category><![CDATA[.Net]]></category>
+		<category><![CDATA[Kinect]]></category>
+		<category><![CDATA[Rx]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9658</guid>
+		<description><![CDATA[On Tuesday 13 September 2011, I attended my first K-day at Jayway Stockholm. The day consisted of stand-ups, awesome technical presentations, round-table, labs and, of course, viewing of the Microsoft BUILD conference from Anaheim. During the labs I joined a group who wanted to have a look at Kinect. This nice device features a depth-sensor (using infra-red [...]]]></description>
+			<content:encoded><![CDATA[<p>On Tuesday 13 September 2011, I attended my first <a title="K-day" href="https://confluence.jayway.com/display/jaywaystockholm/Dotdag+13+september+2011">K-day</a> at Jayway Stockholm. The day consisted of stand-ups, awesome technical presentations, round-table, labs and, of course, viewing of the Microsoft BUILD conference from Anaheim.</p>
+<p>During the labs I joined a group who wanted to have a look at Kinect. This nice device features a depth-sensor (using infra-red laser), an RGB camera and an array of microphones. Some months ago Microsoft published the <a title="Kinect SDK" href="http://research.microsoft.com/en-us/um/redmond/projects/kinectsdk/">Kinect SDK</a> which lets you write applications interacting with it. It's in beta phase and only for non-commercial use. The SDK comes with two example applications namely a SkeletalViewer application and ShapeGame application. The former tracks a captured person and renders a skeleton image ("stick figure"), the RGB-image and a depth-image. The latter is a simple game where you use your body to catch falling shapes from the sky.</p>
+<p>After installing the SDK, the sample code for the aforementioned applications is placed in C:\Users\Public\Documents\Microsoft Research KinectSDK Samples\NUI\ on a Windows 7 system.</p>
+<p>Our team wanted to try whether the Kinect was able to track user movements when placed behind glass which it proved to be. This was also shown in this <a title="demo" href="http://www.youtube.com/watch?v=p85b87FKecU">demo</a>.</p>
+<p>Next, I wanted to try out some experimenting in the code to get a feel for the API's. My intention was simply to have an image follow the movements of the right hand. There are two API's to control the Kinect; NUI API (Natural User Interface) and the Audio API. You can use C++ or C# to build applications for the Kinect and though I have lot of love for C++ I chose C# since, well, it's faster to get up and running with.</p>
+<p>To use the API you simply reference Microsoft.Research.Kinect.dll on the .NET tab in the Add reference dialog and then add <strong>using Microsoft.Research.Kinect.Nui;</strong> in your source file. The main NUI API class is called <strong>Runtime</strong> and gives you access to the video stream, depth image stream and three events namely <strong>DepthFrameReady</strong>, <strong>SkeletonFrameReady</strong> and <strong>VideoFrameReady</strong>. Using the stream getters or using the events is just a matter of chosing to retreive image data using a polling model or an event model.</p>
+<p>For inspiration and helper methods I used the SkeletalViewer application but instead of creating the UI using XAML I just launched a WPF GUI from a console application. Instead of .NET events I chose to use Reactive Extensions' Observables which gives you much greater flexibility and power for reacting on different user behavior. The main method code looks like this:</p>
+<pre>[STAThread]
+static void Main()
+{
+    _nui = new Runtime();
+    var app = new Application();
+    var window = new Window();
+    InitializeNui();    //Initializing the Runtime object and opening video streams
+    CreateGUI(window); //Setting up a canvas to hold the RGB video and the image attached to the hand of captured person
+    var skeletonFrameReadyObservable = Observable.FromEventPattern(_nui, "SkeletonFrameReady");
+    var trackedSkeletons = from ev in skeletonFrameReadyObservable
+                            from skel in ev.EventArgs.SkeletonFrame.Skeletons
+                            where skel.TrackingState == SkeletonTrackingState.Tracked
+                            select skel;
+    var rightHandPos = trackedSkeletons.ObserveOnDispatcher().Select(s =&gt; getDisplayPosition(s.Joints[JointID.HandRight]));
+    rightHandPos.ObserveOnDispatcher().Subscribe(pos =&gt;
+    {
+        _image.SetValue(Canvas.TopProperty, pos.Y);
+        _image.SetValue(Canvas.LeftProperty, pos.X);
+        Console.WriteLine(pos.X + ", " + pos.Y);
+    });
+
+    var videoFrameReadyObservable = Observable.FromEventPattern(_nui, "VideoFrameReady");
+    videoFrameReadyObservable.ObserveOnDispatcher().Subscribe(evPattern =&gt;
+    {
+        PlanarImage Image = evPattern.EventArgs.ImageFrame.Image;
+        _video.Source = BitmapSource.Create(Image.Width, Image.Height, 96, 96, PixelFormats.Bgr32, null, Image.Bits, Image.Width * Image.BytesPerPixel);
+    });
+    app.Run(window);
+}</pre>
+<p>After NUI API and GUI setup the frame ready events for the skeleton and RGB video are converted to observable streams. The former is then used for filtering out the right hand position and attaching an image to it while the latter is used for getting the image frame of the video and showing it on the canvas. The result is shown here:</p>
+<div id="attachment_9665" class="wp-caption alignnone" style="width: 310px"><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/JayMover.png" rel="lightbox"><img class="size-medium wp-image-9665" title="JayMover" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/JayMover-300x224.png" alt="" width="300" height="224" /></a><p class="wp-caption-text">Jay follows hand&#39;s movement</p></div>
+<p>To conclude: it is really easy to program against the Kinect API and really fun too! The Kinect sensor is quite inexpensive (~800 Skr) in comparison to what you get: endless possibilities and awesome technology! <img src='http://blog.jayway.com/wordpress/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=uR52oeIN8pE:rQjtqkkLrTk:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=uR52oeIN8pE:rQjtqkkLrTk:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=uR52oeIN8pE:rQjtqkkLrTk:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=uR52oeIN8pE:rQjtqkkLrTk:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/uR52oeIN8pE" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/22/kinect-first-steps/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/22/kinect-first-steps/</feedburner:origLink></item>
+		<item>
+		<title>Using QtCreator for Arduino development</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/yCslNYR8ab0/</link>
+		<comments>http://blog.jayway.com/2011/09/22/using-qtcreator-for-arduino-development/#comments</comments>
+		<pubDate>Thu, 22 Sep 2011 13:16:07 +0000</pubDate>
+		<dc:creator>Mario Boikov</dc:creator>
+				<category><![CDATA[Embedded]]></category>
+		<category><![CDATA[Tips & Tricks]]></category>
+		<category><![CDATA[arduino]]></category>
+		<category><![CDATA[Qt]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9617</guid>
+		<description><![CDATA[Introduction I've been using QtCreator for some time now, mostly for Qt projects, and I really like the environment. It's fast and have plenty of features for c/c++ development such as code completion, symbol navigation, and git integration. Today I decided to try if I could use QtCreator for Arduino development and it turned out [...]]]></description>
+			<content:encoded><![CDATA[<p><strong>Introduction</strong></p>
+<p>I've been using QtCreator for some time now, mostly for Qt projects, and I really like the environment. It's fast and have plenty of features for c/c++ development such as code completion, symbol navigation, and git integration.</p>
+<p>Today I decided to try if I could use QtCreator for Arduino development and it turned out that it wasn't that difficult. The environment isn't perfect but it works and it doesn't take much effort to set up a project.</p>
+<p><em>Disclaimer: I'm not doing Arduino development regularly, I just find it amusing to toggle bits on 8-bit hardware now and then. If you find anything in this post that seems totally wrong please let me know.</em></p>
+<p><strong>Prerequisites</strong></p>
+<p>This tutorial assumes that you're running Ubuntu. It shouldn't be too difficult to adjust for other Linux distributions.</p>
+<p>If you haven't already installed the latest QtSDK (1.1.3), please download it from <a title="http://qt.nokia.com/downloads" href="http://qt.nokia.com/downloads" target="_blank">http://qt.nokia.com/downloads</a> and do so.</p>
+<p>Install arduino-core package from the Ubuntu repository</p>
+<pre>$&gt; sudo apt-get install arduino-core</pre>
+<p>This should pull in required dependencies too, such as avr-gcc and avrdude.</p>
+<p>Install gtkterm (optional, but recommended)</p>
+<pre>$&gt; sudo apt-get install gtkterm</pre>
+<p><strong>Creating a simple 'Hello World' project</strong></p>
+<p>You can create everything from within QtCreator but I find it easier to do the initial set up from command line.</p>
+<pre>$&gt; cd &lt;projects folder&gt;
+$&gt; mkdir -p helloworld/src
+$&gt; cd helloworld/src</pre>
+<p>If you look at the top of the file <em>/usr/share/arduino/Arduino.mk</em> you'll find instructions on how to create a suitable <em>Makefile</em> for your project.</p>
+<p>Here's one that I use, just put the content in <em>helloworld/src/Makefile</em></p>
+<pre>ARDUINO_DIR  = /usr/share/arduino
+
+TARGET       = main
+ARDUINO_LIBS =
+
+MCU          = atmega328p
+F_CPU        = 16000000
+
+# Avrdude code
+ARDUINO_PORT = /dev/ttyACM0
+AVRDUDE_ARD_PROGRAMMER = arduino
+AVRDUDE_ARD_BAUDRATE = 115200
+
+include /usr/share/arduino/Arduino.mk</pre>
+<p>Finally create <em>helloworld/src/app.cpp</em> with the following content:</p>
+<pre><code>
+#include &lt;WProgram.h&gt;
+
+void setup()
+{
+}
+
+void loop()
+{
+}
+</code></pre>
+<p><strong>Importing the <em>Hello World</em> project</strong></p>
+<p>Start QtCreator and go to <em>'File/New File or Project'</em> (<em>ctrl+n</em>) and then choose <em>'Other Project/Import Existing Project'</em>.</p>
+<p style="text-align: center;"><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/import_project.png" rel="lightbox"><img class="size-medium wp-image-9620 aligncenter" title="Import project" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/import_project-300x260.png" alt="" width="300" height="260" /></a></p>
+<p>Finish the wizard by specifying <em>'HelloWorld'</em> as <em>'Project name'</em> and <em>'&lt;projects folder&gt;/helloworld'</em> as <em>'Location'</em>. You might wonder why I specified <em>'helloworld'</em> as project location instead of <em>'helloworld/src'</em>. This is because I don't want QtCreator's project files to end up in the same folder as my source. Just click on <em>'Next'</em> on the following questions to finish the wizard.</p>
+<p style="text-align: center;"><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/project_name.png" rel="lightbox"><img class="size-medium wp-image-9621 aligncenter" title="Project name" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/project_name-300x273.png" alt="" width="300" height="273" /></a></p>
+<p>QtCreator creates three files:</p>
+<ul>
+<li>HelloWorld.conf - Add defines</li>
+<li>HelloWorld.files - List all files that are part of the project</li>
+<li>HelloWorld.includes - List all include paths</li>
+</ul>
+<p style="text-align: left;">Add '/usr/share/arduino/hardware/arduino/cores/arduino' to 'HelloWorld.includes'. This tells QtCreator where to look for Arduino specific header files.</p>
+<p><strong>Configuring 'Clean/Build/Run'</strong><br />
+Click 'Projects' (<em>ctrl+5</em>) on the bar to the left to activate the project settings page to change the build and run settings.</p>
+<p><strong>Clean and Build settings</strong><br />
+Change <em>'Build directory'</em> to <em>'&lt;projects folder&gt;/helloworld/src'</em> and modify the settings to reflect the screen shot below.</p>
+<p style="text-align: center;"><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/build_settings1.png" rel="lightbox"><img class="size-full wp-image-9624 aligncenter" title="Clean and Build settings" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/build_settings1.png" alt="" width="482" height="426" /></a><strong></strong></p>
+<p style="text-align: left;"><strong>Run settings</strong><br />
+Choose 'Add Deploy Step' and use the screen shot below to specify the settings.</p>
+<p style="text-align: center;"><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/run_settings.png" rel="lightbox"><img class="size-full wp-image-9625 aligncenter" title="Run settings" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/run_settings.png" alt="" width="493" height="378" /></a></p>
+<p style="text-align: left;">
+If you didn't install gtkterm you can specify '<em>echo'</em> or something in the <em>'Run configuration'</em>.</p>
+<p style="text-align: left;"><strong>The Hello World app</strong><br />
+Finally I'll write the code and upload/run it on the Arduino.</p>
+<p style="text-align: left;">Open <em>'app.cpp'</em> and change the code to the following snippet:</p>
+<pre><code>
+#include &lt;WProgram.h&gt;
+
+void setup()
+{
+    Serial.begin(115200);
+}
+
+void loop()
+{
+    Serial.println("Hello World");
+    delay(1000);
+}
+</code></pre>
+<p>Press <em>ctrl+r</em> and hopefully you'll see 'Hello World' printed each second in the gtkterm console.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=yCslNYR8ab0:ZqCnPpgjZfE:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=yCslNYR8ab0:ZqCnPpgjZfE:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=yCslNYR8ab0:ZqCnPpgjZfE:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=yCslNYR8ab0:ZqCnPpgjZfE:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/yCslNYR8ab0" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/22/using-qtcreator-for-arduino-development/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/22/using-qtcreator-for-arduino-development/</feedburner:origLink></item>
+		<item>
+		<title>NoSQL with RavenDB</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/mVcatxQNN1c/</link>
+		<comments>http://blog.jayway.com/2011/09/22/nosql-with-ravendb/#comments</comments>
+		<pubDate>Thu, 22 Sep 2011 07:43:48 +0000</pubDate>
+		<dc:creator>Niklas Lundberg</dc:creator>
+				<category><![CDATA[.Net]]></category>
+		<category><![CDATA[Database]]></category>
+		<category><![CDATA[nosql]]></category>
+		<category><![CDATA[ravendb]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=8762</guid>
+		<description><![CDATA[In the strongly typed world we have to predefine data structures expressed with language elements such as structs and classes. However in a dynamic web world there is a greater flexibility, especially with a dynamic language as JavaScript, native browser support for JSON and jQuery libraries. If your data is relational and fixed in the [...]]]></description>
+			<content:encoded><![CDATA[<p>In the strongly typed world we have to predefine data structures expressed with language elements such as structs and classes. However in a dynamic web world there is a greater flexibility, especially with a dynamic language as JavaScript, native browser support for JSON and jQuery libraries.</p>
+<p>If your data is relational and fixed in the sense that there is a predefined schema, then a relational database would solve your problem just fine. However, if the problem domain is not relational in its nature, then other data structures might be better suited.</p>
+<p>When dealing with free text qualitative data, there is really no connections that could be modeled between different sets of data. Instead a data structure of independent documents would be more suitable.</p>
+<p>As a .NET developer the document database RavenDB is attractive since it provides us with a built-in .NET API, HTTP API and many of the features a NoSQL database can offer. In a web environment the HTTP API is useful because it could eliminate the need for a middle tier for simple scenarios where you don't need all the features the server side could offer. In RavenDB all documents are stored as JSON and its input and output is also JSON.</p>
+<p>Since RavenDB is built in .NET, the natural way of using it is from .NET code. It is very easy to store and fetch strongly typed objects since RavenDB has APIs for doing the mapping transparently. However, you are not forced to use .NET code only. From JavaScript we can call the database directly with RavenDB's RESTful API. The mapping to a .NET class is stored as metadata with a fully qualified name. This is the only difference between a .NET mapped document and a document without any .NET type.</p>
+<p>In RavenDB, you have to create indexes as Map/Reduce functions written as LINQ-queries. These indexes could make use of document properties, metadata or both.</p>
+<p>The same logic is applied to collections in RavenDB; it is just some metadata specifying the Raven-Entity-Name. The major difference between this attribute and other metadata is that the Raven-Entity-Name could be used in indexes like this:</p>
+<pre class="brush: csharp;">
+from album in docs.albums
+select new {album}
+</pre>
+<p>Of course you can add your own metadata and use it in your own indexes.</p>
+<p>My personal findings about RavenDB are that it is very easily deployed; you can use xcopy to a website in Internet Information Services, IIS, with all of the features it offers.<br />
+The database itself is quite straight forward but there are still things that need to be improved in the eco-system, such as management tools and more extensive documentation. </p>
+<p>It is really nice to use Linq syntax to create indexes if you know C#, but you really have to think differently than you do when using a traditional relational database. You cannot write SQL to query RavenDB. However, in most cases it is possible to get the data you want by creating indexes. </p>
+<p>Just remember, you store documents, not relational data.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=mVcatxQNN1c:tjaanK3zi10:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=mVcatxQNN1c:tjaanK3zi10:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=mVcatxQNN1c:tjaanK3zi10:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=mVcatxQNN1c:tjaanK3zi10:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/mVcatxQNN1c" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/22/nosql-with-ravendb/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/22/nosql-with-ravendb/</feedburner:origLink></item>
+		<item>
+		<title>Infinitest</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/ECj2dMcRW48/</link>
+		<comments>http://blog.jayway.com/2011/09/21/infinitest/#comments</comments>
+		<pubDate>Wed, 21 Sep 2011 20:20:06 +0000</pubDate>
+		<dc:creator>Anders Eriksson</dc:creator>
+				<category><![CDATA[Java]]></category>
+		<category><![CDATA[Testing]]></category>
+		<category><![CDATA[Tips & Tricks]]></category>
+		<category><![CDATA[automated testing]]></category>
+		<category><![CDATA[junit]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9572</guid>
+		<description><![CDATA[The Infinitest Eclipse plug-in looks for unit tests and have them run as soon as changes are detected. Just as modern IDEs have provided automatic compilation for ages this can now also be provided for unit testing. The test outcome shows up as a green or red bar in the bottom of the Eclipse application [...]]]></description>
+			<content:encoded><![CDATA[<p>The <a title="Infinitest" href="http://infinitest.github.com/">Infinitest</a> Eclipse plug-in looks for unit tests and have them run as soon as changes are detected. Just as modern IDEs have provided automatic compilation for ages this can now also be provided for unit testing.</p>
+<p>The test outcome shows up as a green or red bar in the bottom of the Eclipse application window. The plugin also gives more feedback. In case of failing test the failing line of code in the unit test shows up with a "problem" icon just as a compilation error would look like. Doing mouse-over on the problem icon you will get the failing assert message. This feature I have noticed in recent versions of Eclipse so try to update to the latest Eclipse if you don't see this happen.</p>
+<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/infinitest12.png" rel="lightbox"><img class="alignnone size-full wp-image-9591" title="infinitest1" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/infinitest12.png" alt="" width="640" height="243" /></a></p>
+<p>The problem indicator is quite powerful and allows a higher level of TDD. When doing pure TDD you write a failing test first. This would make Infinitest mark your assert statement as problematic until you save a working implementation of your tested code. This allows a very focused <em>write failing test / write implementation</em>-loop.</p>
+<p>Infinitest operates independently from the JUnit view in Eclipse. As Infinitest is activated as soon as source code is saved while JUnit is run when initiated by the developer the state shown by either system is often out of sync. I have also experienced that the Infinitest fails to "re-test" but then a project clean brings it back on track. Even if there are quirks I think Infinitest is useful for my daily work and it really promotes TDD.</p>
+<p>The plug-in is available on update site http://infinitest.github.com/ and if you are using SpringSource Tool Suite (STS) the plug-in is also available in STS's  extension list.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=ECj2dMcRW48:z2aAdoF58TE:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=ECj2dMcRW48:z2aAdoF58TE:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=ECj2dMcRW48:z2aAdoF58TE:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=ECj2dMcRW48:z2aAdoF58TE:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/ECj2dMcRW48" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/21/infinitest/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/21/infinitest/</feedburner:origLink></item>
+		<item>
+		<title>Asset management with Sprockets</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/kovrujnYMhg/</link>
+		<comments>http://blog.jayway.com/2011/09/19/asset-management-with-sprockets/#comments</comments>
+		<pubDate>Mon, 19 Sep 2011 13:20:38 +0000</pubDate>
+		<dc:creator>Andreas Hallberg</dc:creator>
+				<category><![CDATA[Dynamic languages]]></category>
+		<category><![CDATA[Tips & Tricks]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[Ruby On Rails]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9317</guid>
+		<description><![CDATA[A quick tip in case you're a Ruby person and haven't used the Sprockets gem: Sprockets is a Rack application that serves assets (javascript, css, images etc) over HTTP. It's built in to Rails 3.1 and DHH spent a significant portion of the RailsConf 2011 keynote promoting its benefits (although I'm not sure he ever mentioned its [...]]]></description>
+			<content:encoded><![CDATA[<p style="text-align: left;">A quick tip in case you're a Ruby person and haven't used the Sprockets gem: Sprockets is a Rack application that serves assets (javascript, css, images etc) over HTTP. It's built in to Rails 3.1 and DHH spent a significant portion of the <a href="http://www.youtube.com/watch?v=cGdCI2HhfAU" target="_blank">RailsConf 2011 keynote</a> promoting its benefits (although I'm not sure he ever mentioned its name).</p>
+<p style="text-align: left;">From the <a href="https://github.com/sstephenson/sprockets">Sprockets github page</a>:</p>
+<blockquote><p>Sprockets is a Ruby library for compiling and serving web assets. It features declarative dependency management for JavaScript and CSS assets, as well as a powerful preprocessor pipeline that allows you to write assets in languages like CoffeeScript, Sass, SCSS and LESS.</p></blockquote>
+<p style="text-align: left;">Well put! The neat thing is that even if your project might not be on Rails 3.1 yet, you can still enjoy the Sprockets gem. Here's how I set up preprocessing and compilation (as in <em>organizing/concatenating</em>) of some CoffeeScript and JavaScript files in a gem I was working on:</p>
+<p style="text-align: left;">1. In config.ru, I mapped up the folders I wanted to server assets from into a single, easy-to-remember path:</p>
+<pre style="color: #d1d1d1; background: #000000;"><span style="color: #e66170; font-weight: bold;">require</span> <span style="color: #00c4c4;">'sprockets'</span>
+
+map <span style="color: #00c4c4;">'/'</span> <span style="color: #e66170; font-weight: bold;">do</span>
+  run My::Fancy::App
+<span style="color: #e66170; font-weight: bold;">end</span>
+
+map <span style="color: #00c4c4;">'/assets'</span> <span style="color: #e66170; font-weight: bold;">do</span>
+  environment <span style="color: #d2cd86;">=</span> Sprockets::Environment<span style="color: #d2cd86;">.</span><span style="color: #e66170; font-weight: bold;">new</span>
+  environment<span style="color: #d2cd86;">.</span>append_path <span style="color: #00c4c4;">'public/javascripts'</span>
+  environment<span style="color: #d2cd86;">.</span>append_path <span style="color: #00c4c4;">'someOtherDirectory/coffeeScripts'</span>
+  run environment
+<span style="color: #e66170; font-weight: bold;">end</span></pre>
+<p>2. I created a main.js file with Sprockets require statements, in the order I needed the files to be concatenated. As I needed erb and CoffeeScript preprocessing on some of them, I gave the file names the appropriate endings, in a right-to-left order of processing:</p>
+<pre style="color: #d1d1d1; background: #000000;"><span style="color: #d2cd86;">/</span><span style="color: #d2cd86;">/</span><span style="color: #d2cd86;">=</span> <span style="color: #e66170; font-weight: bold;">require</span> A<span style="color: #d2cd86;">.</span>coffeescript<span style="color: #d2cd86;">.</span>erb
+<span style="color: #d2cd86;">/</span><span style="color: #d2cd86;">/</span><span style="color: #d2cd86;">=</span> <span style="color: #e66170; font-weight: bold;">require</span> B<span style="color: #d2cd86;">.</span>js
+<span style="color: #d2cd86;">/</span><span style="color: #d2cd86;">/</span><span style="color: #d2cd86;">=</span> <span style="color: #e66170; font-weight: bold;">require</span> C<span style="color: #d2cd86;">.</span>coffeescript<span style="color: #d2cd86;">.</span>erb</pre>
+<p style="text-align: left;">So "A.coffeescript.erb" and "C.coffeescript.erb" will first be processed by erb, then by the CoffeeScript compiler. "B.js" will not be preprocessed by anything.</p>
+<p style="text-align: left;">3. Good to go! In my HTML page I would load the whole enchilada like so:</p>
+<pre style="color: #d1d1d1; background: #000000;">&lt;script type<span style="color: #d2cd86;">=</span><span style="color: #00c4c4;">"text/javascript"</span>  src <span style="color: #d2cd86;">=</span><span style="color: #00c4c4;">"/assets/main.js"</span> <span style="color: #d2cd86;">/</span>&gt;</pre>
+<p>... which gives me one file served, preprocessed and concatenated.</p>
+<p>It's easy!</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=kovrujnYMhg:EvBfqMmkY74:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=kovrujnYMhg:EvBfqMmkY74:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=kovrujnYMhg:EvBfqMmkY74:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=kovrujnYMhg:EvBfqMmkY74:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/kovrujnYMhg" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/19/asset-management-with-sprockets/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/19/asset-management-with-sprockets/</feedburner:origLink></item>
+		<item>
+		<title>Booting Windows 8 from a virtual disk</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/F2oCdngKJDA/</link>
+		<comments>http://blog.jayway.com/2011/09/19/booting-windows-8-from-a-virtual-disk/#comments</comments>
+		<pubDate>Mon, 19 Sep 2011 12:55:24 +0000</pubDate>
+		<dc:creator>Björn Carlsson</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/2011/09/19/booting-windows-8-from-a-virtual-disk/</guid>
+		<description><![CDATA[I have now installed Windows 8 developer preview on my main machine. I did this by looking at a couple of blog posts from primarily Scott Hanselman. Guide to Installing and Booting Windows 8 Developer Preview off a VHD (Virtual Hard Disk Less Virtual, More Machine - Windows 7 and the magic of Boot to [...]]]></description>
+			<content:encoded><![CDATA[<p>I have now installed Windows 8 developer preview on my main machine. I did this by looking at a couple of blog posts from primarily Scott Hanselman.</p>
+<ul>
+<li><a href="http://www.hanselman.com/blog/GuideToInstallingAndBootingWindows8DeveloperPreviewOffAVHDVirtualHardDisk.aspx" target="_blank">Guide to Installing and Booting Windows 8 Developer Preview off a VHD (Virtual Hard Disk</a></li>
+<li><a href="http://http://www.hanselman.com/blog/LessVirtualMoreMachineWindows7AndTheMagicOfBootToVHD.aspx" target="_blank">Less Virtual, More Machine - Windows 7 and the magic of Boot to VHD</a></li>
+<li><a href="http://www.istartedsomething.com/20081104/tip-make-your-pdc-2008-usb-hard-drive-a-bootable-windows-7-install-disk/" target="_blank">Tip: make your PDC 2008 (or any) USB hard drive a bootable Windows 7 install disk</a></li>
+</ul>
+<p>During this process I did run into a few problems.</p>
+<p>First I did not have a USB key big enough for the 64-bit installation (<a href="http://msdn.microsoft.com/en-us/windows/apps/br229516" target="_blank">all downloads here</a>) with Visual Studio pre installed, my biggest was 4 GB. So I followed the instructions to make a 10 GB part of my USB hard drive bootable. </p>
+<p>Then I found out that I can’t copy a 4.2 GB file to a FAT32 file system. I also found out that my computer do not want to boot from a partition formatted with NTFS or exFAT. </p>
+<p>My solution was to use the iso without Visual Studio pre installed. On that iso the biggest file was only 3.6 GB, so it worked with FAT32.</p>
+<p>I then downloaded and installed the VS 11 preview from MSDN, which unfortunately requires an MSDN subscription. </p>
+<p>Finally a short step by step description:</p>
+<ol>
+<li>Create a virtual disk, 60 GB, dynamically growing.</li>
+<li>Create a restore point, and make back ups (I didn’t do this, but one should).</li>
+<li>Burn the iso to a DVD or copy the content of the iso a bootable USB device.</li>
+<li>Boot from the media in point 3.</li>
+<li>When the installation comes to selecting partition to boot from, press Shift+F10 to get a console</li>
+<li>run diskpart</li>
+<li>DISKPART&gt; select vdisk file=d:\VMs\Win8.vhd</li>
+<li>DISKPART&gt; attach vdisk</li>
+<li>return back to installation and refresh list of disks.</li>
+<li>select your virtual disk and install Windows 8 onto it.</li>
+<li>ready to run.</li>
+</ol>
+<p>I did run into some trouble, when I booted back to Windows 7, I got a temporary desktop. But I reverted back to a system restore point (created by Windows update), and then it worked great again.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=F2oCdngKJDA:UcypoLGy5hE:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=F2oCdngKJDA:UcypoLGy5hE:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=F2oCdngKJDA:UcypoLGy5hE:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=F2oCdngKJDA:UcypoLGy5hE:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/F2oCdngKJDA" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/19/booting-windows-8-from-a-virtual-disk/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/19/booting-windows-8-from-a-virtual-disk/</feedburner:origLink></item>
+		<item>
+		<title>Multipart Form Data File Uploading Made Simple with REST Assured</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/Bh8FYlPBv3I/</link>
+		<comments>http://blog.jayway.com/2011/09/15/multipart-form-data-file-uploading-made-simple-with-rest-assured/#comments</comments>
+		<pubDate>Thu, 15 Sep 2011 16:59:53 +0000</pubDate>
+		<dc:creator>Johan Haleby</dc:creator>
+				<category><![CDATA[Java]]></category>
+		<category><![CDATA[Testing]]></category>
+		<category><![CDATA[Tips & Tricks]]></category>
+		<category><![CDATA[automated testing]]></category>
+		<category><![CDATA[http]]></category>
+		<category><![CDATA[rest]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9349</guid>
+		<description><![CDATA[From a client perspective it has always seemed to me that uploading a large file or stream to a server using multi-part form data encoding in Java is overly complex. To address this I implemented support for it in REST Assured 1.3. Example Let's say you have a simple HTML page that performs file-uploading from [...]]]></description>
+			<content:encoded><![CDATA[<p>From a client perspective it has always seemed to me that uploading a large file or stream to a server using <a href="http://www.w3.org/TR/html4/interact/forms.html#h-17.13.4.2">multi-part form data encoding</a> in Java is overly complex. To address this I implemented support for it in <a href="http://code.google.com/p/rest-assured/">REST Assured</a> 1.3.</p>
+<h2>Example</h2>
+<p>Let's say you have a simple HTML page that performs file-uploading from a browser like this:</p>
+<pre>
+&lt;html&gt;
+&lt;body&gt;
+	&lt;form id=&quot;upload&quot; action=&quot;/fileUpload&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+		&lt;input type=&quot;file&quot; name=&quot;file&quot; size=&quot;40&quot;&gt;
+		&lt;input type=submit value=&quot;Upload!&quot;&gt;
+	&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>We also assume that we have a server that receives the file and return a JSON response like this if everything was ok:</p>
+<pre class="javascript">&nbsp;
+<span style="color: #66cc66;">&#123;</span> <span style="color: #3366CC;">&quot;fileUploadResult&quot;</span> : <span style="color: #3366CC;">&quot;OK&quot;</span> <span style="color: #66cc66;">&#125;</span>
+&nbsp;</pre>
+<p>Now let's use REST Assured to upload a file and assert that the upload was OK:</p>
+<pre class="java">&nbsp;
+given<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>.
+         <span style="color: #006600;">multiPart</span><span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3AFile+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">File</span></a><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;/home/johan/some_large_file.bin&quot;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>.
+<span style="color: #006600;">expect</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>.
+         <span style="color: #006600;">body</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;fileUploadResult&quot;</span>, is<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;OK&quot;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>.
+<span style="color: #006600;">when</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>.
+         <span style="color: #006600;">post</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;/fileUpload&quot;</span><span style="color: #66cc66;">&#41;</span>;
+&nbsp;</pre>
+<p>With so little code you've now managed to POST a large file using multi-part form data encoding to the server and asserted that the expected JSON bundled in the response body was correct.</p>
+<p>But how can this work? We haven't even specified a <a href="http://www.w3.org/TR/html4/interact/forms.html#h-17.2">control name</a>? Well if you don't define a control name specifically REST Assured will default to "file". In many cases this is of course not the case. For example let's say we change the control name in the HTML form to "file2" instead:</p>
+<pre>
+&lt;html&gt;
+&lt;body&gt;
+	&lt;form id=&quot;upload&quot; action=&quot;/fileUpload&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+		&lt;input type=&quot;file&quot; name=&quot;file2&quot; size=&quot;40&quot;&gt;
+		&lt;input type=submit value=&quot;Upload!&quot;&gt;
+	&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>REST Assured still makes it simple:</p>
+<pre class="java">&nbsp;
+given<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>.
+         <span style="color: #006600;">multiPart</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;file2&quot;</span>, <span style="color: #000000; font-weight: bold;">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3AFile+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">File</span></a><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;/home/johan/some_large_file.bin&quot;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>.
+<span style="color: #006600;">expect</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>.
+         <span style="color: #006600;">body</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;fileUploadResult&quot;</span>, is<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;OK&quot;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>.
+<span style="color: #006600;">when</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>.
+         <span style="color: #006600;">post</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;/fileUpload&quot;</span><span style="color: #66cc66;">&#41;</span>;
+&nbsp;</pre>
+<h2>Multiple parts</h2>
+<p>You can even send multiple files, streams, byte-arrays and form parameters in the same request:</p>
+<pre class="java">&nbsp;
+<a href="http://www.google.com/search?hl=en&amp;q=allinurl%3AInputStream+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">InputStream</span></a> inputStream = ..
+&nbsp;
+<span style="color: #006600;">given</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>.
+         <span style="color: #006600;">multiPart</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;file1&quot;</span>, <span style="color: #000000; font-weight: bold;">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3AFile+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">File</span></a><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;/home/johan/some_large_file.bin&quot;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>.
+         <span style="color: #006600;">multiPart</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;file2&quot;</span>, <span style="color: #000000; font-weight: bold;">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3AFile+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">File</span></a><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;/home/johan/some_other_large_file.bin&quot;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>.
+         <span style="color: #006600;">multiPart</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;file3&quot;</span>, <span style="color: #ff0000;">&quot;file_name.bin&quot;</span>, inputStream<span style="color: #66cc66;">&#41;</span>.
+         <span style="color: #006600;">formParam</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;name&quot;</span>, <span style="color: #ff0000;">&quot;value&quot;</span><span style="color: #66cc66;">&#41;</span>.
+<span style="color: #006600;">expect</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>.
+         <span style="color: #006600;">body</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;fileUploadResult&quot;</span>, is<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;OK&quot;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>.
+<span style="color: #006600;">when</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>.
+         <span style="color: #006600;">post</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;/advancedFileUpload&quot;</span><span style="color: #66cc66;">&#41;</span>;
+&nbsp;</pre>
+<h2>Summary</h2>
+<p>As you've hopefully seen it's very simple do multi-part form data uploading with REST Assured. Credits should of course also go to <a href="http://hc.apache.org/">Apache HTTP Client</a> for making it possible. To get started with REST Assured today just visit the <a href="http://code.google.com/p/rest-assured/">web-site</a>. Enjoy!</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=Bh8FYlPBv3I:WvWnU9XGZio:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=Bh8FYlPBv3I:WvWnU9XGZio:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=Bh8FYlPBv3I:WvWnU9XGZio:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=Bh8FYlPBv3I:WvWnU9XGZio:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/Bh8FYlPBv3I" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/15/multipart-form-data-file-uploading-made-simple-with-rest-assured/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/15/multipart-form-data-file-uploading-made-simple-with-rest-assured/</feedburner:origLink></item>
+		<item>
+		<title>Windows 8 Keynote–Impressions</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/b0eJByBUPsA/</link>
+		<comments>http://blog.jayway.com/2011/09/14/windows-8-keynoteimpressions/#comments</comments>
+		<pubDate>Wed, 14 Sep 2011 15:25:37 +0000</pubDate>
+		<dc:creator>Jakob Nilsson-Ehle</dc:creator>
+				<category><![CDATA[.Net]]></category>
+		<category><![CDATA[build]]></category>
+		<category><![CDATA[windows 8]]></category>
+		<category><![CDATA[winrt]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/2011/09/14/windows-8-keynoteimpressions/</guid>
+		<description><![CDATA[Yesterday, Microsoft kicked of the BUILD conference with the keynote introducing Windows 8.  It was clear that they had taken a page from other companies in keeping everything as secret as possible up to the event, so that the impact from the conference and the keynote would be as powerful as possible. It’s a simple [...]]]></description>
+			<content:encoded><![CDATA[<p>Yesterday, Microsoft kicked of the <a href="http://buildwindows.com">BUILD conference</a> with the keynote introducing Windows 8.  It was clear that they had taken a page from other companies in keeping everything as secret as possible up to the event, so that the impact from the conference and the keynote would be as powerful as possible. It’s a simple strategy, but also very effective. The hype and rumors have been building weeks, effectively turning the actual keynote into a proverbial firework of information and emotion.</p>
+<p>It is clear (as was stated several times) that the keynote only scratched the surface of the Windows 8 experience – both for developers and end users, but it also provided an overview of what Windows 8 is <em>about</em> and where it wants to be both right now and a bit down the line.</p>
+<h2>The Interface</h2>
+<p>One thing that we did know before the event was what the interface looked like, and even if they hadn’t shown it to us <em>explicitly</em>, it wouldn’t be that far-fetched to assume that it would in some way, shape or form move towards the Metro interface present in Windows Phones (and also hinted to in the Xbox 360 interface).</p>
+<p>But while we knew what it <em>looked like</em> we (or at least I) knew very little of how it actually behaved. Again, we could make some inspired guesses based on Windows Phone 7, but we (or at least I) also have to expect a lot more from a full-blown desktop OS than a phone operating system. And indeed, we did get a lot more. The interface seems very fluent and touch centric, but still promises to support keyboard and mouse just as well. To be fair though, anything else would not be good enough to beat off the competition in the operating system market.</p>
+<p>My favorite bit from the entire keynote though was the concept of <em>Charms</em>, and even though they carry an odd name, what they represent is far more impressive. Windows 8 will provide a very loosely-coupled web of services that never have to know each other but can still interact. That concept, to me, is very powerful and seems to resonate throughout the Windows 8 experience (as seen, for example, in the File Picker dialog), it also gives a proper meaning to the word <em>Application Ecosystem</em>. It is used by both Google and Apple for their respective operating systems, but in both those cases it actually only means a selection of available apps. In a true <em>ecosystem,</em> everything that is a part of it actually works together to support an nourish each other, and in that sense Windows 8 will have the first ecosystem that actually behaves like one. Both as a developer and as an end user, I am very intrigued by the prospects and opportunities this brings.</p>
+<p>There were, of course, many other interface news shown in the keynote, but many of them weren’t that notable in my opinion. A few new ways to enter passwords, a way to change your profile and so on, but no things that would really sway me in one way or the other in terms of deciding my next OS.</p>
+<p>There is certainly a wow-factor to the Metro interface, and I’m sure the first time you use it, it will be very cool, but it also begs the question if people using actual desktop computers with mouse and keyboard will still enjoy it a year down the line? It is also hard to tell how well the touch interface <em>actually </em>works only from videos, but it’s important enough to Microsoft and the Windows 8 experience that it really has to be entirely free from compromises, so I have strong belief in it until my actual hands-on experience would prove me otherwise.</p>
+<h2>Development and the WinRT</h2>
+<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/platformstools.png" rel="lightbox"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="platformstools" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/platformstools_thumb.png" alt="platformstools" width="635" height="356" border="0" /></a></p>
+<p>Microsoft has recognized that there is a problem in how developers work with Windows, that every time you change your tool, you are thrust into an entirely new world, that doesn’t have a lot in common with the old one. To solve this , they have created what they call “WinRT”, basically a common set of APIs that all Metro-style applications access in a similar way, so that no developer will feel left out and forced to jump through hoops like P/Invoke. This was probably one of the biggest news of the entire keynote (up there with the “up” button in windows explorer)</p>
+<p>One of the other really big news, that was mentioned in passing earlier by Microsoft, was how HTML and JS were integrated into Windows 8. Even so, this level of integration was more than I imagined, and also showed how much Microsoft wants to bring Web developers on board to their platform. I was especially impressed by how well it seemed to be handled by Expression Blend.</p>
+<p>I’m not sure how I feel about their entire approach to it though. They have taken a lot of steps to make sure that the JavaScript and HTML work just as any other native app on the platform, but in doing so they are forced (by themselves) to again diverge from the standards of the web, although they do it a lot more gracefully this time around. The first consequence of this is that people who somehow expected to just jack in their old web apps into Windows 8 will likely be disappointed by how much work <em>may</em> be required to get it right. Some developers may be reluctant to re-learn many things just for Windows 8 – Expression Blend is not exactly the tool of choice for web developers anywhere that I know of. Of course everything was made to seem very easy in the keynote, but I still have no idea how the grid view, for example, is represented in an HTML app.</p>
+<p>That said, people looking to getting into development are more likely to have an easier time with HTML+JS than they would with Java, Silverlight or Objective-C.</p>
+<p>The new WinRT approach seems to me to be a smart move by Microsoft. It gives a good feeling to know that whatever language I choose, or am forced to use, to develop for Windows 8, all the same APIs will be available to me – naturally in slightly different ways. One thing that was barely mentioned, but was shown on the screen, was that XAML would be available for C and C++ as well now. I’m not a C developer myself, but I’m a bit keen to see if anyone who does C is actually interested in doing XAML, it doesn’t really seem like a strong match, but time will tell I guess.</p>
+<p>If I understood the above graphic correctly, it seemed like WinRT would only be available to developers choosing to do Metro-style apps. Personally it feels like a bit of a loss, as it would be nice to have the same unified approach to “ordinary” desktop apps, but maybe that can’t be done without the unified interface.</p>
+<p>Since the concept of <em>Charms</em> intrigued me so much, I of course also wonder if it would be possible to develop own charms to install into the system, or if I’m simply stuck with the ones provided by Windows 8. What if I want some kind of GeoLocation charm? How will that be solved?</p>
+<p>Finally, heading back to web development, I’m interested to see how deep the JavaScript Runtime is really embedded into the operating system. Is Internet Explorer once again deeply integrated in the OS á la Windows 95? Let’s hope not. Can Microsoft really keep the JS+HTML+CSS up-to-date with the rapidly evolving web standards? Let’s hope so.</p>
+<p>Microsoft have been very much in control when it comes to the .NET Framework and C#, and C++ and C haven’t really evolved that fast that keeping up with it would be a problem. Web and web development is a different beast entirely when it comes to change, and Microsoft’s track record is more than lacking in this department. I am prepared to give them the benefit of the doubt at the moment, but not much more.</p>
+<h2>Conclusion</h2>
+<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/didntshow-large.jpg" rel="lightbox"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="didntshow-large" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/didntshow-large_thumb.jpg" alt="didntshow-large" width="655" height="400" border="0" /></a></p>
+<p>I have very high hopes when it comes to Windows 8, especially what they call the “Web of Apps”, hopefully that will live up to all I imagine it to do, and then some. I also realize that we haven’t heard everything (again, they only scratched the surface) from the keynote, but Microsoft seem to be on an interesting new track, and the ambition is higher than ever.</p>
+<p>I also have a few concerns that I hope Microsoft will shatter in the coming days, weeks or months. The biggest cloud on the Windows 8 horizon right now is undoubtedly Microsoft’s commitment to Web technologies when compared to their track record of supporting them, and this is where they have the most to prove. I really hope they can do it, but I’m nowhere near convinced of that yet.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=b0eJByBUPsA:_aV_hiphLhI:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=b0eJByBUPsA:_aV_hiphLhI:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=b0eJByBUPsA:_aV_hiphLhI:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=b0eJByBUPsA:_aV_hiphLhI:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/b0eJByBUPsA" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/14/windows-8-keynoteimpressions/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/14/windows-8-keynoteimpressions/</feedburner:origLink></item>
+		<item>
+		<title>Getting ShowOff source code high-lighting for Clojure</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/f2Z6Cvc6h4Q/</link>
+		<comments>http://blog.jayway.com/2011/09/10/getting-showoff-source-code-high-lighting-for-clojure/#comments</comments>
+		<pubDate>Fri, 09 Sep 2011 22:50:29 +0000</pubDate>
+		<dc:creator>Ulrik Sandberg</dc:creator>
+				<category><![CDATA[Dynamic languages]]></category>
+		<category><![CDATA[Tips & Tricks]]></category>
+		<category><![CDATA[User Experience]]></category>
+		<category><![CDATA[clojure source highlight]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9274</guid>
+		<description><![CDATA[ShowOff is a presentation software where you create your slides by writing simple text files containing markdown formatting. Styling is done using CSS. The slides are served by a web server and can be displayed in a web browser. With a simple command, a presentation can be deployed on Heroku for everyone to see. ShowOff [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="https://github.com/schacon/showoff">ShowOff</a> is a presentation software where you create your slides by writing simple text files containing <a href="http://daringfireball.net/projects/markdown/">markdown</a> formatting. Styling is done using CSS. The slides are served by a web server and can be displayed in a web browser. With a simple command, a presentation can be deployed on <a href="http://www.heroku.com/">Heroku</a> for everyone to see. ShowOff can even execute code and show the result (currently that's possible for Ruby and JavaScript).</p>
+<p>ShowOff is great if you are fed up with the bloated presentation applications that make a mess of your source code. Text files means that presentations can be properly version controlled. It's easy to re-arrange slides and sections. ShowOff uses <a href="http://shjs.sourceforge.net/">SHJS</a> to highlight code blocks. It supports many languages, but currently not <a href="http://clojure.org/">Clojure</a>. Searching around for a while revealed <a href="https://gist.github.com/265810/78857041d922c21488415a9b7ec0300aece47009">a Gist of SHJS styling code</a> that I wanted to try out:</p>
+<pre>
+# Clojure syntax highlighting for GNU source-highlight
+# rocks with SHJS
+comment start ";"
+include "number.lang"
+vardef SPECIALCHAR = '\\.'
+environment string delim "\"" "\"" begin
+  specialchar = $SPECIALCHAR
+end
+type = "int|byte|boolean|char|long|float|double|short|void"
+vardef FUNCTION = '\(([[:alpha:]]|_)[[:word:]]*(?=[[:blank:]]*)'
+function = $FUNCTION
+include "symbols.lang"
+</pre>
+<p>This is what I did on my MacOSX Snow Leopard to get ShowOff to high-light Clojure source code:</p>
+<p>1. Install some pre-requisites. I use <a href="http://mxcl.github.com/homebrew/">HomeBrew</a>, but you can use MacPorts or whatever package manager you prefer.</p>
+<pre>
+gem install showoff</code>
+brew install yuicompressor
+brew install source-highlight
+brew install unix2dos
+</pre>
+<p>2. Download the <a href="http://sourceforge.net/projects/shjs/files/shjs/0.6/shjs-0.6-src.zip/download">shjs source distro</a>.</p>
+<p>3. Unzip shjs-0.6-src.zip somewhere which we will call SHJS_HOME</p>
+<p>4. cd SHJS_HOME</p>
+<p>5. touch source-highlight-lang/clojure.lang</p>
+<p>6. Edit source-highlight-lang/clojure.lang and paste <a href="https://gist.github.com/265810/78857041d922c21488415a9b7ec0300aece47009">this Clojure source code high-lighting spec</a> (that's the same as displayed above).</p>
+<p>7. My Perl installation needed a recursive descent parser, so I did this: <code><br />
+cpan install Parse::RecDescent</code></p>
+<p>8. make</p>
+<p>9. I then copied the resulting minified JavaScript file to where my ShowOff gem keeps the language style files. I use the <a href="http://beginrescueend.com/">RVM</a> Ruby manager, so this is where I needed it:</p>
+<pre>
+cp lang/sh_clojure.min.js ~/.rvm/gems/ruby-1.9.2-p290/gems/showoff-0.4.2/public/js/sh_lang/
+</pre>
+<p>Should you discover that you need some more tools installed, you can clean up with <code>make maintainer-clean</code>. After you installed whatever you were missing, run <code>make</code> again.</p>
+<h2>Testing Clojure high-lighting</h2>
+<p>In order to test this, we will create a simple presentation called "mypres":</p>
+<pre>
+showoff init mypres
+</pre>
+<p>This creates a new directory <code>mypres</code>. We go to that directory and look around:</p>
+<pre>
+.
+├── one
+│   └── 01_slide.md
+└── showoff.json
+</pre>
+<p>OK, so we have now the skeleton of a presentation, containing a section folder named <code>one</code> and a set of slides in the <code>01_slide.md</code> file. Looking closer at that file, we see this:</p>
+<pre>
+!SLIDE
+# My Presentation #
+
+!SLIDE bullets incremental
+# Bullet Points #
+
+* first point
+* second point
+* third point
+</pre>
+<p>We will now add to this file a slide definition with some Clojure source code, formatted as a code block by indenting it. Note that we have preceded the code with <code>@@@ clojure</code>, in order to tell ShowOff what language we want to format the block as:</p>
+<pre>
+!SLIDE encode-symbol
+# Huffman encoding #
+
+	@@@ clojure
+	(defn encode
+	  "takes as arguments a message and a tree
+	 and produces the list of bits that gives
+	 the encoded message"
+	[[first & rest :as message] tree]
+	  (when (seq message)
+	    (concat (encode-symbol first tree)
+	            (encode rest tree))))
+</pre>
+<p>We serve the presentation:</p>
+<pre>
+$ showoff serve
+</pre>
+<p>Finally we can watch the presentation by browsing to http://localhost:9090</p>
+<div id="attachment_9288" class="wp-caption alignnone" style="width: 310px"><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/ShowOff-with-Clojure1.png" rel="lightbox"><img src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/ShowOff-with-Clojure1-300x187.png" alt="" title="ShowOff with Clojure" width="300" height="187" class="size-medium wp-image-9288" /></a><p class="wp-caption-text">ShowOff source code high-lighting for Clojure</p></div>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=f2Z6Cvc6h4Q:INvRimqufr4:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=f2Z6Cvc6h4Q:INvRimqufr4:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=f2Z6Cvc6h4Q:INvRimqufr4:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=f2Z6Cvc6h4Q:INvRimqufr4:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/f2Z6Cvc6h4Q" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/10/getting-showoff-source-code-high-lighting-for-clojure/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/10/getting-showoff-source-code-high-lighting-for-clojure/</feedburner:origLink></item>
+		<item>
+		<title>Setting AssemblyVersion number in TeamCity 6.5</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/WVWcEuF1Be8/</link>
+		<comments>http://blog.jayway.com/2011/09/07/setting-assemblyversion-number-in-teamcity-6-5/#comments</comments>
+		<pubDate>Wed, 07 Sep 2011 11:00:04 +0000</pubDate>
+		<dc:creator>Peter von Lochow</dc:creator>
+				<category><![CDATA[.Net]]></category>
+		<category><![CDATA[TeamCity]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9266</guid>
+		<description><![CDATA[You know the process where you need to increment the AssemblyVersion for each build? Personally I’ve solved it both using MSBuild and PowerShell as a part of our daily builds. We have also touched on the subject of incrementing version numbers in earlier posts, like: Håkan Reis – Version handling in TeamCity first part Håkan [...]]]></description>
+			<content:encoded><![CDATA[<p>You know the process where you need to increment the AssemblyVersion for each build? Personally I’ve solved it both using MSBuild and PowerShell as a part of our daily builds. We have also touched on the subject of incrementing version numbers in earlier posts, like:</p>
+<ul>
+<li><a href="http://blog.jayway.com/author/hakanreis/">Håkan Reis</a> – <a href="http://blog.reis.se/post/Version-handling-in-TeamCity-first-part.aspx">Version handling in TeamCity first part</a> </li>
+<li><a href="http://blog.jayway.com/author/hakanreis/">Håkan Reis</a> – <a href="http://blog.reis.se/post/Version-handling-in-TeamCity-second-part.aspx">Version handling in TeamCity second part</a> </li>
+<li><a href="http://blog.jayway.com/author/fredrikolsson/">Fredrik Olsson</a> – <a href="http://blog.jayway.com/2011/05/31/auto-incrementing-build-numbers-in-xcode/">Auto incrementing Build Numbers in XCode</a> </li>
+</ul>
+<p>But the fact is, at least for Visual Studio projects, this can be done in two steps without writing any code at all. Simply put, it just got really easy. To accomplish this we’ll be using TeamCity’s <strong>Addition Build Features</strong>.</p>
+<h2>Step 1 – Set a build number format</h2>
+<p>I used the format 0.1.0.{0} (where {0} will be replaced by the build counter), but you can basically put anything you like here.</p>
+<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/buildnumber.png" rel="lightbox"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="buildnumber" border="0" alt="buildnumber" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/buildnumber_thumb.png" width="659" height="200" /></a></p>
+<p>The build number format will automatically be stored in TeamCity as %build.number% which we will use in the next step.</p>
+<h2>Step 2 – Add an additional build step</h2>
+<p>When configuring your <strong>Build Steps</strong> you can also add something called <strong>Additional Build Features</strong>. One of those features is called <a href="http://confluence.jetbrains.net/display/TCD65/AssemblyInfo+Patcher">AssemblyInfo patcher</a> and it’s described like this.</p>
+<blockquote><p>AssemblyInfo Patcher build feature allows to set a build number to an assembly automatically, without having to patch <tt>AssemblyInfo.cs</tt> files manually. When adding this build feature you need only to specify version format. Note, that you can use TeamCity parameter references here.</p>
+</blockquote>
+<p>So just add this feature and put your %build.number% as the assembly version format.</p>
+<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/build-feature.png" rel="lightbox"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="build feature" border="0" alt="build feature" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/09/build-feature_thumb.png" width="603" height="329" /></a></p>
+<p>Done and done. For every build TeamCity will now update AssemblyInfo.cs, build your solution and then revert the changes that it made to the file. So we’ll end up with an assembly with a version number and unchanged source files.</p>
+<p>Maintainable, clean and simple.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=WVWcEuF1Be8:PWJpa0ixuX8:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=WVWcEuF1Be8:PWJpa0ixuX8:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=WVWcEuF1Be8:PWJpa0ixuX8:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=WVWcEuF1Be8:PWJpa0ixuX8:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/WVWcEuF1Be8" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/09/07/setting-assemblyversion-number-in-teamcity-6-5/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/09/07/setting-assemblyversion-number-in-teamcity-6-5/</feedburner:origLink></item>
+		<item>
+		<title>WP7: Background execution – revisited!</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/tBrA-1K8HdE/</link>
+		<comments>http://blog.jayway.com/2011/08/31/wp7-background-execution-really-2/#comments</comments>
+		<pubDate>Wed, 31 Aug 2011 15:00:05 +0000</pubDate>
+		<dc:creator>Håkan Reis</dc:creator>
+				<category><![CDATA[.Net]]></category>
+		<category><![CDATA[development]]></category>
+		<category><![CDATA[windows phone 7]]></category>
+		<category><![CDATA[wp7dev]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/2011/08/31/wp7-background-execution-really-2/</guid>
+		<description><![CDATA[The dust from what was presented at Mix11 has long settled and the mango released had been packaged. The tools are with us and we are just waiting for the update to officially reach the phones. So I will do a quick view on background execution in the light of a post I did a [...]]]></description>
+			<content:encoded><![CDATA[<p>The dust from what was presented at Mix11 has long settled and the mango released had been packaged. The tools are with us and we are just waiting for the update to officially reach the phones. So I will do a quick view on background execution in the light of a post I did a few months ago: <a href="http://blog.jayway.com/2011/01/11/wp7-background-execution-really/">WP7: Background execution – really?</a></p>
+<p>As it turns out I wasn’t that far from what was presented. Lets go through each point.</p>
+<h2>The audio service first</h2>
+<p>What I said around audio service was to make use of:</p>
+<blockquote><p>…the Zune media player. Why would I want to create a new player over and over again? Wouldn’t it be better to integrate with the current? If the API was richer…</p>
+</blockquote>
+<p>It’s just what they provided for us. They call it the Zune service and it’s very easy to use as well. You need of course create a background player agent that is entitled to continue feeding the audio service with tracks to play. The metadata is fully controllable as well using the AudioTrack class that holds lots of information like:</p>
+<ul>
+<li>Title </li>
+<li>Artist </li>
+<li>Album&#160;&#160;&#160;&#160;&#160;&#160;&#160; </li>
+<li>Tag </li>
+<li>Duration </li>
+<li>AlbumArt </li>
+<li>Source </li>
+<li>PlayerControls </li>
+</ul>
+<p>And as an added bonus it can even be controlled from the web. It will be possible to build an audio player in HTML5 that continues to play the music in the background. Nicely done!</p>
+<h2>GPS application</h2>
+<p>My suggestion was to just start the GPS service and start tracking the point in a cache so that not only the current application would access the GPS but also let other application using it at the same time. Also there should be a possibility to trigger a background task on events like each kilometer or every 5 minutes. As we know now, these ideas wasn’t realized in the current version so for RunKeeper and applications like it. It’s still run under screen lock that is the solution.</p>
+<p>There are some traces of tracking if you look a bit deeper and do a few undocumented calls. But it’s nothing that is official and an application using it probably wont make it through to marketplace. However, it might very well hint on upcoming functionality and official APIs.</p>
+<h2>Task scheduling</h2>
+<p>I also suggested something along these lines of operation:</p>
+<blockquote><p>Why not support some kind of task scheduling instead of true background operation. </p>
+</blockquote>
+<p>Well I missed the naming of this functionality, I should call the code snippets brought back to life <em>agents</em> and I would be spot on. The only exception is the rate of how the agents are run. </p>
+<h2>Conclusion</h2>
+<p>In all I think they mostly managed to live up to the users and developers needs here. And now with the mango release fully on its way to the windows phone out there and upcoming models it will certainly be a a lot of fun.&#160; </p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=tBrA-1K8HdE:_CRS8BVmCeo:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=tBrA-1K8HdE:_CRS8BVmCeo:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=tBrA-1K8HdE:_CRS8BVmCeo:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=tBrA-1K8HdE:_CRS8BVmCeo:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/tBrA-1K8HdE" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/08/31/wp7-background-execution-really-2/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/08/31/wp7-background-execution-really-2/</feedburner:origLink></item>
+		<item>
+		<title>How mail sync killed the battery on my WP7</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/6HO8Mg87Gx0/</link>
+		<comments>http://blog.jayway.com/2011/08/24/how-mail-sync-killed-the-battery-on-my-wp7/#comments</comments>
+		<pubDate>Wed, 24 Aug 2011 21:57:59 +0000</pubDate>
+		<dc:creator>Håkan Reis</dc:creator>
+				<category><![CDATA[Tips & Tricks]]></category>
+		<category><![CDATA[User Experience]]></category>
+		<category><![CDATA[battery]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[mango]]></category>
+		<category><![CDATA[windows phone 7]]></category>
+		<category><![CDATA[wp7]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/2011/08/24/how-mail-sync-killed-the-battery-on-my-wp7/</guid>
+		<description><![CDATA[The last couple of days the battery life on my Windows Phone Mango has been catastrophic. I wasn’t able to last more than 3-4 hours, tops. Then the battery saver icon appeared (battery with a little heart over it) and gave me a couple extra hours, it really is a saver. The only thing that [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/08/no_battery.png" rel="lightbox"><img style="background-image: none; border-right-width: 0px; margin: 0px 10px 0px 0px; padding-left: 0px; padding-right: 0px; display: inline; float: left; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="no_battery" border="0" alt="no_battery" align="left" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/08/no_battery_thumb.png" width="99" height="99" /></a>The last couple of days the battery life on my Windows Phone Mango has been catastrophic. I wasn’t able to last more than 3-4 hours, tops. Then the battery saver icon appeared (battery with a little heart over it) and gave me a couple extra hours, it really is a saver. The only thing that I could think of, that I had changed, was that shuffling the images used as background in pictures hub. So I began to restart, charge, changed settings, disconnected Wi-Fi. I tried all kind of tricks that affects battery life. No luck.</p>
+<p>Then I thought that maybe I should stop syncing mail so often and se what effect that would have. When I tried to change my settings I saw how it was syncing mail, lots of mail in my account. It never seem to stop and suddenly it hit me:</p>
+<p>I might have set it to sync my <em>All mails</em> folder in my Google mail, and that isn’t a good thing. If it tries to sync all then there is 56 472 conversations dragging around in my Google account (I haven't thrown away any mail, except for spam mail and mailing list, the last 8 years). And even if I narrow this down to the last 7 days it’s a lot of mail to sync in the background. No wonder it was draining the battery. An I was right.</p>
+<p>Actually here are a few areas that can improve in the user interface. Doing all this syncing was not good for the performance of the mail application either. I even had trouble to stop the sync of the <em>All mails</em> folder. And while the account was syncing I wasn’t able to remove it or change any settings on it. </p>
+<p>In the end I figured that the easiest way to get rid of it all was to just go into flight mode, remove the account and then add it again (after going out of flight mode). This time I made sure it’s just the inbox that is synced. And now all is back to normal again or even better.</p>
+<p>So be careful with what you sync or it may really kill the battery on your device.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=6HO8Mg87Gx0:hUznsgxLOV8:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=6HO8Mg87Gx0:hUznsgxLOV8:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=6HO8Mg87Gx0:hUznsgxLOV8:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=6HO8Mg87Gx0:hUznsgxLOV8:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/6HO8Mg87Gx0" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/08/24/how-mail-sync-killed-the-battery-on-my-wp7/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/08/24/how-mail-sync-killed-the-battery-on-my-wp7/</feedburner:origLink></item>
+		<item>
+		<title>CAST 2011 – Testing competition with Happy Purples</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/kpzTjBc91pk/</link>
+		<comments>http://blog.jayway.com/2011/08/22/cast-2011-testing-competition-with-happy-purples/#comments</comments>
+		<pubDate>Mon, 22 Aug 2011 21:18:07 +0000</pubDate>
+		<dc:creator>Sigurdur Birgisson</dc:creator>
+				<category><![CDATA[Testing]]></category>
+		<category><![CDATA[CAST]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[exploratory testing]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9219</guid>
+		<description><![CDATA[First of all, Ill have to report a bug in James' blog post. We only got $23 for the worst bug report award.=) Then I would like to thank for the fun competition James set up, it was really a learning experience and in retrospect I would maybe have put even more effort in the [...]]]></description>
+			<content:encoded><![CDATA[<p>First of all, Ill have to report a bug in<a href="http://www.satisfice.com/blog/archives/605"> James' blog post.</a> We only got $23 for the worst bug report award.=)</p>
+<p>Then I would like to thank for the fun competition James set up, it was really a learning experience and in retrospect I would maybe have put even more effort in the learning parts throughout the exercise. This, and my ability to concentrate may also have been impaired because of the time of day (after 6 pm after long conference day) and that I was still jet-lagged. But enough whining now, here is the story and my learnings that hopefully will help me make better decisions in the future.</p>
+<p>First out, I was going to enter the competition myself, but then I got to know Jay and Sandra and we formed Happy purples (even written in purple on the registration flip chart). It felt quite good to be a team instead of working solo on this. Especially since we had the Miagi-do all-star team on the table next to us, and they were plenty.The start of the competition could have been better. While we knew we were already crippled with having two computers in a team of three (with two iPads as complement), we thought we would be ok since we were told we would get a web-link to the software to test. Here was a first set-back when we realized that it was a Windows application to test on our two macs and iPads. Dual-booted Win XP worked for one of the laptops while my own Parallells Win 7 instance had not been running for a while and did not really want to cooperate.</p>
+<div>
+<h5><em>Learning:</em></h5>
+<p><em> </em><em>Keep your options open to be able to test on whatever platform is needed. Also, make sure you know the platform requirements. Here we really should have questioned the statement of "you will soon get a web link to the software" and not assumed that it was a web application to test, which I actually did at the time right before the competition.</em></p>
+<h5><em>Learning:</em></h5>
+<p><em> </em><em>Later I got to know why my Parallells instance of Windows did not want to cooperate during the competition. It was due to a<a href="http://kb.parallels.com/en/111541">performance bug in Parallells that causes MacosX dock to hog for CPU because of having Win applications folder in dock.</a></em></p>
+<p>The next set-back in time was the slow download of the software. It was however solved by organizers that we could get installer on thumb drive. But already half an hour into competition we only had one instance running. This is where we filed the "download takes long time" bug in frustration.</p>
+<p>While I tried for some more time to get my Windows running, the others started testing the product and reading up on the documentation provided. I also scrolled through the readme file while observing the initial exploring of a quite unstable product. While it seemed like a dead end to get my Windows up and running, I left it for starting to report the first bugs. This is where our quite bad standard of bug reports were initiated. The problem here was our quite unstructured way of testing together with note-taking while at the same time only have one running instance of the application under test. Because of the stress factor in the room, and that the bugs just jumped at us like bullets in Matrix, the team was overwhelmed by some information overload.</p>
+<h5><em>Learning:</em></h5>
+<p><em>It is important to have enough instances of the application under test to make sure everyone can have a good view of what is going on.</em></p>
+<p>When I later finally (2,5 h into competition) got the application running on my machine, I was able to verify behavior as correct although it looked wrong on the other laptop, because the data on my installation had not been tampered with.</p>
+<h5><em>Learning:</em></h5>
+<p><em>When having an initial information overload of bugs/issues/problems/questions in the beginning of testing, we should have invested some time in stepping back from the product and thinking about what was really important and focus on that. In our current situation with our first encounter of the product, the only sensible thing to do would be to go talk to the developer.</em></p>
+<h5><em>Learning:</em></h5>
+<p><em>Documentation of the product is important, but after reviewing this and getting acquainted with the product, opening a dialog with developer should be prioritized in the setting we were in.</em></p>
+<p>When up and running, we actually tried several approaches to how to report all the bugs found. Since I did not have the application running, most of the reports were written as short notes that I then submitted to the tracker. The problems with this was that I sometimes had hard time getting the context of the bugs, and yet did not completely succeed to deliver that context into the reports when it was entered. Very similar to the whispering game, since we all just went on in a really stressed pace.</p>
+<p>James came by with his notebook and asked how were were doing our testing and what approaches we had. This was just when we had gotten just a little up and running but still not very organized in our work. We told him about /some/ status and I realized that would not suffice and swiftly grabbed one of <a href="http://www.testjutsu.com/">Ben Kellys</a>advices from an earlier session "Since we are in the middle of working, can I get back to you with the answer to that question?". A quite good answer in a hectic environment and you need to keep your breath above the surface, but unfortunately I later realized that I never got back to James about that.</p>
+<p>While having James at our disposal, I realized that was a good opportunity to interview him on his expectations on the test report. That was a quite good thing, since we got to know how important the report actually was. Our main focus had really been on finding bugs that would be foundation for the report, but there was more to it than just that.</p>
+<h5><em>Learning:</em></h5>
+<p><em>There is always more information to get about the context, you just have to ask the right questions to the right person.</em></p>
+<p>When the reporting was brought to our attention, we started thinking about how the outline could be. One of us started doing an outline while the others continued testing and reporting bugs. This is something that would have needed more attention and not something to plan /during/ our test session. This fact got more obvious when we all directed our focus on the report, and needed to do most of it from scratch.</p>
+<h5><em>Learning:</em></h5>
+</div>
+<p><em>It is important to set the stage in a group before starting solving a problem like this competition. I think our group would have benefited from at least some structure in our work, and I think during the heat of action we underestimated these needs. It is especially important to have some kinds of statement of work when being a group of more than two people. This was shown over and over in all activities we performed, yet we did not cope with it at all, i guess because of the stress and not realizing the need for it in the short term of the competition. We even observed the structured way the Miagi-do team set up their SBTM on flip charts.</em></p>
+<h4>About the worst bug report award</h4>
+<p>The two bugs mentioned by James are of course questionable. The tooltip inconsistency was actually filed with an assumption of consistency, but later we got to know from the developer that those type of bugs were not important. So, getting feedback on bugs from developer did actually change the type of bugs we filed later on, we improved. But it was still not possible to edit or delete already filed bugs.<br />
+On the "slow download of application under test"-bug, <a href="http://happytesting.wordpress.com/2010/01/21/afternoon-bugs/#comment-52">it is related to a discussion I had with Michael Bolton on my blog a while back</a>. I would consider it a testability issue to not get the application delivered in a timely fashion. Especially if we were going to get more deliveries of it during the competition time frame. In retrospect, it might seem more rational NOT to make a bug report on this, but only include it in our final test report, as it delayed our testing quite a bit.</p>
+<p>This post was also posted on my <a href="http://happytesting.wordpress.com/2011/08/22/cast-2011-testing-competition-with-happy-purples/">personal blog</a>.</p>
+<p>&nbsp;</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=kpzTjBc91pk:o0WbmZen-G8:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=kpzTjBc91pk:o0WbmZen-G8:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=kpzTjBc91pk:o0WbmZen-G8:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=kpzTjBc91pk:o0WbmZen-G8:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/kpzTjBc91pk" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/08/22/cast-2011-testing-competition-with-happy-purples/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/08/22/cast-2011-testing-competition-with-happy-purples/</feedburner:origLink></item>
+		<item>
+		<title>Create ‘native’ Java applications on OS X and Windows using Maven plugins</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/SPF1TwVjTtg/</link>
+		<comments>http://blog.jayway.com/2011/08/15/create-native-java-applications-on-os-x-and-windows-using-maven-plugins/#comments</comments>
+		<pubDate>Mon, 15 Aug 2011 09:07:21 +0000</pubDate>
+		<dc:creator>Tobias Södergren</dc:creator>
+				<category><![CDATA[Java]]></category>
+		<category><![CDATA[Tips & Tricks]]></category>
+		<category><![CDATA[desktop]]></category>
+		<category><![CDATA[maven]]></category>
+		<category><![CDATA[native]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9190</guid>
+		<description><![CDATA[When building a desktop application, the target audience usually expects an executable to when launching it. If the application is written in Java you have the options to create a batch file to launch it, create an executable jar file, compile the application as a native application or wrap the application using a native 'launcher'. [...]]]></description>
+			<content:encoded><![CDATA[<p>When building a desktop application, the target audience usually expects an executable to when launching it. If the application is written in Java you have the options to create a batch file to launch it, create an executable jar file, compile the application as a native application or wrap the application using a native 'launcher'. This post will result in a maven pom for dealing with the last option, it may be used in both Windows and OS X environments.</p>
+<p>The pom is configured to use two different plugins depending on which operating system that is executing it.<br />
+On Windows, a <a href="http://launch4j.sourceforge.net/">Launch4j</a> project <a href="http://alakai.org/reference/plugins/launch4j-plugin-usage.html">plugin</a> will be used. On OS X the <a href="http://mojo.codehaus.org/osxappbundle-maven-plugin/">osxappbundle</a> plugin is used, which creates an OS X application directory structure and uses the JavaApplicationStub binary for launching the application.</p>
+<p>The <code>&lt;profile&gt;</code> tag is used for deciding which plugin to use depending on operating system.</p>
+<p>The pom also points out different application icons for the binaries, OS X requires the icon to be in the <a href="http://en.wikipedia.org/wiki/Apple_Icon_Image_format">icns</a> and windows in the <a href="http://en.wikipedia.org/wiki/ICO_(file_format)">ico</a> format.</p>
+<p>The wrapped application has a main class in the file <code>com.jayway.wrappedapplication.Launcher</code></p>
+<h2>The pom.xml</h2>
+<pre class="brush:xml">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemalocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelversion>4.0.0</modelversion>
+  <groupid>com.jayway.wrappedapplication</groupid>
+  <artifactid>launcher</artifactid>
+<packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>launcher</name>
+  <url>http://maven.apache.org</url>
+<profiles>
+<profile>
+      <id>windows-deploy</id>
+      <activation>
+        <os>
+          <family>Windows</family>
+        </os>
+      </activation>
+      <build>
+<plugins>
+<plugin>
+            <groupid>org.bluestemsoftware.open.maven.plugin</groupid>
+            <artifactid>launch4j-plugin</artifactid>
+            <version>1.5.0.0</version>
+            <executions>
+              <execution>
+                <id>launch4j</id>
+<phase>verify</phase>
+                <goals>
+                  <goal>launch4j</goal>
+                </goals>
+                <configuration>
+                  <dontwrapjar>false</dontwrapjar>
+<headertype>gui</headertype>
+                  <outfile>${project.build.directory}/relauncher-${project.version}.exe</outfile>
+                  <jar>${project.build.directory}/${project.build.finalName}.jar</jar>
+                  <errtitle>Launcher</errtitle>
+                  <jre>
+                    <minversion>1.6.0</minversion>
+                  </jre>
+                  <classpath>
+                    <mainclass>com.jayway.wrappedapplication.Launcher</mainclass>
+                    <adddependencies>false</adddependencies>
+<precp>anything</precp>
+                  </classpath>
+                  <icon>${basedir}/build-resources/win/icons/application.ico</icon>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+<profile>
+      <activation>
+        <os>
+          <family>mac</family>
+        </os>
+      </activation>
+      <build>
+<plugins>
+<plugin>
+            <groupid>org.codehaus.mojo</groupid>
+            <artifactid>osxappbundle-maven-plugin</artifactid>
+            <version>1.0-alpha-2</version>
+            <configuration>
+              <mainclass>com.jayway.wrappedapplication.Launcher</mainclass>
+              <iconfile>${basedir}/build-resources/osx/icons/application.icns</iconfile>
+            </configuration>
+            <executions>
+              <execution>
+<phase>package</phase>
+                <goals>
+                  <goal>bundle</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>
+</pre>
+<p>And that's it.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=SPF1TwVjTtg:haJ7O2UHwUg:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=SPF1TwVjTtg:haJ7O2UHwUg:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=SPF1TwVjTtg:haJ7O2UHwUg:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=SPF1TwVjTtg:haJ7O2UHwUg:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/SPF1TwVjTtg" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/08/15/create-native-java-applications-on-os-x-and-windows-using-maven-plugins/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/08/15/create-native-java-applications-on-os-x-and-windows-using-maven-plugins/</feedburner:origLink></item>
+		<item>
+		<title>Show a minimized panorama application bar</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/C7sfR9O4SYQ/</link>
+		<comments>http://blog.jayway.com/2011/08/12/show-a-minimzed-panorama-application-bar/#comments</comments>
+		<pubDate>Fri, 12 Aug 2011 09:09:56 +0000</pubDate>
+		<dc:creator>Håkan Reis</dc:creator>
+				<category><![CDATA[.Net]]></category>
+		<category><![CDATA[mango]]></category>
+		<category><![CDATA[windows phone 7]]></category>
+		<category><![CDATA[wp7]]></category>
+		<category><![CDATA[wp7dev]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9184</guid>
+		<description><![CDATA[The first version of WP7 design style guide, specified that the panorama should not include an application bar. In Mango, Microsoft have reconsidered, and you can find it in the hubs there. Additionally, if you look at the application bar in the games hub there is a new way to display it: empty and minimized [...]]]></description>
+			<content:encoded><![CDATA[<p>The first version of WP7 design style guide, specified that the panorama should not include an application bar. In Mango, Microsoft have reconsidered, and you can find it in the hubs there. </p>
+<p>Additionally, if you look at the application bar in the games hub there is a new way to display it: empty and minimized with just a little transparency, like this;</p>
+<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/08/gameshub.png" rel="lightbox"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="gameshub" border="0" alt="gameshub" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/08/gameshub_thumb.png" width="244" height="79" /></a></p>
+<p>I think this is brilliant for functionality you want available in the panorama but at the same time have it tucked away, and not interfering with the panorama content. </p>
+<p>The slim menu is actually easy to accomplish and is part of the mango build. You accomplish it by setting the <em>Mode </em>property on the application bar to <em>Minimized</em>. The opacity and color can be set the same way with the <em>Opacity </em>and <em>BackgroundColor</em> properties. Just remember that the color needs to be a solid color and not a brush.</p>
+<p>The last thing to set is an event handler for the <em>StateChanged</em> event to make the transparency go away when the menu is displayed. The xaml code for this looks something like this:</p>
+<pre class="brush: xml;">&lt;phone:PhoneApplicationPage.ApplicationBar&gt;
+    &lt;shell:ApplicationBar
+        IsVisible=&quot;True&quot;
+        IsMenuEnabled=&quot;True&quot;
+        Mode=&quot;Minimized&quot;
+        Opacity=&quot;0.65&quot;
+        StateChanged=&quot;OnApplicationBarStateChanged&quot;
+        BackgroundColor=&quot;#FFFF9800&quot;&gt;
+        &lt;shell:ApplicationBar.MenuItems&gt;
+            &lt;shell:ApplicationBarMenuItem
+                Text=&quot;refresh&quot;
+                Click=&quot;OnRefreshClicked&quot;/&gt;
+            &lt;shell:ApplicationBarMenuItem
+                Text=&quot;settings&quot;
+                Click=&quot;OnSettingsClicked&quot;/&gt;
+        &lt;/shell:ApplicationBar.MenuItems&gt;
+    &lt;/shell:ApplicationBar&gt;
+&lt;/phone:PhoneApplicationPage.ApplicationBar&gt;</pre>
+<p>I removed the icon items here, but if you leave them in they will be displayed as soon as you tap and display the menu and hide again when minimized. To change the transparency I track the <em>StateChange</em> event and do a simple change of the Opacity property based on <em>MenuVisibility</em> like this:</p>
+<pre class="brush: csharp;">private void OnApplicationBarStateChanged(object sender,
+    ApplicationBarStateChangedEventArgs e)
+{
+    var appBar = sender as ApplicationBar;
+    if (appBar == null) return;
+
+    appBar.Opacity = e.IsMenuVisible ? 1 : .65;
+}</pre>
+<p>The end result (although selecting orange as background is probably not a good idea to get a discreet application bar) is this: </p>
+<p><a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/08/minimized.png" rel="lightbox"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="minimized" border="0" alt="minimized" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/08/minimized_thumb.png" width="204" height="158" /></a>&#160; <a href="http://blog.jayway.com/wordpress/wp-content/uploads/2011/08/maximized.png" rel="lightbox"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="maximized" border="0" alt="maximized" src="http://blog.jayway.com/wordpress/wp-content/uploads/2011/08/maximized_thumb.png" width="204" height="158" /></a></p>
+<p>// Håkan Reis</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=C7sfR9O4SYQ:wibMQLjfmFE:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=C7sfR9O4SYQ:wibMQLjfmFE:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=C7sfR9O4SYQ:wibMQLjfmFE:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=C7sfR9O4SYQ:wibMQLjfmFE:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/C7sfR9O4SYQ" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/08/12/show-a-minimzed-panorama-application-bar/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/08/12/show-a-minimzed-panorama-application-bar/</feedburner:origLink></item>
+		<item>
+		<title>Apache Camel automatic type conversion</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/mqsjQbzUJHU/</link>
+		<comments>http://blog.jayway.com/2011/08/12/apache-camel-automatic-type-conversion/#comments</comments>
+		<pubDate>Fri, 12 Aug 2011 08:05:58 +0000</pubDate>
+		<dc:creator>Jan Kronquist</dc:creator>
+				<category><![CDATA[Java]]></category>
+		<category><![CDATA[camel]]></category>
+		<category><![CDATA[integration]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9172</guid>
+		<description><![CDATA[Apache Camel has good support for type conversion and it is easy to add your own type converters. In this blog post I'll show how to create a generic type converter using reflection. Type conversion is done by Camel either when you explicitly tell Camel to perform conversion or in some cases where Camel detects [...]]]></description>
+			<content:encoded><![CDATA[<p>Apache Camel has good support for type conversion and it is easy to add your own type converters. In this blog post I'll show how to create a generic type converter using reflection.</p>
+<p>Type conversion is done by Camel either when you explicitly tell Camel to perform conversion or in some cases where Camel detects that a type conversion is needed. For example in this case Camel tries to perform type conversion from SourceType to TargetType:</p>
+<pre class="brush:java">
+public class SourceType {
+    private final int value;
+
+    public SourceType(int value) {
+        this.value = value;
+    }
+}
+public class TargetType {
+    private final int value;
+
+    public TargetType(int value) {
+        this.value = value;
+    }
+}
+public interface Service {
+    public void call(TargetType value);
+}
+...
+from("direct:call").bean(service, "call");
+...
+template.requestBody("direct:call", new SourceType(17));
+</pre>
+<p>This will fail since there is no type converter registered to handle conversion to TargetType. What if TargetType has a constructor taking a SourceType:</p>
+<pre class="brush:java">
+public TargetType(SourceType source) {
+    this.value = source.getValue();
+}
+</pre>
+<p>But this will also fail! My solution is to add a FallbackConverter that can handle this scenario, that is the target type having a single argument constructor taking the source type. The code looks like this:</p>
+<pre class="brush:java">
+package com.jayway.camel.typeconverter;
+
+@Converter
+public class UsingConstructor {
+    @SuppressWarnings("unchecked")
+    @FallbackConverter
+    public static &lt;T> T convertTo(Class&lt;T> type, Object value, TypeConverterRegistry registry) throws Throwable {
+        for (Constructor&lt;?> c : type.getConstructors()) {
+            Class&lt;?>[] types = c.getParameterTypes();
+            if (types.length == 1 && types[0].isAssignableFrom(value.getClass())) {
+                    return (T) c.newInstance(value);
+            }
+        }
+        return null;
+    }
+}
+</pre>
+<p>A couple of things to notice:</p>
+<ul>
+<li>The class has the @Converter annotation</li>
+<li>The method has the @FallbackConverter</li>
+<li>The signature of the method</li>
+</ul>
+<p>You also need to include file <i>META-INF/services/org/apache/camel/TypeConverter</i> in your classpath that contains the package name. This allows Camel to automatically discover the type converter class.</p>
+<pre class="brush:java">
+com.jayway.camel.typeconverter
+</pre>
+<p>Here is an <a href="https://github.com/jankronquist/AirportWeather/blob/master/src/test/java/com/jayway/camel/typeconverter/UsingReflectionIntegrationTest.java">integration test showing this example</a>. I have also implemented a type converter that checks if the source type has a no argument method returning the target type. The source code for <a href="https://github.com/jankronquist/AirportWeather/tree/master/src/main/java/com/jayway/camel/typeconverter">both type converters</a> are available at GitHub.</p>
+<p>Notice that this is just a demo of the capabilities of fallback converters. You have to decide if this approach is appropriate in your project. It might not be desirable to have a direct dependency between the TargetType and the SourceType. The overhead of reflection might be too high or it might have unintended consequences. For example the <a href="https://github.com/jankronquist/AirportWeather/blob/master/src/main/java/com/jayway/camel/typeconverter/UsingMethod.java">UsingMethod</a> converter has the unintended consequence of finding and using the toString() method when a conversion to String is needed. The <a href="https://github.com/jankronquist/AirportWeather/blob/master/src/main/java/com/jayway/camel/typeconverter/UsingConstructor.java">UsingConstructor</a> is probably faster and safer since there are usually fewer constructors than public methods. </p>
+<p>See the <a href="http://camel.apache.org/type-converter.html">Camel documentation for type converts</a> for more information.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=mqsjQbzUJHU:5XbucsfSofo:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=mqsjQbzUJHU:5XbucsfSofo:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=mqsjQbzUJHU:5XbucsfSofo:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=mqsjQbzUJHU:5XbucsfSofo:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/mqsjQbzUJHU" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/08/12/apache-camel-automatic-type-conversion/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/08/12/apache-camel-automatic-type-conversion/</feedburner:origLink></item>
+		<item>
+		<title>jQuery Changes From 1.4.2 to 1.6</title>
+		<link>http://feedproxy.google.com/~r/jayway/posts/~3/AKn1QY_ob-U/</link>
+		<comments>http://blog.jayway.com/2011/08/09/jquery-changes-from-1-4-2-to-1-6/#comments</comments>
+		<pubDate>Tue, 09 Aug 2011 12:32:13 +0000</pubDate>
+		<dc:creator>Anders Janmyr</dc:creator>
+				<category><![CDATA[Dynamic languages]]></category>
+		<category><![CDATA[coffeescript]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[jquery]]></category>
+
+		<guid isPermaLink="false">http://blog.jayway.com/?p=9163</guid>
+		<description><![CDATA[jQuery is a powerful library and it is possible to get by without using any of the new features. That&#8217;s why many of us just upgrade to a new version assuming that it is mostly bug and performance fixes. This is not the case. jQuery 1.4.2 was released in February 2010 and it&#8217;s been one [...]]]></description>
+			<content:encoded><![CDATA[
+<p>jQuery is a powerful library and it is possible to get by without<br />
+using any of the new features. That&rsquo;s why many of us<br />
+just upgrade to a new version assuming that it is mostly bug and<br />
+performance fixes. This is not the case. jQuery 1.4.2 was released in<br />
+February 2010 and it&rsquo;s been one and a half years and a number of<br />
+releases since then.</p>
+<p>I was going to write about the changes in 1.5 and 1.6, but I have<br />
+noticed that many people have missed some of the new features of the 1.4<br />
+releases. And by the way, all examples are written in Coffeescript.</p>
+<h2>Selected changes from 1.4.2+</h2>
+<h3><code>delegate()</code></h3>
+<p>Most people know about <code>live()</code> and how it can be used to attach<br />
+listeners to elements that don&rsquo;t yet exist in the DOM. <code>live()</code> has<br />
+a younger brother that was born in 1.4.2 and he is called <code>delegate()</code>.<br />
+<code>delegate()</code> is more powerful. It gives you more precision in<br />
+where to attach the listener.  </p>
+<p><!-- Generator: GNU source-highlight 3.1.4<br />
+by Lorenzo Bettini</p>
+<p>http://www.lorenzobettini.it</p>
+<p>http://www.gnu.org/software/src-highlite --> </p>
+<pre><tt>$<font color="#990000">(</font><font color="#FF0000">'.main-content'</font><font color="#990000">).</font><b><font color="#000000">find</font></b><font color="#990000">(</font><font color="#FF0000">'section'</font><font color="#990000">).</font>delegate <font color="#FF0000">'p'</font><font color="#990000">,</font> <font color="#FF0000">'click'</font><font color="#990000">,</font> <font color="#990000">-&gt;</font>
+  $<font color="#990000">(</font><b><font color="#0000FF">this</font></b><font color="#990000">).</font>addClass <font color="#FF0000">'highlight'</font>
+</tt></pre>
+<p>As you can see above, <code>delegate()</code>, unlike <code>live()</code>, can be chained like<br />
+normal jQuery calls.</p>
+<h3><code>jQuery.now()</code>, <code>jQuery.type()</code> and <code>jQuery.parseXML()</code></h3>
+<p>Nothing special here, just some utilities that are good to know about.</p>
+<p><!-- Generator: GNU source-highlight 3.1.4<br />
+by Lorenzo Bettini</p>
+<p>http://www.lorenzobettini.it</p>
+<p>http://www.gnu.org/software/src-highlite --> </p>
+<pre><tt>$<font color="#990000">.</font><b><font color="#000000">now</font></b><font color="#990000">()</font> <b><font color="#000000">is</font></b> <font color="#990000">(</font><b><font color="#0000FF">new</font></b> <b><font color="#000000">Date</font></b><font color="#990000">()).</font><b><font color="#000000">getTime</font></b><font color="#990000">()</font> 
+
+$<font color="#990000">.</font><b><font color="#000000">type</font></b><font color="#990000">(</font><font color="#FF0000">'hello'</font><font color="#990000">)</font> is <font color="#FF0000">'string'</font> 
+
+xml <font color="#990000">=</font> <font color="#FF0000">"""</font>
+<font color="#FF0000">&lt;rss version='2.0'&gt;</font>
+<font color="#FF0000">&lt;channel&gt;</font>
+<font color="#FF0000">&lt;title&gt;RSS Title&lt;/title&gt;</font>
+<font color="#FF0000">&lt;/channel&gt;</font>
+<font color="#FF0000">&lt;/rss&gt;</font>
+<font color="#FF0000">"""</font>
+xmlDoc <font color="#990000">=</font> $<font color="#990000">.</font>parseXML xml
+<font color="#990000">(</font>$<font color="#990000">(</font>xmlDoc<font color="#990000">).</font>find <font color="#FF0000">'title'</font><font color="#990000">).</font><b><font color="#000000">text</font></b><font color="#990000">()</font> is <font color="#FF0000">'RSS Title'</font>
+</tt></pre>
+<p>All these utilities are interesting, but the truly good thing that came<br />
+out of jQuery-1.5+ is <code>Deferred()</code>.</p>
+<h3><code>Deferred()</code></h3>
+<p>With the release of jQuery 1.5 the internal implementation of <code>$.ajax</code><br />
+was changed to use <code>Deferred()</code>, and, even better, the implementation<br />
+was deemed so useful, that it became part of the public API.</p>
+<p>Here is how you can use it via the <code>$.ajax</code> method.</p>
+<p>Declare a function hex that calls the <code>/hex</code> url on the server, which<br />
+will return a hex value between <strong>00</strong> and <strong>FF</strong>.</p>
+<p><!-- Generator: GNU source-highlight 3.1.4<br />
+by Lorenzo Bettini</p>
+<p>http://www.lorenzobettini.it</p>
+<p>http://www.gnu.org/software/src-highlite --> </p>
+<pre><tt>  hex <font color="#990000">=</font> <font color="#990000">-&gt;</font>
+    $<font color="#990000">.</font>ajax <font color="#FF0000">{</font> url<font color="#990000">:</font> <font color="#FF0000">'/hex'</font> <font color="#FF0000">}</font>
+</tt></pre>
+<p>Call the function multiple times, and you get a new <code>Deferred</code> back for<br />
+each call. Notice the lack of handlers for the calls.</p>
+<p><!-- Generator: GNU source-highlight 3.1.4<br />
+by Lorenzo Bettini</p>
+<p>http://www.lorenzobettini.it</p>
+<p>http://www.gnu.org/software/src-highlite --> </p>
+<pre><tt>  red <font color="#990000">=</font> <b><font color="#000000">hex</font></b><font color="#990000">()</font>
+  green <font color="#990000">=</font> <b><font color="#000000">hex</font></b><font color="#990000">()</font>
+  blue <font color="#990000">=</font> <b><font color="#000000">hex</font></b><font color="#990000">()</font>
+</tt></pre>
+<p>Attach handlers to each of the <code>Deferred</code>s to do something useful with<br />
+the returned value. Notice the use of <code>done</code> instead of <code>success</code>.<br />
+<code>success</code> is deprecated and will be removed in 1.8.</p>
+<p><!-- Generator: GNU source-highlight 3.1.4<br />
+by Lorenzo Bettini</p>
+<p>http://www.lorenzobettini.it</p>
+<p>http://www.gnu.org/software/src-highlite --> </p>
+<pre><tt>  red<font color="#990000">.</font><b><font color="#000000">done</font></b> <font color="#990000">(</font>hh<font color="#990000">)-&gt;</font>
+    $<font color="#990000">(</font><font color="#FF0000">"#r"</font><font color="#990000">).</font>css <font color="#FF0000">'background-color'</font><font color="#990000">,</font> <font color="#FF0000">"##{hh}0000"</font>
+  green<font color="#990000">.</font><b><font color="#000000">done</font></b> <font color="#990000">(</font>hh<font color="#990000">)-&gt;</font>
+    $<font color="#990000">(</font><font color="#FF0000">"#g"</font><font color="#990000">).</font>css <font color="#FF0000">'background-color'</font><font color="#990000">,</font> <font color="#FF0000">"#00#{hh}00"</font>
+  blue<font color="#990000">.</font><b><font color="#000000">done</font></b> <font color="#990000">(</font>hh<font color="#990000">)-&gt;</font>
+    $<font color="#990000">(</font><font color="#FF0000">"#b"</font><font color="#990000">).</font>css <font color="#FF0000">'background-color'</font><font color="#990000">,</font> <font color="#FF0000">"#0000#{hh}"</font>
+</tt></pre>
+<p>I am not limited to adding one handler, I can attach as many as I like.<br />
+Here I attach another one for logging the success of the <code>red</code>-call.</p>
+<p><!-- Generator: GNU source-highlight 3.1.4<br />
+by Lorenzo Bettini</p>
+<p>http://www.lorenzobettini.it</p>
+<p>http://www.gnu.org/software/src-highlite --> </p>
+<pre><tt>  red<font color="#990000">.</font><b><font color="#000000">done</font></b> <font color="#990000">(</font>hh<font color="#990000">)</font> <font color="#990000">-&gt;</font>
+    console<font color="#990000">.</font><b><font color="#000000">log</font></b><font color="#990000">(</font>hh<font color="#990000">)</font>
+</tt></pre>
+<p>If this was all there was to it, I would be happy, but it is not by<br />
+using the <code>$.when</code> method I get a new <code>Deferred</code> object that orchestrates<br />
+multiple <code>Deferred</code>s in a very simple way. Let me create a color-<code>Deferred</code><br />
+that waits for the others to return and then calls a new callback when<br />
+they are all done.</p>
+<p><!-- Generator: GNU source-highlight 3.1.4<br />
+by Lorenzo Bettini</p>
+<p>http://www.lorenzobettini.it</p>
+<p>http://www.gnu.org/software/src-highlite --> </p>
+<pre><tt>  color <font color="#990000">=</font> $<font color="#990000">.</font><b><font color="#000000">when</font></b><font color="#990000">(</font>red<font color="#990000">,</font> green<font color="#990000">,</font> blue<font color="#990000">)</font> 
+
+  color<font color="#990000">.</font><b><font color="#000000">done</font></b> <font color="#990000">(</font>r<font color="#990000">,</font> g<font color="#990000">,</font> b<font color="#990000">)</font> <font color="#990000">-&gt;</font>
+    $<font color="#990000">(</font><font color="#FF0000">"#color"</font><font color="#990000">).</font>css <font color="#FF0000">'background-color'</font><font color="#990000">,</font> <font color="#FF0000">"##{r[0]}#{g[0]}#{b[0]}"</font>
+</tt></pre>
+<p>The results from the requests are given in the same order as the<br />
+<code>Deferred</code> objects are passed in. The results are given as an array with<br />
+three arguments <code>[ data, &lsquo;success&rsquo; , deferred ]</code>.</p>
+<p>You can see the example, a simple Sinatra app, in action on <a href="http://colors-deferred.herokuapp.com/">Heroku</a> and the source code can be found on <a href="https://github.com/andersjanmyr/colors">Github</a></p>
+<p>Very nice! Apart from the examples I have shown, there are methods<br />
+working with <code>Deferred</code>. Methods for creating, <code>jQuery.Deferred()</code>,<br />
+resolving, <code>resolve(), resolveWith()</code>, and rejecting, <code>reject(),<br />
+rejectWith()</code>.</p>
+<p>To attach handlers to the events, you can use <code>done()</code> for resolve,<br />
+<code>fail</code> for reject, <code>always()</code> for both resolve and reject. You can also<br />
+use <code>then(doneCallback, failCallback)</code> to attach both a <code>done</code> and a<br />
+<code>fail</code> handler with one call.</p>
+<p><code>Deferred</code>s are really cool, check them out <a href="http://api.jquery.com/category/deferred-object/">here</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/jayway/posts?a=AKn1QY_ob-U:EArvMkp6pi4:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=AKn1QY_ob-U:EArvMkp6pi4:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/jayway/posts?i=AKn1QY_ob-U:EArvMkp6pi4:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/jayway/posts?a=AKn1QY_ob-U:EArvMkp6pi4:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/jayway/posts?d=yIl2AUoC8zA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/jayway/posts/~4/AKn1QY_ob-U" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://blog.jayway.com/2011/08/09/jquery-changes-from-1-4-2-to-1-6/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.jayway.com/2011/08/09/jquery-changes-from-1-4-2-to-1-6/</feedburner:origLink></item>
+	</channel>
+</rss>

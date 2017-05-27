@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+		<title>brpf.com.br - H-SPHERE</title>
+		<style type="text/css">
+body { background-color: #FFFFFF; margin: 0.4em; border-style:solid; border-color:#BEBEBE; border-width:1px; font-family:Tahoma,sans-serif}
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:active { text-decoration: underline; }
+a#forgot, input.s { white-space: nowrap; font-family:tahoma,sans-serif; font-size:10pt; color:black; background-color:#F7F9FA; border-style:solid; text-align:center; border: solid #E0E0E0 1px; white-space: nowrap; width:auto; filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#E1E8ED',EndColorStr='#F7F9FA'); }
+a#forgot[id] { padding: 1 10 1 10px; height:1.4em; } a#forgot { padding: 2 10 2 10px; margin: 0 0 -4 0px; height:1.4em; } a#forgot:hover, input.s:hover { text-decoration:underline; color:#0F0F0F; border-color:#666666; }
+input { border: 1px; border-style:solid;font-size:11pt; width: 6em; }
+label { font-size: 90%; margin: 0 4 0 0px; }
+h2 { color: #222222; font-family: Tahoma,sans-serif; font-size: 18pt; font-weight: bold; margin-bottom: 0px; margin-top: 1em; text-indent: 2em; }
+#header { position: relative; width: 100%; background-color: #75BEF5; border-width: 2px 2px 0; border-style: solid; border-color: #E0E0E0; filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#127EDB',EndColorStr='#77BFF6'); }
+#header h1 { height: 80px; background-color: #75BEF5; margin: 0 0 0 50px; font-family:Tahoma,sans-serif; font-size: 20pt; text-align: left; line-height: 80px; font-weight:bold; color:#FFFFFF; filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#127EDB',EndColorStr='#77BFF6'); }
+div#centered { border: 0; height: 50%; width: 80%; position: absolute; left: 10%; top: 20%; color: black;  }
+form {white-space: nowrap; margin-bottom:2em; margin-top: 2em;}
+fieldset {border: 1px solid; #E0E0E0; padding: 20 20 20 20px;}
+small {text-align:right; display: block; font-size: x-small;}
+        </style>
+	</head>
+	<body>
+		<div id="header">
+			<h1>H-SPHERE</h1>
+		</div>
+		<div id="centered">
+		<h2>Welcome to brpf.com.br</h2>
+		<p>Your account has been created.<br />
+		  You can access your Web site right away using d703953101.tecla337.tecla.com.br. Over the next few days, DNS servers all across the Internet will<br />
+		  update themselves with your new site name. Once that happens, you will be able to access your site at its
+		  permanent address, brpf.com.br.</p>
+
+		<form action="http://cp.tecla.com.br:8080/psoft/servlet/psoft.hsphere.CP" method="POST">
+		<fieldset>
+		<legend>Your Control Panel:</legend>
+		<input type="hidden" name="action" value="login" />
+		<input type="hidden" name="ftemplate" value="design/login.html" />
+		<p><label for="l">Login:</label><input type="text" id="l" name="login" size="20" /> &nbsp;
+		<label for="p">Password:</label><input id="p" type="password" name="password" size="20" />
+		<input class="s" type="submit" value="Login">
+		<a id="forgot" href="http://cp.tecla.com.br:8080/psoft/servlet/psoft.hsphere.CP?action=forgetPassw&ftemplate=design/login.html">Forgot your password?</a></p>
+		</fieldset>
+		</form>
+		<form action="http://200.219.245.48:8080/studio/servlet/psoft.masonry.Builder" method="POST">
+		<fieldset><legend>SiteStudio:</legend>
+		<input type="hidden" name="requestURL" value="/studio/servlet/psoft.masonry.Builder" />
+		<input type="hidden" name="useraction" value="login" />
+		<input type="hidden" name="action" value="useraction" />
+		<input type="hidden" name="login" value="703953098" />
+		<input type="hidden" name="url" value="d703953101.tecla337.tecla.com.br" />
+		<input type="hidden" name="real_login" value="kimbrasil" />
+		<input type="hidden" name="dir" value="/brpf.com.br/" />
+		<input type="hidden" name="server" value="d703953101.tecla337.tecla.com.br" />
+		<input type="hidden" name="port" value="21" />
+
+		<p><label for="sp">To launch, just enter your password:</label><input id="sp" type="password" name="password" size="20" />
+		<input class="s" type="submit" value="Login to SiteStudio">
+		</p>
+		</fieldset>
+		<br /><br /><br />
+        <small>Powered by <a href="http://www.psoft.net/">H-Sphere</a></small>
+		</div>
+	</body>
+</html>

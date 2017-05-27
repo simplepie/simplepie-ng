@@ -1,0 +1,1044 @@
+<?xml version="1.0"?><feed xmlns:media="http://search.yahoo.com/mrss/" xmlns:gr="http://www.google.com/schemas/reader/atom/" xmlns:idx="urn:atom-extension:indexing" xmlns="http://www.w3.org/2005/Atom" idx:index="no" gr:dir="ltr"><!--
+Content-type: Preventing XSRF in IE.
+
+--><generator uri="http://www.google.com/reader">Google Reader</generator><id>tag:google.com,2005:reader/user/03020522199988970127/state/com.google/broadcast</id><link rel="hub" href="http://pubsubhubbub.appspot.com/"/><title>Desimon's shared items in Google Reader</title><gr:continuation>CKySn6K0rqsC</gr:continuation><link rel="self" href="http://www.google.com/reader/public/atom/user%2F03020522199988970127%2Fstate%2Fcom.google%2Fbroadcast"/><author><name>Desimon</name></author><updated>2011-10-03T14:52:47Z</updated><entry gr:crawl-timestamp-msec="1317653567490"><id gr:original-id="http://www.pinceladasdaweb.com.br/blog/?p=5181">tag:google.com,2005:reader/item/00f9e492402e81f7</id><category term="JavaScript"/><category term="jQuery"/><title type="html">Slideshow com jCarousel</title><published>2011-10-03T10:28:02Z</published><updated>2011-10-03T10:28:02Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/PinceladasDaWeb/~3/UHYCILpyyQ8/" type="text/html"/><content xml:base="http://www.pinceladasdaweb.com.br/blog" type="html">&lt;div&gt;&lt;img src="http://www.pinceladasdaweb.com.br/blog/uploads/jcarousel-slideshow/jcarousel-slideshow.jpg" alt="Slideshow com jCarousel" title="Slideshow com jCarousel"&gt;&lt;/div&gt;
+&lt;p&gt;Ao contrário do muitos pensam, o plugin &lt;a href="http://sorgalla.com/jcarousel/" title="jCarousel" rel="external"&gt;jCarousel&lt;/a&gt; não precisa ser utilizado somente no desenvolvimento de um Carousel, ele pode também ser utilzado na criação de um Slideshow, e como vou mostrar, ele também funciona perfeitamente para isso.&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;A grande sacada do jCarousel é que ele possui suporte a controles externos, com isso basta então criar uma função que gere dinamicamente aqueles bullets que ficam logo abaixo do Slideshow, fazendo com que cada link ao ser clicado vá para sua imagem em questão:&lt;/p&gt;
+&lt;pre&gt;
+function carouselSlideshow(carousel) {
+	carousel.clip.hover(function () {
+		carousel.stopAuto();
+	}, function () {
+		carousel.startAuto();
+	});
+
+	$(&amp;#39;&amp;lt;div id=&amp;quot;bullets&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;).insertAfter(&amp;#39;.jcarousel-container&amp;#39;);
+
+	$(&amp;#39;#slideshow li&amp;#39;).each(function(index) {
+			var number = parseInt(index) + 1;
+			$(&amp;#39;#bullets&amp;#39;).append(&amp;#39;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;#39;+ number +&amp;#39;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;#39;);
+	});
+
+	$(&amp;#39;#slideshow&amp;#39;).delegate(&amp;#39;#bullets a&amp;#39;, &amp;#39;click&amp;#39;, function(){
+		carousel.scroll($.jcarousel.intval($(this).text()));
+		return false;
+	});
+};
+&lt;/pre&gt;
+&lt;p&gt;Com a função pronta, basta chamá-la como um Callback dentro da chamada do jCarousel:&lt;/p&gt;
+&lt;pre&gt;
+$(&amp;#39;#slideshow ul&amp;#39;).jcarousel({
+	auto: 5,
+	scroll: 1,
+	wrap: &amp;#39;last&amp;#39;,
+	initCallback: carouselSlideshow,
+	itemVisibleInCallback: {
+		onAfterAnimation: function(c, o, i, s) {
+			--i;
+			$(&amp;#39;#bullets a&amp;#39;).removeClass(&amp;#39;active&amp;#39;);
+			$(&amp;#39;#bullets a:eq(&amp;#39;+i+&amp;#39;)&amp;#39;).addClass(&amp;#39;active&amp;#39;);
+		}
+	}
+});
+&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.pinceladasdaweb.com.br/blog/uploads/jcarousel-slideshow/" title="Slideshow com jCarousel" rel="alternate"&gt;Ver Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.pinceladasdaweb.com.br/blog/uploads/jcarousel-slideshow/slideshow-jcarousel.rar" title="Download Slideshow com jCarousel" rel="alternate enclosure"&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;hr&gt;
+&lt;a href="http://www.pinceladasdaweb.com.br/blog/2011/10/03/slideshow-com-jcarousel/"&gt;Slideshow com jCarousel&lt;/a&gt;
+&lt;br&gt;
+&lt;p&gt;Já conhece o meu outro blog? O endereço é o: &lt;a href="http://www.cssnolanche.com.br"&gt;CSS no Lanche&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Você ainda não está me seguindo no &lt;a href="http://twitter.com/pinceladasdaweb" title="Siga-me no Twitter" rel="external"&gt;Twitter&lt;/a&gt;, o que está esperando para fazer isso?&lt;/p&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://www.pinceladasdaweb.com.br/blog/2011/09/13/responsive-slideshows/" title="Responsive Slideshows"&gt;Responsive Slideshows&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.pinceladasdaweb.com.br/blog/2011/09/07/carregar-botao-do-google-plus-via-ajax/" title="Carregar botão do Google+ via Ajax"&gt;Carregar botão do Google+ via Ajax&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.pinceladasdaweb.com.br/blog/2011/08/22/carregar-botao-like-do-facebook-via-ajax/" title="Carregar botão Like do Facebook via Ajax"&gt;Carregar botão Like do Facebook via Ajax&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.pinceladasdaweb.com.br/blog/2011/07/23/galeria-de-fotos-com-a-api-do-flickr-e-jquery/" title="Galeria de fotos com a API do Flickr e jQuery"&gt;Galeria de fotos com a API do Flickr e jQuery&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.pinceladasdaweb.com.br/blog/2011/05/05/como-mostrar-updates-do-twitter-no-blog/" title="Como mostrar updates do Twitter no blog"&gt;Como mostrar updates do Twitter no blog&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/ca78ojdpio005qvamidhqt1jlc/300/250?ca=1&amp;amp;fh=280#http%3A%2F%2Fwww.pinceladasdaweb.com.br%2Fblog%2F2011%2F10%2F03%2Fslideshow-com-jcarousel%2F" width="100%" height="280" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=UHYCILpyyQ8:AyqWh-n7xVA:D7DqB2pKExk"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?i=UHYCILpyyQ8:AyqWh-n7xVA:D7DqB2pKExk" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=UHYCILpyyQ8:AyqWh-n7xVA:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=UHYCILpyyQ8:AyqWh-n7xVA:tr8VpXobKIM"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?d=tr8VpXobKIM" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=UHYCILpyyQ8:AyqWh-n7xVA:7Q72WNTAKBA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?d=7Q72WNTAKBA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=UHYCILpyyQ8:AyqWh-n7xVA:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?i=UHYCILpyyQ8:AyqWh-n7xVA:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=UHYCILpyyQ8:AyqWh-n7xVA:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?i=UHYCILpyyQ8:AyqWh-n7xVA:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=UHYCILpyyQ8:AyqWh-n7xVA:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?i=UHYCILpyyQ8:AyqWh-n7xVA:gIN9vFwOqvQ" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/PinceladasDaWeb/~4/UHYCILpyyQ8" height="1" width="1"&gt;</content><author><name>Pedro Rogério</name></author><gr:likingUser>12051581108364679109</gr:likingUser><gr:likingUser>14753128479457744117</gr:likingUser><gr:likingUser>13619909293713474163</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><gr:likingUser>12719853160202774820</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/pinceladasdaweb"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/pinceladasdaweb</id><title type="html">Pinceladas da Web - XHTML, CSS, JavaScript e WebStandards</title><link rel="alternate" href="http://www.pinceladasdaweb.com.br/blog" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317653463910"><id gr:original-id="http://www.cssnolanche.com.br/?p=1370">tag:google.com,2005:reader/item/380ddbfea16729f7</id><category term="CSS"/><category term="JavaScript"/><category term="CSS3"/><category term="jQuery"/><title type="html">Animated Login Form</title><published>2011-10-03T13:16:38Z</published><updated>2011-10-03T13:16:38Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/CssNoLanche/~3/_9xV1ydmLek/" type="text/html"/><content xml:base="http://www.cssnolanche.com.br/" type="html">&lt;div&gt;&lt;img src="http://www.cssnolanche.com.br/lab/animated-login-form/animated-login-form.jpg" alt="Animated Login Form" title="Animated Login Form"&gt;&lt;/div&gt;
+&lt;p&gt;Quer implementar um formulário de login animado no seu site? Deixo aqui um &lt;a href="http://www.cssnolanche.com.br/lab/animated-login-form/" title="Animated Login Form" rel="alternate"&gt;exemplo&lt;/a&gt; que vi no site &lt;a href="http://forrst.com" title="Forrst" rel="alternate"&gt;Forrst&lt;/a&gt;. Não preciso nem dizer para testar em browsers modernos né?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/lab/animated-login-form/" title="Animated Login Form" rel="alternate"&gt;Ver exemplo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/lab/animated-login-form/animated-login-form.rar"&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;hr&gt;
+&lt;a href="http://www.cssnolanche.com.br/animated-login-form/"&gt;Animated Login Form&lt;/a&gt;
+&lt;br&gt;
+&lt;p&gt;Você ainda não está me seguindo no &lt;a href="http://twitter.com/pinceladasdaweb" title="Siga-me no Twitter" rel="external"&gt;Twitter&lt;/a&gt;, o que está esperando para fazer isso?&lt;/p&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/css3-polaroid-gallery/" title="CSS3 Polaroid Gallery"&gt;CSS3 Polaroid Gallery&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/youtube-lightbox-gallery/" title="Youtube Lightbox Gallery"&gt;Youtube Lightbox Gallery&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/jquery-tabs/" title="jQuery Tabs"&gt;jQuery Tabs&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/css3-3d-box-shadow/" title="CSS3 3D Box Shadow"&gt;CSS3 3D Box Shadow&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/smooth-background-color/" title="Smooth Background Color"&gt;Smooth Background Color&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/s8usd9i9kv3asivi32hmdhruvo/300/250?ca=1&amp;amp;fh=280#http%3A%2F%2Fwww.cssnolanche.com.br%2Fanimated-login-form%2F" width="100%" height="280" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=_9xV1ydmLek:put8YgE7_wQ:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=_9xV1ydmLek:put8YgE7_wQ:7Q72WNTAKBA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?d=7Q72WNTAKBA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=_9xV1ydmLek:put8YgE7_wQ:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?i=_9xV1ydmLek:put8YgE7_wQ:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=_9xV1ydmLek:put8YgE7_wQ:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?i=_9xV1ydmLek:put8YgE7_wQ:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=_9xV1ydmLek:put8YgE7_wQ:dnMXMwOfBR0"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?d=dnMXMwOfBR0" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=_9xV1ydmLek:put8YgE7_wQ:D7DqB2pKExk"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?i=_9xV1ydmLek:put8YgE7_wQ:D7DqB2pKExk" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=_9xV1ydmLek:put8YgE7_wQ:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?i=_9xV1ydmLek:put8YgE7_wQ:gIN9vFwOqvQ" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=_9xV1ydmLek:put8YgE7_wQ:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?d=qj6IDK7rITs" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/CssNoLanche/~4/_9xV1ydmLek" height="1" width="1"&gt;</content><author><name>Pedro Rogério</name></author><gr:likingUser>14753128479457744117</gr:likingUser><gr:likingUser>05477052356105909717</gr:likingUser><gr:likingUser>05385266777549228810</gr:likingUser><gr:likingUser>10936578366072076741</gr:likingUser><gr:likingUser>01112624528302127941</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/CssNoLanche"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/CssNoLanche</id><title type="html">CSS no Lanche - Porque ingerir CSS na hora do lanche não engorda</title><link rel="alternate" href="http://www.cssnolanche.com.br" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317388412550"><id gr:original-id="">tag:google.com,2005:reader/item/8b55988bdd7a8952</id><title type="html">Faça Backup da ativação do Windows</title><published>2011-09-30T04:16:00Z</published><updated>2011-09-30T04:16:00Z</updated><link rel="alternate" href="http://www.baboo.com.br/conteudo/modelos/Faca-Backup-da-ativacao-do-Windows_a42957_z396.aspx" type="text/html"/><summary xml:base="http://www.baboo.com.br/conteudo/?z=396" type="html">&lt;div style="text-align:justify"&gt;Se você (assim como eu) faz formatações com certa frequência na máquina, sabe como é chato ter que reativar o Windows e o Office - mesmo que o sistema de ativação via telefone da Microsoft seja esperto. Neste tutorial do BABOO, &lt;a href="http://joshcell.blogspot.com/2011/07/advanced-tokens-manager-activation.html"&gt;vamos conhecer o gratuito Advanced Tokens Manager&lt;/a&gt;, que faz justamente o backup dos arquivos de ativação do Windows e do Office.&lt;br&gt;&lt;br&gt;&lt;span style="font-weight:bold"&gt;01.&lt;/span&gt; Como o software é gratuito, basta executá-lo. Você terá informações do seu Windows em &lt;span style="color:rgb(255,0,0)"&gt;Tokens&lt;/span&gt; e &lt;span style="color:rgb(255,0,0)"&gt;Product Key&lt;/span&gt; e poderá fazer o backup em &lt;span style="color:rgb(255,0,0)"&gt;Backup Activation&lt;/span&gt;.&lt;br&gt;&lt;br&gt;
+&lt;div style="text-align:center"&gt;&lt;img border="0" alt="" src="http://www.baboo.com.br/conteudo/articlefiles/42957-01.jpg"&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;span style="font-weight:bold"&gt;02. &lt;/span&gt;Uma pasta será criada no mesmo local onde o Advanced Tokens Manager foi executado. Guarde a pasta e o programa.&lt;br&gt;&lt;br&gt;
+&lt;div style="text-align:center"&gt;&lt;img border="0" alt="" src="http://www.baboo.com.br/conteudo/articlefiles/42957-02.jpg"&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;span style="font-weight:bold"&gt;03. &lt;/span&gt;Para fazer a restauração, abra o software (certifique-se de que a pasta com o backup está no mesmo local do software) e clique em &lt;span style="color:rgb(255,0,0)"&gt;Restore Activation&lt;/span&gt;. Para apagar o backup, exclua a pasta ou clique em &lt;span style="color:rgb(255,0,0)"&gt;Delete Backup&lt;/span&gt;. &lt;br&gt;&lt;br&gt;
+&lt;div style="text-align:center"&gt;&lt;img border="0" alt="" src="http://www.baboo.com.br/conteudo/articlefiles/42957-03.jpg"&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;span style="font-weight:bold"&gt;04. &lt;/span&gt;Se você clicar no botão &lt;span style="color:rgb(255,0,0)"&gt;Office Activation Backup&lt;/span&gt;, poderá fazer o mesmo procedimento para salvar a ativação do Office. Da mesma forma, &lt;span style="color:rgb(255,0,0)"&gt;Windows Activation Backup&lt;/span&gt; volta a exibir a ativação do Windows.&lt;br&gt;&lt;br&gt;
+&lt;div style="text-align:center"&gt;&lt;img border="0" alt="" src="http://www.baboo.com.br/conteudo/articlefiles/42957-04.jpg"&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;img border="0" alt="" src="http://www.baboo.com.br/icons/pdf.jpg"&gt; &lt;a href="http://www.baboo.com.br/conteudo/articlefiles/42957-tutorial.pdf"&gt;&lt;span style="font-style:italic"&gt;Faça o download deste tutorial em PDF&lt;/span&gt;&lt;/a&gt;&lt;br&gt;&lt;/div&gt;</summary><author gr:unknown-author="true"><name>(author unknown)</name></author><gr:likingUser>05408179690033069269</gr:likingUser><gr:likingUser>08932219406647682937</gr:likingUser><gr:likingUser>08862678626003282198</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><gr:likingUser>14772633308416400631</gr:likingUser><source gr:stream-id="feed/http://www.baboo.com.br/conteudo/rss.aspx?z=396"><id>tag:google.com,2005:reader/feed/http://www.baboo.com.br/conteudo/rss.aspx?z=396</id><title type="html">BABOO - Todas as notícias</title><link rel="alternate" href="http://www.baboo.com.br/conteudo/?z=396" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317388161742"><id gr:original-id="http://net.tutsplus.com/?p=22065">tag:google.com,2005:reader/item/41bd373725036a31</id><category term="News"/><title type="html">Recently in Web Development (September Edition)</title><published>2011-09-29T19:14:21Z</published><updated>2011-09-29T19:14:21Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/nettuts/~3/Alb3wYmZRfk/" type="text/html"/><summary xml:base="http://net.tutsplus.com/" type="html">&lt;a href="http://rss.buysellads.com/click.php?z=1260013&amp;amp;k=d754f1e9ba63a736ba8ff5ece958f7dd&amp;amp;a=22065&amp;amp;c=394769434"&gt;&lt;img src="http://rss.buysellads.com/img.php?z=1260013&amp;amp;k=d754f1e9ba63a736ba8ff5ece958f7dd&amp;amp;a=22065&amp;amp;c=394769434" border="0" alt=""&gt;&lt;/a&gt;&lt;p&gt;Web development is an industry that’s in a state of constant flux with technologies and jargon changing and mutating in an endless cycle. Not to mention the sheer deluge of information one has to process everyday.&lt;/p&gt;
+&lt;p&gt;In this series, published monthly, we’ll seek to rectify this by bringing you all the important news, announcements, releases and interesting discussions within the web development industry in a concise package. Join me after the jump!&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;hr style="clear:both"&gt;News and Releases&lt;/h2&gt;
+&lt;p&gt;All of the important news in a single place: releases, announcements, companies bickering, security issues and all related hoopla.&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1002_riwd1/ff.jpg" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;Firefox 7 Officially Available&lt;/h3&gt;
+&lt;p&gt;And just like that another version of the hugely popular Firefox browser is out. In keeping with their earlier promise of faster release, version 7 is out just a few weeks after version 6.&lt;/p&gt;
+&lt;p&gt;The new version is touted to use as low half as much as memory as the previous version. A little testing does indeed show the the browser is much snappier than before. Another feature that should keep users and web devs happy is hardware acceleration for the canvas tag. As someone who messes around with canvas all the time, this is indeed a big one. Hit the link below to glean more about the new features and updates.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.mozilla.org/en-US/firefox/new/"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1002_riwd1/rails.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;Ruby on Rails 3.1 is Released&lt;/h3&gt;
+&lt;p&gt;This one is for the Rails aficionados. This extremely popular Ruby framework just released a major point release of the framework. Big features in this version include jQuery being included as the default JavaScript library and support for HTTP streaming. Hit the link below for the entire change log.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://guides.rubyonrails.org/3_1_release_notes.html"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1002_riwd1/jqm.jpg" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;jQuery Mobile arc2released!&lt;/h3&gt;
+&lt;p&gt;The jQuery team is back  at their super productive best with their beta 3 &lt;em&gt;and &lt;/em&gt;RC1 release of jQuery mobile.&lt;/p&gt;
+&lt;p&gt;Among a big set of fixes and improvements, this release also include support for pushState and the beforechangepage event along with improvements for the iOS5 platform. Hit the link below for more.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://jquerymobile.com/blog/2011/09/08/jquery-mobile-beta-3-released/"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/psql.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;PostgreSQL 9.1 is Out&lt;/h3&gt;
+&lt;p&gt;Among all the talk about noSQL, it’s easy to forget that we still are in a world where SQL is the dominant force. PostgreSQL, one of the well known SQL vendors just released a point update to their software with a lot of new features and improvements.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.postgresql.org/about/news.1349"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/mongodb.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;MongoDB 2.0 Released&lt;/h3&gt;
+&lt;p&gt;And to just spite the SQL camp, MongoDB is out with version 2 of their flagship MongoDB data store. MongoDB is one of the more well known noSQL solutions and just finished a round of funding from Sequoia, for the more entrepreneurish amongst you. I recommend visiting the link below to find out more about what has changed here.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.mongodb.org/post/10126837729/mongodb-2-0-released"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1002_riwd1/ror.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;Rails Installer Now Supports Rails 3.1&lt;/h3&gt;
+&lt;p&gt;While Unix and Linux devs have the luxury of an easy workflow on their platforms, getting Rails setup well on Windows is still a chore. &lt;/p&gt;
+&lt;p&gt;RailsInstaller, an &lt;a href="http://engineyard.com/"&gt;EngineYard&lt;/a&gt; effort, seeks to streamline this process. They just updated their software to support Rails 3. If you’re a Windows Rails developer, make sure to grab this!&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://railsinstaller.org/"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/clojure.jpg" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;Clojure 1.3 Released &lt;/h3&gt;
+&lt;p&gt;While Nettuts+ primarily focuses on the front end and a smattering of PHP and Ruby right now, we do intend to expand to broader programming topics soon. To that effect, here is something a little more niche.&lt;/p&gt;
+&lt;p&gt;Clojure is a variant of the veteran Lisp language. It’s a high level, functional, general purpose programming language that works on both the JVM and CLR. An important point to note is that a variant of Clojure, called ClojureScript, compiles down to JavaScript and works on web browsers everywhere. If you’re even a tiny bit intrigued, make sure to read the link below.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://groups.google.com/group/clojure/browse_thread/thread/c39366c79acf690b?pli=1"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;hr style="clear:both"&gt;New Kids on the Block&lt;/h2&gt;
+&lt;p&gt;As web developers, the sheer amount of resources we can tap into increases exponentially with time. Here is just a quick look at some recently created resources that deserve your attention — everything from new books to scripts and frameworks.&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/crypt.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;cryptico.js&lt;/h3&gt;
+&lt;p&gt;A plain JavaScript utility to aid in encrypting content on the client side. The utility supports RSA + AES and can go upto 1024 bits.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://cryptico.wwwtyro.net/"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/km.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;keymaster&lt;/h3&gt;
+&lt;p&gt;A simple micro-library for defining and dispatching keyboard shortcuts. It has no dependencies&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/madrobby/keymaster"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/flourish.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;Flourish&lt;/h3&gt;
+&lt;p&gt;Flourish is a PHP unframework — a general-purpose, object-oriented library.&lt;br&gt;
+It has a modular architecture, meaning it isn’t strictly MVC. It focuses on being secure, well documented and easy to use, while solving problems intrinsic to web development. &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://flourishlib.com/"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/dq.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;dquery&lt;/h3&gt;
+&lt;p&gt;dquery is a useful tool for handling dates and times. It works by extending instances of Date with additional functionality. &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/torholm/dquery"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/tdb.jpg" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;TaffyDB&lt;/h3&gt;
+&lt;p&gt;TaffyDB is an opensouce library that brings database features into your JavaScript applications.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://taffydb.com/"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/tc.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;Touché&lt;/h3&gt;
+&lt;p&gt;Touché brings touch events to non-touch browsers (how touching!). No dependencies. No code bloat.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/davidcalhoun/touche"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/rjs.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;R.js&lt;/h3&gt;
+&lt;p&gt;R.js is a simple i18n framework for JavaScript, using CommonJS. R.js should work in both browsers, and on Node.js, providing internationalization capabilities to both.&lt;/p&gt;
+&lt;p&gt;R.js is tiny, at less than 900 bytes minified and gzipped (&amp;lt;2kb minified). R.js has no dependencies, but can be used easily with any other libraries you wish. R.js binds itself to window.R, or global.R on the server side.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/keithamus/R.js"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/stream.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;streamjs&lt;/h3&gt;
+&lt;p&gt;stream.js is a tiny stand-alone Javascript library that unlocks a new data structure for you: streams. Streams are an easy to use data structure similar to arrays and linked lists, but with some extraordinary capabilities.  &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://streamjs.org/"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/kibo.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;kibo&lt;/h3&gt;
+&lt;p&gt;Kibo is a simple JavaScript library for handling keyboard events.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/marquete/kibo"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/three.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;three.js&lt;/h3&gt;
+&lt;p&gt;three.js is a Javascript 3D Engine. The aim of the project is to create a lightweight 3D engine with a very low level of complexity — in other words, for dummies. The engine can render using &amp;lt;canvas&amp;gt;, &amp;lt;svg&amp;gt; and WebGL.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/mrdoob/three.js/"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;hr style="clear:both"&gt;
+Best of the Internet&lt;/h2&gt;
+&lt;p&gt;Often, you’re not really looking for a tutorial as much as you’re looking for a rant, an opinion or the musings of a tired developer or just something cool with absolutely zero real world use. This sections contains links to precisely those — interesting and cool stuff from the developer community. &lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/joey.jpg" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;Backbone.js Screencast – Introduction and Views&lt;/h3&gt;
+&lt;p&gt;An excellent screencast by Joey Beninghove on the basics of Backbone.js. If you’re looking for a well made screencast to jumpstart your Backbone experiments, this is a fine place to start.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://joeybeninghove.com/2011/08/16/backbone-screencast-introduction-views/"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/use.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;What is the exact difference between a ‘terminal’, a ‘shell’, a ‘tty’ and a ‘console’?&lt;/h3&gt;
+&lt;p&gt;Wondering at the semantic differences between the words in questions? This is &lt;em&gt;the&lt;/em&gt; discussion to read.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://unix.stackexchange.com/questions/4126/what-is-the-exact-difference-between-a-terminal-a-shell-a-tty-and-a-cons/4132#4132"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/yay.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;CSS3 Rainbow Dividers&lt;/h3&gt;
+
+&lt;p&gt;Title says it all. Rainbow friggin’ dividers using just CSS3 — now there’s no reason that your pages are anything less than &lt;span&gt;utterly, mind-bogglingly fabulous&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://codepo8.github.com/CSS3-Rainbow-Dividers/"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/lgm.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;ligament.js&lt;/h3&gt;
+&lt;p&gt;ligament.js, by Yehuda Katz, is the smallest, lightest-weight JavaScript MVC framework around. Or is it?&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gist.github.com/313496e6ba9160dc6eb5"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/be.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;My TXJS talk (Twitter remix)&lt;/h3&gt;
+&lt;p&gt;Brendan Eich’s speech at TXJS on the good, bad and ugly parts of Ecma TC39. An excellent watch for anyone doing anything related to the web and a must watch for every JS developer.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://brendaneich.com/2011/08/my-txjs-talk-twitter-remix/"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+&lt;div style="float:left;margin-right:20px;margin-top:25px;padding:5px;border:1px solid #E8E8E8"&gt;&lt;img alt="Nettuts image" src="http://d2o0t5hpnwv4c1.cloudfront.net/1057_riwd4/sudoku.png" width="250"&gt;&lt;/div&gt;
+&lt;h3&gt;Sudoku Solver in 140 bytes&lt;/h3&gt;
+&lt;p&gt;A cute little algo that brute forces any Sudoku into submission. Oh, did I mention that it’s just 140 bytes? I imagine this is how gods program.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gist.github.com/1230481/95f6facb74f51d089bea87eba0f470cf3bbed83a"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;hr style="clear:both"&gt;Wrapping Up&lt;/h2&gt;
+&lt;p&gt;Well, that’s about all the major changes that happened in our industry lately. Since this is the first time we’re doing something along these lines, everything is still up in the air — future editions will be shaped by your feedback.&lt;/p&gt;
+&lt;p&gt;Do you want us to cover more standard news? A focus on upcoming scripts maybe? Or just more interesting posts and discussions from the community? Let us know in the comments and thank you so much for reading! &lt;/p&gt;&lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/8olmjno1k05rb1som1frr6u854/300/250?ca=1&amp;amp;fh=280#http%3A%2F%2Fnet.tutsplus.com%2Farticles%2Fnews%2Frecently-in-web-development-september-edition%2F" width="100%" height="280" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=Alb3wYmZRfk:OsWLcjV2h94:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=Alb3wYmZRfk:OsWLcjV2h94:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?i=Alb3wYmZRfk:OsWLcjV2h94:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=Alb3wYmZRfk:OsWLcjV2h94:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?i=Alb3wYmZRfk:OsWLcjV2h94:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=Alb3wYmZRfk:OsWLcjV2h94:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?i=Alb3wYmZRfk:OsWLcjV2h94:gIN9vFwOqvQ" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=Alb3wYmZRfk:OsWLcjV2h94:TzevzKxY174"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?d=TzevzKxY174" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/nettuts/~4/Alb3wYmZRfk" height="1" width="1"&gt;</summary><author><name>Siddharth</name></author><gr:likingUser>16182825675045258828</gr:likingUser><gr:likingUser>11607752889960896241</gr:likingUser><gr:likingUser>04272422856704558511</gr:likingUser><gr:likingUser>09513604172585024060</gr:likingUser><gr:likingUser>15655411476007253232</gr:likingUser><gr:likingUser>18185968087341283327</gr:likingUser><gr:likingUser>14223135685696614587</gr:likingUser><gr:likingUser>05275545278580982367</gr:likingUser><gr:likingUser>16214824429376995538</gr:likingUser><gr:likingUser>01979860954254968478</gr:likingUser><gr:likingUser>15050386822896416003</gr:likingUser><gr:likingUser>17905618791332783611</gr:likingUser><gr:likingUser>04101141606547087048</gr:likingUser><gr:likingUser>01097592153485785182</gr:likingUser><gr:likingUser>18413991821024136595</gr:likingUser><gr:likingUser>09224272190585328767</gr:likingUser><gr:likingUser>06293495514676569841</gr:likingUser><gr:likingUser>17008010272444510104</gr:likingUser><gr:likingUser>08780812040320875076</gr:likingUser><gr:likingUser>16308979042363528558</gr:likingUser><gr:likingUser>10525450077210192424</gr:likingUser><gr:likingUser>17265046258292698964</gr:likingUser><gr:likingUser>01672061414039448368</gr:likingUser><gr:likingUser>00048640862741442703</gr:likingUser><gr:likingUser>16370743116912306494</gr:likingUser><gr:likingUser>02326901925032653302</gr:likingUser><gr:likingUser>01671391396978879872</gr:likingUser><gr:likingUser>11284355427865067553</gr:likingUser><gr:likingUser>03545964666694920486</gr:likingUser><gr:likingUser>09815750668635243442</gr:likingUser><gr:likingUser>13384963207965026126</gr:likingUser><gr:likingUser>17279853864188752402</gr:likingUser><gr:likingUser>00204732632111925900</gr:likingUser><gr:likingUser>13951589489696226012</gr:likingUser><gr:likingUser>15632928568779456076</gr:likingUser><gr:likingUser>09411207292002552740</gr:likingUser><gr:likingUser>00866917058956403556</gr:likingUser><gr:likingUser>06329617104682115898</gr:likingUser><gr:likingUser>04535502839512400358</gr:likingUser><gr:likingUser>13583143679572878867</gr:likingUser><gr:likingUser>02193062338663850635</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><gr:likingUser>06475860091886113561</gr:likingUser><gr:likingUser>16521913441986911051</gr:likingUser><gr:likingUser>05656794539681452000</gr:likingUser><gr:likingUser>10664205029253107262</gr:likingUser><gr:likingUser>11561555181230073950</gr:likingUser><gr:likingUser>11892670387364915247</gr:likingUser><gr:likingUser>02097639434290888675</gr:likingUser><gr:likingUser>16162539689409290585</gr:likingUser><gr:likingUser>09973761376110709135</gr:likingUser><gr:likingUser>14844844399277512676</gr:likingUser><gr:likingUser>07553439738345968622</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/nettuts"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/nettuts</id><title type="html">Nettuts+</title><link rel="alternate" href="http://net.tutsplus.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317327922861"><id gr:original-id="http://googlediscovery.com/?p=23508">tag:google.com,2005:reader/item/b8ee0ed00bdab7e5</id><category term="Google"/><category term="Google Analytics"/><title type="html">Google Analytics terá relatório de usuários online</title><published>2011-09-29T19:15:26Z</published><updated>2011-09-29T19:15:26Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/googlediscovery/~3/yf4cS2UCNKU/" type="text/html"/><content xml:base="http://googlediscovery.com/" type="html">&lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/cpfs0f7o7n37o911pnc8aej84s/468/60#http%3A%2F%2Fgooglediscovery.com%2F2011%2F09%2F29%2Fgoogle-analytics-tera-relatorio-de-usuarios-online%2F" width="100%" height="60" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;p&gt;&lt;img title="google_analytics" src="http://www.google.com/images/logos/analytics_logo.gif" alt="analytics logo Google Analytics terá relatório de usuários online"&gt;O Google &lt;a href="http://analytics.blogspot.com/2011/09/whats-happening-on-your-site-right-now.html"&gt;anunciou&lt;/a&gt;, nesta quinta-feira, que finalmente irá implementar uma solução muito aguardada por empresas e editores da web: a possibilidade de acompanhar, em tempo real, o número de pessoas ativas em um website.&lt;/p&gt;
+&lt;p&gt;“Estamos muito animados tem trazer dados em tempo real para o Google Analytics com o lançamento do novo Google Analytics Real Time: um conjunto de novos relatórios que mostram o que está acontecendo em seu site”, explicou John Jersin, Google Analytics Team.&lt;/p&gt;
+&lt;p&gt;A nova funcionalidade, porém, está atualmente disponível para um pequeno número de editores, dentro da guia “Dashboards” na nova versão do Google Analytics. Para a solicitar acesso, basta se cadastrar &lt;a href="https://services.google.com/fb/forms/realtimeanalytics/"&gt;neste formulário&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Para as empresas que necessitam de soluções especiais, incluindo ferramentas avançadas, suporte e garantias, o Google anunciou o lançamento do &lt;a href="http://www.google.com/analytics/premium/"&gt;Google Analytics Premium&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://googlediscovery.com/wp-content/uploads/rightnow-social.png"&gt;&lt;img title="rightnow-social" src="http://googlediscovery.com/wp-content/uploads/rightnow-social-e1317323570708.png" alt="rightnow social e1317323570708 Google Analytics terá relatório de usuários online" width="640" height="401"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;---&lt;br&gt;&lt;b&gt;Artigos relacionados no Google Discovery&lt;/b&gt;&lt;li&gt;&lt;a href="http://googlediscovery.com/2007/06/13/google-analytics-ganha-versao-final-e-novos-recursos/" rel="bookmark" title="Permanent Link: Google Analytics ganha versão final e novos recursos"&gt;Google Analytics ganha versão final e novos recursos&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://googlediscovery.com/2007/07/21/google-analytics-desativa-antiga-interface/" rel="bookmark" title="Permanent Link: Google Analytics desativa antiga interface"&gt;Google Analytics desativa antiga interface&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://googlediscovery.com/2007/07/30/google-analytics-sofre-com-delay-temporario/" rel="bookmark" title="Permanent Link: Google Analytics sofre com delay temporário"&gt;Google Analytics sofre com delay temporário&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://googlediscovery.com/2007/07/31/atualizacao-delay-no-google-analytics-persiste/" rel="bookmark" title="Permanent Link: Atualização: Delay no Google Analytics persiste"&gt;Atualização: Delay no Google Analytics persiste&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://googlediscovery.com/2007/05/08/google-analytics-vai-ganhar-upgrade/" rel="bookmark" title="Permanent Link: Google Analytics vai ganhar upgrade"&gt;Google Analytics vai ganhar upgrade&lt;/a&gt;&lt;/li&gt;&lt;/p&gt;&lt;br&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/googlediscovery?a=yf4cS2UCNKU:90QvYit7_7s:D7DqB2pKExk"&gt;&lt;img src="http://feeds.feedburner.com/~ff/googlediscovery?i=yf4cS2UCNKU:90QvYit7_7s:D7DqB2pKExk" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/googlediscovery?a=yf4cS2UCNKU:90QvYit7_7s:I9og5sOYxJI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/googlediscovery?d=I9og5sOYxJI" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/googlediscovery?a=yf4cS2UCNKU:90QvYit7_7s:-BTjWOF_DHI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/googlediscovery?i=yf4cS2UCNKU:90QvYit7_7s:-BTjWOF_DHI" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/googlediscovery?a=yf4cS2UCNKU:90QvYit7_7s:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/googlediscovery?d=qj6IDK7rITs" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/googlediscovery/~4/yf4cS2UCNKU" height="1" width="1"&gt;</content><author><name>Renê Fraga</name></author><gr:likingUser>17610611297835918880</gr:likingUser><gr:likingUser>11148217089971950025</gr:likingUser><gr:likingUser>09450231191276986494</gr:likingUser><gr:likingUser>04587748544218900048</gr:likingUser><gr:likingUser>06164599105678165110</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><gr:likingUser>01032573878255963052</gr:likingUser><gr:likingUser>06568078284961871181</gr:likingUser><gr:likingUser>08701814948057097731</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/googlediscovery"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/googlediscovery</id><title type="html">Google Discovery</title><link rel="alternate" href="http://googlediscovery.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317327748966"><id gr:original-id="http://techcrunch.com/?p=429322">tag:google.com,2005:reader/item/e89ec4ceec8b64f5</id><category term="TC"/><title type="html">Google Analytics Catches Up With Real-Time, Launches Enterprise Tier</title><published>2011-09-29T19:17:59Z</published><updated>2011-09-29T19:17:59Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/Techcrunch/~3/5p5uzvf9_A8/" type="text/html"/><content xml:base="http://techcrunch.com/" type="html">&lt;img width="100" height="70" src="http://tctechcrunch2011.files.wordpress.com/2011/09/googlerealtime.png?w=100&amp;amp;h=70&amp;amp;crop=1" alt="googlerealtime" title="googlerealtime" style="float:left;margin:0 10px 7px 0"&gt;&lt;p&gt;Google Analytics, the immensely popular suite of tools that Google offers to help webmasters track their site traffic, is getting a big boost this week: the service has &lt;a href="http://analytics.blogspot.com/2011/09/whats-happening-on-your-site-right-now.html"&gt;launched&lt;/a&gt; a real-time dashboard that updates with user events as they happen.&lt;/p&gt;
+&lt;p&gt;That’s a big deal, as it brings Google more in line with popular real-time analytics products like Chartbeat, which allows you to track things like how many people are currently on your site, and how much traffic each individual article has gotten in the last few minutes. Prior to today’s launch of real-time, Google Analytics reports typically had a delay window upwards of three hours (and often longer), which meant this kind of tracking wasn’t possible.&lt;/p&gt;
+&lt;p&gt;In its blog post announcing the news, Google highlights how you can now use Analytics to gauge the impact of various social channels, like Twitter and Facebook — and you’ll be able to quickly tell if your custom analytics query is working as intended, without having to wait 24 hours to see the results. In order to see the new Real-Time feature you’ll need to activate the ‘New Version’ link in Analytics, which is in the upper-right hand corner of the screen.&lt;/p&gt;
+&lt;p&gt;In addition to Real-Time, today the Analytics team has also &lt;a href="http://analytics.blogspot.com/2011/09/introducing-google-analytics-premium.html"&gt;announced&lt;/a&gt; a premium tier for enterprise companies who want more support (and datapoints tracked) than Google offers with its free service. Google says that for an unspecified price, companies will be able to get phone support, SLA guarantees, and increased data limits.&lt;/p&gt;
+&lt;span style="text-align:center;display:block"&gt;&lt;a href="http://techcrunch.com/2011/09/29/google-analytics-catches-up-with-real-time-launches-enterprise-tier/"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;br&gt;  &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/tctechcrunch2011.wordpress.com/429322/"&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/tctechcrunch2011.wordpress.com/429322/"&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/tctechcrunch2011.wordpress.com/429322/"&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/tctechcrunch2011.wordpress.com/429322/"&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/tctechcrunch2011.wordpress.com/429322/"&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/tctechcrunch2011.wordpress.com/429322/"&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/tctechcrunch2011.wordpress.com/429322/"&gt;&lt;/a&gt; &lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/v7tfagih50mrtjprksjv4s1ftk/300/250?ca=1&amp;amp;fh=280#http%3A%2F%2Ftechcrunch.com%2F2011%2F09%2F29%2Fgoogle-analytics-catches-up-with-real-time-launches-enterprise-tier%2F" width="100%" height="280" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/Techcrunch?a=5p5uzvf9_A8:RCd-O8DziAc:2mJPEYqXBVI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Techcrunch?d=2mJPEYqXBVI" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Techcrunch?a=5p5uzvf9_A8:RCd-O8DziAc:7Q72WNTAKBA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Techcrunch?d=7Q72WNTAKBA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Techcrunch?a=5p5uzvf9_A8:RCd-O8DziAc:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Techcrunch?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Techcrunch?a=5p5uzvf9_A8:RCd-O8DziAc:-BTjWOF_DHI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Techcrunch?i=5p5uzvf9_A8:RCd-O8DziAc:-BTjWOF_DHI" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Techcrunch?a=5p5uzvf9_A8:RCd-O8DziAc:D7DqB2pKExk"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Techcrunch?i=5p5uzvf9_A8:RCd-O8DziAc:D7DqB2pKExk" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Techcrunch?a=5p5uzvf9_A8:RCd-O8DziAc:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Techcrunch?d=qj6IDK7rITs" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Techcrunch/~4/5p5uzvf9_A8" height="1" width="1"&gt;</content><author><name>Jason Kincaid</name></author><gr:likingUser>05303085571422996287</gr:likingUser><gr:likingUser>05873186328745471519</gr:likingUser><gr:likingUser>09150175772102954636</gr:likingUser><gr:likingUser>02103864680157236255</gr:likingUser><gr:likingUser>07183976951727730367</gr:likingUser><gr:likingUser>12604743250052102896</gr:likingUser><gr:likingUser>04219062778588917590</gr:likingUser><gr:likingUser>16414674337141872388</gr:likingUser><gr:likingUser>13343202765607569971</gr:likingUser><gr:likingUser>16252948281552691243</gr:likingUser><gr:likingUser>15218633955327620808</gr:likingUser><gr:likingUser>01277433158057089998</gr:likingUser><gr:likingUser>03199603023799690040</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><gr:likingUser>09444362576768336939</gr:likingUser><gr:likingUser>11418474796549290698</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/TechCrunch"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/TechCrunch</id><title type="html">TechCrunch</title><link rel="alternate" href="http://techcrunch.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317241905388"><id gr:original-id="http://webholic.com.br/?p=18465">tag:google.com,2005:reader/item/4b528d6caf00d770</id><category term="Novidades"/><category term="google"/><category term="google news"/><category term="rankeamento"/><category term="ranking"/><category term="seo"/><title type="html">Tutorial: Aprenda Como Chegar na Capa do Google News</title><published>2011-09-28T18:28:40Z</published><updated>2011-09-28T18:28:40Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/readwritewebbrasil/~3/J9GrMGTee9k/" type="text/html"/><content xml:base="http://webholic.com.br/" type="html">&lt;p&gt;O Google News é almejado por todos os bloggers e jornalistas pela quantidade de tráfego que ele proporciona. Mas como rankear no Google News? Quais são os fatores levados em consideração? Vasculhamos na web e descobrimos alguns que poderão mudar sua estratégia com o seu blog.&lt;/p&gt;
+&lt;p&gt;Um estudo realizado pelo Local SEO Guide, PerfectMarket e newsknife especificou os &lt;a href="http://googlenewsrankingfactors.com/top-10-most-important-google-news-ranking-factors/"&gt;10 Fatores mais Importantes para Rankeamento do Google News&lt;/a&gt;. Como a Google não divulga seus algoritmos, o estudo foi feito com base em entrevistas realizadas com &lt;a href="http://googlenewsrankingfactors.com/contributors/"&gt;17 experts de SEO&lt;/a&gt; dos principais sites de notícias do mundo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adam Audette - RKG&lt;/li&gt;
+&lt;li&gt;AJ Kohn - Blind Five Year Old&lt;/li&gt;
+&lt;li&gt;Andrew Shotland - Local SEO Guide&lt;/li&gt;
+&lt;li&gt;Bryan Young - NY Public Radio&lt;/li&gt;
+&lt;li&gt;Chris Mull - PerfectMarket&lt;/li&gt;
+&lt;li&gt;Christopher Angus - Warlock Media&lt;/li&gt;
+&lt;li&gt;Eleanor Hong - ESPN.com&lt;/li&gt;
+&lt;li&gt;Haim Barad - Sure Visit&lt;/li&gt;
+&lt;li&gt;James Hood - Consumer Affairs&lt;/li&gt;
+&lt;li&gt;John Shehata - ABC News&lt;/li&gt;
+&lt;li&gt;Marshall Simmonds - Define Media Group&lt;/li&gt;
+&lt;li&gt;Matthew Brown - AudienceWise&lt;/li&gt;
+&lt;li&gt;Mi Li - The Fiscal Times&lt;/li&gt;
+&lt;li&gt;Neil Pharyzyn - Newsknife&lt;/li&gt;
+&lt;li&gt;Simon Heseltine - The Huffington Post&lt;/li&gt;
+&lt;li&gt;Tim Ruder - Perfect Market&lt;/li&gt;
+&lt;li&gt;Topher Kohan - CNN&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;O &lt;a href="http://searchenginewatch.com/article/2112126/Google-News-Key-Ranking-Factors-Study"&gt;Search Engine Watch&lt;/a&gt; entrou na brincadeira e também juntou as informações para alegria geral e criou uma lista com os principais fatores de rankeamento do Google News devidamente explicados, são estes:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Utilize Palavras-Chave Poderosas e Títulos Breves&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;O Google Insights é uma ótima ferramenta para descobrir palavras-chave de peso para seus artigos, utilize-as de também no título, nas descrições e por todo o artigo. Sinônimos e palavras relativas também ajudam, mas não seja redundante que isso pode prejudicá-lo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Otimize seu Domínio&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use táticas padrões de SEO para aumentar o número de links inbound para o domínio principal, criando uma arquitetura otimizada de links e aumentando o feedback social. O pagerank ainda é muito importante no rankeamento.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Otimize o Conteúdo para as Mídias Sociais&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Tanto o volume quanto a velocidade na mídia social são importantes. Facilite o compartilhamento com os botões e seja ativo nas redes sociais.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Seja o Primeiro&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;É exatamente isso. Seja o primeiro a divulgar a notícia. Isso ajuda o seu conteúdo melhorando sua posição a longo prazo e oferece uma exclusividade momentânea que também é bem vinda.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Procure Gerar Citações&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;As citações de fontes respeitadas são vistas como um grande elemento no rankeamento de um artigo. É importante publicar seu conteúdo em canais que poderão gerar citações, então certifique-se de que as pessoas que utilizarem o seu conteúdo façam uso das citações. E procure produzir conteúdo digno de ser citado.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conteúdo Único&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Utilize o mínimo possível de conteúdo reaproveitado. Procure fornecer conteúdo original o máximo possível. Se um artigo ou uma parte dele  já foi publicada em outros sites/páginas, dificilmente uma página vai para a capa do Google News.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Otimize sua headline focando no CTR e na baixa Taxa de Rejeição&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Crie headlines relevantes, com texto interessante, oferecendo conteúdo de primeira. Os experts afirmaram que a Google avalia o CTR do Google News e compara com outras fontes para determinar o valor do conteúdo para o usuário. Além disso, a taxa de rejeição é usada para determinar o sucesso do conteúdo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conteúdo de Qualidade&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;O padrão de qualidade aqui é acima do esperado, já que os avaliadores editoriais do Google News são bastante criteriosos em relação a isto. Seu site pode ser retirado rapidamente do Google News se o seu conteúdo não for avaliado como de qualidade. A qualidade do conteúdo é a maior exigência, já que ela gera visitas orgânicas, links e citações, assim como o compartilhamento social.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Práticas Comuns de Otimização&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;As práticas padrão como diminuir o tempo de carregamento do site, otimização de imagens e quantidade de palavras. John Shehata da NBC recomenda artigos de 200 a 800 palavras, mas segundo ele, existem algumas exceções.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Utilize o Google News Sitemap&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;O &lt;a href="http://www.google.com/support/news_pub/bin/answer.py?answer=74288"&gt;sitemap&lt;/a&gt; ajuda na especificação alguns detalhes, oferece também metadados que ajudarão a chamar a atenção dos usuários nos resultados. Esta ferramenta é extremamente importante, é preciso dominá-la.&lt;/p&gt;
+&lt;p&gt;Esses pontos foram divulgados pelo Search Engine Watch como uma variação da pesquisa completa, já que nem todos os fatores podem ser implementados caso o editor espere otimização á curto prazo. Alguns pontos considerados variáveis humanas também não foram mencionadas aqui, mas você pode conferir a pesquisa completa &lt;a href="http://googlenewsrankingfactors.com/"&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Se você se interessar em tentar otimizar seu site utilizando estes fatores de rankeamento, não deixe de comentar.&lt;/p&gt;
+&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/readwritewebbrasil?a=J9GrMGTee9k:VzzMjA0Egoc:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/readwritewebbrasil?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/readwritewebbrasil/~4/J9GrMGTee9k" height="1" width="1"&gt;</content><author><name>Diogo Bedran</name></author><gr:likingUser>16797449418408812900</gr:likingUser><gr:likingUser>07804246751908253347</gr:likingUser><gr:likingUser>11544189612135710572</gr:likingUser><gr:likingUser>03859115529731037363</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/ReadwritewebBrasil"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/ReadwritewebBrasil</id><title type="html">WebHolic</title><link rel="alternate" href="http://webholic.com.br" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317232298708"><id gr:original-id="http://www.josscrowcroft.com/?p=1538">tag:google.com,2005:reader/item/3767d5fd0dd2f2f2</id><category term="Code"/><title type="html">A little URL generator for Backbone.js</title><published>2011-09-28T16:24:40Z</published><updated>2011-09-28T16:24:40Z</updated><link rel="alternate" href="http://www.josscrowcroft.com/2011/code/a-little-url-generator-for-backbone-js/" type="text/html"/><content xml:base="http://www.josscrowcroft.com/" type="html">&lt;p&gt;Just something I wrote at work today: our app has a model that acts as an API for submodules, and as part of it, it allows interlinking between different modules (aka ‘screens’).&lt;/p&gt;
+&lt;p&gt;You can pass this method the ‘slug’ of any screen (module) in the app, plus any number of arguments and it builds a URL for them. Each of the args is separated by a ‘&lt;code&gt;/&lt;/code&gt;‘. &lt;/p&gt;
+&lt;p&gt;Arrays are joined with commas, functions are executed, objects are strigified via jQuery’s &lt;code&gt;$.param&lt;/code&gt;, and strings/numbers are just given as-is.&lt;/p&gt;
+&lt;pre&gt;// Build URL for any screen:
+urlify: function(slug) {
+	slug = slug || &amp;quot;&amp;quot;;
+
+	// Create array of strings from arguments:
+	var args = _.map(Array.prototype.slice.call(arguments, 1), function(arg) {
+		// Join arrays, evaluate functions, stringify objects, leave strings/numbers:
+		return _.isArray(arg) ? arg.join(&amp;#39;,&amp;#39;) : _.isFunction(arg) ? arg() : _.isObject(arg) ? $.param(arg) : arg;
+	});
+	return (!Backbone.history.options.pushState ? &amp;#39;#&amp;#39; : &amp;#39;&amp;#39;) + slug + &amp;#39;/&amp;#39; + ( args.length &amp;gt; 0 ? args.join(&amp;#39;/&amp;#39;) + &amp;#39;/&amp;#39; : &amp;#39;&amp;#39; );
+}
+
+// for example:
+Model.urlify(&amp;#39;screen-name&amp;#39;, 1253431, [&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;], {a:1});
+// =&amp;gt; &amp;quot;#screen-name/1253431/a,b,c/a%5Bb%5D=1/&amp;quot;
+&lt;/pre&gt;
+&lt;h3&gt;What the &lt;em&gt;hash&lt;/em&gt;?&lt;/h3&gt;
+&lt;p&gt;Note the &lt;code&gt;(!Backbone.history.options.pushState ? '#' : '')&lt;/code&gt; ?&lt;/p&gt;
+&lt;p&gt;When supporting &lt;code&gt;pushState&lt;/code&gt; in Backbone.history, some browsers will use e.g. &lt;code&gt;app.com/#page&lt;/code&gt;, while others will use simply &lt;code&gt;app.com/page&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;But what about when you need to template in links to other sections of your app, but you’re not sure if the user’s browser supports &lt;code&gt;pushState&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;I got your back, bro. What this function does is inserts a hash &lt;code&gt;#&lt;/code&gt; when pushState is not supported, so that inter-linking modules still get routed to the correct place.&lt;/p&gt;
+&lt;p&gt;Not sure if any of this makes sense, as currently a little tipsy – will update tomorrow with better info and examples.&lt;/p&gt;</content><author><name>Joss</name></author><gr:likingUser>03020522199988970127</gr:likingUser><source gr:stream-id="feed/http://www.josscrowcroft.com/feed/"><id>tag:google.com,2005:reader/feed/http://www.josscrowcroft.com/feed/</id><title type="html">Joss Crowcroft</title><link rel="alternate" href="http://www.josscrowcroft.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317135178646"><id gr:original-id="http://www.coletiva.net/site/noticia_detalhe.php?idNoticia=42368">tag:google.com,2005:reader/item/b1ace9ca98315a31</id><category term="Comunicação"/><title type="html">Vereador quis impedir Google de divulgar seu nome</title><published>2011-09-27T18:22:00Z</published><updated>2011-09-27T18:22:00Z</updated><link rel="alternate" href="http://www.coletiva.net/site/noticia_detalhe.php?idNoticia=42368" type="text/html"/><summary xml:base="http://www.coletiva.com.br/" type="html">Mauro Zacher alega que buscador apresenta notícias falsas ou tendenciosas a seu respeito ...</summary><author gr:unknown-author="true"><name>(author unknown)</name></author><gr:likingUser>03020522199988970127</gr:likingUser><source gr:stream-id="feed/http://www.coletiva.net/site/xml/index.xml"><id>tag:google.com,2005:reader/feed/http://www.coletiva.net/site/xml/index.xml</id><title type="html">Coletiva.net</title><link rel="alternate" href="http://www.coletiva.com.br/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317133443625"><id gr:original-id="http://css-tricks.com/?p=14415">tag:google.com,2005:reader/item/78ffc80af329a1f5</id><category term="Article"/><title type="html">Better Linkable Tabs</title><published>2011-09-27T01:55:26Z</published><updated>2011-09-27T01:55:26Z</updated><link rel="alternate" href="http://css-tricks.com/14415-better-linkable-tabs/" type="text/html"/><content xml:base="http://css-tricks.com/" type="html">&lt;p&gt;I find it's a common desire with "tab" design patterns that there is a way to link to specific tabs. As in, you could give someone a URL and that URL would lead them to that page with the specific desired tab active and displaying the correct content.&lt;/p&gt;&lt;p&gt;If each tab is a completely different URL, it's easy. In the HTML that is served, the appropriate class name is applied to the tab to make it look active, and the appropriate content below is served.&lt;/p&gt; &lt;img src="http://cdn.css-tricks.com/wp-content/uploads/2011/09/wufootabs.png" alt="" title="wufootabs" width="649" height="63"&gt; Wufoo uses a tab design pattern inside the app. Each tab is a entirely different page and URL. &lt;p&gt;If these tabs are "same page" tabs that hide/show different panels of content instantly (or via Ajax), it's a bit harder. A common (and I'd argue semantic) approach to this has been with hash links, e.g.:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;http://example.com/#tab-three&lt;/code&gt;&lt;/pre&gt; &lt;img src="http://cdn.css-tricks.com/wp-content/uploads/2011/09/sidebartabs.png" alt="" title="sidebartabs" width="464" height="138"&gt; Tabs like these are likely "same page" tabs that don't have unique URL's to themselves &lt;p&gt;With CSS3's &lt;code&gt;:target&lt;/code&gt; pseudo class selector, there are ways to make functional &lt;a href="http://css-tricks.com/5841-css3-tabs/"&gt;tabbed areas with CSS&lt;/a&gt; alone (no JavaScript). However, if pure CSS tabs are the goal, &lt;a href="http://css-tricks.com/13758-functional-css-tabs-revisited/"&gt;this is better&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;As much as I've experimented with CSS techniques, I think functional tabbed areas are best accommodated by JavaScript. This is functionality territory, and if we adhere to the traditional model of separation of concerns, it should be handled by JavaScript.&lt;/p&gt;&lt;p&gt;Hash links have a few other problems:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;When the page loads with a hash link &lt;em&gt;or&lt;/em&gt; the hash links changes, the browser will &lt;strong&gt;scroll down&lt;/strong&gt; so that the element with the ID of that hash is at the top of the page. There is a good chance this is not desirable. The latter is easy to fight with &lt;code&gt;preventDefault()&lt;/code&gt;. The former is nearly impossible to deal with cleanly.&lt;/li&gt;&lt;li&gt;Changing the hash tag of a page adds an entry to the browser history, so pressing the &lt;strong&gt;back button&lt;/strong&gt; will go back through previous hashes. There is also a good chance this is not desirable.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Let's solve both problems while accommodating the desire to have a way to link to a specific tab. This is what we are going to do:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Not use hash links but use URL parameters instead (no jump downs).&lt;/li&gt;&lt;li&gt;Use the ultra-hip &lt;code&gt;history.replaceState()&lt;/code&gt; so we can change the URL without affecting the back button.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Our URL's will be like:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;http://example.com/?tab=tab-three&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Rather than re-write JavaScript based tabs from scratch, let's use my existing &lt;a href="http://css-tricks.com/4530-organic-tabs/"&gt;Organic Tabs&lt;/a&gt; demo. We need to adjust &lt;em&gt;very little&lt;/em&gt; of the plugin to make this work. We'll add a param parameter so people can choose whatever they want there.&lt;/p&gt;&lt;pre rel="jQuery"&gt;&lt;code&gt;$.organicTabs.defaultOptions = {
+    "speed": 300,
+    "param": "tab"
+};&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then in the part with all the tab-changing functionality, we'll add this one line:&lt;/p&gt;&lt;pre rel="JavaScript"&gt;&lt;code&gt;// Change window location to add URL params
+if (window.history &amp;amp;&amp;amp; history.pushState) {
+  // NOTE: doesn&amp;#39;t take into account existing params
+	history.replaceState(&amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;?&amp;quot; + base.options.param + &amp;quot;=&amp;quot; + listID);
+}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;del&gt;The tricky part is that we need to pull in the URL parameter when the page loads and do JavaScript stuff with it. That means we'll need to use a server-side language, and intermingle some of it with our JavaScript. Here I'll use PHP:&lt;/del&gt;&lt;/p&gt;&lt;p&gt;&lt;ins&gt;Update: We can access the query string entirely through JavaScript, and &lt;a href="http://stevenbenner.com/2010/03/javascript-regex-trick-parse-a-query-string-into-an-object/"&gt;parse out the parts easily&lt;/a&gt;. So instead of the PHP that used to be here (not ideal for many reasons) we'll do this instead:&lt;/ins&gt;&lt;/p&gt;&lt;pre rel="jQuery"&gt;&lt;code&gt;var queryString = {};
+window.location.href.replace(
+    new RegExp(&amp;quot;([^?=&amp;amp;]+)(=([^&amp;amp;]*))?&amp;quot;, &amp;quot;g&amp;quot;),
+    function($0, $1, $2, $3) { queryString[$1] = $3; }
+);
+
+if (queryString[base.options.param]) {
+
+	var tab = $(&amp;quot;a[href=&amp;#39;#&amp;quot; + queryString[base.options.param] + &amp;quot;&amp;#39;]&amp;quot;);
+
+	tab
+		.closest(&amp;quot;.nav&amp;quot;)
+		.find(&amp;quot;a&amp;quot;)
+		.removeClass(&amp;quot;current&amp;quot;)
+		.end()
+		.next(&amp;quot;.list-wrap&amp;quot;)
+		.find(&amp;quot;ul&amp;quot;)
+		.hide();
+	tab.addClass(&amp;quot;current&amp;quot;);
+	$(&amp;quot;#&amp;quot; + queryString[base.options.param]).show();
+
+};&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This code grabs that URL param and make sure the current tab is highlighted and the correct content is shown.&lt;/p&gt;&lt;p&gt;Functional demo:&lt;/p&gt;&lt;p&gt;&lt;a href="http://css-tricks.com/examples/OrganicTabsReplaceState/"&gt;View Demo&lt;/a&gt;   &lt;a href="http://css-tricks.com/examples/OrganicTabsReplaceState.zip"&gt;Download Files&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Video:&lt;/p&gt;&lt;p&gt;&lt;iframe width="560" height="315" src="http://www.youtube.com/embed/WwIcic487Qc?rel=0&amp;amp;hd=1" frameborder="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;h3&gt;Incomplete-ish&lt;/h3&gt;&lt;p&gt;Browser support for history.replaceState (and all the &lt;a href="https://developer.mozilla.org/en/window.history"&gt;history management stuff&lt;/a&gt;) is &lt;a href="http://caniuse.com/#search=replaceState"&gt;far from ubiquitous&lt;/a&gt;. I'm using a basic feature test here, but not implementing any fallback. The important part, the tab functionality, still works fine. You might wanna do more.&lt;/p&gt;&lt;p&gt;I&amp;#39;m also not taking into account existing URL parameters. If your page is already using them and you also want to use this (e.g. ?foo=bar&amp;amp;tab=tab-one) this would get a bit more complicated. You&amp;#39;d probably snag the entire URL param string and pass it into the plugin. Then parse it apart and re-insert the existing params when you use &lt;code&gt;replaceState()&lt;/code&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href="http://css-tricks.com/14415-better-linkable-tabs/"&gt;Better Linkable Tabs&lt;/a&gt; is a post from &lt;a href="http://css-tricks.com"&gt;CSS-Tricks&lt;/a&gt;&lt;/p&gt;</content><author><name>Chris Coyier</name></author><gr:likingUser>07408627712721547853</gr:likingUser><gr:likingUser>12799982373348976659</gr:likingUser><gr:likingUser>02493361864459897726</gr:likingUser><gr:likingUser>08519035998958918419</gr:likingUser><gr:likingUser>03476101948734426453</gr:likingUser><gr:likingUser>03084244025020584564</gr:likingUser><gr:likingUser>04826924077922979930</gr:likingUser><gr:likingUser>03994345909668016089</gr:likingUser><gr:likingUser>05198197270045227445</gr:likingUser><gr:likingUser>14465000831884328462</gr:likingUser><gr:likingUser>02482163204506775199</gr:likingUser><gr:likingUser>07090954721813636948</gr:likingUser><gr:likingUser>18413991821024136595</gr:likingUser><gr:likingUser>00661897490611622152</gr:likingUser><gr:likingUser>01239910964141058601</gr:likingUser><gr:likingUser>03908111175491098024</gr:likingUser><gr:likingUser>06293495514676569841</gr:likingUser><gr:likingUser>00363647479470519434</gr:likingUser><gr:likingUser>12573117395771383318</gr:likingUser><gr:likingUser>17481313524217510319</gr:likingUser><gr:likingUser>07993733103281100702</gr:likingUser><gr:likingUser>09890829929171432444</gr:likingUser><gr:likingUser>10137260079216002473</gr:likingUser><gr:likingUser>06195548605813419530</gr:likingUser><gr:likingUser>15896779591291037062</gr:likingUser><gr:likingUser>00984508782103022453</gr:likingUser><gr:likingUser>05690229047086915053</gr:likingUser><gr:likingUser>03331357361851518648</gr:likingUser><gr:likingUser>15478528425001517671</gr:likingUser><gr:likingUser>03526858162053867652</gr:likingUser><gr:likingUser>06841265058484712367</gr:likingUser><gr:likingUser>15632928568779456076</gr:likingUser><gr:likingUser>08900670204817955338</gr:likingUser><gr:likingUser>11631395849033825314</gr:likingUser><gr:likingUser>16580969973201915332</gr:likingUser><gr:likingUser>03516113911956757097</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><gr:likingUser>03242124755602841458</gr:likingUser><gr:likingUser>03699674739271600107</gr:likingUser><gr:likingUser>14221372247647717796</gr:likingUser><gr:likingUser>10414194481074252239</gr:likingUser><gr:likingUser>06946665897350995169</gr:likingUser><gr:likingUser>07196731696854151448</gr:likingUser><gr:likingUser>12572976117601857073</gr:likingUser><gr:likingUser>03043057124833535901</gr:likingUser><gr:likingUser>15409928394224524117</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/CssTricks"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/CssTricks</id><title type="html">CSS-Tricks</title><link rel="alternate" href="http://css-tricks.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317048099826"><id gr:original-id="http://net.tutsplus.com/?p=22033">tag:google.com,2005:reader/item/ea30b0083e9b328c</id><category term="JavaScript &amp; AJAX"/><category term="jQuery"/><category term="knockout.js"/><title type="html">Into the Ring with Knockout.js: The Title Fight</title><published>2011-09-26T13:40:29Z</published><updated>2011-09-26T13:40:29Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/nettuts/~3/XjBIoJbPA4E/" type="text/html"/><summary xml:base="http://net.tutsplus.com/" type="html">&lt;a href="http://rss.buysellads.com/click.php?z=1260013&amp;amp;k=d754f1e9ba63a736ba8ff5ece958f7dd&amp;amp;a=22033&amp;amp;c=1444194565"&gt;&lt;img src="http://rss.buysellads.com/img.php?z=1260013&amp;amp;k=d754f1e9ba63a736ba8ff5ece958f7dd&amp;amp;a=22033&amp;amp;c=1444194565" border="0" alt=""&gt;&lt;/a&gt;&lt;p&gt;In this final part in our knockout mini-series, we’ll add a couple more feature to the simple contacts app that we’ve built over the course of the last two tutorials. We’ve already covered the core fundamentals of the library – data-binding, templating, observables and dependant observables – so this part will consolidate what we’ve learned so far.&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;One of the features that we’ll add in this part is the ability to filter the displayed list of contacts by the first letter of their name – quite a common feature that can be difficult to execute manually. Additionally, a reader of &lt;a href="http://net.tutsplus.com/tutorials/javascript-ajax/into-the-ring-with-knockout-js-part-2-the-rematch/"&gt;part two&lt;/a&gt; in this series asked how difficult it would be to add a search feature using Knockout, so we’ll also add a search box to the UI that will allow a subset of contacts which match a specific search term to be displayed. Let’s get started.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Round 1 – Getting Started&lt;/h2&gt;
+&lt;p&gt;We’ll begin by adding the new mark-up to the view. In the &lt;code&gt;index.html&lt;/code&gt; file from the &lt;a href="http://net.tutsplus.com/tutorials/javascript-ajax/into-the-ring-with-knockout-js-part-2-the-rematch/"&gt;previous tutorial&lt;/a&gt;, add the following new mark-up to the start of the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag:&lt;/p&gt;
+&lt;pre&gt;
+    &amp;lt;div id=&amp;quot;alphaFilter&amp;quot;&amp;gt;
+&amp;lt;span&amp;gt;Filter name by:&amp;lt;/span&amp;gt;
+&amp;lt;ul data-bind=&amp;quot;template: &amp;#39;letterTemplate&amp;#39;&amp;quot;&amp;gt;&amp;lt;/ul&amp;gt;
+&amp;lt;a id=&amp;quot;clear&amp;quot; href=&amp;quot;#&amp;quot; title=&amp;quot;Clear Filter&amp;quot; data-bind=&amp;quot;click: clearLetter, css: { disabled: filterLetter() === &amp;#39;&amp;#39; }&amp;quot;&amp;gt;Clear filter&amp;lt;/a&amp;gt;
+&amp;lt;fieldset id=&amp;quot;searchForm&amp;quot;&amp;gt;
+	&amp;lt;span&amp;gt;Search for:&amp;lt;/span&amp;gt;
+	&amp;lt;button data-bind=&amp;quot;click: setTerm, disable: filterTerm&amp;quot; type=&amp;quot;button&amp;quot;&amp;gt;Go&amp;lt;/button&amp;gt;
+	&amp;lt;input id=&amp;quot;term&amp;quot;&amp;gt;
+	&amp;lt;a data-bind=&amp;quot;visible: filterTerm, click: clearTerm&amp;quot; title=&amp;quot;Clear search&amp;quot; href=&amp;quot;#&amp;quot;&amp;gt;x&amp;lt;/a&amp;gt;
+&amp;lt;/fieldset&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;script id=&amp;quot;letterTemplate&amp;quot; type=&amp;quot;text/x-jquery-tmpl&amp;quot;&amp;gt;
+{{each(i, val) letters}}
+	&amp;lt;li&amp;gt;
+		&amp;lt;a href=&amp;quot;#&amp;quot; title=&amp;quot;Filter name by ${ val }&amp;quot; data-bind=&amp;quot;click: function() {
+			filterLetter(val) },
+			css: { disabled: val === filterLetter() }&amp;quot;&amp;gt;
+			${ val }
+		&amp;lt;/a&amp;gt;
+	&amp;lt;/li&amp;gt;
+{{/each}}
+&amp;lt;/script&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;We start with a simple outer container to hold our new UI elements, which we give an &lt;code&gt;id&lt;/code&gt; for styling purposes. Inside is a &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt; containing an explanatory label for the letters used to filter the contacts by name, followed by an empty &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; element that we bind to the &lt;code&gt;letters&lt;/code&gt; template using the &lt;code&gt;data-bind&lt;/code&gt; attribute.&lt;/p&gt;
+&lt;p&gt;Following the list is a link; this link is used to clear the filter and has two bindings: the first is a &lt;code&gt;click&lt;/code&gt; binding, which is linked to a method on our &lt;code&gt;viewModel&lt;/code&gt; that we’ll add in a moment. The second binding is the &lt;code&gt;css&lt;/code&gt; binding, which is used to add the class name &lt;code&gt;disabled&lt;/code&gt; to the element when a filtering letter has not been selected.&lt;/p&gt;
+&lt;p&gt;The search component of our UI uses a &lt;code&gt;&amp;lt;fieldset&amp;gt;&lt;/code&gt; with an &lt;code&gt;id&lt;/code&gt; (also for styling) which contains an explanatory text label, a &lt;code&gt;&amp;lt;button&amp;gt;&lt;/code&gt; element that will trigger the search, the &lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt; that the search term will be typed into, and a link that can be used to clear the search.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;&amp;lt;button&amp;gt;&lt;/code&gt; uses the &lt;code&gt;click&lt;/code&gt; and &lt;code&gt;disable&lt;/code&gt; bindings; the &lt;code&gt;click&lt;/code&gt; binding is used to trigger the search and the &lt;code&gt;disable&lt;/code&gt; binding will disable the button when the &lt;code&gt;filterTerm&lt;/code&gt; equals an empty string (which equates to &lt;code&gt;false&lt;/code&gt;). The clearing link also has two bindings: &lt;code&gt;visible&lt;/code&gt; and &lt;code&gt;click&lt;/code&gt;. The &lt;code&gt;visible&lt;/code&gt; binding is used to only display the link when a search has been performed, and the &lt;code&gt;click&lt;/code&gt; binding is used to clear the search.&lt;/p&gt;
+&lt;p&gt;Next we add the &lt;code&gt;letters&lt;/code&gt; jQuery template that is used to create the letters used to filter by the first letter of each contact’s name. As with the numeric paging from the last tutorial, we use the jQuery &lt;code&gt;tmpl&lt;/code&gt; syntax here instead of Knockout’s templating functionality. This means that the whole template will be re-rendered when one of the items changes, but in this example that doesn’t impact performance too much.&lt;/p&gt;
+&lt;p&gt;We use the &lt;code&gt;{{each}}&lt;/code&gt; template tag and will make use of the second parameter, &lt;code&gt;val&lt;/code&gt;, which is passed to the template on each item in the array the template consumes, which will correspond to the first letter of each contact’s name (we’ll see how this array is generated when we update our &lt;code&gt;viewModel&lt;/code&gt; shortly).&lt;/p&gt;
+&lt;p&gt;For each item in the &lt;code&gt;array&lt;/code&gt;, we create an &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; and an &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; element. The &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; element uses the &lt;code&gt;val&lt;/code&gt; parameter passed into the template function to set the &lt;code&gt;title&lt;/code&gt; attribute of the link, and its text content. We also add &lt;code&gt;click&lt;/code&gt; and &lt;code&gt;css&lt;/code&gt; bindings. The &lt;code&gt;click&lt;/code&gt; binding sets the &lt;code&gt;filterLetter viewModel&lt;/code&gt; property (which will be an observable) to the value of the link that was clicked. The &lt;code&gt;css&lt;/code&gt; binding just adds the &lt;code&gt;disabled&lt;/code&gt; class in the same way that we did with the clearing &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;, but this time, the class is applied if the current element’s &lt;code&gt;val&lt;/code&gt; is equal to the &lt;code&gt;filterLetter&lt;/code&gt; property.&lt;/p&gt;
+&lt;p&gt;Although you won’t be able to run the page at this point, the filtering and search components will appear like this once the necessary code has been added to the &lt;code&gt;viewModel&lt;/code&gt;:&lt;/p&gt;
+&lt;div&gt;&lt;img src="http://d2o0t5hpnwv4c1.cloudfront.net/1055_knockout/1.png"&gt;&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;Round 2 – Updating the viewModel&lt;/h2&gt;
+&lt;p&gt;To wire up the elements we just added, we first need to add some new properties and methods to our &lt;code&gt;viewModel&lt;/code&gt;. These can go after the &lt;code&gt;navigate&lt;/code&gt; method from the last part of the tutorial (don’t forget to add a trailing comma after &lt;code&gt;navigate&lt;/code&gt;):&lt;/p&gt;
+&lt;pre&gt;
+filterLetter: ko.observable(&amp;quot;&amp;quot;),
+filterTerm: ko.observable(&amp;quot;&amp;quot;),
+clearLetter: function () {
+  this.filterLetter(&amp;quot;&amp;quot;);
+},
+clearTerm: function () {
+  this.filterTerm(&amp;quot;&amp;quot;);
+$(&amp;quot;#term&amp;quot;).val(&amp;quot;&amp;quot;);
+},
+setTerm: function () {
+  this.filterTerm($(&amp;quot;#term&amp;quot;).val());
+}&lt;/pre&gt;
+&lt;p&gt;We’ll also need a few new &lt;code&gt;dependentObservables&lt;/code&gt;, but we’ll add them in a moment. First, we add two new observable properties: &lt;code&gt;filterLetter&lt;/code&gt;, which is used to keep track of the current letter to filter by, and &lt;code&gt;filterTerm&lt;/code&gt;, which keeps track of the current search term. Both are set to empty strings by default.&lt;/p&gt;
+&lt;p&gt;Next, we add several methods; the first method, &lt;code&gt;clearLetter&lt;/code&gt;, sets the &lt;code&gt;filterLetter&lt;/code&gt; observable back to an empty string, which will clear the filter, and the second method, &lt;code&gt;clearTerm&lt;/code&gt;, sets the &lt;code&gt;filterTerm&lt;/code&gt; observable back to an empty string, which will clear the search. This method will also remove the string entered into the text field in the view. The last new method, &lt;code&gt;setTerm&lt;/code&gt;, is used to obtain the string entered into the text field and add it to the &lt;code&gt;filterTerm&lt;/code&gt; observable.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Round 3 – Filtering by Search Term&lt;/h2&gt;
+&lt;p&gt;Now that we have some new observable properties, we need to add some functions that will monitor these properties and react when their values change. The first &lt;code&gt;dependentObservable&lt;/code&gt; is used to filter the complete set of contacts and return an object containing only the contacts that contain the search term:&lt;/p&gt;
+&lt;pre&gt;
+viewModel.filteredPeopleByTerm = ko.dependentObservable(function () {
+var term = this.filterTerm().toLowerCase();
+
+if (!term) {
+	return this.people();
+}
+
+return ko.utils.arrayFilter(this.people(), function (person) {
+	var found = false;
+
+	for (var prop in person) {
+		if (typeof (person[prop]) === &amp;quot;string&amp;quot;) {
+			if (person[prop].toLowerCase().search(term) !== -1) {
+				found = true;
+				break;
+			}
+		}
+	}
+
+	return found;
+});
+
+}, viewModel);
+&lt;/pre&gt;
+&lt;p&gt;Within the function, we first store the search term in lowercase so that searches are not case-sensitive. If the search term equates to &lt;code&gt;false&lt;/code&gt; (if it is an empty string), the function will  return the &lt;code&gt;people&lt;/code&gt; &lt;code&gt;array&lt;/code&gt;. If there is a search term, we use the &lt;code&gt;arrayFilter()&lt;/code&gt; Knockout utility function to filter the &lt;code&gt;people&lt;/code&gt; &lt;code&gt;array&lt;/code&gt;. This utility function takes the &lt;code&gt;array&lt;/code&gt; to filter, and an anonymous function that will be executed for each item in the &lt;code&gt;array&lt;/code&gt; being filtered.&lt;/p&gt;
+&lt;p&gt;Within our anonymous function, we first set a flag variable to &lt;code&gt;false&lt;/code&gt;. We then cycle through each property that the current &lt;code&gt;array&lt;/code&gt; item contains. We check that the current property is a string, and if so, we determine whether the property contains the search term. This is done by converting the property to lowercase and then using JavaScript’s native &lt;code&gt;search()&lt;/code&gt; method. If the &lt;code&gt;search()&lt;/code&gt; method does not return &lt;code&gt;-1&lt;/code&gt;, we know that a match has been found, and so we set our flag variable to &lt;code&gt;true&lt;/code&gt; and break out of the &lt;code&gt;for&lt;/code&gt; loop with the &lt;code&gt;break&lt;/code&gt; statement.&lt;/p&gt;
+&lt;p&gt;After the &lt;code&gt;for&lt;/code&gt; loop has completed (or we have broken out of it with a match), the flag variable will be returned and will either be &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;. The &lt;code&gt;arrayFilter&lt;/code&gt; utility method will only include items from the original array in the array it returns if the anonymous function executed for each item returns &lt;code&gt;true&lt;/code&gt;. This provides an easy mechanism for returning a subset of the &lt;code&gt;people&lt;/code&gt; array to be consumed by other &lt;code&gt;dependentObservables&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Round 4 – Building the Letter Filter&lt;/h2&gt;
+&lt;p&gt;Our next &lt;code&gt;dependentObservable&lt;/code&gt; is used to build the array of letters that the &lt;code&gt;letters&lt;/code&gt; template consumes in order to add the letter links to the UI:&lt;/p&gt;
+&lt;pre&gt;
+viewModel.letters = ko.dependentObservable(function () {
+var result = [];
+
+ko.utils.arrayForEach(this.filteredPeopleByTerm(), function (person) {
+	result.push(person.name.charAt(0).toUpperCase());
+});
+
+return ko.utils.arrayGetDistinctValues(result.sort());
+}, viewModel);&lt;/pre&gt;
+&lt;p&gt;In this &lt;code&gt;dependentObservable&lt;/code&gt;, we first create an empty array called &lt;code&gt;result&lt;/code&gt;. We the use the &lt;code&gt;arrayForEach&lt;/code&gt; Knockout utility method to process each item in the array returned by the previous &lt;code&gt;dependentObservable&lt;/code&gt; – &lt;code&gt;filteredPeopleByTerm&lt;/code&gt;. For each item we simply push the first letter of each item’s &lt;code&gt;name&lt;/code&gt; property, in uppercase, to the &lt;code&gt;result&lt;/code&gt; array. We then return this array after passing it through the &lt;code&gt;arrayGetDistinctValues()&lt;/code&gt; Knockout utility method and sorting it. The utility method we use here filters the array and removes any duplicates.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Round 5 – Filtering by Letter&lt;/h2&gt;
+&lt;p&gt;The last &lt;code&gt;dependentObservable&lt;/code&gt; we need to add filters the contacts by letter and is triggered when the &lt;code&gt;filterLetter&lt;/code&gt; observable changes value:&lt;/p&gt;
+&lt;pre&gt;
+viewModel.filteredPeople = ko.dependentObservable(function () {
+    var letter = this.filterLetter();
+    if (!letter) {
+        return this.filteredPeopleByTerm();
+    }
+
+    return ko.utils.arrayFilter(this.filteredPeopleByTerm(), function (person) {
+        return person.name.charAt(0).toUpperCase() === letter;
+    });
+}, viewModel);
+&lt;/pre&gt;
+&lt;p&gt;In this &lt;code&gt;dependentObservable&lt;/code&gt; we first store the contents of the &lt;code&gt;filterLetter&lt;/code&gt; observable in an array. If the &lt;code&gt;letter&lt;/code&gt; variable equates to &lt;code&gt;false&lt;/code&gt; (e.g. if it’s an empty string) we simply return the array that the &lt;code&gt;filteredPeopleByTerm()&lt;/code&gt; method returns without modifying it.&lt;/p&gt;
+&lt;p&gt;If there is a letter to filter by, we use the &lt;code&gt;arrayFilter()&lt;/code&gt; utility method again to filter the array returned by &lt;code&gt;filteredPeopleByTerm&lt;/code&gt;. This time we convert the first letter of each item’s &lt;code&gt;name&lt;/code&gt; property to uppercase and return whether it is equal to letter. Remember, items will only remain in the array we are filtering if the anonymous function returns &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Round 6 – Updating the Paging&lt;/h2&gt;
+&lt;p&gt;In the last tutorial in this mini-series, we added the paging feature, which operated directly on the &lt;code&gt;people&lt;/code&gt; array. If we want the paging to work with our new filtering functionality, we’ll need to update the &lt;code&gt;showCurrentPage dependentObservable&lt;/code&gt; from the last article. All we need to do is change the &lt;code&gt;return&lt;/code&gt; statement at the end of the function so that it returns a slice of the array returned by the &lt;code&gt;filteredPeople() dependentObservable&lt;/code&gt; instead of the &lt;code&gt;people&lt;/code&gt; array:&lt;/p&gt;
+&lt;pre&gt;
+return this.filteredPeople().slice(startIndex, startIndex + this.pageSize());
+&lt;/pre&gt;
+&lt;p&gt;At this point, we should now be able to run the page and filter the displayed contacts by a letter or by a search term. The two new features aren’t mutually-exclusive, so we can filter the contacts by a letter and then search the filtered list further using a search term. Or vice-versa – filtering a searched set of contacts. And our paging will still keep up with the currently displayed set of contacts.&lt;/p&gt;
+&lt;div&gt;&lt;img src="http://d2o0t5hpnwv4c1.cloudfront.net/1055_knockout/2.png"&gt;&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;Post Fight Review&lt;/h2&gt;
+&lt;p&gt;In this final chapter of this series, we consolidated what we know about using Knockout by adding filtering by letter or search term features to let users view a subset of the data held in the &lt;code&gt;viewModel&lt;/code&gt;. As before, adding these new features to our application is so much easier to do with Knockout than it would be if we were trying to maintain our views and &lt;code&gt;viewModels&lt;/code&gt; manually using jQuery alone.&lt;/p&gt;
+&lt;p&gt;As well as keeping our UI and data in sync with ease, we also get a range of utility functions including &lt;code&gt;arrayGetDistinctValues()&lt;/code&gt;, and &lt;code&gt;arrayFilter()&lt;/code&gt; which we can use to save ourselves some manual coding when performing common tasks.&lt;/p&gt;
+&lt;p&gt;This now brings us to the end of the series, but I hope that it isn’t the end of your experience with Knockout itself; the library is a fantastic addition to any developer’s toolkit and makes creating fast, engaging interactive applications with JavaScript much easier.&lt;/p&gt;&lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/8olmjno1k05rb1som1frr6u854/300/250?ca=1&amp;amp;fh=280#http%3A%2F%2Fnet.tutsplus.com%2Ftutorials%2Fjavascript-ajax%2Finto-the-ring-with-knockout-js-the-title-fight%2F" width="100%" height="280" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=XjBIoJbPA4E:nHpXD7JGCbg:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=XjBIoJbPA4E:nHpXD7JGCbg:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?i=XjBIoJbPA4E:nHpXD7JGCbg:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=XjBIoJbPA4E:nHpXD7JGCbg:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?i=XjBIoJbPA4E:nHpXD7JGCbg:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=XjBIoJbPA4E:nHpXD7JGCbg:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?i=XjBIoJbPA4E:nHpXD7JGCbg:gIN9vFwOqvQ" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/nettuts?a=XjBIoJbPA4E:nHpXD7JGCbg:TzevzKxY174"&gt;&lt;img src="http://feeds.feedburner.com/~ff/nettuts?d=TzevzKxY174" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/nettuts/~4/XjBIoJbPA4E" height="1" width="1"&gt;</summary><author><name>Dan Wellman</name></author><gr:likingUser>15655411476007253232</gr:likingUser><gr:likingUser>15644619847096475155</gr:likingUser><gr:likingUser>07424212042491562558</gr:likingUser><gr:likingUser>15317848453547653670</gr:likingUser><gr:likingUser>13456616995620280602</gr:likingUser><gr:likingUser>06293495514676569841</gr:likingUser><gr:likingUser>13414797780324777332</gr:likingUser><gr:likingUser>11470353817241759113</gr:likingUser><gr:likingUser>03545964666694920486</gr:likingUser><gr:likingUser>03242796904629677626</gr:likingUser><gr:likingUser>00866917058956403556</gr:likingUser><gr:likingUser>01267671039884340356</gr:likingUser><gr:likingUser>09230387860466884847</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><gr:likingUser>12989611357353539114</gr:likingUser><gr:likingUser>01078909911975297443</gr:likingUser><gr:likingUser>18039009441148723893</gr:likingUser><gr:likingUser>07553439738345968622</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/nettuts"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/nettuts</id><title type="html">Nettuts+</title><link rel="alternate" href="http://net.tutsplus.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317046228841"><id gr:original-id="http://blog.ikeda.com.br/2011/09/voc%C3%AA-sabe-quais-s%C3%A3o-os-melhores-hor%C3%A1rios-para-postar-no-facebook.html">tag:google.com,2005:reader/item/02088db2714ed354</id><category term="Pesquisas"/><title type="html">Você sabe quais são os melhores horários para postar no Facebook?</title><published>2011-09-26T13:40:06Z</published><updated>2011-09-26T13:40:06Z</updated><link rel="alternate" href="http://blog.ikeda.com.br/2011/09/voc%C3%AA-sabe-quais-s%C3%A3o-os-melhores-hor%C3%A1rios-para-postar-no-facebook.html" type="text/html"/><content xml:base="http://blog.ikeda.com.br/" type="html">&lt;p&gt;Os posts no Facebook relacionados a marcas de varejo que são enviados durante o período das 20-07 horas apresentam uma taxa de engajamento dos usuários 20% maior em termos de uso da função “like” e de taxa de comentários quando comparados as mensagens escritas durante o período das  8-19 horas, de acordo com estudo de setembro de 2011 da Buddy Media. Entretanto, dados do trabalho “&lt;a href="http://ecommercenews.com.br/midias/slides/estudo-strategies-for-effective-facebook-wall-posts-buddy-media"&gt;Strategies for Effective Facebook Wall Posts&lt;/a&gt;” indicam que 89% das marcas de varejo realizam suas postagens entre as 8:00-19:00.&lt;/p&gt;
+&lt;p&gt;A análise da Buddy Media diz que nestes horários muitos usuários estão ocupados, não tendo tempo para entrarem em suas contas na rede social. O estudo propõe que as marcas se utilizam de agendas de envio automáticas para mandar mensagens nos horários de maior engajamento por parte dos usuários.&lt;/p&gt;
+&lt;p&gt;O engajamento dos fãs em murais de varejistas no Facebook aumentam nas quartas-feiras e domingos, que apresentam valores respectivamente 8% e 2% superiores a média.&lt;/p&gt;
+&lt;p&gt;Por outro lado, mensagens postadas nos murais nas quintas-feiras têm a menor taxa de engajamento, 6% inferior a média, seguido por segundas e terças, com uma média cerca de 2% inferior.&lt;/p&gt;
+&lt;p&gt;No entanto, os varejistas postam de maneira mais ou menos constante as mensagens em seus murais ao longo da semana, com um pequeno aumento nas quartas-feiras. Poucos posts são realizados nos finais de semana, a despeito de suas taxas de engajamento relativamente altas.&lt;/p&gt;
+&lt;p&gt;O estudo indica que marcas que postam uma vez por dia apresentam engajamento dos fãs 40% superior ao das que postam três vezes ou mais. As taxas de uso da função “like”para marcas que escrevem de 1-2 mensagens por dia é 32% superior das que o fazem 3 ou mais vezes, enquanto as taxas de comentários são 73% maiores.&lt;/p&gt;
+&lt;p&gt;Do mesmo modo, a taxa de engajamento diminui a medida que aumentam o número de mensagens enviadas em uma semana. Marcas que enviam de 1-4 mensagens por semana apresentaram taxa de engajamento dos fãs 71% maior do que aquelas que escrevem 5 ou mais mensagens na semana.&lt;/p&gt;
+&lt;p&gt;A buddy Media aconselha aos varejistas se focar na qualidade, e não na quantidade de posts, e enviar mais de duas mensagens em um dia apenas se elas contiverem conteúdo exclusivo, como por exemplo, destaques de produtos com vendas que durarão por apenas um dia.&lt;/p&gt;
+&lt;p&gt;A maioria dos consumidores online afirma que as empresas devem se comunicar via redes sociais uma vez ao mês, ou até mesmo no máximo uma vez na semana, segundo um relatório de abril de 2011 do ROI Research e Performics. Dados do estudo “S-Net: A Study in Social Media Usage and Behavior” indicam que 28% dos consumidores online afirmam que a comunicação via redes sociais devem ser conduzidas em até uma vez no mês, enquanto 26% afirmaram que a comunicação deve ocorrer no máximo em uma semana. Apenas 3% afirmaram que deva ocorrer em mais de um dia e 7% diariamente, enquanto 4% acreditam que as marcas não devam se utilizar deste meio de comunicação.&lt;/p&gt;
+&lt;p&gt;Fonte: eCommerce News&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;</content><author><name>Ricardo Jordão Magalhães</name></author><gr:likingUser>03020522199988970127</gr:likingUser><source gr:stream-id="feed/http://blog.ikeda.com.br/rss.xml"><id>tag:google.com,2005:reader/feed/http://blog.ikeda.com.br/rss.xml</id><title type="html">Ikeda - Sacadas sobre comércio eletrônico, loja virtual, e-commerce, varejo e tecnologia</title><link rel="alternate" href="http://blog.ikeda.com.br/" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317042530228"><id gr:original-id="http://www.cssnolanche.com.br/?p=1361">tag:google.com,2005:reader/item/86df42b62531a41b</id><category term="JavaScript"/><category term="jQuery"/><title type="html">jQuery Tabs</title><published>2011-09-26T11:20:52Z</published><updated>2011-09-26T11:20:52Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/CssNoLanche/~3/759sbQkhff8/" type="text/html"/><content xml:base="http://www.cssnolanche.com.br/" type="html">&lt;div&gt;&lt;img src="http://www.cssnolanche.com.br/uploads/jquery-tabs.png" alt="jQuery Tabs" title="jQuery Tabs"&gt;&lt;/div&gt;
+&lt;p&gt;Quer desenvolver um sistema de tabs (abas) mas não quer fazer isso com &lt;a href="http://www.pinceladasdaweb.com.br/blog/2010/01/13/javascript-tabs-sem-framework-ou-plugin/" title="JavaScript Tabs sem Framework ou Plugin" rel="external me"&gt;JavaScript puro&lt;/a&gt;? Então utilize jQuery. Existem hoje várias formas de se criar tabs com jQuery, deixo aqui uma das soluções.&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Antes de tudo, vamos ao nosso HTML:&lt;/p&gt;
+&lt;pre&gt;
+&amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;
+    &amp;lt;ul&amp;gt;
+    	&amp;lt;li class=&amp;quot;active&amp;quot;&amp;gt;Tab 1&amp;lt;/li&amp;gt;
+    	&amp;lt;li&amp;gt;Tab 2&amp;lt;/li&amp;gt;
+    &amp;lt;/ul&amp;gt;
+    &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;
+        &amp;lt;div&amp;gt;
+        	&amp;lt;h2&amp;gt;Tab 1&amp;lt;/h2&amp;gt;
+        &amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;
+            &amp;lt;h2&amp;gt;Tab 2&amp;lt;/h2&amp;gt;
+        &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;Como podem ver, não existe muito segredo no HTML, pois a coisa começa mesmo a ficar interessante no JavaScript:&lt;/p&gt;
+&lt;pre&gt;
+$(function () {
+    $(&amp;#39;.box&amp;#39;).each(function() {
+        var content = $(this).find(&amp;#39;.content&amp;#39;),
+            tab     = $(&amp;#39;&amp;gt; ul li&amp;#39;, this);
+        $(&amp;#39;div&amp;#39;, content).eq(0).show();
+        tab.click(function () {
+            tab.removeClass(&amp;#39;active&amp;#39;);
+            $(this).addClass(&amp;#39;active&amp;#39;);
+            $(&amp;#39;div&amp;#39;, content).hide().eq($(this).index()).show();
+        });
+    });
+});
+&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/lab/jquery-tabs/" title="Veja aqui o exemplo" rel="alternate"&gt;Ver exemplo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/lab/jquery-tabs/jquery-tabs.rar" title="Download" rel="alternate enclosure"&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;hr&gt;
+&lt;a href="http://www.cssnolanche.com.br/jquery-tabs/"&gt;jQuery Tabs&lt;/a&gt;
+&lt;br&gt;
+&lt;p&gt;Você ainda não está me seguindo no &lt;a href="http://twitter.com/pinceladasdaweb" title="Siga-me no Twitter" rel="external"&gt;Twitter&lt;/a&gt;, o que está esperando para fazer isso?&lt;/p&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/animated-login-form/" title="Animated Login Form"&gt;Animated Login Form&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/css3-polaroid-gallery/" title="CSS3 Polaroid Gallery"&gt;CSS3 Polaroid Gallery&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/youtube-lightbox-gallery/" title="Youtube Lightbox Gallery"&gt;Youtube Lightbox Gallery&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/slideshow-com-legendas-desenvolvido-em-jquery/" title="Slideshow com Legendas desenvolvido em jQuery"&gt;Slideshow com Legendas desenvolvido em jQuery&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.cssnolanche.com.br/centralizar-imagem-na-vertical-com-javascript/" title="Centralizar imagem na vertical com JavaScript"&gt;Centralizar imagem na vertical com JavaScript&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/s8usd9i9kv3asivi32hmdhruvo/300/250?ca=1&amp;amp;fh=280#http%3A%2F%2Fwww.cssnolanche.com.br%2Fjquery-tabs%2F" width="100%" height="280" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=759sbQkhff8:A32vJYoxZro:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=759sbQkhff8:A32vJYoxZro:7Q72WNTAKBA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?d=7Q72WNTAKBA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=759sbQkhff8:A32vJYoxZro:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?i=759sbQkhff8:A32vJYoxZro:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=759sbQkhff8:A32vJYoxZro:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?i=759sbQkhff8:A32vJYoxZro:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=759sbQkhff8:A32vJYoxZro:dnMXMwOfBR0"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?d=dnMXMwOfBR0" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=759sbQkhff8:A32vJYoxZro:D7DqB2pKExk"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?i=759sbQkhff8:A32vJYoxZro:D7DqB2pKExk" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=759sbQkhff8:A32vJYoxZro:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?i=759sbQkhff8:A32vJYoxZro:gIN9vFwOqvQ" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/CssNoLanche?a=759sbQkhff8:A32vJYoxZro:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/CssNoLanche?d=qj6IDK7rITs" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/CssNoLanche/~4/759sbQkhff8" height="1" width="1"&gt;</content><author><name>Pedro Rogério</name></author><gr:likingUser>17906328018518454939</gr:likingUser><gr:likingUser>16902306298101452660</gr:likingUser><gr:likingUser>17848595051434878154</gr:likingUser><gr:likingUser>18254091379865189880</gr:likingUser><gr:likingUser>09258107782189907901</gr:likingUser><gr:likingUser>17205886511792617183</gr:likingUser><gr:likingUser>10936578366072076741</gr:likingUser><gr:likingUser>10038734618377134279</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><gr:likingUser>02253510048676284635</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/CssNoLanche"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/CssNoLanche</id><title type="html">CSS no Lanche - Porque ingerir CSS na hora do lanche não engorda</title><link rel="alternate" href="http://www.cssnolanche.com.br" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1317042431846"><id gr:original-id="http://tutorialzine.com/?p=1621">tag:google.com,2005:reader/item/8c12c617c4d8a130</id><category term="CSS"/><category term="jQuery"/><category term="PHP"/><title type="html">HTML5 File Uploads with jQuery</title><published>2011-09-26T10:48:24Z</published><updated>2011-09-26T10:48:24Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/Tutorialzine/~3/jayg_QlG12Y/" type="text/html"/><content xml:base="http://tutorialzine.com/" type="html">&lt;div&gt;&lt;a href="http://tutorialzine.com/2011/09/html5-file-upload-jquery-php/"&gt;&lt;img src="http://cdn.tutorialzine.com/img/featured/1621.jpg"&gt;&lt;/a&gt;&lt;/div&gt; &lt;p&gt;Today we will be developing a small web application called &lt;em&gt;&lt;strong&gt;Upload Center&lt;/strong&gt;&lt;/em&gt;, that will allow people to upload photos from their computers by dragging and dropping them onto the browser window, possible with the new HTML5 APIs exposed by modern browsers.&lt;/p&gt;
+&lt;p&gt;The photos will have a preview and a progress bar, all of which controlled on the client side. Currently, the photos are only stored in a folder on the server, but you could improve it any way you like.&lt;/p&gt;
+&lt;h3&gt;What are HTML5 File Uploads?&lt;/h3&gt;
+&lt;p&gt;Uploading files using HTML5 is actually a combination of three technologies – the new &lt;a href="http://www.html5rocks.com/en/tutorials/file/dndfiles/"&gt;File Reader API&lt;/a&gt;, the also new &lt;a href="https://developer.mozilla.org/en/Using_files_from_web_applications"&gt;Drag &amp;amp; Drop API&lt;/a&gt;, and the good ol’ AJAX (with the addition of binary data transfer). Here is a description of a HTML5 file upload process:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The user drops one or more files from their file system to the browser window by dragging. Browsers that support the &lt;em&gt;Drag &amp;amp; Drop API&lt;/em&gt; will fire an event, which alongside other useful information, contains a list of files that were dropped;&lt;/li&gt;
+&lt;li&gt;Using the &lt;em&gt;File Reader API&lt;/em&gt;, we read the files in the list as binary data, and store them in memory;&lt;/li&gt;
+&lt;li&gt;We use the new &lt;strong&gt;sendAsBinary&lt;/strong&gt; method of the &lt;em&gt;XMLHttpRequest&lt;/em&gt; object, and send the file data to the server.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Sounds complicated? Yes, it could use some optimization. Fortunately, there are jQuery plugins that can do this for us. One of them is &lt;a href="https://github.com/weixiyen/jquery-filedrop"&gt;Filedrop&lt;/a&gt;, which is a wrapper around this functionality, and provides features for limiting maximum file size and specifying callback functions, which is really handy for integrating it into your web applications.&lt;/p&gt;
+&lt;p&gt;Currently file uploads work &lt;strong&gt;only in Firefox and Chrome&lt;/strong&gt;, but upcoming major versions of the other browsers also include support for it. A simple fallback solution for older browsers would be to display a regular file input dialog, but we won’t be doing this today, as we will be focusing our attention on using HTML5.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;So lets get started!&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;The HTML&lt;/h3&gt;
+&lt;p&gt;The markup of our &lt;em&gt;Upload Center&lt;/em&gt; couldn’t be simpler. We have a regular HTML5 document, which includes our stylesheet and&lt;em&gt;&lt;strong&gt; script.js&lt;/strong&gt;&lt;/em&gt; file, the &lt;em&gt;Filedrop plugin&lt;/em&gt; and the &lt;em&gt;jQuery library&lt;/em&gt;.&lt;/p&gt;
+&lt;h4&gt;index.html&lt;/h4&gt;
+&lt;pre&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+        &amp;lt;meta charset=&amp;quot;utf-8&amp;quot; /&amp;gt;
+        &amp;lt;title&amp;gt;HTML5 File Drag and Drop Upload with jQuery and PHP | Tutorialzine Demo&amp;lt;/title&amp;gt;
+
+        &amp;lt;!-- Our CSS stylesheet file --&amp;gt;
+        &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;assets/css/styles.css&amp;quot; /&amp;gt;
+
+        &amp;lt;!--[if lt IE 9]&amp;gt;
+          &amp;lt;script src=&amp;quot;http://html5shiv.googlecode.com/svn/trunk/html5.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+        &amp;lt;![endif]--&amp;gt;
+    &amp;lt;/head&amp;gt;
+
+    &amp;lt;body&amp;gt;
+
+		&amp;lt;header&amp;gt;
+			&amp;lt;h1&amp;gt;HTML5 File Upload with jQuery and PHP&amp;lt;/h1&amp;gt;
+		&amp;lt;/header&amp;gt;
+
+		&amp;lt;div id=&amp;quot;dropbox&amp;quot;&amp;gt;
+			&amp;lt;span class=&amp;quot;message&amp;quot;&amp;gt;Drop images here to upload. &amp;lt;br /&amp;gt;&amp;lt;i&amp;gt;(they will only be visible to you)&amp;lt;/i&amp;gt;&amp;lt;/span&amp;gt;
+		&amp;lt;/div&amp;gt;
+
+        &amp;lt;!-- Including The jQuery Library --&amp;gt;
+		&amp;lt;script src=&amp;quot;http://code.jquery.com/jquery-1.6.3.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+
+		&amp;lt;!-- Including the HTML5 Uploader plugin --&amp;gt;
+		&amp;lt;script src=&amp;quot;assets/js/jquery.filedrop.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+
+		&amp;lt;!-- The main script file --&amp;gt;
+        &amp;lt;script src=&amp;quot;assets/js/script.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/pre&gt;
+&lt;p&gt;The only div that the Filedrop interacts with, is &lt;strong&gt;#dropbox&lt;/strong&gt;. We will pass this element to the plugin, which will detect when a file is dropped on top of it. The message span is updated if there is an error condition (for example if your browser does not support one of the HTML5 APIs that this example relies on).&lt;/p&gt;
+&lt;div style="width:630px"&gt;&lt;a href="http://demo.tutorialzine.com/2011/09/html5-file-upload-jquery-php/"&gt;&lt;img title="HTML5 File Upload Center with PHP and jQuery" src="http://cdn.tutorialzine.com/wp-content/uploads/2011/09/html5-jquery-php-upload-progress.jpg" alt="HTML5 File Upload Center with PHP and jQuery" width="620" height="300"&gt;&lt;/a&gt;&lt;p&gt;HTML5 File Upload Center with PHP and jQuery&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;Later, when we drop a file, our jQuery code will display a preview by adding the following markup to the page:&lt;/p&gt;
+&lt;pre&gt;&amp;lt;div class=&amp;quot;preview done&amp;quot;&amp;gt;
+
+	&amp;lt;span class=&amp;quot;imageHolder&amp;quot;&amp;gt;
+		&amp;lt;img src=&amp;quot;&amp;quot; /&amp;gt;
+		&amp;lt;span class=&amp;quot;uploaded&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+	&amp;lt;/span&amp;gt;
+
+	&amp;lt;div class=&amp;quot;progressHolder&amp;quot;&amp;gt;
+		&amp;lt;div class=&amp;quot;progress&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;/div&amp;gt;
+
+&amp;lt;/div&amp;gt;&lt;/pre&gt;
+&lt;p&gt;This snippet contains a preview of the image (the source attribute is going to be populated with a &lt;a href="http://en.wikipedia.org/wiki/Data_URI_scheme"&gt;DataURL&lt;/a&gt; of the picture) and a progress bar. The whole preview can have the &lt;em&gt;“.done”&lt;/em&gt; class, which causes the &lt;em&gt;“.uploaded”&lt;/em&gt; span to show up (it is hidden by default). This span has the green check mark as its background, and indicates the upload is complete.&lt;/p&gt;
+&lt;p&gt;Great, lets move on to our &lt;em&gt;script.js&lt;/em&gt; file!&lt;/p&gt;
+&lt;h3&gt;The jQuery Code&lt;/h3&gt;
+&lt;p&gt;As all of the actual file transfer functionality is handled by the Filedrop plugin, we only need to call it and pass a few callbacks, so we can hook it to our &lt;em&gt;Upload Center&lt;/em&gt;. We will be writing a small PHP script that handles the uploads on the server in the next section.&lt;/p&gt;
+&lt;p&gt;The first step is to write a helper function that takes a file object (a special object which is created by the web browser on file drop, and has properties like file name, path and size), and creates the markup for previewing the upload.&lt;/p&gt;
+&lt;h4&gt;assets/js/script.js&lt;/h4&gt;
+&lt;pre&gt;var template = &amp;#39;&amp;lt;div class=&amp;quot;preview&amp;quot;&amp;gt;&amp;#39;+
+						&amp;#39;&amp;lt;span class=&amp;quot;imageHolder&amp;quot;&amp;gt;&amp;#39;+
+							&amp;#39;&amp;lt;img /&amp;gt;&amp;#39;+
+							&amp;#39;&amp;lt;span class=&amp;quot;uploaded&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;#39;+
+						&amp;#39;&amp;lt;/span&amp;gt;&amp;#39;+
+						&amp;#39;&amp;lt;div class=&amp;quot;progressHolder&amp;quot;&amp;gt;&amp;#39;+
+							&amp;#39;&amp;lt;div class=&amp;quot;progress&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;+
+						&amp;#39;&amp;lt;/div&amp;gt;&amp;#39;+
+					&amp;#39;&amp;lt;/div&amp;gt;&amp;#39;; 
+
+	function createImage(file){
+
+		var preview = $(template),
+			image = $(&amp;#39;img&amp;#39;, preview);
+
+		var reader = new FileReader();
+
+		image.width = 100;
+		image.height = 100;
+
+		reader.onload = function(e){
+
+			// e.target.result holds the DataURL which
+			// can be used as a source of the image:
+
+			image.attr(&amp;#39;src&amp;#39;,e.target.result);
+		};
+
+		// Reading the file as a DataURL. When finished,
+		// this will trigger the onload function above:
+		reader.readAsDataURL(file);
+
+		message.hide();
+		preview.appendTo(dropbox);
+
+		// Associating a preview container
+		// with the file, using jQuery&amp;#39;s $.data():
+
+		$.data(file,preview);
+	}&lt;/pre&gt;
+&lt;p&gt;The &lt;em&gt;&lt;strong&gt;template&lt;/strong&gt;&lt;/em&gt; variable holds the HTML5 markup of the preview. We get the DataURL of the image (a base64 encoded representation of the image bytes) and add it as the source of the image. Everything is then appended to the dropbox container. Now we are left with calling the filedrop plugin:&lt;/p&gt;
+&lt;h4&gt;assets/js/script.js&lt;/h4&gt;
+&lt;pre&gt;$(function(){
+
+	var dropbox = $('#dropbox'),
+		message = $('.message', dropbox);
+
+	dropbox.filedrop({
+		// The name of the $_FILES entry:
+		paramname:'pic',
+
+		maxfiles: 5,
+    	maxfilesize: 2, // in mb
+		url: 'post_file.php',
+
+		uploadFinished:function(i,file,response){
+			$.data(file).addClass('done');
+			// response is the JSON object that post_file.php returns
+		},
+
+    	error: function(err, file) {
+			switch(err) {
+				case 'BrowserNotSupported':
+					showMessage('Your browser does not support HTML5 file uploads!');
+					break;
+				case 'TooManyFiles':
+					alert('Too many files! Please select 5 at most!');
+					break;
+				case 'FileTooLarge':
+					alert(file.name+' is too large! Please upload files up to 2mb.');
+					break;
+				default:
+					break;
+			}
+		},
+
+		// Called before each upload is started
+		beforeEach: function(file){
+			if(!file.type.match(/^image\//)){
+				alert('Only images are allowed!');
+
+				// Returning false will cause the
+				// file to be rejected
+				return false;
+			}
+		},
+
+		uploadStarted:function(i, file, len){
+			createImage(file);
+		},
+
+		progressUpdated: function(i, file, progress) {
+			$.data(file).find('.progress').width(progress);
+		}
+
+	});
+
+	var template = '...'; 
+
+	function createImage(file){
+		// ... see above ...
+	}
+
+	function showMessage(msg){
+		message.html(msg);
+	}
+
+});&lt;/pre&gt;
+&lt;p&gt;With this, every valid image file that is dropped on the &lt;em&gt;&lt;strong&gt;#dropbox&lt;/strong&gt;&lt;/em&gt; div gets uploaded to &lt;strong&gt;post_file.php&lt;/strong&gt;, which you can see in the next section.&lt;/p&gt;
+&lt;div style="width:630px"&gt;&lt;a href="http://demo.tutorialzine.com/2011/09/html5-file-upload-jquery-php/"&gt;&lt;img title="Upload Complete!" src="http://cdn.tutorialzine.com/wp-content/uploads/2011/09/html5-jquery-php-upload-done.jpg" alt="Upload Complete!" width="620" height="300"&gt;&lt;/a&gt;&lt;p&gt;Upload Complete!&lt;/p&gt;&lt;/div&gt;
+&lt;h3&gt;The PHP Code&lt;/h3&gt;
+&lt;p&gt;On the PHP side of things, there is no difference between a regular form file upload and a drag and drop one. This means that you can easily provide a fallback solution to your application and reuse the same backend.&lt;/p&gt;
+&lt;h4&gt;post_file.php&lt;/h4&gt;
+&lt;pre&gt;// If you want to ignore the uploaded files,
+// set $demo_mode to true;
+
+$demo_mode = false;
+$upload_dir = &amp;#39;uploads/&amp;#39;;
+$allowed_ext = array(&amp;#39;jpg&amp;#39;,&amp;#39;jpeg&amp;#39;,&amp;#39;png&amp;#39;,&amp;#39;gif&amp;#39;);
+
+if(strtolower($_SERVER[&amp;#39;REQUEST_METHOD&amp;#39;]) != &amp;#39;post&amp;#39;){
+	exit_status(&amp;#39;Error! Wrong HTTP method!&amp;#39;);
+}
+
+if(array_key_exists(&amp;#39;pic&amp;#39;,$_FILES) &amp;amp;&amp;amp; $_FILES[&amp;#39;pic&amp;#39;][&amp;#39;error&amp;#39;] == 0 ){
+
+	$pic = $_FILES[&amp;#39;pic&amp;#39;];
+
+	if(!in_array(get_extension($pic[&amp;#39;name&amp;#39;]),$allowed_ext)){
+		exit_status(&amp;#39;Only &amp;#39;.implode(&amp;#39;,&amp;#39;,$allowed_ext).&amp;#39; files are allowed!&amp;#39;);
+	}	
+
+	if($demo_mode){
+
+		// File uploads are ignored. We only log them.
+
+		$line = implode(&amp;#39;		&amp;#39;, array( date(&amp;#39;r&amp;#39;), $_SERVER[&amp;#39;REMOTE_ADDR&amp;#39;], $pic[&amp;#39;size&amp;#39;], $pic[&amp;#39;name&amp;#39;]));
+		file_put_contents(&amp;#39;log.txt&amp;#39;, $line.PHP_EOL, FILE_APPEND);
+
+		exit_status(&amp;#39;Uploads are ignored in demo mode.&amp;#39;);
+	}
+
+	// Move the uploaded file from the temporary
+	// directory to the uploads folder:
+
+	if(move_uploaded_file($pic[&amp;#39;tmp_name&amp;#39;], $upload_dir.$pic[&amp;#39;name&amp;#39;])){
+		exit_status(&amp;#39;File was uploaded successfuly!&amp;#39;);
+	}
+
+}
+
+exit_status(&amp;#39;Something went wrong with your upload!&amp;#39;);
+
+// Helper functions
+
+function exit_status($str){
+	echo json_encode(array(&amp;#39;status&amp;#39;=&amp;gt;$str));
+	exit;
+}
+
+function get_extension($file_name){
+	$ext = explode(&amp;#39;.&amp;#39;, $file_name);
+	$ext = array_pop($ext);
+	return strtolower($ext);
+}&lt;/pre&gt;
+&lt;p&gt;The script runs some checks on the HTTP method that was used to request the page and the validity of the file extension. Demo mode is mainly for &lt;em&gt;demo.tutorialzine.com&lt;/em&gt;, where I don’t want to store any file uploads (if you don’t call &lt;em&gt;move_uploaded_file&lt;/em&gt; in your script, the file is deleted automatically at the end of the request).&lt;/p&gt;
+&lt;p&gt;Now lets make it pretty!&lt;/p&gt;
+&lt;h3&gt;The CSS Styles&lt;/h3&gt;
+&lt;p&gt;I left out the parts of the stylesheet that are not directly related to the uploads. You can see everything in &lt;em&gt;&lt;strong&gt;styles.css&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;h4&gt;assets/css/styles.css&lt;/h4&gt;
+&lt;pre&gt;/*-------------------------
+	Dropbox Element
+--------------------------*/
+
+#dropbox{
+	background:url('../img/background_tile_3.jpg');
+
+	border-radius:3px;
+	position: relative;
+	margin:80px auto 90px;
+	min-height: 290px;
+	overflow: hidden;
+	padding-bottom: 40px;
+    width: 990px;
+
+	box-shadow:0 0 4px rgba(0,0,0,0.3) inset,0 -3px 2px rgba(0,0,0,0.1);
+}
+
+#dropbox .message{
+	font-size: 11px;
+    text-align: center;
+    padding-top:160px;
+    display: block;
+}
+
+#dropbox .message i{
+	color:#ccc;
+	font-size:10px;
+}
+
+#dropbox:before{
+	border-radius:3px 3px 0 0;
+}
+
+/*-------------------------
+	Image Previews
+--------------------------*/
+
+#dropbox .preview{
+	width:245px;
+	height: 215px;
+	float:left;
+	margin: 55px 0 0 60px;
+	position: relative;
+	text-align: center;
+}
+
+#dropbox .preview img{
+	max-width: 240px;
+	max-height:180px;
+	border:3px solid #fff;
+	display: block;
+
+	box-shadow:0 0 2px #000;
+}
+
+#dropbox .imageHolder{
+	display: inline-block;
+	position:relative;
+}
+
+#dropbox .uploaded{
+	position: absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background: url('../img/done.png') no-repeat center center rgba(255,255,255,0.5);
+	display: none;
+}
+
+#dropbox .preview.done .uploaded{
+	display: block;
+}
+
+/*-------------------------
+	Progress Bars
+--------------------------*/
+
+#dropbox .progressHolder{
+	position: absolute;
+	background-color:#252f38;
+	height:12px;
+	width:100%;
+	left:0;
+	bottom: 0;
+
+	box-shadow:0 0 2px #000;
+}
+
+#dropbox .progress{
+	background-color:#2586d0;
+	position: absolute;
+	height:100%;
+	left:0;
+	width:0;
+
+	box-shadow: 0 0 1px rgba(255, 255, 255, 0.4) inset;
+
+	-moz-transition:0.25s;
+	-webkit-transition:0.25s;
+	-o-transition:0.25s;
+	transition:0.25s;
+}
+
+#dropbox .preview.done .progress{
+	width:100% !important;
+}&lt;/pre&gt;
+&lt;p&gt;The &lt;em&gt;.progress&lt;/em&gt; div is positioned absolutely. Changing its width (in percent) makes for a natural progress indicator. Throw in a 0.25 transition, and you have animated increments which would be a bit tricky to do with jQuery alone.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;With this our HTML5 Upload Center is complete!&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;We’re done!&lt;/h3&gt;
+&lt;p&gt;You can use this as a starting point for a file upload service, HTML5 gallery, file manager or your app’s new admin panel. Add your thoughts or suggestions in the comments.&lt;/p&gt;
+&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/Tutorialzine?a=jayg_QlG12Y:oimrBG7AJwY:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Tutorialzine?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Tutorialzine?a=jayg_QlG12Y:oimrBG7AJwY:D7DqB2pKExk"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Tutorialzine?i=jayg_QlG12Y:oimrBG7AJwY:D7DqB2pKExk" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Tutorialzine?a=jayg_QlG12Y:oimrBG7AJwY:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Tutorialzine?i=jayg_QlG12Y:oimrBG7AJwY:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Tutorialzine?a=jayg_QlG12Y:oimrBG7AJwY:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Tutorialzine?i=jayg_QlG12Y:oimrBG7AJwY:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Tutorialzine?a=jayg_QlG12Y:oimrBG7AJwY:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Tutorialzine?i=jayg_QlG12Y:oimrBG7AJwY:gIN9vFwOqvQ" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Tutorialzine?a=jayg_QlG12Y:oimrBG7AJwY:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Tutorialzine?d=qj6IDK7rITs" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Tutorialzine/~4/jayg_QlG12Y" height="1" width="1"&gt;</content><author><name>Martin Angelov</name></author><gr:likingUser>10344509277423937363</gr:likingUser><gr:likingUser>14937359681499646238</gr:likingUser><gr:likingUser>07408627712721547853</gr:likingUser><gr:likingUser>12227875771549024740</gr:likingUser><gr:likingUser>10946940203774217552</gr:likingUser><gr:likingUser>16697095619628339362</gr:likingUser><gr:likingUser>17618677563050747338</gr:likingUser><gr:likingUser>13209861054177403647</gr:likingUser><gr:likingUser>18153406979002155461</gr:likingUser><gr:likingUser>13533534972482881746</gr:likingUser><gr:likingUser>15859274866949833454</gr:likingUser><gr:likingUser>05078670780500756628</gr:likingUser><gr:likingUser>02383748288715273123</gr:likingUser><gr:likingUser>11334534699351940551</gr:likingUser><gr:likingUser>07234957563187634569</gr:likingUser><gr:likingUser>15317848453547653670</gr:likingUser><gr:likingUser>18357941347212468597</gr:likingUser><gr:likingUser>15610171563649781796</gr:likingUser><gr:likingUser>09102967786939126875</gr:likingUser><gr:likingUser>12554860630897120938</gr:likingUser><gr:likingUser>06293495514676569841</gr:likingUser><gr:likingUser>10485946243868920272</gr:likingUser><gr:likingUser>00363647479470519434</gr:likingUser><gr:likingUser>13031572427711585293</gr:likingUser><gr:likingUser>11926151384893025195</gr:likingUser><gr:likingUser>10137260079216002473</gr:likingUser><gr:likingUser>11473216901592880325</gr:likingUser><gr:likingUser>09899473250446406505</gr:likingUser><gr:likingUser>06416249016482713681</gr:likingUser><gr:likingUser>17132986844943284208</gr:likingUser><gr:likingUser>11470353817241759113</gr:likingUser><gr:likingUser>05496832754874457203</gr:likingUser><gr:likingUser>12519552230184728521</gr:likingUser><gr:likingUser>07856481595078367145</gr:likingUser><gr:likingUser>09678330867621005663</gr:likingUser><gr:likingUser>18436761080801877337</gr:likingUser><gr:likingUser>17279853864188752402</gr:likingUser><gr:likingUser>02299361428707483538</gr:likingUser><gr:likingUser>15478528425001517671</gr:likingUser><gr:likingUser>09867370999104093497</gr:likingUser><gr:likingUser>17535725116474393634</gr:likingUser><gr:likingUser>10924449834811599185</gr:likingUser><gr:likingUser>07963840913788799523</gr:likingUser><gr:likingUser>06183063511236815876</gr:likingUser><gr:likingUser>15233982903567288262</gr:likingUser><gr:likingUser>12086272353565392861</gr:likingUser><gr:likingUser>01513927743443713598</gr:likingUser><gr:likingUser>06484174908386580390</gr:likingUser><gr:likingUser>04450525663691148378</gr:likingUser><gr:likingUser>03265167928670422403</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><gr:likingUser>13434578368247665036</gr:likingUser><gr:likingUser>01733049198105419594</gr:likingUser><gr:likingUser>14457473046109904699</gr:likingUser><gr:likingUser>08276734142284959071</gr:likingUser><gr:likingUser>14779988337496729452</gr:likingUser><gr:likingUser>16261544613175584434</gr:likingUser><gr:likingUser>16412759983641669939</gr:likingUser><gr:likingUser>12845221130860547771</gr:likingUser><gr:likingUser>18039009441148723893</gr:likingUser><gr:likingUser>07553439738345968622</gr:likingUser><gr:likingUser>13865918989529327360</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/Tutorialzine"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/Tutorialzine</id><title type="html">Tutorialzine</title><link rel="alternate" href="http://tutorialzine.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1316986305566"><id gr:original-id="http://www.rodrigostoledo.com/?p=30602">tag:google.com,2005:reader/item/e1204b5151457996</id><category term="Internet"/><title type="html">Para pensar sobre o uso da internet</title><published>2011-09-24T12:37:12Z</published><updated>2011-09-24T12:37:12Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/rodrigostoledocom/~3/Dp8ku_h0vEE/" type="text/html"/><content xml:base="http://www.rodrigostoledo.com/" type="html">&lt;p&gt;&lt;a href="http://www.rodrigostoledo.com/wp-content/uploads/2011/09/web20.png"&gt;&lt;img title="web20" src="http://www.rodrigostoledo.com/wp-content/uploads/2011/09/web20-e1316867670967.png" alt="" width="560" height="448"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Para pensar sobre o uso da internet.&lt;/p&gt;
+&lt;p&gt;Via &lt;a href="http://www.sedentario.org/internet/facebook-e-voce-47689?"&gt;Sedentário&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;p&gt;Related posts:&lt;ol&gt;&lt;li&gt;&lt;a href="http://www.rodrigostoledo.com/2009/04/excelente-artigo-para-pensar-sobre-a-internet/" rel="bookmark" title="Excelente artigo para pensar sobre a internet"&gt;Excelente artigo para pensar sobre a internet&lt;/a&gt; &lt;small&gt;Nesta semana eu recebi um texto do meu amigo virtual...&lt;/small&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.rodrigostoledo.com/2011/08/professores-ainda-sabem-menos-sobre-internet-que-os-alunos/" rel="bookmark" title="Professores ainda sabem menos sobre internet que os alunos"&gt;Professores ainda sabem menos sobre internet que os alunos&lt;/a&gt; &lt;small&gt;No ano passado comecei a fazer palestras sobre internet e...&lt;/small&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.rodrigostoledo.com/2007/08/blog-e-wiki-sobre-acesso-a-internet-por-simcard-pre-pago/" rel="bookmark" title="Blog e Wiki sobre acesso Ã  internet por simcard pré-pago"&gt;Blog e Wiki sobre acesso Ã  internet por simcard pré-pago&lt;/a&gt; &lt;small&gt;Hoje temos uma excelente dica do leitor e amigo virtual...&lt;/small&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/rodrigostoledocom/~4/Dp8ku_h0vEE" height="1" width="1"&gt;</content><author><name>rodrigostoledo</name></author><gr:likingUser>03020522199988970127</gr:likingUser><source gr:stream-id="feed/http://feeds2.feedburner.com/rodrigostoledocom"><id>tag:google.com,2005:reader/feed/http://feeds2.feedburner.com/rodrigostoledocom</id><title type="html">rodrigostoledo.com</title><link rel="alternate" href="http://www.rodrigostoledo.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1316781591511"><id gr:original-id="http://www.pinceladasdaweb.com.br/blog/?p=5168">tag:google.com,2005:reader/item/a454dcafcebdc7d0</id><category term="PHP"/><title type="html">PHP Random HTML</title><published>2011-09-23T07:13:59Z</published><updated>2011-09-23T07:13:59Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/PinceladasDaWeb/~3/zNh2m4zCAq4/" type="text/html"/><content xml:base="http://www.pinceladasdaweb.com.br/blog" type="html">&lt;div&gt;&lt;img src="http://www.pinceladasdaweb.com.br/blog/uploads/php-random-html/php-random-html.jpg" alt="PHP Random HTML" title="PHP Random HTML"&gt;&lt;/div&gt;
+&lt;p&gt;Suponho que algum dia você precise de alguma forma mostrar alguns itens de forma randômica em sua página, sejam eles banners ou coisa do tipo, vou deixar aqui um código em PHP que pode resolver isso facilmente para você.&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;
+&amp;lt; ?php
+	$a = array(
+		&amp;#39;Código HTML aqui&amp;#39;,
+		&amp;#39;Código HTML aqui&amp;#39;,
+		&amp;#39;Código HTML aqui&amp;#39;,
+		&amp;#39;Código HTML aqui&amp;#39;
+	);
+	shuffle($a);
+	$na = array_slice($a, 0, 2);
+	echo implode(&amp;#39;&amp;#39;, $na);
+?&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;Uma rápida explicação para entender a funcionalidade desse código:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Linha 1&lt;/strong&gt; – Crio um array com os meus elementos HTML.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linha 8&lt;/strong&gt; – Embaralho os elementos do array.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linha 9&lt;/strong&gt; – Crio uma nova variável onde vou extrair uma parte do array que criei anteriormente, ou seja, vou pegar alí 2 itens.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linha 10&lt;/strong&gt; – Mostro os itens na tela de forma aleatória.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Vejam aqui um exemplo &lt;a href="http://www.pinceladasdaweb.com.br/blog/uploads/php-random-html/" title="PHP Random HTML" rel="alternate"&gt;funcionando&lt;/a&gt;. Dê alguns refreshs na página e você verá que os itens são mostrados de forma aleatória. Você pode fazer o &lt;a href="http://www.pinceladasdaweb.com.br/blog/uploads/php-random-html/php-random-html.rar" title="PHP Random HTML" rel="alternate enclosure"&gt;download do exemplo aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;hr&gt;
+&lt;a href="http://www.pinceladasdaweb.com.br/blog/2011/09/23/php-random-html/"&gt;PHP Random HTML&lt;/a&gt;
+&lt;br&gt;
+&lt;p&gt;Já conhece o meu outro blog? O endereço é o: &lt;a href="http://www.cssnolanche.com.br"&gt;CSS no Lanche&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Você ainda não está me seguindo no &lt;a href="http://twitter.com/pinceladasdaweb" title="Siga-me no Twitter" rel="external"&gt;Twitter&lt;/a&gt;, o que está esperando para fazer isso?&lt;/p&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://www.pinceladasdaweb.com.br/blog/2011/08/24/endentacao-codigo-tab-espacos/" title="Endentação do código – TAB vs Espaços"&gt;Endentação do código – TAB vs Espaços&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.pinceladasdaweb.com.br/blog/2011/08/24/comecando-php-salvando/" title="Começando com PHP – Salvando o código"&gt;Começando com PHP – Salvando o código&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.pinceladasdaweb.com.br/blog/2011/07/20/dicas-profissionais-para-os-iniciantes-em-web/" title="Dicas profissionais para os iniciantes em web"&gt;Dicas profissionais para os iniciantes em web&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.pinceladasdaweb.com.br/blog/2011/04/05/convertendo-xml-em-json-com-php/" title="Convertendo XML em JSON com PHP"&gt;Convertendo XML em JSON com PHP&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.pinceladasdaweb.com.br/blog/2011/01/31/sistema-de-redimensionar-imagens-com-zip-e-pic/" title="Sistema de redimensionar imagens com zip e Pic"&gt;Sistema de redimensionar imagens com zip e Pic&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/ca78ojdpio005qvamidhqt1jlc/300/250?ca=1&amp;amp;fh=280#http%3A%2F%2Fwww.pinceladasdaweb.com.br%2Fblog%2F2011%2F09%2F23%2Fphp-random-html%2F" width="100%" height="280" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=zNh2m4zCAq4:sRn3agCk8Wg:D7DqB2pKExk"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?i=zNh2m4zCAq4:sRn3agCk8Wg:D7DqB2pKExk" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=zNh2m4zCAq4:sRn3agCk8Wg:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=zNh2m4zCAq4:sRn3agCk8Wg:tr8VpXobKIM"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?d=tr8VpXobKIM" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=zNh2m4zCAq4:sRn3agCk8Wg:7Q72WNTAKBA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?d=7Q72WNTAKBA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=zNh2m4zCAq4:sRn3agCk8Wg:F7zBnMyn0Lo"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?i=zNh2m4zCAq4:sRn3agCk8Wg:F7zBnMyn0Lo" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=zNh2m4zCAq4:sRn3agCk8Wg:V_sGLiPBpWU"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?i=zNh2m4zCAq4:sRn3agCk8Wg:V_sGLiPBpWU" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/PinceladasDaWeb?a=zNh2m4zCAq4:sRn3agCk8Wg:gIN9vFwOqvQ"&gt;&lt;img src="http://feeds.feedburner.com/~ff/PinceladasDaWeb?i=zNh2m4zCAq4:sRn3agCk8Wg:gIN9vFwOqvQ" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/PinceladasDaWeb/~4/zNh2m4zCAq4" height="1" width="1"&gt;</content><author><name>Pedro Rogério</name></author><gr:likingUser>14753128479457744117</gr:likingUser><gr:likingUser>05084959009493803646</gr:likingUser><gr:likingUser>03051379159361575304</gr:likingUser><gr:likingUser>04121300307487142749</gr:likingUser><gr:likingUser>02274307454453476528</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/pinceladasdaweb"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/pinceladasdaweb</id><title type="html">Pinceladas da Web - XHTML, CSS, JavaScript e WebStandards</title><link rel="alternate" href="http://www.pinceladasdaweb.com.br/blog" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1316700213739"><id gr:original-id="http://techcrunch.com/?p=425123">tag:google.com,2005:reader/item/a64818401df75f82</id><category term="Gadgets"/><category term="iPad"/><category term="Pheromone Labs"/><title type="html">Video: Developer Uses Lego Robot To Test Out iPad 2 Camera App</title><published>2011-09-21T20:40:44Z</published><updated>2011-09-21T20:40:44Z</updated><link rel="alternate" href="http://feedproxy.google.com/~r/Techcrunch/~3/kuM_GFDJV9g/" type="text/html"/><content xml:base="http://techcrunch.com/" type="html">&lt;img width="100" height="70" src="http://tctechcrunch2011.files.wordpress.com/2011/09/legorobotfinger.jpg?w=100&amp;amp;h=70&amp;amp;crop=1" alt="legorobotfinger" title="legorobotfinger" style="float:left;margin:0 10px 7px 0"&gt;&lt;p&gt;So what happens when you’ve just built this awesome camera app but your client wants you to manually test it out like… 10,000 times? You have two options: you can spend the rest of your earthly days pressing shutter, save, and repeating the process &lt;em&gt;orrrr&lt;/em&gt; you can just build yourself a robot finger out of Legos. Simple enough, yes? &lt;/p&gt;
+&lt;p&gt;It sure seemed to be for the guys over at Pheromone Labs. After their client asked for between 10,000 to 15,000 manual load tests of the application they built, the team figured a little ingenuity would save loads of time and energy, reports &lt;a href="http://www.tuaw.com/2011/09/20/lego-robot-helps-stress-test-ipad-app/"&gt;TUAW&lt;/a&gt;. Ingredients: a Lego Mindstorm kit and a few capacitive styluses. Easy as that. &lt;/p&gt;
+&lt;p&gt;While the end-product (video below) is more exciting than you’d assume, none seem more pleased with it than Jon Masse, a member of the developer team and the one who &lt;a href="http://lab.pheromone.ca/2011/08/30/the-art-of-automation/"&gt;blogged about the experience&lt;/a&gt;. &lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Arriving at work this morning there were many more people circling my desk than usual. They were all curious to see what kind of insanity the team had cooked up this time. And there it was sitting on my desk chugging along snapping pics not phased by the attention it was getting. A perfect example of creative automation.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Granted, Pheromone Labs’ robotic finger is much less intense than this seemingly useless &lt;a href="http://techcrunch.com/2010/03/03/the-lego-robotic-hand-do-not-get-any-ideas/"&gt;life-sized robotic hand&lt;/a&gt;, but then again the automatic picture taker actually has purpose. And is thus human*.&lt;/p&gt;
+&lt;p&gt;*JK&lt;/p&gt;
+&lt;p&gt;&lt;div style="text-align:center"&gt;&lt;iframe src="http://player.vimeo.com/video/28363975" width="640" height="360" frameborder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href="http://vimeo.com/28363975"&gt;The Robot (English version)&lt;/a&gt; from &lt;a href="http://vimeo.com/pheromonelab"&gt;Pheromone Lab&lt;/a&gt; on &lt;a href="http://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+  &lt;br&gt;  &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/tctechcrunch2011.wordpress.com/425123/"&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/tctechcrunch2011.wordpress.com/425123/"&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/tctechcrunch2011.wordpress.com/425123/"&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/tctechcrunch2011.wordpress.com/425123/"&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/tctechcrunch2011.wordpress.com/425123/"&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/tctechcrunch2011.wordpress.com/425123/"&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/tctechcrunch2011.wordpress.com/425123/"&gt;&lt;/a&gt; &lt;p&gt;&lt;iframe src="http://feedads.g.doubleclick.net/~ah/f/v7tfagih50mrtjprksjv4s1ftk/300/250?ca=1&amp;amp;fh=280#http%3A%2F%2Ftechcrunch.com%2F2011%2F09%2F21%2Fvideo-developer-uses-lego-robot-to-test-out-ipad-2-camera-app%2F" width="100%" height="280" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"&gt;&lt;/iframe&gt;&lt;/p&gt;&lt;div&gt;
+&lt;a href="http://feeds.feedburner.com/~ff/Techcrunch?a=kuM_GFDJV9g:0xBESraIA60:2mJPEYqXBVI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Techcrunch?d=2mJPEYqXBVI" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Techcrunch?a=kuM_GFDJV9g:0xBESraIA60:7Q72WNTAKBA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Techcrunch?d=7Q72WNTAKBA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Techcrunch?a=kuM_GFDJV9g:0xBESraIA60:yIl2AUoC8zA"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Techcrunch?d=yIl2AUoC8zA" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Techcrunch?a=kuM_GFDJV9g:0xBESraIA60:-BTjWOF_DHI"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Techcrunch?i=kuM_GFDJV9g:0xBESraIA60:-BTjWOF_DHI" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Techcrunch?a=kuM_GFDJV9g:0xBESraIA60:D7DqB2pKExk"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Techcrunch?i=kuM_GFDJV9g:0xBESraIA60:D7DqB2pKExk" border="0"&gt;&lt;/a&gt; &lt;a href="http://feeds.feedburner.com/~ff/Techcrunch?a=kuM_GFDJV9g:0xBESraIA60:qj6IDK7rITs"&gt;&lt;img src="http://feeds.feedburner.com/~ff/Techcrunch?d=qj6IDK7rITs" border="0"&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img src="http://feeds.feedburner.com/~r/Techcrunch/~4/kuM_GFDJV9g" height="1" width="1"&gt;&lt;/p&gt;</content><author><name>Jordan Crook</name></author><gr:likingUser>13108682871048974389</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/TechCrunch"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/TechCrunch</id><title type="html">TechCrunch</title><link rel="alternate" href="http://techcrunch.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1316629411244"><id gr:original-id="http://www.josscrowcroft.com/?p=1488">tag:google.com,2005:reader/item/8e33fa82497144fb</id><category term="Code"/><category term="accounting.js"/><category term="javascript"/><title type="html">Formatting currency columns in tables with underscore.zip and accounting.js</title><published>2011-09-21T16:39:56Z</published><updated>2011-09-21T16:39:56Z</updated><link rel="alternate" href="http://www.josscrowcroft.com/2011/code/formatting-currency-columns-in-javascrip-tables-underscore-zip-accounting-js/" type="text/html"/><content xml:base="http://www.josscrowcroft.com/" type="html">&lt;p&gt;This article runs through and demonstrates using &lt;a rel="external" href="http://josscrowcroft.github.com/accounting.js/" title="accounting.js - format numbers, money, currency in javascript"&gt;accounting.js&lt;/a&gt; and &lt;a title="underscore.js" href="http://documentcloud.github.com/underscore/" rel="external"&gt;underscore.js&lt;/a&gt; to format columns of numbers inside tables. It’s not complicated, and you might find it interesting, but it’s really a specific solution aimed at a common problem.&lt;/p&gt;
+&lt;p&gt;So. Probably the most common usage example for formatting accounting columns is inside tables, for example:&lt;/p&gt;
+&lt;pre&gt;EXPENSES
+Hair Net                $   (1.50) « symbols and units lined up
+Treatment Creme         $  (12.99)
+Cut and Finish          $ (125.00)&lt;/pre&gt;
+&lt;p&gt;This table is easily templated from an array of arrays (a ‘matrix’), each array representing a row (&lt;code&gt;&amp;lt;tr&amp;gt;&lt;/code&gt;) in the table, each value representing a cell (&lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt;) – like so:&lt;/p&gt;
+&lt;pre&gt;// Each nested array represents a &amp;lt;tr&amp;gt;, each value a &amp;lt;td&amp;gt;
+var expenseReport = [
+	[&amp;quot;Hair Net&amp;quot;, -1.5],
+	[&amp;quot;Treatment Creme&amp;quot;, -12.99],
+	[&amp;quot;Cut and Finish&amp;quot;, -125]
+];&lt;/pre&gt;
+&lt;pre&gt;&lt;span&gt;// Example templated markup:&lt;/span&gt;
+&lt;span&gt;&amp;lt;table&amp;gt;&lt;/span&gt;&lt;span&gt;
+    &lt;/span&gt;&lt;span&gt;&amp;lt;tbody&amp;gt;&lt;/span&gt;&lt;span&gt;
+        &lt;/span&gt;&lt;span&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;&lt;span&gt;
+            &lt;/span&gt;&lt;span&gt;&amp;lt;td&amp;gt;&lt;/span&gt;&lt;span&gt;Hair Net&lt;/span&gt;&lt;span&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;&lt;span&gt;
+            &lt;/span&gt;&lt;span&gt;&amp;lt;td&amp;gt;&lt;/span&gt;&lt;span&gt;-1.5&lt;/span&gt;&lt;span&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;p&gt;The problem here is that each of these arrays represents a row, each containing a single one of the values you need – but if you want to column-format those numbers with accounting.js’s &lt;code&gt;&lt;strong&gt;formatColumn()&lt;/strong&gt;&lt;/code&gt; method, you’ll need to have those values in an array by themselves, so that you can do this:&lt;/p&gt;
+&lt;pre&gt;var values = [-1.5, -12.99, -125];
+accounting.formatColumn(values);
+// ["$   (1.50)", "$  (12.99)", "$ (125.00)"]&lt;/pre&gt;
+&lt;p&gt;Hence you need a matrix where each nested array represents a &lt;em&gt;vertical column&lt;/em&gt; in the table, like this:&lt;/p&gt;
+&lt;pre&gt;// Each nested array is now a hypothetical 'column' in the table:
+var expenseReport = [
+	["Hair Net", "Treatment Creme", "Cut and Finish"],
+	[1.5, 12.99, 125] // we gots the values!
+];&lt;/pre&gt;
+&lt;p&gt;So what you effectively need to do is flip around that matrix of values, so that you have access to all those numbers without having to pluck out the second value from each row manually.&lt;/p&gt;
+&lt;p&gt;This is a process known as &lt;strong&gt;transposing a matrix&lt;/strong&gt;, and it is exactly this that underscore.js performs with &lt;code&gt;&lt;strong&gt;_.zip()&lt;/strong&gt;&lt;/code&gt;. From the underscore.js docs (emphasis added):&lt;/p&gt;
+&lt;blockquote&gt;&lt;h4&gt;zip   &lt;code&gt;_.zip(*arrays)&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Merges together the values of each of the arrays with the values at the corresponding position. Useful when you have separate data sources that are coordinated through matching array indexes. &lt;strong&gt;If you’re working with a matrix of nested arrays, zip.apply can transpose the matrix in a similar fashion.&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;_.zip([&amp;#39;moe&amp;#39;, &amp;#39;larry&amp;#39;, &amp;#39;curly&amp;#39;], [30, 40, 50], [true, false, false]);
+=&amp;gt; [[&amp;quot;moe&amp;quot;, 30, true], [&amp;quot;larry&amp;quot;, 40, false], [&amp;quot;curly&amp;quot;, 50, false]]&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Obviously it’s unfeasible to pass in each row of the table manually (e.g. &lt;code&gt;_.zip(row1, row2, row3, ...&lt;/code&gt;) so you need to use &lt;code&gt;&lt;strong&gt;_.zip.apply([], matrix)&lt;/strong&gt;&lt;/code&gt;, which will call &lt;code&gt;_.zip&lt;/code&gt; with the matrix’s nested arrays (table rows) as arguments, returning a transposed matrix where all the values are swapped into equivalent positions.&lt;/p&gt;
+&lt;h3&gt;Example of matrix transposition&lt;/h3&gt;
+&lt;p&gt;I threw together a little jsFiddle demo to show what this does. Click the button a few times.&lt;br&gt;
+&lt;br&gt;
+&lt;small&gt;&lt;em&gt;Not loading? &lt;a href="http://jsfiddle.net/_joss/tsYjC/3/" title="jsFiddle - transposing matrix with underscore.zip"&gt;View it on jsFiddle here.&lt;/a&gt;&lt;/em&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;The process, step-by-step:&lt;/h2&gt;
+&lt;p&gt;If you have a table represented by a matrix (array of arrays) in a javascript variable, where each array represents a table row, you could use this example code to apply &lt;code&gt;&lt;strong&gt;accounting.formatColumn()&lt;/strong&gt;&lt;/code&gt; to a column of values at the 2nd index (&lt;code&gt;row[1]&lt;/code&gt;):&lt;/p&gt;
+&lt;pre&gt;// The original matrix:
+var expenseReport = [
+	["Hair Net", -1.5],
+	["Treatment Creme", -12.99],
+	["Cut and Finish", -125]
+];
+
+// Options for accounting.js (see docs)
+var options = {
+	symbol: "HK$",
+	precision: 0,
+	format: {
+		pos : "%s %v",   // for positive values, eg. "$ 1.00"
+		neg : "%s (%v)", // for negative values, eg. "$ (1.00)"
+		zero : "%s -- "  // for zero values, eg. "$ --"
+	}
+};
+
+// Transpose the matrix to access the columns as arrays:
+expenseReport = _.zip.apply([], expenseReport);
+
+// Format the column of values (at position [1]):
+expenseReport[1] = accounting.formatColumn(expenseReport[1], options);
+
+// Transpose the matrix back to original positions:
+expenseReport = _.zip.apply([], expenseReport);&lt;/pre&gt;
+&lt;p&gt;Done! The &lt;code&gt;expenseReport&lt;/code&gt; matrix now looks like this – an array of rows, ready to be templated into an HTML table:&lt;/p&gt;
+&lt;pre&gt;[
+  [
+    "Hair Net",
+    "HK$   (2)"
+  ],
+  [
+    "Treatment Creme",
+    "HK$  (13)"
+  ],
+  [
+    "Cut and Finish",
+    "HK$ (125)"
+  ]
+]&lt;/pre&gt;
+&lt;p&gt;This same logic applies to big tables of data, too – once you’ve used &lt;code&gt;_.zip&lt;/code&gt; to access the table’s columns as arrays, you can use formatColumn on as many of them as you need to, with as many different configurations as you like.&lt;/p&gt;
+&lt;h2&gt;The next step&lt;/h2&gt;
+&lt;p&gt;I’m also hoping to implement this into accounting.js somehow, if there’s demand for it. Something like &lt;code&gt;formatTable&lt;/code&gt;, although it could get complicated, so it’d probably be implemented as an additional plugin, maybe for jayQwery or the awesome &lt;a href="http://www.datatables.net/" title="DataTables"&gt;DataTables&lt;/a&gt; plugin. Heck, look at me, I’m ramblin’ again.&lt;/p&gt;
+&lt;p&gt;Comment up if you have questions, comments or personal problems you’d like to discuss.&lt;/p&gt;</content><author><name>Joss</name></author><gr:likingUser>03020522199988970127</gr:likingUser><source gr:stream-id="feed/http://www.josscrowcroft.com/feed/"><id>tag:google.com,2005:reader/feed/http://www.josscrowcroft.com/feed/</id><title type="html">Joss Crowcroft</title><link rel="alternate" href="http://www.josscrowcroft.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1316610844526"><id gr:original-id="http://css-tricks.com/?p=14402">tag:google.com,2005:reader/item/781381cfa729b549</id><category term="Article"/><title type="html">Radio Buttons with 2-Way Exclusivity</title><published>2011-09-21T04:06:43Z</published><updated>2011-09-21T04:06:43Z</updated><link rel="alternate" href="http://css-tricks.com/14402-radio-buttons-with-2-way-exclusivity/" type="text/html"/><content xml:base="http://css-tricks.com/" type="html">&lt;p&gt;Let's say you were tasked with creating a UI in which users can rate three candy bars from their most to least favorite. A grid of radio buttons isn't a terrible way to go about this.&lt;span&gt;&lt;/span&gt;&lt;/p&gt;  &lt;img src="http://cdn.css-tricks.com/wp-content/uploads/2011/09/grid.png" alt="" title="grid" width="223" height="181"&gt; A (small) grid of radio buttons. &lt;p&gt;The good news is that radio buttons have natural exclusivity in the name-group they are in, and we can use that to our advantage. The bad news is that we have interlocking groups and there is no way to express that in a functional way through HTML alone.&lt;/p&gt;  &lt;img src="http://cdn.css-tricks.com/wp-content/uploads/2011/09/groups.jpg" alt="" title="groups" width="332" height="287"&gt; Only one radio button can be selected in each circled group &lt;p&gt;Let's craft the HTML in such a way that the horizontal groups share the same name, granting exclusivity automatically. And we'll also add an HTML data-* attribute which signifies the column which we'll use to simulate the vertical exclusivity with JavaScript&lt;sup&gt;1&lt;/sup&gt;.&lt;/p&gt;&lt;pre rel="HTML"&gt;&lt;code&gt;&amp;lt;table&amp;gt;
+&amp;lt;tr&amp;gt;
+    &amp;lt;th&amp;gt;&amp;lt;/th&amp;gt;
+    &amp;lt;th&amp;gt;1&amp;lt;/th&amp;gt;
+    &amp;lt;th&amp;gt;2&amp;lt;/th&amp;gt;
+    &amp;lt;th&amp;gt;3&amp;lt;/th&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr&amp;gt;
+    &amp;lt;td&amp;gt;Twix&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;row-1&amp;quot; data-col=&amp;quot;1&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;row-1&amp;quot; data-col=&amp;quot;2&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;row-1&amp;quot; data-col=&amp;quot;3&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr&amp;gt;
+    &amp;lt;td&amp;gt;Snickers&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;row-2&amp;quot; data-col=&amp;quot;1&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;row-2&amp;quot; data-col=&amp;quot;2&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;row-2&amp;quot; data-col=&amp;quot;3&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr&amp;gt;
+    &amp;lt;td&amp;gt;Butterfingers&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;row-3&amp;quot; data-col=&amp;quot;1&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;row-3&amp;quot; data-col=&amp;quot;2&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;row-3&amp;quot; data-col=&amp;quot;3&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;/table&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Our incredibly simple design can be accomplished with this CSS:&lt;/p&gt;&lt;pre rel="CSS"&gt;&lt;code&gt;table {
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+th:empty {
+    border: 0;
+}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I wouldn't have even posted that CSS except I think it's a super useful case of the &lt;code&gt;:empty&lt;/code&gt; pseudo class selector.&lt;/p&gt;&lt;p&gt;Now to grant the vertical group exclusivity, we'll use a touch of jQuery:&lt;/p&gt;&lt;pre rel="jQuery"&gt;&lt;code&gt;var col, el;
+
+$("input[type=radio]").click(function() {
+   el = $(this);
+   col = el.data("col");
+   $("input[data-col=" + col + "]").prop("checked", false);
+   el.prop("checked", true);
+});&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When a radio button is clicked, the column is determined and all other radio buttons in that column are turned off, then the clicked on is turned back on.&lt;/p&gt;&lt;p&gt;That's all there is to it.&lt;/p&gt;&lt;p&gt;&lt;a href="http://css-tricks.com/examples/RadioGrid/"&gt;View Demo&lt;/a&gt;   &lt;a href="http://css-tricks.com/examples/RadioGrid.zip"&gt;Download Files&lt;/a&gt;&lt;/p&gt;&lt;p&gt;For the record, I did get this idea from the &lt;a href="https://peepcode.com/products/ryan-singer-ux"&gt;screencast I linked up earlier&lt;/a&gt; in which this idea was briefly mentioned and then discarded.&lt;/p&gt;&lt;p&gt;Also, I'd be interested to hear if people have alternate design pattern ideas for the "rate these three candy bars" thing. That's always fun to think about.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt; &lt;small&gt;You could, instead, apply the data attributes through JavaScript programatically, or even calculate column on the fly as needed. As ever, there are &lt;a href="http://www.worldwidewords.org/qa/qa-mor1.htm"&gt;more ways to kill a cat than choking it with butter&lt;/a&gt;.&lt;/small&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://css-tricks.com/14402-radio-buttons-with-2-way-exclusivity/"&gt;Radio Buttons with 2-Way Exclusivity&lt;/a&gt; is a post from &lt;a href="http://css-tricks.com"&gt;CSS-Tricks&lt;/a&gt;&lt;/p&gt;</content><author><name>Chris Coyier</name></author><gr:likingUser>07408627712721547853</gr:likingUser><gr:likingUser>02107103645613151618</gr:likingUser><gr:likingUser>02508319771731836425</gr:likingUser><gr:likingUser>12799982373348976659</gr:likingUser><gr:likingUser>11231255539132246323</gr:likingUser><gr:likingUser>13848703108435258371</gr:likingUser><gr:likingUser>02493361864459897726</gr:likingUser><gr:likingUser>14958201677731104381</gr:likingUser><gr:likingUser>01585781993341433047</gr:likingUser><gr:likingUser>03994345909668016089</gr:likingUser><gr:likingUser>16214824429376995538</gr:likingUser><gr:likingUser>02587752625328016067</gr:likingUser><gr:likingUser>03161119868583916422</gr:likingUser><gr:likingUser>06164618210408089548</gr:likingUser><gr:likingUser>04101141606547087048</gr:likingUser><gr:likingUser>05198197270045227445</gr:likingUser><gr:likingUser>11132888979039710046</gr:likingUser><gr:likingUser>14465000831884328462</gr:likingUser><gr:likingUser>02482163204506775199</gr:likingUser><gr:likingUser>13174795164802359020</gr:likingUser><gr:likingUser>10240082377017480154</gr:likingUser><gr:likingUser>06293495514676569841</gr:likingUser><gr:likingUser>00363647479470519434</gr:likingUser><gr:likingUser>12573117395771383318</gr:likingUser><gr:likingUser>17481313524217510319</gr:likingUser><gr:likingUser>05457722186072968032</gr:likingUser><gr:likingUser>17381389920920838361</gr:likingUser><gr:likingUser>12572479963993650621</gr:likingUser><gr:likingUser>13010448769364866704</gr:likingUser><gr:likingUser>18149609740399581807</gr:likingUser><gr:likingUser>06023713027536022419</gr:likingUser><gr:likingUser>10542853046101149859</gr:likingUser><gr:likingUser>14855703185403784008</gr:likingUser><gr:likingUser>10721624459503834425</gr:likingUser><gr:likingUser>06808395769643365537</gr:likingUser><gr:likingUser>13007308213409689926</gr:likingUser><gr:likingUser>03526858162053867652</gr:likingUser><gr:likingUser>12753713996132641659</gr:likingUser><gr:likingUser>08900670204817955338</gr:likingUser><gr:likingUser>10985624760689388252</gr:likingUser><gr:likingUser>11265838980323729774</gr:likingUser><gr:likingUser>00504940098754352732</gr:likingUser><gr:likingUser>11328009988724888862</gr:likingUser><gr:likingUser>06592534183385489667</gr:likingUser><gr:likingUser>17762056173350321482</gr:likingUser><gr:likingUser>16580969973201915332</gr:likingUser><gr:likingUser>12972447472043721617</gr:likingUser><gr:likingUser>04450525663691148378</gr:likingUser><gr:likingUser>07408772749581184612</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><gr:likingUser>12730771884756135490</gr:likingUser><gr:likingUser>10414194481074252239</gr:likingUser><gr:likingUser>11859766065880903889</gr:likingUser><gr:likingUser>12572976117601857073</gr:likingUser><gr:likingUser>14276130751291356910</gr:likingUser><gr:likingUser>02097639434290888675</gr:likingUser><gr:likingUser>15409928394224524117</gr:likingUser><gr:likingUser>00190684916446033092</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/CssTricks"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/CssTricks</id><title type="html">CSS-Tricks</title><link rel="alternate" href="http://css-tricks.com" type="text/html"/></source></entry><entry gr:crawl-timestamp-msec="1316610697450"><id gr:original-id="http://css-tricks.com/?p=14358">tag:google.com,2005:reader/item/de5d509e5eb60a66</id><category term="Article"/><title type="html">Default Tab UI of the Current Desktop Browser Landscape</title><published>2011-09-17T23:16:00Z</published><updated>2011-09-17T23:16:00Z</updated><link rel="alternate" href="http://css-tricks.com/14358-default-tab-ui-of-the-current-desktop-browser-landscape/" type="text/html"/><content xml:base="http://css-tricks.com/" type="html">&lt;p&gt;I opened up the same 6 tabs in current versions of all the desktop browsers, then took screenshots of the UI of just the tabs themselves. &lt;span&gt;&lt;/span&gt; These are from a Mac running OS X Lion.&lt;/p&gt;  &lt;a href="http://cdn.css-tricks.com/wp-content/uploads/2011/09/Firefox6.png"&gt;&lt;img src="http://cdn.css-tricks.com/wp-content/uploads/2011/09/Firefox6.png" alt="" title="Firefox6" width="1157" height="46"&gt;&lt;/a&gt; Firefox 6   &lt;a href="http://cdn.css-tricks.com/wp-content/uploads/2011/09/Chrome15.png"&gt;&lt;img src="http://cdn.css-tricks.com/wp-content/uploads/2011/09/Chrome15.png" alt="" title="Chrome15" width="1155" height="37"&gt;&lt;/a&gt; Chrome 15   &lt;a href="http://cdn.css-tricks.com/wp-content/uploads/2011/09/Opera11.png"&gt;&lt;img src="http://cdn.css-tricks.com/wp-content/uploads/2011/09/Opera11.png" alt="" title="Opera11" width="1158" height="47"&gt;&lt;/a&gt; Opera 11   &lt;a href="http://cdn.css-tricks.com/wp-content/uploads/2011/09/Safari51.png"&gt;&lt;img src="http://cdn.css-tricks.com/wp-content/uploads/2011/09/Safari51.png" alt="" title="Safari5" width="1155" height="23"&gt;&lt;/a&gt; Safari 5   &lt;a href="http://cdn.css-tricks.com/wp-content/uploads/2011/09/IE9.png"&gt;&lt;img src="http://cdn.css-tricks.com/wp-content/uploads/2011/09/IE9.png" alt="" title="IE9" width="404" height="30"&gt;&lt;/a&gt; Internet Explorer 9 &lt;h3&gt;Some facts&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;You get an average of 26 visible characters per tab if the user has 1-3 tabs open at around 1200px (&lt;a href="http://css-tricks.com/9778-screen-resolution-notequalto-browser-window/"&gt;average for this site&lt;/a&gt;).&lt;/li&gt;&lt;li&gt;All browsers maintain this 26 visible character average until about 5 tabs, then that number shrinks. At 6 tabs you get ~18 characters.&lt;/li&gt;&lt;li&gt;IE 9 starts shrinking at 4 tabs and at 6 tabs only an average of 3 characters are shown per tab.&lt;/li&gt;&lt;li&gt;Every browser shows favicons except Safari.&lt;/li&gt;&lt;li&gt;Every browser puts tabs on the top (above URL bar) except Safari.&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Some opinions&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;You don't have much room, make it count.&lt;/li&gt;&lt;li&gt;You can largely count on the favicon to identify your site so don't start with site title, start with the next most significant thing. Unless you have a ton of Safari traffic (remember, your site's stats are &lt;a href="http://css-tricks.com/9745-the-stats-that-matter-your-sites-stats/"&gt;the only ones that matter.&lt;/a&gt;)&lt;/li&gt;&lt;li&gt;Safari should get over it and put favicons in the tabs.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="http://css-tricks.com/14358-default-tab-ui-of-the-current-desktop-browser-landscape/"&gt;Default Tab UI of the Current Desktop Browser Landscape&lt;/a&gt; is a post from &lt;a href="http://css-tricks.com"&gt;CSS-Tricks&lt;/a&gt;&lt;/p&gt;</content><author><name>Chris Coyier</name></author><gr:likingUser>07408627712721547853</gr:likingUser><gr:likingUser>15402698410055161977</gr:likingUser><gr:likingUser>02493361864459897726</gr:likingUser><gr:likingUser>12776289841562678042</gr:likingUser><gr:likingUser>18104276611526409683</gr:likingUser><gr:likingUser>09433814959000598805</gr:likingUser><gr:likingUser>05392530455166982582</gr:likingUser><gr:likingUser>13240275040780172337</gr:likingUser><gr:likingUser>03161119868583916422</gr:likingUser><gr:likingUser>04951716653057569198</gr:likingUser><gr:likingUser>02521387969137911343</gr:likingUser><gr:likingUser>14465000831884328462</gr:likingUser><gr:likingUser>02511925071602805561</gr:likingUser><gr:likingUser>17996110627549947396</gr:likingUser><gr:likingUser>09890829929171432444</gr:likingUser><gr:likingUser>10017550940109491378</gr:likingUser><gr:likingUser>10902869890156917646</gr:likingUser><gr:likingUser>10828937438154568609</gr:likingUser><gr:likingUser>01334159780427779376</gr:likingUser><gr:likingUser>00984508782103022453</gr:likingUser><gr:likingUser>05690229047086915053</gr:likingUser><gr:likingUser>13007308213409689926</gr:likingUser><gr:likingUser>17754984257026167329</gr:likingUser><gr:likingUser>17251673941562854838</gr:likingUser><gr:likingUser>15478528425001517671</gr:likingUser><gr:likingUser>03526858162053867652</gr:likingUser><gr:likingUser>07963840913788799523</gr:likingUser><gr:likingUser>04991343963793826258</gr:likingUser><gr:likingUser>14238639521668728383</gr:likingUser><gr:likingUser>03020522199988970127</gr:likingUser><gr:likingUser>13612719240878301842</gr:likingUser><gr:likingUser>07699779827498138902</gr:likingUser><source gr:stream-id="feed/http://feeds.feedburner.com/CssTricks"><id>tag:google.com,2005:reader/feed/http://feeds.feedburner.com/CssTricks</id><title type="html">CSS-Tricks</title><link rel="alternate" href="http://css-tricks.com" type="text/html"/></source></entry></feed>

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>Plings Blogs</title>
+	
+	<link>http://www.plings.net/blog</link>
+	<description>...about information on Places to Go, Things to Do</description>
+	<lastBuildDate>Tue, 02 Aug 2011 08:52:30 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.1.1</generator>
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/plingsblogs" /><feedburner:info uri="plingsblogs" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><geo:lat>53.478490</geo:lat><geo:long>-2.232015</geo:long><creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/2.0/</creativeCommons:license><feedburner:emailServiceId>plingsblogs</feedburner:emailServiceId><feedburner:feedburnerHostname>http://feedburner.google.com</feedburner:feedburnerHostname><feedburner:feedFlare href="http://add.my.yahoo.com/rss?url=http%3A%2F%2Ffeeds.feedburner.com%2Fplingsblogs" src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif">Subscribe with My Yahoo!</feedburner:feedFlare><feedburner:feedFlare href="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http%3A%2F%2Ffeeds.feedburner.com%2Fplingsblogs" src="http://www.newsgator.com/images/ngsub1.gif">Subscribe with NewsGator</feedburner:feedFlare><feedburner:feedFlare href="http://feeds.my.aol.com/add.jsp?url=http%3A%2F%2Ffeeds.feedburner.com%2Fplingsblogs" src="http://o.aolcdn.com/favorites.my.aol.com/webmaster/ffclient/webroot/locale/en-US/images/myAOLButtonSmall.gif">Subscribe with My AOL</feedburner:feedFlare><feedburner:feedFlare href="http://www.bloglines.com/sub/http://feeds.feedburner.com/plingsblogs" src="http://www.bloglines.com/images/sub_modern11.gif">Subscribe with Bloglines</feedburner:feedFlare><feedburner:feedFlare href="http://www.netvibes.com/subscribe.php?url=http%3A%2F%2Ffeeds.feedburner.com%2Fplingsblogs" src="http://www.netvibes.com/img/add2netvibes.gif">Subscribe with Netvibes</feedburner:feedFlare><feedburner:feedFlare href="http://fusion.google.com/add?feedurl=http%3A%2F%2Ffeeds.feedburner.com%2Fplingsblogs" src="http://buttons.googlesyndication.com/fusion/add.gif">Subscribe with Google</feedburner:feedFlare><feedburner:feedFlare href="http://www.pageflakes.com/subscribe.aspx?url=http%3A%2F%2Ffeeds.feedburner.com%2Fplingsblogs" src="http://www.pageflakes.com/ImageFile.ashx?instanceId=Static_4&amp;fileName=ATP_blu_91x17.gif">Subscribe with Pageflakes</feedburner:feedFlare><feedburner:browserFriendly>Thanks for subscribing to the Plings feed!</feedburner:browserFriendly><item>
+		<title>Pling-o-matic can now publish your Google Calendar</title>
+		<link>http://feedproxy.google.com/~r/plingsblogs/~3/wKV5OcKskVk/</link>
+		<comments>http://www.plings.net/blog/index.php/2011/07/26/pling-o-matic-can-now-publish-your-google-calendar/#comments</comments>
+		<pubDate>Tue, 26 Jul 2011 17:24:44 +0000</pubDate>
+		<dc:creator>petenickless</dc:creator>
+				<category><![CDATA[Collecting Plings]]></category>
+		<category><![CDATA[Project news]]></category>
+		<category><![CDATA[Technical]]></category>
+
+		<guid isPermaLink="false">http://www.plings.net/blog/?p=2045</guid>
+		<description><![CDATA[Avid readers will be aware of the powerful pling-o-matic tool we built with 1UPDesign to process records from the Open Family Services Directory, parse and reformat them ready for upload to the plings web service. At the core of the &#8230; <a href="http://www.plings.net/blog/index.php/2011/07/26/pling-o-matic-can-now-publish-your-google-calendar/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Avid readers will be aware of the powerful <a href="http://pling-o-matic.com">pling-o-matic</a> tool we built with <a href="http://1updesign.org">1UPDesign</a> to process records from the <a href="http://www.openfamilyservices.org.uk/ofs/">Open Family Services Directory</a>, parse and reformat them ready for upload to the plings web service.</p>
+<p>At the core of the pling-o-matic is an application which parses the freetext of the records from the OFS searching for unstructured instances of dates, days and times;  Where present the starttime and endtimes are created in a structured format.</p>
+<p>It occurred to us we could harness this semantic application to parse data from elsewhere.  So, over the last few weeks we&#8217;ve been experimenting with collecting data from other sources.  Using a dedicated application developed by 1UP we&#8217;ve scraped the content from a number of sites and are working to reformat the data ready for plings.</p>
+<div id="attachment_2049" class="wp-caption alignright" style="width: 650px"><a href="http://www.plings.net/blog/wp-content/uploads/2011/07/Screen-shot-2011-07-26-at-18.31.27.png"><img class="size-large wp-image-2049" title="Plings Calendar - Google Calendar" src="http://www.plings.net/blog/wp-content/uploads/2011/07/Screen-shot-2011-07-26-at-18.31.27-1024x549.png" alt="Plings Calendar - Google Calendar - Dorset" width="640" height="343" /></a><p class="wp-caption-text">A day in Cumbria&#39;s Google Calendar</p></div>
+<h3>However by far the most effective source of data we&#8217;ve found has been Google Calendars maintained by local authorities.</h3>
+<p>Not only does this lend the local authorities all of the benefits that are native to Google Calendars but it also means the data is available to the pling-o-matic in great quality, well structured feeds.</p>
+<p>Jamie Tickner from Cumbria County Council was quick to see the benefits of using calendars to manage his data.</p>
+<blockquote>
+<p style="padding-left: 30px;">&#8220;Prior to storing our events data in a google calendar I just added events details manually on to a web page using standard html.  This was fine but not very dynamic and there were no other uses for the data.  Also it meant that I was the only person who could add events to the website.&#8221;</p>
+<p style="padding-left: 30px;">So I decided to set up a google calendar.  The main advantages of this were that the calendar could easily be embedded in to existing websites and activity providers could add their own events with minimal training.&#8221;</p>
+</blockquote>
+<p>We&#8217;re now processing the calendars that contain all the positive activity data for Cumbria.  These calendars have helped us produce in excess of 500 plings during the next four weeks.&#8221;</p>
+<p>Jamie is &#8220;very pleased with the work Substance have done&#8221;  and is looking forward to taking advantage of the array of applications available now he&#8217;s got data live at plings.</p>
+<h3>We&#8217;re on the lookout for other organisations (from a single youth club to Local Authority) who already have Google Calendars full of data and would like to take the opportunity to get their data live at plings.  If you&#8217;ve got a calendar you&#8217;d like us to take a look at please <a href="http://pling-o-matic.com/#contact">contact us</a></h3>
+<p>Alternatively for those of you who haven&#8217;t got calendars full of data yet here&#8217;s some of the benefits of using Google calendars to collate your data:-</p>
+<ul>
+<li><strong>Collaboration</strong> &#8211; Any member of a large organisation can add, edit or remove a calendar entry at anytime and from anywhere with an internet connection</li>
+<li><strong>Publishing</strong> &#8211; It&#8217;s really easy to publish your events on your own website using the google calendar widget or elsewhere using Google&#8217;s range of calendar feeds and the calendar API</li>
+<li><strong>Mobile</strong> &#8211; Google&#8217;s Mobile service (which links seamlessly into iPhone and Android) can be accessed anywhere from mobile devices.</li>
+</ul>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/plingsblogs?a=wKV5OcKskVk:WOaTgMXPbpg:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=wKV5OcKskVk:WOaTgMXPbpg:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=wKV5OcKskVk:WOaTgMXPbpg:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=wKV5OcKskVk:WOaTgMXPbpg:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=wKV5OcKskVk:WOaTgMXPbpg:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=wKV5OcKskVk:WOaTgMXPbpg:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=wKV5OcKskVk:WOaTgMXPbpg:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=wKV5OcKskVk:WOaTgMXPbpg:gIN9vFwOqvQ" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://www.plings.net/blog/index.php/2011/07/26/pling-o-matic-can-now-publish-your-google-calendar/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.plings.net/blog/index.php/2011/07/26/pling-o-matic-can-now-publish-your-google-calendar/</feedburner:origLink></item>
+		<item>
+		<title>Open Family Services Directory and Plings</title>
+		<link>http://feedproxy.google.com/~r/plingsblogs/~3/qWNBmCeXj1c/</link>
+		<comments>http://www.plings.net/blog/index.php/2011/05/17/open-family-services-directory-and-plings/#comments</comments>
+		<pubDate>Tue, 17 May 2011 13:20:49 +0000</pubDate>
+		<dc:creator>petenickless</dc:creator>
+				<category><![CDATA[Project news]]></category>
+
+		<guid isPermaLink="false">http://www.plings.net/blog/?p=2018</guid>
+		<description><![CDATA[As many of you may already know for the last year or so we&#8217;ve been working with Local Authorities to publish the data they stored in the Family Information Directory via the many plings publishing channels.  To overcome difficulties with &#8230; <a href="http://www.plings.net/blog/index.php/2011/05/17/open-family-services-directory-and-plings/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<div id="attachment_2024" class="wp-caption alignright" style="width: 310px"><a href="http://www.plings.net/blog/wp-content/uploads/2011/05/Screen-shot-2011-05-17-at-14.21.09.png"><img class="size-medium wp-image-2024" title="Pling-o-matic Website" src="http://www.plings.net/blog/wp-content/uploads/2011/05/Screen-shot-2011-05-17-at-14.21.09-300x154.png" alt="Pling-o-matic Website" width="300" height="154" /></a><p class="wp-caption-text">Pling-o-matic Website</p></div>
+<p>As many of you may already know for the last year or so we&#8217;ve been working with Local Authorities to publish the data they stored in the Family Information Directory via the many plings publishing channels.  To overcome difficulties with the formats of the data as well as variations in it&#8217;s quality and quantity we built a Data Processing application which we affectionately called <a href="http://pling-o-matic.com">Pling-o-matic</a>.</p>
+<h2>What is Pling-o-matic?</h2>
+<p>Amongst other things the magnificent Pling-o-matic parses freetext looking for instances of days, dates and times, when a day or date and time is found pling-o-matic automatically creates the start time and end time of an event and publishes it at plings.net.   There&#8217;s stacks of more specific information on the <a href="/http://plings.info/wiki/index.php/Pling-o-matic">plings wiki</a> and the <a href="http://pling-o-matic.com">Pling-o-matic website</a>.</p>
+<h2>Quality or Quantity when it comes to data?</h2>
+<p>When we launched we piloted parsing and publishing all the activities listed under the &#8220;Leisure and Recreation&#8221; category terms.  This provided us with a huge amount of data, at the height we were parsing in excess of 35,000 records daily.  Although the quantity and quality of the records was great we were concerned that some data didn&#8217;t fit into the scope of Plings; Positive Activities for 13-19 year olds.</p>
+<p>Our solution was to ask local authorities to tag the records they&#8217;d like processed by the pling-o-matic and published at plings with the vocabulary term <a href="http://doc.esd.org.uk/FID/3.00.html#/http://id.esd.org.uk/subject/001-01v">&#8220;Positive Activities&#8221;</a>.  Although the quantity dropped we ended up with a smaller data set of high quality data which was perfectly in our scope.</p>
+<h2>Family Information Directory (FIDy) hit by budget cuts</h2>
+<p>Our concern was raised in February when the announcement came that the Family Information Directory was to fall victim to the central government deficit reduction cuts and was to be discontinued.  The department saw merit in the open sourcing of the aggregator code and thankfully the consortium of Vantaggio, Knowledge Integration and Kent Family Information Service came to the rescue providing the <a href="http://www.openfamilyservices.org.uk/ofs/">Open Family Services Directory</a>.</p>
+<div id="attachment_2029" class="wp-caption alignleft" style="width: 310px"><a href="http://www.plings.net/blog/wp-content/uploads/2011/05/Screen-shot-2011-05-17-at-14.25.21.png"><img class="size-medium wp-image-2029" title="Open Family Services Directory" src="http://www.plings.net/blog/wp-content/uploads/2011/05/Screen-shot-2011-05-17-at-14.25.21-300x137.png" alt="Open Family Services Directory" width="300" height="137" /></a><p class="wp-caption-text">Open Family Services Directory</p></div>
+<h2>Welcome to the Open Family Services Directory</h2>
+<p>The OFS aggregator was an exact replica of the FIDy aggregator so we simply changed a couple of base URLs and starting parsing data immediately.  We were amazed at the quality and quantity of data held in the aggregator at such an early stage.  We&#8217;re really excited about the future of the directory and we encourage local authorities and channel partners to get involved.</p>
+<p><em>Pling-o-matic was developed and is maintained by <a href="http://1updesign.org">1UPDesign</a> for Substance Coop.  To date it has created and published 278,520 plings.  Interested in knowing more about pling-o-matic, <a href="mailto:pete@1updesign.org" target="_blank">contact us</a></em></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/plingsblogs?a=qWNBmCeXj1c:IVEd4FAT2bg:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=qWNBmCeXj1c:IVEd4FAT2bg:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=qWNBmCeXj1c:IVEd4FAT2bg:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=qWNBmCeXj1c:IVEd4FAT2bg:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=qWNBmCeXj1c:IVEd4FAT2bg:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=qWNBmCeXj1c:IVEd4FAT2bg:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=qWNBmCeXj1c:IVEd4FAT2bg:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=qWNBmCeXj1c:IVEd4FAT2bg:gIN9vFwOqvQ" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://www.plings.net/blog/index.php/2011/05/17/open-family-services-directory-and-plings/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.plings.net/blog/index.php/2011/05/17/open-family-services-directory-and-plings/</feedburner:origLink></item>
+		<item>
+		<title>Blackpool Plings By Numbers</title>
+		<link>http://feedproxy.google.com/~r/plingsblogs/~3/1ASmfMl0GvE/</link>
+		<comments>http://www.plings.net/blog/index.php/2011/04/15/blackpool-plings-by-numbers/#comments</comments>
+		<pubDate>Fri, 15 Apr 2011 09:20:34 +0000</pubDate>
+		<dc:creator>Duncan Hodgson</dc:creator>
+				<category><![CDATA[Managing Plings]]></category>
+		<category><![CDATA[Project news]]></category>
+		<category><![CDATA[attendance]]></category>
+		<category><![CDATA[blackpool]]></category>
+		<category><![CDATA[commissioning]]></category>
+		<category><![CDATA[management information]]></category>
+		<category><![CDATA[stats]]></category>
+
+		<guid isPermaLink="false">http://www.plings.net/blog/?p=1997</guid>
+		<description><![CDATA[Here at Blackpool Council we&#8217;ve just pulled together our end of year Plings statistical report using the Plings Stats Tool. This year we&#8217;ve managed to achieve some fantastic increases in the number of activities we are sending up to Plings &#8230; <a href="http://www.plings.net/blog/index.php/2011/04/15/blackpool-plings-by-numbers/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Here at <strong><a title="Blackpool Council" href="http://www.blackpool.gov.uk" target="_blank">Blackpool Council</a></strong> we&#8217;ve just pulled together our end of year Plings statistical report using the <a title="The Plings Stats tool" href="http://www.plings.net/blog/index.php/2010/01/04/the-plings-stats-tool/" target="_blank">Plings Stats Tool</a>. This year we&#8217;ve managed to achieve some fantastic increases in the number of activities we are sending up to Plings via the <a title="Plings Input API" href="http://www.plings.info/wiki/index.php/Plings_Input_API" target="_blank">API</a>.</p>
+<h2>10,000 hours</h2>
+<div id="attachment_2005" class="wp-caption alignright" style="width: 294px"><a href="http://www.plings.net/blog/wp-content/uploads/2011/04/plings-blog-blackpool-stats1.jpg"><img class="size-full wp-image-2005" src="http://www.plings.net/blog/wp-content/uploads/2011/04/plings-blog-blackpool-stats1.jpg" alt="Blackpool Stats" width="284" height="81" /></a><p class="wp-caption-text">Blackpool&#39;s Stats Spreadsheet</p></div>
+<p>In 2010/11 we have seen the number of hours of provision advertised rocket to over 10,000 &#8211; <strong>more than 28 hours of provision for every day of the year</strong> and an increase of 125% on 2009/10.</p>
+<p>However, in some wards we have seen numbers drop but it&#8217;s really important to remember how to use the figures in a positive way &#8211; even when they aren&#8217;t as good as we&#8217;d like.</p>
+<div id="attachment_2008" class="wp-caption alignleft" style="width: 278px"><a href="http://www.plings.net/blog/wp-content/uploads/2011/04/plings-blog-blackpool-graph.jpg"><img class="size-full wp-image-2008 " src="http://www.plings.net/blog/wp-content/uploads/2011/04/plings-blog-blackpool-graph.jpg" alt="Blackpool Stats Graph" width="268" height="166" /></a><p class="wp-caption-text">Instances per Month</p></div>
+<h2>Plings is also strategic</h2>
+<p>Sometimes there can be a struggle when trying to get the message across that Plings is not only a tool for young people to find positive activities, but also one for senior management and commissioners to better plan and structure activities both in geographical areas and in the type of activity provided.</p>
+<p>For example in Blackpool&#8217;s <a title="Park on Plings" href="http://www.plings.net/la/00EY?ward=00EYNN" target="_blank">Park ward</a> we saw a 23% fall in the number of activities in 2010/11 from 2009/10. While this information isn&#8217;t what we&#8217;d like to see, we need to establish the reason behind this fall. Is it that providers had previously been putting on activities in this areas but they weren&#8217;t being attended in high enough numbers? If that was the case then the drop is justified but if there is another reason, we need to know what it was and establish whether activities need to be reinstated in this area.</p>
+<h2>Adding attendance to Plings data?</h2>
+<p>If we could tie in the Plings Data with management information on the number of young people attending particular activities we could have an even richer picture of what we have to offer. Maybe this is a new development to be looked at in the future.</p>
+<p><em>You can see Blackpool&#8217;s Plings at <a title="rubothered.co.uk" href="http://www.rubothered.co.uk" target="_blank">www.rubothered.co.uk</a>!</em></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/plingsblogs?a=1ASmfMl0GvE:ZxffmAlvFI8:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=1ASmfMl0GvE:ZxffmAlvFI8:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=1ASmfMl0GvE:ZxffmAlvFI8:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=1ASmfMl0GvE:ZxffmAlvFI8:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=1ASmfMl0GvE:ZxffmAlvFI8:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=1ASmfMl0GvE:ZxffmAlvFI8:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=1ASmfMl0GvE:ZxffmAlvFI8:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=1ASmfMl0GvE:ZxffmAlvFI8:gIN9vFwOqvQ" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://www.plings.net/blog/index.php/2011/04/15/blackpool-plings-by-numbers/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.plings.net/blog/index.php/2011/04/15/blackpool-plings-by-numbers/</feedburner:origLink></item>
+		<item>
+		<title>March Search Terms – Zumba still there!</title>
+		<link>http://feedproxy.google.com/~r/plingsblogs/~3/uXn9DXHbDBg/</link>
+		<comments>http://www.plings.net/blog/index.php/2011/04/01/march-search-terms-zumba-still-there/#comments</comments>
+		<pubDate>Fri, 01 Apr 2011 13:05:00 +0000</pubDate>
+		<dc:creator>stevieflow</dc:creator>
+				<category><![CDATA[News & Announcements]]></category>
+		<category><![CDATA[Project news]]></category>
+		<category><![CDATA[FIDy]]></category>
+		<category><![CDATA[google analytics]]></category>
+		<category><![CDATA[search]]></category>
+		<category><![CDATA[zumba]]></category>
+
+		<guid isPermaLink="false">http://www.plings.net/blog/?p=1983</guid>
+		<description><![CDATA[We&#8217;ve pulled together another tag cloud for search terms made on plings.net during March.  As you can see, the rise of Zumba continues! We&#8217;re are also publishing these images onto Flickr &#8211; please let us know if you want to &#8230; <a href="http://www.plings.net/blog/index.php/2011/04/01/march-search-terms-zumba-still-there/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>We&#8217;ve pulled together another tag cloud for search terms made on plings.net during March.  As you can see, the rise of <a href="http://www.plings.net/thingstodo/zumba"><strong>Zumba</strong></a> continues!</p>
+<div class="wp-caption alignnone" style="width: 510px"><a href="http://www.wordle.net/show/wrdl/3397548/Plings_search_terms_-_March_2011"><img title="Search terms - March 2011" src="http://farm6.static.flickr.com/5140/5579426056_398928ff41.jpg" alt="Search terms - March 2011" width="500" height="229" /></a><p class="wp-caption-text">Search terms - March 2011</p></div>
+<p>We&#8217;re are also <a href="http://www.flickr.com/photos/plings/sets/72157626041535595/">publishing these images onto Flickr</a> &#8211; please let us know if you want to use them in any way &#8211; or even if you visualise your own!</p>
+<p><H2>Free tools to help</H2></p>
+<p>Stewart from <a href="http://analysis-exchange.tumblr.com/post/3879775756/analysis-exchange-success-story-plings">the Analysis Exchange helped us</a> gather the tools to query Google Analytics and make this visualisation.  The first tool &#8211; <a href="http://excellentanalytics.com/"><strong>Excellent Analytics</strong></a> &#8211; is really useful to grab data and bring it into an Excel spreadsheet.  Alongside this, Stewart recommended <a href="http://www.asap-utilities.com/"><strong>ASAP Utilities</strong></a> for helping to refine the data whilst in Excel.  Once we have the hang of it, we will post up a quick video tutorial!</p>
+<p><H2>Traffic to category pages</H2></p>
+<div id="attachment_1984" class="wp-caption alignleft" style="width: 160px"><a href="http://www.plings.net/"><img class="size-thumbnail wp-image-1984" title="Plings homepage" src="http://www.plings.net/blog/wp-content/uploads/2011/04/Plings-Things-to-do-When-Bored-Free-Things-To-Do_1301658667222-150x150.png" alt="Plings homepage" width="150" height="150" /></a><p class="wp-caption-text">Plings homepage</p></div>
+<p>We recently made some minor adjustments on the <a href="http://www.plings.net/">Plings homepage</a>, to encourage traffic to the category pages &#8211; <a href="http://www.plings.net/thingstodo">Things to Do</a> and Places to Go.  Again, analysis has shown us that people stay longer when visiting via these pages, as opposed to just searching.</p>
+<p><H2>Pause with Family Information Direct data</H2></p>
+<p>Finally, with the <a href="http://www.familyinformationservices.org.uk/index.php?option=com_content&amp;view=article&amp;id=116:fidy-aggregator-information-update&amp;catid=36:strategic-comms">loss of the government-funded national aggregator</a> platform for Family Information Services, we&#8217;ve had to pause the feed of activities from that source temporarily.  However, we are actively speaking to alternative platform providers in order to re-secure this data!</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/plingsblogs?a=uXn9DXHbDBg:-2gdjhnsgfo:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=uXn9DXHbDBg:-2gdjhnsgfo:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=uXn9DXHbDBg:-2gdjhnsgfo:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=uXn9DXHbDBg:-2gdjhnsgfo:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=uXn9DXHbDBg:-2gdjhnsgfo:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=uXn9DXHbDBg:-2gdjhnsgfo:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=uXn9DXHbDBg:-2gdjhnsgfo:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=uXn9DXHbDBg:-2gdjhnsgfo:gIN9vFwOqvQ" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://www.plings.net/blog/index.php/2011/04/01/march-search-terms-zumba-still-there/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.plings.net/blog/index.php/2011/04/01/march-search-terms-zumba-still-there/</feedburner:origLink></item>
+		<item>
+		<title>How can we use infographics in community information?</title>
+		<link>http://feedproxy.google.com/~r/plingsblogs/~3/dNumJ8vEHVk/</link>
+		<comments>http://www.plings.net/blog/index.php/2011/03/24/how-can-we-use-infographics-in-community-information/#comments</comments>
+		<pubDate>Thu, 24 Mar 2011 14:25:42 +0000</pubDate>
+		<dc:creator>stevieflow</dc:creator>
+				<category><![CDATA[Other stuff!]]></category>
+		<category><![CDATA[Project news]]></category>
+		<category><![CDATA[Sharing Plings]]></category>
+		<category><![CDATA[big society]]></category>
+		<category><![CDATA[formstack]]></category>
+		<category><![CDATA[infographics]]></category>
+
+		<guid isPermaLink="false">http://www.plings.net/blog/?p=1970</guid>
+		<description><![CDATA[Our friends at the Big Society Big Mouth campaign asked us to help circulate this infographic they recently commissioned: An infographic can be a really effective way to capture a complex issue in a stimulating and visual way.  For Big &#8230; <a href="http://www.plings.net/blog/index.php/2011/03/24/how-can-we-use-infographics-in-community-information/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Our friends at the <a href="http://www.bigsocietysbigmouth.org/"><strong>Big Society Big Mouth</strong></a> campaign asked us to help circulate this <a href="http://en.wikipedia.org/wiki/Information_graphics">infographic</a> they recently commissioned:</p>
+<div id="attachment_1972" class="wp-caption alignnone" style="width: 539px"><a href="http://www.plings.net/blog/wp-content/uploads/2011/03/bigsocietybigmouth-infographic.jpg"><img class="size-full wp-image-1972 " title="bigsocietybigmouth-infographic" src="http://www.plings.net/blog/wp-content/uploads/2011/03/bigsocietybigmouth-infographic.jpg" alt="" width="529" height="412" /></a><p class="wp-caption-text">Big society infographic</p></div>
+<p>An infographic can be a really effective way to capture a complex issue in a stimulating and visual way.  For Big Society Big Mouth, the desired outcome is to stimulate <a href="http://www.bigsocietysbigmouth.org/voice">discussion and debate amongst young people</a> around <a href="http://search.twitter.com/search?q=%23bigsociety">#bigsociety</a> related issues &#8211; so please feel free to print, circulate and use this.  It will be interesting to track the debate and discussions that arise from this &#8211; as a real test of an infographic is the engagement it can bring, and how we measure it&#8230;.</p>
+<p><strong>Good infographics result in better engagement?<br />
+</strong></p>
+<p>We recently enjoyed a infographic around <a href="http://www.formstack.com/the-anatomy-of-a-perfect-landing-page"><strong>compelling landing pages</strong></a>, which has helped us in our thinking for better designs on Plings (more of which later).  What really caught our eye though, was the <a href="http://blog.formstack.com/2011/01/27/anatomy-perfect-landing-page-case-study/">follow up blog post from Formstack</a> &#8211; the people behind the infographic.  Alongside the phenomenal <strong>150,000 views</strong> of the image in a month, they found an interesting trend amongst their web analytics.  Visitors took a different route around the website, as opposed to cutting straight to the product costs, implying that the infographic had acted as a <strong>useful tool for engagement</strong>.</p>
+<p><strong>Where are the youth activities infographics?</strong></p>
+<p>We&#8217;re starting think of compelling stories around Plings, that could result in an infographic.</p>
+<p><strong>Do you know of any?  Do you currently deploy such mechanisms in your work?  How can we make them accessible?  We&#8217;d love to hear&#8230;</strong></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/plingsblogs?a=dNumJ8vEHVk:qChzvxj7KGo:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=dNumJ8vEHVk:qChzvxj7KGo:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=dNumJ8vEHVk:qChzvxj7KGo:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=dNumJ8vEHVk:qChzvxj7KGo:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=dNumJ8vEHVk:qChzvxj7KGo:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=dNumJ8vEHVk:qChzvxj7KGo:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=dNumJ8vEHVk:qChzvxj7KGo:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=dNumJ8vEHVk:qChzvxj7KGo:gIN9vFwOqvQ" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://www.plings.net/blog/index.php/2011/03/24/how-can-we-use-infographics-in-community-information/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.plings.net/blog/index.php/2011/03/24/how-can-we-use-infographics-in-community-information/</feedburner:origLink></item>
+		<item>
+		<title>Yet more Zumba goodness!</title>
+		<link>http://feedproxy.google.com/~r/plingsblogs/~3/6z3_iTKjwkg/</link>
+		<comments>http://www.plings.net/blog/index.php/2011/03/16/yet-more-zumba-goodness/#comments</comments>
+		<pubDate>Wed, 16 Mar 2011 10:16:06 +0000</pubDate>
+		<dc:creator>stevieflow</dc:creator>
+				<category><![CDATA[Project news]]></category>
+		<category><![CDATA[Research]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[insights]]></category>
+		<category><![CDATA[search]]></category>
+		<category><![CDATA[thing to do]]></category>
+		<category><![CDATA[zumba]]></category>
+
+		<guid isPermaLink="false">http://www.plings.net/blog/?p=1957</guid>
+		<description><![CDATA[Just a very quick update from our last post on the rise of Zumba in the Plings search results&#8230; Zumba Thing to Do We&#8217;ve now added a Thing to Do page for Zumba, through which we can monitor traffic and &#8230; <a href="http://www.plings.net/blog/index.php/2011/03/16/yet-more-zumba-goodness/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Just a very quick update from our<a href="http://www.plings.net/blog/index.php/2011/03/10/zumba-dancing-everywhere/"> last post on the rise of Zumba</a> in the Plings search results&#8230;</p>
+<div id="attachment_1962" class="wp-caption alignleft" style="width: 310px"><a href="http://www.plings.net/thingstodo/zumba"><img src="http://www.plings.net/blog/wp-content/uploads/2011/03/Plings-Things-to-do-Activity-Zumba_1300270352933-300x171.png" alt="" title="Plings - Things to do - Activity - Zumba_1300270352933" width="300" height="171" class="size-medium wp-image-1962" /></a><p class="wp-caption-text">Zumba as a Thing to Do</p></div>
+<p><strong>Zumba Thing to Do</strong><br />
+We&#8217;ve now added a <strong><a href="http://www.plings.net/thingstodo/zumba">Thing to Do page for Zumba</a></strong>, through which we can monitor traffic and engagement</p>
+<p><strong>Zumba searches on Google</strong></p>
+<p>Stewart, who has helped us a great deal via the <a href="http://analysis-exchange.tumblr.com/post/3879775756/analysis-exchange-success-story-plings">Analysis Exchange project</a>, pointed us to this <a href="http://www.google.com/insights/search/#q=zumba&amp;geo=GB-ENG&amp;cmpt=q">visualisation of searches for Zumba</a> made via Gooogle (in England).  It really is a search phenomenon!</p>
+<p><script type="text/javascript" src="http://www.gmodules.com/ig/ifr?url=http%3A%2F%2Fwww.google.com%2Fig%2Fmodules%2Fgoogle_insightsforsearch_interestovertime_searchterms.xml&amp;up__property=empty&amp;up__search_terms=zumba&amp;up__location=GB-ENG&amp;up__category=0&amp;up__time_range=empty&amp;up__compare_to_category=false&amp;synd=open&amp;w=600&amp;h=350&amp;lang=en-GB&amp;title=Google+Insights+for+Search&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script></p>
+<p><strong>What other trends exist around activities for young people?<br />
+</strong>The Google Insights for Search tool is really useful when thinking about activities for young people &#8211; please let us know if you find any other interesting trends&#8230;</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/plingsblogs?a=6z3_iTKjwkg:B2PbcT8hQUw:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=6z3_iTKjwkg:B2PbcT8hQUw:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=6z3_iTKjwkg:B2PbcT8hQUw:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=6z3_iTKjwkg:B2PbcT8hQUw:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=6z3_iTKjwkg:B2PbcT8hQUw:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=6z3_iTKjwkg:B2PbcT8hQUw:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=6z3_iTKjwkg:B2PbcT8hQUw:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=6z3_iTKjwkg:B2PbcT8hQUw:gIN9vFwOqvQ" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://www.plings.net/blog/index.php/2011/03/16/yet-more-zumba-goodness/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.plings.net/blog/index.php/2011/03/16/yet-more-zumba-goodness/</feedburner:origLink></item>
+		<item>
+		<title>Zumba dancing everywhere!</title>
+		<link>http://feedproxy.google.com/~r/plingsblogs/~3/bup1L-_WAiU/</link>
+		<comments>http://www.plings.net/blog/index.php/2011/03/10/zumba-dancing-everywhere/#comments</comments>
+		<pubDate>Thu, 10 Mar 2011 15:32:44 +0000</pubDate>
+		<dc:creator>stevieflow</dc:creator>
+				<category><![CDATA[Project news]]></category>
+		<category><![CDATA[Research]]></category>
+		<category><![CDATA[analytics]]></category>
+		<category><![CDATA[search]]></category>
+		<category><![CDATA[zumba]]></category>
+
+		<guid isPermaLink="false">http://www.plings.net/blog/?p=1935</guid>
+		<description><![CDATA[We noticed Zumba was trending in our search results.  What is it? <a href="http://www.plings.net/blog/index.php/2011/03/10/zumba-dancing-everywhere/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>We recently started to pull together all the search terms people use on  the Plings website, and noticed the increased use of the term <a href="http://en.wikipedia.org/wiki/Zumba"><strong>Zumba</strong></a>:</p>
+<div class="wp-caption alignnone" style="width: 510px"><a href="http://www.flickr.com/photos/plings/5486040472/"><img title="Plings Search - Word Cloud " src="http://farm6.static.flickr.com/5299/5486040472_7602efe001.jpg" alt="Plings Search - Word Cloud " width="500" height="286" /></a><p class="wp-caption-text">Plings Search - Word Cloud </p></div>
+<div id="attachment_1934" class="wp-caption alignright" style="width: 189px"><img class="size-medium wp-image-1934 " title="Zumba" src="http://www.plings.net/blog/wp-content/uploads/2011/03/Zumba-179x300.jpg" alt="Zumba" width="179" height="300" /><p class="wp-caption-text">Zumba classes</p></div>
+<p>That very same day I spotted a flyer for Zumba classes at my local leisure centre!</p>
+<p>A quick google search for &#8220;<a href="http://www.google.co.uk/search?q=zumba+classes+uk&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:en-GB:official&amp;client=firefox-a">zumba classes uk</a>&#8221; brings back 1,500,000 results.</p>
+<p>Scientific proof that Zumba is a new craze?</p>
+<p>Well, not quite, although there is quite a lot of <a href="http://www.guardian.co.uk/cardiff/2010/dec/16/zumba-classes-cardiff">coverage to suggest it is</a>.</p>
+<p>However, it is the implications for Plings that we are really interested in.</p>
+<p><strong>Zumba for Plings</strong><br />
+Well, given this compelling evidence, we plan to:</p>
+<ul>
+<li>Pull together a Zumba page over at the <a href="http://www.plings.net/thingstodo">Things to Do</a> section</li>
+<li>Try and find data and listings of any Zumba classes</li>
+<li>Work on our keywords to enable better tagging</li>
+</ul>
+<ul></ul>
+<p>It is this type of data-driven analysis we are keen to keep doing.  Know of any other trends we could help spot?</p>
+<p><strong>The Analysis Exchange</strong><br />
+Hats off to <a href="http://twitter.com/#!/tomp2/">Tom</a> and Stewart who helped us unearth this &#8211; and lots more &#8211; data through our recent participation in the <strong><a href="http://www.webanalyticsdemystified.com/ae/">Analysis Exchange</a></strong>.  This is a free programme to help non-profit and community projects gain better insights into their web datasets such as Google Analytics.  <a href="http://www.webanalyticsdemystified.com/ae/what-is-analysis-exchange.asp">Register now&#8230; it&#8217;s free</a>!</p>
+<p><strong>But what *is* Zumba?</strong><br />
+If you&#8217;re not sure what Zumba is, take a look:</p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="390" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/BILiNvLA-lo?fs=1&amp;hl=en_GB" /><param name="allowfullscreen" value="true" /><embed type="application/x-shockwave-flash" width="480" height="390" src="http://www.youtube.com/v/BILiNvLA-lo?fs=1&amp;hl=en_GB" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/plingsblogs?a=bup1L-_WAiU:7J9Yu4ciTGY:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=bup1L-_WAiU:7J9Yu4ciTGY:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=bup1L-_WAiU:7J9Yu4ciTGY:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=bup1L-_WAiU:7J9Yu4ciTGY:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=bup1L-_WAiU:7J9Yu4ciTGY:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=bup1L-_WAiU:7J9Yu4ciTGY:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=bup1L-_WAiU:7J9Yu4ciTGY:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=bup1L-_WAiU:7J9Yu4ciTGY:gIN9vFwOqvQ" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://www.plings.net/blog/index.php/2011/03/10/zumba-dancing-everywhere/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://www.plings.net/blog/index.php/2011/03/10/zumba-dancing-everywhere/</feedburner:origLink></item>
+		<item>
+		<title>Spreading the word on activities for young people – report out now</title>
+		<link>http://feedproxy.google.com/~r/plingsblogs/~3/KeVP8SELeNc/</link>
+		<comments>http://www.plings.net/blog/index.php/2011/01/26/spreading-the-word-on-activities-for-young-people-report-out-now/#comments</comments>
+		<pubDate>Wed, 26 Jan 2011 12:55:37 +0000</pubDate>
+		<dc:creator>NeilW</dc:creator>
+				<category><![CDATA[ISP]]></category>
+		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[Project news]]></category>
+		<category><![CDATA[Research]]></category>
+		<category><![CDATA[DofE]]></category>
+		<category><![CDATA[report]]></category>
+
+		<guid isPermaLink="false">http://www.plings.net/blog/?p=1913</guid>
+		<description><![CDATA[After two years of &#8216;action research&#8216; we are delighted to be able to circulate our final report Spreading the Word. The research, which has utilised the Plings platform has been focused around work with 20 local authorities since September 2008 &#8230; <a href="http://www.plings.net/blog/index.php/2011/01/26/spreading-the-word-on-activities-for-young-people-report-out-now/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>After two years of &#8216;<em>action research</em>&#8216; we are delighted to be able to circulate our final report <strong>Spreading the Word</strong>.</p>
+<div id="attachment_1919" class="wp-caption alignright" style="width: 310px"><img class="size-medium wp-image-1919 " title="spreadingthewordreport" src="http://www.plings.net/blog/wp-content/uploads/2011/01/spreadingthewordreport-300x201.png" alt="Spreading the Word report" width="300" height="201" /><p class="wp-caption-text">Spreading the Word report</p></div>
+<p>The research, which has utilised the Plings platform has been focused around work with 20 local authorities since September 2008 to help them deliver <strong>accurate</strong>, <strong>comprehensive </strong>and <strong>accessible </strong>information about <strong>structured activity opportunities</strong> for young people. Four of the local authorities have been closely involved, <strong>Knowsley</strong>, <strong>Hull</strong>, <strong>Newcastle </strong>and <strong>Salford</strong>, and we thank the staff at all of these for giving so freely of their time and for their many ideas and thoughts.</p>
+<p>As a result of Plings, we can say with some certainty that:</p>
+<ul>
+<li> local authorities have published more and better quality information</li>
+<li>there has been more engagement with it by young people, particularly in social networking spaces</li>
+<li>it has been possible to synchronise the analysis and reporting of activity data which has led to better commissioning.</li>
+</ul>
+<p>This has given us the confidence to roll out the project across the country, including a free service for local authorities who are able to collect activity information and want to publish it in the spaces that young people are likely to find it.</p>
+<p>We hope you take the time to read the report and let us know what you think. At Substance, we see the publication of reports as just another milestone in the journey; a further opportunity to discuss the issues with both strategic and operational staff.</p>
+<p>In the meantime we&#8217;ll get on with implementing what we have learned so far and try and make Plings even more relevant to <strong>young people</strong>, <strong>parents</strong>, <strong>carers </strong>and <strong>activity providers</strong>.</p>
+<p><strong><strong><a href="http://www.substance.coop/publications/spreading-word-dfe-information-and-signposting-project-final-report"><img class="alignleft size-full wp-image-1926" title="pdf_icon" src="http://www.plings.net/blog/wp-content/uploads/2011/01/pdf_icon.png" alt="Download the PDF at the Substance website" width="35" height="35" /></a></strong><a href="http://www.substance.coop/publications/spreading-word-dfe-information-and-signposting-project-final-report">Download Spreading the Word from the Substance website</a></strong></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/plingsblogs?a=KeVP8SELeNc:8a4gkZNLcp8:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=KeVP8SELeNc:8a4gkZNLcp8:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=KeVP8SELeNc:8a4gkZNLcp8:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=KeVP8SELeNc:8a4gkZNLcp8:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=KeVP8SELeNc:8a4gkZNLcp8:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=KeVP8SELeNc:8a4gkZNLcp8:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=KeVP8SELeNc:8a4gkZNLcp8:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=KeVP8SELeNc:8a4gkZNLcp8:gIN9vFwOqvQ" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://www.plings.net/blog/index.php/2011/01/26/spreading-the-word-on-activities-for-young-people-report-out-now/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.plings.net/blog/index.php/2011/01/26/spreading-the-word-on-activities-for-young-people-report-out-now/</feedburner:origLink></item>
+		<item>
+		<title>Travel directions – three alternatives to Google maps</title>
+		<link>http://feedproxy.google.com/~r/plingsblogs/~3/t3MW9y3rGbM/</link>
+		<comments>http://www.plings.net/blog/index.php/2011/01/14/travel-directions-three-alternatives-to-google-maps/#comments</comments>
+		<pubDate>Fri, 14 Jan 2011 11:51:28 +0000</pubDate>
+		<dc:creator>stevieflow</dc:creator>
+				<category><![CDATA[Enhancing Plings]]></category>
+		<category><![CDATA[Project news]]></category>
+		<category><![CDATA[cyclestreets]]></category>
+		<category><![CDATA[directions]]></category>
+		<category><![CDATA[liftshare]]></category>
+		<category><![CDATA[minibus]]></category>
+		<category><![CDATA[transport]]></category>
+		<category><![CDATA[transport direct]]></category>
+		<category><![CDATA[travel]]></category>
+		<category><![CDATA[walkit]]></category>
+
+		<guid isPermaLink="false">http://www.plings.net/blog/?p=1901</guid>
+		<description><![CDATA[You may have noticed that we recently added some extra travel direction tools to each activity page, to provide people with a few options including cycling, walking and public transport. Whilst it is straightforward to get travel directions from a &#8230; <a href="http://www.plings.net/blog/index.php/2011/01/14/travel-directions-three-alternatives-to-google-maps/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<div id="attachment_1909" class="wp-caption alignright" style="width: 219px"><a href="http://www.plings.net/blog/wp-content/uploads/2011/01/Plings-traveldirections.png"><img class="size-full wp-image-1909" title="Plings-traveldirections" src="http://www.plings.net/blog/wp-content/uploads/2011/01/Plings-traveldirections.png" alt="Plings - travel directions options" width="209" height="150" /></a><p class="wp-caption-text">Travel directions on Plings</p></div>
+<p>You may have noticed that we recently added some extra travel direction tools to each activity page, to provide people with a few options including <strong>cycling</strong>, <strong>walking </strong>and <strong>public transport</strong>.</p>
+<p>Whilst it is straightforward to get travel directions from a number of websites and maps these days, these still tend to be car/driving based &#8211; which may not always apply to 13-19 year olds!</p>
+<p>Luckily, there are a some specialist web-based services that provide tailored directions according to the mode of transport, so we took the opportunity to link into them.</p>
+<p><strong> </strong></p>
+<div id="attachment_1905" class="wp-caption alignleft" style="width: 266px"><strong><strong><img class="size-full wp-image-1905" title="walkit-logo" src="http://www.plings.net/blog/wp-content/uploads/2011/01/walkit-logo.png" alt="Walkit logo" width="256" height="80" /></strong></strong><p class="wp-caption-text">Walkit</p></div>
+<p><strong>1. By foot?  Then Walkit!</strong><br />
+<a href="http://walkit.com/"><strong>Walkit</strong></a> provides walking directions based on an advanced mapping and calculation engine. With Walkit you can state what kind of route you&#8217;d prefer and get directions alongside projected time, step count, calorie burn and even carbon saving.</p>
+<p>We&#8217;ve talked with Jamie and Martin at Walkit for the past few months and are very excited to be able to link to their service.  Walkit take great care to ensure the routes they present people are safe and responsible.  Walkit is a mainly urban based service, and so we&#8217;ve created a link into their service only for venues in areas that they cover.</p>
+<p><strong> </strong></p>
+<div id="attachment_1906" class="wp-caption alignleft" style="width: 160px"><strong><strong><img class="size-full wp-image-1906" title="cyclestreetslogo" src="http://www.plings.net/blog/wp-content/uploads/2011/01/cyclestreetslogo.png" alt="Cycle Streets logo" width="150" height="81" /></strong></strong><p class="wp-caption-text">Cyclestreets</p></div>
+<p><strong>2. Cycle the streets</strong><br />
+<a href="http://www.cyclestreets.net/"><strong>Cyclestreets</strong></a> is the UK-wide cycle journey planner, whose website has just seen its third-of-a-millionth route planned.  Martin and his small team based in Cambridge have built a website that provides another well-grounded service &#8211; again making sure that direct and relevant instructions are given.</p>
+<p>Again, we are delighted to be able to provide a link with Cyclestreets &#8211; giving us the confidence to present this on every activity page.</p>
+<p><strong> </strong></p>
+<div id="attachment_1907" class="wp-caption alignleft" style="width: 150px"><strong><strong><img class="size-full wp-image-1907" title="transportdirectlogo" src="http://www.plings.net/blog/wp-content/uploads/2011/01/transportdirectlogo.png" alt="Transport Direct logo" width="140" height="65" /></strong></strong><p class="wp-caption-text">Transport Direct</p></div>
+<p><strong>3. Public transport</strong><br />
+Finally, we took the opportunity to brush up the link we have with the national public transport system, <a href="http://www.transportdirect.info"><strong>Transport Direct</strong></a>.  Again, this is a national resource &#8211; albeit an &#8220;official&#8221; governmental service &#8211; and something that provides bespoke and tailored directions.  The added advantage of Transport Direct is the link into relevant timetables so that people can plan their journey accordingly.</p>
+<p><strong>Travel Directions and the Positive Activity duty</strong><br />
+As you may be aware, alongside the duty to provide information on positive activities, local authorities should also provide some kind of travel directions.  We appreciate how difficult that this can be technically, which is why we&#8217;ve undertaken this work to provide this at Plings.  <strong> </strong></p>
+<p><strong>Other travel options</strong><br />
+Alongside the services we&#8217;ve linked to, we wanted to mention two others that would be interesting to explore.</p>
+<p><em><strong>Community Transport</strong></em><br />
+Social Enterprises such as  <strong><a href="http://communitytransport.org/">Community Transport</a></strong> provide minibuses (and drivers) to local communities  across the West Midlands South, Black Country, Manchester and  Newcastle  at fair rates and access.  For trips out or activities that  bring together people from different areas, organisations such as these  could be a viable option.</p>
+<p><em><strong> </strong></em></p>
+<div id="attachment_1908" class="wp-caption alignleft" style="width: 245px"><em><strong><em><strong><img class="size-full wp-image-1908" title="liftshare_logo" src="http://www.plings.net/blog/wp-content/uploads/2011/01/liftshare_logo.png" alt="Liftshare logo" width="235" height="50" /></strong></em></strong></em><p class="wp-caption-text">Liftshare</p></div>
+<p><em><strong>Liftshare</strong></em><br />
+Another social enterprise, focussed on matching people together who make similar journeys, especially by car.  <strong><a href="https://www.liftshare.com/uk/">Liftshare</a></strong> has won numerous awards and recognition, and remains free to use.  We&#8217;ve been thinking about the potential multiple similar journeys that &#8211; for example &#8211; parents may make when dropping people off at positive activities.  How, potentially could Liftshare help?</p>
+<p><strong>Over to You</strong></p>
+<p>We would be delighted to hear from others providing information on events and activities, and how you&#8217;ve addressed the issue of travel directions.</p>
+<p><strong>Has anyone linked their youth offer to such services</strong>?</p>
+<p><strong>Can anyone think of a reasonable and relevant travel direction we are missing</strong>?</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/plingsblogs?a=t3MW9y3rGbM:tMUNITkTlJY:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=t3MW9y3rGbM:tMUNITkTlJY:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=t3MW9y3rGbM:tMUNITkTlJY:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=t3MW9y3rGbM:tMUNITkTlJY:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=t3MW9y3rGbM:tMUNITkTlJY:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=t3MW9y3rGbM:tMUNITkTlJY:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=t3MW9y3rGbM:tMUNITkTlJY:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=t3MW9y3rGbM:tMUNITkTlJY:gIN9vFwOqvQ" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://www.plings.net/blog/index.php/2011/01/14/travel-directions-three-alternatives-to-google-maps/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://www.plings.net/blog/index.php/2011/01/14/travel-directions-three-alternatives-to-google-maps/</feedburner:origLink></item>
+		<item>
+		<title>Five reasons that Family Information Services are vital to Plings</title>
+		<link>http://feedproxy.google.com/~r/plingsblogs/~3/zC3KdYpcXKo/</link>
+		<comments>http://www.plings.net/blog/index.php/2010/12/01/five-reasons-that-family-information-services-are-vital-to-plings/#comments</comments>
+		<pubDate>Wed, 01 Dec 2010 12:36:45 +0000</pubDate>
+		<dc:creator>stevieflow</dc:creator>
+				<category><![CDATA[Collecting Plings]]></category>
+		<category><![CDATA[Practice]]></category>
+		<category><![CDATA[Project news]]></category>
+		<category><![CDATA[Sharing Plings]]></category>
+		<category><![CDATA[data quality]]></category>
+		<category><![CDATA[family information services]]></category>
+		<category><![CDATA[fis]]></category>
+		<category><![CDATA[provenance]]></category>
+		<category><![CDATA[st helens]]></category>
+		<category><![CDATA[stoke]]></category>
+		<category><![CDATA[twitter]]></category>
+		<category><![CDATA[west sussex]]></category>
+
+		<guid isPermaLink="false">http://www.plings.net/blog/?p=1884</guid>
+		<description><![CDATA[Family Information Services play a vital role in Plings.  We highlight some of the ways in this article. <a href="http://www.plings.net/blog/index.php/2010/12/01/five-reasons-that-family-information-services-are-vital-to-plings/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>I was due to attend the North East FIS regional meeting this week, but the <a href="http://www.bbc.co.uk/news/uk-11871708">weather</a> has meant we have had to postpone.  In the meantime, I thought it would be useful to chart some of the ways and reasons that <a href="http://www.familyinformationservices.org.uk/index.php?option=com_comprofiler&amp;task=userslist&amp;listid=2&amp;Itemid=73">FIS teams</a> are really important to Plings.  As a starter, here are five:</p>
+<p><strong> </strong></p>
+<div id="attachment_1886" class="wp-caption alignright" style="width: 310px"><strong><strong><a href="http://www.plings.net/blog/wp-content/uploads/2010/12/FIDy-chart.png"><img class="size-medium wp-image-1886" title="FIDy-chart" src="http://www.plings.net/blog/wp-content/uploads/2010/12/FIDy-chart-300x63.png" alt="" width="300" height="63" /></a></strong></strong><p class="wp-caption-text">Data via FIDy has increased, especially since the addition of the Leisure &amp; Recreation category</p></div>
+<p><strong>1 &#8211; Data Quantity</strong><br />
+Via the <a href="http://www.pkhdsupport.org.uk/">Family Information Directory</a> (FIDy) aggregation platform and our <a href="http://pling-o-matic.com/"><strong>Pling-o-matic tool</strong></a>, FIS teams contribute lots of data on positive activities to Plings.  We have seen this steadily grow over the past months, highlighting the importance of this source.  A team like <a href="http://www.plings.net/la/00BZ">St Helens</a> regularly tag 500 activities a week as positive activities</p>
+<p><strong>2  &#8211; Systems in Place</strong><br />
+In many local authorities, FIS teams have existed for many years, and so have matured in their utilisation of data systems.  Prior to FIDy, data was captured and controlled locally,  and curated through a national portal.  Hence, as we have talked about similar concepts with Plings we have found many FIS teams are very familiar with this due to direct experience.</p>
+<p><strong>3 &#8211; Data Provenance</strong><br />
+Recently, an activity provider contacted us to state that their information was incorrect on Plings.  This data was derived from an <a href="http://www.westsussex.gov.uk/living/social_care/children/childcare_-_the_childrens.aspx">FIS team in West Sussex</a>.  Two emails later the record was corrected and re-uploaded to Plings.  The point here is that the <a href="http://en.wikipedia.org/wiki/Provenance#Computers_and_law">lineage</a> and source of the data from FIS teams is clear in terms of who to contact for a resolution.  We see this as vital.</p>
+<div id="attachment_1891" class="wp-caption alignleft" style="width: 310px"><a href="http://www.plings.net/blog/wp-content/uploads/2010/12/Family-Information-Service-Weekly_1291201754531.png"><img class="size-medium wp-image-1891 " title="Family Information Service Weekly_1291201754531" src="http://www.plings.net/blog/wp-content/uploads/2010/12/Family-Information-Service-Weekly_1291201754531-300x171.png" alt="The Family Information Service Weekly is autogenerated from the links shared by FIS teams on Twitter" width="300" height="171" /></a><p class="wp-caption-text">The Family Information Service Weekly is autogenerated from the links shared by FIS teams on Twitter</p></div>
+<p><strong>4 &#8211; Collaboration</strong><br />
+We think FIS teams are well networked and connected.  Recently, with the help of the <a href="http://www.stokefis.co.uk/">Stoke FIS team</a>, we created <a href="http://twitter.com/#!/plings/fis">a list of FIS twitter accounts</a>, which in turn helped us make <a href="http://paper.li/plings/fis"><strong>a weekly &#8220;newspaper&#8221;</strong></a> via the paper.li service.  This demonstrates to us a sector that is vibrant and active in terms of sharing of news and resources.</p>
+<p><strong>5 &#8211; Nice people!</strong><br />
+Seriously, this is a genuine reason we value the input of FIS teams.  In all our dealings with FIS people, we&#8217;ve found an enthusiasm and passion for the subject.  This obviously helps <img src='http://www.plings.net/blog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>Ill stress that these are observations we have made from an external point of view &#8211; but please add comments and thoughts, particularly if you work within an FIS team.  <strong>Equally, how can we make it easier to work with Plings</strong>?</p>
+<div id="attachment_1882" class="wp-caption alignnone" style="width: 189px"><a href="http://www.plings.net/blog/wp-content/uploads/2010/11/FIS-card.jpg"><img class="size-medium wp-image-1882" title="FIS-card" src="http://www.plings.net/blog/wp-content/uploads/2010/11/FIS-card-179x300.jpg" alt="" width="179" height="300" /></a><p class="wp-caption-text">FIS cards in my local library!</p></div>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/plingsblogs?a=zC3KdYpcXKo:khdPQXT5cyU:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=zC3KdYpcXKo:khdPQXT5cyU:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=zC3KdYpcXKo:khdPQXT5cyU:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=zC3KdYpcXKo:khdPQXT5cyU:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/plingsblogs?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=zC3KdYpcXKo:khdPQXT5cyU:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=zC3KdYpcXKo:khdPQXT5cyU:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/plingsblogs?a=zC3KdYpcXKo:khdPQXT5cyU:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/plingsblogs?i=zC3KdYpcXKo:khdPQXT5cyU:gIN9vFwOqvQ" border="0"></img></a>
+</div>]]></content:encoded>
+			<wfw:commentRss>http://www.plings.net/blog/index.php/2010/12/01/five-reasons-that-family-information-services-are-vital-to-plings/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://www.plings.net/blog/index.php/2010/12/01/five-reasons-that-family-information-services-are-vital-to-plings/</feedburner:origLink></item>
+	</channel>
+</rss>

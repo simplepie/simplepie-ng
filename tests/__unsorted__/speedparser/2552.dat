@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<title>Protected Blog &rsaquo; Login</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel='stylesheet' id='login-css'  href='http://s0.wp.com/wp-admin/css/login.css?m=1310062561g&#038;ver=20110610' type='text/css' media='all' />
+<link rel='stylesheet' id='colors-fresh-css'  href='http://s2.wp.com/wp-admin/css/colors-fresh.css?m=1309726245g&#038;ver=20110703' type='text/css' media='all' />
+<link rel='stylesheet' href='http://s1.wp.com/wp-admin/css/wpcom.css?m=1314369532g&#038;version=MU' type='text/css' />
+	<script type="text/javascript">
+		function focusit() {
+			if(document.getElementById('user_login')) document.getElementById('user_login').focus();
+		}
+		window.onload = focusit;
+	</script>
+	<meta name="robots" content="noindex, nofollow" />
+<script type='text/javascript' src='http://s0.wp.com/wp-includes/js/jquery/jquery.js?ver=1.6.1'></script>
+<script type="text/javascript">_qoptions={qacct:'p-18-mFEk4J448M',labels:'wp.login-page,language.en,type.wpcom'};</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript><p><img class="robots-nocontent" src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=wp.login-page%2Clanguage.en%2Ctype.wpcom" style="display:none" height="1" width="1" alt="" /></p></noscript>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://thundering.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://thundering.wordpress.com/wp-includes/wlwmanifest.xml" /> 
+</head>
+<body class="login">
+
+<div id="login"><h1><a href="http://wordpress.com/" title="Powered by WordPress">Being</a></h1>
+<p class="message"><strong>http://thundering.wordpress.com/</strong> is marked private by its owner. If you were invited to view this site, please <strong>log in</strong> below. Read more about <a href="http://en.support.wordpress.com/settings/privacy-settings/">privacy settings</a>.</p>
+
+<form name="loginform" id="loginform" action="https://thundering.wordpress.com/wp-login.php" method="post">
+	<p>
+		<label>Username<br />
+		<input type="text" name="log" id="user_login" class="input" value="" size="20" tabindex="10" /></label>
+	</p>
+	<p>
+		<label>Password<br />
+		<input type="password" name="pwd" id="user_pass" class="input" value="" size="20" tabindex="20" /></label>
+	</p>
+	<p class="forgetmenot"><label><input name="rememberme" type="checkbox" id="rememberme" value="forever" tabindex="90" /> Remember Me</label></p>
+	<p class="submit">
+		<input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Log In" tabindex="100" />
+		<input type="hidden" name="redirect_to" value="http://thundering.wordpress.com/feed/" />
+		<input type="hidden" name="testcookie" value="1" />
+	</p>
+</form>
+
+<p id="nav">
+	<a href="http://wordpress.com/signup/?ref=wplogin">Register</a> |
+	<a href="http://thundering.wordpress.com/wp-login.php?action=lostpassword" title="Password Lost and Found">Lost your password?</a>
+</p>
+
+</div>
+
+</body>
+</html>

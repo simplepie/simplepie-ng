@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+
+<rdf:RDF
+	xmlns="http://purl.org/rss/1.0/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xml:lang="ja">
+<channel rdf:about="http://d.hatena.ne.jp/nkjm_ask/rss">
+	<title>脳内随筆</title>
+	<link>http://d.hatena.ne.jp/nkjm_ask/</link>
+	<description>脳内随筆</description>
+	
+	<dc:creator>nkjm_ask</dc:creator>
+	<dc:date>2011-08-07T04:43:06+09:00</dc:date>
+	<items>
+	<rdf:Seq>
+		<rdf:li rdf:resource="http://d.hatena.ne.jp/nkjm_ask/"/>
+	</rdf:Seq>
+	</items>
+</channel>
+
+
+
+<item rdf:about="http://d.hatena.ne.jp/nkjm_ask/">
+	<title>脳内随筆</title>
+	<link>http://d.hatena.ne.jp/nkjm_ask/</link>
+	<description>この日記は、プライベートモードに設定されています。ブログ移動しました→http://asuka-nakajima.blogspot.com/
+
+今後とも宜しくお願い致します。</description>
+
+	<content:encoded><![CDATA[この日記は、プライベートモードに設定されています。<br><br>ブログ移動しました→http://asuka-nakajima.blogspot.com/<BR>
+<BR>
+今後とも宜しくお願い致します。]]></content:encoded>
+	<dc:creator>nkjm_ask</dc:creator>
+	<dc:date>2011-08-07T04:43:06+09:00</dc:date>
+</item>
+</rdf:RDF>

@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" version="2.0">
+
+<channel>
+	<title>dougv.com « Doug Vanderweide</title>
+	
+	<link>http://www.dougv.com</link>
+	<description>ASP.NET, PHP, XML, JavaScript, DOM, Web geekery</description>
+	<lastBuildDate>Sun, 11 Sep 2011 20:49:27 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=</generator>
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/dougvdotcom" /><feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="dougvdotcom" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><geo:lat>44.344406</geo:lat><geo:long>-69.763457</geo:long><creativeCommons:license>http://creativecommons.org/licenses/by-sa/3.0/</creativeCommons:license><feedburner:emailServiceId xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">dougvdotcom</feedburner:emailServiceId><feedburner:feedburnerHostname xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">http://feedburner.google.com</feedburner:feedburnerHostname><item>
+		<title>Looking To Trade Web Design For Programming Time</title>
+		<link>http://www.dougv.com/2011/09/11/looking-to-trade-web-design-for-programming-time/</link>
+		<comments>http://www.dougv.com/2011/09/11/looking-to-trade-web-design-for-programming-time/#comments</comments>
+		<pubDate>Sun, 11 Sep 2011 20:49:02 +0000</pubDate>
+		<dc:creator>Doug Vanderweide</dc:creator>
+				<category><![CDATA[General]]></category>
+		<category><![CDATA[Housekeeping Notes]]></category>
+		<category><![CDATA[WordPress]]></category>
+		<category><![CDATA[WordPress Themes]]></category>
+		<category><![CDATA[best practices]]></category>
+		<category><![CDATA[brand identity]]></category>
+		<category><![CDATA[coding standards]]></category>
+		<category><![CDATA[HTML]]></category>
+		<category><![CDATA[XHTML]]></category>
+
+		<guid isPermaLink="false">http://www.dougv.com/?p=3928</guid>
+		<description><![CDATA[This Web site is in sore need of a redesign &#8212; something cleaner, way prettier, brandable and unique &#8212; and it&#8217;s painfully obvious to me I&#8217;m not the guy to get that done. So to all the ad agencies, creative houses, Web designers and graphic artists out there: I&#8217;m looking to trade my time and [...]
+
+
+Related posts:<ol><li><a href='http://www.dougv.com/2010/12/28/a-quick-note-about-the-blogs-design/' rel='bookmark' title='A Quick Note About The Blog&#039;s Design'>A Quick Note About The Blog&#039;s Design</a></li>
+<li><a href='http://www.dougv.com/2007/05/26/the-three-keys-to-successful-self-employment-in-programming-and-consulting-introduction/' rel='bookmark' title='The Three Keys To Successful Self-Employment In Programming And Consulting: Introduction'>The Three Keys To Successful Self-Employment In Programming And Consulting: Introduction</a></li>
+<li><a href='http://www.dougv.com/2007/08/23/an-open-letter-to-a-programming-noob/' rel='bookmark' title='An Open Letter To A Programming Noob'>An Open Letter To A Programming Noob</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p>This Web site is in sore need of a redesign &#8212; something cleaner, way prettier, brandable and unique &#8212; and it&#8217;s painfully obvious to me I&#8217;m not the guy to get that done.</p>
+<p>So to all the ad agencies, creative houses, Web designers and graphic artists out there: I&#8217;m looking to trade my time and materials for your time and materials.</p>
+<p>If you&#8217;ve got the skills to apply a brand to this site that kicks much ass, I&#8217;ve got the skills to hack your CMS, ride herd on your troublesome Web server, write you a WordPress plugin, fix your stove-up online store, clean up your messy database,  build you an ASP.NET / PHP site, do some Microsoft Office VBA, apply some jQuery or API code, and much more.</p>
+<p>This site runs off WordPress and I&#8217;m pretty neurotic about making sure it&#8217;s the latest version. I have zero brand identity at the moment in terms of aesthetics, so you&#8217;ll have near total creative freedom. And since I&#8217;m in the business, you can be sure I&#8217;m not going to be one of those pains in the ass who expects the moon and stars for nothing, or who constantly asks for tweaks, needless gizmos or ridiculous &#8220;features.&#8221;</p>
+<p>The only hard requirements on my end:</p>
+<ul>
+<li>The design must use <a href="http://codex.wordpress.org/WordPress_Coding_Standards" target="_blank">WordPress coding standards</a> and follow best practices (e.g., no hard-coding of menus / widgets on template pages; style hooks for unique divs / sections; no deprecated WordPress functions; page, index, archive, comment and other templates put in unique files; etc.)</li>
+<li>It must be XHTML 1 Transitional and CSS 2 compliant. I&#8217;d prefer if it was HTML 5 and CSS 3 compliant, but I&#8217;m not going to be pushy about that.</li>
+<li>No Flash or other animations.</li>
+</ul>
+<p>Interested? Shoot me an email at dougvanderweide@gmail.com describing what you think would work here and what you&#8217;d like me to do in return.</p>
+
+
+<p>Related posts:<ol><li><a href='http://www.dougv.com/2010/12/28/a-quick-note-about-the-blogs-design/' rel='bookmark' title='A Quick Note About The Blog&#039;s Design'>A Quick Note About The Blog&#039;s Design</a></li>
+<li><a href='http://www.dougv.com/2007/05/26/the-three-keys-to-successful-self-employment-in-programming-and-consulting-introduction/' rel='bookmark' title='The Three Keys To Successful Self-Employment In Programming And Consulting: Introduction'>The Three Keys To Successful Self-Employment In Programming And Consulting: Introduction</a></li>
+<li><a href='http://www.dougv.com/2007/08/23/an-open-letter-to-a-programming-noob/' rel='bookmark' title='An Open Letter To A Programming Noob'>An Open Letter To A Programming Noob</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=-mr35LL35Uc:UF5bijzIdMA:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=-mr35LL35Uc:UF5bijzIdMA:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=-mr35LL35Uc:UF5bijzIdMA:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=-mr35LL35Uc:UF5bijzIdMA:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=-mr35LL35Uc:UF5bijzIdMA:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=-mr35LL35Uc:UF5bijzIdMA:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=-mr35LL35Uc:UF5bijzIdMA:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=-mr35LL35Uc:UF5bijzIdMA:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=-mr35LL35Uc:UF5bijzIdMA:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/dougvdotcom/~4/-mr35LL35Uc" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.dougv.com/2011/09/11/looking-to-trade-web-design-for-programming-time/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Review: Free: The Future of a Radical Price</title>
+		<link>http://www.dougv.com/2011/08/05/review-free-the-future-of-a-radical-price/</link>
+		<comments>http://www.dougv.com/2011/08/05/review-free-the-future-of-a-radical-price/#comments</comments>
+		<pubDate>Fri, 05 Aug 2011 16:12:09 +0000</pubDate>
+		<dc:creator>Doug Vanderweide</dc:creator>
+				<category><![CDATA[Facebook]]></category>
+		<category><![CDATA[General]]></category>
+		<category><![CDATA[Self Employment]]></category>
+		<category><![CDATA[Social Media]]></category>
+		<category><![CDATA[Twitter]]></category>
+		<category><![CDATA[advertising]]></category>
+		<category><![CDATA[Copyright]]></category>
+		<category><![CDATA[information economy]]></category>
+		<category><![CDATA[Music]]></category>
+		<category><![CDATA[opportunity cost]]></category>
+		<category><![CDATA[reputation]]></category>
+
+		<guid isPermaLink="false">http://www.dougv.com/?p=3921</guid>
+		<description><![CDATA[Free: The Future of a Radical Price by Chris Anderson My rating: 3 of 5 stars Reading Free: The Future of a Radical Price reminded me, in many ways, of  The Grand Design. To understand the universe on the quantum level, you have to embrace understandings and facts that seem ludicrous at human scales. That [...]
+
+
+Related posts:<ol><li><a href='http://www.dougv.com/2010/02/22/the-future-of-web-programming-from-artisan-to-assembly-line/' rel='bookmark' title='The Future Of Web Programming: From Artisan To Assembly Line'>The Future Of Web Programming: From Artisan To Assembly Line</a></li>
+<li><a href='http://www.dougv.com/2010/04/26/on-facebooks-new-features-privacy-and-the-near-future-of-the-web/' rel='bookmark' title='On Facebook&#039;s New Features, Privacy And The Near Future Of The Web'>On Facebook&#039;s New Features, Privacy And The Near Future Of The Web</a></li>
+<li><a href='http://www.dougv.com/2010/03/22/a-beginning-entrepreneurs-guide-to-pricing-part-2-how-price-conveys-value/' rel='bookmark' title='A Beginning Entrepreneur&#039;s Guide To Pricing, Part 2: How Price Conveys Value'>A Beginning Entrepreneur&#039;s Guide To Pricing, Part 2: How Price Conveys Value</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.goodreads.com/book/show/7005066"><img class="alignleft" style="border: 0pt none;" src="http://photo.goodreads.com/books/1275841908m/7005066.jpg" alt="Free: The Future of a Radical Price" width="98" height="150" border="0" />Free: The Future of a Radical Price</a> by <a href="http://www.goodreads.com/author/show/1756">Chris Anderson</a></p>
+<p>My rating: <a href="http://www.goodreads.com/review/show/102646918">3 of 5 stars</a></p>
+<p>Reading Free: The Future of a Radical Price reminded me, in many ways, of  <a href="http://www.dougv.org/2011/07/review-grand-design.html">The Grand Design</a>.</p>
+<p>To understand the universe on the quantum level, you have to embrace understandings and facts that seem ludicrous at human scales. That is, that we have free will; that things cannot be in the same place at the same time; that time progresses at one speed and forward only, are all convenient and explicit truths for our day-to-day existence. But at the subatomic level, that&#8217;s not how things work; not at all.</p>
+<p>Anderson&#8217;s arguments about Free &#8212; that is, <em>gratis</em> and <em>libre</em> &#8212; are presented in the same sense, if not quite as well or explicitly.</p>
+<p>Free does a fine job of explaining the mechanics of how things can be free on the Web: namely, per-unit / per-user costs are so low, they might as well be considered nothing.</p>
+<p>He also does a good job of explaining the obvious money-making models applied successfully so far: advertising, freemium (basic service is free; premium service costs money) and non-monetary / indirect recompense, such as an increase in reputation / marketing of ancillary products, such as concerts and merchandise for musicians or speaking engagements and consultations for professionals.</p>
+<p><span id="more-3921"></span>Probably the most valuable lesson Anderson&#8217;s book provides is that in the information economy, copies cost nothing.</p>
+<p>Certainly, the physical cost of the copy is so close to nothing, it might as well be nothing; but Anderson also suggests that the lost &#8220;opportunity cost&#8221; of not selling that record or book or software is significantly overstated, since there&#8217;s a good chance they wouldn&#8217;t have been purchased in the first place, and that the auxiliary benefits of spreading a product far and wide outweigh the loss from sales.</p>
+<p>Speaking as someone who has pirated content he probably would have purchased if he couldn&#8217;t get it for free, I&#8217;d call that argument, on its face, pretty spurious.</p>
+<p>But it makes perfect sense in view of the base assertion that digital content is going to be stolen, because it&#8217;s so easy and the costs / consequences are virtually zero. So don&#8217;t put all your effort into preventing theft (but don&#8217;t make it completely easy, either); put most of your effort into monetizing your soon-to-be-widespread content.</p>
+<p>The reason I can&#8217;t give Anderson full credit here is because for someone who so consistently and readily acknowledges that there&#8217;s two groups of understanding when it comes to Free &#8212; the over-30 crowd, which can&#8217;t break free of the &#8220;there&#8217;s no such thing as a free lunch&#8221; model; and the under-30 crowd, which can&#8217;t understand copyright or intellectual property to save its life &#8212; he sure does a poor job of satiating each others&#8217; curiosity.</p>
+<p>It&#8217;s one thing to relate the obvious, which is about half of Anderson&#8217;s book. It&#8217;s another to provide real-life examples of how Free is being monetized, which Anderson does via several sidebars.</p>
+<p>What this book lacks is what it needed most: its own version of M-theory, to explain how and why Free is the only model that makes sense here. That is, he went about presenting the information all wrong.</p>
+<p>It should have been less anecdotal and more theoretical proof. Had Free set out with a statement of the &#8220;rules of the digital economy,&#8221; then proceeded to address those rules in order with interlocking and supporting truths, a much more useful book would have been produced.</p>
+<p>As it is, Free tells us what we already know, and does little to predict what comes next. It suffices as an introduction to the idea of the economics of the 21st century, but it&#8217;s no road map.</p>
+<p><a href="http://www.goodreads.com/review/show/102646918">View all my reviews</a></p>
+
+
+<p>Related posts:<ol><li><a href='http://www.dougv.com/2010/02/22/the-future-of-web-programming-from-artisan-to-assembly-line/' rel='bookmark' title='The Future Of Web Programming: From Artisan To Assembly Line'>The Future Of Web Programming: From Artisan To Assembly Line</a></li>
+<li><a href='http://www.dougv.com/2010/04/26/on-facebooks-new-features-privacy-and-the-near-future-of-the-web/' rel='bookmark' title='On Facebook&#039;s New Features, Privacy And The Near Future Of The Web'>On Facebook&#039;s New Features, Privacy And The Near Future Of The Web</a></li>
+<li><a href='http://www.dougv.com/2010/03/22/a-beginning-entrepreneurs-guide-to-pricing-part-2-how-price-conveys-value/' rel='bookmark' title='A Beginning Entrepreneur&#039;s Guide To Pricing, Part 2: How Price Conveys Value'>A Beginning Entrepreneur&#039;s Guide To Pricing, Part 2: How Price Conveys Value</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=aVDvNQSo8Oo:iVi3uHPIvaM:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=aVDvNQSo8Oo:iVi3uHPIvaM:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=aVDvNQSo8Oo:iVi3uHPIvaM:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=aVDvNQSo8Oo:iVi3uHPIvaM:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=aVDvNQSo8Oo:iVi3uHPIvaM:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=aVDvNQSo8Oo:iVi3uHPIvaM:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=aVDvNQSo8Oo:iVi3uHPIvaM:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=aVDvNQSo8Oo:iVi3uHPIvaM:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=aVDvNQSo8Oo:iVi3uHPIvaM:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/dougvdotcom/~4/aVDvNQSo8Oo" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.dougv.com/2011/08/05/review-free-the-future-of-a-radical-price/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>zip codes within 1,000 mile radius of 19142</title>
+		<link>http://www.dougv.com/2011/07/28/zip-codes-within-1000-mile-radius-of-19142/</link>
+		<comments>http://www.dougv.com/2011/07/28/zip-codes-within-1000-mile-radius-of-19142/#comments</comments>
+		<pubDate>Thu, 28 Jul 2011 15:28:14 +0000</pubDate>
+		<dc:creator>formspring</dc:creator>
+				<category><![CDATA[Databases]]></category>
+		<category><![CDATA[FormSpring Questions]]></category>
+		<category><![CDATA[MySQL]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programming]]></category>
+
+		<guid isPermaLink="false">http://www.dougv.com/2011/07/28/zip-codes-within-1000-mile-radius-of-19142/</guid>
+		<description><![CDATA[You should be able to scale my PHP / MySQL solution ( http://dougv.us/5s ) up to do this without incident. Not that it&#8217;s necessary; pretty much every US city east of the Mississippi River is within 1,000 miles of Philadelphia. If you&#8217;d like to pay me to do this for you, I&#8217;ll be happy to [...]
+
+
+Related posts:<ol><li><a href='http://www.dougv.com/2009/03/27/getting-all-zip-codes-in-a-given-radius-from-a-known-point-zip-code-via-php-and-mysql/' rel='bookmark' title='Getting All ZIP Codes In A Given Radius From A Known Point / ZIP Code Via PHP And MySQL'>Getting All ZIP Codes In A Given Radius From A Known Point / ZIP Code Via PHP And MySQL</a></li>
+<li><a href='http://www.dougv.com/2009/07/13/calculating-the-bearing-and-compass-rose-direction-between-two-latitude-longitude-coordinates-in-php/' rel='bookmark' title='Calculating The Bearing And Compass Rose Direction Between Two Latitude / Longitude Coordinates In PHP'>Calculating The Bearing And Compass Rose Direction Between Two Latitude / Longitude Coordinates In PHP</a></li>
+<li><a href='http://www.dougv.com/2009/07/06/working-with-the-authorize-net-customer-information-manager-cim-part-1-overview/' rel='bookmark' title='Working With The Authorize.net Customer Information Manager (CIM), Part 1: Overview'>Working With The Authorize.net Customer Information Manager (CIM), Part 1: Overview</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p class="formspringmeAnswer">You should be able to scale my PHP / MySQL solution ( <a href="http://dougv.us/5s" target="_blank" rel="nofollow" class="nofollow">http://dougv.us/5s</a> ) up to do this without incident. Not that it&#8217;s necessary; pretty much every US city east of the Mississippi River is within 1,000 miles of Philadelphia. If you&#8217;d like to pay me to do this for you, I&#8217;ll be happy to do so; see <a href="http://dougv.us/f0" target="_blank" rel="nofollow" class="nofollow">http://dougv.us/f0</a> for details.</p>
+<p class="formspringmeFooter">
+    <a href="http://www.formspring.me/dougvdotcom?utm_medium=social&amp;utm_source=wordpress&amp;utm_campaign=shareanswer">Ask me anything</a></p>
+
+
+<p>Related posts:<ol><li><a href='http://www.dougv.com/2009/03/27/getting-all-zip-codes-in-a-given-radius-from-a-known-point-zip-code-via-php-and-mysql/' rel='bookmark' title='Getting All ZIP Codes In A Given Radius From A Known Point / ZIP Code Via PHP And MySQL'>Getting All ZIP Codes In A Given Radius From A Known Point / ZIP Code Via PHP And MySQL</a></li>
+<li><a href='http://www.dougv.com/2009/07/13/calculating-the-bearing-and-compass-rose-direction-between-two-latitude-longitude-coordinates-in-php/' rel='bookmark' title='Calculating The Bearing And Compass Rose Direction Between Two Latitude / Longitude Coordinates In PHP'>Calculating The Bearing And Compass Rose Direction Between Two Latitude / Longitude Coordinates In PHP</a></li>
+<li><a href='http://www.dougv.com/2009/07/06/working-with-the-authorize-net-customer-information-manager-cim-part-1-overview/' rel='bookmark' title='Working With The Authorize.net Customer Information Manager (CIM), Part 1: Overview'>Working With The Authorize.net Customer Information Manager (CIM), Part 1: Overview</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=YOVI_fWM7hw:jJp-9YtqmYE:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=YOVI_fWM7hw:jJp-9YtqmYE:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=YOVI_fWM7hw:jJp-9YtqmYE:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=YOVI_fWM7hw:jJp-9YtqmYE:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=YOVI_fWM7hw:jJp-9YtqmYE:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=YOVI_fWM7hw:jJp-9YtqmYE:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=YOVI_fWM7hw:jJp-9YtqmYE:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=YOVI_fWM7hw:jJp-9YtqmYE:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=YOVI_fWM7hw:jJp-9YtqmYE:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/dougvdotcom/~4/YOVI_fWM7hw" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.dougv.com/2011/07/28/zip-codes-within-1000-mile-radius-of-19142/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>No question, just saying "thanks!!!" for the bitly example.Bob</title>
+		<link>http://www.dougv.com/2011/07/24/no-question-just-saying-thanks-for-the-bitly-example-bob/</link>
+		<comments>http://www.dougv.com/2011/07/24/no-question-just-saying-thanks-for-the-bitly-example-bob/#comments</comments>
+		<pubDate>Sun, 24 Jul 2011 20:42:50 +0000</pubDate>
+		<dc:creator>formspring</dc:creator>
+				<category><![CDATA[API]]></category>
+		<category><![CDATA[FormSpring Questions]]></category>
+		<category><![CDATA[Programming]]></category>
+
+		<guid isPermaLink="false">http://www.dougv.com/2011/07/24/no-question-just-saying-thanks-for-the-bitly-example-bob/</guid>
+		<description><![CDATA[You&#8217;re welcome! Ask me anything Related posts:Hello, I&#8217;ve a question about your post &#8220;Using AJAX To Update A Non-Map DIV Via Google Maps API&#8217;s GDownload() And GMarker OnClick Event&#8221;. Your example is for the V2 version of google maps, so, is it possible to have exactly the same things for the v3 api?
+
+
+Related posts:<ol><li><a href='http://www.dougv.com/2011/03/18/hello-ive-a-question-about-your-post-using-ajax-to-update-a-non-map-div-via-google-maps-apis-gdownload-and-gmarker-onclick-event-your-example-is-for-the-v2-version-of-google-maps/' rel='bookmark' title='Hello, I&#8217;ve a question about your post &#8220;Using AJAX To Update A Non-Map DIV Via Google Maps API&#8217;s GDownload() And GMarker OnClick Event&#8221;. Your example is for the V2 version of google maps, so, is it possible to have exactly the same things for the v3 api?'>Hello, I&#8217;ve a question about your post &#8220;Using AJAX To Update A Non-Map DIV Via Google Maps API&#8217;s GDownload() And GMarker OnClick Event&#8221;. Your example is for the V2 version of google maps, so, is it possible to have exactly the same things for the v3 api?</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p class="formspringmeAnswer">You&#8217;re welcome!</p>
+<p class="formspringmeFooter">
+    <a href="http://www.formspring.me/dougvdotcom?utm_medium=social&amp;utm_source=wordpress&amp;utm_campaign=shareanswer">Ask me anything</a></p>
+
+
+<p>Related posts:<ol><li><a href='http://www.dougv.com/2011/03/18/hello-ive-a-question-about-your-post-using-ajax-to-update-a-non-map-div-via-google-maps-apis-gdownload-and-gmarker-onclick-event-your-example-is-for-the-v2-version-of-google-maps/' rel='bookmark' title='Hello, I&#8217;ve a question about your post &#8220;Using AJAX To Update A Non-Map DIV Via Google Maps API&#8217;s GDownload() And GMarker OnClick Event&#8221;. Your example is for the V2 version of google maps, so, is it possible to have exactly the same things for the v3 api?'>Hello, I&#8217;ve a question about your post &#8220;Using AJAX To Update A Non-Map DIV Via Google Maps API&#8217;s GDownload() And GMarker OnClick Event&#8221;. Your example is for the V2 version of google maps, so, is it possible to have exactly the same things for the v3 api?</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=HqDmhl9ZOvM:hcrnggSMFz8:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=HqDmhl9ZOvM:hcrnggSMFz8:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=HqDmhl9ZOvM:hcrnggSMFz8:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=HqDmhl9ZOvM:hcrnggSMFz8:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=HqDmhl9ZOvM:hcrnggSMFz8:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=HqDmhl9ZOvM:hcrnggSMFz8:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=HqDmhl9ZOvM:hcrnggSMFz8:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=HqDmhl9ZOvM:hcrnggSMFz8:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=HqDmhl9ZOvM:hcrnggSMFz8:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/dougvdotcom/~4/HqDmhl9ZOvM" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.dougv.com/2011/07/24/no-question-just-saying-thanks-for-the-bitly-example-bob/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>News Of The World Wasn’t ‘Hacking’ Voicemail, It Was Blagging</title>
+		<link>http://www.dougv.com/2011/07/08/news-of-the-world-wasnt-hacking-voicemail-it-was-blagging/</link>
+		<comments>http://www.dougv.com/2011/07/08/news-of-the-world-wasnt-hacking-voicemail-it-was-blagging/#comments</comments>
+		<pubDate>Fri, 08 Jul 2011 22:09:42 +0000</pubDate>
+		<dc:creator>Doug Vanderweide</dc:creator>
+				<category><![CDATA[Programming]]></category>
+		<category><![CDATA[Security]]></category>
+		<category><![CDATA[Business Practices]]></category>
+		<category><![CDATA[Hacking]]></category>
+		<category><![CDATA[Journalism]]></category>
+		<category><![CDATA[Newspapers]]></category>
+		<category><![CDATA[Privacy]]></category>
+
+		<guid isPermaLink="false">http://www.dougv.com/?p=3898</guid>
+		<description><![CDATA[This is nitpicky, and I certainly don&#8217;t mean to take lightly the seriousness of the matter. But I do want to clarify that the News of the World wasn&#8217;t technically &#8220;hacking&#8221; voicemail in its scandal. It was engaged in social engineering. For those of you who missed the headlines (and for the benefit of posterity): [...]
+
+
+Related posts:<ol><li><a href='http://www.dougv.com/2010/02/03/hacking-wp-plugins-used-to-remove-plugin-version-numbers/' rel='bookmark' title='Hacking WP-PluginsUsed To Remove Plugin Version Numbers'>Hacking WP-PluginsUsed To Remove Plugin Version Numbers</a></li>
+<li><a href='http://www.dougv.com/2007/03/12/displaying-the-correct-time-for-world-cities-with-ajax-javascript-dom/' rel='bookmark' title='Displaying The Correct Time For World Cities  With AJAX / JavaScript / DOM'>Displaying The Correct Time For World Cities  With AJAX / JavaScript / DOM</a></li>
+<li><a href='http://www.dougv.com/2010/10/05/comment-spammed-by-a-big-boy-and-i-dont-like-it/' rel='bookmark' title='Comment Spammed By A Big Boy, And I Don&#039;t Like It'>Comment Spammed By A Big Boy, And I Don&#039;t Like It</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<div id="attachment_3900" class="wp-caption alignright" style="width: 310px"><a href="http://www.flickr.com/photos/compujeramey/168108824/in/photostream/"><img class="size-full wp-image-3900 " title="Cell Phones" src="http://www.dougv.com/wp-content/uploads/2011/07/168108824_8022e0b076.jpg" alt="Cell Phones" width="300" height="225" /></a><p class="wp-caption-text">flickr /compujeramey</p></div>
+<p>This is nitpicky, and I certainly don&#8217;t mean to take lightly the seriousness of the matter. But I do want to clarify that the News of the World wasn&#8217;t technically &#8220;hacking&#8221; voicemail in its scandal. It was engaged in social engineering.</p>
+<p>For those of you who missed the headlines (and for the benefit of posterity): News of the World was (until July 10, 2011) a Sunday tabloid; like most British tabs, it&#8217;s best known for printing racy pictures of women and sleazy stories.</p>
+<p>News of the World  hired a private investigator to help it research stories. <a href="http://en.wikipedia.org/wiki/News_of_the_World_phone_hacking_affair" target="_blank">That contractor gained access to a number of voicemail accounts</a>, including those of a murdered 13-year-old girl, several soldiers killed in the Middle East conflicts, and royal family members.</p>
+<p>All the shoes involved here haven&#8217;t yet dropped, but as of this writing the scandal has closed the paper after 168 years of publication; threatens to bring down Prime Minister David Cameron; has led to several arrests and may well result in additional restrictions on Great Britain&#8217;s press. (Even overwhelmingly reasonable pundits, such as <a href="http://www.economist.com/node/18928406" target="_blank">The Economist, are calling for a mucking out of British journalism&#8217;s stables</a>.)</p>
+<p>The entire affair is loathsome, no question about that, even for the British press, nefarious for its &#8220;chew people up and spit them out&#8221; appetite. It&#8217;s also caused other world press outlets to term what News of the World did &#8220;phone hacking,&#8221; needlessly worrying people who have taken reasonable steps to secure their voicemail that they, too, might be targeted.</p>
+<p>So I want to clear things up. If you&#8217;ve changed your voicemail password (PIN), you almost certainly can&#8217;t be violated in the way News of the World violated its victims.</p>
+<p><span id="more-3898"></span><strong>Hacking</strong> means &#8220;to alter a system to perform differently than intended.&#8221; Hacking isn&#8217;t necessarily a malicious act. In fact, it&#8217;s often a good thing. I am 100 percent in favor of hacking, provided the thing you are hacking is yours or you have permission to hack it.</p>
+<p><strong>Cracking</strong> means &#8220;to compromise the security of a system.&#8221; While there are legitimate reasons to crack, it&#8217;s never an appropriate thing to do with property that doesn&#8217;t belong to you.</p>
+<p>(I realize this is only one interpretation of &#8220;hacker,&#8221; and that <a href="http://en.wikipedia.org/wiki/Hacker_definition_controversy#Hacker_definition_controversy" target="_blank">other definitions exist</a>, which also encompass what I term separately as &#8220;cracking.&#8221; I reject definitions of hacking that assume malice or nefarious intent. Hackers don&#8217;t aim to cause harm to, or violate the rights of, others; crackers do. Period.)</p>
+<p><a href="http://www.symantec.com/connect/articles/social-engineering-fundamentals-part-i-hacker-tactics" target="_blank"><strong>Social engineering</strong></a> (also called &#8220;blagging&#8221;) is the act of exploiting human behavior to achieve an end, usually without the tacit understanding of the people targeted that they are being exploited.</p>
+<p>That&#8217;s what News of the World was up to: Exploiting people who were ignorant of, or indifferent to, basic voicemail features and security.</p>
+<p><a href="http://nakedsecurity.sophos.com/2011/07/08/how-phone-hacking-worked/" target="_blank">As explained at this excellent article at sophos.com</a>, a lot of people don&#8217;t change the default password for their voicemail. Additionally, most users don&#8217;t understand that the convenience of being able to access voicemail from a different phone is a security risk that should at least be managed, if not disabled. (Admittedly, a number of phone providers don&#8217;t give you the option to disable remote access to voicemail.)</p>
+<p>Simply put, News of the World&#8217;s private investigator gambled that the victims of his snooping didn&#8217;t bother to change their voicemail passwords from default values, and didn&#8217;t disable (if they even could disable) remote voicemail access.</p>
+<p>Again, I am not suggesting what News of the World did was OK. That people don&#8217;t protect themselves from being violated does not make it OK to violate them.</p>
+<p>My point is that what News of the World did is not hacking; at no point did anything not perform as designed. It also isn&#8217;t cracking; at no point was any procedure undertaken to circumvent the built-in security of the voicemail systems in question. The victims&#8217; misunderstandings and inaction were exploited. That&#8217;s social engineering.</p>
+<p>All links in this post on delicious: <a href="http://www.delicious.com/dougvdotcom/news-of-the-world-wasnt-hacking-voicemail-it-was-blagging" target="_blank">http://www.delicious.com/dougvdotcom/news-of-the-world-wasnt-hacking-voicemail-it-was-blagging</a></p>
+
+
+<p>Related posts:<ol><li><a href='http://www.dougv.com/2010/02/03/hacking-wp-plugins-used-to-remove-plugin-version-numbers/' rel='bookmark' title='Hacking WP-PluginsUsed To Remove Plugin Version Numbers'>Hacking WP-PluginsUsed To Remove Plugin Version Numbers</a></li>
+<li><a href='http://www.dougv.com/2007/03/12/displaying-the-correct-time-for-world-cities-with-ajax-javascript-dom/' rel='bookmark' title='Displaying The Correct Time For World Cities  With AJAX / JavaScript / DOM'>Displaying The Correct Time For World Cities  With AJAX / JavaScript / DOM</a></li>
+<li><a href='http://www.dougv.com/2010/10/05/comment-spammed-by-a-big-boy-and-i-dont-like-it/' rel='bookmark' title='Comment Spammed By A Big Boy, And I Don&#039;t Like It'>Comment Spammed By A Big Boy, And I Don&#039;t Like It</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=vt6fTAKlPdE:ZWUXLgosr4A:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=vt6fTAKlPdE:ZWUXLgosr4A:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=vt6fTAKlPdE:ZWUXLgosr4A:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=vt6fTAKlPdE:ZWUXLgosr4A:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=vt6fTAKlPdE:ZWUXLgosr4A:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=vt6fTAKlPdE:ZWUXLgosr4A:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=vt6fTAKlPdE:ZWUXLgosr4A:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=vt6fTAKlPdE:ZWUXLgosr4A:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=vt6fTAKlPdE:ZWUXLgosr4A:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/dougvdotcom/~4/vt6fTAKlPdE" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.dougv.com/2011/07/08/news-of-the-world-wasnt-hacking-voicemail-it-was-blagging/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Getting Pseudo Random Records From A MySQL Database Table</title>
+		<link>http://www.dougv.com/2011/07/07/getting-pseudo-random-records-from-a-mysql-database-table/</link>
+		<comments>http://www.dougv.com/2011/07/07/getting-pseudo-random-records-from-a-mysql-database-table/#comments</comments>
+		<pubDate>Thu, 07 Jul 2011 23:09:10 +0000</pubDate>
+		<dc:creator>Doug Vanderweide</dc:creator>
+				<category><![CDATA[Databases]]></category>
+		<category><![CDATA[MySQL]]></category>
+		<category><![CDATA[Programming]]></category>
+		<category><![CDATA[SQL]]></category>
+		<category><![CDATA[LAMP]]></category>
+
+		<guid isPermaLink="false">http://www.dougv.com/?p=3885</guid>
+		<description><![CDATA[Here&#8217;s a common programming problem: You have some records in a MySQL table. You want to randomly select a record, or just a few records, from that database; maybe, you want to pass some additional, specific criteria to narrow the candidate records somewhat. For example, maybe you run a music Web site. You have a [...]
+
+
+Related posts:<ol><li><a href='http://www.dougv.com/2011/04/12/automatically-hash-tagging-text-with-php-and-mysql-part-2-adding-new-hash-tags-to-the-database-table/' rel='bookmark' title='Automatically Hash Tagging Text With PHP And MySQL Part 2: Adding New Hash Tags To The Database Table'>Automatically Hash Tagging Text With PHP And MySQL Part 2: Adding New Hash Tags To The Database Table</a></li>
+<li><a href='http://www.dougv.com/2009/04/13/a-mysql-stored-procedure-to-return-the-total-years-months-and-days-of-all-person-records/' rel='bookmark' title='A MySQL Stored Procedure To Return The Total Years, Months And Days Of All Person Records'>A MySQL Stored Procedure To Return The Total Years, Months And Days Of All Person Records</a></li>
+<li><a href='http://www.dougv.com/2007/09/12/a-simple-random-link-javascript/' rel='bookmark' title='A Simple Random Link JavaScript'>A Simple Random Link JavaScript</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p>Here&#8217;s a common programming problem: You have some records in a MySQL table. You want to randomly select a record, or just a few records, from that database; maybe, you want to pass some additional, specific criteria to narrow the candidate records somewhat.</p>
+<p>For example, maybe you run a music Web site. You have a database table full of albums, and you want to randomly pick one as &#8220;album of the moment.&#8221; Perhaps you want to select from a category &#8212; rock, country, jazz, etc. Or maybe you want to get an assortment of albums from a specific artist, and display many records on a Web page.</p>
+<p>Getting such &#8220;random&#8221; database records is easily done in MySQL (versions 3.23 and up) via a fairly standard SELECT statement, using ORDER BY, <a href="http://dev.mysql.com/doc/refman/5.0/en/mathematical-functions.html#function_rand">RAND</a> and LIMIT.</p>
+<p>(For the purpose of this tutorial, I&#8217;ll use the ZIP Code database I got for <a href="http://www.dougv.com/2009/03/27/getting-all-zip-codes-in-a-given-radius-from-a-known-point-zip-code-via-php-and-mysql/">Getting All ZIP Codes In A Given Radius From A Known Point / ZIP Code Via PHP And MySQL</a>, which I wrote some time ago.)</p>
+<p>First, let&#8217;s simply <strong>select any old record from the table</strong>; that is, every record in the table is equally eligible for selection.</p>
+<pre class="brush: sql; title: ; notranslate">SELECT * FROM table_name ORDER BY RAND() LIMIT 1;</pre>
+<p>What this does is tell MySQL, &#8220;Toss all the records together in a pile [ORDER BY RAND()], then give me just one record from that pile [LIMIT 1].&#8221;</p>
+<p>You can see this in action here: <a href="http://www.dougv.com/demo/mysql_random_records/index.php">http://www.dougv.com/demo/mysql_random_records/index.php</a></p>
+<p><span id="more-3885"></span>Suppose you want to <strong>get a random record from a subset</strong>; say, only ZIP Codes in Maine. That&#8217;s easily done with a standard WHERE clause:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT * FROM table_name WHERE state = 'ME' ORDER BY RAND() LIMIT 1;</pre>
+<p>You can see this in action here: <a href="http://www.dougv.com/demo/mysql_random_records/example2.php">http://www.dougv.com/demo/mysql_random_records/example2.php</a></p>
+<p>What about <strong>getting multiple, random records</strong>? Just add the count of records you want as the argument to LIMIT:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT * FROM table_name ORDER BY RAND() LIMIT 5;</pre>
+<p>Note that the nice thing about this is that you won&#8217;t get five records in primary key order; you&#8217;ll get some five records from the table. (Of course, if you only have five records in the table, you&#8217;ll get those five records; and it&#8217;s possible, because it&#8217;s such a small set, they&#8217;ll be in primary key order.)</p>
+<p>You can see this in action here: <a href="http://www.dougv.com/demo/mysql_random_records/example3.php">http://www.dougv.com/demo/mysql_random_records/example3.php</a></p>
+<p>And, of course, this works for <strong>statements with multiple WHERE arguments</strong>:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT * FROM table_name WHERE latitude &lt; 40 AND latitude &gt; 30 AND longitude &lt; -80 AND longitude &gt; -100 ORDER BY RAND() LIMIT 5;</pre>
+<p>As you&#8217;ve probably deduced, you can <strong>randomly order results without a LIMIT</strong>, too; that is, just jumble up your complete recordset:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT * FROM table_name ORDER BY RAND();</pre>
+<p>Really, this process works with any complex SQL statement: JOINs, UNIONs, subqueries, etc.</p>
+<p>For example, you could get RAND to give you a random starting point in your records, and then select multiple records from that point, but order them by some column value. Going back to the music analogy, you could write a query that selects some random starting point for a list of albums, but orders the results set by album title. That&#8217;s a more complex query, so I won&#8217;t cover it here, but will follow up with a sample if interest is expressed in the comments to this post.</p>
+<p>What you can&#8217;t do is specify a specific column as the randomizing agent. That is, using our sample data, you can&#8217;t tell MySQL to randomize results based on latitude, ZIP Code, state, etc.</p>
+<p>First, that&#8217;s not necessary; second, as the MySQL documentation notes, that&#8217;s not how MySQL works. (I won&#8217;t get into the gory details. Suffice it to say, MySQL isn&#8217;t going to do the same thing twice when parsing a query, and using a specific column for randomizing would require a duplication of effort.)</p>
+<p>Finally, my standard caveat about &#8220;random&#8221; numbers: No computer system (at least, none that are available to people like you and me) generates a truly random number. However, for all intents and purposes, RAND will create a results set that&#8217;s random.</p>
+<p>You can download the PHP demo files <a href="http://www.dougv.com/wp-content/uploads/2011/07/mysql_random_records.zip">here</a>. I distribute code under the GNU GPL.</p>
+<p>All links in this post on delicious: <a href="http://www.delicious.com/dougvdotcom/getting-pseudo-random-records-from-a-mysql-database-table">http://www.delicious.com/dougvdotcom/getting-pseudo-random-records-from-a-mysql-database-table</a></p>
+
+
+<p>Related posts:<ol><li><a href='http://www.dougv.com/2011/04/12/automatically-hash-tagging-text-with-php-and-mysql-part-2-adding-new-hash-tags-to-the-database-table/' rel='bookmark' title='Automatically Hash Tagging Text With PHP And MySQL Part 2: Adding New Hash Tags To The Database Table'>Automatically Hash Tagging Text With PHP And MySQL Part 2: Adding New Hash Tags To The Database Table</a></li>
+<li><a href='http://www.dougv.com/2009/04/13/a-mysql-stored-procedure-to-return-the-total-years-months-and-days-of-all-person-records/' rel='bookmark' title='A MySQL Stored Procedure To Return The Total Years, Months And Days Of All Person Records'>A MySQL Stored Procedure To Return The Total Years, Months And Days Of All Person Records</a></li>
+<li><a href='http://www.dougv.com/2007/09/12/a-simple-random-link-javascript/' rel='bookmark' title='A Simple Random Link JavaScript'>A Simple Random Link JavaScript</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=iR4q8ASmR3E:4xsVuvMuOjA:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=iR4q8ASmR3E:4xsVuvMuOjA:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=iR4q8ASmR3E:4xsVuvMuOjA:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=iR4q8ASmR3E:4xsVuvMuOjA:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=iR4q8ASmR3E:4xsVuvMuOjA:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=iR4q8ASmR3E:4xsVuvMuOjA:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=iR4q8ASmR3E:4xsVuvMuOjA:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=iR4q8ASmR3E:4xsVuvMuOjA:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=iR4q8ASmR3E:4xsVuvMuOjA:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/dougvdotcom/~4/iR4q8ASmR3E" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.dougv.com/2011/07/07/getting-pseudo-random-records-from-a-mysql-database-table/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>New England GiveCamp 2011: What A Weekend!</title>
+		<link>http://www.dougv.com/2011/05/03/new-england-givecamp-2011-what-a-weekend/</link>
+		<comments>http://www.dougv.com/2011/05/03/new-england-givecamp-2011-what-a-weekend/#comments</comments>
+		<pubDate>Tue, 03 May 2011 22:40:04 +0000</pubDate>
+		<dc:creator>Doug Vanderweide</dc:creator>
+				<category><![CDATA[ASP.NET]]></category>
+		<category><![CDATA[C#]]></category>
+		<category><![CDATA[Databases]]></category>
+		<category><![CDATA[Dot Net]]></category>
+		<category><![CDATA[Programming]]></category>
+		<category><![CDATA[SQL Server]]></category>
+		<category><![CDATA[VB.NET]]></category>
+		<category><![CDATA[Business Practices]]></category>
+		<category><![CDATA[GiveCamp]]></category>
+		<category><![CDATA[Jim O'Neil]]></category>
+		<category><![CDATA[Microsoft]]></category>
+		<category><![CDATA[Twitter]]></category>
+		<category><![CDATA[Visual Basic]]></category>
+
+		<guid isPermaLink="false">http://www.dougv.com/?p=3849</guid>
+		<description><![CDATA[Last weekend was New England GiveCamp 2011, in which 100+ developers, designers and other volunteers gathered to donate time and skills to some 30 charities who needed IT help. This year, I was project lead for Alex&#8217;s Team Foundation, based in Andover, Mass. Our team was Saurabh Moondhra and William Wade, both experienced ASP.NET developers. Alex&#8217;s [...]
+
+
+Related posts:<ol><li><a href='http://www.dougv.com/2010/05/13/designers-and-developers-donate-your-time-talent-at-new-england-give-camp-june-11-13-2010/' rel='bookmark' title='Designers And Developers: Donate Your Time, Talent At New England GiveCamp, June 11-13, 2010'>Designers And Developers: Donate Your Time, Talent At New England GiveCamp, June 11-13, 2010</a></li>
+<li><a href='http://www.dougv.com/2011/04/24/automatically-hash-tagging-text-with-asp-net-web-forms-vb-net/' rel='bookmark' title='Automatically Hash Tagging Text With ASP.NET Web Forms (VB.NET)'>Automatically Hash Tagging Text With ASP.NET Web Forms (VB.NET)</a></li>
+<li><a href='http://www.dougv.com/2009/08/12/new-url-for-asp-net-demos-dougv-net/' rel='bookmark' title='New URL For ASP.NET Demos: dougv.net'>New URL For ASP.NET Demos: dougv.net</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p>Last weekend was <a href="http://newenglandgivecamp.org/" target="_blank">New England GiveCamp</a> <a href="http://newenglandgivecamp.org/category/give-camp-2011/" target="_blank">2011</a>, in which 100+ developers, designers and other volunteers gathered to donate time and skills to some 30 charities who needed IT help.</p>
+<p>This year, I was project lead for <a href="http://www.alexsteamfoundation.com/" target="_blank"><strong>Alex&#8217;s Team Foundation</strong></a>, based in Andover, Mass. Our team was <a href="https://twitter.com/#!/saush11" target="_blank"><strong>Saurabh Moondhra</strong></a> and <a href="http://dirigosoftwaresolutions.com" target="_blank"><strong>William Wade</strong></a>, both experienced ASP.NET developers.</p>
+<p>Alex&#8217;s Team Foundation, named after 16-year-old Alex Miliotis, who passed away from leukemia in 2002, raises money to support nurses and other oncology professionals, and supports youth sports. The foundation is largely the labors of <strong>Patti Rae Miliotis</strong>, Alex&#8217;s mother, and a handful of reliable volunteers. Like every small nonprofit, Alex&#8217;s Team doesn&#8217;t have a lot of money.</p>
+<div id="attachment_3853" class="wp-caption alignnone" style="width: 710px"><img class="size-full wp-image-3853" title="Alex's Team Foundation at New England GiveCamp 2011" src="http://www.dougv.com/wp-content/uploads/2011/05/negc2011_08.png" alt="Alex's Team Foundation at New England GiveCamp 2011" width="700" height="245" /><p class="wp-caption-text">From the right to left: William Wade, Doug Vanderweide, Saurabh Moondhra and Patti Rae Miliotis of Alex&#39;s Team Foundation. The lady with her feet up is Deanna Lohnes, who worked on another project; the woman in green, whose name I do not know, was her charity&#39;s contact person.</p></div>
+<p>Like every other leader of a small nonprofit, Patti is pulled in a lot of different directions and has all she can do to keep track of the people with whom she comes in contact, nonetheless all the donations she gets. Patti also hosts a few events every year. She basically needs a way to keep track of who attends those events or otherwise supports her organization, and to mail merge thank-you notes.</p>
+<p>So that was the project I led this weekend: Converting a bunch of data stored in (of course!) Excel spreadsheets into a more relational database, with the ability to export that data in order to mail merge thank-you and fundraising letters.</p>
+<p><span id="more-3849"></span></p>
+<h3>CiviCRM: Too Much, Too Late</h3>
+<p>At first, I thought we could use <a href="http://civicrm.org/" target="_blank">CiviCRM</a>, which is a Joomla / Drupal extension to manage membership, events, capital campaigns, email lists and the like.</p>
+<p>The primary benefit in it, to my thinking, was that it does most of what Patti needed done; so, if she could use it, most of the work would already be done. That would allow us not only to import her spreadsheets, but also pay some attention to re-skinning the foundation&#8217;s current Web site (which is sorely needed).</p>
+<p>CiviCRM&#8217;s biggest drawback is a huge learning curve. It is not easy to understand out of the box, especially if someone doesn&#8217;t have prior experience with customer relation management software. That was Patti&#8217;s problem: It was too daunting, much like the system she had tried previously.</p>
+<p>So our task played directly to our strengths: Make an easy-to-use contact database on the Web, which could also track donations and event registrations.</p>
+<h3>Friday: Three Ways To Skin A Cat</h3>
+<p>Patti asked that we use Access to make her database, since she has some experience with it. Unfortunately, nobody on our team knew much about Access, and at least two of us have had negative experiences with it.</p>
+<p>At last year&#8217;s GiveCamp, William wound up having to become an on-the-spot Access developer, and it left something of a sour taste. I&#8217;ve never had much success building standalone Access databases, largely because I find its visual query and form designers extremely limiting. Saurabh said he had little to no experience with Access.</p>
+<p>The one thing we all knew was <a href="http://www.asp.net/web-forms" target="_blank">ASP.NET Web Forms</a>. Well, to be specific, we knew three different versions of ASP.NET Web Forms. Saurabh programs in C#. William and I prefer VB.NET. William likes using <a href="http://msdn.microsoft.com/en-us/netframework/aa904594" target="_blank">Linq</a>; I prefer old-school stored procedures; Saurabh likes inline SQL statements.</p>
+<p>The good thing in that is, an ASP.NET Web application doesn&#8217;t need to run under just one language, and so long as the connections and queries are good, you can mix and match database layers to your hearts&#8217; content.</p>
+<p>So we settled in to design a database schema that could record contacts, donations and events. That consumed most of Friday night&#8217;s efforts. Here&#8217;s how it looked on the whiteboard. <em>(Saurabh took this with his cell phone camera. Click it for full-size, which is easier to read.)</em></p>
+<p><a href="http://www.dougv.com/wp-content/uploads/2011/05/Photo_CB6DA206-0E0E-C34E-DADC-2CD1B7D8C086.jpg"><img class="alignnone size-large wp-image-3858" title="Our database schema" src="http://www.dougv.com/wp-content/uploads/2011/05/Photo_CB6DA206-0E0E-C34E-DADC-2CD1B7D8C086-728x545.jpg" alt="Our database schema" width="728" height="545" /></a></p>
+<h3>Saturday: Tackling The Obstacles</h3>
+<p>Saturday started with a lot of little hiccups.</p>
+<p><a href="http://discountasp.net/" target="_blank">DiscountASP.NET</a> very kindly donated the Web hosting for our application. However, they require a domain name in order to host a site, and wouldn&#8217;t donate that. Because we weren&#8217;t redesigning the Alex&#8217;s Team site, which needed to remain on its current server, we couldn&#8217;t use the one domain name Patti had. So I popped on over to GoDaddy and bought a special domain for the occasion.</p>
+<p>With a domain in hand, we could go ahead and create our application. Except that DiscountASP.NET, which would also donate a SQL Server database, has a separate ordering process for add-on services, which meant we would be delayed for several hours while we waited for the database to be set up.</p>
+<p>Since our entire application was basically just a GUI to a relational database, we really couldn&#8217;t get much done without a database. So I tried to use one of my free GoDaddy Web hosting credits to set up service sufficient to get us started.</p>
+<p>Unfortunately, I couldn&#8217;t use the newly registered domain to access any free service, because I guess the registration was too new; also, all the other domains I have registered through GoDaddy point to something, so I couldn&#8217;t use one of those.</p>
+<p>Thankfully, GoDaddy will sell Web hosting for $8 for one month without need for a contract, so I just went ahead with that; and within 30 minutes, we were able to build our database and start making forms.</p>
+<div class="aside">For the record, DiscountASP.NET came through for us completely by early Saturday afternoon. It was only my panic, lack of timely preparation / organization and impatience that made me use GoDaddy. This application will soon be moved to DiscountASP.NET, where it will permanently reside. I&#8217;ve used DiscountASP.NET for Web hosting in the past and in terms of features and reliability, they simply cannot be outdone.</div>
+<ul>
+<li>I didn&#8217;t pre-install Visual Studio on my crappy laptop; that took two hours out of Saturday morning. A new laptop will definitely be in the offing for next year.</li>
+<li>While waiting for that install to finish, I went on a wild goose chase for a convenience store in Cambridge. Suffice it to say, the one nearest to NERD is a 7-Eleven about a half-mile away; but I wound up hanging around for about 45 minutes outside <a href="http://store.thecoop.com/" target="_blank">the Coop</a>, waiting for it to open, because I was mistakenly led to believe it sold tobacco. (I fell off the no-smoking wagon for the weekend; I knew there would be some stress, and nicotine definitely keeps me calm.) So what should have been a 20-minute break turned in to an hour and a half.</li>
+</ul>
+<div id="attachment_3862" class="wp-caption alignnone" style="width: 717px"><img class="size-full wp-image-3862" title="Saurabh accuses me of being high. It's not an unreasonable assumption." src="http://www.dougv.com/wp-content/uploads/2011/05/tweet01.jpg" alt="Saurabh accuses me of being high. It's not an unreasonable assumption." width="707" height="378" /><p class="wp-caption-text">I was gone so long in search of smokes, Saurabh accused me of going to get stoned. It was a reasonably accurate portrayal.</p></div>
+<ul>
+<li>Somewhere around 1 pm, I mistakenly thought we would have to work in ASP.NET 2.0 in order to resolve some namespace and other issues, and I communicated as much to my team. This led them to delete what they had made to that point. Within 5 minutes, William had corrected my error. Saurabh was nonplussed.</li>
+<li>After dinner, we were ready to start integrating our files. Non unexpectedly, we ran into a number of small issues. It took a little while to get William&#8217;s files working on my laptop, but try as we might, we just couldn&#8217;t get Saurabh&#8217;s C#-based solution to work. So he wound up converting them to VB.NET. I went back to the hotel to finish my part of the solution.</li>
+</ul>
+<p>On Saturday night, I gave a quick overview on WordPress for the non-profits that I fear was a real snoozer. (Memo to self: Never host a seminar after dinner.) During that, I won my choice of a number of software prizes; but what was left available in the first-come, first-served prize pool didn&#8217;t really thrill me.</p>
+<p>William had his eye on a copy of <a href="http://www.devexpress.com/Subscriptions/DXperience/editionEnt.xml" target="_blank">DevExpress DXPerience Enterprise</a>, a bunch of .NET controls, worth about $1,300 on the retail market. I seldom program in Windows and he does all the time, so I transferred my winnings to him.</p>
+<h3>A Word About The Royal Sonesta</h3>
+<p>While many GiveCampers &#8212; William and Saurabh among them &#8212; spent the night at NERD, I stayed at a hotel, because I&#8217;m too old and fussy to be sleeping on hard floors. Also, I&#8217;m in Cambridge, which is quite a treat for me, and I wanted a chance to spend at least a little time in the city each night, even if it was just walking a half-mile to the hotel and having a drink or two in the lounge. So I opted to stay at the <a href="http://www.sonesta.com/boston/" target="_blank">Royal Sonesta</a>, which had the best rates.</p>
+<p><iframe src="http://maps.google.com/maps/ms?hl=&amp;ie=UTF8&amp;msa=0&amp;msid=208401827101352337890.0004a2659aa672a475969&amp;ll=42.364727,-71.085362&amp;spn=0.011098,0.031242&amp;z=15&amp;output=embed" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="728" height="350"></iframe><br />
+<small>View <a style="color: #0000ff; text-align: left;" href="http://maps.google.com/maps/ms?hl=&amp;ie=UTF8&amp;msa=0&amp;msid=208401827101352337890.0004a2659aa672a475969&amp;ll=42.364727,-71.085362&amp;spn=0.011098,0.031242&amp;z=15&amp;source=embed">New England GiveCamp 2011</a> in a larger map</small></p>
+<p>This simple plot was foiled, however, by the Royal Sonesta&#8217;s unfathomable renting out of the first-floor lounge on both Friday and Saturday night. On Friday, I was able to get a single beer, but it felt very strange crashing a private event and I wound up calling it a night early. On Saturday, they just turned me away, period, because a wedding reception was being held there.</p>
+<p>Also, while the Sonesta loudly advertised its local shuttle service, they require you to register for it; and nobody saw fit to remind me of it at the concierge desk, when I asked for a shuttle schedule. As a result, I stood outside for a half-hour on Friday night, waiting for a shuttle that never showed up.</p>
+<p>Overall, the Sonesta&#8217;s staff was courteous and friendly; especially the front desk, porters and valets. But the concierges were inexplicably surly, brusque, unapologetic and unhelpful.</p>
+<p>So while the price was great ($144 per night, amazingly good for Cambridge), the hotel was clean and the room / amenities nice, I cannot recommend the place. I mean, what kind of hotel closes its lounge to guests? And has concierge service that basically looks to do as little as possible, and that with a frown on its face?</p>
+<h3>Sunday: It All Comes Together, Like Magic</h3>
+<p>The great benefit of having competent, skilled and motivated team members is that their sense of urgency and their ability to adapt and overcome adversity are both fine-tuned. That was certainly the case with William and Saurabh; they were pretty much done by Sunday morning, and all we had to do was take one more crack at getting all three parts to play nicely with one another.</p>
+<p>I let that task fall to William, and he did an extraordinary job getting everything to work; certainly, a much better job than I would have done. Meanwhile, Saurabh settled in to help Patti make some upgrades to her Web site, notably in getting her Paypal donation button working again, adding in some alternative donation options and adding Google Analytics to her site.</p>
+<p>Saurabh also won an instant drawing on Sunday and scored a copy of Age of Empires III for PC. I had my heart set on winning a WiFi-enabled Kindle, which was being given away at the end of GiveCamp; but that didn&#8217;t happen.</p>
+<p>Not to say we didn&#8217;t get some great swag:</p>
+<ul>
+<li>A full-boat copy of Microsoft Office 2010 Professional. Awesome!</li>
+<li>A thumb drive. You can never have too many of those.</li>
+<li>A set of jewelers&#8217; screwdrivers. Again, you can never have too many of them.</li>
+<li>A screw-top sippy cup with durable straw. Which is exactly what my spill-prone self needs to have on his work desk.</li>
+<li>A miniature Nerf football. Awesome stress reliever.</li>
+<li>A pen and pad of paper. Again, never can have enough of either.</li>
+<li>A puzzle book. Not that I had time during the weekend to mess with puzzles.</li>
+<li>A GiveCamp T-shirt. I like T-shirts as mementos.</li>
+</ul>
+<p>During the weekend, Jim O&#8217;Neil dropped scores of additional treats on a giveaway table, many of which were O&#8217;Reilly books. I managed to get a spare puzzle book, several notepads, a <a href="http://www.amazon.com/Oracle-Language-Pocket-Reference-OReilly/dp/0596514042/" target="_blank">PL/SQL quick pocket reference</a>, <a href="http://www.amazon.com/Access-2010-Missing-Matthew-MacDonald/dp/1449382371/" target="_blank">Access 2010: the missing manual</a> and <a href="http://www.amazon.com/Microsoft®-Visual-Basic®-2010-Microsoft/dp/0735626693/" target="_blank">Visual Basic 2010 Step By Step</a>. There were a number of other books available but I was too slow to score them. However, I understand I am allowed a free ebook from O&#8217;Reilly, as well.</p>
+<p>The bottom line is that we got our project done, it works, Patti seems fairly pleased with it and we had a great time this weekend. It&#8217;s definitely renewed my commitment; I&#8217;ll be a GiveCamper until I can&#8217;t do it any more.</p>
+<p>All links in this post on delicious: <a href="http://www.delicious.com/dougvdotcom/new-england-givecamp-2011-what-a-weekend" target="_blank">http://www.delicious.com/dougvdotcom/new-england-givecamp-2011-what-a-weekend</a></p>
+
+
+<p>Related posts:<ol><li><a href='http://www.dougv.com/2010/05/13/designers-and-developers-donate-your-time-talent-at-new-england-give-camp-june-11-13-2010/' rel='bookmark' title='Designers And Developers: Donate Your Time, Talent At New England GiveCamp, June 11-13, 2010'>Designers And Developers: Donate Your Time, Talent At New England GiveCamp, June 11-13, 2010</a></li>
+<li><a href='http://www.dougv.com/2011/04/24/automatically-hash-tagging-text-with-asp-net-web-forms-vb-net/' rel='bookmark' title='Automatically Hash Tagging Text With ASP.NET Web Forms (VB.NET)'>Automatically Hash Tagging Text With ASP.NET Web Forms (VB.NET)</a></li>
+<li><a href='http://www.dougv.com/2009/08/12/new-url-for-asp-net-demos-dougv-net/' rel='bookmark' title='New URL For ASP.NET Demos: dougv.net'>New URL For ASP.NET Demos: dougv.net</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=rNk_nG6bRF0:ms89_pcQvk0:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=rNk_nG6bRF0:ms89_pcQvk0:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=rNk_nG6bRF0:ms89_pcQvk0:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=rNk_nG6bRF0:ms89_pcQvk0:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=rNk_nG6bRF0:ms89_pcQvk0:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=rNk_nG6bRF0:ms89_pcQvk0:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=rNk_nG6bRF0:ms89_pcQvk0:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=rNk_nG6bRF0:ms89_pcQvk0:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=rNk_nG6bRF0:ms89_pcQvk0:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/dougvdotcom/~4/rNk_nG6bRF0" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.dougv.com/2011/05/03/new-england-givecamp-2011-what-a-weekend/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Automatically Hash Tagging Text With ASP.NET Web Forms (VB.NET)</title>
+		<link>http://www.dougv.com/2011/04/24/automatically-hash-tagging-text-with-asp-net-web-forms-vb-net/</link>
+		<comments>http://www.dougv.com/2011/04/24/automatically-hash-tagging-text-with-asp-net-web-forms-vb-net/#comments</comments>
+		<pubDate>Mon, 25 Apr 2011 01:14:41 +0000</pubDate>
+		<dc:creator>Doug Vanderweide</dc:creator>
+				<category><![CDATA[ASP.NET]]></category>
+		<category><![CDATA[Databases]]></category>
+		<category><![CDATA[Dot Net]]></category>
+		<category><![CDATA[Programming]]></category>
+		<category><![CDATA[Social Media]]></category>
+		<category><![CDATA[SQL]]></category>
+		<category><![CDATA[SQL Server]]></category>
+		<category><![CDATA[Twitter]]></category>
+		<category><![CDATA[VB.NET]]></category>
+		<category><![CDATA[hashtags]]></category>
+		<category><![CDATA[HTML]]></category>
+		<category><![CDATA[labels]]></category>
+
+		<guid isPermaLink="false">http://www.dougv.com/?p=3836</guid>
+		<description><![CDATA[I had previously blogged a solution in PHP to automatically hash tag an input string with various terms stored in a database. Here&#8217;s an ASP.NET Web Forms version of the same solution (this one should work for ASP.NET 2, 3.5 and 4). To review, a hash tag is a bit of text, led with a [...]
+
+
+Related posts:<ol><li><a href='http://www.dougv.com/2011/04/12/automatically-hash-tagging-text-with-php-and-mysql-part-2-adding-new-hash-tags-to-the-database-table/' rel='bookmark' title='Automatically Hash Tagging Text With PHP And MySQL Part 2: Adding New Hash Tags To The Database Table'>Automatically Hash Tagging Text With PHP And MySQL Part 2: Adding New Hash Tags To The Database Table</a></li>
+<li><a href='http://www.dougv.com/2011/04/11/automatically-hash-tagging-text-with-php-and-mysql/' rel='bookmark' title='Automatically Hash Tagging Text With PHP And MySQL'>Automatically Hash Tagging Text With PHP And MySQL</a></li>
+<li><a href='http://www.dougv.com/2007/07/13/getting-plain-text-from-an-aspnet-20-page-for-use-as-an-ajax-data-source/' rel='bookmark' title='Getting Plain Text From An ASP.NET 2.0 Page For Use As An AJAX Data Source'>Getting Plain Text From An ASP.NET 2.0 Page For Use As An AJAX Data Source</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p>I had previously blogged <a href="http://www.dougv.com/2011/04/11/automatically-hash-tagging-text-with-php-and-mysql/">a solution in PHP to automatically hash tag an input string</a> with various terms stored in a database. Here&#8217;s an ASP.NET Web Forms version of the same solution (this one should work for ASP.NET 2, 3.5 and 4).</p>
+<p>To review, a <a href="http://en.wikipedia.org/wiki/Tag_%28metadata%29">hash tag</a> is a bit of text, led with a hash mark (#), that serves to indicate to some Web sites / services &#8212; <a href="http://support.twitter.com/entries/49309-what-are-hashtags-symbols">notably, Twitter</a> &#8212; that the word thus marked should be treated as a tag. This code will take some piece of input text, search it for terms we generally want to tag, and mark the instances in that input string with hash tags.</p>
+<p>As in the previous solution, we&#8217;ll define a &#8220;word&#8221; for the purposes of this demo to be any alphanumeric character sequence that is followed by a space or a newline. Also, this demo will only tag text; it won&#8217;t automatically add new terms to the database. That will be the subject of an upcoming post.</p>
+<p>I&#8217;m going to use three <a href="http://msdn.microsoft.com/en-us/library/system.collections.arraylist.aspx" target="_blank">ArrayLists</a> as the workhorses for this solution. One will hold the terms from the database; the second will contain all the distinct words in the input string; and the third, the words from the input string that are hashtag terms.<br />
+<span id="more-3836"></span></p>
+<h4>The HTML / ASP.NET Controls</h4>
+<p>For the purposes of this demo, we&#8217;ll just have a form with a <a href="http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.label.aspx" target="_blank">Label</a> (to show results or error messages), <a href="http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.textbox.aspx" target="_blank">TextBox</a> (to provide the input text), a <a href="http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.requiredfieldvalidator.aspx" target="_blank">RequiredFieldValidator</a> and a <a href="http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.aspx" target="_blank">Button</a>. I&#8217;ll also output in a <a href="http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.aspx" target="_blank">DetailsView</a>, bound to a <a href="http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.aspx" target="_blank">SqlDataSource</a>, all the terms stored in the database at the moment.</p>
+<pre class="brush: xml; title: ; notranslate">
+&lt;h2&gt;Automatically Hashtagging An Input String&lt;/h2&gt;
+&lt;p&gt;&lt;asp:Label runat=&quot;server&quot; ID=&quot;lblResult&quot; Text='Enter some text in the box, then click the submit button. Results will be shown here.' /&gt;&lt;/p&gt;
+&lt;asp:TextBox runat=&quot;server&quot; ID=&quot;tbInput&quot; TextMode=&quot;MultiLine&quot; Rows=&quot;10&quot; Columns=&quot;50&quot; Text=&quot;Amazon uses HTML5 and JavaScript; Google owns YouTube.&quot;  /&gt;
+&lt;asp:RequiredFieldValidator runat=&quot;server&quot; ID=&quot;rfvInput&quot; ControlToValidate=&quot;tbInput&quot; ErrorMessage='&lt;br /&gt;Please provide some text.' CssClass=&quot;warning&quot; Display=&quot;Dynamic&quot; /&gt;
+&lt;br /&gt;
+&lt;asp:Button runat=&quot;server&quot; ID=&quot;btnSubmit&quot; Text=&quot;Submit&quot; /&gt;
+
+&lt;h4&gt;Terms in the database&lt;/h4&gt;
+&lt;asp:DataList runat=&quot;server&quot; ID=&quot;dlTerms&quot; DataSourceID=&quot;sqlTerms&quot; RepeatColumns=&quot;10&quot; RepeatDirection=&quot;Horizontal&quot; CellPadding=&quot;5&quot; CellSpacing=&quot;0&quot; ItemStyle-BorderColor=&quot;Black&quot; ItemStyle-BorderWidth=&quot;1&quot;&gt;
+	&lt;ItemTemplate&gt;
+		&lt;%#Eval(&quot;term_text&quot;)%&gt;
+	&lt;/ItemTemplate&gt;
+&lt;/asp:DataList&gt;
+
+&lt;asp:SqlDataSource runat=&quot;server&quot; ID=&quot;sqlTerms&quot; SelectCommand=&quot;your stored procedure&quot; SelectCommandType=&quot;StoredProcedure&quot; ConnectionString=&quot;&lt;%$ ConnectionStrings:your connection string%&gt;&quot; /&gt;
+</pre>
+<h4>The GetAllTerms Function</h4>
+<p>First up, a function that retrieves from the database all the hashtag terms and returns them as an array.</p>
+<pre class="brush: vb; title: ; notranslate">Function GetAllTerms() As ArrayList
+	'retrieves all terms from the database
+	'returns empty ArrayList on error,
+	'populated ArrayList on success
+
+	Dim arrOut As New ArrayList()
+
+	Dim objConn As New SqlConnection(ConfigurationManager.ConnectionStrings(&quot;your connections string&quot;).ConnectionString)
+	Dim objCmd As New SqlCommand(&quot;your stored procedure&quot;, objConn)
+	objCmd.CommandType = CommandType.StoredProcedure
+
+	Dim objReader As SqlDataReader
+	objConn.Open()
+	objReader = objCmd.ExecuteReader()
+	While objReader.Read()
+		arrOut.Add(objReader(0))
+	End While
+	objConn.Close()
+	objCmd.Dispose()
+	objConn.Dispose()
+
+	Return arrOut
+End Function</pre>
+<h4>The ExtractTerms Function</h4>
+<p>Now we need to get all the potentially taggable words in our input string.</p>
+<pre class="brush: vb; title: ; notranslate">Function ExtractTerms(ByVal strInput As String) As ArrayList
+	'extracts all words from textbox
+	'returns them as ArrayList, empty ArrayList on error
+	'words are any alphanumeric sequence before a space or newline
+
+	Dim arrOut As New ArrayList()
+
+	Dim reWords As New Regex(&quot;\w+(\s|$)&quot;, RegexOptions.IgnoreCase Or RegexOptions.CultureInvariant)
+	Dim reMatches As MatchCollection = reWords.Matches(tbInput.Text)
+
+	For Each reMatch As Match In reMatches
+		arrOut.Add(reMatch.Value.Trim)
+	Next
+
+	Return arrOut
+End Function</pre>
+<h4>The CompareLists Function</h4>
+<p>Now that we have ArrayLists with all terms and all words, we can compare the two, and create an ArrayList that contains the words we intend to tag.</p>
+<p>Note that we take care to cast the terms and words to lower-case, and return the input text version of any terms found. That&#8217;s because we want to preserve case in the input string. That&#8217;s also why I can&#8217;t use the <a href="http://msdn.microsoft.com/en-us/library/system.collections.arraylist.contains.aspx">ArrayList.Contains </a>method; it&#8217;s case-sensitive when comparing strings. (Actually, that can be overridden or worked around; but it&#8217;s involved and somewhat complicated, so it&#8217;s also a subject for some other column).</p>
+<pre class="brush: vb; title: ; notranslate">Function CompareLists(ByVal arrTerms As ArrayList, ByVal arrWords As ArrayList) As ArrayList
+	'compares term list against word list
+	'returns ArrayList with all words found in terms
+	'maintains case
+
+	Dim arrOut As New ArrayList()
+
+	For Each strWord As String In arrWords
+		For Each strTerm As String In arrTerms
+			If strTerm.ToLower = strWord.ToLower Then
+				arrOut.Add(strWord)
+				Exit For
+			End If
+		Next
+	Next
+
+	Return arrOut
+End Function</pre>
+<h4>The AutoTagSubject Function</h4>
+<p>Finally, we need a function that will take the words we want autotagged, and apply the autotagging to the input string.</p>
+<p>Note that before we proceed with tagging, we remove all current hash marks from the input string. That&#8217;s to avoid double-hashing words that may have been tagged in the input text.</p>
+<pre class="brush: vb; title: ; notranslate">Function AutoTagSubject(ByVal strInput As String, ByVal arrTerms As ArrayList) As String
+	'applies arrTerms as hashtags to strInput
+	'removes hashtags first to avoid double-tagging
+
+	Dim strOut As String = strInput
+	strOut = strOut.Replace(&quot;#&quot;, &quot;&quot;)
+
+	For Each strTerm As String In arrTerms
+		strOut = strOut.Replace(strTerm, &quot;#&quot; &amp; strTerm)
+	Next
+
+	Return strOut
+End Function</pre>
+<h4>The btnSubmit_click Subroutine</h4>
+<p>We now need a simple subroutine to invoke our functions and autotag the input text.</p>
+<pre class="brush: vb; title: ; notranslate">Sub btnSubmit_click(ByVal Sender As Object, ByVal E As EventArgs) Handles btnSubmit.Click
+	'get terms from database
+	Dim arrTerms As New ArrayList()
+	arrTerms = GetAllTerms()
+
+	'get unique words from input text
+	Dim arrWords As New ArrayList()
+	arrWords = ExtractTerms(tbInput.Text)
+
+	If arrTerms.Count &lt; 1 Then
+		lblResult.Text = &quot;There are no terms in the database, or there was an error retrieving the terms.&quot;
+		lblResult.CssClass = &quot;warning&quot;
+	ElseIf arrWords.Count &lt; 1 Then
+		lblResult.Text = &quot;There are no words in the string to be tagged.&quot;
+		lblResult.CssClass = &quot;warning&quot;
+	Else
+		'get matches between terms and input words
+		Dim arrHashes As New ArrayList()
+		arrHashes = CompareLists(arrTerms, arrWords)
+
+		If arrHashes.Count &lt; 1 Then
+			lblResult.Text = &quot;There were no matches between the input text and the terms in the database.&quot;
+			lblResult.CssClass = &quot;&quot;
+		Else
+			'display found terms
+			Dim sbMsg As New StringBuilder(&quot;The following terms were found: &quot;)
+			For Each strTerm As String In arrHashes
+				sbMsg.Append(strTerm)
+				sbMsg.Append(&quot;, &quot;)
+			Next
+			sbMsg.Remove(sbMsg.Length - 2, 2)
+			lblResult.Text = sbMsg.ToString()
+			lblResult.CssClass = &quot;&quot;
+
+			'autotag input string
+			tbInput.Text = AutoTagSubject(tbInput.Text, arrHashes)
+		End If
+	End If
+
+End Sub</pre>
+<p>And that&#8217;s all there is to it. You can see a working demo at <a href="http://www.dougv.net/demos/auto_hashtag/">http://www.dougv.net/demos/auto_hashtag/</a></p>
+<p>You can also <a href="http://www.dougv.com/wp-content/uploads/2011/04/auto_hashtag.zip">download the demo code</a>. I distribute code under the GNU GPL.</p>
+<p>All links in this post on delicious: <a href="http://www.delicious.com/dougvdotcom/automatically-hash-tagging-text-with-asp-net-web-forms-vb-net">http://www.delicious.com/dougvdotcom/automatically-hash-tagging-text-with-asp-net-web-forms-vb-net</a></p>
+
+
+<p>Related posts:<ol><li><a href='http://www.dougv.com/2011/04/12/automatically-hash-tagging-text-with-php-and-mysql-part-2-adding-new-hash-tags-to-the-database-table/' rel='bookmark' title='Automatically Hash Tagging Text With PHP And MySQL Part 2: Adding New Hash Tags To The Database Table'>Automatically Hash Tagging Text With PHP And MySQL Part 2: Adding New Hash Tags To The Database Table</a></li>
+<li><a href='http://www.dougv.com/2011/04/11/automatically-hash-tagging-text-with-php-and-mysql/' rel='bookmark' title='Automatically Hash Tagging Text With PHP And MySQL'>Automatically Hash Tagging Text With PHP And MySQL</a></li>
+<li><a href='http://www.dougv.com/2007/07/13/getting-plain-text-from-an-aspnet-20-page-for-use-as-an-ajax-data-source/' rel='bookmark' title='Getting Plain Text From An ASP.NET 2.0 Page For Use As An AJAX Data Source'>Getting Plain Text From An ASP.NET 2.0 Page For Use As An AJAX Data Source</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=Mzt385CLHbU:cGJsUzad06c:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=Mzt385CLHbU:cGJsUzad06c:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=Mzt385CLHbU:cGJsUzad06c:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=Mzt385CLHbU:cGJsUzad06c:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=Mzt385CLHbU:cGJsUzad06c:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=Mzt385CLHbU:cGJsUzad06c:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=Mzt385CLHbU:cGJsUzad06c:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=Mzt385CLHbU:cGJsUzad06c:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=Mzt385CLHbU:cGJsUzad06c:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/dougvdotcom/~4/Mzt385CLHbU" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.dougv.com/2011/04/24/automatically-hash-tagging-text-with-asp-net-web-forms-vb-net/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Good Contracts Make Good Business. Or, ‘F*ck You, Pay Me’</title>
+		<link>http://www.dougv.com/2011/04/16/good-contracts-make-good-business-or-fck-you-pay-me/</link>
+		<comments>http://www.dougv.com/2011/04/16/good-contracts-make-good-business-or-fck-you-pay-me/#comments</comments>
+		<pubDate>Sat, 16 Apr 2011 16:15:49 +0000</pubDate>
+		<dc:creator>Doug Vanderweide</dc:creator>
+				<category><![CDATA[Self Employment]]></category>
+		<category><![CDATA[Business Practices]]></category>
+		<category><![CDATA[Copyright]]></category>
+		<category><![CDATA[Pricing]]></category>
+
+		<guid isPermaLink="false">http://www.dougv.com/?p=3824</guid>
+		<description><![CDATA[When I talk to new free-lance programmers about running a business, there are two core pieces of advice I offer. The first is that it&#8216;s almost always better to have a little high-paying work than a lot of low-paying jobs. The other is the importance of a lawyer-reviewed contract that clearly defines the work to [...]
+
+
+Related posts:<ol><li><a href='http://www.dougv.com/2008/11/12/the-wrong-way-of-looking-at-client-relationships-an-example-examined-and-discussed/' rel='bookmark' title='The Wrong Way Of Looking At Client Relationships: An Example Examined And Discussed'>The Wrong Way Of Looking At Client Relationships: An Example Examined And Discussed</a></li>
+<li><a href='http://www.dougv.com/2009/05/03/a-beginning-entrepreneurs-guide-to-pricing-professional-services/' rel='bookmark' title='A Beginning Entrepreneur&#039;s Guide To Pricing Professional Services'>A Beginning Entrepreneur&#039;s Guide To Pricing Professional Services</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p>When I talk to new free-lance programmers about running a business, there are two core pieces of advice I offer. The first is that it<a title="A Beginning Entrepreneur's Guide To Pricing Professional Services" href="http://www.dougv.com/2009/05/03/a-beginning-entrepreneurs-guide-to-pricing-professional-services/" target="_blank">&#8216;s almost always better to have a little high-paying work than a lot of low-paying jobs</a>. The other is <a title="More Bad Business: Dealing With Contractors And Copyright" href="http://www.dougv.com/2008/11/24/more-bad-business-dealing-with-contractors-and-copyright/" target="_blank">the importance of a lawyer-reviewed contract</a> that clearly defines the work to be produced, the date by which it will be completed and the cost of that work.</p>
+<p>So I was very pleased to come across a <a href="http://www.creativemornings.com/" target="_blank">Creative Mornings</a> talk, given by Mike Monteiro of <a href="http://www.muledesign.com/" target="_blank">Mule Design</a> and his attorney, <a href="http://www.sfcounsel.com/attorneys/levine.php" target="_blank">Gabriel Levine</a>, which reinforces and expands upon those basic ideas.</p>
+<p><iframe src="http://player.vimeo.com/video/22053820" width="728" height="410" frameborder="0"></iframe></p>
+<p><em>(via zeldman.com and Google Reader Play)</em></p>
+<p>This is a long video (40 minutes) but worth every moment. But for the <a href="http://knowyourmeme.com/memes/tldr" target="_blank">tl;dw</a> crowd, here&#8217;s a synopsis of the salient points:</p>
+<ol>
+<li>Contracts protect both parties &#8211; you and your client.</li>
+<li>Don&#8217;t start work without a contract.</li>
+<li>Don&#8217;t blindly accept your client&#8217;s terms.</li>
+<li>Anticipate negotiation but don&#8217;t back down on important stuff &#8211; payment, deadlines and your intellectual property rights in the work until final payment is received.</li>
+<li>Lawyers talk to lawyers. If your client is talking to you in the presence of, or through, his lawyer, get yours or don&#8217;t talk.</li>
+<li>Be specific and confident about money. Ask for the rate you deserve and don&#8217;t back down on terms.</li>
+</ol>
+<p><span id="more-3824"></span>&#8220;This is a business,&#8221; said Monteiro. <strong>&#8220;All clients start a business relationship with the best of intentions, but things go wrong.</strong> Things that you weren&#8217;t expecting: the market changes, or the person who hired you leaves, or someone has a bad mood day, but things change.&#8221;</p>
+<p>In other words, it doesn&#8217;t matter how well you know someone, how minor the work you are doing is or how informal or nontraditional you or your client may be about running a business. Good contracts don&#8217;t hurt relationships: they protect them.</p>
+<p>Otherwise, Monteiro noted, you&#8217;re left to making emotional appeals in order to get paid: &#8220;The minute you appeal to their emotions, you have given up any bit of leverage that you had in that relationship. You have shown them your belly. You have shown them that you don&#8217;t think you have a leg to stand on, other than playing upon guilt.&#8221;</p>
+<p><strong>Contracts contain clear definitions of the work to be done and clear expectations for both parties.</strong> That helps you deal with problems, such as attempts to change the nature and scope of the project midstream; the client expressing displeasure or reservations about the work so far (i.e., buyer&#8217;s remorse); delays or confusion about payment amounts due; keeping the project on track and on schedule; and so forth.</p>
+<p>&#8220;You want to make sure that everybody understands what they have agreed to,&#8221; says Levine.</p>
+<p>What if the client says, &#8220;you can trust us?&#8221;</p>
+<p>&#8220;This is the biggest red flag in client services,&#8221; said Monteiro. &#8220;If you ever hear this phrase, just walk away.&#8221;</p>
+<p>He gives, as example, a client who didn&#8217;t want to codify payment terms, on a project that was to being in two days. He decided to walk away.</p>
+<p>&#8220;If you agree to things like this at the very beginning, you are going to have to agree to things during the project that are as onerous,&#8221; said Monteiro. &#8220;Let this be a sign of what&#8217;s to come and walk away from it.&#8221;</p>
+<p>He also addressed the <strong>two common complaints </strong>most people have about hiring a lawyer, accountant or other trusted advisor: &#8220;It&#8217;s expensive&#8221; and &#8220;Do I really need one?&#8221;</p>
+<p>&#8220;What I pay (Levine) is a pittance of the money I would have lost had I not had him taking care of this stuff,&#8221; said Monteiro, &#8220;and you&#8217;re at the point where you need a lawyer when you decide to stop being a design amateur and start being a design professional.&#8221;</p>
+<p>It&#8217;s really easy, when you&#8217;re just starting out in business, to feel as though you should be happy to have the work and shouldn&#8217;t be demanding about terms, conditions or payment. Believe me, I felt that way when I went out on my own. And as a result, every mistake and problem was magnified, because I was performing without a safety net: A clear, firm and comprehensive contract.</p>
+<p>Now, even if I am just doing a quick job for a routine customer, I make sure I have at least an email stating what is to be done, when it will be delivered and the rate I am to be paid, so there are few surprises and little misunderstood.</p>
+<p>And believe it or not, when you do run into problems &#8212; and all human endeavors have problems &#8212; a contract helps you fix problems without having to go to the extremes of court. Contracts keep people honest and motivate them to solve their problems within the context of the agreement. Or, as Monteiro said, most client issues can be fixed via a quick cup of coffee or a short chat when you have a good contract with him.</p>
+<p>All links in this post on delicious: <a href="http://www.delicious.com/dougvdotcom/good-contracts-make-good-business-or-fck-you-pay-me" target="_blank">http://www.delicious.com/dougvdotcom/good-contracts-make-good-business-or-fck-you-pay-me</a></p>
+
+
+<p>Related posts:<ol><li><a href='http://www.dougv.com/2008/11/12/the-wrong-way-of-looking-at-client-relationships-an-example-examined-and-discussed/' rel='bookmark' title='The Wrong Way Of Looking At Client Relationships: An Example Examined And Discussed'>The Wrong Way Of Looking At Client Relationships: An Example Examined And Discussed</a></li>
+<li><a href='http://www.dougv.com/2009/05/03/a-beginning-entrepreneurs-guide-to-pricing-professional-services/' rel='bookmark' title='A Beginning Entrepreneur&#039;s Guide To Pricing Professional Services'>A Beginning Entrepreneur&#039;s Guide To Pricing Professional Services</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=4NgTZrsaLv0:tFy_XYplgwg:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=4NgTZrsaLv0:tFy_XYplgwg:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=4NgTZrsaLv0:tFy_XYplgwg:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=4NgTZrsaLv0:tFy_XYplgwg:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=4NgTZrsaLv0:tFy_XYplgwg:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=4NgTZrsaLv0:tFy_XYplgwg:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=4NgTZrsaLv0:tFy_XYplgwg:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=4NgTZrsaLv0:tFy_XYplgwg:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=4NgTZrsaLv0:tFy_XYplgwg:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/dougvdotcom/~4/4NgTZrsaLv0" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.dougv.com/2011/04/16/good-contracts-make-good-business-or-fck-you-pay-me/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Automatically Hash Tagging Text With PHP And MySQL Part 2: Adding New Hash Tags To The Database Table</title>
+		<link>http://www.dougv.com/2011/04/12/automatically-hash-tagging-text-with-php-and-mysql-part-2-adding-new-hash-tags-to-the-database-table/</link>
+		<comments>http://www.dougv.com/2011/04/12/automatically-hash-tagging-text-with-php-and-mysql-part-2-adding-new-hash-tags-to-the-database-table/#comments</comments>
+		<pubDate>Tue, 12 Apr 2011 19:32:13 +0000</pubDate>
+		<dc:creator>Doug Vanderweide</dc:creator>
+				<category><![CDATA[Databases]]></category>
+		<category><![CDATA[MySQL]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Programming]]></category>
+		<category><![CDATA[Social Media]]></category>
+		<category><![CDATA[Twitter]]></category>
+		<category><![CDATA[global constants]]></category>
+		<category><![CDATA[hashtags]]></category>
+		<category><![CDATA[HTML]]></category>
+		<category><![CDATA[labels]]></category>
+
+		<guid isPermaLink="false">http://www.dougv.com/?p=3810</guid>
+		<description><![CDATA[Yesterday I wrote a short script that will automatically tag a subject string with terms contained in a database table. Today, I&#8217;m going to alter that script, so that user-designated hash tags will be added to the database. For example, suppose we have a hash tag database table that contains the terms winter, summer and [...]
+
+
+Related posts:<ol><li><a href='http://www.dougv.com/2011/04/11/automatically-hash-tagging-text-with-php-and-mysql/' rel='bookmark' title='Automatically Hash Tagging Text With PHP And MySQL'>Automatically Hash Tagging Text With PHP And MySQL</a></li>
+<li><a href='http://www.dougv.com/2009/06/13/sorting-your-mysql-results-set-in-php-using-jquery-and-a-more-traditional-approach/' rel='bookmark' title='Sorting Your MySQL Results Set In PHP Using jQuery (And A More Traditional Approach)'>Sorting Your MySQL Results Set In PHP Using jQuery (And A More Traditional Approach)</a></li>
+<li><a href='http://www.dougv.com/2008/07/23/recursively-listing-files-in-a-directory-and-adding-their-names-to-a-text-file-in-visual-basic-net/' rel='bookmark' title='Recursively Listing Files In A Directory And Adding Their Names To A Text File In Visual Basic .NET'>Recursively Listing Files In A Directory And Adding Their Names To A Text File In Visual Basic .NET</a></li>
+</ol>]]></description>
+			<content:encoded><![CDATA[<p>Yesterday I wrote <a title="Automatically Hash Tagging Text With PHP And MySQL" href="http://www.dougv.com/2011/04/11/automatically-hash-tagging-text-with-php-and-mysql/">a short script that will automatically tag a subject string with terms contained in a database table</a>. Today, I&#8217;m going to alter that script, so that user-designated hash tags will be added to the database.</p>
+<p>For example, suppose we have a hash tag database table that contains the terms <em>winter, summer </em>and <em>sun</em>. If we apply those to the opening line of <a href="http://shakespeare.mit.edu/richardiii/">Richard III</a>, it looks like this:</p>
+<pre class="brush: plain; title: ; notranslate">Now is the #winter of our discontent made glorious #summer by this #sun of York;
+and all the clouds that lour'd upon our house in the deep bosom of the ocean buried.</pre>
+<p>But what if we decided we wanted to also hash tag <em>clouds</em>, now and in the future? We can certainly manually do so every time, but having a convenient way to add that text to the database would be quite helpful.</p>
+<p>That&#8217;s what today&#8217;s script will do: Find all the words we have manually hashtagged in the subject string and add them to the database, if they are not in the database already and we confirm we want them added.<br />
+<span id="more-3810"></span></p>
+<h4>Alterations To The HTML Form</h4>
+<p>The HTML form is fundamentally the same as before. We add a pair of radio buttons, however, that determine whether new terms should be added to the database.</p>
+<pre class="brush: xml; title: ; notranslate">&lt;form id=&quot;tform&quot; name=&quot;tform&quot; action=&quot;&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;&quot; method=&quot;post&quot;&gt;
+	&lt;textarea id=&quot;ttext&quot; name=&quot;ttext&quot; cols=&quot;50&quot; rows=&quot;3&quot;&gt;&lt;?php echo $_POST['ttext']; ?&gt;&lt;/textarea&gt;
+	&lt;br /&gt;
+	Add new terms to the database?&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;tadd&quot; value=&quot;1&quot; /&gt; Yes&lt;/label&gt; &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;tadd&quot; value=&quot;0&quot; checked=&quot;checked&quot; /&gt; No&lt;/label&gt;
+	&lt;br /&gt;
+	&lt;input type=&quot;submit&quot; name=&quot;submit&quot; id=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+&lt;/form&gt;</pre>
+<h4>Changes To The Database Global Constants</h4>
+<p>Because we&#8217;re going to run two queries, I&#8217;ve changed the database constants a bit, modifying the previous select query to instead be the name of the table and the name of the terms column, so that I can build both select and insert queries.</p>
+<pre class="brush: php; title: ; notranslate">//your database server variables
+define('MYSQL_HOST', 'hostname');
+define('MYSQL_USER', 'db_user');
+define('MYSQL_PASS', 'db_password');
+define('MYSQL_DB', 'db_name');
+define('MYSQL_TABLE', 'taxonomy_table_name');
+define('MYSQL_TERM_COLUMN', 'taxonomy_column_name');</pre>
+<p>(Note: &#8220;<a href="http://en.wikipedia.org/wiki/Taxonomy">Taxonomy</a>&#8221; is a more formal name for tags / categories / labels. I&#8217;m using it here specifically for link bait. So sue me.)</p>
+<h4>Changes To The Autotagging PHP Function</h4>
+<p>Because we now expect to see hashtags in the input text, we need to remove any extras that show up, since the process of autotagging may now add extraneous hash tags. (In truth, I should have checked for the presence of hash tags in the original function. Oops.)</p>
+<pre class="brush: php; title: ; notranslate">function autotag($input, $terms) {
+	//tags $input with $terms
+	//returns false on error, tagged string on success
+
+	if(strlen(trim($input)) &lt; 1) {
+		trigger_error('function autotag: string to be tagged is empty', E_USER_WARNING);
+		return false;
+	}
+	if(!is_array($terms)) {
+		trigger_error('function autotag: terms is not an array', E_USER_WARNING);
+		return false;
+	}
+
+	$tmp = array();
+	foreach($terms as $term){
+		//matches will be terms exactly as in database,
+		//followed by space or newline
+		$tmp[] = &quot;/($term)(\s|$)/i&quot;;
+	}
+	$out = preg_replace($tmp, '#$0', $input);
+	$out = preg_replace('/#{2,}/', '#', $out);
+	return $out;
+}</pre>
+<h4>A PHP Function To Save New Tags To The Database</h4>
+<p>Now, for the function that will save new terms to the database.</p>
+<ul>
+<li>We&#8217;ll identify all hashtagged words in the subject string, then place them in an array.</li>
+<li>We&#8217;ll compare that array against the current terms array; any terms in the subject, that aren&#8217;t in the original terms list, we know should be added to the database.</li>
+<li>A SQL statement is built and then passed to the database server.</li>
+<li>The function returns the added terms, if any.</li>
+</ul>
+<pre class="brush: php; title: ; notranslate">function save_tags($input, $terms) {
+	//save new tags to database
+	//returns Boolean false on error,
+	//string of added terms on success
+
+	if(strlen(trim($input)) &lt; 1) {
+		trigger_error('function save_tags: string to be tagged is empty', E_USER_WARNING);
+		return false;
+	}
+	if(!is_array($terms)) {
+		trigger_error('function save_tags: terms is not an array', E_USER_WARNING);
+		return false;
+	}
+
+	//get terms from subject string
+	$tmp = array();
+	$new_terms = array();
+	preg_match_all('/#\w+(\s|$)/', $input, $tmp);
+	foreach($tmp[0] as $term) {
+		$new_terms[] = trim(strtolower(str_replace('#', '', $term)));
+	}
+	$tmp = array_diff($new_terms, $terms);
+
+	//if new terms, add to database
+	if(count($tmp) &gt; 0) {
+		//build sql string
+		$sql = &quot;INSERT INTO &quot; . MYSQL_TABLE . &quot; (&quot; . MYSQL_TERM_COLUMN . &quot;) VALUES &quot;;
+		foreach($tmp as $term) {
+			$sql .= &quot;('$term'), &quot;;
+		}
+		$sql = substr($sql, 0, strlen($sql) - 2);
+		$sql .= &quot;;&quot;;
+
+		//insert to database table
+		if(!$link = mysql_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASS)) {
+			trigger_error('function save_tags: Cannot connect to database server. Please check your host name and credentials', E_USER_WARNING);
+			return false;
+		}
+
+		if(!mysql_select_db(MYSQL_DB)) {
+			trigger_error('function save_tags: Cannot select the database. Please check your database name', E_USER_WARNING);
+			return false;
+		}
+
+		if(!$rs = mysql_query($sql)) {
+			trigger_error('function save_tags: Error parsing query. MySQL error: ' . mysql_error(), E_USER_WARNING);
+			return false;
+		}
+	}
+	return implode(&quot;, &quot;, $tmp);
+}</pre>
+<h4>The Invocation Code</h4>
+<p>To actually command the script to add the new terms to the database, we can simply check that the value of the radio button is true (1). If so, we&#8217;ll go ahead and call save_tags.</p>
+<pre class="brush: php; title: ; notranslate">$terms = at_get_terms();
+$content = &quot;Enter text in the textarea below, then click Submit. The text will be automatically tagged with terms contained in the database. Any newly tagged terms will be added to the database.&quot;;
+
+if(isset($_POST['submit'])) {
+	$content = &quot;&lt;strong&gt;Hashtagged string:&lt;/strong&gt; &quot; . autotag(htmlspecialchars($_POST['ttext']), $terms);
+	if($_POST['tadd'] == '1') {
+		$content .= &quot;&lt;br /&gt;&lt;strong&gt;Terms added to database:&lt;/strong&gt; &quot; . save_tags(htmlspecialchars($_POST['ttext']), $terms);
+	}
+}</pre>
+<p>And once again, that&#8217;s it. </p>
+<p>I have a demo running that goes through the motions of adding new hashtags to the database, but doesn&#8217;t actually do so (for obvious reasons; some of you can&#8217;t be trusted to keep it clean, in a technical or grammatical sense). It&#8217;s at <a href="http://dougv.com/demo/php_auto_hashtag_update/">http://dougv.com/demo/php_auto_hashtag_update/</a></p>
+<p><a href="http://www.dougv.com/wp-content/uploads/2011/04/php_auto_hashtag_update.zip">You can also download the source code</a>. I distribute this code under the GNU GPL version 3.</p>
+<p>All links in this post on delicious: <a href="http://www.delicious.com/dougvdotcom/automatically-hash-tagging-text-with-php-and-mysql-part-2-adding-new-hash-tags-to-the-database-table">http://www.delicious.com/dougvdotcom/automatically-hash-tagging-text-with-php-and-mysql-part-2-adding-new-hash-tags-to-the-database-table</a></p>
+
+
+<p>Related posts:<ol><li><a href='http://www.dougv.com/2011/04/11/automatically-hash-tagging-text-with-php-and-mysql/' rel='bookmark' title='Automatically Hash Tagging Text With PHP And MySQL'>Automatically Hash Tagging Text With PHP And MySQL</a></li>
+<li><a href='http://www.dougv.com/2009/06/13/sorting-your-mysql-results-set-in-php-using-jquery-and-a-more-traditional-approach/' rel='bookmark' title='Sorting Your MySQL Results Set In PHP Using jQuery (And A More Traditional Approach)'>Sorting Your MySQL Results Set In PHP Using jQuery (And A More Traditional Approach)</a></li>
+<li><a href='http://www.dougv.com/2008/07/23/recursively-listing-files-in-a-directory-and-adding-their-names-to-a-text-file-in-visual-basic-net/' rel='bookmark' title='Recursively Listing Files In A Directory And Adding Their Names To A Text File In Visual Basic .NET'>Recursively Listing Files In A Directory And Adding Their Names To A Text File In Visual Basic .NET</a></li>
+</ol></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=xdDLSwcZj50:Ju-D7OJc_QE:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=xdDLSwcZj50:Ju-D7OJc_QE:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=xdDLSwcZj50:Ju-D7OJc_QE:D7DqB2pKExk" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=xdDLSwcZj50:Ju-D7OJc_QE:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=7Q72WNTAKBA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=xdDLSwcZj50:Ju-D7OJc_QE:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=xdDLSwcZj50:Ju-D7OJc_QE:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=xdDLSwcZj50:Ju-D7OJc_QE:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/dougvdotcom?a=xdDLSwcZj50:Ju-D7OJc_QE:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/dougvdotcom?i=xdDLSwcZj50:Ju-D7OJc_QE:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/dougvdotcom/~4/xdDLSwcZj50" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://www.dougv.com/2011/04/12/automatically-hash-tagging-text-with-php-and-mysql-part-2-adding-new-hash-tags-to-the-database-table/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss><!-- Dynamic page generated in 2.756 seconds. --><!-- Cached page generated by WP-Super-Cache on 2011-09-15 05:28:21 --><!-- Compression = gzip -->

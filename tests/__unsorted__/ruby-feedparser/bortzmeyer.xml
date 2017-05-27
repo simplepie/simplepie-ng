@@ -1,0 +1,788 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="feed.css" type="text/css"?>
+<feed xml:lang="fr" xmlns="http://www.w3.org/2005/Atom" 
+                    xmlns:html="http://www.w3.org/1999/xhtml"
+                    xmlns:dublincore="http://purl.org/dc/elements/1.1/">
+<!-- See for discussions about the relationship between Atom and Dublin Core 
+     and why Atom does not use Dublin Core:
+  http://internetalchemy.org/2004/03/theNucleusOfAtom 
+  http://www.imc.org/atom-syntax/mail-archive/msg03170.html
+  http://www.imc.org/atom-syntax/mail-archive/msg04474.html
+  http://bitworking.org/news/Not_Invented_Here
+-->
+
+<title>Blog de Stéphane Bortzmeyer</title>
+<dublincore:title>Blog de Stéphane Bortzmeyer</dublincore:title>
+<div class="info" xmlns="http://www.w3.org/1999/xhtml">Ceci est le
+fichier <a href="http://fr.wikipedia.org/wiki/XML">XML</a> d'un flux
+de <a href="http://fr.wikipedia.org/wiki/syndication">syndication</a> au
+format <a href="http://fr.wikipedia.org/wiki/Atom">Atom</a>.  Il est
+conçu pour être syndicaté depuis un autre site Web ou bien lu à
+travers un lecteur de flux d'information comme <a
+href="http://sage.mozdev.org/">Sage</a> ou <a
+href="http://liferea.sourceforge.net/">Liferea</a>, <em>pas</em>
+depuis un navigateur Web ordinaire.</div>
+<link rel="alternate" type="text/html" href="http://www.bortzmeyer.org/"/>
+<link rel="self" type="application/atom+xml" href="http://www.bortzmeyer.org/feed.atom"/><!-- TODO: fails for the full Atom feed which has a different URI http://feedvalidator.org/docs/warning/SelfDoesntMatchLocation.html -->
+<link rel="license" type="text/html" title="GFDL in HTML format" href="http://www.gnu.org/copyleft/fdl.html"/>
+<!--  draft-walsh-app-docbook-xml, not yet registered -->
+<link rel="license" type="application/docbook+xml" title="GFDL in Docbook format" href="http://www.gnu.org/licenses/fdl.xml"/>
+<link rel="license" type="text/plain" title="GFDL in plain text" href="http://www.gnu.org/licenses/fdl.txt"/>
+<rights type="xhtml"><html:div>&#169; Stéphane Bortzmeyer, 2005. <html:a href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</html:a> (GFDL).</html:div></rights>
+<icon>/favicon.ico</icon>
+<dublincore:language>fr</dublincore:language> <!-- TODO: xml:lang for Atom ? -->
+<author>
+<name>
+Stéphane Bortzmeyer
+</name>
+<email>stephane+blog@bortzmeyer.org</email>
+</author>
+<dublincore:creator>Stéphane Bortzmeyer</dublincore:creator>
+<dublincore:publisher>Stéphane Bortzmeyer</dublincore:publisher>
+<id>tag:bortzmeyer.org,2006-02:Blog/</id>
+<dublincore:identifier>tag:bortzmeyer.org,2006-02:Blog/</dublincore:identifier>
+<updated>2009-05-03T22:13:00Z</updated>
+<dublincore:date>2009-05-03T22:13:00Z</dublincore:date>
+<generator>make-feed.py (Python 2.5.2 (r252:60911, Jan  4 2009, 17:40:26) 
+[GCC 4.3.2])</generator>
+<dublincore:format>application/atom+xml</dublincore:format>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5511: Routing Backus-Naur Form (RBNF) : A Syntax Used to Form Encoding Rules in Various Routing Protocol Specifications</title><id>tag:bortzmeyer.org,2006-02:Blog/5511</id><updated>2009-05-03T00:00:00Z</updated><published>2009-05-03T00:00:00Z</published><content>Contrairement à d'autres SDO,
+l'IETF utilise relativement peu de langages
+formels dans ses normes. Beaucoup de protocoles réseaux sont
+normalisés uniquement en langage naturel. Malgré les efforts des
+chercheurs qui ont développé de nombreux langages de spécification
+comme Lotos ou le désormais abandoné Estelle,
+malgré l'exemple de SDO qui dépendent de langages comme SDL/Z100,
+l'IETF reste fidèle aux langues humaines. Parfois, un langage formel
+est quand même utilisé pour une partie d'une norme. Souhaitons donc la
+bienvenue à RBNF (Routing Backus-Naur
+Form), nouveau venu dans cette famille.</content><link rel="alternate" href="http://www.bortzmeyer.org/5511.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Création du groupe de travail IETF sur LISP</title><id>tag:bortzmeyer.org,2006-02:Blog/lisp-wg</id><updated>2009-04-28T00:00:00Z</updated><published>2009-04-28T00:00:00Z</published><content>Non, ce nouveau groupe de travail (http://www.ietf.org/html.charters/lisp-charter.html)
+de l'IETF, créé officiellement aujourd'hui, ne concerne pas le fameux langage de programmation. Il est chargé de
+travailler sur un nouveau protocole réseau qui, sur le long terme,
+permettra peut-être de résoudre le problème de passage à l'échelle du
+routage sur l'Internet.</content><link rel="alternate" href="http://www.bortzmeyer.org/lisp-wg.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Tests de performances de systèmes de fichiers pour une application PostgreSQL</title><id>tag:bortzmeyer.org,2006-02:Blog/tests-disques-postgresql</id><updated>2009-04-27T00:00:00Z</updated><published>2009-04-27T00:00:00Z</published><content>À chaque fois qu'on installe et configure des machines pour une
+application spécifique, on se pose la question des meilleurs réglages
+pour tirer les performances maximales du matériel disponible. On peut
+lire alors plein de pages Web et de blogs remplis d'avis péremptoires
+mais, au bout du compte, il faut toujours faire des
+mesures, ne serait-ce que parce que les réglages
+idéaux dépendent de l'application. Ce qui accélère une application
+peut en ralentir une autre. L'informatique
+est une science expérimentale. Ici, je devais installer une machine
+pour une application  faisant un usage intensif du
+SGBD PostgreSQL mais
+avec peu de concurrence (presque toujours un seule client), sur
+Linux.</content><link rel="alternate" href="http://www.bortzmeyer.org/tests-disques-postgresql.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Gérer son contrôleur RAID PERC sur un Dell PowerEdge sous Debian</title><id>tag:bortzmeyer.org,2006-02:Blog/dell-raid-omsa</id><updated>2009-04-28T00:00:00Z</updated><published>2009-04-24T00:00:00Z</published><content>Faire fonctionner un PC, qu'il soit machine
+de bureau ou serveur sans écran, avec du logiciel libre n'a jamais été facile. Même si les fabricants
+affirment tous « supporter (sic) Linux », dans
+la réalité, un tel « support » nécessite en général de n'utiliser
+qu'un seul système d'exploitation, en général
+d'origine commerciale, de charger des pilotes non-libres et de renoncer à
+certaines fonctions du matériel.</content><link rel="alternate" href="http://www.bortzmeyer.org/dell-raid-omsa.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5507: Design Choices When Expanding DNS</title><id>tag:bortzmeyer.org,2006-02:Blog/5507</id><updated>2009-04-23T00:00:00Z</updated><published>2009-04-23T00:00:00Z</published><content>Le DNS est au
+cœur de la plupart des transactions sur
+l'Internet. Bien connu, très fiable et largement déployé, il
+est un service très tentant, lorsqu'on veut déployer un nouveau
+service d'information sur l'Internet. Bien des protocoles ont ainsi
+délégué la récupérations de données au DNS. Parfois, ils ne l'ont pas
+fait de manière optimum et ce RFC de l'IAB veut
+« redresser la barre » en précisant les bonnes (et les mauvaises)
+façons de stocker et de récupérer de l'information dans le DNS.</content><link rel="alternate" href="http://www.bortzmeyer.org/5507.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Vente forcée : pourquoi nous oblige t-on à acheter du « triple play » ?</title><id>tag:bortzmeyer.org,2006-02:Blog/no-triple-play</id><updated>2009-04-23T00:00:00Z</updated><published>2009-04-23T00:00:00Z</published><content>Le protocole IP est la base de
+l'Internet, celle au dessus de laquelle on peut tout
+construire. Les services comme la téléphonie ou
+la distribution de la télévision pourraient
+être simplement fournies au dessus d'IP, pas forcément par le
+fournisseur d'accès à l'Internet. Alors,
+pourquoi tant de FAI s'obstinent-ils à nous forcer à acheter du
+triple play même si nous
+n'en voulons pas ?
+</content><link rel="alternate" href="http://www.bortzmeyer.org/no-triple-play.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Les moteurs de recherche de code source</title><id>tag:bortzmeyer.org,2006-02:Blog/codesearch</id><updated>2009-04-28T00:00:00Z</updated><published>2009-04-21T00:00:00Z</published><content>Pour le programmeur, la présence
+d'énormes quantités de codes
+source librement disponibles sur l'Internet est une
+bénédiction. Si la documentation n'est pas claire et qu'on cherche à trouver un exemple d'utilisation de la
+fonction C "gpgme_get_engine_info" ou la définition
+de la classe Java
+"BufferedReader", on a tout sous la main.</content><link rel="alternate" href="http://www.bortzmeyer.org/codesearch.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Abysses, de Frank Schätzing</title><id>tag:bortzmeyer.org,2006-02:Blog/abysses</id><updated>2009-04-18T00:00:00Z</updated><published>2009-04-18T00:00:00Z</published><content>Vous aimez les romans catastrophico-scientifiques ? « Abysses », de Frank
+Schätzing (Der Schwarm en
+allemand)
+est un livre passionnant sur une catastrophe écologique provoquée
+par... lisez le livre, vous verrez bien. Je dis juste que cela se
+passe dans la mer et un peu partout dans le monde, notamment en
+Norvège et au Canada.</content><link rel="alternate" href="http://www.bortzmeyer.org/abysses.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5451: Message Header Field for Indicating Message Authentication Status</title><id>tag:bortzmeyer.org,2006-02:Blog/5451</id><updated>2009-04-17T00:00:00Z</updated><published>2009-04-17T00:00:00Z</published><content>Il existe désormais plusieurs techniques pour authentifier les courriers
+électroniques. Certaines peuvent nécessiter des calculs un
+peu compliqués et on voudrait souvent les centraliser sur une machine
+de puissance raisonnable, dotée de tous les logiciels
+nécessaires. Dans cette hypothèse, le MUA ne
+recevra qu'une synthèse (« Ce message vient bien de
+"example.com" ») et pourra alors prendre une
+décision, basée sur cette synthèse. C'est le but du nouvel en-tête
+"Authentication-Results:" que normalise notre
+RFC.</content><link rel="alternate" href="http://www.bortzmeyer.org/5451.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Utiliser une bibliographie avec Docbook</title><id>tag:bortzmeyer.org,2006-02:Blog/bibliographie-docbook</id><updated>2009-04-17T00:00:00Z</updated><published>2009-04-17T00:00:00Z</published><content>Le schéma XML de documentation Docbook
+contient un élément "&lt;bibliography&gt; (http://oreilly.com/catalog/docbook/book2/bibliography.html)"
+qui permet d'indiquer une bibliographie. Gérer
+le contenu de cette bibliographie à la main dans chaque document
+Docbook n'est pas pratique : après tout, beaucoup d'éléments de la
+bibliographie sont certainement partagés entre tous les documents
+qu'on édite dans son travail. Je présente ici une méthode qui permet
+de gérer la bibliographie à part, sous forme d'un fichier XML unique,
+et d'inclure dans les documents Docbook seulement les références
+effectivement citées.</content><link rel="alternate" href="http://www.bortzmeyer.org/bibliographie-docbook.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Pourquoi pas d'attributs booléens dans les normes du W3C ?</title><id>tag:bortzmeyer.org,2006-02:Blog/normes-w3c-booleens</id><updated>2009-04-17T00:00:00Z</updated><published>2009-04-16T00:00:00Z</published><content>Une question me titille : dans plusieurs (toutes ?) normes du
+W3C, un attribut prend une valeur qui est le
+nom de l'attribut, plutôt qu'un booléen. Deux
+exemples : en CSS, l'attribut
+"border-collapse" (pour fusionner les bordures de
+deux cellules contiguës d'un tableau) s'utilise :
+
+border-collapse: collapse; 
+
+alors que :
+
+border-collapse: true; 
+
+me semblerait plus logique. De même, en XHTML,
+on indique le bouton radio sélectionné avec :
+
+&lt;input checked="checked" type="radio" name="operator" value="OR" /&gt;
+
+alors que j'aurai préféré :
+
+&lt;input checked="true" type="radio" name="operator" value="OR" /&gt;
+
+Existe t-il une raison à cette absence de booléens ?
+</content><link rel="alternate" href="http://www.bortzmeyer.org/normes-w3c-booleens.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Programmation réseau avec des prises brutes, en IPv4 et en IPv6</title><id>tag:bortzmeyer.org,2006-02:Blog/raw-sockets</id><updated>2009-04-20T00:00:00Z</updated><published>2009-04-16T00:00:00Z</published><content>De nombreuses applications réseau nécessitent de contrôler
+étroitement le contenu du paquet IP, y compris les parties qui ne
+sont normalement pas accessibles aux applications. Cela peut se faire
+en C
+avec des appels adéquats à
+"setsockopt()" mais, si on veut
+vraiment changer la plus grande partie du paquet, il peut être plus
+simple de fabriquer un paquet IP entièrement « à la main » en
+utilisant des prises
+brutes (en anglais raw
+sockets). Voyons comment on fait en IPv4 et si c'est
+possible en IPv6.</content><link rel="alternate" href="http://www.bortzmeyer.org/raw-sockets.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Pour tester, il faut utiliser une commande d'une ligne, rappelable</title><id>tag:bortzmeyer.org,2006-02:Blog/commande-rappelable-pour-tests</id><updated>2009-04-15T00:00:00Z</updated><published>2009-04-15T00:00:00Z</published><content>À chaque fois que je donne des cours d'administration système et
+réseaux sur Unix (par exemple pour
+les FFTI (http://www.afnic.fr/afnic/international/college/ffti)), je suis surpris de voir que
+beaucoup d'étudiants, pour tester leur serveur de messagerie qu'ils viennent de configurer, utilisent un
+MUA interactif et graphique (comme
+Thunderbird) où beaucoup de clics sont
+nécessaires avant d'avoir pu envoyer le message. En fait, le test leur
+prend plus de temps que le changement de configuration qu'ils
+voulaient tester. Utiliser une commande d'une ligne, facilement
+rappelable avec la flèche vers le haut, ce que permettent tous les
+shells, leur faciliterait pourtant
+beaucoup la vie.</content><link rel="alternate" href="http://www.bortzmeyer.org/commande-rappelable-pour-tests.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Meridian, un mécanisme pour trouver le pair le plus proche</title><id>tag:bortzmeyer.org,2006-02:Blog/meridian</id><updated>2009-04-14T00:00:00Z</updated><published>2009-04-14T00:00:00Z</published><content>Le développement formidable des techniques
+pair-à-pair a apporté d'immenses possibilités
+et des défis nouveaux. Par exemple, si une machine peut
+potentiellement demander un service à 10 000 pairs, lequel utiliser ?
+Le plus proche, évidemment mais comment définir « le plus proche » ?
+Certainement pas par la proximité géographique qui, sur
+l'Internet, n'est qu'un indicateur très
+grossier. Et, une fois cette notion de proximité définie, comment la
+mesurer de manière qui supporte le passage à
+l'échelle ? Utiliser ping avec
+chacun des 10 000 pairs prendrait un temps fou et serait très coûteux
+en ressources réseau.</content><link rel="alternate" href="http://www.bortzmeyer.org/meridian.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Dictionnaire des mots nés de la mer</title><id>tag:bortzmeyer.org,2006-02:Blog/mots-nes-mer</id><updated>2009-04-13T00:00:00Z</updated><published>2009-04-13T00:00:00Z</published><content>J'aime l'étymologie, savoir d'où viennent
+les mots et quels voyages ils ont fait avant d'arriver en
+français. Et, à propos de voyages, j'aime la
+mer et la voile. Alors, je recommande fortement le dictionnaire de
+Pol Corvez (http://web.mac.com/polcorvez/iWeb/Dictionnaire-mer/Accueil.html), qui porte sur
+l'étymologie des termes marins et sur le parcours qui a amené beaucoup
+d'entre eux à passer dans le vocabulaire non-marin.</content><link rel="alternate" href="http://www.bortzmeyer.org/mots-nes-mer.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 1305: Network Time Protocol (Version 3) Specification, Implementation</title><id>tag:bortzmeyer.org,2006-02:Blog/1305</id><updated>2009-04-10T00:00:00Z</updated><published>2009-04-10T00:00:00Z</published><content>Dans tout système technique complexe, comme
+l'Internet, on a besoin
+d'horloges correctes. À tout moment, on lit
+l'heure et on en tient compte. Par exemple, l'ingénieur système qui lit les journaux d'un serveur a besoin d'être sûr
+de l'heure qu'ils indiquent. De même, le chercheur qui mesure le temps
+de propogation d'un paquet IP entre deux machines en soustrayant le temps
+de départ de celui d'arrivée (cf. RFC 2679) doit être sûr des horloges des deux machines, sinon la
+mesure sera fausse. Pour synchroniser des horloges, on pourrait munir
+chaque ordinateur connecté à Internet d'un récepteur
+GPS ou équivalent. Mais de tels récepteurs sont
+relativement chers (surtout pour les engins les moins puissants comme
+les PC bas de gamme ou les téléphones
+portables) et ne marchent pas dans toutes les circonstances (le GPS ne
+fonctionne bien qu'en plein air). Le mécanisme privilégié sur
+l'Internet est donc que seules certaines machines sont connectées à
+une horloge physique correcte et que les autres d'ajustent sur
+celles-ci, par le biais du protocole NTP, objet
+de ce RFC.</content><link rel="alternate" href="http://www.bortzmeyer.org/1305.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5540: 40 Years of RFCs</title><id>tag:bortzmeyer.org,2006-02:Blog/5540</id><updated>2009-04-08T00:00:00Z</updated><published>2009-04-08T00:00:00Z</published><content>Ce mois d'avril marque le quarantième anniversaire du premier
+RFC, le RFC 1, Host
+software, publié le 7 avril 1969.</content><link rel="alternate" href="http://www.bortzmeyer.org/5540.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>État du routage sur Internet par rapport aux registres de routes</title><id>tag:bortzmeyer.org,2006-02:Blog/etat-internet</id><updated>2009-04-08T00:00:00Z</updated><published>2009-04-08T00:00:00Z</published><content>Il n'y a quasiment que des articles intéressants sur le blog de Renesys (http://www.renesys.com/blog) et toute
+personne intéressée par BGP ou, plus
+généralement, par l'état de l'Internet devrait
+le lire régulièrement. Le dernier article, Route
+Hygiene: The Dirt on the Internet (http://www.renesys.com/blog/2009/03/compliance-scoring-by-country.shtml) analyse l'état réel
+de la table de routage BGP globale par rapport
+à ce que contiennent les registres de
+route.</content><link rel="alternate" href="http://www.bortzmeyer.org/etat-internet.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5518: Vouch By Reference</title><id>tag:bortzmeyer.org,2006-02:Blog/5518</id><updated>2009-04-07T00:00:00Z</updated><published>2009-04-07T00:00:00Z</published><content>Le courrier électronique ne fournit pas
+assez de garanties pour un certain nombre d'utilisations, notamment
+celles exigeantes en matière de sécurité. Il y a donc beaucoup de
+propositions pour améliorer les choses, dont ce RFC qui propose un
+mécanisme par lequel un message électronique peut annoncer le nom d'un
+certificateur, qui se portera garant (to vouch for)
+de son sérieux.</content><link rel="alternate" href="http://www.bortzmeyer.org/5518.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Python, TLS et les délais de garde</title><id>tag:bortzmeyer.org,2006-02:Blog/python-tls-timeout</id><updated>2009-04-06T00:00:00Z</updated><published>2009-04-06T00:00:00Z</published><content>J'ai besoin de munir un client HTTP
+existant, écrit en Python, de TLS. Je ne veux pas
+seulement faire des connexions chiffrées mais aussi accéder à des
+informations sur le certificat du serveur, notamment le nom de la CA
+qui l'a signé. Comme le but du projet (http://www.dnswitness.net/) est
+d'interroger pas mal de serveurs HTTP, souvent non répondants (il est
+fréquent qu'un serveur réponde en HTTP et timeoute en HTTPS et on ne
+peut pas le savoir avant d'essayer), il faut pouvoir mettre des
+délais de garde sur la connexion.</content><link rel="alternate" href="http://www.bortzmeyer.org/python-tls-timeout.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>La compagnie Emporte-Voix au Kibélé (le Horla)</title><id>tag:bortzmeyer.org,2006-02:Blog/emportevoix-au-kibele</id><updated>2009-04-02T00:00:00Z</updated><published>2009-04-02T00:00:00Z</published><content>La compagnie Emporte-Voix (http://www.emportevoix.com) présente ses
+spectacles en ce moment au Kibélé (http://www.kibele.fr/) à
+Paris. Hier, c'était Raphaël d'Olce dans une
+adaptation de la nouvelle de Maupassant,
+le Horla.</content><link rel="alternate" href="http://www.bortzmeyer.org/emportevoix-au-kibele.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5504: Downgrading mechanism for Email Address Internationalization</title><id>tag:bortzmeyer.org,2006-02:Blog/5504</id><updated>2009-04-01T00:00:00Z</updated><published>2009-04-01T00:00:00Z</published><content>Complétant la série de RFC sur l'internationalisation du
+courrier électronique (courrier-entierement-internationalise.html), ce document normalise la procédure de
+repli (downgrade) que doivent
+utiliser les MTA lorsqu'ils essaient de
+transmettre un message RFC 5335 à un autre MTA
+si ce dernier ne gère pas l'extension "UTF8SMTP" du
+RFC 5336.</content><link rel="alternate" href="http://www.bortzmeyer.org/5504.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5474: A Framework for Packet Selection and Reporting</title><id>tag:bortzmeyer.org,2006-02:Blog/5474</id><updated>2009-04-01T00:00:00Z</updated><published>2009-04-01T00:00:00Z</published><content>L'échantillonnage est une opération qui
+consiste à ne sélectionner qu'une partie des objets qu'on mesure. Par
+exemple, lors de l'étude des paquets passant
+par un réseau, on ne capture qu'une partie des paquets, afin de ne pas
+faire exploser le disque et que le temps d'analyse reste
+raisonnable. Le groupe de
+travail PSAMP (http://www.ietf.org/html.charters/psamp-charter.html) de l'IETF met au point des normes sur
+l'échantillonnage de paquets, afin de garantir une certaine cohérence
+dans les mesures. Ce RFC présente le cadre général de PSAMP.</content><link rel="alternate" href="http://www.bortzmeyer.org/5474.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5475: Sampling and Filtering Techniques for IP Packet Selection</title><id>tag:bortzmeyer.org,2006-02:Blog/5475</id><updated>2009-04-01T00:00:00Z</updated><published>2009-04-01T00:00:00Z</published><content>Ce RFC fait partie de la série des normes produites par le groupe
+de travail psamp (http://www.ietf.org/html.charters/psamp-charter.html) sur
+l'échantillonage (ou, plus exactement, la
+sélection) des paquets IP. Les explications générales
+sur ce mécanisme figurent dans le RFC 5474 et notre RFC 5475, lui, détaille les techniques de sélection des
+paquets.</content><link rel="alternate" href="http://www.bortzmeyer.org/5475.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5470: Architecture for IP Flow Information Export</title><id>tag:bortzmeyer.org,2006-02:Blog/5470</id><updated>2009-04-01T00:00:00Z</updated><published>2009-04-01T00:00:00Z</published><content>Voici donc les RFC décrivant le protocole IPFIX, le successeur normalisé de Netflow. Ce RFC particulier décrit l'architecture d'IPFIX.</content><link rel="alternate" href="http://www.bortzmeyer.org/5470.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Ajout d'un attribut HTML indiquant la langue du document lié</title><id>tag:bortzmeyer.org,2006-02:Blog/attribut-lang-liens</id><updated>2009-03-31T00:00:00Z</updated><published>2009-03-31T00:00:00Z</published><content>J'ai souvent lu qu'il était de bonne pratique d'ajouter un
+attribut "hreflang (http://www.w3.org/TR/REC-html40/struct/links.html#adef-hreflang)"
+aux liens hypertexte lorsqu'ils pointent vers
+un document d'une langue différente. Cela permet à l'utilisateur de ne
+pas être surpris désagréablement en changeant soudain de domaine
+linguistique.</content><link rel="alternate" href="http://www.bortzmeyer.org/attribut-lang-liens.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Faire passer ssh à travers un relais qui ne permet que HTTP</title><id>tag:bortzmeyer.org,2006-02:Blog/ssh-a-travers-relais-http</id><updated>2009-03-28T00:00:00Z</updated><published>2009-03-28T00:00:00Z</published><content>Parfois, en voyage, on est coincé sur un réseau qui ne permet que
+HTTP. Pour se connecter à sa machine distante
+avec SSH, il « suffit » d'avoir un serveur SSH
+qui écoute sur le port 443, celui normalement
+dédié à HTTPS. Mais, si le réseau en question
+oblige à passer explicitement par un relais, comme cela vient de m'arriver ?</content><link rel="alternate" href="http://www.bortzmeyer.org/ssh-a-travers-relais-http.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Exposé sur les normes techniques au colloque IG3T à Milan</title><id>tag:bortzmeyer.org,2006-02:Blog/milano-technical-norms-governance</id><updated>2009-03-30T00:00:00Z</updated><published>2009-03-27T00:00:00Z</published><content>Aujourd'hui, à l'université du
+Sacré-Cœur à Milan, j'ai eu
+le plaisir de faire un exposé sur les normes techniques au colloque de l'IG3T (http://www.info.fundp.ac.be/IG3T/),
+Internet Governance : Transparency, Trust and
+Tools. Cette session milanaise de l'IG3T portait sur Technical norms and Internet governance : socio-technical et socio-ethical dimensions.</content><link rel="alternate" href="http://www.bortzmeyer.org/milano-technical-norms-governance.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>The manga guide to databases</title><id>tag:bortzmeyer.org,2006-02:Blog/manga-guide-databases</id><updated>2009-03-25T00:00:00Z</updated><published>2009-03-25T00:00:00Z</published><content>Finis, les livres d'informatiques « pour les nuls ». Place aux
+mangas. No Starch Press et O'Reilly
+ont lancé (http://press.oreilly.com/pub/pr/2099) il y a
+quelques mois les traductions en anglais de la série « Le guide Manga
+de XXX » avec déjà des titres où XXX = électricité, statistiques et
+bases de données avec The manga guide to databases (http://oreilly.com/catalog/9781593271909/index.html).</content><link rel="alternate" href="http://www.bortzmeyer.org/manga-guide-databases.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Avoir un TLD à soi, d'accord, mais s'en servir ?</title><id>tag:bortzmeyer.org,2006-02:Blog/domaines-d-un-seul-label</id><updated>2009-03-25T00:00:00Z</updated><published>2009-03-25T00:00:00Z</published><content>L'ICANN avait annoncé à l'occasion de sa
+réunion (http://par.icann.org/) de
+Paris en juin 2008, un assouplissement
+important (http://www.icann.org/en/announcements/announcement-4-26jun08-en.htm) des conditions de création de nouveaux
+TLD. Si l'assouplissement n'est pas aussi
+important que ce que la presse avait prétendu à l'époque (et il semble
+en outre
+actuellement très ralenti par l'opposition active des titulaires de marques déposées), le dossier
+reste néanmoins ouvert. Mais il semble qu'un petit aspect technique
+est passé relativement inaperçu, la difficulté à utiliser des
+noms de domaines composés
+d'un seul élément.</content><link rel="alternate" href="http://www.bortzmeyer.org/domaines-d-un-seul-label.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC editor à l'ISI, un bilan</title><id>tag:bortzmeyer.org,2006-02:Blog/rfc-editor-at-isi</id><updated>2009-03-24T00:00:00Z</updated><published>2009-03-24T00:00:00Z</published><content>Ce texte était à l'origine la réponse de
+l'ISI à la candidature pour le renouvellement
+du poste de RFC editor (http://www.rfc-editor.org/)
+en
+1996 (http://www.isoc.org/standards/rfceditor/rfceditor-rfp.shtml), où l'ISI avait été reconduite facilement. Il vient d'être
+republié et mis à jour, pour servir cette fois de bilan puisque l'ISI
+a annoncé qu'elle ne serait pas candidate à sa succession. Cela mettra
+fin à une époque : la fonction de RFC editor (http://www.rfc-editor.org/) a toujours été à
+l'ISI...</content><link rel="alternate" href="http://www.bortzmeyer.org/rfc-editor-at-isi.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Science &amp; Vie et la table rase</title><id>tag:bortzmeyer.org,2006-02:Blog/science-et-vie-table-rase</id><updated>2009-03-23T00:00:00Z</updated><published>2009-03-23T00:00:00Z</published><content>Le numéro de Science &amp; Vie de décembre
+2008. contient un article intitulé « Internet au bord de l'explosion
+». L'article explique que ce n'est que par miracle que l'Internet
+continue de fonctionner et qu'il est nécessaire de faire table rase de
+tout ce qui existe pour bâtir, en partant de zéro, un réseau «
+meilleur ».</content><link rel="alternate" href="http://www.bortzmeyer.org/science-et-vie-table-rase.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Sécurité des logiciels peu utilisés</title><id>tag:bortzmeyer.org,2006-02:Blog/securite-logiciels-peu-utilises</id><updated>2009-03-23T00:00:00Z</updated><published>2009-03-23T00:00:00Z</published><content>La publication récente de deux failles de sécurité dans le logiciel
+djbdns met l'accent sur un problème particulier
+de la sécurité, la question des logiciels peu utilisés, qui
+intéressent peu de monde et n'ont donc guère de revues de sécurité,
+laissant ainsi leurs utilisateurs dans le noir, quant aux risques de
+leur logiciel.</content><link rel="alternate" href="http://www.bortzmeyer.org/securite-logiciels-peu-utilises.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Utilisation de carte Ethernet Realtek 8168 sur Debian</title><id>tag:bortzmeyer.org,2006-02:Blog/install-debian-realtek-RTL8168</id><updated>2009-04-03T00:00:00Z</updated><published>2009-03-23T00:00:00Z</published><content>Contrairement à ce que racontent des optimistes invétérés (linux-driver-project-status.html),
+l'installation et la configuration du matériel sur
+Linux sont souvent très pénibles. Je documente
+ici mes aventures avec une carte Ethernet
+Realtek RTL8168, pour en garder trace pour la
+prochaine fois et pour que cela puisse servir à d'autres.</content><link rel="alternate" href="http://www.bortzmeyer.org/install-debian-realtek-RTL8168.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 4366: Transport Layer Security (TLS) Extensions</title><id>tag:bortzmeyer.org,2006-02:Blog/4366</id><updated>2009-03-19T00:00:00Z</updated><published>2009-03-19T00:00:00Z</published><content>Ce RFC décrit les premières extensions au protocole cryptographique
+TLS. Il décrit le mécanisme général d'extension
+(qui a depuis été déplacé dans le RFC 5246) puis
+certaines extensions spécifiques (résumées en section 1).</content><link rel="alternate" href="http://www.bortzmeyer.org/4366.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>The gift, de Jon Kalb</title><id>tag:bortzmeyer.org,2006-02:Blog/the-gift</id><updated>2009-03-19T00:00:00Z</updated><published>2009-03-19T00:00:00Z</published><content>Tiens, l'art de la nouvelle n'est pas complètement perdu aux
+États-Unis ? On peut encore y faire des
+œuvre de moins de huit cents pages ? C'est ce qu'a fait
+Jon Kalb, connu pour son livre d'histoire sur
+les découvertes de fossiles humains en Afrique de l'Est,
+Adventures in the Bone Trade. Il a également commis
+un excellent livre de fiction, The Gift, court
+roman sur le thème des relations très violentes dans le milieu des
+chercheurs en paléoanthropologie. Très
+recommandé, passionnante histoire, et très bons personnages.</content><link rel="alternate" href="http://www.bortzmeyer.org/the-gift.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Toujours apprendre, ici sur Python</title><id>tag:bortzmeyer.org,2006-02:Blog/pythonista</id><updated>2009-03-18T00:00:00Z</updated><published>2009-03-18T00:00:00Z</published><content>C'est quand on croit bien connaître quelque chose qu'il faut
+retourner apprendre du nouveau sur celle-ci. Par exemple, parmi les
+outils du programmeur, connaissez-vous vraiment
+tout sur votre langage de programmation, même
+si vous l'utilisez depuis des années ? Probablement pas, vous avez
+appris un certain nombre de choses au début et pas tellement après ?
+J'ai raison ? Si oui, il est temps de lire Code
+Like a Pythonista: Idiomatic Python (http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html).</content><link rel="alternate" href="http://www.bortzmeyer.org/pythonista.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>La Dame à la Licorne, de Tracy Chevalier</title><id>tag:bortzmeyer.org,2006-02:Blog/dame-a-la-licorne</id><updated>2009-03-17T00:00:00Z</updated><published>2009-03-17T00:00:00Z</published><content>Si vous avez visité Paris, il y a des
+chances que vous ayez vu le Musée du Moyen-Âge
+à Cluny. Le chef d'œuvre de ce musée est un ensemble de six
+grandes tapisseries, la Dame à la Licorne. Si
+vous avez lu les textes, vous savez... qu'on ne sait pas grand'chose
+de cette tapisserie, qui l'a dessinée, où elle a été réalisée, et
+quelle est la symbolique derrière ces curieuses scènes. C'est donc un
+terrain parfait pour la romancière Tracy Chevalier qui s'est lancée
+dans la tâche d'imaginer les auteurs de la Dame à la Licorne.</content><link rel="alternate" href="http://www.bortzmeyer.org/dame-a-la-licorne.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Qui achète du porno en ligne ?</title><id>tag:bortzmeyer.org,2006-02:Blog/who-buys-porn</id><updated>2009-03-17T00:00:00Z</updated><published>2009-03-17T00:00:00Z</published><content>Les économistes peuvent tout
+étudier, comme l'a montré Steven Levitt dans son célèbre
+livre Freakonomics. Donc,
+les ventes de pornographie en ligne sont aussi
+un sujet d'étude. Quel jour de la semaine y a t-il le plus
+d'abonnements ? Dans quel état des États-Unis ?
+Ces achats sont-ils corrélés à la pratique religieuse ? Au niveau de
+diplôme ?</content><link rel="alternate" href="http://www.bortzmeyer.org/who-buys-porn.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5482: TCP User Timeout Option</title><id>tag:bortzmeyer.org,2006-02:Blog/5482</id><updated>2009-03-17T00:00:00Z</updated><published>2009-03-17T00:00:00Z</published><content>Le RFC 793, qui normalise
+TCP, prévoit un paramètre local
+user timeout qui permet de régler la « patience » de
+TCP. S'il n'arrive pas à échanger des données avec son partenaire
+avant l'expiration de ce délai, TCP renonce et coupe la
+connexion. Notre RFC étend l'utilité de ce paramètre, en permettant de
+le communiquer au partenaire, pour qu'il soit prévenu de la patience
+ou de l'impatience de celui avec qui il communique. On augmente ainsi
+les chances des connexion TCP de survivre aux longues coupures ou, au
+contraire, de détecter plus rapidement la coupure du réseau.</content><link rel="alternate" href="http://www.bortzmeyer.org/5482.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Moteur de recherche sur mon blog</title><id>tag:bortzmeyer.org,2006-02:Blog/moteur-recherche</id><updated>2009-04-02T00:00:00Z</updated><published>2009-03-16T00:00:00Z</published><content>Cela fait longtemps que je voulais avoir un moteur de recherche
+sur mon blog. Il y a deux solutions, installer un logiciel sur le
+serveur, ou bien utiliser un des moteurs de recherche publics. J'ai
+exploré la deuxième possibilité (recherche-blog.html)
+mais avec des résultats peu satisfaisants, notamment du point de vue
+des licences d'utilisation. Je suis donc repassé à ma première idée,
+un logiciel installé sur le serveur. Il est désormais disponible depuis chaque page.</content><link rel="alternate" href="http://www.bortzmeyer.org/moteur-recherche.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Mise en œuvre du moteur de recherche de ce blog</title><id>tag:bortzmeyer.org,2006-02:Blog/moteur-recherche-wsgi</id><updated>2009-03-16T00:00:00Z</updated><published>2009-03-16T00:00:00Z</published><content>Le tout nouveau moteur de recherche
+de ce blog (moteur-recherche.html) repose sur plusieurs techniques que j'apprécie, notamment
+WSGI (wsgi.html), TAL (generer-html-avec-tal.html) et la recherche texte de
+PostgreSQL.</content><link rel="alternate" href="http://www.bortzmeyer.org/moteur-recherche-wsgi.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>WSGI, une technique pour des applications Web en Python</title><id>tag:bortzmeyer.org,2006-02:Blog/wsgi</id><updated>2009-03-28T00:00:00Z</updated><published>2009-03-16T00:00:00Z</published><content>Pour créer une application Web en
+Python, il existe plusieurs solutions. La plus
+ancienne est d'utiliser le standard CGI qui
+permet de créer très simplement des applications Web sommaires. La
+plus à la mode est d'installer un des innombrables environnements de
+développement et d'exécution, comme Django. Il
+existe encore une autre solution, développer des applications en
+WSGI.</content><link rel="alternate" href="http://www.bortzmeyer.org/wsgi.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Nouvelle version de Conficker, avec une utilisation plus intensive du DNS</title><id>tag:bortzmeyer.org,2006-02:Blog/conficker-version-c-et-le-dns</id><updated>2009-03-30T00:00:00Z</updated><published>2009-03-14T00:00:00Z</published><content>L'une des originalités du ver
+Conficker est qu'il utilise des noms de domaine et pas des
+adresses IP pour contacter
+son maître, afin de lui demander des mises à jour, des listes
+d'actions à effectuer, etc. Mais la nouvelle version, analysée il y
+a quelques jours, pousse cette logique encore plus loin.</content><link rel="alternate" href="http://www.bortzmeyer.org/conficker-version-c-et-le-dns.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>The world without us</title><id>tag:bortzmeyer.org,2006-02:Blog/world-without-us</id><updated>2009-03-13T00:00:00Z</updated><published>2009-03-13T00:00:00Z</published><content>Qu'adviendrait-il du monde, des animaux et végétaux qui le
+peuplent, des choses que nous avions construites, si l'humanité
+disparaissait, victime d'une épidémie, d'un enlèvement comme dans le
+roman Left Behind, ou bien
+de n'importe quelle autre cause ? La nature reconquérerait-elle son
+territoire ? Les futurs visiteurs extraterrestres retrouveront-ils
+quelque chose de nous ? C'est le point de départ de ce livre (ou, plus
+exactement, de cette série d'articles) scientifico-journalistique.</content><link rel="alternate" href="http://www.bortzmeyer.org/world-without-us.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Filtrage maladroit dans les bibliothèques parisiennes</title><id>tag:bortzmeyer.org,2006-02:Blog/filtrage-maladroit-paris</id><updated>2009-03-13T00:00:00Z</updated><published>2009-03-13T00:00:00Z</published><content>Il existe plein d'endroits au monde où l'accès à
+l'Internet est filtré, par exemple par le
+passage obligatoire des requêtes HTTP à travers
+un relais qui va tenter de déterminer si la
+page Web qu'on veut voir est légitime ou
+pas. Ces relais fonctionnent en général en combinant une liste noire
+d'URL interdits et une liste blanche d'URL
+autorisés. Ces listes sont maintenues au petit bonheur la chance et
+sont une grande source d'agacement pour les utilisateurs, comme le
+montre le filtrage dans les bibliothèques parisiennes.</content><link rel="alternate" href="http://www.bortzmeyer.org/filtrage-maladroit-paris.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 2645: ON-DEMAND MAIL RELAY (ODMR) ; SMTP with Dynamic IP Addresses</title><id>tag:bortzmeyer.org,2006-02:Blog/2645</id><updated>2009-03-11T00:00:00Z</updated><published>2009-03-11T00:00:00Z</published><content>Le protocole de transfert de courrier électronique SMTP, normalisé dans
+le RFC 5321, est prévu pour des cas où la
+connexion est la règle et l'absence de connexion une exception. S'il
+ne peut joindre le serveur suivant, le MTA SMTP
+réessaie de temps en temps, pendant trois à cinq jours puis
+renonce. Ce mécanisme ne marche pas lorsque le serveur suivant n'a pas
+d'adresse IP fixe, ce qui est fréquent, ou bien
+lorsqu'il est fréquemment déconnecté (tellement fréquemment que les
+périodes où l'envoyeur essaie ont de fortes chances de ne pas
+coïncider avec celles où le receveur est connecté). Il existe
+plusieurs solutions à ce problème et notre RFC normalisait
+ODMR (On-demand mail relay),
+également appelé ATRN (Authenticated TURN). Il n'a
+pas été un succès et reste très peu déployé aujourd'hui.</content><link rel="alternate" href="http://www.bortzmeyer.org/2645.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5424: The syslog Protocol</title><id>tag:bortzmeyer.org,2006-02:Blog/5424</id><updated>2009-03-10T00:00:00Z</updated><published>2009-03-10T00:00:00Z</published><content>Mettant à jour l'ancienne description, voici la nouvelle
+spécification du protocole syslog, protocole de
+transmission d'informations sur les événements observés par un
+système.</content><link rel="alternate" href="http://www.bortzmeyer.org/5424.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5425: TLS Transport Mapping for Syslog</title><id>tag:bortzmeyer.org,2006-02:Blog/5425</id><updated>2009-03-10T00:00:00Z</updated><published>2009-03-10T00:00:00Z</published><content>Le protocole syslog, de transport des
+données de journalisation entre deux machines
+TCP/IP, a toujours souffert de son absence de
+sécurité. Ce RFC normalise un transport des
+données authentifié et
+chiffré, grâce au protocole TLS, et permet donc
+de combler une des failles de sécurité de syslog.</content><link rel="alternate" href="http://www.bortzmeyer.org/5425.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>La loi Hadopi à l'Assemblée Nationale</title><id>tag:bortzmeyer.org,2006-02:Blog/hadopi-a-l-assemblee</id><updated>2009-04-10T00:00:00Z</updated><published>2009-03-10T00:00:00Z</published><content>L'Assemblée Nationale commence aujourd'hui
+l'examen du projet de loi Hadopi. Si elle est
+adoptée, cette loi innovera en droit pénal en
+permettant des sanctions sans aucune procédure judiciaire.</content><link rel="alternate" href="http://www.bortzmeyer.org/hadopi-a-l-assemblee.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5426: Transmission of syslog messages over UDP</title><id>tag:bortzmeyer.org,2006-02:Blog/5426</id><updated>2009-03-10T00:00:00Z</updated><published>2009-03-10T00:00:00Z</published><content>La nouvelle version du protocole syslog
+offre désormais le choix du protocole de transport. Il y aura
+un RFC par transport et celui-ci normalise le transport sur
+UDP.</content><link rel="alternate" href="http://www.bortzmeyer.org/5426.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 4001: Textual Conventions for Internet Network Addresses</title><id>tag:bortzmeyer.org,2006-02:Blog/4001</id><updated>2009-03-09T00:00:00Z</updated><published>2009-03-09T00:00:00Z</published><content>Il y a plein de normes Internet dans lesquelles il faut représenter
+sous forme texte (representation-texte.html) des adresses
+IP. Parmi elles, les MIB,
+normalisées dans le RFC 1155 pour la gestion des
+réseaux (cf. section 2 du RFC et le RFC 3410). Comment représenter une adresse ? La question est un peu plus
+difficile que cela ne parait et méritait une norme.</content><link rel="alternate" href="http://www.bortzmeyer.org/4001.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5485: Digital Signatures on Internet-Draft Documents</title><id>tag:bortzmeyer.org,2006-02:Blog/5485</id><updated>2009-03-06T00:00:00Z</updated><published>2009-03-06T00:00:00Z</published><content>Lorsqu'un document, par exemple un
+Internet-Draft est publié et
+distribué via l'Internet, il peut être difficile de prouver qu'il est
+bien « authentique », qu'il a été validé et pas modifié ensuite. La
+technique la plus courante pour cela est la signature
+cryptographique et ce nouveau RFC explique comment elle
+s'appliquera aux Internet-Drafts.</content><link rel="alternate" href="http://www.bortzmeyer.org/5485.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Les structures de données IP en C</title><id>tag:bortzmeyer.org,2006-02:Blog/ip-data-structures</id><updated>2009-03-06T00:00:00Z</updated><published>2009-03-05T00:00:00Z</published><content>Comme je ne programme pas en C tous les jours, à chaque fois que je m'y
+remets (et c'est en général pour un programme réseau), j'ai du mal
+avec les structures de données qui servent à IP. Alors, pour garder trace de ce que j'ai
+compris la dernière fois, le plus simple est encore d'en faire
+profiter l'univers en mettant quelques notes sur ce blog.</content><link rel="alternate" href="http://www.bortzmeyer.org/ip-data-structures.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5481: Packet Delay Variation Applicability Statement</title><id>tag:bortzmeyer.org,2006-02:Blog/5481</id><updated>2009-03-04T00:00:00Z</updated><published>2009-03-04T00:00:00Z</published><content>Le RFC 3393
+normalise une métrique de variation du délai
+d'acheminement des paquets. Cette métrique est assez souple pour que,
+en pratique, plusieurs formules aient été utilisées. Ce RFC en discute
+deux et précise leur usage.</content><link rel="alternate" href="http://www.bortzmeyer.org/5481.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Décoder les paquets DNS capturés avec pcap</title><id>tag:bortzmeyer.org,2006-02:Blog/pcap-decodage-dns</id><updated>2009-03-05T00:00:00Z</updated><published>2009-03-03T00:00:00Z</published><content>Une fois capturés et stockés sur disque (capture-paquets.html), au format
+pcap, les paquets doivent être disséqués pour trouver les éléments
+intéressants. Quels sont les particularités de la dissection de
+paquets DNS ?</content><link rel="alternate" href="http://www.bortzmeyer.org/pcap-decodage-dns.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Des certificats pour prouver qu'on est titulaire d'une ressource Internet</title><id>tag:bortzmeyer.org,2006-02:Blog/certificats-ressources-internet</id><updated>2009-03-02T00:00:00Z</updated><published>2009-03-02T00:00:00Z</published><content>On le sait bien, le système de routage de
+l'Internet est très peu fiable, comme l'a
+montré par exemple le détournement du trafic de YouTube par
+Pakistan Telecom (pakistan-pirate-youtube.html). Pourquoi ne pas sécuriser les annonces
+BGP par des signatures cryptographiques, comme on
+authentifie le DNS
+avec DNSSEC ? Il y a plusieurs raisons à cela,
+mais l'une est souvent oubliée : il n'y a pas de moyen facile de
+« prouver » qu'on est bien le titulaire d'une ressource Internet, par
+exemple une adresse IP.</content><link rel="alternate" href="http://www.bortzmeyer.org/certificats-ressources-internet.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 2046: Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types</title><id>tag:bortzmeyer.org,2006-02:Blog/2046</id><updated>2009-03-01T00:00:00Z</updated><published>2009-03-01T00:00:00Z</published><content>La norme MIME permettant de distribuer du
+contenu multimédia par courrier électronique est composée de plusieurs
+RFC dont le plus connu est le RFC 2045 qui décrit la syntaxe des messages MIME. Mais notre
+RFC 2046 est tout aussi important car il traite d'un concept
+central de MIME, le type des données. En effet,
+MIME attribue un type à chaque groupe de données qu'il gère. Cela
+permet d'identifier du premier coup telle suite de bits comme étant
+une image PNG ou une chanson codée en
+Vorbis. Ces types ont eu un tel succès qu'ils
+ont été repris par bien d'autres systèmes que MIME par exemple dans
+HTTP pour indiquer le type de la ressource
+envoyée au navigateur Web (avec
+Firefox, on peut l'afficher via le menu
+Tools, option Page info), ou même par
+certains systèmes d'exploitation comme
+BeOS qui, dans les méta-données du système de fichiers, stocke le type de chaque fichier sous
+forme d'un type de média. Logiquement, le nom officiel a donc changé
+et on ne devrait plus dire type MIME mais « type du média ».</content><link rel="alternate" href="http://www.bortzmeyer.org/2046.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 4251: The Secure Shell (SSH) Protocol Architecture</title><id>tag:bortzmeyer.org,2006-02:Blog/4251</id><updated>2009-02-27T00:00:00Z</updated><published>2009-02-27T00:00:00Z</published><content>Pendant longtemps, les connexions interactives à une machine
+distante, via l'Internet, se faisaient par un
+protocole (telnet ou
+rlogin) qui ne chiffrait pas les communications et
+notamment le mot de passe échangé pour s'authentifier. D'innombrables
+sniffers ont
+ainsi capturés des mots de passe et les ont ensuite transmis à
+Eve, pour qu'elle en fasse un
+mauvais usage. L'arrivée de SSH, en 1995 (http://groups.google.com/group/comp.security.unix/msg/67079d812a19f499),
+a donc bouleversé la sécurité sur Internet. Sa simplicité
+d'usage, la possibilité de résoudre enfin la majorité des problèmes
+de sécurité de X11, et la sécurité qu'il offre lui ont permis de l'emporter
+facilement contre des concurrents compliqués à déployer et à utiliser
+comme Kerberos telnet.</content><link rel="alternate" href="http://www.bortzmeyer.org/4251.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5461: TCP's Reaction to Soft Errors</title><id>tag:bortzmeyer.org,2006-02:Blog/5461</id><updated>2009-02-26T00:00:00Z</updated><published>2009-02-26T00:00:00Z</published><content>Que doit faire une implémentation de TCP
+lorsqu'une erreur est signalée par le réseau, par exemple lorsqu'un
+paquet ICMP indique une route inaccessible ? La
+norme traditionnelle est peu respectée et ce RFC explique pourquoi et
+documente la réaction la plus courante des mises en œuvre de
+TCP.</content><link rel="alternate" href="http://www.bortzmeyer.org/5461.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5492: Capabilities Advertisement with BGP-4</title><id>tag:bortzmeyer.org,2006-02:Blog/5492</id><updated>2009-02-26T00:00:00Z</updated><published>2009-02-26T00:00:00Z</published><content>Cette norme modifie le protocole BGP (RFC 4271) pour ajouter une nouvelle option, qui est
+plutôt une méta-option, permettant de décrire des capacités
+optionnelles d'un pair BGP.</content><link rel="alternate" href="http://www.bortzmeyer.org/5492.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Ressources en ligne pour ceux qui écrivent en français</title><id>tag:bortzmeyer.org,2006-02:Blog/ressources-ecrire-francais</id><updated>2009-03-13T00:00:00Z</updated><published>2009-02-26T00:00:00Z</published><content>Il me semble qu'il y a bien davantage de ressources en ligne
+(dictionnaires, guides de
+conjugaison, etc) pour
+l'anglais que pour le
+français. Les francophones préfèrent en général
+organiser de coûteux colloques et subventionner des éléphants blancs (francophonie-ouverte.html)
+sans lendemain, plutôt que de mettre gratuitement des ressources à la
+disposition de tous (les principales ressources sont en effet des projets issus
+de la base, comme le wiktionnaire, pas des
+projets officiels). Mais peut-être y a t-il des
+ressources pour le français que je ne connais pas ?</content><link rel="alternate" href="http://www.bortzmeyer.org/ressources-ecrire-francais.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5466: IMAP4 Extension for Named Searches (Filters)</title><id>tag:bortzmeyer.org,2006-02:Blog/5466</id><updated>2009-02-25T00:00:00Z</updated><published>2009-02-25T00:00:00Z</published><content>La déjà très longue série des RFC sur
+IMAP s'agrandit avec cette norme pour le
+nommage de filtres IMAP. On peut désormais stocker ses filtres sous un
+nom et les réutiliser plus tard.</content><link rel="alternate" href="http://www.bortzmeyer.org/5466.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>ITAR est officiellement publié, pour aider au déploiement de DNSSEC</title><id>tag:bortzmeyer.org,2006-02:Blog/itar-dnssec</id><updated>2009-02-24T00:00:00Z</updated><published>2009-02-24T00:00:00Z</published><content>Un problème classique de DNSSEC est qu'il
+faut connaître au moins une clé publique
+pour commencer la validation. Si la racine du DNS est signée, on configure logiquement dans son
+résolveur DNS la clé publique de la racine, largement diffusée. Mais,
+aujourd'hui, la racine n'est pas signée et cette signature, qui dépend
+du gouvernement états-unien, est bloquée par des
+considérations essentiellement politiciennes. Alors, en attendant, une
+nouvelle méthode est disponible, ITAR (https://itar.iana.org/).</content><link rel="alternate" href="http://www.bortzmeyer.org/itar-dnssec.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5453: Reserved IPv6 Interface Identifiers</title><id>tag:bortzmeyer.org,2006-02:Blog/5453</id><updated>2009-02-11T00:00:00Z</updated><published>2009-02-11T00:00:00Z</published><content>Une machine IPv6 doit évidemment avoir une
+adresse IP unique mais il existe une autre
+contrainte, c'est que les 64 bits de plus faible poids de cette
+adresses, l'interface identifier (RFC 4291, section 2.5.1), doivent être
+uniques sur le lien auquel la machine est attachée. Or, certains
+interface identifier sont réservés et ne doivent
+pas être utilisés. Lorsque l'interface identifier
+est attribuée manuellement par l'administrateur système, pas de
+problème. Mais s'il est attribué par autoconfiguration (RFC 4862) ? Ou par des une des autres méthodes citées
+dans l'annexe A du RFC ? Dans ce cas, le logiciel doit prendre 
+garde à ne pas utiliser ces identificateurs notre RFC que réserve.</content><link rel="alternate" href="http://www.bortzmeyer.org/5453.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 4301: Security Architecture for the Internet Protocol</title><id>tag:bortzmeyer.org,2006-02:Blog/4301</id><updated>2009-02-09T00:00:00Z</updated><published>2009-02-09T00:00:00Z</published><content>L'Internet n'est pas sûr, on le sait
+bien. Un méchant peut lire les paquets IP qui circulent, il peut injecter de faux
+paquets, avec une fausse adresse IP source,
+etc. Il existe des tas de façons d'aborder ce problème et ce RFC
+décrit une des plus ambitieuses, une complète architecture de sécurité
+pour IP, IPsec.</content><link rel="alternate" href="http://www.bortzmeyer.org/4301.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 3148: A Framework for Defining Empirical Bulk Transfer Capacity Metrics</title><id>tag:bortzmeyer.org,2006-02:Blog/3148</id><updated>2009-02-08T00:00:00Z</updated><published>2009-02-08T00:00:00Z</published><content>Parmi les différentes métriques qu'on peut
+définir sur l'Internet, une est
+particulièrement intéressante pour les utilisateurs, c'est le débit
+possible lors d'un transfert de fichiers. Si l'administrateur système
+tend à regarder plutôt le RTT avec
+ping, l'utilisateur préférerait savoir le temps
+qu'il lui reste avant l'arrivée des copies de la dernière saison de
+Desperate Housewives. D'où
+la définition formelle de ce débit, dans ce RFC.</content><link rel="alternate" href="http://www.bortzmeyer.org/3148.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5411: A Hitchhiker's Guide to the Session Initiation   Protocol (SIP)</title><id>tag:bortzmeyer.org,2006-02:Blog/5411</id><updated>2009-02-04T00:00:00Z</updated><published>2009-02-04T00:00:00Z</published><content>La quantité de RFC sur le protocole
+SIP est colossale et s'accroit tous les
+jours. Depuis la norme originale, le RFC 3261,
+ce sont des dizaines de RFC que devrait lire l'implémenteur de SIP
+consciencieux. Pour lui faciliter la vie, ce RFC résume les RFC
+pertinents sur SIP et les classe en catégories.</content><link rel="alternate" href="http://www.bortzmeyer.org/5411.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5434: Considerations for Having a Successful Birds-of-a-Feather (BOF) Session</title><id>tag:bortzmeyer.org,2006-02:Blog/5434</id><updated>2009-02-02T00:00:00Z</updated><published>2009-02-02T00:00:00Z</published><content>Le travail de normalisation au sein de
+l'IETF se fait dans des groupes de travail
+(Working Groups) dont la constitution nécessite un
+grand formalisme. L'écart est tel entre des discussions informelles
+dans un bistrot et la création d'un groupe de travail que des états
+intermédiaires se sont développés comme les BoF (Birds of a
+Feather, d'une expression anglophone intraduisible). Les BoF sont actives
+depuis de nombreuses années et le premier RFC qui les avait
+mentionnées était le RFC 2418, dans sa section 2.4.</content><link rel="alternate" href="http://www.bortzmeyer.org/5434.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5437: Sieve Notification Mechanism: xmpp</title><id>tag:bortzmeyer.org,2006-02:Blog/5437</id><updated>2009-02-01T00:00:00Z</updated><published>2009-02-01T00:00:00Z</published><content>Le langage de description de filtres de courrier Sieve
+dispose d'une possibilité de notification. Avec ce RFC la notification
+peut utiliser le protocole XMPP, ce qui
+intéressera surtout les utilisateurs de la messagerie instantanée.</content><link rel="alternate" href="http://www.bortzmeyer.org/5437.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5436: Sieve Notification Mechanism: mailto</title><id>tag:bortzmeyer.org,2006-02:Blog/5436</id><updated>2009-02-01T00:00:00Z</updated><published>2009-02-01T00:00:00Z</published><content>Le système de notification du langage de filtrage de courrier
+Sieve est normalisé dans le RFC 5435. Il se décline en plusieurs mécanismes, pour envoyer des
+SMS, des coups de téléphone, ou bien même, avec
+notre RFC 5436, du courrier.</content><link rel="alternate" href="http://www.bortzmeyer.org/5436.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5435: Sieve Email Filtering: Notifications</title><id>tag:bortzmeyer.org,2006-02:Blog/5435</id><updated>2009-02-01T00:00:00Z</updated><published>2009-02-01T00:00:00Z</published><content>Le langage de filtrage du courrier Sieve se
+voit désormais doté d'une nouvelle fonction, la possibilité de
+prévenir lors de l'arrivée de certains messages. Cette notification
+pourra se faire via plusieurs protocoles, spécifiés dans d'autres
+RFC.</content><link rel="alternate" href="http://www.bortzmeyer.org/5435.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Measurement Lab, pour savoir si votre FAI vous ment</title><id>tag:bortzmeyer.org,2006-02:Blog/measurement-lab</id><updated>2009-01-31T00:00:00Z</updated><published>2009-01-31T00:00:00Z</published><content>Google lance un énorme pavé dans la mare avec Measurement Lab (http://www.measurementlab.net/), une plate-forme distribuée
+de mesures sur Internet, avec un système de rapport qui permet à
+tout utilisateur de tester sa connectivité, son débit mais aussi
+d'éventuelles violations de la transparence du réseau, par exemple de
+la limitation de trafic BitTorrent.</content><link rel="alternate" href="http://www.bortzmeyer.org/measurement-lab.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>pcapr.net, pour explorer des paquets réseau</title><id>tag:bortzmeyer.org,2006-02:Blog/pcapr</id><updated>2009-01-30T00:00:00Z</updated><published>2009-01-30T00:00:00Z</published><content>Examiner en détail, au niveau des champs qui le composent et même
+des bits sous-jacents, des
+paquets capturés sur le
+réseau est une occupation essentielle pour l'étudiant en réseaux
+informatiques, pour le programmeur réseau, pour l'administrateur
+réseaux... et pour celui qui s'intéresse à la sécurité des
+réseaux. Des outils pour programmeur comme
+Scapy ou des outils graphiques très riches
+comme Wireshark permettent de rendre cette
+tâche bien plus efficace, pour les paquets qu'on a capturé
+soi-même. Mais il peut être instructif d'explorer les paquets capturés
+sur des réseaux différents du sien, par exemple pour apprendre des
+protocoles dont on n'a pas de mise en œuvre disponible. C'est
+l'un des buts de pcapr (http://www.pcapr.net), le
+Flickr des paquets.</content><link rel="alternate" href="http://www.bortzmeyer.org/pcapr.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5452: Measures for making DNS more resilient against forged answers</title><id>tag:bortzmeyer.org,2006-02:Blog/5452</id><updated>2009-01-29T00:00:00Z</updated><published>2009-01-29T00:00:00Z</published><content>Le système de résolution de noms DNS est indispensable à la grande majorité des
+sessions sur l'Internet et pourtant il est très
+peu fiable. « Empoisonner » un résolveur DNS, lui faire avaler de
+fausses informations, est relativement facile,
+et ce problème est connu depuis longtemps (et documenté dans le RFC 3833, notamment les sections 2.2 et 2.3). Il existe une solution à long terme,
+DNSSEC, mais il n'est pas évident qu'elle
+puisse un jour être déployée suffisamment pour fournir une réelle
+protection. Alors, que faire en attendant ? Ce RFC documente les
+mesures que devrait prendre un résolveur pour ne pas se faire
+empoisonner.</content><link rel="alternate" href="http://www.bortzmeyer.org/5452.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 5408: Identity-based Encryption Architecture and Supporting Data Structures</title><id>tag:bortzmeyer.org,2006-02:Blog/5408</id><updated>2009-01-24T00:00:00Z</updated><published>2009-01-24T00:00:00Z</published><content>L'IBE
+(Identity-Based Encryption) est une technique
+d'identité numérique où les clés cryptographiques sont dérivées de
+l'identité (par exemple d'une adresse de courrier). Ce RFC normalise son utilisation, notamment
+dans S/MIME.</content><link rel="alternate" href="http://www.bortzmeyer.org/5408.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Attaque DNS par amplification en demandant "NS ."</title><id>tag:bortzmeyer.org,2006-02:Blog/dns-attaque-ns-point</id><updated>2009-01-24T00:00:00Z</updated><published>2009-01-24T00:00:00Z</published><content>Depuis au moins le 7 janvier, une série d'attaques
+DoS utilisant le DNS a lieu. Parfois nommée
+ISPrime, du nom de la première victime, cette
+attaque utilise une variante originale des attaques par
+amplification.</content><link rel="alternate" href="http://www.bortzmeyer.org/dns-attaque-ns-point.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Tables de hachage pour le programmeur C</title><id>tag:bortzmeyer.org,2006-02:Blog/c-hash-tables</id><updated>2009-02-09T00:00:00Z</updated><published>2009-01-23T00:00:00Z</published><content>Les tables de hachages, appelées, selon les
+langages de programmations, hashes (Perl), dictionnaires (Python),
+"HashTable" (Java), sont une des structures de données les
+plus courantes en programmation, en partie à cause de leur
+simplicité. Sont-elles réservées aux langages de haut niveau ? Et en
+C ?</content><link rel="alternate" href="http://www.bortzmeyer.org/c-hash-tables.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Unbound, un autre résolveur DNS</title><id>tag:bortzmeyer.org,2006-02:Blog/unbound</id><updated>2009-01-21T00:00:00Z</updated><published>2009-01-21T00:00:00Z</published><content>Le résolveur DNS le plus courant, dans le
+monde du logiciel libre, est
+BIND. Mais il est toujours bon qu'il existe des
+alternatives sérieuses, pour faire face à toute éventualité. Le
+deuxième résolveur DNS le plus utilisé est sans doute
+Unbound.</content><link rel="alternate" href="http://www.bortzmeyer.org/unbound.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>The world's writing systems</title><id>tag:bortzmeyer.org,2006-02:Blog/worlds-writing-systems</id><updated>2009-01-19T00:00:00Z</updated><published>2009-01-19T00:00:00Z</published><content>Depuis l'invention de l'écriture il y a cinq mille ans, du côté de
+Sumer ou d'Uruk (section
+3 du livre, une des plus longues, en hommage à l'écriture première),
+d'innombrables systèmes d'écriture ont été inventés par l'homme. Bien
+que moins nombreux que les langues puisqu'un même système d'écriture
+peut servir à de nombreuses langues, on compte néanmoins pas moins de
+131 entrées dans la norme ISO 15924, qui
+normalise la liste des écritures... sans compter celles qui ne sont
+pas connues. La thèse de Peter Daniels, exposée dans la section 1, est
+que l'écriture mérite une science à elle, qu'il nomme
+grammatologie, distincte de la linguistique.</content><link rel="alternate" href="http://www.bortzmeyer.org/worlds-writing-systems.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 3757: Domain Name System KEY (DNSKEY) Resource Record (RR) Secure Entry Point (SEP) Flag</title><id>tag:bortzmeyer.org,2006-02:Blog/3757</id><updated>2009-01-17T00:00:00Z</updated><published>2009-01-17T00:00:00Z</published><content>Le protocole DNSSEC de signature des
+enregistrements DNS
+par des signatures cryptographiques repose sur
+des clés dont la partie publique est distribuée dans le DNS
+lui-même. La partie privée sert à signer les enregistrements ou
+d'autres clés. Certaines de ces clés ne servent qu'à signer des clés,
+afin d'être moins exposées que les autres. Pour permettre de
+distinguer ces clés, un bit spécial est réservé par ce RFC.</content><link rel="alternate" href="http://www.bortzmeyer.org/3757.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Analyser les en-têtes IPv6 avec pcap</title><id>tag:bortzmeyer.org,2006-02:Blog/analyse-pcap-ipv6</id><updated>2009-01-15T00:00:00Z</updated><published>2009-01-15T00:00:00Z</published><content>Comme expliqué dans mon article sur
+l'analyse des
+paquets réseau en C (libpcap-c.html), il est relativement facile
+d'analyser des paquets capturés sur le
+réseau (capture-paquets.html) au format pcap,
+depuis un programme écrit en C. Mais la plupart des exemples qu'on trouve en
+ligne ne concernent qu'IPv4. Son possible
+successeur, IPv6, est-il plus ou moins
+difficile à analyser ?</content><link rel="alternate" href="http://www.bortzmeyer.org/analyse-pcap-ipv6.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>La taille du botnet Storm est-elle surestimée ?</title><id>tag:bortzmeyer.org,2006-02:Blog/taille-de-storm</id><updated>2009-01-14T00:00:00Z</updated><published>2009-01-14T00:00:00Z</published><content>Quelle est la taille du plus célèbre des botnets,
+Storm ? Selon un article de chercheurs à
+l'UCSD, elle serait moins importante
+qu'annoncée.</content><link rel="alternate" href="http://www.bortzmeyer.org/taille-de-storm.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Exposé sur les identités numériques à la réunion FULBI</title><id>tag:bortzmeyer.org,2006-02:Blog/expose-identites-fulbi</id><updated>2009-01-16T00:00:00Z</updated><published>2009-01-13T00:00:00Z</published><content>Le 13 janvier, à Paris, j'ai eu le
+plaisir de faire un exposé lors de la réunion FULBI (http://www.fulbi.fr/spip.php?article40) consacrée à
+« Identification, identifiant, identité... individu ». La FULBI est la
+Fédération des Utilisateurs de Logiciels pour
+Bibliothèque, Documentation et Information,
+regroupement d'associations de bibliothécaires et de
+documentalistes. Environ 150 personnes étaient présentes. La
+sociologie de ce métier étant ce qu'elle est, une grande majorité
+était des femmes, ce qui change des réunions d'informaticiens. La plupart venaient du monde Enseignement supérieure / Recherche. Mon exposé portait sur « Qu'est-ce qu'un service d'identité ».</content><link rel="alternate" href="http://www.bortzmeyer.org/expose-identites-fulbi.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>C'est vraiment bien d'indiquer la date dans les commentaires des fichiers de configuration</title><id>tag:bortzmeyer.org,2006-02:Blog/mettre-date-fichiers-config</id><updated>2009-01-12T00:00:00Z</updated><published>2009-01-12T00:00:00Z</published><content>Souvent, je regarde les fichiers de configuration d'une machine qui
+a plusieurs administrateurs système et je vois
+un commentaire du genre :
+
+# Modification temporaire, tant qu'on n'a pas d'avantage d'espace disque
+do_something=false
+
+et, là, je suis perplexe. Depuis combien de temps est-ce
+« temporaire » ? Des années, peut-être. La date du fichier ne me renseigne pas car il a pu
+être modifié à d'autres endroits. Pourquoi tout le monde ne met-il pas
+la date de la modification lorsqu'il ajoute un
+tel commentaire ?</content><link rel="alternate" href="http://www.bortzmeyer.org/mettre-date-fichiers-config.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Repli d'une langue vers ou autre, ou demander son chemin à Helsinki</title><id>tag:bortzmeyer.org,2006-02:Blog/demander-son-chemin-a-helsinki</id><updated>2009-01-12T00:00:00Z</updated><published>2009-01-12T00:00:00Z</published><content>Chaque fois que quelqu'un qui n'a pas encore étudié la question se
+penche sur le choix des langues
+pour un logiciel, en fonction des demandes d'un utilisateur, il se dit
+« Mais pourquoi, lorsque la langue demandée n'est pas disponible, ne
+pas lui
+en fournir une autre, assez proche ? ». Pour comprendre pourquoi c'est
+une idée difficile à appliquer, prenons le cas d'un étranger qui demande son chemin
+à Helsinki.</content><link rel="alternate" href="http://www.bortzmeyer.org/demander-son-chemin-a-helsinki.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Faire des schémas avec un langage et pas avec la souris</title><id>tag:bortzmeyer.org,2006-02:Blog/schemas-avec-un-langage</id><updated>2009-01-09T00:00:00Z</updated><published>2009-01-09T00:00:00Z</published><content>
+On dit qu'une image vaut mille mots. C'est vrai qu'il est souvent
+bien plus facile d'expliquer avec un dessin qu'avec de la prose. Dans
+le monde physique, je le fais souvent. Alors, lorsqu'on communique via
+des ordinateurs ? Pourquoi n'y a t-il pas davantage de dessins sur ce
+blog ? Une des raisons est que je dessine très mal à la souris, je
+préfère utiliser un langage de description
+de schémas, comme Graphviz.
+</content><link rel="alternate" href="http://www.bortzmeyer.org/schemas-avec-un-langage.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 768: User Datagram Protocol</title><id>tag:bortzmeyer.org,2006-02:Blog/768</id><updated>2009-01-08T00:00:00Z</updated><published>2009-01-08T00:00:00Z</published><content>Le protocole IP,
+situé dans la couche 3,
+fournit un service de datagrammes où presque
+rien n'est garanti. Les datagrammes peuvent arriver dans le désordre,
+être dupliqués ou, plus couramment, ne pas arriver du tout. IP ne
+fournit pas non plus de mécanisme permettant d'identifier un
+processus particulier sur la machine de
+destination. Quasiment toutes les applications utilisent un protocole de transport au dessus
+d'IP. TCP (RFC 793) est le plus connu. Il fournit, lui,
+fiabilité de la transmission mais au prix de délais parfois
+importants. En effet, tout octet devant être acheminé à bon port, TCP
+doit souvent attendre les retardataires... ou demander leur
+rééxpédition. De plus, le fonctionnement de TCP nécessite
+l'établissement préalable d'une connexion et cela prend du temps
+(trois trajets sont nécessaires, donc la
+latence est parfois importante).</content><link rel="alternate" href="http://www.bortzmeyer.org/768.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 2385: Protection of BGP Sessions via the TCP MD5 Signature Option</title><id>tag:bortzmeyer.org,2006-02:Blog/2385</id><updated>2009-01-06T00:00:00Z</updated><published>2009-01-06T00:00:00Z</published><content>Le protocole TCP est vulnérable à plusieurs
+attaques fondées sur l'envoi de paquets prétendant venir d'un
+correspondant légitime, alors qu'ils sont injectés dans le réseau par le
+méchant. La communauté des opérateurs Internet est depuis longtemps
+particulièrement soucieuse de ces risques pour les sessions
+BGP entre ses membres et a donc développé ce
+bricolage qui consiste à insérer une option TCP validant très
+partiellement les paquets. (Bien que cette vulnérabilité de TCP soit
+très générale, cette solution n'a été utilisée que pour BGP. Le
+résultat 
+est un
+très court RFC, traitant - assez mal - un problème très particulier.)</content><link rel="alternate" href="http://www.bortzmeyer.org/2385.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Homelink, pour échanger ses maisons pour les vacances</title><id>tag:bortzmeyer.org,2006-02:Blog/homelink</id><updated>2009-01-06T00:00:00Z</updated><published>2009-01-06T00:00:00Z</published><content>Vous voulez une maison de trois étages à
+Londres ? Plutôt au
+Canada, près d'un lac ou en
+Norvège dans la montagne ? Ou bien un appartement
+dans le centre de Barcelone ? Vous pouvez avoir
+tout cela gratuitement en adhérant à un système d'échange de maisons
+comme Homelink (http://www.homelink.fr/).</content><link rel="alternate" href="http://www.bortzmeyer.org/homelink.html"/></entry>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>RFC 2330: Framework for IP Performance Metrics</title><id>tag:bortzmeyer.org,2006-02:Blog/2330</id><updated>2009-01-04T00:00:00Z</updated><published>2009-01-04T00:00:00Z</published><content>La mesure des performances sur Internet est un vaste sujet, rendu
+plus difficile par l'utilisation massive de mots mal définis ou, pire,
+utilisés
+à contre sens (« débit », « bande passante » ou, pire, « vitesse »
+étant de bons exemples). C'est pour cela que le travail du groupe
+IPPM (http://tools.ietf.org/wg/ippm) (IP
+Performance Metrics) a commencé par ce RFC 2330 qui
+essaie de définir un cadre solide pour parler de mesures de
+performances.</content><link rel="alternate" href="http://www.bortzmeyer.org/2330.html"/></entry>
+
+</feed>
+

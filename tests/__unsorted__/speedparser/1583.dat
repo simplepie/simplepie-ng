@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>Pagelime Blog.</title>
+	
+	<link>http://blog.pagelime.com</link>
+	<description>Content Management for Designers and Agencies.</description>
+	<lastBuildDate>Wed, 21 Sep 2011 16:22:41 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.2.1</generator>
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/PageLime" /><feedburner:info uri="pagelime" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><item>
+		<title>So we finally have a Facebook Page.</title>
+		<link>http://feedproxy.google.com/~r/PageLime/~3/ZUVV3JtXA_s/</link>
+		<comments>http://blog.pagelime.com/2011/09/21/so-we-finally-have-a-facebook-page/#comments</comments>
+		<pubDate>Wed, 21 Sep 2011 16:22:41 +0000</pubDate>
+		<dc:creator>Tom</dc:creator>
+				<category><![CDATA[Announcement]]></category>
+		<category><![CDATA[facebook]]></category>
+		<category><![CDATA[hellooooo 2009]]></category>
+		<category><![CDATA[social networking]]></category>
+		<category><![CDATA[yeah we know.]]></category>
+
+		<guid isPermaLink="false">http://blog.pagelime.com/?p=526</guid>
+		<description><![CDATA[Yeah&#8230; I know&#8230; clearly this is long overdue. We&#8217;ve been so busy making Pagelime better we never took the time to get our social networking in order. Like our page, get discounts and beta access to new features in the future. Oh yeaaaaaah click here.]]></description>
+			<content:encoded><![CDATA[<p><a href="http://blog.pagelime.com/wp-content/uploads/2011/09/blogpost-header.jpg"><img class="alignnone size-full wp-image-527" title="blogpost-header" src="http://blog.pagelime.com/wp-content/uploads/2011/09/blogpost-header.jpg" alt="" width="600" height="350" /></a></p>
+<p>Yeah&#8230; I know&#8230; clearly this is long overdue. We&#8217;ve been so busy making Pagelime better we never took the time to get our social networking in order. Like our page, get discounts and beta access to new features in the future.</p>
+<p><a href="http://www.facebook.com/pages/Pagelime/150410925052109">Oh yeaaaaaah click here.</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.pagelime.com/2011/09/21/so-we-finally-have-a-facebook-page/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.pagelime.com/2011/09/21/so-we-finally-have-a-facebook-page/</feedburner:origLink></item>
+		<item>
+		<title>Quick Hit: Setting Up A CNAME</title>
+		<link>http://feedproxy.google.com/~r/PageLime/~3/_qE5bUPXD8Y/</link>
+		<comments>http://blog.pagelime.com/2011/07/05/quick-hit-setting-up-a-cname/#comments</comments>
+		<pubDate>Tue, 05 Jul 2011 15:45:29 +0000</pubDate>
+		<dc:creator>Tom</dc:creator>
+				<category><![CDATA[How To]]></category>
+		<category><![CDATA[Pagelime 101]]></category>
+		<category><![CDATA[Quick hit]]></category>
+		<category><![CDATA[alias]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[cname]]></category>
+		<category><![CDATA[dns]]></category>
+		<category><![CDATA[domains]]></category>
+		<category><![CDATA[pagelime]]></category>
+		<category><![CDATA[professional]]></category>
+		<category><![CDATA[records]]></category>
+		<category><![CDATA[subdomain]]></category>
+
+		<guid isPermaLink="false">http://blog.pagelime.com/?p=518</guid>
+		<description><![CDATA[So a lot of people, after they upgrade to Pro or Business, immediately want to setup their CNAMES. This often creates some confusion as to what a CNAME is, how to set it up, and emails to me that say &#8220;Tom, I have no idea what I&#8217;m doing here?&#8221;. Like a green Batman I&#8217;m swooping [...]]]></description>
+			<content:encoded><![CDATA[<p>So a lot of people, after they upgrade to Pro or Business, immediately want to setup their CNAMES. This often creates some confusion as to what a CNAME is, how to set it up, and emails to me that say &#8220;Tom, I have no idea what I&#8217;m doing here?&#8221;. Like a green Batman I&#8217;m swooping in to save the day here.</p>
+<p>What is a CNAME?<br />
+<em>From Wikipedia:</em><br />
+<span>&#8220;A <strong>CNAME record</strong> or <strong>Canonical Name record</strong> is a type of <a class="mw-redirect" title="Resource record" href="http://en.wikipedia.org/wiki/Resource_record">resource record</a> in the <a title="Domain Name System" href="http://en.wikipedia.org/wiki/Domain_Name_System">Domain Name System</a> (DNS) that specifies that the <a title="Domain name" href="http://en.wikipedia.org/wiki/Domain_name">domain name</a> is an alias of another, <a title="Canonical" href="http://en.wikipedia.org/wiki/Canonical">canonical</a> domain name.</span> &#8221;</p>
+<p><em>From Tom&#8217;s Brain:</em><br />
+&#8220;A CNAME is like a subdomain, but instead of pointing to files on server, it points to a completely different domain. The big perk is that you can reference it in a URL the same way you would the original domain.&#8221;</p>
+<p><strong>Setting up a CNAME:<br />
+</strong>Your CNAME is setup where your nameservers are located.<br />
+<em> This consists of 3 parts:</em></p>
+<ul>
+<li>Part 1 is picking the type of record, usually you get a few options: &#8220;A, MX, CNAME, etc&#8221;. Guess what? <em>What?</em> Pick the CNAME. <em>Got it!</em></li>
+<li>Part 2 is picking the hostname/alias. This is the wordyouwant.yourdomain.com. So if you want to have changeyerstuff.websitedesignkingpin.com, you would place &#8220;changeyerstuff&#8221; in this box.</li>
+<li>Part 3  is the value/destination/pointing to/domain/referrer. In this case since you&#8217;re using Pagelime it will always point to &#8220;cms.pagelime.com&#8221;</li>
+</ul>
+<p><strong>Registering your CNAME with Pagelime</strong>:<br />
+Go to your Account Settings, in the CNAME box put the full CNAME record, continuing the example from above you would place &#8220;changeyerstuff.websitedesignkingpin.com&#8221; in the box below.</p>
+<p><a rel="attachment wp-att-521" href="http://blog.pagelime.com/2011/07/05/quick-hit-setting-up-a-cname/screen-shot-2011-07-05-at-114322-am/"><img class="alignnone size-full wp-image-521" title="screen-shot-2011-07-05-at-114322-am" src="http://blog.pagelime.com/wp-content/uploads/2011/07/screen-shot-2011-07-05-at-114322-am.png" alt="screen-shot-2011-07-05-at-114322-am" width="462" height="123" /></a></p>
+<p><strong>Some things to keep in mind!</strong></p>
+<ul>
+<li>CNAMES are just like any other DNS level change they take some time to propagate across the whole internet, sometimes as long as 48 hours, so if it&#8217;s not working just wait a little bit.</li>
+<li>When it&#8217;s configured correctly the page will be light gray with your logo centered. If you&#8217;re still seeing the black and green Pagelime login screen you&#8217;re doing it wrong.</li>
+<li>CNAMES are not subdomains, there are no actual files on your server there, you can&#8217;t upload other stuff to them, or try and create custom pages. It&#8217;s a pure DNS level redirect.</li>
+</ul>
+<p>That&#8217;s it! Good luck.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.pagelime.com/2011/07/05/quick-hit-setting-up-a-cname/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://blog.pagelime.com/2011/07/05/quick-hit-setting-up-a-cname/</feedburner:origLink></item>
+		<item>
+		<title>Quick Hit: Optimal Logos</title>
+		<link>http://feedproxy.google.com/~r/PageLime/~3/hIqw_DyA2JE/</link>
+		<comments>http://blog.pagelime.com/2011/06/15/quick-hit-optimal-logos/#comments</comments>
+		<pubDate>Wed, 15 Jun 2011 14:01:00 +0000</pubDate>
+		<dc:creator>Tom</dc:creator>
+				<category><![CDATA[How To]]></category>
+		<category><![CDATA[Pagelime 101]]></category>
+		<category><![CDATA[Quick hit]]></category>
+		<category><![CDATA[backgrounds]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[logos]]></category>
+		<category><![CDATA[optimal sizing]]></category>
+		<category><![CDATA[professional]]></category>
+
+		<guid isPermaLink="false">http://blog.pagelime.com/?p=512</guid>
+		<description><![CDATA[This comes up a lot. Whenever someone goes pro with Pagelime they always look to setup up their company logo and get their branding on. What many people fail to realize is there are a few things to keep in mind. The background of Pagelime is not white (#fffff) it is actually slightly off white [...]]]></description>
+			<content:encoded><![CDATA[<p>This comes up a lot. Whenever someone goes pro with Pagelime they always look to setup up their company logo and get their branding on. What many people fail to realize is there are a few things to keep in mind.</p>
+<ul>
+<li>The background of Pagelime is not white (#fffff) it is actually slightly off white (#f9f9f9).</li>
+<li>Transparency (alpha channels) do not show up, as we deal with many different browsers. We suggest everyone just sets the logo background to #f9f9f9</li>
+<li>While there are no constraints on height, the maximum width is 200px. If you don&#8217;t want scaling issues or extended load times I would resize and optimize manually before uploading.</li>
+<li>From a theme perspective it makes everything look more custom built if you select a color in your logo as an accent color in Pagelime. Your clients will be impressed, and everything will look more polished.</li>
+</ul>
+<p>That&#8217;s it. If anyone has anything they want to add, or has any questions, feel free to leave them in the comments.</p>
+<p><strong>Bonus Coverage: Lime Rickey Recipe!</strong></p>
+<p><span>3/4 oz fresh </span><span><a href="http://www.drinksmixer.com/desc71.html">lime juice<br />
+</a></span><span>1 oz </span><span><a href="http://www.drinksmixer.com/desc495.html">simple syrup<br />
+</a></span><span>3 dashes </span><span><a href="http://www.drinksmixer.com/desc95.html">Angostura bitters<br />
+</a></span><span>6 &#8211; 8 oz </span><span><a href="http://www.drinksmixer.com/desc74.html">club soda</a></span></p>
+<div class="RecipeDirections">Build all ingredients in a <a id="itxthook0" class="itxtrst itxtrsta itxthook" rel="nofollow" href="http://www.drinksmixer.com/drink7437.html#"><span id="itxthook0w0" class="itxtrst itxtrstspan itxthookspan">collins </span><span id="itxthook0w2" class="itxtrst itxtrstspan itxthookspan">glass</span></a> and top with soda. Garnish with a spiral of lime peel, and serve.</div>
+<div class="RecipeDirections"></div>
+<div class="RecipeDirections"></div>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.pagelime.com/2011/06/15/quick-hit-optimal-logos/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.pagelime.com/2011/06/15/quick-hit-optimal-logos/</feedburner:origLink></item>
+		<item>
+		<title>Pagelime Per Page Permissions!</title>
+		<link>http://feedproxy.google.com/~r/PageLime/~3/VXIQj4XOFWw/</link>
+		<comments>http://blog.pagelime.com/2011/06/08/pagelime-per-page-permissions/#comments</comments>
+		<pubDate>Wed, 08 Jun 2011 22:24:38 +0000</pubDate>
+		<dc:creator>Tom</dc:creator>
+				<category><![CDATA[Features]]></category>
+		<category><![CDATA[control]]></category>
+		<category><![CDATA[money]]></category>
+		<category><![CDATA[per page]]></category>
+		<category><![CDATA[per page permissions]]></category>
+		<category><![CDATA[power]]></category>
+		<category><![CDATA[rights]]></category>
+		<category><![CDATA[users]]></category>
+
+		<guid isPermaLink="false">http://blog.pagelime.com/?p=478</guid>
+		<description><![CDATA[Pagelime now has Per Page Permissions (and added alliteration!) This has long been one of the most sought after requests from the Pagelime community. As a Pagelimer you can now limit the pages that your clients can access to on a per user basis. What this means for your clients: 1. You can stop Jack [...]]]></description>
+			<content:encoded><![CDATA[<p><img class="alignnone size-full wp-image-482" title="permissions1" src="http://blog.pagelime.com/wp-content/uploads/2011/06/permissions1.png" alt="permissions1" width="600" height="450" /></p>
+<p><strong>Pagelime now has Per Page Permissions (and added alliteration!) </strong></p>
+<p>This has long been one of the most sought after requests from the Pagelime community. As a Pagelimer you can now limit the pages that your clients can access to on a per user basis.</p>
+<p><strong>What this means for your clients:</strong></p>
+<p style="padding-left: 30px;"><strong></strong>1. You can stop Jack from changing Jill&#8217;s bio to &#8220;<a href="http://en.wikipedia.org/wiki/Jack_and_Jill_(nursery_rhyme)">Second place tumblr</a>&#8221; all the time on their About page.</p>
+<p style="padding-left: 30px;">2. You can allow Neo to change Neo&#8217;s page as well as Morpheus&#8217; page, but Morpheus&#8217; can only change his own page. <a href="http://en.wikipedia.org/wiki/Neo_(The_Matrix)">Whoa</a>.</p>
+<p style="padding-left: 30px;">3. Lucy can see all the pages on the site and publish them. Charlie can only see his page, and not even publish that. <a href="http://1.bp.blogspot.com/_HTQ7n9Azmro/R8wdpA0eN_I/AAAAAAAAAgw/BSZ5XNd201Y/s400/charliebrown.gif">AAUGH</a>.</p>
+<p><strong>What this means for you:</strong></p>
+<p style="padding-left: 30px;"><strong></strong>1. More power! You now get to play god with your clients, giving them permissions to edit their site as you see fit.</p>
+<p style="padding-left: 30px;">2. More money! You can now charge them for this feature as a line item on your invoices.</p>
+<p style="padding-left: 30px;">3. More control! Get granular baby! If you have a client who has a friend who is always breaking stuff&#8230; keep them off the homepage. Or if you hate that client only let them on the homepage. It&#8217;s your call!</p>
+<p>It&#8217;s in Pagelime right now. It&#8217;s a Pro only feature (aka. give us some of your green!). We know you will love it.</p>
+<p>- <a href="http://i254.photobucket.com/albums/hh114/mchst805/WRX_Pics/32585_GCM_FEA_greenman3_022709.jpg">The Lime Guys</a></p>
+<p><strong>Quick tutorial:</strong></p>
+<p>1.  Make sure you enable &#8220;Per Page Permissions&#8221; in the features of the site you want to use.</p>
+<p>2.  Add some pages to the site map either by using &#8220;Site Pages&#8221; or just browsing to them via your websites internal navigation</p>
+<p>3.  Browse to the user you want to enable permissions for in the &#8220;Users and Permissions&#8221; section then click on the &#8220;Permissions&#8221; tab.</p>
+<p><a rel="attachment wp-att-499" href="http://blog.pagelime.com/2011/06/08/pagelime-per-page-permissions/step1/"><img class="size-full wp-image-499 alignnone" title="step1" src="http://blog.pagelime.com/wp-content/uploads/2011/06/step1.png" alt="step1" width="371" height="450" /></a></p>
+<p>4.  Click on the plus icon next to the website(s) you&#8217;ve enabled the feature on.</p>
+<p><a rel="attachment wp-att-500" href="http://blog.pagelime.com/2011/06/08/pagelime-per-page-permissions/step2/"><img class="size-full wp-image-500 alignnone" title="step2" src="http://blog.pagelime.com/wp-content/uploads/2011/06/step2.png" alt="step2" width="371" height="450" /></a></p>
+<p>5. Click on the checkboxes for the appropriate permissions on the appropriate pages. (If you click the checkboxes inline with the site, it will add or remove all permissions across all pages.</p>
+<p><a rel="attachment wp-att-501" href="http://blog.pagelime.com/2011/06/08/pagelime-per-page-permissions/step3/"><img class="alignnone size-full wp-image-501" title="step3" src="http://blog.pagelime.com/wp-content/uploads/2011/06/step3.png" alt="step3" width="600" height="200" /></a></p>
+<p>6. Save your changes and you will be all set!</p>
+<p>Simple stuff. Just the way we like it around here at Pagelime world HQ.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.pagelime.com/2011/06/08/pagelime-per-page-permissions/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://blog.pagelime.com/2011/06/08/pagelime-per-page-permissions/</feedburner:origLink></item>
+		<item>
+		<title>Amazon EC2 outage: how it affected us, and what we’ve done since</title>
+		<link>http://feedproxy.google.com/~r/PageLime/~3/A0zwpskw-y8/</link>
+		<comments>http://blog.pagelime.com/2011/04/23/amazon-ec2-outage-how-it-affected-us-and-what-weve-done-since/#comments</comments>
+		<pubDate>Sat, 23 Apr 2011 15:33:17 +0000</pubDate>
+		<dc:creator>Emil</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.pagelime.com/?p=471</guid>
+		<description><![CDATA[As most of you know by now, we were affected by the Amazon EC2 outage, which resulted in approximately a day of on/off downtime for Pagelime. We&#8217;ve communicated openly about it to anyone who reached out, and we sent out a mass email with our personal cell numbers and personal emails. We wanted to make [...]]]></description>
+			<content:encoded><![CDATA[<p>As most of you know by now, we were affected by the <a href="http://eu.techcrunch.com/2011/04/21/amazon-ec2-goes-down-taking-with-it-reddit-foursquare-and-quora/">Amazon EC2 outage</a>, which resulted in approximately a day of on/off downtime for Pagelime. We&#8217;ve communicated openly about it to anyone who reached out, and we sent out a mass email with our personal cell numbers and personal emails. We wanted to make sure to stay open, and available when you needed to reach out to us. I&#8217;m going to take time with this post to explain the details behind the outage.</p>
+<p>Here&#8217;s what happened, how it affected us, and what we&#8217;ve done since to mitigate this issue:</p>
+<ul>
+<li>The North Virginia region of the Amazon Elastic Cloud infrastructure had a major set of issues with their storage: the Elastic Block Store (the EBS). The EBS is meant to be a highly redundant form of storage with very low rates of failure, where any single disk failure should not affect availability of the actual data. Turns out this isn&#8217;t exactly the case: the entire block store seems to have become unavailable within a number of regions.</li>
+<li>A number of web companies were affected, including Foursquare, Reddit, Quora, and HootSuite to name a few. A number of web apps like ourselves assumed the issue would be resolved promptly.</li>
+<li>Amazon took about a day to repair the issue, at which point service was restored, and things began to operate normally. This puts our current uptime at 99.4% for the year. We need this to be better for both our users and our peace of mind.</li>
+</ul>
+<p>Here&#8217;s why we use Amazon AWS and not a custom brewed hosting solution:</p>
+<ul>
+<li>Amazon AWS is fast. It gives us really good response times, and the storage performs very well for the price. <span>Which allows us to keep our costs down for our users, while providing the best service.</span></li>
+<li>Amazon AWS is highly available. It allows us to host servers in Virginia, North California, Ireland, and Asia Pacific at the same time, so that a Pagelime server can always be available to close to where you are.  The same goes for their simple storage service: S3.</li>
+<li>Amazon AWS is highly scalable. We can provision new computing and storage resources very quickly. It puts scaling into our hands.</li>
+</ul>
+<p>An ideal setup with AWS should not have failed even in the outstanding scenario we had over the past two days. Here&#8217;s why ours failed:</p>
+<ul>
+<li>All of our data is stored in multiple availability zones (around the world) by both our databases and our data files stored in S3. This worked like a charm, our database immediately failed over to an available instance, and our data was un-affected. This is good.</li>
+<li>The same goes for servers hosted in multiple availability zones. Only the ones in the US-East zone were affected. This is good.</li>
+<li>However, for speed of use, Pagelime caches all of the data files, such as content, images, and documents, on Elastic Block Store volumes&#8230; the very volumes that failed completely. This cache allows us to quickly publish content without a lot of round-tripping between the database and the servers. This crippled us for a day, and we&#8217;re fixing it.</li>
+<li>Pagelime also runs the publish engine from ONE single destination. The reason is that we want the publish engine to always originate from one IP address, so that firewalls and hosts can white-list us. This publish engine happened to be in the affected zone. We&#8217;re fixing this as well.</li>
+</ul>
+<p>Soon after the outage happened, we initiated plan B, and began to migrate all of our cache/engine to a different availability zone. This was great as an emergency response, but we want to be resilient to these failures in the future. Here&#8217;s what we&#8217;re doing to prevent this from happening again:</p>
+<ul>
+<li>We are purging the publish cache. From now on, the data will be published directly from the data store. This may result in longer load times when you press the publish button, or when you publish an image gallery, but it should reduce the potential of future failures. We unfortunately have to cut this performance optimization for the sake of reliability.</li>
+<li>We are adding code to the Pagelime application that will actually fail-over in the software itself to different storage models should one appear to be failing.</li>
+<li>We are creating a backup publish engine in a different part of the world. And for those folks who have bypassed firewalls, we will send this IP out as well, to be added to their web host&#8217;s firewalls.</li>
+</ul>
+<p>We&#8217;ve learned a lot from this. We were really proud of our cloud infrastructure, and the speed / reliability we were getting for the price. After this incident we&#8217;re a bit sobered, and we realize that we need to put even more effort into it.</p>
+<p>We&#8217;re grateful for the outpouring of support we&#8217;ve received from you via email. Thanks for standing by us &#8211; we&#8217;ll make sure to pay it back in kind.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.pagelime.com/2011/04/23/amazon-ec2-outage-how-it-affected-us-and-what-weve-done-since/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.pagelime.com/2011/04/23/amazon-ec2-outage-how-it-affected-us-and-what-weve-done-since/</feedburner:origLink></item>
+		<item>
+		<title>Quick Hit: What do all the Permissions mean?</title>
+		<link>http://feedproxy.google.com/~r/PageLime/~3/0HGFL2D__eE/</link>
+		<comments>http://blog.pagelime.com/2011/03/29/quick-hit-what-do-all-the-permissions-mean/#comments</comments>
+		<pubDate>Tue, 29 Mar 2011 18:44:39 +0000</pubDate>
+		<dc:creator>Tom</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.pagelime.com/?p=467</guid>
+		<description><![CDATA[I received an email this morning from a user asking what all the different permission levels mean. I figured I would take a moment and do a brief explanation: (Note: He&#8217;s a business account user and has a few extra permissions) Edit: Make changes to general content from within Pagelime, but no publishing. Basically, it [...]]]></description>
+			<content:encoded><![CDATA[<p>I received an email this morning from a user asking what all the different permission levels mean. I figured I would take a moment and do a brief explanation: <em>(Note: He&#8217;s a business account user and has a few extra permissions)</em></p>
+<div>
+<ul>
+<li><strong>Edit</strong>: Make changes to general content from within Pagelime, but no publishing. Basically, it allows this user to create drafts for editorial review.</li>
+<li><strong>Create</strong>: Create new pages based on predefined templates.</li>
+<li><strong>Publish</strong>: Publish changes of any kind to the live server.</li>
+<li><strong>Templates</strong>: Create templates that can be used to create new pages.</li>
+<li><strong>Code</strong>: See the &#8220;Edit Code&#8221; button in the editor, as well as make and publish direct code changes from within it.</li>
+<li><strong>Settings</strong>: The ability to edit the site settings as well as enable and disable site features.</li>
+</ul>
+</div>
+<div>Hope this helps clear up any questions about this. &#8211; Tom</div>
+<div></div>
+<div><strong>Bonus LIMErick:</strong></div>
+<div>Permissions are oh so adorable,</div>
+<div>They help keep your designs affordable,</div>
+<div>All of the types I have seen,</div>
+<div>Keep your sites nice and clean,</div>
+<div>When your clients needs are deplorable.</div>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.pagelime.com/2011/03/29/quick-hit-what-do-all-the-permissions-mean/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://blog.pagelime.com/2011/03/29/quick-hit-what-do-all-the-permissions-mean/</feedburner:origLink></item>
+		<item>
+		<title>Pagelime Community Bug Fix Reachout.</title>
+		<link>http://feedproxy.google.com/~r/PageLime/~3/QHcVaVyXBe0/</link>
+		<comments>http://blog.pagelime.com/2011/01/04/pagelime-community-bug-fix-reachout/#comments</comments>
+		<pubDate>Tue, 04 Jan 2011 20:39:39 +0000</pubDate>
+		<dc:creator>Tom</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.pagelime.com/?p=459</guid>
+		<description><![CDATA[Hey everyone! Right now we&#8217;re working on 2 bugs that have recently popped up. We are looking for community feedback to help work through these issues. The first bug is occurs where sites that had been working suddenly stop working (or never work in the first place). We&#8217;ve narrowed it down to a specific issue. [...]]]></description>
+			<content:encoded><![CDATA[<p>Hey everyone! Right now we&#8217;re working on 2 bugs that have recently popped up. We are looking for community feedback to help work through these issues.</p>
+<p>The first bug is occurs where sites that had been working suddenly stop working (or never work in the first place). We&#8217;ve narrowed it down to a specific issue. Somewhere in the last 3 weeks many server hosts have upgraded their FTP servers to 220 ProFTPD 1.3.2 Server. To confirm you are experiencing this specific bug, click &#8220;Browse&#8221; in the site settings and then the log should look like this</p>
+<p><a rel="attachment wp-att-460" href="http://blog.pagelime.com/2011/01/04/pagelime-community-bug-fix-reachout/ftpd/"><img class="alignnone size-full wp-image-460" title="ftpd" src="http://blog.pagelime.com/wp-content/uploads/2011/01/ftpd.jpg" alt="ftpd" width="460" height="500" /></a></p>
+<p>It appears to be primarily with IX Webhosting, but ProFTPD is a common component of many hosts. If you could please leave a comment with the domain that is failing, and where you host your sites (Host Gator, Media Temple, etc). We&#8217;re actively working on rolling out a fix for this ASAP.</p>
+<p>The second is a bug with our iPhone app on original iPhone 3G phones. It appears like the app loads quickly, then crashes immediately. We&#8217;re looking for people with iPhone 3G&#8217;s (NOT 3GS) to help us beta test a fix before our next release.</p>
+<p>Thanks! We&#8217;re always trying to get everything fixed as fast as possible. Happy New Year everyone! Go get some more clients!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.pagelime.com/2011/01/04/pagelime-community-bug-fix-reachout/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		<feedburner:origLink>http://blog.pagelime.com/2011/01/04/pagelime-community-bug-fix-reachout/</feedburner:origLink></item>
+		<item>
+		<title>Pagelime 101: 5 Tips for Integrating a Site with the Pagelime iPhone App</title>
+		<link>http://feedproxy.google.com/~r/PageLime/~3/kQoGeAoy6QU/</link>
+		<comments>http://blog.pagelime.com/2010/12/21/pagelime-101-5-tips-for-integrating-a-site-with-the-pagelime-iphone-app/#comments</comments>
+		<pubDate>Tue, 21 Dec 2010 21:29:34 +0000</pubDate>
+		<dc:creator>Tom</dc:creator>
+				<category><![CDATA[How To]]></category>
+		<category><![CDATA[Pagelime 101]]></category>
+		<category><![CDATA[app]]></category>
+		<category><![CDATA[iphone]]></category>
+		<category><![CDATA[mobile]]></category>
+		<category><![CDATA[pagelime]]></category>
+		<category><![CDATA[tips]]></category>
+
+		<guid isPermaLink="false">http://blog.pagelime.com/?p=425</guid>
+		<description><![CDATA[With the launch of the Pagelime iPhone app we decided  to provide everyone with a few tips to keep in mind when integrating your sites with the Pagelime iPhone app. Don&#8217;t worry, you don&#8217;t have to learn anything new, but if you keep these tips in mind, you can get the most out of your [...]]]></description>
+			<content:encoded><![CDATA[<p><a rel="attachment wp-att-427" href="http://blog.pagelime.com/2010/12/21/pagelime-101-5-tips-for-integrating-a-site-with-the-pagelime-iphone-app/blackboard1/"><img class="alignnone size-full wp-image-427" title="blackboard1" src="http://blog.pagelime.com/wp-content/uploads/2010/12/blackboard1.jpg" alt="blackboard1" width="640" height="290" /></a></p>
+<p>With the launch of the <a href="http://itunes.apple.com/us/app/pagelime-cms-edit-your-website/id409036530?mt=8" target="_blank">Pagelime iPhone app</a> we decided  to provide everyone with a few tips to keep in mind when integrating your sites with the Pagelime iPhone app. Don&#8217;t worry, you don&#8217;t have to learn anything new, but if you keep these tips in mind, you can get the most out of your new mobile CMS!</p>
+<p><span id="more-425"></span>1 &#8211; <strong>Get Granular!</strong> WYSIWYG editing hasn’t quite made it to iOS devices yet. While we’re working on a solution, for the moment the best way to cleanly handle editing is to place your editable classes directly on the tags of items you want to edit. So instead of putting it on one div that contains images and text. Put it directly on the text and directly on the image</p>
+<p><strong>Not so great:</strong></p>
+<pre>&lt;div id="mainbox" <strong>class="cms-editable"</strong>&gt;
+&lt;img src="kittenhat.jpg" id="kittenimg" /&gt;
+&lt;p id="kittendesc"&gt;This kitten sure has a cute hat on!&lt;/p&gt;
+&lt;/div&gt;</pre>
+<p><strong>Great:</strong></p>
+<pre>&lt;div id="mainbox"&gt;
+&lt;img src="kittenhat.jpg" id="kittenimg" class=<strong>"cms-editable"</strong> /&gt;
+&lt;p id="kittendesc" <strong>class="cms-editable"</strong> &gt;This kitten sure has a hat on!&lt;/p&gt;
+&lt;/div&gt;</pre>
+<p>2 &#8211; <strong>The Name Game.</strong> By default we read the unique ID that you have on the items to show what you’re editing in the regions view. However you can add a “Name=” attribute on any editable element to provide a descriptive title. This could be the difference between “themanagebox” and “The Man Age Box”.</p>
+<p><strong>Not so great:</strong></p>
+<pre>&lt;div id="id93734" class="cms-editable"&gt;Not So Great&lt;/div&gt;</pre>
+<p><strong>Great:</strong></p>
+<pre>&lt;div id="id93734" class="cms-editable" <strong>name="This is Great!"</strong>&gt;Great!&lt;/div&gt;</pre>
+<p>3 &#8211; <strong>SEOMG! </strong>The SEO box doesn’t automatically place the &lt;meta&gt; tags. You need to pre-include them in your html. This is important to keep this in mind when using templates. Make sure when you clone or create a new template it already has modifiable SEO data inside.</p>
+<p>4 &#8211; <strong>Enjoy the View!</strong> With the app, you have 2 options for mobile editing. The Regions view provides a list the of editable regions on the page. This can be great for digging in and getting to the editing fast. The Edit view is closer to the more traditional Pagelime live view. This will be extremely handy when you have repeating regions, or many unique editable areas. Make sure to use the more efficient solution for the moment.</p>
+<p>5 &#8211; <strong>Images.</strong> The mobile app allows you to offer lots of cool features to your clients. An idea we came up with is the ability to have a on the fly update-able image box. <strong>For Example:</strong> Perhaps you have a restaurant as a client, you can now offer a “Daily Features” image, that they can update with the smiles of satisfied guests, or the days special. The ability to make unique and speedy changes on the go will provide utility and impress your clients.</p>
+<div>We think that the iPhone app represents a new way to think about client web design. While it certainly doesn’t replace the Pagelime web app, it allows you to present your clients with a creative tool for on the go site updating that can have a myriad of creative new implementations. If you haven&#8217;t tried it yet, <a href="http://itunes.apple.com/us/app/pagelime-cms-edit-your-website/id409036530?mt=8" target="_blank">go get it!</a> Good luck and stay green. &#8211; Tom</div>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.pagelime.com/2010/12/21/pagelime-101-5-tips-for-integrating-a-site-with-the-pagelime-iphone-app/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		<feedburner:origLink>http://blog.pagelime.com/2010/12/21/pagelime-101-5-tips-for-integrating-a-site-with-the-pagelime-iphone-app/</feedburner:origLink></item>
+		<item>
+		<title>While we wait for app approval: Pagelime iPhone Wallpaper</title>
+		<link>http://feedproxy.google.com/~r/PageLime/~3/g1DTDW_0i6w/</link>
+		<comments>http://blog.pagelime.com/2010/12/14/while-we-wait-for-app-approval-pagelime-iphone-wallpaper/#comments</comments>
+		<pubDate>Tue, 14 Dec 2010 22:20:09 +0000</pubDate>
+		<dc:creator>Emil</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.pagelime.com/?p=414</guid>
+		<description><![CDATA[So our iPhone app has been sitting in Apple&#8217;s review box for a while now&#8230; and while you all patiently wait, we&#8217;ve put together a ballin&#8217; Pagelime iPhone wallpaper. Why, you ask? Because we&#8217;re just awesome that way. Also, don&#8217;t ask us what the whole leather and stitch theme has to do with anything, we [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://blog.pagelime.com/wp-content/uploads/2010/12/pagelime-iphone-4-wallpaper.png"><img class="alignnone size-full wp-image-416" title="pagelime-iphone-wallpaper-blog-header1" src="http://blog.pagelime.com/wp-content/uploads/2010/12/pagelime-iphone-wallpaper-blog-header1.jpg" alt="pagelime-iphone-wallpaper-blog-header1" width="640" height="290" /></a></p>
+<p>So our iPhone app has been sitting in Apple&#8217;s review box for a while now&#8230; and while you all patiently wait, we&#8217;ve put together a ballin&#8217; Pagelime iPhone wallpaper. Why, you ask? Because we&#8217;re just awesome that way.</p>
+<p>Also, don&#8217;t ask us what the whole leather and stitch theme has to do with anything, we just thought it was kinda cool.</p>
+<p><a href="http://blog.pagelime.com/wp-content/uploads/2010/12/pagelime-iphone-4-wallpaper.png">Download the Pagelime iPhone 4 Wallpaper</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.pagelime.com/2010/12/14/while-we-wait-for-app-approval-pagelime-iphone-wallpaper/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<feedburner:origLink>http://blog.pagelime.com/2010/12/14/while-we-wait-for-app-approval-pagelime-iphone-wallpaper/</feedburner:origLink></item>
+		<item>
+		<title>Pagelime Client Intro Video: White-Label Edition</title>
+		<link>http://feedproxy.google.com/~r/PageLime/~3/Q5zI5pZKzsk/</link>
+		<comments>http://blog.pagelime.com/2010/11/12/client-intro-video-white-label-edition/#comments</comments>
+		<pubDate>Fri, 12 Nov 2010 16:13:46 +0000</pubDate>
+		<dc:creator>Adam</dc:creator>
+				<category><![CDATA[Announcement]]></category>
+		<category><![CDATA[Videos]]></category>
+		<category><![CDATA[White Labeling]]></category>
+		<category><![CDATA[client]]></category>
+		<category><![CDATA[client specific]]></category>
+		<category><![CDATA[introduction]]></category>
+		<category><![CDATA[tutorial]]></category>
+		<category><![CDATA[video]]></category>
+		<category><![CDATA[white label]]></category>
+
+		<guid isPermaLink="false">http://blog.pagelime.com/?p=401</guid>
+		<description><![CDATA[This is a re-edited version of our previously posted video Learn How to Edit with Pagelime in under 11 minutes. Thanks for all the feedback! Specifically @Brandon Setter! We&#8217;ve incorporated user suggestions, such as zooming/camera movements and removing some of the more &#8220;brandable&#8221; actions, like logging in. The breakdown of material covered, still remains the [...]]]></description>
+			<content:encoded><![CDATA[<p>This is a re-edited version of our previously posted video <a href="http://blog.pagelime.com/2010/10/28/sneak-peak%E2%80%94pagelime-client-intro-video-rough-cut/">Learn How to Edit with Pagelime in under 11 minutes</a>.</p>
+<p>Thanks for all the feedback! Specifically @Brandon Setter! </p>
+<p>We&#8217;ve incorporated user suggestions, such as zooming/camera movements and removing some of the more &#8220;brandable&#8221; actions, like logging in.</p>
+<p>The breakdown of material covered, still remains the same&#8230;</p>
+<p>The video runs under 10 minutes and covers the basics of editing content in the CMS. Topics that are covered include:</p>
+<ul>
+<li>Basic inline editing of a Header</li>
+<li>basic inline editing of a p tag (main content)</li>
+<li>editing of a content area with mixed styles</li>
+<li>Basic use of repeating regions, both mixed styles (cms-editable-repeat) and compartmentalized (cms-editable regions inside cms-repeat)</li>
+<li>Drafts</li>
+<li>Publishing</li>
+</ul>
+<p>This video was edited to be short and include the core necessary information for editing a site. The Site Map is still not included in this video, but may be included in the next full version of this video. In the meantime, we have planned a series of much shorter (1-2 minute) supplements about each module, such as the Site Map viewer and different enable-able site features. </p>
+<h2>Let us know!</h2>
+<p>Site Map will be the first, but we really need your feedback on what the other tutorials should be? What features do enable the most? What features do your clients have the most trouble with? Let us know in the comments!!!</p>
+<p>Cheers!</p>
+<h2>The Video!</h2>
+<p>This is version one of the white label video, please leave your feedback! We do this for you, and are always improving our materials, your thoughts matter!</p>
+<p><strong>Also note, this video is for preview purposes only. A non-watermarked version of the video is available to our PRO and Business users.</strong></p>
+<p> We will be setting up a system for paid account users to retrieve materials as they are made available, however, in the meantime, if you are a PRO/Biz user and want to get a hold of the video, just email me, Adam(AT)pagelime.com.</p>
+<p><iframe src="http://player.vimeo.com/video/16770531" width="400" height="300" frameborder="0"></iframe>
+<p><a href="http://vimeo.com/16770531">Learn to Edit with Our CMS in under 10 minutes [white-label Sample]</a> from <a href="http://vimeo.com/user2535775">PageLime</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.pagelime.com/2010/11/12/client-intro-video-white-label-edition/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		<feedburner:origLink>http://blog.pagelime.com/2010/11/12/client-intro-video-white-label-edition/</feedburner:origLink></item>
+	</channel>
+</rss>

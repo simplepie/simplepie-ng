@@ -1,0 +1,801 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  <html><head> <!-- update: 1317663369749 --><meta http-equiv="content-type" content="text/html; charset=utf-8"><title>NBA.com </title><!-- START 'htmlHead : default' FILE: /.element/ssi/sect/1.0/home/.branding/default/htmlHead.html --><link rel="stylesheet" href="/.element/css/2.0/global/global.css" type="text/css">
+<link rel="stylesheet" href="/.element/css/2.0/sect/home/homepage.css" type="text/css">
+
+<script type="text/javascript" src="/.element/js/2.1/lib/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/.element/js/2.1/global/adspaces.js"></script>
+<script type="text/javascript" src="/.element/js/2.0/global/flash.js"></script>
+<script type="text/javascript" src="/.element/js/2.1/lib/csiManager-1.25.js"></script>
+<script type="text/javascript" src="/.element/js/2.1/sect/home/nbaHPTabs.js"></script>
+
+
+
+
+    
+
+
+ 
+
+
+
+ 
+
+
+  
+
+<!-- FINISH 'htmlHead' --><!-- START 'georedirect : default' FILE: /.element/ssi/sect/1.0/home/.branding/default/georedirect.html --><!-- Geo Redir -->
+<!--include virtual="/.element/home/ssi/home/1.0/georedirect.html" -->
+<!-- FINISH 'georedirect' --> </head><body><!-- START 'ceiling : default' FILE: /.element/ssi/sect/1.0/DEFAULT/.branding/default/ceiling.html --><!-- CEILING -->
+	<script src="/.element/js/2.0/global/chrome.js"></script> 
+<div id="nbaChrome">
+	<div id="nbaChromeContent">
+		<ul>
+			<li class="nbaChromeTeams"><a href="#" class="topnav">TEAMS</a>
+				<ul>
+					<li class="nbaTeamsIndex"><a href="/home/teams/">Teams</a></li>
+
+					<li>
+						<table cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td colspan="2"><strong>TEAM SITES</strong></td>
+							</tr>
+							<tr>
+								<td><a href="/hawks/">Atlanta</a></td>
+								<td><a href="/bucks/">Milwaukee</a></td>
+
+							</tr>
+							<tr>
+								<td><a href="/celtics/">Boston</a></td>
+								<td><a href="/timberwolves/">Minnesota</a></td>
+							</tr>
+							<tr>
+								<td><a href="/bobcats/">Charlotte</a></td>
+
+								<td><a href="/nets/">New Jersey</a></td>
+							</tr>
+							<tr>
+								<td><a href="/bulls/">Chicago</a></td>
+								<td><a href="/hornets/">New Orleans</a></td>
+							</tr>
+							<tr>
+
+								<td><a href="/cavaliers/">Cleveland</a></td>
+								<td><a href="/knicks/">New York</a></td>
+							</tr>
+							<tr>
+								<td><a href="/mavericks/">Dallas</a></td>
+								<td><a href="/thunder/">Oklahoma City</a></td>
+							</tr>
+
+							<tr>
+								<td><a href="/nuggets/">Denver</a></td>
+								<td><a href="/magic/">Orlando</a></td>
+							</tr>
+							<tr>
+								<td><a href="/pistons/">Detroit</a></td>
+								<td><a href="/sixers/">Philadelphia</a></td>
+
+							</tr>	
+							<tr>
+								<td><a href="/warriors/">Golden State</a></td>
+								<td><a href="/suns/">Phoenix</a></td>
+							</tr>
+							<tr>
+								<td><a href="/rockets/">Houston</a></td>
+								<td><a href="/blazers/">Portland</a></td>
+
+							</tr>
+							<tr>
+								<td><a href="/pacers/">Indiana</a></td>
+								<td><a href="/kings/">Sacramento</a></td>
+							</tr>
+							<tr>
+								<td><a href="/clippers/">LA Clippers</a></td>
+
+								<td><a href="/spurs/">San Antonio</a></td>
+							</tr>
+							<tr>
+								<td><a href="/lakers/">LA Lakers</a></td>
+								<td><a href="/raptors/">Toronto</a></td>
+							</tr>		
+							<tr>
+								<td><a href="/grizzlies/">Memphis</a></td>
+
+								<td><a href="/jazz/">Utah</a></td>
+							</tr>
+							<tr>
+								<td><a href="/heat/">Miami</a></td>
+								<td><a href="/wizards/">Washington</a></td>
+							</tr>
+						</table>	
+					</li>	
+				</ul>
+
+			</li>
+			<li><a href="/tickets/tickets.html">TICKETS</a></li>
+			<li><a href="/global/">GLOBAL</a></li>
+			<li><a href="/dleague/">D-LEAGUE</a></li>
+			<li><a href="http://www.wnba.com/">WNBA</a></li>
+			<li><a href="http://www.nba.com/enebea/">ENE-BE-A</a></li> 
+			<li><a href="http://www.ihoops.com/">iHOOPS</a></li>
+			<li><a href="http://www.usabasketball.com/">USAB</a></li>
+			<li><a href="http://www.nbahooptroop.com/" target="_blank">KIDS</a></li>
+		</ul>
+
+		<!-- SEARCH -->
+		<div id="nbaChromeSearch">
+			<table cellpadding="0" cellspacing="0" border="0">
+			<form style="nbaSrchForm" action="/search/" method="get">
+				<tr>
+					<td class="nbaSrchNavTxt">
+						<label for="nbaSearchQuery">Search Text</label> 
+						<input name="text" value="" type="text" class="nbaSearchQuery" />
+					</td>
+					<td class="nbaSrchNavBtn">
+						<label for="nbaSearchButton">Search Button</label> 
+						<input type="submit" class="nbaSearchButton" value="" />
+					</td>
+				</tr>
+			</form>
+			</table>
+		</div>
+		<!-- LOGIN/REGISTER -->		
+		<div id="nbaChromeLogin"></div>	
+	</div>
+</div>
+
+		<div id="nbaHeaderNav">
+		<div id="nbaAccess"><a href="#Main"><img alt="Click here to Skip to main content" src="http://i.cdn.turner.com/nba/nba/.element/img/2.0/global/1.gif" width="1" height="1"></a></div> 
+		<div id="nbaHeaderNavContain">
+			<ul>
+				<li><a href="/gameline">SCHEDULE</a></li>
+				<li><a href="/home/video/">VIDEO</a>
+					<ul> 
+						<li><a href="/video/nbatv">NBA TV</a></li>
+						<li><a href="/video/history">History</a></li>
+						<li><a href="/video/cba_news">CBA News</a></li>
+					</ul>    
+				</li>
+				<li><a href="/home/players">PLAYERS</a>
+					<ul>
+						<li><a href="/home/players">Players</a></li>
+						<li><a href="/historical/search/index.jsp">Historical Player Search</a></li>
+					</ul>
+				</li>
+				<li><a href="/standings/team_record_comparison/conferenceNew_Std_Cnf.html">STANDINGS</a>
+					<ul>
+						<li><a href="/standings/team_record_comparison/conferenceNew_Std_Div.html">By Division</a></li>
+						<li><a href="/standings/team_record_comparison/conferenceNew_Std_Cnf.html">By Conference</a></li>
+						<li><a href="/statistics/playoff_picture.html">Playoff Picture</a></li>
+						<li><a href="/standings/team_record_comparison/conferenceNew_Stk_Cnf.html">Team Record Comparison</a></li>
+						<li><a href="/standings/team_record_comparison/conferenceNew_Stk_Div.html">Streaks and Last 10</a></li>
+						<li><a href="/standings/team_record_comparison/conferenceNew_Ahd_Div.html">Ahead and Behind</a></li>
+						<li><a href="/standings/team_record_comparison/conferenceNew_Mrg_Div.html">Margin and Statistics</a></li>
+
+					</ul>
+				</li>
+				<li><a href="/statistics/player/Scoring.jsp">STATS</a></li>
+                <li><a href="http://hangtime.blogs.nba.com" target="_blank">BLOGS</a>
+					<ul>
+						<li><a href="http://hangtime.blogs.nba.com" target="_blank">Hang Time Blog</a></li>
+						<li><a href="http://allball.blogs.nba.com/" target="_blank">All Ball Blog</a></li> 
+						<li><a href="http://www.charlesbarkley.com" target="_blank">CharlesBarkley.com</a></li>
+						<li><a href="http://www.mikefratello.com" target="_blank">MikeFratello.com</a></li>
+					</ul>     
+				</li>
+				<li><a href="/home/allaccess/">FAN STUFF</a>
+					<ul>           
+						<li><a href="/home/allaccess/">All Access</a></li>
+						<li><a href="http://www.twitter.com/nba" target="_blank">NBA Twitter</a></li>
+						<li><a href="http://www.facebook.com/nba" target="_blank">NBA on Facebook</a></li>
+						<li><a href="http://www.nbahooptroop.com" target="_blank">For Kids</a></li>
+						<li><a href="http://itunes.apple.com/us/app/nba-fancam-take-photos-nba/id429227231?mt=8" target="_blank">Mobile Fan Pack</a></li>
+						<li><a href="http://www.facebook.com/nbalegend ">NBA Legend</a></li>
+						<li><a href="http://www.facebook.com/nbadynasty">NBA Dynasty</a></li>
+					</ul>
+				</li>
+				<li><a href="/nbatv">TV</a>
+					<ul>
+						<li><a href="/nbatv">NBA TV</a></li>
+						<li><a href="/schedules/national_tv_schedule/index.html">National TV Schedule</a></li>	
+						<li><a href="/nbatv/schedule/">NBA TV Schedule</a></li>
+					</ul>
+				</li>
+				<li><a href="/home/leaguepass/index.html">LEAGUE PASS</a>
+					<ul>  
+						<li><a href="/leaguepass/broadband/index.html">LEAGUE PASS Broadband</a></li>
+                        <li><a href="/leaguepass/">LEAGUE PASS for TV</a></li>
+                        <li><a href="/leaguepass/mobile/index.html">LEAGUE PASS Mobile</a></li>
+						<li><a href="/global/leaguepassemail.html">International LEAGUE PASS Broadband</a></li>
+					</ul> 
+				</li>
+				<li class="nbaNavStore"><a href="http://store.nba.com/home/index.jsp" target="_blank">STORE</a>
+                <ul>  
+						<li><a href="http://www.nbastore.com/entry.point?entry=2482948&source=NBA_Jerseys">Jerseys</a></li>		
+						<li><a href="http://www.nbastore.com/entry.point?entry=1400498&source=NBA_Mens">Mens</a></li>
+						<li><a href="http://store.nba.com/category/index.jsp?categoryId=1400501">Kids</a></li>
+						<li><a href="http://www.nbastore.com/entry.point?entry=1400499&source=NBA_NBA4Her">NBA4HER</a></li>
+						<li><a href="http://www.nbastore.com/entry.point?entry=3358354&source=NBA_CustomShop">Custom Shop</a></li>
+						<li><a href="http://www.nbastore.com/entry.point?entry=2132627&source=NBA_Headwear">Headwear</a></li>
+						<li><a href="http://www.nbastore.com/entry.point?entry=2030151&source=NBA_basketballs">Basketballs</a></li>
+						<li><a href="http://www.nbastore.com/entry.point?entry=11407769&source=NBA_WhatsHot">What's Hot</a></li>
+						<li><a href="http://auctions.nba.com">Auctions</a></li>
+						<li><a href="http://NBAGameworn.com">NBAGameworn.com</a></li>
+						<li><a href="http://www.nba.com/nycstore"/>NYC Store</a></li>
+						<li><a href="http://store.nba.com/entry.point?entry=2710536&source=NBA_FOOTWEAR">Footwear</a></li>
+					</ul>
+                </li>
+			</ul>
+		</div>
+	</div>
+
+
+<!-- FINISH 'ceiling' --> <div id="nbaExpandPod"><div id="nbaExpandAd">  <!-- START 'expandable : default' FILE: /.element/ssi/sect/1.0/home/.branding/default/expandable.html -->
+<!-- ADSPACE: homepage/spon.938x31 --><div id="ad-843136" align="center" style="padding: 0; margin: 0; border: 0;"><script type="text/javascript"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cnnad_createAd("843136","http://ads.nba.com/html.ng/site=nba&nba_pos=938x31_spon&nba_rollup=homepage&page.allowcompete=yes&params.styles=fs","31","938");
+
+
+
+
+
+
+
+
+
+
+</script></div>
+	
+<!-- FINISH 'expandable' --> </div></div><div id="nbaMainSection"><!-- START 'logorail : default' FILE: /.element/ssi/sect/1.0/DEFAULT/.branding/default/logorail.html --><script type="text/javascript" src="/.element/js/2.0/global/omniTrack.js"></script>
+<div id="nbaLogoRail" style="left:2px;top:0px;">
+<!-- START 'logoman_onetab : default' FILE: /.element/ssi/sect/1.0/home/.branding/default/logoman_onetab.html -->
+
+<script type="text/javascript">
+ 			
+           if ( new NBA_FlashDetect().detectVersion(8) ) {
+
+               var strLocation = ('');
+               var nba_Populator = new NBA_FlashObject( "HomeLogoSwf",
+                   "/.element/swf/2.0/logorail/NBA_HomeButton.swf",62,307,{allowscriptaccess:'always'},{configVideoIndex:strLocation,lastPath:lastPath,track:track});
+       
+               nba_Populator.writeHtml();
+       
+           } else {
+		   	document.write('<a href="/"><img src="/.element/img/2.0/global/nbaErrorLogoPic.gif"></a>');
+             // flashMissingWarning(8);
+			
+           }
+	</script>
+
+<!-- FINISH 'logoman_onetab' -->
+</div>
+
+<!-- FINISH 'logorail' --><div id="nbaContent"><!-- START 'aboveGametracker : default' FILE: /.element/ssi/sect/1.0/home/.branding/default/aboveGametracker.html -->	<div class="nbaAboveGameTracker">
+ 
+	</div>
+<!-- FINISH 'aboveGametracker' --><!-- START 'breakingNews : default' FILE: /.element/ssi/sect/1.0/home/.branding/default/breakingNews.html -->
+<!-- FINISH 'breakingNews' --> <div id="nbaAboveFold"><div class="nbaHPPodContain">    <a href="/2011/news/features/david_aldridge/10/03/morning-tip-players-impact-talks/index.html?ls=iref:nbahpt1"><img border="0" src="http://i2.cdn.turner.com/nba/nba/2011/news/features/david_aldridge/10/03/morning-tip-players-impact-talks/1003-morning-tip-300.jpg" height="262" width="300"></a>  <div id="nbaT1Tease"><h1><a href="/2011/news/features/david_aldridge/10/03/morning-tip-players-impact-talks/index.html?ls=iref:nbahpt1">Weekend wake-up call</a></h1><li> Stars make a stand at labor talks as urgency grows.</li><li> <b>Hang Time blog: </b><a href="http://hangtime.blogs.nba.com/2011/10/02/labor-talks-still-no-common-ground/">Sides still seeking common ground</a></li><li> <b>Aschburner: </b><a href="/2011/news/features/steve_aschburner/10/03/labor-update-monday/index.html">NBA calendar braces for impact</a> | <b><a href="/laborcentral">More</a></b></li></div></div><div class="nbaHPPodContain double"><div class="nbaHPPods nbaMidPod"><div class="nbaHPodHead"><img src="/.element/img/2.0/sect/homepage/pods/headlines.pod.header.gif" width="300" height="34" border="0" alt="Headlines"></div><div class="nbaHPodContent"><ul><li><a href="/2011/news/features/steve_aschburner/10/03/labor-update-monday/index.html">Aschburner: Calendar braces for first impact</a></li><li><a href="/2011/news/10/01/kobe-italy.ap/index.html">Kobe, Italian team working 'intensely' on deal</a></li><li><a href="http://www.wnba.com/video/wnba/2011/10/02/20111002atlminwnbafinalsrecapdes-1856741"><img src="http://i.cdn.turner.com/nba/nba/.element/img/2.0/global/nbaVideoCamThumb.gif" width="10" height="10" hspace="0" vspace="0" alt="Video" border="0">&nbsp;WNBA Finals: Lynx dump Dream in Game 1</a></li><li><a href="/2011/news/10/01/chris-paul-game.ap/index.html">Durant nets 48 in exhibition win over LBJ, Wade</a></li><li><a href="/2011/news/09/30/miami-game.ap/index.html">Plans finalized for LeBron, Wade exhibition game</a></li><li><a href="/dleague/reno/reno_bighorns_hire_paul_mokesk_2011_09_29.html">NBA D-League's Bighorns tab Mokeski as coach</a></li><li><a href="http://sportsillustrated.cnn.com/2011/basketball/nba/wires/09/29/2030.ap.bkn.heat.brand.wade.1058/index.html">SI.com: Lockout not slowing Wade's off-court deals</a></li><li><a href="/2011/news/features/steve_aschburner/09/28/rick-adelman-qa/index.html">Q&amp;A: Wolves' Adelman on challenge</a> |  <img src="http://i.cdn.turner.com/nba/nba/.element/img/2.0/global/nbaVideoCamThumb.gif" hspace="0" vspace="0" width="10" height="10" alt="Video" border="0">&nbsp;<a href="/video/channels/nba_tv/2011/09/28/20110928_min_presser_full.nba"><b>Watch</b></a></li><li><a href="/2011/news/09/28/arvydas-sabonis-heart-attack.ap/index.html">Hall of Famer Sabonis OK after heart attack</a></li><li><a href="http://sportsillustrated.cnn.com/2011/basketball/nba/09/27/derrick.rose.ap/index.html">SI.com: Bulls' Rose says lockout is unnecessary</a></li></ul> </div></div><div class="nbaHPLC"><div class="nbaHPLCContent"><a class="nbaLaborLink" href="/laborcentral"></a><ul><li><a href="/laborcentral#">Main Page</a></li><li><a href="/2011/news/09/09/labor-timeline/index.html#">Timeline</a></li><li><a href="/news/lockout-faqs/index.html">FAQs</a></li></ul></div></div></div><div class="nbaHPPodContain"><!-- START 'rightColTopAds : default' FILE: /.element/ssi/sect/1.0/home/.branding/default/rightColTopAds.html --><div class="right300Ad">
+  	<!-- default generic ad -->
+    	         <!-- ADSPACE: homepage/right.300x250 --><div id="ad-598012" align="center" style="padding: 0; margin: 0; border: 0;"><script type="text/javascript"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cnnad_createAd("598012","http://ads.nba.com/html.ng/site=nba&nba_pos=300x250_rgt&nba_rollup=homepage&page.allowcompete=yes&params.styles=fs","250","300");
+
+</script></div>
+     <img src="http://i.cdn.turner.com/nba/nba/media/homepage/advertisement_300.gif"/>
+ </div><!--End of nba300Ad-->
+
+<!-- ADSPACE: homepage/spon.300x100 --><div id="ad-997877" align="center" style="padding: 0; margin: 0; border: 0;"><script type="text/javascript"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cnnad_createAd("997877","http://ads.nba.com/html.ng/site=nba&nba_pos=300x100_spon&nba_rollup=homepage&page.allowcompete=yes&params.styles=fs","100","300");
+
+
+
+
+
+
+
+
+
+
+</script></div> 
+<!-- FINISH 'rightColTopAds' --></div></div> <div id="nbaBelowFold"><div class="nbaHPPodContain"><!-- START 'nbatv : default' FILE: /.element/ssi/sect/1.0/home/.branding/default/nbatv.html -->
+<!-- esi
+
+	
+
+		<div id="nbaTVPod">
+		<div class="nbaTVBotPod"> 
+    		<div class="nbaHPodHead">
+   	 			<div class="nbaHPodLft"><a href="/nbatv/fannight"><img src="http://i.cdn.turner.com/nba/nba/.element/img/2.0/sect/playoffs/2011/homepage/nbatv.Spon.Hdr.Lft.gif" width="171" height="35" /></a></div>
+    			<div class="nbaHPodRgt"><a href="/nbatv/" target="_self"><img src="http://i.cdn.turner.com/nba/nba/.element/img/2.0/sect/playoffs/2011/homepage/nbatv.Spon.Hdr.Rgt.gif" /></a></div>
+				</div>
+			    <div class="nbaHPodContent">	
+    				<div id="nbaTVContent"><!~~#include virtual="/.element/home/ssi/auto/2.0/cms/home/2011/nbatvPod.html" ~~></div>        
+				</div>
+			</div>
+		</div>
+
+	
+ -->
+		<div id="nbaTVPod">
+		<div class="nbaTVBotPod"> 
+    		<div class="nbaHPodHead">
+				 <a href="/nbatv##">  <img src="http://i.cdn.turner.com/nba/nba/2011/images/08/25/nbatv-header.jpg" width="300" height="36" alt="nbatv-header.jpg" border="0" align="" hspace="0" vspace="0"></a>				
+			</div>
+			<div class="nbaHPodContent">	
+    			<div id="nbaTVContent"><div class="nbaPlayoffsNBAtvModule"> <div class="nbaPlayoffsNBAtvModuleThumb">  <a href="/nbatv/index.html########"><img src="http://i.cdn.turner.com/nba/nba/2011/images/10/03/1003-rick-barry-72b.jpg" alt="Old School Monday: 1975 Finals" width="72" height="55"  hspace="0" vspace="0" border="0"></a></div><div class="nbaPlayoffsNBAtvModuleDesc"><div class="nbaPlayoffsNBAtvModuleTitle"><a href="/nbatv/index.html########">Old School Monday: 1975 Finals</a></div>Behind Rick Barry's play, the Warriors wrap up the NBA crown with a Game 4 win against the Bullets at 4 p.m. today. </div></div><div class="nbaPlayoffsNBAtvModule"> <div class="nbaPlayoffsNBAtvModuleThumb">  <a href="/nbatv/index.html"><img src="http://i.cdn.turner.com/nba/nba/2011/images/10/03/1003-rick-barry-72.jpg" alt="Old School Monday: Bulls-Warriors" width="72" height="55"  hspace="0" vspace="0" border="0"></a></div><div class="nbaPlayoffsNBAtvModuleDesc"><div class="nbaPlayoffsNBAtvModuleTitle"><a href="/nbatv/index.html">Old School Monday: Bulls-Warriors</a></div>Rick Barry takes charge in Game 7 of the Western Conference Finals against the Bulls at 6 p.m. ET today. </div></div> <div class="nbaPlayoffsNBAtvModule"> <div class="nbaPlayoffsNBAtvModuleThumb">  <a href="/video/channels/nba_tv/2011/09/29/20110922_rick_barry_warriors_broll.nba"><img src="http://i.cdn.turner.com/nba/nba/2011/images/10/03/1003-mitch-richmond.jpg" alt="Hardwood Classics: Run TMC" width="72" height="55"  hspace="0" vspace="0" border="0"></a></div><div class="nbaPlayoffsNBAtvModuleDesc"><div class="nbaPlayoffsNBAtvModuleTitle"><a href="/video/channels/nba_tv/2011/09/29/20110922_rick_barry_warriors_broll.nba">Hardwood Classics: Run TMC</a></div>Run-TMC puts up 71 points as the Warriors sink the Spurs in Game 3 of the first round at noon ET on Tuesday. </div></div><div class="nbaPlayoffsNBAtvModule"> <div class="nbaPlayoffsNBAtvModuleThumb">  <a href="/nbatv######"><img src="http://i.cdn.turner.com/nba/nba/2011/images/10/03/1003-magic-johnson-72.jpg" alt="Hardwood Classics: '91 West finals" width="72" height="55"  hspace="0" vspace="0" border="0"></a></div><div class="nbaPlayoffsNBAtvModuleDesc"><div class="nbaPlayoffsNBAtvModuleTitle"><a href="/nbatv######">Hardwood Classics: '91 West finals</a></div>Magic Johnson had a triple-double as L.A. beats Golden State in Game 5 of the 1991 West finals at 4 p.m. ET Tuesday. </div></div></div>        
+			</div>
+		</div>
+	</div>
+<!-- FINISH 'nbatv' --></div><div class="nbaHPPodContain"><div class="nbaHPPods nbaHPFeatPod"><div class="nbaHPodHead"><a href="http://www.nba.com/history"><img src="/.element/img/2.0/sect/homepage/pods/history.header.gif " width="300" height="34" border="0"/></a></div><div class="nbaHPodContent"><div class="nbaPodFeatContent">   <a href="/video/channels/nba_tv/2011/10/01/1987_slam_dunk_contest.nba/"><img src="http://i.cdn.turner.com/nba/nba/2011/images/10/01/87-dunk-contest.jpg" alt="1987 Dunk Contest" width="286" height="115"  hspace="0" vspace="0" border="0"></a><div class="nbaFeatPodHed"><a href="/video/channels/nba_tv/2011/10/01/1987_slam_dunk_contest.nba/">1987 Dunk Contest</a></div>The best high-flyers take to the air in Seattle.   | <img src="http://i.cdn.turner.com/nba/nba/.element/img/2.0/global/nbaVideoCamThumb.gif" hspace="0" vspace="0" width="10" height="10" alt="Video" border="0">&nbsp;<a href="/video/history/"><b>More</b></a></div><div class="nbaPodFeatContent">   <a href="/video/channels/originals/2011/09/29/20110929_Red_and_me_part1.nba"><img src="http://i.cdn.turner.com/nba/nba/2011/images/09/30/0930-bill-russell-286.jpg" alt="Red & Me: The Early Years" width="286" height="115"  hspace="0" vspace="0" border="0"></a><div class="nbaFeatPodHed"><a href="/video/channels/originals/2011/09/29/20110929_Red_and_me_part1.nba">Red &amp; Me: The Early Years</a></div>Big man reflects on his legendary former coach.   | <img src="http://i.cdn.turner.com/nba/nba/.element/img/2.0/global/nbaVideoCamThumb.gif" hspace="0" vspace="0" width="10" height="10" alt="Video" border="0">&nbsp;<a href="/home/video/"><b>More</b></a></div></div><div class="nbaPodFeatContentFoot"></div></div></div><div class="nbaHPPodContain nbaHPPodContainRt"><!-- START 'rightColBotAds : default' FILE: /.element/ssi/sect/1.0/home/.branding/default/rightColBotAds.html -->  	<!-- default generic ad -->
+<!-- ADSPACE: homepage/marketing/spon.300x350 --><div id="ad-863869" align="center" style="padding: 0; margin: 0; border: 0;"><script type="text/javascript"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cnnad_createAd("863869","http://ads.nba.com/html.ng/site=nba&nba_pos=300x350_spon&nba_rollup=homepage&nba_section=marketing&page.allowcompete=yes&params.styles=fs","350","300");
+
+
+
+
+
+
+
+
+
+
+
+</script></div>
+     <img src="http://i.cdn.turner.com/nba/nba/media/homepage/advertisement_300.gif"/>
+<!-- FINISH 'rightColBotAds' --></div><!-- START 'belowFold : default' FILE: /.element/ssi/sect/1.0/home/.branding/default/belowFold.html --><!-- Write Out BelowFold -->
+
+
+<div class="nba9pxTopMargin">
+	<!-- MIDDLE ADS -->
+<div class="nbaClear"></div>
+<div id="nbaMidAds">
+	<div id="nbaMid181Ad">
+		<!-- ADSPACE: homepage/marketing/spon.181x90 --><div id="ad-523504" align="center" style="padding: 0; margin: 0; border: 0;"><script type="text/javascript"> 
+cnnad_createAd("523504","http://ads.nba.com/html.ng/site=nba&nba_pos=181x90_spon&nba_rollup=homepage&nba_section=marketing&page.allowcompete=yes&params.styles=fs","90","181");
+</script></div>
+
+	</div>
+	<div id="nbaMid728Ad">
+		<!-- ADSPACE: homepage/top.728x90 --><div id="ad-907068" align="center" style="padding: 0; margin: 0; border: 0;"><script type="text/javascript"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cnnad_createAd("907068","http://ads.nba.com/html.ng/site=nba&nba_pos=728x90_top&nba_rollup=homepage&page.allowcompete=yes&params.styles=fs","90","728");
+
+
+
+
+
+
+
+
+
+
+
+</script></div>
+	</div>	
+</div>
+</div>
+
+						
+<div class="nbaClear"></div>
+	<div class="nbaAdPodRow">
+		<div class="nbaAdPodContain">
+			<!-- ADSPACE: pods/homepage/spon1.300x56 --><div id="ad-414975" align="center" style="padding: 0; margin: 0; border: 0;"><script type="text/javascript"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cnnad_createAd("414975","http://ads.nba.com/html.ng/site=nba&nba_pos=300x56_spon1&nba_rollup=pods&nba_section=homepage&page.allowcompete=yes&params.styles=fs","56","300");
+
+
+
+
+
+
+
+
+
+
+</script></div>
+		</div>	
+		<div class="nbaAdPodContain">		
+			<!-- ADSPACE: pods/homepage/spon2.300x56 --><div id="ad-719854" align="center" style="padding: 0; margin: 0; border: 0;"><script type="text/javascript"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cnnad_createAd("719854","http://ads.nba.com/html.ng/site=nba&nba_pos=300x56_spon2&nba_rollup=pods&nba_section=homepage&page.allowcompete=yes&params.styles=fs","56","300");
+
+
+
+
+
+
+
+
+
+
+</script></div>
+		</div>
+		<div class="nbaAdPodContain">
+			<!-- ADSPACE: pods/homepage/spon3.300x56 --><div id="ad-25719" align="center" style="padding: 0; margin: 0; border: 0;"><script type="text/javascript"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cnnad_createAd("25719","http://ads.nba.com/html.ng/site=nba&nba_pos=300x56_spon3&nba_rollup=pods&nba_section=homepage&page.allowcompete=yes&params.styles=fs","56","300");
+
+
+
+
+
+
+
+
+
+
+</script></div>
+		</div>	
+	</div>
+
+
+<!-- FINISH 'belowFold' --></div></div><!-- START 'footer' FILE: /.element/ssi/sect/1.0/DEFAULT/.branding/default/footer.html --><script language="JavaScript" type="text/javascript">var nbaCurrTime = new Date(1317667810915); var nbaCurrHour = 14; var nbaCurrMin = 50; var nbaCurrDay='Mon';</script>
+<style>
+.nbaFooterLinks.nbaFooterCol1 { margin-left: 72px; }
+</style>
+<div id="nbaFooter">
+	<div class="nbaFooterLinks nbaFooterCol1">
+		
+		<ul>
+			<li><a href="http://tsed.turner.com/nba">Advertise on NBA.com</a></li>
+			<li><a href="/careers/">Career Opportunities</a></li>
+			<li><a href="/email_us/">Contact Us</a></li>
+		</ul>
+	</div>
+	<div class="nbaFooterLinks">
+		
+		<ul>
+		
+			<li><a href="/caravan/">NBA Cares</a></li>
+			<li><a href="/nbafit">NBA Fit</a></li>
+		</ul>
+	</div>	
+	<div class="nbaFooterLinks">
+		
+		<ul>
+			<li><a href="http://www.ihoops.com">iHoops</a></li>
+			<li><a href="http://www.usabasketball.com">USA Basketball</a></li>
+		</ul>
+	</div>	
+	<div class="nbaFooterLinks">
+		<ul>
+			
+			<li><a href="/allaccess">Member Center</a></li>
+			<li><a href="/allstarvendordiversity">All-Star Vendor Diversity</a></li>
+		</ul>
+	</div>	
+	<div class="nbaFooterLinks">
+		<ul>
+			<li><a href="/home/history/">History</a></li>
+			<li><a href="/bwb/">Basketball Without Borders</a></li>
+		</ul>
+	</div>	
+	
+	<div class="nbaClear"></div>
+	<img src="http://i.cdn.turner.com/nba/nba/.element/img/2.0/global/foot.gradient.gif" />
+	<div id="nbaFooterCopy">
+		<p>Copyright &copy; <script type="text/javascript">document.write(nbaCurrTime.getFullYear());</script> NBA Media Ventures, LLC. All rights reserved. No portion of NBA.com may be duplicated, redistributed or manipulated in any form. By accessing any information beyond this page, you agree to abide by the <a href="/news/privacy_policy.html">Privacy Policy</a> /	<a href="/news/privacy_policy.html#priv11">Your California Privacy Rights</a> and <a href="/news/termsofuse.html">Terms of Use</a>. | <a href="/adchoices/">Ad Choices</a> <img src="http://i2.cdn.turner.com/nba/nba/.element/img/2.0/sect/adChoices/logo_ad_choices_footer.png" alt="Ad Choices" /></p>
+		<div class="nbaClear"></div>
+		<ul>
+			<li><a href="http://tsed.turner.com/nba">Advertise on NBA.com</a></li>
+			<li>|</li>
+			<li><a href="/help/site_faq.html">NBA.com Help</a></li>
+			<li>|</li>
+			<li><a href="/help/fan_relations_faq.html">Fan Relations FAQ</a></li>
+			<li>|</li>
+			<li><a href="/careers/">Career Opportunities</a></li>
+            
+		</ul>
+		<div class="nbaClear"></div>
+		<p><img src="http://i.cdn.turner.com/nba/nba/.element/img/2.0/global/turner.tictac.gif" /> <a href="/">NBA.com</a> is part of Turner - SI Digital, part of the Turner Sports &amp; Entertainment Digital Network.</p>
+	</div>
+	
+	<!-- BEGIN: SiteCatalyst code version: H.20.3. -->
+	<script language="JavaScript" type="text/javascript">
+		nbaOmEnableLinkFilters=true;
+	</script>
+	<script language="JavaScript" type="text/javascript" src="/.element/js/2.0/global/omniture/s_code.js"></script>
+	<script language="JavaScript" type="text/javascript">
+		/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+		var s_code=s.t();if(s_code)document.write(s_code);
+		if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-');
+	</script>
+	<noscript>
+		<a href="http://www.nba.com/" title="NBA.com"><img src="http://metrics.nba.com/b/ss/nbag-n-league/1/H.20.3--NS/0" height="1" width="1" border="0" alt="" /></a>
+	</noscript>
+	<!-- END: SiteCatalyst code version: H.20.3. -->
+	<img src="http://i.cdn.turner.com/cnn/images/1.gif" alt="" id="TargetImageDE" name="TargetImageDE" width="1" height="1" onload="cnnad_getDEAdHeadCookie(this)">
+
+</div>
+<script src="http://js.revsci.net/gateway/gw.js?csid=A09801"></script>
+<script language="JavaScript" type="text/javascript">
+//ADM
+cnnad_sendADMData();
+//UGD
+cnnad_ugsync();
+</script>
+
+<!-- FINISH 'footer' --></div></body></html>
