@@ -1,0 +1,24 @@
+myconfig:
+    # paths to explore
+    path:
+        extensions: php
+        exclude: tests
+
+    # report and violations files
+    logging:
+        report:
+            xml:    ./reports/metrics/phpmetrics.xml
+            html:   ./reports/metrics/phpmetrics.html
+            json:   ./reports/metrics/phpmetrics.json
+        violations:
+            xml:    ./reports/metrics/violations.xml
+        chart:
+            bubbles: ./reports/metrics/bubbles.svg
+
+    # condition of failure
+    failure: average.maintainabilityIndex < 50 or sum.loc > 10000
+
+    # rules used for color ([ critical, warning, good ])
+    rules:
+        cyclomaticComplexity: [ 10, 6, 2 ]
+        maintainabilityIndex: [ 0, 69, 85 ]

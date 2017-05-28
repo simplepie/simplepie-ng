@@ -7,11 +7,9 @@
  */
 declare(strict_types=1);
 
-namespace SimplePie\Sanitizer;
+namespace SimplePie\Enum;
 
-/**
- * @see http://web.archive.org/web/20081031231837/http://diveintomark.org/archives/2003/06/12/how_to_consume_rss_safely
- */
-class DiveIntoMark
+class ErrorMessage extends AbstractEnum
 {
+    public const LOGGER_NOT_PSR3  = 'The configured logger MUST be compatible with PSR-3. Received "%s" instead.';
 }

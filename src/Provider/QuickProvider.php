@@ -5,6 +5,7 @@
  *
  * http://opensource.org/licenses/Apache2.0
  */
+declare(strict_types=1);
 
 namespace SimplePie\Provider;
 
@@ -34,7 +35,7 @@ class QuickProvider implements ServiceProviderInterface
             );
         };
 
-        #-----------------------------------------------------------------------
+        //-----------------------------------------------------------------------
 
         $container['__sp__.logger'] = $container['logger'];
     }

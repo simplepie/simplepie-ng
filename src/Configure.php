@@ -12,14 +12,14 @@ namespace SimplePie;
 use Interop\Container\ContainerInterface;
 use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\StreamInterface;
-use SimplePie\Mixin\ContainerTrait;
-use SimplePie\Mixin\LoggerTrait;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
+use SimplePie\Enum\ErrorMessage;
+use SimplePie\Exception\ConfigurationException;
+use Skyzyx\UtilityPack\Types;
 
-class SimplePie
+class Configure
 {
-    use ContainerTrait;
-    use LoggerTrait;
-
     /**
      * Constructs a new instance of this class.
      *
@@ -28,7 +28,19 @@ class SimplePie
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
-        $this->logger    = $container['__sp__.logger'];
+
+        // The PSR-3 logger
+        if ($container->has('__sp__.logger')) {
+            if ($container['__sp__.logger'] instanceof LoggerInterface) {
+                $this->logger = $container['__sp__.logger'];
+            } else {
+                throw new ConfigurationException(
+                    sprintf(ErrorMessage::LOGGER_NOT_PSR3, Types::getClassOrType($container['__sp__.logger']))
+                );
+            }
+        } else {
+            $this->logger = new NullLogger();
+        }
     }
 
     /**

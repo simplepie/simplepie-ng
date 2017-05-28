@@ -5,6 +5,7 @@
  *
  * http://opensource.org/licenses/Apache2.0
  */
+declare(strict_types=1);
 
 namespace SimplePie\Enum;
 
@@ -27,6 +28,6 @@ class AbstractEnum implements EnumInterface
      */
     public static function introspectKeys(): array
     {
-    	return array_keys(static::introspect());
+        return array_keys(static::introspect());
     }
 }
