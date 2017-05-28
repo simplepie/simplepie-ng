@@ -11,7 +11,7 @@ namespace SimplePie\Enum;
 
 use ReflectionClass;
 
-class AbstractEnum implements EnumInterface
+abstract class AbstractEnum implements EnumInterface
 {
     /**
      * {@inheritdoc}

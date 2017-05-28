@@ -7,8 +7,8 @@
  */
 declare(strict_types=1);
 
-namespace SimplePie\Type;
+namespace SimplePie\Parser;
 
-class Entry
+interface ParserInterface
 {
 }

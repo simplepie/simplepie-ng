@@ -10,20 +10,19 @@ declare(strict_types=1);
 namespace SimplePie\Parser;
 
 use Psr\Http\Message\StreamInterface;
-use SimplePie\Mixin\RawDocumentTrait;
 
-class Xml extends AbstractParser
+abstract class AbstractParser implements ParserInterface
 {
-    use RawDocumentTrait;
-
     /**
-     * Constructs a new instance of this class.
+     * Reads the contents of the stream resource.
      *
      * @param StreamInterface $stream A PSR-7 `StreamInterface` which is typically returned by the
      *                                `getBody()` method of a `ResponseInterface` class.
+     *
+     * @return string The raw contents of the steam resource.
      */
-    public function __construct(StreamInterface $stream)
+    public function readStream(StreamInterface $stream): string
     {
-        $this->rawDocument = $this->readStream($stream);
+        return $stream->getContents();
     }
 }

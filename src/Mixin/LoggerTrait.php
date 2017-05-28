@@ -14,14 +14,14 @@ use Psr\Log\LoggerInterface;
 trait LoggerTrait
 {
     /**
-     * The PSR-3 logger.
+     * A PSR-3 logger.
      *
      * @var Interop\Container\ContainerInterface
      */
     protected $logger;
 
     /**
-     * Retrieves the PSR-3 logger.
+     * Retrieves a PSR-3 logger.
      *
      * @return Psr\Log\LoggerInterface
      */

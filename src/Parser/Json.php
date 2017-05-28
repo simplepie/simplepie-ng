@@ -9,6 +9,6 @@ declare(strict_types=1);
 
 namespace SimplePie\Parser;
 
-class Json
+class Json extends AbstractParser
 {
 }

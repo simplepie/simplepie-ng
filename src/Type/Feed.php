@@ -11,4 +11,7 @@ namespace SimplePie\Type;
 
 class Feed
 {
+    public function __construct()
+    {
+    }
 }

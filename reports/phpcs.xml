@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="3.0.0">
-<file name="/Library/WebServer/Documents/simplepie-ng/src/Configure.php">
- <error line="64" column="12" severity="warning" message="The method parameter $contentType is never used" source="Generic.CodeAnalysis.UnusedFunctionParameter.Found"/>
- <error line="64" column="12" severity="warning" message="The method parameter $charset is never used" source="Generic.CodeAnalysis.UnusedFunctionParameter.Found"/>
+<file name="/Library/WebServer/Documents/simplepie-ng/src/Enum/ErrorMessage.php">
+ <error line="14" column="134" severity="error" message="Line exceeds maximum limit of 120 characters; contains 134 characters" source="Generic.Files.LineLength.MaxExceeded"/>
 </file>
 <file name="/Library/WebServer/Documents/simplepie-ng/src/Provider/QuickProvider.php">
  <error line="29" column="52" severity="warning" message="The method parameter $c is never used" source="Generic.CodeAnalysis.UnusedFunctionParameter.Found"/>
-</file>
-<file name="/Library/WebServer/Documents/simplepie-ng/src/SimplePie.php">
- <error line="52" column="12" severity="warning" message="The method parameter $contentType is never used" source="Generic.CodeAnalysis.UnusedFunctionParameter.Found"/>
- <error line="52" column="12" severity="warning" message="The method parameter $charset is never used" source="Generic.CodeAnalysis.UnusedFunctionParameter.Found"/>
 </file>
 </checkstyle>
 

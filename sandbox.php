@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use Pimple\Container;
 use SamBurns\Pimple3ContainerInterop\ServiceContainer;
+use SimplePie\Configure;
 use SimplePie\Enum\CharacterSet;
 use SimplePie\Enum\Mime;
 use SimplePie\Provider\QuickProvider;
@@ -13,9 +14,9 @@ use SimplePie\SimplePie;
 
 $container = new ServiceContainer();
 $container->addConfig(new QuickProvider());
-$container['testing'] = 'Testing!';
+$configuration = new Configure($container);
 
-$simplepie = new SimplePie($container);
+$simplepie = new SimplePie($configuration);
 
 // $client = new Client([
 //     'timeout'  => 2.0,
@@ -25,4 +26,4 @@ $simplepie = new SimplePie($container);
 
 $stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
 
-print_r($simplepie->parsePsr7Stream($stream, Mime::APPLICATION_ATOM_XML));
+echo $simplepie->parseXml($stream);
