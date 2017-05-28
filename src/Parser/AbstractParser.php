@@ -25,4 +25,16 @@ abstract class AbstractParser implements ParserInterface
     {
         return $stream->getContents();
     }
+
+    /**
+     * Returns an opaque string representing the object.
+     *
+     * @return string
+     *
+     * @see http://php.net/manual/en/language.oop5.magic.php#object.tostring
+     */
+    public function __toString(): string
+    {
+        return sprintf('<%s> object', get_called_class());
+    }
 }

@@ -41,9 +41,9 @@ class SimplePie
      */
     public function parseXml(StreamInterface $stream)
     {
-        $parser = new XmlParser($stream);
+        $parser = new XmlParser($this->container, $stream);
 
-        return $parser->getRawDocument();
+        return $parser;
     }
 
     public function parseJson(StreamInterface $stream)

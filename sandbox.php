@@ -11,6 +11,7 @@ use SimplePie\Enum\CharacterSet;
 use SimplePie\Enum\Mime;
 use SimplePie\Provider\QuickProvider;
 use SimplePie\SimplePie;
+use Skyzyx\UtilityPack\Types;
 
 $container = new ServiceContainer();
 $container->addConfig(new QuickProvider());
@@ -25,5 +26,4 @@ $simplepie = new SimplePie($configuration);
 // $response = $client->get('https://github.com/skyzyx/signer/releases.atom');
 
 $stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
-
-echo $simplepie->parseXml($stream);
+$dom = $simplepie->parseXml($stream)->getDomDocument();

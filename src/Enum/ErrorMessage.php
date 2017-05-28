@@ -11,5 +11,5 @@ namespace SimplePie\Enum;
 
 class ErrorMessage extends AbstractEnum
 {
-    public const LOGGER_NOT_PSR3  = 'The configured logger MUST be compatible with `Psr\Log\LoggerInterface`. Received `%s` instead.';
+    public const LOGGER_NOT_PSR3 = 'The configured logger MUST be compatible with `Psr\Log\LoggerInterface`. Received `%s` instead.';
 }
