@@ -12,23 +12,16 @@ namespace SimplePie\Parser;
 use DOMDocument;
 use Interop\Container\ContainerInterface;
 use Psr\Http\Message\StreamInterface;
-use SimplePie\Enum\ErrorMessage;
-use SimplePie\Exception\ConfigurationException;
 use SimplePie\Mixin\ContainerTrait;
+use SimplePie\Mixin\DomDocumentTrait;
 use SimplePie\Mixin\RawDocumentTrait;
 use Throwable;
 
 class Xml extends AbstractParser
 {
     use ContainerTrait;
+    use DomDocumentTrait;
     use RawDocumentTrait;
-
-    /**
-     * The DOMDocument object which is being used to parse the content.
-     *
-     * @var DOMDocument
-     */
-    protected $domDocument;
 
     /**
      * Constructs a new instance of this class.
@@ -67,15 +60,5 @@ class Xml extends AbstractParser
         $this->domDocument->preserveWhiteSpace = false;
         $this->domDocument->substituteEntities = true;
         $this->domDocument->loadXML($this->rawDocument, $this->container['__sp__.dom.libxml']);
-    }
-
-    /**
-     * Gets the DOMDocument object which is being used to parse the content.
-     *
-     * @return DOMDocument
-     */
-    public function getDomDocument(): DOMDocument
-    {
-        return $this->domDocument;
     }
 }

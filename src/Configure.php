@@ -100,7 +100,7 @@ class Configure
      */
     protected function validateDomExtensions(): void
     {
-        $map = [];
+        $map        = [];
         $domClasses = [
             'DOMAttr',
             'DOMCdataSection',

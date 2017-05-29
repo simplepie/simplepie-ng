@@ -12,6 +12,7 @@ use SimplePie\Enum\Mime;
 use SimplePie\Provider\QuickProvider;
 use SimplePie\SimplePie;
 use Skyzyx\UtilityPack\Types;
+use SimplePie\Dictionary\Ns;
 
 $container = new ServiceContainer();
 $container->addConfig(new QuickProvider());
@@ -27,3 +28,22 @@ $simplepie = new SimplePie($configuration);
 
 $stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
 $dom = $simplepie->parseXml($stream)->getDomDocument();
+
+$xpath = new DOMXPath($dom);
+$namespace = new Ns($dom);
+
+if (
+    !is_null(
+        $ns = $namespace->getPreferredNamespaceAlias(
+            $dom->documentElement->namespaceURI
+        )
+    )
+) {
+    $xpath->registerNamespace($ns, $dom->documentElement->namespaceURI);
+}
+
+foreach ($xpath->query('/atom10:feed/atom10:entry') as $node) {
+    foreach ($xpath->query('atom10:title', $node) as $node2) {
+        echo $node2->nodeValue . PHP_EOL;
+    }
+}
