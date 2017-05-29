@@ -10,16 +10,10 @@ declare(strict_types=1);
 namespace SimplePie\Mixin;
 
 use Psr\Log\LoggerInterface;
+use SimplePie\SimplePie;
 
 trait LoggerTrait
 {
-    /**
-     * A PSR-3 logger.
-     *
-     * @var Interop\Container\ContainerInterface
-     */
-    protected $logger;
-
     /**
      * Retrieves a PSR-3 logger.
      *
@@ -27,6 +21,8 @@ trait LoggerTrait
      */
     public function getLogger(): LoggerInterface
     {
-        return $this->logger;
+        $container = SimplePie::getContainer();
+
+        return $container['__sp__.logger'];
     }
 }

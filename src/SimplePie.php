@@ -11,24 +11,50 @@ namespace SimplePie;
 
 use Interop\Container\ContainerInterface;
 use Psr\Http\Message\StreamInterface;
-use SimplePie\Mixin\ContainerTrait;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
+use SimplePie\Enum\ErrorMessage;
+use SimplePie\Exception\ConfigurationException;
 use SimplePie\Mixin\LoggerTrait;
 use SimplePie\Parser\Xml as XmlParser;
+use Skyzyx\UtilityPack\Types;
 
 class SimplePie
 {
-    use ContainerTrait;
     use LoggerTrait;
+
+    /**
+     * The PSR-11 dependency injection container.
+     *
+     * @var ContainerInterface
+     */
+    protected static $container;
 
     /**
      * Constructs a new instance of this class.
      *
      * @param ContainerInterface $container A PSR-11 dependency injection container.
      */
-    public function __construct(Configure $configuration)
+    public function __construct(ContainerInterface $container)
     {
-        $this->container = $configuration->getContainer();
-        $this->logger    = $configuration->getLogger();
+        // Run validations
+        static::validateLogger($container);
+        static::validateLibxml($container);
+        static::validateDomExtensions($container);
+
+        static::$container = $container;
+
+        static::getLogger()->debug(sprintf('`%s` has completed instantiation.', __CLASS__));
+    }
+
+    /**
+     * Gets a PSR-11 dependency injection container.
+     *
+     * @return ContainerInterface
+     */
+    public static function getContainer(): ContainerInterface
+    {
+        return static::$container;
     }
 
     /**
@@ -41,7 +67,7 @@ class SimplePie
      */
     public function parseXml(StreamInterface $stream)
     {
-        $parser = new XmlParser($this->container, $stream);
+        $parser = new XmlParser($stream);
 
         return $parser;
     }
@@ -49,5 +75,118 @@ class SimplePie
     public function parseJson(StreamInterface $stream)
     {
         return $stream->getContents();
+    }
+
+    //---------------------------------------------------------------------------
+
+    /**
+     * Validates the user's configuration for the PSR-3 logger.
+     *
+     * A valid PSR-3 logger set by the user will be utilized. If there is no
+     * logger set, the default value will be `NullLogger`. An invalid setting
+     * will throw an exception.
+     *
+     * @throws ConfigurationException
+     */
+    protected static function validateLogger(ContainerInterface $container): void
+    {
+        // The PSR-3 logger
+        if ($container->has('__sp__.logger')) {
+            if (!$container['__sp__.logger'] instanceof LoggerInterface) {
+                throw new ConfigurationException(
+                    sprintf(
+                        ErrorMessage::LOGGER_NOT_PSR3,
+                        Types::getClassOrType($container['__sp__.logger'])
+                    )
+                );
+            }
+        } else {
+            $container['__sp__.logger'] = new NullLogger();
+        }
+
+        // What are we logging with?
+        $container['__sp__.logger']->info(sprintf(
+            'Logger configured to use `%s`.',
+            Types::getClassOrType($container['__sp__.logger'])
+        ));
+    }
+
+    /**
+     * Validates the user's configuration for `LIBXML_*` XML parsing parameters.
+     *
+     * A valid PSR-3 logger set by the user will be utilized. If there is no
+     * logger set, the default value will be `NullLogger`. An invalid setting
+     * will throw an exception.
+     *
+     * @throws ConfigurationException
+     */
+    protected static function validateLibxml(ContainerInterface $container): void
+    {
+        // The PSR-3 logger
+        if (!$container->has('__sp__.dom.libxml')) {
+            $container['__sp__.dom.libxml'] = 0
+                | LIBXML_BIGLINES
+                | LIBXML_COMPACT
+                | LIBXML_HTML_NODEFDTD
+                | LIBXML_HTML_NOIMPLIED
+                | LIBXML_NOBLANKS
+                | LIBXML_NOCDATA
+                | LIBXML_NOENT
+                | LIBXML_NSCLEAN
+                | LIBXML_PARSEHUGE;
+        }
+
+        // What are we logging with?
+        $container['__sp__.logger']->debug(sprintf(
+            'Libxml configuration has a bitwise value of `%s`.%s',
+            $container['__sp__.dom.libxml'],
+            ($container['__sp__.dom.libxml'] === 4808966)
+                ? ' (This is the default configuration.)'
+                : ''
+        ));
+    }
+
+    /**
+     * Pre-processes any DOM-extending classes you have defined in userland. These are applied to
+     * the top-level `DOMDocument` object using `registerNodeClass()`.
+     *
+     * @see http://php.net/manual/en/domdocument.registernodeclass.php
+     */
+    protected static function validateDomExtensions(ContainerInterface $container): void
+    {
+        $map        = [];
+        $domClasses = [
+            'DOMAttr',
+            'DOMCdataSection',
+            'DOMCharacterData',
+            'DOMComment',
+            'DOMDocument',
+            'DOMDocumentFragment',
+            'DOMDocumentType',
+            'DOMElement',
+            'DOMEntity',
+            'DOMEntityReference',
+            'DOMException',
+            'DOMImplementation',
+            'DOMNamedNodeMap',
+            'DOMNode',
+            'DOMNodeList',
+            'DOMNotation',
+            'DOMProcessingInstruction',
+            'DOMText',
+            'DOMXPath',
+        ];
+
+        foreach ($domClasses as $domClass) {
+            if ($container->has(sprintf('__sp__.dom.extend.%s', $domClass))) {
+                $map[$domClass] = $container[sprintf('__sp__.dom.extend.%s', $domClass)];
+            }
+        }
+
+        $container['__sp__.dom.extend.__matches__'] = $map;
+
+        if (!empty($map)) {
+            $container['__sp__.logger']->debug('DOMDocument is configured to use extended classes.', $map);
+        }
     }
 }

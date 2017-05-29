@@ -10,33 +10,30 @@ declare(strict_types=1);
 namespace SimplePie\Parser;
 
 use DOMDocument;
-use Interop\Container\ContainerInterface;
 use Psr\Http\Message\StreamInterface;
-use SimplePie\Mixin\ContainerTrait;
 use SimplePie\Mixin\DomDocumentTrait;
 use SimplePie\Mixin\RawDocumentTrait;
+use SimplePie\SimplePie;
 use Throwable;
 
 class Xml extends AbstractParser
 {
-    use ContainerTrait;
     use DomDocumentTrait;
     use RawDocumentTrait;
 
     /**
      * Constructs a new instance of this class.
      *
-     * @param ContainerInterface $container A PSR-11 dependency injection container.
-     * @param StreamInterface    $stream    A PSR-7 `StreamInterface` which is typically returned by
-     *                                      the `getBody()` method of a `ResponseInterface` class.
+     * @param StreamInterface $stream A PSR-7 `StreamInterface` which is typically returned by
+     *                                the `getBody()` method of a `ResponseInterface` class.
      *
      * @throws Error
      * @throws TypeError
      */
-    public function __construct(ContainerInterface $container, StreamInterface $stream)
+    public function __construct(StreamInterface $stream)
     {
         // Container
-        $this->container = $container;
+        $this->container = SimplePie::getContainer();
 
         // Raw stream
         $this->rawDocument = $this->readStream($stream);
@@ -45,8 +42,8 @@ class Xml extends AbstractParser
         $this->domDocument = new DOMDocument();
 
         // Handle registerNodeClass() calls
-        if ($container->has('__sp__.dom.extend.__matches__')) {
-            foreach ($container['__sp__.dom.extend.__matches__'] as $baseClass => $extendingClass) {
+        if ($this->container->has('__sp__.dom.extend.__matches__')) {
+            foreach ($this->container['__sp__.dom.extend.__matches__'] as $baseClass => $extendingClass) {
                 try {
                     $this->domDocument->registerNodeClass($baseClass, $extendingClass);
                 } catch (Throwable $e) {
