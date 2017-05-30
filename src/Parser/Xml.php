@@ -12,7 +12,7 @@ namespace SimplePie\Parser;
 use DOMDocument;
 use Psr\Http\Message\StreamInterface;
 use ReflectionClass;
-use SimplePie\Dom\DomInterface;
+use SimplePie\Dom;
 use SimplePie\Enum\ErrorMessage;
 use SimplePie\Exception\ConfigurationException;
 use SimplePie\Mixin\DomDocumentTrait;
@@ -69,5 +69,6 @@ class Xml extends AbstractParser
         $this->domDocument->preserveWhiteSpace = false;
         $this->domDocument->substituteEntities = true;
         $this->domDocument->loadXML($this->rawDocument, $this->container['__sp__.dom.libxml']);
+        $this->domDocument->normalizeDocument();
     }
 }
