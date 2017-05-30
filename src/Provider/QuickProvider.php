@@ -36,7 +36,7 @@ class QuickProvider implements ServiceProviderInterface
             return $logger;
         };
 
-        $container['logger.handler.error_debug'] = function (Container $c) {
+        $container['logger.handler.error_debug'] = function () {
             return new ErrorLogHandler(
                 ErrorLogHandler::OPERATING_SYSTEM,
                 LogLevel::DEBUG,

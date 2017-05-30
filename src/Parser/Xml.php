@@ -11,6 +11,10 @@ namespace SimplePie\Parser;
 
 use DOMDocument;
 use Psr\Http\Message\StreamInterface;
+use ReflectionClass;
+use SimplePie\Dom\DomInterface;
+use SimplePie\Enum\ErrorMessage;
+use SimplePie\Exception\ConfigurationException;
 use SimplePie\Mixin\DomDocumentTrait;
 use SimplePie\Mixin\RawDocumentTrait;
 use SimplePie\SimplePie;
@@ -29,6 +33,7 @@ class Xml extends AbstractParser
      *
      * @throws Error
      * @throws TypeError
+     * @throws ConfigurationException
      */
     public function __construct(StreamInterface $stream)
     {
@@ -42,13 +47,20 @@ class Xml extends AbstractParser
         $this->domDocument = new DOMDocument();
 
         // Handle registerNodeClass() calls
-        if ($this->container->has('__sp__.dom.extend.__matches__')) {
-            foreach ($this->container['__sp__.dom.extend.__matches__'] as $baseClass => $extendingClass) {
-                try {
-                    $this->domDocument->registerNodeClass($baseClass, $extendingClass);
-                } catch (Throwable $e) {
-                    throw $e;
+        foreach ($this->container['__sp__.dom.extend.__matches__'] as $baseClass => $extendingClass) {
+            try {
+                if ((new ReflectionClass($extendingClass))->implementsInterface(DomInterface::class)) {
+                    $this->domDocument->registerNodeClass(sprintf('DOM%s', $baseClass), $extendingClass);
+                } else {
+                    throw new ConfigurationException(sprintf(
+                        ErrorMessage::DOM_NOT_EXTEND_FROM,
+                        $baseClass,
+                        $extendingClass,
+                        $baseClass
+                    ));
                 }
+            } catch (Throwable $e) {
+                throw $e;
             }
         }
 

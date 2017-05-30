@@ -150,31 +150,29 @@ class SimplePie
      * Pre-processes any DOM-extending classes you have defined in userland. These are applied to
      * the top-level `DOMDocument` object using `registerNodeClass()`.
      *
+     * This only works with classes which extend from `DOMNode`.
+     *
      * @see http://php.net/manual/en/domdocument.registernodeclass.php
+     * @see https://bugs.php.net/48352
      */
     protected static function validateDomExtensions(ContainerInterface $container): void
     {
         $map        = [];
         $domClasses = [
-            'DOMAttr',
-            'DOMCdataSection',
-            'DOMCharacterData',
-            'DOMComment',
-            'DOMDocument',
-            'DOMDocumentFragment',
-            'DOMDocumentType',
-            'DOMElement',
-            'DOMEntity',
-            'DOMEntityReference',
-            'DOMException',
-            'DOMImplementation',
-            'DOMNamedNodeMap',
-            'DOMNode',
-            'DOMNodeList',
-            'DOMNotation',
-            'DOMProcessingInstruction',
-            'DOMText',
-            'DOMXPath',
+            'Attr',
+            'CdataSection',
+            'CharacterData',
+            'Comment',
+            'Document',
+            'DocumentFragment',
+            'DocumentType',
+            'Element',
+            'Entity',
+            'EntityReference',
+            'Node',
+            'Notation',
+            'ProcessingInstruction',
+            'Text',
         ];
 
         foreach ($domClasses as $domClass) {

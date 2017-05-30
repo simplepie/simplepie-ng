@@ -14,9 +14,12 @@ use SimplePie\Provider\QuickProvider;
 use SimplePie\SimplePie;
 use Skyzyx\UtilityPack\Types;
 
+
+use SimplePie\Dom\Node;
+
 $container = new ServiceContainer();
 $container->addConfig(new QuickProvider());
-
+// $container['__sp__.dom.extend.Node'] = DOMNode::class;
 $simplepie = new SimplePie($container);
 
 // $client = new Client([

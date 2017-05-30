@@ -10,10 +10,12 @@ declare(strict_types=1);
 namespace SimplePie\Dictionary;
 
 use DOMNode;
-use ReflectionObject;
+use SimplePie\Mixin\LoggerTrait;
 
 class Ns
 {
+    use LoggerTrait;
+
     public const ATOM_03 = 'http://purl.org/atom/ns#';
     public const ATOM_10 = 'http://www.w3.org/2005/Atom';
     public const RDF     = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
@@ -35,22 +37,53 @@ class Ns
     // http://www.itunes.com/dtds/podcast-1.0.dtd
 
     /**
-     * The reflected data of this class.
+     * A mapping of namespace URIs to preferred namespace aliases.
      *
-     * @var ReflectionObject
+     * @var array
      */
-    protected $reflected;
+    protected $mapping = [];
 
     /**
      * Constructs a new instance of this class.
      */
     public function __construct(DOMNode $dom)
     {
-        $this->reflected   = new ReflectionObject($this);
         $this->domDocument = $dom;
+
+        $this->mapping = [
+            static::ATOM_03 => 'atom03',
+            static::ATOM_10 => 'atom10',
+            static::RDF     => 'rdf',
+            static::RSS_090 => 'rss09',
+            static::RSS_10  => 'rss10',
+            static::RSS_20  => 'rss20',
+            static::XHTML   => 'xhtml',
+            static::XML     => 'xml',
+        ];
     }
 
-    public function getNamespaces(): array
+    /**
+     * Adds new aliases to this list of aliases. Set an associative array where
+     * the key is the namespace URI and the namespace alias as the value.
+     *
+     * @param array $aliases An associative array of namespace URIs to namespace aliases.
+     *
+     * @return array The updated list of namespace aliases.
+     */
+    public function addAliases(array $aliases): array
+    {
+        $this->mapping = array_merge($this->mapping, $aliases);
+        $this->getLogger()->info('Added namespace URIs and namespace aliases.', $this->mapping);
+
+        return $this->mapping;
+    }
+
+    /**
+     * Gets the list of document-defined namespace aliases and namespace URIs.
+     *
+     * @return array
+     */
+    public function getDocNamespaces(): array
     {
         return simplexml_import_dom($this->domDocument)->getDocNamespaces(true, true);
     }
@@ -69,20 +102,20 @@ class Ns
         $namespaceUri = $namespaceUri
             ?? $this->domDocument->documentElement->namespaceUri;
 
-        $map = [
-            static::ATOM_03 => 'atom03',
-            static::ATOM_10 => 'atom10',
-            static::RDF     => 'rdf',
-            static::RSS_090 => 'rss09',
-            static::RSS_10  => 'rss10',
-            static::RSS_20  => 'rss20',
-            static::XHTML   => 'xhtml',
-            static::XML     => 'xml',
-        ];
+        if (isset($this->mapping[$namespaceUri])) {
+            $this->getLogger()->info(sprintf(
+                'The namespace URI "%s" has resolved to a namespace alias of "%s".',
+                $namespaceUri,
+                $this->mapping[$namespaceUri]
+            ));
 
-        if (isset($map[$namespaceUri])) {
-            return $map[$namespaceUri];
+            return $this->mapping[$namespaceUri];
         }
+
+        $this->getLogger()->info(sprintf(
+            'The namespace URI "%s" was not resolved to any known namespace alias.',
+            $namespaceUri
+        ));
 
         return null;
     }
