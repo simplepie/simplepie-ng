@@ -10,8 +10,10 @@ declare(strict_types=1);
 namespace SimplePie\Parser;
 
 use DOMDocument;
+use DOMXPath;
 use Psr\Http\Message\StreamInterface;
 use ReflectionClass;
+use SimplePie\Dictionary\Ns;
 use SimplePie\Dom;
 use SimplePie\Enum\ErrorMessage;
 use SimplePie\Exception\ConfigurationException;
@@ -70,5 +72,28 @@ class Xml extends AbstractParser
         $this->domDocument->substituteEntities = true;
         $this->domDocument->loadXML($this->rawDocument, $this->container['__sp__.dom.libxml']);
         $this->domDocument->normalizeDocument();
+    }
+
+    /**
+     * Gets a reference to the `DOMXPath` object, with the default namespace
+     * already registered.
+     *
+     * @return DOMXPath
+     */
+    public function xpath()
+    {
+        $xpath     = new DOMXPath($dom);
+        $namespace = new Ns($dom);
+
+        if (!is_null(
+            $ns = $namespace->getPreferredNamespaceAlias(
+                $this->domDocument->documentElement->namespaceURI
+            )
+        )
+        ) {
+            $xpath->registerNamespace($ns, $this->domDocument->documentElement->namespaceURI);
+        }
+
+        return $xpath;
     }
 }

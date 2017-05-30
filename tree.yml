@@ -1,0 +1,145 @@
+---
+
+feed:
+    [lang]: LANG {channel[language]}
+    *author¹: {channel[managingEditor], channel[webMaster]} "betty@herald.com (Betty Guernsey)"
+        name¹: STRING {json[author][name]}
+        uri¹: IRI {json[author][url]}
+        email¹: STRING
+        avatar:
+            self: IRI {json[author][avatar]}
+    category[]:
+        term¹: STRING {channel[category][:text]}
+        scheme¹: IRI {channel[category][domain]}
+        label¹: STRING
+    contributor[]: {feed[author]}
+        name¹: STRING
+        uri¹: IRI
+        email¹: STRING
+    generator¹:
+        uri¹: IRI
+        version: STRING {channel[generator]}
+    image[]:
+        uri: IRI {feed[logo], feed[icon], json[image], json[favicon]}
+        title: STRING
+        link: IRI
+        width: INT
+        height: INT
+        description: STRING
+    *id¹: STRING
+    *link[self]¹:
+        href¹: IRI {json[feed_url]}
+        rel¹: STRING
+        type¹: MEDIATYPE
+        hreflang¹: LANG
+        title¹: STRING
+        length¹: INT
+    *link[alternate][]:
+        href¹: IRI {channel[link], json[home_page_url]}
+        rel¹: STRING
+        type¹: MEDIATYPE
+        hreflang¹: LANG
+        title¹: STRING
+        length¹: INT
+    rating: PICS
+    rights¹: STRING {channel[copyright]}
+    subtitle¹: STRING {channel[description], json[description]}
+    *title¹: STRING {channel[title], json[title]}
+    *updated¹: DATETIME {channel[lastBuildDate], channel[pubDate]}
+    *entry: {channel[items], json.items}
+        *author¹: {item[author]} "betty@herald.com (Betty Guernsey)"
+            name¹: STRING
+            uri¹: IRI
+            email¹: STRING
+        category[]:
+            term¹: STRING {item[category][:text], json.item[tags]}
+            scheme¹: IRI {item[category][domain]}
+            label¹: STRING
+        content¹:
+            [type=text]: STRING {item[description], json.item[content_text]}
+            [type=html]: STRING {item[description], json.item[content_html]}
+        contributor[]:
+            name¹: STRING
+            uri¹: IRI
+            email¹: STRING
+        *id¹: STRING {item[guid][isPermaLink=false], json.item[id]}
+        image[]:
+            uri: IRI {json.item[image], json.item[banner_image]}
+            title: STRING
+            link: IRI
+            width: INT
+            height: INT
+            description: STRING
+        *link[alternate][]¹:
+            href¹: IRI {item[link], item[guid][isPermaLink=true], json.item[url], json.item[external_url]}
+            rel¹: STRING
+            type¹: MEDIATYPE
+            hreflang¹: LANG
+            title¹: STRING
+            length¹: INT
+        *link[alternate][rel=enclosure][]¹:
+            href¹: IRI {item[enclosure][url], json.item.attachment[url]}
+            rel¹: STRING
+            type¹: MEDIATYPE {item[enclosure][type], json.item.attachment[mime_type]}
+            hreflang¹: LANG
+            title¹: STRING {json.item.attachment[title]}
+            length¹: INT {item[enclosure][length], json.item.attachment[size_in_bytes]}
+            duration: INT {json.item.attachment[duration_in_seconds]}
+        *published¹: DATETIME {item[pubDate], json.item[date_published]}
+        rights¹: STRING
+        subtitle¹: STRING
+        *summary¹: STRING {item[description], json.item[summary]}
+        *title¹: STRING {item[title], json.item[title]}
+        *updated¹: DATETIME {json.item[date_modified]}
+        source[]¹:
+            *author¹:
+                name¹: STRING
+                uri¹: IRI
+                email¹: STRING
+            category:
+                term¹: STRING
+                scheme¹: IRI
+                label¹: STRING
+            contributor:
+                name¹: STRING
+                uri¹: IRI
+                email¹: STRING
+            generator¹:
+                uri¹: IRI
+                version: STRING
+            icon¹: IRI
+            *id¹: STRING
+            *link[self]¹:
+                href¹: IRI
+                rel¹: STRING
+                type¹: MEDIATYPE
+                hreflang¹: LANG
+                title¹: STRING
+                length¹: INT
+            *link[alternate][]¹:
+                href¹: IRI {item[source][url]}
+                rel¹: STRING
+                type¹: MEDIATYPE
+                hreflang¹: LANG
+                title¹: STRING
+                length¹: INT
+            logo¹: IRI
+            rights¹: STRING
+            subtitle¹: STRING
+            *title¹: STRING {item[source][:text]}
+            *updated¹: DATETIME
+
+
+@type
+    - text
+    - html
+    - xhtml
+
+atom:feed elements MUST contain one or more atom:author elements,
+unless all of the atom:feed element's child atom:entry elements
+contain at least one atom:author element.
+
+atom:entry elements MUST contain one or more atom:author elements,
+unless the atom:entry contains an atom:source element that
+contains an atom:author element or, in an Atom Feed Document, the
+atom:feed element contains an atom:author element itself.

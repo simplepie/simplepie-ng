@@ -9,13 +9,13 @@ declare(strict_types=1);
 
 namespace SimplePie\Type;
 
-class Feed
+class Entry
 {
     public function __construct()
     {
     }
 
-    public function getItems()
+    public function getTitle()
     {
     }
 }

@@ -14,13 +14,11 @@ use SimplePie\Provider\QuickProvider;
 use SimplePie\SimplePie;
 use Skyzyx\UtilityPack\Types;
 
-
-use SimplePie\Dom\Node;
-
 $container = new ServiceContainer();
 $container->addConfig(new QuickProvider());
 // $container['__sp__.dom.extend.Node'] = DOMNode::class;
 $simplepie = new SimplePie($container);
+$simplepie->register();
 
 // $client = new Client([
 //     'timeout'  => 2.0,
@@ -29,23 +27,4 @@ $simplepie = new SimplePie($container);
 // $response = $client->get('https://github.com/skyzyx/signer/releases.atom');
 
 $stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
-$dom = $simplepie->parseXml($stream)->getDomDocument();
-
-$xpath = new DOMXPath($dom);
-$namespace = new Ns($dom);
-
-if (
-    !is_null(
-        $ns = $namespace->getPreferredNamespaceAlias(
-            $dom->documentElement->namespaceURI
-        )
-    )
-) {
-    $xpath->registerNamespace($ns, $dom->documentElement->namespaceURI);
-}
-
-foreach ($xpath->query('/atom10:feed/atom10:entry') as $node) {
-    foreach ($xpath->query('atom10:title', $node) as $node2) {
-        echo $node2->nodeValue . PHP_EOL;
-    }
-}
+$parser = $simplepie->parseXml($stream);

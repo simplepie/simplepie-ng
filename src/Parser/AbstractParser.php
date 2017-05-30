@@ -35,6 +35,6 @@ abstract class AbstractParser implements ParserInterface
      */
     public function __toString(): string
     {
-        return sprintf('<%s> object', get_called_class());
+        return sprintf('<%s %s>', get_called_class(), spl_object_hash($this));
     }
 }

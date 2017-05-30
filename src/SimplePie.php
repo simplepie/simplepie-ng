@@ -63,7 +63,7 @@ class SimplePie
      * @param StreamInterface $stream A PSR-7 `StreamInterface` which is typically returned by the
      *                                `getBody()` method of a `ResponseInterface` class.
      *
-     * @return [type] [description]
+     * @return XmlParser
      */
     public function parseXml(StreamInterface $stream)
     {

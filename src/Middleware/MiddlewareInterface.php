@@ -11,5 +11,4 @@ namespace SimplePie\Middleware;
 
 interface MiddlewareInterface
 {
-    public function getName(): string;
 }
