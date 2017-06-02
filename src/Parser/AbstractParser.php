@@ -29,12 +29,14 @@ abstract class AbstractParser implements ParserInterface
     /**
      * Returns an opaque string representing the object.
      *
+     * Note: Use of MD5 here is not cryptographically significant.
+     *
      * @return string
      *
      * @see http://php.net/manual/en/language.oop5.magic.php#object.tostring
      */
     public function __toString(): string
     {
-        return sprintf('<%s %s>', get_called_class(), spl_object_hash($this));
+        return sprintf('<%s: resource %s>', get_called_class(), md5(spl_object_hash($this)));
     }
 }

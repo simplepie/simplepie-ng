@@ -18,7 +18,6 @@ $container = new ServiceContainer();
 $container->addConfig(new QuickProvider());
 // $container['__sp__.dom.extend.Node'] = DOMNode::class;
 $simplepie = new SimplePie($container);
-$simplepie->register();
 
 // $client = new Client([
 //     'timeout'  => 2.0,
@@ -28,3 +27,5 @@ $simplepie->register();
 
 $stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
 $parser = $simplepie->parseXml($stream);
+
+echo $parser . PHP_EOL;

@@ -14,11 +14,11 @@ use DOMXPath;
 class Atom extends AbstractMiddleware implements MiddlewareInterface
 {
     /**
-     * [process description]
+     * [process description].
      *
-     * @param  DOMXPath $xpath   [description]
-     * @param  callable $next    [description]
-     * @param  array    $options [description]
+     * @param DOMXPath $xpath   [description]
+     * @param callable $next    [description]
+     * @param array    $options [description]
      *
      * @see https://tools.ietf.org/html/rfc4287
      */
