@@ -44,20 +44,15 @@ abstract class AbstractMiddleware
     }
 
     /**
-     * Enables this instance to be called as a function.
+     * Checks whether or not a particular property exists on an object, and if not, instantiates it as an array.
      *
-     * @param DOMXPath $xpath   The instantiated `DOMXPath` object for this document.
-     * @param callable $next    The next middleware in the stack.
-     * @param array    $options Options passed-in from the calling environment that the middleware can use.
-     *
-     * @see http://php.net/manual/en/language.oop5.magic.php#object.invoke
+     * @param mixed  $object   An object that you can add ad-hoc properties to. Preferably a `stdClass` object.
+     * @param string $property The name of the property to check and/or add.
      */
-    public function __invoke(DOMXPath $xpath, callable $next, array $options)
+    public function addArrayProperty(&$object, string $property): void
     {
-        $callable = $this->fn;
-
-        if ($callable()) {
-            $this->process($xpath, $next);
+        if (!isset($object->$property)) {
+            $object->$property = [];
         }
     }
 }

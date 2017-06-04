@@ -23,6 +23,6 @@ trait LoggerTrait
     {
         $container = SimplePie::getContainer();
 
-        return $container['__sp__.logger'];
+        return $container['_.logger'];
     }
 }

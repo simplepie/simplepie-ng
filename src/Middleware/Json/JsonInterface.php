@@ -7,8 +7,10 @@
  */
 declare(strict_types=1);
 
-namespace SimplePie\Middleware;
+namespace SimplePie\Middleware\Json;
 
-class Rss extends AbstractMiddleware implements MiddlewareInterface
+use SimplePie\Middleware\MiddlewareInterface;
+
+interface JsonInterface extends MiddlewareInterface
 {
 }

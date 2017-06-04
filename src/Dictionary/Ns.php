@@ -103,19 +103,8 @@ class Ns
             ?? $this->domDocument->documentElement->namespaceUri;
 
         if (isset($this->mapping[$namespaceUri])) {
-            $this->getLogger()->info(sprintf(
-                'The namespace URI "%s" has resolved to a namespace alias of "%s".',
-                $namespaceUri,
-                $this->mapping[$namespaceUri]
-            ));
-
             return $this->mapping[$namespaceUri];
         }
-
-        $this->getLogger()->info(sprintf(
-            'The namespace URI "%s" was not resolved to any known namespace alias.',
-            $namespaceUri
-        ));
 
         return null;
     }

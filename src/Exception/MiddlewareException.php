@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace SimplePie\Exception;
 
 /**
- * `ConfigurationException` is thrown when there is an error while validating the configuration settings.
+ * `MiddlewareException` is thrown when there is an error while registering or running middleware.
  */
-class ConfigurationException extends SimplePieException
+class MiddlewareException extends SimplePieException
 {
 }

@@ -7,8 +7,10 @@
  */
 declare(strict_types=1);
 
-namespace SimplePie\Util;
+namespace SimplePie\Middleware\Html;
 
-class FeedType
+use SimplePie\Middleware\MiddlewareInterface;
+
+interface HtmlInterface extends MiddlewareInterface
 {
 }

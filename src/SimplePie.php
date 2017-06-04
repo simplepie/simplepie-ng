@@ -60,18 +60,31 @@ class SimplePie
     /**
      * Parses content which is known to be valid XML and is encoded as UTF-8.
      *
-     * @param StreamInterface $stream A PSR-7 `StreamInterface` which is typically returned by the
-     *                                `getBody()` method of a `ResponseInterface` class.
+     * @param StreamInterface $stream                  A PSR-7 `StreamInterface` which is typically returned by the
+     *                                                 `getBody()` method of a `ResponseInterface` class.
+     * @param bool            $handleHtmlEntitiesInXml Whether or not SimplePie should pre-parse the XML as HTML to
+     *                                                 resolve the entities. A value of `true` means that SimplePie
+     *                                                 should inject the entity definitions. A value of `false` means
+     *                                                 that SimplePie should NOT inject the entity definitions. The
+     *                                                 default value is `false`.
      *
      * @return XmlParser
      */
-    public function parseXml(StreamInterface $stream)
+    public function parseXml(StreamInterface $stream, bool $handleHtmlEntitiesInXml = false): XmlParser
     {
-        $parser = new XmlParser($stream);
+        $parser = new XmlParser($stream, $handleHtmlEntitiesInXml);
 
         return $parser;
     }
 
+    /**
+     * Parses content which is known to be valid JSON and is encoded as UTF-8.
+     *
+     * @param StreamInterface $stream A PSR-7 `StreamInterface` which is typically returned by the
+     *                                `getBody()` method of a `ResponseInterface` class.
+     *
+     * @return JsonParser
+     */
     public function parseJson(StreamInterface $stream)
     {
         return $stream->getContents();
@@ -91,23 +104,23 @@ class SimplePie
     protected static function validateLogger(ContainerInterface $container): void
     {
         // The PSR-3 logger
-        if ($container->has('__sp__.logger')) {
-            if (!$container['__sp__.logger'] instanceof LoggerInterface) {
+        if ($container->has('_.logger')) {
+            if (!$container['_.logger'] instanceof LoggerInterface) {
                 throw new ConfigurationException(
                     sprintf(
                         ErrorMessage::LOGGER_NOT_PSR3,
-                        Types::getClassOrType($container['__sp__.logger'])
+                        Types::getClassOrType($container['_.logger'])
                     )
                 );
             }
         } else {
-            $container['__sp__.logger'] = new NullLogger();
+            $container['_.logger'] = new NullLogger();
         }
 
         // What are we logging with?
-        $container['__sp__.logger']->info(sprintf(
+        $container['_.logger']->info(sprintf(
             'Logger configured to use `%s`.',
-            Types::getClassOrType($container['__sp__.logger'])
+            Types::getClassOrType($container['_.logger'])
         ));
     }
 
@@ -123,8 +136,8 @@ class SimplePie
     protected static function validateLibxml(ContainerInterface $container): void
     {
         // The PSR-3 logger
-        if (!$container->has('__sp__.dom.libxml')) {
-            $container['__sp__.dom.libxml'] = 0
+        if (!$container->has('_.dom.libxml')) {
+            $container['_.dom.libxml'] = 0
                 | LIBXML_BIGLINES
                 | LIBXML_COMPACT
                 | LIBXML_HTML_NODEFDTD
@@ -137,10 +150,10 @@ class SimplePie
         }
 
         // What are we logging with?
-        $container['__sp__.logger']->debug(sprintf(
+        $container['_.logger']->debug(sprintf(
             'Libxml configuration has a bitwise value of `%s`.%s',
-            $container['__sp__.dom.libxml'],
-            ($container['__sp__.dom.libxml'] === 4808966)
+            $container['_.dom.libxml'],
+            ($container['_.dom.libxml'] === 4808966)
                 ? ' (This is the default configuration.)'
                 : ''
         ));
@@ -176,15 +189,15 @@ class SimplePie
         ];
 
         foreach ($domClasses as $domClass) {
-            if ($container->has(sprintf('__sp__.dom.extend.%s', $domClass))) {
-                $map[$domClass] = $container[sprintf('__sp__.dom.extend.%s', $domClass)];
+            if ($container->has(sprintf('_.dom.extend.%s', $domClass))) {
+                $map[$domClass] = $container[sprintf('_.dom.extend.%s', $domClass)];
             }
         }
 
-        $container['__sp__.dom.extend.__matches__'] = $map;
+        $container['_.dom.extend._matches'] = $map;
 
         if (!empty($map)) {
-            $container['__sp__.logger']->debug('DOMDocument is configured to use extended classes.', $map);
+            $container['_.logger']->debug('DOMDocument is configured to use extended classes.', $map);
         }
     }
 }
