@@ -63,3 +63,18 @@ Previously, SimplePie tried to do it all. In retrospect, this was a bad idea.
 * The HTTP layer will support PSR-7 adapters.
 * The dependency injection layer will support PSR-11 adapters.
 * Middleware isn't HTTP middleware, so doesn't follow PSR-15, but is inspired by Guzzle's single-pass [Middleware HandlerStack](http://docs.guzzlephp.org/en/latest/handlers-and-middleware.html#handlerstack).
+
+## Services to integrate code with
+
+* https://zappr.opensource.zalan.do/login
+* https://gratipay.com
+* https://cla-assistant.io
+* https://sideci.com
+* https://about.pullapprove.com/features/
+* https://packagist.org
+* https://travis-ci.org
+* https://coveralls.io
+* https://codeclimate.com
+* https://scrutinizer-ci.com
+* https://www.versioneye.com
+* https://insight.sensiolabs.com
