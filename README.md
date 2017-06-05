@@ -17,34 +17,102 @@
 * Will almost certainly not work with shared hosting providers. Time to get a grown-up server.
 
 
+## Examples
+
+**Still in the proof-of-concept phase.** Looking at dependency injection, PSR-3 logging, and using PSR-7 for feed transport.
+
+There will probably be a wrapper for `parseXml()`, `parseJson()`, and `parseHtml()` in the form of `parse()`. There will also be some level of PSR-6/16 caching at the object layer to make non-first runs even faster.
+
+```php
+use GuzzleHttp\Psr7;
+use Monolog\Handler\ErrorLogHandler;
+use Psr\Log\LogLevel;
+use SamBurns\Pimple3ContainerInterop\ServiceContainer;
+use SimplePie\Enum\FeedType;
+use SimplePie\Provider\QuickProvider;
+use SimplePie\SimplePie;
+
+// Supports PSR-11 containers. Pimple 3 needs a wrapper.
+$container = new ServiceContainer();
+
+// Configure a simple PSR-3 logger.
+// (Uses a service locator pattern. Currently reviewing alternatives.)
+$container['_.logger'] = function (Container $c) {
+    $logger = new Logger('SimplePie');
+    $logger->pushHandler(new ErrorLogHandler(
+        ErrorLogHandler::OPERATING_SYSTEM,
+        LogLevel::DEBUG,
+        true,
+        false
+    ));
+
+    return $logger;
+};
+
+// Configure middleware for parsing formats. Parse as much or as little as you want.
+// (Uses a service locator pattern. Currently reviewing alternatives.)
+$container['_.middleware'] = function (Container $c) {
+    $stack = new HandlerStack($c['_.logger']);
+
+    $stack
+        ->append(new JsonFeed(), 'jsonfeed')
+        ->append(new Atom()    , 'atom10')
+        ->append(new Rss()     , 'rss20')
+
+    return $stack;
+};
+
+// Instantiate SimplePie with your container.
+// (Uses a service locator pattern. Currently reviewing alternatives.)
+$simplepie = new SimplePie($container);
+
+// Pass a PSR-7 stream to SimplePie for parsing.
+$stream = Psr7\stream_for(file_get_contents(__DIR__ . '/github-releases.atom'));
+
+// Specifically parses XML.
+// Only applies the middleware that is registered as supporting XML feed types.
+$parser = $simplepie->parseXml($stream, true);
+
+// Reference the top-level feed object
+$feed = $parser->getFeed();
+
+// Use familiar syntax to read the data you care about.
+echo $feed->getTitle();
+foreach ($feed->getItems() as $item) {
+    echo $item->getTitle();
+}
+```
+
+
 ## Feed support through middleware (planned)
 
-* [JSON Feed 1.0](https://jsonfeed.org/version/1)
-* [RSS 1.0](http://web.resource.org/rss/1.0/spec)
-* [RSS 2.0](http://www.rssboard.org/rss-specification)
-* [Atom 1.0](https://tools.ietf.org/html/rfc4287)
+* [ ] [JSON Feed 1.0](https://jsonfeed.org/version/1)
+* [ ] [RSS 1.0](http://web.resource.org/rss/1.0/spec)
+* [ ] [RSS 2.0](http://www.rssboard.org/rss-specification)
+* [ ] [Atom 1.0](https://tools.ietf.org/html/rfc4287)
 
 ### And XML grammars
 
-* [RSS 1.0 Content Modules](http://web.resource.org/rss/1.0/modules/content/)
-* [Dublin Core Metadata 1.0](http://dublincore.org/documents/1998/09/dces/) and [1.1](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements)
-* [Dublin Core Terms](http://dublincore.org/documents/2012/06/14/dcmi-terms/)
-* [W3C WGS84 Geo](https://www.w3.org/2003/01/geo/)
-* [GeoRSS (Simple)](http://www.georss.org/simple.html)
-* [GeoRSS (GML)](http://www.georss.org/gml.html)
-* [Media RSS](http://www.rssboard.org/media-rss)
-* [iTunes Podcast RSS](https://help.apple.com/itc/podcasts_connect/#/itcb54353390)
-* [Creative Commons](http://backend.userland.com/creativeCommonsRssModule)
-* [W3C Annotation Schema](https://www.w3.org/2000/10/annotation-ns)
-* [W3C Simple Knowledge Organization System](https://www.w3.org/2009/08/skos-reference/skos.html)
-* [FOAF](http://xmlns.com/foaf/spec/)
+* [ ] [RSS 1.0 Content Modules](http://web.resource.org/rss/1.0/modules/content/)
+* [ ] [Dublin Core Metadata 1.0](http://dublincore.org/documents/1998/09/dces/)
+* [ ] [Dublin Core Metadata 1.1](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements)
+* [ ] [Dublin Core Terms](http://dublincore.org/documents/2012/06/14/dcmi-terms/)
+* [ ] [W3C WGS84 Geo](https://www.w3.org/2003/01/geo/)
+* [ ] [GeoRSS (Simple)](http://www.georss.org/simple.html)
+* [ ] [GeoRSS (GML)](http://www.georss.org/gml.html)
+* [ ] [Media RSS](http://www.rssboard.org/media-rss)
+* [ ] [iTunes Podcast RSS](https://help.apple.com/itc/podcasts_connect/#/itcb54353390)
+* [ ] [Creative Commons](http://backend.userland.com/creativeCommonsRssModule)
+* [ ] [W3C Annotation Schema](https://www.w3.org/2000/10/annotation-ns)
+* [ ] [W3C Simple Knowledge Organization System](https://www.w3.org/2009/08/skos-reference/skos.html)
+* [ ] [FOAF](http://xmlns.com/foaf/spec/)
 
 ### Might come later
 
-* [h-feed](http://microformats.org/wiki/h-feed)/[h-entry](http://microformats.org/wiki/h-entry)
-* Ancient RSS versions
-* Atom 0.3
-* [OpenSearch](http://www.opensearch.org/Specifications/OpenSearch/1.1/Draft_5)
+* [ ] [h-feed](http://microformats.org/wiki/h-feed)/[h-entry](http://microformats.org/wiki/h-entry)
+* [ ] Ancient RSS versions
+* [ ] Atom 0.3
+* [ ] [OpenSearch](http://www.opensearch.org/Specifications/OpenSearch/1.1/Draft_5)
 
 ### Other interesting things
 
@@ -66,15 +134,15 @@ Previously, SimplePie tried to do it all. In retrospect, this was a bad idea.
 
 ## Services to integrate code with
 
-* https://zappr.opensource.zalan.do/login
-* https://gratipay.com
-* https://cla-assistant.io
-* https://sideci.com
-* https://about.pullapprove.com/features/
-* https://packagist.org
-* https://travis-ci.org
-* https://coveralls.io
-* https://codeclimate.com
-* https://scrutinizer-ci.com
-* https://www.versioneye.com
-* https://insight.sensiolabs.com
+* [ ] https://zappr.opensource.zalan.do/login
+* [ ] https://gratipay.com
+* [ ] https://cla-assistant.io
+* [ ] https://sideci.com
+* [ ] https://about.pullapprove.com/features/
+* [ ] https://packagist.org
+* [ ] https://travis-ci.org
+* [ ] https://coveralls.io
+* [ ] https://codeclimate.com
+* [ ] https://scrutinizer-ci.com
+* [ ] https://www.versioneye.com
+* [ ] https://insight.sensiolabs.com
