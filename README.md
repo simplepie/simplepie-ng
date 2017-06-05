@@ -26,6 +26,7 @@ There will probably be a wrapper for `parseXml()`, `parseJson()`, and `parseHtml
 ```php
 use GuzzleHttp\Psr7;
 use Monolog\Handler\ErrorLogHandler;
+use Monolog\Logger;
 use Psr\Log\LogLevel;
 use SamBurns\Pimple3ContainerInterop\ServiceContainer;
 use SimplePie\Enum\FeedType;
