@@ -24,7 +24,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
      */
     public function __invoke(stdClass $feedRoot, string $namespaceAlias, DOMXPath $xpath): void
     {
-        foreach (['id', 'rights', 'title'] as $nodeName) {
+        foreach (['id', 'rights', 'subtitle', 'summary', 'title'] as $nodeName) {
             $this->addArrayProperty($feedRoot, $nodeName);
             $feedRoot->$nodeName[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
         }
