@@ -9,24 +9,22 @@ declare(strict_types=1);
 
 namespace SimplePie\Mixin;
 
-use Psr\Log\LoggerInterface;
-
-trait LoggerTrait
+trait LibxmlTrait
 {
     /**
-     * A PSR-3 logger.
+     * Bitwise libxml options to use for parsing XML.
      *
-     * @var LoggerInterface
+     * @var int
      */
-    protected $logger;
+    protected $libxml;
 
     /**
-     * Retrieves the PSR-3 logger.
+     * Gets the libxml value to use for parsing XML.
      *
-     * @return LoggerInterface
+     * @return int
      */
-    public function getLogger(): LoggerInterface
+    public function getLibxml(): int
     {
-        return $this->logger;
+        return $this->libxml;
     }
 }

@@ -10,12 +10,10 @@ declare(strict_types=1);
 namespace SimplePie\Dictionary;
 
 use DOMNode;
-use SimplePie\Mixin\LoggerTrait;
+use Psr\Log\LoggerInterface;
 
 class Ns
 {
-    use LoggerTrait;
-
     public const ATOM_03 = 'http://purl.org/atom/ns#';
     public const ATOM_10 = 'http://www.w3.org/2005/Atom';
     public const RDF     = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
@@ -45,8 +43,11 @@ class Ns
 
     /**
      * Constructs a new instance of this class.
+     *
+     * @param LoggerInterface $logger A PSR-3 logger.
+     * @param DOMNode         $dom    A DOMDocument object representing the XML file to be parsed.
      */
-    public function __construct(DOMNode $dom)
+    public function __construct(LoggerInterface $logger, DOMNode $dom)
     {
         $this->domDocument = $dom;
 

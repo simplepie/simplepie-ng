@@ -16,6 +16,7 @@ use stdClass;
  * Support for the Atom 1.0 grammar.
  *
  * @see https://tools.ietf.org/html/rfc4287
+ * @see https://www.w3.org/wiki/Atom
  */
 class Atom extends AbstractXmlMiddleware implements XmlInterface
 {
@@ -33,6 +34,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
     /**
      * Find and read the contents of the feed-level id node.
      *
+     * @param string   $nodeName       The name of the namespaced XML node to read.
      * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
      *                                 of a call to `SimplePie\Dictionary\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
@@ -41,10 +43,11 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
      */
     protected function getSingle(string $nodeName, string $namespaceAlias, DOMXPath $xpath): array
     {
-        return $this->handleSingleNode(function () use (&$nodeName, &$namespaceAlias, $xpath) {
-            return $xpath->query(
-                $this->applyNs('/%s:feed/%s:' . $nodeName, $namespaceAlias)
-            );
+        $query = $this->applyNs('/%s:feed/%s:' . $nodeName, $namespaceAlias);
+        $this->getLogger()->debug(sprintf('%s is running an XPath query:', __CLASS__), [$query]);
+
+        return $this->handleSingleNode(function () use ($xpath, $query) {
+            return $xpath->query($query);
         });
     }
 }

@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace SimplePie\Type;
 
+use Psr\Log\LoggerInterface;
 use stdClass;
 
 /**
@@ -26,9 +27,10 @@ class Feed
     /**
      * Constructs a new instance of this class.
      */
-    public function __construct()
+    public function __construct(LoggerInterface $logger)
     {
-        $this->root = new stdClass();
+        $this->logger = $logger;
+        $this->root   = new stdClass();
     }
 
     public function getItems()

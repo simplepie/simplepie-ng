@@ -14,6 +14,9 @@ class ErrorMessage extends AbstractEnum
     public const LOGGER_NOT_PSR3 = 'The configured logger MUST be compatible with `Psr\Log\LoggerInterface`. '
         . 'Received `%s` instead.';
 
-    public const DOM_NOT_EXTEND_FROM = 'The `DOM%s` class could not be extended by `%s` because it does not extend '
-        . 'the `SimplePie\Dom\%s` class.';
+    public const MIDDLEWARE_NOT_HANDLERSTACK = 'The configured middleware handler stack MUST be compatible with '
+        . '`SimplePie\HandlerStackInterface`. Received `%s` instead.';
+
+    public const LIBXML_NOT_INTEGER = 'The configured libxml options MUST be bitwise LIBXML_* constants, which result '
+        . 'in an integer value. Received `%s` instead.';
 }

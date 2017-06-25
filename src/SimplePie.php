@@ -9,53 +9,39 @@ declare(strict_types=1);
 
 namespace SimplePie;
 
-use Interop\Container\ContainerInterface;
 use Psr\Http\Message\StreamInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use SimplePie\Enum\ErrorMessage;
 use SimplePie\Exception\ConfigurationException;
+use SimplePie\Mixin\LibxmlTrait;
 use SimplePie\Mixin\LoggerTrait;
+use SimplePie\Mixin\MiddlewareStackTrait;
 use SimplePie\Parser\Xml as XmlParser;
 use Skyzyx\UtilityPack\Types;
 
+define('SIMPLEPIE_ROOT', __DIR__);
+
 class SimplePie
 {
+    use LibxmlTrait;
     use LoggerTrait;
-
-    /**
-     * The PSR-11 dependency injection container.
-     *
-     * @var ContainerInterface
-     */
-    protected static $container;
+    use MiddlewareStackTrait;
 
     /**
      * Constructs a new instance of this class.
-     *
-     * @param ContainerInterface $container A PSR-11 dependency injection container.
      */
-    public function __construct(ContainerInterface $container)
+    public function __construct(array $options = [])
     {
         // Run validations
-        static::validateLogger($container);
-        static::validateLibxml($container);
-        static::validateDomExtensions($container);
+        $this->validateLogger($options);
+        $this->validateLibxml($options);
+        $this->validateMiddlewareStack($options);
 
-        static::$container = $container;
-
-        static::getLogger()->debug(sprintf('`%s` has completed instantiation.', __CLASS__));
+        $this->logger->info(sprintf('`%s` has completed instantiation.', __CLASS__));
     }
 
-    /**
-     * Gets a PSR-11 dependency injection container.
-     *
-     * @return ContainerInterface
-     */
-    public static function getContainer(): ContainerInterface
-    {
-        return static::$container;
-    }
+    //---------------------------------------------------------------------------
 
     /**
      * Parses content which is known to be valid XML and is encoded as UTF-8.
@@ -72,7 +58,7 @@ class SimplePie
      */
     public function parseXml(StreamInterface $stream, bool $handleHtmlEntitiesInXml = false): XmlParser
     {
-        $parser = new XmlParser($stream, $handleHtmlEntitiesInXml);
+        $parser = new XmlParser($this->logger, $this->middleware, $stream, $handleHtmlEntitiesInXml, $this->libxml);
 
         return $parser;
     }
@@ -99,105 +85,106 @@ class SimplePie
      * logger set, the default value will be `NullLogger`. An invalid setting
      * will throw an exception.
      *
+     * @param array $options The options which were passed into the constructor.
+     *
      * @throws ConfigurationException
      */
-    protected static function validateLogger(ContainerInterface $container): void
+    protected function validateLogger(array $options = []): void
     {
-        // The PSR-3 logger
-        if ($container->has('_.logger')) {
-            if (!$container['_.logger'] instanceof LoggerInterface) {
+        if (isset($options['logger'])) {
+            if ($options['logger'] instanceof LoggerInterface) {
+                $this->logger = $options['logger'];
+            } else {
                 throw new ConfigurationException(
                     sprintf(
                         ErrorMessage::LOGGER_NOT_PSR3,
-                        Types::getClassOrType($container['_.logger'])
+                        Types::getClassOrType($options['logger'])
                     )
                 );
             }
         } else {
-            $container['_.logger'] = new NullLogger();
+            $this->logger = new NullLogger();
         }
 
         // What are we logging with?
-        $container['_.logger']->info(sprintf(
+        $this->logger->debug(sprintf(
             'Logger configured to use `%s`.',
-            Types::getClassOrType($container['_.logger'])
+            Types::getClassOrType($this->logger)
         ));
     }
 
     /**
-     * Validates the user's configuration for `LIBXML_*` XML parsing parameters.
+     * Validates the user's configuration for `LIBXML_*` XML parsing parameters. If no valid values are set, the
+     * default value will be `LIBXML_NOCDATA`.
      *
-     * A valid PSR-3 logger set by the user will be utilized. If there is no
-     * logger set, the default value will be `NullLogger`. An invalid setting
-     * will throw an exception.
+     * @param array $options The options which were passed into the constructor.
      *
      * @throws ConfigurationException
      */
-    protected static function validateLibxml(ContainerInterface $container): void
+    protected function validateLibxml(array $options = []): void
     {
-        // The PSR-3 logger
-        if (!$container->has('_.dom.libxml')) {
-            $container['_.dom.libxml'] = 0
+        if (isset($options['libxml'])) {
+            if (is_int($options['libxml'])) {
+                $this->libxml = $options['libxml'];
+            } else {
+                throw new ConfigurationException(
+                    sprintf(
+                        ErrorMessage::LIBXML_NOT_INTEGER,
+                        Types::getClassOrType($options['libxml'])
+                    )
+                );
+            }
+        } else {
+            $this->libxml = 0
                 | LIBXML_BIGLINES
                 | LIBXML_COMPACT
                 | LIBXML_HTML_NODEFDTD
-                | LIBXML_HTML_NOIMPLIED
+                | LIBXML_HTML_NOIMPLIED // Required, or things crash.
                 | LIBXML_NOBLANKS
-                | LIBXML_NOCDATA
+                // | LIBXML_NOCDATA // Do not merge into text nodes.
                 | LIBXML_NOENT
+                | LIBXML_NOXMLDECL
                 | LIBXML_NSCLEAN
-                | LIBXML_PARSEHUGE;
+                | LIBXML_PARSEHUGE
+            ;
         }
 
         // What are we logging with?
-        $container['_.logger']->debug(sprintf(
+        $this->logger->debug(sprintf(
             'Libxml configuration has a bitwise value of `%s`.%s',
-            $container['_.dom.libxml'],
-            ($container['_.dom.libxml'] === 4808966)
+            $this->libxml,
+            ($this->libxml === 4808966)
                 ? ' (This is the default configuration.)'
                 : ''
         ));
     }
 
     /**
-     * Pre-processes any DOM-extending classes you have defined in userland. These are applied to
-     * the top-level `DOMDocument` object using `registerNodeClass()`.
+     * Validates the user's configuration for the middleware handler stack.
      *
-     * This only works with classes which extend from `DOMNode`.
+     * A valid middleware handler stack by the user will be utilized. If there
+     * is no handler stack set, the default value will be `HandlerStack`. An
+     * invalid setting will throw an exception.
      *
-     * @see http://php.net/manual/en/domdocument.registernodeclass.php
-     * @see https://bugs.php.net/48352
+     * @param array $options The options which were passed into the constructor.
+     *
+     * @throws ConfigurationException
      */
-    protected static function validateDomExtensions(ContainerInterface $container): void
+    protected function validateMiddlewareStack(array $options = []): void
     {
-        $map        = [];
-        $domClasses = [
-            'Attr',
-            'CdataSection',
-            'CharacterData',
-            'Comment',
-            'Document',
-            'DocumentFragment',
-            'DocumentType',
-            'Element',
-            'Entity',
-            'EntityReference',
-            'Node',
-            'Notation',
-            'ProcessingInstruction',
-            'Text',
-        ];
-
-        foreach ($domClasses as $domClass) {
-            if ($container->has(sprintf('_.dom.extend.%s', $domClass))) {
-                $map[$domClass] = $container[sprintf('_.dom.extend.%s', $domClass)];
+        if (isset($options['middleware'])) {
+            if ($options['middleware'] instanceof HandlerStackInterface) {
+                $this->middleware = $options['middleware'];
+            } else {
+                throw new ConfigurationException(
+                    sprintf(
+                        ErrorMessage::MIDDLEWARE_NOT_HANDLERSTACK,
+                        Types::getClassOrType($options['logger'])
+                    )
+                );
             }
-        }
-
-        $container['_.dom.extend._matches'] = $map;
-
-        if (!empty($map)) {
-            $container['_.logger']->debug('DOMDocument is configured to use extended classes.', $map);
+        } else {
+            $this->middleware = new HandlerStack($this->logger);
         }
     }
 }

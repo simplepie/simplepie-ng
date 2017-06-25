@@ -50,15 +50,17 @@ class QuickProvider implements ServiceProviderInterface
 
             $stack
                 ->append($c['middleware.atom10'], 'atom')
+                // ->append(new \SimpleXMLElement('<what/>'))
                 // ->append($c['middleware.rss20'])
-                ->append($c['middleware.myCallable'], 'myCallable', FeedType::ALL)
-                ->prepend($c['middleware.groot'], 'groot', FeedType::ALL);
+                // ->append($c['middleware.myCallable'], 'myCallable', FeedType::ALL)
+                // ->prepend($c['middleware.groot'], 'groot', FeedType::ALL)
+            ;
 
             return $stack;
         };
 
-        $container['middleware.atom10'] = function () {
-            return new Atom();
+        $container['middleware.atom10'] = function (Container $c) {
+            return new Atom($c['_.logger']);
         };
 
         $container['middleware.rss20'] = function () {
@@ -76,31 +78,5 @@ class QuickProvider implements ServiceProviderInterface
                 echo 'I AM GROOT!' . PHP_EOL;
             };
         };
-
-        //----------------------------------------------------------------------
-        // ENTRIES UNDERSTOOD BY SIMPLEPIE
-
-        // $container['_.dom.extend.DOMAttr']
-        // $container['_.dom.extend.DOMCdataSection']
-        // $container['_.dom.extend.DOMCharacterData']
-        // $container['_.dom.extend.DOMComment']
-        // $container['_.dom.extend.DOMDocument']
-        // $container['_.dom.extend.DOMDocumentFragment']
-        // $container['_.dom.extend.DOMDocumentType']
-        // $container['_.dom.extend.DOMElement']
-        // $container['_.dom.extend.DOMEntity']
-        // $container['_.dom.extend.DOMEntityReference']
-        // $container['_.dom.extend.DOMException']
-        // $container['_.dom.extend.DOMImplementation']
-        // $container['_.dom.extend.DOMNamedNodeMap']
-        // $container['_.dom.extend.DOMNode']
-        // $container['_.dom.extend.DOMNodeList']
-        // $container['_.dom.extend.DOMNotation']
-        // $container['_.dom.extend.DOMProcessingInstruction']
-        // $container['_.dom.extend.DOMText']
-        // $container['_.dom.extend.DOMXPath']
-        // $container['_.dom.libxml']
-        // $container['_.logger']
-        // $container['_.middleware']
     }
 }

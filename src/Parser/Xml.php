@@ -10,23 +10,29 @@ declare(strict_types=1);
 namespace SimplePie\Parser;
 
 use DOMDocument;
+use DOMImplementation;
 use DOMXPath;
 use Psr\Http\Message\StreamInterface;
-use ReflectionClass;
+use Psr\Log\LoggerInterface;
 use SimplePie\Dictionary\Ns;
-use SimplePie\Dom;
-use SimplePie\Enum\ErrorMessage;
+use SimplePie\Enum\CharacterSet;
 use SimplePie\Enum\FeedType;
 use SimplePie\Exception\ConfigurationException;
+use SimplePie\HandlerStackInterface;
 use SimplePie\Mixin\DomDocumentTrait;
+use SimplePie\Mixin\LibxmlTrait;
+use SimplePie\Mixin\LoggerTrait;
+use SimplePie\Mixin\MiddlewareStackTrait;
 use SimplePie\Mixin\RawDocumentTrait;
 use SimplePie\SimplePie;
 use SimplePie\Type\Feed;
-use Throwable;
 
 class Xml extends AbstractParser
 {
     use DomDocumentTrait;
+    use LibxmlTrait;
+    use LoggerTrait;
+    use MiddlewareStackTrait;
     use RawDocumentTrait;
 
     /**
@@ -39,22 +45,40 @@ class Xml extends AbstractParser
     /**
      * Constructs a new instance of this class.
      *
-     * @param StreamInterface $stream                  A PSR-7 `StreamInterface` which is typically returned by the
-     *                                                 `getBody()` method of a `ResponseInterface` class.
-     * @param bool            $handleHtmlEntitiesInXml Whether or not SimplePie should pre-parse the XML as HTML to
-     *                                                 resolve the entities. A value of `true` means that SimplePie
-     *                                                 should inject the entity definitions. A value of `false` means
-     *                                                 that SimplePie should NOT inject the entity definitions. The
-     *                                                 default value is `false`.
+     * @param LoggerInterface       $logger                  A PSR-3 logger.
+     * @param HandlerStackInterface $middleware              A middleware handler stack containing any registered middleware.
+     * @param StreamInterface       $stream                  A PSR-7 `StreamInterface` which is typically returned by the
+     *                                                       `getBody()` method of a `ResponseInterface` class.
+     * @param bool                  $handleHtmlEntitiesInXml Whether or not SimplePie should pre-parse the XML as HTML to
+     *                                                       resolve the entities. A value of `true` means that SimplePie
+     *                                                       should inject the entity definitions. A value of `false` means
+     *                                                       that SimplePie should NOT inject the entity definitions. The
+     *                                                       default value is `false`.
+     * @param int                   $libxml                  A set of bitwise LIBXML_* constants.
      *
      * @throws Error
      * @throws TypeError
      * @throws ConfigurationException
+     *
+     * @codingStandardsIgnoreStart
      */
-    public function __construct(StreamInterface $stream, bool $handleHtmlEntitiesInXml = false)
-    {
-        // Container
-        $this->container = SimplePie::getContainer();
+    public function __construct(
+        LoggerInterface $logger,
+        HandlerStackInterface $middleware,
+        StreamInterface $stream,
+        bool $handleHtmlEntitiesInXml,
+        int $libxml
+    ) {
+        // @codingStandardsIgnoreEnd
+
+        // Logger
+        $this->logger = $logger;
+
+        // Libxml settings
+        $this->libxml = $libxml;
+
+        // Middleware stack
+        $this->middleware = $middleware;
 
         // Raw stream
         $this->rawDocument = $this->readStream($stream);
@@ -62,54 +86,44 @@ class Xml extends AbstractParser
         // DOMDocument
         $this->domDocument = new DOMDocument();
 
-        // Handle registerNodeClass() calls
-        foreach ($this->container['_.dom.extend._matches'] as $baseClass => $extendingClass) {
-            try {
-                if ((new ReflectionClass($extendingClass))->implementsInterface(DomInterface::class)) {
-                    $this->domDocument->registerNodeClass(sprintf('DOM%s', $baseClass), $extendingClass);
-                } else {
-                    throw new ConfigurationException(sprintf(
-                        ErrorMessage::DOM_NOT_EXTEND_FROM,
-                        $baseClass,
-                        $extendingClass,
-                        $baseClass
-                    ));
-                }
-            } catch (Throwable $e) {
-                throw $e;
-            }
-        }
-
         libxml_use_internal_errors(true);
 
         // DOMDocument configuration
         $this->domDocument->recover             = true;
         $this->domDocument->formatOutput        = true;
         $this->domDocument->preserveWhiteSpace  = false;
-        $this->domDocument->resolveExternals    = false;
+        $this->domDocument->resolveExternals    = true;
         $this->domDocument->substituteEntities  = true;
         $this->domDocument->strictErrorChecking = false;
+        $this->domDocument->validateOnParse     = true;
 
-        // Do we need to parse as HTML first, then rewrite the source XML?
+        // If enabled, force-inject the contents of `entities.dtd` into the feed.
         if ($handleHtmlEntitiesInXml) {
-            $this->domDocument->loadHTML($this->rawDocument, $this->container['_.dom.libxml']);
-            $this->domDocument->normalizeDocument();
-            $this->rawDocument = $this->domDocument->saveXML();
+            $this->getLogger()->debug('Handing HTML entities in XML.');
+            $this->domDocument->loadXML($this->rawDocument, $this->libxml);
+
+            $rootElementStart = sprintf('<%s', (string) $this->domDocument->firstChild->nodeName);
+            $this->rawDocument = str_replace(
+                $rootElementStart,
+                sprintf('%s%s', trim(file_get_contents(SIMPLEPIE_ROOT . '/entities.dtd')), $rootElementStart),
+                $this->rawDocument
+            );
         }
 
-        $this->domDocument->loadXML($this->rawDocument, $this->container['_.dom.libxml']);
-        $this->domDocument->normalizeDocument();
+        $this->domDocument->loadXML($this->rawDocument, $this->libxml);
 
         // Instantiate a new write-to feed object.
-        $this->feed = new Feed();
+        $this->feed = new Feed($this->logger);
 
         // Invoke the middleware.
-        $this->container['_.middleware']->invoke(
+        $this->middleware->invoke(
             FeedType::XML,
             $this->getFeed()->getRoot(),
             $this->getNamespaceAlias(),
             $this->xpath()
         );
+
+        libxml_clear_errors();
     }
 
     /**
@@ -119,7 +133,7 @@ class Xml extends AbstractParser
      */
     public function getNamespaceAlias(): ?string
     {
-        $namespace = new Ns($this->domDocument);
+        $namespace = new Ns($this->logger, $this->domDocument);
 
         return $namespace->getPreferredNamespaceAlias(
             $this->domDocument->documentElement->namespaceURI
