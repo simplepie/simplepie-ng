@@ -1,0 +1,272 @@
+/******************************************************************************/
+/* Global, but non-structural styles. */
+
+body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+pre, code {
+    font-family: Menlo, Monaco, "Courier New", Courier, monospace !important;
+}
+
+pre {
+    line-height: 1.45em !important;
+    font-size: 13px !important;
+}
+
+.rst-content div.document a {
+    text-decoration: underline !important;
+}
+
+.rst-content code.literal {
+    font-size: 1em !important;
+}
+
+.rst-content code.literal {
+    background-color: #f3f6f6 !important;
+    border: 1px solid #e1e4e5 !important;
+    border-radius: 3px !important;
+    -webkit-border-radius: 3px !important;
+    -moz-border-radius: 3px !important;
+    padding: 2px 5px !important;
+    font-size: 90% !important;
+    color: #d14;
+}
+
+.rst-content dl.get dt code.descname,
+.rst-content dl.get dt span.sig-paren,
+.rst-content dl.get dt em {
+    font-style: normal !important;
+    font-size: 1em !important;
+    color: auto !important;
+    font-family: Menlo, Monaco, "Courier New", Courier, monospace !important;
+}
+
+.rst-content blockquote {
+    position: relative;
+
+    background-color: #eee !important;
+    border-left: 10px solid #ccc !important;
+    color: #666 !important;
+    margin: 0 0 24px 0 !important;
+    padding: 15px !important;
+    font-size: 14px !important;
+    line-height: 1.5em !important;
+}
+
+/* This is wildly inefficient. */
+ul ul ul ul,
+ul ul ul,
+ul ul,
+ol ol ol ol,
+ol ol ol,
+ol ol {
+    margin-bottom: 0 !important;
+}
+
+ul, ol {
+    margin-bottom: 1.5em !important;
+}
+
+.rst-content .section ul li,
+.rst-content .section ol li {
+    margin-left: 24px !important;
+    padding: 0.3em 0 !important;
+}
+
+/* Special for the homepage TOC */
+.rst-content .toctree-wrapper ul li,
+.rst-content .toctree-wrapper ol li {
+    padding: 0 !important;
+}
+
+/******************************************************************************/
+/* Custom styles for the code sample tabs. */
+
+.sphinx-tabs.docutils.container {}
+
+.sphinx-tabs.docutils.container .ui.menu>.item:first-child,
+.sphinx-tabs.docutils.container .ui.top.attached.menu>.item:first-child,
+.sphinx-tabs.docutils.container .ui.tabular.menu .active.item,
+.sphinx-tabs.docutils.container .ui[class*="top attached"].menu {
+    border-radius: 0 !important;
+}
+
+.sphinx-tabs.docutils.container .ui.menu {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.sphinx-tabs.docutils.container .ui.menu > a {
+    line-height: 24px !important;
+    font-size: 16px !important;
+    display: inline-block !important;
+    cursor: pointer !important;
+    padding: 0.5em 1em !important;
+    margin: 0 0 -1px 0 !important;
+    text-decoration: none !important;
+    color: #404040 !important;
+}
+
+.sphinx-tabs.docutils.container .ui.segment {
+    border: none !important;
+    padding: 0 !important;
+}
+
+.sphinx-tabs.docutils.container div[class^='highlight'] {
+    border-top: none !important;
+}
+
+.sphinx-tabs.docutils.container .ui.tabular.menu {
+    border-bottom: 1px solid #e1e4e5 !important;
+}
+
+.sphinx-tabs.docutils.container .sphinx-menu a.active.item {
+    border-color: #e1e4e5 !important;
+}
+
+.sphinx-tabs.docutils.container .sphinx-menu {
+    border-bottom-color: #e1e4e5 !important;
+}
+
+.sphinx-tabs.docutils.container div.highlight span.hll {
+    background-color: rgb(248, 238, 199);
+}
+
+/******************************************************************************/
+/* Figures and images. */
+
+.rst-content div.figure {
+    margin-bottom: 24px !important;
+    background-color: #f3f6f6 !important;
+    padding: 15px !important;
+    border: 1px solid #e1e4e5 !important;
+}
+
+.rst-content div.figure a.reference.internal.image-reference,
+.rst-content div.figure a.reference.internal.image-reference img {
+    display: inline-block !important;
+}
+
+.rst-content div.figure p.caption {
+    font-style: normal !important;
+    margin: 0 !important;
+    padding: 0.5em !important;
+    font-size: 14px !important;
+    line-height: 1.3em !important;
+}
+
+/******************************************************************************/
+/* Notes and warnings. */
+
+.rst-content div.admonition.note {
+    background-color: #d9edf7 !important;
+    border-left: 10px solid #31708f !important;
+    color: #31708f !important;
+}
+
+.rst-content div.admonition.note p.admonition-title {
+    background-color: #d9edf7 !important;
+    color: #31708f !important;
+}
+
+.rst-content div.admonition.note p.admonition-title:before {
+    /* http://fontawesome.io/icon/lightbulb-o/ */
+    content: "\f0eb";
+}
+
+.rst-content div.admonition.note code.literal {
+    color: #245269 !important;
+}
+
+.rst-content div.admonition.note p a,
+.rst-content div.admonition.note p a:hover,
+.rst-content div.admonition.note p a:focus {
+    color: #245269 !important;
+}
+
+.rst-content div.admonition.warning {
+    background-color: #f2dede !important;
+    border-left: 10px solid #a94442 !important;
+    color: #a94442 !important;
+}
+
+.rst-content div.admonition.warning p.admonition-title {
+    background-color: #f2dede !important;
+    color: #a94442 !important;
+}
+
+.rst-content div.admonition.warning p.admonition-title:before {
+    /* http://fontawesome.io/icon/exclamation-triangle/ */
+    content: "\f071";
+}
+
+.rst-content div.admonition.warning p a,
+.rst-content div.admonition.warning p a:hover,
+.rst-content div.admonition.warning p a:focus {
+    color: #843534 !important;
+}
+
+.rst-content div.admonition p.admonition-title {
+    font-size: 18px !important;
+    line-height: 1.2em !important;
+    margin-bottom: 0 !important;
+    padding: 12px 12px 6px 12px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.rst-content div.admonition p.admonition-title:before {
+    margin-right: 6px;
+}
+
+.rst-content div.admonition p.last {}
+
+.rst-content div.admonition.reviewed {
+    background-color: #f3f6f6 !important;
+    border-top: 1px solid #e1e4e5 !important;
+    color: #404040 !important;
+    padding: 15px !important;
+    margin: 36px 0 24px 0 !important;
+}
+
+.rst-content div.admonition.reviewed p {
+    font-size: 14px !important;
+    line-height: 1.5em !important;
+    margin: 0 !important;
+}
+
+.rst-content div.admonition.reviewed p:before {
+    /* http://fontawesome.io/icon/star/ */
+    font: normal normal normal 14px/1 "FontAwesome";
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-decoration: inherit;
+    content: "\f005";
+
+    padding-right: 4px;
+}
+
+.rst-content div.admonition.reviewed p.admonition-title {
+    display: none !important;
+}
+
+/******************************************************************************/
+/* Tables. */
+
+@media screen and (min-width: 767px) {
+
+    .wy-table-responsive table td,
+    .wy-table-responsive table th {
+        white-space: normal !important;
+        line-height: 1.4em !important;
+    }
+
+    .wy-table-responsive table td {
+        vertical-align: top !important;
+    }
+
+    .wy-table-responsive table tr td:first-child {
+        white-space: nowrap !important;
+    }
+}

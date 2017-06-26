@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuration &mdash; SimplePie: User and Developer Guide</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.2.7/segment.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.2.7/menu.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.2.7/tab.min.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SimplePie: User and Developer Guide" href="../index.html"/>
+        <link rel="next" title="Getting Started (Draft)" href="../developer/start.html"/>
+        <link rel="prev" title="Foundation" href="foundation.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SimplePie NG
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="foundation.html">Foundation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#lies-damned-lies-and-statistics">Lies, damned lies, and statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#json">JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#domdocument">DOMDocument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#xpath">XPath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#decoupled-components">Decoupled Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#middleware">Middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#standards">Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#doing-less">Doing Less</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#coding-standards">Coding Standards</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#logger">Logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#middleware">Middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#libxml">libxml</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer/start.html">Getting Started (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/start.html#php-dependencies">PHP Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/testing.html">Unit and Integration Testing (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/testing.html#unit-tests">Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/testing.html#integration-test-schema">Integration Test Schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/testing.html#all-at-once">All at Once</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SimplePie NG</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/user/configuration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>There are some configuration parameters that SimplePie NG supports.</p>
+<div class="section" id="logger">
+<h2>Logger<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h2>
+<p>Passing the <code class="docutils literal"><span class="pre">logger</span></code> option to the constructor will allow you to use any <a class="reference external" href="http://www.php-fig.org/psr/psr-3/">PSR-3</a>
+logger. Here’s an example <a class="reference external" href="https://github.com/Seldaek/monolog">Monolog</a> logger that uses the system’s error log.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">use</span> <span class="nx">Monolog\Handler\ErrorLogHandler</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Monolog\Logger</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Psr\Log\LogLevel</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">SimplePie\SimplePie</span><span class="p">;</span>
+
+<span class="nv">$logger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="s1">&#39;SimplePie&#39;</span><span class="p">);</span>
+<span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">pushHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">ErrorLogHandler</span><span class="p">(</span>
+    <span class="nx">ErrorLogHandler</span><span class="o">::</span><span class="na">OPERATING_SYSTEM</span><span class="p">,</span>
+    <span class="nx">LogLevel</span><span class="o">::</span><span class="na">DEBUG</span><span class="p">,</span>
+    <span class="k">true</span><span class="p">,</span>
+    <span class="k">false</span>
+<span class="p">));</span>
+
+<span class="nv">$simplepie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimplePie</span><span class="p">([</span>
+    <span class="s1">&#39;logger&#39;</span> <span class="o">=&gt;</span> <span class="nv">$logger</span><span class="p">,</span>
+<span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="middleware">
+<h2>Middleware<a class="headerlink" href="#middleware" title="Permalink to this headline">¶</a></h2>
+<p>All of the parsing leverages a middleware pattern. Without any registered middleware, nothing happens by default. All
+of this is managed using a <em>middleware handler stack</em>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">use</span> <span class="nx">SimplePie\HandlerStack</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">SimplePie\Middleware\Xml\Atom</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">SimplePie\Middleware\Xml\Rss</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">SimplePie\SimplePie</span><span class="p">;</span>
+
+<span class="nv">$stack</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">HandlerStack</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">Atom</span><span class="p">(),</span> <span class="s1">&#39;atom10&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">Rss</span><span class="p">(),</span> <span class="s1">&#39;rss20&#39;</span><span class="p">)</span>
+<span class="p">;</span>
+
+<span class="nv">$simplepie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimplePie</span><span class="p">([</span>
+    <span class="s1">&#39;middleware&#39;</span> <span class="o">=&gt;</span> <span class="nv">$stack</span><span class="p">,</span>
+<span class="p">]);</span>
+</pre></div>
+</div>
+<p>In this example, and assuming the feed is XML-based, the Atom 1.0 middleware will run first followed by the RSS 2.0
+middleware.</p>
+<ul class="simple">
+<li>If it’s an RSS 2.0 feed, it is likely that the Atom 1.0 middleware will have limited results while the RSS 2.0
+middleware will populate the results. Since Atom can be embedded inside RSS 2.0 feeds (e.g., <code class="docutils literal"><span class="pre">&lt;atom:enabled&gt;</span></code>), it
+is possible that the Atom middleware will pick up a few matching elements.</li>
+<li>If it’s an Atom 1.0 feed, it is likely that the Atom 1.0 middleware will populate the results while the RSS 2.0
+middleware will have no results.</li>
+</ul>
+<p>For more information on how to write custom middleware, see &#64;todo.</p>
+</div>
+<div class="section" id="libxml">
+<h2>libxml<a class="headerlink" href="#libxml" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">libxml</span></code> settings that are used by default provide the best support for the widest variety of XML-based feeds.
+They are as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><code class="docutils literal"><span class="pre">libxml</span></code> constant</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">LIBXML_BIGLINES</span></code></td>
+<td>Allows line numbers greater than 65535 to be reported correctly.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">LIBXML_COMPACT</span></code></td>
+<td>Activates small nodes allocation optimization. This may speed up your application
+without needing to change the code.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">LIBXML_HTML_NODEFDTD</span></code></td>
+<td>Sets <code class="docutils literal"><span class="pre">HTML_PARSE_NODEFDTD</span></code> flag, which prevents a default doctype being added when one
+is not found.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">LIBXML_HTML_NOIMPLIED</span></code></td>
+<td>Sets <code class="docutils literal"><span class="pre">HTML_PARSE_NOIMPLIED</span></code> flag, which turns off the automatic adding of implied
+<code class="docutils literal"><span class="pre">html</span></code>/<code class="docutils literal"><span class="pre">body</span></code>… elements. This is <strong>required</strong> otherwise parsing will fail.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">LIBXML_NOBLANKS</span></code></td>
+<td>Remove blank nodes.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">LIBXML_NOENT</span></code></td>
+<td>Substitute entities in the XML.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">LIBXML_NOXMLDECL</span></code></td>
+<td>Drop the XML declaration when saving a document.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">LIBXML_NSCLEAN</span></code></td>
+<td>Remove redundant namespace declarations.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">LIBXML_PARSEHUGE</span></code></td>
+<td>Sets <code class="docutils literal"><span class="pre">XML_PARSE_HUGE</span></code> flag, which relaxes any hardcoded limit from the parser. This
+affects limits like maximum depth of a document or the entity recursion, as well as
+limits of the size of text nodes.</td>
+</tr>
+</tbody>
+</table>
+<p>We explicitly do not set <code class="docutils literal"><span class="pre">LIBXML_NOCDATA</span></code> because we want to preserve the <em>CDATA-ness</em> of those nodes. You can find the definitions for more <code class="docutils literal"><span class="pre">libxml</span></code> constants by reading <a class="reference external" href="http://php.net/manual/en/libxml.constants.php">Predefined libxml constants</a>.</p>
+<p>If you want to change the <code class="docutils literal"><span class="pre">libxml</span></code> parameters that are used, you can pass them to the constructor.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">use</span> <span class="nx">SimplePie\SimplePie</span><span class="p">;</span>
+
+<span class="nv">$simplepie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimplePie</span><span class="p">([</span>
+    <span class="s1">&#39;libxml&#39;</span> <span class="o">=&gt;</span> <span class="nx">LIBXML_HTML_NOIMPLIED</span> <span class="o">|</span> <span class="nx">LIBXML_NOCDATA</span><span class="p">,</span>
+<span class="p">]);</span>
+</pre></div>
+</div>
+<div class="reviewed admonition">
+<p class="first admonition-title">Review</p>
+<p class="last">Written on 2017-06-25, proofread on 2017-06-25.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../developer/start.html" class="btn btn-neutral float-right" title="Getting Started (Draft)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="foundation.html" class="btn btn-neutral" title="Foundation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017 Ryan Parman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.2.7/tab.min.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
