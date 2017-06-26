@@ -20,6 +20,8 @@ Over the years I've tried to start this project by forking SimplePie and strippi
 
 **SimplePie NG** is a from-scratch rewrite of SimplePie for PHP 7.1. It starts with a completely different kind of thinking, and more than a decade more experience in software engineering and open-source. It is written with a view of PHP from 2017 and beyond, and is being built in such a way that greater community involvement should be far easier from much earlier in the project's life.
 
+I want this tool. I have a deep knowledge about feeds. I am working to make this happen.
+
 
 ## Features (planned)
 
