@@ -97,7 +97,7 @@ foreach ($feed->getItems() as $item) {
 * [ ] [JSON Feed 1.0](https://jsonfeed.org/version/1)
 * [ ] [RSS 1.0](http://web.resource.org/rss/1.0/spec)
 * [ ] [RSS 2.0](http://www.rssboard.org/rss-specification)
-* [-] [Atom 1.0](https://tools.ietf.org/html/rfc4287)
+* [ ] [Atom 1.0](https://tools.ietf.org/html/rfc4287)
 
 ### And XML grammars
 
