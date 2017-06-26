@@ -14,11 +14,11 @@ If, after reading the existing docs, you have questions or ideas, you can file a
 
 ## What is SimplePie NG, _really?_
 
-_SimplePie [OG](http://www.urbandictionary.com/define.php?term=OG)_ was created for PHP 4.3 by a person who was brand-new to programming. That was me. About 6 months into the project, I started receiving a _tremendous_ amount of help from a teenage Scot who had nothing better to do — thanks Geoffrey!
+**SimplePie [OG](http://www.urbandictionary.com/define.php?term=OG)** was created for PHP 4.3 by a person who was brand-new to programming. That was me. About 6 months into the project, I started receiving a _tremendous_ amount of help from a teenage Scot who had nothing better to do — thanks Geoffrey!
 
-Over the years I've tried to start this project by forking SimplePie and stripping out as much legacy code as possible. Those efforts never made it very far. The original codebase grew rapidly and organically over the first 5 years (before I got burned-out and retired from SimplePie development), is extremely complex, not tested or documented nearly well enough, and has been kept alive since 2010 by way of Frankenstein-like patchwork. As PHP and its community have matured over the years, and I started to experiment with new approaches to handling such a complex set of tasks as SimplePie performs.
+Over the years I've tried to start this project by forking SimplePie and stripping out as much legacy code as possible. Those efforts never made it very far. The original codebase grew rapidly and organically over the first 5 years (before I got burned-out and retired from SimplePie development), is extremely complex, not tested or documented nearly well enough, and has been kept alive since 2010 by way of Frankenstein-like patchwork. As PHP and its community have matured over the years, I've started to experiment with new approaches to handling such a complex set of tasks as SimplePie performs.
 
-_SimplePie NG_ is a from-scratch rewrite of SimplePie. It starts with a completely different kind of thinking, and more than a decade more experience in software engineering and open-source. It is written with a view of PHP from 2017 and beyond, and is being built in such a way that greater community involvement should be far easier from much earlier in the project's life.
+**SimplePie NG** is a from-scratch rewrite of SimplePie for PHP 7.1. It starts with a completely different kind of thinking, and more than a decade more experience in software engineering and open-source. It is written with a view of PHP from 2017 and beyond, and is being built in such a way that greater community involvement should be far easier from much earlier in the project's life.
 
 
 ## Features (planned)
@@ -30,7 +30,13 @@ _SimplePie NG_ is a from-scratch rewrite of SimplePie. It starts with a complete
 * Written following a stricter view of the PSR coding style guidelines.
 * Leverages a middleware-based system for feed format support and other add-ons.
 * Support for feed formats can be as inclusive or exclusive as you want. You can choose how you want to spend your performance points.
+
+### Non-Goals
+
+* Backwards-compatibility with SimplePie 1.x.
+* Compatibility with older/historic versions of PHP. We're starting with 7.1/7.2 and moving forward from there.
 * Will almost certainly not work with shared hosting providers. Time to get a grown-up server.
+* WordPress compatibility.
 
 
 ## Examples
