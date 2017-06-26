@@ -14,6 +14,73 @@ test:
 
 #-------------------------------------------------------------------------------
 
+.PHONY: docs
+docs: umldocs rstdocs sphinxdocs
+
+.PHONY: quick
+quick: rstdocs sphinxdocs
+
+.PHONY: umldocs
+umldocs:
+	for uml in $$(find docs/uml/ -type f -name *.puml); do \
+		java -jar ./plantuml.jar -tsvg -charset UTF-8 -nbthread auto $$uml; \
+	done;
+	for dot in $$(find docs/uml/ -type f -name *.dot); do \
+		dot -Tsvg -O -x $$dot; \
+	done;
+	cd docs/uml/ && \
+		for file in $$(find $$(pwd) -type f -name '*.dot.svg' | sed -e "s/\.dot\.svg//"); do \
+			mv $$file.dot.svg $$file.svg; \
+		done;
+
+.PHONY: rstdocs
+rstdocs:
+	cd docs/ && \
+		touch touch.rst && \
+		find $$(pwd) -type f -name '*.rst' | xargs rm -f && \
+		cp index.tmpl index.rst && \
+		find $$(pwd) -type f -name '*.md' -exec \
+			pandoc --from markdown_github --to rst --smart --columns 120 --output '{}'.rst '{}' \;
+	cd docs/ && \
+		find $$(pwd) -type f -name '*.rstx' -exec cp '{}' '{}'.rst \;
+		for file in $$(find $$(pwd) -type f -name '*.rstx.rst' | sed -e "s/\.rstx\.rst//"); do \
+			mv $$file.rstx.rst $$file.rst; \
+		done;
+	cd docs/ && \
+		for file in $$(find $$(pwd) -type f -name '*.md.rst' | sed -e "s/\.md\.rst//"); do \
+			mv $$file.md.rst $$file.rst; \
+			sed -i "s/.. code::/.. code-block::/" $$file.rst; \
+			sed -i "s/| .. reviewer-meta::/.. reviewer-meta::/" $$file.rst; \
+			sed -i "s/| .. figure::/.. figure::/" $$file.rst; \
+			sed -i "s/| :written-on:/   :written-on:/" $$file.rst; \
+			sed -i "s/| :proofread-on/   :proofread-on/" $$file.rst; \
+			sed -i "s/| :scale/   :scale/" $$file.rst; \
+			sed -i "s/| :alt/   :alt/" $$file.rst; \
+			sed -i "s/| :caption: /\n   /" $$file.rst; \
+			sed -i "s/    \*\*NOTE:\*\* /.. note::\n    /" $$file.rst; \
+			sed -i "s/    \*\*IMPORTANT:\*\* /.. warning::\n    /" $$file.rst; \
+			sed -i "s/    \*\*WARNING:\*\* /.. warning::\n    /" $$file.rst; \
+			sed -i -r "s/:ref:\`\`([^\`]*)\`\`/:ref:\`\1\`/" $$file.rst; \
+		done;
+
+.PHONY: sphinxdocs
+sphinxdocs:
+	rm -Rf docs/_build
+	cd docs/ && make html
+	cp docs/theme_overrides.css docs/_build/html/_static/theme_overrides.css
+
+.PHONY: push
+push:
+	rm -Rf /tmp/gh-pages
+	git clone git@github.com:skyzyx/simplepie-ng.git --branch gh-pages --single-branch /tmp/gh-pages
+	rm -Rf /tmp/gh-pages/*
+	cp -Rf ./docs/_build/html/* /tmp/gh-pages/
+	find /tmp/gh-pages -type d | xargs chmod -f 0755
+	find /tmp/gh-pages -type f | xargs chmod -f 0644
+	cd /tmp/gh-pages/ && git add . && git commit -a -m "Automated commit on $$(date)" && git push origin gh-pages
+
+#-------------------------------------------------------------------------------
+
 .PHONY: lint
 lint:
 	@ echo " "

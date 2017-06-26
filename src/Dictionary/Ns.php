@@ -11,9 +11,12 @@ namespace SimplePie\Dictionary;
 
 use DOMNode;
 use Psr\Log\LoggerInterface;
+use SimplePie\Mixin\LoggerTrait;
 
 class Ns
 {
+    use LoggerTrait;
+
     public const ATOM_03 = 'http://purl.org/atom/ns#';
     public const ATOM_10 = 'http://www.w3.org/2005/Atom';
     public const RDF     = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
@@ -49,6 +52,7 @@ class Ns
      */
     public function __construct(LoggerInterface $logger, DOMNode $dom)
     {
+        $this->logger      = $logger;
         $this->domDocument = $dom;
 
         $this->mapping = [

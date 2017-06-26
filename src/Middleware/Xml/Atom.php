@@ -32,7 +32,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
     }
 
     /**
-     * Find and read the contents of the feed-level id node.
+     * Find and read the contents of the feed-level nodes which only have a single value.
      *
      * @param string   $nodeName       The name of the namespaced XML node to read.
      * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
@@ -47,6 +47,26 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
         $this->getLogger()->debug(sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
         return $this->handleSingleNode(function () use ($xpath, $query) {
+            return $xpath->query($query);
+        });
+    }
+
+    /**
+     * Find and read the contents of the feed-level nodes which have multiple values.
+     *
+     * @param string   $nodeName       The name of the namespaced XML node to read.
+     * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
+     *                                 of a call to `SimplePie\Dictionary\Ns`.
+     * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
+     *
+     * @return array Returns an array of arrays with keys of `text` and `html`.
+     */
+    protected function getMultiple(string $nodeName, string $namespaceAlias, DOMXPath $xpath): array
+    {
+        $query = $this->applyNs('/%s:feed/%s:' . $nodeName, $namespaceAlias);
+        $this->getLogger()->debug(sprintf('%s is running an XPath query:', __CLASS__), [$query]);
+
+        return $this->handleMultipleNode(function () use ($xpath, $query) {
             return $xpath->query($query);
         });
     }

@@ -1,4 +1,8 @@
+*.rst
 .phpintel/
+.venv/
 bin/
+docs/_build/
+plantuml.jar
 reports/
 vendor/

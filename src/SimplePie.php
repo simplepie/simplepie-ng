@@ -145,15 +145,14 @@ class SimplePie
                 | LIBXML_NOENT
                 | LIBXML_NOXMLDECL
                 | LIBXML_NSCLEAN
-                | LIBXML_PARSEHUGE
-            ;
+                | LIBXML_PARSEHUGE;
         }
 
         // What are we logging with?
         $this->logger->debug(sprintf(
             'Libxml configuration has a bitwise value of `%s`.%s',
             $this->libxml,
-            ($this->libxml === 4808966)
+            ($this->libxml === 4792582)
                 ? ' (This is the default configuration.)'
                 : ''
         ));

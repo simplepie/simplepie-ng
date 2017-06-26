@@ -52,8 +52,10 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
         ];
     }
 
-    // public function handleMultipleNodes()
-    // {
+    public function handleMultipleNodes(callable $fn): array
+    {
+        $nodes = $fn();
 
-    // }
+print_r($nodes);
+    }
 }

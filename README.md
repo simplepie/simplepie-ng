@@ -5,6 +5,22 @@
 **SimplePie NG** is a modern, _next-generation_ PHP package for working with syndication feeds. It was re-written from the ground-up to take advantage of the changes that have happened in the PHP community since SimplePie was first released in July 2004 for PHP 4.3.
 
 
+## How can I contribute?
+
+**You can't** — at least, not yet. I'm still in the _big-bang_ (or _iteration-zero_, or _proof-of-concept_) phase, and I'm not _yet_ looking for code contributions. I'm making progress on the ideas that I have, and things are still wildly experimental and unstable.
+
+If, after reading the existing docs, you have questions or ideas, you can file a feature request or start a discussion thread in GitHub Issues. I'm willing to entertain good ideas provided that they are good for professional-grade software engineers. My goal is _mostly_ spec-compliance, but adapted to the realities of real-world feeds.
+
+
+## What is SimplePie NG, _really?_
+
+_SimplePie [OG](http://www.urbandictionary.com/define.php?term=OG)_ was created for PHP 4.3 by a person who was brand-new to programming. That was me. About 6 months into the project, I started receiving a _tremendous_ amount of help from a teenage Scot who had nothing better to do — thanks Geoffrey!
+
+Over the years I've tried to start this project by forking SimplePie and stripping out as much legacy code as possible. Those efforts never made it very far. The original codebase grew rapidly and organically over the first 5 years (before I got burned-out and retired from SimplePie development), is extremely complex, not tested or documented nearly well enough, and has been kept alive since 2010 by way of Frankenstein-like patchwork. As PHP and its community have matured over the years, and I started to experiment with new approaches to handling such a complex set of tasks as SimplePie performs.
+
+_SimplePie NG_ is a from-scratch rewrite of SimplePie. It starts with a completely different kind of thinking, and more than a decade more experience in software engineering and open-source. It is written with a view of PHP from 2017 and beyond, and is being built in such a way that greater community involvement should be far easier from much earlier in the project's life.
+
+
 ## Features (planned)
 
 * Built for professional-grade software engineers.
@@ -28,44 +44,29 @@ use GuzzleHttp\Psr7;
 use Monolog\Handler\ErrorLogHandler;
 use Monolog\Logger;
 use Psr\Log\LogLevel;
-use SamBurns\Pimple3ContainerInterop\ServiceContainer;
 use SimplePie\Enum\FeedType;
-use SimplePie\Provider\QuickProvider;
 use SimplePie\SimplePie;
 
-// Supports PSR-11 containers. Pimple 3 needs a wrapper.
-$container = new ServiceContainer();
-
 // Configure a simple PSR-3 logger.
-// (Uses a service locator pattern. Currently reviewing alternatives.)
-$container['_.logger'] = function (Container $c) {
-    $logger = new Logger('SimplePie');
-    $logger->pushHandler(new ErrorLogHandler(
-        ErrorLogHandler::OPERATING_SYSTEM,
-        LogLevel::DEBUG,
-        true,
-        false
-    ));
+$logger = new Logger('SimplePie');
+$logger->pushHandler(new ErrorLogHandler(
+    ErrorLogHandler::OPERATING_SYSTEM,
+    LogLevel::DEBUG,
+    true,
+    false
+));
 
-    return $logger;
-};
-
-// Configure middleware for parsing formats. Parse as much or as little as you want.
-// (Uses a service locator pattern. Currently reviewing alternatives.)
-$container['_.middleware'] = function (Container $c) {
-    $stack = new HandlerStack($c['_.logger']);
-
-    $stack
-        ->append(new JsonFeed(), 'jsonfeed')
-        ->append(new Atom()    , 'atom10')
-        ->append(new Rss()     , 'rss20')
-
-    return $stack;
-};
+$stack = (new HandlerStack($logger))
+    ->append(new JsonFeed(), 'jsonfeed')
+    ->append(new Atom()    , 'atom10')
+    ->append(new Rss()     , 'rss20')
+;
 
 // Instantiate SimplePie with your container.
-// (Uses a service locator pattern. Currently reviewing alternatives.)
-$simplepie = new SimplePie($container);
+$simplepie = new SimplePie([
+    'logger'     => $logger,
+    'middleware' => $middleware,
+]);
 
 // Pass a PSR-7 stream to SimplePie for parsing.
 $stream = Psr7\stream_for(file_get_contents(__DIR__ . '/github-releases.atom'));
@@ -133,6 +134,7 @@ Previously, SimplePie tried to do it all. In retrospect, this was a bad idea.
 * The dependency injection layer will support PSR-11 adapters.
 * Middleware isn't HTTP middleware, so doesn't follow PSR-15, but is inspired by Guzzle's single-pass [Middleware HandlerStack](http://docs.guzzlephp.org/en/latest/handlers-and-middleware.html#handlerstack).
 
+
 ## Services to integrate code with
 
 * [ ] https://zappr.opensource.zalan.do/login
@@ -147,3 +149,10 @@ Previously, SimplePie tried to do it all. In retrospect, this was a bad idea.
 * [ ] https://scrutinizer-ci.com
 * [ ] https://www.versioneye.com
 * [ ] https://insight.sensiolabs.com
+
+
+## Coding Standards
+
+PSR-1/2/12 are a solid foundation, but are not an entire coding style by themselves. I have taken the time to document all of the nitpicky patterns and nuances of my personal coding style. It goes well-beyond brace placement and tabs vs. spaces to cover topics such as docblock annotations, ternary operations and which variation of English to use. It aims for thoroughness and pedanticism over hoping that we can all get along.
+
+<https://github.com/skyzyx/php-coding-standards>

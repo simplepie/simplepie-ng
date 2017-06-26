@@ -10,12 +10,10 @@ declare(strict_types=1);
 namespace SimplePie\Parser;
 
 use DOMDocument;
-use DOMImplementation;
 use DOMXPath;
 use Psr\Http\Message\StreamInterface;
 use Psr\Log\LoggerInterface;
 use SimplePie\Dictionary\Ns;
-use SimplePie\Enum\CharacterSet;
 use SimplePie\Enum\FeedType;
 use SimplePie\Exception\ConfigurationException;
 use SimplePie\HandlerStackInterface;
@@ -86,6 +84,7 @@ class Xml extends AbstractParser
         // DOMDocument
         $this->domDocument = new DOMDocument();
 
+        // Don't barf errors all over the output
         libxml_use_internal_errors(true);
 
         // DOMDocument configuration
@@ -95,14 +94,17 @@ class Xml extends AbstractParser
         $this->domDocument->resolveExternals    = true;
         $this->domDocument->substituteEntities  = true;
         $this->domDocument->strictErrorChecking = false;
-        $this->domDocument->validateOnParse     = true;
+        $this->domDocument->validateOnParse     = false;
 
         // If enabled, force-inject the contents of `entities.dtd` into the feed.
         if ($handleHtmlEntitiesInXml) {
-            $this->getLogger()->debug('Handing HTML entities in XML.');
+            $this->getLogger()->debug('Enabled handing HTML entities in XML.');
             $this->domDocument->loadXML($this->rawDocument, $this->libxml);
 
+            // <feed, <rss, etc.
             $rootElementStart = sprintf('<%s', (string) $this->domDocument->firstChild->nodeName);
+
+            // Read the entity definition file, and force-inject it into the XML document
             $this->rawDocument = str_replace(
                 $rootElementStart,
                 sprintf('%s%s', trim(file_get_contents(SIMPLEPIE_ROOT . '/entities.dtd')), $rootElementStart),
@@ -110,12 +112,13 @@ class Xml extends AbstractParser
             );
         }
 
+        // Parse the XML document with the configured libxml options
         $this->domDocument->loadXML($this->rawDocument, $this->libxml);
 
         // Instantiate a new write-to feed object.
         $this->feed = new Feed($this->logger);
 
-        // Invoke the middleware.
+        // Invoke the registered middleware.
         $this->middleware->invoke(
             FeedType::XML,
             $this->getFeed()->getRoot(),
@@ -123,6 +126,7 @@ class Xml extends AbstractParser
             $this->xpath()
         );
 
+        // Clear the libxml errors to avoid excessive memory usage
         libxml_clear_errors();
     }
 
@@ -135,9 +139,16 @@ class Xml extends AbstractParser
     {
         $namespace = new Ns($this->logger, $this->domDocument);
 
-        return $namespace->getPreferredNamespaceAlias(
+        $alias = $namespace->getPreferredNamespaceAlias(
             $this->domDocument->documentElement->namespaceURI
         );
+
+        $this->getLogger()->debug('Preferred namespace alias:', [
+            'namespace' => $this->domDocument->documentElement->namespaceURI,
+            'alias'     => $alias,
+        ]);
+
+        return $alias;
     }
 
     /**
@@ -151,6 +162,7 @@ class Xml extends AbstractParser
         $ns    = $this->getNamespaceAlias();
         $xpath = new DOMXPath($this->domDocument);
 
+        // Register the namespace alias with the XPath instance
         if (!is_null($ns)) {
             $xpath->registerNamespace($ns,
                 $this->domDocument->documentElement->namespaceURI ?? ''
