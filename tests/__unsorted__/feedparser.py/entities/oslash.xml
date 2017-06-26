@@ -1,9 +1,0 @@
-<!--
-Description: oslash
-Expect:      feed['title'] == 'testing \xf8 entity'
--->
-<rss>
-<channel>
-<title>testing &oslash; entity</title>
-</channel>
-</rss>

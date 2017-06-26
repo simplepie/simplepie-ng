@@ -1,9 +1,0 @@
-<!--
-Description: Iuml
-Expect:      feed['title'] == 'testing \xcf entity'
--->
-<rss>
-<channel>
-<title>testing &Iuml; entity</title>
-</channel>
-</rss>

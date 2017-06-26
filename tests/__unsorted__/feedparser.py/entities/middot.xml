@@ -1,9 +1,0 @@
-<!--
-Description: middot
-Expect:      feed['title'] == 'testing \xb7 entity'
--->
-<rss>
-<channel>
-<title>testing &middot; entity</title>
-</channel>
-</rss>
