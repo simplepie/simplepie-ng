@@ -10,6 +10,8 @@ declare(strict_types=1);
 namespace SimplePie\Middleware\Xml;
 
 use DOMXPath;
+use SimplePie\Type\Generator;
+use SimplePie\Type\Node;
 use stdClass;
 
 /**
@@ -27,16 +29,23 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
     {
         // lang
         $this->addArrayProperty($feedRoot, 'lang');
-        $xq = $xpath->query($this->applyNs('/%s:feed[attribute::xml:lang][1]/@xml:lang', $namespaceAlias));
+        $xq                              = $xpath->query($this->applyNs('/%s:feed[attribute::xml:lang][1]/@xml:lang', $namespaceAlias));
         $feedRoot->lang[$namespaceAlias] = ($xq->length > 0)
             ? (string) $xq->item(0)->value
-            : null
-        ;
+            : null;
 
+        // single nodes, string values
         foreach (['id', 'rights', 'subtitle', 'summary', 'title'] as $nodeName) {
             $this->addArrayProperty($feedRoot, $nodeName);
             $feedRoot->$nodeName[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
         }
+
+        // generator
+        $this->addArrayProperty($feedRoot, 'generator');
+        $xq                                   = $xpath->query($this->applyNs('/%s:feed/%s:generator', $namespaceAlias));
+        $feedRoot->generator[$namespaceAlias] = ($xq->length > 0)
+            ? new Generator($this->getLogger(), $xq->item(0))
+            : null;
     }
 
     /**
@@ -49,7 +58,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
      *
      * @return array Returns an array with keys of `text` and `html`.
      */
-    protected function getSingle(string $nodeName, string $namespaceAlias, DOMXPath $xpath): array
+    protected function getSingle(string $nodeName, string $namespaceAlias, DOMXPath $xpath): Node
     {
         $query = $this->applyNs('/%s:feed/%s:' . $nodeName, $namespaceAlias);
         $this->getLogger()->debug(sprintf('%s is running an XPath query:', __CLASS__), [$query]);
@@ -69,7 +78,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
      *
      * @return array Returns an array of arrays with keys of `text` and `html`.
      */
-    protected function getMultiple(string $nodeName, string $namespaceAlias, DOMXPath $xpath): array
+    protected function getMultiple(string $nodeName, string $namespaceAlias, DOMXPath $xpath): Node
     {
         $query = $this->applyNs('/%s:feed/%s:' . $nodeName, $namespaceAlias);
         $this->getLogger()->debug(sprintf('%s is running an XPath query:', __CLASS__), [$query]);

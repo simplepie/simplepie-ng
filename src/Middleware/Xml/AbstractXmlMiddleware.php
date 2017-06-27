@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace SimplePie\Middleware\Xml;
 
 use SimplePie\Middleware\AbstractMiddleware;
+use SimplePie\Type\Node;
 
 abstract class AbstractXmlMiddleware extends AbstractMiddleware
 {
@@ -35,27 +36,21 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
      *
      * @return array Returns an array with keys of `text` and `html`.
      */
-    public function handleSingleNode(callable $fn): array
+    public function handleSingleNode(callable $fn): Node
     {
         $nodes = $fn();
 
         if ($nodes->length > 0) {
-            return [
-                'text' => $nodes[0]->textContent,
-                'html' => $nodes[0]->nodeValue,
-            ];
+            return new Node($nodes[0]);
         }
 
-        return [
-            'text' => null,
-            'html' => null,
-        ];
+        return new Node();
     }
 
-    public function handleMultipleNodes(callable $fn): array
+    public function handleMultipleNodes(callable $fn): Node
     {
         $nodes = $fn();
 
-print_r($nodes);
+        print_r($nodes);
     }
 }

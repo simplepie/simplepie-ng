@@ -116,7 +116,7 @@ class Xml extends AbstractParser
         $this->domDocument->loadXML($this->rawDocument, $this->libxml);
 
         // Instantiate a new write-to feed object.
-        $this->feed = new Feed($this->logger);
+        $this->feed = new Feed($this->logger, $this->getNamespaceAlias());
 
         // Invoke the registered middleware.
         $this->middleware->invoke(
@@ -142,11 +142,6 @@ class Xml extends AbstractParser
         $alias = $namespace->getPreferredNamespaceAlias(
             $this->domDocument->documentElement->namespaceURI
         );
-
-        $this->getLogger()->debug('Preferred namespace alias:', [
-            'namespace' => $this->domDocument->documentElement->namespaceURI,
-            'alias'     => $alias,
-        ]);
 
         return $alias;
     }
