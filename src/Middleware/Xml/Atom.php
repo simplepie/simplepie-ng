@@ -25,6 +25,14 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
      */
     public function __invoke(stdClass $feedRoot, string $namespaceAlias, DOMXPath $xpath): void
     {
+        // lang
+        $this->addArrayProperty($feedRoot, 'lang');
+        $xq = $xpath->query($this->applyNs('/%s:feed[attribute::xml:lang][1]/@xml:lang', $namespaceAlias));
+        $feedRoot->lang[$namespaceAlias] = ($xq->length > 0)
+            ? (string) $xq->item(0)->value
+            : null
+        ;
+
         foreach (['id', 'rights', 'subtitle', 'summary', 'title'] as $nodeName) {
             $this->addArrayProperty($feedRoot, $nodeName);
             $feedRoot->$nodeName[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
