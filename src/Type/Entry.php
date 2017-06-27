@@ -9,13 +9,20 @@ declare(strict_types=1);
 
 namespace SimplePie\Type;
 
-class Entry
-{
-    public function __construct()
-    {
-    }
+use Psr\Log\LoggerInterface;
+use SimplePie\Mixin\LoggerTrait;
 
-    public function getTitle()
+class Entry extends AbstractType implements TypeInterface
+{
+    use LoggerTrait;
+
+    /**
+     * Constructs a new instance of this class.
+     *
+     * @param LoggerInterface $logger A PSR-3 logger.
+     */
+    public function __construct(LoggerInterface $logger)
     {
+        $this->logger = $logger;
     }
 }

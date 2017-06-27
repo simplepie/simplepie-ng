@@ -10,28 +10,64 @@ declare(strict_types=1);
 namespace SimplePie\Type;
 
 use Psr\Log\LoggerInterface;
+use SimplePie\Mixin\LoggerTrait;
 use stdClass;
 
 /**
  * Represents the top-level of a feed.
  */
-class Feed
+class Feed extends AbstractType implements TypeInterface
 {
+    use LoggerTrait;
+
     /**
      * The root-most node in the feed.
      *
-     * @var [type]
+     * @var stdClass
      */
     protected $root;
 
     /**
-     * Constructs a new instance of this class.
+     * The preferred namespace alias for a given XML namespace URI. Should be
+     * the result of a call to `SimplePie\Dictionary\Ns`.
+     *
+     * @var string
      */
-    public function __construct(LoggerInterface $logger)
+    protected $namespaceAlias;
+
+    /**
+     * Constructs a new instance of this class.
+     *
+     * @param LoggerInterface $logger A PSR-3 logger.
+     */
+    public function __construct(LoggerInterface $logger, string $namespaceAlias)
     {
-        $this->logger = $logger;
-        $this->root   = new stdClass();
+        $this->root           = new stdClass();
+        $this->logger         = $logger;
+        $this->namespaceAlias = $namespaceAlias;
     }
+
+    //---------------------------------------------------------------------------
+    // SINGLE VALUES
+
+    public function getId(?string $namespaceAlias = null): Node
+    {
+        $alias = $namespaceAlias
+            ?? $this->namespaceAlias;
+
+        if (isset($this->getRoot()->id[$alias])) {
+            return $this->getRoot()->id[$alias];
+        }
+
+        return new Node();
+    }
+
+    //---------------------------------------------------------------------------
+    // MULTIPLE VALUES
+
+
+    //---------------------------------------------------------------------------
+    // INTERNAL
 
     public function getItems()
     {
