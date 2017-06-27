@@ -30,4 +30,14 @@ abstract class AbstractEnum implements EnumInterface
     {
         return array_keys(static::introspect());
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function hasValue(string $value): bool
+    {
+        $arr = array_flip(static::introspect());
+
+        return isset($arr[$value]);
+    }
 }
