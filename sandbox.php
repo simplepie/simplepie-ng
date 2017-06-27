@@ -38,5 +38,7 @@ $stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
 $parser = $simplepie->parseXml($stream, true);
 
 $feed = $parser->getFeed();
-print_r($feed->getRoot());
+print_r($feed->getId()->html);
 // print_r($feed->getRoot());
+
+echo PHP_EOL;

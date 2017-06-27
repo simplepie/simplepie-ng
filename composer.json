@@ -24,7 +24,8 @@
         "samburns/pimple3-containerinterop": "^1.3",
         "monolog/monolog": "^1.22",
         "willdurand/negotiation": "^2.3",
-        "skyzyx/utility-pack": "^1.0"
+        "skyzyx/utility-pack": "^1.0",
+        "psr/container": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.1",
