@@ -29,7 +29,8 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
     {
         // lang
         $this->addArrayProperty($feedRoot, 'lang');
-        $xq                              = $xpath->query($this->applyNs('/%s:feed[attribute::xml:lang][1]/@xml:lang', $namespaceAlias));
+        $xq = $xpath->query($this->applyNsToQuery('/%s:feed[attribute::xml:lang][1]/@xml:lang', $namespaceAlias));
+
         $feedRoot->lang[$namespaceAlias] = ($xq->length > 0)
             ? (string) $xq->item(0)->value
             : null;
@@ -42,7 +43,8 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
 
         // generator
         $this->addArrayProperty($feedRoot, 'generator');
-        $xq                                   = $xpath->query($this->applyNs('/%s:feed/%s:generator', $namespaceAlias));
+        $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', 'generator'));
+
         $feedRoot->generator[$namespaceAlias] = ($xq->length > 0)
             ? new Generator($this->getLogger(), $xq->item(0))
             : null;
@@ -56,11 +58,11 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
      *                                 of a call to `SimplePie\Dictionary\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
      *
-     * @return array Returns an array with keys of `text` and `html`.
+     * @return Node Returns a Node object with properties of `text` and `html`.
      */
     protected function getSingle(string $nodeName, string $namespaceAlias, DOMXPath $xpath): Node
     {
-        $query = $this->applyNs('/%s:feed/%s:' . $nodeName, $namespaceAlias);
+        $query = $this->generateQuery($namespaceAlias, true, 'feed', $nodeName);
         $this->getLogger()->debug(sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
         return $this->handleSingleNode(function () use ($xpath, $query) {
@@ -76,11 +78,11 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
      *                                 of a call to `SimplePie\Dictionary\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
      *
-     * @return array Returns an array of arrays with keys of `text` and `html`.
+     * @return array Returns an array of Node objects with properties of `text` and `html`.
      */
-    protected function getMultiple(string $nodeName, string $namespaceAlias, DOMXPath $xpath): Node
+    protected function getMultiple(string $nodeName, string $namespaceAlias, DOMXPath $xpath): array
     {
-        $query = $this->applyNs('/%s:feed/%s:' . $nodeName, $namespaceAlias);
+        $query = $this->generateQuery('/%s:feed/%s:' . $nodeName, $namespaceAlias);
         $this->getLogger()->debug(sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
         return $this->handleMultipleNode(function () use ($xpath, $query) {

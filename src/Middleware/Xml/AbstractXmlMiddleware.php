@@ -24,9 +24,48 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
      *
      * @return string
      */
-    public function applyNs(string $query, string $namespaceAlias): string
+    public function applyNsToQuery(string $query, string $namespaceAlias): string
     {
         return str_replace('%s', $namespaceAlias, $query);
+    }
+
+    /**
+     * Produce an XPath 1.0 expression which is used to query XML document nodes.
+     *
+     * @param string $namespaceAlias   The XML namespace alias to apply.
+     * @param bool   $supportMixedCase Whether or not to generate an XPath query which supports
+     *                                 mixed-case/case-insensitive XML element names.
+     * @param string ...$path          A variadic parameter which accepts the names of the XML
+     *                                 tree nodes in sequence.
+     *
+     * @return string An XPath 1.0 expression.
+     *
+     * @see https://wiki.php.net/rfc/variadics
+     * @see http://php.net/manual/en/functions.arguments.php#functions.variable-arg-list
+     */
+    public function generateQuery(string $namespaceAlias, bool $supportMixedCase = false, string ...$path): string
+    {
+        $query = '';
+
+        foreach ($path as $p) {
+            if ($supportMixedCase) {
+                $query .= sprintf(
+                    '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
+                    $namespaceAlias,
+                    'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                    'abcdefghijklmnopqrstuvwxyz',
+                    $p
+                );
+            } else {
+                $query .= sprintf(
+                    '/%s:%s',
+                    $namespaceAlias,
+                    $p
+                );
+            }
+        }
+
+        return $query;
     }
 
     /**
