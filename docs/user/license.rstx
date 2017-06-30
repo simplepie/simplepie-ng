@@ -1,0 +1,105 @@
+License: Why Apache 2.0?
+========================
+
+With all of the different *Free Software* and *Permissive* licenses out there, why am I selecting `Apache
+2.0 <https://opensource.org/licenses/Apache-2.0>`__ for this project?
+
+I have worked with a lot of engineers in my career who didn’t understand the first thing about software licenses. I even
+had one co-worker once tell me that “software licenses really don’t matter, so don’t worry about it.”
+
+``/me facepalm``
+
+We had been talking about it, and his belief was that GPL only matters if you redistribute. He was half-right.
+`GPL <https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html>`__ and
+`LGPL <https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html>`__ licenses do have specific rules around
+redistribution, but they are *far* from the “only” thing that matters.
+
+Short and Permissive
+--------------------
+
+Many projects use short, permissive licenses such as `MIT <https://opensource.org/licenses/MIT>`__,
+`BSD-2-clause <https://opensource.org/licenses/BSD-2-Clause>`__,
+`BSD-3-clause <https://opensource.org/licenses/BSD-3-Clause>`__, `PHP <https://opensource.org/licenses/PHP-3.0>`__,
+`zlib/libpng <https://opensource.org/licenses/Zlib>`__, `WTFPL <http://www.wtfpl.net/about/>`__, etc. These license are
+fine¹ for small projects, and their brevity is often seen as a positive quality. But this same quality leaves things
+legally murky.
+
+Corporations can use these licenses without fear of lawsuits because most of them have been around a long time, and are
+understood well-enough by IP lawyers.
+
+SimplePie “OG” went through a few license changes in the earliest days, back before I understood anything about software
+licenses. Since I either owned all of the code in its entirety, or Geoffrey and I owned the code jointly, we were able
+to tweak the license unilaterally while we came to understand them better.
+
+I started with `GPLv2 <https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html>`__ because I associated “GPL” with
+“open source”. Then someone emailed me to let me know that GPL was bad (I don’t remember who it was, but they used the
+phrase “cutting off my nose to spite my face”), so I changed it to
+`LGPLv2.1 <https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html>`__. Then it was one of the `Creative
+Commons <https://creativecommons.org/share-your-work/>`__ licenses before I learned that they were not designed for
+*software* so much as *creative works* like art, photography, and music.
+
+Finally we ended on `BSD-3-clause <https://opensource.org/licenses/BSD-3-Clause>`__. We briefly considered
+`zlib/libpng <https://opensource.org/licenses/Zlib>`__ and `MIT <https://opensource.org/licenses/MIT>`__, but decided
+that the difference between those and the BSD license weren’t enough to warrant another license change.
+
+¹ `IANAL <http://www.urbandictionary.com/define.php?term=IANAL>`__
+
+GPL, LGPL, AGPL, and “Free Software”
+------------------------------------
+
+The first thing to understand is that the license is pushed and promoted by `Richard
+Stallman <https://stallman.org/rms-lifestyle.html>`__. If you take the time to understand his politics and agenda,
+you’ll understand why the GPL is the way that it is.
+
+.. note::
+
+    I’m going to be up-front about my dislike for Richard Stallman, GPL licenses on the whole, and the way that
+    the *Free Software Foundation* handles its business. I have a fundamental philosophical opposition to the GPL because it
+    takes away my freedom as a creator. Copyright is both good and fair when it’s not being `grossly abused by
+    Disney <https://artlawjournal.com/mickey-mouse-keeps-changing-copyright-law/>`__ or the
+    `RIAA <https://www.eff.org/wp/riaa-v-people-five-years-later>`__.
+
+    Despite my personal disapproval of the GPL, I will do my best to describe it in an accurate and unbiased manner.
+
+It is a *viral license*. What this means is that if you are writing code, and you pull-in some GPL’d code, your code is
+now **required** to be released under the GPL. It *infects* the code that it touches, as it were. The GPL is written in
+favor of the freedom of the end-user to use it however they want, and not the freedom of the creator to decide how it
+can be used. From the perspective of the creator, the GPL is as restrictive as any proprietary license.
+
+LGPL is designed to be *slightly* less restrictive, in that LGPL code stays LGPL, but it doesn’t infect your codebase.
+`AGPL <https://www.gnu.org/licenses/why-affero-gpl.en.html>`__ is a variation of the GPL which says that if you modify
+or integrate any AGPL code, you are **required** to release the source code. How does this impact usage by corporations?
+
+Well, in nearly all cases, corporations won’t touch \*GPL code with a 10-foot pole. Unless they themselves are forking
+GPL code (see `Amazon Linux <https://aws.amazon.com/amazon-linux-ami/>`__), they will keep any usage of \*GPL code
+completely separate from all other code.
+
+Lastly, the language in the `GPLv2 <https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html>`__ is intended for
+*compiled software*, which SimplePie is not. This legal murkiness led the *Free Software Foundation* to develop
+`GPLv3 <https://www.gnu.org/licenses/gpl-3.0.en.html>`__ (and
+`LGPLv3 <https://www.gnu.org/licenses/lgpl-3.0.en.html>`__), but in doing so, they also changed the language around
+patent rights, making `GPLv3 <https://www.gnu.org/licenses/gpl-3.0.en.html>`__ a hard no-go for corporations.
+
+So, why Apache 2.0?
+-------------------
+
+The `Apache 2.0 license <https://opensource.org/licenses/Apache-2.0>`__ has a few specific qualities that I was looking
+for:
+
+-  It is well-understood and defined, legally.
+-  It is corporation-friendly.
+-  It is *Permissive* and supports copyright (as opposed to copyleft).
+-  It is broadly compatible with other *Permissive* licenses.
+-  It is in wide usage in the industry.
+
+Learn more about the Apache 2.0 license:
+
+-  https://www.apache.org/legal/resolved.html
+-  https://www.apache.org/foundation/license-faq.html
+-  https://www.apache.org/licenses/GPL-compatibility.html
+-  http://oss-watch.ac.uk/resources/apache2
+-  https://news.ycombinator.com/item?id=3402450
+
+.. reviewer-meta::
+   :written-on: 2017-06-29
+   :proofread-on: 2017-06-29
