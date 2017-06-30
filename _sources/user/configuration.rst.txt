@@ -1,39 +1,70 @@
 Configuration
 =============
 
-There are some configuration parameters that SimplePie NG supports.
+The Design
+----------
 
-.. note::
+The design of the configuration system is one I've struggled with a bit.
 
-    I think this is going to change a little. I have been avoiding using the service locator pattern, in favor of
-    dependency injection, but I think that in well-understood, limited cases, it can come in handy. Namely, for the
-    logger and other global-style configurations that should apply universally.
+I'm a strong proponent of *dependency injection* and the *inversion of control* principle. The overwhelming majority of
+SimplePie NG is built like this by default.
+
+Then I started looking at what a global configuration system would look like. As a user, I want to be able to pass-in
+my logger when I get started, then trust that it will be used throughout. Following a *strict* view of inversion of
+control, this means that I have to pass the logger object down throughout every single instantiated object in the tree.
+*Every single constructor* would have to accept my logger.
+
+When I started doing this, however, the public API started to get really gnarly. Even in my development sandbox file, I
+was having to pass the logger to ``SimplePie``, ``HandlerStack``, and then into each and every single piece of
+middleware I used individually.
+
+Conversely, you have the *service locator pattern* wherein you use your container as a central registry. Every class
+which needs something from the registry knows how to pull it. Slim Framework leverages this pattern for a few things
+like the various 400/500 error handlers. Some people refer to this as an *anti-pattern* because, when used flagrantly,
+you completely lose track of your class dependencies. But I think that in well-understood, limited cases, it can come in
+handy. Namely, for the logger and other global-style configurations that should apply universally.
+
+So that's what this is — documentation for *configuration options* which leverage the service locator pattern, while the
+rest of SimplePie NG uses plain ol' dependency injection.
 
 Logger
 ------
 
-Passing the ``logger`` option to the constructor will allow you to use any `PSR-3 <http://www.php-fig.org/psr/psr-3/>`__
-logger. Here’s an example `Monolog <https://github.com/Seldaek/monolog>`__ logger that uses the system’s error log.
+Using any `PSR-11 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md>`__ container,
+create a new key called ``simplepie.logger``, then have it return any instantiated
+`PSR-3 <http://www.php-fig.org/psr/psr-3/>`__ logger.
+
+Here’s an example `Monolog <https://github.com/Seldaek/monolog>`__ logger that uses the system’s error log.
 
 .. code-block:: php
 
     <?php
     use Monolog\Handler\ErrorLogHandler;
     use Monolog\Logger;
+    use Psr\Container\ContainerInterface;
     use Psr\Log\LogLevel;
+    use SimplePie\Configuration;
+    use SimplePie\Container;
     use SimplePie\SimplePie;
 
-    $logger = new Logger('SimplePie');
-    $logger->pushHandler(new ErrorLogHandler(
-        ErrorLogHandler::OPERATING_SYSTEM,
-        LogLevel::DEBUG,
-        true,
-        false
-    ));
+    $container = new Container();
 
-    $simplepie = new SimplePie([
-        'logger' => $logger,
-    ]);
+    $container['simplepie.logger'] = function (ContainerInterface $c)
+    {
+        $logger = new Logger('SimplePie');
+        $logger->pushHandler(new ErrorLogHandler(
+            ErrorLogHandler::OPERATING_SYSTEM,
+            LogLevel::DEBUG,
+            true,
+            false
+        ));
+
+        return $logger;
+    }
+
+    Configuration::setContainer($container);
+
+    $simplepie = new SimplePie();
 
 Middleware
 ----------
@@ -41,22 +72,34 @@ Middleware
 All of the parsing leverages a middleware pattern. Without any registered middleware, nothing happens by default. All
 of this is managed using a *middleware handler stack*.
 
+Using any `PSR-11 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md>`__ container,
+create a new key called ``simplepie.middleware``, then have it return an instantiated class which implements
+`SimplePie\HandlerStackInterface` (such as `SimplePie\HandlerStack`).
+
 .. code-block:: php
 
     <?php
+    use SimplePie\Configuration;
+    use SimplePie\Container;
     use SimplePie\HandlerStack;
+    use SimplePie\Middleware\Json\JsonFeed;
     use SimplePie\Middleware\Xml\Atom;
     use SimplePie\Middleware\Xml\Rss;
     use SimplePie\SimplePie;
 
-    $stack = (new HandlerStack())
-        ->append(new Atom(), 'atom10')
-        ->append(new Rss(), 'rss20')
-    ;
+    $container = new Container();
 
-    $simplepie = new SimplePie([
-        'middleware' => $stack,
-    ]);
+    $container['simplepie.middleware'] = function (ContainerInterface $c)
+    {
+        return (new HandlerStack())
+            ->append(new JsonFeed(), 'jsonfeed')
+            ->append(new Atom(), 'atom10')
+            ->append(new Rss(), 'rss20');
+    }
+
+    Configuration::setContainer($container);
+
+    $simplepie = new SimplePie();
 
 In this example, and assuming the feed is XML-based, the Atom 1.0 middleware will run first followed by the RSS 2.0
 middleware.
@@ -103,19 +146,33 @@ They are as follows:
 |                           | limits of the size of text nodes.                                                        |
 +---------------------------+------------------------------------------------------------------------------------------+
 
-We explicitly do not set ``LIBXML_NOCDATA`` because we want to preserve the *CDATA-ness* of those nodes. You can find the definitions for more ``libxml`` constants by reading `Predefined libxml constants <http://php.net/manual/en/libxml.constants.php>`__.
+We explicitly do not set ``LIBXML_NOCDATA`` because we want to preserve the *CDATA-ness* of those nodes. You can find
+the definitions for more ``libxml`` constants by reading
+`Predefined libxml constants <http://php.net/manual/en/libxml.constants.php>`__.
 
-If you want to change the ``libxml`` parameters that are used, you can pass them to the constructor.
+If you want to change the ``libxml`` parameters that are used, using any
+`PSR-11 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md>`__ container, create a new
+key called ``simplepie.libxml``, then have it return the
+`bitwise-OR <http://php.net/manual/en/language.operators.bitwise.php>`__ value of the ``LIBXML_*`` options you prefer.
 
 .. code-block:: php
 
     <?php
+    use SimplePie\Configuration;
+    use SimplePie\Container;
     use SimplePie\SimplePie;
 
-    $simplepie = new SimplePie([
-        'libxml' => LIBXML_HTML_NOIMPLIED | LIBXML_NOCDATA,
-    ]);
+    $container = new Container();
+
+    $container['simplepie.libxml'] = function ()
+    {
+        return LIBXML_HTML_NOIMPLIED | LIBXML_NOCDATA;
+    }
+
+    Configuration::setContainer($container);
+
+    $simplepie = new SimplePie();
 
 .. reviewer-meta::
    :written-on: 2017-06-25
-   :proofread-on: 2017-06-25
+   :proofread-on: 2017-06-30

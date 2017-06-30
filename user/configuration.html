@@ -108,6 +108,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-design">The Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#logger">Logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#middleware">Middleware</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#libxml">libxml</a></li>
@@ -197,34 +198,59 @@
             
   <div class="section" id="configuration">
 <h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
-<p>There are some configuration parameters that SimplePie NG supports.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">I think this is going to change a little. I have been avoiding using the service locator pattern, in favor of
-dependency injection, but I think that in well-understood, limited cases, it can come in handy. Namely, for the
-logger and other global-style configurations that should apply universally.</p>
+<div class="section" id="the-design">
+<h2>The Design<a class="headerlink" href="#the-design" title="Permalink to this headline">¶</a></h2>
+<p>The design of the configuration system is one I’ve struggled with a bit.</p>
+<p>I’m a strong proponent of <em>dependency injection</em> and the <em>inversion of control</em> principle. The overwhelming majority of
+SimplePie NG is built like this by default.</p>
+<p>Then I started looking at what a global configuration system would look like. As a user, I want to be able to pass-in
+my logger when I get started, then trust that it will be used throughout. Following a <em>strict</em> view of inversion of
+control, this means that I have to pass the logger object down throughout every single instantiated object in the tree.
+<em>Every single constructor</em> would have to accept my logger.</p>
+<p>When I started doing this, however, the public API started to get really gnarly. Even in my development sandbox file, I
+was having to pass the logger to <code class="docutils literal"><span class="pre">SimplePie</span></code>, <code class="docutils literal"><span class="pre">HandlerStack</span></code>, and then into each and every single piece of
+middleware I used individually.</p>
+<p>Conversely, you have the <em>service locator pattern</em> wherein you use your container as a central registry. Every class
+which needs something from the registry knows how to pull it. Slim Framework leverages this pattern for a few things
+like the various 400/500 error handlers. Some people refer to this as an <em>anti-pattern</em> because, when used flagrantly,
+you completely lose track of your class dependencies. But I think that in well-understood, limited cases, it can come in
+handy. Namely, for the logger and other global-style configurations that should apply universally.</p>
+<p>So that’s what this is — documentation for <em>configuration options</em> which leverage the service locator pattern, while the
+rest of SimplePie NG uses plain ol’ dependency injection.</p>
 </div>
 <div class="section" id="logger">
 <h2>Logger<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h2>
-<p>Passing the <code class="docutils literal"><span class="pre">logger</span></code> option to the constructor will allow you to use any <a class="reference external" href="http://www.php-fig.org/psr/psr-3/">PSR-3</a>
-logger. Here’s an example <a class="reference external" href="https://github.com/Seldaek/monolog">Monolog</a> logger that uses the system’s error log.</p>
+<p>Using any <a class="reference external" href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md">PSR-11</a> container,
+create a new key called <code class="docutils literal"><span class="pre">simplepie.logger</span></code>, then have it return any instantiated
+<a class="reference external" href="http://www.php-fig.org/psr/psr-3/">PSR-3</a> logger.</p>
+<p>Here’s an example <a class="reference external" href="https://github.com/Seldaek/monolog">Monolog</a> logger that uses the system’s error log.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">use</span> <span class="nx">Monolog\Handler\ErrorLogHandler</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Monolog\Logger</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Psr\Container\ContainerInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Psr\Log\LogLevel</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">SimplePie\Configuration</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">SimplePie\Container</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\SimplePie</span><span class="p">;</span>
 
-<span class="nv">$logger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="s1">&#39;SimplePie&#39;</span><span class="p">);</span>
-<span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">pushHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">ErrorLogHandler</span><span class="p">(</span>
-    <span class="nx">ErrorLogHandler</span><span class="o">::</span><span class="na">OPERATING_SYSTEM</span><span class="p">,</span>
-    <span class="nx">LogLevel</span><span class="o">::</span><span class="na">DEBUG</span><span class="p">,</span>
-    <span class="k">true</span><span class="p">,</span>
-    <span class="k">false</span>
-<span class="p">));</span>
+<span class="nv">$container</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Container</span><span class="p">();</span>
 
-<span class="nv">$simplepie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimplePie</span><span class="p">([</span>
-    <span class="s1">&#39;logger&#39;</span> <span class="o">=&gt;</span> <span class="nv">$logger</span><span class="p">,</span>
-<span class="p">]);</span>
+<span class="nv">$container</span><span class="p">[</span><span class="s1">&#39;simplepie.logger&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nx">ContainerInterface</span> <span class="nv">$c</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$logger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="s1">&#39;SimplePie&#39;</span><span class="p">);</span>
+    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">pushHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">ErrorLogHandler</span><span class="p">(</span>
+        <span class="nx">ErrorLogHandler</span><span class="o">::</span><span class="na">OPERATING_SYSTEM</span><span class="p">,</span>
+        <span class="nx">LogLevel</span><span class="o">::</span><span class="na">DEBUG</span><span class="p">,</span>
+        <span class="k">true</span><span class="p">,</span>
+        <span class="k">false</span>
+    <span class="p">));</span>
+
+    <span class="k">return</span> <span class="nv">$logger</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Configuration</span><span class="o">::</span><span class="na">setContainer</span><span class="p">(</span><span class="nv">$container</span><span class="p">);</span>
+
+<span class="nv">$simplepie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimplePie</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -232,20 +258,31 @@ logger. Here’s an example <a class="reference external" href="https://github.c
 <h2>Middleware<a class="headerlink" href="#middleware" title="Permalink to this headline">¶</a></h2>
 <p>All of the parsing leverages a middleware pattern. Without any registered middleware, nothing happens by default. All
 of this is managed using a <em>middleware handler stack</em>.</p>
+<p>Using any <a class="reference external" href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md">PSR-11</a> container,
+create a new key called <code class="docutils literal"><span class="pre">simplepie.middleware</span></code>, then have it return an instantiated class which implements
+<cite>SimplePieHandlerStackInterface</cite> (such as <cite>SimplePieHandlerStack</cite>).</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">use</span> <span class="nx">SimplePie\Configuration</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">SimplePie\Container</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\HandlerStack</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">SimplePie\Middleware\Json\JsonFeed</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\Middleware\Xml\Atom</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\Middleware\Xml\Rss</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\SimplePie</span><span class="p">;</span>
 
-<span class="nv">$stack</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">HandlerStack</span><span class="p">())</span>
-    <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">Atom</span><span class="p">(),</span> <span class="s1">&#39;atom10&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">Rss</span><span class="p">(),</span> <span class="s1">&#39;rss20&#39;</span><span class="p">)</span>
-<span class="p">;</span>
+<span class="nv">$container</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Container</span><span class="p">();</span>
 
-<span class="nv">$simplepie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimplePie</span><span class="p">([</span>
-    <span class="s1">&#39;middleware&#39;</span> <span class="o">=&gt;</span> <span class="nv">$stack</span><span class="p">,</span>
-<span class="p">]);</span>
+<span class="nv">$container</span><span class="p">[</span><span class="s1">&#39;simplepie.middleware&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nx">ContainerInterface</span> <span class="nv">$c</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="k">new</span> <span class="nx">HandlerStack</span><span class="p">())</span>
+        <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">JsonFeed</span><span class="p">(),</span> <span class="s1">&#39;jsonfeed&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">Atom</span><span class="p">(),</span> <span class="s1">&#39;atom10&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">Rss</span><span class="p">(),</span> <span class="s1">&#39;rss20&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">Configuration</span><span class="o">::</span><span class="na">setContainer</span><span class="p">(</span><span class="nv">$container</span><span class="p">);</span>
+
+<span class="nv">$simplepie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimplePie</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>In this example, and assuming the feed is XML-based, the Atom 1.0 middleware will run first followed by the RSS 2.0
@@ -308,19 +345,33 @@ limits of the size of text nodes.</td>
 </tr>
 </tbody>
 </table>
-<p>We explicitly do not set <code class="docutils literal"><span class="pre">LIBXML_NOCDATA</span></code> because we want to preserve the <em>CDATA-ness</em> of those nodes. You can find the definitions for more <code class="docutils literal"><span class="pre">libxml</span></code> constants by reading <a class="reference external" href="http://php.net/manual/en/libxml.constants.php">Predefined libxml constants</a>.</p>
-<p>If you want to change the <code class="docutils literal"><span class="pre">libxml</span></code> parameters that are used, you can pass them to the constructor.</p>
+<p>We explicitly do not set <code class="docutils literal"><span class="pre">LIBXML_NOCDATA</span></code> because we want to preserve the <em>CDATA-ness</em> of those nodes. You can find
+the definitions for more <code class="docutils literal"><span class="pre">libxml</span></code> constants by reading
+<a class="reference external" href="http://php.net/manual/en/libxml.constants.php">Predefined libxml constants</a>.</p>
+<p>If you want to change the <code class="docutils literal"><span class="pre">libxml</span></code> parameters that are used, using any
+<a class="reference external" href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md">PSR-11</a> container, create a new
+key called <code class="docutils literal"><span class="pre">simplepie.libxml</span></code>, then have it return the
+<a class="reference external" href="http://php.net/manual/en/language.operators.bitwise.php">bitwise-OR</a> value of the <code class="docutils literal"><span class="pre">LIBXML_*</span></code> options you prefer.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">use</span> <span class="nx">SimplePie\Configuration</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">SimplePie\Container</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\SimplePie</span><span class="p">;</span>
 
-<span class="nv">$simplepie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimplePie</span><span class="p">([</span>
-    <span class="s1">&#39;libxml&#39;</span> <span class="o">=&gt;</span> <span class="nx">LIBXML_HTML_NOIMPLIED</span> <span class="o">|</span> <span class="nx">LIBXML_NOCDATA</span><span class="p">,</span>
-<span class="p">]);</span>
+<span class="nv">$container</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Container</span><span class="p">();</span>
+
+<span class="nv">$container</span><span class="p">[</span><span class="s1">&#39;simplepie.libxml&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nx">LIBXML_HTML_NOIMPLIED</span> <span class="o">|</span> <span class="nx">LIBXML_NOCDATA</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Configuration</span><span class="o">::</span><span class="na">setContainer</span><span class="p">(</span><span class="nv">$container</span><span class="p">);</span>
+
+<span class="nv">$simplepie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimplePie</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="reviewed admonition">
 <p class="first admonition-title">Review</p>
-<p class="last">Written on 2017-06-25, proofread on 2017-06-25.</p>
+<p class="last">Written on 2017-06-25, proofread on 2017-06-30.</p>
 </div>
 </div>
 </div>

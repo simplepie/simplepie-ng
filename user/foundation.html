@@ -108,6 +108,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-design">The Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html#logger">Logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html#middleware">Middleware</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html#libxml">libxml</a></li>
@@ -245,8 +246,8 @@ this in mind.</p>
 names</a>. But despite our best
 efforts, there was still a lot of tight coupling happening.</p>
 <p>SimplePie NG strongly adopts the dependency injection pattern and inversion of control, and encourages the use of PSR-11
-containers for re-using complex sets of dependencies. It makes it a point, however, to avoid the <a class="reference external" href="https://en.wikipedia.org/wiki/Service_locator_pattern">Service Locator
-Pattern</a>, which many people consider to be an anti-pattern.</p>
+containers for re-using complex sets of dependencies. All of this is balanced, however, with support for global settings
+such as your preferred logger.</p>
 </div>
 <div class="section" id="middleware">
 <h2>Middleware<a class="headerlink" href="#middleware" title="Permalink to this headline">¶</a></h2>
@@ -290,7 +291,7 @@ aims for thoroughness and pedanticism over hoping that we can all get along.</p>
 <p><a class="reference external" href="https://github.com/skyzyx/php-coding-standards">https://github.com/skyzyx/php-coding-standards</a></p>
 <div class="reviewed admonition">
 <p class="first admonition-title">Review</p>
-<p class="last">Written on 2017-06-25, proofread on 2017-06-25.</p>
+<p class="last">Written on 2017-06-25, proofread on 2017-06-30.</p>
 </div>
 </div>
 </div>

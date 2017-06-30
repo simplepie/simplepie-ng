@@ -62,8 +62,8 @@ names <https://stackoverflow.com/questions/4578335/creating-php-class-instance-w
 efforts, there was still a lot of tight coupling happening.
 
 SimplePie NG strongly adopts the dependency injection pattern and inversion of control, and encourages the use of PSR-11
-containers for re-using complex sets of dependencies. It makes it a point, however, to avoid the `Service Locator
-Pattern <https://en.wikipedia.org/wiki/Service_locator_pattern>`__, which many people consider to be an anti-pattern.
+containers for re-using complex sets of dependencies. All of this is balanced, however, with support for global settings
+such as your preferred logger.
 
 Middleware
 ----------
@@ -119,4 +119,4 @@ https://github.com/skyzyx/php-coding-standards
 
 .. reviewer-meta::
    :written-on: 2017-06-25
-   :proofread-on: 2017-06-25
+   :proofread-on: 2017-06-30
