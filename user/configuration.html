@@ -260,7 +260,7 @@ create a new key called <code class="docutils literal"><span class="pre">simplep
 of this is managed using a <em>middleware handler stack</em>.</p>
 <p>Using any <a class="reference external" href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md">PSR-11</a> container,
 create a new key called <code class="docutils literal"><span class="pre">simplepie.middleware</span></code>, then have it return an instantiated class which implements
-<cite>SimplePieHandlerStackInterface</cite> (such as <cite>SimplePieHandlerStack</cite>).</p>
+<code class="docutils literal"><span class="pre">SimplePie\HandlerStackInterface</span></code> (such as <code class="docutils literal"><span class="pre">SimplePie\HandlerStack</span></code>).</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">use</span> <span class="nx">SimplePie\Configuration</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\Container</span><span class="p">;</span>

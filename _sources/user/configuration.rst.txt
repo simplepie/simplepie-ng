@@ -74,7 +74,7 @@ of this is managed using a *middleware handler stack*.
 
 Using any `PSR-11 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md>`__ container,
 create a new key called ``simplepie.middleware``, then have it return an instantiated class which implements
-`SimplePie\HandlerStackInterface` (such as `SimplePie\HandlerStack`).
+``SimplePie\HandlerStackInterface`` (such as ``SimplePie\HandlerStack``).
 
 .. code-block:: php
 
