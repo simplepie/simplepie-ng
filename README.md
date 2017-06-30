@@ -43,7 +43,7 @@ I want this tool. I have a deep knowledge about feeds. I am working to make this
 
 ## Examples
 
-**Still in the proof-of-concept phase.** Looking at dependency injection, PSR-3 logging, and using PSR-7 for feed transport.
+**Still in the proof-of-concept phase.** PSR-3 logging, and using PSR-7 for feed transport.
 
 There will probably be a wrapper for `parseXml()`, `parseJson()`, and `parseHtml()` in the form of `parse()`. There will also be some level of PSR-6/16 caching at the object layer to make non-first runs even faster.
 
@@ -52,32 +52,47 @@ use GuzzleHttp\Psr7;
 use Monolog\Handler\ErrorLogHandler;
 use Monolog\Logger;
 use Psr\Log\LogLevel;
-use SimplePie\Enum\FeedType;
+use SimplePie\Configuration;
+use SimplePie\Container;
+use SimplePie\HandlerStack;
+use SimplePie\Middleware\Json\JsonFeed;
+use SimplePie\Middleware\Xml\Atom;
+use SimplePie\Middleware\Xml\Rss;
 use SimplePie\SimplePie;
 
+// Instantiate your PSR-11 container. We'll use SimplePie\Container for this.
+$container = new Container();
+
 // Configure a simple PSR-3 logger.
-$logger = new Logger('SimplePie');
-$logger->pushHandler(new ErrorLogHandler(
-    ErrorLogHandler::OPERATING_SYSTEM,
-    LogLevel::DEBUG,
-    true,
-    false
-));
+$container['simplepie.logger'] = function () {
+    $logger = new Logger('SimplePie');
+    $logger->pushHandler(new ErrorLogHandler(
+        ErrorLogHandler::OPERATING_SYSTEM,
+        LogLevel::DEBUG,
+        true,
+        false
+    ));
 
-$stack = (new HandlerStack($logger))
-    ->append(new JsonFeed(), 'jsonfeed')
-    ->append(new Atom()    , 'atom10')
-    ->append(new Rss()     , 'rss20')
-;
+    return $logger;
+};
 
-// Instantiate SimplePie with your container.
-$simplepie = new SimplePie([
-    'logger'     => $logger,
-    'middleware' => $middleware,
-]);
+// Configure the middleware stack.
+$container['simplepie.middleware'] = function () {
+    return $stack = (new HandlerStack())
+        ->append(new JsonFeed(), 'jsonfeed')
+        ->append(new Atom()    , 'atom10')
+        ->append(new Rss()     , 'rss20')
+    ;
+};
+
+// Lock-in your configuration. Resolve any default values.
+Configuration::setContainer($container);
+
+// Instantiate SimplePie.
+$simplepie = new SimplePie();
 
 // Pass a PSR-7 stream to SimplePie for parsing.
-$stream = Psr7\stream_for(file_get_contents(__DIR__ . '/github-releases.atom'));
+$stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
 
 // Specifically parses XML.
 // Only applies the middleware that is registered as supporting XML feed types.
@@ -89,7 +104,7 @@ $feed = $parser->getFeed();
 // Use familiar syntax to read the data you care about.
 echo $feed->getTitle();
 foreach ($feed->getItems() as $item) {
-    echo $item->getTitle();
+    echo $item->getTitle()->getValue();
 }
 ```
 

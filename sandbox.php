@@ -8,12 +8,9 @@ use Monolog\Logger;
 use Psr\Log\LogLevel;
 use SimplePie\Configuration;
 use SimplePie\Container;
-use SimplePie\Enum\CharacterSet;
-use SimplePie\Enum\FeedType;
 use SimplePie\HandlerStack;
 use SimplePie\Middleware\Xml\Atom;
 use SimplePie\SimplePie;
-use Skyzyx\UtilityPack\Types;
 
 //------------------------------------------------------------------------------
 
@@ -41,7 +38,7 @@ Configuration::setContainer($container);
 
 //------------------------------------------------------------------------------
 
-$simplepie = new SimplePie($container);
+$simplepie = new SimplePie();
 
 $stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
 $parser = $simplepie->parseXml($stream, true);
