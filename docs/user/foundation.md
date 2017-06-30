@@ -34,7 +34,7 @@ PHP's [XPath implementation](http://php.net/manual/en/class.domxpath.php) only s
 
 Before we knew what dependency injection was, SimplePie offered a wide set of injection points which leveraged [instantiating PHP classes by their string names](https://stackoverflow.com/questions/4578335/creating-php-class-instance-with-a-string). But despite our best efforts, there was still a lot of tight coupling happening.
 
-SimplePie NG strongly adopts the dependency injection pattern and inversion of control, and encourages the use of PSR-11 containers for re-using complex sets of dependencies. It makes it a point, however, to avoid the [Service Locator Pattern](https://en.wikipedia.org/wiki/Service_locator_pattern), which many people consider to be an anti-pattern.
+SimplePie NG strongly adopts the dependency injection pattern and inversion of control, and encourages the use of PSR-11 containers for re-using complex sets of dependencies. All of this is balanced, however, with support for global settings such as your preferred logger.
 
 ## Middleware
 
@@ -69,4 +69,4 @@ PSR-1/2/12 are a solid foundation, but are not an entire coding style by themsel
 
 .. reviewer-meta::
    :written-on: 2017-06-25
-   :proofread-on: 2017-06-25
+   :proofread-on: 2017-06-30

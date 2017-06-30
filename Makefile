@@ -16,8 +16,8 @@ test:
 
 .PHONY: apidocs
 apidocs:
-	composer install --no-ansi --no-dev --no-interaction --no-progress --no-scripts --optimize-autoloader --ignore-platform-reqs
-	git reset --hard HEAD
+	# composer install --no-ansi --no-dev --no-interaction --no-progress --no-scripts --optimize-autoloader --ignore-platform-reqs
+	# git reset --hard HEAD
 	sami update docs/sami-config.php
 
 .PHONY: docs
