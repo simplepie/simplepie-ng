@@ -3,6 +3,12 @@ Configuration
 
 There are some configuration parameters that SimplePie NG supports.
 
+.. note::
+
+    I think this is going to change a little. I have been avoiding using the service locator pattern, in favor of
+    dependency injection, but I think that in well-understood, limited cases, it can come in handy. Namely, for the
+    logger and other global-style configurations that should apply universally.
+
 Logger
 ------
 

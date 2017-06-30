@@ -192,6 +192,12 @@
   <div class="section" id="configuration">
 <h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
 <p>There are some configuration parameters that SimplePie NG supports.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">I think this is going to change a little. I have been avoiding using the service locator pattern, in favor of
+dependency injection, but I think that in well-understood, limited cases, it can come in handy. Namely, for the
+logger and other global-style configurations that should apply universally.</p>
+</div>
 <div class="section" id="logger">
 <h2>Logger<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h2>
 <p>Passing the <code class="docutils literal"><span class="pre">logger</span></code> option to the constructor will allow you to use any <a class="reference external" href="http://www.php-fig.org/psr/psr-3/">PSR-3</a>
