@@ -17,6 +17,12 @@ test:
 .PHONY: docs
 docs: umldocs rstdocs sphinxdocs
 
+.PHONY apidocs
+apidocs:
+	composer install --no-ansi --no-dev --no-interaction --no-progress --no-scripts --optimize-autoloader --ignore-platform-reqs
+	git reset --hard HEAD
+	sami update docs/sami-config.php
+
 .PHONY: quick
 quick: rstdocs sphinxdocs
 
