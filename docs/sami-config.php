@@ -18,7 +18,6 @@ $versions = GitVersionCollection::create($dir)
 ;
 
 return new Sami($iterator, array(
-    'theme'                => 'symfony',
     'versions'             => $versions,
     'title'                => 'SimplePie NG API',
     'build_dir'            => __DIR__ . '/_build/api/%version%',
