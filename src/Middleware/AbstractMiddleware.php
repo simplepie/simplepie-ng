@@ -9,8 +9,7 @@ declare(strict_types=1);
 
 namespace SimplePie\Middleware;
 
-use Psr\Log\LoggerInterface;
-use Psr\Log\NullLogger;
+use SimplePie\Configuration;
 use SimplePie\Mixin\LoggerTrait;
 
 abstract class AbstractMiddleware
@@ -33,15 +32,14 @@ abstract class AbstractMiddleware
      * function () {}
      * ```
      *
-     * @param LoggerInterface|null $logger A PSR-3 logger.
-     * @param callable|null        $fn     A callable which is used to determine whether or not to run this
-     *                                     middleware. A value of `true` means that the middleware should run.
-     *                                     A value of `false` means that the middleware should NOT run, By
-     *                                     default, the middleware will run.
+     * @param callable|null $fn A callable which is used to determine whether or not to run this
+     *                          middleware. A value of `true` means that the middleware should run.
+     *                          A value of `false` means that the middleware should NOT run, By
+     *                          default, the middleware will run.
      */
-    public function __construct(?LoggerInterface $logger = null, ?callable $fn = null)
+    public function __construct(?callable $fn = null)
     {
-        $this->logger = $logger ?? new NullLogger();
+        $this->logger = Configuration::getLogger();
 
         $this->fn = $fn ?: function () {
             return true;

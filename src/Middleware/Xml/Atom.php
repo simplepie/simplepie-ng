@@ -46,7 +46,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
         $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', 'generator'));
 
         $feedRoot->generator[$namespaceAlias] = ($xq->length > 0)
-            ? new Generator($this->getLogger(), $xq->item(0))
+            ? new Generator($xq->item(0))
             : null;
     }
 

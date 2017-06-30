@@ -12,11 +12,10 @@ namespace SimplePie\Parser;
 use DOMDocument;
 use DOMXPath;
 use Psr\Http\Message\StreamInterface;
-use Psr\Log\LoggerInterface;
+use SimplePie\Configuration;
 use SimplePie\Dictionary\Ns;
 use SimplePie\Enum\FeedType;
 use SimplePie\Exception\ConfigurationException;
-use SimplePie\HandlerStackInterface;
 use SimplePie\Mixin\DomDocumentTrait;
 use SimplePie\Mixin\LibxmlTrait;
 use SimplePie\Mixin\LoggerTrait;
@@ -43,40 +42,28 @@ class Xml extends AbstractParser
     /**
      * Constructs a new instance of this class.
      *
-     * @param LoggerInterface       $logger                  A PSR-3 logger.
-     * @param HandlerStackInterface $middleware              A middleware handler stack containing any registered middleware.
-     * @param StreamInterface       $stream                  A PSR-7 `StreamInterface` which is typically returned by the
-     *                                                       `getBody()` method of a `ResponseInterface` class.
-     * @param bool                  $handleHtmlEntitiesInXml Whether or not SimplePie should pre-parse the XML as HTML to
-     *                                                       resolve the entities. A value of `true` means that SimplePie
-     *                                                       should inject the entity definitions. A value of `false` means
-     *                                                       that SimplePie should NOT inject the entity definitions. The
-     *                                                       default value is `false`.
-     * @param int                   $libxml                  A set of bitwise LIBXML_* constants.
+     * @param StreamInterface $stream                  A PSR-7 `StreamInterface` which is typically returned by the
+     *                                                 `getBody()` method of a `ResponseInterface` class.
+     * @param bool            $handleHtmlEntitiesInXml Whether or not SimplePie should pre-parse the XML as HTML to
+     *                                                 resolve the entities. A value of `true` means that SimplePie
+     *                                                 should inject the entity definitions. A value of `false` means
+     *                                                 that SimplePie should NOT inject the entity definitions. The
+     *                                                 default value is `false`.
      *
      * @throws Error
      * @throws TypeError
      * @throws ConfigurationException
-     *
-     * @codingStandardsIgnoreStart
      */
-    public function __construct(
-        LoggerInterface $logger,
-        HandlerStackInterface $middleware,
-        StreamInterface $stream,
-        bool $handleHtmlEntitiesInXml,
-        int $libxml
-    ) {
-        // @codingStandardsIgnoreEnd
-
+    public function __construct(StreamInterface $stream, bool $handleHtmlEntitiesInXml)
+    {
         // Logger
-        $this->logger = $logger;
+        $this->logger = Configuration::getLogger();
 
         // Libxml settings
-        $this->libxml = $libxml;
+        $this->libxml = Configuration::getLibxml();
 
         // Middleware stack
-        $this->middleware = $middleware;
+        $this->middleware = Configuration::getMiddlewareStack();
 
         // Raw stream
         $this->rawDocument = $this->readStream($stream);
@@ -116,7 +103,7 @@ class Xml extends AbstractParser
         $this->domDocument->loadXML($this->rawDocument, $this->libxml);
 
         // Instantiate a new write-to feed object.
-        $this->feed = new Feed($this->logger, $this->getNamespaceAlias());
+        $this->feed = new Feed($this->getNamespaceAlias());
 
         // Invoke the registered middleware.
         $this->middleware->invoke(
@@ -137,7 +124,7 @@ class Xml extends AbstractParser
      */
     public function getNamespaceAlias(): ?string
     {
-        $namespace = new Ns($this->logger, $this->domDocument);
+        $namespace = new Ns($this->domDocument);
 
         $alias = $namespace->getPreferredNamespaceAlias(
             $this->domDocument->documentElement->namespaceURI

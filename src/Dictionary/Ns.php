@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace SimplePie\Dictionary;
 
 use DOMNode;
-use Psr\Log\LoggerInterface;
+use SimplePie\Configuration;
 use SimplePie\Mixin\LoggerTrait;
 
 class Ns
@@ -47,12 +47,11 @@ class Ns
     /**
      * Constructs a new instance of this class.
      *
-     * @param LoggerInterface $logger A PSR-3 logger.
-     * @param DOMNode         $dom    A DOMDocument object representing the XML file to be parsed.
+     * @param DOMNode $dom A DOMDocument object representing the XML file to be parsed.
      */
-    public function __construct(LoggerInterface $logger, DOMNode $dom)
+    public function __construct(DOMNode $dom)
     {
-        $this->logger      = $logger;
+        $this->logger      = Configuration::getLogger();
         $this->domDocument = $dom;
 
         $this->mapping = [

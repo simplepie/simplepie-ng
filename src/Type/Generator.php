@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace SimplePie\Type;
 
 use DOMNode;
-use Psr\Log\LoggerInterface;
+use SimplePie\Configuration;
 use SimplePie\Mixin\LoggerTrait;
 
 class Generator extends AbstractType implements TypeInterface
@@ -48,12 +48,11 @@ class Generator extends AbstractType implements TypeInterface
     /**
      * Constructs a new instance of this class.
      *
-     * @param LoggerInterface $logger A PSR-3 logger.
-     * @param DOMNode         $node   The `DOMNode` element to parse.
+     * @param DOMNode $node The `DOMNode` element to parse.
      */
-    public function __construct(LoggerInterface $logger, DOMNode $node)
+    public function __construct(DOMNode $node)
     {
-        $this->logger = $logger;
+        $this->logger = Configuration::getLogger();
         $this->node   = $node;
         $this->name   = new Node($this->node);
 

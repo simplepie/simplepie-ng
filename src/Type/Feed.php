@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace SimplePie\Type;
 
-use Psr\Log\LoggerInterface;
+use SimplePie\Configuration;
 use SimplePie\Mixin\LoggerTrait;
 use stdClass;
 
@@ -38,12 +38,12 @@ class Feed extends AbstractType implements TypeInterface
     /**
      * Constructs a new instance of this class.
      *
-     * @param LoggerInterface $logger A PSR-3 logger.
+     * @param string $namespaceAlias [description]
      */
-    public function __construct(LoggerInterface $logger, string $namespaceAlias)
+    public function __construct(string $namespaceAlias)
     {
         $this->root           = new stdClass();
-        $this->logger         = $logger;
+        $this->logger         = Configuration::getLogger();
         $this->namespaceAlias = $namespaceAlias;
     }
 

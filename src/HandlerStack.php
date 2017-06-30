@@ -37,12 +37,10 @@ class HandlerStack implements HandlerStackInterface
 
     /**
      * Constructs a new instance of this class.
-     *
-     * @param LoggerInterface $logger A PSR-3 logger.
      */
-    public function __construct(LoggerInterface $logger)
+    public function __construct()
     {
-        $this->logger = $logger;
+        $this->logger = Configuration::getLogger();
 
         $this->stack = [
             'html' => [],
