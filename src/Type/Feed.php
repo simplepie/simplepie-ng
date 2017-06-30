@@ -62,6 +62,18 @@ class Feed extends AbstractType implements TypeInterface
         return new Node();
     }
 
+    public function getSummary(?string $namespaceAlias = null): Node
+    {
+        $alias = $namespaceAlias
+            ?? $this->namespaceAlias;
+
+        if (isset($this->getRoot()->summary[$alias])) {
+            return $this->getRoot()->summary[$alias];
+        }
+
+        return new Node();
+    }
+
     //---------------------------------------------------------------------------
     // MULTIPLE VALUES
 

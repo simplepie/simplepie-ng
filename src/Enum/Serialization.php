@@ -9,8 +9,9 @@ declare(strict_types=1);
 
 namespace SimplePie\Enum;
 
-class StringFormat extends AbstractEnum
+class Serialization extends AbstractEnum
 {
-    public const HTML = 'html';
-    public const TEXT = 'text';
+    public const TEXT  = 'text';
+    public const HTML  = 'html';
+    public const XHTML = 'xhtml';
 }

@@ -10,23 +10,32 @@ declare(strict_types=1);
 namespace SimplePie\Type;
 
 use DOMNode;
+use SimplePie\Enum\CharacterSet;
+use SimplePie\Enum\Serialization;
 use SimplePie\Exception\SimplePieException;
 
 class Node extends AbstractType implements TypeInterface
 {
     /**
-     * The HTML serialization of the content.
+     * The raw `DOMNode` element.
      *
-     * @var string|null
+     * @var DOMNode|null
      */
-    protected $html = null;
+    protected $node;
 
     /**
-     * The Plain Text serialization of the content.
+     * The content of the node, serialized appropriately.
      *
      * @var string|null
      */
-    protected $text = null;
+    protected $value = null;
+
+    /**
+     * The serialization of the content.
+     *
+     * @var string
+     */
+    protected $serialization = Serialization::TEXT;
 
     /**
      * Get the text node in multiple formats.
@@ -36,31 +45,54 @@ class Node extends AbstractType implements TypeInterface
     public function __construct(?DOMNode $node = null)
     {
         if ($node) {
-            $this->text = $node->textContent;
-            $this->html = $node->nodeValue;
+            $this->node  = $node;
+            $this->value = $node->nodeValue;
+
+            if ($node->nodeType === XML_ELEMENT_NODE && $node->attributes->length > 0) {
+                foreach ($node->attributes as $attribute) {
+                    if ($attribute->name === 'type' && $attribute->value === 'html') {
+                        $this->serialization = $attribute->nodeValue;
+                        $this->value = html_entity_decode(
+                            $node->nodeValue,
+                            ENT_COMPAT | ENT_HTML5,
+                            CharacterSet::UTF_8
+                        );
+                        break;
+                    }
+                }
+            }
         }
     }
 
     /**
-     * Meta-method which enables the return of inaccessible properties.
+     * Gets the raw `DOMNode` element.
      *
-     * @param string $name The name of the property to retrieve.
-     *
-     * @throws SimplePieException
+     * @return DOMNode|null
+     */
+    public function getNode(): ?DOMNode
+    {
+        return $this->node;
+    }
+
+    /**
+     * Gets the content of the node, serialized appropriately.
      *
      * @return string|null
      */
-    public function __get(string $name): ?string
+    public function getValue(): ?string
     {
-        if (property_exists($this, $name)) {
-            return $this->$name;
-        }
+        return $this->value;
+    }
 
-        throw new SimplePieException(
-            sprintf(
-                'The property `%s` is invalid and cannot be accessed.',
-                $name
-            )
-        );
+    /**
+     * Gets the serialization of the content.
+     *
+     * Will always be one of the enums from `SimplePie\Enum\Serialization`.
+     *
+     * @return string
+     */
+    public function getSerialization(): string
+    {
+        return $this->serialization;
     }
 }
