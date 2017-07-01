@@ -83,6 +83,7 @@ push:
 	cp -Rf ./docs/_build/html/* /tmp/gh-pages/
 	mkdir -p /tmp/gh-pages/api
 	cp -Rf ./docs/_build/api/* /tmp/gh-pages/api/
+	cp ./docs/redirect.tmpl /tmp/gh-pages/api/index.html
 	touch /tmp/gh-pages/.nojekyll
 	find /tmp/gh-pages -type d | xargs chmod -f 0755
 	find /tmp/gh-pages -type f | xargs chmod -f 0644
