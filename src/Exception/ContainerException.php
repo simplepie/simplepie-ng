@@ -11,6 +11,9 @@ namespace SimplePie\Exception;
 
 use Psr\Container\Exception\ContainerExceptionInterface;
 
+/**
+ * `ContainerException` is required as part of PSR-11 compatibility.
+ */
 class ContainerException extends SimplePieException implements ContainerExceptionInterface
 {
 }

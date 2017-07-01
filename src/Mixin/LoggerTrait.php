@@ -11,6 +11,9 @@ namespace SimplePie\Mixin;
 
 use Psr\Log\LoggerInterface;
 
+/**
+ * Shared code for working with the logger.
+ */
 trait LoggerTrait
 {
     /**

@@ -11,6 +11,9 @@ namespace SimplePie\Mixin;
 
 use DOMDocument;
 
+/**
+ * Shared code for working with `DOMDocument` objects.
+ */
 trait DomDocumentTrait
 {
     /**

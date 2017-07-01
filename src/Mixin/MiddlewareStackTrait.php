@@ -11,6 +11,9 @@ namespace SimplePie\Mixin;
 
 use SimplePie\HandlerStackInterface;
 
+/**
+ * Shared code for working with middleware.
+ */
 trait MiddlewareStackTrait
 {
     /**

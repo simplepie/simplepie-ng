@@ -13,6 +13,11 @@ use DOMNode;
 use SimplePie\Configuration;
 use SimplePie\Mixin\LoggerTrait;
 
+/**
+ * Provides tools for managing and working with XML namespaces.
+ *
+ * @todo Separate the enums and migrate this into a utility class.
+ */
 class Ns
 {
     use LoggerTrait;

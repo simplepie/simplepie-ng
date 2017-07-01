@@ -9,6 +9,9 @@ declare(strict_types=1);
 
 namespace SimplePie\Mixin;
 
+/**
+ * Shared code for working with raw feed content.
+ */
 trait RawDocumentTrait
 {
     /**

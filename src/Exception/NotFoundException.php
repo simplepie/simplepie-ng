@@ -11,6 +11,9 @@ namespace SimplePie\Exception;
 
 use Psr\Container\Exception\NotFoundExceptionInterface;
 
+/**
+ * `NotFoundException` is required as part of PSR-11 compatibility.
+ */
 class NotFoundException extends SimplePieException implements NotFoundExceptionInterface
 {
 }
