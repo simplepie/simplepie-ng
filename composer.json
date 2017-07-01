@@ -42,7 +42,7 @@
     "autoload": {
         "psr-4": {
             "SimplePie\\": "src/",
-            "SimplePie\\Tests\\": "tests/"
+            "SimplePie\\Test\\": "tests/"
         }
     }
 }
