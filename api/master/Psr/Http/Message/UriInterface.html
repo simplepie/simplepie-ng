@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Psr\Http\Message\UriInterface | SimplePie NG</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/sami.css">
+        <script src="../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Psr_Http_Message_UriInterface" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">SimplePie NG</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">interface</span></li>
+                        <li><a href="../../../Psr.html">Psr</a></li><li class="backslash">\</li><li><a href="../../../Psr/Http.html">Http</a></li><li class="backslash">\</li><li><a href="../../../Psr/Http/Message.html">Message</a></li><li class="backslash">\</li><li>UriInterface</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            UriInterface
+                
+        </h1>
+    </div>
+
+    <p>    interface
+    <strong>UriInterface</strong>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php">View source</a>)
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Value object representing a URI.</p>            <p>This interface is meant to represent URIs according to RFC 3986 and to
+provide methods for most common operations. Additional functionality for
+working with URIs can be provided on top of the interface or externally.
+Its primary use is for HTTP requests, but may also be used in other
+contexts.</p>
+
+<p>Instances of this interface are considered immutable; all methods that
+might change state MUST be implemented such that they retain the internal
+state of the current instance and return an instance that contains the
+changed state.</p>
+
+<p>Typically the Host header will be also be present in the request message.
+For server-side requests, the scheme will typically be discoverable in the
+server parameters.</p>                    </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getScheme">getScheme</a>()
+        
+                                            <p>Retrieve the scheme component of the URI.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAuthority">getAuthority</a>()
+        
+                                            <p>Retrieve the authority component of the URI.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getUserInfo">getUserInfo</a>()
+        
+                                            <p>Retrieve the user information component of the URI.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getHost">getHost</a>()
+        
+                                            <p>Retrieve the host component of the URI.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    null|int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getPort">getPort</a>()
+        
+                                            <p>Retrieve the port component of the URI.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getPath">getPath</a>()
+        
+                                            <p>Retrieve the path component of the URI.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getQuery">getQuery</a>()
+        
+                                            <p>Retrieve the query string of the URI.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getFragment">getFragment</a>()
+        
+                                            <p>Retrieve the fragment component of the URI.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_withScheme">withScheme</a>(string $scheme)
+        
+                                            <p>Return an instance with the specified scheme.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_withUserInfo">withUserInfo</a>(string $user, null|string $password = null)
+        
+                                            <p>Return an instance with the specified user information.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_withHost">withHost</a>(string $host)
+        
+                                            <p>Return an instance with the specified host.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_withPort">withPort</a>(null|int $port)
+        
+                                            <p>Return an instance with the specified port.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_withPath">withPath</a>(string $path)
+        
+                                            <p>Return an instance with the specified path.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_withQuery">withQuery</a>(string $query)
+        
+                                            <p>Return an instance with the specified query string.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_withFragment">withFragment</a>(string $fragment)
+        
+                                            <p>Return an instance with the specified URI fragment.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___toString">__toString</a>()
+        
+                                            <p>Return the string representation as a URI reference.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_getScheme">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L40">line 40</a></div>
+        <code>                    string
+    <strong>getScheme</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieve the scheme component of the URI.</p>                    <p>If no scheme is present, this method MUST return an empty string.</p>
+
+<p>The value returned MUST be normalized to lowercase, per RFC 3986
+Section 3.1.</p>
+
+<p>The trailing ":" character is not part of the scheme and MUST NOT be
+added.</p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>The URI scheme.</td>
+        </tr>
+    </table>
+
+            
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>https://tools.ietf.org/html/rfc3986#section-3.1</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAuthority">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L60">line 60</a></div>
+        <code>                    string
+    <strong>getAuthority</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieve the authority component of the URI.</p>                    <p>If no authority information is present, this method MUST return an empty
+string.</p>
+
+<p>The authority syntax of the URI is:</p>
+
+<pre>
+[user-info@]host[:port]
+</pre>
+
+<p>If the port component is not set or is the standard port for the current
+scheme, it SHOULD NOT be included.</p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>The URI authority, in "[user-info@]host[:port]" format.</td>
+        </tr>
+    </table>
+
+            
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>https://tools.ietf.org/html/rfc3986#section-3.2</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getUserInfo">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L77">line 77</a></div>
+        <code>                    string
+    <strong>getUserInfo</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieve the user information component of the URI.</p>                    <p>If no user information is present, this method MUST return an empty
+string.</p>
+
+<p>If a user is present in the URI, this will return that value;
+additionally, if the password is also present, it will be appended to the
+user value, with a colon (":") separating the values.</p>
+
+<p>The trailing "@" character is not part of the user information and MUST
+NOT be added.</p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>The URI user information, in "username[:password]" format.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getHost">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L90">line 90</a></div>
+        <code>                    string
+    <strong>getHost</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieve the host component of the URI.</p>                    <p>If no host is present, this method MUST return an empty string.</p>
+
+<p>The value returned MUST be normalized to lowercase, per RFC 3986
+Section 3.2.2.</p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>The URI host.</td>
+        </tr>
+    </table>
+
+            
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>http://tools.ietf.org/html/rfc3986#section-3.2.2</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPort">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L107">line 107</a></div>
+        <code>                    null|int
+    <strong>getPort</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieve the port component of the URI.</p>                    <p>If a port is present, and it is non-standard for the current scheme,
+this method MUST return it as an integer. If the port is the standard port
+used with the current scheme, this method SHOULD return null.</p>
+
+<p>If no port is present, and no scheme is present, this method MUST return
+a null value.</p>
+
+<p>If no port is present, but a scheme is present, this method MAY return
+the standard port for that scheme, but SHOULD return null.</p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>null|int</td>
+            <td>The URI port.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPath">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L134">line 134</a></div>
+        <code>                    string
+    <strong>getPath</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieve the path component of the URI.</p>                    <p>The path can either be empty or absolute (starting with a slash) or
+rootless (not starting with a slash). Implementations MUST support all
+three syntaxes.</p>
+
+<p>Normally, the empty path "" and absolute path "/" are considered equal as
+defined in RFC 7230 Section 2.7.3. But this method MUST NOT automatically
+do this normalization because in contexts with a trimmed base path, e.g.
+the front controller, this difference becomes significant. It's the task
+of the user to handle both "" and "/".</p>
+
+<p>The value returned MUST be percent-encoded, but MUST NOT double-encode
+any characters. To determine what characters to encode, please refer to
+RFC 3986, Sections 2 and 3.3.</p>
+
+<p>As an example, if the value should include a slash ("/") not intended as
+delimiter between path segments, that value MUST be passed in encoded
+form (e.g., "%2F") to the instance.</p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>The URI path.</td>
+        </tr>
+    </table>
+
+            
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>https://tools.ietf.org/html/rfc3986#section-2</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>https://tools.ietf.org/html/rfc3986#section-3.3</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getQuery">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L156">line 156</a></div>
+        <code>                    string
+    <strong>getQuery</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieve the query string of the URI.</p>                    <p>If no query string is present, this method MUST return an empty string.</p>
+
+<p>The leading "?" character is not part of the query and MUST NOT be
+added.</p>
+
+<p>The value returned MUST be percent-encoded, but MUST NOT double-encode
+any characters. To determine what characters to encode, please refer to
+RFC 3986, Sections 2 and 3.4.</p>
+
+<p>As an example, if a value in a key/value pair of the query string should
+include an ampersand ("&amp;") not intended as a delimiter between values,
+that value MUST be passed in encoded form (e.g., "%26") to the instance.</p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>The URI query string.</td>
+        </tr>
+    </table>
+
+            
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>https://tools.ietf.org/html/rfc3986#section-2</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>https://tools.ietf.org/html/rfc3986#section-3.4</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getFragment">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L174">line 174</a></div>
+        <code>                    string
+    <strong>getFragment</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieve the fragment component of the URI.</p>                    <p>If no fragment is present, this method MUST return an empty string.</p>
+
+<p>The leading "#" character is not part of the fragment and MUST NOT be
+added.</p>
+
+<p>The value returned MUST be percent-encoded, but MUST NOT double-encode
+any characters. To determine what characters to encode, please refer to
+RFC 3986, Sections 2 and 3.5.</p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>The URI fragment.</td>
+        </tr>
+    </table>
+
+            
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>https://tools.ietf.org/html/rfc3986#section-2</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>https://tools.ietf.org/html/rfc3986#section-3.5</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_withScheme">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L191">line 191</a></div>
+        <code>                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+    <strong>withScheme</strong>(string $scheme)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return an instance with the specified scheme.</p>                    <p>This method MUST retain the state of the current instance, and return
+an instance that contains the specified scheme.</p>
+
+<p>Implementations MUST support the schemes "http" and "https" case
+insensitively, and MAY accommodate other schemes if required.</p>
+
+<p>An empty scheme is equivalent to removing the scheme.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$scheme</td>
+                <td>The scheme to use with the new instance.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a></td>
+            <td>A new instance with the specified scheme.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td>for invalid or unsupported schemes.</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_withUserInfo">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L207">line 207</a></div>
+        <code>                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+    <strong>withUserInfo</strong>(string $user, null|string $password = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return an instance with the specified user information.</p>                    <p>This method MUST retain the state of the current instance, and return
+an instance that contains the specified user information.</p>
+
+<p>Password is optional, but the user information MUST include the
+user; an empty string for the user is equivalent to removing user
+information.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$user</td>
+                <td>The user name to use for authority.</td>
+            </tr>
+                    <tr>
+                <td>null|string</td>
+                <td>$password</td>
+                <td>The password associated with $user.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a></td>
+            <td>A new instance with the specified user information.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_withHost">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L221">line 221</a></div>
+        <code>                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+    <strong>withHost</strong>(string $host)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return an instance with the specified host.</p>                    <p>This method MUST retain the state of the current instance, and return
+an instance that contains the specified host.</p>
+
+<p>An empty host value is equivalent to removing the host.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$host</td>
+                <td>The hostname to use with the new instance.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a></td>
+            <td>A new instance with the specified host.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td>for invalid hostnames.</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_withPort">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L240">line 240</a></div>
+        <code>                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+    <strong>withPort</strong>(null|int $port)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return an instance with the specified port.</p>                    <p>This method MUST retain the state of the current instance, and return
+an instance that contains the specified port.</p>
+
+<p>Implementations MUST raise an exception for ports outside the
+established TCP and UDP port ranges.</p>
+
+<p>A null value provided for the port is equivalent to removing the port
+information.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>null|int</td>
+                <td>$port</td>
+                <td>The port to use with the new instance; a null value
+    removes the port information.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a></td>
+            <td>A new instance with the specified port.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td>for invalid ports.</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_withPath">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L264">line 264</a></div>
+        <code>                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+    <strong>withPath</strong>(string $path)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return an instance with the specified path.</p>                    <p>This method MUST retain the state of the current instance, and return
+an instance that contains the specified path.</p>
+
+<p>The path can either be empty or absolute (starting with a slash) or
+rootless (not starting with a slash). Implementations MUST support all
+three syntaxes.</p>
+
+<p>If the path is intended to be domain-relative rather than path relative then
+it must begin with a slash ("/"). Paths not starting with a slash ("/")
+are assumed to be relative to some base path known to the application or
+consumer.</p>
+
+<p>Users can provide both encoded and decoded path characters.
+Implementations ensure the correct encoding as outlined in getPath().</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$path</td>
+                <td>The path to use with the new instance.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a></td>
+            <td>A new instance with the specified path.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td>for invalid paths.</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_withQuery">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L281">line 281</a></div>
+        <code>                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+    <strong>withQuery</strong>(string $query)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return an instance with the specified query string.</p>                    <p>This method MUST retain the state of the current instance, and return
+an instance that contains the specified query string.</p>
+
+<p>Users can provide both encoded and decoded query characters.
+Implementations ensure the correct encoding as outlined in getQuery().</p>
+
+<p>An empty query string value is equivalent to removing the query string.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$query</td>
+                <td>The query string to use with the new instance.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a></td>
+            <td>A new instance with the specified query string.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td>for invalid query strings.</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_withFragment">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L297">line 297</a></div>
+        <code>                    <a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a>
+    <strong>withFragment</strong>(string $fragment)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return an instance with the specified URI fragment.</p>                    <p>This method MUST retain the state of the current instance, and return
+an instance that contains the specified URI fragment.</p>
+
+<p>Users can provide both encoded and decoded fragment characters.
+Implementations ensure the correct encoding as outlined in getFragment().</p>
+
+<p>An empty fragment value is equivalent to removing the fragment.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$fragment</td>
+                <td>The fragment to use with the new instance.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a></td>
+            <td>A new instance with the specified fragment.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___toString">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/http-message/src/UriInterface.php#L322">line 322</a></div>
+        <code>                    string
+    <strong>__toString</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return the string representation as a URI reference.</p>                    <p>Depending on which components of the URI are present, the resulting
+string is either a full URI or relative reference according to RFC 3986,
+Section 4.1. The method concatenates the various components of the URI,
+using the appropriate delimiters:</p>
+
+<ul>
+<li>If a scheme is present, it MUST be suffixed by ":".</li>
+<li>If an authority is present, it MUST be prefixed by "//".</li>
+<li>The path can be concatenated without delimiters. But there are two
+cases where the path has to be adjusted to make the URI reference
+valid as PHP does not allow to throw an exception in __toString():
+
+<ul>
+<li>If the path is rootless and an authority is present, the path MUST
+be prefixed by "/".</li>
+<li>If the path is starting with more than one "/" and no authority is
+present, the starting slashes MUST be reduced to one.</li>
+</ul></li>
+<li>If a query is present, it MUST be prefixed by "?".</li>
+<li>If a fragment is present, it MUST be prefixed by "#".</li>
+</ul>
+</p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>http://tools.ietf.org/html/rfc3986#section-4.1</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

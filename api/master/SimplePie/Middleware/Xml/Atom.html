@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>SimplePie\Middleware\Xml\Atom | SimplePie NG</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/sami.css">
+        <script src="../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:SimplePie_Middleware_Xml_Atom" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">SimplePie NG</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../SimplePie.html">SimplePie</a></li><li class="backslash">\</li><li><a href="../../../SimplePie/Middleware.html">Middleware</a></li><li class="backslash">\</li><li><a href="../../../SimplePie/Middleware/Xml.html">Xml</a></li><li class="backslash">\</li><li>Atom</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Atom
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Atom</strong>        extends <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a>        implements
+        <a href="../../../SimplePie/Middleware/Xml/XmlInterface.html"><abbr title="SimplePie\Middleware\Xml\XmlInterface">XmlInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php">View source</a>)
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Support for the Atom 1.0 grammar.</p>                                </div>
+    
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+            </div>
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_logger">
+                                        protected                                        <a href="../../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
+                </td>
+                <td>$logger</td>
+                <td class="last">A PSR-3 logger.</td>
+                <td><small>from&nbsp;<a href="../../../SimplePie/Mixin/LoggerTrait.html#property_logger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_fn">
+                                        protected                                        callable
+                </td>
+                <td>$fn</td>
+                <td class="last">A callable which is used to determine whether or not to run this middleware.</td>
+                <td><small>from&nbsp;<a href="../../../SimplePie/Middleware/AbstractMiddleware.html#property_fn"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a></small></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLogger">getLogger</a>()
+        
+                                            <p>Retrieves the PSR-3 logger.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(callable $fn = null)
+        
+                                            <p>Constructs a new instance of this class.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method___construct"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addArrayProperty">addArrayProperty</a>(mixed $object, string $property)
+        
+                                            <p>Checks whether or not a particular property exists on an object, and if not, instantiates it as an array.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method_addArrayProperty"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_applyNsToQuery">applyNsToQuery</a>(string $query, string $namespaceAlias)
+        
+                                            <p>Replace all instances of <code>%s</code> with the <code>$namespaceAlias</code> parameter.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_applyNsToQuery"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_generateQuery">generateQuery</a>(string $namespaceAlias, bool $supportMixedCase = false, string $path)
+        
+                                            <p>Produce an XPath 1.0 expression which is used to query XML document nodes.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_generateQuery"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_handleSingleNode">handleSingleNode</a>(callable $fn)
+        
+                                            <p>Some elements in the feed should only have one result. This handles those cases.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_handleSingleNode"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_handleMultipleNodes">handleMultipleNodes</a>(callable $fn)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_handleMultipleNodes"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___invoke">__invoke</a>(<a target="_blank" href="http://php.net/stdClass">stdClass</a> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
+        
+                                            <p>The function signature for the middleware.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSingle">getSingle</a>(string $nodeName, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
+        
+                                            <p>Find and read the contents of the feed-level nodes which only have a single value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getMultiple">getMultiple</a>(string $nodeName, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
+        
+                                            <p>Find and read the contents of the feed-level nodes which have multiple values.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_getLogger">
+        <div class="location">in <a href="../../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L28">line 28</a></div>
+        <code>                    <a href="../../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
+    <strong>getLogger</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieves the PSR-3 logger.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method___construct"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L40">line 40</a></div>
+        <code>                    
+    <strong>__construct</strong>(callable $fn = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructs a new instance of this class.</p>                    <p>Accepts a callable with the following function signature:</p>
+
+<pre><code>function () {}
+</code></pre>
+</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>callable</td>
+                <td>$fn</td>
+                <td>A callable which is used to determine whether or not to run this
+                         middleware. A value of <code>true</code> means that the middleware should run.
+                         A value of <code>false</code> means that the middleware should NOT run, By
+                         default, the middleware will run.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addArrayProperty">
+        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method_addArrayProperty"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L55">line 55</a></div>
+        <code>                    
+    <strong>addArrayProperty</strong>(mixed $object, string $property)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Checks whether or not a particular property exists on an object, and if not, instantiates it as an array.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>mixed</td>
+                <td>$object</td>
+                <td>An object that you can add ad-hoc properties to. Preferably a <code>stdClass</code> object.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$property</td>
+                <td>The name of the property to check and/or add.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_applyNsToQuery">
+        <div class="location">in <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_applyNsToQuery"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L27">line 27</a></div>
+        <code>                    string
+    <strong>applyNsToQuery</strong>(string $query, string $namespaceAlias)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Replace all instances of <code>%s</code> with the <code>$namespaceAlias</code> parameter.</p>                    <p>This is similar to <code>sprintf()</code>, but the <code>$namespaceAlias</code> is applied to <em>all</em> instances of <code>%s</code>.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$query</td>
+                <td>An XPath query where <code>%s</code> is used in-place of the XML namespace alias.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$namespaceAlias</td>
+                <td>The XML namespace alias to apply.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_generateQuery">
+        <div class="location">in <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_generateQuery"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L46">line 46</a></div>
+        <code>                    string
+    <strong>generateQuery</strong>(string $namespaceAlias, bool $supportMixedCase = false, string $path)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Produce an XPath 1.0 expression which is used to query XML document nodes.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$namespaceAlias</td>
+                <td>The XML namespace alias to apply.</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$supportMixedCase</td>
+                <td>Whether or not to generate an XPath query which supports
+                                mixed-case/case-insensitive XML element names.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$path</td>
+                <td>A variadic parameter which accepts the names of the XML
+                                tree nodes in sequence.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>An XPath 1.0 expression.</td>
+        </tr>
+    </table>
+
+            
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>https://wiki.php.net/rfc/variadics</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>http://php.net/manual/en/functions.arguments.php#functions.variable-arg-list</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_handleSingleNode">
+        <div class="location">in <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_handleSingleNode"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L78">line 78</a></div>
+        <code>                    array
+    <strong>handleSingleNode</strong>(callable $fn)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Some elements in the feed should only have one result. This handles those cases.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>callable</td>
+                <td>$fn</td>
+                <td>A callable which returns a <code>DOMElementList</code>.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>Returns an array with keys of <code>text</code> and <code>html</code>.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_handleMultipleNodes">
+        <div class="location">in <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_handleMultipleNodes"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L89">line 89</a></div>
+        <code>                    
+    <strong>handleMultipleNodes</strong>(callable $fn)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>callable</td>
+                <td>$fn</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___invoke">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L28">line 28</a></div>
+        <code>                    
+    <strong>__invoke</strong>(<a target="_blank" href="http://php.net/stdClass">stdClass</a> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The function signature for the middleware.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/stdClass">stdClass</a></td>
+                <td>$feedRoot</td>
+                <td>The root of the feed. This will be written-to when the parsing middleware runs.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$namespaceAlias</td>
+                <td>The preferred namespace alias for a given XML namespace URI. Should be the result
+                                of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a></td>
+                <td>$xpath</td>
+                <td>The <code>DOMXPath</code> object with this middleware's namespace alias applied.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSingle">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L63">line 63</a></div>
+        <code>            protected        <a href="../../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+    <strong>getSingle</strong>(string $nodeName, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Find and read the contents of the feed-level nodes which only have a single value.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$nodeName</td>
+                <td>The name of the namespaced XML node to read.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$namespaceAlias</td>
+                <td>The preferred namespace alias for a given XML namespace URI. Should be the result
+                                of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a></td>
+                <td>$xpath</td>
+                <td>The <code>DOMXPath</code> object with this middleware's namespace alias applied.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a></td>
+            <td>Returns a Node object with properties of <code>text</code> and <code>html</code>.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getMultiple">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L83">line 83</a></div>
+        <code>            protected        array
+    <strong>getMultiple</strong>(string $nodeName, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Find and read the contents of the feed-level nodes which have multiple values.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$nodeName</td>
+                <td>The name of the namespaced XML node to read.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$namespaceAlias</td>
+                <td>The preferred namespace alias for a given XML namespace URI. Should be the result
+                                of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a></td>
+                <td>$xpath</td>
+                <td>The <code>DOMXPath</code> object with this middleware's namespace alias applied.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>Returns an array of Node objects with properties of <code>text</code> and <code>html</code>.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

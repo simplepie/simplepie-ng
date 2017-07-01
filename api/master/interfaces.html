@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Interfaces | SimplePie NG</title>
+
+            <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="css/sami.css">
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/typeahead.min.js"></script>
+        <script src="sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="interfaces" data-name="" data-root-path="">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">SimplePie NG</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="classes.html">Classes</a></li>
+                                            <li><a href="namespaces.html">Namespaces</a></li>
+                                        <li><a href="interfaces.html">Interfaces</a></li>
+                    <li><a href="traits.html">Traits</a></li>
+                    <li><a href="doc-index.html">Index</a></li>
+                    <li><a href="search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div id="page-content">
+                    <div class="page-header">
+        <h1>Interfaces</h1>
+    </div>
+
+    
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="Psr/Container/ContainerExceptionInterface.html"><abbr title="Psr\Container\ContainerExceptionInterface">ContainerExceptionInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Base interface representing a generic exception in a container.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Describes the interface of a container that exposes methods to read its entries.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="Psr/Container/NotFoundExceptionInterface.html"><abbr title="Psr\Container\NotFoundExceptionInterface">NotFoundExceptionInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    No entry was found in the container.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="Psr/Http/Message/MessageInterface.html"><abbr title="Psr\Http\Message\MessageInterface">MessageInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    HTTP messages consist of requests from a client to a server and responses
+from a server to a client. This interface defines the methods common to
+each.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="Psr/Http/Message/RequestInterface.html"><abbr title="Psr\Http\Message\RequestInterface">RequestInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Representation of an outgoing, client-side request.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="Psr/Http/Message/ResponseInterface.html"><abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Representation of an outgoing, server-side response.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="Psr/Http/Message/ServerRequestInterface.html"><abbr title="Psr\Http\Message\ServerRequestInterface">ServerRequestInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Representation of an incoming, server-side HTTP request.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Describes a data stream.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="Psr/Http/Message/UploadedFileInterface.html"><abbr title="Psr\Http\Message\UploadedFileInterface">UploadedFileInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Value object representing a file uploaded through an HTTP request.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="Psr/Http/Message/UriInterface.html"><abbr title="Psr\Http\Message\UriInterface">UriInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Value object representing a URI.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="Psr/Log/LoggerAwareInterface.html"><abbr title="Psr\Log\LoggerAwareInterface">LoggerAwareInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Describes a logger-aware instance.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Describes a logger instance.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="SimplePie/Enum/EnumInterface.html"><abbr title="SimplePie\Enum\EnumInterface">EnumInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="SimplePie/Middleware/Html/HtmlInterface.html"><abbr title="SimplePie\Middleware\Html\HtmlInterface">HtmlInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="SimplePie/Middleware/Json/JsonInterface.html"><abbr title="SimplePie\Middleware\Json\JsonInterface">JsonInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="SimplePie/Middleware/MiddlewareInterface.html"><abbr title="SimplePie\Middleware\MiddlewareInterface">MiddlewareInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="SimplePie/Middleware/Xml/XmlInterface.html"><abbr title="SimplePie\Middleware\Xml\XmlInterface">XmlInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    The interface that all XML-based middleware classes should adhere to.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="SimplePie/Parser/ParserInterface.html"><abbr title="SimplePie\Parser\ParserInterface">ParserInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <em><a href="SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a></em>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+            </div>
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

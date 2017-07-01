@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>SimplePie\SimplePie | SimplePie NG</title>
+
+            <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/sami.css">
+        <script src="../js/jquery-1.11.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/typeahead.min.js"></script>
+        <script src="../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:SimplePie_SimplePie" data-root-path="../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">SimplePie NG</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../classes.html">Classes</a></li>
+                                            <li><a href="../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../interfaces.html">Interfaces</a></li>
+                    <li><a href="../traits.html">Traits</a></li>
+                    <li><a href="../doc-index.html">Index</a></li>
+                    <li><a href="../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../SimplePie.html">SimplePie</a></li><li class="backslash">\</li><li>SimplePie</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            SimplePie
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>SimplePie</strong>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php">View source</a>)
+</p>
+
+        
+    
+
+    
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../SimplePie/Mixin/LibxmlTrait.html"><abbr title="SimplePie\Mixin\LibxmlTrait">LibxmlTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../SimplePie/Mixin/MiddlewareStackTrait.html"><abbr title="SimplePie\Mixin\MiddlewareStackTrait">MiddlewareStackTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+            </div>
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_libxml">
+                                        protected                                        int
+                </td>
+                <td>$libxml</td>
+                <td class="last">Bitwise libxml options to use for parsing XML.</td>
+                <td><small>from&nbsp;<a href="../SimplePie/Mixin/LibxmlTrait.html#property_libxml"><abbr title="SimplePie\Mixin\LibxmlTrait">LibxmlTrait</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_logger">
+                                        protected                                        <a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
+                </td>
+                <td>$logger</td>
+                <td class="last">A PSR-3 logger.</td>
+                <td><small>from&nbsp;<a href="../SimplePie/Mixin/LoggerTrait.html#property_logger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_middleware">
+                                        protected                                        <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
+                </td>
+                <td>$middleware</td>
+                <td class="last">The handler stack which contains registered middleware.</td>
+                <td><small>from&nbsp;<a href="../SimplePie/Mixin/MiddlewareStackTrait.html#property_middleware"><abbr title="SimplePie\Mixin\MiddlewareStackTrait">MiddlewareStackTrait</abbr></a></small></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLibxml">getLibxml</a>()
+        
+                                            <p>Gets the libxml value to use for parsing XML.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../SimplePie/Mixin/LibxmlTrait.html#method_getLibxml"><abbr title="SimplePie\Mixin\LibxmlTrait">LibxmlTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLogger">getLogger</a>()
+        
+                                            <p>Retrieves the PSR-3 logger.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getMiddlewareStack">getMiddlewareStack</a>()
+        
+                                            <p>Gets the handler stack which contains registered middleware.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../SimplePie/Mixin/MiddlewareStackTrait.html#method_getMiddlewareStack"><abbr title="SimplePie\Mixin\MiddlewareStackTrait">MiddlewareStackTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>()
+        
+                                            <p>Constructs a new instance of this class.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../SimplePie/Parser/Xml.html"><abbr title="SimplePie\Parser\Xml">Xml</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_parseXml">parseXml</a>(<a href="../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream, bool $handleHtmlEntitiesInXml = false)
+        
+                                            <p>Parses content which is known to be valid XML and is encoded as UTF-8.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="SimplePie\JsonParser">JsonParser</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_parseJson">parseJson</a>(<a href="../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream)
+        
+                                            <p>Parses content which is known to be valid JSON and is encoded as UTF-8.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_getLibxml">
+        <div class="location">in <a href="../SimplePie/Mixin/LibxmlTrait.html#method_getLibxml"><abbr title="SimplePie\Mixin\LibxmlTrait">LibxmlTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LibxmlTrait.php#L26">line 26</a></div>
+        <code>                    int
+    <strong>getLibxml</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the libxml value to use for parsing XML.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLogger">
+        <div class="location">in <a href="../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L28">line 28</a></div>
+        <code>                    <a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
+    <strong>getLogger</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieves the PSR-3 logger.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getMiddlewareStack">
+        <div class="location">in <a href="../SimplePie/Mixin/MiddlewareStackTrait.html#method_getMiddlewareStack"><abbr title="SimplePie\Mixin\MiddlewareStackTrait">MiddlewareStackTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/MiddlewareStackTrait.php#L28">line 28</a></div>
+        <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
+    <strong>getMiddlewareStack</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the handler stack which contains registered middleware.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L29">line 29</a></div>
+        <code>                    
+    <strong>__construct</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructs a new instance of this class.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_parseXml">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L50">line 50</a></div>
+        <code>                    <a href="../SimplePie/Parser/Xml.html"><abbr title="SimplePie\Parser\Xml">Xml</abbr></a>
+    <strong>parseXml</strong>(<a href="../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream, bool $handleHtmlEntitiesInXml = false)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Parses content which is known to be valid XML and is encoded as UTF-8.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a></td>
+                <td>$stream</td>
+                <td>A PSR-7 <code>StreamInterface</code> which is typically returned by the
+                                                <code>getBody()</code> method of a <code>ResponseInterface</code> class.</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$handleHtmlEntitiesInXml</td>
+                <td>Whether or not SimplePie should pre-parse the XML as HTML to
+                                                resolve the entities. A value of <code>true</code> means that SimplePie
+                                                should inject the entity definitions. A value of <code>false</code> means
+                                                that SimplePie should NOT inject the entity definitions. The
+                                                default value is <code>false</code>.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../SimplePie/Parser/Xml.html"><abbr title="SimplePie\Parser\Xml">Xml</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_parseJson">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L65">line 65</a></div>
+        <code>                    <abbr title="SimplePie\JsonParser">JsonParser</abbr>
+    <strong>parseJson</strong>(<a href="../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Parses content which is known to be valid JSON and is encoded as UTF-8.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a></td>
+                <td>$stream</td>
+                <td>A PSR-7 <code>StreamInterface</code> which is typically returned by the
+                               <code>getBody()</code> method of a <code>ResponseInterface</code> class.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="SimplePie\JsonParser">JsonParser</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

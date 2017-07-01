@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>SimplePie\Configuration | SimplePie NG</title>
+
+            <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/sami.css">
+        <script src="../js/jquery-1.11.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/typeahead.min.js"></script>
+        <script src="../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:SimplePie_Configuration" data-root-path="../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">SimplePie NG</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../classes.html">Classes</a></li>
+                                            <li><a href="../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../interfaces.html">Interfaces</a></li>
+                    <li><a href="../traits.html">Traits</a></li>
+                    <li><a href="../doc-index.html">Index</a></li>
+                    <li><a href="../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../SimplePie.html">SimplePie</a></li><li class="backslash">\</li><li>Configuration</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Configuration
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Configuration</strong>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php">View source</a>)
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>A "master container" for configuration. Think of it as a global class that
+you can access to read global configurations. It is not meant to be
+sub-classed.</p>                                </div>
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_container">
+                    static                    protected                                        <a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a>
+                </td>
+                <td>$container</td>
+                <td class="last">A PSR-11 container.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_libxml">
+                    static                    protected                                        int
+                </td>
+                <td>$libxml</td>
+                <td class="last">Bitwise libxml options to use for parsing XML.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_logger">
+                    static                    protected                                        <a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
+                </td>
+                <td>$logger</td>
+                <td class="last">A PSR-3 logger.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_middleware">
+                    static                    protected                                        <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
+                </td>
+                <td>$middleware</td>
+                <td class="last">The handler stack which contains registered middleware.</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setContainer">setContainer</a>(<a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a> $container = null)
+        
+                                            <p>Constructs a new instance of this class.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLibxml">getLibxml</a>()
+        
+                                            <p>Gets the libxml value to use for parsing XML.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;<a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLogger">getLogger</a>()
+        
+                                            <p>Retrieves the PSR-3 logger.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;<a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getMiddlewareStack">getMiddlewareStack</a>()
+        
+                                            <p>Gets the handler stack which contains registered middleware.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_validateLogger">validateLogger</a>(<a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a> $container)
+        
+                                            <p>Validates the user's configuration for the PSR-3 logger.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_validateLibxml">validateLibxml</a>(<a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a> $container)
+        
+                                            <p>Validates the user's configuration for <code>LIBXML_*</code> XML parsing parameters.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_validateMiddlewareStack">validateMiddlewareStack</a>(<a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a> $container)
+        
+                                            <p>Validates the user's configuration for the middleware handler stack.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_setContainer">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L57">line 57</a></div>
+        <code>        static            
+    <strong>setContainer</strong>(<a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a> $container = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructs a new instance of this class.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a></td>
+                <td>$container</td>
+                <td>A PSR-11 container. The default value is null,
+                                          which will instantiate <code>SimplePie\Container</code>.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLibxml">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L74">line 74</a></div>
+        <code>        static            int
+    <strong>getLibxml</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the libxml value to use for parsing XML.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLogger">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L84">line 84</a></div>
+        <code>        static            <a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
+    <strong>getLogger</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieves the PSR-3 logger.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getMiddlewareStack">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L94">line 94</a></div>
+        <code>        static            <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
+    <strong>getMiddlewareStack</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the handler stack which contains registered middleware.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_validateLogger">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L110">line 110</a></div>
+        <code>        static    protected        
+    <strong>validateLogger</strong>(<a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a> $container)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Validates the user's configuration for the PSR-3 logger.</p>                    <p>A valid PSR-3 logger set by the user will be utilized. If there is no
+logger set, the default value will be <code>NullLogger</code>. An invalid setting
+will throw an exception.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a></td>
+                <td>$container</td>
+                <td>A PSR-11 container.</td>
+            </tr>
+            </table>
+
+            
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="SimplePie\ConfigurationException">ConfigurationException</abbr></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_validateLibxml">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L142">line 142</a></div>
+        <code>        static    protected        
+    <strong>validateLibxml</strong>(<a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a> $container)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Validates the user's configuration for <code>LIBXML_*</code> XML parsing parameters.</p>                    <p>If no valid values are set, the default values will be applied.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a></td>
+                <td>$container</td>
+                <td>A PSR-11 container.</td>
+            </tr>
+            </table>
+
+            
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="SimplePie\ConfigurationException">ConfigurationException</abbr></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_validateMiddlewareStack">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L190">line 190</a></div>
+        <code>        static    protected        
+    <strong>validateMiddlewareStack</strong>(<a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a> $container)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Validates the user's configuration for the middleware handler stack.</p>                    <p>A valid middleware handler stack by the user will be utilized. If there
+is no handler stack set, the default value will be <code>HandlerStack</code>. An
+invalid setting will throw an exception.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a></td>
+                <td>$container</td>
+                <td>A PSR-11 container.</td>
+            </tr>
+            </table>
+
+            
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="SimplePie\ConfigurationException">ConfigurationException</abbr></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
