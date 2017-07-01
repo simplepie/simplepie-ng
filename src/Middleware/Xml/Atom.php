@@ -55,7 +55,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
      *
      * @param string   $nodeName       The name of the namespaced XML node to read.
      * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
-     *                                 of a call to `SimplePie\Dictionary\Ns`.
+     *                                 of a call to `SimplePie\Util\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
      *
      * @return Node Returns a Node object with properties of `text` and `html`.
@@ -75,7 +75,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
      *
      * @param string   $nodeName       The name of the namespaced XML node to read.
      * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
-     *                                 of a call to `SimplePie\Dictionary\Ns`.
+     *                                 of a call to `SimplePie\Util\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
      *
      * @return array Returns an array of Node objects with properties of `text` and `html`.

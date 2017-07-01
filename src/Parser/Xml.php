@@ -13,7 +13,6 @@ use DOMDocument;
 use DOMXPath;
 use Psr\Http\Message\StreamInterface;
 use SimplePie\Configuration;
-use SimplePie\Dictionary\Ns;
 use SimplePie\Enum\FeedType;
 use SimplePie\Exception\ConfigurationException;
 use SimplePie\Mixin\DomDocumentTrait;
@@ -23,6 +22,7 @@ use SimplePie\Mixin\MiddlewareStackTrait;
 use SimplePie\Mixin\RawDocumentTrait;
 use SimplePie\SimplePie;
 use SimplePie\Type\Feed;
+use SimplePie\Util\Ns;
 
 class Xml extends AbstractParser
 {

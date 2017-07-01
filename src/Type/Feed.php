@@ -29,7 +29,7 @@ class Feed extends AbstractType implements TypeInterface
 
     /**
      * The preferred namespace alias for a given XML namespace URI. Should be
-     * the result of a call to `SimplePie\Dictionary\Ns`.
+     * the result of a call to `SimplePie\Util\Ns`.
      *
      * @var string
      */
