@@ -9,6 +9,9 @@ declare(strict_types=1);
 
 namespace SimplePie\Enum;
 
+/**
+ * Provides a set of known, allowable error messages.
+ */
 class ErrorMessage extends AbstractEnum
 {
     public const LOGGER_NOT_PSR3 = 'The configured logger MUST be compatible with `Psr\Log\LoggerInterface`. '

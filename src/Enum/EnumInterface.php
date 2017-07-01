@@ -9,6 +9,9 @@ declare(strict_types=1);
 
 namespace SimplePie\Enum;
 
+/**
+ * The interface that all enum classes must implement and respond to.
+ */
 interface EnumInterface
 {
     /**

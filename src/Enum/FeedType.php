@@ -9,6 +9,10 @@ declare(strict_types=1);
 
 namespace SimplePie\Enum;
 
+/**
+ * Provides a set of known, allowable feed types. This is most often used for
+ * determining which feed types a particular middleware should apply to.
+ */
 class FeedType extends AbstractEnum
 {
     public const ALL  = 'all';

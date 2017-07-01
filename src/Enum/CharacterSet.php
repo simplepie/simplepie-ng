@@ -9,6 +9,9 @@ declare(strict_types=1);
 
 namespace SimplePie\Enum;
 
+/**
+ * Provides a set of known, allowable character encodings.
+ */
 class CharacterSet extends AbstractEnum
 {
     public const ISO_8859_1 = 'iso-8859-1';

@@ -9,6 +9,9 @@ declare(strict_types=1);
 
 namespace SimplePie\Enum;
 
+/**
+ * Provides a set of known, allowable serializations of content nodes.
+ */
 class Serialization extends AbstractEnum
 {
     public const TEXT  = 'text';

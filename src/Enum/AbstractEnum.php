@@ -11,6 +11,11 @@ namespace SimplePie\Enum;
 
 use ReflectionClass;
 
+/**
+ * The base enum class that all other enum classes extend from. It does the
+ * heavy lifting of implementing `EnumInterface` so that extending enum classes
+ * can focus on defining enums.
+ */
 abstract class AbstractEnum implements EnumInterface
 {
     /**

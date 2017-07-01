@@ -9,6 +9,9 @@ declare(strict_types=1);
 
 namespace SimplePie\Enum;
 
+/**
+ * Provides a set of known, allowable media types (née mime types).
+ */
 class Mime extends AbstractEnum
 {
     public const APPLICATION_ATOM_XML  = 'application/atom+xml';
