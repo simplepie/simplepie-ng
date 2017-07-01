@@ -19,6 +19,14 @@ use SimplePie\Middleware\Xml\XmlInterface;
 use Skyzyx\UtilityPack\Types;
 use stdClass;
 
+/**
+ * `SimplePie\HandlerStack` is a middleware stack system which is modeled after
+ * [Guzzle's middleware handler stack system](http://docs.guzzlephp.org/en/latest/handlers-and-middleware.html),
+ * but is designed specifically for SimplePie's use-cases.
+ *
+ * Its primary job is to (a) allow the registration and priority of middleware,
+ * and (b) provide the interface for SimplePie NG to trigger middleware.
+ */
 class HandlerStack implements HandlerStackInterface
 {
     /**

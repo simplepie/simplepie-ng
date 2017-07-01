@@ -15,6 +15,9 @@ use SimplePie\Exception\MiddlewareException;
 use Skyzyx\UtilityPack\Types;
 use stdClass;
 
+/**
+ * Provides an interface for `SimplePie\HandlerStack` to implement.
+ */
 interface HandlerStackInterface
 {
     /**

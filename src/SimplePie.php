@@ -17,6 +17,9 @@ use SimplePie\Parser\Xml as XmlParser;
 
 define('SIMPLEPIE_ROOT', __DIR__);
 
+/**
+ * `SimplePie\SimplePie` is the primary entry point for SimplePie NG.
+ */
 class SimplePie
 {
     use LibxmlTrait;

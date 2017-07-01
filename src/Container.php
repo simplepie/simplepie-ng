@@ -18,6 +18,14 @@ use SimplePie\Exception\ContainerException;
 use SimplePie\Exception\NotFoundException;
 use Traversable;
 
+/**
+ * `SimplePie\Container` is a simple, small PSR-11 container. It implements
+ * `ArrayAccess`, and has an interface which is Pimple-like, without all of
+ * Pimple's more advanced features.
+ *
+ * Usage of this container system is NOT required, and can be replaced by any
+ * other container system that is compatible with PSR-11.
+ */
 class Container implements ContainerInterface, IteratorAggregate, ArrayAccess, Countable
 {
     /**

@@ -14,9 +14,18 @@ use Psr\Log\LoggerInterface;
 use Skyzyx\UtilityPack\Types;
 
 /**
- * A "master container" for configuration. Think of it as a global class that
- * you can access to read global configurations. It is not meant to be
- * sub-classed.
+ * The configuration system is designed around the idea of being a centralized
+ * registry. The usage of this centralized registry is limited, but is used for
+ * configurations that are truly global such as configuring your preferred
+ * logger or registering middleware.
+ *
+ * The `SimplePie\Configuration` class acts as a centralized, global class that
+ * any other class can speak to. It is used in a way that is similar to the
+ * service locator pattern, but has a looser coupling with the rest of the code.
+ *
+ * The configuration class itself is configured by reading specific, known keys
+ * out of a PSR-11 container (documented below). Any values not provided by the
+ * container are assigned default values by the configuration class.
  */
 class Configuration
 {
