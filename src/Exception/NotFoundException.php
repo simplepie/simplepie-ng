@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace SimplePie\Exception;
 
-use Psr\Container\Exception\NotFoundExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 /**
  * `NotFoundException` is required as part of PSR-11 compatibility.
