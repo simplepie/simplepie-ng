@@ -120,7 +120,7 @@ foreach ($feed->getItems() as $item) {
 
 * [ ] [RSS 1.0 Content Modules](http://web.resource.org/rss/1.0/modules/content/)
 * [ ] [Dublin Core Metadata 1.0](http://dublincore.org/documents/1998/09/dces/)
-* [ ] [Dublin Core Metadata 1.1](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements)
+* [ ] [Dublin Core Metadata 1.1](http://dublincore.org/documents/1999/07/02/dces/)
 * [ ] [Dublin Core Terms](http://dublincore.org/documents/2012/06/14/dcmi-terms/)
 * [ ] [W3C WGS84 Geo](https://www.w3.org/2003/01/geo/)
 * [ ] [GeoRSS (Simple)](http://www.georss.org/simple.html)
