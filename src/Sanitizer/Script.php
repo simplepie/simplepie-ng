@@ -10,8 +10,10 @@ declare(strict_types=1);
 namespace SimplePie\Sanitizer;
 
 /**
- * @see http://web.archive.org/web/20081031231837/http://diveintomark.org/archives/2003/06/12/how_to_consume_rss_safely
+ * Will someday perform sanitization on content for `<script>` tags and JavaScript-related HTML attributes.
+ *
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Article:-How-to-consume-RSS-safely
  */
-class DiveIntoMark
+class Script
 {
 }
