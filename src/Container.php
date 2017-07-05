@@ -29,13 +29,6 @@ use Traversable;
 class Container implements ContainerInterface, IteratorAggregate, ArrayAccess, Countable
 {
     /**
-     * The default settings to use when a user fails to provide a specific one.
-     *
-     * @var array
-     */
-    private $defaultSettings = [];
-
-    /**
      * The container storage.
      *
      * @var ArrayObject
@@ -47,9 +40,9 @@ class Container implements ContainerInterface, IteratorAggregate, ArrayAccess, C
      *
      * @param array $userSettings Settings that are passed by the user.
      */
-    public function __construct(array $userSettings = [])
+    public function __construct()
     {
-        $this->container = array_merge($this->defaultSettings, $userSettings);
+        $this->container = [];
     }
 
     /**
@@ -84,10 +77,9 @@ class Container implements ContainerInterface, IteratorAggregate, ArrayAccess, C
      *
      * @param string $offset Identifier of the entry to look for.
      *
-     * @throws NotFoundExceptionInterface  No entry was found for **this** identifier.
-     * @throws ContainerExceptionInterface Error while retrieving the entry.
-     *
      * @return mixed
+     *
+     * @throws NotFoundExceptionInterface  No entry was found for **this** identifier.
      *
      * @see ArrayAccess
      */
@@ -110,12 +102,20 @@ class Container implements ContainerInterface, IteratorAggregate, ArrayAccess, C
      *                         parameter and returns the intended value.
      *
      * @see ArrayAccess
+     *
+     * @throws ContainerExceptionInterface
      */
     public function offsetSet($offset, $value): void
     {
         if (isset($this->container[$offset])) {
             throw new ContainerException(
                 sprintf('The container ID `%s` cannot be overwritten.', $offset)
+            );
+        }
+
+        if (!is_callable($value)) {
+            throw new ContainerException(
+                sprintf('The value `%s` MUST be a callable.', $offset)
             );
         }
 
