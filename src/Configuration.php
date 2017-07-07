@@ -73,7 +73,7 @@ class Configuration
         self::validateLibxml($container);
         self::validateMiddlewareStack($container);
 
-        self::getLogger()->info(sprintf('`%s` has completed instantiation.', __CLASS__));
+        self::getLogger()->info(\sprintf('`%s` has completed instantiation.', __CLASS__));
     }
 
     /**
@@ -124,7 +124,7 @@ class Configuration
                 self::$logger = $container->get('simplepie.logger');
             } else {
                 throw new ConfigurationException(
-                    sprintf(
+                    \sprintf(
                         ErrorMessage::LOGGER_NOT_PSR3,
                         Types::getClassOrType($container->get('simplepie.logger'))
                     )
@@ -135,7 +135,7 @@ class Configuration
         }
 
         // What are we logging with?
-        self::getLogger()->debug(sprintf(
+        self::getLogger()->debug(\sprintf(
             'Logger configured to use `%s`.',
             Types::getClassOrType(self::getLogger())
         ));
@@ -152,11 +152,11 @@ class Configuration
     protected static function validateLibxml(ContainerInterface $container): void
     {
         if ($container->has('simplepie.libxml')) {
-            if (is_int($container->get('simplepie.libxml'))) {
+            if (\is_int($container->get('simplepie.libxml'))) {
                 self::$libxml = $container->get('simplepie.libxml');
             } else {
                 throw new ConfigurationException(
-                    sprintf(
+                    \sprintf(
                         ErrorMessage::LIBXML_NOT_INTEGER,
                         Types::getClassOrType($container->get('simplepie.libxml'))
                     )
@@ -177,7 +177,7 @@ class Configuration
         }
 
         // What are we logging with?
-        self::getLogger()->debug(sprintf(
+        self::getLogger()->debug(\sprintf(
             'Libxml configuration has a bitwise value of `%s`.%s',
             self::getLibxml(),
             (self::getLibxml() === 4792582)
@@ -204,7 +204,7 @@ class Configuration
                 self::$middleware = $container->get('simplepie.middleware');
             } else {
                 throw new ConfigurationException(
-                    sprintf(
+                    \sprintf(
                         ErrorMessage::MIDDLEWARE_NOT_HANDLERSTACK,
                         Types::getClassOrType($container->get('simplepie.middleware'))
                     )

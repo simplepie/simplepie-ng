@@ -61,7 +61,7 @@ class Ns
      */
     public function addAliases(array $aliases): array
     {
-        $this->mapping = array_merge($this->mapping, $aliases);
+        $this->mapping = \array_merge($this->mapping, $aliases);
         $this->getLogger()->info('Added namespace URIs and namespace aliases.', $this->mapping);
 
         return $this->mapping;
@@ -74,7 +74,7 @@ class Ns
      */
     public function getDocNamespaces(): array
     {
-        return simplexml_import_dom($this->domDocument)->getDocNamespaces(true, true);
+        return \simplexml_import_dom($this->domDocument)->getDocNamespaces(true, true);
     }
 
     /**

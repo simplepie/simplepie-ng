@@ -88,7 +88,7 @@ class Container implements ContainerInterface, IteratorAggregate, ArrayAccess, C
     {
         if (!isset($this->container[$offset])) {
             throw new NotFoundException(
-                sprintf('The container ID `%s` does not exist.', $offset)
+                \sprintf('The container ID `%s` does not exist.', $offset)
             );
         }
 
@@ -110,13 +110,13 @@ class Container implements ContainerInterface, IteratorAggregate, ArrayAccess, C
     {
         if (isset($this->container[$offset])) {
             throw new ContainerException(
-                sprintf('The container ID `%s` cannot be overwritten.', $offset)
+                \sprintf('The container ID `%s` cannot be overwritten.', $offset)
             );
         }
 
-        if (!is_callable($value)) {
+        if (!\is_callable($value)) {
             throw new ContainerException(
-                sprintf('The value `%s` MUST be a callable.', $offset)
+                \sprintf('The value `%s` MUST be a callable.', $offset)
             );
         }
 
@@ -144,7 +144,7 @@ class Container implements ContainerInterface, IteratorAggregate, ArrayAccess, C
      */
     public function count(): int
     {
-        return count($this->container);
+        return \count($this->container);
     }
 
     /**

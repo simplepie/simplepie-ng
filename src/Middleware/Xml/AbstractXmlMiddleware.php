@@ -27,7 +27,7 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
      */
     public function applyNsToQuery(string $query, string $namespaceAlias): string
     {
-        return str_replace('%s', $namespaceAlias, $query);
+        return \str_replace('%s', $namespaceAlias, $query);
     }
 
     /**
@@ -50,7 +50,7 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
 
         foreach ($path as $p) {
             if ($supportMixedCase) {
-                $query .= sprintf(
+                $query .= \sprintf(
                     '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
                     $namespaceAlias,
                     'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -58,7 +58,7 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
                     $p
                 );
             } else {
-                $query .= sprintf(
+                $query .= \sprintf(
                     '/%s:%s',
                     $namespaceAlias,
                     $p
@@ -91,6 +91,6 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
     {
         $nodes = $fn();
 
-        print_r($nodes);
+        \print_r($nodes);
     }
 }

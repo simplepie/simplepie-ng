@@ -24,7 +24,7 @@ abstract class AbstractEnum implements EnumInterface
      */
     public static function introspect(): array
     {
-        $refl = new ReflectionClass(get_called_class());
+        $refl = new ReflectionClass(\get_called_class());
 
         return $refl->getConstants();
     }
@@ -34,7 +34,7 @@ abstract class AbstractEnum implements EnumInterface
      */
     public static function introspectKeys(): array
     {
-        return array_keys(static::introspect());
+        return \array_keys(static::introspect());
     }
 
     /**
@@ -42,7 +42,7 @@ abstract class AbstractEnum implements EnumInterface
      */
     public static function hasValue(string $value): bool
     {
-        $arr = array_flip(static::introspect());
+        $arr = \array_flip(static::introspect());
 
         return isset($arr[$value]);
     }

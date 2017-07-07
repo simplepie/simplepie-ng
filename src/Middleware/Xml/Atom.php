@@ -64,7 +64,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
     protected function getSingle(string $nodeName, string $namespaceAlias, DOMXPath $xpath): Node
     {
         $query = $this->generateQuery($namespaceAlias, true, 'feed', $nodeName);
-        $this->getLogger()->debug(sprintf('%s is running an XPath query:', __CLASS__), [$query]);
+        $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
         return $this->handleSingleNode(function () use ($xpath, $query) {
             return $xpath->query($query);
@@ -84,7 +84,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
     protected function getMultiple(string $nodeName, string $namespaceAlias, DOMXPath $xpath): array
     {
         $query = $this->generateQuery('/%s:feed/%s:' . $nodeName, $namespaceAlias);
-        $this->getLogger()->debug(sprintf('%s is running an XPath query:', __CLASS__), [$query]);
+        $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
         return $this->handleMultipleNode(function () use ($xpath, $query) {
             return $xpath->query($query);

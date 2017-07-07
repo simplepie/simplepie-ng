@@ -52,7 +52,7 @@ class Node extends AbstractType implements TypeInterface
                 foreach ($node->attributes as $attribute) {
                     if ($attribute->name === 'type' && $attribute->value === 'html') {
                         $this->serialization = $attribute->nodeValue;
-                        $this->value         = html_entity_decode(
+                        $this->value         = \html_entity_decode(
                             $node->nodeValue,
                             ENT_COMPAT | ENT_HTML5,
                             CharacterSet::UTF_8

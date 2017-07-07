@@ -17,16 +17,16 @@ class ContainerTest extends AbstractTestCase
     public function testConstruct()
     {
         $container1 = new Container();
-        $this->assertEquals(0, count($container1));
+        $this->assertEquals(0, \count($container1));
 
         $container2 = new Container([]);
-        $this->assertEquals(0, count($container2));
+        $this->assertEquals(0, \count($container2));
 
         $container3            = new Container();
         $container3['testing'] = function (Container $c) {
             return true;
         };
-        $this->assertEquals(1, count($container3));
+        $this->assertEquals(1, \count($container3));
     }
 
     public function testSetterOK()
@@ -37,7 +37,7 @@ class ContainerTest extends AbstractTestCase
             return true;
         };
 
-        $this->assertEquals(1, count($container));
+        $this->assertEquals(1, \count($container));
     }
 
     /**
@@ -68,7 +68,7 @@ class ContainerTest extends AbstractTestCase
             return true;
         };
 
-        $this->assertEquals(1, count($container));
+        $this->assertEquals(1, \count($container));
     }
 
     /**

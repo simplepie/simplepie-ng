@@ -15,19 +15,6 @@ use Psr\Http\Message\StreamInterface;
 abstract class AbstractParser implements ParserInterface
 {
     /**
-     * Reads the contents of the stream resource.
-     *
-     * @param StreamInterface $stream A PSR-7 `StreamInterface` which is typically returned by the
-     *                                `getBody()` method of a `ResponseInterface` class.
-     *
-     * @return string The raw contents of the steam resource.
-     */
-    public function readStream(StreamInterface $stream): string
-    {
-        return $stream->getContents();
-    }
-
-    /**
      * Returns an opaque string representing the object.
      *
      * Note: Use of MD5 here is not cryptographically significant.
@@ -38,6 +25,19 @@ abstract class AbstractParser implements ParserInterface
      */
     public function __toString(): string
     {
-        return sprintf('<%s: resource %s>', get_called_class(), md5(spl_object_hash($this)));
+        return \sprintf('<%s: resource %s>', \get_called_class(), \md5(\spl_object_hash($this)));
+    }
+
+    /**
+     * Reads the contents of the stream resource.
+     *
+     * @param StreamInterface $stream A PSR-7 `StreamInterface` which is typically returned by the
+     *                                `getBody()` method of a `ResponseInterface` class.
+     *
+     * @return string The raw contents of the steam resource.
+     */
+    public function readStream(StreamInterface $stream): string
+    {
+        return $stream->getContents();
     }
 }

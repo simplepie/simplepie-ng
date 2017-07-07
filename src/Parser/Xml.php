@@ -73,7 +73,7 @@ class Xml extends AbstractParser
         $this->domDocument = new DOMDocument();
 
         // Don't barf errors all over the output
-        libxml_use_internal_errors(true);
+        \libxml_use_internal_errors(true);
 
         // DOMDocument configuration
         $this->domDocument->recover             = true;
@@ -90,12 +90,12 @@ class Xml extends AbstractParser
             $this->domDocument->loadXML($this->rawDocument, $this->libxml);
 
             // <feed, <rss, etc.
-            $rootElementStart = sprintf('<%s', (string) $this->domDocument->firstChild->nodeName);
+            $rootElementStart = \sprintf('<%s', (string) $this->domDocument->firstChild->nodeName);
 
             // Read the entity definition file, and force-inject it into the XML document
-            $this->rawDocument = str_replace(
+            $this->rawDocument = \str_replace(
                 $rootElementStart,
-                sprintf('%s%s', trim(file_get_contents(SIMPLEPIE_ROOT . '/entities.dtd')), $rootElementStart),
+                \sprintf('%s%s', \trim(\file_get_contents(SIMPLEPIE_ROOT . '/entities.dtd')), $rootElementStart),
                 $this->rawDocument
             );
         }
@@ -115,7 +115,7 @@ class Xml extends AbstractParser
         );
 
         // Clear the libxml errors to avoid excessive memory usage
-        libxml_clear_errors();
+        \libxml_clear_errors();
     }
 
     /**
@@ -146,7 +146,7 @@ class Xml extends AbstractParser
         $xpath = new DOMXPath($this->domDocument);
 
         // Register the namespace alias with the XPath instance
-        if (!is_null($ns)) {
+        if (null !== $ns) {
             $xpath->registerNamespace($ns,
                 $this->domDocument->documentElement->namespaceURI ?? ''
             );

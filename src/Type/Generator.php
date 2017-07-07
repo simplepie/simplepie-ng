@@ -63,6 +63,16 @@ class Generator extends AbstractType implements TypeInterface
     }
 
     /**
+     * Converts this object into a string representation.
+     *
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return \trim(\sprintf('%s %s', $this->name, $this->version));
+    }
+
+    /**
      * Gets the DOMNode element.
      *
      * @return DOMNode
@@ -100,15 +110,5 @@ class Generator extends AbstractType implements TypeInterface
     public function getVersion(): string
     {
         return $this->version;
-    }
-
-    /**
-     * Converts this object into a string representation.
-     *
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return trim(sprintf('%s %s', $this->name, $this->version));
     }
 }

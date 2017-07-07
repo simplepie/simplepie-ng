@@ -16,7 +16,7 @@ use SimplePie\Mixin\LoggerTrait;
 use SimplePie\Mixin\MiddlewareStackTrait;
 use SimplePie\Parser\Xml as XmlParser;
 
-define('SIMPLEPIE_ROOT', __DIR__);
+\define('SIMPLEPIE_ROOT', __DIR__);
 
 /**
  * `SimplePie\SimplePie` is the primary entry point for SimplePie NG.
@@ -33,7 +33,7 @@ class SimplePie
     public function __construct()
     {
         $this->logger = Configuration::getLogger();
-        $this->logger->info(sprintf('`%s` has completed instantiation.', __CLASS__));
+        $this->logger->info(\sprintf('`%s` has completed instantiation.', __CLASS__));
     }
 
     //---------------------------------------------------------------------------

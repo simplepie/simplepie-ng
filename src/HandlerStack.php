@@ -107,7 +107,7 @@ class HandlerStack implements HandlerStackInterface
         // @codingStandardsIgnoreEnd
 
         $this->validateMiddleware($middleware, $name, $overrideType, function (&$arr) use ($middleware, $name) {
-            array_unshift($arr, [$middleware, $name]);
+            \array_unshift($arr, [$middleware, $name]);
         });
 
         $this->logRegistration($middleware, $name, $overrideType);
@@ -150,14 +150,14 @@ class HandlerStack implements HandlerStackInterface
             }
         } else {
             $allowedTypes = FeedType::introspectKeys();
-            array_shift($allowedTypes);
+            \array_shift($allowedTypes);
 
-            throw new MiddlewareException(sprintf(
+            throw new MiddlewareException(\sprintf(
                 'Could not determine which handler stack to invoke. Stack `%s` was requested. [Allowed: %s]',
                 $feedType,
-                implode(', ', array_map(
+                \implode(', ', \array_map(
                     function ($type) {
-                        return sprintf('FeedType::%s', $type);
+                        return \sprintf('FeedType::%s', $type);
                     },
                     $allowedTypes
                 ))
@@ -173,18 +173,18 @@ class HandlerStack implements HandlerStackInterface
     public function debugStack(): array
     {
         $fn = function ($mw) {
-            return sprintf(
+            return \sprintf(
                 '[<%s: resource %s>, %s]',
                 Types::getClassOrType($mw[0]),
-                md5(spl_object_hash($mw[0])),
-                isset($mw[1]) ? sprintf('"%s"', $mw[1]) : 'null'
+                \md5(\spl_object_hash($mw[0])),
+                isset($mw[1]) ? \sprintf('"%s"', $mw[1]) : 'null'
             );
         };
 
         return [
-            'html' => array_map($fn, $this->stack['html']),
-            'json' => array_map($fn, $this->stack['json']),
-            'xml'  => array_map($fn, $this->stack['xml']),
+            'html' => \array_map($fn, $this->stack['html']),
+            'json' => \array_map($fn, $this->stack['json']),
+            'xml'  => \array_map($fn, $this->stack['xml']),
         ];
     }
 
@@ -250,10 +250,10 @@ class HandlerStack implements HandlerStackInterface
     ): void {
         // @codingStandardsIgnoreEnd
 
-        $this->logger->info(sprintf(
+        $this->logger->info(\sprintf(
             'Registered `%s` as middleware%s.',
             Types::getClassOrType($middleware),
-            (!is_null($name) ? sprintf(' with the name `%s`', $name) : '')
+            (null !== $name ? \sprintf(' with the name `%s`', $name) : '')
         ));
     }
 
@@ -280,10 +280,10 @@ class HandlerStack implements HandlerStackInterface
     ): string {
         // @codingStandardsIgnoreEnd
 
-        return sprintf(
+        return \sprintf(
             'The middleware `%s`%s could not be assigned to a feed type.',
             Types::getClassOrType($middleware),
-            (!is_null($name) ? sprintf(' with the name `%s`', $name) : '')
+            (null !== $name ? \sprintf(' with the name `%s`', $name) : '')
         );
     }
 }
