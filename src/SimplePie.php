@@ -16,7 +16,9 @@ use SimplePie\Mixin\LoggerTrait;
 use SimplePie\Mixin\MiddlewareStackTrait;
 use SimplePie\Parser\Xml as XmlParser;
 
+// @codingStandardsIgnoreStart
 \define('SIMPLEPIE_ROOT', __DIR__);
+// @codingStandardsIgnoreEnd
 
 /**
  * `SimplePie\SimplePie` is the primary entry point for SimplePie NG.
