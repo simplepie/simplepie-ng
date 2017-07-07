@@ -12,6 +12,13 @@ $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__ . '/tests')
 ;
 
+$fileHeader = <<<'EOF'
+Copyright (c) 2017 Ryan Parman <http://ryanparman.com>.
+Copyright (c) 2017 Contributors.
+
+http://opensource.org/licenses/Apache2.0
+EOF;
+
 return Config::create()
     ->setIndent("    ")
     ->setLineEnding("\n")
@@ -29,8 +36,34 @@ return Config::create()
             'allow_single_line_closure'                   => false,
             'position_after_functions_and_oop_constructs' => 'next',
         ],
+        'class_definition' => [
+            'multiLineExtendsEachSingleLine' => false,
+            'singleItemSingleLine'           => true,
+            'singleLine'                     => true,
+        ],
         'concat_space' => [
             'spacing' => 'one',
+        ],
+        'function_declaration' => [
+            'closure_function_spacing' => 'one',
+        ],
+        'function_to_constant' => [
+            'functions' => [
+                'phpversion',
+                'php_sapi_name',
+                'pi',
+            ],
+        ],
+        'general_phpdoc_annotation_remove' => [
+            'author',
+            'package',
+            'subpackage',
+        ],
+        'header_comment' => [
+            'commentType' => 'PHPDoc',
+            'location' => 'after_open',
+            'separate' => 'bottom',
+            'header' => $fileHeader,
         ],
         'no_mixed_echo_print' => [
             'use' => 'echo',
@@ -56,15 +89,14 @@ return Config::create()
         'blank_line_after_opening_tag'                => true,
         'blank_line_before_return'                    => true,
         'cast_spaces'                                 => true,
-        'class_definition'                            => true,
         'combine_consecutive_unsets'                  => true,
         'declare_equal_normalize'                     => true,
         'declare_strict_types'                        => true,
         'dir_constant'                                => true,
         'elseif'                                      => true,
         'encoding'                                    => true,
+        'ereg_to_preg'                                => true,
         'full_opening_tag'                            => true,
-        'function_declaration'                        => true,
         'function_typehint_space'                     => true,
         'hash_to_slash_comment'                       => true,
         'include'                                     => true,
@@ -156,7 +188,9 @@ return Config::create()
 
         // Do not enforce
         'class_keyword_remove'              => false,
-        'ereg_to_preg'                      => false,
+        'doctrine_annotation_braces'        => false,
+        'doctrine_annotation_indentation'   => false,
+        'doctrine_annotation_spaces'        => false,
         'heredoc_to_nowdoc'                 => false,
         'no_blank_lines_before_namespace'   => false,
         'no_short_echo_tag'                 => false,
@@ -171,10 +205,6 @@ return Config::create()
         'psr0'                              => false,
         'silenced_deprecation_error'        => false,
         'simplified_null_return'            => false,
-
-        // Unused
-        // 'header_comment' => ['header' => '']
-
     ])
     ->setFinder($finder)
     ->setUsingCache(false)
