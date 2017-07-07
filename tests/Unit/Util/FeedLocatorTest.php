@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace SimplePie\Test\Unit\Util;
 
-use SimplePie\Util\FeedLocator;
 use SimplePie\Test\Unit\AbstractTestCase;
+use SimplePie\Util\FeedLocator;
 
 class FeedLocatorTest extends AbstractTestCase
 {

@@ -77,9 +77,9 @@ class Container implements ContainerInterface, IteratorAggregate, ArrayAccess, C
      *
      * @param string $offset Identifier of the entry to look for.
      *
-     * @return mixed
+     * @throws NotFoundExceptionInterface No entry was found for **this** identifier.
      *
-     * @throws NotFoundExceptionInterface  No entry was found for **this** identifier.
+     * @return mixed
      *
      * @see ArrayAccess
      */

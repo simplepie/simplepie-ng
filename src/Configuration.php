@@ -210,7 +210,7 @@ class Configuration
                 );
             }
         } else {
-            self::$middleware = new HandlerStack($this->getLogger());
+            self::$middleware = new HandlerStack(self::getLogger());
         }
     }
 }

@@ -15,7 +15,7 @@ use SimplePie\Test\Unit\AbstractTestCase;
 class ConfigurationExceptionTest extends AbstractTestCase
 {
     /**
-     * @expectedException SimplePie\Exception\ConfigurationException
+     * @expectedException \SimplePie\Exception\ConfigurationException
      * @expectedExceptionMessage This is a test message.
      */
     public function testThrow()

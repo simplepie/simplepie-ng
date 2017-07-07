@@ -10,7 +10,6 @@ declare(strict_types=1);
 namespace SimplePie\Test\Unit;
 
 use SimplePie\SimplePie;
-use SimplePie\Test\Unit\AbstractTestCase;
 
 class SimplePieTest extends AbstractTestCase
 {

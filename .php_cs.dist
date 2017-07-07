@@ -25,6 +25,10 @@ return Config::create()
             'align_double_arrow' => true,
             'align_equals'       => true,
         ],
+        'braces' => [
+            'allow_single_line_closure'                   => false,
+            'position_after_functions_and_oop_constructs' => 'next',
+        ],
         'concat_space' => [
             'spacing' => 'one',
         ],
@@ -51,7 +55,6 @@ return Config::create()
         'blank_line_after_namespace'                  => true,
         'blank_line_after_opening_tag'                => true,
         'blank_line_before_return'                    => true,
-        'braces'                                      => true,
         'cast_spaces'                                 => true,
         'class_definition'                            => true,
         'combine_consecutive_unsets'                  => true,

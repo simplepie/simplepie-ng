@@ -44,4 +44,3 @@ class CharacterSetTest extends AbstractTestCase
         $this->assertFalse(CharacterSet::hasValue('nope'));
     }
 }
-

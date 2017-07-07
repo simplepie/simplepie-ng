@@ -10,7 +10,6 @@ declare(strict_types=1);
 namespace SimplePie\Test\Unit;
 
 use SimplePie\Container;
-use SimplePie\Test\Unit\AbstractTestCase;
 
 class ContainerTest extends AbstractTestCase
 {
@@ -22,7 +21,7 @@ class ContainerTest extends AbstractTestCase
         $container2 = new Container([]);
         $this->assertEquals(0, count($container2));
 
-        $container3 = new Container();
+        $container3            = new Container();
         $container3['testing'] = function (Container $c) {
             return true;
         };
@@ -41,7 +40,7 @@ class ContainerTest extends AbstractTestCase
     }
 
     /**
-     * @expectedException SimplePie\Exception\ContainerException
+     * @expectedException \SimplePie\Exception\ContainerException
      * @expectedExceptionMessage The container ID `testing` cannot be overwritten.
      */
     public function testSetterNotOK()
@@ -72,13 +71,13 @@ class ContainerTest extends AbstractTestCase
     }
 
     /**
-     * @expectedException SimplePie\Exception\NotFoundException
+     * @expectedException \SimplePie\Exception\NotFoundException
      * @expectedExceptionMessage The container ID `testing` does not exist.
      */
     public function testGetterNotOK()
     {
         $container = new Container();
-        $get = $container['testing'];
+        $get       = $container['testing'];
     }
 
     public function testGetterOK()
@@ -104,7 +103,7 @@ class ContainerTest extends AbstractTestCase
     }
 
     /**
-     * @expectedException SimplePie\Exception\ContainerException
+     * @expectedException \SimplePie\Exception\ContainerException
      * @expectedExceptionMessage The value `testing` MUST be a callable.
      */
     public function testGetterNotOK2()
@@ -117,7 +116,7 @@ class ContainerTest extends AbstractTestCase
     }
 
     /**
-     * @expectedException SimplePie\Exception\ContainerException
+     * @expectedException \SimplePie\Exception\ContainerException
      * @expectedExceptionMessage The value `testing` MUST be a callable.
      */
     public function testGetterNotOK3()
@@ -150,7 +149,7 @@ class ContainerTest extends AbstractTestCase
 
         foreach ($container as $k => $v) {
             $this->assertEquals($k, 'testing');
-            $this->assertTrue(is_callable($v));
+            $this->assertInternalType('callable', $v);
             $this->assertTrue($v($container));
         }
     }

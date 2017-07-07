@@ -15,7 +15,7 @@ use SimplePie\Test\Unit\AbstractTestCase;
 class MiddlewareExceptionTest extends AbstractTestCase
 {
     /**
-     * @expectedException SimplePie\Exception\MiddlewareException
+     * @expectedException \SimplePie\Exception\MiddlewareException
      * @expectedExceptionMessage This is a test message.
      */
     public function testThrow()

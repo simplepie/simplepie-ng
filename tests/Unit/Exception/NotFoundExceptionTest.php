@@ -15,7 +15,7 @@ use SimplePie\Test\Unit\AbstractTestCase;
 class NotFoundExceptionTest extends AbstractTestCase
 {
     /**
-     * @expectedException SimplePie\Exception\NotFoundException
+     * @expectedException \SimplePie\Exception\NotFoundException
      * @expectedExceptionMessage This is a test message.
      */
     public function testThrow()

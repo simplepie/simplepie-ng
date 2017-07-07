@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace SimplePie\Test\Unit\Util;
 
-use SimplePie\Util\Ns;
 use SimplePie\Test\Unit\AbstractTestCase;
+use SimplePie\Util\Ns;
 
 class NsTest extends AbstractTestCase
 {

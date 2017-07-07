@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace SimplePie\Test\Unit\Type;
 
-use SimplePie\Type\Feed;
 use SimplePie\Test\Unit\AbstractTestCase;
+use SimplePie\Type\Feed;
 
 class FeedTest extends AbstractTestCase
 {

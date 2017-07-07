@@ -44,4 +44,3 @@ class FeedTypeTest extends AbstractTestCase
         $this->assertFalse(FeedType::hasValue('nope'));
     }
 }
-
