@@ -149,7 +149,7 @@ analyze: #lint test
 	- bin/analyze bundle reports/analyze/
 	@ echo "*******************************************************************"
 	@ echo "Start a local web server to view the results"
-	@ echo "php -S 4000 -t $$(pwd)/reports/analyze/"
+	@ echo "php -S localhost:4000 -t $$(pwd)/reports/analyze/"
 	@ echo "*******************************************************************"
 
 #-------------------------------------------------------------------------------
