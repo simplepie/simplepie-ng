@@ -12,6 +12,7 @@ namespace SimplePie;
 
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 use Skyzyx\UtilityPack\Types;
 
 /**
@@ -69,9 +70,9 @@ class Configuration
         self::$container = $container ?? new Container();
 
         // Run validations
-        self::validateLogger($container);
-        self::validateLibxml($container);
-        self::validateMiddlewareStack($container);
+        self::validateLogger(self::$container);
+        self::validateLibxml(self::$container);
+        self::validateMiddlewareStack(self::$container);
 
         self::getLogger()->info(\sprintf('`%s` has completed instantiation.', __CLASS__));
     }
@@ -211,7 +212,7 @@ class Configuration
                 );
             }
         } else {
-            self::$middleware = new HandlerStack(self::getLogger());
+            self::$middleware = new HandlerStack();
         }
     }
 }
