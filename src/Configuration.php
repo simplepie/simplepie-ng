@@ -13,6 +13,8 @@ namespace SimplePie;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
+use SimplePie\Enum\ErrorMessage;
+use SimplePie\Exception\ConfigurationException;
 use Skyzyx\UtilityPack\Types;
 
 /**
@@ -164,13 +166,11 @@ class Configuration
                 );
             }
         } else {
-            self::$libxml = 0
+            self::$libxml = LIBXML_HTML_NOIMPLIED // Required, or things crash.
                 | LIBXML_BIGLINES
                 | LIBXML_COMPACT
                 | LIBXML_HTML_NODEFDTD
-                | LIBXML_HTML_NOIMPLIED // Required, or things crash.
                 | LIBXML_NOBLANKS
-                // | LIBXML_NOCDATA // Do not merge into text nodes.
                 | LIBXML_NOENT
                 | LIBXML_NOXMLDECL
                 | LIBXML_NSCLEAN

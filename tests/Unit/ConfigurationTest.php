@@ -58,4 +58,52 @@ class ConfigurationTest extends AbstractTestCase
         $this->assertTrue(Configuration::getMiddlewareStack() instanceof HandlerStackInterface);
         $this->assertEquals(16384, Configuration::getLibxml());
     }
+
+    /**
+     * @expectedException SimplePie\Exception\ConfigurationException
+     * @expectedExceptionMessage The configured logger MUST be compatible with `Psr\Log\LoggerInterface`. Received `string` instead.
+     */
+    public function testCustomLogger()
+    {
+        $container = new Container();
+
+        $container['simplepie.logger'] = function (Container $c)
+        {
+            return 'b0rk';
+        };
+
+        Configuration::setContainer($container);
+    }
+
+    /**
+     * @expectedException SimplePie\Exception\ConfigurationException
+     * @expectedExceptionMessage The configured libxml options MUST be bitwise LIBXML_* constants, which result in an integer value. Received `string` instead.
+     */
+    public function testCustomLibxml()
+    {
+        $container = new Container();
+
+        $container['simplepie.libxml'] = function (Container $c)
+        {
+            return 'b0rk';
+        };
+
+        Configuration::setContainer($container);
+    }
+
+    /**
+     * @expectedException SimplePie\Exception\ConfigurationException
+     * @expectedExceptionMessage The configured middleware handler stack MUST be compatible with `SimplePie\HandlerStackInterface`. Received `string` instead.
+     */
+    public function testCustomMiddleware()
+    {
+        $container = new Container();
+
+        $container['simplepie.middleware'] = function (Container $c)
+        {
+            return 'b0rk';
+        };
+
+        Configuration::setContainer($container);
+    }
 }
