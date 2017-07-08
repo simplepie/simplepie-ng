@@ -11,7 +11,12 @@ declare(strict_types=1);
 namespace SimplePie\Test\Unit;
 
 use PHPUnit\Framework\TestCase;
+use SimplePie\Configuration;
 
 abstract class AbstractTestCase extends TestCase
 {
+    public function setUp()
+    {
+        Configuration::setContainer();
+    }
 }
