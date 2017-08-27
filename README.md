@@ -47,6 +47,34 @@ I want this tool. I have a deep knowledge about feeds. I am working to make this
 
 There will probably be a wrapper for `parseXml()`, `parseJson()`, and `parseHtml()` in the form of `parse()`. There will also be some level of PSR-6/16 caching at the object layer to make non-first runs even faster.
 
+### Simple, leveraging default options
+
+```php
+use GuzzleHttp\Psr7;
+use SimplePie\SimplePie;
+
+// Instantiate SimplePie.
+$simplepie = new SimplePie();
+
+// Pass a PSR-7 stream to SimplePie for parsing.
+$stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
+
+// Specifically parses XML.
+$parser = $simplepie->parseXml($stream, true);
+
+// Reference the top-level feed object
+$feed = $parser->getFeed();
+
+// Use familiar syntax to read the data you care about.
+echo $feed->getTitle();
+foreach ($feed->getItems() as $item) {
+    echo $item->getTitle();
+}
+```
+
+
+### Custom logger and middleware stack
+
 ```php
 use GuzzleHttp\Psr7;
 use Monolog\Handler\ErrorLogHandler;
@@ -101,10 +129,18 @@ $parser = $simplepie->parseXml($stream, true);
 // Reference the top-level feed object
 $feed = $parser->getFeed();
 
-// Use familiar syntax to read the data you care about.
-echo $feed->getTitle();
+// By default, all nodes return a `SimplePie\Type\Node` object with a `toString()` method defined.
+// You can also handle various allowed serializations differently.
 foreach ($feed->getItems() as $item) {
-    echo $item->getTitle()->getValue();
+    switch ($item->getTitle()->getSerialization()) {
+        case 'xhtml':
+            // Custom XML stuff...
+            break;
+        case 'text':
+        case 'html':
+        default:
+            echo $item->getTitle()->getValue();
+    }
 }
 ```
 
@@ -114,7 +150,7 @@ foreach ($feed->getItems() as $item) {
 * [ ] [JSON Feed 1.0](https://jsonfeed.org/version/1)
 * [ ] [RSS 1.0](http://web.resource.org/rss/1.0/spec)
 * [ ] [RSS 2.0](http://www.rssboard.org/rss-specification)
-* [ ] [Atom 1.0](https://tools.ietf.org/html/rfc4287)
+* [-] [Atom 1.0](https://tools.ietf.org/html/rfc4287)
 
 ### And XML grammars
 

@@ -13,8 +13,13 @@ namespace SimplePie;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
+use SimplePie\Configuration;
+use SimplePie\Container;
 use SimplePie\Enum\ErrorMessage;
 use SimplePie\Exception\ConfigurationException;
+use SimplePie\HandlerStack;
+use SimplePie\Middleware\Xml\Atom;
+use SimplePie\SimplePie;
 use Skyzyx\UtilityPack\Types;
 
 /**
@@ -86,6 +91,11 @@ class Configuration
      */
     public static function getLibxml(): int
     {
+        if (self::$libxml) {
+            return self::$libxml;
+        }
+
+        static::setContainer();
         return self::$libxml;
     }
 
@@ -96,6 +106,11 @@ class Configuration
      */
     public static function getLogger(): LoggerInterface
     {
+        if (self::$logger) {
+            return self::$logger;
+        }
+
+        static::setContainer();
         return self::$logger;
     }
 
@@ -106,6 +121,11 @@ class Configuration
      */
     public static function getMiddlewareStack(): HandlerStackInterface
     {
+        if (self::$middleware) {
+            return self::$middleware;
+        }
+
+        static::setContainer();
         return self::$middleware;
     }
 
@@ -212,7 +232,8 @@ class Configuration
                 );
             }
         } else {
-            self::$middleware = new HandlerStack();
+            self::$middleware = (new HandlerStack())
+                ->append(new Atom(), 'atom');
         }
     }
 }

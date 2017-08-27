@@ -13,6 +13,7 @@ namespace SimplePie\Type;
 use DOMNode;
 use SimplePie\Configuration;
 use SimplePie\Mixin\LoggerTrait;
+use SimplePie\Type\Node;
 
 class Generator extends AbstractType implements TypeInterface
 {
@@ -49,16 +50,18 @@ class Generator extends AbstractType implements TypeInterface
     /**
      * Constructs a new instance of this class.
      *
-     * @param DOMNode $node The `DOMNode` element to parse.
+     * @param DOMNode|null $node The `DOMNode` element to parse.
      */
-    public function __construct(DOMNode $node)
+    public function __construct(?DOMNode $node = null)
     {
-        $this->logger = Configuration::getLogger();
-        $this->node   = $node;
-        $this->name   = new Node($this->node);
+        if ($node) {
+            $this->logger = Configuration::getLogger();
+            $this->node   = $node;
+            $this->name   = new Node($this->node);
 
-        foreach ($this->node->attributes as $attribute) {
-            $this->{$attribute->name} = new Node($attribute);
+            foreach ($this->node->attributes as $attribute) {
+                $this->{$attribute->name} = new Node($attribute);
+            }
         }
     }
 
@@ -87,7 +90,7 @@ class Generator extends AbstractType implements TypeInterface
      *
      * @return string
      */
-    public function getName(): string
+    public function getName(): Node
     {
         return $this->name;
     }
@@ -97,7 +100,7 @@ class Generator extends AbstractType implements TypeInterface
      *
      * @return string
      */
-    public function getUri(): string
+    public function getUri(): Node
     {
         return $this->uri;
     }
@@ -107,7 +110,7 @@ class Generator extends AbstractType implements TypeInterface
      *
      * @return string
      */
-    public function getVersion(): string
+    public function getVersion(): Node
     {
         return $this->version;
     }

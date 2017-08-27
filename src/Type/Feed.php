@@ -11,7 +11,9 @@ declare(strict_types=1);
 namespace SimplePie\Type;
 
 use SimplePie\Configuration;
+use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin\LoggerTrait;
+use SimplePie\Type\Generator;
 use stdClass;
 
 /**
@@ -48,45 +50,80 @@ class Feed extends AbstractType implements TypeInterface
         $this->namespaceAlias = $namespaceAlias;
     }
 
-    //---------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     // SINGLE VALUES
 
-    public function getId(?string $namespaceAlias = null): Node
+    /**
+     * Retrieves nodes that are simple scalars, and there are only one allowed value.
+     *
+     * @param  string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
+     *                                     looking at the response from `getRoot()`.
+     * @param  string|null $namespaceAlias The XML namespace alias to apply.
+     *
+     * @return Node
+     */
+    public function getScalarSingleValue(string $nodeName, ?string $namespaceAlias = null): Node
     {
         $alias = $namespaceAlias
             ?? $this->namespaceAlias;
 
-        if (isset($this->getRoot()->id[$alias])) {
-            return $this->getRoot()->id[$alias];
+        if (isset($this->getRoot()->$nodeName[$alias])) {
+            return $this->getRoot()->$nodeName[$alias];
         }
 
         return new Node();
     }
 
-    public function getSummary(?string $namespaceAlias = null): Node
+    public function __call(string $nodeName, array $args): Node
     {
-        $alias = $namespaceAlias
-            ?? $this->namespaceAlias;
-
-        if (isset($this->getRoot()->summary[$alias])) {
-            return $this->getRoot()->summary[$alias];
+        // Make sure we have *something*
+        if (empty($args)) {
+            $args[0] = null;
         }
 
-        return new Node();
+        // Strip `get` from the start of the node name.
+        if (substr($nodeName, 0, 3) === 'get') {
+            $nodeName = lcfirst(substr($nodeName, 3));
+        }
+
+        switch ($nodeName) {
+            case 'id':
+            case 'lang':
+            case 'rights':
+            case 'subtitle':
+            case 'summary':
+            case 'title':
+                return $this->getScalarSingleValue($nodeName, $args[0]);
+            default:
+                throw new SimplePieException(
+                    sprintf('%s is an unresolvable method.')
+                );
+        }
     }
 
-    //---------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     // MULTIPLE VALUES
 
+    public function getGenerator(?string $namespaceAlias = null): Generator
+    {
+        $alias = $namespaceAlias
+            ?? $this->namespaceAlias;
 
-    //---------------------------------------------------------------------------
+        if (isset($this->getRoot()->generator[$alias])) {
+            return $this->getRoot()->generator[$alias];
+        }
+
+        return new Generator();
+    }
+
+    //--------------------------------------------------------------------------
     // INTERNAL
 
     public function getItems(): void
     {
     }
 
-    //---------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     // INTERNAL
 
     /**

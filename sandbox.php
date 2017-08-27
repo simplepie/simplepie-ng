@@ -44,6 +44,26 @@ $stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
 $parser = $simplepie->parseXml($stream, true);
 
 $feed = $parser->getFeed();
+
+echo '--------------------------------------------------------------------------' . PHP_EOL;
+
+echo 'feed->getId: ' . $feed->getId('atom10') . PHP_EOL;
+echo 'feed->getLang: ' . $feed->getLang() . PHP_EOL;
+echo 'feed->getLang->getSerialization: ' . $feed->getLang()->getSerialization() . PHP_EOL;
+echo 'feed->getRights: ' . $feed->getRights() . PHP_EOL;
+echo 'feed->getSubtitle: ' . $feed->getSubtitle() . PHP_EOL;
+echo 'feed->getSummary: ' . $feed->getSummary() . PHP_EOL;
+echo 'feed->getTitle: ' . $feed->getTitle() . PHP_EOL;
+
+echo '--------------------------------------------------------------------------' . PHP_EOL;
+
+echo 'feed->getGenerator: ' . $feed->getGenerator() . PHP_EOL;
+echo 'feed->getGenerator->getName: ' . $feed->getGenerator()->getName() . PHP_EOL;
+echo 'feed->getGenerator->getUri: ' . $feed->getGenerator()->getUri() . PHP_EOL;
+echo 'feed->getGenerator->getVersion: ' . $feed->getGenerator()->getVersion() . PHP_EOL;
+echo 'feed->getGenerator->getVersion->getSerialization: ' . $feed->getGenerator()->getVersion()->getSerialization() . PHP_EOL;
+
+echo '--------------------------------------------------------------------------' . PHP_EOL;
 print_r($feed->getRoot());
 
 echo PHP_EOL;

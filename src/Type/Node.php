@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace SimplePie\Type;
 
 use DOMNode;
+use DOMText;
 use SimplePie\Enum\CharacterSet;
 use SimplePie\Enum\Serialization;
 
@@ -40,7 +41,7 @@ class Node extends AbstractType implements TypeInterface
     /**
      * Get the text node in multiple formats.
      *
-     * @param DOMNode $node A `DOMNode` element to read properties from.
+     * @param DOMNode|null $node A `DOMNode` element to read properties from.
      */
     public function __construct(?DOMNode $node = null)
     {
@@ -62,6 +63,20 @@ class Node extends AbstractType implements TypeInterface
                 }
             }
         }
+    }
+
+    /**
+     * Creates a new `Node` object from a string of text (such as from an XML attribute).
+     *
+     * @param  string $value The string of text to convert to a `Node` object.
+     *
+     * @return Node
+     */
+    public static function factory(string $value): Node
+    {
+        return new Node(
+            new DOMText($value)
+        );
     }
 
     /**
@@ -94,5 +109,15 @@ class Node extends AbstractType implements TypeInterface
     public function getSerialization(): string
     {
         return $this->serialization;
+    }
+
+    /**
+     * Casting this Node element to a string with return the _value_ of the Node.
+     *
+     * @return string|null
+     */
+    public function __toString(): ?string
+    {
+        return $this->getValue();
     }
 }

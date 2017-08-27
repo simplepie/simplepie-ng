@@ -3,7 +3,7 @@
 Firstly, download and install the dependencies.
 
 ```bash
-composer install --optimize-autoloader
+composer install -oa
 ```
 
 ## Unit Tests
@@ -36,4 +36,4 @@ make test
 
 .. reviewer-meta::
    :written-on: 2017-06-25
-   :proofread-on: 2017-06-25
+   :proofread-on: 2017-08-27

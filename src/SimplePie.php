@@ -36,7 +36,7 @@ class SimplePie
         $this->logger->info(\sprintf('`%s` has completed instantiation.', __CLASS__));
     }
 
-    //---------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Parses content which is known to be valid XML and is encoded as UTF-8.

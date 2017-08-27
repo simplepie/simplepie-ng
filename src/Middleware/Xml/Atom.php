@@ -33,10 +33,10 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
         $xq = $xpath->query($this->applyNsToQuery('/%s:feed[attribute::xml:lang][1]/@xml:lang', $namespaceAlias));
 
         $feedRoot->lang[$namespaceAlias] = ($xq->length > 0)
-            ? (string) $xq->item(0)->value
+            ? Node::factory((string) $xq->item(0)->value)
             : null;
 
-        // single nodes, string values
+        // single nodes, scalar values
         foreach (['id', 'rights', 'subtitle', 'summary', 'title'] as $nodeName) {
             $this->addArrayProperty($feedRoot, $nodeName);
             $feedRoot->$nodeName[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
@@ -59,7 +59,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
      *                                 of a call to `SimplePie\Util\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
      *
-     * @return Node Returns a Node object with properties of `text` and `html`.
+     * @return Node
      */
     protected function getSingle(string $nodeName, string $namespaceAlias, DOMXPath $xpath): Node
     {
@@ -79,7 +79,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
      *                                 of a call to `SimplePie\Util\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
      *
-     * @return array Returns an array of Node objects with properties of `text` and `html`.
+     * @return array Returns an array of Node objects.
      */
     protected function getMultiple(string $nodeName, string $namespaceAlias, DOMXPath $xpath): array
     {
