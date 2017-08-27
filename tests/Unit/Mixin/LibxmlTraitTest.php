@@ -17,7 +17,7 @@ class LibxmlTraitTest extends AbstractTestCase
 {
     use LibxmlTrait;
 
-    public function testFailMe()
+    public function testFailMe(): void
     {
     }
 }

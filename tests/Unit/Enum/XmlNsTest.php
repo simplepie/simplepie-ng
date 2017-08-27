@@ -15,9 +15,9 @@ use SimplePie\Test\Unit\AbstractTestCase;
 
 class XmlNsTest extends AbstractTestCase
 {
-    public function testIntrospect()
+    public function testIntrospect(): void
     {
-        $this->assertEquals(XmlNs::introspect(), [
+        $this->assertSame(XmlNs::introspect(), [
             'ATOM_03' => 'http://purl.org/atom/ns#',
             'ATOM_10' => 'http://www.w3.org/2005/Atom',
             'RDF'     => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
@@ -29,9 +29,9 @@ class XmlNsTest extends AbstractTestCase
         ]);
     }
 
-    public function testIntrospectKeys()
+    public function testIntrospectKeys(): void
     {
-        $this->assertEquals(XmlNs::introspectKeys(), [
+        $this->assertSame(XmlNs::introspectKeys(), [
             'ATOM_03',
             'ATOM_10',
             'RDF',
@@ -43,7 +43,7 @@ class XmlNsTest extends AbstractTestCase
         ]);
     }
 
-    public function testHasValue()
+    public function testHasValue(): void
     {
         $this->assertTrue(XmlNs::hasValue(XmlNs::ATOM_03));
         $this->assertTrue(XmlNs::hasValue(XmlNs::ATOM_10));

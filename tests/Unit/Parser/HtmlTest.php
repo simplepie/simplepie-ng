@@ -15,7 +15,7 @@ use SimplePie\Test\Unit\AbstractTestCase;
 
 class HtmlTest extends AbstractTestCase
 {
-    public function testFailMe()
+    public function testFailMe(): void
     {
         new Html();
     }

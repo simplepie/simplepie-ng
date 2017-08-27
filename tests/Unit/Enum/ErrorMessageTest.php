@@ -15,9 +15,9 @@ use SimplePie\Test\Unit\AbstractTestCase;
 
 class ErrorMessageTest extends AbstractTestCase
 {
-    public function testIntrospectKeys()
+    public function testIntrospectKeys(): void
     {
-        $this->assertEquals(ErrorMessage::introspectKeys(), [
+        $this->assertSame(ErrorMessage::introspectKeys(), [
             'LOGGER_NOT_PSR3',
             'MIDDLEWARE_NOT_HANDLERSTACK',
             'LIBXML_NOT_INTEGER',

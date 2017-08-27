@@ -19,7 +19,7 @@ class ConfigurationExceptionTest extends AbstractTestCase
      * @expectedException \SimplePie\Exception\ConfigurationException
      * @expectedExceptionMessage This is a test message.
      */
-    public function testThrow()
+    public function testThrow(): void
     {
         throw new ConfigurationException('This is a test message.');
     }

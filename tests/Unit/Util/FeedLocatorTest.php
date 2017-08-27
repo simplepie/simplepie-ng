@@ -15,7 +15,7 @@ use SimplePie\Util\FeedLocator;
 
 class FeedLocatorTest extends AbstractTestCase
 {
-    public function testFailMe()
+    public function testFailMe(): void
     {
         new FeedLocator();
     }

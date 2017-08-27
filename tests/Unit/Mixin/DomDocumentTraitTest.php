@@ -17,7 +17,7 @@ class DomDocumentTraitTest extends AbstractTestCase
 {
     use DomDocumentTrait;
 
-    public function testFailMe()
+    public function testFailMe(): void
     {
     }
 }

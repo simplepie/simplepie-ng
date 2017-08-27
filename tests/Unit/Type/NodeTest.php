@@ -15,7 +15,7 @@ use SimplePie\Type\Node;
 
 class NodeTest extends AbstractTestCase
 {
-    public function testFailMe()
+    public function testFailMe(): void
     {
         new Node();
     }

@@ -15,7 +15,7 @@ use SimplePie\Type\Entry;
 
 class EntryTest extends AbstractTestCase
 {
-    public function testFailMe()
+    public function testFailMe(): void
     {
         new Entry();
     }

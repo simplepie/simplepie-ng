@@ -17,7 +17,7 @@ class RawDocumentTraitTest extends AbstractTestCase
 {
     use RawDocumentTrait;
 
-    public function testFailMe()
+    public function testFailMe(): void
     {
     }
 }

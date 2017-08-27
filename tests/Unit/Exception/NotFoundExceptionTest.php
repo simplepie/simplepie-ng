@@ -19,7 +19,7 @@ class NotFoundExceptionTest extends AbstractTestCase
      * @expectedException \SimplePie\Exception\NotFoundException
      * @expectedExceptionMessage This is a test message.
      */
-    public function testThrow()
+    public function testThrow(): void
     {
         throw new NotFoundException('This is a test message.');
     }

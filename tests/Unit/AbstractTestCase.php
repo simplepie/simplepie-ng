@@ -15,7 +15,7 @@ use SimplePie\Configuration;
 
 abstract class AbstractTestCase extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         Configuration::setContainer();
     }

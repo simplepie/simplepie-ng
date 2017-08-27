@@ -15,9 +15,9 @@ use SimplePie\Test\Unit\AbstractTestCase;
 
 class FeedTypeTest extends AbstractTestCase
 {
-    public function testIntrospect()
+    public function testIntrospect(): void
     {
-        $this->assertEquals(FeedType::introspect(), [
+        $this->assertSame(FeedType::introspect(), [
             'ALL'  => 'all',
             'JSON' => 'json',
             'HTML' => 'html',
@@ -25,9 +25,9 @@ class FeedTypeTest extends AbstractTestCase
         ]);
     }
 
-    public function testIntrospectKeys()
+    public function testIntrospectKeys(): void
     {
-        $this->assertEquals(FeedType::introspectKeys(), [
+        $this->assertSame(FeedType::introspectKeys(), [
             'ALL',
             'JSON',
             'HTML',
@@ -35,7 +35,7 @@ class FeedTypeTest extends AbstractTestCase
         ]);
     }
 
-    public function testHasValue()
+    public function testHasValue(): void
     {
         $this->assertTrue(FeedType::hasValue(FeedType::ALL));
         $this->assertTrue(FeedType::hasValue(FeedType::JSON));

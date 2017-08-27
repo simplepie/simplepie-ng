@@ -15,25 +15,25 @@ use SimplePie\Test\Unit\AbstractTestCase;
 
 class SerializationTest extends AbstractTestCase
 {
-    public function testIntrospect()
+    public function testIntrospect(): void
     {
-        $this->assertEquals(Serialization::introspect(), [
+        $this->assertSame(Serialization::introspect(), [
             'TEXT'  => 'text',
             'HTML'  => 'html',
             'XHTML' => 'xhtml',
         ]);
     }
 
-    public function testIntrospectKeys()
+    public function testIntrospectKeys(): void
     {
-        $this->assertEquals(Serialization::introspectKeys(), [
+        $this->assertSame(Serialization::introspectKeys(), [
             'TEXT',
             'HTML',
             'XHTML',
         ]);
     }
 
-    public function testHasValue()
+    public function testHasValue(): void
     {
         $this->assertTrue(Serialization::hasValue(Serialization::TEXT));
         $this->assertTrue(Serialization::hasValue(Serialization::HTML));

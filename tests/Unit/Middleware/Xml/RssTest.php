@@ -15,7 +15,7 @@ use SimplePie\Test\Unit\AbstractTestCase;
 
 class RssTest extends AbstractTestCase
 {
-    public function testFailMe()
+    public function testFailMe(): void
     {
         new Rss();
     }

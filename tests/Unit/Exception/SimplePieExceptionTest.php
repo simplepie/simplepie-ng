@@ -19,7 +19,7 @@ class SimplePieExceptionTest extends AbstractTestCase
      * @expectedException \SimplePie\Exception\SimplePieException
      * @expectedExceptionMessage This is a test message.
      */
-    public function testThrow()
+    public function testThrow(): void
     {
         throw new SimplePieException('This is a test message.');
     }

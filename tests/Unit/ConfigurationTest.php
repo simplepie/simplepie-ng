@@ -21,16 +21,16 @@ use SimplePie\Middleware\Xml\Atom;
 
 class ConfigurationTest extends AbstractTestCase
 {
-    public function testDefaultContainer()
+    public function testDefaultContainer(): void
     {
         Configuration::setContainer();
 
         $this->assertTrue(Configuration::getLogger() instanceof LoggerInterface);
         $this->assertTrue(Configuration::getMiddlewareStack() instanceof HandlerStackInterface);
-        $this->assertEquals(4792582, Configuration::getLibxml());
+        $this->assertSame(4792582, Configuration::getLibxml());
     }
 
-    public function testCustomContainer()
+    public function testCustomContainer(): void
     {
         $container = new Container();
 
@@ -53,14 +53,14 @@ class ConfigurationTest extends AbstractTestCase
 
         $this->assertTrue(Configuration::getLogger() instanceof LoggerInterface);
         $this->assertTrue(Configuration::getMiddlewareStack() instanceof HandlerStackInterface);
-        $this->assertEquals(16384, Configuration::getLibxml());
+        $this->assertSame(16384, Configuration::getLibxml());
     }
 
     /**
      * @expectedException \SimplePie\Exception\ConfigurationException
      * @expectedExceptionMessage The configured logger MUST be compatible with `Psr\Log\LoggerInterface`. Received `string` instead.
      */
-    public function testCustomLogger()
+    public function testCustomLogger(): void
     {
         $container = new Container();
 
@@ -75,7 +75,7 @@ class ConfigurationTest extends AbstractTestCase
      * @expectedException \SimplePie\Exception\ConfigurationException
      * @expectedExceptionMessage The configured libxml options MUST be bitwise LIBXML_* constants, which result in an integer value. Received `string` instead.
      */
-    public function testCustomLibxml()
+    public function testCustomLibxml(): void
     {
         $container = new Container();
 
@@ -90,7 +90,7 @@ class ConfigurationTest extends AbstractTestCase
      * @expectedException \SimplePie\Exception\ConfigurationException
      * @expectedExceptionMessage The configured middleware handler stack MUST be compatible with `SimplePie\HandlerStackInterface`. Received `string` instead.
      */
-    public function testCustomMiddleware()
+    public function testCustomMiddleware(): void
     {
         $container = new Container();
 

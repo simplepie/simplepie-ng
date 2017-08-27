@@ -147,7 +147,8 @@ class Xml extends AbstractParser
 
         // Register the namespace alias with the XPath instance
         if (null !== $ns) {
-            $xpath->registerNamespace($ns,
+            $xpath->registerNamespace(
+                $ns,
                 $this->domDocument->documentElement->namespaceURI ?? ''
             );
         }

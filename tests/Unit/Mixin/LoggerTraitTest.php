@@ -17,7 +17,7 @@ class LoggerTraitTest extends AbstractTestCase
 {
     use LoggerTrait;
 
-    public function testFailMe()
+    public function testFailMe(): void
     {
     }
 }

@@ -15,7 +15,7 @@ use SimplePie\Util\Ns;
 
 class NsTest extends AbstractTestCase
 {
-    public function testFailMe()
+    public function testFailMe(): void
     {
         new Ns();
     }

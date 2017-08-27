@@ -67,7 +67,7 @@ class Configuration
      * @param ContainerInterface|null $container A PSR-11 container. The default value is null,
      *                                           which will instantiate `SimplePie\Container`.
      */
-    public static function setContainer(?ContainerInterface $container = null)
+    public static function setContainer(?ContainerInterface $container = null): void
     {
         self::$container = $container ?? new Container();
 

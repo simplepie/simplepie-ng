@@ -15,7 +15,7 @@ use SimplePie\Type\Generator;
 
 class GeneratorTest extends AbstractTestCase
 {
-    public function testFailMe()
+    public function testFailMe(): void
     {
         new Generator();
     }

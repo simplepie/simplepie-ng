@@ -19,7 +19,7 @@ class ContainerExceptionTest extends AbstractTestCase
      * @expectedException \SimplePie\Exception\ContainerException
      * @expectedExceptionMessage This is a test message.
      */
-    public function testThrow()
+    public function testThrow(): void
     {
         throw new ContainerException('This is a test message.');
     }

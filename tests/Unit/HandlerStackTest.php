@@ -22,47 +22,47 @@ class HandlerStackTest extends AbstractTestCase
     //         ->append(new Atom());
     // }
 
-    public function testAppendClosure()
+    public function testAppendClosure(): void
     {
         $stack = (new HandlerStack())
             ->append(new Atom())
-            ->appendClosure(FeedType::ALL, function () {
+            ->appendClosure(FeedType::ALL, function (): void {
             })
-            ->appendClosure(FeedType::JSON, function () {
+            ->appendClosure(FeedType::JSON, function (): void {
             })
-            ->appendClosure(FeedType::HTML, function () {
+            ->appendClosure(FeedType::HTML, function (): void {
             })
-            ->appendClosure(FeedType::XML, function () {
+            ->appendClosure(FeedType::XML, function (): void {
             });
 
-        $this->assertEquals(2, \count($stack->debugStack()['json']));
-        $this->assertEquals(2, \count($stack->debugStack()['html']));
-        $this->assertEquals(3, \count($stack->debugStack()['xml']));
+        $this->assertSame(2, \count($stack->debugStack()['json']));
+        $this->assertSame(2, \count($stack->debugStack()['html']));
+        $this->assertSame(3, \count($stack->debugStack()['xml']));
     }
 
-    public function testOrder()
+    public function testOrder(): void
     {
         $stack = (new HandlerStack())
-            ->appendClosure(FeedType::ALL, function () {
+            ->appendClosure(FeedType::ALL, function (): void {
             }, 'start')
-            ->appendClosure(FeedType::JSON, function () {
+            ->appendClosure(FeedType::JSON, function (): void {
             }, 'appendJson')
-            ->appendClosure(FeedType::HTML, function () {
+            ->appendClosure(FeedType::HTML, function (): void {
             }, 'appendHtml')
-            ->appendClosure(FeedType::XML, function () {
+            ->appendClosure(FeedType::XML, function (): void {
             }, 'appendXml')
-            ->prependClosure(FeedType::JSON, function () {
+            ->prependClosure(FeedType::JSON, function (): void {
             }, 'prependJson')
-            ->prependClosure(FeedType::HTML, function () {
+            ->prependClosure(FeedType::HTML, function (): void {
             }, 'prependHtml')
-            ->prependClosure(FeedType::XML, function () {
+            ->prependClosure(FeedType::XML, function (): void {
             }, 'prependXml');
 
         $order = ['prependXml', 'start', 'appendXml'];
 
         foreach ($stack->debugStack()['xml'] as $middleware) {
             $match = \array_shift($order);
-            $this->assertEquals(1, \preg_match('/' . $match . '/', $middleware));
+            $this->assertSame(1, \preg_match('/' . $match . '/', $middleware));
         }
     }
 
@@ -70,10 +70,10 @@ class HandlerStackTest extends AbstractTestCase
      * @expectedException \SimplePie\Exception\MiddlewareException
      * @expectedExceptionMessage The middleware `Closure` could not be assigned to a feed type.
      */
-    public function testMiddlewareException()
+    public function testMiddlewareException(): void
     {
         $stack = (new HandlerStack())
-            ->appendClosure('bogus', function () {
+            ->appendClosure('bogus', function (): void {
             });
     }
 }

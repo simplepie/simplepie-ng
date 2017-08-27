@@ -70,7 +70,7 @@ class HandlerStack implements HandlerStackInterface
     ): HandlerStackInterface {
         // @codingStandardsIgnoreEnd
 
-        $this->validateMiddleware($middleware, $name, $overrideType, function (&$arr) use ($middleware, $name) {
+        $this->validateMiddleware($middleware, $name, $overrideType, function (&$arr) use ($middleware, $name): void {
             $arr[] = [$middleware, $name];
         });
 
@@ -106,7 +106,7 @@ class HandlerStack implements HandlerStackInterface
     ): HandlerStackInterface {
         // @codingStandardsIgnoreEnd
 
-        $this->validateMiddleware($middleware, $name, $overrideType, function (&$arr) use ($middleware, $name) {
+        $this->validateMiddleware($middleware, $name, $overrideType, function (&$arr) use ($middleware, $name): void {
             \array_unshift($arr, [$middleware, $name]);
         });
 

@@ -15,7 +15,7 @@ use SimplePie\Test\Unit\AbstractTestCase;
 
 class DateTest extends AbstractTestCase
 {
-    public function testFailMe()
+    public function testFailMe(): void
     {
         new Date();
     }

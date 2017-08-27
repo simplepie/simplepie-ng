@@ -17,7 +17,7 @@ class MiddlewareStackTraitTest extends AbstractTestCase
 {
     use MiddlewareStackTrait;
 
-    public function testFailMe()
+    public function testFailMe(): void
     {
     }
 }

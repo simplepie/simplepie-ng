@@ -82,7 +82,7 @@ class Feed extends AbstractType implements TypeInterface
     //---------------------------------------------------------------------------
     // INTERNAL
 
-    public function getItems()
+    public function getItems(): void
     {
     }
 

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Defintions can be looked-up at <http://cs.sensiolabs.org>.
  */
@@ -25,6 +24,9 @@ return Config::create()
     ->setRiskyAllowed(true)
     ->setRules([
         // Configurable
+        'align_multiline_comment' => [
+            'comment_type' => 'all_multiline',
+        ],
         'array_syntax' => [
             'syntax' => 'short',
         ],
@@ -32,9 +34,17 @@ return Config::create()
             'align_double_arrow' => true,
             'align_equals'       => true,
         ],
+        'blank_line_before_statement' => [
+            'statements' => ['declare', 'return', 'throw', 'try'],
+        ],
         'braces' => [
             'allow_single_line_closure'                   => false,
+            'position_after_anonymous_constructs'         => 'same',
+            'position_after_control_structures'           => 'same',
             'position_after_functions_and_oop_constructs' => 'next',
+        ],
+        'cast_spaces' => [
+            'space' => 'single',
         ],
         'class_definition' => [
             'multiLineExtendsEachSingleLine' => false,
@@ -43,6 +53,9 @@ return Config::create()
         ],
         'concat_space' => [
             'spacing' => 'one',
+        ],
+        'declare_equal_normalize' => [
+            'space' => 'none',
         ],
         'function_declaration' => [
             'closure_function_spacing' => 'one',
@@ -61,9 +74,9 @@ return Config::create()
         ],
         'header_comment' => [
             'commentType' => 'PHPDoc',
-            'location' => 'after_open',
-            'separate' => 'bottom',
-            'header' => $fileHeader,
+            'location'    => 'after_open',
+            'separate'    => 'bottom',
+            'header'      => $fileHeader,
         ],
         'is_null' => [
             'use_yoda_style' => true,
@@ -72,10 +85,22 @@ return Config::create()
             'syntax' => 'short',
         ],
         'method_argument_space' => [
+            'ensure_fully_multiline'           => true,
             'keep_multiple_spaces_after_comma' => false,
+        ],
+        'no_break_comment' => [
+            'comment_text' => 'no break',
         ],
         'no_mixed_echo_print' => [
             'use' => 'echo',
+        ],
+        'non_printable_character' => [
+            'use_escape_sequences_in_strings' => true,
+        ],
+        'no_extra_consecutive_blank_lines' => [
+            'tokens' => [
+                'use',
+            ],
         ],
         'no_spaces_around_offset' => [
             'positions' => [
@@ -117,13 +142,24 @@ return Config::create()
             'sortAlgorithm' => 'alpha',
         ],
         'phpdoc_no_alias_tag' => [
-            'property-read'  => 'property',
-            'property-write' => 'property',
-            'type'           => 'var',
-            'link'           => 'see',
+            'replacements' => [
+                'property-read'  => 'property',
+                'property-write' => 'property',
+                'type'           => 'var',
+                'link'           => 'see',
+            ],
         ],
         'phpdoc_add_missing_param_annotation' => [
             'only_untyped' => false,
+        ],
+        'phpdoc_align' => [
+            'tags' => [
+                'param',
+                'return',
+                'throws',
+                'type',
+                'var',
+            ]
         ],
         'phpdoc_return_self_reference' => [
             'replacements' => [
@@ -133,6 +169,51 @@ return Config::create()
                 '@self'   => 'self',
                 '$static' => 'static',
                 '@static' => 'static',
+            ],
+        ],
+        'phpdoc_types_order' => [
+            'null_adjustment' => 'always_last',
+            'sort_algorithm'  => 'alpha',
+        ],
+        'php_unit_construct' => [
+            'assertions' => [
+                'assertEquals',
+                'assertSame',
+                'assertNotEquals',
+                'assertNotSame',
+            ],
+        ],
+        'php_unit_dedicate_assert' => [
+            'functions' => [
+                'array_key_exists',
+                'empty',
+                'file_exists',
+                'is_infinite',
+                'is_nan',
+                'is_null',
+                'is_array',
+                'is_bool',
+                'is_boolean',
+                'is_callable',
+                'is_double',
+                'is_float',
+                'is_int',
+                'is_integer',
+                'is_long',
+                'is_numeric',
+                'is_object',
+                'is_real',
+                'is_resource',
+                'is_scalar',
+                'is_string',
+            ],
+        ],
+        'php_unit_strict' => [
+            'assertions' => [
+                'assertAttributeEquals',
+                'assertAttributeNotEquals',
+                'assertEquals',
+                'assertNotEquals',
             ],
         ],
         'random_api_migration' => [
@@ -146,20 +227,28 @@ return Config::create()
         'return_type_declaration' => [
             'space_before' => 'none',
         ],
+        'single_class_element_per_statement' => [
+            'elements' => [
+                'const',
+                'property',
+            ],
+        ],
+        'single_line_comment_style' => [
+            'comment_types' => [
+                'hash',
+            ],
+        ],
         'visibility_required' => [
             'const',
             'method',
             'property',
         ],
-        'no_extra_consecutive_blank_lines' => ['use'],
 
         // Enforce
         'blank_line_after_namespace'                  => true,
         'blank_line_after_opening_tag'                => true,
         'blank_line_before_return'                    => true,
-        'cast_spaces'                                 => true,
         'combine_consecutive_unsets'                  => true,
-        'declare_equal_normalize'                     => true,
         'declare_strict_types'                        => true,
         'dir_constant'                                => true,
         'elseif'                                      => true,
@@ -167,7 +256,6 @@ return Config::create()
         'ereg_to_preg'                                => true,
         'full_opening_tag'                            => true,
         'function_typehint_space'                     => true,
-        'hash_to_slash_comment'                       => true,
         'heredoc_to_nowdoc'                           => true,
         'include'                                     => true,
         'indentation_type'                            => true,
@@ -199,23 +287,22 @@ return Config::create()
         'no_singleline_whitespace_before_semicolons'  => true,
         'no_spaces_after_function_name'               => true,
         'no_spaces_inside_parenthesis'                => true,
+        'no_superfluous_elseif'                       => true,
         'no_trailing_comma_in_list_call'              => true,
         'no_trailing_comma_in_singleline_array'       => true,
         'no_trailing_whitespace'                      => true,
         'no_trailing_whitespace_in_comment'           => true,
+        'no_unneeded_curly_braces'                    => true,
+        'no_unneeded_final_method'                    => true,
         'no_unreachable_default_argument_value'       => true,
         'no_unused_imports'                           => true,
         'no_useless_else'                             => true,
         'no_useless_return'                           => true,
         'no_whitespace_before_comma_in_array'         => true,
         'no_whitespace_in_blank_line'                 => true,
-        'non_printable_character'                     => true,
         'normalize_index_brace'                       => true,
         'object_operator_without_whitespace'          => true,
-        'php_unit_construct'                          => true,
-        'php_unit_dedicate_assert'                    => true,
         'php_unit_fqcn_annotation'                    => true,
-        'phpdoc_align'                                => true,
         'phpdoc_indent'                               => true,
         'phpdoc_inline_tag'                           => true,
         'phpdoc_no_access'                            => true,
@@ -238,7 +325,6 @@ return Config::create()
         'short_scalar_cast'                           => true,
         'single_blank_line_at_eof'                    => true,
         'single_blank_line_before_namespace'          => true,
-        'single_class_element_per_statement'          => true,
         'single_import_per_statement'                 => true,
         'single_line_after_imports'                   => true,
         'single_quote'                                => true,
@@ -253,19 +339,21 @@ return Config::create()
         'trailing_comma_in_multiline_array'           => true,
         'trim_array_spaces'                           => true,
         'unary_operator_spaces'                       => true,
+        'void_return'                                 => true,
         'whitespace_after_comma_in_array'             => true,
 
         // Do not enforce
         'class_keyword_remove'                => false,
+        // 'doctrine_annotation_array_assignment'
         'doctrine_annotation_braces'          => false,
         'doctrine_annotation_indentation'     => false,
         'doctrine_annotation_spaces'          => false,
         'no_blank_lines_before_namespace'     => false,
         'no_short_echo_tag'                   => false,
+        'no_null_property_initialization'     => false,
         'not_operator_with_space'             => false,
         'not_operator_with_successor_space'   => false,
         'not_operator_with_successor_space'   => false,
-        'php_unit_strict'                     => false,
         'php_unit_test_class_requires_covers' => false,
         'phpdoc_annotation_without_dot'       => false,
         'pre_increment'                       => false,
@@ -275,5 +363,5 @@ return Config::create()
         'simplified_null_return'              => false,
     ])
     ->setFinder($finder)
-    ->setUsingCache(false)
+    ->setUsingCache(true)
 ;

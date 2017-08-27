@@ -14,7 +14,7 @@ use SimplePie\Middleware\AbstractMiddleware;
 
 class Rss extends AbstractMiddleware implements XmlInterface
 {
-    public function __invoke()
+    public function __invoke(): void
     {
         echo __CLASS__ . PHP_EOL;
     }

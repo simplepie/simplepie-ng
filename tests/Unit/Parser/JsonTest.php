@@ -15,7 +15,7 @@ use SimplePie\Test\Unit\AbstractTestCase;
 
 class JsonTest extends AbstractTestCase
 {
-    public function testFailMe()
+    public function testFailMe(): void
     {
         new Json();
     }
