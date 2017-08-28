@@ -5,7 +5,7 @@ Firstly, download and install the dependencies.
 
 .. code-block:: bash
 
-    composer install --optimize-autoloader
+    composer install -oa
 
 Unit Tests
 ----------
@@ -44,4 +44,4 @@ You can run both unit and integration tests at the same time with:
 
 .. reviewer-meta::
    :written-on: 2017-06-25
-   :proofread-on: 2017-06-25
+   :proofread-on: 2017-08-27
