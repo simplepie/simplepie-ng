@@ -42,6 +42,12 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
             $feedRoot->$nodeName[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
         }
 
+        // time/date stamps
+        foreach (['published', 'updated'] as $nodeName) {
+            $this->addArrayProperty($feedRoot, $nodeName);
+            $feedRoot->$nodeName[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
+        }
+
         // generator
         $this->addArrayProperty($feedRoot, 'generator');
         $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', 'generator'));
@@ -67,26 +73,6 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
         $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
         return $this->handleSingleNode(function () use ($xpath, $query) {
-            return $xpath->query($query);
-        });
-    }
-
-    /**
-     * Find and read the contents of the feed-level nodes which have multiple values.
-     *
-     * @param string   $nodeName       The name of the namespaced XML node to read.
-     * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
-     *                                 of a call to `SimplePie\Util\Ns`.
-     * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
-     *
-     * @return array Returns an array of Node objects.
-     */
-    protected function getMultiple(string $nodeName, string $namespaceAlias, DOMXPath $xpath): array
-    {
-        $query = $this->generateQuery('/%s:feed/%s:' . $nodeName, $namespaceAlias);
-        $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
-
-        return $this->handleMultipleNode(function () use ($xpath, $query) {
             return $xpath->query($query);
         });
     }

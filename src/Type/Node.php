@@ -66,15 +66,25 @@ class Node extends AbstractType implements TypeInterface
     }
 
     /**
+     * Casting this Node element to a string with return the _value_ of the Node.
+     *
+     * @return string|null
+     */
+    public function __toString(): ?string
+    {
+        return $this->getValue();
+    }
+
+    /**
      * Creates a new `Node` object from a string of text (such as from an XML attribute).
      *
-     * @param  string $value The string of text to convert to a `Node` object.
+     * @param string $value The string of text to convert to a `Node` object.
      *
      * @return Node
      */
     public static function factory(string $value): Node
     {
-        return new Node(
+        return new self(
             new DOMText($value)
         );
     }
@@ -109,15 +119,5 @@ class Node extends AbstractType implements TypeInterface
     public function getSerialization(): string
     {
         return $this->serialization;
-    }
-
-    /**
-     * Casting this Node element to a string with return the _value_ of the Node.
-     *
-     * @return string|null
-     */
-    public function __toString(): ?string
-    {
-        return $this->getValue();
     }
 }

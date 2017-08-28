@@ -10,10 +10,11 @@ declare(strict_types=1);
 
 namespace SimplePie\Type;
 
+use DateTime;
+use DateTimeZone;
 use SimplePie\Configuration;
 use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin\LoggerTrait;
-use SimplePie\Type\Generator;
 use stdClass;
 
 /**
@@ -39,6 +40,20 @@ class Feed extends AbstractType implements TypeInterface
     protected $namespaceAlias;
 
     /**
+     * The format that should be used when determining how to parse a date from a date string.
+     *
+     * @var string
+     */
+    protected $createFromFormat;
+
+    /**
+     * The preferred timezone to use for date output.
+     *
+     * @var DateTimeZone
+     */
+    protected $outputTimezone;
+
+    /**
      * Constructs a new instance of this class.
      *
      * @param string $namespaceAlias [description]
@@ -50,15 +65,119 @@ class Feed extends AbstractType implements TypeInterface
         $this->namespaceAlias = $namespaceAlias;
     }
 
+    /**
+     * Proxy method which forwards requests to an underlying handler.
+     *
+     * @param  string $nodeName The name of the method being called.
+     * @param  array  $args     Any arguments passed into that method.
+     *
+     * @return mixed
+     *
+     * @method \DateTime getPublished(?string $namespaceAlias = null) Indicates an instant-in-time associated with an event early in the life-cycle of the entry.
+     * @method \DateTime getUpdated(?string $namespaceAlias = null) Indicates the most recent instant-in-time when an entry or feed was modified in a way the publisher considers significant. Therefore, not all modifications necessarily result in a changed value.
+     *
+     * @method SimplePie\Type\Node getId(?string $namespaceAlias = null) Conveys a permanent, universally unique identifier for an entry or feed.
+     * @method SimplePie\Type\Node getLang(?string $namespaceAlias = null) Indicates the natural language for the element and its descendents.
+     * @method SimplePie\Type\Node getRights(?string $namespaceAlias = null) Conveys information about rights held in and over an entry or feed.
+     * @method SimplePie\Type\Node getSubtitle(?string $namespaceAlias = null) Conveys a human-readable description or subtitle for a feed.
+     * @method SimplePie\Type\Node getSummary(?string $namespaceAlias = null) Conveys a short summary, abstract, or excerpt of an entry.
+     * @method SimplePie\Type\Node getTitle(?string $namespaceAlias = null) Conveys a human-readable title for an entry or feed.
+     *
+     * @method SimplePie\Type\Generator getGenerator(?string $namespaceAlias = null) Identifies the agent used to generate a feed, for debugging and other purposes.
+     */
+    public function __call(string $nodeName, array $args)
+    {
+        // Make sure we have *something*
+        if (empty($args)) {
+            $args[0] = null;
+        }
+
+        // Strip `get` from the start of the node name.
+        if (\mb_substr($nodeName, 0, 3) === 'get') {
+            $nodeName = \lcfirst(\mb_substr($nodeName, 3));
+        }
+
+        // Aliases
+        switch ($nodeName) {
+            case 'language':
+                $nodeName = 'lang';
+                break;
+            case 'pubDate':
+            case 'publishedDate':
+                $nodeName = 'published';
+                break;
+        }
+
+        // Main Handler
+        switch ($nodeName) {
+            case 'id':
+            case 'lang':
+            case 'rights':
+            case 'subtitle':
+            case 'summary':
+            case 'title':
+                return $this->getScalarSingleValue($nodeName, $args[0]);
+            case 'published':
+            case 'updated':
+                return $this->handleAsDatestamp(
+                    $this->getScalarSingleValue($nodeName, $args[0])->getValue()
+                );
+            default:
+                throw new SimplePieException(
+                    \sprintf('%s is an unresolvable method.')
+                );
+        }
+    }
+
+    /**
+     * Allows the user to help the date parser by providing the format of the datestamp in the feed.
+     *
+     * This will be passed into `DateTime::createFromFormat()` at parse-time.
+     *
+     * @param string $createFromFormat The format of the datestamp in the feed.
+     *
+     * @return self
+     *
+     * @see http://php.net/manual/en/datetime.createfromformat.php
+     */
+    public function setDateFormat(string $createFromFormat): Feed
+    {
+        $this->createFromFormat = $createFromFormat;
+
+        return $this;
+    }
+
+    /**
+     * Set the preferred output timezone.
+     *
+     * This calculation is performed on a _best-effort_ basis and is not guaranteed. Factors which may affect the
+     * calculation include:
+     *
+     * * the version of glibc/musl that your OS relies on
+     * * the freshness of the timestamp data your OS relies on
+     * * the format of the datestamp inside of the feed and PHP's ability to parse it
+     *
+     * @param string $timezone The timezone identifier to use. Must be compatible with `DateTimeZone`. The default
+     *                         value is `UTC`.
+     *
+     * @return self
+     */
+    public function setOutputTimezone(string $timezone = 'UTC'): Feed
+    {
+        $this->outputTimezone = $timezone;
+
+        return $this;
+    }
+
     //--------------------------------------------------------------------------
-    // SINGLE VALUES
+    // SINGLE SCALAR VALUES
 
     /**
      * Retrieves nodes that are simple scalars, and there are only one allowed value.
      *
-     * @param  string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
-     *                                     looking at the response from `getRoot()`.
-     * @param  string|null $namespaceAlias The XML namespace alias to apply.
+     * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
+     *                                    looking at the response from `getRoot()`.
+     * @param string|null $namespaceAlias The XML namespace alias to apply.
      *
      * @return Node
      */
@@ -74,35 +193,8 @@ class Feed extends AbstractType implements TypeInterface
         return new Node();
     }
 
-    public function __call(string $nodeName, array $args): Node
-    {
-        // Make sure we have *something*
-        if (empty($args)) {
-            $args[0] = null;
-        }
-
-        // Strip `get` from the start of the node name.
-        if (substr($nodeName, 0, 3) === 'get') {
-            $nodeName = lcfirst(substr($nodeName, 3));
-        }
-
-        switch ($nodeName) {
-            case 'id':
-            case 'lang':
-            case 'rights':
-            case 'subtitle':
-            case 'summary':
-            case 'title':
-                return $this->getScalarSingleValue($nodeName, $args[0]);
-            default:
-                throw new SimplePieException(
-                    sprintf('%s is an unresolvable method.')
-                );
-        }
-    }
-
     //--------------------------------------------------------------------------
-    // MULTIPLE VALUES
+    // SINGLE COMPLEX VALUES
 
     public function getGenerator(?string $namespaceAlias = null): Generator
     {
@@ -134,5 +226,40 @@ class Feed extends AbstractType implements TypeInterface
     public function getRoot(): stdClass
     {
         return $this->root;
+    }
+
+    /**
+     * Handle a string as a datestamp and convert it to a `DateTime` object.
+     *
+     * Affected by `setOutputTimezone()` and `setDateFormat()`, if they were set.
+     *
+     * @param  string $datestamp The datestamp to handle, as a string.
+     *
+     * @return DateTime
+     */
+    protected function handleAsDatestamp(string $datestamp): DateTime
+    {
+        // Use the custom formatter, if available
+        if ($this->createFromFormat) {
+            $date = DateTime::createFromFormat(
+                $this->createFromFormat,
+                $datestamp,
+                new DateTimeZone('UTC')
+            );
+        } else {
+            $date = new DateTime(
+                $datestamp,
+                new DateTimeZone('UTC')
+            );
+        }
+
+        // Pre-apply the output timezone, if available
+        if ($this->outputTimezone) {
+            $date = $date->setTimezone(
+                new DateTimeZone($this->outputTimezone)
+            );
+        }
+
+        return $date;
     }
 }

@@ -13,7 +13,6 @@ namespace SimplePie\Type;
 use DOMNode;
 use SimplePie\Configuration;
 use SimplePie\Mixin\LoggerTrait;
-use SimplePie\Type\Node;
 
 class Generator extends AbstractType implements TypeInterface
 {

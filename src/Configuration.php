@@ -13,13 +13,9 @@ namespace SimplePie;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
-use SimplePie\Configuration;
-use SimplePie\Container;
 use SimplePie\Enum\ErrorMessage;
 use SimplePie\Exception\ConfigurationException;
-use SimplePie\HandlerStack;
 use SimplePie\Middleware\Xml\Atom;
-use SimplePie\SimplePie;
 use Skyzyx\UtilityPack\Types;
 
 /**
@@ -96,6 +92,7 @@ class Configuration
         }
 
         static::setContainer();
+
         return self::$libxml;
     }
 
@@ -111,6 +108,7 @@ class Configuration
         }
 
         static::setContainer();
+
         return self::$logger;
     }
 
@@ -126,6 +124,7 @@ class Configuration
         }
 
         static::setContainer();
+
         return self::$middleware;
     }
 

@@ -8,6 +8,7 @@ use Monolog\Logger;
 use Psr\Log\LogLevel;
 use SimplePie\Configuration;
 use SimplePie\Container;
+use SimplePie\Enum\DateFormat;
 use SimplePie\HandlerStack;
 use SimplePie\Middleware\Xml\Atom;
 use SimplePie\SimplePie;
@@ -50,10 +51,25 @@ echo '--------------------------------------------------------------------------
 echo 'feed->getId: ' . $feed->getId('atom10') . PHP_EOL;
 echo 'feed->getLang: ' . $feed->getLang() . PHP_EOL;
 echo 'feed->getLang->getSerialization: ' . $feed->getLang()->getSerialization() . PHP_EOL;
+echo 'feed->getLanguage: ' . $feed->getLanguage() . PHP_EOL;
+echo 'feed->getLanguage->getSerialization: ' . $feed->getLanguage()->getSerialization() . PHP_EOL;
 echo 'feed->getRights: ' . $feed->getRights() . PHP_EOL;
 echo 'feed->getSubtitle: ' . $feed->getSubtitle() . PHP_EOL;
 echo 'feed->getSummary: ' . $feed->getSummary() . PHP_EOL;
 echo 'feed->getTitle: ' . $feed->getTitle() . PHP_EOL;
+
+echo '--------------------------------------------------------------------------' . PHP_EOL;
+
+echo 'feed->getPublished: ' . $feed->getPublished()
+    ->setTimezone(new \DateTimeZone('America/New_York'))
+    ->format(DateFormat::RSS20) . PHP_EOL;
+
+echo 'feed->getPubDate: ' . $feed->getPubDate()
+    ->format(DateFormat::RSS20) . PHP_EOL;
+
+echo 'feed->getUpdated: ' . $feed->getUpdated()
+    ->setTimezone(new \DateTimeZone('America/Los_Angeles'))
+    ->format(DateFormat::RSS20) . PHP_EOL;
 
 echo '--------------------------------------------------------------------------' . PHP_EOL;
 
