@@ -108,7 +108,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#the-design">The Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#design-of-the-configuration-system">Design of the Configuration System</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#logger">Logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#middleware">Middleware</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#libxml">libxml</a></li>
@@ -202,25 +202,18 @@
             
   <div class="section" id="configuration">
 <h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="the-design">
-<h2>The Design<a class="headerlink" href="#the-design" title="Permalink to this headline">¶</a></h2>
-<p>The design of the configuration system is one I’ve struggled with a bit.</p>
-<p>I’m a strong proponent of <em>dependency injection</em> and the <em>inversion of control</em> principle. The overwhelming majority of
-SimplePie NG is built like this by default.</p>
-<p>Then I started looking at what a global configuration system would look like. As a user, I want to be able to pass-in
-my logger when I get started, then trust that it will be used throughout. Following a <em>strict</em> view of inversion of
-control, this means that I have to pass the logger object down throughout every single instantiated object in the tree.
-<em>Every single constructor</em> would have to accept my logger.</p>
-<p>When I started doing this, however, the public API started to get really gnarly. Even in my development sandbox file, I
-was having to pass the logger to <code class="docutils literal"><span class="pre">SimplePie</span></code>, <code class="docutils literal"><span class="pre">HandlerStack</span></code>, and then into each and every single piece of
-middleware I used individually.</p>
-<p>Conversely, you have the <em>service locator pattern</em> wherein you use your container as a central registry. Every class
-which needs something from the registry knows how to pull it. Slim Framework leverages this pattern for a few things
-like the various 400/500 error handlers. Some people refer to this as an <em>anti-pattern</em> because, when used flagrantly,
-you completely lose track of your class dependencies. But I think that in well-understood, limited cases, it can come in
-handy. Namely, for the logger and other global-style configurations that should apply universally.</p>
-<p>So that’s what this is — documentation for <em>configuration options</em> which leverage the service locator pattern, while the
-rest of SimplePie NG uses plain ol’ dependency injection.</p>
+<div class="section" id="design-of-the-configuration-system">
+<h2>Design of the Configuration System<a class="headerlink" href="#design-of-the-configuration-system" title="Permalink to this headline">¶</a></h2>
+<p>The configuration system is designed around the idea of being a centralized registry. The usage of this centralized
+registry is limited, but is used for configurations that are truly global such as configuring your preferred logger or
+registering middleware.</p>
+<p>It leverages the <code class="docutils literal"><span class="pre">SimplePie\Configuration</span></code> class as a centralized, global class that any other class can speak to. It
+is used in a way that is similar to the <a class="reference external" href="https://martinfowler.com/articles/injection.html#UsingAServiceLocator">service locator pattern</a>, but has a looser coupling with the rest of
+the code. It becomes a <em>proxy</em> for the values from the container that SimplePie NG cares about.</p>
+<p>The configuration class itself is configured by reading specific, known keys out of a PSR-11 container (documented
+below). Any values not provided by the container are assigned default values by the configuration class.</p>
+<p>See the <a class="reference external" href="https://simplepie.github.io/simplepie-ng/api/master/SimplePie/Configuration.html">Configuration</a> and
+<a class="reference external" href="https://simplepie.github.io/simplepie-ng/api/master/SimplePie/Container.html">Container</a> references for details.</p>
 </div>
 <div class="section" id="logger">
 <h2>Logger<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h2>
@@ -375,7 +368,7 @@ key called <code class="docutils literal"><span class="pre">simplepie.libxml</sp
 </div>
 <div class="reviewed admonition">
 <p class="first admonition-title">Review</p>
-<p class="last">Written on 2017-06-25, proofread on 2017-06-30.</p>
+<p class="last">Written on 2017-06-25, proofread on 2017-07-01.</p>
 </div>
 </div>
 </div>

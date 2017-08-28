@@ -86,6 +86,11 @@
         
     
 
+            <div class="description">
+            <p><code>SimplePie\Container</code> is a simple, small PSR-11 container. It implements
+<code>ArrayAccess</code>, and has an interface which is Pimple-like, without all of
+Pimple's more advanced features.</p>            <p>Usage of this container system is NOT required, and can be replaced by any
+other container system that is compatible with PSR-11.</p>                    </div>
     
     
     
@@ -111,7 +116,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(array $userSettings = [])
+                    <a href="#method___construct">__construct</a>()
         
                                             <p>Constructs a new instance of this class.</p>                </div>
                 <div class="col-md-2"></div>
@@ -204,9 +209,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L42">line 42</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L44">line 44</a></div>
         <code>                    
-    <strong>__construct</strong>(array $userSettings = [])
+    <strong>__construct</strong>()
         </code>
     </h3>
     <div class="details">
@@ -216,16 +221,6 @@
                     <div class="method-description">
                                     <p>Constructs a new instance of this class.</p>                                                </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>array</td>
-                <td>$userSettings</td>
-                <td>Settings that are passed by the user.</td>
-            </tr>
-            </table>
-
             
             
             
@@ -235,7 +230,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getIterator">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L54">line 54</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L56">line 56</a></div>
         <code>                    <a target="_blank" href="http://php.net/Traversable">Traversable</a>
     <strong>getIterator</strong>()
         </code>
@@ -274,7 +269,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetExists">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L69">line 69</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L71">line 71</a></div>
         <code>                    bool
     <strong>offsetExists</strong>(string $offset)
         </code>
@@ -323,7 +318,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetGet">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L86">line 86</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L87">line 87</a></div>
         <code>                    mixed
     <strong>offsetGet</strong>(string $offset)
         </code>
@@ -363,10 +358,6 @@
                 <td><abbr title="SimplePie\NotFoundExceptionInterface">NotFoundExceptionInterface</abbr></td>
                 <td>No entry was found for <strong>this</strong> identifier.</td>
             </tr>
-                    <tr>
-                <td><abbr title="SimplePie\ContainerExceptionInterface">ContainerExceptionInterface</abbr></td>
-                <td>Error while retrieving the entry.</td>
-            </tr>
             </table>
 
             
@@ -385,7 +376,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetSet">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L106">line 106</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L109">line 109</a></div>
         <code>                    
     <strong>offsetSet</strong>(string $offset, callable $value)
         </code>
@@ -415,6 +406,15 @@
 
             
             
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="SimplePie\ContainerExceptionInterface">ContainerExceptionInterface</abbr></td>
+                <td></td>
+            </tr>
+            </table>
+
             
                             <h4>See also</h4>
 
@@ -431,7 +431,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetUnset">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L124">line 124</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L133">line 133</a></div>
         <code>                    
     <strong>offsetUnset</strong>(string $offset)
         </code>
@@ -471,7 +471,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_count">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L136">line 136</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L145">line 145</a></div>
         <code>                    int
     <strong>count</strong>()
         </code>
@@ -510,7 +510,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_get">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L153">line 153</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L162">line 162</a></div>
         <code>                    mixed
     <strong>get</strong>(string $id)
         </code>
@@ -547,11 +547,11 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../Psr/Container/NotFoundExceptionInterface.html"><abbr title="Psr\Container\NotFoundExceptionInterface">NotFoundExceptionInterface</abbr></a></td>
+                <td><abbr title="SimplePie\NotFoundExceptionInterface">NotFoundExceptionInterface</abbr></td>
                 <td>No entry was found for <strong>this</strong> identifier.</td>
             </tr>
                     <tr>
-                <td><a href="../Psr/Container/ContainerExceptionInterface.html"><abbr title="Psr\Container\ContainerExceptionInterface">ContainerExceptionInterface</abbr></a></td>
+                <td><abbr title="SimplePie\ContainerExceptionInterface">ContainerExceptionInterface</abbr></td>
                 <td>Error while retrieving the entry.</td>
             </tr>
             </table>
@@ -572,7 +572,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_has">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L171">line 171</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Container.php#L180">line 180</a></div>
         <code>                    bool
     <strong>has</strong>(string $id)
         </code>

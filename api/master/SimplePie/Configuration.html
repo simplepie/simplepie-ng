@@ -86,9 +86,16 @@
     
 
             <div class="description">
-            <p>A "master container" for configuration. Think of it as a global class that
-you can access to read global configurations. It is not meant to be
-sub-classed.</p>                                </div>
+            <p>The configuration system is designed around the idea of being a centralized
+registry. The usage of this centralized registry is limited, but is used for
+configurations that are truly global such as configuring your preferred
+logger or registering middleware.</p>            <p>The <code>SimplePie\Configuration</code> class acts as a centralized, global class that
+any other class can speak to. It is used in a way that is similar to the
+service locator pattern, but has a looser coupling with the rest of the code.</p>
+
+<p>The configuration class itself is configured by reading specific, known keys
+out of a PSR-11 container (documented below). Any values not provided by the
+container are assigned default values by the configuration class.</p>                    </div>
     
     
     
@@ -211,7 +218,7 @@ sub-classed.</p>                                </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_setContainer">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L57">line 57</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L71">line 71</a></div>
         <code>        static            
     <strong>setContainer</strong>(<a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a> $container = null)
         </code>
@@ -243,7 +250,7 @@ sub-classed.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getLibxml">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L74">line 74</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L88">line 88</a></div>
         <code>        static            int
     <strong>getLibxml</strong>()
         </code>
@@ -273,7 +280,7 @@ sub-classed.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getLogger">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L84">line 84</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L104">line 104</a></div>
         <code>        static            <a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
     <strong>getLogger</strong>()
         </code>
@@ -303,7 +310,7 @@ sub-classed.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getMiddlewareStack">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L94">line 94</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L120">line 120</a></div>
         <code>        static            <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>getMiddlewareStack</strong>()
         </code>
@@ -333,7 +340,7 @@ sub-classed.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_validateLogger">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L110">line 110</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L142">line 142</a></div>
         <code>        static    protected        
     <strong>validateLogger</strong>(<a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a> $container)
         </code>
@@ -363,7 +370,7 @@ will throw an exception.</p>                            </div>
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="SimplePie\ConfigurationException">ConfigurationException</abbr></td>
+                <td><a href="../SimplePie/Exception/ConfigurationException.html"><abbr title="SimplePie\Exception\ConfigurationException">ConfigurationException</abbr></a></td>
                 <td></td>
             </tr>
             </table>
@@ -375,7 +382,7 @@ will throw an exception.</p>                            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_validateLibxml">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L142">line 142</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L174">line 174</a></div>
         <code>        static    protected        
     <strong>validateLibxml</strong>(<a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a> $container)
         </code>
@@ -403,7 +410,7 @@ will throw an exception.</p>                            </div>
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="SimplePie\ConfigurationException">ConfigurationException</abbr></td>
+                <td><a href="../SimplePie/Exception/ConfigurationException.html"><abbr title="SimplePie\Exception\ConfigurationException">ConfigurationException</abbr></a></td>
                 <td></td>
             </tr>
             </table>
@@ -415,7 +422,7 @@ will throw an exception.</p>                            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_validateMiddlewareStack">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L190">line 190</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration.php#L220">line 220</a></div>
         <code>        static    protected        
     <strong>validateMiddlewareStack</strong>(<a href="../Psr/Container/ContainerInterface.html"><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></a> $container)
         </code>
@@ -445,7 +452,7 @@ invalid setting will throw an exception.</p>                            </div>
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="SimplePie\ConfigurationException">ConfigurationException</abbr></td>
+                <td><a href="../SimplePie/Exception/ConfigurationException.html"><abbr title="SimplePie\Exception\ConfigurationException">ConfigurationException</abbr></a></td>
                 <td></td>
             </tr>
             </table>

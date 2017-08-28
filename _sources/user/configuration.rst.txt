@@ -1,31 +1,23 @@
 Configuration
 =============
 
-The Design
-----------
+Design of the Configuration System
+----------------------------------
 
-The design of the configuration system is one I've struggled with a bit.
+The configuration system is designed around the idea of being a centralized registry. The usage of this centralized
+registry is limited, but is used for configurations that are truly global such as configuring your preferred logger or
+registering middleware.
 
-I'm a strong proponent of *dependency injection* and the *inversion of control* principle. The overwhelming majority of
-SimplePie NG is built like this by default.
+It leverages the ``SimplePie\Configuration`` class as a centralized, global class that any other class can speak to. It
+is used in a way that is similar to the `service locator pattern
+<https://martinfowler.com/articles/injection.html#UsingAServiceLocator>`__, but has a looser coupling with the rest of
+the code. It becomes a *proxy* for the values from the container that SimplePie NG cares about.
 
-Then I started looking at what a global configuration system would look like. As a user, I want to be able to pass-in
-my logger when I get started, then trust that it will be used throughout. Following a *strict* view of inversion of
-control, this means that I have to pass the logger object down throughout every single instantiated object in the tree.
-*Every single constructor* would have to accept my logger.
+The configuration class itself is configured by reading specific, known keys out of a PSR-11 container (documented
+below). Any values not provided by the container are assigned default values by the configuration class.
 
-When I started doing this, however, the public API started to get really gnarly. Even in my development sandbox file, I
-was having to pass the logger to ``SimplePie``, ``HandlerStack``, and then into each and every single piece of
-middleware I used individually.
-
-Conversely, you have the *service locator pattern* wherein you use your container as a central registry. Every class
-which needs something from the registry knows how to pull it. Slim Framework leverages this pattern for a few things
-like the various 400/500 error handlers. Some people refer to this as an *anti-pattern* because, when used flagrantly,
-you completely lose track of your class dependencies. But I think that in well-understood, limited cases, it can come in
-handy. Namely, for the logger and other global-style configurations that should apply universally.
-
-So that's what this is — documentation for *configuration options* which leverage the service locator pattern, while the
-rest of SimplePie NG uses plain ol' dependency injection.
+See the `Configuration <https://simplepie.github.io/simplepie-ng/api/master/SimplePie/Configuration.html>`__ and
+`Container <https://simplepie.github.io/simplepie-ng/api/master/SimplePie/Container.html>`__ references for details.
 
 Logger
 ------
@@ -175,4 +167,4 @@ key called ``simplepie.libxml``, then have it return the
 
 .. reviewer-meta::
    :written-on: 2017-06-25
-   :proofread-on: 2017-06-30
+   :proofread-on: 2017-07-01

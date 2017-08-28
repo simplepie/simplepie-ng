@@ -86,6 +86,11 @@
         
     
 
+            <div class="description">
+            <p><code>SimplePie\HandlerStack</code> is a middleware stack system which is modeled after
+<a href="http://docs.guzzlephp.org/en/latest/handlers-and-middleware.html">Guzzle's middleware handler stack system</a>,
+but is designed specifically for SimplePie's use-cases.</p>            <p>Its primary job is to (a) allow the registration and priority of middleware,
+and (b) provide the interface for SimplePie NG to trigger middleware.</p>                    </div>
     
     
     
@@ -222,7 +227,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L41">line 41</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L50">line 50</a></div>
         <code>                    
     <strong>__construct</strong>()
         </code>
@@ -243,7 +248,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_append">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L57">line 57</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L66">line 66</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>append</strong>(callable $middleware, string $name = null, string $overrideType = null)
         </code>
@@ -307,7 +312,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_appendClosure">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L78">line 78</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L87">line 87</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>appendClosure</strong>(string $overrideType, callable $middleware, string $name = null)
         </code>
@@ -371,7 +376,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_prepend">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L93">line 93</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L102">line 102</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>prepend</strong>(callable $middleware, string $name = null, string $overrideType = null)
         </code>
@@ -435,7 +440,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_prependClosure">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L114">line 114</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L123">line 123</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>prependClosure</strong>(string $overrideType, callable $middleware, string $name = null)
         </code>
@@ -499,7 +504,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_invoke">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L129">line 129</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L138">line 138</a></div>
         <code>                    
     <strong>invoke</strong>(string $feedType, <a target="_blank" href="http://php.net/stdClass">stdClass</a> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
         </code>
@@ -529,7 +534,7 @@
                 <td>string</td>
                 <td>$namespaceAlias</td>
                 <td>The preferred namespace alias for a given XML namespace URI. Should be the result
-                                of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
+                                of a call to <code>SimplePie\Util\Ns</code>.</td>
             </tr>
                     <tr>
                 <td><a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a></td>
@@ -547,7 +552,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_debugStack">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L164">line 164</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L173">line 173</a></div>
         <code>                    <abbr title="SimplePie\[type]">[type]</abbr>
     <strong>debugStack</strong>()
         </code>
@@ -577,7 +582,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_validateMiddleware">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L200">line 200</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L209">line 209</a></div>
         <code>            protected        
     <strong>validateMiddleware</strong>(callable $middleware, string $name = null, string $overrideType = null, callable $fn)
         </code>
@@ -638,7 +643,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_logRegistration">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L237">line 237</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L246">line 246</a></div>
         <code>            protected        
     <strong>logRegistration</strong>(callable $middleware, string $name = null, string $overrideType = null)
         </code>
@@ -684,7 +689,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_exceptionMessage">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L267">line 267</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L276">line 276</a></div>
         <code>            protected        string
     <strong>exceptionMessage</strong>(callable $middleware, string $name = null, string $overrideType = null)
         </code>

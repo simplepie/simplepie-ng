@@ -259,9 +259,10 @@ each.
                                             
                 </div>
                 <div class="col-md-6">
-                    A "master container" for configuration. Think of it as a global class that
-you can access to read global configurations. It is not meant to be
-sub-classed.
+                    The configuration system is designed around the idea of being a centralized
+registry. The usage of this centralized registry is limited, but is used for
+configurations that are truly global such as configuring your preferred
+logger or registering middleware.
                 </div>
             </div>
                     <div class="row">
@@ -270,16 +271,9 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
-                </div>
-            </div>
-                    <div class="row">
-                <div class="col-md-6">
-                                            <a href="SimplePie/Dictionary/Ns.html"><abbr title="SimplePie\Dictionary\Ns">Ns</abbr></a>
-                                            
-                </div>
-                <div class="col-md-6">
-                    
+                    <code>SimplePie\Container</code> is a simple, small PSR-11 container. It implements
+<code>ArrayAccess</code>, and has an interface which is Pimple-like, without all of
+Pimple's more advanced features.
                 </div>
             </div>
                     <div class="row">
@@ -288,7 +282,9 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    The base enum class that all other enum classes extend from. It does the
+heavy lifting of implementing <code>EnumInterface</code> so that extending enum classes
+can focus on defining enums.
                 </div>
             </div>
                     <div class="row">
@@ -297,7 +293,16 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    Provides a set of known, allowable character encodings.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Enum/DateFormat.html"><abbr title="SimplePie\Enum\DateFormat">DateFormat</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Provides a set of commonly-used time/date-stamps in feeds.
                 </div>
             </div>
                     <div class="row">
@@ -306,7 +311,7 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    The interface that all enum classes must implement and respond to.
                 </div>
             </div>
                     <div class="row">
@@ -315,7 +320,7 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    Provides a set of known, allowable error messages.
                 </div>
             </div>
                     <div class="row">
@@ -324,16 +329,8 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
-                </div>
-            </div>
-                    <div class="row">
-                <div class="col-md-6">
-                                            <a href="SimplePie/Enum/Mime.html"><abbr title="SimplePie\Enum\Mime">Mime</abbr></a>
-                                            
-                </div>
-                <div class="col-md-6">
-                    
+                    Provides a set of known, allowable feed types. This is most often used for
+determining which feed types a particular middleware should apply to.
                 </div>
             </div>
                     <div class="row">
@@ -342,7 +339,16 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    Provides a set of known, allowable serializations of content nodes.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Enum/XmlNs.html"><abbr title="SimplePie\Enum\XmlNs">XmlNs</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Provides a set of known, allowable XML namespaces.
                 </div>
             </div>
                     <div class="row">
@@ -360,7 +366,7 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    <code>ContainerException</code> is required as part of PSR-11 compatibility.
                 </div>
             </div>
                     <div class="row">
@@ -378,7 +384,7 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    <code>NotFoundException</code> is required as part of PSR-11 compatibility.
                 </div>
             </div>
                     <div class="row">
@@ -396,7 +402,9 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    <code>SimplePie\HandlerStack</code> is a middleware stack system which is modeled after
+<a href="http://docs.guzzlephp.org/en/latest/handlers-and-middleware.html">Guzzle's middleware handler stack system</a>,
+but is designed specifically for SimplePie's use-cases.
                 </div>
             </div>
                     <div class="row">
@@ -405,7 +413,7 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    Provides an interface for <code>SimplePie\HandlerStack</code> to implement.
                 </div>
             </div>
                     <div class="row">
@@ -486,7 +494,7 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    Shared code for working with <code>DOMDocument</code> objects.
                 </div>
             </div>
                     <div class="row">
@@ -495,7 +503,7 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    Shared code for working with libxml configuration.
                 </div>
             </div>
                     <div class="row">
@@ -504,7 +512,7 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    Shared code for working with the logger.
                 </div>
             </div>
                     <div class="row">
@@ -513,7 +521,7 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    Shared code for working with middleware.
                 </div>
             </div>
                     <div class="row">
@@ -522,7 +530,7 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    Shared code for working with raw feed content.
                 </div>
             </div>
                     <div class="row">
@@ -581,11 +589,101 @@ sub-classed.
             </div>
                     <div class="row">
                 <div class="col-md-6">
-                                            <a href="SimplePie/Sanitizer/DiveIntoMark.html"><abbr title="SimplePie\Sanitizer\DiveIntoMark">DiveIntoMark</abbr></a>
+                                            <a href="SimplePie/Sanitizer/Body.html"><abbr title="SimplePie\Sanitizer\Body">Body</abbr></a>
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    Will someday perform sanitization on <code>&lt;body&gt;</code> HTML elements.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Sanitizer/DataProtocol.html"><abbr title="SimplePie\Sanitizer\DataProtocol">DataProtocol</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Will someday perform sanitization on <code>data:</code> URLs in HTML elements.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Sanitizer/DeprecatedElements.html"><abbr title="SimplePie\Sanitizer\DeprecatedElements">DeprecatedElements</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Will someday perform sanitization on content deprecated HTML elements (e.g., <code>&lt;font&gt;</code>).
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Sanitizer/Frame.html"><abbr title="SimplePie\Sanitizer\Frame">Frame</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Will someday perform sanitization on content for <code>&lt;frame&gt;</code> and <code>&lt;frameset&gt;</code> tags.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Sanitizer/Iframe.html"><abbr title="SimplePie\Sanitizer\Iframe">Iframe</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Will someday perform sanitization on content for <code>&lt;iframe&gt;</code> tags.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Sanitizer/JavaScriptProtocol.html"><abbr title="SimplePie\Sanitizer\JavaScriptProtocol">JavaScriptProtocol</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Will someday perform sanitization on <code>javascript:</code> URLs in HTML elements.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Sanitizer/Meta.html"><abbr title="SimplePie\Sanitizer\Meta">Meta</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Will someday perform sanitization on content for <code>&lt;meta&gt;</code> tags.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Sanitizer/ObjectEmbed.html"><abbr title="SimplePie\Sanitizer\ObjectEmbed">ObjectEmbed</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Will someday perform sanitization on content for <code>&lt;object&gt;</code> and <code>&lt;embed&gt;</code> tags.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Sanitizer/Script.html"><abbr title="SimplePie\Sanitizer\Script">Script</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Will someday perform sanitization on content for <code>&lt;script&gt;</code> tags and JavaScript-related HTML attributes.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Sanitizer/Style.html"><abbr title="SimplePie\Sanitizer\Style">Style</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Will someday perform sanitization on content for <code>&lt;style&gt;</code> and <code>&lt;link&gt;</code> tags, and CSS-related HTML attributes.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Sanitizer/TextFormatting.html"><abbr title="SimplePie\Sanitizer\TextFormatting">TextFormatting</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Will someday perform sanitization on text formatting HTML elements (e.g., <code>&lt;b&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;strike&gt;</code>).
                 </div>
             </div>
                     <div class="row">
@@ -594,7 +692,7 @@ sub-classed.
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    <code>SimplePie\SimplePie</code> is the primary entry point for SimplePie NG.
                 </div>
             </div>
                     <div class="row">
@@ -658,6 +756,15 @@ sub-classed.
                 </div>
                 <div class="col-md-6">
                     
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Provides tools for managing and working with XML namespaces.
                 </div>
             </div>
             </div>

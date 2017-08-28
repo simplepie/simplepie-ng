@@ -85,6 +85,8 @@
         
     
 
+            <div class="description">
+            <p>Provides an interface for <code>SimplePie\HandlerStack</code> to implement.</p>                                </div>
     
     
     
@@ -150,7 +152,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_append">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L36">line 36</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L40">line 40</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>append</strong>(callable $middleware, string $name = null, string $overrideType = null)
         </code>
@@ -214,7 +216,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_appendClosure">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L58">line 58</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L62">line 62</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>appendClosure</strong>(string $overrideType, callable $middleware, string $name = null)
         </code>
@@ -278,7 +280,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_prepend">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L80">line 80</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L84">line 84</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>prepend</strong>(callable $middleware, string $name = null, string $overrideType = null)
         </code>
@@ -342,7 +344,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_prependClosure">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L102">line 102</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L106">line 106</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>prependClosure</strong>(string $overrideType, callable $middleware, string $name = null)
         </code>
@@ -406,7 +408,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_invoke">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L118">line 118</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L122">line 122</a></div>
         <code>                    
     <strong>invoke</strong>(string $feedType, <a target="_blank" href="http://php.net/stdClass">stdClass</a> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
         </code>
@@ -436,7 +438,7 @@
                 <td>string</td>
                 <td>$namespaceAlias</td>
                 <td>The preferred namespace alias for a given XML namespace URI. Should be the result
-                                of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
+                                of a call to <code>SimplePie\Util\Ns</code>.</td>
             </tr>
                     <tr>
                 <td><a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a></td>

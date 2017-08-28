@@ -99,7 +99,7 @@
                                             
                 </div>
                 <div class="col-md-6">
-                    
+                    Shared code for working with the logger.
                 </div>
             </div>
             </div>
@@ -130,7 +130,23 @@
                 </td>
                 <td>$namespaceAlias</td>
                 <td class="last">The preferred namespace alias for a given XML namespace URI. Should be
-the result of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
+the result of a call to <code>SimplePie\Util\Ns</code>.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_createFromFormat">
+                                        protected                                        string
+                </td>
+                <td>$createFromFormat</td>
+                <td class="last">The format that should be used when determining how to parse a date from a date string.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_outputTimezone">
+                                        protected                                        <a target="_blank" href="http://php.net/DateTimeZone">DateTimeZone</a>
+                </td>
+                <td>$outputTimezone</td>
+                <td class="last">The preferred timezone to use for date output.</td>
                 <td></td>
             </tr>
             </table>
@@ -161,13 +177,42 @@ the result of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    mixed
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getId">getId</a>(string $namespaceAlias = null)
+                    <a href="#method___call">__call</a>(string $nodeName, array $args)
         
-                                            <p class="no-description">No description</p>
-                                    </div>
+                                            <p>Proxy method which forwards requests to an underlying handler.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDateFormat">setDateFormat</a>(string $createFromFormat)
+        
+                                            <p>Allows the user to help the date parser by providing the format of the datestamp in the feed.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setOutputTimezone">setOutputTimezone</a>(string $timezone = &#039;UTC&#039;)
+        
+                                            <p>Set the preferred output timezone.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getScalarSingleValue">getScalarSingleValue</a>(string $nodeName, string $namespaceAlias = null)
+        
+                                            <p>Retrieves nodes that are simple scalars, and there are only one allowed value.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -175,7 +220,7 @@ the result of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getSummary">getSummary</a>(string $namespaceAlias = null)
+                    <a href="#method_getGenerator">getGenerator</a>(string $namespaceAlias = null)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -202,6 +247,16 @@ the result of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
                                             <p>Retrieve the root-most node in the feed.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a target="_blank" href="http://php.net/DateTime">DateTime</a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_handleAsDatestamp">handleAsDatestamp</a>(string $datestamp)
+        
+                                            <p>Handle a string as a datestamp and convert it to a <code>DateTime</code> object.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -210,7 +265,7 @@ the result of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L43">line 43</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L61">line 61</a></div>
         <code>                    
     <strong>__construct</strong>(string $namespaceAlias)
         </code>
@@ -241,7 +296,7 @@ the result of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_getLogger">
-        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L28">line 28</a></div>
+        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L32">line 32</a></div>
         <code>                    <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
     <strong>getLogger</strong>()
         </code>
@@ -270,28 +325,44 @@ the result of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getId">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
-        <code>                    
-    <strong>getId</strong>(string $namespaceAlias = null)
+                    <h3 id="method___call">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L88">line 88</a></div>
+        <code>                    mixed
+    <strong>__call</strong>(string $nodeName, array $args)
         </code>
     </h3>
     <div class="details">
             
     
 
+                    <div class="method-description">
+                                    <p>Proxy method which forwards requests to an underlying handler.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$namespaceAlias</td>
-                <td></td>
+                <td>$nodeName</td>
+                <td>The name of the method being called.</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$args</td>
+                <td>Any arguments passed into that method.</td>
             </tr>
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -299,10 +370,154 @@ the result of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getSummary">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L65">line 65</a></div>
+                    <h3 id="method_setDateFormat">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L143">line 143</a></div>
+        <code>                    <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
+    <strong>setDateFormat</strong>(string $createFromFormat)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Allows the user to help the date parser by providing the format of the datestamp in the feed.</p>                    <p>This will be passed into <code>DateTime::createFromFormat()</code> at parse-time.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$createFromFormat</td>
+                <td>The format of the datestamp in the feed.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>http://php.net/manual/en/datetime.createfromformat.php</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setOutputTimezone">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L165">line 165</a></div>
+        <code>                    <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
+    <strong>setOutputTimezone</strong>(string $timezone = &#039;UTC&#039;)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the preferred output timezone.</p>                    <p>This calculation is performed on a <em>best-effort</em> basis and is not guaranteed. Factors which may affect the
+calculation include:</p>
+
+<ul>
+<li>the version of glibc/musl that your OS relies on</li>
+<li>the freshness of the timestamp data your OS relies on</li>
+<li>the format of the datestamp inside of the feed and PHP's ability to parse it</li>
+</ul>
+</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$timezone</td>
+                <td>The timezone identifier to use. Must be compatible with <code>DateTimeZone</code>. The default
+                        value is <code>UTC</code>.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getScalarSingleValue">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L184">line 184</a></div>
+        <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+    <strong>getScalarSingleValue</strong>(string $nodeName, string $namespaceAlias = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieves nodes that are simple scalars, and there are only one allowed value.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$nodeName</td>
+                <td>The name of the tree node to retrieve. Available tree nodes can be viewed by
+                                   looking at the response from <code>getRoot()</code>.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$namespaceAlias</td>
+                <td>The XML namespace alias to apply.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getGenerator">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L199">line 199</a></div>
         <code>                    
-    <strong>getSummary</strong>(string $namespaceAlias = null)
+    <strong>getGenerator</strong>(string $namespaceAlias = null)
         </code>
     </h3>
     <div class="details">
@@ -329,7 +544,7 @@ the result of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_getItems">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L84">line 84</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L214">line 214</a></div>
         <code>                    
     <strong>getItems</strong>()
         </code>
@@ -348,7 +563,7 @@ the result of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_getRoot">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L96">line 96</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L226">line 226</a></div>
         <code>                    <a target="_blank" href="http://php.net/stdClass">stdClass</a>
     <strong>getRoot</strong>()
         </code>
@@ -366,6 +581,46 @@ the result of a call to <code>SimplePie\Dictionary\Ns</code>.</td>
                     <table class="table table-condensed">
         <tr>
             <td><a target="_blank" href="http://php.net/stdClass">stdClass</a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_handleAsDatestamp">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L240">line 240</a></div>
+        <code>            protected        <a target="_blank" href="http://php.net/DateTime">DateTime</a>
+    <strong>handleAsDatestamp</strong>(string $datestamp)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Handle a string as a datestamp and convert it to a <code>DateTime</code> object.</p>                    <p>Affected by <code>setOutputTimezone()</code> and <code>setDateFormat()</code>, if they were set.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$datestamp</td>
+                <td>The datestamp to handle, as a string.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a target="_blank" href="http://php.net/DateTime">DateTime</a></td>
             <td></td>
         </tr>
     </table>
