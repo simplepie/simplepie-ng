@@ -15,6 +15,7 @@ use DateTimeZone;
 use SimplePie\Configuration;
 use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin\LoggerTrait;
+use SimplePie\Parser\Date as DateParser;
 use stdClass;
 
 /**
@@ -68,21 +69,19 @@ class Feed extends AbstractType implements TypeInterface
     /**
      * Proxy method which forwards requests to an underlying handler.
      *
-     * @param  string $nodeName The name of the method being called.
-     * @param  array  $args     Any arguments passed into that method.
+     * @param string $nodeName The name of the method being called.
+     * @param array  $args     Any arguments passed into that method.
      *
      * @return mixed
      *
      * @method \DateTime getPublished(?string $namespaceAlias = null) Indicates an instant-in-time associated with an event early in the life-cycle of the entry.
      * @method \DateTime getUpdated(?string $namespaceAlias = null) Indicates the most recent instant-in-time when an entry or feed was modified in a way the publisher considers significant. Therefore, not all modifications necessarily result in a changed value.
-     *
      * @method SimplePie\Type\Node getId(?string $namespaceAlias = null) Conveys a permanent, universally unique identifier for an entry or feed.
      * @method SimplePie\Type\Node getLang(?string $namespaceAlias = null) Indicates the natural language for the element and its descendents.
      * @method SimplePie\Type\Node getRights(?string $namespaceAlias = null) Conveys information about rights held in and over an entry or feed.
      * @method SimplePie\Type\Node getSubtitle(?string $namespaceAlias = null) Conveys a human-readable description or subtitle for a feed.
      * @method SimplePie\Type\Node getSummary(?string $namespaceAlias = null) Conveys a short summary, abstract, or excerpt of an entry.
      * @method SimplePie\Type\Node getTitle(?string $namespaceAlias = null) Conveys a human-readable title for an entry or feed.
-     *
      * @method SimplePie\Type\Generator getGenerator(?string $namespaceAlias = null) Identifies the agent used to generate a feed, for debugging and other purposes.
      */
     public function __call(string $nodeName, array $args)
@@ -119,9 +118,11 @@ class Feed extends AbstractType implements TypeInterface
                 return $this->getScalarSingleValue($nodeName, $args[0]);
             case 'published':
             case 'updated':
-                return $this->handleAsDatestamp(
-                    $this->getScalarSingleValue($nodeName, $args[0])->getValue()
-                );
+                return (new DateParser(
+                    $this->getScalarSingleValue($nodeName, $args[0])->getValue(),
+                    $this->outputTimezone,
+                    $this->createFromFormat
+                ))->getDateTime();
             default:
                 throw new SimplePieException(
                     \sprintf('%s is an unresolvable method.')
@@ -226,40 +227,5 @@ class Feed extends AbstractType implements TypeInterface
     public function getRoot(): stdClass
     {
         return $this->root;
-    }
-
-    /**
-     * Handle a string as a datestamp and convert it to a `DateTime` object.
-     *
-     * Affected by `setOutputTimezone()` and `setDateFormat()`, if they were set.
-     *
-     * @param  string $datestamp The datestamp to handle, as a string.
-     *
-     * @return DateTime
-     */
-    protected function handleAsDatestamp(string $datestamp): DateTime
-    {
-        // Use the custom formatter, if available
-        if ($this->createFromFormat) {
-            $date = DateTime::createFromFormat(
-                $this->createFromFormat,
-                $datestamp,
-                new DateTimeZone('UTC')
-            );
-        } else {
-            $date = new DateTime(
-                $datestamp,
-                new DateTimeZone('UTC')
-            );
-        }
-
-        // Pre-apply the output timezone, if available
-        if ($this->outputTimezone) {
-            $date = $date->setTimezone(
-                new DateTimeZone($this->outputTimezone)
-            );
-        }
-
-        return $date;
     }
 }
