@@ -198,6 +198,7 @@ Previously, SimplePie tried to do it all. In retrospect, this was a bad idea.
 
 * [X] https://waffle.io/simplepie/simplepie-ng
 * [X] https://insight.sensiolabs.com/projects/1b772338-fd6a-4af1-8f5e-fddffc2b9d43
+* [X] https://scrutinizer-ci.com/g/simplepie/simplepie-ng/
 * [ ] https://zappr.opensource.zalan.do/login
 * [ ] https://gratipay.com
 * [ ] https://cla-assistant.io
@@ -207,7 +208,6 @@ Previously, SimplePie tried to do it all. In retrospect, this was a bad idea.
 * [ ] https://travis-ci.org
 * [ ] https://coveralls.io
 * [ ] https://codeclimate.com
-* [ ] https://scrutinizer-ci.com
 * [ ] https://www.versioneye.com
 
 
