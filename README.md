@@ -196,6 +196,7 @@ Previously, SimplePie tried to do it all. In retrospect, this was a bad idea.
 
 ## Services to integrate code with
 
+* [X] https://waffle.io/simplepie/simplepie-ng
 * [ ] https://zappr.opensource.zalan.do/login
 * [ ] https://gratipay.com
 * [ ] https://cla-assistant.io
