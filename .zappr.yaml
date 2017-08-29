@@ -1,0 +1,47 @@
+autobranch:
+  pattern: 'issues/{number}-{title}'
+  length: 60
+
+commit:
+  message:
+    patterns:
+      - '#[0-9]+'
+
+approvals:
+  minimum: 1
+  ignore: both
+  pattern: "^(:\\+1:|👍)$"
+  veto:
+    pattern: "^(:\\-1:|👎)$"
+  from:
+    orgs:
+      - simplepie
+    collaborators: true
+    users:
+      - skyzyx
+  groups:
+    seniors:
+      minimum: 1
+      from:
+        users:
+          - skyzyx
+
+specification:
+  title:
+    minimum-length:
+      enabled: true
+      length: 8
+  body:
+    minimum-length:
+      enabled: true
+      length: 8
+    contains-url: true
+    contains-issue-number: true
+  template:
+    differs-from-body: true
+
+pull-request:
+  labels:
+    additional: true
+    required:
+      - reviewed
