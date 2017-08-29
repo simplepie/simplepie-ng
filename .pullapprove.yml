@@ -1,0 +1,12 @@
+version: 2
+groups:
+  code-review:
+    approve_by_comment:
+      approve_regex: ":+1:"
+      enabled: true
+      reject_regex: ":-1:"
+    required: 1
+    reset_on_push:
+      enabled: true
+    users:
+    - skyzyx
