@@ -202,15 +202,15 @@ Previously, SimplePie tried to do it all. In retrospect, this was a bad idea.
 * [X] https://insight.sensiolabs.com/projects/1b772338-fd6a-4af1-8f5e-fddffc2b9d43
 * [X] https://scrutinizer-ci.com/g/simplepie/simplepie-ng/
 * [X] https://coveralls.io/github/simplepie/simplepie-ng
+* [X] https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsimplepie%2Fsimplepie-ng/
+* [X] https://pullapprove.com/simplepie/simplepie-ng/
 * [ ] https://zappr.opensource.zalan.do/login
 * [ ] https://gratipay.com
 * [ ] https://cla-assistant.io
 * [ ] https://sideci.com
-* [ ] https://about.pullapprove.com/features/
 * [ ] https://packagist.org
 * [ ] https://travis-ci.org
 * [ ] https://codeclimate.com
-* [ ] https://www.versioneye.com
 
 
 ## Coding Standards
