@@ -204,10 +204,10 @@ Previously, SimplePie tried to do it all. In retrospect, this was a bad idea.
 * [X] https://coveralls.io/github/simplepie/simplepie-ng
 * [X] https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fsimplepie%2Fsimplepie-ng/
 * [X] https://pullapprove.com/simplepie/simplepie-ng/
+* [X] https://sideci.com/gh/92493013/news_feed
 * [ ] https://zappr.opensource.zalan.do/login
 * [ ] https://gratipay.com
 * [ ] https://cla-assistant.io
-* [ ] https://sideci.com
 * [ ] https://packagist.org
 * [ ] https://travis-ci.org
 * [ ] https://codeclimate.com
