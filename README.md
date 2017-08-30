@@ -205,7 +205,7 @@ Previously, SimplePie tried to do it all. In retrospect, this was a bad idea.
 * [X] https://sideci.com/gh/92493013/news_feed
 * [X] https://zappr.opensource.zalan.do/repository/simplepie/simplepie-ng
 * [X] https://gratipay.com/~skyzyx/
-* [ ] https://cla-assistant.io
+* [X] https://cla-assistant.io
 * [ ] https://packagist.org
 * [ ] https://travis-ci.org
 * [ ] https://codeclimate.com
