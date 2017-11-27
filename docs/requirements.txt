@@ -1,0 +1,11 @@
+doc8 >=0.8.0,<1.0
+sphinx-dust >=1.2.1,<2.0
+sphinx-rfc2119 >=0.0.10,<1.0
+sphinx-rtd-theme >=0.2.4,<1.0
+sphinx-tabs >=0.2.2,<1.0
+Sphinx >=1.6.2,<2.0
+sphinxcontrib-dashbuilder >=0.1.0,<1.0
+sphinxcontrib-gravatar >=0.1.2,<1.0
+sphinxcontrib-versioning >=2.2.1,<3.0
+git+https://github.com/tardyp/sphinx-jinja@00ae1415daf1ef222397ac09cc5b8a6eaac1b091#egg=sphinx-jinja
+hg+https://bitbucket.org/skyzyx/sphinx-contrib/@831aee8ea393c5150e4e98736e4c14f1f2e36445#egg=sphinxcontrib-httpdomain&subdirectory=httpdomain

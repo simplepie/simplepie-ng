@@ -1,0 +1,42 @@
+version: "3"
+services:
+    docs:
+        build:
+            context: .
+            dockerfile: build/docs/Dockerfile
+        volumes:
+            - ./docs:/var/docs
+        labels: # http://label-schema.org/rc1/
+            org.label-schema.schema-version: "1.0.0-rc.1"
+            org.label-schema.name: "simplepie-ng-docs"
+            org.label-schema.description: "The documentation generator for SimplePie NG."
+            org.label-schema.url: "https://simplepie.github.io/simplepie-ng/"
+            org.label-schema.vcs-url: "https://github.com/simplepie/simplepie-ng"
+            org.label-schema.vendor: "SimplePie"
+            org.label-schema.version: "0.0.0"
+            org.label-schema.vcs-ref: "00000000"
+            org.label-schema.build-date: "1970-01-01T00:00:00Z"
+        ulimits:
+            nofile:
+                soft: 65535
+                hard: 100000
+
+    tests:
+        build:
+            context: .
+            dockerfile: build/tests/Dockerfile
+        volumes:
+            - ./:/var/simplepie-ng
+        labels: # http://label-schema.org/rc1/
+            org.label-schema.schema-version: "1.0.0-rc.1"
+            org.label-schema.name: "simplepie-ng-tests"
+            org.label-schema.description: "The test runner for SimplePie NG."
+            org.label-schema.vcs-url: "https://github.com/simplepie/simplepie-ng"
+            org.label-schema.vendor: "SimplePie"
+            org.label-schema.version: "0.0.0"
+            org.label-schema.vcs-ref: "00000000"
+            org.label-schema.build-date: "1970-01-01T00:00:00Z"
+        ulimits:
+            nofile:
+                soft: 65535
+                hard: 100000

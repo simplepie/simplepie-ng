@@ -1,10 +1,10 @@
 *.rst
+.DS_Store
 .phpintel/
-.venv/
 bin/
-docs/_build/
-docs/_cache/
-plantuml.jar
+docs/src/_build/
+docs/src/_cache/
+docs/src/uml/*.svg
 reports/
 tests/report/
 vendor/

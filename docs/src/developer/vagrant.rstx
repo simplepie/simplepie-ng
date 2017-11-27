@@ -1,0 +1,107 @@
+Leveraging Vagrant (Optional)
+=============================
+
+.. note::
+    See *Development Dependencies* for more information about *why* it might make sense to use a Vagrant VM.
+
+Vagrant is an *orchestration* tool for building and configuring local development virtual machines. Understanding
+Vagrant’s place in the world is important.
+
+The steps to install the necessary requirements differ, depending on a few variables:
+
+-  Are you using macOS or Windows?
+-  Have you already invested in virtual machine software?
+-  Do you have admin/\``sudo`` access on your computer? If not, you need to stop right here, and go get
+   admin/\``sudo`` access from IT.
+
+I am using macOS
+----------------
+
+Install Xcode CLI Development Tools
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Open your Terminal, and run the following command:
+
+.. code-block:: bash
+
+    xcode-select --install
+
+This will prompt you to either (a) install the CLI development tools, or (b) download all of Xcode. You only need the
+CLI development tools. If you see the following error message, it means that the CLI development tools are already
+installed.
+
+    xcode-select: error: command line tools are already installed, use “Software Update” to install updates
+
+Give yourself passwordless sudo (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can optionally give yourself passwordless ``sudo``. This will streamline some of the automated processes.
+
+.. code-block:: bash
+
+    sudo mkdir -p /etc/sudoers.d
+    echo "$(whoami) ALL=(ALL:ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$(whoami)
+
+Install Homebrew
+~~~~~~~~~~~~~~~~
+
+If you’re already using `Fink <http://www.finkproject.org>`__ or `MacPorts <https://www.macports.org>`__ (because you’re
+as old as I am), you need to stop, go have a drink, then come back and completely replace your installation with
+`Homebrew <http://brew.sh>`__. You cannot run them side-by-side without breaking your system.
+
+This is *step zero*. Nothing else happens until you do this. Throw off the shackles of *Generation-X*, and embrace the
+shackles of *Millennials*.
+
+After you’ve done that, install `Homebrew Cask <https://caskroom.github.io>`__ and `Vagrant <https://vagrantup.com>`__.
+
+.. code-block:: bash
+
+   # Homebrew Cask
+   brew install caskroom/cask/brew-cask
+
+   # Vagrant stuff
+   brew install \
+       cask \
+       Caskroom/cask/vagrant \
+       homebrew/completions/vagrant-completion \
+   ;
+
+Install Vagrant plug-ins
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Firstly, install the `vagrant-cachier <http://fgrehm.viewdocs.io/vagrant-cachier/>`__ Vagrant plug-in to enable caching of ``yum`` packages.
+
+.. code-block:: bash
+
+   vagrant plugin install vagrant-cachier
+
+Then, install the `vagrant-hostsupdater <https://github.com/cogitatio/vagrant-hostsupdater>`__ Vagrant plug-in to automatically update your ``/etc/hosts`` file.
+
+.. code-block:: bash
+
+   vagrant plugin install vagrant-hostsupdater
+
+Selecting Virtual Machine Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Choose which virtual machine software you want to use. You only need one of these, but they have different tradeoffs.
+
++-----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------+-------------------------------+------------------------------------------------+
+| Software                                                                          | Additional Software                                                                         | Cost | Pros                          | Cons                                           |
++===================================================================================+=============================================================================================+======+===============================+================================================+
+| `VirtualBox <https://www.virtualbox.org/wiki/Downloads>`__ (free)                 | `vagrant-vbguest <https://github.com/dotless-de/vagrant-vbguest>`__ (free)                  | Free | It's completely free.         | It's the slowest VM solution.                  |
++-----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------+-------------------------------+------------------------------------------------+
+| `VMware Fusion <http://www.vmware.com/products/fusion>`__ ($80)                   | `Vagrant Provider for VMware <https://www.vagrantup.com/vmware/>`__ ($79)                   | $159 | It's the fastest VM solution. | It's a bit pricey. Requires multiple licenses. |
++-----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------+-------------------------------+------------------------------------------------+
+| `Parallels Desktop <http://www.parallels.com/products/desktop/download/>`__ ($80) | `Parallels Virtualization SDK for Mac <http://www.parallels.com/download/pvsdk/>`__ (free), | $80  | It's middle-priced.           | It's the least well-supported.                 |
+|                                                                                   | `vagrant-parallels <http://parallels.github.io/vagrant-parallels/>`__ (free)                |      |                               |                                                |
++-----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------+-------------------------------+------------------------------------------------+
+
+I am using Windows
+------------------
+
+TBD
+
+.. reviewer-meta::
+   :written-on: 2017-11-26
+   :proofread-on: 2017-11-26
