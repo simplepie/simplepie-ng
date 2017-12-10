@@ -180,6 +180,31 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
         return new Generator();
     }
 
+    public function getAuthor(?string $namespaceAlias = null): Person
+    {
+        $alias = $namespaceAlias ?? $this->namespaceAlias;
+
+        if (isset($this->getRoot()->author[$alias])) {
+            return $this->getRoot()->author[$alias];
+        }
+
+        return new Person();
+    }
+
+    //--------------------------------------------------------------------------
+    // MULTIPLE COMPLEX VALUES
+
+    public function getContributors(?string $namespaceAlias = null): iterable
+    {
+        $alias = $namespaceAlias ?? $this->namespaceAlias;
+
+        if (isset($this->getRoot()->contributor[$alias])) {
+            return $this->getRoot()->contributor[$alias];
+        }
+
+        return [];
+    }
+
     public function getItems(): void
     {
     }

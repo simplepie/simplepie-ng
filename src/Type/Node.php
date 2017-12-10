@@ -69,11 +69,11 @@ class Node extends AbstractType implements TypeInterface
     /**
      * Casting this Node element to a string with return the _value_ of the Node.
      *
-     * @return string|null
+     * @return string
      */
-    public function __toString(): ?string
+    public function __toString(): string
     {
-        return $this->getValue();
+        return $this->getValue() ?? '';
     }
 
     /**

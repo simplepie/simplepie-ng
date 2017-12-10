@@ -12,11 +12,10 @@ namespace SimplePie\Type;
 
 use DOMNode;
 use Psr\Log\LoggerInterface;
-use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
 use SimplePie\Mixin as T;
 
-class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterface
+class Person extends AbstractType implements TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;
 
@@ -28,25 +27,32 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
     protected $node;
 
     /**
-     * The generator name.
+     * The person's name.
      *
      * @var string
      */
     protected $name;
 
     /**
-     * The generator URI.
+     * The person's URL.
      *
      * @var string
      */
     protected $uri;
 
     /**
-     * The generator version.
+     * The person's email address.
      *
      * @var string
      */
-    protected $version;
+    protected $email;
+
+    /**
+     * The person's avatar.
+     *
+     * @var string
+     */
+    protected $avatar;
 
     /**
      * Constructs a new instance of this class.
@@ -61,8 +67,8 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
             $this->node   = $node;
             $this->name   = new Node($this->node);
 
-            foreach ($this->node->attributes as $attribute) {
-                $this->{$attribute->name} = new Node($attribute);
+            foreach ($this->node->childNodes as $child) {
+                $this->{$child->tagName} = new Node($child);
             }
         }
     }
@@ -74,7 +80,27 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
      */
     public function __toString(): string
     {
-        return \trim(\sprintf('%s %s', $this->name, $this->version));
+        if (null !== $this->name && null !== $this->uri) {
+            return \trim(\sprintf('%s <%s>', (string) $this->name, (string) $this->uri));
+        }
+
+        if (null !== $this->name && null !== $this->email) {
+            return \trim(\sprintf('%s <%s>', (string) $this->name, (string) $this->email));
+        }
+
+        if (null !== $this->name) {
+            return \trim((string) $this->name);
+        }
+
+        if (null !== $this->uri) {
+            return \trim((string) $this->uri);
+        }
+
+        if (null !== $this->email) {
+            return \trim((string) $this->email);
+        }
+
+        return 'Unknown';
     }
 
     /**
@@ -88,7 +114,7 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
     }
 
     /**
-     * Gets the generator name.
+     * Gets the person's name.
      *
      * @return Node
      */
@@ -98,7 +124,7 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
     }
 
     /**
-     * Gets the generator URI.
+     * Gets the person's URL.
      *
      * @return Node
      */
@@ -108,12 +134,22 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
     }
 
     /**
-     * Gets the generator version.
+     * Gets the person's email address.
      *
      * @return Node
      */
-    public function getVersion(): Node
+    public function getEmail(): Node
     {
-        return $this->version ?? new Node();
+        return $this->email ?? new Node();
+    }
+
+    /**
+     * Gets the person's avatar.
+     *
+     * @return Node
+     */
+    public function getAvatar(): Node
+    {
+        return $this->avatar ?? new Node();
     }
 }

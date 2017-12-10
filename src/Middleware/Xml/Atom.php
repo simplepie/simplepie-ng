@@ -15,6 +15,7 @@ use SimplePie\Configuration as C;
 use SimplePie\Mixin as T;
 use SimplePie\Type\Generator;
 use SimplePie\Type\Node;
+use SimplePie\Type\Person;
 use stdClass;
 
 /**
@@ -32,7 +33,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      */
     public function __invoke(stdClass $feedRoot, string $namespaceAlias, DOMXPath $xpath): void
     {
-        // lang
+        // lang (single, scalar)
         $this->addArrayProperty($feedRoot, 'lang');
         $xq = $xpath->query($this->applyNsToQuery('/%s:feed[attribute::xml:lang][1]/@xml:lang', $namespaceAlias));
 
@@ -40,7 +41,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             ? Node::factory((string) $xq->item(0)->value)
             : null;
 
-        // single nodes, scalar values
+        // single, scalar
         foreach (['id', 'rights', 'subtitle', 'summary', 'title'] as $nodeName) {
             $this->addArrayProperty($feedRoot, $nodeName);
             $feedRoot->{$nodeName}[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
@@ -52,13 +53,31 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             $feedRoot->{$nodeName}[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
         }
 
-        // generator
+        // generator (single, complex)
         $this->addArrayProperty($feedRoot, 'generator');
         $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', 'generator'));
 
         $feedRoot->generator[$namespaceAlias] = ($xq->length > 0)
             ? new Generator($xq->item(0), $this->getLogger())
             : null;
+
+        // author (single, complex)
+        $this->addArrayProperty($feedRoot, 'author');
+        $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', 'author'));
+
+        $feedRoot->author[$namespaceAlias] = ($xq->length > 0)
+            ? new Person($xq->item(0), $this->getLogger())
+            : null;
+
+        // contributor (multiple, complex)
+        $this->addArrayProperty($feedRoot, 'contributor');
+        $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', 'contributor'));
+
+        $feedRoot->contributor[$namespaceAlias] = [];
+
+        foreach ($xq as $result) {
+            $feedRoot->contributor[$namespaceAlias][] = new Person($result, $this->getLogger());
+        }
     }
 
     /**

@@ -13,9 +13,9 @@
     <title>Release notes from signer</title>
     <subtitle>testing subtitles</subtitle>
 
-    <summary type="html"><![CDATA[Pure, unadulterated incompetence in this week&#8217;s episode of Clueless Recruiters! (Cue theme music!) Explanation There are few things that technical people are more annoyed by than technical recruiters. A very large segment of the technical recruiting industry has made a bad name for the rest of their industry by relentlessly spamming technical professionals after having [&#8230;]]]></summary>
+    <summary type="html"><![CDATA[This is a bunch of CDATA! 😀 [&#8230;]]]></summary>
 
-    <updated>2015-02-12T23:30:50Z</updated>
+    <updated>2016-02-26T20:30:12Z</updated>
     <published>2016-02-26T20:30:12Z</published>
 
     <rights>Copyright &copy; 2017 GitHub</rights>
@@ -23,8 +23,18 @@
 
     <author>
         <name>Ryan Parman</name>
+        <email>ryan@ryanparman.com</email>
         <uri>http://ryanparman.com</uri>
     </author>
+
+    <contributor>
+        <name>Eric Baird</name>
+    </contributor>
+
+    <contributor>
+        <name>Jeff Ringer</name>
+        <email>jeff@ufks.com</email>
+    </contributor>
 
     <entry>
         <id>tag:github.com,2008:Repository/25600856/1.1.0</id>

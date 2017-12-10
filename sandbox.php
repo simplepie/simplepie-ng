@@ -34,45 +34,35 @@ $simplepie = (new SimplePie())
 
 //------------------------------------------------------------------------------
 
-$stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
+$stream = Psr7\stream_for(file_get_contents(__DIR__ . '/tests/Integration/feeds/test.atom'));
 $parser = $simplepie->parseXml($stream, true);
 
 $feed = $parser->getFeed();
 
 echo '--------------------------------------------------------------------------' . PHP_EOL;
 
-echo 'feed->getId: ' . $feed->getId('atom10') . PHP_EOL;
-echo 'feed->getLang: ' . $feed->getLang() . PHP_EOL;
-echo 'feed->getLang->getSerialization: ' . $feed->getLang()->getSerialization() . PHP_EOL;
-echo 'feed->getLanguage: ' . $feed->getLanguage() . PHP_EOL;
-echo 'feed->getLanguage->getSerialization: ' . $feed->getLanguage()->getSerialization() . PHP_EOL;
 echo 'feed->getRights: ' . $feed->getRights() . PHP_EOL;
-echo 'feed->getSubtitle: ' . $feed->getSubtitle() . PHP_EOL;
-echo 'feed->getSummary: ' . $feed->getSummary() . PHP_EOL;
-echo 'feed->getTitle: ' . $feed->getTitle() . PHP_EOL;
 
 echo '--------------------------------------------------------------------------' . PHP_EOL;
 
-echo 'feed->getPublished: ' . $feed->getPublished()
-    ->setTimezone(new \DateTimeZone('America/New_York'))
-    ->format(DateFormat::RSS20) . PHP_EOL;
+echo 'count(contributors): ' . count($feed->getContributors()) . PHP_EOL;
+$count = 1;
 
-echo 'feed->getPubDate: ' . $feed->getPubDate()
-    ->format(DateFormat::RSS20) . PHP_EOL;
-
-echo 'feed->getUpdated: ' . $feed->getUpdated()
-    ->setTimezone(new \DateTimeZone('America/Los_Angeles'))
-    ->format(DateFormat::RSS20) . PHP_EOL;
-
-echo '--------------------------------------------------------------------------' . PHP_EOL;
-
-echo 'feed->getGenerator: ' . $feed->getGenerator() . PHP_EOL;
-echo 'feed->getGenerator->getName: ' . $feed->getGenerator()->getName() . PHP_EOL;
-echo 'feed->getGenerator->getUri: ' . $feed->getGenerator()->getUri() . PHP_EOL;
-echo 'feed->getGenerator->getVersion: ' . $feed->getGenerator()->getVersion() . PHP_EOL;
-echo 'feed->getGenerator->getVersion->getSerialization: ' . $feed->getGenerator()->getVersion()->getSerialization() . PHP_EOL;
+foreach ($feed->getContributors() as $contributor) {
+    echo sprintf('Contributor #%s:', $count);
+    echo 'contributor: ' . (string) $contributor . PHP_EOL;
+    echo 'contributor->getName: ' . (string) $contributor->getName() . PHP_EOL;
+    echo 'contributor->getName->getSerialization: ' . (string) $contributor->getName()->getSerialization() . PHP_EOL;
+    echo 'contributor->getUrl: ' . (string) $contributor->getUrl() . PHP_EOL;
+    echo 'contributor->getUrl->getSerialization: ' . (string) $contributor->getUrl()->getSerialization() . PHP_EOL;
+    echo 'contributor->getEmail: ' . (string) $contributor->getEmail() . PHP_EOL;
+    echo 'contributor->getEmail->getSerialization: ' . (string) $contributor->getEmail()->getSerialization() . PHP_EOL;
+    echo 'contributor->getAvatar: ' . (string) $contributor->getAvatar() . PHP_EOL;
+    echo 'contributor->getAvatar->getSerialization: ' . (string) $contributor->getAvatar()->getSerialization() . PHP_EOL;
+    echo PHP_EOL;
+}
 
 echo '--------------------------------------------------------------------------' . PHP_EOL;
-print_r($feed->getRoot());
 
+// print_r($feed->getRoot());
 echo PHP_EOL;

@@ -1,20 +1,10 @@
 ---
 
 feed:
-    *author¹: {channel[managingEditor], channel[webMaster]} "betty@herald.com (Betty Guernsey)"
-        name¹: STRING {json[author][name]}
-        uri¹: IRI {json[author][url]}
-        email¹: STRING
-        avatar:
-            self: IRI {json[author][avatar]}
     category[]:
         term¹: STRING {channel[category][:text]}
         scheme¹: IRI {channel[category][domain]}
         label¹: STRING
-    contributor[]: {feed[author]}
-        name¹: STRING
-        uri¹: IRI
-        email¹: STRING
     image[]:
         uri: IRI {feed[logo], feed[icon], json[image], json[favicon]}
         title: STRING

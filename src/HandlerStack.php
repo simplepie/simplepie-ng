@@ -68,7 +68,7 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
             $middleware,
             $name,
             $overrideType,
-            function (&$arr) use ($middleware, $name): void {
+            static function (&$arr) use ($middleware, $name): void {
                 $arr[] = [$middleware, $name];
             }
         );
@@ -107,7 +107,7 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
             $middleware,
             $name,
             $overrideType,
-            function (&$arr) use ($middleware, $name): void {
+            static function (&$arr) use ($middleware, $name): void {
                 \array_unshift($arr, [$middleware, $name]);
             }
         );
