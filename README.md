@@ -37,7 +37,7 @@ I want this tool. I have a deep knowledge about feeds. I am working to make this
 
 * Backwards-compatibility with SimplePie 1.x.
 * Compatibility with older/historic versions of PHP. We're starting with 7.2 and moving forward from there.
-* Will almost certainly not work with shared hosting providers. Time to get a grown-up server.
+* Will almost certainly [not work with shared hosting providers](https://github.com/simplepie/simplepie-ng/issues/32). Time to get a grown-up server.
 * WordPress compatibility.
 
 
