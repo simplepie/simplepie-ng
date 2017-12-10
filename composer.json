@@ -36,7 +36,8 @@
         "qafoo/quality-analyzer": "dev-master",
         "codeclimate/php-test-reporter": "*@dev",
         "satooshi/php-coveralls": "*@dev",
-        "mamuz/php-dependency-analysis": "^1.3"
+        "mamuz/php-dependency-analysis": "^1.3",
+        "twig/twig": "^2.4"
     },
     "config": {
         "bin-dir": "bin/",

@@ -27,6 +27,13 @@ install-hooks:
 	printf '#!/usr/bin/env bash\nmake lint\nmake test' > .git/hooks/pre-commit
 	chmod +x .git/hooks/pre-commit
 
+.PHONY: entities
+entities:
+	wget -O resources/entities.json https://www.w3.org/TR/html5/entities.json
+	tools/entities.php
+	cat src/entities.dtd | uniq > src/entities2.dtd
+	mv src/entities2.dtd src/entities.dtd
+
 #-------------------------------------------------------------------------------
 
 .PHONY: docs

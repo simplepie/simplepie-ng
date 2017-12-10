@@ -1,0 +1,5 @@
+<!DOCTYPE HTMLENTITIES [
+{% for entity in entities %}
+	<!ENTITY {{ entity.amp }} "{{ entity.codepoint | raw }}">
+{% endfor %}
+]>
