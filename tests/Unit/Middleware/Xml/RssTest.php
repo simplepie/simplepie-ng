@@ -13,6 +13,9 @@ namespace SimplePie\Test\Unit\Middleware\Xml;
 use SimplePie\Middleware\Xml\Rss;
 use SimplePie\Test\Unit\AbstractTestCase;
 
+/**
+ * @coversNothing
+ */
 class RssTest extends AbstractTestCase
 {
     public function testFailMe(): void

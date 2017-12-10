@@ -13,6 +13,9 @@ namespace SimplePie\Test\Unit\Type;
 use SimplePie\Test\Unit\AbstractTestCase;
 use SimplePie\Type\Entry;
 
+/**
+ * @coversNothing
+ */
 class EntryTest extends AbstractTestCase
 {
     public function testFailMe(): void

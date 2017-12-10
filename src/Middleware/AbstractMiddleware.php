@@ -42,7 +42,7 @@ abstract class AbstractMiddleware
     {
         $this->logger = Configuration::getLogger();
 
-        $this->fn = $fn ?: function () {
+        $this->fn = $fn ?: static function () {
             return true;
         };
     }
@@ -55,8 +55,8 @@ abstract class AbstractMiddleware
      */
     public function addArrayProperty(&$object, string $property): void
     {
-        if (!isset($object->$property)) {
-            $object->$property = [];
+        if (!isset($object->{$property})) {
+            $object->{$property} = [];
         }
     }
 }

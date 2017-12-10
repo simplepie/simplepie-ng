@@ -13,6 +13,9 @@ namespace SimplePie\Test\Unit\Mixin;
 use SimplePie\Mixin\LibxmlTrait;
 use SimplePie\Test\Unit\AbstractTestCase;
 
+/**
+ * @coversNothing
+ */
 class LibxmlTraitTest extends AbstractTestCase
 {
     use LibxmlTrait;

@@ -13,6 +13,9 @@ namespace SimplePie\Test\Unit\Enum;
 use SimplePie\Enum\CharacterSet;
 use SimplePie\Test\Unit\AbstractTestCase;
 
+/**
+ * @coversNothing
+ */
 class CharacterSetTest extends AbstractTestCase
 {
     public function testIntrospect(): void

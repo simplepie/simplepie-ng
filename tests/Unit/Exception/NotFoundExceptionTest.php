@@ -13,14 +13,16 @@ namespace SimplePie\Test\Unit\Exception;
 use SimplePie\Exception\NotFoundException;
 use SimplePie\Test\Unit\AbstractTestCase;
 
+/**
+ * @coversNothing
+ */
 class NotFoundExceptionTest extends AbstractTestCase
 {
-    /**
-     * @expectedException \SimplePie\Exception\NotFoundException
-     * @expectedExceptionMessage This is a test message.
-     */
     public function testThrow(): void
     {
+        $this->expectException(\SimplePie\Exception\NotFoundException::class);
+        $this->expectExceptionMessage('This is a test message.');
+
         throw new NotFoundException('This is a test message.');
     }
 }

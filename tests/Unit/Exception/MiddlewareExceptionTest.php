@@ -13,14 +13,16 @@ namespace SimplePie\Test\Unit\Exception;
 use SimplePie\Exception\MiddlewareException;
 use SimplePie\Test\Unit\AbstractTestCase;
 
+/**
+ * @coversNothing
+ */
 class MiddlewareExceptionTest extends AbstractTestCase
 {
-    /**
-     * @expectedException \SimplePie\Exception\MiddlewareException
-     * @expectedExceptionMessage This is a test message.
-     */
     public function testThrow(): void
     {
+        $this->expectException(\SimplePie\Exception\MiddlewareException::class);
+        $this->expectExceptionMessage('This is a test message.');
+
         throw new MiddlewareException('This is a test message.');
     }
 }

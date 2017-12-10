@@ -29,7 +29,7 @@ class Node extends AbstractType implements TypeInterface
      *
      * @var string|null
      */
-    protected $value = null;
+    protected $value;
 
     /**
      * The serialization of the content.
@@ -49,15 +49,16 @@ class Node extends AbstractType implements TypeInterface
             $this->node  = $node;
             $this->value = $node->nodeValue;
 
-            if ($node->nodeType === XML_ELEMENT_NODE && $node->attributes->length > 0) {
+            if (XML_ELEMENT_NODE === $node->nodeType && $node->attributes->length > 0) {
                 foreach ($node->attributes as $attribute) {
-                    if ($attribute->name === 'type' && $attribute->value === 'html') {
+                    if ('type' === $attribute->name && 'html' === $attribute->value) {
                         $this->serialization = $attribute->nodeValue;
                         $this->value         = \html_entity_decode(
                             $node->nodeValue,
                             ENT_COMPAT | ENT_HTML5,
                             CharacterSet::UTF_8
                         );
+
                         break;
                     }
                 }
@@ -82,7 +83,7 @@ class Node extends AbstractType implements TypeInterface
      *
      * @return Node
      */
-    public static function factory(string $value): Node
+    public static function factory(string $value): self
     {
         return new self(
             new DOMText($value)

@@ -13,14 +13,16 @@ namespace SimplePie\Test\Unit\Exception;
 use SimplePie\Exception\ConfigurationException;
 use SimplePie\Test\Unit\AbstractTestCase;
 
+/**
+ * @coversNothing
+ */
 class ConfigurationExceptionTest extends AbstractTestCase
 {
-    /**
-     * @expectedException \SimplePie\Exception\ConfigurationException
-     * @expectedExceptionMessage This is a test message.
-     */
     public function testThrow(): void
     {
+        $this->expectException(\SimplePie\Exception\ConfigurationException::class);
+        $this->expectExceptionMessage('This is a test message.');
+
         throw new ConfigurationException('This is a test message.');
     }
 }

@@ -15,7 +15,9 @@ namespace SimplePie\Enum;
  */
 class Serialization extends AbstractEnum
 {
-    public const TEXT  = 'text';
-    public const HTML  = 'html';
+    public const TEXT = 'text';
+
+    public const HTML = 'html';
+
     public const XHTML = 'xhtml';
 }

@@ -13,6 +13,9 @@ namespace SimplePie\Test\Unit\Parser;
 use SimplePie\Parser\Xml;
 use SimplePie\Test\Unit\AbstractTestCase;
 
+/**
+ * @coversNothing
+ */
 class XmlTest extends AbstractTestCase
 {
     public function testFailMe(): void

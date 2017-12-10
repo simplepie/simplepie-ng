@@ -14,6 +14,9 @@ use SimplePie\Enum\FeedType;
 use SimplePie\HandlerStack;
 use SimplePie\Middleware\Xml\Atom;
 
+/**
+ * @coversNothing
+ */
 class HandlerStackTest extends AbstractTestCase
 {
     // public function testBasicAppend()
@@ -26,13 +29,13 @@ class HandlerStackTest extends AbstractTestCase
     {
         $stack = (new HandlerStack())
             ->append(new Atom())
-            ->appendClosure(FeedType::ALL, function (): void {
+            ->appendClosure(FeedType::ALL, static function (): void {
             })
-            ->appendClosure(FeedType::JSON, function (): void {
+            ->appendClosure(FeedType::JSON, static function (): void {
             })
-            ->appendClosure(FeedType::HTML, function (): void {
+            ->appendClosure(FeedType::HTML, static function (): void {
             })
-            ->appendClosure(FeedType::XML, function (): void {
+            ->appendClosure(FeedType::XML, static function (): void {
             });
 
         $this->assertSame(2, \count($stack->debugStack()['json']));
@@ -43,19 +46,19 @@ class HandlerStackTest extends AbstractTestCase
     public function testOrder(): void
     {
         $stack = (new HandlerStack())
-            ->appendClosure(FeedType::ALL, function (): void {
+            ->appendClosure(FeedType::ALL, static function (): void {
             }, 'start')
-            ->appendClosure(FeedType::JSON, function (): void {
+            ->appendClosure(FeedType::JSON, static function (): void {
             }, 'appendJson')
-            ->appendClosure(FeedType::HTML, function (): void {
+            ->appendClosure(FeedType::HTML, static function (): void {
             }, 'appendHtml')
-            ->appendClosure(FeedType::XML, function (): void {
+            ->appendClosure(FeedType::XML, static function (): void {
             }, 'appendXml')
-            ->prependClosure(FeedType::JSON, function (): void {
+            ->prependClosure(FeedType::JSON, static function (): void {
             }, 'prependJson')
-            ->prependClosure(FeedType::HTML, function (): void {
+            ->prependClosure(FeedType::HTML, static function (): void {
             }, 'prependHtml')
-            ->prependClosure(FeedType::XML, function (): void {
+            ->prependClosure(FeedType::XML, static function (): void {
             }, 'prependXml');
 
         $order = ['prependXml', 'start', 'appendXml'];
@@ -66,14 +69,13 @@ class HandlerStackTest extends AbstractTestCase
         }
     }
 
-    /**
-     * @expectedException \SimplePie\Exception\MiddlewareException
-     * @expectedExceptionMessage The middleware `Closure` could not be assigned to a feed type.
-     */
     public function testMiddlewareException(): void
     {
+        $this->expectException(\SimplePie\Exception\MiddlewareException::class);
+        $this->expectExceptionMessage('The middleware `Closure` could not be assigned to a feed type.');
+
         $stack = (new HandlerStack())
-            ->appendClosure('bogus', function (): void {
+            ->appendClosure('bogus', static function (): void {
             });
     }
 }

@@ -13,6 +13,9 @@ namespace SimplePie\Test\Unit\Enum;
 use SimplePie\Enum\ErrorMessage;
 use SimplePie\Test\Unit\AbstractTestCase;
 
+/**
+ * @coversNothing
+ */
 class ErrorMessageTest extends AbstractTestCase
 {
     public function testIntrospectKeys(): void

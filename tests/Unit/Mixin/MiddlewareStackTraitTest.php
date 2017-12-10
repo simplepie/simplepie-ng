@@ -13,6 +13,9 @@ namespace SimplePie\Test\Unit\Mixin;
 use SimplePie\Mixin\MiddlewareStackTrait;
 use SimplePie\Test\Unit\AbstractTestCase;
 
+/**
+ * @coversNothing
+ */
 class MiddlewareStackTraitTest extends AbstractTestCase
 {
     use MiddlewareStackTrait;

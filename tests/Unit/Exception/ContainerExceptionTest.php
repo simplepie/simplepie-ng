@@ -13,14 +13,16 @@ namespace SimplePie\Test\Unit\Exception;
 use SimplePie\Exception\ContainerException;
 use SimplePie\Test\Unit\AbstractTestCase;
 
+/**
+ * @coversNothing
+ */
 class ContainerExceptionTest extends AbstractTestCase
 {
-    /**
-     * @expectedException \SimplePie\Exception\ContainerException
-     * @expectedExceptionMessage This is a test message.
-     */
     public function testThrow(): void
     {
+        $this->expectException(\SimplePie\Exception\ContainerException::class);
+        $this->expectExceptionMessage('This is a test message.');
+
         throw new ContainerException('This is a test message.');
     }
 }

@@ -74,6 +74,8 @@ class Feed extends AbstractType implements TypeInterface
      *
      * @return mixed
      *
+     * @codingStandardsIgnoreStart
+     *
      * @method \DateTime getPublished(?string $namespaceAlias = null) Indicates an instant-in-time associated with an event early in the life-cycle of the entry.
      * @method \DateTime getUpdated(?string $namespaceAlias = null) Indicates the most recent instant-in-time when an entry or feed was modified in a way the publisher considers significant. Therefore, not all modifications necessarily result in a changed value.
      * @method SimplePie\Type\Node getId(?string $namespaceAlias = null) Conveys a permanent, universally unique identifier for an entry or feed.
@@ -83,6 +85,8 @@ class Feed extends AbstractType implements TypeInterface
      * @method SimplePie\Type\Node getSummary(?string $namespaceAlias = null) Conveys a short summary, abstract, or excerpt of an entry.
      * @method SimplePie\Type\Node getTitle(?string $namespaceAlias = null) Conveys a human-readable title for an entry or feed.
      * @method SimplePie\Type\Generator getGenerator(?string $namespaceAlias = null) Identifies the agent used to generate a feed, for debugging and other purposes.
+     *
+     * @codingStandardsIgnoreEnd
      */
     public function __call(string $nodeName, array $args)
     {
@@ -92,42 +96,13 @@ class Feed extends AbstractType implements TypeInterface
         }
 
         // Strip `get` from the start of the node name.
-        if (\mb_substr($nodeName, 0, 3) === 'get') {
+        if ('get' === \mb_substr($nodeName, 0, 3)) {
             $nodeName = \lcfirst(\mb_substr($nodeName, 3));
         }
 
-        // Aliases
-        switch ($nodeName) {
-            case 'language':
-                $nodeName = 'lang';
-                break;
-            case 'pubDate':
-            case 'publishedDate':
-                $nodeName = 'published';
-                break;
-        }
+        $nodeName = $this->getAlias($nodeName);
 
-        // Main Handler
-        switch ($nodeName) {
-            case 'id':
-            case 'lang':
-            case 'rights':
-            case 'subtitle':
-            case 'summary':
-            case 'title':
-                return $this->getScalarSingleValue($nodeName, $args[0]);
-            case 'published':
-            case 'updated':
-                return (new DateParser(
-                    $this->getScalarSingleValue($nodeName, $args[0])->getValue(),
-                    $this->outputTimezone,
-                    $this->createFromFormat
-                ))->getDateTime();
-            default:
-                throw new SimplePieException(
-                    \sprintf('%s is an unresolvable method.')
-                );
-        }
+        return $this->getHandler($nodeName);
     }
 
     /**
@@ -141,7 +116,7 @@ class Feed extends AbstractType implements TypeInterface
      *
      * @see http://php.net/manual/en/datetime.createfromformat.php
      */
-    public function setDateFormat(string $createFromFormat): Feed
+    public function setDateFormat(string $createFromFormat): self
     {
         $this->createFromFormat = $createFromFormat;
 
@@ -163,15 +138,12 @@ class Feed extends AbstractType implements TypeInterface
      *
      * @return self
      */
-    public function setOutputTimezone(string $timezone = 'UTC'): Feed
+    public function setOutputTimezone(string $timezone = 'UTC'): self
     {
         $this->outputTimezone = $timezone;
 
         return $this;
     }
-
-    //--------------------------------------------------------------------------
-    // SINGLE SCALAR VALUES
 
     /**
      * Retrieves nodes that are simple scalars, and there are only one allowed value.
@@ -184,11 +156,10 @@ class Feed extends AbstractType implements TypeInterface
      */
     public function getScalarSingleValue(string $nodeName, ?string $namespaceAlias = null): Node
     {
-        $alias = $namespaceAlias
-            ?? $this->namespaceAlias;
+        $alias = $namespaceAlias ?? $this->namespaceAlias;
 
-        if (isset($this->getRoot()->$nodeName[$alias])) {
-            return $this->getRoot()->$nodeName[$alias];
+        if (isset($this->getRoot()->{$nodeName}[$alias])) {
+            return $this->getRoot()->{$nodeName}[$alias];
         }
 
         return new Node();
@@ -199,8 +170,7 @@ class Feed extends AbstractType implements TypeInterface
 
     public function getGenerator(?string $namespaceAlias = null): Generator
     {
-        $alias = $namespaceAlias
-            ?? $this->namespaceAlias;
+        $alias = $namespaceAlias ?? $this->namespaceAlias;
 
         if (isset($this->getRoot()->generator[$alias])) {
             return $this->getRoot()->generator[$alias];
@@ -210,7 +180,6 @@ class Feed extends AbstractType implements TypeInterface
     }
 
     //--------------------------------------------------------------------------
-    // INTERNAL
 
     public function getItems(): void
     {
@@ -227,5 +196,62 @@ class Feed extends AbstractType implements TypeInterface
     public function getRoot(): stdClass
     {
         return $this->root;
+    }
+
+    /**
+     * Finds the common internal alias for a given XML node.
+     *
+     * @param string $nodeName The name of the XML node.
+     *
+     * @return string
+     */
+    protected function getAlias(string $nodeName): string
+    {
+        switch ($nodeName) {
+            case 'language':
+                return 'lang';
+
+            case 'pubDate':
+            case 'publishedDate':
+                return 'published';
+
+            default:
+                return $nodeName;
+        }
+    }
+
+    /**
+     * Get the correct handler for a whitelisted XML node name.
+     *
+     * @param string $nodeName The name of the XML node.
+     *
+     * @throws SimplePieException
+     *
+     * @return mixed
+     */
+    protected function getHandler(string $nodeName)
+    {
+        switch ($nodeName) {
+            case 'id':
+            case 'lang':
+            case 'rights':
+            case 'subtitle':
+            case 'summary':
+            case 'title':
+                return $this->getScalarSingleValue($nodeName, $args[0]);
+
+            case 'published':
+            case 'updated':
+                return (new DateParser(
+                    $this->getScalarSingleValue($nodeName, $args[0])->getValue(),
+                    $this->outputTimezone,
+                    $this->createFromFormat
+                ))->getDateTime();
+
+            default:
+                throw new SimplePieException(
+                    \sprintf('%s is an unresolvable method.')
+                );
+        }
     }
 }

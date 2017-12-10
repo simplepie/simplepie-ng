@@ -13,6 +13,9 @@ namespace SimplePie\Test\Unit\Util;
 use SimplePie\Test\Unit\AbstractTestCase;
 use SimplePie\Util\Ns;
 
+/**
+ * @coversNothing
+ */
 class NsTest extends AbstractTestCase
 {
     public function testFailMe(): void

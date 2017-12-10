@@ -13,6 +13,9 @@ namespace SimplePie\Test\Unit\Enum;
 use SimplePie\Enum\XmlNs;
 use SimplePie\Test\Unit\AbstractTestCase;
 
+/**
+ * @coversNothing
+ */
 class XmlNsTest extends AbstractTestCase
 {
     public function testIntrospect(): void

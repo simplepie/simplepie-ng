@@ -41,7 +41,7 @@ interface HandlerStackInterface
         callable $middleware,
         ?string $name = null,
         ?string $overrideType = null
-    ): HandlerStackInterface;
+    ): self;
 
     /**
      * Appends a new middleware closure onto the end of the stack.
@@ -63,7 +63,7 @@ interface HandlerStackInterface
         string $overrideType,
         callable $middleware,
         ?string $name = null
-    ): HandlerStackInterface;
+    ): self;
 
     /**
      * Prepends a new middleware class onto the beginning of the stack.
@@ -85,7 +85,7 @@ interface HandlerStackInterface
         callable $middleware,
         ?string $name = null,
         ?string $overrideType = null
-    ): HandlerStackInterface;
+    ): self;
 
     /**
      * Prepends a new middleware closure onto the beginning of the stack.
@@ -107,7 +107,7 @@ interface HandlerStackInterface
         string $overrideType,
         callable $middleware,
         ?string $name = null
-    ): HandlerStackInterface;
+    ): self;
 
     /**
      * Invokes the stack of middleware.

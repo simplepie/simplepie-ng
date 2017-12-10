@@ -16,7 +16,10 @@ namespace SimplePie\Enum;
 class CharacterSet extends AbstractEnum
 {
     public const ISO_8859_1 = 'iso-8859-1';
-    public const US_ASCII   = 'us-ascii';
-    public const UTF_8      = 'utf-8';
-    public const WIN_1252   = 'windows-1252';
+
+    public const US_ASCII = 'us-ascii';
+
+    public const UTF_8 = 'utf-8';
+
+    public const WIN_1252 = 'windows-1252';
 }

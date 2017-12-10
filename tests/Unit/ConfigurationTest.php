@@ -15,10 +15,14 @@ use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 use SimplePie\Configuration;
 use SimplePie\Container;
+use SimplePie\Exception\ConfigurationException;
 use SimplePie\HandlerStack;
 use SimplePie\HandlerStackInterface;
 use SimplePie\Middleware\Xml\Atom;
 
+/**
+ * @coversNothing
+ */
 class ConfigurationTest extends AbstractTestCase
 {
     public function testDefaultContainer(): void
@@ -34,18 +38,18 @@ class ConfigurationTest extends AbstractTestCase
     {
         $container = new Container();
 
-        $container['simplepie.logger'] = function (Container $c) {
+        $container['simplepie.logger'] = static function () {
             $logger = new Logger('Testing');
             $logger->pushHandler(new TestHandler());
 
             return $logger;
         };
 
-        $container['simplepie.libxml'] = function (Container $c) {
+        $container['simplepie.libxml'] = static function () {
             return LIBXML_NOCDATA;
         };
 
-        $container['simplepie.middleware'] = function (Container $c) {
+        $container['simplepie.middleware'] = static function () {
             return (new HandlerStack())->append(new Atom());
         };
 
@@ -56,45 +60,51 @@ class ConfigurationTest extends AbstractTestCase
         $this->assertSame(16384, Configuration::getLibxml());
     }
 
-    /**
-     * @expectedException \SimplePie\Exception\ConfigurationException
-     * @expectedExceptionMessage The configured logger MUST be compatible with `Psr\Log\LoggerInterface`. Received `string` instead.
-     */
     public function testCustomLogger(): void
     {
+        $message = 'The configured logger MUST be compatible with `Psr\\Log\\LoggerInterface`. '
+            . 'Received `string` instead.';
+
+        $this->expectException(ConfigurationException::class);
+        $this->expectExceptionMessage($message);
+
         $container = new Container();
 
-        $container['simplepie.logger'] = function (Container $c) {
+        $container['simplepie.logger'] = static function (Container $c) {
             return 'b0rk';
         };
 
         Configuration::setContainer($container);
     }
 
-    /**
-     * @expectedException \SimplePie\Exception\ConfigurationException
-     * @expectedExceptionMessage The configured libxml options MUST be bitwise LIBXML_* constants, which result in an integer value. Received `string` instead.
-     */
     public function testCustomLibxml(): void
     {
+        $message = 'The configured libxml options MUST be bitwise LIBXML_* constants, which result in an '
+            . 'integer value. Received `string` instead.';
+
+        $this->expectException(ConfigurationException::class);
+        $this->expectExceptionMessage($message);
+
         $container = new Container();
 
-        $container['simplepie.libxml'] = function (Container $c) {
+        $container['simplepie.libxml'] = static function (Container $c) {
             return 'b0rk';
         };
 
         Configuration::setContainer($container);
     }
 
-    /**
-     * @expectedException \SimplePie\Exception\ConfigurationException
-     * @expectedExceptionMessage The configured middleware handler stack MUST be compatible with `SimplePie\HandlerStackInterface`. Received `string` instead.
-     */
     public function testCustomMiddleware(): void
     {
+        $message = 'The configured middleware handler stack MUST be compatible with '
+            . '`SimplePie\\HandlerStackInterface`. Received `string` instead.';
+
+        $this->expectException(ConfigurationException::class);
+        $this->expectExceptionMessage($message);
+
         $container = new Container();
 
-        $container['simplepie.middleware'] = function (Container $c) {
+        $container['simplepie.middleware'] = static function (Container $c) {
             return 'b0rk';
         };
 

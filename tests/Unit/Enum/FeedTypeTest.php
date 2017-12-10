@@ -13,6 +13,9 @@ namespace SimplePie\Test\Unit\Enum;
 use SimplePie\Enum\FeedType;
 use SimplePie\Test\Unit\AbstractTestCase;
 
+/**
+ * @coversNothing
+ */
 class FeedTypeTest extends AbstractTestCase
 {
     public function testIntrospect(): void

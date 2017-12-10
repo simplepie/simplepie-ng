@@ -12,6 +12,9 @@ namespace SimplePie\Test\Unit;
 
 use SimplePie\SimplePie;
 
+/**
+ * @coversNothing
+ */
 class SimplePieTest extends AbstractTestCase
 {
     public function testFailMe(): void

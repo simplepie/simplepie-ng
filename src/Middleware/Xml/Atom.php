@@ -39,13 +39,13 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
         // single nodes, scalar values
         foreach (['id', 'rights', 'subtitle', 'summary', 'title'] as $nodeName) {
             $this->addArrayProperty($feedRoot, $nodeName);
-            $feedRoot->$nodeName[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
+            $feedRoot->{$nodeName}[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
         }
 
         // time/date stamps
         foreach (['published', 'updated'] as $nodeName) {
             $this->addArrayProperty($feedRoot, $nodeName);
-            $feedRoot->$nodeName[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
+            $feedRoot->{$nodeName}[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
         }
 
         // generator
@@ -72,7 +72,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
         $query = $this->generateQuery($namespaceAlias, true, 'feed', $nodeName);
         $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
-        return $this->handleSingleNode(function () use ($xpath, $query) {
+        return $this->handleSingleNode(static function () use ($xpath, $query) {
             return $xpath->query($query);
         });
     }

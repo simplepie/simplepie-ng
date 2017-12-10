@@ -16,8 +16,11 @@ namespace SimplePie\Enum;
  */
 class FeedType extends AbstractEnum
 {
-    public const ALL  = 'all';
+    public const ALL = 'all';
+
     public const JSON = 'json';
+
     public const HTML = 'html';
-    public const XML  = 'xml';
+
+    public const XML = 'xml';
 }

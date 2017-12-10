@@ -200,7 +200,7 @@ class Configuration
         self::getLogger()->debug(\sprintf(
             'Libxml configuration has a bitwise value of `%s`.%s',
             self::getLibxml(),
-            (self::getLibxml() === 4792582)
+            (4792582 === self::getLibxml())
                 ? ' (This is the default configuration.)'
                 : ''
         ));

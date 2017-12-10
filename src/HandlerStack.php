@@ -70,9 +70,14 @@ class HandlerStack implements HandlerStackInterface
     ): HandlerStackInterface {
         // @codingStandardsIgnoreEnd
 
-        $this->validateMiddleware($middleware, $name, $overrideType, function (&$arr) use ($middleware, $name): void {
-            $arr[] = [$middleware, $name];
-        });
+        $this->validateMiddleware(
+            $middleware,
+            $name,
+            $overrideType,
+            static function (&$arr) use ($middleware, $name): void {
+                $arr[] = [$middleware, $name];
+            }
+        );
 
         $this->logRegistration($middleware, $name, $overrideType);
 
@@ -106,9 +111,14 @@ class HandlerStack implements HandlerStackInterface
     ): HandlerStackInterface {
         // @codingStandardsIgnoreEnd
 
-        $this->validateMiddleware($middleware, $name, $overrideType, function (&$arr) use ($middleware, $name): void {
-            \array_unshift($arr, [$middleware, $name]);
-        });
+        $this->validateMiddleware(
+            $middleware,
+            $name,
+            $overrideType,
+            static function (&$arr) use ($middleware, $name): void {
+                \array_unshift($arr, [$middleware, $name]);
+            }
+        );
 
         $this->logRegistration($middleware, $name, $overrideType);
 
@@ -156,9 +166,9 @@ class HandlerStack implements HandlerStackInterface
                 'Could not determine which handler stack to invoke. Stack `%s` was requested. [Allowed: %s]',
                 $feedType,
                 \implode(', ', \array_map(
-                    function ($type) {
-                        return \sprintf('FeedType::%s', $type);
-                    },
+            static function ($type) {
+                return \sprintf('FeedType::%s', $type);
+            },
                     $allowedTypes
                 ))
             ));
@@ -172,7 +182,7 @@ class HandlerStack implements HandlerStackInterface
      */
     public function debugStack(): array
     {
-        $fn = function ($mw) {
+        $fn = static function ($mw) {
             return \sprintf(
                 '[<%s: resource %s>, %s]',
                 Types::getClassOrType($mw[0]),
@@ -214,15 +224,15 @@ class HandlerStack implements HandlerStackInterface
     ): void {
         // @codingStandardsIgnoreEnd
 
-        if ($overrideType === FeedType::ALL) {
+        if (FeedType::ALL === $overrideType) {
             $fn($this->stack['html']);
             $fn($this->stack['json']);
             $fn($this->stack['xml']);
-        } elseif ($overrideType === FeedType::JSON || $middleware instanceof JsonInterface) {
+        } elseif (FeedType::JSON === $overrideType || $middleware instanceof JsonInterface) {
             $fn($this->stack['json']);
-        } elseif ($overrideType === FeedType::XML || $middleware instanceof XmlInterface) {
+        } elseif (FeedType::XML === $overrideType || $middleware instanceof XmlInterface) {
             $fn($this->stack['xml']);
-        } elseif ($overrideType === FeedType::HTML || $middleware instanceof HtmlInterface) {
+        } elseif (FeedType::HTML === $overrideType || $middleware instanceof HtmlInterface) {
             $fn($this->stack['html']);
         } else {
             throw new MiddlewareException($this->exceptionMessage($middleware, $name, $overrideType));
