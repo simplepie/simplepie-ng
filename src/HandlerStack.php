@@ -11,12 +11,13 @@ declare(strict_types=1);
 namespace SimplePie;
 
 use DOMXPath;
-use Psr\Log\LoggerInterface;
+use SimplePie\Configuration\SetLoggerInterface;
 use SimplePie\Enum\FeedType;
 use SimplePie\Exception\MiddlewareException;
 use SimplePie\Middleware\Html\HtmlInterface;
 use SimplePie\Middleware\Json\JsonInterface;
 use SimplePie\Middleware\Xml\XmlInterface;
+use SimplePie\Mixin as T;
 use Skyzyx\UtilityPack\Types;
 use stdClass;
 
@@ -28,14 +29,9 @@ use stdClass;
  * Its primary job is to (a) allow the registration and priority of middleware,
  * and (b) provide the interface for SimplePie NG to trigger middleware.
  */
-class HandlerStack implements HandlerStackInterface
+class HandlerStack implements HandlerStackInterface, SetLoggerInterface
 {
-    /**
-     * A PSR-3 logger.
-     *
-     * @var LoggerInterface
-     */
-    protected $logger;
+    use T\LoggerTrait;
 
     /**
      * The middleware stack, grouped by feed type.
@@ -49,8 +45,6 @@ class HandlerStack implements HandlerStackInterface
      */
     public function __construct()
     {
-        $this->logger = Configuration::getLogger();
-
         $this->stack = [
             'html' => [],
             'json' => [],
@@ -74,12 +68,10 @@ class HandlerStack implements HandlerStackInterface
             $middleware,
             $name,
             $overrideType,
-            static function (&$arr) use ($middleware, $name): void {
+            function (&$arr) use ($middleware, $name): void {
                 $arr[] = [$middleware, $name];
             }
         );
-
-        $this->logRegistration($middleware, $name, $overrideType);
 
         return $this;
     }
@@ -115,12 +107,10 @@ class HandlerStack implements HandlerStackInterface
             $middleware,
             $name,
             $overrideType,
-            static function (&$arr) use ($middleware, $name): void {
+            function (&$arr) use ($middleware, $name): void {
                 \array_unshift($arr, [$middleware, $name]);
             }
         );
-
-        $this->logRegistration($middleware, $name, $overrideType);
 
         return $this;
     }
@@ -156,6 +146,7 @@ class HandlerStack implements HandlerStackInterface
         if (isset($this->stack[$feedType])) {
             foreach ($this->stack[$feedType] as $tuple) {
                 $middleware = $tuple[0];
+                $middleware->setLogger($this->getLogger());
                 $middleware($feedRoot, $namespaceAlias, $xpath);
             }
         } else {
@@ -166,9 +157,9 @@ class HandlerStack implements HandlerStackInterface
                 'Could not determine which handler stack to invoke. Stack `%s` was requested. [Allowed: %s]',
                 $feedType,
                 \implode(', ', \array_map(
-            static function ($type) {
-                return \sprintf('FeedType::%s', $type);
-            },
+                    static function ($type) {
+                        return \sprintf('FeedType::%s', $type);
+                    },
                     $allowedTypes
                 ))
             ));

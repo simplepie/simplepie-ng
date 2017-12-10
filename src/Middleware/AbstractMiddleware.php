@@ -10,12 +10,12 @@ declare(strict_types=1);
 
 namespace SimplePie\Middleware;
 
-use SimplePie\Configuration;
-use SimplePie\Mixin\LoggerTrait;
+use SimplePie\Configuration\SetLoggerInterface;
+use SimplePie\Mixin as T;
 
-abstract class AbstractMiddleware
+abstract class AbstractMiddleware implements SetLoggerInterface
 {
-    use LoggerTrait;
+    use T\LoggerTrait;
 
     /**
      * A callable which is used to determine whether or not to run this middleware.
@@ -40,8 +40,6 @@ abstract class AbstractMiddleware
      */
     public function __construct(?callable $fn = null)
     {
-        $this->logger = Configuration::getLogger();
-
         $this->fn = $fn ?: static function () {
             return true;
         };

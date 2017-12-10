@@ -1,4 +1,4 @@
-FROM php:7.2.0RC6-cli-alpine3.6
+FROM php:7.2.0-cli-alpine3.6
 
 ENV BUILD_DEPS alpine-sdk curl-dev icu-dev libxml2-dev
 ENV PERSISTENT_DEPS curl icu make php7-xdebug

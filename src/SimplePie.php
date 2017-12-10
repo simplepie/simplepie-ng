@@ -11,9 +11,10 @@ declare(strict_types=1);
 namespace SimplePie;
 
 use Psr\Http\Message\StreamInterface;
-use SimplePie\Mixin\LibxmlTrait;
-use SimplePie\Mixin\LoggerTrait;
-use SimplePie\Mixin\MiddlewareStackTrait;
+use Psr\Log\NullLogger;
+use SimplePie\Configuration\SetLoggerInterface;
+use SimplePie\Middleware\Xml\Atom;
+use SimplePie\Mixin as T;
 use SimplePie\Parser\Xml as XmlParser;
 
 \define('SIMPLEPIE_ROOT', __DIR__);
@@ -21,19 +22,107 @@ use SimplePie\Parser\Xml as XmlParser;
 /**
  * `SimplePie\SimplePie` is the primary entry point for SimplePie NG.
  */
-class SimplePie
+class SimplePie implements SetLoggerInterface
 {
-    use LibxmlTrait;
-    use LoggerTrait;
-    use MiddlewareStackTrait;
+    use T\LoggerTrait;
+
+    /**
+     * Bitwise libxml options to use for parsing XML.
+     *
+     * @var int
+     */
+    protected $libxml;
+
+    /**
+     * The handler stack which contains registered middleware.
+     *
+     * @var HandlerStackInterface
+     */
+    protected $middleware;
 
     /**
      * Constructs a new instance of this class.
      */
     public function __construct()
     {
-        $this->logger = Configuration::getLogger();
-        $this->logger->info(\sprintf('`%s` has completed instantiation.', __CLASS__));
+        // Default logger
+        $this->logger = new NullLogger();
+
+        // Default middleware stack
+        $this->middleware = new HandlerStack();
+        $this->middleware->setLogger($this->getLogger());
+        $this->middleware->append(new Atom(), 'atom');
+
+        // Default libxml2 settings
+        $this->libxml = LIBXML_HTML_NOIMPLIED // Required, or things crash.
+            | LIBXML_BIGLINES
+            | LIBXML_COMPACT
+            | LIBXML_HTML_NODEFDTD
+            | LIBXML_NOBLANKS
+            | LIBXML_NOENT
+            | LIBXML_NOXMLDECL
+            | LIBXML_NSCLEAN
+            | LIBXML_PARSEHUGE;
+    }
+
+    //--------------------------------------------------------------------------
+
+    /**
+     * Sets the libxml value to use for parsing XML.
+     *
+     * @param int $libxml
+     *
+     * @return int
+     */
+    public function setLibxml(int $libxml)
+    {
+        $this->libxml = $libxml;
+
+        // What are the libxml2 configurations?
+        $this->logger->debug(\sprintf(
+            'Libxml configuration has a bitwise value of `%s`.%s',
+            $this->libxml,
+            (4792582 === $this->libxml)
+                ? ' (This is the default configuration.)'
+                : ''
+        ));
+
+        return $this;
+    }
+
+    /**
+     * Gets the libxml value to use for parsing XML.
+     *
+     * @return int
+     */
+    public function getLibxml(): int
+    {
+        return $this->libxml;
+    }
+
+    /**
+     * Sets the handler stack which contains registered middleware.
+     *
+     * @param HandlerStackInterface $handlerStack
+     *
+     * @return self
+     */
+    public function setMiddlewareStack(HandlerStackInterface $handlerStack)
+    {
+        $this->middleware = $handlerStack;
+        $this->middleware->setLogger($this->getLogger());
+
+        return $this;
+    }
+
+    /**
+     * Gets the handler stack which contains registered middleware.
+     *
+     * @return HandlerStackInterface
+     */
+    public function getMiddlewareStack(): HandlerStackInterface
+    {
+        return $this->middleware;
     }
 
     //--------------------------------------------------------------------------
@@ -53,7 +142,13 @@ class SimplePie
      */
     public function parseXml(StreamInterface $stream, bool $handleHtmlEntitiesInXml = false): XmlParser
     {
-        $parser = new XmlParser($stream, $handleHtmlEntitiesInXml);
+        $parser = new XmlParser(
+            $stream,
+            $this->logger,
+            $this->middleware,
+            $this->libxml,
+            $handleHtmlEntitiesInXml
+        );
 
         return $parser;
     }

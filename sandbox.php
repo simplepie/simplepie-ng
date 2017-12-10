@@ -15,31 +15,24 @@ use SimplePie\SimplePie;
 
 //------------------------------------------------------------------------------
 
-$container = new Container();
+$logger = new Logger('SimplePie');
+$logger->pushHandler(new ErrorLogHandler(
+    ErrorLogHandler::OPERATING_SYSTEM,
+    LogLevel::DEBUG,
+    true,
+    false
+));
 
-$container['simplepie.logger'] = function () {
-    $logger = new Logger('SimplePie');
-    $logger->pushHandler(new ErrorLogHandler(
-        ErrorLogHandler::OPERATING_SYSTEM,
-        LogLevel::DEBUG,
-        true,
-        false
-    ));
+$middleware = (new HandlerStack())
+    ->append(new Atom(), 'atom')
+;
 
-    return $logger;
-};
-
-$container['simplepie.middleware'] = function () {
-    return $stack = (new HandlerStack())
-        ->append(new Atom(), 'atom')
-    ;
-};
-
-Configuration::setContainer($container);
+$simplepie = (new SimplePie())
+    ->setLogger($logger)
+    ->setMiddlewareStack($middleware)
+;
 
 //------------------------------------------------------------------------------
-
-$simplepie = new SimplePie();
 
 $stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
 $parser = $simplepie->parseXml($stream, true);

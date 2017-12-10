@@ -11,6 +11,8 @@ declare(strict_types=1);
 namespace SimplePie\Middleware\Xml;
 
 use DOMXPath;
+use SimplePie\Configuration as C;
+use SimplePie\Mixin as T;
 use SimplePie\Type\Generator;
 use SimplePie\Type\Node;
 use stdClass;
@@ -21,8 +23,10 @@ use stdClass;
  * @see https://tools.ietf.org/html/rfc4287
  * @see https://www.w3.org/wiki/Atom
  */
-class Atom extends AbstractXmlMiddleware implements XmlInterface
+class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInterface
 {
+    use T\LoggerTrait;
+
     /**
      * {@inheritdoc}
      */
@@ -53,7 +57,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface
         $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', 'generator'));
 
         $feedRoot->generator[$namespaceAlias] = ($xq->length > 0)
-            ? new Generator($xq->item(0))
+            ? new Generator($xq->item(0), $this->getLogger())
             : null;
     }
 

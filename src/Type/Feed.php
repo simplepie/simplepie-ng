@@ -12,7 +12,8 @@ namespace SimplePie\Type;
 
 use DateTime;
 use DateTimeZone;
-use SimplePie\Configuration;
+use Psr\Log\NullLogger;
+use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin\LoggerTrait;
 use SimplePie\Parser\Date as DateParser;
@@ -21,7 +22,7 @@ use stdClass;
 /**
  * Represents the top-level of a feed.
  */
-class Feed extends AbstractType implements TypeInterface
+class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
 {
     use LoggerTrait;
 
@@ -62,7 +63,7 @@ class Feed extends AbstractType implements TypeInterface
     public function __construct(string $namespaceAlias)
     {
         $this->root           = new stdClass();
-        $this->logger         = Configuration::getLogger();
+        $this->logger         = new NullLogger();
         $this->namespaceAlias = $namespaceAlias;
     }
 
@@ -102,7 +103,7 @@ class Feed extends AbstractType implements TypeInterface
 
         $nodeName = $this->getAlias($nodeName);
 
-        return $this->getHandler($nodeName);
+        return $this->getHandler($nodeName, $args);
     }
 
     /**
@@ -179,8 +180,6 @@ class Feed extends AbstractType implements TypeInterface
         return new Generator();
     }
 
-    //--------------------------------------------------------------------------
-
     public function getItems(): void
     {
     }
@@ -199,9 +198,9 @@ class Feed extends AbstractType implements TypeInterface
     }
 
     /**
-     * Finds the common internal alias for a given XML node.
+     * Finds the common internal alias for a given method name.
      *
-     * @param string $nodeName The name of the XML node.
+     * @param string $nodeName The name of the method being called.
      *
      * @return string
      */
@@ -221,15 +220,16 @@ class Feed extends AbstractType implements TypeInterface
     }
 
     /**
-     * Get the correct handler for a whitelisted XML node name.
+     * Get the correct handler for a whitelisted method name.
      *
-     * @param string $nodeName The name of the XML node.
+     * @param string $nodeName The name of the method being called.
+     * @param array  $args     Any arguments passed into that method.
      *
      * @throws SimplePieException
      *
      * @return mixed
      */
-    protected function getHandler(string $nodeName)
+    protected function getHandler(string $nodeName, array $args)
     {
         switch ($nodeName) {
             case 'id':

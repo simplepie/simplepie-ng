@@ -11,16 +11,16 @@ declare(strict_types=1);
 namespace SimplePie\Util;
 
 use DOMNode;
-use SimplePie\Configuration;
+use Psr\Log\NullLogger;
 use SimplePie\Enum\XmlNs;
-use SimplePie\Mixin\LoggerTrait;
+use SimplePie\Mixin as T;
 
 /**
  * Provides tools for managing and working with XML namespaces.
  */
 class Ns
 {
-    use LoggerTrait;
+    use T\LoggerTrait;
 
     /**
      * A mapping of namespace URIs to preferred namespace aliases.
@@ -36,7 +36,7 @@ class Ns
      */
     public function __construct(DOMNode $dom)
     {
-        $this->logger      = Configuration::getLogger();
+        $this->logger      = new NullLogger();
         $this->domDocument = $dom;
 
         $this->mapping = [
