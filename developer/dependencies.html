@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Unit and Integration Testing (Draft) &mdash; SimplePie: User and Developer Guide</title>
+  <title>Development Dependencies &mdash; SimplePie: User and Developer Guide</title>
   
 
   
@@ -46,7 +46,8 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="SimplePie: User and Developer Guide" href="../index.html"/>
-        <link rel="prev" title="Leveraging Vagrant (Optional)" href="vagrant.html"/> 
+        <link rel="next" title="Leveraging Vagrant (Optional)" href="vagrant.html"/>
+        <link rel="prev" title="Getting Started (Draft)" href="start.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -130,13 +131,13 @@
 <li class="toctree-l2"><a class="reference internal" href="start.html#php-dependencies">PHP Dependencies</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Development Dependencies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dependencies.html#core-tools">Core Tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dependencies.html#docker-and-docker-compose">Docker and Docker Compose</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development Dependencies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#core-tools">Core Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docker-and-docker-compose">Docker and Docker Compose</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="dependencies.html#optional-tools">Optional Tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dependencies.html#vagrant">Vagrant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-tools">Optional Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vagrant">Vagrant</a></li>
 </ul>
 </li>
 </ul>
@@ -153,10 +154,10 @@
 <li class="toctree-l2"><a class="reference internal" href="vagrant.html#i-am-using-windows">I am using Windows</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Unit and Integration Testing (Draft)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#unit-tests">Unit Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#integration-test-schema">Integration Test Schema</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#all-at-once">All at Once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Unit and Integration Testing (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#unit-tests">Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#integration-test-schema">Integration Test Schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#all-at-once">All at Once</a></li>
 </ul>
 </li>
 </ul>
@@ -203,13 +204,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Unit and Integration Testing (Draft)</li>
+      <li>Development Dependencies</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/developer/testing.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/developer/dependencies.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -222,41 +223,78 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="unit-and-integration-testing-draft">
-<h1>Unit and Integration Testing (Draft)<a class="headerlink" href="#unit-and-integration-testing-draft" title="Permalink to this headline">¶</a></h1>
-<p>Firstly, download and install the dependencies.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>composer install -oa
-</pre></div>
+  <div class="section" id="development-dependencies">
+<h1>Development Dependencies<a class="headerlink" href="#development-dependencies" title="Permalink to this headline">¶</a></h1>
+<p>Virtually every engineer I’ve ever met has had a different preferred way of developing software – from operating
+systems, to build tools, to virtualization methods.</p>
+<p>Before you can worry about your application dependencies, you need to understand your <em>runtime dependencies</em>. The
+operating system you use for runtime/development makes a difference.</p>
+<div class="section" id="core-tools">
+<h2>Core Tools<a class="headerlink" href="#core-tools" title="Permalink to this headline">¶</a></h2>
+<p>At a high level, these are the tools you need to run – or develop for – SimplePie NG.</p>
+<ul class="simple">
+<li>PHP 7.2+ (curl, intl, opcache, mbstring, xml, zip)</li>
+<li>Composer</li>
+<li>Docker (for development)</li>
+</ul>
+<p>The better you understand this toolset, the smaller the learning curve you’ll experience. The less you understand this
+toolset, the larger the learning curve you’ll experience.</p>
+<div class="section" id="docker-and-docker-compose">
+<h3>Docker and Docker Compose<a class="headerlink" href="#docker-and-docker-compose" title="Permalink to this headline">¶</a></h3>
+<p>There are a few development-oriented tasks which can be relatively complex, so I have wrapped those tasks up into
+<a class="reference external" href="https://www.docker.com">Docker</a> containers so that they always run consistently by avoiding environmental
+differences.</p>
+<p>Docker leverages a feature called “containers” that is built into the Linux kernel. Docker runs natively on modern Linux
+kernels and operating systems. For macOS and Windows, Docker (the company) provides
+<a class="reference external" href="https://www.docker.com/community-edition">toolkits</a> which – in essence – boot up miniature Linux VMs to run Docker
+(the software) through.</p>
+<p>There are different pros and cons to leveraging Docker depending on how your environment is configured.</p>
 </div>
-<div class="section" id="unit-tests">
-<h2>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
-<p>You can run the unit tests as follows:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>bin/phpunit --testsuite unit
-</pre></div>
 </div>
-<p>When we write unit tests, we are testing that the single piece of code (i.e., function, method) does what it is supposed
-to be doing. A test should be very small and very focused. We will write lots and lots of these, and we will writes
-<em>mocks</em> to simulate <code class="docutils literal"><span class="pre">Factory</span></code> classes.</p>
+<div class="section" id="optional-tools">
+<h2>Optional Tools<a class="headerlink" href="#optional-tools" title="Permalink to this headline">¶</a></h2>
+<p>There are some optional tools that you can use which take a little more effort to get up and going, but (I would argue)
+provide an overall better development experience. Some people will completely disagree with me for their own reasons,
+and that’s OK.</p>
+<div class="section" id="vagrant">
+<h3>Vagrant<a class="headerlink" href="#vagrant" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.vagrantup.com">Vagrant</a> is a great tool for orchestrating local development <em>virtual machines</em>. It is
+well-supported, and has a large audience of developers.</p>
+<blockquote>
+<div>“But why would I use Vagrant when I can just run Docker on my Mac?”</div></blockquote>
+<p>This is a great question (and feel free to replace <em>Mac</em> with <em>Windows machine</em> or whatever). As a matter of fact, I’ve
+had this exact same discussion with many developers I’ve worked with.</p>
+<p>If you are running Linux (e.g., Ubuntu, CentOS) natively — you wouldn’t. Leveraging Vagrant here generally wouldn’t make
+sense. However, if you are a developer with a macOS or Windows machine, there are some things to consider about this
+approach.</p>
+<ol class="arabic simple">
+<li><strong>Both leverage virtual machines.</strong> For both <a class="reference external" href="https://store.docker.com/editions/community/docker-ce-desktop-mac">Docker for
+Mac</a> and <a class="reference external" href="https://store.docker.com/editions/community/docker-ce-desktop-windows">Docker for
+Windows</a>, a miniature virtual machine is
+started first, then the Docker daemon is started inside of that. This is more-or-less exactly the same pattern that
+Docker-inside-Vagrant uses.</li>
+<li><strong>Reduce the complexity.</strong> It can be difficult managing Windows and macOS developers on the same team. One has
+<a class="reference external" href="https://brew.sh">Homebrew</a> while the other does not. <a class="reference external" href="https://github.com/skyzyx/bash-mac">Both</a> support
+<a class="reference external" href="https://msdn.microsoft.com/en-us/commandline/wsl/about">Bash</a>, but only if all Windows machines are on Windows
+10. Instead of wasting the intermediate VM, why not <em>leverage</em> it? If you can get everyone using the same Vagrant VM,
+then support scripts, shell commands, and various development/deployment processes become unified. Without Vagrant,
+it falls entirely on you – the developer – to correctly install and configure all of the necessary software.</li>
+<li><strong>Disk I/O is faster.</strong> Generally speaking, leveraging NFS or Samba inside a Vagrant VM provides faster disk I/O than
+file system sharing from VMware or VirtualBox, and is overwhelmingly faster than <em>Docker for Mac’s</em>
+<a class="reference external" href="https://docs.docker.com/docker-for-mac/osxfs/">osxfs</a>.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When I used to work at <a class="reference external" href="https://wepay.com">WePay</a>, we had a well-supported, well-documented Vagrant
+environment. New engineers were able to ramp up and get their development environment up and running on the first
+day.</p>
 </div>
-<div class="section" id="integration-test-schema">
-<h2>Integration Test Schema<a class="headerlink" href="#integration-test-schema" title="Permalink to this headline">¶</a></h2>
-<p>You can run the integration tests as follows:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>bin/phpunit --testsuite integration
-</pre></div>
-</div>
-<p>When we write integration tests, we are testing that two pieces of code (e.g., classes) are working together to
-accomplish what they are supposed to be doing. An integration test may be larger than a unit test. We will write fewer
-of these, and will back them with known-good data.</p>
-</div>
-<div class="section" id="all-at-once">
-<h2>All at Once<a class="headerlink" href="#all-at-once" title="Permalink to this headline">¶</a></h2>
-<p>You can run both unit and integration tests at the same time with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>make <span class="nb">test</span>
-</pre></div>
-</div>
+<p>Yes, there’s more initial setup. No, the fastest configuration isn’t free. But I am a firm believer that running Docker
+via a Vagrant development environment ultimately provides the best developer experience.</p>
 <div class="reviewed admonition">
 <p class="first admonition-title">Review</p>
-<p class="last">Written on 2017-06-25, proofread on 2017-08-27.</p>
+<p class="last">Written on 2017-06-25, proofread on 2017-11-26.</p>
+</div>
 </div>
 </div>
 </div>
@@ -271,8 +309,10 @@ of these, and will back them with known-good data.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="vagrant.html" class="btn btn-neutral float-right" title="Leveraging Vagrant (Optional)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="vagrant.html" class="btn btn-neutral" title="Leveraging Vagrant (Optional)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="start.html" class="btn btn-neutral" title="Getting Started (Draft)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -88,7 +88,286 @@
     
     
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_datestamp">
+                                        protected                                        string
+                </td>
+                <td>$datestamp</td>
+                <td class="last">The input datestamp.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_outputTimezone">
+                                        protected                                        string|null
+                </td>
+                <td>$outputTimezone</td>
+                <td class="last">The desired output timezone.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_createFromFormat">
+                                        protected                                        string|null
+                </td>
+                <td>$createFromFormat</td>
+                <td class="last">The format used to assist date string parsing.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_dateTime">
+                                        protected                                        <a target="_blank" href="http://php.net/DateTime">DateTime</a>
+                </td>
+                <td>$dateTime</td>
+                <td class="last">The resulting <code>DateTime</code> object.</td>
+                <td></td>
+            </tr>
+            </table>
+
     
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(string $datestamp, string $outputTimezone = &#039;UTC&#039;, string $createFromFormat = null)
+        
+                                            <p>Constructs a new instance of this class.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getDatestamp">getDatestamp</a>()
+        
+                                            <p>Get the input datestamp.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getOutputTimezone">getOutputTimezone</a>()
+        
+                                            <p>Get the requested output timezone.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getCreateFromFormat">getCreateFromFormat</a>()
+        
+                                            <p>Get the format used to assist date string parsing.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a target="_blank" href="http://php.net/DateTime">DateTime</a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getDateTime">getDateTime</a>()
+        
+                                            <p>Get the resulting <code>DateTime</code> object.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Date.php#L65">line 65</a></div>
+        <code>                    
+    <strong>__construct</strong>(string $datestamp, string $outputTimezone = &#039;UTC&#039;, string $createFromFormat = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructs a new instance of this class.</p>                    <p>Timezone calculation is performed on a <em>best-effort</em> basis and is not guaranteed. Factors which may affect the
+calculation include:</p>
+
+<ul>
+<li>the version of glibc/musl that your OS relies on.</li>
+<li>the freshness of the timestamp data your OS relies on.</li>
+<li>the format of the datestamp inside of the feed and PHP's ability to parse it.</li>
+</ul>
+</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$datestamp</td>
+                <td>The datestamp to handle, as a string.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$outputTimezone</td>
+                <td>The timezone identifier to use. Must be compatible with <code>DateTimeZone</code>.
+                                     The default value is <code>UTC</code>.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$createFromFormat</td>
+                <td>Allows the user to assist the date parser by providing the input format of
+                                     the datestamp. This will be passed into <code>DateTime::createFromFormat()</code>
+                                     at parse-time.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>http://php.net/manual/en/datetime.createfromformat.php</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getDatestamp">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Date.php#L91">line 91</a></div>
+        <code>                    string
+    <strong>getDatestamp</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the input datestamp.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getOutputTimezone">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Date.php#L101">line 101</a></div>
+        <code>                    string
+    <strong>getOutputTimezone</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the requested output timezone.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCreateFromFormat">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Date.php#L111">line 111</a></div>
+        <code>                    string|null
+    <strong>getCreateFromFormat</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the format used to assist date string parsing.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getDateTime">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Date.php#L121">line 121</a></div>
+        <code>                    <a target="_blank" href="http://php.net/DateTime">DateTime</a>
+    <strong>getDateTime</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the resulting <code>DateTime</code> object.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a target="_blank" href="http://php.net/DateTime">DateTime</a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
     
             </div>
                 <div id="footer">

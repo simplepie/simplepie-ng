@@ -80,7 +80,7 @@
 
     <p>    class
     <strong>Feed</strong>        extends <a href="../../SimplePie/Type/AbstractType.html"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a>        implements
-        <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php">View source</a>)
+        <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>, <a href="../../SimplePie/Configuration/SetLoggerInterface.html"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php">View source</a>)
 </p>
 
         
@@ -167,6 +167,16 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
+                    <a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLogger">setLogger</a>(<a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
+        
+                                            <p>Sets the PSR-3 logger.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
                 </div>
                 <div class="col-md-8 type">
@@ -231,6 +241,28 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
                     
                 </div>
                 <div class="col-md-8 type">
+                    <a href="#method_getAuthor">getAuthor</a>(string $namespaceAlias = null)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getContributors">getContributors</a>(string $namespaceAlias = null)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
                     <a href="#method_getItems">getItems</a>()
         
                                             <p class="no-description">No description</p>
@@ -249,12 +281,22 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a target="_blank" href="http://php.net/DateTime">DateTime</a>
+                    string
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_handleAsDatestamp">handleAsDatestamp</a>(string $datestamp)
+                    <a href="#method_getAlias">getAlias</a>(string $nodeName)
         
-                                            <p>Handle a string as a datestamp and convert it to a <code>DateTime</code> object.</p>                </div>
+                                            <p>Finds the common internal alias for a given method name.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getHandler">getHandler</a>(string $nodeName, array $args)
+        
+                                            <p>Get the correct handler for a whitelisted method name.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -265,7 +307,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L61">line 61</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L63">line 63</a></div>
         <code>                    
     <strong>__construct</strong>(string $namespaceAlias)
         </code>
@@ -295,8 +337,48 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_setLogger">
+        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L35">line 35</a></div>
+        <code>                    <a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
+    <strong>setLogger</strong>(<a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets the PSR-3 logger.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></td>
+                <td>$logger</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_getLogger">
-        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L32">line 32</a></div>
+        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L54">line 54</a></div>
         <code>                    <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
     <strong>getLogger</strong>()
         </code>
@@ -326,7 +408,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method___call">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L88">line 88</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L92">line 92</a></div>
         <code>                    mixed
     <strong>__call</strong>(string $nodeName, array $args)
         </code>
@@ -371,7 +453,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDateFormat">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L143">line 143</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L120">line 120</a></div>
         <code>                    <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
     <strong>setDateFormat</strong>(string $createFromFormat)
         </code>
@@ -420,7 +502,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setOutputTimezone">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L165">line 165</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L142">line 142</a></div>
         <code>                    <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
     <strong>setOutputTimezone</strong>(string $timezone = &#039;UTC&#039;)
         </code>
@@ -469,7 +551,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getScalarSingleValue">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L184">line 184</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L158">line 158</a></div>
         <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getScalarSingleValue</strong>(string $nodeName, string $namespaceAlias = null)
         </code>
@@ -515,7 +597,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getGenerator">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L199">line 199</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L172">line 172</a></div>
         <code>                    
     <strong>getGenerator</strong>(string $namespaceAlias = null)
         </code>
@@ -543,8 +625,66 @@ calculation include:</p>
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_getAuthor">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L183">line 183</a></div>
+        <code>                    
+    <strong>getAuthor</strong>(string $namespaceAlias = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$namespaceAlias</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getContributors">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L197">line 197</a></div>
+        <code>                    
+    <strong>getContributors</strong>(string $namespaceAlias = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$namespaceAlias</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_getItems">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L214">line 214</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L208">line 208</a></div>
         <code>                    
     <strong>getItems</strong>()
         </code>
@@ -563,7 +703,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getRoot">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L226">line 226</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L220">line 220</a></div>
         <code>                    <a target="_blank" href="http://php.net/stdClass">stdClass</a>
     <strong>getRoot</strong>()
         </code>
@@ -592,10 +732,10 @@ calculation include:</p>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_handleAsDatestamp">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L240">line 240</a></div>
-        <code>            protected        <a target="_blank" href="http://php.net/DateTime">DateTime</a>
-    <strong>handleAsDatestamp</strong>(string $datestamp)
+                    <h3 id="method_getAlias">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L232">line 232</a></div>
+        <code>            protected        string
+    <strong>getAlias</strong>(string $nodeName)
         </code>
     </h3>
     <div class="details">
@@ -603,15 +743,15 @@ calculation include:</p>
     
 
                     <div class="method-description">
-                                    <p>Handle a string as a datestamp and convert it to a <code>DateTime</code> object.</p>                    <p>Affected by <code>setOutputTimezone()</code> and <code>setDateFormat()</code>, if they were set.</p>                            </div>
+                                    <p>Finds the common internal alias for a given method name.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$datestamp</td>
-                <td>The datestamp to handle, as a string.</td>
+                <td>$nodeName</td>
+                <td>The name of the method being called.</td>
             </tr>
             </table>
 
@@ -620,12 +760,66 @@ calculation include:</p>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a target="_blank" href="http://php.net/DateTime">DateTime</a></td>
+            <td>string</td>
             <td></td>
         </tr>
     </table>
 
             
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getHandler">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L257">line 257</a></div>
+        <code>            protected        mixed
+    <strong>getHandler</strong>(string $nodeName, array $args)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the correct handler for a whitelisted method name.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$nodeName</td>
+                <td>The name of the method being called.</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$args</td>
+                <td>Any arguments passed into that method.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../SimplePie/Exception/SimplePieException.html"><abbr title="SimplePie\Exception\SimplePieException">SimplePieException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
             
                     </div>
     </div>

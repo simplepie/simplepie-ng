@@ -79,7 +79,8 @@
     </div>
 
     <p>    class
-    <strong>SimplePie</strong>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php">View source</a>)
+    <strong>SimplePie</strong>        implements
+        <a href="../SimplePie/Configuration/SetLoggerInterface.html"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php">View source</a>)
 </p>
 
         
@@ -94,29 +95,11 @@
     <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-6">
-                                            <a href="../SimplePie/Mixin/LibxmlTrait.html"><abbr title="SimplePie\Mixin\LibxmlTrait">LibxmlTrait</abbr></a>
-                                            
-                </div>
-                <div class="col-md-6">
-                    Shared code for working with libxml configuration.
-                </div>
-            </div>
-                    <div class="row">
-                <div class="col-md-6">
                                             <a href="../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
                                             
                 </div>
                 <div class="col-md-6">
                     Shared code for working with the logger.
-                </div>
-            </div>
-                    <div class="row">
-                <div class="col-md-6">
-                                            <a href="../SimplePie/Mixin/MiddlewareStackTrait.html"><abbr title="SimplePie\Mixin\MiddlewareStackTrait">MiddlewareStackTrait</abbr></a>
-                                            
-                </div>
-                <div class="col-md-6">
-                    Shared code for working with middleware.
                 </div>
             </div>
             </div>
@@ -126,14 +109,6 @@
 
             <table class="table table-condensed">
                     <tr>
-                <td class="type" id="property_libxml">
-                                        protected                                        int
-                </td>
-                <td>$libxml</td>
-                <td class="last">Bitwise libxml options to use for parsing XML.</td>
-                <td><small>from&nbsp;<a href="../SimplePie/Mixin/LibxmlTrait.html#property_libxml"><abbr title="SimplePie\Mixin\LibxmlTrait">LibxmlTrait</abbr></a></small></td>
-            </tr>
-                    <tr>
                 <td class="type" id="property_logger">
                                         protected                                        <a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
                 </td>
@@ -142,12 +117,20 @@
                 <td><small>from&nbsp;<a href="../SimplePie/Mixin/LoggerTrait.html#property_logger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></small></td>
             </tr>
                     <tr>
+                <td class="type" id="property_libxml">
+                                        protected                                        int
+                </td>
+                <td>$libxml</td>
+                <td class="last">Bitwise libxml options to use for parsing XML.</td>
+                <td></td>
+            </tr>
+                    <tr>
                 <td class="type" id="property_middleware">
                                         protected                                        <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
                 </td>
                 <td>$middleware</td>
                 <td class="last">The handler stack which contains registered middleware.</td>
-                <td><small>from&nbsp;<a href="../SimplePie/Mixin/MiddlewareStackTrait.html#property_middleware"><abbr title="SimplePie\Mixin\MiddlewareStackTrait">MiddlewareStackTrait</abbr></a></small></td>
+                <td></td>
             </tr>
             </table>
 
@@ -157,13 +140,13 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    int
+                    <a href="../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getLibxml">getLibxml</a>()
+                    <a href="#method_setLogger">setLogger</a>(<a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
         
-                                            <p>Gets the libxml value to use for parsing XML.</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../SimplePie/Mixin/LibxmlTrait.html#method_getLibxml"><abbr title="SimplePie\Mixin\LibxmlTrait">LibxmlTrait</abbr></a></small></div>
+                                            <p>Sets the PSR-3 logger.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
@@ -177,22 +160,52 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getMiddlewareStack">getMiddlewareStack</a>()
-        
-                                            <p>Gets the handler stack which contains registered middleware.</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../SimplePie/Mixin/MiddlewareStackTrait.html#method_getMiddlewareStack"><abbr title="SimplePie\Mixin\MiddlewareStackTrait">MiddlewareStackTrait</abbr></a></small></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
                     
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method___construct">__construct</a>()
         
                                             <p>Constructs a new instance of this class.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLibxml">setLibxml</a>(int $libxml)
+        
+                                            <p>Sets the libxml value to use for parsing XML.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLibxml">getLibxml</a>()
+        
+                                            <p>Gets the libxml value to use for parsing XML.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../SimplePie/SimplePie.html"><abbr title="SimplePie\SimplePie">SimplePie</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setMiddlewareStack">setMiddlewareStack</a>(<a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a> $handlerStack)
+        
+                                            <p>Sets the handler stack which contains registered middleware.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getMiddlewareStack">getMiddlewareStack</a>()
+        
+                                            <p>Gets the handler stack which contains registered middleware.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -222,10 +235,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_getLibxml">
-        <div class="location">in <a href="../SimplePie/Mixin/LibxmlTrait.html#method_getLibxml"><abbr title="SimplePie\Mixin\LibxmlTrait">LibxmlTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LibxmlTrait.php#L30">line 30</a></div>
-        <code>                    int
-    <strong>getLibxml</strong>()
+                    <h3 id="method_setLogger">
+        <div class="location">in <a href="../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L35">line 35</a></div>
+        <code>                    <a href="../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
+    <strong>setLogger</strong>(<a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
         </code>
     </h3>
     <div class="details">
@@ -233,14 +246,24 @@
     
 
                     <div class="method-description">
-                                    <p>Gets the libxml value to use for parsing XML.</p>                                                </div>
+                                    <p>Sets the PSR-3 logger.</p>                                                </div>
                 <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></td>
+                <td>$logger</td>
+                <td></td>
+            </tr>
+            </table>
+
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>int</td>
+            <td><a href="../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -253,7 +276,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getLogger">
-        <div class="location">in <a href="../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L32">line 32</a></div>
+        <div class="location">in <a href="../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L54">line 54</a></div>
         <code>                    <a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
     <strong>getLogger</strong>()
         </code>
@@ -282,8 +305,139 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L46">line 46</a></div>
+        <code>                    
+    <strong>__construct</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructs a new instance of this class.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLibxml">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L77">line 77</a></div>
+        <code>                    int
+    <strong>setLibxml</strong>(int $libxml)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets the libxml value to use for parsing XML.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$libxml</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLibxml">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L98">line 98</a></div>
+        <code>                    int
+    <strong>getLibxml</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the libxml value to use for parsing XML.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setMiddlewareStack">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L110">line 110</a></div>
+        <code>                    <a href="../SimplePie/SimplePie.html"><abbr title="SimplePie\SimplePie">SimplePie</abbr></a>
+    <strong>setMiddlewareStack</strong>(<a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a> $handlerStack)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets the handler stack which contains registered middleware.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a></td>
+                <td>$handlerStack</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../SimplePie/SimplePie.html"><abbr title="SimplePie\SimplePie">SimplePie</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_getMiddlewareStack">
-        <div class="location">in <a href="../SimplePie/Mixin/MiddlewareStackTrait.html#method_getMiddlewareStack"><abbr title="SimplePie\Mixin\MiddlewareStackTrait">MiddlewareStackTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/MiddlewareStackTrait.php#L32">line 32</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L123">line 123</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>getMiddlewareStack</strong>()
         </code>
@@ -312,29 +466,8 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L33">line 33</a></div>
-        <code>                    
-    <strong>__construct</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Constructs a new instance of this class.</p>                                                </div>
-                <div class="tags">
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
                     <h3 id="method_parseXml">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L54">line 54</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L143">line 143</a></div>
         <code>                    <a href="../SimplePie/Parser/Xml.html"><abbr title="SimplePie\Parser\Xml">Xml</abbr></a>
     <strong>parseXml</strong>(<a href="../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream, bool $handleHtmlEntitiesInXml = false)
         </code>
@@ -384,7 +517,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_parseJson">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L69">line 69</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/SimplePie.php#L164">line 164</a></div>
         <code>                    <abbr title="SimplePie\JsonParser">JsonParser</abbr>
     <strong>parseJson</strong>(<a href="../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream)
         </code>

@@ -80,7 +80,7 @@
 
     <p>    class
     <strong>Generator</strong>        extends <a href="../../SimplePie/Type/AbstractType.html"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a>        implements
-        <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php">View source</a>)
+        <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>, <a href="../../SimplePie/Configuration/SetLoggerInterface.html"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php">View source</a>)
 </p>
 
         
@@ -157,10 +157,20 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $node = null)
+                    <a href="#method___construct">__construct</a>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $node = null, <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger = null)
         
                                             <p>Constructs a new instance of this class.</p>                </div>
                 <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLogger">setLogger</a>(<a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
+        
+                                            <p>Sets the PSR-3 logger.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
@@ -184,7 +194,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>
+                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>|null
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getNode">getNode</a>()
@@ -194,7 +204,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getName">getName</a>()
@@ -204,17 +214,17 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getUri">getUri</a>()
+                    <a href="#method_getUrl">getUrl</a>()
         
                                             <p>Gets the generator URI.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getVersion">getVersion</a>()
@@ -230,9 +240,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L54">line 54</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L57">line 57</a></div>
         <code>                    
-    <strong>__construct</strong>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $node = null)
+    <strong>__construct</strong>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $node = null, <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger = null)
         </code>
     </h3>
     <div class="details">
@@ -250,6 +260,11 @@
                 <td>$node</td>
                 <td>The <code>DOMNode</code> element to parse.</td>
             </tr>
+                    <tr>
+                <td><a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></td>
+                <td>$logger</td>
+                <td>The PSR-3 logger.</td>
+            </tr>
             </table>
 
             
@@ -260,8 +275,48 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_setLogger">
+        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L35">line 35</a></div>
+        <code>                    <a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
+    <strong>setLogger</strong>(<a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets the PSR-3 logger.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></td>
+                <td>$logger</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_getLogger">
-        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L32">line 32</a></div>
+        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L54">line 54</a></div>
         <code>                    <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
     <strong>getLogger</strong>()
         </code>
@@ -291,7 +346,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___toString">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L72">line 72</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L75">line 75</a></div>
         <code>                    string
     <strong>__toString</strong>()
         </code>
@@ -321,8 +376,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getNode">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L82">line 82</a></div>
-        <code>                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L85">line 85</a></div>
+        <code>                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>|null
     <strong>getNode</strong>()
         </code>
     </h3>
@@ -338,7 +393,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><a target="_blank" href="http://php.net/DOMNode">DOMNode</a></td>
+            <td><a target="_blank" href="http://php.net/DOMNode">DOMNode</a>|null</td>
             <td></td>
         </tr>
     </table>
@@ -351,8 +406,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getName">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L92">line 92</a></div>
-        <code>                    string
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L95">line 95</a></div>
+        <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getName</strong>()
         </code>
     </h3>
@@ -368,7 +423,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
+            <td><a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -380,10 +435,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getUri">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L102">line 102</a></div>
-        <code>                    string
-    <strong>getUri</strong>()
+                    <h3 id="method_getUrl">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L105">line 105</a></div>
+        <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+    <strong>getUrl</strong>()
         </code>
     </h3>
     <div class="details">
@@ -398,7 +453,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
+            <td><a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -411,8 +466,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getVersion">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L112">line 112</a></div>
-        <code>                    string
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L115">line 115</a></div>
+        <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getVersion</strong>()
         </code>
     </h3>
@@ -428,7 +483,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
+            <td><a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a></td>
             <td></td>
         </tr>
     </table>
