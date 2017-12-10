@@ -26,7 +26,7 @@ I want this tool. I have a deep knowledge about feeds. I am working to make this
 ## Features (planned)
 
 * Built for professional-grade software engineers.
-* Requires PHP 7.1+. Maybe 7.2 before we're done.
+* Requires PHP 7.2+.
 * Complies mith multiple PSR recommendations and drafts.
 * Supports multiple log levels.
 * Written following a stricter view of the PSR coding style guidelines.
