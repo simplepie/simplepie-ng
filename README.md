@@ -18,7 +18,7 @@ If, after reading the existing docs, you have questions or ideas, you can file a
 
 Over the years I've tried to start this project by forking SimplePie and stripping out as much legacy code as possible. Those efforts never made it very far. The original codebase grew rapidly and organically over the first 5 years (before I got burned-out and retired from SimplePie development), is extremely complex, not tested or documented nearly well enough, and has been kept alive since 2010 by way of Frankenstein-like patchwork. As PHP and its community have matured over the years, I've started to experiment with new approaches to handling such a complex set of tasks as SimplePie performs.
 
-**SimplePie NG** is a from-scratch rewrite of SimplePie for PHP 7.1. It starts with a completely different kind of thinking, and more than a decade more experience in software engineering and open-source. It is written with a view of PHP from 2017 and beyond, and is being built in such a way that greater community involvement should be far easier from much earlier in the project's life.
+**SimplePie NG** is a from-scratch rewrite of SimplePie for PHP 7.2. It starts with a completely different kind of thinking, and more than a decade more experience in software engineering and open-source. It is written with a view of PHP from 2017 and beyond, and is being built in such a way that greater community involvement should be far easier from much earlier in the project's life.
 
 I want this tool. I have a deep knowledge about feeds. I am working to make this happen.
 
@@ -36,7 +36,7 @@ I want this tool. I have a deep knowledge about feeds. I am working to make this
 ### Non-Goals
 
 * Backwards-compatibility with SimplePie 1.x.
-* Compatibility with older/historic versions of PHP. We're starting with 7.1/7.2 and moving forward from there.
+* Compatibility with older/historic versions of PHP. We're starting with 7.2 and moving forward from there.
 * Will almost certainly not work with shared hosting providers. Time to get a grown-up server.
 * WordPress compatibility.
 
@@ -80,44 +80,33 @@ use GuzzleHttp\Psr7;
 use Monolog\Handler\ErrorLogHandler;
 use Monolog\Logger;
 use Psr\Log\LogLevel;
-use SimplePie\Configuration;
-use SimplePie\Container;
 use SimplePie\HandlerStack;
 use SimplePie\Middleware\Json\JsonFeed;
 use SimplePie\Middleware\Xml\Atom;
 use SimplePie\Middleware\Xml\Rss;
 use SimplePie\SimplePie;
 
-// Instantiate your PSR-11 container. We'll use SimplePie\Container for this.
-$container = new Container();
-
-// Configure a simple PSR-3 logger.
-$container['simplepie.logger'] = function () {
-    $logger = new Logger('SimplePie');
-    $logger->pushHandler(new ErrorLogHandler(
-        ErrorLogHandler::OPERATING_SYSTEM,
-        LogLevel::DEBUG,
-        true,
-        false
-    ));
-
-    return $logger;
-};
+// Configure the logger.
+$logger = new Logger('SimplePie');
+$logger->pushHandler(new ErrorLogHandler(
+    ErrorLogHandler::OPERATING_SYSTEM,
+    LogLevel::DEBUG,
+    true,
+    false
+));
 
 // Configure the middleware stack.
-$container['simplepie.middleware'] = function () {
-    return $stack = (new HandlerStack())
-        ->append(new JsonFeed(), 'jsonfeed')
-        ->append(new Atom()    , 'atom10')
-        ->append(new Rss()     , 'rss20')
-    ;
-};
-
-// Lock-in your configuration. Resolve any default values.
-Configuration::setContainer($container);
+$middleware = (new HandlerStack())
+    ->append(new JsonFeed(), 'jsonfeed')
+    ->append(new Atom()    , 'atom10')
+    ->append(new Rss()     , 'rss20')
+;
 
 // Instantiate SimplePie.
-$simplepie = new SimplePie();
+$simplepie = (new SimplePie())
+    ->setLogger($logger)
+    ->setMiddlewareStack($middleware)
+;
 
 // Pass a PSR-7 stream to SimplePie for parsing.
 $stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
