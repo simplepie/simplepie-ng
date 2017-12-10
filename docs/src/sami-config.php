@@ -4,8 +4,8 @@ use Sami\RemoteRepository\GitHubRemoteRepository;
 use Sami\Version\GitVersionCollection;
 use Symfony\Component\Finder\Finder;
 
-$dir    = dirname(__DIR__) . '/src';
-$vendor = dirname(__DIR__) . '/vendor/psr';
+$dir    = dirname(dirname(__DIR__)) . '/src';
+$vendor = dirname(dirname(__DIR__)) . '/vendor/psr';
 
 $iterator = Finder::create()
     ->files()

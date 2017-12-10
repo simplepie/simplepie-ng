@@ -44,7 +44,7 @@ docs:
 apidocs:
 	# composer install --no-ansi --no-dev --no-interaction --no-progress --no-scripts --optimize-autoloader --ignore-platform-reqs
 	# git reset --hard HEAD
-	sami update docs/sami-config.php
+	sami update docs/src/sami-config.php
 
 #-------------------------------------------------------------------------------
 
