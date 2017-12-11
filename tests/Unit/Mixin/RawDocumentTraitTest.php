@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Mixin;
 use SimplePie\Mixin\RawDocumentTrait;
 use SimplePie\Test\Unit\AbstractTestCase;
 
-/**
- * @coversNothing
- */
 class RawDocumentTraitTest extends AbstractTestCase
 {
     use RawDocumentTrait;

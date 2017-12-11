@@ -14,9 +14,6 @@ use SimplePie\Enum\FeedType;
 use SimplePie\HandlerStack;
 use SimplePie\Middleware\Xml\Atom;
 
-/**
- * @coversNothing
- */
 class HandlerStackTest extends AbstractTestCase
 {
     // public function testBasicAppend()

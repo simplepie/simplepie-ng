@@ -15,9 +15,6 @@ use SimplePie\Test\Integration\AbstractTestCase;
 use SimplePie\Type\Node;
 use Skyzyx\UtilityPack\Types;
 
-/**
- * @coversNothing
- */
 class SummaryTest extends AbstractTestCase
 {
     public function testSummary(): void

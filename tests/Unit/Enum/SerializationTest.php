@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Enum;
 use SimplePie\Enum\Serialization;
 use SimplePie\Test\Unit\AbstractTestCase;
 
-/**
- * @coversNothing
- */
 class SerializationTest extends AbstractTestCase
 {
     public function testIntrospect(): void

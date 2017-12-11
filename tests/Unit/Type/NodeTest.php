@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Type;
 use SimplePie\Test\Unit\AbstractTestCase;
 use SimplePie\Type\Node;
 
-/**
- * @coversNothing
- */
 class NodeTest extends AbstractTestCase
 {
     public function testFailMe(): void

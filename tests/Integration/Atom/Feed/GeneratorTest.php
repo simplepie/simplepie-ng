@@ -17,9 +17,6 @@ use SimplePie\Type\Generator;
 use SimplePie\Type\Node;
 use Skyzyx\UtilityPack\Types;
 
-/**
- * @coversNothing
- */
 class GeneratorTest extends AbstractTestCase
 {
     public function testGenerator(): void

@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Exception;
 use SimplePie\Exception\MiddlewareException;
 use SimplePie\Test\Unit\AbstractTestCase;
 
-/**
- * @coversNothing
- */
 class MiddlewareExceptionTest extends AbstractTestCase
 {
     public function testThrow(): void

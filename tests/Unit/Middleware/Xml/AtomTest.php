@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Middleware\Xml;
 use SimplePie\Middleware\Xml\Atom;
 use SimplePie\Test\Unit\AbstractTestCase;
 
-/**
- * @coversNothing
- */
 class AtomTest extends AbstractTestCase
 {
     public function testFailMe(): void

@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Mixin;
 use SimplePie\Mixin\LoggerTrait;
 use SimplePie\Test\Unit\AbstractTestCase;
 
-/**
- * @coversNothing
- */
 class LoggerTraitTest extends AbstractTestCase
 {
     use LoggerTrait;

@@ -15,9 +15,6 @@ use SimplePie\Test\Integration\AbstractTestCase;
 use SimplePie\Type\Node;
 use Skyzyx\UtilityPack\Types;
 
-/**
- * @coversNothing
- */
 class LanguageTest extends AbstractTestCase
 {
     public function testLang(): void

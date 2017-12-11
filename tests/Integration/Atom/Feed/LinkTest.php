@@ -17,9 +17,6 @@ use SimplePie\Type\Link;
 use SimplePie\Type\Node;
 use Skyzyx\UtilityPack\Types;
 
-/**
- * @coversNothing
- */
 class LinkTest extends AbstractTestCase
 {
     public function testLink(): void

@@ -17,9 +17,6 @@ use SimplePie\Type\Node;
 use SimplePie\Type\Person;
 use Skyzyx\UtilityPack\Types;
 
-/**
- * @coversNothing
- */
 class PersonTest extends AbstractTestCase
 {
     public function testPerson(): void

@@ -16,9 +16,6 @@ use SimplePie\Enum\DateFormat;
 use SimplePie\Test\Integration\AbstractTestCase;
 use Skyzyx\UtilityPack\Types;
 
-/**
- * @coversNothing
- */
 class PublishedUpdatedTest extends AbstractTestCase
 {
     public function testPublished(): void

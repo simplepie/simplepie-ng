@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Type;
 use SimplePie\Test\Unit\AbstractTestCase;
 use SimplePie\Type\Generator;
 
-/**
- * @coversNothing
- */
 class GeneratorTest extends AbstractTestCase
 {
     public function testFailMe(): void

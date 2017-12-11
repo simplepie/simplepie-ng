@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Parser;
 use SimplePie\Parser\Json;
 use SimplePie\Test\Unit\AbstractTestCase;
 
-/**
- * @coversNothing
- */
 class JsonTest extends AbstractTestCase
 {
     public function testFailMe(): void

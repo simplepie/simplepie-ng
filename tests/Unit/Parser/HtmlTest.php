@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Parser;
 use SimplePie\Parser\Html;
 use SimplePie\Test\Unit\AbstractTestCase;
 
-/**
- * @coversNothing
- */
 class HtmlTest extends AbstractTestCase
 {
     public function testFailMe(): void

@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Mixin;
 use SimplePie\Mixin\DomDocumentTrait;
 use SimplePie\Test\Unit\AbstractTestCase;
 
-/**
- * @coversNothing
- */
 class DomDocumentTraitTest extends AbstractTestCase
 {
     use DomDocumentTrait;

@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Exception;
 use SimplePie\Exception\ConfigurationException;
 use SimplePie\Test\Unit\AbstractTestCase;
 
-/**
- * @coversNothing
- */
 class ConfigurationExceptionTest extends AbstractTestCase
 {
     public function testThrow(): void

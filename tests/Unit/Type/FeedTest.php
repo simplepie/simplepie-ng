@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Type;
 use SimplePie\Test\Unit\AbstractTestCase;
 use SimplePie\Type\Feed;
 
-/**
- * @coversNothing
- */
 class FeedTest extends AbstractTestCase
 {
     public function testFailMe(): void

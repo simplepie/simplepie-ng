@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Parser;
 use SimplePie\Parser\Date;
 use SimplePie\Test\Unit\AbstractTestCase;
 
-/**
- * @coversNothing
- */
 class DateTest extends AbstractTestCase
 {
     public function testFailMe(): void

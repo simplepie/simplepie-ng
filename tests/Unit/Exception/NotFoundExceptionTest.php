@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Exception;
 use SimplePie\Exception\NotFoundException;
 use SimplePie\Test\Unit\AbstractTestCase;
 
-/**
- * @coversNothing
- */
 class NotFoundExceptionTest extends AbstractTestCase
 {
     public function testThrow(): void

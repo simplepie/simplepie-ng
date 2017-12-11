@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Util;
 use SimplePie\Test\Unit\AbstractTestCase;
 use SimplePie\Util\FeedLocator;
 
-/**
- * @coversNothing
- */
 class FeedLocatorTest extends AbstractTestCase
 {
     public function testFailMe(): void

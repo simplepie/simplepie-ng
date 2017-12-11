@@ -15,9 +15,6 @@ use SimplePie\Test\Integration\AbstractTestCase;
 use SimplePie\Type\Node;
 use Skyzyx\UtilityPack\Types;
 
-/**
- * @coversNothing
- */
 class IdTest extends AbstractTestCase
 {
     public function testId(): void

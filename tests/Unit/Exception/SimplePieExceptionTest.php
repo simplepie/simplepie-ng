@@ -13,9 +13,6 @@ namespace SimplePie\Test\Unit\Exception;
 use SimplePie\Exception\SimplePieException;
 use SimplePie\Test\Unit\AbstractTestCase;
 
-/**
- * @coversNothing
- */
 class SimplePieExceptionTest extends AbstractTestCase
 {
     public function testThrow(): void
