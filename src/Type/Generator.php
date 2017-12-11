@@ -124,7 +124,7 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
 
             default:
                 throw new SimplePieException(
-                    \sprintf('%s is an unresolvable method.')
+                    $this->getUnresolvableMessage($nodeName)
                 );
         }
     }

@@ -152,6 +152,28 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
         return new Person();
     }
 
+    public function getIcon(?string $namespaceAlias = null): Image
+    {
+        $alias = $namespaceAlias ?? $this->namespaceAlias;
+
+        if (isset($this->getRoot()->icon[$alias])) {
+            return new Image($this->getRoot()->icon[$alias]->getNode());
+        }
+
+        return new Image();
+    }
+
+    public function getLogo(?string $namespaceAlias = null): Image
+    {
+        $alias = $namespaceAlias ?? $this->namespaceAlias;
+
+        if (isset($this->getRoot()->logo[$alias])) {
+            return new Image($this->getRoot()->logo[$alias]->getNode());
+        }
+
+        return new Image();
+    }
+
     //--------------------------------------------------------------------------
     // MULTIPLE COMPLEX VALUES
 
@@ -229,8 +251,10 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
     protected function getHandler(string $nodeName, array $args)
     {
         switch ($nodeName) {
+            case 'icon':
             case 'id':
             case 'lang':
+            case 'logo':
             case 'rights':
             case 'subtitle':
             case 'summary':
@@ -247,7 +271,7 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
 
             default:
                 throw new SimplePieException(
-                    \sprintf('%s is an unresolvable method.')
+                    $this->getUnresolvableMessage($nodeName)
                 );
         }
     }

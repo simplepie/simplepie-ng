@@ -16,7 +16,7 @@ use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
 use SimplePie\Mixin as T;
 
-class Link extends AbstractType implements TypeInterface, C\SetLoggerInterface
+class Image extends AbstractType implements TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;
 
@@ -28,46 +28,46 @@ class Link extends AbstractType implements TypeInterface, C\SetLoggerInterface
     protected $node;
 
     /**
-     * The link's remote location.
+     * The image element's URL.
      *
      * @var string
      */
-    protected $href;
+    protected $uri;
 
     /**
-     * The link's relationship to the current document.
-     *
-     * @var string
-     */
-    protected $rel;
-
-    /**
-     * The link's media type.
-     *
-     * @var string
-     */
-    protected $type;
-
-    /**
-     * The language of the link's remote location.
-     *
-     * @var string
-     */
-    protected $hreflang;
-
-    /**
-     * The link's title.
+     * The image element's title.
      *
      * @var string
      */
     protected $title;
 
     /**
-     * The link's length, in bytes (e.g., if it is a large file or direct download).
+     * The image element's link.
+     *
+     * @var string
+     */
+    protected $link;
+
+    /**
+     * The image element's width, in pixels.
      *
      * @var int
      */
-    protected $length;
+    protected $width;
+
+    /**
+     * The image element's height, in pixels.
+     *
+     * @var int
+     */
+    protected $height;
+
+    /**
+     * The image element's description.
+     *
+     * @var string
+     */
+    protected $description;
 
     /**
      * Constructs a new instance of this class.
@@ -78,13 +78,14 @@ class Link extends AbstractType implements TypeInterface, C\SetLoggerInterface
     public function __construct(?DOMNode $node = null, LoggerInterface $logger = null)
     {
         if ($node) {
-            $this->logger = $logger ?? new NullLogger();
-            $this->node   = $node;
-            $this->name   = new Node($this->node);
-
-            foreach ($this->node->attributes as $attribute) {
-                $this->{$attribute->name} = new Node($attribute);
-            }
+            $this->logger      = $logger ?? new NullLogger();
+            $this->node        = $node;
+            $this->uri         = new Node($this->node);
+            $this->title       = null;
+            $this->link        = null;
+            $this->width       = null;
+            $this->height      = null;
+            $this->description = null;
         }
     }
 
@@ -95,7 +96,7 @@ class Link extends AbstractType implements TypeInterface, C\SetLoggerInterface
      */
     public function __toString(): string
     {
-        return (string) $this->href ?? '';
+        return (string) $this->uri ?? '';
     }
 
     /**
@@ -118,19 +119,8 @@ class Link extends AbstractType implements TypeInterface, C\SetLoggerInterface
     protected function getAlias(string $nodeName): string
     {
         switch ($nodeName) {
-            case 'uri':
             case 'url':
-                return 'href';
-
-            case 'relationship':
-                return 'rel';
-
-            case 'mediaType':
-                return 'type';
-
-            case 'lang':
-            case 'language':
-                return 'hreflang';
+                return 'uri';
 
             default:
                 return $nodeName;
@@ -149,12 +139,12 @@ class Link extends AbstractType implements TypeInterface, C\SetLoggerInterface
     protected function getHandler(string $nodeName): Node
     {
         switch ($nodeName) {
-            case 'href':
-            case 'hreflang':
-            case 'length':
-            case 'rel':
+            case 'uri':
             case 'title':
-            case 'type':
+            case 'link':
+            case 'width':
+            case 'height':
+            case 'description':
                 return $this->{$nodeName} ?? new Node();
 
             default:

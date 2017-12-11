@@ -41,30 +41,6 @@ $feed = $parser->getFeed();
 
 echo '--------------------------------------------------------------------------' . PHP_EOL;
 
-echo 'count(feed->getLinks): ' . count($feed->getLinks()) . PHP_EOL;
-echo PHP_EOL;
-
-$count = 1;
-foreach ($feed->getLinks() as $link) {
-    echo sprintf('Link #%d', $count) . PHP_EOL;
-    echo 'link->getUrl: ' . $link->getUrl() . PHP_EOL;
-    echo 'link->getRelationship: ' . $link->getRelationship() . PHP_EOL;
-    echo 'link->getMediaType: ' . $link->getMediaType() . PHP_EOL;
-    echo 'link->getLanguage: ' . $link->getLanguage() . PHP_EOL;
-    echo 'link->getTitle: ' . $link->getTitle() . PHP_EOL;
-    echo 'link->getLength: ' . $link->getLength() . PHP_EOL;
-
-    echo PHP_EOL;
-    $count++;
-}
-
-print_r(
-    array_values(
-        array_filter($feed->getLinks(), function ($l): bool {
-            return 'self' === $l->getRelationship()->getValue();
-        })
-    )
-);
 
 echo '--------------------------------------------------------------------------' . PHP_EOL;
 

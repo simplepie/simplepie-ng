@@ -41,4 +41,19 @@ abstract class AbstractType
 
         return $this->getHandler($nodeName, $args);
     }
+
+    /**
+     * Gets the standard, pre-formatted message for unresolvable method calls.
+     *
+     * @param string $nodeName The short version of the call (without the `get`).
+     *
+     * @return string
+     */
+    protected function getUnresolvableMessage(string $nodeName): string
+    {
+        return \sprintf(
+            '%s is an unresolvable method.',
+            \sprintf('get%s', \ucfirst($nodeName))
+        );
+    }
 }

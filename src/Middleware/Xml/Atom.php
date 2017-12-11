@@ -43,7 +43,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             : null;
 
         // single, scalar
-        foreach (['id', 'rights', 'subtitle', 'summary', 'title'] as $nodeName) {
+        foreach (['id', 'icon', 'logo', 'rights', 'subtitle', 'summary', 'title'] as $nodeName) {
             $this->addArrayProperty($feedRoot, $nodeName);
             $feedRoot->{$nodeName}[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
         }
