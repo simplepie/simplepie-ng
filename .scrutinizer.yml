@@ -147,7 +147,7 @@ checks:
 tools:
     external_code_coverage:
         timeout: 600
-    php_sim: true
+    php_sim: false
     php_code_coverage:
         enabled: true
     php_code_sniffer:

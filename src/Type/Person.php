@@ -80,27 +80,21 @@ class Person extends AbstractType implements TypeInterface, C\SetLoggerInterface
      */
     public function __toString(): string
     {
-        if (null !== $this->name && null !== $this->uri) {
-            return \trim(\sprintf('%s <%s>', (string) $this->name, (string) $this->uri));
+        if (
+            null !== $this->name && (
+                null !== $this->uri ||
+                null !== $this->email
+            )
+        ) {
+            return \trim(\sprintf('%s <%s>', (string) $this->name, (string) $this->uri ?? (string) $this->email));
         }
 
-        if (null !== $this->name && null !== $this->email) {
-            return \trim(\sprintf('%s <%s>', (string) $this->name, (string) $this->email));
-        }
-
-        if (null !== $this->name) {
-            return \trim((string) $this->name);
-        }
-
-        if (null !== $this->uri) {
-            return \trim((string) $this->uri);
-        }
-
-        if (null !== $this->email) {
-            return \trim((string) $this->email);
-        }
-
-        return 'Unknown';
+        return \trim(
+            (string) $this->name
+            ?? (string) $this->uri
+            ?? (string) $this->email
+            ?? 'Unknown'
+        );
     }
 
     /**

@@ -51,7 +51,7 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
     /**
      * The preferred timezone to use for date output.
      *
-     * @var DateTimeZone
+     * @var string
      */
     protected $outputTimezone;
 

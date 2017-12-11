@@ -38,7 +38,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
         $xq = $xpath->query($this->applyNsToQuery('/%s:feed[attribute::xml:lang][1]/@xml:lang', $namespaceAlias));
 
         $feedRoot->lang[$namespaceAlias] = ($xq->length > 0)
-            ? Node::factory((string) $xq->item(0)->value)
+            ? Node::factory((string) $xq->item(0)->nodeValue)
             : null;
 
         // single, scalar
