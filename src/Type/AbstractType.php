@@ -12,7 +12,33 @@ namespace SimplePie\Type;
 
 abstract class AbstractType
 {
-    public function __construct()
+    /**
+     * Proxy method which forwards requests to an underlying handler.
+     *
+     * @param string $nodeName The name of the method being called.
+     * @param array  $args     Any arguments passed into that method.
+     *
+     * @return mixed
+     *
+     * @codingStandardsIgnoreStart
+     *
+     *
+     * @codingStandardsIgnoreEnd
+     */
+    public function __call(string $nodeName, array $args)
     {
+        // Make sure we have *something*
+        if (empty($args)) {
+            $args[0] = null;
+        }
+
+        // Strip `get` from the start of the node name.
+        if ('get' === \mb_substr($nodeName, 0, 3)) {
+            $nodeName = \lcfirst(\mb_substr($nodeName, 3));
+        }
+
+        $nodeName = $this->getAlias($nodeName);
+
+        return $this->getHandler($nodeName, $args);
     }
 }

@@ -14,6 +14,7 @@ use DOMXPath;
 use SimplePie\Configuration as C;
 use SimplePie\Mixin as T;
 use SimplePie\Type\Generator;
+use SimplePie\Type\Link;
 use SimplePie\Type\Node;
 use SimplePie\Type\Person;
 use stdClass;
@@ -77,6 +78,16 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
 
         foreach ($xq as $result) {
             $feedRoot->contributor[$namespaceAlias][] = new Person($result, $this->getLogger());
+        }
+
+        // link (multiple, complex)
+        $this->addArrayProperty($feedRoot, 'link');
+        $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', 'link'));
+
+        $feedRoot->link[$namespaceAlias] = [];
+
+        foreach ($xq as $result) {
+            $feedRoot->link[$namespaceAlias][] = new Link($result, $this->getLogger());
         }
     }
 

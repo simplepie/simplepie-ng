@@ -15,8 +15,9 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
 use SimplePie\Mixin as T;
+use SimplePie\Type\Node;
 
-class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterface
+class Link extends AbstractType implements TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;
 
@@ -28,25 +29,46 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
     protected $node;
 
     /**
-     * The generator name.
+     * The link's remote location.
      *
      * @var string
      */
-    protected $name;
+    protected $href;
 
     /**
-     * The generator URI.
+     * The link's relationship to the current document.
      *
      * @var string
      */
-    protected $uri;
+    protected $rel;
 
     /**
-     * The generator version.
+     * The link's media type.
      *
      * @var string
      */
-    protected $version;
+    protected $type;
+
+    /**
+     * The language of the link's remote location.
+     *
+     * @var string
+     */
+    protected $hreflang;
+
+    /**
+     * The link's title.
+     *
+     * @var string
+     */
+    protected $title;
+
+    /**
+     * The link's length, in bytes (e.g., if it is a large file or direct download).
+     *
+     * @var int
+     */
+    protected $length;
 
     /**
      * Constructs a new instance of this class.
@@ -74,7 +96,7 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
      */
     public function __toString(): string
     {
-        return \trim(\sprintf('%s %s', $this->name, $this->version));
+        return (string) $this->href ?? '';
     }
 
     /**
@@ -97,8 +119,19 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
     protected function getAlias(string $nodeName): string
     {
         switch ($nodeName) {
+            case 'uri':
             case 'url':
-                return 'uri';
+                return 'href';
+
+            case 'relationship':
+                return 'rel';
+
+            case 'mediaType':
+                return 'type';
+
+            case 'lang':
+            case 'language':
+                return 'hreflang';
 
             default:
                 return $nodeName;
@@ -117,9 +150,12 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
     protected function getHandler(string $nodeName): Node
     {
         switch ($nodeName) {
-            case 'name':
-            case 'uri':
-            case 'version':
+            case 'href':
+            case 'hreflang':
+            case 'length':
+            case 'rel':
+            case 'title':
+            case 'type':
                 return $this->{$nodeName} ?? new Node();
 
             default:

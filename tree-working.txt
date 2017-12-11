@@ -26,8 +26,6 @@ feed:
         hreflang¹: LANG
         title¹: STRING
         length¹: INT
-    rating: PICS
-    *updated¹: DATETIME {channel[lastBuildDate], channel[pubDate]}
     *entry: {channel[items], json.items}
         *author¹: {item[author]} "betty@herald.com (Betty Guernsey)"
             name¹: STRING

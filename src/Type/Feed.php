@@ -68,45 +68,6 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
     }
 
     /**
-     * Proxy method which forwards requests to an underlying handler.
-     *
-     * @param string $nodeName The name of the method being called.
-     * @param array  $args     Any arguments passed into that method.
-     *
-     * @return mixed
-     *
-     * @codingStandardsIgnoreStart
-     *
-     * @method \DateTime getPublished(?string $namespaceAlias = null) Indicates an instant-in-time associated with an event early in the life-cycle of the entry.
-     * @method \DateTime getUpdated(?string $namespaceAlias = null) Indicates the most recent instant-in-time when an entry or feed was modified in a way the publisher considers significant. Therefore, not all modifications necessarily result in a changed value.
-     * @method SimplePie\Type\Node getId(?string $namespaceAlias = null) Conveys a permanent, universally unique identifier for an entry or feed.
-     * @method SimplePie\Type\Node getLang(?string $namespaceAlias = null) Indicates the natural language for the element and its descendents.
-     * @method SimplePie\Type\Node getRights(?string $namespaceAlias = null) Conveys information about rights held in and over an entry or feed.
-     * @method SimplePie\Type\Node getSubtitle(?string $namespaceAlias = null) Conveys a human-readable description or subtitle for a feed.
-     * @method SimplePie\Type\Node getSummary(?string $namespaceAlias = null) Conveys a short summary, abstract, or excerpt of an entry.
-     * @method SimplePie\Type\Node getTitle(?string $namespaceAlias = null) Conveys a human-readable title for an entry or feed.
-     * @method SimplePie\Type\Generator getGenerator(?string $namespaceAlias = null) Identifies the agent used to generate a feed, for debugging and other purposes.
-     *
-     * @codingStandardsIgnoreEnd
-     */
-    public function __call(string $nodeName, array $args)
-    {
-        // Make sure we have *something*
-        if (empty($args)) {
-            $args[0] = null;
-        }
-
-        // Strip `get` from the start of the node name.
-        if ('get' === \mb_substr($nodeName, 0, 3)) {
-            $nodeName = \lcfirst(\mb_substr($nodeName, 3));
-        }
-
-        $nodeName = $this->getAlias($nodeName);
-
-        return $this->getHandler($nodeName, $args);
-    }
-
-    /**
      * Allows the user to help the date parser by providing the format of the datestamp in the feed.
      *
      * This will be passed into `DateTime::createFromFormat()` at parse-time.
@@ -200,6 +161,17 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
 
         if (isset($this->getRoot()->contributor[$alias])) {
             return $this->getRoot()->contributor[$alias];
+        }
+
+        return [];
+    }
+
+    public function getLinks(?string $namespaceAlias = null): iterable
+    {
+        $alias = $namespaceAlias ?? $this->namespaceAlias;
+
+        if (isset($this->getRoot()->link[$alias])) {
+            return $this->getRoot()->link[$alias];
         }
 
         return [];

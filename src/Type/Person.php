@@ -80,11 +80,7 @@ class Person extends AbstractType implements TypeInterface, C\SetLoggerInterface
      */
     public function __toString(): string
     {
-        if (
-            null !== $this->name && (
-                null !== $this->uri ||
-                null !== $this->email
-            )
+        if (null !== $this->name && (null !== $this->uri || null !== $this->email)
         ) {
             return \trim(\sprintf('%s <%s>', (string) $this->name, (string) $this->uri ?? (string) $this->email));
         }
@@ -108,42 +104,45 @@ class Person extends AbstractType implements TypeInterface, C\SetLoggerInterface
     }
 
     /**
-     * Gets the person's name.
+     * Finds the common internal alias for a given method name.
      *
-     * @return Node
+     * @param string $nodeName The name of the method being called.
+     *
+     * @return string
      */
-    public function getName(): Node
+    protected function getAlias(string $nodeName): string
     {
-        return $this->name ?? new Node();
+        switch ($nodeName) {
+            case 'url':
+                return 'uri';
+
+            default:
+                return $nodeName;
+        }
     }
 
     /**
-     * Gets the person's URL.
+     * Get the correct handler for a whitelisted method name.
+     *
+     * @param string $nodeName The name of the method being called.
+     *
+     * @throws SimplePieException
      *
      * @return Node
      */
-    public function getUrl(): Node
+    protected function getHandler(string $nodeName): Node
     {
-        return $this->uri ?? new Node();
-    }
+        switch ($nodeName) {
+            case 'name':
+            case 'uri':
+            case 'email':
+            case 'avatar':
+                return $this->{$nodeName} ?? new Node();
 
-    /**
-     * Gets the person's email address.
-     *
-     * @return Node
-     */
-    public function getEmail(): Node
-    {
-        return $this->email ?? new Node();
-    }
-
-    /**
-     * Gets the person's avatar.
-     *
-     * @return Node
-     */
-    public function getAvatar(): Node
-    {
-        return $this->avatar ?? new Node();
+            default:
+                throw new SimplePieException(
+                    \sprintf('%s is an unresolvable method.')
+                );
+        }
     }
 }
