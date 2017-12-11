@@ -69,7 +69,7 @@ class Date
         $this->createFromFormat = $createFromFormat;
 
         // Use the custom formatter, if available
-        if ($createFromFormat) {
+        if (null !== $createFromFormat) {
             $this->dateTime = DateTime::createFromFormat(
                 $createFromFormat,
                 $datestamp,
