@@ -42,52 +42,48 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             ? Node::factory((string) $xq->item(0)->nodeValue)
             : null;
 
-        // single, scalar
-        foreach (['id', 'icon', 'logo', 'rights', 'subtitle', 'summary', 'title'] as $nodeName) {
+        // single, scalar types
+        foreach ([
+            'icon',
+            'id',
+            'logo',
+            'published',
+            'rights',
+            'subtitle',
+            'summary',
+            'title',
+            'updated',
+        ] as $nodeName) {
             $this->addArrayProperty($feedRoot, $nodeName);
             $feedRoot->{$nodeName}[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
         }
 
-        // time/date stamps
-        foreach (['published', 'updated'] as $nodeName) {
-            $this->addArrayProperty($feedRoot, $nodeName);
-            $feedRoot->{$nodeName}[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
+        // single, complex types
+        foreach ([
+            'author'    => Person::class,
+            'generator' => Generator::class,
+        ] as $name => $class) {
+            $this->addArrayProperty($feedRoot, $name);
+            $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', $name));
+
+            $feedRoot->{$name}[$namespaceAlias] = ($xq->length > 0)
+                ? new $class($xq->item(0), $this->getLogger())
+                : null;
         }
 
-        // generator (single, complex)
-        $this->addArrayProperty($feedRoot, 'generator');
-        $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', 'generator'));
+        // multiple, complex types
+        foreach ([
+            'contributor' => Person::class,
+            'link'        => Link::class,
+        ] as $name => $class) {
+            $this->addArrayProperty($feedRoot, $name);
+            $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', $name));
 
-        $feedRoot->generator[$namespaceAlias] = ($xq->length > 0)
-            ? new Generator($xq->item(0), $this->getLogger())
-            : null;
+            $feedRoot->{$name}[$namespaceAlias] = [];
 
-        // author (single, complex)
-        $this->addArrayProperty($feedRoot, 'author');
-        $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', 'author'));
-
-        $feedRoot->author[$namespaceAlias] = ($xq->length > 0)
-            ? new Person($xq->item(0), $this->getLogger())
-            : null;
-
-        // contributor (multiple, complex)
-        $this->addArrayProperty($feedRoot, 'contributor');
-        $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', 'contributor'));
-
-        $feedRoot->contributor[$namespaceAlias] = [];
-
-        foreach ($xq as $result) {
-            $feedRoot->contributor[$namespaceAlias][] = new Person($result, $this->getLogger());
-        }
-
-        // link (multiple, complex)
-        $this->addArrayProperty($feedRoot, 'link');
-        $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', 'link'));
-
-        $feedRoot->link[$namespaceAlias] = [];
-
-        foreach ($xq as $result) {
-            $feedRoot->link[$namespaceAlias][] = new Link($result, $this->getLogger());
+            foreach ($xq as $result) {
+                $feedRoot->{$name}[$namespaceAlias][] = new $class($result, $this->getLogger());
+            }
         }
     }
 
