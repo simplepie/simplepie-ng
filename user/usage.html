@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>General Usage (Draft) &mdash; SimplePie: User and Developer Guide</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.2.7/segment.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.2.7/menu.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.2.7/tab.min.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SimplePie: User and Developer Guide" href="../index.html"/>
+        <link rel="next" title="License: Why Apache 2.0?" href="license.html"/>
+        <link rel="prev" title="Configuration" href="configuration.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SimplePie NG
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="foundation.html">Foundation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#lies-damned-lies-and-statistics">Lies, damned lies, and statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#json">JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#domdocument">DOMDocument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#xpath">XPath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#decoupled-components">Decoupled Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#middleware">Middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#standards">Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#doing-less">Doing Less</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html#coding-standards">Coding Standards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#logger">Logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#middleware">Middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#libxml">libxml</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">General Usage (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fetching-feeds-over-http">Fetching Feeds Over HTTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#caching-data">Caching Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-node-types">Working with <code class="docutils literal"><span class="pre">Node</span></code> types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-datetime-types">Working with <code class="docutils literal"><span class="pre">DateTime</span></code> types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License: Why Apache 2.0?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="license.html#short-and-permissive">Short and Permissive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#gpl-lgpl-agpl-and-free-software">GPL, LGPL, AGPL, and “Free Software”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html#so-why-apache-2-0">So, why Apache 2.0?</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref/api-reference.html">API Reference</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer/start.html">Getting Started (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/start.html#php-dependencies">PHP Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/dependencies.html">Development Dependencies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/dependencies.html#core-tools">Core Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer/dependencies.html#docker-and-docker-compose">Docker and Docker Compose</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/dependencies.html#optional-tools">Optional Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer/dependencies.html#vagrant">Vagrant</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/vagrant.html">Leveraging Vagrant (Optional)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/vagrant.html#i-am-using-macos">I am using macOS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer/vagrant.html#install-xcode-cli-development-tools">Install Xcode CLI Development Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/vagrant.html#give-yourself-passwordless-sudo-optional">Give yourself passwordless sudo (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/vagrant.html#install-homebrew">Install Homebrew</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/vagrant.html#install-vagrant-plug-ins">Install Vagrant plug-ins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/vagrant.html#selecting-virtual-machine-software">Selecting Virtual Machine Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/vagrant.html#i-am-using-windows">I am using Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/docker.html">Leveraging Docker (Draft)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/json-parsing.html">JSON Parsing (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/json-parsing.html#high-level-internals">High-Level Internals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/xml-parsing.html">XML Parsing (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/xml-parsing.html#high-level-internals">High-Level Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/xml-parsing.html#html-entities">HTML Entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/xml-parsing.html#xml-namespaces">XML Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/xml-parsing.html#xpath-1-0">XPath 1.0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/testing.html">Unit and Integration Testing (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/testing.html#unit-tests">Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/testing.html#integration-test-schema">Integration Test Schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/testing.html#all-at-once">All at Once</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SimplePie NG</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>General Usage (Draft)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/user/usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="general-usage-draft">
+<h1>General Usage (Draft)<a class="headerlink" href="#general-usage-draft" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fetching-feeds-over-http">
+<h2>Fetching Feeds Over HTTP<a class="headerlink" href="#fetching-feeds-over-http" title="Permalink to this headline">¶</a></h2>
+<p>TBD.</p>
+</div>
+<div class="section" id="caching-data">
+<h2>Caching Data<a class="headerlink" href="#caching-data" title="Permalink to this headline">¶</a></h2>
+<p>TBD.</p>
+</div>
+<div class="section" id="working-with-node-types">
+<h2>Working with <code class="docutils literal"><span class="pre">Node</span></code> types<a class="headerlink" href="#working-with-node-types" title="Permalink to this headline">¶</a></h2>
+<p>With few exceptions, every value that comes out of SimplePie is a <code class="docutils literal"><span class="pre">Node</span></code> type.</p>
+<p>One of the complexities of working with <a class="reference external" href="https://tools.ietf.org/html/rfc4287">Atom</a> feeds (and sometimes
+<a class="reference external" href="http://www.rssboard.org/rss-specification">RSS</a> feeds) is that the content you’re looking for may be serialized as
+<code class="docutils literal"><span class="pre">text</span></code>, <code class="docutils literal"><span class="pre">html</span></code>, or <code class="docutils literal"><span class="pre">xhtml</span></code>. This was something that we didn’t solve very well in SimplePie OG, so it’s something
+that I’ve paid better attention to in SimplePie NG by exposing these serializations.</p>
+<p>Let’s say that you want to get the author of a feed.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$author</span> <span class="o">=</span> <span class="nv">$feed</span><span class="o">-&gt;</span><span class="na">getAuthor</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>There are a few things that we do with this. If we were to type-cast it as a <em>string</em>, then it would trigger the
+<code class="docutils literal"><span class="pre">__toString()</span></code> function on the class.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$author</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="c1">#=&gt; Ryan Parman &lt;http://ryanparman.com&gt;</span>
+</pre></div>
+</div>
+<p>However, maybe we want to display the author’s information differently. We know that <code class="docutils literal"><span class="pre">$author</span></code> is a type of
+<code class="docutils literal"><span class="pre">Person</span></code>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nb">get_class</span><span class="p">(</span><span class="nv">$author</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="c1">#=&gt; SimplePie\Type\Person</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Person</span></code> has three methods: <code class="docutils literal"><span class="pre">getName()</span></code>, <code class="docutils literal"><span class="pre">getUrl()</span></code>, and <code class="docutils literal"><span class="pre">getEmail()</span></code>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nb">sprintf</span><span class="p">(</span>
+  <span class="s2">&quot;%s</span><span class="se">\n</span><span class="s2">e: %s</span><span class="se">\n</span><span class="s2">w: %s&quot;</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$author</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">(),</span>
+  <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$author</span><span class="o">-&gt;</span><span class="na">getEmail</span><span class="p">(),</span>
+  <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$author</span><span class="o">-&gt;</span><span class="na">getUrl</span><span class="p">()</span>
+<span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="c1">#=&gt; Ryan Parman</span>
+<span class="c1">#=&gt; e: ryan@ryanparman.com</span>
+<span class="c1">#=&gt; w: http://ryanparman.com</span>
+</pre></div>
+</div>
+<p>If you were to check the types of <code class="docutils literal"><span class="pre">getName()</span></code>, <code class="docutils literal"><span class="pre">getUrl()</span></code>, and <code class="docutils literal"><span class="pre">getEmail()</span></code>, you’ll see that they’re all <code class="docutils literal"><span class="pre">Node</span></code>
+types.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nb">get_class</span><span class="p">(</span><span class="nv">$author</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">())</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="c1">#=&gt; SimplePie\Type\Node</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">Node</span></code> type’s <code class="docutils literal"><span class="pre">__toString()</span></code> method will call out to its <code class="docutils literal"><span class="pre">getValue()</span></code> method to stringify the value.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$author</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">()</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="c1">#=&gt; Ryan Parman</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">Node</span></code> type itself has a few methods: <code class="docutils literal"><span class="pre">getValue()</span></code>, <code class="docutils literal"><span class="pre">getSerialization()</span></code>, and <code class="docutils literal"><span class="pre">getNode()</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">getValue()</span></code> is where the actual value itself is stored – it simply gets bubbled up by higher-level calls. It’s the
+first time that a value doesn’t need to be type-cast as a <em>string</em>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$author</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">()</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="c1">#=&gt; Ryan Parman</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">getSerialization()</span></code> is how we can tell which serialization (<code class="docutils literal"><span class="pre">text</span></code>, <code class="docutils literal"><span class="pre">html</span></code>, or <code class="docutils literal"><span class="pre">xhtml</span></code>) the content inside the
+feed is using.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$author</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getSerialization</span><span class="p">()</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="c1">#=&gt; text</span>
+
+<span class="k">switch</span> <span class="p">(</span><span class="nv">$author</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getSerialization</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s1">&#39;xhtml&#39;</span><span class="o">:</span>
+        <span class="c1">// Custom XML stuff...</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="s1">&#39;text&#39;</span><span class="o">:</span>
+    <span class="k">case</span> <span class="s1">&#39;html&#39;</span><span class="o">:</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="k">echo</span> <span class="nv">$author</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="c1">#=&gt; Ryan Parman</span>
+</pre></div>
+</div>
+<p>Lastly, <code class="docutils literal"><span class="pre">getNode()</span></code> returns the low-level <code class="docutils literal"><span class="pre">DOMNode</span></code> element, just in case you wanted to access the data that the
+parser has directly.</p>
+</div>
+<div class="section" id="working-with-datetime-types">
+<h2>Working with <code class="docutils literal"><span class="pre">DateTime</span></code> types<a class="headerlink" href="#working-with-datetime-types" title="Permalink to this headline">¶</a></h2>
+<p>TBD.</p>
+<div class="reviewed admonition">
+<p class="first admonition-title">Review</p>
+<p class="last">Written on 2017-12-17, proofread on 2017-12-17.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="license.html" class="btn btn-neutral float-right" title="License: Why Apache 2.0?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="configuration.html" class="btn btn-neutral" title="Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017 Ryan Parman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.2.7/tab.min.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

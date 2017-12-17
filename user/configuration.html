@@ -46,7 +46,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="SimplePie: User and Developer Guide" href="../index.html"/>
-        <link rel="next" title="License: Why Apache 2.0?" href="license.html"/>
+        <link rel="next" title="General Usage (Draft)" href="usage.html"/>
         <link rel="prev" title="Foundation" href="foundation.html"/> 
 
   
@@ -108,10 +108,16 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#design-of-the-configuration-system">Design of the Configuration System</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#logger">Logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#middleware">Middleware</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#libxml">libxml</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">General Usage (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#fetching-feeds-over-http">Fetching Feeds Over HTTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#caching-data">Caching Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#working-with-node-types">Working with <code class="docutils literal"><span class="pre">Node</span></code> types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#working-with-datetime-types">Working with <code class="docutils literal"><span class="pre">DateTime</span></code> types</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License: Why Apache 2.0?</a><ul>
@@ -152,6 +158,18 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../developer/vagrant.html#i-am-using-windows">I am using Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/docker.html">Leveraging Docker (Draft)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/json-parsing.html">JSON Parsing (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/json-parsing.html#high-level-internals">High-Level Internals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/xml-parsing.html">XML Parsing (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/xml-parsing.html#high-level-internals">High-Level Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/xml-parsing.html#html-entities">HTML Entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/xml-parsing.html#xml-namespaces">XML Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/xml-parsing.html#xpath-1-0">XPath 1.0</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/testing.html">Unit and Integration Testing (Draft)</a><ul>
@@ -225,84 +243,52 @@
             
   <div class="section" id="configuration">
 <h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="design-of-the-configuration-system">
-<h2>Design of the Configuration System<a class="headerlink" href="#design-of-the-configuration-system" title="Permalink to this headline">¶</a></h2>
-<p>The configuration system is designed around the idea of being a centralized registry. The usage of this centralized
-registry is limited, but is used for configurations that are truly global such as configuring your preferred logger or
-registering middleware.</p>
-<p>It leverages the <code class="docutils literal"><span class="pre">SimplePie\Configuration</span></code> class as a centralized, global class that any other class can speak to. It
-is used in a way that is similar to the <a class="reference external" href="https://martinfowler.com/articles/injection.html#UsingAServiceLocator">service locator pattern</a>, but has a looser coupling with the rest of
-the code. It becomes a <em>proxy</em> for the values from the container that SimplePie NG cares about.</p>
-<p>The configuration class itself is configured by reading specific, known keys out of a PSR-11 container (documented
-below). Any values not provided by the container are assigned default values by the configuration class.</p>
-<p>See the <a class="reference external" href="https://simplepie.github.io/simplepie-ng/api/master/SimplePie/Configuration.html">Configuration</a> and
-<a class="reference external" href="https://simplepie.github.io/simplepie-ng/api/master/SimplePie/Container.html">Container</a> references for details.</p>
-</div>
 <div class="section" id="logger">
 <h2>Logger<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h2>
-<p>Using any <a class="reference external" href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md">PSR-11</a> container,
-create a new key called <code class="docutils literal"><span class="pre">simplepie.logger</span></code>, then have it return any instantiated
-<a class="reference external" href="http://www.php-fig.org/psr/psr-3/">PSR-3</a> logger.</p>
+<p>SimplePie supports <a class="reference external" href="http://www.php-fig.org/psr/psr-3/">PSR-3</a> loggers out of the box. After constructing a new
+instance of a PSR-3 logger, you can pass it to <code class="docutils literal"><span class="pre">setLogger()</span></code>. This instance will be passed along to all
+newly-constructed child classes so that the entire stack uses the same logger.</p>
+<p>The type-hint for the logger is <code class="docutils literal"><span class="pre">Psr\Log\LoggerInterface</span></code>.</p>
 <p>Here’s an example <a class="reference external" href="https://github.com/Seldaek/monolog">Monolog</a> logger that uses the system’s error log.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">use</span> <span class="nx">Monolog\Handler\ErrorLogHandler</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Monolog\Logger</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Psr\Container\ContainerInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Psr\Log\LogLevel</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">SimplePie\Configuration</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">SimplePie\Container</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\SimplePie</span><span class="p">;</span>
 
-<span class="nv">$container</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Container</span><span class="p">();</span>
+<span class="nv">$logger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="s1">&#39;SimplePie&#39;</span><span class="p">);</span>
+<span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">pushHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">ErrorLogHandler</span><span class="p">(</span>
+    <span class="nx">ErrorLogHandler</span><span class="o">::</span><span class="na">OPERATING_SYSTEM</span><span class="p">,</span>
+    <span class="nx">LogLevel</span><span class="o">::</span><span class="na">DEBUG</span><span class="p">,</span>
+    <span class="k">true</span><span class="p">,</span>
+    <span class="k">false</span>
+<span class="p">));</span>
 
-<span class="nv">$container</span><span class="p">[</span><span class="s1">&#39;simplepie.logger&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nx">ContainerInterface</span> <span class="nv">$c</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nv">$logger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="s1">&#39;SimplePie&#39;</span><span class="p">);</span>
-    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">pushHandler</span><span class="p">(</span><span class="k">new</span> <span class="nx">ErrorLogHandler</span><span class="p">(</span>
-        <span class="nx">ErrorLogHandler</span><span class="o">::</span><span class="na">OPERATING_SYSTEM</span><span class="p">,</span>
-        <span class="nx">LogLevel</span><span class="o">::</span><span class="na">DEBUG</span><span class="p">,</span>
-        <span class="k">true</span><span class="p">,</span>
-        <span class="k">false</span>
-    <span class="p">));</span>
-
-    <span class="k">return</span> <span class="nv">$logger</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nx">Configuration</span><span class="o">::</span><span class="na">setContainer</span><span class="p">(</span><span class="nv">$container</span><span class="p">);</span>
-
-<span class="nv">$simplepie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimplePie</span><span class="p">();</span>
+<span class="nv">$simplepie</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">SimplePie</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="na">setLogger</span><span class="p">(</span><span class="nv">$logger</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="middleware">
 <h2>Middleware<a class="headerlink" href="#middleware" title="Permalink to this headline">¶</a></h2>
-<p>All of the parsing leverages a middleware pattern. Without any registered middleware, nothing happens by default. All
-of this is managed using a <em>middleware handler stack</em>.</p>
-<p>Using any <a class="reference external" href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md">PSR-11</a> container,
-create a new key called <code class="docutils literal"><span class="pre">simplepie.middleware</span></code>, then have it return an instantiated class which implements
-<code class="docutils literal"><span class="pre">SimplePie\HandlerStackInterface</span></code> (such as <code class="docutils literal"><span class="pre">SimplePie\HandlerStack</span></code>).</p>
+<p>All of the feed parsing leverages a middleware pattern. Without any registered middleware, nothing gets parsed by
+default. All of this is managed using a <em>middleware handler stack</em>.</p>
+<p>The type-hint for the middleware handler stack is <code class="docutils literal"><span class="pre">SimplePie\HandlerStackInterface</span></code>, and the type-hint for middleware
+itself is <code class="docutils literal"><span class="pre">SimplePie\Middleware\MiddlewareInterface</span></code>.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">use</span> <span class="nx">SimplePie\Configuration</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">SimplePie\Container</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\HandlerStack</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\Middleware\Json\JsonFeed</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\Middleware\Xml\Atom</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\Middleware\Xml\Rss</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\SimplePie</span><span class="p">;</span>
 
-<span class="nv">$container</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Container</span><span class="p">();</span>
+<span class="nv">$stack</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">HandlerStack</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">JsonFeed</span><span class="p">(),</span> <span class="s1">&#39;jsonfeed&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">Atom</span><span class="p">(),</span> <span class="s1">&#39;atom10&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">Rss</span><span class="p">(),</span> <span class="s1">&#39;rss20&#39;</span><span class="p">);</span>
 
-<span class="nv">$container</span><span class="p">[</span><span class="s1">&#39;simplepie.middleware&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nx">ContainerInterface</span> <span class="nv">$c</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span><span class="k">new</span> <span class="nx">HandlerStack</span><span class="p">())</span>
-        <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">JsonFeed</span><span class="p">(),</span> <span class="s1">&#39;jsonfeed&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">Atom</span><span class="p">(),</span> <span class="s1">&#39;atom10&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">append</span><span class="p">(</span><span class="k">new</span> <span class="nx">Rss</span><span class="p">(),</span> <span class="s1">&#39;rss20&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nx">Configuration</span><span class="o">::</span><span class="na">setContainer</span><span class="p">(</span><span class="nv">$container</span><span class="p">);</span>
-
-<span class="nv">$simplepie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimplePie</span><span class="p">();</span>
+<span class="nv">$simplepie</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">SimplePie</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="na">setMiddlewareStack</span><span class="p">(</span><span class="nv">$stack</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>In this example, and assuming the feed is XML-based, the Atom 1.0 middleware will run first followed by the RSS 2.0
@@ -368,30 +354,18 @@ limits of the size of text nodes.</td>
 <p>We explicitly do not set <code class="docutils literal"><span class="pre">LIBXML_NOCDATA</span></code> because we want to preserve the <em>CDATA-ness</em> of those nodes. You can find
 the definitions for more <code class="docutils literal"><span class="pre">libxml</span></code> constants by reading
 <a class="reference external" href="http://php.net/manual/en/libxml.constants.php">Predefined libxml constants</a>.</p>
-<p>If you want to change the <code class="docutils literal"><span class="pre">libxml</span></code> parameters that are used, using any
-<a class="reference external" href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md">PSR-11</a> container, create a new
-key called <code class="docutils literal"><span class="pre">simplepie.libxml</span></code>, then have it return the
+<p>If you want to change the <code class="docutils literal"><span class="pre">libxml</span></code> parameters that are used, use any
 <a class="reference external" href="http://php.net/manual/en/language.operators.bitwise.php">bitwise-OR</a> value of the <code class="docutils literal"><span class="pre">LIBXML_*</span></code> options you prefer.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">use</span> <span class="nx">SimplePie\Configuration</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">SimplePie\Container</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">SimplePie\SimplePie</span><span class="p">;</span>
 
-<span class="nv">$container</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Container</span><span class="p">();</span>
-
-<span class="nv">$container</span><span class="p">[</span><span class="s1">&#39;simplepie.libxml&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="nx">LIBXML_HTML_NOIMPLIED</span> <span class="o">|</span> <span class="nx">LIBXML_NOCDATA</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nx">Configuration</span><span class="o">::</span><span class="na">setContainer</span><span class="p">(</span><span class="nv">$container</span><span class="p">);</span>
-
-<span class="nv">$simplepie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimplePie</span><span class="p">();</span>
+<span class="nv">$simplepie</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">SimplePie</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="na">setLibxml</span><span class="p">(</span><span class="nx">LIBXML_HTML_NOIMPLIED</span> <span class="o">|</span> <span class="nx">LIBXML_NOCDATA</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="reviewed admonition">
 <p class="first admonition-title">Review</p>
-<p class="last">Written on 2017-06-25, proofread on 2017-07-01.</p>
+<p class="last">Written on 2017-06-25, proofread on 2017-12-17.</p>
 </div>
 </div>
 </div>
@@ -406,7 +380,7 @@ key called <code class="docutils literal"><span class="pre">simplepie.libxml</sp
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="license.html" class="btn btn-neutral float-right" title="License: Why Apache 2.0?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="General Usage (Draft)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="foundation.html" class="btn btn-neutral" title="Foundation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

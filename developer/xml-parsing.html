@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Unit and Integration Testing (Draft) &mdash; SimplePie: User and Developer Guide</title>
+  <title>XML Parsing (Draft) &mdash; SimplePie: User and Developer Guide</title>
   
 
   
@@ -46,7 +46,8 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="SimplePie: User and Developer Guide" href="../index.html"/>
-        <link rel="prev" title="XML Parsing (Draft)" href="xml-parsing.html"/> 
+        <link rel="next" title="Unit and Integration Testing (Draft)" href="testing.html"/>
+        <link rel="prev" title="JSON Parsing (Draft)" href="json-parsing.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -164,17 +165,17 @@
 <li class="toctree-l2"><a class="reference internal" href="json-parsing.html#high-level-internals">High-Level Internals</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="xml-parsing.html">XML Parsing (Draft)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="xml-parsing.html#high-level-internals">High-Level Internals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xml-parsing.html#html-entities">HTML Entities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xml-parsing.html#xml-namespaces">XML Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xml-parsing.html#xpath-1-0">XPath 1.0</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">XML Parsing (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#high-level-internals">High-Level Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#html-entities">HTML Entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xml-namespaces">XML Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xpath-1-0">XPath 1.0</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Unit and Integration Testing (Draft)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#unit-tests">Unit Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#integration-test-schema">Integration Test Schema</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#all-at-once">All at Once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Unit and Integration Testing (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#unit-tests">Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#integration-test-schema">Integration Test Schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#all-at-once">All at Once</a></li>
 </ul>
 </li>
 </ul>
@@ -221,13 +222,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Unit and Integration Testing (Draft)</li>
+      <li>XML Parsing (Draft)</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/developer/testing.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/developer/xml-parsing.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -240,41 +241,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="unit-and-integration-testing-draft">
-<h1>Unit and Integration Testing (Draft)<a class="headerlink" href="#unit-and-integration-testing-draft" title="Permalink to this headline">¶</a></h1>
-<p>Firstly, download and install the dependencies.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>composer install -oa
-</pre></div>
+  <div class="section" id="xml-parsing-draft">
+<h1>XML Parsing (Draft)<a class="headerlink" href="#xml-parsing-draft" title="Permalink to this headline">¶</a></h1>
+<p>XML (<a class="reference external" href="https://www.w3.org/TR/2008/REC-xml-20081126/">REC-xml-20081126</a>) is the intended serialization of the
+<a class="reference external" href="https://tools.ietf.org/html/rfc4287">Atom</a> and <a class="reference external" href="http://www.rssboard.org/rss-specification">RSS</a> formats. As such,
+SimplePie NG has been designed from the beginning with support for multiple feed serialization types.</p>
+<div class="section" id="high-level-internals">
+<h2>High-Level Internals<a class="headerlink" href="#high-level-internals" title="Permalink to this headline">¶</a></h2>
+<p>Internally, we use the <a class="reference external" href="http://php.net/manual/en/class.domdocument.php">DOMDocument</a> family of classes to parse the
+XML data into an object. The internal XML parser is <a class="reference external" href="http://xmlsoft.org">libxml2</a> which implements the spec, but also
+has some niceties such as the ability to <a class="reference external" href="https://secure.php.net/manual/en/class.domdocument.php#domdocument.props.recover">recover from malformed
+XML</a>. This is a tremendous
+improvement over SimplePie OG’s usage of the <a class="reference external" href="http://php.net/manual/en/ref.xml.php">XML Parser</a> functions leftover
+from PHP 4.</p>
 </div>
-<div class="section" id="unit-tests">
-<h2>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
-<p>You can run the unit tests as follows:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>bin/phpunit --testsuite unit
-</pre></div>
+<div class="section" id="html-entities">
+<h2>HTML Entities<a class="headerlink" href="#html-entities" title="Permalink to this headline">¶</a></h2>
+<p>There are (generally) two kinds of entities: (a) <em>named</em> entities (e.g., <code class="docutils literal"><span class="pre">&amp;nbsp;</span></code>) and (b) <em>numeric</em> entities (e.g.,
+<code class="docutils literal"><span class="pre">&amp;#xA0;</span></code> or <code class="docutils literal"><span class="pre">&amp;#160;</span></code>).</p>
+<p>Most of the <em>named entities</em> defined in HTML are <em>not</em> defined in XML. This means that unless the feed author (or the
+feed-generating software) is diligent about using CDATA to wrap these named entities, most XML parsers will fail. (This
+was a problem that plagued SimplePie OG, and was the source of a tremendous amount of workarounds in the source code.)</p>
+<p>SimplePie NG handles things differently. Firstly, it uses the
+<a class="reference external" href="http://php.net/manual/en/class.domdocument.php">DOMDocument</a> family of classes which are higher-level than the old
+XML Parser code. Secondly, since <a class="reference external" href="http://xmlsoft.org">libxml2</a> offers a recovery bit, it will continue parsing the
+document even if it encounters these kinds of errors. Thirdly, we now fetch and maintain a <a class="reference external" href="https://www.w3.org/TR/html5/entities.json">canonical list of entity
+mappings defined for HTML5</a> from the W3C, that we can use to handle
+un-CDATA’d named entities in XML.</p>
+<p>At present, this named entity handling is disabled by default for two reasons: (a) we don’t yet have enough test
+coverage to help us avoid <a class="reference external" href="https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing">XML External Entity</a>
+vulnerabilities, and (b) because this involves us modifying the XML on the fly to insert our entity definitions (which
+is slightly slower).</p>
 </div>
-<p>When we write unit tests, we are testing that the single piece of code (i.e., function, method) does what it is supposed
-to be doing. A test should be very small and very focused. We will write lots and lots of these, and we will writes
-<em>mocks</em> to simulate <code class="docutils literal"><span class="pre">Factory</span></code> classes.</p>
+<div class="section" id="xml-namespaces">
+<h2>XML Namespaces<a class="headerlink" href="#xml-namespaces" title="Permalink to this headline">¶</a></h2>
+<p>TBD.</p>
 </div>
-<div class="section" id="integration-test-schema">
-<h2>Integration Test Schema<a class="headerlink" href="#integration-test-schema" title="Permalink to this headline">¶</a></h2>
-<p>You can run the integration tests as follows:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>bin/phpunit --testsuite integration
-</pre></div>
-</div>
-<p>When we write integration tests, we are testing that two pieces of code (e.g., classes) are working together to
-accomplish what they are supposed to be doing. An integration test may be larger than a unit test. We will write fewer
-of these, and will back them with known-good data.</p>
-</div>
-<div class="section" id="all-at-once">
-<h2>All at Once<a class="headerlink" href="#all-at-once" title="Permalink to this headline">¶</a></h2>
-<p>You can run both unit and integration tests at the same time with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>make <span class="nb">test</span>
-</pre></div>
-</div>
+<div class="section" id="xpath-1-0">
+<h2>XPath 1.0<a class="headerlink" href="#xpath-1-0" title="Permalink to this headline">¶</a></h2>
+<p>TBD.</p>
 <div class="reviewed admonition">
 <p class="first admonition-title">Review</p>
-<p class="last">Written on 2017-06-25, proofread on 2017-08-27.</p>
+<p class="last">Written on 2017-12-17, proofread on 2017-12-17.</p>
 </div>
 </div>
 </div>
@@ -289,8 +297,10 @@ of these, and will back them with known-good data.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="testing.html" class="btn btn-neutral float-right" title="Unit and Integration Testing (Draft)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="xml-parsing.html" class="btn btn-neutral" title="XML Parsing (Draft)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="json-parsing.html" class="btn btn-neutral" title="JSON Parsing (Draft)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

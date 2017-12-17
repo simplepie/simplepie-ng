@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>SimplePie\Type\Generator | SimplePie NG</title>
+    <title>SimplePie\Type\Link | SimplePie NG</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:SimplePie_Type_Generator" data-root-path="../../">
+    <body id="class" data-name="class:SimplePie_Type_Link" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,21 +66,21 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../SimplePie.html">SimplePie</a></li><li class="backslash">\</li><li><a href="../../SimplePie/Type.html">Type</a></li><li class="backslash">\</li><li>Generator</li>
+                        <li><a href="../../SimplePie.html">SimplePie</a></li><li class="backslash">\</li><li><a href="../../SimplePie/Type.html">Type</a></li><li class="backslash">\</li><li>Link</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            Generator
+            Link
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>Generator</strong>        extends <a href="../../SimplePie/Type/AbstractType.html"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a>        implements
-        <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>, <a href="../../SimplePie/Configuration/SetLoggerInterface.html"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php">View source</a>)
+    <strong>Link</strong>        extends <a href="../../SimplePie/Type/AbstractType.html"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a>        implements
+        <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>, <a href="../../SimplePie/Configuration/SetLoggerInterface.html"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Link.php">View source</a>)
 </p>
 
         
@@ -123,27 +123,51 @@
                 <td></td>
             </tr>
                     <tr>
-                <td class="type" id="property_name">
+                <td class="type" id="property_href">
                                         protected                                        string
                 </td>
-                <td>$name</td>
-                <td class="last">The generator name.</td>
+                <td>$href</td>
+                <td class="last">The link's remote location.</td>
                 <td></td>
             </tr>
                     <tr>
-                <td class="type" id="property_uri">
+                <td class="type" id="property_rel">
                                         protected                                        string
                 </td>
-                <td>$uri</td>
-                <td class="last">The generator URI.</td>
+                <td>$rel</td>
+                <td class="last">The link's relationship to the current document.</td>
                 <td></td>
             </tr>
                     <tr>
-                <td class="type" id="property_version">
+                <td class="type" id="property_type">
                                         protected                                        string
                 </td>
-                <td>$version</td>
-                <td class="last">The generator version.</td>
+                <td>$type</td>
+                <td class="last">The link's media type.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_hreflang">
+                                        protected                                        string
+                </td>
+                <td>$hreflang</td>
+                <td class="last">The language of the link's remote location.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_title">
+                                        protected                                        string
+                </td>
+                <td>$title</td>
+                <td class="last">The link's title.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_length">
+                                        protected                                        int
+                </td>
+                <td>$length</td>
+                <td class="last">The link's length, in bytes (e.g., if it is a large file or direct download).</td>
                 <td></td>
             </tr>
             </table>
@@ -405,7 +429,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L57">line 57</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Link.php#L78">line 78</a></div>
         <code>                    
     <strong>__construct</strong>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $node = null, <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger = null)
         </code>
@@ -441,7 +465,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___toString">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L75">line 75</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Link.php#L96">line 96</a></div>
         <code>                    string
     <strong>__toString</strong>()
         </code>
@@ -471,7 +495,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getNode">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L85">line 85</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Link.php#L106">line 106</a></div>
         <code>                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>|null
     <strong>getNode</strong>()
         </code>
@@ -501,7 +525,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAlias">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L97">line 97</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Link.php#L118">line 118</a></div>
         <code>            protected        string
     <strong>getAlias</strong>(string $nodeName)
         </code>
@@ -541,7 +565,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getHandler">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L117">line 117</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Link.php#L149">line 149</a></div>
         <code>            protected        <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getHandler</strong>(string $nodeName)
         </code>

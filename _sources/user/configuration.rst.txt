@@ -1,30 +1,14 @@
 Configuration
 =============
 
-Design of the Configuration System
-----------------------------------
-
-The configuration system is designed around the idea of being a centralized registry. The usage of this centralized
-registry is limited, but is used for configurations that are truly global such as configuring your preferred logger or
-registering middleware.
-
-It leverages the ``SimplePie\Configuration`` class as a centralized, global class that any other class can speak to. It
-is used in a way that is similar to the `service locator pattern
-<https://martinfowler.com/articles/injection.html#UsingAServiceLocator>`__, but has a looser coupling with the rest of
-the code. It becomes a *proxy* for the values from the container that SimplePie NG cares about.
-
-The configuration class itself is configured by reading specific, known keys out of a PSR-11 container (documented
-below). Any values not provided by the container are assigned default values by the configuration class.
-
-See the `Configuration <https://simplepie.github.io/simplepie-ng/api/master/SimplePie/Configuration.html>`__ and
-`Container <https://simplepie.github.io/simplepie-ng/api/master/SimplePie/Container.html>`__ references for details.
-
 Logger
 ------
 
-Using any `PSR-11 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md>`__ container,
-create a new key called ``simplepie.logger``, then have it return any instantiated
-`PSR-3 <http://www.php-fig.org/psr/psr-3/>`__ logger.
+SimplePie supports `PSR-3 <http://www.php-fig.org/psr/psr-3/>`__ loggers out of the box. After constructing a new
+instance of a PSR-3 logger, you can pass it to ``setLogger()``. This instance will be passed along to all
+newly-constructed child classes so that the entire stack uses the same logger.
+
+The type-hint for the logger is ``Psr\Log\LoggerInterface``.
 
 Here’s an example `Monolog <https://github.com/Seldaek/monolog>`__ logger that uses the system’s error log.
 
@@ -33,65 +17,45 @@ Here’s an example `Monolog <https://github.com/Seldaek/monolog>`__ logger that
     <?php
     use Monolog\Handler\ErrorLogHandler;
     use Monolog\Logger;
-    use Psr\Container\ContainerInterface;
     use Psr\Log\LogLevel;
-    use SimplePie\Configuration;
-    use SimplePie\Container;
     use SimplePie\SimplePie;
 
-    $container = new Container();
+    $logger = new Logger('SimplePie');
+    $logger->pushHandler(new ErrorLogHandler(
+        ErrorLogHandler::OPERATING_SYSTEM,
+        LogLevel::DEBUG,
+        true,
+        false
+    ));
 
-    $container['simplepie.logger'] = function (ContainerInterface $c)
-    {
-        $logger = new Logger('SimplePie');
-        $logger->pushHandler(new ErrorLogHandler(
-            ErrorLogHandler::OPERATING_SYSTEM,
-            LogLevel::DEBUG,
-            true,
-            false
-        ));
-
-        return $logger;
-    }
-
-    Configuration::setContainer($container);
-
-    $simplepie = new SimplePie();
+    $simplepie = (new SimplePie())
+        ->setLogger($logger);
 
 Middleware
 ----------
 
-All of the parsing leverages a middleware pattern. Without any registered middleware, nothing happens by default. All
-of this is managed using a *middleware handler stack*.
+All of the feed parsing leverages a middleware pattern. Without any registered middleware, nothing gets parsed by
+default. All of this is managed using a *middleware handler stack*.
 
-Using any `PSR-11 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md>`__ container,
-create a new key called ``simplepie.middleware``, then have it return an instantiated class which implements
-``SimplePie\HandlerStackInterface`` (such as ``SimplePie\HandlerStack``).
+The type-hint for the middleware handler stack is ``SimplePie\HandlerStackInterface``, and the type-hint for middleware
+itself is ``SimplePie\Middleware\MiddlewareInterface``.
 
 .. code-block:: php
 
     <?php
-    use SimplePie\Configuration;
-    use SimplePie\Container;
     use SimplePie\HandlerStack;
     use SimplePie\Middleware\Json\JsonFeed;
     use SimplePie\Middleware\Xml\Atom;
     use SimplePie\Middleware\Xml\Rss;
     use SimplePie\SimplePie;
 
-    $container = new Container();
+    $stack = (new HandlerStack())
+        ->append(new JsonFeed(), 'jsonfeed')
+        ->append(new Atom(), 'atom10')
+        ->append(new Rss(), 'rss20');
 
-    $container['simplepie.middleware'] = function (ContainerInterface $c)
-    {
-        return (new HandlerStack())
-            ->append(new JsonFeed(), 'jsonfeed')
-            ->append(new Atom(), 'atom10')
-            ->append(new Rss(), 'rss20');
-    }
-
-    Configuration::setContainer($container);
-
-    $simplepie = new SimplePie();
+    $simplepie = (new SimplePie())
+        ->setMiddlewareStack($stack);
 
 In this example, and assuming the feed is XML-based, the Atom 1.0 middleware will run first followed by the RSS 2.0
 middleware.
@@ -142,29 +106,17 @@ We explicitly do not set ``LIBXML_NOCDATA`` because we want to preserve the *CDA
 the definitions for more ``libxml`` constants by reading
 `Predefined libxml constants <http://php.net/manual/en/libxml.constants.php>`__.
 
-If you want to change the ``libxml`` parameters that are used, using any
-`PSR-11 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md>`__ container, create a new
-key called ``simplepie.libxml``, then have it return the
+If you want to change the ``libxml`` parameters that are used, use any
 `bitwise-OR <http://php.net/manual/en/language.operators.bitwise.php>`__ value of the ``LIBXML_*`` options you prefer.
 
 .. code-block:: php
 
     <?php
-    use SimplePie\Configuration;
-    use SimplePie\Container;
     use SimplePie\SimplePie;
 
-    $container = new Container();
-
-    $container['simplepie.libxml'] = function ()
-    {
-        return LIBXML_HTML_NOIMPLIED | LIBXML_NOCDATA;
-    }
-
-    Configuration::setContainer($container);
-
-    $simplepie = new SimplePie();
+    $simplepie = (new SimplePie())
+        ->setLibxml(LIBXML_HTML_NOIMPLIED | LIBXML_NOCDATA);
 
 .. reviewer-meta::
    :written-on: 2017-06-25
-   :proofread-on: 2017-07-01
+   :proofread-on: 2017-12-17

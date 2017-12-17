@@ -143,7 +143,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </tr>
                     <tr>
                 <td class="type" id="property_outputTimezone">
-                                        protected                                        <a target="_blank" href="http://php.net/DateTimeZone">DateTimeZone</a>
+                                        protected                                        string
                 </td>
                 <td>$outputTimezone</td>
                 <td class="last">The preferred timezone to use for date output.</td>
@@ -157,13 +157,23 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    mixed
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $namespaceAlias)
+                    <a href="#method___call">__call</a>(string $nodeName, array $args)
         
-                                            <p>Constructs a new instance of this class.</p>                </div>
-                <div class="col-md-2"></div>
+                                            <p>Proxy method which forwards requests to an underlying handler.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Type/AbstractType.html#method___call"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getUnresolvableMessage">getUnresolvableMessage</a>(string $nodeName)
+        
+                                            <p>Gets the standard, pre-formatted message for unresolvable method calls.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Type/AbstractType.html#method_getUnresolvableMessage"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
@@ -187,12 +197,12 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    mixed
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___call">__call</a>(string $nodeName, array $args)
+                    <a href="#method___construct">__construct</a>(string $namespaceAlias)
         
-                                            <p>Proxy method which forwards requests to an underlying handler.</p>                </div>
+                                            <p>Constructs a new instance of this class.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -213,49 +223,6 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
                     <a href="#method_setOutputTimezone">setOutputTimezone</a>(string $timezone = &#039;UTC&#039;)
         
                                             <p>Set the preferred output timezone.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getScalarSingleValue">getScalarSingleValue</a>(string $nodeName, string $namespaceAlias = null)
-        
-                                            <p>Retrieves nodes that are simple scalars, and there are only one allowed value.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getGenerator">getGenerator</a>(string $namespaceAlias = null)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getAuthor">getAuthor</a>(string $namespaceAlias = null)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getContributors">getContributors</a>(string $namespaceAlias = null)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -299,6 +266,36 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
                                             <p>Get the correct handler for a whitelisted method name.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getScalarSingleValue">getScalarSingleValue</a>(string $nodeName, string $namespaceAlias = null)
+        
+                                            <p>Retrieves nodes that are simple scalars, and there is only one allowed value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getComplexSingleValue">getComplexSingleValue</a>(string $nodeName, string $className, string $namespaceAlias = null)
+        
+                                            <p>Retrieves nodes that are complex types, and there is only one allowed value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="SimplePie\Type\iterable">iterable</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getComplexMultipleValues">getComplexMultipleValues</a>(string $nodeName, string $namespaceAlias = null)
+        
+                                            <p>Retrieves nodes that are complex types, and there may be are more than one value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -306,10 +303,10 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L63">line 63</a></div>
-        <code>                    
-    <strong>__construct</strong>(string $namespaceAlias)
+                    <h3 id="method___call">
+        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method___call"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L28">line 28</a></div>
+        <code>                    mixed
+    <strong>__call</strong>(string $nodeName, array $args)
         </code>
     </h3>
     <div class="details">
@@ -317,19 +314,73 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
     
 
                     <div class="method-description">
-                                    <p>Constructs a new instance of this class.</p>                                                </div>
+                                    <p>Proxy method which forwards requests to an underlying handler.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$namespaceAlias</td>
-                <td>[description]</td>
+                <td>$nodeName</td>
+                <td>The name of the method being called.</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$args</td>
+                <td>Any arguments passed into that method.</td>
             </tr>
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getUnresolvableMessage">
+        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method_getUnresolvableMessage"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L52">line 52</a></div>
+        <code>            protected        string
+    <strong>getUnresolvableMessage</strong>(string $nodeName)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the standard, pre-formatted message for unresolvable method calls.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$nodeName</td>
+                <td>The short version of the call (without the <code>get</code>).</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -407,10 +458,10 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method___call">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L92">line 92</a></div>
-        <code>                    mixed
-    <strong>__call</strong>(string $nodeName, array $args)
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L63">line 63</a></div>
+        <code>                    
+    <strong>__construct</strong>(string $namespaceAlias)
         </code>
     </h3>
     <div class="details">
@@ -418,33 +469,19 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
     
 
                     <div class="method-description">
-                                    <p>Proxy method which forwards requests to an underlying handler.</p>                                                </div>
+                                    <p>Constructs a new instance of this class.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$nodeName</td>
-                <td>The name of the method being called.</td>
-            </tr>
-                    <tr>
-                <td>array</td>
-                <td>$args</td>
-                <td>Any arguments passed into that method.</td>
+                <td>$namespaceAlias</td>
+                <td>[description]</td>
             </tr>
             </table>
 
             
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>mixed</td>
-            <td></td>
-        </tr>
-    </table>
-
             
             
                     </div>
@@ -453,7 +490,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDateFormat">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L120">line 120</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L81">line 81</a></div>
         <code>                    <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
     <strong>setDateFormat</strong>(string $createFromFormat)
         </code>
@@ -502,7 +539,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setOutputTimezone">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L142">line 142</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L103">line 103</a></div>
         <code>                    <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
     <strong>setOutputTimezone</strong>(string $timezone = &#039;UTC&#039;)
         </code>
@@ -550,141 +587,8 @@ calculation include:</p>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getScalarSingleValue">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L158">line 158</a></div>
-        <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
-    <strong>getScalarSingleValue</strong>(string $nodeName, string $namespaceAlias = null)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Retrieves nodes that are simple scalars, and there are only one allowed value.</p>                                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$nodeName</td>
-                <td>The name of the tree node to retrieve. Available tree nodes can be viewed by
-                                   looking at the response from <code>getRoot()</code>.</td>
-            </tr>
-                    <tr>
-                <td>string</td>
-                <td>$namespaceAlias</td>
-                <td>The XML namespace alias to apply.</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a></td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getGenerator">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L172">line 172</a></div>
-        <code>                    
-    <strong>getGenerator</strong>(string $namespaceAlias = null)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$namespaceAlias</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getAuthor">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L183">line 183</a></div>
-        <code>                    
-    <strong>getAuthor</strong>(string $namespaceAlias = null)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$namespaceAlias</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getContributors">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L197">line 197</a></div>
-        <code>                    
-    <strong>getContributors</strong>(string $namespaceAlias = null)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$namespaceAlias</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
                     <h3 id="method_getItems">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L208">line 208</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L113">line 113</a></div>
         <code>                    
     <strong>getItems</strong>()
         </code>
@@ -703,7 +607,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getRoot">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L220">line 220</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L125">line 125</a></div>
         <code>                    <a target="_blank" href="http://php.net/stdClass">stdClass</a>
     <strong>getRoot</strong>()
         </code>
@@ -733,7 +637,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getAlias">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L232">line 232</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L137">line 137</a></div>
         <code>            protected        string
     <strong>getAlias</strong>(string $nodeName)
         </code>
@@ -773,7 +677,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getHandler">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L257">line 257</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L171">line 171</a></div>
         <code>            protected        mixed
     <strong>getHandler</strong>(string $nodeName, array $args)
         </code>
@@ -820,6 +724,149 @@ calculation include:</p>
             </tr>
             </table>
 
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getScalarSingleValue">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L221">line 221</a></div>
+        <code>            protected        <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+    <strong>getScalarSingleValue</strong>(string $nodeName, string $namespaceAlias = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieves nodes that are simple scalars, and there is only one allowed value.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$nodeName</td>
+                <td>The name of the tree node to retrieve. Available tree nodes can be viewed by
+                                   looking at the response from <code>getRoot()</code>.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$namespaceAlias</td>
+                <td>The XML namespace alias to apply.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getComplexSingleValue">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L244">line 244</a></div>
+        <code>            protected        <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>
+    <strong>getComplexSingleValue</strong>(string $nodeName, string $className, string $namespaceAlias = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieves nodes that are complex types, and there is only one allowed value.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$nodeName</td>
+                <td>The name of the tree node to retrieve. Available tree nodes can be viewed by
+                                   looking at the response from <code>getRoot()</code>.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$className</td>
+                <td>The class name to instantiate when there is not a defined value.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$namespaceAlias</td>
+                <td>The XML namespace alias to apply.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getComplexMultipleValues">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L269">line 269</a></div>
+        <code>            protected        <abbr title="SimplePie\Type\iterable">iterable</abbr>
+    <strong>getComplexMultipleValues</strong>(string $nodeName, string $namespaceAlias = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieves nodes that are complex types, and there may be are more than one value.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$nodeName</td>
+                <td>The name of the tree node to retrieve. Available tree nodes can be viewed by
+                                   looking at the response from <code>getRoot()</code>.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$namespaceAlias</td>
+                <td>The XML namespace alias to apply.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="SimplePie\Type\iterable">iterable</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
             
                     </div>
     </div>
