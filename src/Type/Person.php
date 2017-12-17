@@ -12,6 +12,7 @@ namespace SimplePie\Type;
 
 use DOMNode;
 use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
 use SimplePie\Mixin as T;
 

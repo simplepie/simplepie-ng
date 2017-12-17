@@ -60,7 +60,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
 
         // single, complex types
         foreach ([
-            'author'    => Person::class,
+            'author' => Person::class,
             'generator' => Generator::class,
         ] as $name => $class) {
             $this->addArrayProperty($feedRoot, $name);
@@ -74,7 +74,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
         // multiple, complex types
         foreach ([
             'contributor' => Person::class,
-            'link'        => Link::class,
+            'link' => Link::class,
         ] as $name => $class) {
             $this->addArrayProperty($feedRoot, $name);
             $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', $name));

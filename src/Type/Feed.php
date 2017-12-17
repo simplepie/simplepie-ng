@@ -107,97 +107,8 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
         return $this;
     }
 
-    /**
-     * Retrieves nodes that are simple scalars, and there are only one allowed value.
-     *
-     * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
-     *                                    looking at the response from `getRoot()`.
-     * @param string|null $namespaceAlias The XML namespace alias to apply.
-     *
-     * @return Node
-     */
-    public function getScalarSingleValue(string $nodeName, ?string $namespaceAlias = null): Node
-    {
-        $alias = $namespaceAlias ?? $this->namespaceAlias;
-
-        if (isset($this->getRoot()->{$nodeName}[$alias])) {
-            return $this->getRoot()->{$nodeName}[$alias];
-        }
-
-        return new Node();
-    }
-
-    //--------------------------------------------------------------------------
-    // SINGLE COMPLEX VALUES
-
-    public function getGenerator(?string $namespaceAlias = null): Generator
-    {
-        $alias = $namespaceAlias ?? $this->namespaceAlias;
-
-        if (isset($this->getRoot()->generator[$alias])) {
-            return $this->getRoot()->generator[$alias];
-        }
-
-        return new Generator();
-    }
-
-    public function getAuthor(?string $namespaceAlias = null): Person
-    {
-        $alias = $namespaceAlias ?? $this->namespaceAlias;
-
-        if (isset($this->getRoot()->author[$alias])) {
-            return $this->getRoot()->author[$alias];
-        }
-
-        return new Person();
-    }
-
-    public function getIcon(?string $namespaceAlias = null): Image
-    {
-        $alias = $namespaceAlias ?? $this->namespaceAlias;
-
-        if (isset($this->getRoot()->icon[$alias])) {
-            return new Image($this->getRoot()->icon[$alias]->getNode());
-        }
-
-        return new Image();
-    }
-
-    public function getLogo(?string $namespaceAlias = null): Image
-    {
-        $alias = $namespaceAlias ?? $this->namespaceAlias;
-
-        if (isset($this->getRoot()->logo[$alias])) {
-            return new Image($this->getRoot()->logo[$alias]->getNode());
-        }
-
-        return new Image();
-    }
-
     //--------------------------------------------------------------------------
     // MULTIPLE COMPLEX VALUES
-
-    public function getContributors(?string $namespaceAlias = null): iterable
-    {
-        $alias = $namespaceAlias ?? $this->namespaceAlias;
-
-        if (isset($this->getRoot()->contributor[$alias])) {
-            return $this->getRoot()->contributor[$alias];
-        }
-
-        return [];
-    }
-
-    public function getLinks(?string $namespaceAlias = null): iterable
-    {
-        $alias = $namespaceAlias ?? $this->namespaceAlias;
-
-        if (isset($this->getRoot()->link[$alias])) {
-            return $this->getRoot()->link[$alias];
-        }
-
-        return [];
-    }
 
     public function getItems(): void
     {
@@ -226,6 +137,12 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
     protected function getAlias(string $nodeName): string
     {
         switch ($nodeName) {
+            case 'contributors':
+                return 'contributor';
+
+            case 'links':
+                return 'link';
+
             case 'language':
                 return 'lang';
 
@@ -251,10 +168,8 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
     protected function getHandler(string $nodeName, array $args)
     {
         switch ($nodeName) {
-            case 'icon':
             case 'id':
             case 'lang':
-            case 'logo':
             case 'rights':
             case 'subtitle':
             case 'summary':
@@ -269,10 +184,92 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
                     $this->createFromFormat
                 ))->getDateTime();
 
+            case 'author':
+                return $this->getComplexSingleValue($nodeName, Person::class, $args[0]);
+
+            case 'generator':
+                return $this->getComplexSingleValue($nodeName, Generator::class, $args[0]);
+
+            case 'icon':
+            case 'logo':
+                return $this->getComplexSingleValue($nodeName, Image::class, $args[0]);
+
+            case 'contributor':
+            case 'link':
+                return $this->getComplexMultipleValues($nodeName, $args[0]);
+
             default:
                 throw new SimplePieException(
                     $this->getUnresolvableMessage($nodeName)
                 );
         }
+    }
+
+    /**
+     * Retrieves nodes that are simple scalars, and there is only one allowed value.
+     *
+     * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
+     *                                    looking at the response from `getRoot()`.
+     * @param string|null $namespaceAlias The XML namespace alias to apply.
+     *
+     * @return Node
+     */
+    protected function getScalarSingleValue(string $nodeName, ?string $namespaceAlias = null): Node
+    {
+        $alias = $namespaceAlias ?? $this->namespaceAlias;
+
+        if (isset($this->getRoot()->{$nodeName}[$alias])) {
+            return $this->getRoot()->{$nodeName}[$alias];
+        }
+
+        return new Node();
+    }
+
+    /**
+     * Retrieves nodes that are complex types, and there is only one allowed value.
+     *
+     * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
+     *                                    looking at the response from `getRoot()`.
+     * @param string      $className      The class name to instantiate when there is not a defined value.
+     * @param string|null $namespaceAlias The XML namespace alias to apply.
+     *
+     * @return TypeInterface
+     *
+     * @codingStandardsIgnoreStart
+     */
+    protected function getComplexSingleValue(
+        string $nodeName,
+        string $className,
+        ?string $namespaceAlias = null
+    ): TypeInterface {
+        // @codingStandardsIgnoreEnd
+
+        $alias = $namespaceAlias ?? $this->namespaceAlias;
+
+        if (isset($this->getRoot()->{$nodeName}[$alias])) {
+            return new $className($this->getRoot()->{$nodeName}[$alias]->getNode());
+        }
+
+        return new $className();
+    }
+
+    /**
+     * Retrieves nodes that are complex types, and there may be are more than one value.
+     *
+     * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
+     *                                    looking at the response from `getRoot()`.
+     * @param string|null $namespaceAlias The XML namespace alias to apply.
+     *
+     * @return iterable
+     */
+    protected function getComplexMultipleValues(string $nodeName, ?string $namespaceAlias = null): iterable
+    {
+        $alias = $namespaceAlias ?? $this->namespaceAlias;
+
+        if (isset($this->getRoot()->{$nodeName}[$alias])) {
+            return $this->getRoot()->{$nodeName}[$alias];
+        }
+
+        return [];
     }
 }
