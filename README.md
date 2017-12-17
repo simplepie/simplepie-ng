@@ -6,6 +6,8 @@
 
 **SimplePie NG** is a modern, _next-generation_ PHP package for working with syndication feeds. It was re-written from the ground-up to take advantage of the changes that have happened in the PHP community since SimplePie was first released in July 2004 for PHP 4.3.
 
+Follow: [Medium](https://medium.com/simplepie-ng) • [Twitter](https://twitter.com/simplepie_ng)
+
 
 ## How can I contribute?
 
