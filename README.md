@@ -1,4 +1,4 @@
-# SimplePie “NG”
+<div align="center"><img src="logo.png" width="500"></div>
 
 **Highly experimental. Don't use this.**
 
