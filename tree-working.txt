@@ -1,10 +1,6 @@
 ---
 
 feed:
-    category[]:
-        term¹: STRING {channel[category][:text]}
-        scheme¹: IRI {channel[category][domain]}
-        label¹: STRING
     *entry: {channel[items], json.items}
         *author¹: {item[author]} "betty@herald.com (Betty Guernsey)"
             name¹: STRING

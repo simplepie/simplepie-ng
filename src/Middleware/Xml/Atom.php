@@ -12,11 +12,8 @@ namespace SimplePie\Middleware\Xml;
 
 use DOMXPath;
 use SimplePie\Configuration as C;
-use SimplePie\Mixin as T;
-use SimplePie\Type\Generator;
-use SimplePie\Type\Link;
-use SimplePie\Type\Node;
-use SimplePie\Type\Person;
+use SimplePie\Mixin as Tr;
+use SimplePie\Type as T;
 use stdClass;
 
 /**
@@ -27,7 +24,7 @@ use stdClass;
  */
 class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInterface
 {
-    use T\LoggerTrait;
+    use Tr\LoggerTrait;
 
     /**
      * {@inheritdoc}
@@ -39,7 +36,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
         $xq = $xpath->query($this->applyNsToQuery('/%s:feed[attribute::xml:lang][1]/@xml:lang', $namespaceAlias));
 
         $feedRoot->lang[$namespaceAlias] = ($xq->length > 0)
-            ? Node::factory((string) $xq->item(0)->nodeValue)
+            ? T\Node::factory((string) $xq->item(0)->nodeValue)
             : null;
 
         // single, scalar types
@@ -60,8 +57,8 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
 
         // single, complex types
         foreach ([
-            'author' => Person::class,
-            'generator' => Generator::class,
+            'author' => T\Person::class,
+            'generator' => T\Generator::class,
         ] as $name => $class) {
             $this->addArrayProperty($feedRoot, $name);
             $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', $name));
@@ -73,8 +70,9 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
 
         // multiple, complex types
         foreach ([
-            'contributor' => Person::class,
-            'link' => Link::class,
+            'category' => T\Category::class,
+            'contributor' => T\Person::class,
+            'link' => T\Link::class,
         ] as $name => $class) {
             $this->addArrayProperty($feedRoot, $name);
             $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', $name));
@@ -97,7 +95,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      *
      * @return Node
      */
-    protected function getSingle(string $nodeName, string $namespaceAlias, DOMXPath $xpath): Node
+    protected function getSingle(string $nodeName, string $namespaceAlias, DOMXPath $xpath): T\Node
     {
         $query = $this->generateQuery($namespaceAlias, true, 'feed', $nodeName);
         $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);

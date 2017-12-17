@@ -137,14 +137,17 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
     protected function getAlias(string $nodeName): string
     {
         switch ($nodeName) {
+            case 'categories':
+                return 'category';
+
             case 'contributors':
                 return 'contributor';
 
-            case 'links':
-                return 'link';
-
             case 'language':
                 return 'lang';
+
+            case 'links':
+                return 'link';
 
             case 'pubDate':
             case 'publishedDate':
@@ -194,6 +197,7 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
             case 'logo':
                 return $this->getComplexSingleValue($nodeName, Image::class, $args[0]);
 
+            case 'category':
             case 'contributor':
             case 'link':
                 return $this->getComplexMultipleValues($nodeName, $args[0]);
