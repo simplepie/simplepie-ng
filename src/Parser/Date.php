@@ -73,14 +73,17 @@ class Date
             $this->dateTime = DateTime::createFromFormat(
                 $createFromFormat,
                 $datestamp,
-                new DateTimeZone($outputTimezone ?? 'UTC')
+                new DateTimeZone($outputTimezone)
             );
         } else {
             $this->dateTime = new DateTime(
                 $datestamp,
-                new DateTimeZone($outputTimezone ?? 'UTC')
+                new DateTimeZone($outputTimezone)
             );
         }
+
+        // Sometimes, `createFromFormat()` doesn't set this correctly.
+        $this->dateTime->setTimezone(new DateTimeZone($outputTimezone));
     }
 
     /**
