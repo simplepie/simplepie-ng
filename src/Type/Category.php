@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017 Contributors.
+ * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2018 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -74,7 +74,7 @@ class Category extends AbstractType implements TypeInterface, C\SetLoggerInterfa
      */
     public function __toString(): string
     {
-        return trim(
+        return \trim(
             (string) ($this->label ?? $this->term)
         );
     }

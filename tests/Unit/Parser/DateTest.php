@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017 Contributors.
+ * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2018 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace SimplePie\Test\Unit\Parser;
 
-use \DateTime;
+use DateTime;
 use SimplePie\Enum\DateFormat;
 use SimplePie\Parser\Date;
 use SimplePie\Test\Unit\AbstractTestCase;
@@ -38,15 +38,17 @@ class DateTest extends AbstractTestCase
                     'UTC',
                     '\T\h\e jS \d\a\y \o\f F, \i\n \t\h\e \y\e\a\r Y, \a\t g:i A \a\n\d s \s\e\c\o\n\d\s, \i\n \t\h\e '
                         . 'e \t\i\m\e\z\o\n\e.'
-                )
+                ),
             ],
         ];
     }
 
     /**
      * @dataProvider providerUtc
+     *
+     * @param mixed $date
      */
-    public function testUTC($date)
+    public function testUtc($date): void
     {
         $this->assertEquals('string', Types::getClassOrType($date->getDatestamp()));
         $this->assertEquals('UTC', $date->getOutputTimezone());

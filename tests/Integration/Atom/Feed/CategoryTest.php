@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017 Contributors.
+ * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2018 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -13,8 +13,8 @@ namespace SimplePie\Test\Integration\Atom\Feed;
 use DOMElement;
 use SimplePie\Enum\Serialization;
 use SimplePie\Test\Integration\AbstractTestCase;
-use SimplePie\Type\Node;
 use SimplePie\Type\Category;
+use SimplePie\Type\Node;
 use Skyzyx\UtilityPack\Types;
 
 class CategoryTest extends AbstractTestCase
