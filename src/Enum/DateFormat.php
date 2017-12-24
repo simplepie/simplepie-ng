@@ -32,5 +32,6 @@ class DateFormat extends AbstractEnum
     // D, d M Y H:i:s O
     public const RFC2822 = DateTime::RFC2822;
 
+    // D, d M Y H:i:s O
     public const RSS20 = DateTime::RFC2822;
 }

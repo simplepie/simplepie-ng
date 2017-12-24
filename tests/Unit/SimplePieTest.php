@@ -14,4 +14,22 @@ use SimplePie\SimplePie;
 
 class SimplePieTest extends AbstractTestCase
 {
+    public function testLibxml(): void
+    {
+        $simplepie = (new SimplePie())
+            ->setLibxml(
+                LIBXML_HTML_NOIMPLIED
+                | LIBXML_BIGLINES
+                | LIBXML_COMPACT
+                | LIBXML_HTML_NODEFDTD
+                | LIBXML_NOBLANKS
+                | LIBXML_NOENT
+                | LIBXML_NOXMLDECL
+                | LIBXML_NSCLEAN
+                | LIBXML_PARSEHUGE
+            )
+        ;
+
+        $this->assertEquals(4792582, $simplepie->getLibxml());
+    }
 }
