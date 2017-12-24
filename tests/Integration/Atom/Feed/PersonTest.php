@@ -12,6 +12,7 @@ namespace SimplePie\Test\Integration\Atom\Feed;
 
 use DOMElement;
 use SimplePie\Enum\Serialization;
+use SimplePie\Exception\SimplePieException;
 use SimplePie\Test\Integration\AbstractTestCase;
 use SimplePie\Type\Node;
 use SimplePie\Type\Person;
@@ -55,5 +56,27 @@ class PersonTest extends AbstractTestCase
             $this->assertEquals(Node::class, Types::getClassOrType($person->getEmail()));
             $this->assertEquals(Serialization::TEXT, $person->getEmail()->getSerialization());
         }
+
+        $this->assertEquals('Eric Baird', (string) $people[0]);
+        $this->assertEquals('Jeff Ringer <jeff@ufks.com>', (string) $people[1]);
+        $this->assertEquals('http://ryanparman.com', (string) $people[2]);
+        $this->assertEquals('ryan@ryanparman.com', (string) $people[3]);
+    }
+
+    public function testPersonAliases(): void
+    {
+        $person = $this->feed->getAuthor();
+
+        $this->assertEquals('http://ryanparman.com', (string) $person->getUrl());
+        $this->assertEquals('http://ryanparman.com', (string) $person->getUri());
+    }
+
+    public function testPersonFail(): void
+    {
+        $this->expectException(SimplePieException::class);
+        $this->expectExceptionMessage('getDoesntExist is an unresolvable method.');
+
+        $person = $this->feed->getAuthor();
+        $person->getDoesntExist();
     }
 }

@@ -5,9 +5,7 @@ ENV PERSISTENT_DEPS curl icu make php7-xdebug
 ENV INSTALL_EXTENSIONS curl intl json opcache mbstring xml zip
 
 # Install Packages
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.6/community" >> /etc/apk/repositories && \
-    echo "http://dl-cdn.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories && \
-    apk upgrade --update && \
+RUN apk upgrade --update && \
     apk add --no-cache --virtual .build-deps $BUILD_DEPS && \
     apk add --no-cache --virtual .persistent-deps $PERSISTENT_DEPS && \
     docker-php-ext-install $INSTALL_EXTENSIONS && \

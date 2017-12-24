@@ -19,11 +19,6 @@ abstract class AbstractType
      * @param array  $args     Any arguments passed into that method.
      *
      * @return mixed
-     *
-     * @codingStandardsIgnoreStart
-     *
-     *
-     * @codingStandardsIgnoreEnd
      */
     public function __call(string $nodeName, array $args)
     {

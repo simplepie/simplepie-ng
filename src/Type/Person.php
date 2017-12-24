@@ -14,6 +14,7 @@ use DOMNode;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
+use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin as T;
 
 class Person extends AbstractType implements TypeInterface, C\SetLoggerInterface
@@ -83,7 +84,7 @@ class Person extends AbstractType implements TypeInterface, C\SetLoggerInterface
     {
         if (null !== $this->name && (null !== $this->uri || null !== $this->email)
         ) {
-            return \trim(\sprintf('%s <%s>', (string) $this->name, (string) $this->uri ?? (string) $this->email));
+            return \trim(\sprintf('%s <%s>', (string) $this->name, (string) ($this->uri ?? $this->email)));
         }
 
         return \trim(

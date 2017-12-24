@@ -14,8 +14,4 @@ use SimplePie\SimplePie;
 
 class SimplePieTest extends AbstractTestCase
 {
-    public function testFailMe(): void
-    {
-        new SimplePie();
-    }
 }

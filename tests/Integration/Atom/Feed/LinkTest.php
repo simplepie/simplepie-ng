@@ -12,6 +12,7 @@ namespace SimplePie\Test\Integration\Atom\Feed;
 
 use DOMElement;
 use SimplePie\Enum\Serialization;
+use SimplePie\Exception\SimplePieException;
 use SimplePie\Test\Integration\AbstractTestCase;
 use SimplePie\Type\Link;
 use SimplePie\Type\Node;
@@ -59,5 +60,31 @@ class LinkTest extends AbstractTestCase
             $this->assertEquals(Node::class, Types::getClassOrType($link->getMediaType()));
             $this->assertEquals(Serialization::TEXT, $link->getMediaType()->getSerialization());
         }
+    }
+
+    public function testLinkAliases(): void
+    {
+        $links = $this->feed->getLinks();
+        $link  = $links[0];
+
+        $this->assertEquals('https://github.com/skyzyx/signer/releases', (string) $link->getUrl());
+        $this->assertEquals('https://github.com/skyzyx/signer/releases', (string) $link->getUri());
+        $this->assertEquals('https://github.com/skyzyx/signer/releases', (string) $link->getHref());
+
+        $this->assertEquals('alternate', (string) $link->getRel());
+        $this->assertEquals('alternate', (string) $link->getRelationship());
+
+        $this->assertEquals('', (string) $link->getLang());
+        $this->assertEquals('', (string) $link->getLanguage());
+        $this->assertEquals('', (string) $link->getHreflang());
+    }
+
+    public function testLinkFail(): void
+    {
+        $this->expectException(SimplePieException::class);
+        $this->expectExceptionMessage('getDoesntExist is an unresolvable method.');
+
+        $links = $this->feed->getLinks();
+        $links[0]->getDoesntExist();
     }
 }

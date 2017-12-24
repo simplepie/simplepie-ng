@@ -15,8 +15,4 @@ use SimplePie\Test\Unit\AbstractTestCase;
 
 class AtomTest extends AbstractTestCase
 {
-    public function testFailMe(): void
-    {
-        new Atom();
-    }
 }

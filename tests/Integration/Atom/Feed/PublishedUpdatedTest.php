@@ -34,7 +34,7 @@ class PublishedUpdatedTest extends AbstractTestCase
         $this->assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RSS20));
 
         $this->assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
-        $this->assertEquals('Z', $published->getTimezone()->getName());
+        $this->assertEquals('UTC', $published->getTimezone()->getName());
     }
 
     public function testPublishedAtom10(): void
@@ -46,7 +46,7 @@ class PublishedUpdatedTest extends AbstractTestCase
         $this->assertEquals(0, $published->getOffset());
 
         $this->assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
-        $this->assertEquals('Z', $published->getTimezone()->getName());
+        $this->assertEquals('UTC', $published->getTimezone()->getName());
     }
 
     public function testPublishedUsWestCoast(): void
@@ -76,7 +76,7 @@ class PublishedUpdatedTest extends AbstractTestCase
         $this->assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RSS20));
 
         $this->assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
-        $this->assertEquals('Z', $published->getTimezone()->getName());
+        $this->assertEquals('UTC', $published->getTimezone()->getName());
     }
 
     public function testUpdated(): void
@@ -95,6 +95,6 @@ class PublishedUpdatedTest extends AbstractTestCase
         $this->assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RSS20));
 
         $this->assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
-        $this->assertEquals('Z', $published->getTimezone()->getName());
+        $this->assertEquals('UTC', $published->getTimezone()->getName());
     }
 }

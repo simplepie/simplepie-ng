@@ -12,6 +12,7 @@ namespace SimplePie\Test\Integration\Atom\Feed;
 
 use DOMElement;
 use SimplePie\Enum\Serialization;
+use SimplePie\Exception\SimplePieException;
 use SimplePie\Test\Integration\AbstractTestCase;
 use SimplePie\Type\Category;
 use SimplePie\Type\Node;
@@ -55,5 +56,14 @@ class CategoryTest extends AbstractTestCase
             $this->assertEquals(Node::class, Types::getClassOrType($category->getLabel()));
             $this->assertEquals(Serialization::TEXT, $category->getLabel()->getSerialization());
         }
+    }
+
+    public function testCategoryFail(): void
+    {
+        $this->expectException(SimplePieException::class);
+        $this->expectExceptionMessage('getDoesntExist is an unresolvable method.');
+
+        $category = $this->feed->getCategories()[0];
+        $category->getDoesntExist();
     }
 }

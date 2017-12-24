@@ -65,25 +65,33 @@ class Date
     public function __construct(string $datestamp, ?string $outputTimezone = 'UTC', ?string $createFromFormat = null)
     {
         $this->datestamp        = $datestamp;
-        $this->outputTimezone   = $outputTimezone;
         $this->createFromFormat = $createFromFormat;
 
+        // Convert null to UTC; Convert Z to UTC.
+        if (null === $outputTimezone) {
+            $this->outputTimezone = 'UTC';
+        } elseif ('Z' === strtoupper($outputTimezone)) {
+            $this->outputTimezone = 'UTC';
+        } else {
+            $this->outputTimezone = $outputTimezone;
+        }
+
         // Use the custom formatter, if available
-        if (null !== $createFromFormat) {
+        if (null !== $this->createFromFormat) {
             $this->dateTime = DateTime::createFromFormat(
-                $createFromFormat,
-                $datestamp,
-                new DateTimeZone($outputTimezone)
+                $this->createFromFormat,
+                $this->datestamp,
+                new DateTimeZone($this->outputTimezone)
             );
         } else {
             $this->dateTime = new DateTime(
-                $datestamp,
-                new DateTimeZone($outputTimezone)
+                $this->datestamp,
+                new DateTimeZone($this->outputTimezone)
             );
         }
 
         // Sometimes, `createFromFormat()` doesn't set this correctly.
-        $this->dateTime->setTimezone(new DateTimeZone($outputTimezone));
+        $this->dateTime->setTimezone(new DateTimeZone($this->outputTimezone));
     }
 
     /**

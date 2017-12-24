@@ -14,6 +14,7 @@ use DOMNode;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
+use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin as T;
 
 class Image extends AbstractType implements TypeInterface, C\SetLoggerInterface

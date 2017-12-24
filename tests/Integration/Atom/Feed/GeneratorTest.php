@@ -12,6 +12,7 @@ namespace SimplePie\Test\Integration\Atom\Feed;
 
 use DOMElement;
 use SimplePie\Enum\Serialization;
+use SimplePie\Exception\SimplePieException;
 use SimplePie\Test\Integration\AbstractTestCase;
 use SimplePie\Type\Generator;
 use SimplePie\Type\Node;
@@ -39,5 +40,22 @@ class GeneratorTest extends AbstractTestCase
         $this->assertEquals(Node::class, Types::getClassOrType($generator->getUrl()));
         $this->assertEquals('https://wordpress.org/', (string) $generator->getUrl());
         $this->assertEquals(Serialization::TEXT, $generator->getUrl()->getSerialization());
+    }
+
+    public function testGeneratorAliases(): void
+    {
+        $generator = $this->feed->getGenerator();
+
+        $this->assertEquals('https://wordpress.org/', (string) $generator->getUrl());
+        $this->assertEquals('https://wordpress.org/', (string) $generator->getUri());
+    }
+
+    public function testGeneratorFail(): void
+    {
+        $this->expectException(SimplePieException::class);
+        $this->expectExceptionMessage('getDoesntExist is an unresolvable method.');
+
+        $generator = $this->feed->getGenerator();
+        $generator->getDoesntExist();
     }
 }
