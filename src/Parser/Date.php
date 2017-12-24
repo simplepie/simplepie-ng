@@ -70,7 +70,7 @@ class Date
         // Convert null to UTC; Convert Z to UTC.
         if (null === $outputTimezone) {
             $this->outputTimezone = 'UTC';
-        } elseif ('Z' === strtoupper($outputTimezone)) {
+        } elseif ('Z' === \mb_strtoupper($outputTimezone)) {
             $this->outputTimezone = 'UTC';
         } else {
             $this->outputTimezone = $outputTimezone;

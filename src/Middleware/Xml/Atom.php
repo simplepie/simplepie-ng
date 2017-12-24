@@ -39,7 +39,21 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             ? T\Node::factory((string) $xq->item(0)->nodeValue)
             : null;
 
-        // single, scalar types
+        $this->getSingleScalarTypes($feedRoot, $namespaceAlias, $xpath);
+        $this->getSingleComplexTypes($feedRoot, $namespaceAlias, $xpath);
+        $this->getMultipleComplexTypes($feedRoot, $namespaceAlias, $xpath);
+    }
+
+    /**
+     * Fetches elements with a single, scalar value.
+     *
+     * @param stdClass $feedRoot       The root of the feed. This will be written-to when the parsing middleware runs.
+     * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
+     *                                 of a call to `SimplePie\Util\Ns`.
+     * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
+     */
+    protected function getSingleScalarTypes(stdClass $feedRoot, string $namespaceAlias, DOMXPath $xpath): void
+    {
         foreach ([
             'icon',
             'id',
@@ -54,28 +68,48 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             $this->addArrayProperty($feedRoot, $nodeName);
             $feedRoot->{$nodeName}[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
         }
+    }
 
-        // single, complex types
+    /**
+     * Fetches elements with a single, complex value.
+     *
+     * @param stdClass $feedRoot       The root of the feed. This will be written-to when the parsing middleware runs.
+     * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
+     *                                 of a call to `SimplePie\Util\Ns`.
+     * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
+     */
+    protected function getSingleComplexTypes(stdClass $feedRoot, string $namespaceAlias, DOMXPath $xpath): void
+    {
         foreach ([
             'author' => T\Person::class,
             'generator' => T\Generator::class,
         ] as $name => $class) {
             $this->addArrayProperty($feedRoot, $name);
-            $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', $name));
+            $xq = $xpath->query($this->generateQuery($namespaceAlias, 'feed', $name));
 
             $feedRoot->{$name}[$namespaceAlias] = ($xq->length > 0)
                 ? new $class($xq->item(0), $this->getLogger())
                 : null;
         }
+    }
 
-        // multiple, complex types
+    /**
+     * Fetches elements with a multiple, complex values.
+     *
+     * @param stdClass $feedRoot       The root of the feed. This will be written-to when the parsing middleware runs.
+     * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
+     *                                 of a call to `SimplePie\Util\Ns`.
+     * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
+     */
+    protected function getMultipleComplexTypes(stdClass $feedRoot, string $namespaceAlias, DOMXPath $xpath): void
+    {
         foreach ([
             'category' => T\Category::class,
             'contributor' => T\Person::class,
             'link' => T\Link::class,
         ] as $name => $class) {
             $this->addArrayProperty($feedRoot, $name);
-            $xq = $xpath->query($this->generateQuery($namespaceAlias, true, 'feed', $name));
+            $xq = $xpath->query($this->generateQuery($namespaceAlias, 'feed', $name));
 
             $feedRoot->{$name}[$namespaceAlias] = [];
 
@@ -97,7 +131,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      */
     protected function getSingle(string $nodeName, string $namespaceAlias, DOMXPath $xpath): T\Node
     {
-        $query = $this->generateQuery($namespaceAlias, true, 'feed', $nodeName);
+        $query = $this->generateQuery($namespaceAlias, 'feed', $nodeName);
         $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
         return $this->handleSingleNode(static function () use ($xpath, $query) {

@@ -33,37 +33,27 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
     /**
      * Produce an XPath 1.0 expression which is used to query XML document nodes.
      *
-     * @param string $namespaceAlias   The XML namespace alias to apply.
-     * @param bool   $supportMixedCase Whether or not to generate an XPath query which supports
-     *                                 mixed-case/case-insensitive XML element names.
-     * @param string ...$path          A variadic parameter which accepts the names of the XML
-     *                                 tree nodes in sequence.
+     * @param string $namespaceAlias The XML namespace alias to apply.
+     * @param string ...$path        A variadic parameter which accepts the names of the XML
+     *                               tree nodes in sequence.
      *
      * @return string An XPath 1.0 expression.
      *
      * @see https://wiki.php.net/rfc/variadics
      * @see http://php.net/manual/en/functions.arguments.php#functions.variable-arg-list
      */
-    public function generateQuery(string $namespaceAlias, bool $supportMixedCase = false, string ...$path): string
+    public function generateQuery(string $namespaceAlias, string ...$path): string
     {
         $query = '';
 
         foreach ($path as $p) {
-            if ($supportMixedCase) {
-                $query .= \sprintf(
-                    '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
-                    $namespaceAlias,
-                    'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-                    'abcdefghijklmnopqrstuvwxyz',
-                    $p
-                );
-            } else {
-                $query .= \sprintf(
-                    '/%s:%s',
-                    $namespaceAlias,
-                    $p
-                );
-            }
+            $query .= \sprintf(
+                '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
+                $namespaceAlias,
+                'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                'abcdefghijklmnopqrstuvwxyz',
+                $p
+            );
         }
 
         return $query;
@@ -85,12 +75,5 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
         }
 
         return new Node();
-    }
-
-    public function handleMultipleNodes(callable $fn): Node
-    {
-        $nodes = $fn();
-
-        \print_r($nodes);
     }
 }

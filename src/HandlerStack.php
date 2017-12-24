@@ -55,14 +55,14 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
     /**
      * {@inheritdoc}
      *
-     * @codingStandardsIgnoreStart
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function append(
         callable $middleware,
         ?string $name = null,
         ?string $overrideType = null
     ): HandlerStackInterface {
-        // @codingStandardsIgnoreEnd
+        // phpcs:enable
 
         $this->validateMiddleware(
             $middleware,
@@ -79,14 +79,14 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
     /**
      * {@inheritdoc}
      *
-     * @codingStandardsIgnoreStart
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function appendClosure(
         string $overrideType,
         callable $middleware,
         ?string $name = null
     ): HandlerStackInterface {
-        // @codingStandardsIgnoreEnd
+        // phpcs:enable
 
         return $this->append($middleware, $name, $overrideType);
     }
@@ -94,14 +94,14 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
     /**
      * {@inheritdoc}
      *
-     * @codingStandardsIgnoreStart
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function prepend(
         callable $middleware,
         ?string $name = null,
         ?string $overrideType = null
     ): HandlerStackInterface {
-        // @codingStandardsIgnoreEnd
+        // phpcs:enable
 
         $this->validateMiddleware(
             $middleware,
@@ -118,14 +118,14 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
     /**
      * {@inheritdoc}
      *
-     * @codingStandardsIgnoreStart
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function prependClosure(
         string $overrideType,
         callable $middleware,
         ?string $name = null
     ): HandlerStackInterface {
-        // @codingStandardsIgnoreEnd
+        // phpcs:enable
 
         return $this->prepend($middleware, $name, $overrideType);
     }
@@ -133,7 +133,7 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
     /**
      * {@inheritdoc}
      *
-     * @codingStandardsIgnoreStart
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function invoke(
         string $feedType,
@@ -141,7 +141,7 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
         ?string $namespaceAlias,
         DOMXPath $xpath
     ): void {
-        // @codingStandardsIgnoreEnd
+        // phpcs:enable
 
         if (isset($this->stack[$feedType])) {
             foreach ($this->stack[$feedType] as $tuple) {
@@ -205,7 +205,7 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
      *
      * @throws MiddlewareException
      *
-     * @codingStandardsIgnoreStart
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function validateMiddleware(
         callable $middleware,
@@ -213,7 +213,7 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
         ?string $overrideType = null,
         callable $fn
     ): void {
-        // @codingStandardsIgnoreEnd
+        // phpcs:enable
 
         if (FeedType::ALL === $overrideType) {
             $fn($this->stack['html']);
@@ -233,23 +233,16 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
     /**
      * Log that the registration of the middleware occurred.
      *
-     * @param callable    $middleware   The middleware to add to the stack.
-     * @param string|null $name         A name for the middleware. Can be used with `pushBefore()` and `pushAfter()`.
-     * @param string|null $overrideType Override our best guess for which stack to apply the middleware to. By default
-     *                                  the appropriate stack will be determined by which
-     *                                  `SimplePie\Middleware\*\*Interface` the middleware extends from. If the
-     *                                  middleware is a closure, this parameter is required. If the appropriate stack
-     *                                  cannot be determined, a `SimplePie\Exception\MiddlewareException` exception
-     *                                  will be thrown.
+     * @param callable    $middleware The middleware to add to the stack.
+     * @param string|null $name       A name for the middleware. Can be used with `pushBefore()` and `pushAfter()`.
      *
-     * @codingStandardsIgnoreStart
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function logRegistration(
         callable $middleware,
-        ?string $name = null,
-        ?string $overrideType = null
+        ?string $name = null
     ): void {
-        // @codingStandardsIgnoreEnd
+        // phpcs:enable
 
         $this->logger->info(\sprintf(
             'Registered `%s` as middleware%s.',
@@ -261,25 +254,18 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
     /**
      * Generate the most appropriate error message based on the parameters that were passed.
      *
-     * @param callable    $middleware   The middleware to add to the stack.
-     * @param string|null $name         A name for the middleware. Can be used with `pushBefore()` and `pushAfter()`.
-     * @param string|null $overrideType Override our best guess for which stack to apply the middleware to. By default
-     *                                  the appropriate stack will be determined by which
-     *                                  `SimplePie\Middleware\*\*Interface` the middleware extends from. If the
-     *                                  middleware is a closure, this parameter is required. If the appropriate stack
-     *                                  cannot be determined, a `SimplePie\Exception\MiddlewareException` exception
-     *                                  will be thrown.
+     * @param callable    $middleware The middleware to add to the stack.
+     * @param string|null $name       A name for the middleware. Can be used with `pushBefore()` and `pushAfter()`.
      *
      * @return string
      *
-     * @codingStandardsIgnoreStart
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function exceptionMessage(
         callable $middleware,
-        ?string $name = null,
-        ?string $overrideType = null
+        ?string $name = null
     ): string {
-        // @codingStandardsIgnoreEnd
+        // phpcs:enable
 
         return \sprintf(
             'The middleware `%s`%s could not be assigned to a feed type.',

@@ -11,11 +11,8 @@ declare(strict_types=1);
 namespace SimplePie\Test\Integration\Atom\Feed;
 
 use SimplePie\Enum\DateFormat;
-use SimplePie\Enum\Serialization;
 use SimplePie\Exception\SimplePieException;
 use SimplePie\Test\Integration\AbstractTestCase;
-use SimplePie\Type\Node;
-use Skyzyx\UtilityPack\Types;
 
 class FeedTest extends AbstractTestCase
 {
@@ -23,8 +20,7 @@ class FeedTest extends AbstractTestCase
     {
         $feed = $this->feed
             ->setDateFormat(DateFormat::ATOM)
-            ->setOutputTimezone('America/Los_Angeles')
-        ;
+            ->setOutputTimezone('America/Los_Angeles');
 
         $published = $feed->getPublished();
 

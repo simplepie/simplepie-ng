@@ -58,8 +58,8 @@ lint:
 
 	@ echo " "
 	@ echo "=====> Running PHP Code Sniffer..."
-	- bin/phpcs --report-xml=reports/phpcs-src.xml $$(find src/ -type f -name "*.php" | sort | uniq)
-	- bin/phpcs --report-xml=reports/phpcs-tests.xml $$(find tests/ -type f -name "*.php" | sort | uniq)
+	- bin/phpcs --report-xml=reports/phpcs-src.xml -p --colors --encoding=utf-8 $$(find src/ -type f -name "*.php" | sort | uniq)
+	- bin/phpcs --report-xml=reports/phpcs-tests.xml -p --colors --encoding=utf-8 $$(find tests/ -type f -name "*.php" | sort | uniq)
 	- bin/phpcbf --encoding=utf-8 --tab-width=4 src/ 1>/dev/null
 	- bin/phpcbf --encoding=utf-8 --tab-width=4 tests/ 1>/dev/null
 	@ echo " "

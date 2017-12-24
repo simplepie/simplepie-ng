@@ -167,6 +167,8 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
      * @throws SimplePieException
      *
      * @return mixed
+     *
+     * phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
      */
     protected function getHandler(string $nodeName, array $args)
     {
@@ -209,6 +211,8 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
         }
     }
 
+    // phpcs:enable
+
     /**
      * Retrieves nodes that are simple scalars, and there is only one allowed value.
      *
@@ -239,14 +243,14 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
      *
      * @return TypeInterface
      *
-     * @codingStandardsIgnoreStart
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getComplexSingleValue(
         string $nodeName,
         string $className,
         ?string $namespaceAlias = null
     ): TypeInterface {
-        // @codingStandardsIgnoreEnd
+        // phpcs:enable
 
         $alias = $namespaceAlias ?? $this->namespaceAlias;
 

@@ -10,7 +10,6 @@ declare(strict_types=1);
 
 namespace SimplePie\Test\Unit\Middleware\Xml;
 
-use SimplePie\Middleware\Xml\Atom;
 use SimplePie\Test\Unit\AbstractTestCase;
 
 class AtomTest extends AbstractTestCase

@@ -27,8 +27,7 @@ class SimplePieTest extends AbstractTestCase
                 | LIBXML_NOXMLDECL
                 | LIBXML_NSCLEAN
                 | LIBXML_PARSEHUGE
-            )
-        ;
+            );
 
         $this->assertEquals(4792582, $simplepie->getLibxml());
     }
