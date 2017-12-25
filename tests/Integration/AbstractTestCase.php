@@ -29,7 +29,7 @@ abstract class AbstractTestCase extends TestCase
     public function setUp(): void
     {
         $this->feedDir  = __DIR__ . '/feeds';
-        $this->goodAtom = \file_get_contents($this->feedDir . '/test.atom');
+        $this->goodAtom = \file_get_contents($this->feedDir . '/wellformed/test.atom');
 
         $middleware = (new HandlerStack())
             ->append(new Atom(), 'atom');
