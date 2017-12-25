@@ -49,6 +49,13 @@ class Xml extends AbstractParser
     protected $middleware;
 
     /**
+     * The namespace discoverer.
+     *
+     * @var Ns
+     */
+    protected $ns;
+
+    /**
      * Constructs a new instance of this class.
      *
      * @param StreamInterface       $stream                  A PSR-7 `StreamInterface` which is typically returned by
@@ -122,6 +129,13 @@ class Xml extends AbstractParser
         // Parse the XML document with the configured libxml options
         $this->domDocument->loadXML($this->rawDocument, $this->libxml);
 
+        // Register the namespace handler.
+        $this->ns = (new Ns($this->domDocument))
+            ->setLogger($this->getLogger());
+
+        // Look at which namespaces the registered middleware understands.
+        $this->middleware->registerNamespaces($this->ns);
+
         // Instantiate a new write-to feed object.
         $this->feed = (new Feed($this->getNamespaceAlias()))
             ->setLogger($this->getLogger());
@@ -139,14 +153,23 @@ class Xml extends AbstractParser
     }
 
     /**
+     * Get the namespace handler.
+     *
+     * @return Ns
+     */
+    public function getNs(): Ns
+    {
+        return $this->ns;
+    }
+
+    /**
      * Get the preferred namespace alias.
      *
      * @return string|null
      */
     public function getNamespaceAlias(): ?string
     {
-        $namespace = (new Ns($this->domDocument))
-            ->setLogger($this->getLogger());
+        $namespace = $this->getNs();
 
         $alias = $namespace->getPreferredNamespaceAlias(
             $this->domDocument->documentElement->namespaceURI

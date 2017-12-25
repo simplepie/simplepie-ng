@@ -18,6 +18,7 @@ use SimplePie\Middleware\Html\HtmlInterface;
 use SimplePie\Middleware\Json\JsonInterface;
 use SimplePie\Middleware\Xml\XmlInterface;
 use SimplePie\Mixin as T;
+use SimplePie\Util\Ns;
 use Skyzyx\UtilityPack\Types;
 use stdClass;
 
@@ -132,17 +133,9 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
 
     /**
      * {@inheritdoc}
-     *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
-    public function invoke(
-        string $feedType,
-        stdClass $feedRoot,
-        ?string $namespaceAlias,
-        DOMXPath $xpath
-    ): void {
-        // phpcs:enable
-
+    public function invoke(string $feedType, stdClass $feedRoot, ?string $namespaceAlias, DOMXPath $xpath): void
+    {
         if (isset($this->stack[$feedType])) {
             foreach ($this->stack[$feedType] as $tuple) {
                 $middleware = $tuple[0];
@@ -163,6 +156,21 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
                     $allowedTypes
                 ))
             ));
+        }
+    }
+
+    /**
+     * Collects all of the supported namespaces from the registered middleware.
+     *
+     * **NOTE:** Only significant for XML-based feed types.
+     *
+     * @param Ns $ns [description]
+     */
+    public function registerNamespaces(Ns $ns): void
+    {
+        foreach ($this->stack[FeedType::XML] as $tuple) {
+            $middleware = $tuple[0];
+            $ns->addAliases($middleware->getSupportedNamespaces());
         }
     }
 
@@ -235,15 +243,9 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
      *
      * @param callable    $middleware The middleware to add to the stack.
      * @param string|null $name       A name for the middleware. Can be used with `pushBefore()` and `pushAfter()`.
-     *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
-    protected function logRegistration(
-        callable $middleware,
-        ?string $name = null
-    ): void {
-        // phpcs:enable
-
+    protected function logRegistration(callable $middleware, ?string $name = null): void
+    {
         $this->logger->info(\sprintf(
             'Registered `%s` as middleware%s.',
             Types::getClassOrType($middleware),
@@ -258,15 +260,9 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
      * @param string|null $name       A name for the middleware. Can be used with `pushBefore()` and `pushAfter()`.
      *
      * @return string
-     *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
-    protected function exceptionMessage(
-        callable $middleware,
-        ?string $name = null
-    ): string {
-        // phpcs:enable
-
+    protected function exceptionMessage(callable $middleware, ?string $name = null): string
+    {
         return \sprintf(
             'The middleware `%s`%s could not be assigned to a feed type.',
             Types::getClassOrType($middleware),

@@ -37,11 +37,7 @@ interface HandlerStackInterface
      *
      * @return self
      */
-    public function append(
-        callable $middleware,
-        ?string $name = null,
-        ?string $overrideType = null
-    ): self;
+    public function append(callable $middleware, ?string $name = null, ?string $overrideType = null): self;
 
     /**
      * Appends a new middleware closure onto the end of the stack.
@@ -59,11 +55,7 @@ interface HandlerStackInterface
      *
      * @return self
      */
-    public function appendClosure(
-        string $overrideType,
-        callable $middleware,
-        ?string $name = null
-    ): self;
+    public function appendClosure(string $overrideType, callable $middleware, ?string $name = null): self;
 
     /**
      * Prepends a new middleware class onto the beginning of the stack.
@@ -81,11 +73,7 @@ interface HandlerStackInterface
      *
      * @return self
      */
-    public function prepend(
-        callable $middleware,
-        ?string $name = null,
-        ?string $overrideType = null
-    ): self;
+    public function prepend(callable $middleware, ?string $name = null, ?string $overrideType = null): self;
 
     /**
      * Prepends a new middleware closure onto the beginning of the stack.
@@ -103,11 +91,7 @@ interface HandlerStackInterface
      *
      * @return self
      */
-    public function prependClosure(
-        string $overrideType,
-        callable $middleware,
-        ?string $name = null
-    ): self;
+    public function prependClosure(string $overrideType, callable $middleware, ?string $name = null): self;
 
     /**
      * Invokes the stack of middleware.
@@ -119,10 +103,5 @@ interface HandlerStackInterface
      *                                 of a call to `SimplePie\Util\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
      */
-    public function invoke(
-        string $feedType,
-        stdClass $feedRoot,
-        ?string $namespaceAlias,
-        DOMXPath $xpath
-    ): void;
+    public function invoke(string $feedType, stdClass $feedRoot, ?string $namespaceAlias, DOMXPath $xpath): void;
 }

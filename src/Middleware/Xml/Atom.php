@@ -45,6 +45,16 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getSupportedNamespaces(): array
+    {
+        return [
+            'http://www.w3.org/2005/Atom' => 'atom10',
+        ];
+    }
+
+    /**
      * Fetches elements with a single, scalar value.
      *
      * @param stdClass $feedRoot       The root of the feed. This will be written-to when the parsing middleware runs.

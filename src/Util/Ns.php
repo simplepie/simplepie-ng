@@ -12,7 +12,6 @@ namespace SimplePie\Util;
 
 use DOMNode;
 use Psr\Log\NullLogger;
-use SimplePie\Enum\XmlNs;
 use SimplePie\Mixin as T;
 
 /**
@@ -38,17 +37,7 @@ class Ns
     {
         $this->logger      = new NullLogger();
         $this->domDocument = $dom;
-
-        $this->mapping = [
-            XmlNs::ATOM_03 => 'atom03',
-            XmlNs::ATOM_10 => 'atom10',
-            XmlNs::RDF     => 'rdf',
-            XmlNs::RSS_090 => 'rss09',
-            XmlNs::RSS_10  => 'rss10',
-            XmlNs::RSS_20  => 'rss20',
-            XmlNs::XHTML   => 'xhtml',
-            XmlNs::XML     => 'xml',
-        ];
+        $this->mapping     = [];
     }
 
     /**
