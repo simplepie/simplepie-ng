@@ -10,6 +10,9 @@ declare(strict_types=1);
 
 namespace SimplePie\Parser;
 
+/**
+ * The interface that all parser classes must implement and respond to.
+ */
 interface ParserInterface
 {
 }

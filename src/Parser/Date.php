@@ -13,6 +13,15 @@ namespace SimplePie\Parser;
 use DateTime;
 use DateTimeZone;
 
+/**
+ * The core parser for all Date content.
+ *
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#33-date-constructs
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#429-the-atompublished-element
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#4215-the-atomupdated-element
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#elements-of-item
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-JSON-Feed-v1#items
+ */
 class Date
 {
     /**

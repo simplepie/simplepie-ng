@@ -21,6 +21,9 @@ use SimplePie\SimplePie;
 use SimplePie\Type\Feed;
 use SimplePie\Util\Ns;
 
+/**
+ * The core parser for all XML content.
+ */
 class Xml extends AbstractParser
 {
     use T\DomDocumentTrait;

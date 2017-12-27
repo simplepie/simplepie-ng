@@ -10,6 +10,9 @@ declare(strict_types=1);
 
 namespace SimplePie\Parser;
 
+/**
+ * The core parser for all HTML content.
+ */
 class Html extends AbstractParser
 {
 }
