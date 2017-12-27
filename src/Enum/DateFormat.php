@@ -18,25 +18,52 @@ use DateTime;
 class DateFormat extends AbstractEnum
 {
     /**
-     * Y-m-d\TH:i:sP
+     * `1970-01-01T00:00:00+00:00`
      */
     public const ATOM = DateTime::RFC3339;
 
+    /**
+     * `1970-01-01T00:00:00+00:00`
+     */
     public const ISO8601 = DateTime::RFC3339;
 
+    /**
+     * `1970-01-01T00:00:00+00:00`
+     */
     public const RFC3339 = DateTime::RFC3339;
 
+    /**
+     * `Thu, 01 Jan 70 00:00:00 +0000`
+     */
     public const RFC822 = DateTime::RFC822;
 
+    /**
+     * `Thu, 01 Jan 1970 00:00:00 +0000`
+     */
     public const RFC2822 = DateTime::RFC2822;
 
+    /**
+     * `Thu, 01 Jan 1970 00:00:00 +0000`
+     */
     public const RSS20 = DateTime::RFC2822;
 
-    public const LONG_12HOUR = 'l, jS F Y, g:i a T';
+    /**
+     * `Thursday, 1st January 1970, 12:00am GMT`
+     */
+    public const LONG_12HOUR = 'l, jS F Y, g:ia T';
 
-    public const LONG_24HOUR = 'l, jS F Y, G:i a T';
+    /**
+     * `Thursday, 1st January 1970, 0:00 GMT`
+     */
+    public const LONG_24HOUR = 'l, jS F Y, G:i T';
 
-    public const SHORT_12HOUR = 'D, j M Y, g:i a T';
+    /**
+     * `Thu, 1 Jan 1970, 12:00am GMT`
+     */
+    public const SHORT_12HOUR = 'D, j M Y, g:ia T';
 
-    public const SHORT_24HOUR = 'D, j M Y, G:i a T';
+    /**
+     * `Thu, 1 Jan 1970, 0:00 GMT`
+     */
+    public const SHORT_24HOUR = 'D, j M Y, G:i T';
 }
