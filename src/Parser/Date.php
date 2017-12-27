@@ -62,7 +62,7 @@ class Date
      * * the freshness of the timestamp data your OS relies on.
      * * the format of the datestamp inside of the feed and PHP's ability to parse it.
      *
-     * @param string      $datestamp        The datestamp to handle, as a string.
+     * @param string|null $datestamp        The datestamp to handle, as a string. The default value is `null`.
      * @param string|null $outputTimezone   The timezone identifier to use. Must be compatible with `DateTimeZone`.
      *                                      The default value is `UTC`.
      * @param string|null $createFromFormat Allows the user to assist the date parser by providing the input format of
@@ -70,10 +70,17 @@ class Date
      *                                      at parse-time.
      *
      * @see http://php.net/manual/en/datetime.createfromformat.php
+     *
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
-    public function __construct(string $datestamp, ?string $outputTimezone = 'UTC', ?string $createFromFormat = null)
-    {
-        $this->datestamp        = $datestamp;
+    public function __construct(
+        ?string $datestamp = null,
+        ?string $outputTimezone = 'UTC',
+        ?string $createFromFormat = null
+    ) {
+        // phpcs:enable
+
+        $this->datestamp        = $datestamp ?? '';
         $this->createFromFormat = $createFromFormat;
 
         // Convert null to UTC; Convert Z to UTC.

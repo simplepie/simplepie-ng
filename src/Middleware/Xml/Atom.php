@@ -31,6 +31,8 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      */
     public function __invoke(stdClass $feedRoot, string $namespaceAlias, DOMXPath $xpath): void
     {
+        $path = [];
+
         // lang (single, scalar)
         $this->addArrayProperty($feedRoot, 'lang');
         $xq = $xpath->query($this->applyNsToQuery('/%s:feed[attribute::xml:lang][1]/@xml:lang', $namespaceAlias));
@@ -39,9 +41,13 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             ? T\Node::factory((string) $xq->item(0)->nodeValue)
             : null;
 
-        $this->getSingleScalarTypes($feedRoot, $namespaceAlias, $xpath);
-        $this->getSingleComplexTypes($feedRoot, $namespaceAlias, $xpath);
-        $this->getMultipleComplexTypes($feedRoot, $namespaceAlias, $xpath);
+        foreach (['feed', 'entry'] as $p) {
+            $path[] = $p;
+
+            $this->getSingleScalarTypes($feedRoot, $namespaceAlias, $xpath, $path);
+            $this->getSingleComplexTypes($feedRoot, $namespaceAlias, $xpath, $path);
+            $this->getMultipleComplexTypes($feedRoot, $namespaceAlias, $xpath, $path);
+        }
     }
 
     /**
@@ -69,9 +75,18 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
      *                                 of a call to `SimplePie\Util\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
+     *
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @param array $path
      */
-    protected function getSingleScalarTypes(stdClass $feedRoot, string $namespaceAlias, DOMXPath $xpath): void
-    {
+    protected function getSingleScalarTypes(
+        stdClass $feedRoot,
+        string $namespaceAlias,
+        DOMXPath $xpath,
+        array $path
+    ): void {
+        // phpcs:enable
+
         foreach ([
             'icon',
             'id',
@@ -84,12 +99,14 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             'updated',
         ] as $nodeName) {
             $this->addArrayProperty($feedRoot, $nodeName);
-            $query = $this->generateQuery($namespaceAlias, 'feed', $nodeName);
+            $query = $this->generateQuery($namespaceAlias, \array_merge($path, [$nodeName]));
             $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
-            $feedRoot->{$nodeName}[$namespaceAlias] = $this->handleSingleNode(static function () use ($xpath, $query) {
-                return $xpath->query($query);
-            });
+            $feedRoot->{$nodeName}[$namespaceAlias] = $this->handleSingleNode(
+                static function () use ($xpath, $query) {
+                    return $xpath->query($query);
+                }
+            );
         }
     }
 
@@ -100,15 +117,24 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
      *                                 of a call to `SimplePie\Util\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
+     *
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @param array $path
      */
-    protected function getSingleComplexTypes(stdClass $feedRoot, string $namespaceAlias, DOMXPath $xpath): void
-    {
+    protected function getSingleComplexTypes(
+        stdClass $feedRoot,
+        string $namespaceAlias,
+        DOMXPath $xpath,
+        array $path
+    ): void {
+        // phpcs:enable
+
         foreach ([
             'author' => T\Person::class,
             'generator' => T\Generator::class,
         ] as $name => $class) {
             $this->addArrayProperty($feedRoot, $name);
-            $query = $this->generateQuery($namespaceAlias, 'feed', $name);
+            $query = $this->generateQuery($namespaceAlias, \array_merge($path, [$name]));
             $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
             $xq = $xpath->query($query);
 
@@ -125,9 +151,18 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
      *                                 of a call to `SimplePie\Util\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
+     *
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @param array $path
      */
-    protected function getMultipleComplexTypes(stdClass $feedRoot, string $namespaceAlias, DOMXPath $xpath): void
-    {
+    protected function getMultipleComplexTypes(
+        stdClass $feedRoot,
+        string $namespaceAlias,
+        DOMXPath $xpath,
+        array $path
+    ): void {
+        // phpcs:enable
+
         foreach ([
             'category' => T\Category::class,
             'contributor' => T\Person::class,
@@ -135,7 +170,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             'entry' => T\Entry::class,
         ] as $name => $class) {
             $this->addArrayProperty($feedRoot, $name);
-            $query = $this->generateQuery($namespaceAlias, 'feed', $name);
+            $query = $this->generateQuery($namespaceAlias, \array_merge($path, [$name]));
             $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
             $xq = $xpath->query($query);
 
