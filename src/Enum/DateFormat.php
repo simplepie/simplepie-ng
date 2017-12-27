@@ -17,6 +17,9 @@ use DateTime;
  */
 class DateFormat extends AbstractEnum
 {
+    /**
+     * Y-m-d\TH:i:sP
+     */
     public const ATOM = DateTime::RFC3339;
 
     public const ISO8601 = DateTime::RFC3339;
