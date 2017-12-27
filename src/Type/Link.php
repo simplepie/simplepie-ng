@@ -17,6 +17,18 @@ use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin as T;
 
+/**
+ * A type model for a Link element.
+ *
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#427-the-atomlink-element
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-1.0#532-link
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#required-channel-elements
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-JSON-Feed-v1#top-level
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-iTunes-Podcast-RSS#link
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-iTunes-Podcast-RSS#itunesnew-feed-url
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Media-RSS#mediabacklinks
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Media-RSS#mediapeerlink
+ */
 class Link extends AbstractType implements TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;

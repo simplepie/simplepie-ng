@@ -17,6 +17,15 @@ use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin as T;
 
+/**
+ * A type model for a Category/Tag/Topic element.
+ *
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#422-the-atomcategory-element
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#category-sub-element-of-item
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-JSON-Feed-v1#items
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-iTunes-Podcast-RSS#itunescategory
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Media-RSS#mediacategory
+ */
 class Category extends AbstractType implements TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;

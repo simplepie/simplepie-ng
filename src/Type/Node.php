@@ -15,6 +15,9 @@ use DOMText;
 use SimplePie\Enum\CharacterSet;
 use SimplePie\Enum\Serialization;
 
+/**
+ * A type model for a deep-level Node element.
+ */
 class Node extends AbstractType implements TypeInterface
 {
     /**

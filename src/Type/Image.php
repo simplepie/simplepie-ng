@@ -20,13 +20,13 @@ use SimplePie\Mixin as T;
 /**
  * A type model for an Image element.
  *
- * @see https://tools.ietf.org/html/rfc4287#section-4.2.5
- * @see https://tools.ietf.org/html/rfc4287#section-4.2.8
- * @see https://jsonfeed.org/version/1
- * @see http://web.resource.org/rss/1.0/spec#s5.4
- * @see http://www.rssboard.org/rss-specification#ltimagegtSubelementOfLtchannelgt
- * @see https://help.apple.com/itc/podcasts_connect/#/itcb54353390
- * @see http://www.rssboard.org/media-rss#media-thumbnails
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#425-the-atomicon-element
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#428-the-atomlogo-element
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-1.0#534-image
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#image-sub-element-of-channel
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-JSON-Feed-v1#top-level
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-iTunes-Podcast-RSS#itunesimage
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Media-RSS#mediathumbnails
  */
 class Image extends AbstractType implements TypeInterface, C\SetLoggerInterface
 {

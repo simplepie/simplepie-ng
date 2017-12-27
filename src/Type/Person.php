@@ -17,6 +17,16 @@ use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin as T;
 
+/**
+ * A type model for a Person element.
+ *
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#32-person-constructs
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#author-sub-element-of-item
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-JSON-Feed-v1#top-level
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-iTunes-Podcast-RSS#itunesauthor
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-iTunes-Podcast-RSS#itunesowner
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Media-RSS#mediacredit
+ */
 class Person extends AbstractType implements TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;
