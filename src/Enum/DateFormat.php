@@ -66,4 +66,9 @@ class DateFormat extends AbstractEnum
      * Thu, 1 Jan 1970, 0:00 GMT
      */
     public const SHORT_24HOUR = 'D, j M Y, G:i T';
+
+    /**
+     * 1514357702
+     */
+    public const SINCE_EPOCH = 'U';
 }
