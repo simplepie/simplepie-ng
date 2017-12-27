@@ -150,6 +150,7 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
                 return 'link';
 
             case 'pubDate':
+            case 'publishDate':
             case 'publishedDate':
                 return 'published';
 

@@ -65,8 +65,6 @@ class SimplePie implements SetLoggerInterface
             | LIBXML_PARSEHUGE;
     }
 
-    //--------------------------------------------------------------------------
-
     /**
      * Sets the libxml value to use for parsing XML.
      *
@@ -124,8 +122,6 @@ class SimplePie implements SetLoggerInterface
     {
         return $this->middleware;
     }
-
-    //--------------------------------------------------------------------------
 
     /**
      * Parses content which is known to be valid XML and is encoded as UTF-8.
