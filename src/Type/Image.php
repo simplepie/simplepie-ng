@@ -17,6 +17,17 @@ use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin as T;
 
+/**
+ * A type model for an Image element.
+ *
+ * @link https://tools.ietf.org/html/rfc4287#section-4.2.5
+ * @link https://tools.ietf.org/html/rfc4287#section-4.2.8
+ * @link https://jsonfeed.org/version/1
+ * @link http://web.resource.org/rss/1.0/spec#s5.4
+ * @link http://www.rssboard.org/rss-specification#ltimagegtSubelementOfLtchannelgt
+ * @link https://help.apple.com/itc/podcasts_connect/#/itcb54353390
+ * @link http://www.rssboard.org/media-rss#media-thumbnails
+ */
 class Image extends AbstractType implements TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;

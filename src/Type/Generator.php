@@ -18,7 +18,7 @@ use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin as T;
 
 /**
- * A type model for the generator element.
+ * A type model for a Generator element.
  *
  * @link https://tools.ietf.org/html/rfc4287#section-4.2.4
  * @link http://www.rssboard.org/rss-specification#optionalChannelElements
