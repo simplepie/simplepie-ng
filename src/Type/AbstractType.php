@@ -10,6 +10,10 @@ declare(strict_types=1);
 
 namespace SimplePie\Type;
 
+/**
+ * The base type class that all other type classes extend from. It handles low-level functionality that is shared
+ * across all type classes.
+ */
 abstract class AbstractType
 {
     /**

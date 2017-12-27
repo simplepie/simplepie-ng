@@ -10,6 +10,9 @@ declare(strict_types=1);
 
 namespace SimplePie\Type;
 
+/**
+ * The interface that all type classes must implement and respond to.
+ */
 interface TypeInterface
 {
 }

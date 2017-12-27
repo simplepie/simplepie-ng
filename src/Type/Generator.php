@@ -17,6 +17,12 @@ use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin as T;
 
+/**
+ * A type model for the generator element.
+ *
+ * @link https://tools.ietf.org/html/rfc4287#section-4.2.4
+ * @link http://www.rssboard.org/rss-specification#optionalChannelElements
+ */
 class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;
