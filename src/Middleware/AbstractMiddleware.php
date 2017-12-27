@@ -13,6 +13,10 @@ namespace SimplePie\Middleware;
 use SimplePie\Configuration\SetLoggerInterface;
 use SimplePie\Mixin as T;
 
+/**
+ * The base middleware class that all other middleware classes extend from. It handles low-level functionality that is
+ * shared across all middleware classes.
+ */
 abstract class AbstractMiddleware implements SetLoggerInterface
 {
     use T\LoggerTrait;

@@ -12,6 +12,9 @@ namespace SimplePie\Middleware\Json;
 
 use SimplePie\Middleware\MiddlewareInterface;
 
+/**
+ * The interface that all JSON middleware classes must implement and respond to.
+ */
 interface JsonInterface extends MiddlewareInterface
 {
 }

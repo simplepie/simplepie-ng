@@ -19,8 +19,8 @@ use stdClass;
 /**
  * Support for the Atom 1.0 grammar.
  *
- * @link https://tools.ietf.org/html/rfc4287
- * @link https://www.w3.org/wiki/Atom
+ * @see https://tools.ietf.org/html/rfc4287
+ * @see https://www.w3.org/wiki/Atom
  */
 class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInterface
 {

@@ -12,6 +12,9 @@ namespace SimplePie\Middleware\Html;
 
 use SimplePie\Middleware\MiddlewareInterface;
 
+/**
+ * The interface that all HTML middleware classes must implement and respond to.
+ */
 interface HtmlInterface extends MiddlewareInterface
 {
 }

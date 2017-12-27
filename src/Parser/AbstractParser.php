@@ -13,7 +13,8 @@ namespace SimplePie\Parser;
 use Psr\Http\Message\StreamInterface;
 
 /**
- * The base parser class that all other parser classes extend from. It handles low-level functionality that is shared across all parser classes.
+ * The base parser class that all other parser classes extend from. It handles low-level functionality that is shared
+ * across all parser classes.
  */
 abstract class AbstractParser implements ParserInterface
 {

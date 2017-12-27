@@ -13,6 +13,10 @@ namespace SimplePie\Middleware\Xml;
 use SimplePie\Middleware\AbstractMiddleware;
 use SimplePie\Type\Node;
 
+/**
+ * The base XML middleware class that all other XML middleware classes extend from. It handles low-level functionality
+ * that is shared across all XML middleware classes.
+ */
 abstract class AbstractXmlMiddleware extends AbstractMiddleware
 {
     /**

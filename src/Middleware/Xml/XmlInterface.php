@@ -15,7 +15,7 @@ use SimplePie\Middleware\MiddlewareInterface;
 use stdClass;
 
 /**
- * The interface that all XML-based middleware classes should adhere to.
+ * The interface that all XML middleware classes must implement and respond to.
  */
 interface XmlInterface extends MiddlewareInterface
 {

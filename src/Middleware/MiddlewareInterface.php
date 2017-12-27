@@ -10,6 +10,9 @@ declare(strict_types=1);
 
 namespace SimplePie\Middleware;
 
+/**
+ * The interface that all middleware classes must implement and respond to.
+ */
 interface MiddlewareInterface
 {
 }
