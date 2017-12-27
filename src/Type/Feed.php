@@ -108,13 +108,6 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
     }
 
     //--------------------------------------------------------------------------
-    // MULTIPLE COMPLEX VALUES
-
-    public function getItems(): void
-    {
-    }
-
-    //--------------------------------------------------------------------------
     // INTERNAL
 
     /**
@@ -133,6 +126,8 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
      * @param string $nodeName The name of the method being called.
      *
      * @return string
+     *
+     * phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
      */
     protected function getAlias(string $nodeName): string
     {
@@ -142,6 +137,10 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
 
             case 'contributors':
                 return 'contributor';
+
+            case 'entries':
+            case 'items':
+                return 'entry';
 
             case 'language':
                 return 'lang';
@@ -158,6 +157,8 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
                 return $nodeName;
         }
     }
+
+    // phpcs:enable
 
     /**
      * Get the correct handler for a whitelisted method name.
@@ -202,6 +203,7 @@ class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
 
             case 'category':
             case 'contributor':
+            case 'entry':
             case 'link':
                 return $this->getComplexMultipleValues($nodeName, $args[0]);
 

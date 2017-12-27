@@ -20,8 +20,8 @@ use SimplePie\Mixin as T;
 /**
  * A type model for a Generator element.
  *
- * @link https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#424-the-atomgenerator-element
- * @link https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#optional-channel-elements
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#424-the-atomgenerator-element
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#optional-channel-elements
  */
 class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterface
 {

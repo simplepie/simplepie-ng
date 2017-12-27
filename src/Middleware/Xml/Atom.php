@@ -84,7 +84,12 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             'updated',
         ] as $nodeName) {
             $this->addArrayProperty($feedRoot, $nodeName);
-            $feedRoot->{$nodeName}[$namespaceAlias] = $this->getSingle($nodeName, $namespaceAlias, $xpath);
+            $query = $this->generateQuery($namespaceAlias, 'feed', $nodeName);
+            $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
+
+            $feedRoot->{$nodeName}[$namespaceAlias] = $this->handleSingleNode(static function () use ($xpath, $query) {
+                return $xpath->query($query);
+            });
         }
     }
 
@@ -103,7 +108,9 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             'generator' => T\Generator::class,
         ] as $name => $class) {
             $this->addArrayProperty($feedRoot, $name);
-            $xq = $xpath->query($this->generateQuery($namespaceAlias, 'feed', $name));
+            $query = $this->generateQuery($namespaceAlias, 'feed', $name);
+            $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
+            $xq = $xpath->query($query);
 
             $feedRoot->{$name}[$namespaceAlias] = ($xq->length > 0)
                 ? new $class($xq->item(0), $this->getLogger())
@@ -125,9 +132,12 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             'category' => T\Category::class,
             'contributor' => T\Person::class,
             'link' => T\Link::class,
+            'entry' => T\Entry::class,
         ] as $name => $class) {
             $this->addArrayProperty($feedRoot, $name);
-            $xq = $xpath->query($this->generateQuery($namespaceAlias, 'feed', $name));
+            $query = $this->generateQuery($namespaceAlias, 'feed', $name);
+            $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
+            $xq = $xpath->query($query);
 
             $feedRoot->{$name}[$namespaceAlias] = [];
 
@@ -135,25 +145,5 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
                 $feedRoot->{$name}[$namespaceAlias][] = new $class($result, $this->getLogger());
             }
         }
-    }
-
-    /**
-     * Find and read the contents of the feed-level nodes which only have a single value.
-     *
-     * @param string   $nodeName       The name of the namespaced XML node to read.
-     * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
-     *                                 of a call to `SimplePie\Util\Ns`.
-     * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
-     *
-     * @return Node
-     */
-    protected function getSingle(string $nodeName, string $namespaceAlias, DOMXPath $xpath): T\Node
-    {
-        $query = $this->generateQuery($namespaceAlias, 'feed', $nodeName);
-        $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
-
-        return $this->handleSingleNode(static function () use ($xpath, $query) {
-            return $xpath->query($query);
-        });
     }
 }
