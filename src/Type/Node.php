@@ -18,7 +18,7 @@ use SimplePie\Enum\Serialization;
 /**
  * A type model for a deep-level Node element.
  */
-class Node extends AbstractType implements TypeInterface
+class Node extends AbstractType implements NodeInterface
 {
     /**
      * The raw `DOMNode` element.

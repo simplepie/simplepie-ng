@@ -10,9 +10,31 @@ declare(strict_types=1);
 
 namespace SimplePie\Type;
 
+use DOMNode;
+use SimplePie\Type\Node;
+
 /**
  * The interface that all type classes must implement and respond to.
  */
 interface TypeInterface
 {
+    /**
+     * Finds the common internal alias for a given method name.
+     *
+     * @param string $nodeName The name of the method being called.
+     *
+     * @return string
+     */
+    public function getAlias(string $nodeName): string;
+
+    /**
+     * Get the correct handler for a whitelisted method name.
+     *
+     * @param string $nodeName The name of the method being called.
+     *
+     * @throws SimplePieException
+     *
+     * @return Node
+     */
+    public function getHandler(string $nodeName, array $args = []);
 }

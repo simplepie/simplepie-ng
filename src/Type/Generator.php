@@ -23,7 +23,7 @@ use SimplePie\Mixin as T;
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#424-the-atomgenerator-element
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#optional-channel-elements
  */
-class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterface
+class Generator extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;
 
@@ -101,7 +101,7 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
      *
      * @return string
      */
-    protected function getAlias(string $nodeName): string
+    public function getAlias(string $nodeName): string
     {
         switch ($nodeName) {
             case 'url':
@@ -121,7 +121,7 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
      *
      * @return Node
      */
-    protected function getHandler(string $nodeName): Node
+    public function getHandler(string $nodeName, array $args = []): Node
     {
         switch ($nodeName) {
             case 'name':

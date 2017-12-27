@@ -28,7 +28,7 @@ use SimplePie\Mixin as T;
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-iTunes-Podcast-RSS#itunesimage
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Media-RSS#mediathumbnails
  */
-class Image extends AbstractType implements TypeInterface, C\SetLoggerInterface
+class Image extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;
 
@@ -128,7 +128,7 @@ class Image extends AbstractType implements TypeInterface, C\SetLoggerInterface
      *
      * @return string
      */
-    protected function getAlias(string $nodeName): string
+    public function getAlias(string $nodeName): string
     {
         switch ($nodeName) {
             case 'url':
@@ -148,7 +148,7 @@ class Image extends AbstractType implements TypeInterface, C\SetLoggerInterface
      *
      * @return Node
      */
-    protected function getHandler(string $nodeName): Node
+    public function getHandler(string $nodeName, array $args = []): Node
     {
         switch ($nodeName) {
             case 'uri':

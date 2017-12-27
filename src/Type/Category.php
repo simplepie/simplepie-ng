@@ -26,7 +26,7 @@ use SimplePie\Mixin as T;
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-iTunes-Podcast-RSS#itunescategory
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Media-RSS#mediacategory
  */
-class Category extends AbstractType implements TypeInterface, C\SetLoggerInterface
+class Category extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;
 
@@ -105,7 +105,7 @@ class Category extends AbstractType implements TypeInterface, C\SetLoggerInterfa
      *
      * @return string
      */
-    protected function getAlias(string $nodeName): string
+    public function getAlias(string $nodeName): string
     {
         switch ($nodeName) {
             default:
@@ -122,7 +122,7 @@ class Category extends AbstractType implements TypeInterface, C\SetLoggerInterfa
      *
      * @return Node
      */
-    protected function getHandler(string $nodeName): Node
+    public function getHandler(string $nodeName, array $args = []): Node
     {
         switch ($nodeName) {
             case 'term':

@@ -41,12 +41,22 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             ? T\Node::factory((string) $xq->item(0)->nodeValue)
             : null;
 
-        foreach (['feed', 'entry'] as $p) {
-            $path[] = $p;
+        // Top-level feed
+        $path = ['feed'];
+        $this->getSingleScalarTypes($feedRoot, $namespaceAlias, $xpath, $path);
+        $this->getSingleComplexTypes($feedRoot, $namespaceAlias, $xpath, $path);
+        $this->getMultipleComplexTypes($feedRoot, $namespaceAlias, $xpath, $path);
 
-            $this->getSingleScalarTypes($feedRoot, $namespaceAlias, $xpath, $path);
-            $this->getSingleComplexTypes($feedRoot, $namespaceAlias, $xpath, $path);
-            $this->getMultipleComplexTypes($feedRoot, $namespaceAlias, $xpath, $path);
+        // <entry> element
+        $path = ['feed', 'entry'];
+
+        foreach ($feedRoot->entry[$namespaceAlias] as $i => &$entry) {
+            $cpath   = $path;
+            $cpath[] = $i;
+
+            $this->getSingleScalarTypes($entry, $namespaceAlias, $xpath, $cpath);
+            $this->getSingleComplexTypes($entry, $namespaceAlias, $xpath, $cpath);
+            $this->getMultipleComplexTypes($entry, $namespaceAlias, $xpath, $cpath);
         }
     }
 
@@ -75,31 +85,53 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
      *                                 of a call to `SimplePie\Util\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
+     * @param array    $path           The path of the XML traversal. Should begin with `<feed>` or `<channel>`,
+     *                                 then `<entry>` or `<item>`.
      *
      * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
-     * @param array $path
      */
     protected function getSingleScalarTypes(
-        stdClass $feedRoot,
+        object $feedRoot,
         string $namespaceAlias,
         DOMXPath $xpath,
         array $path
     ): void {
         // phpcs:enable
 
-        foreach ([
-            'icon',
-            'id',
-            'logo',
-            'published',
-            'rights',
-            'subtitle',
-            'summary',
-            'title',
-            'updated',
-        ] as $nodeName) {
-            $this->addArrayProperty($feedRoot, $nodeName);
+        $cpath = $path;
+
+        if (\is_int(\end($cpath))) {
+            \array_pop($cpath);
+        }
+
+        if ('feed' === \end($cpath)) {
+            $nodes = [
+                'icon',
+                'id',
+                'logo',
+                'published',
+                'rights',
+                'subtitle',
+                'summary',
+                'title',
+                'updated',
+            ];
+        } elseif ('entry' === \end($cpath)) {
+            $nodes = [
+                'id',
+                'published',
+                'rights',
+                'summary',
+                'title',
+                'updated',
+            ];
+        }
+
+        // & atomContent?
+
+        foreach ($nodes as $nodeName) {
             $query = $this->generateQuery($namespaceAlias, \array_merge($path, [$nodeName]));
+            $this->addArrayProperty($feedRoot, $nodeName);
             $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
             $feedRoot->{$nodeName}[$namespaceAlias] = $this->handleSingleNode(
@@ -117,26 +149,41 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
      *                                 of a call to `SimplePie\Util\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
+     * @param array    $path           The path of the XML traversal. Should begin with `<feed>` or `<channel>`,
+     *                                 then `<entry>` or `<item>`.
      *
      * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
-     * @param array $path
      */
     protected function getSingleComplexTypes(
-        stdClass $feedRoot,
+        object $feedRoot,
         string $namespaceAlias,
         DOMXPath $xpath,
         array $path
     ): void {
         // phpcs:enable
 
-        foreach ([
-            'author' => T\Person::class,
-            'generator' => T\Generator::class,
-        ] as $name => $class) {
-            $this->addArrayProperty($feedRoot, $name);
+        $cpath = $path;
+
+        if (\is_int(\end($cpath))) {
+            \array_pop($cpath);
+        }
+
+        if ('feed' === \end($cpath)) {
+            $nodes = [
+                'author'    => T\Person::class,
+                'generator' => T\Generator::class,
+            ];
+        } elseif ('entry' === \end($cpath)) {
+            $nodes = [
+                'author' => T\Person::class,
+            ];
+        }
+
+        foreach ($nodes as $name => $class) {
             $query = $this->generateQuery($namespaceAlias, \array_merge($path, [$name]));
+            $xq    = $xpath->query($query);
+            $this->addArrayProperty($feedRoot, $name);
             $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
-            $xq = $xpath->query($query);
 
             $feedRoot->{$name}[$namespaceAlias] = ($xq->length > 0)
                 ? new $class($xq->item(0), $this->getLogger())
@@ -151,33 +198,61 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
      *                                 of a call to `SimplePie\Util\Ns`.
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
+     * @param array    $path           The path of the XML traversal. Should begin with `<feed>` or `<channel>`,
+     *                                 then `<entry>` or `<item>`.
      *
      * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
-     * @param array $path
      */
     protected function getMultipleComplexTypes(
-        stdClass $feedRoot,
+        object $feedRoot,
         string $namespaceAlias,
         DOMXPath $xpath,
         array $path
     ): void {
         // phpcs:enable
 
-        foreach ([
-            'category' => T\Category::class,
-            'contributor' => T\Person::class,
-            'link' => T\Link::class,
-            'entry' => T\Entry::class,
-        ] as $name => $class) {
-            $this->addArrayProperty($feedRoot, $name);
+        $cpath = $path;
+
+        if (\is_int(\end($cpath))) {
+            \array_pop($cpath);
+        }
+
+        if ('feed' === \end($cpath)) {
+            $nodes = [
+                'category'    => T\Category::class,
+                'contributor' => T\Person::class,
+                'link'        => T\Link::class,
+                'entry'       => T\Entry::class,
+            ];
+        } elseif ('entry' === \end($cpath)) {
+            $nodes = [
+                'category'    => T\Category::class,
+                'contributor' => T\Person::class,
+                'link'        => T\Link::class,
+            ];
+        }
+
+        foreach ($nodes as $name => $class) {
             $query = $this->generateQuery($namespaceAlias, \array_merge($path, [$name]));
+            $xq    = $xpath->query($query);
+            $this->addArrayProperty($feedRoot, $name);
             $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
-            $xq = $xpath->query($query);
 
             $feedRoot->{$name}[$namespaceAlias] = [];
 
             foreach ($xq as $result) {
-                $feedRoot->{$name}[$namespaceAlias][] = new $class($result, $this->getLogger());
+                if ('entry' === $name) {
+                    $feedRoot->{$name}[$namespaceAlias][] = new $class(
+                        $namespaceAlias,
+                        $result,
+                        $this->getLogger()
+                    );
+                } else {
+                    $feedRoot->{$name}[$namespaceAlias][] = new $class(
+                        $result,
+                        $this->getLogger()
+                    );
+                }
             }
         }
     }
