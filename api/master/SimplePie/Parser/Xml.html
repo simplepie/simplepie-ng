@@ -171,6 +171,14 @@
                 <td class="last">The handler stack which contains registered middleware.</td>
                 <td></td>
             </tr>
+                    <tr>
+                <td class="type" id="property_ns">
+                                        protected                                        <a href="../../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a>
+                </td>
+                <td>$ns</td>
+                <td class="last">The namespace discoverer.</td>
+                <td></td>
+            </tr>
             </table>
 
     
@@ -245,6 +253,16 @@
                     <a href="#method___construct">__construct</a>(<a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream, <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger, <a href="../../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a> $handlerStack, int $libxml, bool $handleHtmlEntitiesInXml)
         
                                             <p>Constructs a new instance of this class.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getNs">getNs</a>()
+        
+                                            <p>Get the namespace handler.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -496,7 +514,7 @@ already registered.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L70">line 70</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L77">line 77</a></div>
         <code>                    
     <strong>__construct</strong>(<a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream, <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger, <a href="../../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a> $handlerStack, int $libxml, bool $handleHtmlEntitiesInXml)
         </code>
@@ -554,7 +572,7 @@ already registered.</p>                </div>
             </tr>
                     <tr>
                 <td><abbr title="SimplePie\Parser\TypeError">TypeError</abbr></td>
-                <td></td>
+                <td>phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine</td>
             </tr>
             </table>
 
@@ -564,8 +582,38 @@ already registered.</p>                </div>
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_getNs">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L160">line 160</a></div>
+        <code>                    <a href="../../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a>
+    <strong>getNs</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the namespace handler.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_getNamespaceAlias">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L146">line 146</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L170">line 170</a></div>
         <code>                    string|null
     <strong>getNamespaceAlias</strong>()
         </code>
@@ -595,7 +643,7 @@ already registered.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_xpath">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L164">line 164</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L187">line 187</a></div>
         <code>                    <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a>
     <strong>xpath</strong>()
         </code>
@@ -626,7 +674,7 @@ already registered.</p>                                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getFeed">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L185">line 185</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L208">line 208</a></div>
         <code>                    <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
     <strong>getFeed</strong>()
         </code>

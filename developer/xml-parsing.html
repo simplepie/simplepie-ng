@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>XML Parsing (Draft) &mdash; SimplePie: User and Developer Guide</title>
+  <title>XML Parsing &mdash; SimplePie: User and Developer Guide</title>
   
 
   
@@ -165,7 +165,7 @@
 <li class="toctree-l2"><a class="reference internal" href="json-parsing.html#high-level-internals">High-Level Internals</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">XML Parsing (Draft)</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">XML Parsing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#high-level-internals">High-Level Internals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#html-entities">HTML Entities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#xml-namespaces">XML Namespaces</a></li>
@@ -222,7 +222,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>XML Parsing (Draft)</li>
+      <li>XML Parsing</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -241,8 +241,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="xml-parsing-draft">
-<h1>XML Parsing (Draft)<a class="headerlink" href="#xml-parsing-draft" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="xml-parsing">
+<h1>XML Parsing<a class="headerlink" href="#xml-parsing" title="Permalink to this headline">¶</a></h1>
 <p>XML (<a class="reference external" href="https://www.w3.org/TR/2008/REC-xml-20081126/">REC-xml-20081126</a>) is the intended serialization of the
 <a class="reference external" href="https://tools.ietf.org/html/rfc4287">Atom</a> and <a class="reference external" href="http://www.rssboard.org/rss-specification">RSS</a> formats. As such,
 SimplePie NG has been designed from the beginning with support for multiple feed serialization types.</p>
@@ -275,14 +275,45 @@ is slightly slower).</p>
 </div>
 <div class="section" id="xml-namespaces">
 <h2>XML Namespaces<a class="headerlink" href="#xml-namespaces" title="Permalink to this headline">¶</a></h2>
-<p>TBD.</p>
+<p>SimplePie NG leverages the <code class="docutils literal"><span class="pre">DOMDocument</span></code> class to parse XML. A big part of parsing XML is working with elements that
+are namespaced. We keep track of many <a class="reference external" href="https://github.com/simplepie/simplepie-ng/wiki/XML-Namespace-URIs">XML Namespace
+URIs</a> in our wiki. For the most part, these URIs
+are applied in a standard way across all feeds.</p>
+<p>However, there are a few cases where the authors of the specification were inconsistent in the naming of their XML
+Namespace URI, and various edits of the specification over the years resulted in feeds with various URIs for the same
+specification. This was troublesome for SimplePie OG, which attempted to map elements to well-known URIs. One of the
+biggest offenders was Yahoo! with the <a class="reference external" href="https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Media-RSS">Media RSS
+spec</a>, who gave the spec three different URIs over
+the course of Yahoo!’s ownership.</p>
+<p>SimplePie NG addresses this differently. All feed formats are processed using middleware, and each XML-based middleware
+registers the XML Namespace URIs it understands. This is an array, which means that you can register multiple URIs. When
+SimplePie parses a feed, it executes the middleware stack to determine how to handle it. When the middleware is
+executed, it attempts to match the feed’s XML Namespace URI against what it understands. If there is an exact match in
+the list, we know that we can parse it. If we don’t get an exact match, SimplePie tries to match again as though the
+middleware-provided URI were a regex.</p>
+<p>If a middleware handler is not found, the namespaced elements are not parsed.</p>
 </div>
 <div class="section" id="xpath-1-0">
 <h2>XPath 1.0<a class="headerlink" href="#xpath-1-0" title="Permalink to this headline">¶</a></h2>
-<p>TBD.</p>
+<p>As part of leveraging <code class="docutils literal"><span class="pre">DOMDocument</span></code> for XML handling, we have access to the
+<a class="reference external" href="http://php.net/manual/en/class.domxpath.php">DOMXPath</a> class. PHP’s XPath processing of XML data is <em>substantially</em>
+more performant than looping over PHP arrays in userland code. As such, all first-party middleware uses XPath
+expressions for retrieving data from feeds.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Despite the fact that <a class="reference external" href="https://www.w3.org/TR/xpath20/">XPath 2.0</a>,
+<a class="reference external" href="https://www.w3.org/TR/xpath-30/">3.0</a>, and <a class="reference external" href="https://www.w3.org/TR/xpath-31/">3.1</a> exist, PHP is limited to
+<a class="reference external" href="https://www.w3.org/TR/xpath/">XPath 1.0</a>.</p>
+</div>
+<p>The <code class="docutils literal"><span class="pre">AbstractXmlMiddleware</span></code> class provided by SimplePie NG has methods which support case-insensitive XPath
+expressions, meaning that <code class="docutils literal"><span class="pre">&lt;pubDate&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;pubdate&gt;</span></code>, and <code class="docutils literal"><span class="pre">&lt;PubDate&gt;</span></code> will all resolve correctly with the same XPath
+expression.</p>
+<p>Custom, third-party XML-based middleware is encouraged to extend this class and leverage these methods for the
+broadest-possible compatibility. Improvements made to the underlying methods will automatically improve any extending
+middleware.</p>
 <div class="reviewed admonition">
 <p class="first admonition-title">Review</p>
-<p class="last">Written on 2017-12-17, proofread on 2017-12-17.</p>
+<p class="last">Written on 2017-12-17, proofread on 2017-12-26.</p>
 </div>
 </div>
 </div>

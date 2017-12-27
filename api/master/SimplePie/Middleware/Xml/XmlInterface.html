@@ -105,6 +105,16 @@
                                             <p>The function signature for the middleware.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSupportedNamespaces">getSupportedNamespaces</a>()
+        
+                                            <p>Gets the list of supported namespaces and their namespace aliases.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -147,6 +157,43 @@
             </table>
 
             
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSupportedNamespaces">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/XmlInterface.php#L46">line 46</a></div>
+        <code>                    array
+    <strong>getSupportedNamespaces</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the list of supported namespaces and their namespace aliases.</p>                    <p>Returns an associative array where the key is the XML Namespace URL, and the value is the friendly alias name
+that the middleware can use to refer to it.</p>
+
+<pre><code class="php">return [
+    'http://www.w3.org/2005/Atom' =&gt; 'atom10'
+];
+</code></pre>
+</p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
