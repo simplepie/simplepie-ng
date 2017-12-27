@@ -80,8 +80,17 @@ class Ns
         $namespaceUri = $namespaceUri
             ?? $this->domDocument->documentElement->namespaceUri;
 
+        // If the namespace URI has an exact match, use it.
         if (isset($this->mapping[$namespaceUri])) {
             return $this->mapping[$namespaceUri];
+        }
+
+        // If not an exact match, attempt a regex match.
+        foreach ($this->mapping as $regex => $alias) {
+            // Regex delimiter must not be alphanumeric or backslash. Check this first.
+            if (0 === \preg_match('/[0-9a-z\\\\]/i', $regex[0]) && 0 !== \preg_match($regex, $namespaceUri)) {
+                return $alias;
+            }
         }
 
         return null;

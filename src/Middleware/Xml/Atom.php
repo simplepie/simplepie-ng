@@ -46,11 +46,19 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
 
     /**
      * {@inheritdoc}
+     *
+     * Supports valid and invalid variations.
+     *
+     * * http://www.w3.org/2005/Atom
+     * * http://www.w3.org/2005/Atom/
+     * * https://www.w3.org/2005/Atom
+     * * https://www.w3.org/2005/Atom/
      */
     public function getSupportedNamespaces(): array
     {
         return [
-            'http://www.w3.org/2005/Atom' => 'atom10',
+            'http://www.w3.org/2005/Atom'              => 'atom10',
+            '/https?:\/\/www\.w3\.org\/2005\/Atom\/?/' => 'atom10',
         ];
     }
 
