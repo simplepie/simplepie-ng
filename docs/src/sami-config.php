@@ -26,5 +26,5 @@ return new Sami($iterator, array(
     'build_dir'            => __DIR__ . '/_build/api/%version%',
     'cache_dir'            => __DIR__ . '/_cache/api/%version%',
     'remote_repository'    => new GitHubRemoteRepository('simplepie/simplepie-ng', dirname($dir)),
-    'default_opened_level' => 2,
+    'default_opened_level' => 1,
 ));
