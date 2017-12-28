@@ -20,7 +20,7 @@ use stdClass;
 /**
  * Represents the top-level of a feed.
  */
-class Feed extends AbstractType implements TypeInterface, C\SetLoggerInterface
+class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
 {
     use Tr\DateTrait;
     use Tr\DeepTypeTrait;

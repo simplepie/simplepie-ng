@@ -77,9 +77,7 @@ class Category extends AbstractType implements NodeInterface, TypeInterface, C\S
     }
 
     /**
-     * Converts this object into a string representation.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function __toString(): string
     {
@@ -89,9 +87,7 @@ class Category extends AbstractType implements NodeInterface, TypeInterface, C\S
     }
 
     /**
-     * Gets the DOMNode element.
-     *
-     * @return DOMNode|null
+     * {@inheritdoc}
      */
     public function getNode(): ?DOMNode
     {
@@ -99,11 +95,7 @@ class Category extends AbstractType implements NodeInterface, TypeInterface, C\S
     }
 
     /**
-     * Finds the common internal alias for a given method name.
-     *
-     * @param string $nodeName The name of the method being called.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getAlias(string $nodeName): string
     {
@@ -114,15 +106,9 @@ class Category extends AbstractType implements NodeInterface, TypeInterface, C\S
     }
 
     /**
-     * Get the correct handler for a whitelisted method name.
-     *
-     * @param string $nodeName The name of the method being called.
-     *
-     * @throws SimplePieException
-     *
-     * @return Node
+     * {@inheritdoc}
      */
-    public function getHandler(string $nodeName, array $args = []): Node
+    public function getHandler(string $nodeName): Node
     {
         switch ($nodeName) {
             case 'term':

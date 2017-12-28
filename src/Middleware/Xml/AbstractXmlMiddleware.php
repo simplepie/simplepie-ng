@@ -45,11 +45,11 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
      * /feed/entry[5]/id (simplified)
      * ```
      *
-     * @param string   $namespaceAlias The XML namespace alias to apply.
-     * @param array    $path           An ordered array of nested elements, starting from the top-level XML node.
-     *                                 If an integer is added, then it is assumed that the element before it should be
-     *                                 handled as an array and the integer is its index. Expression is generated
-     *                                 left-to-right.
+     * @param string $namespaceAlias The XML namespace alias to apply.
+     * @param array  $path           An ordered array of nested elements, starting from the top-level XML node.
+     *                               If an integer is added, then it is assumed that the element before it should be
+     *                               handled as an array and the integer is its index. Expression is generated
+     *                               left-to-right.
      *
      * @return string An XPath 1.0 expression.
      */
@@ -57,18 +57,18 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
     {
         $query = '';
 
-        while (count($path)) {
-            $p    = array_shift($path);
+        while (\count($path)) {
+            $p    = \array_shift($path);
             $next = $path[0] ?? null;
 
-            if (is_int($next)) {
+            if (\is_int($next)) {
                 $query .= \sprintf(
                     '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\'][position() = %d]',
                     $namespaceAlias,
                     'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
                     'abcdefghijklmnopqrstuvwxyz',
                     $p,
-                    array_shift($path) + 1
+                    \array_shift($path) + 1
                 );
             } else {
                 $query .= \sprintf(

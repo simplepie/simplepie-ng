@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace SimplePie\Middleware\Xml;
 
 use DOMXPath;
+use ReflectionClass;
 use SimplePie\Configuration as C;
 use SimplePie\Mixin as Tr;
 use SimplePie\Type as T;
@@ -241,7 +242,11 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             $feedRoot->{$name}[$namespaceAlias] = [];
 
             foreach ($xq as $result) {
-                if ('entry' === $name) {
+                // What kind of class is this?
+                $rclass = (new ReflectionClass($class))
+                    ->newInstanceWithoutConstructor();
+
+                if ($rclass instanceof T\BranchInterface) {
                     $feedRoot->{$name}[$namespaceAlias][] = new $class(
                         $namespaceAlias,
                         $result,

@@ -17,7 +17,6 @@ use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
 use SimplePie\Mixin as Tr;
 use SimplePie\Parser\Date as DateParser;
-use stdClass;
 
 /**
  * A type model for an Entry element.
@@ -28,7 +27,7 @@ use stdClass;
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#elements-of-item
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-JSON-Feed-v1#items
  */
-class Entry extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
+class Entry extends AbstractType implements NodeInterface, BranchInterface, C\SetLoggerInterface
 {
     use Tr\DateTrait;
     use Tr\DeepTypeTrait;
@@ -148,26 +147,26 @@ class Entry extends AbstractType implements NodeInterface, TypeInterface, C\SetL
             case 'subtitle':
             case 'summary':
             case 'title':
-                return $this->getScalarSingleValue($this->getNode(), $nodeName, $args[0]);
+                return $this->getScalarSingleValue($this->getRoot(), $nodeName, $args[0]);
 
             case 'published':
             case 'updated':
                 return (new DateParser(
-                    $this->getScalarSingleValue($this->getNode(), $nodeName, $args[0])->getValue(),
+                    $this->getScalarSingleValue($this->getRoot(), $nodeName, $args[0])->getValue(),
                     $this->outputTimezone,
                     $this->createFromFormat
                 ))->getDateTime();
 
             case 'author':
-                return $this->getComplexSingleValue($this->getNode(), $nodeName, Person::class, $args[0]);
+                return $this->getComplexSingleValue($this->getRoot(), $nodeName, Person::class, $args[0]);
 
             case 'generator':
-                return $this->getComplexSingleValue($this->getNode(), $nodeName, Generator::class, $args[0]);
+                return $this->getComplexSingleValue($this->getRoot(), $nodeName, Generator::class, $args[0]);
 
             case 'category':
             case 'contributor':
             case 'link':
-                return $this->getComplexMultipleValues($this->getNode(), $nodeName, $args[0]);
+                return $this->getComplexMultipleValues($this->getRoot(), $nodeName, $args[0]);
 
             default:
                 throw new SimplePieException(

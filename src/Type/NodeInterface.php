@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace SimplePie\Type;
 
 use DOMNode;
-use SimplePie\Type\Node;
 
 /**
  * The interface that all type classes must implement and respond to.
