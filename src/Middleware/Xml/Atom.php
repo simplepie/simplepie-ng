@@ -32,8 +32,6 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      */
     public function __invoke(stdClass $feedRoot, string $namespaceAlias, DOMXPath $xpath): void
     {
-        $path = [];
-
         // lang (single, scalar)
         $this->addArrayProperty($feedRoot, 'lang');
         $xq = $xpath->query($this->applyNsToQuery('/%s:feed[attribute::xml:lang][1]/@xml:lang', $namespaceAlias));
@@ -100,6 +98,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
         // phpcs:enable
 
         $cpath = $path;
+        $nodes = [];
 
         if (\is_int(\end($cpath))) {
             \array_pop($cpath);
@@ -128,8 +127,6 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
                 'updated',
             ];
         }
-
-        // & atomContent?
 
         foreach ($nodes as $nodeName) {
             $query = $this->generateQuery($namespaceAlias, \array_merge($path, [$nodeName]));
@@ -165,6 +162,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
         // phpcs:enable
 
         $cpath = $path;
+        $nodes = [];
 
         if (\is_int(\end($cpath))) {
             \array_pop($cpath);
@@ -214,6 +212,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
         // phpcs:enable
 
         $cpath = $path;
+        $nodes = [];
 
         if (\is_int(\end($cpath))) {
             \array_pop($cpath);
