@@ -1,51 +1,6 @@
 ---
 
 feed:
-    *entry: {channel[items], json.items}
-        *author¹: {item[author]} "betty@herald.com (Betty Guernsey)"
-            name¹: STRING
-            uri¹: IRI
-            email¹: STRING
-        category[]:
-            term¹: STRING {item[category][:text], json.item[tags]}
-            scheme¹: IRI {item[category][domain]}
-            label¹: STRING
-        content¹:
-            [type=text]: STRING {item[description], json.item[content_text]}
-            [type=html]: STRING {item[description], json.item[content_html]}
-        contributor[]:
-            name¹: STRING
-            uri¹: IRI
-            email¹: STRING
-        *id¹: STRING {item[guid][isPermaLink=false], json.item[id]}
-        image[]:
-            uri: IRI {json.item[image], json.item[banner_image]}
-            title: STRING
-            link: IRI
-            width: INT
-            height: INT
-            description: STRING
-        *link[alternate][]¹:
-            href¹: IRI {item[link], item[guid][isPermaLink=true], json.item[url], json.item[external_url]}
-            rel¹: STRING
-            type¹: MEDIATYPE
-            hreflang¹: LANG
-            title¹: STRING
-            length¹: INT
-        *link[alternate][rel=enclosure][]¹:
-            href¹: IRI {item[enclosure][url], json.item.attachment[url]}
-            rel¹: STRING
-            type¹: MEDIATYPE {item[enclosure][type], json.item.attachment[mime_type]}
-            hreflang¹: LANG
-            title¹: STRING {json.item.attachment[title]}
-            length¹: INT {item[enclosure][length], json.item.attachment[size_in_bytes]}
-            duration: INT {json.item.attachment[duration_in_seconds]}
-        *published¹: DATETIME {item[pubDate], json.item[date_published]}
-        rights¹: STRING
-        subtitle¹: STRING
-        *summary¹: STRING {item[description], json.item[summary]}
-        *title¹: STRING {item[title], json.item[title]}
-        *updated¹: DATETIME {json.item[date_modified]}
         source[]¹:
             *author¹:
                 name¹: STRING
