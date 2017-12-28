@@ -1,10 +1,7 @@
-autobranch:
-  pattern: 'issues/{number}-{title}'
-  length: 60
-
+# https://zappr.readthedocs.io/en/latest/setup/#approvals
 approvals:
   minimum: 1
-  ignore: both
+  ignore: none
   pattern: "^(:\\+1:|👍)$"
   veto:
     pattern: "^(:\\-1:|👎)$"
@@ -15,8 +12,41 @@ approvals:
     users:
       - skyzyx
   groups:
-    seniors:
+    owners:
       minimum: 1
       from:
         users:
           - skyzyx
+
+# https://zappr.readthedocs.io/en/latest/setup/#autobranch
+autobranch: # Disabled
+  pattern: 'issues/{number}-{title}'
+  length: 60
+
+# https://zappr.readthedocs.io/en/latest/setup/#commit-messages
+commit: # Disabled
+  message:
+    patterns:
+      - '#[0-9]+'
+
+# https://zappr.readthedocs.io/en/latest/setup/#specification
+specification:
+  title:
+    minimum-length:
+      enabled: true
+      length: 8
+  body:
+    minimum-length:
+      enabled: true
+      length: 8
+    contains-url: false
+    contains-issue-number: false
+  template:
+    differs-from-body: true
+
+# https://zappr.readthedocs.io/en/latest/setup/#pull-request-labels
+pull-request:
+  labels:
+    required:
+      - reviewed
+    additional: true
