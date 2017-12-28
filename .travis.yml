@@ -2,12 +2,12 @@ language: php
 dist: trusty
 group: edge
 php:
-  - 7.1
+  - 7.2
   - nightly
 
 before_script:
   - 'travis_retry composer self-update'
-  - 'travis_retry composer install --no-interaction --prefer-source -o'
+  - 'travis_retry composer install --no-interaction --prefer-source -oa'
   - 'wget https://scrutinizer-ci.com/ocular.phar'
   - 'phpenv rehash'
 
@@ -16,10 +16,7 @@ script:
   - 'php bin/phpunit -c phpunit.xml.dist'
 
 after_script:
-  - 'if [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then php bin/coveralls -v; fi;'
-  - 'if [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then export CODECLIMATE_REPO_TOKEN=c885c52095c8ce924d4ddb51a33b919d2af6e09c73b916857a99327c0bb79f08; php bin/test-reporter --stdout > codeclimate.json; fi;'
-  - 'if [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then curl -X POST -d @codeclimate.json -H "Content-Type: application/json" -H "User-Agent: Code Climate (PHP Test Reporter v0.1.1)" https://codeclimate.com/test_reports; fi;'
-  - 'if [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml; fi;'
+  - 'php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml'
 
 notifications:
   email:
