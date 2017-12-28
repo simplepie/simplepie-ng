@@ -18,14 +18,14 @@ trait RootTrait
     /**
      * The root-most node in the feed.
      *
-     * @var stdClass
+     * @var object
      */
     protected $root;
 
     /**
      * Retrieve the root-most node in the feed.
      *
-     * @return stdClass
+     * @return object
      */
     public function getRoot(): object
     {

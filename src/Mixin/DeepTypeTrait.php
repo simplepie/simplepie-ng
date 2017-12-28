@@ -21,6 +21,13 @@ use Skyzyx\UtilityPack\Types;
 trait DeepTypeTrait
 {
     /**
+     * The preferred alias for a particular XML Namespace URI.
+     *
+     * @var string
+     */
+    protected $namespaceAlias;
+
+    /**
      * Retrieves nodes that are simple scalars, and there is only one allowed value.
      *
      * @param object      $root           The root node for performing the lookup. Expected to be either a `stdClass`
