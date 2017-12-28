@@ -17,7 +17,6 @@ Follow: [Medium](https://medium.com/simplepie-ng) • [Twitter](https://twitter.
 [![Open Issues](http://img.shields.io/github/issues/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/pulls)
 [![Contributors](https://img.shields.io/github/contributors/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/graphs/contributors)
-[![License](https://img.shields.io/github/license/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/blob/master/LICENSE.md)
 [![Repo Size](https://img.shields.io/github/repo-size/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/pulse/monthly)
 
 ### Quality
@@ -33,6 +32,12 @@ Follow: [Medium](https://medium.com/simplepie-ng) • [Twitter](https://twitter.
 [![Author](http://img.shields.io/badge/author-@skyzyx-blue.svg?style=for-the-badge)](https://twitter.com/skyzyx)
 [![Follow](https://img.shields.io/twitter/follow/simplepie_ng.svg?style=for-the-badge&label=Follow)](https://twitter.com/intent/follow?screen_name=simplepie_ng)
 [![Stars](https://img.shields.io/github/stars/simplepie/simplepie-ng.svg?style=for-the-badge&label=Stars)](https://github.com/simplepie/simplepie-ng/stargazers)
+
+### Compliance
+
+[![License](https://img.shields.io/github/license/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/blob/master/LICENSE.md)
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsimplepie%2Fsimplepie-ng.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsimplepie%2Fsimplepie-ng?ref=badge_large)
 
 ## How can I contribute?
 
