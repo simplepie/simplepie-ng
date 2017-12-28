@@ -37,27 +37,48 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
     /**
      * Produce an XPath 1.0 expression which is used to query XML document nodes.
      *
+     * ```php
+     * ['feed', 'entry', 5, 'id']
+     * ```
+     *
+     * ```xpath
+     * /feed/entry[5]/id (simplified)
+     * ```
+     *
      * @param string $namespaceAlias The XML namespace alias to apply.
-     * @param string ...$path        A variadic parameter which accepts the names of the XML
-     *                               tree nodes in sequence.
+     * @param array  $path           An ordered array of nested elements, starting from the top-level XML node.
+     *                               If an integer is added, then it is assumed that the element before it should be
+     *                               handled as an array and the integer is its index. Expression is generated
+     *                               left-to-right.
      *
      * @return string An XPath 1.0 expression.
-     *
-     * @see https://wiki.php.net/rfc/variadics
-     * @see http://php.net/manual/en/functions.arguments.php#functions.variable-arg-list
      */
-    public function generateQuery(string $namespaceAlias, string ...$path): string
+    public function generateQuery(string $namespaceAlias, array $path): string
     {
         $query = '';
 
-        foreach ($path as $p) {
-            $query .= \sprintf(
-                '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
-                $namespaceAlias,
-                'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-                'abcdefghijklmnopqrstuvwxyz',
-                $p
-            );
+        while (\count($path)) {
+            $p    = \array_shift($path);
+            $next = $path[0] ?? null;
+
+            if (\is_int($next)) {
+                $query .= \sprintf(
+                    '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\'][position() = %d]',
+                    $namespaceAlias,
+                    'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                    'abcdefghijklmnopqrstuvwxyz',
+                    $p,
+                    \array_shift($path) + 1
+                );
+            } else {
+                $query .= \sprintf(
+                    '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
+                    $namespaceAlias,
+                    'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                    'abcdefghijklmnopqrstuvwxyz',
+                    $p
+                );
+            }
         }
 
         return $query;

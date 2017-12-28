@@ -62,7 +62,7 @@ class Date
      * * the freshness of the timestamp data your OS relies on.
      * * the format of the datestamp inside of the feed and PHP's ability to parse it.
      *
-     * @param string      $datestamp        The datestamp to handle, as a string.
+     * @param string|null $datestamp        The datestamp to handle, as a string. The default value is `null`.
      * @param string|null $outputTimezone   The timezone identifier to use. Must be compatible with `DateTimeZone`.
      *                                      The default value is `UTC`.
      * @param string|null $createFromFormat Allows the user to assist the date parser by providing the input format of
@@ -70,37 +70,46 @@ class Date
      *                                      at parse-time.
      *
      * @see http://php.net/manual/en/datetime.createfromformat.php
+     *
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
-    public function __construct(string $datestamp, ?string $outputTimezone = 'UTC', ?string $createFromFormat = null)
-    {
-        $this->datestamp        = $datestamp;
+    public function __construct(
+        ?string $datestamp = null,
+        ?string $outputTimezone = 'UTC',
+        ?string $createFromFormat = null
+    ) {
+        // phpcs:enable
+
+        $this->datestamp        = $datestamp ?? null;
         $this->createFromFormat = $createFromFormat;
 
-        // Convert null to UTC; Convert Z to UTC.
-        if (null === $outputTimezone) {
-            $this->outputTimezone = 'UTC';
-        } elseif ('Z' === \mb_strtoupper($outputTimezone)) {
-            $this->outputTimezone = 'UTC';
-        } else {
-            $this->outputTimezone = $outputTimezone;
-        }
+        if (null !== $this->datestamp) {
+            // Convert null to UTC; Convert Z to UTC.
+            if (null === $outputTimezone) {
+                $this->outputTimezone = 'UTC';
+            } elseif ('Z' === \mb_strtoupper($outputTimezone)) {
+                $this->outputTimezone = 'UTC';
+            } else {
+                $this->outputTimezone = $outputTimezone;
+            }
 
-        // Use the custom formatter, if available
-        if (null !== $this->createFromFormat) {
-            $this->dateTime = DateTime::createFromFormat(
-                $this->createFromFormat,
-                $this->datestamp,
-                new DateTimeZone($this->outputTimezone)
-            );
-        } else {
-            $this->dateTime = new DateTime(
-                $this->datestamp,
-                new DateTimeZone($this->outputTimezone)
-            );
-        }
+            // Use the custom formatter, if available
+            if (null !== $this->createFromFormat) {
+                $this->dateTime = DateTime::createFromFormat(
+                    $this->createFromFormat,
+                    $this->datestamp,
+                    new DateTimeZone($this->outputTimezone)
+                );
+            } else {
+                $this->dateTime = new DateTime(
+                    $this->datestamp,
+                    new DateTimeZone($this->outputTimezone)
+                );
+            }
 
-        // Sometimes, `createFromFormat()` doesn't set this correctly.
-        $this->dateTime->setTimezone(new DateTimeZone($this->outputTimezone));
+            // Sometimes, `createFromFormat()` doesn't set this correctly.
+            $this->dateTime->setTimezone(new DateTimeZone($this->outputTimezone));
+        }
     }
 
     /**
@@ -138,7 +147,7 @@ class Date
      *
      * @return DateTime
      */
-    public function getDateTime()
+    public function getDateTime(): ?DateTime
     {
         return $this->dateTime;
     }

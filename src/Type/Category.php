@@ -26,7 +26,7 @@ use SimplePie\Mixin as T;
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-iTunes-Podcast-RSS#itunescategory
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Media-RSS#mediacategory
  */
-class Category extends AbstractType implements TypeInterface, C\SetLoggerInterface
+class Category extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;
 
@@ -77,9 +77,7 @@ class Category extends AbstractType implements TypeInterface, C\SetLoggerInterfa
     }
 
     /**
-     * Converts this object into a string representation.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function __toString(): string
     {
@@ -89,9 +87,7 @@ class Category extends AbstractType implements TypeInterface, C\SetLoggerInterfa
     }
 
     /**
-     * Gets the DOMNode element.
-     *
-     * @return DOMNode|null
+     * {@inheritdoc}
      */
     public function getNode(): ?DOMNode
     {
@@ -99,13 +95,9 @@ class Category extends AbstractType implements TypeInterface, C\SetLoggerInterfa
     }
 
     /**
-     * Finds the common internal alias for a given method name.
-     *
-     * @param string $nodeName The name of the method being called.
-     *
-     * @return string
+     * {@inheritdoc}
      */
-    protected function getAlias(string $nodeName): string
+    public function getAlias(string $nodeName): string
     {
         switch ($nodeName) {
             default:
@@ -114,15 +106,9 @@ class Category extends AbstractType implements TypeInterface, C\SetLoggerInterfa
     }
 
     /**
-     * Get the correct handler for a whitelisted method name.
-     *
-     * @param string $nodeName The name of the method being called.
-     *
-     * @throws SimplePieException
-     *
-     * @return Node
+     * {@inheritdoc}
      */
-    protected function getHandler(string $nodeName): Node
+    public function getHandler(string $nodeName): Node
     {
         switch ($nodeName) {
             case 'term':

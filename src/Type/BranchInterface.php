@@ -13,7 +13,7 @@ namespace SimplePie\Type;
 /**
  * The interface that all type classes must implement and respond to.
  */
-interface TypeInterface
+interface BranchInterface
 {
     /**
      * Finds the common internal alias for a given method name.
@@ -28,10 +28,11 @@ interface TypeInterface
      * Get the correct handler for a whitelisted method name.
      *
      * @param string $nodeName The name of the method being called.
+     * @param array  $args
      *
      * @throws SimplePieException
      *
      * @return Node
      */
-    public function getHandler(string $nodeName): Node;
+    public function getHandler(string $nodeName, array $args = []);
 }

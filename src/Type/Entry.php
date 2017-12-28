@@ -15,7 +15,7 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
-use SimplePie\Mixin\LoggerTrait;
+use SimplePie\Mixin as Tr;
 use SimplePie\Parser\Date as DateParser;
 
 /**
@@ -27,9 +27,11 @@ use SimplePie\Parser\Date as DateParser;
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#elements-of-item
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-JSON-Feed-v1#items
  */
-class Entry extends AbstractType implements TypeInterface, C\SetLoggerInterface
+class Entry extends AbstractType implements NodeInterface, BranchInterface, C\SetLoggerInterface
 {
-    use LoggerTrait;
+    use Tr\DateTrait;
+    use Tr\DeepTypeTrait;
+    use Tr\LoggerTrait;
 
     /**
      * The DOMNode element to parse.
@@ -39,20 +41,34 @@ class Entry extends AbstractType implements TypeInterface, C\SetLoggerInterface
     protected $node;
 
     /**
+     * The preferred namespace alias for a given XML namespace URI. Should be
+     * the result of a call to `SimplePie\Util\Ns`.
+     *
+     * @var string
+     */
+    protected $namespaceAlias;
+
+    /**
      * Constructs a new instance of this class.
      *
-     * @param DOMNode|null    $node   The `DOMNode` element to parse.
-     * @param LoggerInterface $logger The PSR-3 logger.
+     * @param string          $namespaceAlias [description]
+     * @param DOMNode|null    $node           The `DOMNode` element to parse.
+     * @param LoggerInterface $logger         The PSR-3 logger.
+     *
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
-    public function __construct(?DOMNode $node = null, LoggerInterface $logger = null)
-    {
+    public function __construct(
+        string $namespaceAlias,
+        ?DOMNode $node = null,
+        LoggerInterface $logger = null
+    ) {
+        // phpcs:enable
+
+        $this->namespaceAlias = $namespaceAlias;
+
         if ($node) {
             $this->logger = $logger ?? new NullLogger();
             $this->node   = $node;
-
-            // foreach ($this->node->attributes as $attribute) {
-            //     $this->{$attribute->name} = new Node($attribute);
-            // }
         }
     }
 
@@ -83,7 +99,7 @@ class Entry extends AbstractType implements TypeInterface, C\SetLoggerInterface
      *
      * @return string
      */
-    protected function getAlias(string $nodeName): string
+    public function getAlias(string $nodeName): string
     {
         switch ($nodeName) {
             case 'categories':
@@ -120,35 +136,32 @@ class Entry extends AbstractType implements TypeInterface, C\SetLoggerInterface
      *
      * phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
      */
-    protected function getHandler(string $nodeName, array $args)
+    public function getHandler(string $nodeName, array $args = [])
     {
         switch ($nodeName) {
+            case 'content':
             case 'id':
             case 'lang':
             case 'rights':
-            case 'subtitle':
             case 'summary':
             case 'title':
-                return $this->getScalarSingleValue($nodeName, $args[0]);
+                return $this->getScalarSingleValue($this, $nodeName, $args[0]);
 
             case 'published':
             case 'updated':
                 return (new DateParser(
-                    $this->getScalarSingleValue($nodeName, $args[0])->getValue(),
+                    $this->getScalarSingleValue($this, $nodeName, $args[0])->getValue(),
                     $this->outputTimezone,
                     $this->createFromFormat
                 ))->getDateTime();
 
             case 'author':
-                return $this->getComplexSingleValue($nodeName, Person::class, $args[0]);
-
-            case 'generator':
-                return $this->getComplexSingleValue($nodeName, Generator::class, $args[0]);
+                return $this->getComplexSingleValue($this, $nodeName, Person::class, $args[0]);
 
             case 'category':
             case 'contributor':
             case 'link':
-                return $this->getComplexMultipleValues($nodeName, $args[0]);
+                return $this->getComplexMultipleValues($this, $nodeName, $args[0]);
 
             default:
                 throw new SimplePieException(
@@ -158,72 +171,4 @@ class Entry extends AbstractType implements TypeInterface, C\SetLoggerInterface
     }
 
     // phpcs:enable
-
-    /**
-     * Retrieves nodes that are simple scalars, and there is only one allowed value.
-     *
-     * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
-     *                                    looking at the response from `getRoot()`.
-     * @param string|null $namespaceAlias The XML namespace alias to apply.
-     *
-     * @return Node
-     */
-    protected function getScalarSingleValue(string $nodeName, ?string $namespaceAlias = null): Node
-    {
-        $alias = $namespaceAlias ?? $this->namespaceAlias;
-
-        if (isset($this->getRoot()->item->{$nodeName}[$alias])) {
-            return $this->getRoot()->item->{$nodeName}[$alias];
-        }
-
-        return new Node();
-    }
-
-    /**
-     * Retrieves nodes that are complex types, and there is only one allowed value.
-     *
-     * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
-     *                                    looking at the response from `getRoot()`.
-     * @param string      $className      The class name to instantiate when there is not a defined value.
-     * @param string|null $namespaceAlias The XML namespace alias to apply.
-     *
-     * @return TypeInterface
-     *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
-     */
-    protected function getComplexSingleValue(
-        string $nodeName,
-        string $className,
-        ?string $namespaceAlias = null
-    ): TypeInterface {
-        // phpcs:enable
-
-        $alias = $namespaceAlias ?? $this->namespaceAlias;
-
-        if (isset($this->getRoot()->item->{$nodeName}[$alias])) {
-            return new $className($this->getRoot()->item->{$nodeName}[$alias]->getNode());
-        }
-
-        return new $className();
-    }
-
-    /**
-     * Retrieves nodes that are complex types, and there may be are more than one value.
-     *
-     * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
-     *                                    looking at the response from `getRoot()`.
-     * @param string|null $namespaceAlias The XML namespace alias to apply.
-     *
-     * @return iterable
-     */
-    protected function getComplexMultipleValues(string $nodeName, ?string $namespaceAlias = null): iterable
-    {
-        $alias = $namespaceAlias ?? $this->namespaceAlias;
-
-        if (isset($this->getRoot()->item->{$nodeName}[$alias])) {
-            return $this->getRoot()->item->{$nodeName}[$alias];
-        }
-
-        return [];
-    }
 }

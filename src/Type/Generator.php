@@ -23,7 +23,7 @@ use SimplePie\Mixin as T;
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#424-the-atomgenerator-element
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#optional-channel-elements
  */
-class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterface
+class Generator extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
 {
     use T\LoggerTrait;
 
@@ -75,9 +75,7 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
     }
 
     /**
-     * Converts this object into a string representation.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function __toString(): string
     {
@@ -85,9 +83,7 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
     }
 
     /**
-     * Gets the DOMNode element.
-     *
-     * @return DOMNode|null
+     * {@inheritdoc}
      */
     public function getNode(): ?DOMNode
     {
@@ -95,13 +91,9 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
     }
 
     /**
-     * Finds the common internal alias for a given method name.
-     *
-     * @param string $nodeName The name of the method being called.
-     *
-     * @return string
+     * {@inheritdoc}
      */
-    protected function getAlias(string $nodeName): string
+    public function getAlias(string $nodeName): string
     {
         switch ($nodeName) {
             case 'url':
@@ -113,15 +105,9 @@ class Generator extends AbstractType implements TypeInterface, C\SetLoggerInterf
     }
 
     /**
-     * Get the correct handler for a whitelisted method name.
-     *
-     * @param string $nodeName The name of the method being called.
-     *
-     * @throws SimplePieException
-     *
-     * @return Node
+     * {@inheritdoc}
      */
-    protected function getHandler(string $nodeName): Node
+    public function getHandler(string $nodeName): Node
     {
         switch ($nodeName) {
             case 'name':
