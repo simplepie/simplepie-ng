@@ -31,8 +31,8 @@ Follow: [Medium](https://medium.com/simplepie-ng) • [Twitter](https://twitter.
 
 [![Website](https://img.shields.io/website-up-down-green-red/http/simplepie.org.svg?label=simplepie.org&style=for-the-badge)](http://simplepie.org)
 [![Author](http://img.shields.io/badge/author-@skyzyx-blue.svg?style=for-the-badge)](https://twitter.com/skyzyx)
-![Follow](https://img.shields.io/twitter/follow/simplepie_ng.svg?style=for-the-badge&label=Follow)
-![Stars](https://img.shields.io/github/stars/simplepie/simplepie-ng.svg?style=for-the-badge&label=Stars)
+[![Follow](https://img.shields.io/twitter/follow/simplepie_ng.svg?style=for-the-badge&label=Follow)](https://twitter.com/intent/follow?screen_name=simplepie_ng)
+[![Stars](https://img.shields.io/github/stars/simplepie/simplepie-ng.svg?style=for-the-badge&label=Stars)](https://github.com/simplepie/simplepie-ng/stargazers)
 
 ## How can I contribute?
 
