@@ -4,7 +4,7 @@
 
 **Highly experimental. Don't use this.**
 
-**SimplePie NG** is a modern, _next-generation_ PHP package for working with syndication feeds. It was re-written from the ground-up to take advantage of the changes that have happened in the PHP community since SimplePie was first released in July 2004 for PHP 4.3.
+**SimplePie NG** is a modern, _next-generation_ PHP package for working with syndication feeds. It was re-written from the ground-up to take advantage of the modern features of PHP 7+.
 
 Follow: [Medium](https://medium.com/simplepie-ng) • [Twitter](https://twitter.com/simplepie_ng)
 
@@ -206,6 +206,6 @@ Previously, SimplePie tried to do it all. In retrospect, this was a bad idea.
 
 ## Coding Standards
 
-PSR-1/2/12 are a solid foundation, but are not an entire coding style by themselves. I have taken the time to document all of the nitpicky patterns and nuances of my personal coding style. It goes well-beyond brace placement and tabs vs. spaces to cover topics such as docblock annotations, ternary operations and which variation of English to use. It aims for thoroughness and pedanticism over hoping that we can all get along.
+PSR-1/2/12 are a solid foundation, but are not an entire coding style by themselves. By leveraging tools such as [PHP CS Fixer](http://cs.sensiolabs.org) and [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer), we can automate a large part of our style requirements. The things that we cannot yet automate are documented here:
 
-<https://github.com/skyzyx/php-coding-standards>
+<https://github.com/simplepie/simplepie-ng-coding-standards>
