@@ -1,3 +1,10 @@
+# https://docs.travis-ci.com/user/languages/php/
+# https://docs.travis-ci.com/user/reference/trusty/
+# https://docs.travis-ci.com/user/build-environment-updates/
+# https://docs.travis-ci.com/user/docker/
+# https://docs.travis-ci.com/user/deployment/releases/
+# https://docs.travis-ci.com/user/deployment/pages/
+
 language: php
 dist: trusty
 group: edge
