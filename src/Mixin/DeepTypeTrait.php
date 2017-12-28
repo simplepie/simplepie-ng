@@ -14,7 +14,6 @@ use SimplePie\Configuration as C;
 use SimplePie\Type\Node;
 use SimplePie\Type\TypeInterface;
 use Skyzyx\UtilityPack\Types;
-use stdClass;
 
 /**
  * Shared code for working with deeply-nested elements for types.
@@ -24,7 +23,8 @@ trait DeepTypeTrait
     /**
      * Retrieves nodes that are simple scalars, and there is only one allowed value.
      *
-     * @param stdClass    $root           [description]
+     * @param object      $root           The root node for performing the lookup. Expected to be either a `stdClass`
+     *                                    (for `Feed`), or an `SimplePie\Type\Entry` instance.
      * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
      *                                    looking at the response from `getRoot()`.
      * @param string|null $namespaceAlias The XML namespace alias to apply.
@@ -34,7 +34,7 @@ trait DeepTypeTrait
      * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getScalarSingleValue(
-        stdClass $root,
+        object $root,
         string $nodeName,
         ?string $namespaceAlias = null
     ): Node {
@@ -52,7 +52,8 @@ trait DeepTypeTrait
     /**
      * Retrieves nodes that are complex types, and there is only one allowed value.
      *
-     * @param stdClass    $root           [description]
+     * @param object      $root           The root node for performing the lookup. Expected to be either a `stdClass`
+     *                                    (for `Feed`), or an `SimplePie\Type\Entry` instance.
      * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
      *                                    looking at the response from `getRoot()`.
      * @param string      $className      The class name to instantiate when there is not a defined value.
@@ -63,7 +64,7 @@ trait DeepTypeTrait
      * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getComplexSingleValue(
-        stdClass $root,
+        object $root,
         string $nodeName,
         string $className,
         ?string $namespaceAlias = null
@@ -82,7 +83,8 @@ trait DeepTypeTrait
     /**
      * Retrieves nodes that are complex types, and there may be are more than one value.
      *
-     * @param stdClass    $root           [description]
+     * @param object      $root           The root node for performing the lookup. Expected to be either a `stdClass`
+     *                                    (for `Feed`), or an `SimplePie\Type\Entry` instance.
      * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
      *                                    looking at the response from `getRoot()`.
      * @param string|null $namespaceAlias The XML namespace alias to apply.
@@ -92,7 +94,7 @@ trait DeepTypeTrait
      * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getComplexMultipleValues(
-        stdClass $root,
+        object $root,
         string $nodeName,
         ?string $namespaceAlias = null
     ): iterable {

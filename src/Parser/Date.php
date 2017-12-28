@@ -80,34 +80,36 @@ class Date
     ) {
         // phpcs:enable
 
-        $this->datestamp        = $datestamp ?? '';
+        $this->datestamp        = $datestamp ?? null;
         $this->createFromFormat = $createFromFormat;
 
-        // Convert null to UTC; Convert Z to UTC.
-        if (null === $outputTimezone) {
-            $this->outputTimezone = 'UTC';
-        } elseif ('Z' === \mb_strtoupper($outputTimezone)) {
-            $this->outputTimezone = 'UTC';
-        } else {
-            $this->outputTimezone = $outputTimezone;
-        }
+        if (null !== $this->datestamp) {
+            // Convert null to UTC; Convert Z to UTC.
+            if (null === $outputTimezone) {
+                $this->outputTimezone = 'UTC';
+            } elseif ('Z' === \mb_strtoupper($outputTimezone)) {
+                $this->outputTimezone = 'UTC';
+            } else {
+                $this->outputTimezone = $outputTimezone;
+            }
 
-        // Use the custom formatter, if available
-        if (null !== $this->createFromFormat) {
-            $this->dateTime = DateTime::createFromFormat(
-                $this->createFromFormat,
-                $this->datestamp,
-                new DateTimeZone($this->outputTimezone)
-            );
-        } else {
-            $this->dateTime = new DateTime(
-                $this->datestamp,
-                new DateTimeZone($this->outputTimezone)
-            );
-        }
+            // Use the custom formatter, if available
+            if (null !== $this->createFromFormat) {
+                $this->dateTime = DateTime::createFromFormat(
+                    $this->createFromFormat,
+                    $this->datestamp,
+                    new DateTimeZone($this->outputTimezone)
+                );
+            } else {
+                $this->dateTime = new DateTime(
+                    $this->datestamp,
+                    new DateTimeZone($this->outputTimezone)
+                );
+            }
 
-        // Sometimes, `createFromFormat()` doesn't set this correctly.
-        $this->dateTime->setTimezone(new DateTimeZone($this->outputTimezone));
+            // Sometimes, `createFromFormat()` doesn't set this correctly.
+            $this->dateTime->setTimezone(new DateTimeZone($this->outputTimezone));
+        }
     }
 
     /**
@@ -145,7 +147,7 @@ class Date
      *
      * @return DateTime
      */
-    public function getDateTime()
+    public function getDateTime(): ?DateTime
     {
         return $this->dateTime;
     }

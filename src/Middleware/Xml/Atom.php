@@ -119,6 +119,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             ];
         } elseif ('entry' === \end($cpath)) {
             $nodes = [
+                'content',
                 'id',
                 'published',
                 'rights',

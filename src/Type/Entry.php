@@ -32,7 +32,6 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
     use Tr\DateTrait;
     use Tr\DeepTypeTrait;
     use Tr\LoggerTrait;
-    use Tr\RootTrait;
 
     /**
      * The DOMNode element to parse.
@@ -70,7 +69,6 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
         if ($node) {
             $this->logger = $logger ?? new NullLogger();
             $this->node   = $node;
-            $this->root   = $node;
         }
     }
 
@@ -141,32 +139,29 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
     public function getHandler(string $nodeName, array $args = [])
     {
         switch ($nodeName) {
+            case 'content':
             case 'id':
             case 'lang':
             case 'rights':
-            case 'subtitle':
             case 'summary':
             case 'title':
-                return $this->getScalarSingleValue($this->getRoot(), $nodeName, $args[0]);
+                return $this->getScalarSingleValue($this, $nodeName, $args[0]);
 
             case 'published':
             case 'updated':
                 return (new DateParser(
-                    $this->getScalarSingleValue($this->getRoot(), $nodeName, $args[0])->getValue(),
+                    $this->getScalarSingleValue($this, $nodeName, $args[0])->getValue(),
                     $this->outputTimezone,
                     $this->createFromFormat
                 ))->getDateTime();
 
             case 'author':
-                return $this->getComplexSingleValue($this->getRoot(), $nodeName, Person::class, $args[0]);
-
-            case 'generator':
-                return $this->getComplexSingleValue($this->getRoot(), $nodeName, Generator::class, $args[0]);
+                return $this->getComplexSingleValue($this, $nodeName, Person::class, $args[0]);
 
             case 'category':
             case 'contributor':
             case 'link':
-                return $this->getComplexMultipleValues($this->getRoot(), $nodeName, $args[0]);
+                return $this->getComplexMultipleValues($this, $nodeName, $args[0]);
 
             default:
                 throw new SimplePieException(
