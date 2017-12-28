@@ -1,0 +1,10 @@
+linter:
+  code_sniffer:
+    version: 3
+    dir:
+      - src/
+      - tests/
+    options:
+      standard: phpcs.xml
+      extensions: php
+      encoding: utf-8
