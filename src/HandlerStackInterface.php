@@ -11,15 +11,17 @@ declare(strict_types=1);
 namespace SimplePie;
 
 use DOMXPath;
+use SimplePie\Configuration as C;
 use SimplePie\Enum\FeedType;
 use SimplePie\Exception\MiddlewareException;
+use SimplePie\Util\Ns;
 use Skyzyx\UtilityPack\Types;
 use stdClass;
 
 /**
  * Provides an interface for `SimplePie\HandlerStack` to implement.
  */
-interface HandlerStackInterface
+interface HandlerStackInterface extends C\SetLoggerInterface
 {
     /**
      * Appends a new middleware class onto the end of the stack.
@@ -104,4 +106,13 @@ interface HandlerStackInterface
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
      */
     public function invoke(string $feedType, stdClass $feedRoot, ?string $namespaceAlias, DOMXPath $xpath): void;
+
+    /**
+     * Collects all of the supported namespaces from the registered middleware.
+     *
+     * **NOTE:** Only significant for XML-based feed types.
+     *
+     * @param Ns $ns The XML namespace handler.
+     */
+    public function registerNamespaces(Ns $ns): void;
 }

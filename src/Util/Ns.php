@@ -10,16 +10,17 @@ declare(strict_types=1);
 
 namespace SimplePie\Util;
 
-use DOMNode;
+use DOMDocument;
 use Psr\Log\NullLogger;
-use SimplePie\Mixin as T;
+use SimplePie\Mixin as Tr;
 
 /**
  * Provides tools for managing and working with XML namespaces.
  */
 class Ns
 {
-    use T\LoggerTrait;
+    use Tr\DomDocumentTrait;
+    use Tr\LoggerTrait;
 
     /**
      * A mapping of namespace URIs to preferred namespace aliases.
@@ -31,9 +32,9 @@ class Ns
     /**
      * Constructs a new instance of this class.
      *
-     * @param DOMNode $dom A DOMDocument object representing the XML file to be parsed.
+     * @param DOMDocument $dom A DOMDocument object representing the XML file to be parsed.
      */
-    public function __construct(DOMNode $dom)
+    public function __construct(DOMDocument $dom)
     {
         $this->logger      = new NullLogger();
         $this->domDocument = $dom;
@@ -78,7 +79,7 @@ class Ns
     public function getPreferredNamespaceAlias(?string $namespaceUri = null): ?string
     {
         $namespaceUri = $namespaceUri
-            ?? $this->domDocument->documentElement->namespaceUri;
+            ?? $this->domDocument->documentElement->namespaceURI;
 
         // If the namespace URI has an exact match, use it.
         if (isset($this->mapping[$namespaceUri])) {

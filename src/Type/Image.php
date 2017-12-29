@@ -15,10 +15,18 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
-use SimplePie\Mixin as T;
+use SimplePie\Mixin as Tr;
 
 /**
  * A type model for an Image element.
+ *
+ * @method string getDescription() Returns the description of the Image.
+ * @method string getHeight() Returns the height of the Image.
+ * @method string getLink() Returns to where the Image should be linked.
+ * @method string getTitle() Returns the title of the Image.
+ * @method string getUri() Alias for `getUrl()`.
+ * @method string getUrl() Returns the URL of the Image.
+ * @method string getWidth() Returns the width of the Image.
  *
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#425-the-atomicon-element
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#428-the-atomlogo-element
@@ -30,7 +38,7 @@ use SimplePie\Mixin as T;
  */
 class Image extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
 {
-    use T\LoggerTrait;
+    use Tr\LoggerTrait;
 
     /**
      * The DOMNode element to parse.

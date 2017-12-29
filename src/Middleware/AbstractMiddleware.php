@@ -10,16 +10,16 @@ declare(strict_types=1);
 
 namespace SimplePie\Middleware;
 
-use SimplePie\Configuration\SetLoggerInterface;
-use SimplePie\Mixin as T;
+use SimplePie\Configuration as C;
+use SimplePie\Mixin as Tr;
 
 /**
  * The base middleware class that all other middleware classes extend from. It handles low-level functionality that is
  * shared across all middleware classes.
  */
-abstract class AbstractMiddleware implements SetLoggerInterface
+abstract class AbstractMiddleware implements C\SetLoggerInterface
 {
-    use T\LoggerTrait;
+    use Tr\LoggerTrait;
 
     /**
      * A callable which is used to determine whether or not to run this middleware.

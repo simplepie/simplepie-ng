@@ -15,10 +15,14 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
-use SimplePie\Mixin as T;
+use SimplePie\Mixin as Tr;
 
 /**
  * A type model for a Category/Tag/Topic element.
+ *
+ * @method string getLabel() Returns the label of the Category.
+ * @method string getScheme() Returns the scheme of the Category.
+ * @method string getTerm() Returns the term of the Category.
  *
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#422-the-atomcategory-element
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#category-sub-element-of-item
@@ -28,7 +32,7 @@ use SimplePie\Mixin as T;
  */
 class Category extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
 {
-    use T\LoggerTrait;
+    use Tr\LoggerTrait;
 
     /**
      * The DOMNode element to parse.

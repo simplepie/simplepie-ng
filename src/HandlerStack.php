@@ -11,13 +11,12 @@ declare(strict_types=1);
 namespace SimplePie;
 
 use DOMXPath;
-use SimplePie\Configuration\SetLoggerInterface;
 use SimplePie\Enum\FeedType;
 use SimplePie\Exception\MiddlewareException;
 use SimplePie\Middleware\Html\HtmlInterface;
 use SimplePie\Middleware\Json\JsonInterface;
 use SimplePie\Middleware\Xml\XmlInterface;
-use SimplePie\Mixin as T;
+use SimplePie\Mixin as Tr;
 use SimplePie\Util\Ns;
 use Skyzyx\UtilityPack\Types;
 use stdClass;
@@ -30,14 +29,14 @@ use stdClass;
  * Its primary job is to (a) allow the registration and priority of middleware,
  * and (b) provide the interface for SimplePie NG to trigger middleware.
  */
-class HandlerStack implements HandlerStackInterface, SetLoggerInterface
+class HandlerStack implements HandlerStackInterface
 {
-    use T\LoggerTrait;
+    use Tr\LoggerTrait;
 
     /**
      * The middleware stack, grouped by feed type.
      *
-     * @var string
+     * @var array
      */
     protected $stack;
 
@@ -160,11 +159,7 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
     }
 
     /**
-     * Collects all of the supported namespaces from the registered middleware.
-     *
-     * **NOTE:** Only significant for XML-based feed types.
-     *
-     * @param Ns $ns [description]
+     * {@inheritdoc}
      */
     public function registerNamespaces(Ns $ns): void
     {
@@ -175,9 +170,9 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
     }
 
     /**
-     * [debugStack description].
+     * Returns information about the HandlerStack that is useful for debugging.
      *
-     * @return [type] [description]
+     * @return array
      */
     public function debugStack(): array
     {
@@ -234,7 +229,7 @@ class HandlerStack implements HandlerStackInterface, SetLoggerInterface
         } elseif (FeedType::HTML === $overrideType || $middleware instanceof HtmlInterface) {
             $fn($this->stack['html']);
         } else {
-            throw new MiddlewareException($this->exceptionMessage($middleware, $name, $overrideType));
+            throw new MiddlewareException($this->exceptionMessage($middleware, $name));
         }
     }
 
