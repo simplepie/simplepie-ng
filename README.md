@@ -32,6 +32,7 @@ Follow: [Medium](https://medium.com/simplepie-ng) • [Twitter](https://twitter.
 [![Author](http://img.shields.io/badge/author-@skyzyx-blue.svg?style=for-the-badge)](https://twitter.com/skyzyx)
 [![Follow](https://img.shields.io/twitter/follow/simplepie_ng.svg?style=for-the-badge&label=Follow)](https://twitter.com/intent/follow?screen_name=simplepie_ng)
 [![Stars](https://img.shields.io/github/stars/simplepie/simplepie-ng.svg?style=for-the-badge&label=Stars)](https://github.com/simplepie/simplepie-ng/stargazers)
+[![Beerpay](https://img.shields.io/beerpay/simplepie/simplepie-ng.svg?style=for-the-badge)](https://beerpay.io/simplepie/simplepie-ng)
 
 ### Compliance
 
@@ -56,20 +57,12 @@ Over the years I've tried to start this project by forking SimplePie and strippi
 
 See the [wiki](https://github.com/simplepie/simplepie-ng/wiki) for more details.
 
-## Services to integrate code with
-
-* [X] https://waffle.io/simplepie/simplepie-ng
-* [ ] https://packagist.org
-* [ ] https://codeclimate.com
-* [ ] https://coveralls.io/github/simplepie/simplepie-ng
-
 ## Coding Standards
 
 PSR-1/2/12 are a solid foundation, but are not an entire coding style by themselves. By leveraging tools such as [PHP CS Fixer](http://cs.sensiolabs.org) and [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer), we can automate a large part of our style requirements. The things that we cannot yet automate are documented here:
 
 <https://github.com/simplepie/simplepie-ng-coding-standards>
 
-## Support on Beerpay
-Hey dude! Help me out for a couple of :beers:!
+## Please Support Development
 
-[![Beerpay](https://beerpay.io/simplepie/simplepie-ng/badge.svg?style=beer-square)](https://beerpay.io/simplepie/simplepie-ng)  [![Beerpay](https://beerpay.io/simplepie/simplepie-ng/make-wish.svg?style=flat-square)](https://beerpay.io/simplepie/simplepie-ng?focus=wish)
+[![Beerpay](https://img.shields.io/beerpay/simplepie/simplepie-ng.svg?style=for-the-badge)](https://beerpay.io/simplepie/simplepie-ng)
