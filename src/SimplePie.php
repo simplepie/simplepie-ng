@@ -148,17 +148,4 @@ class SimplePie implements C\SetLoggerInterface
 
         return $parser;
     }
-
-    /**
-     * Parses content which is known to be valid JSON and is encoded as UTF-8.
-     *
-     * @param StreamInterface $stream A PSR-7 `StreamInterface` which is typically returned by the
-     *                                `getBody()` method of a `ResponseInterface` class.
-     *
-     * @return JsonParser
-     */
-    public function parseJson(StreamInterface $stream)
-    {
-        return $stream->getContents();
-    }
 }

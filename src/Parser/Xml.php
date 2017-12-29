@@ -52,7 +52,7 @@ class Xml extends AbstractParser
     protected $middleware;
 
     /**
-     * The namespace discoverer.
+     * The XML namespace handler.
      *
      * @var Ns
      */
@@ -99,7 +99,7 @@ class Xml extends AbstractParser
         $this->rawDocument = $this->readStream($stream);
 
         // DOMDocument
-        $this->domDocument = new DOMDocument();
+        $this->domDocument = new DOMDocument('1.0', 'utf-8');
 
         // Don't barf errors all over the output
         \libxml_use_internal_errors(true);
@@ -156,7 +156,7 @@ class Xml extends AbstractParser
     }
 
     /**
-     * Get the namespace handler.
+     * Get the XML namespace handler.
      *
      * @return Ns
      */

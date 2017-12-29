@@ -21,10 +21,14 @@ use stdClass;
  * The top-most element in a feed.
  *
  * @method SimplePie\Type\Person getAuthor(string $namespaceAlias) Returns the Author associated with this feed.
- * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this feed.
- * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated with this feed.
- * @method SimplePie\Type\Entry[] getEntries(string $namespaceAlias) Returns the list of Entries/Items associated with this feed.
- * @method SimplePie\Type\Generator getGenerator(string $namespaceAlias) Returns the Generator associated with this feed.
+ * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics
+ *         associated with this feed.
+ * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated
+ *         with this feed.
+ * @method SimplePie\Type\Entry[] getEntries(string $namespaceAlias) Returns the list of Entries/Items associated with
+ *         this feed.
+ * @method SimplePie\Type\Generator getGenerator(string $namespaceAlias) Returns the Generator associated with
+ *         this feed.
  * @method string getId(string $namespaceAlias) Returns the ID associated with this feed.
  * @method SimplePie\Type\Image getIcon(string $namespaceAlias) Returns the Icon associated with this feed.
  * @method SimplePie\Type\Entry[] getItems(string $namespaceAlias) Alias for `getEntries()`.

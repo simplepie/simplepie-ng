@@ -185,9 +185,8 @@ tools:
             paths: ["src/*", "tests/*"]
     sensiolabs_security_checker: true
     php_hhvm:
-        enabled: true
-        filter:
-            paths: ["src/*", "tests/*"]
+        enabled: false
 filter:
     excluded_paths:
+        - 'docs/*'
         - 'tests/*'

@@ -48,7 +48,7 @@ class Date
     /**
      * The resulting `DateTime` object.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     protected $dateTime;
 

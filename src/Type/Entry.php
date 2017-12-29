@@ -22,9 +22,12 @@ use SimplePie\Parser\Date as DateParser;
  * A type model for an Entry element.
  *
  * @method SimplePie\Type\Person getAuthor(string $namespaceAlias) Returns the Author associated with this entry.
- * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this entry.
- * @method string getContent(string $namespaceAlias) Returns the content of the entry, serialized as TEXT, HTML, or XHTML content.
- * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated with this entry.
+ * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics
+ *         associated with this entry.
+ * @method string getContent(string $namespaceAlias) Returns the content of the entry, serialized as TEXT, HTML, or
+ *         XHTML content.
+ * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated
+ *         with this entry.
  * @method string getId(string $namespaceAlias) Returns the ID associated with this entry.
  * @method string getLang(string $namespaceAlias) Alias for `getLanguage()`.
  * @method string getLanguage(string $namespaceAlias) Returns the language associated with this entry.

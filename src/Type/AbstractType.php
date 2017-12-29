@@ -39,6 +39,7 @@ abstract class AbstractType
         /** @scrutinizer ignore-call */
         $nodeName = $this->getAlias($nodeName);
 
+        /* @scrutinizer ignore-call */
         return $this->getHandler($nodeName, $args);
     }
 
