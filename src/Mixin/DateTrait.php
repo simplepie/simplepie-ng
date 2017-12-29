@@ -38,7 +38,7 @@ trait DateTrait
      *
      * @return self
      *
-     * @see http://php.net/manual/en/datetime.createfromformat.php
+     * @see <http://php.net/manual/en/datetime.createfromformat.php>
      */
     public function setDateFormat(string $createFromFormat): self
     {
