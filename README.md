@@ -21,18 +21,18 @@ Follow: [Medium](https://medium.com/simplepie-ng) • [Twitter](https://twitter.
 
 ### Quality
 
-[![Travis branch](https://img.shields.io/travis/simplepie/simplepie-ng/master.svg?style=for-the-badge)](https://travis-ci.org/simplepie/simplepie-ng)
-[![Code Quality](http://img.shields.io/scrutinizer/g/simplepie/simplepie-ng.svg?style=for-the-badge)](https://scrutinizer-ci.com/g/simplepie/simplepie-ng)
-[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/1b772338-fd6a-4af1-8f5e-fddffc2b9d43.svg?style=for-the-badge)](https://insight.sensiolabs.com/projects/1b772338-fd6a-4af1-8f5e-fddffc2b9d43)
-[![Libraries.io](https://img.shields.io/librariesio/github/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/blob/master/composer.lock)
+[![Travis branch](https://img.shields.io/travis/simplepie/simplepie-ng/master.svg?style=for-the-badge&label=Travis%20CI)](https://travis-ci.org/simplepie/simplepie-ng)
+[![Code Quality](http://img.shields.io/scrutinizer/g/simplepie/simplepie-ng.svg?style=for-the-badge&label=Scrutinizr)](https://scrutinizer-ci.com/g/simplepie/simplepie-ng)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/1b772338-fd6a-4af1-8f5e-fddffc2b9d43.svg?style=for-the-badge&label=SensioLabs%20Insight)](https://insight.sensiolabs.com/projects/1b772338-fd6a-4af1-8f5e-fddffc2b9d43)
+[![Libraries.io](https://img.shields.io/librariesio/github/simplepie/simplepie-ng.svg?style=for-the-badge&label=Libraries.io)](https://github.com/simplepie/simplepie-ng/blob/master/composer.lock)
 
 ### Social
 
 [![Website](https://img.shields.io/website-up-down-green-red/http/simplepie.org.svg?label=simplepie.org&style=for-the-badge)](http://simplepie.org)
 [![Author](http://img.shields.io/badge/author-@skyzyx-blue.svg?style=for-the-badge)](https://twitter.com/skyzyx)
-[![Follow](https://img.shields.io/twitter/follow/simplepie_ng.svg?style=for-the-badge&label=Follow)](https://twitter.com/intent/follow?screen_name=simplepie_ng)
-[![Stars](https://img.shields.io/github/stars/simplepie/simplepie-ng.svg?style=for-the-badge&label=Stars)](https://github.com/simplepie/simplepie-ng/stargazers)
-[![Beerpay](https://img.shields.io/beerpay/simplepie/simplepie-ng.svg?style=for-the-badge)](https://beerpay.io/simplepie/simplepie-ng)
+[![Follow](https://img.shields.io/twitter/follow/simplepie_ng.svg?style=for-the-badge&label=Follow%20@simplepie_ng)](https://twitter.com/intent/follow?screen_name=simplepie_ng)
+[![Stars](https://img.shields.io/github/stars/simplepie/simplepie-ng.svg?style=for-the-badge&label=GitHub%20Stars)](https://github.com/simplepie/simplepie-ng/stargazers)
+[![Beerpay](https://img.shields.io/beerpay/simplepie/simplepie-ng.svg?style=for-the-badge&label=sponsored)](https://beerpay.io/simplepie/simplepie-ng)
 
 ### Compliance
 
