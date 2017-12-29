@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace SimplePie;
 
 use DOMXPath;
-use SimplePie\Configuration\SetLoggerInterface;
 use SimplePie\Enum\FeedType;
 use SimplePie\Exception\MiddlewareException;
 use SimplePie\Middleware\Html\HtmlInterface;
@@ -30,7 +29,7 @@ use stdClass;
  * Its primary job is to (a) allow the registration and priority of middleware,
  * and (b) provide the interface for SimplePie NG to trigger middleware.
  */
-class HandlerStack implements HandlerStackInterface, SetLoggerInterface
+class HandlerStack implements HandlerStackInterface
 {
     use Tr\LoggerTrait;
 
