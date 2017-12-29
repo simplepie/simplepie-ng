@@ -46,7 +46,7 @@ Follow: [Medium](https://medium.com/simplepie-ng) • [Twitter](https://twitter.
 If, after reading the existing docs, you have questions or ideas, you can file a feature request or start a discussion thread in GitHub Issues. I'm willing to entertain good ideas provided that they are good for professional-grade software engineers. My goal is _mostly_ spec-compliance, but adapted to the realities of real-world feeds.
 
 
-## What is SimplePie NG, _really?_
+## What is SimplePie NG?
 
 **SimplePie [OG](http://www.urbandictionary.com/define.php?term=OG)** was created for PHP 4.3 by a person who was brand-new to programming. That was me. About 6 months into the project, I started receiving a _tremendous_ amount of help from a teenage Scot who had nothing better to do — thanks Geoffrey!
 
@@ -54,118 +54,9 @@ Over the years I've tried to start this project by forking SimplePie and strippi
 
 **SimplePie NG** is a from-scratch rewrite of SimplePie for PHP 7.2. It starts with a completely different kind of thinking, and more than a decade more experience in software engineering and open-source. It is written with a view of PHP from 2017 and beyond, and is being built in such a way that greater community involvement should be far easier from much earlier in the project's life.
 
-I want this tool. I have a deep knowledge about feeds. I am working to make this happen.
 
 
-## Features (planned)
 
-* Built for professional-grade software engineers.
-* Requires PHP 7.2+.
-* Complies mith multiple PSR recommendations and drafts.
-* Supports multiple log levels.
-* Written following a stricter view of the PSR coding style guidelines.
-* Leverages a middleware-based system for feed format support and other add-ons.
-* Support for feed formats can be as inclusive or exclusive as you want. You can choose how you want to spend your performance points.
-
-### Non-Goals
-
-* Backwards-compatibility with SimplePie 1.x.
-* Compatibility with older/historic versions of PHP. We're starting with 7.2 and moving forward from there.
-* Will almost certainly [not work with shared hosting providers](https://github.com/simplepie/simplepie-ng/issues/32). Time to get a grown-up server.
-* WordPress compatibility.
-
-
-## Examples
-
-**Still in the proof-of-concept phase.** PSR-3 logging, and using PSR-7 for feed transport.
-
-There will probably be a wrapper for `parseXml()`, `parseJson()`, and `parseHtml()` in the form of `parse()`. There will also be some level of PSR-6/16 caching at the object layer to make non-first runs even faster.
-
-### Simple, leveraging default options
-
-```php
-use GuzzleHttp\Psr7;
-use SimplePie\SimplePie;
-
-// Instantiate SimplePie.
-$simplepie = new SimplePie();
-
-// Pass a PSR-7 stream to SimplePie for parsing.
-$stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
-
-// Specifically parses XML.
-$parser = $simplepie->parseXml($stream, true);
-
-// Reference the top-level feed object
-$feed = $parser->getFeed();
-
-// Use familiar syntax to read the data you care about.
-echo $feed->getTitle();
-foreach ($feed->getItems() as $item) {
-    echo $item->getTitle();
-}
-```
-
-
-### Custom logger and middleware stack
-
-```php
-use GuzzleHttp\Psr7;
-use Monolog\Handler\ErrorLogHandler;
-use Monolog\Logger;
-use Psr\Log\LogLevel;
-use SimplePie\HandlerStack;
-use SimplePie\Middleware\Json\JsonFeed;
-use SimplePie\Middleware\Xml\Atom;
-use SimplePie\Middleware\Xml\Rss;
-use SimplePie\SimplePie;
-
-// Configure the logger.
-$logger = new Logger('SimplePie');
-$logger->pushHandler(new ErrorLogHandler(
-    ErrorLogHandler::OPERATING_SYSTEM,
-    LogLevel::DEBUG,
-    true,
-    false
-));
-
-// Configure the middleware stack.
-$middleware = (new HandlerStack())
-    ->append(new JsonFeed(), 'jsonfeed')
-    ->append(new Atom()    , 'atom10')
-    ->append(new Rss()     , 'rss20')
-;
-
-// Instantiate SimplePie.
-$simplepie = (new SimplePie())
-    ->setLogger($logger)
-    ->setMiddlewareStack($middleware)
-;
-
-// Pass a PSR-7 stream to SimplePie for parsing.
-$stream = Psr7\stream_for(file_get_contents(__DIR__ . '/releases.atom'));
-
-// Specifically parses XML.
-// Only applies the middleware that is registered as supporting XML feed types.
-$parser = $simplepie->parseXml($stream, true);
-
-// Reference the top-level feed object
-$feed = $parser->getFeed();
-
-// By default, all nodes return a `SimplePie\Type\Node` object with a `toString()` method defined.
-// You can also handle various allowed serializations differently.
-foreach ($feed->getItems() as $item) {
-    switch ($item->getTitle()->getSerialization()) {
-        case 'xhtml':
-            // Custom XML stuff...
-            break;
-        case 'text':
-        case 'html':
-        default:
-            echo $item->getTitle()->getValue();
-    }
-}
-```
 
 
 ## Feed support through middleware (planned)
