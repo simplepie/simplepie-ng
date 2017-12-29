@@ -20,15 +20,13 @@ use stdClass;
 /**
  * The top-most element in a feed.
  *
+ * // phpcs:disable Generic.Files.LineLength.MaxExceeded
+ *
  * @method SimplePie\Type\Person getAuthor(string $namespaceAlias) Returns the Author associated with this feed.
- * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics
- *         associated with this feed.
- * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated
- *         with this feed.
- * @method SimplePie\Type\Entry[] getEntries(string $namespaceAlias) Returns the list of Entries/Items associated with
- *         this feed.
- * @method SimplePie\Type\Generator getGenerator(string $namespaceAlias) Returns the Generator associated with
- *         this feed.
+ * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this feed.
+ * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated with this feed.
+ * @method SimplePie\Type\Entry[] getEntries(string $namespaceAlias) Returns the list of Entries/Items associated with this feed.
+ * @method SimplePie\Type\Generator getGenerator(string $namespaceAlias) Returns the Generator associated with this feed.
  * @method SimplePie\Type\Node getId(string $namespaceAlias) Returns the ID associated with this feed.
  * @method SimplePie\Type\Image getIcon(string $namespaceAlias) Returns the Icon associated with this feed.
  * @method SimplePie\Type\Entry[] getItems(string $namespaceAlias) Alias for `getEntries()`.
@@ -38,12 +36,12 @@ use stdClass;
  * @method SimplePie\Type\Image getLogo(string $namespaceAlias) Returns the Logo associated with this feed.
  * @method \DateTime getPubDate(string $namespaceAlias) Alias for `getPublished()`.
  * @method \DateTime getPublished(string $namespaceAlias) Returns the date that the feed was published.
- * @method SimplePie\Type\Node getRights(string $namespaceAlias) Returns the copyright information associated with
- *         this feed.
+ * @method SimplePie\Type\Node getRights(string $namespaceAlias) Returns the copyright information associated with this feed.
  * @method SimplePie\Type\Node getSubtitle(string $namespaceAlias) Returns the sub-title associated with this feed.
  * @method SimplePie\Type\Node getSummary(string $namespaceAlias) Returns the summary associated with this feed.
  * @method SimplePie\Type\Node getTitle(string $namespaceAlias) Returns the title associated with this feed.
  * @method \DateTime getUpdated(string $namespaceAlias) Returns the date that the feed was updated.
+ * // phpcs:enable
  */
 class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
 {

@@ -10,8 +10,6 @@ declare(strict_types=1);
 
 namespace SimplePie\Type;
 
-use SimplePie\Type\Node;
-
 /**
  * The base type class that all other type classes extend from. It handles low-level functionality that is shared
  * across all type classes.
@@ -43,7 +41,7 @@ abstract class AbstractType
         /** @scrutinizer ignore-call */
         $nodeName = $this->getAlias($nodeName);
 
-        return $this->/** @scrutinizer ignore-call */getHandler($nodeName, $args);
+        return $this->/* @scrutinizer ignore-call */getHandler($nodeName, $args);
     }
 
     /**

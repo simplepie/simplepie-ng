@@ -21,24 +21,23 @@ use SimplePie\Parser\Date as DateParser;
 /**
  * A type model for an Entry element.
  *
+ * // phpcs:disable Generic.Files.LineLength.MaxExceeded
+ *
  * @method SimplePie\Type\Person getAuthor(string $namespaceAlias) Returns the Author associated with this entry.
- * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics
- *         associated with this entry.
- * @method SimplePie\Type\Node getContent(string $namespaceAlias) Returns the content of the entry, serialized as TEXT,
- *         HTML, or XHTML content.
- * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated
- *         with this entry.
+ * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this entry.
+ * @method SimplePie\Type\Node getContent(string $namespaceAlias) Returns the content of the entry, serialized as TEXT, HTML, or XHTML content.
+ * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated with this entry.
  * @method SimplePie\Type\Node getId(string $namespaceAlias) Returns the ID associated with this entry.
  * @method SimplePie\Type\Node getLang(string $namespaceAlias) Alias for `getLanguage()`.
  * @method SimplePie\Type\Node getLanguage(string $namespaceAlias) Returns the language associated with this entry.
  * @method SimplePie\Type\Link[] getLinks(string $namespaceAlias) Returns the list of Links associated with this entry.
  * @method \DateTime getPubDate(string $namespaceAlias) Alias for `getPublished()`.
  * @method \DateTime getPublished(string $namespaceAlias) Returns the date that the entry was published.
- * @method SimplePie\Type\Node getRights(string $namespaceAlias) Returns the copyright information associated with
- *         this entry.
+ * @method SimplePie\Type\Node getRights(string $namespaceAlias) Returns the copyright information associated with this entry.
  * @method SimplePie\Type\Node getSummary(string $namespaceAlias) Returns the summary associated with this entry.
  * @method SimplePie\Type\Node getTitle(string $namespaceAlias) Returns the title associated with this entry.
  * @method \DateTime getUpdated(string $namespaceAlias) Returns the date that the entry was updated.
+ * // phpcs:enable
  *
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#412-the-atomentry-element
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-1.0#535-items
