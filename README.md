@@ -32,9 +32,9 @@
 
 ### Social
 
-[![Website](https://img.shields.io/website-up-down-green-red/http/simplepie.org.svg?label=simplepie.org&style=for-the-badge)](http://simplepie.org)
 [![Author](http://img.shields.io/badge/author-@skyzyx-blue.svg?style=for-the-badge)](https://twitter.com/skyzyx)
 [![Follow](https://img.shields.io/twitter/follow/simplepie_ng.svg?style=for-the-badge&label=Follow%20@simplepie_ng)](https://twitter.com/intent/follow?screen_name=simplepie_ng)
+[![Gitter](https://img.shields.io/gitter/room/simplepie/simplepie-ng.svg?style=for-the-badge)](https://gitter.im/simplepie/simplepie-ng)
 [![Stars](https://img.shields.io/github/stars/simplepie/simplepie-ng.svg?style=for-the-badge&label=GitHub%20Stars)](https://github.com/simplepie/simplepie-ng/stargazers)
 [![Beerpay](https://img.shields.io/beerpay/simplepie/simplepie-ng.svg?style=for-the-badge&label=sponsored)](https://beerpay.io/simplepie/simplepie-ng)
 
