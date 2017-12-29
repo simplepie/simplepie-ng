@@ -96,22 +96,6 @@ analyze: lint test
 	@ echo "=====> Comparing Composer dependencies against the PHP Security Advisories Database..."
 	- curl -sSL -H "Accept: text/plain" https://security.sensiolabs.org/check_lock -F lock=@composer.lock | tee reports/sensiolabs.txt
 
-	@ echo " "
-	@ echo "=====> Running Quality Analyzer..."
-	- bin/analyze \
-	    --coverage=tests/report/clover.xml \
-	    --checkstyle=reports/phpcs-src.xml \
-	    --tests=tests/report/logfile.xml \
-	    --cpd=reports/copy-paste.xml \
-	    --phploc=reports/phploc-src.xml \
-	    --exclude_analyzers=pdepend,phpmd,dependencies \
-	    analyze src/
-	- bin/analyze bundle reports/analyze/
-	@ echo "*******************************************************************"
-	@ echo "Start a local web server to view the results"
-	@ echo "php -S 0.0.0.0:4000 -t $$(pwd)/reports/analyze/"
-	@ echo "*******************************************************************"
-
 #-------------------------------------------------------------------------------
 
 .PHONY: tag
