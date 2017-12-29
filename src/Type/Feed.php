@@ -29,19 +29,20 @@ use stdClass;
  *         this feed.
  * @method SimplePie\Type\Generator getGenerator(string $namespaceAlias) Returns the Generator associated with
  *         this feed.
- * @method string getId(string $namespaceAlias) Returns the ID associated with this feed.
+ * @method SimplePie\Type\Node getId(string $namespaceAlias) Returns the ID associated with this feed.
  * @method SimplePie\Type\Image getIcon(string $namespaceAlias) Returns the Icon associated with this feed.
  * @method SimplePie\Type\Entry[] getItems(string $namespaceAlias) Alias for `getEntries()`.
- * @method string getLang(string $namespaceAlias) Alias for `getLanguage()`.
- * @method string getLanguage(string $namespaceAlias) Returns the language associated with this feed.
+ * @method SimplePie\Type\Node getLang(string $namespaceAlias) Alias for `getLanguage()`.
+ * @method SimplePie\Type\Node getLanguage(string $namespaceAlias) Returns the language associated with this feed.
  * @method SimplePie\Type\Link[] getLinks(string $namespaceAlias) Returns the list of Links associated with this feed.
  * @method SimplePie\Type\Image getLogo(string $namespaceAlias) Returns the Logo associated with this feed.
  * @method \DateTime getPubDate(string $namespaceAlias) Alias for `getPublished()`.
  * @method \DateTime getPublished(string $namespaceAlias) Returns the date that the feed was published.
- * @method string getRights(string $namespaceAlias) Returns the copyright information associated with this feed.
- * @method string getSubtitle(string $namespaceAlias) Returns the sub-title associated with this feed.
- * @method string getSummary(string $namespaceAlias) Returns the summary associated with this feed.
- * @method string getTitle(string $namespaceAlias) Returns the title associated with this feed.
+ * @method SimplePie\Type\Node getRights(string $namespaceAlias) Returns the copyright information associated with
+ *         this feed.
+ * @method SimplePie\Type\Node getSubtitle(string $namespaceAlias) Returns the sub-title associated with this feed.
+ * @method SimplePie\Type\Node getSummary(string $namespaceAlias) Returns the summary associated with this feed.
+ * @method SimplePie\Type\Node getTitle(string $namespaceAlias) Returns the title associated with this feed.
  * @method \DateTime getUpdated(string $namespaceAlias) Returns the date that the feed was updated.
  */
 class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface

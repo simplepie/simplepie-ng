@@ -20,13 +20,13 @@ use SimplePie\Mixin as Tr;
 /**
  * A type model for an Image element.
  *
- * @method string getDescription() Returns the description of the Image.
- * @method string getHeight() Returns the height of the Image.
- * @method string getLink() Returns to where the Image should be linked.
- * @method string getTitle() Returns the title of the Image.
- * @method string getUri() Alias for `getUrl()`.
- * @method string getUrl() Returns the URL of the Image.
- * @method string getWidth() Returns the width of the Image.
+ * @method SimplePie\Type\Node getDescription() Returns the description of the Image.
+ * @method SimplePie\Type\Node getHeight() Returns the height of the Image.
+ * @method SimplePie\Type\Node getLink() Returns to where the Image should be linked.
+ * @method SimplePie\Type\Node getTitle() Returns the title of the Image.
+ * @method SimplePie\Type\Node getUri() Alias for `getUrl()`.
+ * @method SimplePie\Type\Node getUrl() Returns the URL of the Image.
+ * @method SimplePie\Type\Node getWidth() Returns the width of the Image.
  *
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#425-the-atomicon-element
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#428-the-atomlogo-element

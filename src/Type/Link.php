@@ -20,18 +20,18 @@ use SimplePie\Mixin as Tr;
 /**
  * A type model for a Link element.
  *
- * @method string getHref() Alias for `getUrl()`.
- * @method string getHrefLang() Alias for `getLanguage()`.
- * @method string getLang() Alias for `getLanguage()`.
- * @method string getLanguage() Returns the language of the Link.
- * @method string getLength() Returns the length of the Link, in bytes.
- * @method string getMediaType() Returns the media type (née mime type) of the Link.
- * @method string getRel() Alias for `getRelationship()`.
- * @method string getRelationship() Returns the relationship of the Link.
- * @method string getTitle() Returns the title of the Link.
- * @method string getType() Alias for `getMediaType()`.
- * @method string getUri() Alias for `getUrl()`.
- * @method string getUrl() Returns the URL of the Link.
+ * @method SimplePie\Type\Node getHref() Alias for `getUrl()`.
+ * @method SimplePie\Type\Node getHrefLang() Alias for `getLanguage()`.
+ * @method SimplePie\Type\Node getLang() Alias for `getLanguage()`.
+ * @method SimplePie\Type\Node getLanguage() Returns the language of the Link.
+ * @method SimplePie\Type\Node getLength() Returns the length of the Link, in bytes.
+ * @method SimplePie\Type\Node getMediaType() Returns the media type (née mime type) of the Link.
+ * @method SimplePie\Type\Node getRel() Alias for `getRelationship()`.
+ * @method SimplePie\Type\Node getRelationship() Returns the relationship of the Link.
+ * @method SimplePie\Type\Node getTitle() Returns the title of the Link.
+ * @method SimplePie\Type\Node getType() Alias for `getMediaType()`.
+ * @method SimplePie\Type\Node getUri() Alias for `getUrl()`.
+ * @method SimplePie\Type\Node getUrl() Returns the URL of the Link.
  *
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#427-the-atomlink-element
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-1.0#532-link

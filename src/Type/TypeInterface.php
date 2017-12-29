@@ -21,6 +21,8 @@ interface TypeInterface
      * @param string $nodeName The name of the method being called.
      *
      * @return string
+     *
+     * @internal
      */
     public function getAlias(string $nodeName): string;
 
@@ -32,6 +34,8 @@ interface TypeInterface
      * @throws SimplePieException
      *
      * @return Node
+     *
+     * @internal
      */
     public function getHandler(string $nodeName): Node;
 }

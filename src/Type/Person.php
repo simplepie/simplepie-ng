@@ -20,11 +20,11 @@ use SimplePie\Mixin as Tr;
 /**
  * A type model for a Person element.
  *
- * @method string getAvatar() Returns the avatar URL of the Person.
- * @method string getEmail() Returns the email address of the Person.
- * @method string getName() Returns the name of the Person.
- * @method string getUri() Alias for `getUrl()`.
- * @method string getUrl() Returns the URL of the Person.
+ * @method SimplePie\Type\Node getAvatar() Returns the avatar URL of the Person.
+ * @method SimplePie\Type\Node getEmail() Returns the email address of the Person.
+ * @method SimplePie\Type\Node getName() Returns the name of the Person.
+ * @method SimplePie\Type\Node getUri() Alias for `getUrl()`.
+ * @method SimplePie\Type\Node getUrl() Returns the URL of the Person.
  *
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#32-person-constructs
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#author-sub-element-of-item

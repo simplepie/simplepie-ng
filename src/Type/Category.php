@@ -20,9 +20,9 @@ use SimplePie\Mixin as Tr;
 /**
  * A type model for a Category/Tag/Topic element.
  *
- * @method string getLabel() Returns the label of the Category.
- * @method string getScheme() Returns the scheme of the Category.
- * @method string getTerm() Returns the term of the Category.
+ * @method SimplePie\Type\Node getLabel() Returns the label of the Category.
+ * @method SimplePie\Type\Node getScheme() Returns the scheme of the Category.
+ * @method SimplePie\Type\Node getTerm() Returns the term of the Category.
  *
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#422-the-atomcategory-element
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#category-sub-element-of-item
