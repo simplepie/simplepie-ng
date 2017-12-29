@@ -38,7 +38,7 @@ trait DeepTypeTrait
      *
      * @return Node
      *
-     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getScalarSingleValue(
         object $root,
@@ -68,7 +68,7 @@ trait DeepTypeTrait
      *
      * @return TypeInterface
      *
-     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getComplexSingleValue(
         object $root,
@@ -98,7 +98,7 @@ trait DeepTypeTrait
      *
      * @return iterable
      *
-     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getComplexMultipleValues(
         object $root,
