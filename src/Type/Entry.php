@@ -21,7 +21,7 @@ use SimplePie\Parser\Date as DateParser;
 /**
  * A type model for an Entry element.
  *
- * // phpcs:disable Generic.Files.LineLength.MaxExceeded
+ * phpcs:disable Generic.Files.LineLength.MaxExceeded
  *
  * @method SimplePie\Type\Person getAuthor(string $namespaceAlias) Returns the Author associated with this entry.
  * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this entry.
@@ -37,7 +37,7 @@ use SimplePie\Parser\Date as DateParser;
  * @method SimplePie\Type\Node getSummary(string $namespaceAlias) Returns the summary associated with this entry.
  * @method SimplePie\Type\Node getTitle(string $namespaceAlias) Returns the title associated with this entry.
  * @method \DateTime getUpdated(string $namespaceAlias) Returns the date that the entry was updated.
- * // phpcs:enable
+ * phpcs:enable
  *
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#412-the-atomentry-element
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-1.0#535-items

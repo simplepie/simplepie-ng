@@ -20,7 +20,7 @@ use stdClass;
 /**
  * The top-most element in a feed.
  *
- * // phpcs:disable Generic.Files.LineLength.MaxExceeded
+ * phpcs:disable Generic.Files.LineLength.MaxExceeded
  *
  * @method SimplePie\Type\Person getAuthor(string $namespaceAlias) Returns the Author associated with this feed.
  * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this feed.
@@ -41,7 +41,7 @@ use stdClass;
  * @method SimplePie\Type\Node getSummary(string $namespaceAlias) Returns the summary associated with this feed.
  * @method SimplePie\Type\Node getTitle(string $namespaceAlias) Returns the title associated with this feed.
  * @method \DateTime getUpdated(string $namespaceAlias) Returns the date that the feed was updated.
- * // phpcs:enable
+ * phpcs:enable
  */
 class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
 {
