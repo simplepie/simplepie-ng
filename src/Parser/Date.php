@@ -27,7 +27,7 @@ class Date
     /**
      * The input datestamp.
      *
-     * @var string
+     * @var string|null
      */
     protected $datestamp;
 
@@ -48,7 +48,7 @@ class Date
     /**
      * The resulting `DateTime` object.
      *
-     * @var DateTime|null
+     * @var bool|DateTime
      */
     protected $dateTime;
 
@@ -83,16 +83,16 @@ class Date
         $this->datestamp        = $datestamp ?? null;
         $this->createFromFormat = $createFromFormat;
 
-        if (null !== $this->datestamp) {
-            // Convert null to UTC; Convert Z to UTC.
-            if (null === $outputTimezone) {
-                $this->outputTimezone = 'UTC';
-            } elseif ('Z' === \mb_strtoupper($outputTimezone)) {
-                $this->outputTimezone = 'UTC';
-            } else {
-                $this->outputTimezone = $outputTimezone;
-            }
+        // Convert null or `Z` to UTC.
+        if (null === $outputTimezone) {
+            $this->outputTimezone = 'UTC';
+        } elseif ('Z' === \mb_strtoupper($outputTimezone)) {
+            $this->outputTimezone = 'UTC';
+        } else {
+            $this->outputTimezone = $outputTimezone;
+        }
 
+        if (null !== $this->datestamp) {
             // Use the custom formatter, if available
             if (null !== $this->createFromFormat) {
                 $this->dateTime = DateTime::createFromFormat(
@@ -108,7 +108,9 @@ class Date
             }
 
             // Sometimes, `createFromFormat()` doesn't set this correctly.
-            $this->dateTime->setTimezone(new DateTimeZone($this->outputTimezone));
+            if (false !== $this->dateTime) {
+                $this->dateTime->setTimezone(new DateTimeZone($this->outputTimezone));
+            }
         }
     }
 
@@ -143,9 +145,9 @@ class Date
     }
 
     /**
-     * Get the resulting `DateTime` object.
+     * Get the resulting `DateTime` object. If the date string could not be parsed, `false` will be returned.
      *
-     * @return DateTime
+     * @return bool|DateTime
      */
     public function getDateTime(): ?DateTime
     {
