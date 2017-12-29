@@ -24,7 +24,8 @@ Follow: [Medium](https://medium.com/simplepie-ng) • [Twitter](https://twitter.
 [![Travis branch](https://img.shields.io/travis/simplepie/simplepie-ng/master.svg?style=for-the-badge&label=Travis%20CI)](https://travis-ci.org/simplepie/simplepie-ng)
 [![Code Quality](http://img.shields.io/scrutinizer/g/simplepie/simplepie-ng.svg?style=for-the-badge&label=Scrutinizr)](https://scrutinizer-ci.com/g/simplepie/simplepie-ng)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/1b772338-fd6a-4af1-8f5e-fddffc2b9d43.svg?style=for-the-badge&label=Insight)](https://insight.sensiolabs.com/projects/1b772338-fd6a-4af1-8f5e-fddffc2b9d43)
-[![VersionEye](https://img.shields.io/versioneye/d/simplepie/simplepie-ng.svg?style=for-the-badge)](https://www.versioneye.com/user/projects/5a4604b30fb24f11b07c82b6)
+[![Codacy](https://img.shields.io/codacy/grade/2933d00bd11143baaa6538a9c5fbd9a9/master.svg?style=for-the-badge&label=Codacy)](https://www.codacy.com/app/simplepie/simplepie-ng)
+
 
 ### Social
 
