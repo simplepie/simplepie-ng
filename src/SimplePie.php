@@ -12,9 +12,9 @@ namespace SimplePie;
 
 use Psr\Http\Message\StreamInterface;
 use Psr\Log\NullLogger;
-use SimplePie\Configuration\SetLoggerInterface;
+use SimplePie\Configuration as C;
 use SimplePie\Middleware\Xml\Atom;
-use SimplePie\Mixin as T;
+use SimplePie\Mixin as Tr;
 use SimplePie\Parser\Xml as XmlParser;
 
 \define('SIMPLEPIE_ROOT', __DIR__);
@@ -22,9 +22,9 @@ use SimplePie\Parser\Xml as XmlParser;
 /**
  * `SimplePie\SimplePie` is the primary entry point for SimplePie NG.
  */
-class SimplePie implements SetLoggerInterface
+class SimplePie implements C\SetLoggerInterface
 {
-    use T\LoggerTrait;
+    use Tr\LoggerTrait;
 
     /**
      * Bitwise libxml options to use for parsing XML.

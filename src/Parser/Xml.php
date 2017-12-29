@@ -16,7 +16,7 @@ use Psr\Http\Message\StreamInterface;
 use Psr\Log\LoggerInterface;
 use SimplePie\Enum\FeedType;
 use SimplePie\HandlerStackInterface;
-use SimplePie\Mixin as T;
+use SimplePie\Mixin as Tr;
 use SimplePie\SimplePie;
 use SimplePie\Type\Feed;
 use SimplePie\Util\Ns;
@@ -26,9 +26,9 @@ use SimplePie\Util\Ns;
  */
 class Xml extends AbstractParser
 {
-    use T\DomDocumentTrait;
-    use T\LoggerTrait;
-    use T\RawDocumentTrait;
+    use Tr\DomDocumentTrait;
+    use Tr\LoggerTrait;
+    use Tr\RawDocumentTrait;
 
     /**
      * The object which contains the parsed results.

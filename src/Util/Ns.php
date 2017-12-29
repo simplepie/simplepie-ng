@@ -12,14 +12,15 @@ namespace SimplePie\Util;
 
 use DOMNode;
 use Psr\Log\NullLogger;
-use SimplePie\Mixin as T;
+use SimplePie\Mixin as Tr;
 
 /**
  * Provides tools for managing and working with XML namespaces.
  */
 class Ns
 {
-    use T\LoggerTrait;
+    use Tr\DomDocumentTrait;
+    use Tr\LoggerTrait;
 
     /**
      * A mapping of namespace URIs to preferred namespace aliases.

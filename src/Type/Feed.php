@@ -18,7 +18,27 @@ use SimplePie\Parser\Date as DateParser;
 use stdClass;
 
 /**
- * Represents the top-level of a feed.
+ * The top-most element in a feed.
+ *
+ * @method SimplePie\Type\Person getAuthor(string $namespaceAlias) Returns the Author associated with this feed.
+ * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this feed.
+ * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated with this feed.
+ * @method SimplePie\Type\Entry[] getEntries(string $namespaceAlias) Returns the list of Entries/Items associated with this feed.
+ * @method SimplePie\Type\Generator getGenerator(string $namespaceAlias) Returns the Generator associated with this feed.
+ * @method string getId(string $namespaceAlias) Returns the ID associated with this feed.
+ * @method SimplePie\Type\Image getIcon(string $namespaceAlias) Returns the Icon associated with this feed.
+ * @method SimplePie\Type\Entry[] getItems(string $namespaceAlias) Alias for `getEntries()`.
+ * @method string getLang(string $namespaceAlias) Alias for `getLanguage()`.
+ * @method string getLanguage(string $namespaceAlias) Returns the language associated with this feed.
+ * @method SimplePie\Type\Link[] getLinks(string $namespaceAlias) Returns the list of Links associated with this feed.
+ * @method SimplePie\Type\Image getLogo(string $namespaceAlias) Returns the Logo associated with this feed.
+ * @method \DateTime getPubDate(string $namespaceAlias) Alias for `getPublished()`.
+ * @method \DateTime getPublished(string $namespaceAlias) Returns the date that the feed was published.
+ * @method string getRights(string $namespaceAlias) Returns the copyright information associated with this feed.
+ * @method string getSubtitle(string $namespaceAlias) Returns the sub-title associated with this feed.
+ * @method string getSummary(string $namespaceAlias) Returns the summary associated with this feed.
+ * @method string getTitle(string $namespaceAlias) Returns the title associated with this feed.
+ * @method \DateTime getUpdated(string $namespaceAlias) Returns the date that the feed was updated.
  */
 class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
 {
@@ -76,8 +96,6 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
                 return 'link';
 
             case 'pubDate':
-            case 'publishDate':
-            case 'publishedDate':
                 return 'published';
 
             default:

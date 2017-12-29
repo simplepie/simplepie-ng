@@ -17,7 +17,7 @@ use SimplePie\Exception\MiddlewareException;
 use SimplePie\Middleware\Html\HtmlInterface;
 use SimplePie\Middleware\Json\JsonInterface;
 use SimplePie\Middleware\Xml\XmlInterface;
-use SimplePie\Mixin as T;
+use SimplePie\Mixin as Tr;
 use SimplePie\Util\Ns;
 use Skyzyx\UtilityPack\Types;
 use stdClass;
@@ -32,7 +32,7 @@ use stdClass;
  */
 class HandlerStack implements HandlerStackInterface, SetLoggerInterface
 {
-    use T\LoggerTrait;
+    use Tr\LoggerTrait;
 
     /**
      * The middleware stack, grouped by feed type.

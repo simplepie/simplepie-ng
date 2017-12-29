@@ -15,17 +15,22 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
-use SimplePie\Mixin as T;
+use SimplePie\Mixin as Tr;
 
 /**
  * A type model for a Generator element.
+ *
+ * @method string getName() Returns the name of the Generator.
+ * @method string getUri() Alias for `getUrl()`.
+ * @method string getUrl() Returns the URL of the Generator.
+ * @method string getVersion() Returns the version of the Generator.
  *
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#424-the-atomgenerator-element
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#optional-channel-elements
  */
 class Generator extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
 {
-    use T\LoggerTrait;
+    use Tr\LoggerTrait;
 
     /**
      * The DOMNode element to parse.

@@ -15,10 +15,23 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
-use SimplePie\Mixin as T;
+use SimplePie\Mixin as Tr;
 
 /**
  * A type model for a Link element.
+ *
+ * @method string getHref() Alias for `getUrl()`.
+ * @method string getHrefLang() Alias for `getLanguage()`.
+ * @method string getLang() Alias for `getLanguage()`.
+ * @method string getLanguage() Returns the language of the Link.
+ * @method string getLength() Returns the length of the Link, in bytes.
+ * @method string getMediaType() Returns the media type (née mime type) of the Link.
+ * @method string getRel() Alias for `getRelationship()`.
+ * @method string getRelationship() Returns the relationship of the Link.
+ * @method string getTitle() Returns the title of the Link.
+ * @method string getType() Alias for `getMediaType()`.
+ * @method string getUri() Alias for `getUrl()`.
+ * @method string getUrl() Returns the URL of the Link.
  *
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#427-the-atomlink-element
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-1.0#532-link
@@ -31,7 +44,7 @@ use SimplePie\Mixin as T;
  */
 class Link extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
 {
-    use T\LoggerTrait;
+    use Tr\LoggerTrait;
 
     /**
      * The DOMNode element to parse.
@@ -93,7 +106,6 @@ class Link extends AbstractType implements NodeInterface, TypeInterface, C\SetLo
         if ($node) {
             $this->logger = $logger ?? new NullLogger();
             $this->node   = $node;
-            $this->name   = new Node($this->node);
 
             foreach ($this->node->attributes as $attribute) {
                 $this->{$attribute->name} = new Node($attribute);

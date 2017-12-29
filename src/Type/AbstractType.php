@@ -36,6 +36,7 @@ abstract class AbstractType
             $nodeName = \lcfirst(\mb_substr($nodeName, 3));
         }
 
+        /** @scrutinizer ignore-call */
         $nodeName = $this->getAlias($nodeName);
 
         return $this->getHandler($nodeName, $args);
