@@ -21,6 +21,12 @@ use SimplePie\Parser\Date as DateParser;
 /**
  * A type model for an Entry element.
  *
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#412-the-atomentry-element
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-1.0#535-items
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-1.0#55-item
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#elements-of-item
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-JSON-Feed-v1#items
+ *
  * phpcs:disable Generic.Files.LineLength.MaxExceeded
  *
  * @method SimplePie\Type\Person getAuthor(string $namespaceAlias) Returns the Author associated with this entry.
@@ -37,13 +43,8 @@ use SimplePie\Parser\Date as DateParser;
  * @method SimplePie\Type\Node getSummary(string $namespaceAlias) Returns the summary associated with this entry.
  * @method SimplePie\Type\Node getTitle(string $namespaceAlias) Returns the title associated with this entry.
  * @method \DateTime getUpdated(string $namespaceAlias) Returns the date that the entry was updated.
- * phpcs:enable
  *
- * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#412-the-atomentry-element
- * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-1.0#535-items
- * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-1.0#55-item
- * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#elements-of-item
- * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-JSON-Feed-v1#items
+ * phpcs:enable
  */
 class Entry extends AbstractType implements NodeInterface, BranchInterface, C\SetLoggerInterface
 {

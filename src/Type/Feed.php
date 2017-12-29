@@ -20,6 +20,11 @@ use stdClass;
 /**
  * The top-most element in a feed.
  *
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#411-the-atomfeed-element
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-1.0#53-channel
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#required-channel-elements
+ * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-JSON-Feed-v1#top-level
+ *
  * phpcs:disable Generic.Files.LineLength.MaxExceeded
  *
  * @method SimplePie\Type\Person getAuthor(string $namespaceAlias) Returns the Author associated with this feed.
@@ -41,6 +46,7 @@ use stdClass;
  * @method SimplePie\Type\Node getSummary(string $namespaceAlias) Returns the summary associated with this feed.
  * @method SimplePie\Type\Node getTitle(string $namespaceAlias) Returns the title associated with this feed.
  * @method \DateTime getUpdated(string $namespaceAlias) Returns the date that the feed was updated.
+ *
  * phpcs:enable
  */
 class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
