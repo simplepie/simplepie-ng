@@ -25,6 +25,8 @@ abstract class AbstractType
      * @param array  $args     Any arguments passed into that method.
      *
      * @return mixed
+     *
+     * @internal
      */
     public function __call(string $nodeName, array $args)
     {
@@ -50,6 +52,8 @@ abstract class AbstractType
      * @param string $nodeName The short version of the call (without the `get`).
      *
      * @return string
+     *
+     * @internal
      */
     protected function getUnresolvableMessage(string $nodeName): string
     {
