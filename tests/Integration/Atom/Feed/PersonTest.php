@@ -22,7 +22,7 @@ class PersonTest extends AbstractTestCase
 {
     public function testPerson(): void
     {
-        $person = $this->feed->getAuthor();
+        $person = $this->feed->getAuthors()[0];
 
         $this->assertEquals(Person::class, Types::getClassOrType($person));
         $this->assertEquals('Ryan Parman <http://ryanparman.com>', (string) $person);
@@ -65,7 +65,7 @@ class PersonTest extends AbstractTestCase
 
     public function testPersonAliases(): void
     {
-        $person = $this->feed->getAuthor();
+        $person = $this->feed->getAuthors()[0];
 
         $this->assertEquals('http://ryanparman.com', (string) $person->getUrl());
         $this->assertEquals('http://ryanparman.com', (string) $person->getUri());
@@ -76,7 +76,7 @@ class PersonTest extends AbstractTestCase
         $this->expectException(SimplePieException::class);
         $this->expectExceptionMessage('getDoesntExist is an unresolvable method.');
 
-        $person = $this->feed->getAuthor();
+        $person = $this->feed->getAuthors()[0];
         $person->getDoesntExist();
     }
 }

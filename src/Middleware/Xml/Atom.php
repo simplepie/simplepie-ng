@@ -170,12 +170,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
 
         if ('feed' === \end($cpath)) {
             $nodes = [
-                'author'    => T\Person::class,
                 'generator' => T\Generator::class,
-            ];
-        } elseif ('entry' === \end($cpath)) {
-            $nodes = [
-                'author' => T\Person::class,
             ];
         }
 
@@ -220,13 +215,15 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
 
         if ('feed' === \end($cpath)) {
             $nodes = [
+                'author'      => T\Person::class,
                 'category'    => T\Category::class,
                 'contributor' => T\Person::class,
-                'link'        => T\Link::class,
                 'entry'       => T\Entry::class,
+                'link'        => T\Link::class,
             ];
         } elseif ('entry' === \end($cpath)) {
             $nodes = [
+                'author'      => T\Person::class,
                 'category'    => T\Category::class,
                 'contributor' => T\Person::class,
                 'link'        => T\Link::class,

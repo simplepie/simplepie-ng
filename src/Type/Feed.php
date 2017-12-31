@@ -27,7 +27,7 @@ use stdClass;
  *
  * phpcs:disable Generic.Files.LineLength.MaxExceeded
  *
- * @method SimplePie\Type\Person getAuthor(string $namespaceAlias) Returns the Author associated with this feed.
+ * @method SimplePie\Type\Person[] getAuthors(string $namespaceAlias) Returns the Authors associated with this feed.
  * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this feed.
  * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated with this feed.
  * @method SimplePie\Type\Entry[] getEntries(string $namespaceAlias) Returns the list of Entries/Items associated with this feed.
@@ -88,6 +88,9 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
     public function getAlias(string $nodeName): string
     {
         switch ($nodeName) {
+            case 'authors':
+                return 'author';
+
             case 'categories':
                 return 'category';
 
@@ -145,9 +148,6 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
                     $this->createFromFormat
                 ))->getDateTime();
 
-            case 'author':
-                return $this->getComplexSingleValue($this->getRoot(), $nodeName, Person::class, $args[0] ?? null);
-
             case 'generator':
                 return $this->getComplexSingleValue($this->getRoot(), $nodeName, Generator::class, $args[0] ?? null);
 
@@ -155,6 +155,7 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
             case 'logo':
                 return $this->getComplexSingleValue($this->getRoot(), $nodeName, Image::class, $args[0] ?? null);
 
+            case 'author':
             case 'category':
             case 'contributor':
             case 'entry':

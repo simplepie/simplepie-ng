@@ -88,6 +88,9 @@ class Person extends AbstractType implements NodeInterface, TypeInterface, C\Set
             foreach ($this->node->childNodes as $child) {
                 $this->{$child->tagName} = new Node($child);
             }
+
+            // Map to url if uri doesn't exist.
+            $this->uri = $this->uri ?? $this->url ?? null;
         }
     }
 

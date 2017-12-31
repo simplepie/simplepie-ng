@@ -121,6 +121,9 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
     public function getAlias(string $nodeName): string
     {
         switch ($nodeName) {
+            case 'authors':
+                return 'author';
+
             case 'categories':
                 return 'category';
 
@@ -173,8 +176,6 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
                 ))->getDateTime();
 
             case 'author':
-                return $this->getComplexSingleValue($this, $nodeName, Person::class, $args[0]);
-
             case 'category':
             case 'contributor':
             case 'link':

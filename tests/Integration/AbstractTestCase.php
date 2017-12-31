@@ -26,18 +26,33 @@ abstract class AbstractTestCase extends TestCase
 
     public $feed;
 
-    public function setUp(): void
+    public function getFeedDir(): string
     {
         $this->feedDir  = __DIR__ . '/feeds';
-        $this->goodAtom = \file_get_contents($this->feedDir . '/full/atom10/test.atom');
 
-        $middleware = (new HandlerStack())
-            ->append(new Atom(), 'atom');
+        return $this->feedDir;
+    }
 
-        $this->simplepie = (new SimplePie())
-            ->setMiddlewareStack($middleware);
+    public function getFeed(string $path)
+    {
+        return Psr7\stream_for(
+            file_get_contents($this->getFeedDir() . $path)
+        );
+    }
 
-        //------------------------------------------------------------------------------
+    public function getSimplePie(): SimplePie
+    {
+        return (new SimplePie())
+            ->setMiddlewareStack(
+                (new HandlerStack())
+                    ->append(new Atom())
+            );
+    }
+
+    public function setUp(): void
+    {
+        $this->goodAtom = \file_get_contents($this->getFeedDir() . '/full/atom10/test.atom');
+        $this->simplepie = $this->getSimplePie();
 
         $stream = Psr7\stream_for($this->goodAtom);
         $parser = $this->simplepie->parseXml($stream, true);
