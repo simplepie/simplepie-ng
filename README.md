@@ -6,41 +6,41 @@
 
 **SimplePie NG** is a modern, _next-generation_ PHP package for working with syndication feeds. It was re-written from the ground-up to take advantage of the modern features of PHP 7+.
 
-[![Medium](https://img.shields.io/badge/medium-simplepie--ng-blue.svg?style=for-the-badge)](https://medium.com/simplepie-ng)
-[![Follow](https://img.shields.io/twitter/follow/simplepie_ng.svg?style=for-the-badge&label=Twitter)](https://twitter.com/intent/follow?screen_name=simplepie_ng)
+[![Medium](https://img.shields.io/badge/medium-simplepie--ng-blue.svg?style=flat-square)](https://medium.com/simplepie-ng)
+[![Follow](https://img.shields.io/twitter/follow/simplepie_ng.svg?style=flat-square&label=Twitter)](https://twitter.com/intent/follow?screen_name=simplepie_ng)
 
 
 ## Badges
 ### Health
 
-![PHP Version](https://img.shields.io/packagist/php-v/simplepie/simplepie-ng.svg?style=for-the-badge)
-[![Release](https://img.shields.io/github/release/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/releases/latest)
-[![Open Issues](http://img.shields.io/github/issues/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/pulls)
-[![Contributors](https://img.shields.io/github/contributors/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/graphs/contributors)
-[![Repo Size](https://img.shields.io/github/repo-size/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/pulse/monthly)
-[![GitHub Commit Activity](https://img.shields.io/github/commit-activity/y/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/commits/master)
-[![GitHub Last Commit](https://img.shields.io/github/last-commit/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/commits)
+![PHP Version](https://img.shields.io/packagist/php-v/simplepie/simplepie-ng.svg?style=flat-square)
+[![Release](https://img.shields.io/github/release/simplepie/simplepie-ng.svg?style=flat-square)](https://github.com/simplepie/simplepie-ng/releases/latest)
+[![Open Issues](http://img.shields.io/github/issues/simplepie/simplepie-ng.svg?style=flat-square)](https://github.com/simplepie/simplepie-ng/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/simplepie/simplepie-ng.svg?style=flat-square)](https://github.com/simplepie/simplepie-ng/pulls)
+[![Contributors](https://img.shields.io/github/contributors/simplepie/simplepie-ng.svg?style=flat-square)](https://github.com/simplepie/simplepie-ng/graphs/contributors)
+[![Repo Size](https://img.shields.io/github/repo-size/simplepie/simplepie-ng.svg?style=flat-square)](https://github.com/simplepie/simplepie-ng/pulse/monthly)
+[![GitHub Commit Activity](https://img.shields.io/github/commit-activity/y/simplepie/simplepie-ng.svg?style=flat-square)](https://github.com/simplepie/simplepie-ng/commits/master)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/simplepie/simplepie-ng.svg?style=flat-square)](https://github.com/simplepie/simplepie-ng/commits)
 
 ### Quality
 
-[![Travis branch](https://img.shields.io/travis/simplepie/simplepie-ng/master.svg?style=for-the-badge&label=Travis%20CI)](https://travis-ci.org/simplepie/simplepie-ng)
-[![Code Quality](http://img.shields.io/scrutinizer/g/simplepie/simplepie-ng.svg?style=for-the-badge&label=Scrutinizr)](https://scrutinizer-ci.com/g/simplepie/simplepie-ng)
-[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/1b772338-fd6a-4af1-8f5e-fddffc2b9d43.svg?style=for-the-badge&label=Insight)](https://insight.sensiolabs.com/projects/1b772338-fd6a-4af1-8f5e-fddffc2b9d43)
-[![Codacy](https://img.shields.io/codacy/grade/2933d00bd11143baaa6538a9c5fbd9a9/master.svg?style=for-the-badge&label=Codacy)](https://www.codacy.com/app/simplepie/simplepie-ng)
+[![Travis branch](https://img.shields.io/travis/simplepie/simplepie-ng/master.svg?style=flat-square&label=Travis%20CI)](https://travis-ci.org/simplepie/simplepie-ng)
+[![Code Quality](http://img.shields.io/scrutinizer/g/simplepie/simplepie-ng.svg?style=flat-square&label=Scrutinizer)](https://scrutinizer-ci.com/g/simplepie/simplepie-ng)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/1b772338-fd6a-4af1-8f5e-fddffc2b9d43.svg?style=flat-square&label=SensioLabs%20Insight)](https://insight.sensiolabs.com/projects/1b772338-fd6a-4af1-8f5e-fddffc2b9d43)
+[![Codacy](https://img.shields.io/codacy/grade/2933d00bd11143baaa6538a9c5fbd9a9/master.svg?style=flat-square&label=Codacy)](https://www.codacy.com/app/simplepie/simplepie-ng)
 
 
 ### Social
 
-[![Author](http://img.shields.io/badge/author-@skyzyx-blue.svg?style=for-the-badge)](https://twitter.com/skyzyx)
-[![Follow](https://img.shields.io/twitter/follow/simplepie_ng.svg?style=for-the-badge&label=Follow%20@simplepie_ng)](https://twitter.com/intent/follow?screen_name=simplepie_ng)
-[![Gitter](https://img.shields.io/gitter/room/simplepie/simplepie-ng.svg?style=for-the-badge)](https://gitter.im/simplepie/simplepie-ng)
-[![Stars](https://img.shields.io/github/stars/simplepie/simplepie-ng.svg?style=for-the-badge&label=GitHub%20Stars)](https://github.com/simplepie/simplepie-ng/stargazers)
-[![Beerpay](https://img.shields.io/beerpay/simplepie/simplepie-ng.svg?style=for-the-badge&label=sponsored)](https://beerpay.io/simplepie/simplepie-ng)
+[![Author](http://img.shields.io/badge/author-@skyzyx-blue.svg?style=flat-square)](https://twitter.com/skyzyx)
+[![Follow](https://img.shields.io/twitter/follow/simplepie_ng.svg?style=flat-square&label=Follow%20@simplepie_ng)](https://twitter.com/intent/follow?screen_name=simplepie_ng)
+[![Gitter](https://img.shields.io/gitter/room/simplepie/simplepie-ng.svg?style=flat-square)](https://gitter.im/simplepie/simplepie-ng)
+[![Stars](https://img.shields.io/github/stars/simplepie/simplepie-ng.svg?style=flat-square&label=GitHub%20Stars)](https://github.com/simplepie/simplepie-ng/stargazers)
+[![Beerpay](https://img.shields.io/beerpay/simplepie/simplepie-ng.svg?style=flat-square&label=Sponsored)](https://beerpay.io/simplepie/simplepie-ng)
 
 ### Compliance
 
-[![License](https://img.shields.io/github/license/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/blob/master/LICENSE.md)
+[![License](https://img.shields.io/github/license/simplepie/simplepie-ng.svg?style=flat-square)](https://github.com/simplepie/simplepie-ng/blob/master/LICENSE.md)
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsimplepie%2Fsimplepie-ng.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsimplepie%2Fsimplepie-ng?ref=badge_large)
 
@@ -69,7 +69,7 @@ PSR-1/2/12 are a solid foundation, but are not an entire coding style by themsel
 
 ## Please Support or Sponsor Development
 
-[![Beerpay](https://img.shields.io/beerpay/simplepie/simplepie-ng.svg?style=for-the-badge)](https://beerpay.io/simplepie/simplepie-ng)
+[![Beerpay](https://img.shields.io/beerpay/simplepie/simplepie-ng.svg?style=flat-square)](https://beerpay.io/simplepie/simplepie-ng)
 
 SimplePie NG is a labor of love. I have been working on it in my free time since June 2017 because it's a project I love, and I believe our community would benefit from this tool.
 
