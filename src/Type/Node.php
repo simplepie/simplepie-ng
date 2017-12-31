@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace SimplePie\Type;
 
+use DOMAttr;
 use DOMNode;
 use DOMText;
 use SimplePie\Enum\CharacterSet;
@@ -54,15 +55,24 @@ class Node extends AbstractType implements NodeInterface
 
             if (XML_ELEMENT_NODE === $node->nodeType && $node->attributes->length > 0) {
                 foreach ($node->attributes as $attribute) {
-                    if ('type' === $attribute->name && 'html' === $attribute->value) {
-                        $this->serialization = $attribute->nodeValue;
-                        $this->value         = \html_entity_decode(
-                            $node->nodeValue,
-                            ENT_COMPAT | ENT_HTML5,
-                            CharacterSet::UTF_8
-                        );
-
+                    if ('src' === $attribute->name) {
+                        $this->handleAsSource($node, $attribute);
                         break;
+                    } elseif ('type' === $attribute->name && Serialization::TEXT === $attribute->value) {
+                        $this->handleAsText($node, $attribute);
+                        break;
+                    } elseif ('type' === $attribute->name && Serialization::HTML === $attribute->value) {
+                        $this->handleAsHtml($node, $attribute);
+                        break;
+                    } elseif ('type' === $attribute->name && Serialization::XHTML === $attribute->value) {
+                        $this->handleAsXhtml($node, $attribute);
+                        break;
+                    } elseif ('type' === $attribute->name && 'application/octet-stream' === $attribute->value) {
+                        $this->handleAsBase64($node);
+                        break;
+                    } else {
+                        $this->serialization = Serialization::TEXT;
+                        $this->value         = $node->nodeValue;
                     }
                 }
             }
@@ -123,5 +133,82 @@ class Node extends AbstractType implements NodeInterface
     public function getSerialization(): string
     {
         return $this->serialization;
+    }
+
+    /**
+     * Handle the content as source.
+     *
+     * @param  DOMNode $node      The DOMNode element.
+     * @param  DOMAttr $attribute The DOMAttr element.
+     */
+    private function handleAsSource(DOMNode $node, DOMAttr $attribute): void
+    {
+        $this->serialization = Serialization::TEXT;
+        $this->value         = $attribute->nodeValue;
+    }
+
+    /**
+     * Handle the content as plain text.
+     *
+     * @param  DOMNode $node      The DOMNode element.
+     * @param  DOMAttr $attribute The DOMAttr element.
+     */
+    private function handleAsText(DOMNode $node, DOMAttr $attribute): void
+    {
+        $this->serialization = $attribute->nodeValue;
+        $this->value         = \html_entity_decode(
+            $node->nodeValue,
+            ENT_COMPAT,
+            CharacterSet::UTF_8
+        );
+    }
+
+    /**
+     * Handle the content as HTML.
+     *
+     * @param  DOMNode $node      The DOMNode element.
+     * @param  DOMAttr $attribute The DOMAttr element.
+     */
+    private function handleAsHtml(DOMNode $node, DOMAttr $attribute): void
+    {
+        $this->serialization = $attribute->nodeValue;
+        $this->value         = \html_entity_decode(
+            $node->nodeValue,
+            ENT_COMPAT | ENT_HTML5,
+            CharacterSet::UTF_8
+        );
+    }
+
+    /**
+     * Handle the content as XHTML.
+     *
+     * @param  DOMNode $node      The DOMNode element.
+     * @param  DOMAttr $attribute The DOMAttr element.
+     */
+    private function handleAsXhtml(DOMNode $node, DOMAttr $attribute): void
+    {
+        $this->serialization = $attribute->nodeValue;
+
+        // We can't just grab the content. We need to stringify it, then remove the wrapper element.
+        $content = preg_replace(
+            '/^<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">(.*)<\/div>$/ims',
+            '$1',
+            $node->ownerDocument->saveXML(
+                $node->getElementsByTagNameNS('http://www.w3.org/1999/xhtml', 'div')[0]
+            )
+        );
+
+        $this->value = trim($content);
+    }
+
+    /**
+     * Handle the content as Base64-encoded text.
+     *
+     * @param  DOMNode $node      The DOMNode element.
+     */
+    private function handleAsBase64(DOMNode $node): void
+    {
+        $this->serialization = Serialization::TEXT;
+        $this->value = base64_decode(trim($node->nodeValue));
     }
 }
