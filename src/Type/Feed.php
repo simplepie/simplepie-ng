@@ -27,18 +27,18 @@ use stdClass;
  *
  * phpcs:disable Generic.Files.LineLength.MaxExceeded
  *
- * @method array<SimplePie\Type\Person> getAuthors(string $namespaceAlias) Returns the Authors associated with this feed.
- * @method array<SimplePie\Type\Category> getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this feed.
- * @method array<SimplePie\Type\Person> getContributors(string $namespaceAlias) Returns the list of Contributors associated with this feed.
- * @method array<SimplePie\Type\Entry> getEntries(string $namespaceAlias) Returns the list of Entries/Items associated with this feed.
+ * @method array getAuthors(string $namespaceAlias) Returns the Authors associated with this feed.
+ * @method array getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this feed.
+ * @method array getContributors(string $namespaceAlias) Returns the list of Contributors associated with this feed.
+ * @method array getEntries(string $namespaceAlias) Returns the list of Entries/Items associated with this feed.
  * @method SimplePie\Type\Generator getGenerator(string $namespaceAlias) Returns the Generator associated with this feed.
  * @method SimplePie\Type\Node getGuid(string $namespaceAlias) Alias for `getId()`.
  * @method SimplePie\Type\Node getId(string $namespaceAlias) Returns the ID associated with this feed.
  * @method SimplePie\Type\Image getIcon(string $namespaceAlias) Returns the Icon associated with this feed.
- * @method array<SimplePie\Type\Entry> getItems(string $namespaceAlias) Alias for `getEntries()`.
+ * @method array getItems(string $namespaceAlias) Alias for `getEntries()`.
  * @method SimplePie\Type\Node getLang(string $namespaceAlias) Alias for `getLanguage()`.
  * @method SimplePie\Type\Node getLanguage(string $namespaceAlias) Returns the language associated with this feed.
- * @method array<SimplePie\Type\Link> getLinks(string $namespaceAlias, string $relFilter) Returns the list of Links associated with this feed.
+ * @method array getLinks(string $namespaceAlias, string $relFilter) Returns the list of Links associated with this feed.
  * @method SimplePie\Type\Image getLogo(string $namespaceAlias) Returns the Logo associated with this feed.
  * @method \DateTime getPubDate(string $namespaceAlias) Alias for `getPublished()`.
  * @method \DateTime getPublished(string $namespaceAlias) Returns the date that the feed was published.
