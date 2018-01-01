@@ -29,15 +29,15 @@ use SimplePie\Parser\Date as DateParser;
  *
  * phpcs:disable Generic.Files.LineLength.MaxExceeded
  *
- * @method SimplePie\Type\Person[] getAuthors(string $namespaceAlias) Returns the Authors associated with this entry.
- * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this entry.
+ * @method array<SimplePie\Type\Person> getAuthors(string $namespaceAlias) Returns the Authors associated with this entry.
+ * @method array<SimplePie\Type\Category> getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this entry.
  * @method SimplePie\Type\Node getContent(string $namespaceAlias) Returns the content of the entry, serialized as TEXT, HTML, or XHTML content.
- * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated with this entry.
+ * @method array<SimplePie\Type\Person> getContributors(string $namespaceAlias) Returns the list of Contributors associated with this entry.
  * @method SimplePie\Type\Node getGuid(string $namespaceAlias) Alias for `getId()`.
  * @method SimplePie\Type\Node getId(string $namespaceAlias) Returns the ID associated with this entry.
  * @method SimplePie\Type\Node getLang(string $namespaceAlias) Alias for `getLanguage()`.
  * @method SimplePie\Type\Node getLanguage(string $namespaceAlias) Returns the language associated with this entry.
- * @method SimplePie\Type\Link[] getLinks(string $namespaceAlias, string $relFilter) Returns the list of Links associated with this entry.
+ * @method array<SimplePie\Type\Link> getLinks(string $namespaceAlias, string $relFilter) Returns the list of Links associated with this entry.
  * @method \DateTime getPubDate(string $namespaceAlias) Alias for `getPublished()`.
  * @method \DateTime getPublished(string $namespaceAlias) Returns the date that the entry was published.
  * @method SimplePie\Type\Node getRights(string $namespaceAlias) Returns the copyright information associated with this entry.
