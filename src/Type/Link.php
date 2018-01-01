@@ -112,6 +112,7 @@ class Link extends AbstractType implements NodeInterface, TypeInterface, C\SetLo
             }
 
             $this->rel = $this->rel ?? Node::factory('alternate');
+            $this->type = $this->type ?? Node::factory('application/atom+xml');
         }
     }
 
