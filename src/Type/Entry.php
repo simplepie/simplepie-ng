@@ -29,10 +29,11 @@ use SimplePie\Parser\Date as DateParser;
  *
  * phpcs:disable Generic.Files.LineLength.MaxExceeded
  *
- * @method SimplePie\Type\Person getAuthor(string $namespaceAlias) Returns the Author associated with this entry.
+ * @method SimplePie\Type\Person[] getAuthors(string $namespaceAlias) Returns the Authors associated with this entry.
  * @method SimplePie\Type\Category[] getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this entry.
  * @method SimplePie\Type\Node getContent(string $namespaceAlias) Returns the content of the entry, serialized as TEXT, HTML, or XHTML content.
  * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated with this entry.
+ * @method SimplePie\Type\Node getGuid(string $namespaceAlias) Alias for `getId()`.
  * @method SimplePie\Type\Node getId(string $namespaceAlias) Returns the ID associated with this entry.
  * @method SimplePie\Type\Node getLang(string $namespaceAlias) Alias for `getLanguage()`.
  * @method SimplePie\Type\Node getLanguage(string $namespaceAlias) Returns the language associated with this entry.
@@ -129,6 +130,9 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
 
             case 'contributors':
                 return 'contributor';
+
+            case 'guid':
+                return 'id';
 
             case 'language':
                 return 'lang';

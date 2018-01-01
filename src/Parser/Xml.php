@@ -14,7 +14,7 @@ use DOMDocument;
 use DOMXPath;
 use Psr\Http\Message\StreamInterface;
 use Psr\Log\LoggerInterface;
-use SimplePie\Enum\FeedType;
+use SimplePie\Enum as E;
 use SimplePie\HandlerStackInterface;
 use SimplePie\Mixin as Tr;
 use SimplePie\SimplePie;
@@ -140,12 +140,12 @@ class Xml extends AbstractParser
         $this->middleware->registerNamespaces($this->ns);
 
         // Instantiate a new write-to feed object.
-        $this->feed = (new Feed($this->getNamespaceAlias()))
+        $this->feed = (new Feed($this->getNamespaceAlias() ?? ''))
             ->setLogger($this->getLogger());
 
         // Invoke the registered middleware.
         $this->middleware->invoke(
-            FeedType::XML,
+            E\FeedType::XML,
             $this->getFeed()->getRoot(),
             $this->getNamespaceAlias(),
             $this->xpath()
@@ -174,11 +174,9 @@ class Xml extends AbstractParser
     {
         $namespace = $this->getNs();
 
-        $alias = $namespace->getPreferredNamespaceAlias(
+        return $namespace->getPreferredNamespaceAlias(
             $this->domDocument->documentElement->namespaceURI
         );
-
-        return $alias;
     }
 
     /**

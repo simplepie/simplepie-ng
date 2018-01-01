@@ -139,7 +139,7 @@ class HandlerStack implements HandlerStackInterface
             foreach ($this->stack[$feedType] as $tuple) {
                 $middleware = $tuple[0];
                 $middleware->setLogger($this->getLogger());
-                $middleware($feedRoot, $namespaceAlias, $xpath);
+                $middleware($feedRoot, $namespaceAlias ?? '', $xpath);
             }
         } else {
             $allowedTypes = FeedType::introspectKeys();

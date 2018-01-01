@@ -32,6 +32,7 @@ use stdClass;
  * @method SimplePie\Type\Person[] getContributors(string $namespaceAlias) Returns the list of Contributors associated with this feed.
  * @method SimplePie\Type\Entry[] getEntries(string $namespaceAlias) Returns the list of Entries/Items associated with this feed.
  * @method SimplePie\Type\Generator getGenerator(string $namespaceAlias) Returns the Generator associated with this feed.
+ * @method SimplePie\Type\Node getGuid(string $namespaceAlias) Alias for `getId()`.
  * @method SimplePie\Type\Node getId(string $namespaceAlias) Returns the ID associated with this feed.
  * @method SimplePie\Type\Image getIcon(string $namespaceAlias) Returns the Icon associated with this feed.
  * @method SimplePie\Type\Entry[] getItems(string $namespaceAlias) Alias for `getEntries()`.
@@ -100,6 +101,9 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
             case 'entries':
             case 'items':
                 return 'entry';
+
+            case 'guid':
+                return 'id';
 
             case 'language':
                 return 'lang';
