@@ -10,10 +10,7 @@ declare(strict_types=1);
 
 namespace SimplePie\Test\Integration\WellFormed\Atom;
 
-use GuzzleHttp\Psr7;
-use SimplePie\HandlerStack;
 use SimplePie\Middleware\Xml\Atom;
-use SimplePie\SimplePie;
 use SimplePie\Test\Integration\AbstractTestCase;
 
 class EntryCategoryTest extends AbstractTestCase

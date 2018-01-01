@@ -10,11 +10,6 @@ declare(strict_types=1);
 
 namespace SimplePie\Test\Integration\WellFormed\Atom;
 
-use GuzzleHttp\Psr7;
-use SimplePie\Enum\Serialization;
-use SimplePie\HandlerStack;
-use SimplePie\Middleware\Xml\Atom;
-use SimplePie\SimplePie;
 use SimplePie\Test\Integration\AbstractTestCase;
 
 class EntryIdTest extends AbstractTestCase

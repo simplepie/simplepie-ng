@@ -56,24 +56,37 @@ class Node extends AbstractType implements NodeInterface
             if (XML_ELEMENT_NODE === $node->nodeType && $node->attributes->length > 0) {
                 foreach ($node->attributes as $attribute) {
                     if ('src' === $attribute->name) {
-                        $this->handleAsSource($node, $attribute);
+                        $this->handleAsSource($attribute);
+
                         break;
-                    } elseif ('type' === $attribute->name && Serialization::TEXT === $attribute->value) {
-                        $this->handleAsText($node, $attribute);
-                        break;
-                    } elseif ('type' === $attribute->name && Serialization::HTML === $attribute->value) {
-                        $this->handleAsHtml($node, $attribute);
-                        break;
-                    } elseif ('type' === $attribute->name && Serialization::XHTML === $attribute->value) {
-                        $this->handleAsXhtml($node, $attribute);
-                        break;
-                    } elseif ('type' === $attribute->name && 'application/octet-stream' === $attribute->value) {
-                        $this->handleAsBase64($node);
-                        break;
-                    } else {
-                        $this->serialization = Serialization::TEXT;
-                        $this->value         = $node->nodeValue;
                     }
+
+                    if ('type' === $attribute->name && Serialization::TEXT === $attribute->value) {
+                        $this->handleAsText($node, $attribute);
+
+                        break;
+                    }
+
+                    if ('type' === $attribute->name && Serialization::HTML === $attribute->value) {
+                        $this->handleAsHtml($node, $attribute);
+
+                        break;
+                    }
+
+                    if ('type' === $attribute->name && Serialization::XHTML === $attribute->value) {
+                        $this->handleAsXhtml($node, $attribute);
+
+                        break;
+                    }
+
+                    if ('type' === $attribute->name && 'application/octet-stream' === $attribute->value) {
+                        $this->handleAsBase64($node);
+
+                        break;
+                    }
+
+                    $this->serialization = Serialization::TEXT;
+                    $this->value         = $node->nodeValue;
                 }
             }
         }
@@ -138,10 +151,9 @@ class Node extends AbstractType implements NodeInterface
     /**
      * Handle the content as source.
      *
-     * @param  DOMNode $node      The DOMNode element.
-     * @param  DOMAttr $attribute The DOMAttr element.
+     * @param DOMAttr $attribute The DOMAttr element.
      */
-    private function handleAsSource(DOMNode $node, DOMAttr $attribute): void
+    private function handleAsSource(DOMAttr $attribute): void
     {
         $this->serialization = Serialization::TEXT;
         $this->value         = $attribute->nodeValue;
@@ -150,8 +162,8 @@ class Node extends AbstractType implements NodeInterface
     /**
      * Handle the content as plain text.
      *
-     * @param  DOMNode $node      The DOMNode element.
-     * @param  DOMAttr $attribute The DOMAttr element.
+     * @param DOMNode $node      The DOMNode element.
+     * @param DOMAttr $attribute The DOMAttr element.
      */
     private function handleAsText(DOMNode $node, DOMAttr $attribute): void
     {
@@ -166,8 +178,8 @@ class Node extends AbstractType implements NodeInterface
     /**
      * Handle the content as HTML.
      *
-     * @param  DOMNode $node      The DOMNode element.
-     * @param  DOMAttr $attribute The DOMAttr element.
+     * @param DOMNode $node      The DOMNode element.
+     * @param DOMAttr $attribute The DOMAttr element.
      */
     private function handleAsHtml(DOMNode $node, DOMAttr $attribute): void
     {
@@ -182,15 +194,15 @@ class Node extends AbstractType implements NodeInterface
     /**
      * Handle the content as XHTML.
      *
-     * @param  DOMNode $node      The DOMNode element.
-     * @param  DOMAttr $attribute The DOMAttr element.
+     * @param DOMNode $node      The DOMNode element.
+     * @param DOMAttr $attribute The DOMAttr element.
      */
     private function handleAsXhtml(DOMNode $node, DOMAttr $attribute): void
     {
         $this->serialization = $attribute->nodeValue;
 
         // We can't just grab the content. We need to stringify it, then remove the wrapper element.
-        $content = preg_replace(
+        $content = \preg_replace(
             '/^<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">(.*)<\/div>$/ims',
             '$1',
             $node->ownerDocument->saveXML(
@@ -198,17 +210,17 @@ class Node extends AbstractType implements NodeInterface
             )
         );
 
-        $this->value = trim($content);
+        $this->value = \trim($content);
     }
 
     /**
      * Handle the content as Base64-encoded text.
      *
-     * @param  DOMNode $node      The DOMNode element.
+     * @param DOMNode $node The DOMNode element.
      */
     private function handleAsBase64(DOMNode $node): void
     {
         $this->serialization = Serialization::TEXT;
-        $this->value = base64_decode(trim($node->nodeValue));
+        $this->value         = \base64_decode(\trim($node->nodeValue), true);
     }
 }

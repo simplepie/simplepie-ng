@@ -30,7 +30,7 @@ interface BranchInterface
      * Get the correct handler for a whitelisted method name.
      *
      * @param string $nodeName The name of the method being called.
-     * @param array  $args
+     * @param array  $args     The arguments that are passed to the method.
      *
      * @throws SimplePieException
      *

@@ -12,7 +12,6 @@ namespace SimplePie\Util;
 
 use DOMDocument;
 use Psr\Log\NullLogger;
-use SimplePie\Enum as E;
 use SimplePie\Mixin as Tr;
 
 /**
@@ -91,11 +90,9 @@ class Ns
         // If not an exact match, attempt a regex match.
         foreach ($this->mapping as $regex => $alias) {
             // Regex delimiter must not be alphanumeric or backslash. Check this first.
-            if (
-                !empty($regex) &&
-                0 === \preg_match('/[0-9a-z\\\\]/i', $regex[0]) &&
-                0 !== \preg_match($regex, $namespaceUri)
-            ) {
+            // phpcs:disable Generic.Files.LineLength.MaxExceeded
+            if (!empty($regex) && 0 === \preg_match('/[0-9a-z\\\\]/i', $regex[0]) && 0 !== \preg_match($regex, $namespaceUri)) {
+                // phpcs:enable
                 return $alias;
             }
         }

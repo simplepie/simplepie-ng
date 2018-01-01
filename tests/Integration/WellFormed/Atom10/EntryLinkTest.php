@@ -10,11 +10,6 @@ declare(strict_types=1);
 
 namespace SimplePie\Test\Integration\WellFormed\Atom;
 
-use GuzzleHttp\Psr7;
-use SimplePie\Enum\Serialization;
-use SimplePie\HandlerStack;
-use SimplePie\Middleware\Xml\Atom;
-use SimplePie\SimplePie;
 use SimplePie\Test\Integration\AbstractTestCase;
 
 class EntryLinkTest extends AbstractTestCase
@@ -56,7 +51,7 @@ class EntryLinkTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
-        $link   = array_filter($entry->getLinks(), function($link) {
+        $link   = \array_filter($entry->getLinks(), static function ($link) {
             return 'alternate' === (string) $link->getRelationship();
         })[0];
 
