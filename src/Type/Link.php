@@ -110,6 +110,8 @@ class Link extends AbstractType implements NodeInterface, TypeInterface, C\SetLo
             foreach ($this->node->attributes as $attribute) {
                 $this->{$attribute->name} = new Node($attribute);
             }
+
+            $this->rel = $this->rel ?? 'alternate';
         }
     }
 
