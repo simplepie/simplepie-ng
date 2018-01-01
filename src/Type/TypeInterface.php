@@ -30,6 +30,7 @@ interface TypeInterface
      * Get the correct handler for a whitelisted method name.
      *
      * @param string $nodeName The name of the method being called.
+     * @param array  $args     The parameters which are passed to the method.
      *
      * @throws SimplePieException
      *
@@ -37,5 +38,5 @@ interface TypeInterface
      *
      * @internal
      */
-    public function getHandler(string $nodeName): Node;
+    public function getHandler(string $nodeName, array $args = []): Node;
 }

@@ -112,8 +112,11 @@ class Generator extends AbstractType implements NodeInterface, TypeInterface, C\
     /**
      * {@inheritdoc}
      */
-    public function getHandler(string $nodeName): Node
+    public function getHandler(string $nodeName, array $args = []): Node
     {
+        // Shut up, linter.
+        $args;
+
         switch ($nodeName) {
             case 'name':
             case 'uri':

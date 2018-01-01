@@ -111,7 +111,7 @@ class Link extends AbstractType implements NodeInterface, TypeInterface, C\SetLo
                 $this->{$attribute->name} = new Node($attribute);
             }
 
-            $this->rel = $this->rel ?? 'alternate';
+            $this->rel = $this->rel ?? Node::factory('alternate');
         }
     }
 
@@ -159,8 +159,11 @@ class Link extends AbstractType implements NodeInterface, TypeInterface, C\SetLo
     /**
      * {@inheritdoc}
      */
-    public function getHandler(string $nodeName): Node
+    public function getHandler(string $nodeName, array $args = []): Node
     {
+        // Shut up, linter.
+        $args;
+
         switch ($nodeName) {
             case 'href':
             case 'hreflang':

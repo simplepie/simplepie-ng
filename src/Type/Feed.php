@@ -38,7 +38,7 @@ use stdClass;
  * @method SimplePie\Type\Entry[] getItems(string $namespaceAlias) Alias for `getEntries()`.
  * @method SimplePie\Type\Node getLang(string $namespaceAlias) Alias for `getLanguage()`.
  * @method SimplePie\Type\Node getLanguage(string $namespaceAlias) Returns the language associated with this feed.
- * @method SimplePie\Type\Link[] getLinks(string $namespaceAlias) Returns the list of Links associated with this feed.
+ * @method SimplePie\Type\Link[] getLinks(string $namespaceAlias, string $relFilter) Returns the list of Links associated with this feed.
  * @method SimplePie\Type\Image getLogo(string $namespaceAlias) Returns the Logo associated with this feed.
  * @method \DateTime getPubDate(string $namespaceAlias) Alias for `getPublished()`.
  * @method \DateTime getPublished(string $namespaceAlias) Returns the date that the feed was published.
@@ -75,6 +75,16 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
         $this->root           = new stdClass();
         $this->logger         = new NullLogger();
         $this->namespaceAlias = $namespaceAlias;
+    }
+
+    /**
+     * Finds the default namespace alias for the feed type.
+     *
+     * @return string
+     */
+    public function getDefaultNs(): string
+    {
+        return $this->namespaceAlias;
     }
 
     /**
@@ -163,8 +173,20 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
             case 'category':
             case 'contributor':
             case 'entry':
-            case 'link':
                 return $this->getComplexMultipleValues($this->getRoot(), $nodeName, $args[0] ?? null);
+
+            case 'link':
+                $links = $this->getComplexMultipleValues($this->getRoot(), $nodeName, $args[0] ?? null);
+
+                if (isset($args[1])) {
+                    $relFilter = $args[1];
+
+                    return \array_values(\array_filter($links, static function ($link) use ($relFilter) {
+                        return $relFilter === $link->getRel()->getValue();
+                    }));
+                }
+
+                return $links;
 
             default:
                 throw new SimplePieException(

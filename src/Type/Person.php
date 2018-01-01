@@ -137,8 +137,11 @@ class Person extends AbstractType implements NodeInterface, TypeInterface, C\Set
     /**
      * {@inheritdoc}
      */
-    public function getHandler(string $nodeName): Node
+    public function getHandler(string $nodeName, array $args = []): Node
     {
+        // Shut up, linter.
+        $args;
+
         switch ($nodeName) {
             case 'name':
             case 'uri':

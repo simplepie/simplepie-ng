@@ -142,8 +142,11 @@ class Image extends AbstractType implements NodeInterface, TypeInterface, C\SetL
     /**
      * {@inheritdoc}
      */
-    public function getHandler(string $nodeName): Node
+    public function getHandler(string $nodeName, array $args = []): Node
     {
+        // Shut up, linter.
+        $args;
+
         switch ($nodeName) {
             case 'uri':
             case 'title':
