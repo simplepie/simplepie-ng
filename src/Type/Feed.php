@@ -181,9 +181,11 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
                 if (isset($args[1])) {
                     $relFilter = $args[1];
 
-                    return \array_values(\array_filter($links, static function ($link) use ($relFilter) {
-                        return $relFilter === $link->getRel()->getValue();
-                    }));
+                    return \array_values(
+                        \array_filter($links, static function (Link $link) use ($relFilter) {
+                            return $relFilter === $link->getRel()->getValue();
+                        })
+                    );
                 }
 
                 return $links;

@@ -47,28 +47,35 @@ class Person extends AbstractType implements NodeInterface, TypeInterface, C\Set
     /**
      * The person's name.
      *
-     * @var string
+     * @var Node
      */
     protected $name;
 
     /**
      * The person's URL.
      *
-     * @var string
+     * @var Node
      */
     protected $uri;
 
     /**
+     * The person's URL.
+     *
+     * @var Node
+     */
+    protected $url;
+
+    /**
      * The person's email address.
      *
-     * @var string
+     * @var Node
      */
     protected $email;
 
     /**
      * The person's avatar.
      *
-     * @var string
+     * @var Node
      */
     protected $avatar;
 
