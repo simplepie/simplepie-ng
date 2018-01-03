@@ -22,7 +22,7 @@ use SimplePie\Middleware\Xml\Atom;
 use SimplePie\SimplePie;
 use Skyzyx\UtilityPack\Bytes;
 
-$__times__ = ($argv[1] ?? 1000);
+$__times__ = ($argv[1] ?? 10);
 
 echo sprintf('Memory: %s/%s', Bytes::format(memory_get_usage()), Bytes::format(memory_get_usage(true)));
 echo ': Baseline memory usage.' . PHP_EOL;
@@ -30,7 +30,7 @@ echo ': Baseline memory usage.' . PHP_EOL;
 $logger = new Logger('SimplePie');
 $logger->pushHandler(new ErrorLogHandler(
     ErrorLogHandler::OPERATING_SYSTEM,
-    LogLevel::DEBUG,
+    LogLevel::WARNING,
     true,
     false
 ));

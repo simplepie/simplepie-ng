@@ -62,20 +62,31 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
             $next = $path[0] ?? null;
 
             if (\is_int($next)) {
+                // $query .= \sprintf(
+                //     '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\'][position() = %d]',
+                //     $namespaceAlias,
+                //     'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                //     'abcdefghijklmnopqrstuvwxyz',
+                //     $p,
+                //     \array_shift($path) + 1
+                // );
                 $query .= \sprintf(
-                    '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\'][position() = %d]',
+                    '/%s:%s[position() = %d]',
                     $namespaceAlias,
-                    'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-                    'abcdefghijklmnopqrstuvwxyz',
                     $p,
                     \array_shift($path) + 1
                 );
             } else {
+                // $query .= \sprintf(
+                //     '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
+                //     $namespaceAlias,
+                //     'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                //     'abcdefghijklmnopqrstuvwxyz',
+                //     $p
+                // );
                 $query .= \sprintf(
-                    '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
+                    '/%s:%s',
                     $namespaceAlias,
-                    'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-                    'abcdefghijklmnopqrstuvwxyz',
                     $p
                 );
             }
