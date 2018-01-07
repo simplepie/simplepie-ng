@@ -94,22 +94,4 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
 
         return $query;
     }
-
-    /**
-     * Some elements in the feed should only have one result. This handles those cases.
-     *
-     * @param callable $fn A callable which returns a `DOMElementList`.
-     *
-     * @return array Returns an array with keys of `text` and `html`.
-     */
-    public function handleSingleNode(callable $fn): Node
-    {
-        $nodes = $fn();
-
-        if ($nodes->length > 0) {
-            return new Node($nodes[0]);
-        }
-
-        return new Node();
-    }
 }
