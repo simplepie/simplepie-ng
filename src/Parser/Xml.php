@@ -124,7 +124,13 @@ class Xml extends AbstractParser
             // Read the entity definition file, and force-inject it into the XML document
             $this->rawDocument = \str_replace(
                 $rootElementStart,
-                \sprintf('%s%s', \trim(\file_get_contents(dirname(SIMPLEPIE_ROOT) . '/resources/entities.dtd')), $rootElementStart),
+                \sprintf(
+                    '%s%s',
+                    \trim(
+                        \file_get_contents(\dirname(SIMPLEPIE_ROOT) . '/resources/entities.dtd')
+                    ),
+                    $rootElementStart
+                ),
                 $this->rawDocument
             );
         }
