@@ -130,14 +130,13 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
 
         foreach ($nodes as $nodeName) {
             $query = $this->generateQuery($namespaceAlias, \array_merge($path, [$nodeName]));
+            $xq    = $xpath->query($query);
             $this->addArrayProperty($feedRoot, $nodeName);
             $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
-            $feedRoot->{$nodeName}[$namespaceAlias] = $this->handleSingleNode(
-                static function () use ($xpath, $query) {
-                    return $xpath->query($query);
-                }
-            );
+            $feedRoot->{$nodeName}[$namespaceAlias] = ($xq->length > 0)
+                ? new T\Node($xq->item(0))
+                : new T\Node();
         }
     }
 

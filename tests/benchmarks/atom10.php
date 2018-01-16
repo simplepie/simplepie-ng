@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 require_once \dirname(__DIR__) . '/bootstrap.php';
 
-$start = microtime(true);
+$start = \microtime(true);
 
 use GuzzleHttp\Psr7;
 use Monolog\Handler\ErrorLogHandler;
@@ -22,15 +22,15 @@ use SimplePie\Middleware\Xml\Atom;
 use SimplePie\SimplePie;
 use Skyzyx\UtilityPack\Bytes;
 
-$__times__ = ($argv[1] ?? 1000);
+$__times__ = ($argv[1] ?? 10);
 
-echo sprintf('Memory: %s/%s', Bytes::format(memory_get_usage()), Bytes::format(memory_get_usage(true)));
+echo \sprintf('Memory: %s/%s', Bytes::format(\memory_get_usage()), Bytes::format(\memory_get_usage(true)));
 echo ': Baseline memory usage.' . PHP_EOL;
 
 $logger = new Logger('SimplePie');
 $logger->pushHandler(new ErrorLogHandler(
     ErrorLogHandler::OPERATING_SYSTEM,
-    LogLevel::DEBUG,
+    LogLevel::WARNING,
     true,
     false
 ));
@@ -39,44 +39,47 @@ $simplepie = (new SimplePie())
     ->setLogger($logger)
     ->setMiddlewareStack(
         (new HandlerStack())
-            ->append(new Atom())
-    )
-;
+            ->append(
+                (new Atom())
+                    ->setCaseInsensitive()
+            )
+    );
 
-echo sprintf('Memory: %s/%s', Bytes::format(memory_get_usage()), Bytes::format(memory_get_usage(true)));
+echo \sprintf('Memory: %s/%s', Bytes::format(\memory_get_usage()), Bytes::format(\memory_get_usage(true)));
 echo ': Loading our logger and configuring middleware.' . PHP_EOL;
 
 $xmlFile = \dirname(__DIR__) . '/Integration/feeds/full/atom10/tim-bray-500.xml';
-echo sprintf('XML file size: %s', Bytes::format(filesize($xmlFile))) . PHP_EOL;
+// $xmlFile = \dirname(__DIR__) . '/Integration/feeds/full/atom10/test.atom';
+echo \sprintf('XML file size: %s', Bytes::format(\filesize($xmlFile))) . PHP_EOL;
 
 for ($i = 0; $i < ($argv[1] ?? $__times__); $i++) {
     echo '------------------------------------------------------------------------';
     echo PHP_EOL;
 
-    $streamMemStart = memory_get_usage();
-    $streamTimeStart = microtime(true);
-    $stream = Psr7\stream_for(\file_get_contents($xmlFile));
-    echo sprintf('Stream time: %s', microtime(true) - $streamTimeStart) . PHP_EOL;
-    echo sprintf('Stream memory: %s', Bytes::format(memory_get_usage() - $streamMemStart)) . PHP_EOL;
+    $streamMemStart  = \memory_get_usage();
+    $streamTimeStart = \microtime(true);
+    $stream          = Psr7\stream_for(\file_get_contents($xmlFile));
+    echo \sprintf('Stream time: %s', \microtime(true) - $streamTimeStart) . PHP_EOL;
+    echo \sprintf('Stream memory: %s', Bytes::format(\memory_get_usage() - $streamMemStart)) . PHP_EOL;
 
-    $treeMemStart = memory_get_usage();
-    $treeTimeStart = microtime(true);
-    $parser = $simplepie->parseXml($stream, true);
-    echo sprintf('Parse tree time: %s', microtime(true) - $treeTimeStart) . PHP_EOL;
-    echo sprintf('Parse tree memory: %s', Bytes::format(memory_get_usage() - $treeMemStart)) . PHP_EOL;
+    $treeMemStart  = \memory_get_usage();
+    $treeTimeStart = \microtime(true);
+    $parser        = $simplepie->parseXml($stream, true);
+    echo \sprintf('Parse tree time: %s', \microtime(true) - $treeTimeStart) . PHP_EOL;
+    echo \sprintf('Parse tree memory: %s', Bytes::format(\memory_get_usage() - $treeMemStart)) . PHP_EOL;
 
     $feed = $parser->getFeed();
 
-    echo sprintf('Memory: %s/%s', Bytes::format(memory_get_usage()), Bytes::format(memory_get_usage(true)));
+    echo \sprintf('Memory: %s/%s', Bytes::format(\memory_get_usage()), Bytes::format(\memory_get_usage(true)));
     echo ': Reading the XML file, parsing it into a data structure using middleware.' . PHP_EOL;
 
     unset($stream, $parser);
 
-    echo sprintf('Memory: %s/%s', Bytes::format(memory_get_usage()), Bytes::format(memory_get_usage(true)));
+    echo \sprintf('Memory: %s/%s', Bytes::format(\memory_get_usage()), Bytes::format(\memory_get_usage(true)));
     echo ': Unset $stream and $parser.' . PHP_EOL;
 
-    $elseMemStart = memory_get_usage();
-    $elseTimeStart = microtime(true);
+    $elseMemStart  = \memory_get_usage();
+    $elseTimeStart = \microtime(true);
 
     (string) $feed->getGenerator();
     (string) $feed->getGenerator()->getName();
@@ -428,22 +431,26 @@ for ($i = 0; $i < ($argv[1] ?? $__times__); $i++) {
         unset($link);
     }
 
-    echo sprintf('Everything else time: %s', microtime(true) - $elseTimeStart) . PHP_EOL;
-    $elseMem = memory_get_usage() - $elseMemStart;
-    echo sprintf('Everything else memory: %s%s', ($elseMem >= 0 ? '' : '-'), Bytes::format(abs($elseMem))) . PHP_EOL;
+    echo \sprintf('Everything else time: %s', \microtime(true) - $elseTimeStart) . PHP_EOL;
+    $elseMem = \memory_get_usage() - $elseMemStart;
+    echo \sprintf('Everything else memory: %s%s', ($elseMem >= 0 ? '' : '-'), Bytes::format(\abs($elseMem))) . PHP_EOL;
 
-    echo sprintf('Memory: %s/%s', Bytes::format(memory_get_usage()), Bytes::format(memory_get_usage(true)));
+    echo \sprintf('Memory: %s/%s', Bytes::format(\memory_get_usage()), Bytes::format(\memory_get_usage(true)));
     echo ': ' . $i . PHP_EOL;
 }
 
 echo '------------------------------------------------------------------------';
 echo PHP_EOL . PHP_EOL;
 
-$time = microtime(true) - $start;
+$time = \microtime(true) - $start;
 echo 'Total time: ' . $time . ' seconds.' . PHP_EOL;
 echo 'Each run (avg): ' . $time / $__times__ . ' seconds.' . PHP_EOL;
-echo sprintf('Peak memory: %s/%s', Bytes::format(memory_get_peak_usage()), Bytes::format(memory_get_peak_usage(true))) . PHP_EOL;
-echo 'Feed entries: ' . count($feed->getEntries()) . PHP_EOL;
+echo \sprintf(
+    'Peak memory: %s/%s',
+    Bytes::format(\memory_get_peak_usage()),
+    Bytes::format(\memory_get_peak_usage(true))
+) . PHP_EOL;
+echo 'Feed entries: ' . \count($feed->getEntries()) . PHP_EOL;
 echo PHP_EOL;
 
-opcache_reset();
+\opcache_reset();

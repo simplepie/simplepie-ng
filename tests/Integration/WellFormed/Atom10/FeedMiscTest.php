@@ -58,7 +58,10 @@ class FeedMiscTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('<img src="http://example.com/cat-dog.jpg" alt="cat<br />dog">', (string) $feed->getTitle());
+        $this->assertEquals(
+            '<img src="http://example.com/cat-dog.jpg" alt="cat<br />dog">',
+            (string) $feed->getTitle()
+        );
         $this->assertEquals(Serialization::HTML, $feed->getTitle()->getSerialization());
     }
 }
