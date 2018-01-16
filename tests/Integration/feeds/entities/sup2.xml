@@ -2,8 +2,6 @@
 Description: sup2
 Expect:      feed['title'] == 'testing \xb2 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &sup2; entity</title>
-</channel>
-</rss>
+</feed>

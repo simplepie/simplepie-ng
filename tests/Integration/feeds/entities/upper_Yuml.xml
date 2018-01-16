@@ -2,8 +2,6 @@
 Description: Yuml
 Expect:      feed['title'] == 'testing \u0178 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &Yuml; entity</title>
-</channel>
-</rss>
+</feed>

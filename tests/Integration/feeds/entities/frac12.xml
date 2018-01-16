@@ -2,8 +2,6 @@
 Description: frac12
 Expect:      feed['title'] == 'testing \xbd entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &frac12; entity</title>
-</channel>
-</rss>
+</feed>

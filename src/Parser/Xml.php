@@ -10,7 +10,10 @@ declare(strict_types=1);
 
 namespace SimplePie\Parser;
 
+use DOMComment;
 use DOMDocument;
+use DOMNode;
+use DOMText;
 use DOMXPath;
 use Psr\Http\Message\StreamInterface;
 use Psr\Log\LoggerInterface;
@@ -106,7 +109,7 @@ class Xml extends AbstractParser
 
         // DOMDocument configuration
         $this->domDocument->recover             = true;
-        $this->domDocument->formatOutput        = true;
+        $this->domDocument->formatOutput        = false;
         $this->domDocument->preserveWhiteSpace  = false;
         $this->domDocument->resolveExternals    = true;
         $this->domDocument->substituteEntities  = true;
@@ -118,8 +121,11 @@ class Xml extends AbstractParser
             $this->getLogger()->debug('Enabled handing HTML entities in XML.');
             $this->domDocument->loadXML($this->rawDocument, $this->libxml);
 
+            // Make sure this is an XML element instead of a comment or text.
+            $firstElement = $this->findNextRealNode($this->domDocument->firstChild);
+
             // <feed, <rss, etc.
-            $rootElementStart = \sprintf('<%s', (string) $this->domDocument->firstChild->nodeName);
+            $rootElementStart = \sprintf('<%s', (string) $firstElement->nodeName);
 
             // Read the entity definition file, and force-inject it into the XML document
             $this->rawDocument = \str_replace(
@@ -205,6 +211,25 @@ class Xml extends AbstractParser
         }
 
         return $xpath;
+    }
+
+    /**
+     * Some DOMNode names are `#comment` or `#text`. This method will move the
+     * pointer to the next node, then the next until it finds a real XML node.
+     *
+     * @param  DOMNode $node The `DOMNode` element to evaluate.
+     *
+     * @return DOMNode
+     */
+    public function findNextRealNode(DOMNode $node): DOMNode
+    {
+        $n = $node;
+
+        while (($n instanceof DOMComment || $n instanceof DOMText) && null !== $n) {
+            $n = $n->nextSibling;
+        }
+
+        return $n;
     }
 
     /**

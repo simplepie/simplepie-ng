@@ -2,8 +2,6 @@
 Description: infin
 Expect:      feed['title'] == 'testing \u221e entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &infin; entity</title>
-</channel>
-</rss>
+</feed>

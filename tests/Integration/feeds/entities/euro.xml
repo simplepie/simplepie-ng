@@ -2,8 +2,6 @@
 Description: euro
 Expect:      feed['title'] == 'testing \u20ac entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &euro; entity</title>
-</channel>
-</rss>
+</feed>

@@ -2,8 +2,6 @@
 Description: psi
 Expect:      feed['title'] == 'testing \u03c8 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &psi; entity</title>
-</channel>
-</rss>
+</feed>

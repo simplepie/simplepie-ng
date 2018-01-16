@@ -2,8 +2,6 @@
 Description: sim
 Expect:      feed['title'] == 'testing \u223c entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &sim; entity</title>
-</channel>
-</rss>
+</feed>

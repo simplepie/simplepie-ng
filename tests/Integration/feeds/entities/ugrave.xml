@@ -2,8 +2,6 @@
 Description: ugrave
 Expect:      feed['title'] == 'testing \xf9 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &ugrave; entity</title>
-</channel>
-</rss>
+</feed>

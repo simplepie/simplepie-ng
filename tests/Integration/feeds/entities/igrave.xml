@@ -2,8 +2,6 @@
 Description: igrave
 Expect:      feed['title'] == 'testing \xec entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &igrave; entity</title>
-</channel>
-</rss>
+</feed>

@@ -2,8 +2,6 @@
 Description: piv
 Expect:      feed['title'] == 'testing \u03d6 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &piv; entity</title>
-</channel>
-</rss>
+</feed>

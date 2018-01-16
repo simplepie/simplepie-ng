@@ -2,8 +2,6 @@
 Description: Auml
 Expect:      feed['title'] == 'testing \xc4 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &Auml; entity</title>
-</channel>
-</rss>
+</feed>

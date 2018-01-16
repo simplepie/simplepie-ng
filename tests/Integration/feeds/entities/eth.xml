@@ -2,8 +2,6 @@
 Description: eth
 Expect:      feed['title'] == 'testing \xf0 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &eth; entity</title>
-</channel>
-</rss>
+</feed>

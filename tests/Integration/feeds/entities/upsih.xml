@@ -2,8 +2,6 @@
 Description: upsih
 Expect:      feed['title'] == 'testing \u03d2 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &upsih; entity</title>
-</channel>
-</rss>
+</feed>

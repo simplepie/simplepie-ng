@@ -2,8 +2,6 @@
 Description: aelig
 Expect:      feed['title'] == 'testing \xe6 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &aelig; entity</title>
-</channel>
-</rss>
+</feed>

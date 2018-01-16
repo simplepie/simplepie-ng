@@ -2,8 +2,6 @@
 Description: oplus
 Expect:      feed['title'] == 'testing \u2295 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &oplus; entity</title>
-</channel>
-</rss>
+</feed>

@@ -2,8 +2,6 @@
 Description: euml
 Expect:      feed['title'] == 'testing \xeb entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &euml; entity</title>
-</channel>
-</rss>
+</feed>
