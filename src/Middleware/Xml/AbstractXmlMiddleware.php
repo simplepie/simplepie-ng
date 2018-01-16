@@ -92,46 +92,6 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
             $pLow = \mb_strtolower($pLet);
             $pUp  = \mb_strtoupper($pLet);
 
-            // if ($this->caseSensitive) {
-            //     if (\is_int($next)) {
-            //         // case; next
-            //         $query .= \sprintf(
-            //             '/%s:%s[position() = %d]',
-            //             $namespaceAlias,
-            //             $p,
-            //             \array_shift($path) + 1
-            //         );
-            //     } else {
-            //         // case; no-next
-            //         $query .= \sprintf(
-            //             '/%s:%s',
-            //             $namespaceAlias,
-            //             $p
-            //         );
-            //     }
-            // } else {
-            //     if (\is_int($next)) {
-            //         // icase; next
-            //         $query .= \sprintf(
-            //             '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\'][position() = %d]',
-            //             $namespaceAlias,
-            //             $pUp,
-            //             $pLow,
-            //             $p,
-            //             \array_shift($path) + 1
-            //         );
-            //     } else {
-            //         // icase; no-next
-            //         $query .= \sprintf(
-            //             '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
-            //             $namespaceAlias,
-            //             $pUp,
-            //             $pLow,
-            //             $p
-            //         );
-            //     }
-            // }
-
             if (\is_int($next)) {
                 if ($this->caseSensitive) {
                     // case; next
