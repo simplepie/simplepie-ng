@@ -2,7 +2,7 @@
 /**
  * Defintions can be looked-up at <http://cs.sensiolabs.org>.
  *
- * Rules current as of https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/v2.9.0/README.rst
+ * Rules current as of https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/v2.10.0/README.rst
  */
 
 use PhpCsFixer\Config;
@@ -130,10 +130,13 @@ return Config::create()
             'ensure_fully_multiline'           => true,
             'keep_multiple_spaces_after_comma' => false,
         ],
+        'multiline_whitespace_before_semicolons' => [
+            'strategy' => 'no_multi_line',
+        ],
         'no_break_comment' => [
             'comment_text' => 'no break',
         ],
-        'no_extra_consecutive_blank_lines' => [
+        'no_extra_blank_lines' => [
             'tokens' => [
                 'use',
             ],
@@ -273,6 +276,7 @@ return Config::create()
         ],
 
         // Enforce
+        'backtick_to_shell_exec'                      => true,
         'blank_line_after_namespace'                  => true,
         'blank_line_after_opening_tag'                => true,
         'combine_consecutive_issets'                  => true,
@@ -299,6 +303,8 @@ return Config::create()
         'mb_str_functions'                            => true,
         'method_chaining_indentation'                 => true,
         'modernize_types_casting'                     => true,
+        'multiline_comment_opening_closing'           => true,
+        'multiline_whitespace_before_semicolons'      => true,
         'native_function_casing'                      => true,
         'native_function_invocation'                  => true,
         'new_with_braces'                             => true,
@@ -313,7 +319,6 @@ return Config::create()
         'no_leading_import_slash'                     => true,
         'no_leading_namespace_whitespace'             => true,
         'no_multiline_whitespace_around_double_arrow' => true,
-        'no_multiline_whitespace_before_semicolons'   => true,
         'no_null_property_initialization'             => true,
         'no_php4_constructor'                         => true,
         'no_short_bool_cast'                          => true,
