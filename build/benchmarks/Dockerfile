@@ -1,8 +1,8 @@
 FROM php:7.2.0-cli-alpine3.7
 
 ENV BUILD_DEPS alpine-sdk curl-dev icu-dev libxml2-dev
-ENV PERSISTENT_DEPS curl icu tini
-ENV INSTALL_EXTENSIONS curl intl json opcache mbstring xml zip
+ENV PERSISTENT_DEPS curl icu libxslt-dev
+ENV INSTALL_EXTENSIONS curl intl json opcache mbstring xml xsl zip
 
 # Install Packages
 RUN apk upgrade --update && \
