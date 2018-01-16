@@ -39,14 +39,17 @@ $simplepie = (new SimplePie())
     ->setLogger($logger)
     ->setMiddlewareStack(
         (new HandlerStack())
-            ->append(new Atom())
+            ->append(
+                (new Atom())
+                    ->setCaseInsensitive()
+            )
     );
 
 echo \sprintf('Memory: %s/%s', Bytes::format(\memory_get_usage()), Bytes::format(\memory_get_usage(true)));
 echo ': Loading our logger and configuring middleware.' . PHP_EOL;
 
-// $xmlFile = \dirname(__DIR__) . '/Integration/feeds/full/atom10/tim-bray-500.xml';
-$xmlFile = \dirname(__DIR__) . '/Integration/feeds/full/atom10/test.atom';
+$xmlFile = \dirname(__DIR__) . '/Integration/feeds/full/atom10/tim-bray-500.xml';
+// $xmlFile = \dirname(__DIR__) . '/Integration/feeds/full/atom10/test.atom';
 echo \sprintf('XML file size: %s', Bytes::format(\filesize($xmlFile))) . PHP_EOL;
 
 for ($i = 0; $i < ($argv[1] ?? $__times__); $i++) {

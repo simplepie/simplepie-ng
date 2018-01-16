@@ -20,6 +20,31 @@ use SimplePie\Type\Node;
 abstract class AbstractXmlMiddleware extends AbstractMiddleware
 {
     /**
+     * The status of case-sensitivity.
+     *
+     * @var bool
+     */
+    protected $caseSensitive = true;
+
+    /**
+     * By default, SimplePie NG is case-sensitive (as per the specification). If an invalid feed is parsed that does not
+     * follow the specification with regard to casing of XML elements, this method allows you to trade some performance
+     * in favor of case-insensitive parsing.
+     *
+     * @param bool $makeInsensitive Whether or not the handling should be made case-insensitive. A value of `true`
+     *                              means that the handling should be case-insensitive. A value of `false` means that
+     *                              the handling should be case-sensitive. The default value is `true`.
+     *
+     * @return self
+     */
+    public function setCaseInsensitive(bool $makeInsensitive = true): self
+    {
+        $this->caseSensitive = !$makeInsensitive;
+
+        return $this;
+    }
+
+    /**
      * Replace all instances of `%s` with the `$namespaceAlias` parameter.
      *
      * This is similar to `sprintf()`, but the `$namespaceAlias` is applied to _all_ instances of `%s`.
@@ -61,34 +86,90 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
             $p    = \array_shift($path);
             $next = $path[0] ?? null;
 
+            // Reduce to only the upper/lower of the active letters
+            // ≈30-35% faster than the full alphabet
+            $pLet = \count_chars($p, 3);
+            $pLow = \mb_strtolower($pLet);
+            $pUp  = \mb_strtoupper($pLet);
+
+            // if ($this->caseSensitive) {
+            //     if (\is_int($next)) {
+            //         // case; next
+            //         $query .= \sprintf(
+            //             '/%s:%s[position() = %d]',
+            //             $namespaceAlias,
+            //             $p,
+            //             \array_shift($path) + 1
+            //         );
+            //     } else {
+            //         // case; no-next
+            //         $query .= \sprintf(
+            //             '/%s:%s',
+            //             $namespaceAlias,
+            //             $p
+            //         );
+            //     }
+            // } else {
+            //     if (\is_int($next)) {
+            //         // icase; next
+            //         $query .= \sprintf(
+            //             '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\'][position() = %d]',
+            //             $namespaceAlias,
+            //             $pUp,
+            //             $pLow,
+            //             $p,
+            //             \array_shift($path) + 1
+            //         );
+            //     } else {
+            //         // icase; no-next
+            //         $query .= \sprintf(
+            //             '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
+            //             $namespaceAlias,
+            //             $pUp,
+            //             $pLow,
+            //             $p
+            //         );
+            //     }
+            // }
+
             if (\is_int($next)) {
-                // $query .= \sprintf(
-                //     '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\'][position() = %d]',
-                //     $namespaceAlias,
-                //     'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-                //     'abcdefghijklmnopqrstuvwxyz',
-                //     $p,
-                //     \array_shift($path) + 1
-                // );
-                $query .= \sprintf(
-                    '/%s:%s[position() = %d]',
-                    $namespaceAlias,
-                    $p,
-                    \array_shift($path) + 1
-                );
+                if ($this->caseSensitive) {
+                    // case; next
+                    $query .= \sprintf(
+                        '/%s:%s[position() = %d]',
+                        $namespaceAlias,
+                        $p,
+                        \array_shift($path) + 1
+                    );
+                } else {
+                    // icase; next
+                    $query .= \sprintf(
+                        '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\'][position() = %d]',
+                        $namespaceAlias,
+                        $pUp,
+                        $pLow,
+                        $p,
+                        \array_shift($path) + 1
+                    );
+                }
             } else {
-                // $query .= \sprintf(
-                //     '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
-                //     $namespaceAlias,
-                //     'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-                //     'abcdefghijklmnopqrstuvwxyz',
-                //     $p
-                // );
-                $query .= \sprintf(
-                    '/%s:%s',
-                    $namespaceAlias,
-                    $p
-                );
+                if ($this->caseSensitive) {
+                    // case; no-next
+                    $query .= \sprintf(
+                        '/%s:%s',
+                        $namespaceAlias,
+                        $p
+                    );
+                } else {
+                    // icase; no-next
+                    $query .= \sprintf(
+                        '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
+                        $namespaceAlias,
+                        $pUp,
+                        $pLow,
+                        $p
+                    );
+                }
             }
         }
 

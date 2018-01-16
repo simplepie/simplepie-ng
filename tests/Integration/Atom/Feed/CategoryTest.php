@@ -13,6 +13,9 @@ namespace SimplePie\Test\Integration\Atom\Feed;
 use DOMElement;
 use SimplePie\Enum\Serialization;
 use SimplePie\Exception\SimplePieException;
+use SimplePie\HandlerStack;
+use SimplePie\Middleware\Xml\Atom;
+use SimplePie\SimplePie;
 use SimplePie\Test\Integration\AbstractTestCase;
 use SimplePie\Type\Category;
 use SimplePie\Type\Node;
@@ -20,6 +23,19 @@ use Skyzyx\UtilityPack\Types;
 
 class CategoryTest extends AbstractTestCase
 {
+    // override
+    public function getSimplePie(): SimplePie
+    {
+        return (new SimplePie())
+            ->setMiddlewareStack(
+                (new HandlerStack())
+                    ->append(
+                        (new Atom())
+                            ->setCaseInsensitive()
+                    )
+            );
+    }
+
     public function testCategory(): void
     {
         $category = $this->feed->getCategories()[0];

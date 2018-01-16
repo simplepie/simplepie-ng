@@ -11,12 +11,28 @@ declare(strict_types=1);
 namespace SimplePie\Test\Integration\Atom\Feed;
 
 use SimplePie\Enum\Serialization;
+use SimplePie\HandlerStack;
+use SimplePie\Middleware\Xml\Atom;
+use SimplePie\SimplePie;
 use SimplePie\Test\Integration\AbstractTestCase;
 use SimplePie\Type\Node;
 use Skyzyx\UtilityPack\Types;
 
 class IdTest extends AbstractTestCase
 {
+    // override
+    public function getSimplePie(): SimplePie
+    {
+        return (new SimplePie())
+            ->setMiddlewareStack(
+                (new HandlerStack())
+                    ->append(
+                        (new Atom())
+                            ->setCaseInsensitive()
+                    )
+            );
+    }
+
     public function testId(): void
     {
         $id = $this->feed->getId();
