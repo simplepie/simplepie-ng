@@ -27,7 +27,7 @@ use SimplePie\Parser\Date as DateParser;
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#elements-of-item
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-JSON-Feed-v1#items
  *
- * phpcs:disable Generic.Files.LineLength.MaxExceeded
+ * @phpcs:disable Generic.Files.LineLength.MaxExceeded
  *
  * @method array getAuthors(string $namespaceAlias) Returns the Authors associated with this entry.
  * @method array getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this entry.
@@ -45,7 +45,7 @@ use SimplePie\Parser\Date as DateParser;
  * @method SimplePie\Type\Node getTitle(string $namespaceAlias) Returns the title associated with this entry.
  * @method \DateTime getUpdated(string $namespaceAlias) Returns the date that the entry was updated.
  *
- * phpcs:enable
+ * @phpcs:enable
  */
 class Entry extends AbstractType implements NodeInterface, BranchInterface, C\SetLoggerInterface
 {
@@ -75,14 +75,14 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
      * @param DOMNode|null    $node           The `DOMNode` element to parse.
      * @param LoggerInterface $logger         The PSR-3 logger.
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function __construct(
         string $namespaceAlias,
         ?DOMNode $node = null,
         LoggerInterface $logger = null
     ) {
-        // phpcs:enable
+        // @phpcs:enable
 
         $this->namespaceAlias = $namespaceAlias;
 
@@ -158,7 +158,7 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
      *
      * @return mixed
      *
-     * phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
+     * @phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
      */
     public function getHandler(string $nodeName, array $args = [])
     {
@@ -206,5 +206,5 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
         }
     }
 
-    // phpcs:enable
+    // @phpcs:enable
 }

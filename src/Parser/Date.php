@@ -71,14 +71,14 @@ class Date
      *
      * @see http://php.net/manual/en/datetime.createfromformat.php
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function __construct(
         ?string $datestamp = null,
         ?string $outputTimezone = 'UTC',
         ?string $createFromFormat = null
     ) {
-        // phpcs:enable
+        // @phpcs:enable
 
         $this->datestamp        = $datestamp ?? null;
         $this->createFromFormat = $createFromFormat;

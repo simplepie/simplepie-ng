@@ -75,7 +75,7 @@ class Xml extends AbstractParser
      * @throws Error
      * @throws TypeError
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function __construct(
         StreamInterface $stream,
@@ -84,7 +84,7 @@ class Xml extends AbstractParser
         int $libxml,
         bool $handleHtmlEntitiesInXml
     ) {
-        // phpcs:enable
+        // @phpcs:enable
 
         // Logger
         $this->logger = $logger;
