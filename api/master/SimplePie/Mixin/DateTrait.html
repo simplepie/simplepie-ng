@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>SimplePie\Parser\Html | SimplePie NG</title>
+    <title>SimplePie\Mixin\DateTrait | SimplePie NG</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:SimplePie_Parser_Html" data-root-path="../../">
+    <body id="class" data-name="class:SimplePie_Mixin_DateTrait" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -65,54 +65,75 @@
 
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
-                <li><span class="label label-default">class</span></li>
-                        <li><a href="../../SimplePie.html">SimplePie</a></li><li class="backslash">\</li><li><a href="../../SimplePie/Parser.html">Parser</a></li><li class="backslash">\</li><li>Html</li>
+                <li><span class="label label-default">trait</span></li>
+                        <li><a href="../../SimplePie.html">SimplePie</a></li><li class="backslash">\</li><li><a href="../../SimplePie/Mixin.html">Mixin</a></li><li class="backslash">\</li><li>DateTrait</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            Html
+            DateTrait
                 
         </h1>
     </div>
 
-    <p>    class
-    <strong>Html</strong>        extends <a href="../../SimplePie/Parser/AbstractParser.html"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Html.php">View source</a>)
+    <p>    trait
+    <strong>DateTrait</strong>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DateTrait.php">View source</a>)
 </p>
 
         
     
 
             <div class="description">
-            <p>The core parser for all HTML content.</p>                                </div>
+            <p>Shared code for working with elements which manage dates.</p>                                </div>
     
     
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_createFromFormat">
+                                        protected                                        string
+                </td>
+                <td>$createFromFormat</td>
+                <td class="last">The format that should be used when determining how to parse a date from a date string.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_outputTimezone">
+                                        protected                                        string
+                </td>
+                <td>$outputTimezone</td>
+                <td class="last">The preferred timezone to use for date output.</td>
+                <td></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    <a href="../../SimplePie/Mixin/DateTrait.html"><abbr title="SimplePie\Mixin\DateTrait">DateTrait</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___toString">__toString</a>()
+                    <a href="#method_setDateFormat">setDateFormat</a>(string $createFromFormat)
         
-                                            <p>Returns an opaque string representing the object.</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Parser/AbstractParser.html#method___toString"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a></small></div>
+                                            <p>Allows the user to help the date parser by providing the format of the datestamp in the feed.</p>                </div>
+                <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    <a href="../../SimplePie/Mixin/DateTrait.html"><abbr title="SimplePie\Mixin\DateTrait">DateTrait</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_readStream">readStream</a>(<a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream)
+                    <a href="#method_setOutputTimezone">setOutputTimezone</a>(string $timezone = &#039;UTC&#039;)
         
-                                            <p>Reads the contents of the stream resource.</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Parser/AbstractParser.html#method_readStream"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a></small></div>
+                                            <p>Set the preferred output timezone.</p>                </div>
+                <div class="col-md-2"></div>
             </div>
             </div>
 
@@ -121,10 +142,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___toString">
-        <div class="location">in <a href="../../SimplePie/Parser/AbstractParser.html#method___toString"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/AbstractParser.php#L30">line 30</a></div>
-        <code>                    string
-    <strong>__toString</strong>()
+                    <h3 id="method_setDateFormat">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DateTrait.php#L43">line 43</a></div>
+        <code>                    <a href="../../SimplePie/Mixin/DateTrait.html"><abbr title="SimplePie\Mixin\DateTrait">DateTrait</abbr></a>
+    <strong>setDateFormat</strong>(string $createFromFormat)
         </code>
     </h3>
     <div class="details">
@@ -132,14 +153,24 @@
     
 
                     <div class="method-description">
-                                    <p>Returns an opaque string representing the object.</p>                    <p>Note: Use of MD5 here is not cryptographically significant.</p>                            </div>
+                                    <p>Allows the user to help the date parser by providing the format of the datestamp in the feed.</p>                    <p>This will be passed into <code>DateTime::createFromFormat()</code> at parse-time.</p>                            </div>
                 <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$createFromFormat</td>
+                <td>The format of the datestamp in the feed.</td>
+            </tr>
+            </table>
+
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
+            <td><a href="../../SimplePie/Mixin/DateTrait.html"><abbr title="SimplePie\Mixin\DateTrait">DateTrait</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -150,7 +181,7 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td>http://php.net/manual/en/language.oop5.magic.php#object.tostring</td>
+                <td>http://php.net/manual/en/datetime.createfromformat.php</td>
                 <td></td>
             </tr>
             </table>
@@ -160,10 +191,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_readStream">
-        <div class="location">in <a href="../../SimplePie/Parser/AbstractParser.html#method_readStream"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/AbstractParser.php#L43">line 43</a></div>
-        <code>                    string
-    <strong>readStream</strong>(<a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream)
+                    <h3 id="method_setOutputTimezone">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DateTrait.php#L65">line 65</a></div>
+        <code>                    <a href="../../SimplePie/Mixin/DateTrait.html"><abbr title="SimplePie\Mixin\DateTrait">DateTrait</abbr></a>
+    <strong>setOutputTimezone</strong>(string $timezone = &#039;UTC&#039;)
         </code>
     </h3>
     <div class="details">
@@ -171,16 +202,24 @@
     
 
                     <div class="method-description">
-                                    <p>Reads the contents of the stream resource.</p>                                                </div>
+                                    <p>Set the preferred output timezone.</p>                    <p>This calculation is performed on a <em>best-effort</em> basis and is not guaranteed. Factors which may affect the
+calculation include:</p>
+
+<ul>
+<li>the version of glibc/musl that your OS relies on</li>
+<li>the freshness of the timestamp data your OS relies on</li>
+<li>the format of the datestamp inside of the feed and PHP's ability to parse it</li>
+</ul>
+</p>                            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a></td>
-                <td>$stream</td>
-                <td>A PSR-7 <code>StreamInterface</code> which is typically returned by the
-                               <code>getBody()</code> method of a <code>ResponseInterface</code> class.</td>
+                <td>string</td>
+                <td>$timezone</td>
+                <td>The timezone identifier to use. Must be compatible with <code>DateTimeZone</code>. The default
+                        value is <code>UTC</code>.</td>
             </tr>
             </table>
 
@@ -189,8 +228,8 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
-            <td>The raw contents of the steam resource.</td>
+            <td><a href="../../SimplePie/Mixin/DateTrait.html"><abbr title="SimplePie\Mixin\DateTrait">DateTrait</abbr></a></td>
+            <td></td>
         </tr>
     </table>
 

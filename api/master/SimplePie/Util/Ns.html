@@ -94,6 +94,15 @@
     <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-6">
+                                            <a href="../../SimplePie/Mixin/DomDocumentTrait.html"><abbr title="SimplePie\Mixin\DomDocumentTrait">DomDocumentTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Shared code for working with <code>DOMDocument</code> objects.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
                                             <a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
                                             
                 </div>
@@ -107,6 +116,14 @@
             <h2>Properties</h2>
 
             <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_domDocument">
+                                        protected                                        <a target="_blank" href="http://php.net/DOMDocument">DOMDocument</a>
+                </td>
+                <td>$domDocument</td>
+                <td class="last">The DOMDocument object which is being used to parse the content.</td>
+                <td><small>from&nbsp;<a href="../../SimplePie/Mixin/DomDocumentTrait.html#property_domDocument"><abbr title="SimplePie\Mixin\DomDocumentTrait">DomDocumentTrait</abbr></a></small></td>
+            </tr>
                     <tr>
                 <td class="type" id="property_logger">
                                         protected                                        <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
@@ -129,6 +146,16 @@
             <h2>Methods</h2>
 
             <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a target="_blank" href="http://php.net/DOMDocument">DOMDocument</a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getDomDocument">getDomDocument</a>()
+        
+                                            <p>Gets the DOMDocument object which is being used to parse the content.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Mixin/DomDocumentTrait.html#method_getDomDocument"><abbr title="SimplePie\Mixin\DomDocumentTrait">DomDocumentTrait</abbr></a></small></div>
+            </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     <a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
@@ -154,7 +181,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $dom)
+                    <a href="#method___construct">__construct</a>(<a target="_blank" href="http://php.net/DOMDocument">DOMDocument</a> $dom)
         
                                             <p>Constructs a new instance of this class.</p>                </div>
                 <div class="col-md-2"></div>
@@ -182,7 +209,7 @@ the key is the namespace URI and the namespace alias as the value.</p>          
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string|null
+                    string
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getPreferredNamespaceAlias">getPreferredNamespaceAlias</a>(string $namespaceUri = null)
@@ -196,6 +223,36 @@ the key is the namespace URI and the namespace alias as the value.</p>          
         <h2>Details</h2>
 
             <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_getDomDocument">
+        <div class="location">in <a href="../../SimplePie/Mixin/DomDocumentTrait.html#method_getDomDocument"><abbr title="SimplePie\Mixin\DomDocumentTrait">DomDocumentTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DomDocumentTrait.php#L32">line 32</a></div>
+        <code>                    <a target="_blank" href="http://php.net/DOMDocument">DOMDocument</a>
+    <strong>getDomDocument</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the DOMDocument object which is being used to parse the content.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a target="_blank" href="http://php.net/DOMDocument">DOMDocument</a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
                     <div class="method-item">
                     <h3 id="method_setLogger">
         <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L35">line 35</a></div>
@@ -268,9 +325,9 @@ the key is the namespace URI and the namespace alias as the value.</p>          
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Util/Ns.php#L36">line 36</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Util/Ns.php#L37">line 37</a></div>
         <code>                    
-    <strong>__construct</strong>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $dom)
+    <strong>__construct</strong>(<a target="_blank" href="http://php.net/DOMDocument">DOMDocument</a> $dom)
         </code>
     </h3>
     <div class="details">
@@ -284,7 +341,7 @@ the key is the namespace URI and the namespace alias as the value.</p>          
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a target="_blank" href="http://php.net/DOMNode">DOMNode</a></td>
+                <td><a target="_blank" href="http://php.net/DOMDocument">DOMDocument</a></td>
                 <td>$dom</td>
                 <td>A DOMDocument object representing the XML file to be parsed.</td>
             </tr>
@@ -299,7 +356,7 @@ the key is the namespace URI and the namespace alias as the value.</p>          
             </div>
                     <div class="method-item">
                     <h3 id="method_addAliases">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Util/Ns.php#L51">line 51</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Util/Ns.php#L52">line 52</a></div>
         <code>                    array
     <strong>addAliases</strong>(array $aliases)
         </code>
@@ -340,7 +397,7 @@ the key is the namespace URI and the namespace alias as the value.</p>          
             </div>
                     <div class="method-item">
                     <h3 id="method_getDocNamespaces">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Util/Ns.php#L64">line 64</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Util/Ns.php#L65">line 65</a></div>
         <code>                    array
     <strong>getDocNamespaces</strong>()
         </code>
@@ -370,8 +427,8 @@ the key is the namespace URI and the namespace alias as the value.</p>          
             </div>
                     <div class="method-item">
                     <h3 id="method_getPreferredNamespaceAlias">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Util/Ns.php#L78">line 78</a></div>
-        <code>                    string|null
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Util/Ns.php#L79">line 79</a></div>
+        <code>                    string
     <strong>getPreferredNamespaceAlias</strong>(string $namespaceUri = null)
         </code>
     </h3>
@@ -399,7 +456,7 @@ the key is the namespace URI and the namespace alias as the value.</p>          
 
                     <table class="table table-condensed">
         <tr>
-            <td>string|null</td>
+            <td>string</td>
             <td></td>
         </tr>
     </table>

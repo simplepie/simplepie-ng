@@ -80,12 +80,14 @@
 
     <p>    class
     <strong>Generator</strong>        extends <a href="../../SimplePie/Type/AbstractType.html"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a>        implements
-        <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>, <a href="../../SimplePie/Configuration/SetLoggerInterface.html"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php">View source</a>)
+        <a href="../../SimplePie/Type/NodeInterface.html"><abbr title="SimplePie\Type\NodeInterface">NodeInterface</abbr></a>, <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>, <a href="../../SimplePie/Configuration/SetLoggerInterface.html"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php">View source</a>)
 </p>
 
         
     
 
+            <div class="description">
+            <p>A type model for a Generator element.</p>                                </div>
     
             <h2>Traits</h2>
 
@@ -237,9 +239,49 @@
                     <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getHandler">getHandler</a>(string $nodeName)
+                    <a href="#method_getHandler">getHandler</a>(string $nodeName, array $args = [])
         
                                             <p>Get the correct handler for a whitelisted method name.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getName">getName</a>()
+        
+                                            <p>Returns the name of the Generator.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getUri">getUri</a>()
+        
+                                            <p>Alias for <code>getUrl()</code>.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getUrl">getUrl</a>()
+        
+                                            <p>Returns the URL of the Generator.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getVersion">getVersion</a>()
+        
+                                            <p>Returns the version of the Generator.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -250,7 +292,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___call">
-        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method___call"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L23">line 23</a></div>
+        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method___call"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L29">line 29</a></div>
         <code>                    mixed
     <strong>__call</strong>(string $nodeName, array $args)
         </code>
@@ -295,7 +337,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getUnresolvableMessage">
-        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method_getUnresolvableMessage"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L47">line 47</a></div>
+        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method_getUnresolvableMessage"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L56">line 56</a></div>
         <code>            protected        string
     <strong>getUnresolvableMessage</strong>(string $nodeName)
         </code>
@@ -405,7 +447,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L58">line 58</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L69">line 69</a></div>
         <code>                    
     <strong>__construct</strong>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $node = null, <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger = null)
         </code>
@@ -441,7 +483,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___toString">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L76">line 76</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L85">line 85</a></div>
         <code>                    string
     <strong>__toString</strong>()
         </code>
@@ -471,7 +513,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getNode">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L86">line 86</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L93">line 93</a></div>
         <code>                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>|null
     <strong>getNode</strong>()
         </code>
@@ -501,8 +543,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAlias">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L98">line 98</a></div>
-        <code>            protected        string
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L101">line 101</a></div>
+        <code>                    string
     <strong>getAlias</strong>(string $nodeName)
         </code>
     </h3>
@@ -541,9 +583,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getHandler">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L118">line 118</a></div>
-        <code>            protected        <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
-    <strong>getHandler</strong>(string $nodeName)
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L115">line 115</a></div>
+        <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+    <strong>getHandler</strong>(string $nodeName, array $args = [])
         </code>
     </h3>
     <div class="details">
@@ -560,6 +602,11 @@
                 <td>string</td>
                 <td>$nodeName</td>
                 <td>The name of the method being called.</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$args</td>
+                <td>The parameters which are passed to the method.</td>
             </tr>
             </table>
 
@@ -578,11 +625,131 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../SimplePie/Exception/SimplePieException.html"><abbr title="SimplePie\Exception\SimplePieException">SimplePieException</abbr></a></td>
+                <td><abbr title="SimplePie\Type\SimplePieException">SimplePieException</abbr></td>
                 <td></td>
             </tr>
             </table>
 
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getName">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L31">line 31</a></div>
+        <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+    <strong>getName</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Returns the name of the Generator.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getUri">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L31">line 31</a></div>
+        <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+    <strong>getUri</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Alias for <code>getUrl()</code>.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getUrl">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L31">line 31</a></div>
+        <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+    <strong>getUrl</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Returns the URL of the Generator.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getVersion">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Generator.php#L31">line 31</a></div>
+        <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+    <strong>getVersion</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Returns the version of the Generator.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
             
                     </div>
     </div>

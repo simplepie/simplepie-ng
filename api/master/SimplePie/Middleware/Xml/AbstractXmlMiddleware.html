@@ -85,6 +85,9 @@
         
     
 
+            <div class="description">
+            <p>The base XML middleware class that all other XML middleware classes extend from. It handles low-level functionality
+that is shared across all XML middleware classes.</p>                                </div>
     
             <h2>Traits</h2>
 
@@ -120,6 +123,14 @@
                 <td>$fn</td>
                 <td class="last">A callable which is used to determine whether or not to run this middleware.</td>
                 <td><small>from&nbsp;<a href="../../../SimplePie/Middleware/AbstractMiddleware.html#property_fn"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_caseSensitive">
+                                        protected                                        bool
+                </td>
+                <td>$caseSensitive</td>
+                <td class="last">The status of case-sensitivity.</td>
+                <td></td>
             </tr>
             </table>
 
@@ -169,6 +180,18 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
+                    <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setCaseInsensitive">setCaseInsensitive</a>(bool $makeInsensitive = true)
+        
+                                            <p>By default, SimplePie NG is case-sensitive (as per the specification). If an invalid feed is parsed that does not
+follow the specification with regard to casing of XML elements, this method allows you to trade some performance
+in favor of case-insensitive parsing.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     string
                 </div>
                 <div class="col-md-8 type">
@@ -182,19 +205,9 @@
                     string
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_generateQuery">generateQuery</a>(string $namespaceAlias, string $path)
+                    <a href="#method_generateQuery">generateQuery</a>(string $namespaceAlias, array $path)
         
                                             <p>Produce an XPath 1.0 expression which is used to query XML document nodes.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    array
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_handleSingleNode">handleSingleNode</a>(callable $fn)
-        
-                                            <p>Some elements in the feed should only have one result. This handles those cases.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -275,7 +288,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method___construct"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L41">line 41</a></div>
+        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method___construct"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L45">line 45</a></div>
         <code>                    
     <strong>__construct</strong>(callable $fn = null)
         </code>
@@ -313,7 +326,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addArrayProperty">
-        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method_addArrayProperty"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L54">line 54</a></div>
+        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method_addArrayProperty"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L58">line 58</a></div>
         <code>                    
     <strong>addArrayProperty</strong>(mixed $object, string $property)
         </code>
@@ -348,8 +361,52 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_setCaseInsensitive">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L40">line 40</a></div>
+        <code>                    <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a>
+    <strong>setCaseInsensitive</strong>(bool $makeInsensitive = true)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>By default, SimplePie NG is case-sensitive (as per the specification). If an invalid feed is parsed that does not
+follow the specification with regard to casing of XML elements, this method allows you to trade some performance
+in favor of case-insensitive parsing.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$makeInsensitive</td>
+                <td>Whether or not the handling should be made case-insensitive. A value of <code>true</code>
+                             means that the handling should be case-insensitive. A value of <code>false</code> means that
+                             the handling should be case-sensitive. The default value is <code>true</code>.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_applyNsToQuery">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L28">line 28</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L57">line 57</a></div>
         <code>                    string
     <strong>applyNsToQuery</strong>(string $query, string $namespaceAlias)
         </code>
@@ -394,9 +451,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_generateQuery">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L45">line 45</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L81">line 81</a></div>
         <code>                    string
-    <strong>generateQuery</strong>(string $namespaceAlias, string $path)
+    <strong>generateQuery</strong>(string $namespaceAlias, array $path)
         </code>
     </h3>
     <div class="details">
@@ -404,7 +461,12 @@
     
 
                     <div class="method-description">
-                                    <p>Produce an XPath 1.0 expression which is used to query XML document nodes.</p>                                                </div>
+                                    <p>Produce an XPath 1.0 expression which is used to query XML document nodes.</p>                    <p><pre><code class="php">['feed', 'entry', 5, 'id']
+</code></pre>
+
+<pre><code class="xpath">/feed/entry[5]/id (simplified)
+</code></pre>
+</p>                            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -415,10 +477,12 @@
                 <td>The XML namespace alias to apply.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>array</td>
                 <td>$path</td>
-                <td>A variadic parameter which accepts the names of the XML
-                              tree nodes in sequence.</td>
+                <td>An ordered array of nested elements, starting from the top-level XML node.
+                              If an integer is added, then it is assumed that the element before it should be
+                              handled as an array and the integer is its index. Expression is generated
+                              left-to-right.</td>
             </tr>
             </table>
 
@@ -429,59 +493,6 @@
         <tr>
             <td>string</td>
             <td>An XPath 1.0 expression.</td>
-        </tr>
-    </table>
-
-            
-            
-                            <h4>See also</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>https://wiki.php.net/rfc/variadics</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>http://php.net/manual/en/functions.arguments.php#functions.variable-arg-list</td>
-                <td></td>
-            </tr>
-            </table>
-
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_handleSingleNode">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L69">line 69</a></div>
-        <code>                    array
-    <strong>handleSingleNode</strong>(callable $fn)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Some elements in the feed should only have one result. This handles those cases.</p>                                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>callable</td>
-                <td>$fn</td>
-                <td>A callable which returns a <code>DOMElementList</code>.</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>array</td>
-            <td>Returns an array with keys of <code>text</code> and <code>html</code>.</td>
         </tr>
     </table>
 

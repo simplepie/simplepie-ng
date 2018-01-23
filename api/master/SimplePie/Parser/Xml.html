@@ -85,6 +85,8 @@
         
     
 
+            <div class="description">
+            <p>The core parser for all XML content.</p>                                </div>
     
             <h2>Traits</h2>
 
@@ -176,7 +178,7 @@
                                         protected                                        <a href="../../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a>
                 </td>
                 <td>$ns</td>
-                <td class="last">The namespace discoverer.</td>
+                <td class="last">The XML namespace handler.</td>
                 <td></td>
             </tr>
             </table>
@@ -262,7 +264,7 @@
                 <div class="col-md-8 type">
                     <a href="#method_getNs">getNs</a>()
         
-                                            <p>Get the namespace handler.</p>                </div>
+                                            <p>Get the XML namespace handler.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -304,7 +306,7 @@ already registered.</p>                </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___toString">
-        <div class="location">in <a href="../../SimplePie/Parser/AbstractParser.html#method___toString"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/AbstractParser.php#L26">line 26</a></div>
+        <div class="location">in <a href="../../SimplePie/Parser/AbstractParser.html#method___toString"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/AbstractParser.php#L30">line 30</a></div>
         <code>                    string
     <strong>__toString</strong>()
         </code>
@@ -343,7 +345,7 @@ already registered.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_readStream">
-        <div class="location">in <a href="../../SimplePie/Parser/AbstractParser.html#method_readStream"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/AbstractParser.php#L39">line 39</a></div>
+        <div class="location">in <a href="../../SimplePie/Parser/AbstractParser.html#method_readStream"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/AbstractParser.php#L43">line 43</a></div>
         <code>                    string
     <strong>readStream</strong>(<a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream)
         </code>
@@ -514,7 +516,7 @@ already registered.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L77">line 77</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L80">line 80</a></div>
         <code>                    
     <strong>__construct</strong>(<a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream, <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger, <a href="../../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a> $handlerStack, int $libxml, bool $handleHtmlEntitiesInXml)
         </code>
@@ -572,7 +574,7 @@ already registered.</p>                </div>
             </tr>
                     <tr>
                 <td><abbr title="SimplePie\Parser\TypeError">TypeError</abbr></td>
-                <td>phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine</td>
+                <td></td>
             </tr>
             </table>
 
@@ -583,7 +585,7 @@ already registered.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getNs">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L160">line 160</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L169">line 169</a></div>
         <code>                    <a href="../../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a>
     <strong>getNs</strong>()
         </code>
@@ -593,7 +595,7 @@ already registered.</p>                </div>
     
 
                     <div class="method-description">
-                                    <p>Get the namespace handler.</p>                                                </div>
+                                    <p>Get the XML namespace handler.</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -613,7 +615,7 @@ already registered.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getNamespaceAlias">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L170">line 170</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L179">line 179</a></div>
         <code>                    string|null
     <strong>getNamespaceAlias</strong>()
         </code>
@@ -643,7 +645,7 @@ already registered.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_xpath">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L187">line 187</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L194">line 194</a></div>
         <code>                    <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a>
     <strong>xpath</strong>()
         </code>
@@ -674,7 +676,7 @@ already registered.</p>                                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getFeed">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L208">line 208</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L215">line 215</a></div>
         <code>                    <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
     <strong>getFeed</strong>()
         </code>

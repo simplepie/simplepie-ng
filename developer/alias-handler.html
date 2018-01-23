@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Unit and Integration Testing (Draft) &mdash; SimplePie: User and Developer Guide</title>
+  <title>Aliases and Handlers (Draft) &mdash; SimplePie: User and Developer Guide</title>
   
 
   
@@ -46,7 +46,8 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="SimplePie: User and Developer Guide" href="../index.html"/>
-        <link rel="prev" title="Aliases and Handlers (Draft)" href="alias-handler.html"/> 
+        <link rel="next" title="Unit and Integration Testing (Draft)" href="testing.html"/>
+        <link rel="prev" title="Interfaces (Draft)" href="interfaces.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -172,11 +173,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="interfaces.html">Interfaces (Draft)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="alias-handler.html">Aliases and Handlers (Draft)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Unit and Integration Testing (Draft)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#unit-tests">Unit Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#integration-test-schema">Integration Test Schema</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#all-at-once">All at Once</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Aliases and Handlers (Draft)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Unit and Integration Testing (Draft)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#unit-tests">Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#integration-test-schema">Integration Test Schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#all-at-once">All at Once</a></li>
 </ul>
 </li>
 </ul>
@@ -223,13 +224,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Unit and Integration Testing (Draft)</li>
+      <li>Aliases and Handlers (Draft)</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/developer/testing.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/developer/alias-handler.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -242,43 +243,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="unit-and-integration-testing-draft">
-<h1>Unit and Integration Testing (Draft)<a class="headerlink" href="#unit-and-integration-testing-draft" title="Permalink to this headline">¶</a></h1>
-<p>Firstly, download and install the dependencies.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>composer install -oa
-</pre></div>
-</div>
-<div class="section" id="unit-tests">
-<h2>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
-<p>You can run the unit tests as follows:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>bin/phpunit --testsuite unit
-</pre></div>
-</div>
-<p>When we write unit tests, we are testing that the single piece of code (i.e., function, method) does what it is supposed
-to be doing. A test should be very small and very focused. We will write lots and lots of these, and we will writes
-<em>mocks</em> to simulate <code class="docutils literal"><span class="pre">Factory</span></code> classes.</p>
-</div>
-<div class="section" id="integration-test-schema">
-<h2>Integration Test Schema<a class="headerlink" href="#integration-test-schema" title="Permalink to this headline">¶</a></h2>
-<p>You can run the integration tests as follows:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>bin/phpunit --testsuite integration
-</pre></div>
-</div>
-<p>When we write integration tests, we are testing that two pieces of code (e.g., classes) are working together to
-accomplish what they are supposed to be doing. An integration test may be larger than a unit test. We will write fewer
-of these, and will back them with known-good data.</p>
-</div>
-<div class="section" id="all-at-once">
-<h2>All at Once<a class="headerlink" href="#all-at-once" title="Permalink to this headline">¶</a></h2>
-<p>You can run both unit and integration tests at the same time with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>make <span class="nb">test</span>
-</pre></div>
-</div>
-<div class="reviewed admonition">
-<p class="first admonition-title">Review</p>
-<p class="last">Written on 2017-06-25, proofread on 2017-08-27.</p>
-</div>
-</div>
+  <div class="section" id="aliases-and-handlers-draft">
+<h1>Aliases and Handlers (Draft)<a class="headerlink" href="#aliases-and-handlers-draft" title="Permalink to this headline">¶</a></h1>
+<p>TBD.</p>
 </div>
 
 
@@ -291,8 +258,10 @@ of these, and will back them with known-good data.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="testing.html" class="btn btn-neutral float-right" title="Unit and Integration Testing (Draft)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="alias-handler.html" class="btn btn-neutral" title="Aliases and Handlers (Draft)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="interfaces.html" class="btn btn-neutral" title="Interfaces (Draft)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -79,7 +79,8 @@
     </div>
 
     <p>    interface
-    <strong>HandlerStackInterface</strong>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php">View source</a>)
+    <strong>HandlerStackInterface</strong>        implements
+        <a href="../SimplePie/Configuration/SetLoggerInterface.html"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php">View source</a>)
 </p>
 
         
@@ -94,6 +95,17 @@
             <h2>Methods</h2>
 
             <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLogger">setLogger</a>(<a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../SimplePie/Configuration/SetLoggerInterface.html#method_setLogger"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a></small></div>
+            </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
@@ -144,6 +156,16 @@
                                             <p>Invokes the stack of middleware.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_registerNamespaces">registerNamespaces</a>(<a href="../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a> $ns)
+        
+                                            <p>Collects all of the supported namespaces from the registered middleware.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -151,8 +173,37 @@
 
             <div id="method-details">
                     <div class="method-item">
+                    <h3 id="method_setLogger">
+        <div class="location">in <a href="../SimplePie/Configuration/SetLoggerInterface.html#method_setLogger"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration/SetLoggerInterface.php#L17">line 17</a></div>
+        <code>                    
+    <strong>setLogger</strong>(<a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></td>
+                <td>$logger</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_append">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L40">line 40</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L42">line 42</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>append</strong>(callable $middleware, string $name = null, string $overrideType = null)
         </code>
@@ -216,7 +267,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_appendClosure">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L58">line 58</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L60">line 60</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>appendClosure</strong>(string $overrideType, callable $middleware, string $name = null)
         </code>
@@ -280,7 +331,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_prepend">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L76">line 76</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L78">line 78</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>prepend</strong>(callable $middleware, string $name = null, string $overrideType = null)
         </code>
@@ -344,7 +395,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_prependClosure">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L94">line 94</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L96">line 96</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>prependClosure</strong>(string $overrideType, callable $middleware, string $name = null)
         </code>
@@ -408,7 +459,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_invoke">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L106">line 106</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L108">line 108</a></div>
         <code>                    
     <strong>invoke</strong>(string $feedType, <a target="_blank" href="http://php.net/stdClass">stdClass</a> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
         </code>
@@ -444,6 +495,37 @@
                 <td><a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a></td>
                 <td>$xpath</td>
                 <td>The <code>DOMXPath</code> object with this middleware's namespace alias applied.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_registerNamespaces">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L117">line 117</a></div>
+        <code>                    
+    <strong>registerNamespaces</strong>(<a href="../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a> $ns)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Collects all of the supported namespaces from the registered middleware.</p>                    <p><strong>NOTE:</strong> Only significant for XML-based feed types.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a></td>
+                <td>$ns</td>
+                <td>The XML namespace handler.</td>
             </tr>
             </table>
 

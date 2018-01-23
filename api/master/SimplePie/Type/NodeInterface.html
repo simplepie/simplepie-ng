@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>SimplePie\Parser\Html | SimplePie NG</title>
+    <title>SimplePie\Type\NodeInterface | SimplePie NG</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:SimplePie_Parser_Html" data-root-path="../../">
+    <body id="class" data-name="class:SimplePie_Type_NodeInterface" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -65,28 +65,28 @@
 
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
-                <li><span class="label label-default">class</span></li>
-                        <li><a href="../../SimplePie.html">SimplePie</a></li><li class="backslash">\</li><li><a href="../../SimplePie/Parser.html">Parser</a></li><li class="backslash">\</li><li>Html</li>
+                <li><span class="label label-default">interface</span></li>
+                        <li><a href="../../SimplePie.html">SimplePie</a></li><li class="backslash">\</li><li><a href="../../SimplePie/Type.html">Type</a></li><li class="backslash">\</li><li>NodeInterface</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            Html
+            NodeInterface
                 
         </h1>
     </div>
 
-    <p>    class
-    <strong>Html</strong>        extends <a href="../../SimplePie/Parser/AbstractParser.html"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Html.php">View source</a>)
+    <p>    interface
+    <strong>NodeInterface</strong>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/NodeInterface.php">View source</a>)
 </p>
 
         
     
 
             <div class="description">
-            <p>The core parser for all HTML content.</p>                                </div>
+            <p>The interface that all type classes must implement and respond to.</p>                                </div>
     
     
     
@@ -101,18 +101,18 @@
                 <div class="col-md-8 type">
                     <a href="#method___toString">__toString</a>()
         
-                                            <p>Returns an opaque string representing the object.</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Parser/AbstractParser.html#method___toString"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a></small></div>
+                                            <p>Converts this object into a string representation.</p>                </div>
+                <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>|null
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_readStream">readStream</a>(<a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream)
+                    <a href="#method_getNode">getNode</a>()
         
-                                            <p>Reads the contents of the stream resource.</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Parser/AbstractParser.html#method_readStream"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a></small></div>
+                                            <p>Gets the DOMNode element.</p>                </div>
+                <div class="col-md-2"></div>
             </div>
             </div>
 
@@ -122,7 +122,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___toString">
-        <div class="location">in <a href="../../SimplePie/Parser/AbstractParser.html#method___toString"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/AbstractParser.php#L30">line 30</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/NodeInterface.php#L25">line 25</a></div>
         <code>                    string
     <strong>__toString</strong>()
         </code>
@@ -132,7 +132,7 @@
     
 
                     <div class="method-description">
-                                    <p>Returns an opaque string representing the object.</p>                    <p>Note: Use of MD5 here is not cryptographically significant.</p>                            </div>
+                                    <p>Converts this object into a string representation.</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -146,24 +146,15 @@
 
             
             
-                            <h4>See also</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>http://php.net/manual/en/language.oop5.magic.php#object.tostring</td>
-                <td></td>
-            </tr>
-            </table>
-
                     </div>
     </div>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_readStream">
-        <div class="location">in <a href="../../SimplePie/Parser/AbstractParser.html#method_readStream"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/AbstractParser.php#L43">line 43</a></div>
-        <code>                    string
-    <strong>readStream</strong>(<a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream)
+                    <h3 id="method_getNode">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/NodeInterface.php#L32">line 32</a></div>
+        <code>                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>|null
+    <strong>getNode</strong>()
         </code>
     </h3>
     <div class="details">
@@ -171,26 +162,15 @@
     
 
                     <div class="method-description">
-                                    <p>Reads the contents of the stream resource.</p>                                                </div>
+                                    <p>Gets the DOMNode element.</p>                                                </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a></td>
-                <td>$stream</td>
-                <td>A PSR-7 <code>StreamInterface</code> which is typically returned by the
-                               <code>getBody()</code> method of a <code>ResponseInterface</code> class.</td>
-            </tr>
-            </table>
-
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
-            <td>The raw contents of the steam resource.</td>
+            <td><a target="_blank" href="http://php.net/DOMNode">DOMNode</a>|null</td>
+            <td></td>
         </tr>
     </table>
 

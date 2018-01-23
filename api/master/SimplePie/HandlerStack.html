@@ -80,7 +80,7 @@
 
     <p>    class
     <strong>HandlerStack</strong>        implements
-        <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>, <a href="../SimplePie/Configuration/SetLoggerInterface.html"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php">View source</a>)
+        <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php">View source</a>)
 </p>
 
         
@@ -121,7 +121,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </tr>
                     <tr>
                 <td class="type" id="property_stack">
-                                        protected                                        string
+                                        protected                                        array
                 </td>
                 <td>$stack</td>
                 <td class="last">The middleware stack, grouped by feed type.</td>
@@ -225,12 +225,12 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="SimplePie\[type]">[type]</abbr>
+                    array
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_debugStack">debugStack</a>()
         
-                                            <p>[debugStack description].</p>                </div>
+                                            <p>Returns information about the HandlerStack that is useful for debugging.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -341,7 +341,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L47">line 47</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L46">line 46</a></div>
         <code>                    
     <strong>__construct</strong>()
         </code>
@@ -362,7 +362,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method_append">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L61">line 61</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L60">line 60</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>append</strong>(callable $middleware, string $name = null, string $overrideType = null)
         </code>
@@ -426,7 +426,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method_appendClosure">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L85">line 85</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L84">line 84</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>appendClosure</strong>(string $overrideType, callable $middleware, string $name = null)
         </code>
@@ -490,7 +490,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method_prepend">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L100">line 100</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L99">line 99</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>prepend</strong>(callable $middleware, string $name = null, string $overrideType = null)
         </code>
@@ -554,7 +554,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method_prependClosure">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L124">line 124</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L123">line 123</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
     <strong>prependClosure</strong>(string $overrideType, callable $middleware, string $name = null)
         </code>
@@ -618,7 +618,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method_invoke">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L137">line 137</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L136">line 136</a></div>
         <code>                    
     <strong>invoke</strong>(string $feedType, <a target="_blank" href="http://php.net/stdClass">stdClass</a> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
         </code>
@@ -666,7 +666,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method_registerNamespaces">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L169">line 169</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L164">line 164</a></div>
         <code>                    
     <strong>registerNamespaces</strong>(<a href="../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a> $ns)
         </code>
@@ -684,7 +684,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
                     <tr>
                 <td><a href="../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a></td>
                 <td>$ns</td>
-                <td>[description]</td>
+                <td>The XML namespace handler.</td>
             </tr>
             </table>
 
@@ -697,8 +697,8 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method_debugStack">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L182">line 182</a></div>
-        <code>                    <abbr title="SimplePie\[type]">[type]</abbr>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L177">line 177</a></div>
+        <code>                    array
     <strong>debugStack</strong>()
         </code>
     </h3>
@@ -707,15 +707,15 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
     
 
                     <div class="method-description">
-                                    <p>[debugStack description].</p>                                                </div>
+                                    <p>Returns information about the HandlerStack that is useful for debugging.</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="SimplePie\[type]">[type]</abbr></td>
-            <td>[description]</td>
+            <td>array</td>
+            <td></td>
         </tr>
     </table>
 
@@ -727,7 +727,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method_validateMiddleware">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L218">line 218</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L213">line 213</a></div>
         <code>            protected        
     <strong>validateMiddleware</strong>(callable $middleware, string $name = null, string $overrideType = null, callable $fn)
         </code>
@@ -777,7 +777,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
                     <table class="table table-condensed">
                     <tr>
                 <td><a href="../SimplePie/Exception/MiddlewareException.html"><abbr title="SimplePie\Exception\MiddlewareException">MiddlewareException</abbr></a></td>
-                <td>phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine</td>
+                <td></td>
             </tr>
             </table>
 
@@ -788,7 +788,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method_logRegistration">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L247">line 247</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L242">line 242</a></div>
         <code>            protected        
     <strong>logRegistration</strong>(callable $middleware, string $name = null)
         </code>
@@ -824,7 +824,7 @@ and (b) provide the interface for SimplePie NG to trigger middleware.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method_exceptionMessage">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L264">line 264</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStack.php#L259">line 259</a></div>
         <code>            protected        string
     <strong>exceptionMessage</strong>(callable $middleware, string $name = null)
         </code>
