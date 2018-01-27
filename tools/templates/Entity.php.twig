@@ -32,7 +32,7 @@ class Entity
      */
     public static function convertEntitiesToUnicode(string $input): string
     {
-        return preg_replace_callback('/&([^;]*);/', static function($m) {
+        return preg_replace_callback('/&([^;]*);/', static function ($m) {
             if (isset(self::$entities[$m[1]])) {
                 return self::$entities[$m[1]];
             }
