@@ -87,7 +87,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      * @param array    $path           The path of the XML traversal. Should begin with `<feed>` or `<channel>`,
      *                                 then `<entry>` or `<item>`.
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getSingleScalarTypes(
         object $feedRoot,
@@ -95,7 +95,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
         DOMXPath $xpath,
         array $path
     ): void {
-        // phpcs:enable
+        // @phpcs:enable
 
         $cpath = $path;
         $nodes = [];
@@ -150,7 +150,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      * @param array    $path           The path of the XML traversal. Should begin with `<feed>` or `<channel>`,
      *                                 then `<entry>` or `<item>`.
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getSingleComplexTypes(
         object $feedRoot,
@@ -158,7 +158,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
         DOMXPath $xpath,
         array $path
     ): void {
-        // phpcs:enable
+        // @phpcs:enable
 
         $cpath = $path;
         $nodes = [];
@@ -195,7 +195,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      * @param array    $path           The path of the XML traversal. Should begin with `<feed>` or `<channel>`,
      *                                 then `<entry>` or `<item>`.
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getMultipleComplexTypes(
         object $feedRoot,
@@ -203,7 +203,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
         DOMXPath $xpath,
         array $path
     ): void {
-        // phpcs:enable
+        // @phpcs:enable
 
         $cpath = $path;
         $nodes = [];

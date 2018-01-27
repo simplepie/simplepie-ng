@@ -55,14 +55,14 @@ class HandlerStack implements HandlerStackInterface
     /**
      * {@inheritdoc}
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function append(
         callable $middleware,
         ?string $name = null,
         ?string $overrideType = null
     ): HandlerStackInterface {
-        // phpcs:enable
+        // @phpcs:enable
 
         $this->validateMiddleware(
             $middleware,
@@ -79,14 +79,14 @@ class HandlerStack implements HandlerStackInterface
     /**
      * {@inheritdoc}
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function appendClosure(
         string $overrideType,
         callable $middleware,
         ?string $name = null
     ): HandlerStackInterface {
-        // phpcs:enable
+        // @phpcs:enable
 
         return $this->append($middleware, $name, $overrideType);
     }
@@ -94,14 +94,14 @@ class HandlerStack implements HandlerStackInterface
     /**
      * {@inheritdoc}
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function prepend(
         callable $middleware,
         ?string $name = null,
         ?string $overrideType = null
     ): HandlerStackInterface {
-        // phpcs:enable
+        // @phpcs:enable
 
         $this->validateMiddleware(
             $middleware,
@@ -118,14 +118,14 @@ class HandlerStack implements HandlerStackInterface
     /**
      * {@inheritdoc}
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function prependClosure(
         string $overrideType,
         callable $middleware,
         ?string $name = null
     ): HandlerStackInterface {
-        // phpcs:enable
+        // @phpcs:enable
 
         return $this->prepend($middleware, $name, $overrideType);
     }
@@ -208,7 +208,7 @@ class HandlerStack implements HandlerStackInterface
      *
      * @throws MiddlewareException
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function validateMiddleware(
         callable $middleware,
@@ -216,7 +216,7 @@ class HandlerStack implements HandlerStackInterface
         ?string $overrideType = null,
         callable $fn
     ): void {
-        // phpcs:enable
+        // @phpcs:enable
 
         if (FeedType::ALL === $overrideType) {
             $fn($this->stack['html']);

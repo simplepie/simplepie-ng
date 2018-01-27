@@ -25,7 +25,7 @@ use stdClass;
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#required-channel-elements
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-JSON-Feed-v1#top-level
  *
- * phpcs:disable Generic.Files.LineLength.MaxExceeded
+ * @phpcs:disable Generic.Files.LineLength.MaxExceeded
  *
  * @method array getAuthors(string $namespaceAlias) Returns the Authors associated with this feed.
  * @method array getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this feed.
@@ -48,7 +48,7 @@ use stdClass;
  * @method SimplePie\Type\Node getTitle(string $namespaceAlias) Returns the title associated with this feed.
  * @method \DateTime getUpdated(string $namespaceAlias) Returns the date that the feed was updated.
  *
- * phpcs:enable
+ * @phpcs:enable
  */
 class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
 {
@@ -94,7 +94,7 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
      *
      * @return string
      *
-     * phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
+     * @phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
      */
     public function getAlias(string $nodeName): string
     {
@@ -129,7 +129,7 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
         }
     }
 
-    // phpcs:enable
+    // @phpcs:enable
 
     /**
      * Get the correct handler for a whitelisted method name.
@@ -141,7 +141,7 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
      *
      * @return mixed Either `TypeInterface` or `TypeInterface[]`.
      *
-     * phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
+     * @phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
      */
     public function getHandler(string $nodeName, array $args = [])
     {
@@ -197,5 +197,5 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
         }
     }
 
-    // phpcs:enable
+    // @phpcs:enable
 }

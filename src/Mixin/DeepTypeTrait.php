@@ -38,14 +38,14 @@ trait DeepTypeTrait
      *
      * @return Node
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getScalarSingleValue(
         object $root,
         string $nodeName,
         ?string $namespaceAlias = null
     ): Node {
-        // phpcs:enable
+        // @phpcs:enable
 
         $alias = $namespaceAlias ?? $this->namespaceAlias;
 
@@ -68,7 +68,7 @@ trait DeepTypeTrait
      *
      * @return TypeInterface
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getComplexSingleValue(
         object $root,
@@ -76,7 +76,7 @@ trait DeepTypeTrait
         string $className,
         ?string $namespaceAlias = null
     ): TypeInterface {
-        // phpcs:enable
+        // @phpcs:enable
 
         $alias = $namespaceAlias ?? $this->namespaceAlias;
 
@@ -98,14 +98,14 @@ trait DeepTypeTrait
      *
      * @return iterable
      *
-     * phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getComplexMultipleValues(
         object $root,
         string $nodeName,
         ?string $namespaceAlias = null
     ): iterable {
-        // phpcs:enable
+        // @phpcs:enable
 
         $alias = $namespaceAlias ?? $this->namespaceAlias;
 
