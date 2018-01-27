@@ -16,8 +16,8 @@ $twig   = new Twig_Environment($loader, [
 ]);
 $twig->addExtension(new Twig_Extension_Debug());
 
-$twig->addFunction(new Twig_Function('timestamp', function () {
-    return str_replace('+00:00', 'Z', gmdate(DATE_ATOM));
+$twig->addFunction(new Twig_Function('timestamp', static function () {
+    return \str_replace('+00:00', 'Z', \gmdate(DATE_ATOM));
 }));
 
 //-------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ foreach ($entities as $entity => $codepoints) {
         })(),
         'char' => (static function () use ($codepoints) {
             return \implode('', \array_map(static function ($p) {
-                return addcslashes(IntlChar::chr($p), "\n`\\\"");
+                return \addcslashes(IntlChar::chr($p), "\n`\\\"");
             }, $codepoints->codepoints));
         })(),
     ];

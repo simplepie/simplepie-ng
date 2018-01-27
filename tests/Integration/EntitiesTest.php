@@ -11,9 +11,7 @@ declare(strict_types=1);
 namespace SimplePie\Test\Integration;
 
 use IntlChar;
-use SimplePie\Dictionary\Entity;
 use SimplePie\Enum\Serialization;
-use SimplePie\Test\Integration\AbstractTestCase;
 
 class EntitiesTest extends AbstractTestCase
 {
@@ -23,22 +21,24 @@ class EntitiesTest extends AbstractTestCase
     }
 
     /**
-     * Data Provider
+     * Data Provider.
      *
      * @return iterable
      */
     public function feeds(): iterable
     {
-        $pattern = sprintf('%s/entities/*.xml', $this->getFeedDir());
-        $files = glob($pattern, GLOB_MARK | GLOB_BRACE);
+        $pattern = \sprintf('%s/entities/*.xml', $this->getFeedDir());
+        $files   = \glob($pattern, GLOB_MARK | GLOB_BRACE);
 
         foreach ($files as $file) {
-            yield [str_replace($this->getFeedDir(), '', $file)];
+            yield [\str_replace($this->getFeedDir(), '', $file)];
         }
     }
 
     /**
      * @dataProvider feeds
+     *
+     * @param mixed $feed
      */
     public function testEntities($feed): void
     {
@@ -47,7 +47,7 @@ class EntitiesTest extends AbstractTestCase
         $xq     = $parser->xpath()->query('/comment()')[0];
         $feed   = $parser->getFeed();
 
-        preg_match("/Expect:\s+feed\['title'\] == '([^']*)'/", (string) $xq->textContent, $m);
+        \preg_match("/Expect:\\s+feed\\['title'\\] == '([^']*)'/", (string) $xq->textContent, $m);
         $title = $this->codepointCharacter($m[1]);
 
         $this->assertEquals($title, (string) $feed->getTitle());
@@ -56,9 +56,9 @@ class EntitiesTest extends AbstractTestCase
 
     public function codepointCharacter(string $str): string
     {
-        $str = preg_replace_callback('/\\\\(u|x)([0-9a-f]{2,8})/i', static function($m) {
+        $str = \preg_replace_callback('/\\\\(u|x)([0-9a-f]{2,8})/i', static function ($m) {
             $hex = $m[2];
-            $dec = hexdec($hex);
+            $dec = \hexdec($hex);
 
             return IntlChar::chr($dec);
         }, $str);

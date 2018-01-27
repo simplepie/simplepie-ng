@@ -217,7 +217,7 @@ class Xml extends AbstractParser
      * Some DOMNode names are `#comment` or `#text`. This method will move the
      * pointer to the next node, then the next until it finds a real XML node.
      *
-     * @param  DOMNode $node The `DOMNode` element to evaluate.
+     * @param DOMNode $node The `DOMNode` element to evaluate.
      *
      * @return DOMNode
      */
