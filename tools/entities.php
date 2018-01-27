@@ -59,13 +59,13 @@ foreach ($entities as $entity => $codepoints) {
 }
 
 // Sort alphabetically, naturally
-\usort($enumerables, static function ($a, $b) {
+\usort($enumerables, static function (stdClass $a, stdClass $b) {
     return \strcasecmp($a->amp, $b->amp);
 });
 
 // Make sure that the `=>` signs align in the generated output
 $longestKey = \mb_strlen(
-    \array_reduce($enumerables, static function ($a, $b) {
+    \array_reduce($enumerables, static function (stdClass $a, stdClass $b) {
         return (\mb_strlen($a ?? '') > \mb_strlen($b->amp))
             ? $a
             : $b->amp;
