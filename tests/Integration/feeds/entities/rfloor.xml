@@ -2,8 +2,6 @@
 Description: rfloor
 Expect:      feed['title'] == 'testing \u230b entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &rfloor; entity</title>
-</channel>
-</rss>
+</feed>

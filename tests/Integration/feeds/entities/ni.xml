@@ -2,8 +2,6 @@
 Description: ni
 Expect:      feed['title'] == 'testing \u220b entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &ni; entity</title>
-</channel>
-</rss>
+</feed>

@@ -2,8 +2,6 @@
 Description: rArr
 Expect:      feed['title'] == 'testing \u21d2 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &rArr; entity</title>
-</channel>
-</rss>
+</feed>

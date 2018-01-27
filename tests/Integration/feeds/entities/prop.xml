@@ -2,8 +2,6 @@
 Description: prop
 Expect:      feed['title'] == 'testing \u221d entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &prop; entity</title>
-</channel>
-</rss>
+</feed>

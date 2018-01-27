@@ -1,9 +1,7 @@
 <!--
 Description: lang
-Expect:      feed['title'] == 'testing \u2329 entity'
+Expect:      feed['title'] == 'testing \u27E8 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &lang; entity</title>
-</channel>
-</rss>
+</feed>

@@ -2,8 +2,6 @@
 Description: ge
 Expect:      feed['title'] == 'testing \u2265 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &ge; entity</title>
-</channel>
-</rss>
+</feed>

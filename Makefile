@@ -31,8 +31,8 @@ install-hooks:
 entities:
 	wget -O resources/entities.json https://www.w3.org/TR/html5/entities.json
 	tools/entities.php
-	cat src/entities.dtd | uniq > src/entities2.dtd
-	mv src/entities2.dtd src/entities.dtd
+	cat resources/entities.dtd | uniq > resources/entities2.dtd
+	mv resources/entities2.dtd resources/entities.dtd
 
 #-------------------------------------------------------------------------------
 

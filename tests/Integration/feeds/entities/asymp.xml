@@ -2,8 +2,6 @@
 Description: asymp
 Expect:      feed['title'] == 'testing \u2248 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &asymp; entity</title>
-</channel>
-</rss>
+</feed>

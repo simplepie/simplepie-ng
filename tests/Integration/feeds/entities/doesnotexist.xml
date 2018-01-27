@@ -1,9 +1,7 @@
 <!--
 Description: doesnotexist
-Expect:      feed['title'] == 'testing &doesnotexist; entity'
+Expect:      feed['title'] == 'testing  entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &doesnotexist; entity</title>
-</channel>
-</rss>
+</feed>

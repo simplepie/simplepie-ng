@@ -2,8 +2,6 @@
 Description: Oslash
 Expect:      feed['title'] == 'testing \xd8 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &Oslash; entity</title>
-</channel>
-</rss>
+</feed>

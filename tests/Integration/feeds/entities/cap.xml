@@ -2,8 +2,6 @@
 Description: cap
 Expect:      feed['title'] == 'testing \u2229 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &cap; entity</title>
-</channel>
-</rss>
+</feed>

@@ -2,8 +2,6 @@
 Description: sect
 Expect:      feed['title'] == 'testing \xa7 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &sect; entity</title>
-</channel>
-</rss>
+</feed>

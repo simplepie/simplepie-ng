@@ -2,8 +2,6 @@
 Description: bull
 Expect:      feed['title'] == 'testing \u2022 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &bull; entity</title>
-</channel>
-</rss>
+</feed>

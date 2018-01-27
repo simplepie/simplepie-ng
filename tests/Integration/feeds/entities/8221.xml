@@ -2,8 +2,6 @@
 Description: 8221
 Expect:      feed['title'] == 'testing \u201d entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &#8221; entity</title>
-</channel>
-</rss
+</feed>

@@ -2,8 +2,6 @@
 Description: ndash
 Expect:      feed['title'] == 'testing \u2013 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &ndash; entity</title>
-</channel>
-</rss>
+</feed>

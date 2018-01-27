@@ -2,8 +2,6 @@
 Description: tau
 Expect:      feed['title'] == 'testing \u03c4 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &tau; entity</title>
-</channel>
-</rss>
+</feed>

@@ -2,8 +2,6 @@
 Description: diams
 Expect:      feed['title'] == 'testing \u2666 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &diams; entity</title>
-</channel>
-</rss>
+</feed>

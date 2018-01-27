@@ -2,8 +2,6 @@
 Description: isin
 Expect:      feed['title'] == 'testing \u2208 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &isin; entity</title>
-</channel>
-</rss>
+</feed>

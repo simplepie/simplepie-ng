@@ -2,8 +2,6 @@
 Description: image
 Expect:      feed['title'] == 'testing \u2111 entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &image; entity</title>
-</channel>
-</rss>
+</feed>

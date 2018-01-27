@@ -2,8 +2,6 @@
 Description: macr
 Expect:      feed['title'] == 'testing \xaf entity'
 -->
-<rss>
-<channel>
+<feed xmlns="http://www.w3.org/2005/Atom">
 <title>testing &macr; entity</title>
-</channel>
-</rss>
+</feed>
