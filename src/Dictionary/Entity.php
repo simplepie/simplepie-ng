@@ -13,7 +13,7 @@ namespace SimplePie\Dictionary;
 /**
  * Pulled from the W3C's official HTML5 entities list.
  *
- * DO NOT EDIT MANUALLY. This code was automatically generated with `make entities` at 2018-01-27T23:06:10Z.
+ * DO NOT EDIT MANUALLY. This code was automatically generated with `make entities` at 2018-01-27T23:30:18Z.
  */
 class Entity
 {

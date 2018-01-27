@@ -65,7 +65,7 @@ foreach ($entities as $entity => $codepoints) {
 
 // Make sure that the `=>` signs align in the generated output
 $longestKey = \mb_strlen(
-    \array_reduce($enumerables, static function (stdClass $a, stdClass $b) {
+    \array_reduce($enumerables, static function ($a, stdClass $b) {
         return (\mb_strlen($a ?? '') > \mb_strlen($b->amp))
             ? $a
             : $b->amp;
