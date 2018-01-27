@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace SimplePie\Test\Integration;
 
+use IntlChar;
+use SimplePie\Dictionary\Entity;
 use SimplePie\Enum\Serialization;
 use SimplePie\Test\Integration\AbstractTestCase;
 
@@ -46,9 +48,21 @@ class EntitiesTest extends AbstractTestCase
         $feed   = $parser->getFeed();
 
         preg_match("/Expect:\s+feed\['title'\] == '([^']*)'/", (string) $xq->textContent, $m);
-        $title = json_decode(sprintf('["%s"]', $m[1]))[0];
+        $title = $this->codepointCharacter($m[1]);
 
         $this->assertEquals($title, (string) $feed->getTitle());
         $this->assertEquals(Serialization::TEXT, $feed->getTitle()->getSerialization());
+    }
+
+    public function codepointCharacter(string $str): string
+    {
+        $str = preg_replace_callback('/\\\\(u|x)([0-9a-f]{2,8})/i', static function($m) {
+            $hex = $m[2];
+            $dec = hexdec($hex);
+
+            return IntlChar::chr($dec);
+        }, $str);
+
+        return $str;
     }
 }

@@ -16,13 +16,16 @@ $twig   = new Twig_Environment($loader, [
 ]);
 $twig->addExtension(new Twig_Extension_Debug());
 
-$template = $twig->load('entities.dtd.twig');
+$twig->addFunction(new Twig_Function('timestamp', function () {
+    return str_replace('+00:00', 'Z', gmdate(DATE_ATOM));
+}));
 
 //-------------------------------------------------------------------------------
 
 $entities    = \json_decode(\file_get_contents(\dirname(__DIR__) . '/resources/entities.json'));
 $enumerables = [];
 
+// Figure out what they key => value should be
 foreach ($entities as $entity => $codepoints) {
     $enumerables[] = (object) [
         'amp'       => \str_replace(['&', ';'], '', $entity),
@@ -34,18 +37,71 @@ foreach ($entities as $entity => $codepoints) {
                 );
             }, $codepoints->codepoints));
         })(),
+        'codepoint_x' => (static function () use ($codepoints) {
+            return \implode('', \array_map(static function ($p) {
+                return \sprintf(
+                    '\x%s',
+                    \mb_strtoupper(\dechex($p))
+                );
+            }, $codepoints->codepoints));
+        })(),
+        'codepoint_u' => (static function () use ($codepoints) {
+            return \implode('', \array_map(static function ($p) {
+                return \sprintf('\u%s', $p);
+            }, $codepoints->codepoints));
+        })(),
+        'char' => (static function () use ($codepoints) {
+            return \implode('', \array_map(static function ($p) {
+                return addcslashes(IntlChar::chr($p), "\n`\\\"");
+            }, $codepoints->codepoints));
+        })(),
     ];
 }
 
-//-------------------------------------------------------------------------------
+// Sort alphabetically, naturally
+\usort($enumerables, static function ($a, $b) {
+    return \strcasecmp($a->amp, $b->amp);
+});
 
-$output = $template->render([
+// Make sure that the `=>` signs align in the generated output
+$longestKey = \mb_strlen(
+    \array_reduce($enumerables, static function ($a, $b) {
+        return (\mb_strlen($a ?? '') > \mb_strlen($b->amp))
+            ? $a
+            : $b->amp;
+    })
+);
+
+foreach ($enumerables as &$enum) {
+    $enum->padded_amp = \str_pad("'" . $enum->amp . "'", $longestKey + 2, ' ', STR_PAD_RIGHT);
+}
+
+//-------------------------------------------------------------------------------
+// entities.dtd
+
+$template = $twig->load('entities.dtd.twig');
+$output   = $template->render([
     'entities' => $enumerables,
 ]);
 
 $writePath = \sprintf(
     '%s/entities.dtd',
-    \dirname(__DIR__) . '/src'
+    \dirname(__DIR__) . '/resources'
+);
+
+\file_put_contents($writePath, $output);
+
+//-------------------------------------------------------------------------------
+// Entity.php
+
+$template = $twig->load('Entity.php.twig');
+$output   = $template->render([
+    'entities' => $enumerables,
+]);
+
+$writePath = \sprintf(
+    '%s/Entity.php',
+    \dirname(__DIR__) . '/src/Dictionary'
 );
 
 \file_put_contents($writePath, $output);
