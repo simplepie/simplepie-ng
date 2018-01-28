@@ -48,6 +48,7 @@ push:
 	git clone git@github.com:simplepie/simplepie-ng.git --branch gh-pages --single-branch /tmp/gh-pages
 	rm -Rf /tmp/gh-pages/*
 	cp -Rf ./docs/_build/* /tmp/gh-pages/
+	cp -Rf ./docs/redirect.tmpl /tmp/gh-pages/index.html
 	touch /tmp/gh-pages/.nojekyll
 	find /tmp/gh-pages -type d | xargs chmod -f 0755
 	find /tmp/gh-pages -type f | xargs chmod -f 0644
