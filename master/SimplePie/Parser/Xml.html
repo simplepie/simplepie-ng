@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>SimplePie\Parser\Xml | SimplePie NG</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:SimplePie_Parser_Xml" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">SimplePie NG</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../SimplePie.html">SimplePie</a></li><li class="backslash">\</li><li><a href="../../SimplePie/Parser.html">Parser</a></li><li class="backslash">\</li><li>Xml</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Xml
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Xml</strong>        extends <a href="../../SimplePie/Parser/AbstractParser.html"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php">View source</a>)
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>The core parser for all XML content.</p>                                </div>
+    
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../SimplePie/Mixin/DomDocumentTrait.html"><abbr title="SimplePie\Mixin\DomDocumentTrait">DomDocumentTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Shared code for working with <code>DOMDocument</code> objects.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Shared code for working with the logger.
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../SimplePie/Mixin/RawDocumentTrait.html"><abbr title="SimplePie\Mixin\RawDocumentTrait">RawDocumentTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    Shared code for working with raw feed content.
+                </div>
+            </div>
+            </div>
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_domDocument">
+                                        protected                                        <a target="_blank" href="http://php.net/DOMDocument">DOMDocument</a>
+                </td>
+                <td>$domDocument</td>
+                <td class="last">The DOMDocument object which is being used to parse the content.</td>
+                <td><small>from&nbsp;<a href="../../SimplePie/Mixin/DomDocumentTrait.html#property_domDocument"><abbr title="SimplePie\Mixin\DomDocumentTrait">DomDocumentTrait</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_logger">
+                                        protected                                        <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
+                </td>
+                <td>$logger</td>
+                <td class="last">A PSR-3 logger.</td>
+                <td><small>from&nbsp;<a href="../../SimplePie/Mixin/LoggerTrait.html#property_logger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_rawDocument">
+                                        protected                                        string
+                </td>
+                <td>$rawDocument</td>
+                <td class="last">The raw, unparsed contents of the feed's stream.</td>
+                <td><small>from&nbsp;<a href="../../SimplePie/Mixin/RawDocumentTrait.html#property_rawDocument"><abbr title="SimplePie\Mixin\RawDocumentTrait">RawDocumentTrait</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_feed">
+                                        protected                                        <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
+                </td>
+                <td>$feed</td>
+                <td class="last">The object which contains the parsed results.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_libxml">
+                                        protected                                        int
+                </td>
+                <td>$libxml</td>
+                <td class="last">Bitwise libxml options to use for parsing XML.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_middleware">
+                                        protected                                        <a href="../../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
+                </td>
+                <td>$middleware</td>
+                <td class="last">The handler stack which contains registered middleware.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_ns">
+                                        protected                                        <a href="../../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a>
+                </td>
+                <td>$ns</td>
+                <td class="last">The XML namespace handler.</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___toString">__toString</a>()
+        
+                                            <p>Returns an opaque string representing the object.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Parser/AbstractParser.html#method___toString"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_readStream">readStream</a>(<a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream)
+        
+                                            <p>Reads the contents of the stream resource.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Parser/AbstractParser.html#method_readStream"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a target="_blank" href="http://php.net/DOMDocument">DOMDocument</a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getDomDocument">getDomDocument</a>()
+        
+                                            <p>Gets the DOMDocument object which is being used to parse the content.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Mixin/DomDocumentTrait.html#method_getDomDocument"><abbr title="SimplePie\Mixin\DomDocumentTrait">DomDocumentTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLogger">setLogger</a>(<a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
+        
+                                            <p>Sets the PSR-3 logger.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLogger">getLogger</a>()
+        
+                                            <p>Retrieves the PSR-3 logger.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRawDocument">getRawDocument</a>()
+        
+                                            <p>Retrieves the raw, unparsed contents of the feed's stream.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Mixin/RawDocumentTrait.html#method_getRawDocument"><abbr title="SimplePie\Mixin\RawDocumentTrait">RawDocumentTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(<a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream, <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger, <a href="../../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a> $handlerStack, int $libxml, bool $handleHtmlEntitiesInXml)
+        
+                                            <p>Constructs a new instance of this class.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getNs">getNs</a>()
+        
+                                            <p>Get the XML namespace handler.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getNamespaceAlias">getNamespaceAlias</a>()
+        
+                                            <p>Get the preferred namespace alias.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_xpath">xpath</a>()
+        
+                                            <p>Gets a reference to the <code>DOMXPath</code> object, with the default namespace
+already registered.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_findNextRealNode">findNextRealNode</a>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $node)
+        
+                                            <p>Some DOMNode names are <code>#comment</code> or <code>#text</code>. This method will move the
+pointer to the next node, then the next until it finds a real XML node.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getFeed">getFeed</a>()
+        
+                                            <p>Retrieves the object which represents the top-level feed.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___toString">
+        <div class="location">in <a href="../../SimplePie/Parser/AbstractParser.html#method___toString"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/AbstractParser.php#L30">line 30</a></div>
+        <code>                    string
+    <strong>__toString</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Returns an opaque string representing the object.</p>                    <p>Note: Use of MD5 here is not cryptographically significant.</p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>http://php.net/manual/en/language.oop5.magic.php#object.tostring</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_readStream">
+        <div class="location">in <a href="../../SimplePie/Parser/AbstractParser.html#method_readStream"><abbr title="SimplePie\Parser\AbstractParser">AbstractParser</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/AbstractParser.php#L43">line 43</a></div>
+        <code>                    string
+    <strong>readStream</strong>(<a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Reads the contents of the stream resource.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a></td>
+                <td>$stream</td>
+                <td>A PSR-7 <code>StreamInterface</code> which is typically returned by the
+                               <code>getBody()</code> method of a <code>ResponseInterface</code> class.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>The raw contents of the steam resource.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getDomDocument">
+        <div class="location">in <a href="../../SimplePie/Mixin/DomDocumentTrait.html#method_getDomDocument"><abbr title="SimplePie\Mixin\DomDocumentTrait">DomDocumentTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DomDocumentTrait.php#L32">line 32</a></div>
+        <code>                    <a target="_blank" href="http://php.net/DOMDocument">DOMDocument</a>
+    <strong>getDomDocument</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the DOMDocument object which is being used to parse the content.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a target="_blank" href="http://php.net/DOMDocument">DOMDocument</a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLogger">
+        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L35">line 35</a></div>
+        <code>                    <a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
+    <strong>setLogger</strong>(<a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets the PSR-3 logger.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></td>
+                <td>$logger</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLogger">
+        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L54">line 54</a></div>
+        <code>                    <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
+    <strong>getLogger</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieves the PSR-3 logger.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRawDocument">
+        <div class="location">in <a href="../../SimplePie/Mixin/RawDocumentTrait.html#method_getRawDocument"><abbr title="SimplePie\Mixin\RawDocumentTrait">RawDocumentTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/RawDocumentTrait.php#L30">line 30</a></div>
+        <code>                    string
+    <strong>getRawDocument</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieves the raw, unparsed contents of the feed's stream.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L83">line 83</a></div>
+        <code>                    
+    <strong>__construct</strong>(<a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a> $stream, <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger, <a href="../../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a> $handlerStack, int $libxml, bool $handleHtmlEntitiesInXml)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructs a new instance of this class.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../Psr/Http/Message/StreamInterface.html"><abbr title="Psr\Http\Message\StreamInterface">StreamInterface</abbr></a></td>
+                <td>$stream</td>
+                <td>A PSR-7 <code>StreamInterface</code> which is typically returned by
+                                                      the <code>getBody()</code> method of a <code>ResponseInterface</code> class.</td>
+            </tr>
+                    <tr>
+                <td><a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></td>
+                <td>$logger</td>
+                <td>The PSR-3 logger.</td>
+            </tr>
+                    <tr>
+                <td><a href="../../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a></td>
+                <td>$handlerStack</td>
+                <td>The handler stack which contains registered middleware.</td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$libxml</td>
+                <td>The libxml value to use for parsing XML.</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$handleHtmlEntitiesInXml</td>
+                <td>Whether or not SimplePie should pre-parse the XML as HTML
+                                                      to resolve the entities. A value of <code>true</code> means that
+                                                      SimplePie should inject the entity definitions. A value of
+                                                      <code>false</code> means that SimplePie should NOT inject the entity
+                                                      definitions. The default value is <code>false</code>.</td>
+            </tr>
+            </table>
+
+            
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="SimplePie\Parser\Error">Error</abbr></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><abbr title="SimplePie\Parser\TypeError">TypeError</abbr></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getNs">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L175">line 175</a></div>
+        <code>                    <a href="../../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a>
+    <strong>getNs</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the XML namespace handler.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getNamespaceAlias">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L185">line 185</a></div>
+        <code>                    string|null
+    <strong>getNamespaceAlias</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the preferred namespace alias.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_xpath">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L200">line 200</a></div>
+        <code>                    <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a>
+    <strong>xpath</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets a reference to the <code>DOMXPath</code> object, with the default namespace
+already registered.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_findNextRealNode">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L224">line 224</a></div>
+        <code>                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>
+    <strong>findNextRealNode</strong>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $node)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Some DOMNode names are <code>#comment</code> or <code>#text</code>. This method will move the
+pointer to the next node, then the next until it finds a real XML node.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/DOMNode">DOMNode</a></td>
+                <td>$node</td>
+                <td>The <code>DOMNode</code> element to evaluate.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a target="_blank" href="http://php.net/DOMNode">DOMNode</a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getFeed">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Parser/Xml.php#L240">line 240</a></div>
+        <code>                    <a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a>
+    <strong>getFeed</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retrieves the object which represents the top-level feed.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Type/Feed.html"><abbr title="SimplePie\Type\Feed">Feed</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
