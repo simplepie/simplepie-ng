@@ -42,6 +42,17 @@ docs:
 	# git reset --hard HEAD
 	sami update --force docs/sami-config.php
 
+.PHONY: push
+push:
+	rm -Rf /tmp/gh-pages
+	git clone git@github.com:simplepie/simplepie-ng.git --branch gh-pages --single-branch /tmp/gh-pages
+	rm -Rf /tmp/gh-pages/*
+	cp -Rf ./src/_build/* /tmp/gh-pages/
+	touch /tmp/gh-pages/.nojekyll
+	find /tmp/gh-pages -type d | xargs chmod -f 0755
+	find /tmp/gh-pages -type f | xargs chmod -f 0644
+	cd /tmp/gh-pages/ && git add . && git commit -a -m "Automated commit on $$(date)" && git push origin gh-pages
+
 #-------------------------------------------------------------------------------
 
 .PHONY: lint
