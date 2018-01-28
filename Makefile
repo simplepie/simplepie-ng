@@ -38,13 +38,9 @@ entities:
 
 .PHONY: docs
 docs:
-	docker-compose up docs
-
-.PHONY: apidocs
-apidocs:
 	# composer install --no-ansi --no-dev --no-interaction --no-progress --no-scripts --optimize-autoloader --ignore-platform-reqs
 	# git reset --hard HEAD
-	sami update --force docs/src/sami-config.php
+	sami update --force docs/sami-config.php
 
 #-------------------------------------------------------------------------------
 
