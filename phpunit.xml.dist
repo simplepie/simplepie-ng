@@ -5,8 +5,6 @@
     bootstrap="tests/bootstrap.php"
     colors="auto"
     convertErrorsToExceptions="true"
-    printerFile="vendor/skyzyx/phpunit-result-printer/ResultPrinter.php"
-    printerClass="Skyzyx\ResultPrinter\ResultPrinter"
     processIsolation="false"
     stopOnError="false"
     stopOnFailure="false"
