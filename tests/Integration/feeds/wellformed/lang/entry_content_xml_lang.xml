@@ -2,7 +2,7 @@
 Description: entry content language from xml:lang
 Expect:      not bozo and entries[0]['content'][0]['language'] == 'en'
 -->
-<feed version="0.3" xmlns="http://purl.org/atom/ns#">
+<feed xmlns="http://www.w3.org/2005/Atom">
 <entry>
   <content xml:lang="en">Example Atom</content>
 </entry>
