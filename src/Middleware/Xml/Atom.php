@@ -32,16 +32,9 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      */
     public function __invoke(stdClass $feedRoot, string $namespaceAlias, DOMXPath $xpath): void
     {
-        // lang (single, scalar)
-        $this->addArrayProperty($feedRoot, 'lang');
-        $xq = $xpath->query($this->applyNsToQuery('/%s:feed[attribute::xml:lang][1]/@xml:lang', $namespaceAlias));
-
-        $feedRoot->lang[$namespaceAlias] = (false !== $xq && $xq->length > 0)
-            ? T\Node::factory((string) $xq->item(0)->nodeValue)
-            : null;
-
         // Top-level feed
         $path = ['feed'];
+        $this->getNodeAttributes($feedRoot, $namespaceAlias, $xpath, $path);
         $this->getSingleScalarTypes($feedRoot, $namespaceAlias, $xpath, $path);
         $this->getSingleComplexTypes($feedRoot, $namespaceAlias, $xpath, $path);
         $this->getMultipleComplexTypes($feedRoot, $namespaceAlias, $xpath, $path);
@@ -53,6 +46,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             $cpath   = $path;
             $cpath[] = $i;
 
+            $this->getNodeAttributes($entry, $namespaceAlias, $xpath, $cpath);
             $this->getSingleScalarTypes($entry, $namespaceAlias, $xpath, $cpath);
             $this->getSingleComplexTypes($entry, $namespaceAlias, $xpath, $cpath);
             $this->getMultipleComplexTypes($entry, $namespaceAlias, $xpath, $cpath);
@@ -75,6 +69,43 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             'http://www.w3.org/2005/Atom'              => 'atom10',
             '/https?:\/\/www\.w3\.org\/2005\/Atom\/?/' => 'atom10',
         ];
+    }
+
+    /**
+     * Fetches attributes with a single, scalar value, on elements.
+     *
+     * @param stdClass $feedRoot       The root of the feed. This will be written-to when the parsing middleware runs.
+     * @param string   $namespaceAlias The preferred namespace alias for a given XML namespace URI. Should be the result
+     *                                 of a call to `SimplePie\Util\Ns`.
+     * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
+     * @param array    $path           The path of the XML traversal. Should begin with `<feed>` or `<channel>`,
+     *                                 then `<entry>` or `<item>`.
+     *
+     * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
+     */
+    protected function getNodeAttributes(
+        object $feedRoot,
+        string $namespaceAlias,
+        DOMXPath $xpath,
+        array $path
+    ): void {
+        // @phpcs:enable
+
+        $attrs = [
+            'base' => '@xml:base',
+            'lang' => '@xml:lang',
+        ];
+
+        foreach ($attrs as $nodeName => $searchName) {
+            $query = $this->generateQuery($namespaceAlias, \array_merge($path, [$searchName]));
+            $xq    = $xpath->query($query);
+            $this->addArrayProperty($feedRoot, $nodeName);
+            $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
+
+            $feedRoot->{$nodeName}[$namespaceAlias] = (false !== $xq && $xq->length > 0)
+                ? new T\Node($xq->item(0))
+                : new T\Node();
+        }
     }
 
     /**
@@ -134,7 +165,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             $this->addArrayProperty($feedRoot, $nodeName);
             $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
-            $feedRoot->{$nodeName}[$namespaceAlias] = ($xq->length > 0)
+            $feedRoot->{$nodeName}[$namespaceAlias] = (false !== $xq && $xq->length > 0)
                 ? new T\Node($xq->item(0))
                 : new T\Node();
         }
@@ -179,7 +210,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             $this->addArrayProperty($feedRoot, $name);
             $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
-            $feedRoot->{$name}[$namespaceAlias] = ($xq->length > 0)
+            $feedRoot->{$name}[$namespaceAlias] = (false !== $xq && $xq->length > 0)
                 ? new $class($xq->item(0), $this->getLogger())
                 : null;
         }
