@@ -32,6 +32,7 @@ use SimplePie\Parser\Date as DateParser;
  * @method array getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this entry.
  * @method SimplePie\Type\Node getContent(string $namespaceAlias) Returns the content of the entry, serialized as TEXT, HTML, or XHTML content.
  * @method array getContributors(string $namespaceAlias) Returns the list of Contributors associated with this entry.
+ * @method SimplePie\Type\Node getCopyright(string $namespaceAlias) Alias for `getRights()`.
  * @method SimplePie\Type\Node getGuid(string $namespaceAlias) Alias for `getId()`.
  * @method SimplePie\Type\Node getId(string $namespaceAlias) Returns the ID associated with this entry.
  * @method SimplePie\Type\Node getLang(string $namespaceAlias) Alias for `getLanguage()`.
@@ -129,6 +130,9 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
 
             case 'contributors':
                 return 'contributor';
+
+            case 'copyright':
+                return 'rights';
 
             case 'guid':
                 return 'id';

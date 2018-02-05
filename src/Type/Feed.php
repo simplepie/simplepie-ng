@@ -29,6 +29,7 @@ use stdClass;
  * @method array getAuthors(string $namespaceAlias) Returns the Authors associated with this feed.
  * @method array getCategories(string $namespaceAlias) Returns the list of Categories/Tags/Topics associated with this feed.
  * @method array getContributors(string $namespaceAlias) Returns the list of Contributors associated with this feed.
+ * @method SimplePie\Type\Node getCopyright(string $namespaceAlias) Alias for `getRights()`.
  * @method array getEntries(string $namespaceAlias) Returns the list of Entries/Items associated with this feed.
  * @method SimplePie\Type\Generator getGenerator(string $namespaceAlias) Returns the Generator associated with this feed.
  * @method SimplePie\Type\Node getGuid(string $namespaceAlias) Alias for `getId()`.
@@ -106,6 +107,9 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
 
             case 'contributors':
                 return 'contributor';
+
+            case 'copyright':
+                return 'rights';
 
             case 'entries':
             case 'items':

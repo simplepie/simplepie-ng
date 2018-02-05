@@ -167,9 +167,9 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
      *
      * @return string|null
      */
-    public function getLang(): ?string
+    public function getLang(): Node
     {
-        return $this->lang;
+        return Node::factory(str_replace('_', '-', $this->lang));
     }
 
     /**
@@ -177,9 +177,9 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
      *
      * @return string|null
      */
-    public function getBase(): ?string
+    public function getBase(): Node
     {
-        return $this->base;
+        return Node::factory($this->base);
     }
 
     /**

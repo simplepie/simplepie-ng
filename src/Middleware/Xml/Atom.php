@@ -33,8 +33,15 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
     {
         // Top-level feed
         $path = ['feed'];
+
         $this->getNodeAttributes($feedRoot, $namespaceAlias, $xpath, $path);
-        $this->getSingleScalarTypes($feedRoot, $namespaceAlias, $xpath, $path);
+
+        $feedFallback = [
+            'base' => $feedRoot->base[$namespaceAlias]->getNode(),
+            'lang' => $feedRoot->lang[$namespaceAlias]->getNode(),
+        ];
+
+        $this->getSingleScalarTypes($feedRoot, $namespaceAlias, $xpath, $path, $feedFallback);
         $this->getSingleComplexTypes($feedRoot, $namespaceAlias, $xpath, $path);
         $this->getMultipleComplexTypes($feedRoot, $namespaceAlias, $xpath, $path);
 
