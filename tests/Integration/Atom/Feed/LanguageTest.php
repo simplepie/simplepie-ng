@@ -5,7 +5,6 @@
  *
  * http://opensource.org/licenses/Apache2.0
  */
-
 declare(strict_types=1);
 
 namespace SimplePie\Test\Integration\Atom\Feed;
@@ -22,8 +21,8 @@ class LanguageTest extends AbstractTestCase
         $lang = $this->feed->getLang();
 
         $this->assertEquals(Node::class, Types::getClassOrType($lang));
-        $this->assertEquals('en-US', (string) $lang);
-        $this->assertEquals('en-US', $lang->getValue());
+        $this->assertEquals('en_US', (string) $lang);
+        $this->assertEquals('en_US', $lang->getValue());
         $this->assertEquals(Serialization::TEXT, $lang->getSerialization());
     }
 
@@ -32,8 +31,8 @@ class LanguageTest extends AbstractTestCase
         $lang = $this->feed->getLang('atom10');
 
         $this->assertEquals(Node::class, Types::getClassOrType($lang));
-        $this->assertEquals('en-US', (string) $lang);
-        $this->assertEquals('en-US', $lang->getValue());
+        $this->assertEquals('en_US', (string) $lang);
+        $this->assertEquals('en_US', $lang->getValue());
         $this->assertEquals(Serialization::TEXT, $lang->getSerialization());
     }
 
@@ -42,8 +41,8 @@ class LanguageTest extends AbstractTestCase
         $lang = $this->feed->getLanguage();
 
         $this->assertEquals(Node::class, Types::getClassOrType($lang));
-        $this->assertEquals('en-US', (string) $lang);
-        $this->assertEquals('en-US', $lang->getValue());
+        $this->assertEquals('en_US', (string) $lang);
+        $this->assertEquals('en_US', $lang->getValue());
         $this->assertEquals(Serialization::TEXT, $lang->getSerialization());
     }
 
@@ -52,8 +51,8 @@ class LanguageTest extends AbstractTestCase
         $lang = $this->feed->getLanguage('atom10');
 
         $this->assertEquals(Node::class, Types::getClassOrType($lang));
-        $this->assertEquals('en-US', (string) $lang);
-        $this->assertEquals('en-US', $lang->getValue());
+        $this->assertEquals('en_US', (string) $lang);
+        $this->assertEquals('en_US', $lang->getValue());
         $this->assertEquals(Serialization::TEXT, $lang->getSerialization());
     }
 }

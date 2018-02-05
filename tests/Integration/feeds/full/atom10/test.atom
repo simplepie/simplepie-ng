@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed
-    xml:lang="en-US"
+    xml:lang="en_US"
     xmlns="http://www.w3.org/2005/Atom"
     xmlns:thr="http://purl.org/syndication/thread/1.0"
     xmlns:media="http://search.yahoo.com/mrss/">
@@ -11,7 +11,7 @@
     <link href="https://github.com/skyzyx/signer/releases.atom" rel="self" type="application/atom+xml"/>
     <link href="http://df4.us/qio" rel="shorturl" type="text/html"/>
     <link href="https://daringfireball.net/linked/2017/12/08/ive-returns" rel="related" type="text/html"/>
-    <link href="https://imgs.xkcd.com/comics/tech_support_cheat_sheet.png" rel="enclosure" length="82735" type="image/png" hreflang="en-US" title="Tech Support Cheat Sheet"/>
+    <link href="https://imgs.xkcd.com/comics/tech_support_cheat_sheet.png" rel="enclosure" length="82735" type="image/png" hreflang="en_US" title="Tech Support Cheat Sheet"/>
 
     <title>Release notes from signer</title>
     <subtitle>testing subtitles</subtitle>
@@ -66,12 +66,12 @@
         <category scheme="http://blog.ryanparman.com" term="Clueless Recruiters" />
         <thr:total>0</thr:total>
     </entry>
-    <entry>
+    <entry xml:lang="en-CA">
         <id>tag:github.com,2008:Repository/25600856/1.0.4</id>
         <updated>2015-02-12T23:21:41Z</updated>
         <link href="/skyzyx/signer/releases/tag/1.0.4" rel="alternate" type="text/html"/>
         <title>1.0.4</title>
-        <content type="html">&lt;p&gt;Composer updates.&lt;/p&gt;</content>
+        <content type="html" xml:lang="fr-CA">&lt;p&gt;Composer updates.&lt;/p&gt;</content>
         <author>
             <name>skyzyx</name>
         </author>
@@ -79,7 +79,7 @@
         <category scheme="http://blog.ryanparman.com" term="Clueless Recruiters" />
         <thr:total>0</thr:total>
     </entry>
-    <entry>
+    <entry xml:lang="en-AU">
         <id>tag:github.com,2008:Repository/25600856/1.0.3</id>
         <updated>2015-02-11T23:01:05Z</updated>
         <link href="/skyzyx/signer/releases/tag/1.0.3" rel="alternate" type="text/html"/>
@@ -97,7 +97,7 @@
         <category scheme="http://blog.ryanparman.com" term="Clueless Recruiters" />
         <thr:total>0</thr:total>
     </entry>
-    <entry>
+    <entry xml:lang="en-NZ">
         <id>tag:github.com,2008:Repository/25600856/1.0.2</id>
         <updated>2014-10-29T22:29:30Z</updated>
         <link href="/skyzyx/signer/releases/tag/1.0.2" rel="alternate" type="text/html"/>

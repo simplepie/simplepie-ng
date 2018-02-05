@@ -5,7 +5,6 @@
  *
  * http://opensource.org/licenses/Apache2.0
  */
-
 declare(strict_types=1);
 
 namespace SimplePie\Middleware\Xml;
@@ -63,11 +62,11 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
      * Produce an XPath 1.0 expression which is used to query XML document nodes.
      *
      * ```php
-     * ['feed', 'entry', 5, 'id']
+     * ['feed', 'entry', 5, 'id', '@xml:lang']
      * ```
      *
      * ```xpath
-     * /feed/entry[5]/id (simplified)
+     * /feed/entry[5]/id/@xml:lang (simplified)
      * ```
      *
      * @param string $namespaceAlias The XML namespace alias to apply.
@@ -88,24 +87,29 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
 
             // Reduce to only the upper/lower of the active letters
             // ≈30-35% faster than the full alphabet
-            $pLet = \count_chars($p, 3);
-            $pLow = \mb_strtolower($pLet);
-            $pUp  = \mb_strtoupper($pLet);
+            $pLet  = \count_chars($p, 3);
+            $pLow  = \mb_strtolower($pLet);
+            $pUp   = \mb_strtoupper($pLet);
+            $pAttr = ('@' === \mb_substr($p, 0, 1));
 
             if (\is_int($next)) {
-                if ($this->caseSensitive) {
+                if ($this->caseSensitive || $pAttr) {
                     // case; next
                     $query .= \sprintf(
-                        '/%s:%s[position() = %d]',
-                        $namespaceAlias,
+                        '/%s%s[position() = %d]',
+                        (!$pAttr
+                            ? $namespaceAlias . ':'
+                            : ''),
                         $p,
                         \array_shift($path) + 1
                     );
                 } else {
                     // icase; next
                     $query .= \sprintf(
-                        '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\'][position() = %d]',
-                        $namespaceAlias,
+                        '/%s*[translate(name(), \'%s\', \'%s\') = \'%s\'][position() = %d]',
+                        (!$pAttr
+                            ? $namespaceAlias . ':'
+                            : ''),
                         $pUp,
                         $pLow,
                         $p,
@@ -113,18 +117,22 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
                     );
                 }
             } else {
-                if ($this->caseSensitive) {
+                if ($this->caseSensitive || $pAttr) {
                     // case; no-next
                     $query .= \sprintf(
-                        '/%s:%s',
-                        $namespaceAlias,
+                        '/%s%s',
+                        (!$pAttr
+                            ? $namespaceAlias . ':'
+                            : ''),
                         $p
                     );
                 } else {
                     // icase; no-next
                     $query .= \sprintf(
-                        '/%s:*[translate(name(), \'%s\', \'%s\') = \'%s\']',
-                        $namespaceAlias,
+                        '/%s*[translate(name(), \'%s\', \'%s\') = \'%s\']',
+                        (!$pAttr
+                            ? $namespaceAlias . ':'
+                            : ''),
                         $pUp,
                         $pLow,
                         $p
