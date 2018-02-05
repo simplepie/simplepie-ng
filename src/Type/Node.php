@@ -169,7 +169,7 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
      */
     public function getLang(): self
     {
-        return self::factory($this->lang);
+        return self::factory($this->lang ?? '');
     }
 
     /**
@@ -179,7 +179,7 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
      */
     public function getBase(): self
     {
-        return self::factory($this->base);
+        return self::factory($this->base ?? '');
     }
 
     /**
