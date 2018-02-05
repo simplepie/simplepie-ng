@@ -59,15 +59,25 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
     /**
      * Get the text node in multiple formats.
      *
-     * @param DOMNode|null $node A `DOMNode` element to read properties from.
+     * @param DOMNode|null $node     A `DOMNode` element to read properties from.
+     * @param array        $fallback An array of attributes for default XML attributes. The default value is an
+     *                               empty array.
      *
      * @phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
      */
-    public function __construct(?DOMNode $node = null)
+    public function __construct(?DOMNode $node = null, array $fallback = [])
     {
         if ($node) {
             $this->node  = $node;
             $this->value = $node->nodeValue;
+
+            if (isset($fallback['base'])) {
+                $this->base = $fallback['base']->nodeValue;
+            }
+
+            if (isset($fallback['lang'])) {
+                $this->lang = $fallback['lang']->nodeValue;
+            }
 
             if (XML_ELEMENT_NODE === $node->nodeType && $node->attributes->length > 0) {
                 foreach ($node->attributes as $attribute) {

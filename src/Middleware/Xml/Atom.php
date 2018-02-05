@@ -45,15 +45,21 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             $cpath   = $path;
             $cpath[] = $i;
 
-            $fallback = [
+            $feedFallback = [
                 'base' => $feedRoot->base[$namespaceAlias]->getNode(),
                 'lang' => $feedRoot->lang[$namespaceAlias]->getNode(),
             ];
 
-            $this->getNodeAttributes($entry, $namespaceAlias, $xpath, $cpath, $fallback);
-            $this->getSingleScalarTypes($entry, $namespaceAlias, $xpath, $cpath, $fallback);
-            $this->getSingleComplexTypes($entry, $namespaceAlias, $xpath, $cpath, $fallback);
-            $this->getMultipleComplexTypes($entry, $namespaceAlias, $xpath, $cpath, $fallback);
+            $this->getNodeAttributes($entry, $namespaceAlias, $xpath, $cpath, $feedFallback);
+
+            $entryFallback = [
+                'base' => $entry->base[$namespaceAlias]->getNode(),
+                'lang' => $entry->lang[$namespaceAlias]->getNode(),
+            ];
+
+            $this->getSingleScalarTypes($entry, $namespaceAlias, $xpath, $cpath, $entryFallback);
+            $this->getSingleComplexTypes($entry, $namespaceAlias, $xpath, $cpath);
+            $this->getMultipleComplexTypes($entry, $namespaceAlias, $xpath, $cpath);
         }
     }
 
@@ -84,7 +90,8 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
      * @param array    $path           The path of the XML traversal. Should begin with `<feed>` or `<channel>`,
      *                                 then `<entry>` or `<item>`.
-     * @param array    $fallback
+     * @param array    $fallback       An array of attributes for default XML attributes. The default value is an
+     *                                 empty array.
      *
      * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
@@ -127,6 +134,8 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
      * @param array    $path           The path of the XML traversal. Should begin with `<feed>` or `<channel>`,
      *                                 then `<entry>` or `<item>`.
+     * @param array    $fallback       An array of attributes for default XML attributes. The default value is an
+     *                                 empty array.
      *
      * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
@@ -134,7 +143,8 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
         object $feedRoot,
         string $namespaceAlias,
         DOMXPath $xpath,
-        array $path
+        array $path,
+        array $fallback = []
     ): void {
         // @phpcs:enable
 
@@ -176,7 +186,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             $this->getLogger()->debug(\sprintf('%s is running an XPath query:', __CLASS__), [$query]);
 
             $feedRoot->{$nodeName}[$namespaceAlias] = (false !== $xq && $xq->length > 0)
-                ? new T\Node($xq->item(0))
+                ? new T\Node($xq->item(0), $fallback)
                 : new T\Node();
         }
     }
