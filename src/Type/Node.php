@@ -5,7 +5,6 @@
  *
  * http://opensource.org/licenses/Apache2.0
  */
-
 declare(strict_types=1);
 
 namespace SimplePie\Type;
@@ -15,11 +14,12 @@ use DOMNode;
 use DOMText;
 use SimplePie\Enum\CharacterSet;
 use SimplePie\Enum\Serialization;
+use SimplePie\Exception\SimplePieException;
 
 /**
  * A type model for a deep-level Node element.
  */
-class Node extends AbstractType implements NodeInterface
+class Node extends AbstractType implements NodeInterface, TypeInterface
 {
     /**
      * The raw `DOMNode` element.
@@ -36,6 +36,20 @@ class Node extends AbstractType implements NodeInterface
     protected $value;
 
     /**
+     * The language of the content.
+     *
+     * @var string|null
+     */
+    protected $lang;
+
+    /**
+     * The xml:base value of the content.
+     *
+     * @var string|null
+     */
+    protected $base;
+
+    /**
      * The serialization of the content.
      *
      * @var string
@@ -46,6 +60,8 @@ class Node extends AbstractType implements NodeInterface
      * Get the text node in multiple formats.
      *
      * @param DOMNode|null $node A `DOMNode` element to read properties from.
+     *
+     * @phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
      */
     public function __construct(?DOMNode $node = null)
     {
@@ -55,42 +71,30 @@ class Node extends AbstractType implements NodeInterface
 
             if (XML_ELEMENT_NODE === $node->nodeType && $node->attributes->length > 0) {
                 foreach ($node->attributes as $attribute) {
-                    if ('src' === $attribute->name) {
+                    if ('xml:base' === $attribute->nodeName) {
+                        $this->base = $attribute->nodeValue;
+                    } elseif ('xml:lang' === $attribute->nodeName) {
+                        $this->lang = $attribute->nodeValue;
+                    } elseif ('src' === $attribute->name) {
                         $this->handleAsSource($attribute);
-
-                        break;
-                    }
-
-                    if ('type' === $attribute->name && Serialization::TEXT === $attribute->value) {
+                    } elseif ('type' === $attribute->name && Serialization::TEXT === $attribute->value) {
                         $this->handleAsText($node, $attribute);
-
-                        break;
-                    }
-
-                    if ('type' === $attribute->name && Serialization::HTML === $attribute->value) {
+                    } elseif ('type' === $attribute->name && Serialization::HTML === $attribute->value) {
                         $this->handleAsHtml($node, $attribute);
-
-                        break;
-                    }
-
-                    if ('type' === $attribute->name && Serialization::XHTML === $attribute->value) {
+                    } elseif ('type' === $attribute->name && Serialization::XHTML === $attribute->value) {
                         $this->handleAsXhtml($node, $attribute);
-
-                        break;
-                    }
-
-                    if ('type' === $attribute->name && 'application/octet-stream' === $attribute->value) {
+                    } elseif ('type' === $attribute->name && 'application/octet-stream' === $attribute->value) {
                         $this->handleAsBase64($node);
-
-                        break;
+                    } else {
+                        $this->serialization = Serialization::TEXT;
+                        $this->value         = $node->nodeValue;
                     }
-
-                    $this->serialization = Serialization::TEXT;
-                    $this->value         = $node->nodeValue;
                 }
             }
         }
     }
+
+    // @phpcs:enable
 
     /**
      * Casting this Node element to a string with return the _value_ of the Node.
@@ -146,6 +150,50 @@ class Node extends AbstractType implements NodeInterface
     public function getSerialization(): string
     {
         return $this->serialization;
+    }
+
+    /**
+     * Gets the language of the content.
+     *
+     * @return string|null
+     */
+    public function getLang(): ?string
+    {
+        return $this->lang;
+    }
+
+    /**
+     * Gets the xml:base of the content.
+     *
+     * @return string|null
+     */
+    public function getBase(): ?string
+    {
+        return $this->base;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAlias(string $nodeName): string
+    {
+        switch ($nodeName) {
+            case 'language':
+                return 'lang';
+
+            default:
+                return $nodeName;
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getHandler(string $nodeName, array $args = []): self
+    {
+        throw new SimplePieException(
+            $this->getUnresolvableMessage($nodeName)
+        );
     }
 
     /**

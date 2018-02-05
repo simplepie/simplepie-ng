@@ -5,7 +5,6 @@
  *
  * http://opensource.org/licenses/Apache2.0
  */
-
 declare(strict_types=1);
 
 namespace SimplePie\Test\Unit;

@@ -5,7 +5,6 @@
  *
  * http://opensource.org/licenses/Apache2.0
  */
-
 declare(strict_types=1);
 
 namespace SimplePie\Middleware\Xml;
@@ -46,10 +45,15 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             $cpath   = $path;
             $cpath[] = $i;
 
-            $this->getNodeAttributes($entry, $namespaceAlias, $xpath, $cpath);
-            $this->getSingleScalarTypes($entry, $namespaceAlias, $xpath, $cpath);
-            $this->getSingleComplexTypes($entry, $namespaceAlias, $xpath, $cpath);
-            $this->getMultipleComplexTypes($entry, $namespaceAlias, $xpath, $cpath);
+            $fallback = [
+                'base' => $feedRoot->base[$namespaceAlias]->getNode(),
+                'lang' => $feedRoot->lang[$namespaceAlias]->getNode(),
+            ];
+
+            $this->getNodeAttributes($entry, $namespaceAlias, $xpath, $cpath, $fallback);
+            $this->getSingleScalarTypes($entry, $namespaceAlias, $xpath, $cpath, $fallback);
+            $this->getSingleComplexTypes($entry, $namespaceAlias, $xpath, $cpath, $fallback);
+            $this->getMultipleComplexTypes($entry, $namespaceAlias, $xpath, $cpath, $fallback);
         }
     }
 
@@ -80,6 +84,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
      * @param DOMXPath $xpath          The `DOMXPath` object with this middleware's namespace alias applied.
      * @param array    $path           The path of the XML traversal. Should begin with `<feed>` or `<channel>`,
      *                                 then `<entry>` or `<item>`.
+     * @param array    $fallback
      *
      * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
@@ -87,7 +92,8 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
         object $feedRoot,
         string $namespaceAlias,
         DOMXPath $xpath,
-        array $path
+        array $path,
+        array $fallback = []
     ): void {
         // @phpcs:enable
 
@@ -95,6 +101,10 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
             'base' => '@xml:base',
             'lang' => '@xml:lang',
         ];
+
+        // Used for traversing up the tree for inheritance
+        $pathMinusLastBit = $path;
+        \array_pop($pathMinusLastBit);
 
         foreach ($attrs as $nodeName => $searchName) {
             $query = $this->generateQuery($namespaceAlias, \array_merge($path, [$searchName]));
@@ -104,7 +114,7 @@ class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInt
 
             $feedRoot->{$nodeName}[$namespaceAlias] = (false !== $xq && $xq->length > 0)
                 ? new T\Node($xq->item(0))
-                : new T\Node();
+                : new T\Node($this->get($fallback, $nodeName));
         }
     }
 

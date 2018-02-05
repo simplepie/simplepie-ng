@@ -5,7 +5,6 @@
  *
  * http://opensource.org/licenses/Apache2.0
  */
-
 declare(strict_types=1);
 
 namespace SimplePie\Middleware;
@@ -60,5 +59,20 @@ abstract class AbstractMiddleware implements C\SetLoggerInterface
         if (!isset($object->{$property})) {
             $object->{$property} = [];
         }
+    }
+
+    /**
+     * Return the value of an associative array key, if it exists. If not, return $default.
+     *
+     * @param array  $arr     The associative array to check.
+     * @param string $key     The key in the associative array to return the value for.
+     * @param mixed  $default The default value to return if there is no value. The default value is `null`.
+     *
+     * @return mixed
+     */
+    public function get(array $arr, string $key, $default = null)
+    {
+        return $arr[$key]
+            ?? $default;
     }
 }
