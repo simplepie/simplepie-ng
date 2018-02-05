@@ -3,5 +3,5 @@ Description: feed tagline content language from xml:lang
 Expect:      not bozo and feed['tagline_detail']['language'] == 'en'
 -->
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <tagline xml:lang="en">Example Atom</tagline>
+  <subtitle xml:lang="en">Example Atom</subtitle>
 </feed>

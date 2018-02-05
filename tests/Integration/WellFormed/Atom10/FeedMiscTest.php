@@ -63,4 +63,34 @@ class FeedMiscTest extends AbstractTestCase
         );
         $this->assertEquals(Serialization::HTML, $feed->getTitle()->getSerialization());
     }
+
+    public function testRelativeUri(): void
+    {
+        $stream = $this->getFeed('/wellformed/atom10/relative_uri.xml');
+        $parser = $this->simplepie->parseXml($stream);
+        $feed   = $parser->getFeed();
+
+        $this->assertEquals('http://example.com/test/', (string) $feed->getTitle()->getBase());
+        $this->assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
+    }
+
+    public function testRelativeUriInherit(): void
+    {
+        $stream = $this->getFeed('/wellformed/atom10/relative_uri_inherit.xml');
+        $parser = $this->simplepie->parseXml($stream);
+        $feed   = $parser->getFeed();
+
+        $this->assertEquals('http://example.com/test/', (string) $feed->getTitle()->getBase());
+        $this->assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
+    }
+
+    public function testRelativeUriInherit2(): void
+    {
+        $stream = $this->getFeed('/wellformed/atom10/relative_uri_inherit_2.xml');
+        $parser = $this->simplepie->parseXml($stream);
+        $feed   = $parser->getFeed();
+
+        $this->assertEquals('http://example.com/test/', (string) $feed->getTitle()->getBase());
+        $this->assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
+    }
 }

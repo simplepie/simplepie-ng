@@ -149,6 +149,7 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
     public function getHandler(string $nodeName, array $args = [])
     {
         switch ($nodeName) {
+            case 'base':
             case 'id':
             case 'lang':
             case 'rights':

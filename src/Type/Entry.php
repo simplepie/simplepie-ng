@@ -166,6 +166,7 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
     public function getHandler(string $nodeName, array $args = [])
     {
         switch ($nodeName) {
+            case 'base':
             case 'content':
             case 'id':
             case 'lang':

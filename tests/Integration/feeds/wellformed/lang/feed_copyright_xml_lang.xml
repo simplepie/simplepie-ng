@@ -3,5 +3,5 @@ Description: feed copyright content language from xml:lang
 Expect:      not bozo and feed['copyright_detail']['language'] == 'en'
 -->
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <copyright xml:lang="en">Example Atom</copyright>
+  <rights xml:lang="en">Example Atom</rights>
 </feed>

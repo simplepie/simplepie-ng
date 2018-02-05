@@ -105,7 +105,7 @@ class EntryContentTest extends AbstractTestCase
         $this->assertEquals('', (string) $entry->getLang());
         $this->assertEquals(Serialization::TEXT, $entry->getLang()->getSerialization());
 
-        $this->assertEquals('en-US', (string) $entry->getContent()->getLang());
+        $this->assertEquals('en_US', (string) $entry->getContent()->getLang());
         $this->assertEquals(Serialization::TEXT, $entry->getContent()->getLang()->getSerialization());
     }
 }

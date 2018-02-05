@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed
-    xml:lang="en-US"
+    xml:lang="en_US"
     xmlns="http://www.w3.org/2005/Atom"
     xmlns:thr="http://purl.org/syndication/thread/1.0"
     xmlns:media="http://search.yahoo.com/mrss/">
@@ -11,7 +11,7 @@
     <link href="https://github.com/skyzyx/signer/releases.atom" rel="self" type="application/atom+xml"/>
     <link href="http://df4.us/qio" rel="shorturl" type="text/html"/>
     <link href="https://daringfireball.net/linked/2017/12/08/ive-returns" rel="related" type="text/html"/>
-    <link href="https://imgs.xkcd.com/comics/tech_support_cheat_sheet.png" rel="enclosure" length="82735" type="image/png" hreflang="en-US" title="Tech Support Cheat Sheet"/>
+    <link href="https://imgs.xkcd.com/comics/tech_support_cheat_sheet.png" rel="enclosure" length="82735" type="image/png" hreflang="en_US" title="Tech Support Cheat Sheet"/>
 
     <title>Release notes from signer</title>
     <subtitle>testing subtitles</subtitle>
