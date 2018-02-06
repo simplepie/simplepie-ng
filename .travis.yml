@@ -19,7 +19,7 @@ matrix:
 
 before_script:
   - 'travis_retry composer self-update'
-  - 'travis_retry composer install --no-interaction --prefer-source -oa'
+  - 'travis_retry composer install --ignore-platform-reqs --no-interaction --prefer-source -oa'
   - 'wget https://scrutinizer-ci.com/ocular.phar'
   - 'phpenv rehash'
 
