@@ -7,8 +7,8 @@ $files = [
     \dirname(__DIR__) . '/reports/phpcs-tests.xml',
 ];
 
-foreach ($files as $file) {
-    $xml = \simplexml_load_file($file);
+foreach ($files as $f) {
+    $xml = \simplexml_load_file($f);
 
     foreach ($xml->file as $file) {
         echo \str_replace(\dirname(__DIR__), '', (string) $file->attributes()->name) . PHP_EOL;
