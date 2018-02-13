@@ -27,7 +27,7 @@ class EntitiesTest extends AbstractTestCase
     public function feeds(): iterable
     {
         $pattern = \sprintf('%s/entities/*.xml', $this->getFeedDir());
-        $files   = \glob($pattern, GLOB_MARK | GLOB_BRACE);
+        $files   = \glob($pattern, GLOB_MARK);
 
         foreach ($files as $file) {
             yield [\str_replace($this->getFeedDir(), '', $file)];
