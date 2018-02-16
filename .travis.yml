@@ -38,8 +38,8 @@ after_success:
   - 'travis_retry php bin/php-coveralls -v'
   - 'travis_retry php ocular.phar code-coverage:upload --format=php-clover tests/report/clover.xml'
   - 'curl -o http://get.sensiolabs.org/sami.phar sami.phar'
-  - 'git reset --hard HEAD'
-  - 'travis_retry php sami.phar update --force docs/sami-config.php'
+  # - 'git reset --hard HEAD'
+  # - 'travis_retry php sami.phar update --force docs/sami-config.php'
 
 notifications:
   email:
@@ -53,11 +53,11 @@ notifications:
 
 # https://docs.travis-ci.com/user/deployment/script/
 # https://github.com/steveklabnik/automatically_update_github_pages_with_travis_example
-deploy:
-  - provider: script
-    script: make push-travis
-    on:
-      branch: master
+# deploy:
+#   - provider: script
+#     script: make push-travis
+#     on:
+#       branch: master
 
 env:
   global:
