@@ -37,8 +37,9 @@ script:
 after_success:
   - 'travis_retry php bin/php-coveralls -v'
   - 'travis_retry php ocular.phar code-coverage:upload --format=php-clover tests/report/clover.xml'
-  - 'curl -O http://get.sensiolabs.org/sami.phar'
-  - 'travis_retry php sami.phar update --force docs/sami-config.php'
+  - 'curl -o http://get.sensiolabs.org/sami.phar /tmp/sami.phar'
+  - 'git reset --hard HEAD'
+  - 'travis_retry php /tmp/sami.phar update --force docs/sami-config.php'
 
 notifications:
   email:
