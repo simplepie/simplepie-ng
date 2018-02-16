@@ -64,7 +64,7 @@ push-travis:
 	touch ./gh-pages/.nojekyll
 	find ./gh-pages -type d | xargs chmod -f 0755
 	find ./gh-pages -type f | xargs chmod -f 0644
-	cd ./gh-pages/ && git add . && git commit -a -m "Automated commit on $$(date)" && git push origin gh-pages
+	cd ./gh-pages/ && git add . && git commit -a -m "Automated commit on $$(date)" && git push upstream gh-pages
 
 #-------------------------------------------------------------------------------
 
