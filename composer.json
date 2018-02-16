@@ -46,11 +46,11 @@
         "phploc/phploc": "^4.0",
         "phpmetrics/phpmetrics": "^2.2",
         "phpunit/phpunit": "^7.0",
-        "satooshi/php-coveralls": "*@dev",
         "sebastian/phpcpd": "^4.0",
         "squizlabs/php_codesniffer": "dev-master",
         "twig/twig": "^2.4",
-        "wapmorgan/php-code-analyzer": "^1.0"
+        "wapmorgan/php-code-analyzer": "^1.0",
+        "php-coveralls/php-coveralls": "^2.0"
     },
     "config": {
         "bin-dir": "bin/",
