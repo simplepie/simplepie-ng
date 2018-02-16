@@ -12,6 +12,11 @@ php:
   - 7.2
   - nightly
 
+cache:
+  directories:
+    - bin
+    - vendor
+
 matrix:
   fast_finish: true
   allow_failures:
@@ -32,6 +37,8 @@ script:
 after_success:
   - 'travis_retry php bin/php-coveralls -v'
   - 'travis_retry php ocular.phar code-coverage:upload --format=php-clover tests/report/clover.xml'
+  - 'curl -O http://get.sensiolabs.org/sami.phar'
+  - 'travis_retry php sami.phar update --force docs/sami-config.php'
 
 notifications:
   email:
