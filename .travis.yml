@@ -24,14 +24,14 @@ before_script:
   - 'phpenv rehash'
 
 script:
-  - 'mkdir -p build/logs'
+  - 'mkdir -p tests/report'
   - 'php bin/phpunit -c phpunit.xml.dist'
 
 # https://github.com/php-coveralls/php-coveralls#travis-ci
 # https://scrutinizer-ci.com/docs/tools/external-code-coverage/
 after_success:
-  - 'travis_retry php vendor/bin/php-coveralls -v'
-  - 'travis_retry php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml'
+  - 'travis_retry php bin/php-coveralls -v'
+  - 'travis_retry php ocular.phar code-coverage:upload --format=php-clover tests/report/clover.xml'
 
 notifications:
   email:
