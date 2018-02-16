@@ -57,7 +57,7 @@ push:
 .PHONY: push-travis
 push-travis:
 	git clone https://github.com/simplepie/simplepie-ng.git --branch gh-pages --single-branch ./gh-pages
-	git remote add upstream "https://$GH_TOKEN@github.com/simplepie/simplepie-ng.git"
+	git remote add upstream "https://$$GH_TOKEN@github.com/simplepie/simplepie-ng.git"
 	rm -Rf ./gh-pages/*
 	cp -Rf ./docs/_build/* ./gh-pages/
 	cp -Rf ./docs/redirect.tmpl ./gh-pages/index.html
