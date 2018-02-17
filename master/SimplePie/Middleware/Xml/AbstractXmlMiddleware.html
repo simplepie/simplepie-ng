@@ -180,6 +180,16 @@ that is shared across all XML middleware classes.</p>                           
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_get">get</a>(array $arr, string $key, mixed $default = null)
+        
+                                            <p>Return the value of an associative array key, if it exists. If not, return $default.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method_get"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a>
                 </div>
                 <div class="col-md-8 type">
@@ -218,7 +228,7 @@ in favor of case-insensitive parsing.</p>                </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_setLogger">
-        <div class="location">in <a href="../../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L35">line 35</a></div>
+        <div class="location">in <a href="../../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L34">line 34</a></div>
         <code>                    <a href="../../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
     <strong>setLogger</strong>(<a href="../../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
         </code>
@@ -258,7 +268,7 @@ in favor of case-insensitive parsing.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getLogger">
-        <div class="location">in <a href="../../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L54">line 54</a></div>
+        <div class="location">in <a href="../../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L53">line 53</a></div>
         <code>                    <a href="../../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
     <strong>getLogger</strong>()
         </code>
@@ -288,7 +298,7 @@ in favor of case-insensitive parsing.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method___construct"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L45">line 45</a></div>
+        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method___construct"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L44">line 44</a></div>
         <code>                    
     <strong>__construct</strong>(callable $fn = null)
         </code>
@@ -326,7 +336,7 @@ in favor of case-insensitive parsing.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_addArrayProperty">
-        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method_addArrayProperty"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L58">line 58</a></div>
+        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method_addArrayProperty"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L57">line 57</a></div>
         <code>                    
     <strong>addArrayProperty</strong>(mixed $object, string $property)
         </code>
@@ -361,8 +371,58 @@ in favor of case-insensitive parsing.</p>                </div>
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_get">
+        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method_get"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L73">line 73</a></div>
+        <code>                    mixed
+    <strong>get</strong>(array $arr, string $key, mixed $default = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return the value of an associative array key, if it exists. If not, return $default.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$arr</td>
+                <td>The associative array to check.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$key</td>
+                <td>The key in the associative array to return the value for.</td>
+            </tr>
+                    <tr>
+                <td>mixed</td>
+                <td>$default</td>
+                <td>The default value to return if there is no value. The default value is <code>null</code>.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_setCaseInsensitive">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L40">line 40</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L39">line 39</a></div>
         <code>                    <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a>
     <strong>setCaseInsensitive</strong>(bool $makeInsensitive = true)
         </code>
@@ -406,7 +466,7 @@ in favor of case-insensitive parsing.</p>                                       
             </div>
                     <div class="method-item">
                     <h3 id="method_applyNsToQuery">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L57">line 57</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L56">line 56</a></div>
         <code>                    string
     <strong>applyNsToQuery</strong>(string $query, string $namespaceAlias)
         </code>
@@ -451,7 +511,7 @@ in favor of case-insensitive parsing.</p>                                       
             </div>
                     <div class="method-item">
                     <h3 id="method_generateQuery">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L81">line 81</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L80">line 80</a></div>
         <code>                    string
     <strong>generateQuery</strong>(string $namespaceAlias, array $path)
         </code>
@@ -461,10 +521,10 @@ in favor of case-insensitive parsing.</p>                                       
     
 
                     <div class="method-description">
-                                    <p>Produce an XPath 1.0 expression which is used to query XML document nodes.</p>                    <p><pre><code class="php">['feed', 'entry', 5, 'id']
+                                    <p>Produce an XPath 1.0 expression which is used to query XML document nodes.</p>                    <p><pre><code class="php">['feed', 'entry', 5, 'id', '@xml:lang']
 </code></pre>
 
-<pre><code class="xpath">/feed/entry[5]/id (simplified)
+<pre><code class="xpath">/feed/entry[5]/id/@xml:lang (simplified)
 </code></pre>
 </p>                            </div>
                 <div class="tags">

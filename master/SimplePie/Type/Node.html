@@ -80,7 +80,7 @@
 
     <p>    class
     <strong>Node</strong>        extends <a href="../../SimplePie/Type/AbstractType.html"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a>        implements
-        <a href="../../SimplePie/Type/NodeInterface.html"><abbr title="SimplePie\Type\NodeInterface">NodeInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php">View source</a>)
+        <a href="../../SimplePie/Type/NodeInterface.html"><abbr title="SimplePie\Type\NodeInterface">NodeInterface</abbr></a>, <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php">View source</a>)
 </p>
 
         
@@ -108,6 +108,22 @@
                 </td>
                 <td>$value</td>
                 <td class="last">The content of the node, serialized appropriately.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_lang">
+                                        protected                                        string|null
+                </td>
+                <td>$lang</td>
+                <td class="last">The language of the content.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_base">
+                                        protected                                        string|null
+                </td>
+                <td>$base</td>
+                <td class="last">The xml:base value of the content.</td>
                 <td></td>
             </tr>
                     <tr>
@@ -149,7 +165,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $node = null)
+                    <a href="#method___construct">__construct</a>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $node = null, array $fallback = [])
         
                                             <p>Get the text node in multiple formats.</p>                </div>
                 <div class="col-md-2"></div>
@@ -204,6 +220,46 @@
                                             <p>Gets the serialization of the content.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLang">getLang</a>()
+        
+                                            <p>Gets the language of the content.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getBase">getBase</a>()
+        
+                                            <p>Gets the xml:base of the content.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAlias">getAlias</a>(string $nodeName)
+        
+                                            <p>Finds the common internal alias for a given method name.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getHandler">getHandler</a>(string $nodeName, array $args = [])
+        
+                                            <p>Get the correct handler for a whitelisted method name.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -212,7 +268,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___call">
-        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method___call"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L29">line 29</a></div>
+        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method___call"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L28">line 28</a></div>
         <code>                    mixed
     <strong>__call</strong>(string $nodeName, array $args)
         </code>
@@ -257,7 +313,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getUnresolvableMessage">
-        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method_getUnresolvableMessage"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L56">line 56</a></div>
+        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method_getUnresolvableMessage"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L55">line 55</a></div>
         <code>            protected        string
     <strong>getUnresolvableMessage</strong>(string $nodeName)
         </code>
@@ -297,9 +353,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L50">line 50</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L68">line 68</a></div>
         <code>                    
-    <strong>__construct</strong>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $node = null)
+    <strong>__construct</strong>(<a target="_blank" href="http://php.net/DOMNode">DOMNode</a> $node = null, array $fallback = [])
         </code>
     </h3>
     <div class="details">
@@ -317,6 +373,12 @@
                 <td>$node</td>
                 <td>A <code>DOMNode</code> element to read properties from.</td>
             </tr>
+                    <tr>
+                <td>array</td>
+                <td>$fallback</td>
+                <td>An array of attributes for default XML attributes. The default value is an
+                              empty array.</td>
+            </tr>
             </table>
 
             
@@ -328,7 +390,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___toString">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L100">line 100</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L114">line 114</a></div>
         <code>                    string
     <strong>__toString</strong>()
         </code>
@@ -358,7 +420,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_factory">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L112">line 112</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L126">line 126</a></div>
         <code>        static            <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>factory</strong>(string $value)
         </code>
@@ -398,7 +460,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getNode">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L124">line 124</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L138">line 138</a></div>
         <code>                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>|null
     <strong>getNode</strong>()
         </code>
@@ -428,7 +490,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getValue">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L134">line 134</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L148">line 148</a></div>
         <code>                    string|null
     <strong>getValue</strong>()
         </code>
@@ -458,7 +520,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getSerialization">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L146">line 146</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L160">line 160</a></div>
         <code>                    string
     <strong>getSerialization</strong>()
         </code>
@@ -481,6 +543,160 @@
     </table>
 
             
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLang">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L170">line 170</a></div>
+        <code>                    string|null
+    <strong>getLang</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the language of the content.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getBase">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L180">line 180</a></div>
+        <code>                    string|null
+    <strong>getBase</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets the xml:base of the content.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAlias">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L188">line 188</a></div>
+        <code>                    string
+    <strong>getAlias</strong>(string $nodeName)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Finds the common internal alias for a given method name.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$nodeName</td>
+                <td>The name of the method being called.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getHandler">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Node.php#L202">line 202</a></div>
+        <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
+    <strong>getHandler</strong>(string $nodeName, array $args = [])
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the correct handler for a whitelisted method name.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$nodeName</td>
+                <td>The name of the method being called.</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$args</td>
+                <td>The parameters which are passed to the method.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="SimplePie\Type\SimplePieException">SimplePieException</abbr></td>
+                <td></td>
+            </tr>
+            </table>
+
             
                     </div>
     </div>

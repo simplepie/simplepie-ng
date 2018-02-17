@@ -189,6 +189,16 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_get">get</a>(array $arr, string $key, mixed $default = null)
+        
+                                            <p>Return the value of an associative array key, if it exists. If not, return $default.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method_get"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a>
                 </div>
                 <div class="col-md-8 type">
@@ -244,7 +254,17 @@ in favor of case-insensitive parsing.</p>                </div>
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getSingleScalarTypes">getSingleScalarTypes</a>(<abbr title="SimplePie\Middleware\Xml\object">object</abbr> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath, array $path)
+                    <a href="#method_getNodeAttributes">getNodeAttributes</a>(<abbr title="SimplePie\Middleware\Xml\object">object</abbr> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath, array $path, array $fallback = [])
+        
+                                            <p>Fetches attributes with a single, scalar value, on elements.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSingleScalarTypes">getSingleScalarTypes</a>(<abbr title="SimplePie\Middleware\Xml\object">object</abbr> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath, array $path, array $fallback = [])
         
                                             <p>Fetches elements with a single, scalar value.</p>                </div>
                 <div class="col-md-2"></div>
@@ -277,7 +297,7 @@ in favor of case-insensitive parsing.</p>                </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_setLogger">
-        <div class="location">in <a href="../../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L35">line 35</a></div>
+        <div class="location">in <a href="../../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L34">line 34</a></div>
         <code>                    <a href="../../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
     <strong>setLogger</strong>(<a href="../../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
         </code>
@@ -317,7 +337,7 @@ in favor of case-insensitive parsing.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getLogger">
-        <div class="location">in <a href="../../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L54">line 54</a></div>
+        <div class="location">in <a href="../../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L53">line 53</a></div>
         <code>                    <a href="../../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
     <strong>getLogger</strong>()
         </code>
@@ -347,7 +367,7 @@ in favor of case-insensitive parsing.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method___construct"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L45">line 45</a></div>
+        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method___construct"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L44">line 44</a></div>
         <code>                    
     <strong>__construct</strong>(callable $fn = null)
         </code>
@@ -385,7 +405,7 @@ in favor of case-insensitive parsing.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_addArrayProperty">
-        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method_addArrayProperty"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L58">line 58</a></div>
+        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method_addArrayProperty"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L57">line 57</a></div>
         <code>                    
     <strong>addArrayProperty</strong>(mixed $object, string $property)
         </code>
@@ -420,8 +440,58 @@ in favor of case-insensitive parsing.</p>                </div>
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_get">
+        <div class="location">in <a href="../../../SimplePie/Middleware/AbstractMiddleware.html#method_get"><abbr title="SimplePie\Middleware\AbstractMiddleware">AbstractMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/AbstractMiddleware.php#L73">line 73</a></div>
+        <code>                    mixed
+    <strong>get</strong>(array $arr, string $key, mixed $default = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Return the value of an associative array key, if it exists. If not, return $default.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$arr</td>
+                <td>The associative array to check.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$key</td>
+                <td>The key in the associative array to return the value for.</td>
+            </tr>
+                    <tr>
+                <td>mixed</td>
+                <td>$default</td>
+                <td>The default value to return if there is no value. The default value is <code>null</code>.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_setCaseInsensitive">
-        <div class="location">in <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_setCaseInsensitive"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L40">line 40</a></div>
+        <div class="location">in <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_setCaseInsensitive"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L39">line 39</a></div>
         <code>                    <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a>
     <strong>setCaseInsensitive</strong>(bool $makeInsensitive = true)
         </code>
@@ -465,7 +535,7 @@ in favor of case-insensitive parsing.</p>                                       
             </div>
                     <div class="method-item">
                     <h3 id="method_applyNsToQuery">
-        <div class="location">in <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_applyNsToQuery"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L57">line 57</a></div>
+        <div class="location">in <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_applyNsToQuery"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L56">line 56</a></div>
         <code>                    string
     <strong>applyNsToQuery</strong>(string $query, string $namespaceAlias)
         </code>
@@ -510,7 +580,7 @@ in favor of case-insensitive parsing.</p>                                       
             </div>
                     <div class="method-item">
                     <h3 id="method_generateQuery">
-        <div class="location">in <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_generateQuery"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L81">line 81</a></div>
+        <div class="location">in <a href="../../../SimplePie/Middleware/Xml/AbstractXmlMiddleware.html#method_generateQuery"><abbr title="SimplePie\Middleware\Xml\AbstractXmlMiddleware">AbstractXmlMiddleware</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/AbstractXmlMiddleware.php#L80">line 80</a></div>
         <code>                    string
     <strong>generateQuery</strong>(string $namespaceAlias, array $path)
         </code>
@@ -520,10 +590,10 @@ in favor of case-insensitive parsing.</p>                                       
     
 
                     <div class="method-description">
-                                    <p>Produce an XPath 1.0 expression which is used to query XML document nodes.</p>                    <p><pre><code class="php">['feed', 'entry', 5, 'id']
+                                    <p>Produce an XPath 1.0 expression which is used to query XML document nodes.</p>                    <p><pre><code class="php">['feed', 'entry', 5, 'id', '@xml:lang']
 </code></pre>
 
-<pre><code class="xpath">/feed/entry[5]/id (simplified)
+<pre><code class="xpath">/feed/entry[5]/id/@xml:lang (simplified)
 </code></pre>
 </p>                            </div>
                 <div class="tags">
@@ -563,7 +633,7 @@ in favor of case-insensitive parsing.</p>                                       
             </div>
                     <div class="method-item">
                     <h3 id="method___invoke">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L33">line 33</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L32">line 32</a></div>
         <code>                    
     <strong>__invoke</strong>(<a target="_blank" href="http://php.net/stdClass">stdClass</a> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
         </code>
@@ -605,7 +675,7 @@ in favor of case-insensitive parsing.</p>                                       
             </div>
                     <div class="method-item">
                     <h3 id="method_getSupportedNamespaces">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L72">line 72</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L83">line 83</a></div>
         <code>                    array
     <strong>getSupportedNamespaces</strong>()
         </code>
@@ -641,10 +711,64 @@ that the middleware can use to refer to it.</p>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getSingleScalarTypes">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L92">line 92</a></div>
+                    <h3 id="method_getNodeAttributes">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L105">line 105</a></div>
         <code>            protected        
-    <strong>getSingleScalarTypes</strong>(<abbr title="SimplePie\Middleware\Xml\object">object</abbr> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath, array $path)
+    <strong>getNodeAttributes</strong>(<abbr title="SimplePie\Middleware\Xml\object">object</abbr> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath, array $path, array $fallback = [])
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Fetches attributes with a single, scalar value, on elements.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="SimplePie\Middleware\Xml\object">object</abbr></td>
+                <td>$feedRoot</td>
+                <td>The root of the feed. This will be written-to when the parsing middleware runs.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$namespaceAlias</td>
+                <td>The preferred namespace alias for a given XML namespace URI. Should be the result
+                                of a call to <code>SimplePie\Util\Ns</code>.</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a></td>
+                <td>$xpath</td>
+                <td>The <code>DOMXPath</code> object with this middleware's namespace alias applied.</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$path</td>
+                <td>The path of the XML traversal. Should begin with <code>&lt;feed&gt;</code> or <code>&lt;channel&gt;</code>,
+                                then <code>&lt;entry&gt;</code> or <code>&lt;item&gt;</code>.</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$fallback</td>
+                <td>An array of attributes for default XML attributes. The default value is an
+                                empty array.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSingleScalarTypes">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L149">line 149</a></div>
+        <code>            protected        
+    <strong>getSingleScalarTypes</strong>(<abbr title="SimplePie\Middleware\Xml\object">object</abbr> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath, array $path, array $fallback = [])
         </code>
     </h3>
     <div class="details">
@@ -679,6 +803,12 @@ that the middleware can use to refer to it.</p>
                 <td>The path of the XML traversal. Should begin with <code>&lt;feed&gt;</code> or <code>&lt;channel&gt;</code>,
                                 then <code>&lt;entry&gt;</code> or <code>&lt;item&gt;</code>.</td>
             </tr>
+                    <tr>
+                <td>array</td>
+                <td>$fallback</td>
+                <td>An array of attributes for default XML attributes. The default value is an
+                                empty array.</td>
+            </tr>
             </table>
 
             
@@ -690,7 +820,7 @@ that the middleware can use to refer to it.</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getSingleComplexTypes">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L155">line 155</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L213">line 213</a></div>
         <code>            protected        
     <strong>getSingleComplexTypes</strong>(<abbr title="SimplePie\Middleware\Xml\object">object</abbr> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath, array $path)
         </code>
@@ -738,7 +868,7 @@ that the middleware can use to refer to it.</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getMultipleComplexTypes">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L200">line 200</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Middleware/Xml/Atom.php#L258">line 258</a></div>
         <code>            protected        
     <strong>getMultipleComplexTypes</strong>(<abbr title="SimplePie\Middleware\Xml\object">object</abbr> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath, array $path)
         </code>
