@@ -62,6 +62,8 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
      * @param DOMNode|null $node     A `DOMNode` element to read properties from.
      * @param array        $fallback An array of attributes for default XML attributes. The default value is an
      *                               empty array.
+     *
+     * @phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
      */
     public function __construct(?DOMNode $node = null, array $fallback = [])
     {
@@ -74,12 +76,30 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
 
             if (XML_ELEMENT_NODE === $node->nodeType && $node->attributes->length > 0) {
                 foreach ($node->attributes as $attribute) {
-                    $this->overrideXmlAttrs($attribute);
-                    $this->handleTypes($attribute);
+                    if ('xml:base' === $attribute->nodeName) {
+                        $this->base = $attribute->nodeValue;
+                    } elseif ('xml:lang' === $attribute->nodeName) {
+                        $this->lang = $attribute->nodeValue;
+                    } elseif ('src' === $attribute->name) {
+                        $this->handleAsSource($attribute);
+                    } elseif ('type' === $attribute->name && Serialization::TEXT === $attribute->value) {
+                        $this->handleAsText($node, $attribute);
+                    } elseif ('type' === $attribute->name && Serialization::HTML === $attribute->value) {
+                        $this->handleAsHtml($node, $attribute);
+                    } elseif ('type' === $attribute->name && Serialization::XHTML === $attribute->value) {
+                        $this->handleAsXhtml($node, $attribute);
+                    } elseif ('type' === $attribute->name && 'application/octet-stream' === $attribute->value) {
+                        $this->handleAsBase64($node);
+                    } else {
+                        $this->serialization = Serialization::TEXT;
+                        $this->value         = $node->nodeValue;
+                    }
                 }
             }
         }
     }
+
+    // @phpcs:enable
 
     /**
      * Casting this Node element to a string with return the _value_ of the Node.
@@ -179,43 +199,6 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
         throw new SimplePieException(
             $this->getUnresolvableMessage($nodeName)
         );
-    }
-
-    /**
-     * Override the `xml:`-prefixed values inherited from the parent with local values.
-     *
-     * @param DOMAttr $attribute A `DOMAttr` element to read properties from.
-     */
-    private function overrideXmlAttrs(DOMAttr $attribute): void
-    {
-        if ('xml:base' === $attribute->nodeName) {
-            $this->base = $attribute->nodeValue;
-        } elseif ('xml:lang' === $attribute->nodeName) {
-            $this->lang = $attribute->nodeValue;
-        }
-    }
-
-    /**
-     * Determine how a serialized node should be handled.
-     *
-     * @param DOMAttr $attribute A `DOMAttr` element to read properties from.
-     */
-    private function handleTypes(DOMAttr $attribute): void
-    {
-        if ('src' === $attribute->name) {
-            $this->handleAsSource($attribute);
-        } elseif ('type' === $attribute->name && Serialization::TEXT === $attribute->value) {
-            $this->handleAsText($node, $attribute);
-        } elseif ('type' === $attribute->name && Serialization::HTML === $attribute->value) {
-            $this->handleAsHtml($node, $attribute);
-        } elseif ('type' === $attribute->name && Serialization::XHTML === $attribute->value) {
-            $this->handleAsXhtml($node, $attribute);
-        } elseif ('type' === $attribute->name && 'application/octet-stream' === $attribute->value) {
-            $this->handleAsBase64($node);
-        } else {
-            $this->serialization = Serialization::TEXT;
-            $this->value         = $node->nodeValue;
-        }
     }
 
     /**
