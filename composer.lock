@@ -2104,16 +2104,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.7.4",
+            "version": "1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "9f901e29c93dae4aa77c0bb161df4276f9c9a1be"
+                "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/9f901e29c93dae4aa77c0bb161df4276f9c9a1be",
-                "reference": "9f901e29c93dae4aa77c0bb161df4276f9c9a1be",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/dfd6be44111a7c41c2e884a336cc4f461b3b2401",
+                "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401",
                 "shasum": ""
             },
             "require": {
@@ -2163,7 +2163,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-02-11T18:49:29+00:00"
+            "time": "2018-02-19T10:16:54+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3269,12 +3269,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "c926d0baca5514f90880ce9892cb383a4c766671"
+                "reference": "8d132e5c5be798f5791fe3270afd537d52de0cab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/c926d0baca5514f90880ce9892cb383a4c766671",
-                "reference": "c926d0baca5514f90880ce9892cb383a4c766671",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/8d132e5c5be798f5791fe3270afd537d52de0cab",
+                "reference": "8d132e5c5be798f5791fe3270afd537d52de0cab",
                 "shasum": ""
             },
             "require": {
@@ -3312,7 +3312,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-02-15T12:28:23+00:00"
+            "time": "2018-02-19T05:09:19+00:00"
         },
         {
             "name": "symfony/config",
