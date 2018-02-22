@@ -47,8 +47,6 @@ See the [Documentation](https://github.com/simplepie/simplepie-ng/wiki) or the [
 
 [![License](https://img.shields.io/github/license/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/blob/master/LICENSE.md)
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsimplepie%2Fsimplepie-ng.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsimplepie%2Fsimplepie-ng?ref=badge_large)
-
 ## Coding Standards
 
 PSR-1/2/12 are a solid foundation, but are not an entire coding style by themselves. By leveraging tools such as [PHP CS Fixer](http://cs.sensiolabs.org) and [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer), we can automate a large part of our style requirements. The things that we cannot yet automate are documented here:
