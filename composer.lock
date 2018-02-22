@@ -460,6 +460,62 @@
             "time": "2017-02-15T22:25:47+00:00"
         },
         {
+            "name": "composer/ca-bundle",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/ca-bundle.git",
+                "reference": "943b2c4fcad1ef178d16a713c2468bf7e579c288"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/943b2c4fcad1ef178d16a713c2468bf7e579c288",
+                "reference": "943b2c4fcad1ef178d16a713c2468bf7e579c288",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "php": "^5.3.2 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35",
+                "psr/log": "^1.0",
+                "symfony/process": "^2.5 || ^3.0 || ^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\CaBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
+            "keywords": [
+                "cabundle",
+                "cacert",
+                "certificate",
+                "ssl",
+                "tls"
+            ],
+            "time": "2017-11-29T09:37:33+00:00"
+        },
+        {
             "name": "composer/semver",
             "version": "1.4.2",
             "source": {
@@ -1415,36 +1471,44 @@
         },
         {
             "name": "padraic/humbug_get_contents",
-            "version": "1.0.4",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humbug/file_get_contents.git",
-                "reference": "66797199019d0cb4529cb8d29c6f0b4c5085b53a"
+                "reference": "dcb086060c9dd6b2f51d8f7a895500307110b7a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humbug/file_get_contents/zipball/66797199019d0cb4529cb8d29c6f0b4c5085b53a",
-                "reference": "66797199019d0cb4529cb8d29c6f0b4c5085b53a",
+                "url": "https://api.github.com/repos/humbug/file_get_contents/zipball/dcb086060c9dd6b2f51d8f7a895500307110b7a7",
+                "reference": "dcb086060c9dd6b2f51d8f7a895500307110b7a7",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3"
+                "composer/ca-bundle": "^1.0",
+                "ext-openssl": "*",
+                "php": "^5.3 || ^7.0 || ^7.1 || ^7.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "bamarni/composer-bin-plugin": "^1.1",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^4.8 || ^5.7 || ^6.5"
             },
             "type": "library",
             "extra": {
+                "bamarni-bin": {
+                    "bin-links": false
+                },
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Humbug\\": "src/Humbug/"
+                    "Humbug\\": "src/"
                 },
                 "files": [
-                    "src/function.php"
+                    "src/function.php",
+                    "src/functions.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1456,6 +1520,10 @@
                     "name": "Pádraic Brady",
                     "email": "padraic.brady@gmail.com",
                     "homepage": "http://blog.astrumfutura.com"
+                },
+                {
+                    "name": "Théo Fidry",
+                    "email": "theo.fidry@gmail.com"
                 }
             ],
             "description": "Secure wrapper for accessing HTTPS resources with file_get_contents for PHP 5.3+",
@@ -1468,24 +1536,24 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2015-04-22T18:45:00+00:00"
+            "time": "2018-02-12T18:47:17+00:00"
         },
         {
             "name": "padraic/phar-updater",
-            "version": "1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humbug/phar-updater.git",
-                "reference": "ac8802df2d1d03b7092b6f044a914f8d21592aae"
+                "reference": "fb9d3b1551a99466f0a74cd264f4c95a8621ac7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humbug/phar-updater/zipball/ac8802df2d1d03b7092b6f044a914f8d21592aae",
-                "reference": "ac8802df2d1d03b7092b6f044a914f8d21592aae",
+                "url": "https://api.github.com/repos/humbug/phar-updater/zipball/fb9d3b1551a99466f0a74cd264f4c95a8621ac7a",
+                "reference": "fb9d3b1551a99466f0a74cd264f4c95a8621ac7a",
                 "shasum": ""
             },
             "require": {
-                "padraic/humbug_get_contents": "1.0.4",
+                "padraic/humbug_get_contents": "^1.0",
                 "php": ">=5.3.3"
             },
             "require-dev": {
@@ -1508,7 +1576,7 @@
             ],
             "authors": [
                 {
-                    "name": "Pádraic Brady",
+                    "name": "Padraic Brady",
                     "email": "padraic.brady@gmail.com",
                     "homepage": "http://blog.astrumfutura.com"
                 }
@@ -1520,7 +1588,7 @@
                 "self-update",
                 "update"
             ],
-            "time": "2017-07-12T22:42:45+00:00"
+            "time": "2018-02-20T01:18:59+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -3269,12 +3337,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "8d132e5c5be798f5791fe3270afd537d52de0cab"
+                "reference": "5f2cdef533ce14dc2d74252b3bbadac05076c1c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/8d132e5c5be798f5791fe3270afd537d52de0cab",
-                "reference": "8d132e5c5be798f5791fe3270afd537d52de0cab",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/5f2cdef533ce14dc2d74252b3bbadac05076c1c9",
+                "reference": "5f2cdef533ce14dc2d74252b3bbadac05076c1c9",
                 "shasum": ""
             },
             "require": {
@@ -3312,7 +3380,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-02-19T05:09:19+00:00"
+            "time": "2018-02-21T00:37:04+00:00"
         },
         {
             "name": "symfony/config",
