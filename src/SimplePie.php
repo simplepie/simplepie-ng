@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace SimplePie;
 
+use GuzzleHttp\Psr7\Response;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
@@ -124,6 +126,31 @@ class SimplePie implements C\SetLoggerInterface
     }
 
     /**
+     * Parses a PSR-7 complete response which is known to be valid XML.
+     *
+     * @param ResponseInterface $response                [description]
+     * @param bool              $handleHtmlEntitiesInXml Whether or not SimplePie should pre-parse the XML as HTML to
+     *                                                   resolve the entities. A value of `true` means that SimplePie
+     *                                                   should inject the entity definitions. A value of `false` means
+     *                                                   that SimplePie should NOT inject the entity definitions. The
+     *                                                   default value is `false`.
+     *
+     * @return XmlParser
+     */
+    public function parseXml(ResponseInterface $response, bool $handleHtmlEntitiesInXml = false): XmlParser
+    {
+        $parser = new XmlParser(
+            $response,
+            $this->logger,
+            $this->middleware,
+            $this->libxml,
+            $handleHtmlEntitiesInXml
+        );
+
+        return $parser;
+    }
+
+    /**
      * Parses a PSR-7 stream which is known to be valid XML and is encoded as UTF-8.
      *
      * @param StreamInterface $stream                  A PSR-7 `StreamInterface` which is typically returned by the
@@ -139,7 +166,7 @@ class SimplePie implements C\SetLoggerInterface
     public function parseXmlFromStream(StreamInterface $stream, bool $handleHtmlEntitiesInXml = false): XmlParser
     {
         $parser = new XmlParser(
-            $stream,
+            new Response(200, [], $stream),
             $this->logger,
             $this->middleware,
             $this->libxml,

@@ -15,7 +15,7 @@ use DOMDocument;
 use DOMNode;
 use DOMText;
 use DOMXPath;
-use Psr\Http\Message\StreamInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use SimplePie\Enum as E;
 use SimplePie\HandlerStackInterface;
@@ -64,8 +64,7 @@ class Xml extends AbstractParser
     /**
      * Constructs a new instance of this class.
      *
-     * @param StreamInterface       $stream                  A PSR-7 `StreamInterface` which is typically returned by
-     *                                                       the `getBody()` method of a `ResponseInterface` class.
+     * @param ResponseInterface     $response                A PSR-7 `ResponseInterface`.
      * @param LoggerInterface       $logger                  The PSR-3 logger.
      * @param HandlerStackInterface $handlerStack            The handler stack which contains registered middleware.
      * @param int                   $libxml                  The libxml value to use for parsing XML.
@@ -81,7 +80,7 @@ class Xml extends AbstractParser
      * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     public function __construct(
-        StreamInterface $stream,
+        ResponseInterface $response,
         LoggerInterface $logger,
         HandlerStackInterface $handlerStack,
         int $libxml,
@@ -99,7 +98,7 @@ class Xml extends AbstractParser
         $this->libxml = $libxml;
 
         // Raw stream
-        $this->rawDocument = $this->readStream($stream);
+        $this->rawDocument = $this->readStream($response->getBody());
 
         // DOMDocument
         $this->domDocument = new DOMDocument('1.0', 'utf-8');
@@ -108,37 +107,11 @@ class Xml extends AbstractParser
         \libxml_use_internal_errors(true);
 
         // DOMDocument configuration
-        $this->domDocument->recover             = true;
-        $this->domDocument->formatOutput        = false;
-        $this->domDocument->preserveWhiteSpace  = false;
-        $this->domDocument->resolveExternals    = true;
-        $this->domDocument->substituteEntities  = true;
-        $this->domDocument->strictErrorChecking = false;
-        $this->domDocument->validateOnParse     = false;
+        $this->decorateDomDocument();
 
         // If enabled, force-inject the contents of `entities.dtd` into the feed.
         if ($handleHtmlEntitiesInXml) {
-            $this->getLogger()->debug('Enabled handing HTML entities in XML.');
-            $this->domDocument->loadXML($this->rawDocument, $this->libxml);
-
-            // Make sure this is an XML element instead of a comment or text.
-            $firstElement = $this->findNextRealNode($this->domDocument->firstChild);
-
-            // <feed, <rss, etc.
-            $rootElementStart = \sprintf('<%s', (string) $firstElement->nodeName);
-
-            // Read the entity definition file, and force-inject it into the XML document
-            $this->rawDocument = \str_replace(
-                $rootElementStart,
-                \sprintf(
-                    '%s%s',
-                    \trim(
-                        \file_get_contents(\dirname(SIMPLEPIE_ROOT) . '/resources/entities.dtd')
-                    ),
-                    $rootElementStart
-                ),
-                $this->rawDocument
-            );
+            $this->handleHtmlEntitiesInXml();
         }
 
         // Parse the XML document with the configured libxml options
@@ -153,7 +126,8 @@ class Xml extends AbstractParser
 
         // Instantiate a new write-to feed object.
         $this->feed = (new Feed($this->getNamespaceAlias() ?? ''))
-            ->setLogger($this->getLogger());
+            ->setLogger($this->getLogger())
+            ->setPsr7Response($response);
 
         // Invoke the registered middleware.
         $this->middleware->invoke(
@@ -240,5 +214,47 @@ class Xml extends AbstractParser
     public function getFeed(): Feed
     {
         return $this->feed;
+    }
+
+    /**
+     * Configures the DOMDocument object with standard settings.
+     */
+    protected function decorateDomDocument(): void
+    {
+        $this->domDocument->recover             = true;
+        $this->domDocument->formatOutput        = false;
+        $this->domDocument->preserveWhiteSpace  = false;
+        $this->domDocument->resolveExternals    = true;
+        $this->domDocument->substituteEntities  = true;
+        $this->domDocument->strictErrorChecking = false;
+        $this->domDocument->validateOnParse     = false;
+    }
+
+    /**
+     * Force-injects the contents of `entities.dtd` into the feed.
+     */
+    protected function handleHtmlEntitiesInXml(): void
+    {
+        $this->getLogger()->debug('Enabled handing HTML entities in XML.');
+        $this->domDocument->loadXML($this->rawDocument, $this->libxml);
+
+        // Make sure this is an XML element instead of a comment or text.
+        $firstElement = $this->findNextRealNode($this->domDocument->firstChild);
+
+        // <feed, <rss, etc.
+        $rootElementStart = \sprintf('<%s', (string) $firstElement->nodeName);
+
+        // Read the entity definition file, and force-inject it into the XML document
+        $this->rawDocument = \str_replace(
+            $rootElementStart,
+            \sprintf(
+                '%s%s',
+                \trim(
+                    \file_get_contents(\dirname(SIMPLEPIE_ROOT) . '/resources/entities.dtd')
+                ),
+                $rootElementStart
+            ),
+            $this->rawDocument
+        );
     }
 }

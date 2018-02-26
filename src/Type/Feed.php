@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace SimplePie\Type;
 
+use Psr\Http\Message\ResponseInterface;
 use Psr\Log\NullLogger;
 use SimplePie\Configuration as C;
 use SimplePie\Exception\SimplePieException;
@@ -67,6 +68,13 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
     protected $namespaceAlias;
 
     /**
+     * The PSR-7 compatible HTTP response.
+     *
+     * @var ResponseInterface
+     */
+    protected $psr7response;
+
+    /**
      * Constructs a new instance of this class.
      *
      * @param string $namespaceAlias [description]
@@ -76,6 +84,30 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
         $this->root           = new stdClass();
         $this->logger         = new NullLogger();
         $this->namespaceAlias = $namespaceAlias;
+    }
+
+    /**
+     * Sets the PSR-7 response that contained the feed information.
+     *
+     * @param ResponseInterface $response The PSR-7 response object.
+     *
+     * @return self
+     */
+    public function setPsr7Response(ResponseInterface $response): self
+    {
+        $this->psr7response = $response;
+
+        return $this;
+    }
+
+    /**
+     * Gets the PSR-7 response that contained the feed information.
+     *
+     * @return ResponseInterface
+     */
+    public function getPsr7Response(): ResponseInterface
+    {
+        return $this->psr7response;
     }
 
     /**
