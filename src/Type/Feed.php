@@ -95,7 +95,11 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
      */
     public function setPsr7Response(ResponseInterface $response): self
     {
-        $this->psr7response = $response;
+        $this->psr7response              = $response;
+        $this->root->httpStatusCode      = $response->getStatusCode();
+        $this->root->httpReasonPhrase    = $response->getReasonPhrase();
+        $this->root->httpProtocolVersion = $response->getProtocolVersion();
+        $this->root->httpResponseHeaders = $response->getHeaders();
 
         return $this;
     }
