@@ -3,6 +3,6 @@ Header:      Content-Location: http://example.com/
 Description: feed copyright relative to Content-Location header
 Expect:      not bozo and feed['copyright'] == '<div><a href="http://example.com/relative/uri">click here</a></div>'
 -->
-<feed version="0.3" xmlns="http://purl.org/atom/ns#">
+<feed xmlns="http://www.w3.org/2005/Atom">
 <copyright type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><a href="/relative/uri">click here</a></div></copyright>
 </feed>
