@@ -20,6 +20,26 @@ class FeedMiscTest extends AbstractTestCase
         $this->simplepie = $this->getSimplePie();
     }
 
+    public function testAmpersandInAttr(): void
+    {
+        $stream = $this->getFeed('/wellformed/atom10/ampersand_in_attr.xml');
+        $parser = $this->simplepie->parseXml($stream);
+        $feed   = $parser->getFeed();
+
+        $this->assertEquals('Example <a href="http://example.com/?a=1&amp;b=2">test</a>', (string) $feed->getTitle());
+        $this->assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
+    }
+
+    public function testLinkNoRel(): void
+    {
+        $stream = $this->getFeed('/wellformed/atom10/atom_with_link_tag_for_url_unmarked.xml');
+        $parser = $this->simplepie->parseXml($stream);
+        $feed   = $parser->getFeed();
+
+        $this->assertEquals('http://www.innoq.com/planet/', (string) $feed->getLinks()[1]->getUri());
+        $this->assertEquals('alternate', (string) $feed->getLinks()[1]->getRel());
+    }
+
     public function testMissingQuoteInAttr(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/missing_quote_in_attr.xml');

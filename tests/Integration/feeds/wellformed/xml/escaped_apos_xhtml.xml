@@ -1,0 +1,8 @@
+<!--
+XXX - THIS TEST SHOULD BE UPDATED WHEN SGML AND XML OUTPUT IS IDENTICAL
+Description: ensure apos is translated correctly
+Expect: not bozo and feed['title'] == 'it&apos;s correct' or feed['title'] == "it's correct"
+-->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">it&amp;apos;s correct</div></title>
+</feed>
