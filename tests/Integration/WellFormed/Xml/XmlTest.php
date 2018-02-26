@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace SimplePie\Test\Integration\WellFormed\Ns;
+namespace SimplePie\Test\Integration\WellFormed\Xml;
 
 use SimplePie\Enum\Serialization;
 use SimplePie\Test\Integration\AbstractTestCase;

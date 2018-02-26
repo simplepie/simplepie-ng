@@ -83,13 +83,33 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
                         $this->lang = $attribute->nodeValue;
                     } elseif ('src' === $attribute->name) {
                         $this->handleAsSource($attribute);
-                    } elseif ('type' === $attribute->name && Serialization::TEXT === $attribute->value) {
+                    } elseif (
+                        'type' === $attribute->name && (
+                            Serialization::TEXT === $attribute->value
+                            || 'text/plain' === $attribute->value
+                        )
+                    ) {
                         $this->handleAsText($node, $attribute);
-                    } elseif ('type' === $attribute->name && Serialization::HTML === $attribute->value) {
+                    } elseif (
+                        'type' === $attribute->name && (
+                            Serialization::HTML === $attribute->value
+                            || 'text/html' === $attribute->value
+                        )
+                    ) {
                         $this->handleAsHtml($node, $attribute);
-                    } elseif ('type' === $attribute->name && Serialization::XHTML === $attribute->value) {
+                    } elseif (
+                        'type' === $attribute->name && (
+                            Serialization::XHTML === $attribute->value
+                            || 'application/xhtml+xml' === $attribute->value
+                            || 'application/xml' === $attribute->value
+                        )
+                    ) {
                         $this->handleAsXhtml($node, $attribute);
-                    } elseif ('type' === $attribute->name && 'application/octet-stream' === $attribute->value) {
+                    } elseif (
+                        'type' === $attribute->name && (
+                            'application/octet-stream' === $attribute->value
+                        )
+                    ) {
                         $this->handleAsBase64($node);
                     } else {
                         $this->serialization = Serialization::TEXT;
@@ -238,11 +258,7 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
     private function handleAsText(DOMNode $node, DOMAttr $attribute): void
     {
         $this->serialization = $attribute->nodeValue;
-        $this->value         = \html_entity_decode(
-            $node->nodeValue,
-            ENT_COMPAT,
-            CharacterSet::UTF_8
-        );
+        $this->value         = $node->nodeValue;
     }
 
     /**
@@ -254,11 +270,7 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
     private function handleAsHtml(DOMNode $node, DOMAttr $attribute): void
     {
         $this->serialization = $attribute->nodeValue;
-        $this->value         = \html_entity_decode(
-            $node->nodeValue,
-            ENT_COMPAT | ENT_HTML5,
-            CharacterSet::UTF_8
-        );
+        $this->value         = $node->nodeValue;
     }
 
     /**

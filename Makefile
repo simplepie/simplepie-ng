@@ -16,7 +16,7 @@ install:
 
 .PHONY: test
 test:
-	php bin/phpunit
+	bin/phpunit --testsuite all
 
 .PHONY: dump
 dump:

@@ -1,9 +1,9 @@
 <!--
 Description: & test 62
-Expect:      not bozo and entries[0]['title_detail']['value'] == '<div><strong>&amp;</strong></div>'
+Expect:      not bozo and entries[0]['title_detail']['value'] == '<strong>&amp;</strong>'
 -->
-<feed version="0.3" xmlns="http://purl.org/atom/ns#">
+<feed xmlns="http://www.w3.org/2005/Atom">
 <entry>
-	  <title type="application/xhtml+xml" mode="xml"><div xmlns="http://www.w3.org/1999/xhtml"><strong>&#38;</strong></div></title>
+	  <title type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><strong>&#38;</strong></div></title>
 </entry>
 </feed>

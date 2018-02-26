@@ -22,8 +22,8 @@ class SummaryTest extends AbstractTestCase
         $summary = $this->feed->getSummary();
 
         $this->assertEquals(Node::class, Types::getClassOrType($summary));
-        $this->assertEquals('This is a bunch of CDATA! 😀 […]', (string) $summary);
-        $this->assertEquals('This is a bunch of CDATA! 😀 […]', $summary->getValue());
+        $this->assertEquals('This is a bunch of CDATA! 😀 [&#8230;]', (string) $summary);
+        $this->assertEquals('This is a bunch of CDATA! 😀 [&#8230;]', $summary->getValue());
         $this->assertEquals(Serialization::HTML, $summary->getSerialization());
     }
 
@@ -32,8 +32,8 @@ class SummaryTest extends AbstractTestCase
         $summary = $this->feed->getSummary('atom10');
 
         $this->assertEquals(Node::class, Types::getClassOrType($summary));
-        $this->assertEquals('This is a bunch of CDATA! 😀 […]', (string) $summary);
-        $this->assertEquals('This is a bunch of CDATA! 😀 […]', $summary->getValue());
+        $this->assertEquals('This is a bunch of CDATA! 😀 [&#8230;]', (string) $summary);
+        $this->assertEquals('This is a bunch of CDATA! 😀 [&#8230;]', $summary->getValue());
         $this->assertEquals(Serialization::HTML, $summary->getSerialization());
     }
 }
