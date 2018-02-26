@@ -22,7 +22,7 @@ class FeedIdTest extends AbstractTestCase
     public function testId(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/feed_id.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('http://example.com/', (string) $feed->getId());

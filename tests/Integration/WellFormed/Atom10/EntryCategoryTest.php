@@ -23,7 +23,7 @@ class EntryCategoryTest extends AbstractTestCase
     public function testLabel(): void
     {
         $stream   = $this->getFeed('/wellformed/atom10/entry_category_label.xml');
-        $parser   = $this->simplepie->parseXml($stream);
+        $parser   = $this->simplepie->parseXmlFromStream($stream);
         $feed     = $parser->getFeed();
         $entry    = $feed->getEntries()[0];
         $category = $entry->getCategories()[0];
@@ -34,7 +34,7 @@ class EntryCategoryTest extends AbstractTestCase
     public function testScheme(): void
     {
         $stream   = $this->getFeed('/wellformed/atom10/entry_category_scheme.xml');
-        $parser   = $this->simplepie->parseXml($stream);
+        $parser   = $this->simplepie->parseXmlFromStream($stream);
         $feed     = $parser->getFeed();
         $entry    = $feed->getEntries()[0];
         $category = $entry->getCategories()[0];
@@ -45,7 +45,7 @@ class EntryCategoryTest extends AbstractTestCase
     public function testTerm(): void
     {
         $stream   = $this->getFeed('/wellformed/atom10/entry_category_term.xml');
-        $parser   = $this->simplepie->parseXml($stream);
+        $parser   = $this->simplepie->parseXmlFromStream($stream);
         $feed     = $parser->getFeed();
         $entry    = $feed->getEntries()[0];
         $category = $entry->getCategories()[0];
@@ -56,7 +56,7 @@ class EntryCategoryTest extends AbstractTestCase
     public function testTermNonAscii(): void
     {
         $stream   = $this->getFeed('/wellformed/atom10/entry_category_term_non_ascii.xml');
-        $parser   = $this->simplepie->parseXml($stream);
+        $parser   = $this->simplepie->parseXmlFromStream($stream);
         $feed     = $parser->getFeed();
         $entry    = $feed->getEntries()[0];
         $category = $entry->getCategories()[0];

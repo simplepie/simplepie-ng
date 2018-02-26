@@ -22,7 +22,7 @@ class EntryAuthorTest extends AbstractTestCase
     public function testEmail(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_author_email.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $author = $entry->getAuthors()[0];
@@ -33,7 +33,7 @@ class EntryAuthorTest extends AbstractTestCase
     public function testEmails(): void
     {
         $stream  = $this->getFeed('/wellformed/atom10/entry_authors_email.xml');
-        $parser  = $this->simplepie->parseXml($stream);
+        $parser  = $this->simplepie->parseXmlFromStream($stream);
         $feed    = $parser->getFeed();
         $entry   = $feed->getEntries()[0];
         $authors = $entry->getAuthors();
@@ -45,7 +45,7 @@ class EntryAuthorTest extends AbstractTestCase
     public function testStringFormat(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_author_map_author.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $author = $entry->getAuthors()[0];
@@ -56,7 +56,7 @@ class EntryAuthorTest extends AbstractTestCase
     public function testStringFormat2(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_author_map_author_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $author = $entry->getAuthors()[0];
@@ -67,7 +67,7 @@ class EntryAuthorTest extends AbstractTestCase
     public function testName(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_author_name.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $author = $entry->getAuthors()[0];
@@ -78,7 +78,7 @@ class EntryAuthorTest extends AbstractTestCase
     public function testNames(): void
     {
         $stream  = $this->getFeed('/wellformed/atom10/entry_authors_name.xml');
-        $parser  = $this->simplepie->parseXml($stream);
+        $parser  = $this->simplepie->parseXmlFromStream($stream);
         $feed    = $parser->getFeed();
         $entry   = $feed->getEntries()[0];
         $authors = $entry->getAuthors();
@@ -90,7 +90,7 @@ class EntryAuthorTest extends AbstractTestCase
     public function testUri(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_author_uri.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $author = $entry->getAuthors()[0];
@@ -101,7 +101,7 @@ class EntryAuthorTest extends AbstractTestCase
     public function testUris(): void
     {
         $stream  = $this->getFeed('/wellformed/atom10/entry_authors_uri.xml');
-        $parser  = $this->simplepie->parseXml($stream);
+        $parser  = $this->simplepie->parseXmlFromStream($stream);
         $feed    = $parser->getFeed();
         $entry   = $feed->getEntries()[0];
         $authors = $entry->getAuthors();
@@ -113,7 +113,7 @@ class EntryAuthorTest extends AbstractTestCase
     public function testUrl(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_author_url.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $author = $entry->getAuthors()[0];
@@ -124,7 +124,7 @@ class EntryAuthorTest extends AbstractTestCase
     public function testUrls(): void
     {
         $stream  = $this->getFeed('/wellformed/atom10/entry_authors_url.xml');
-        $parser  = $this->simplepie->parseXml($stream);
+        $parser  = $this->simplepie->parseXmlFromStream($stream);
         $feed    = $parser->getFeed();
         $entry   = $feed->getEntries()[0];
         $authors = $entry->getAuthors();

@@ -22,7 +22,7 @@ class EntryIdTest extends AbstractTestCase
     public function testId(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_id.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -32,7 +32,7 @@ class EntryIdTest extends AbstractTestCase
     public function testGuid(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_id_map_guid.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -42,7 +42,7 @@ class EntryIdTest extends AbstractTestCase
     public function testNoNormalization1(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_id_no_normalization_1.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -52,7 +52,7 @@ class EntryIdTest extends AbstractTestCase
     public function testNoNormalization2(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_id_no_normalization_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -62,7 +62,7 @@ class EntryIdTest extends AbstractTestCase
     public function testNoNormalization3(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_id_no_normalization_3.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -72,7 +72,7 @@ class EntryIdTest extends AbstractTestCase
     public function testNoNormalization4(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_id_no_normalization_4.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -82,7 +82,7 @@ class EntryIdTest extends AbstractTestCase
     public function testNoNormalization5(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_id_no_normalization_5.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -92,7 +92,7 @@ class EntryIdTest extends AbstractTestCase
     public function testNoNormalization6(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_id_no_normalization_6.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -102,7 +102,7 @@ class EntryIdTest extends AbstractTestCase
     public function testNoNormalization7(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_id_no_normalization_7.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -112,7 +112,7 @@ class EntryIdTest extends AbstractTestCase
     public function testWithAttr(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_id_with_attributes.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 

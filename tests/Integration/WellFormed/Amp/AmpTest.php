@@ -10,7 +10,6 @@ declare(strict_types=1);
 
 namespace SimplePie\Test\Integration\WellFormed\Amp;
 
-use SimplePie\Enum\Serialization;
 use SimplePie\Test\Integration\AbstractTestCase;
 
 class AmpTest extends AbstractTestCase
@@ -43,12 +42,16 @@ class AmpTest extends AbstractTestCase
     public function testEntities($feed): void
     {
         $stream = $this->getFeed($feed);
-        $parser = $this->simplepie->parseXml($stream, true);
+        $parser = $this->simplepie->parseXmlFromStream($stream, true);
         $xq     = $parser->xpath()->query('/comment()')[0];
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        \preg_match("/Expect:\\s+not bozo and entries\\[0\\]\\['title_detail'\\]\\['value'\\] == '([^']*)'/", (string) $xq->textContent, $m);
+        \preg_match(
+            "/Expect:\\s+not bozo and entries\\[0\\]\\['title_detail'\\]\\['value'\\] == '([^']*)'/",
+            (string) $xq->textContent,
+            $m
+        );
         $title = $m[1];
 
         $this->assertEquals($title, $entry->getTitle()->getValue());

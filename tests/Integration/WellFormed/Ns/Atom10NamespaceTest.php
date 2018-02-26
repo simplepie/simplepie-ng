@@ -23,7 +23,7 @@ class Atom10NamespaceTest extends AbstractTestCase
     public function testMathMl(): void
     {
         $stream = $this->getFeed('/wellformed/namespace/atommathml.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -47,7 +47,7 @@ class Atom10NamespaceTest extends AbstractTestCase
     public function testSvg(): void
     {
         $stream = $this->getFeed('/wellformed/namespace/atomsvg.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -65,7 +65,7 @@ class Atom10NamespaceTest extends AbstractTestCase
     public function testSvgDesc(): void
     {
         $stream = $this->getFeed('/wellformed/namespace/atomsvgdesc.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -88,7 +88,7 @@ class Atom10NamespaceTest extends AbstractTestCase
     public function testSvgTitle(): void
     {
         $stream = $this->getFeed('/wellformed/namespace/atomsvgtitle.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -109,7 +109,7 @@ class Atom10NamespaceTest extends AbstractTestCase
     public function testXlink(): void
     {
         $stream = $this->getFeed('/wellformed/namespace/atomxlink.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -129,7 +129,7 @@ class Atom10NamespaceTest extends AbstractTestCase
     public function testSvgDcTitle(): void
     {
         $stream = $this->getFeed('/wellformed/namespace/atomsvgdctitle.xml');
-        $parser = $this->simplepie->parseXml($stream, true);
+        $parser = $this->simplepie->parseXmlFromStream($stream, true);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 

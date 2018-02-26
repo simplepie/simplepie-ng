@@ -23,7 +23,7 @@ class FeedTest extends AbstractTestCase
     public function testXmlLang(): void
     {
         $stream = $this->getFeed('/wellformed/lang/feed_xml_lang.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('en', (string) $feed->getLang());
@@ -33,7 +33,7 @@ class FeedTest extends AbstractTestCase
     public function testXmlLang2(): void
     {
         $stream = $this->getFeed('/wellformed/lang/feed_xml_lang_underscore.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('en_US', (string) $feed->getLang());
@@ -43,7 +43,7 @@ class FeedTest extends AbstractTestCase
     public function testNotXml(): void
     {
         $stream = $this->getFeed('/wellformed/lang/feed_not_xml_lang.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('en', (string) $feed->getLang());
@@ -53,7 +53,7 @@ class FeedTest extends AbstractTestCase
     public function testNotXml2(): void
     {
         $stream = $this->getFeed('/wellformed/lang/feed_not_xml_lang_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('', (string) $feed->getLang());

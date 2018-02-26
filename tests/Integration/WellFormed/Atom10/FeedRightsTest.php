@@ -23,7 +23,7 @@ class FeedRightsTest extends AbstractTestCase
     public function testRights(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/feed_rights.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('Example Atom', (string) $feed->getRights());
@@ -32,7 +32,7 @@ class FeedRightsTest extends AbstractTestCase
     public function testEscapedMarkup(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/feed_rights_escaped_markup.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('Example <b>Atom</b>', (string) $feed->getRights());
@@ -42,7 +42,7 @@ class FeedRightsTest extends AbstractTestCase
     public function testInlineMarkup(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/feed_rights_inline_markup.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('Example <b>Atom</b>', (string) $feed->getRights());
@@ -52,7 +52,7 @@ class FeedRightsTest extends AbstractTestCase
     public function testInlineMarkup2(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/feed_rights_inline_markup_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('History of the &lt;blink&gt; tag', (string) $feed->getRights());
@@ -62,7 +62,7 @@ class FeedRightsTest extends AbstractTestCase
     public function testTextPlain(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/feed_rights_text_plain.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('Example Atom', (string) $feed->getRights());
@@ -72,7 +72,7 @@ class FeedRightsTest extends AbstractTestCase
     public function testBase64(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/feed_rights_base64.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('Example <b>Atom</b>', (string) $feed->getRights());
@@ -82,7 +82,7 @@ class FeedRightsTest extends AbstractTestCase
     public function testBase642(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/feed_rights_base64_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('<p>History of the &lt;blink&gt; tag</p>', (string) $feed->getRights());

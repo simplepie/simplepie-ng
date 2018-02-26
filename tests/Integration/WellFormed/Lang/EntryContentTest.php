@@ -23,7 +23,7 @@ class EntryContentTest extends AbstractTestCase
     public function testXmlLangInherit(): void
     {
         $stream = $this->getFeed('/wellformed/lang/entry_content_xml_lang_inherit.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('en', (string) $feed->getLang());
@@ -41,7 +41,7 @@ class EntryContentTest extends AbstractTestCase
     public function testXmlLangInherit2(): void
     {
         $stream = $this->getFeed('/wellformed/lang/entry_content_xml_lang_inherit_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('fr', (string) $feed->getLang());
@@ -59,7 +59,7 @@ class EntryContentTest extends AbstractTestCase
     public function testXmlLangInherit3(): void
     {
         $stream = $this->getFeed('/wellformed/lang/entry_content_xml_lang_inherit_3.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('fr', (string) $feed->getLang());
@@ -77,7 +77,7 @@ class EntryContentTest extends AbstractTestCase
     public function testXmlLangInherit4(): void
     {
         $stream = $this->getFeed('/wellformed/lang/entry_content_xml_lang_inherit_4.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('en', (string) $feed->getLang());
@@ -95,7 +95,7 @@ class EntryContentTest extends AbstractTestCase
     public function testXmlLangUnderscore(): void
     {
         $stream = $this->getFeed('/wellformed/lang/entry_content_xml_lang_underscore.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('', (string) $feed->getLang());

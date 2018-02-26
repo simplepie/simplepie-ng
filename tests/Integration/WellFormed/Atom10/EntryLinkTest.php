@@ -22,7 +22,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testHref(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_alternate_map_link.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -35,7 +35,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testHref2(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_alternate_map_link_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -48,7 +48,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testHref3(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_alternate_map_link_3.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks($feed->getDefaultNs(), 'alternate')[0];
@@ -61,7 +61,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testHref4(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_href.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -72,7 +72,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testHreflang(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_hreflang.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -85,7 +85,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testLength(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_length.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -96,7 +96,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testMultiple(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_multiple.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks($feed->getDefaultNs(), 'service.post')[0];
@@ -113,7 +113,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testNoRel(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_no_rel.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -125,7 +125,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testRel(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_rel.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -137,7 +137,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testRelEnclosure(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_rel_enclosure.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -149,7 +149,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testRelEnclosureLength(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_rel_enclosure_map_enclosure_length.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -160,7 +160,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testRelEnclosureType(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_rel_enclosure_map_enclosure_type.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -172,7 +172,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testRelEnclosureUrl(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_rel_enclosure_map_enclosure_url.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -185,7 +185,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testRelLicense(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_rel_license.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -198,7 +198,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testRelOther(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_rel_other.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -210,7 +210,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testRelRelated(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_rel_related.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -222,7 +222,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testRelSelf(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_rel_self.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -234,7 +234,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testRelVia(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_rel_via.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -246,7 +246,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testTitle(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_title.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
@@ -257,7 +257,7 @@ class EntryLinkTest extends AbstractTestCase
     public function testType(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_link_type.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];

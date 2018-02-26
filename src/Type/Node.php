@@ -13,7 +13,6 @@ namespace SimplePie\Type;
 use DOMAttr;
 use DOMNode;
 use DOMText;
-use SimplePie\Enum\CharacterSet;
 use SimplePie\Enum\Serialization;
 use SimplePie\Exception\SimplePieException;
 
@@ -65,6 +64,10 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
      *                               empty array.
      *
      * @phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
+     * @phpcs:disable PEAR.ControlStructures.MultiLineCondition.StartWithBoolean
+     * @phpcs:disable PEAR.ControlStructures.MultiLineCondition.SpacingAfterOpenBrace
+     * @phpcs:disable PEAR.ControlStructures.MultiLineCondition.Alignment
+     * @phpcs:disable PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace
      */
     public function __construct(?DOMNode $node = null, array $fallback = [])
     {
@@ -84,21 +87,24 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
                     } elseif ('src' === $attribute->name) {
                         $this->handleAsSource($attribute);
                     } elseif (
-                        'type' === $attribute->name && (
+                        'type' === $attribute->name
+                        && (
                             Serialization::TEXT === $attribute->value
                             || 'text/plain' === $attribute->value
                         )
                     ) {
                         $this->handleAsText($node, $attribute);
                     } elseif (
-                        'type' === $attribute->name && (
+                        'type' === $attribute->name
+                        && (
                             Serialization::HTML === $attribute->value
                             || 'text/html' === $attribute->value
                         )
                     ) {
                         $this->handleAsHtml($node, $attribute);
                     } elseif (
-                        'type' === $attribute->name && (
+                        'type' === $attribute->name
+                        && (
                             Serialization::XHTML === $attribute->value
                             || 'application/xhtml+xml' === $attribute->value
                             || 'application/xml' === $attribute->value
@@ -106,7 +112,8 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
                     ) {
                         $this->handleAsXhtml($node, $attribute);
                     } elseif (
-                        'type' === $attribute->name && (
+                        'type' === $attribute->name
+                        && (
                             'application/octet-stream' === $attribute->value
                         )
                     ) {

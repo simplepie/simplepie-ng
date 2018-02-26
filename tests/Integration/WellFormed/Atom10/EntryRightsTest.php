@@ -23,7 +23,7 @@ class EntryRightsTest extends AbstractTestCase
     public function testRights(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_rights.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -33,7 +33,7 @@ class EntryRightsTest extends AbstractTestCase
     public function testEscapedMarkup(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_rights_escaped_markup.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -44,7 +44,7 @@ class EntryRightsTest extends AbstractTestCase
     public function testInlineMarkup(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_rights_inline_markup.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -55,7 +55,7 @@ class EntryRightsTest extends AbstractTestCase
     public function testInlineMarkup2(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_rights_inline_markup_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -66,7 +66,7 @@ class EntryRightsTest extends AbstractTestCase
     public function testTextPlain(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_rights_text_plain.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -77,7 +77,7 @@ class EntryRightsTest extends AbstractTestCase
     public function testTextPlainBrackets(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_rights_text_plain_brackets.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 

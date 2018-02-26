@@ -22,7 +22,7 @@ class FeedIconLogoTest extends AbstractTestCase
     public function testIcon(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/feed_icon.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $icon   = $feed->getIcon();
 
@@ -32,7 +32,7 @@ class FeedIconLogoTest extends AbstractTestCase
     public function testLogo(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/feed_logo.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $logo   = $feed->getLogo();
 

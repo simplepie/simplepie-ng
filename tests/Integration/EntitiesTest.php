@@ -43,7 +43,7 @@ class EntitiesTest extends AbstractTestCase
     public function testEntities($feed): void
     {
         $stream = $this->getFeed($feed);
-        $parser = $this->simplepie->parseXml($stream, true);
+        $parser = $this->simplepie->parseXmlFromStream($stream, true);
         $xq     = $parser->xpath()->query('/comment()')[0];
         $feed   = $parser->getFeed();
 

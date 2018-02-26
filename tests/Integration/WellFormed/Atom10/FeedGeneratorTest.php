@@ -22,7 +22,7 @@ class FeedGeneratorTest extends AbstractTestCase
     public function testGenerator(): void
     {
         $stream    = $this->getFeed('/wellformed/atom10/feed_generator.xml');
-        $parser    = $this->simplepie->parseXml($stream);
+        $parser    = $this->simplepie->parseXmlFromStream($stream);
         $feed      = $parser->getFeed();
         $generator = $feed->getGenerator();
 
@@ -32,7 +32,7 @@ class FeedGeneratorTest extends AbstractTestCase
     public function testName(): void
     {
         $stream    = $this->getFeed('/wellformed/atom10/feed_generator_name.xml');
-        $parser    = $this->simplepie->parseXml($stream);
+        $parser    = $this->simplepie->parseXmlFromStream($stream);
         $feed      = $parser->getFeed();
         $generator = $feed->getGenerator();
 
@@ -42,7 +42,7 @@ class FeedGeneratorTest extends AbstractTestCase
     public function testUrl(): void
     {
         $stream    = $this->getFeed('/wellformed/atom10/feed_generator_url.xml');
-        $parser    = $this->simplepie->parseXml($stream);
+        $parser    = $this->simplepie->parseXmlFromStream($stream);
         $feed      = $parser->getFeed();
         $generator = $feed->getGenerator();
 
@@ -53,7 +53,7 @@ class FeedGeneratorTest extends AbstractTestCase
     public function testVersion(): void
     {
         $stream    = $this->getFeed('/wellformed/atom10/feed_generator_version.xml');
-        $parser    = $this->simplepie->parseXml($stream);
+        $parser    = $this->simplepie->parseXmlFromStream($stream);
         $feed      = $parser->getFeed();
         $generator = $feed->getGenerator();
 

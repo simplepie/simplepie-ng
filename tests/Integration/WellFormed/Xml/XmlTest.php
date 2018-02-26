@@ -23,7 +23,7 @@ class XmlTest extends AbstractTestCase
     public function testHtmlCorrect(): void
     {
         $stream = $this->getFeed('/wellformed/xml/escaped_apos.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('it\'s correct', (string) $feed->getTitle());
@@ -33,7 +33,7 @@ class XmlTest extends AbstractTestCase
     public function testHtml(): void
     {
         $stream = $this->getFeed('/wellformed/xml/escaped_apos_html.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('it&apos;s correct', (string) $feed->getTitle());
@@ -43,7 +43,7 @@ class XmlTest extends AbstractTestCase
     public function testText(): void
     {
         $stream = $this->getFeed('/wellformed/xml/escaped_apos_text.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('it&apos;s correct', (string) $feed->getTitle());
@@ -53,7 +53,7 @@ class XmlTest extends AbstractTestCase
     public function testXhtml(): void
     {
         $stream = $this->getFeed('/wellformed/xml/escaped_apos_xhtml.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('it&amp;apos;s correct', (string) $feed->getTitle());

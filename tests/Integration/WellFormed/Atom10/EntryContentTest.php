@@ -24,7 +24,7 @@ class EntryContentTest extends AbstractTestCase
     public function testTypeNone(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_type.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -35,7 +35,7 @@ class EntryContentTest extends AbstractTestCase
     public function testTypeNone2(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_value.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -46,7 +46,7 @@ class EntryContentTest extends AbstractTestCase
     public function testTypeText(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_type_text.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -57,7 +57,7 @@ class EntryContentTest extends AbstractTestCase
     public function testText(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_text_plain.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -68,7 +68,7 @@ class EntryContentTest extends AbstractTestCase
     public function testTextEntities(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_text_plain_brackets.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -79,7 +79,7 @@ class EntryContentTest extends AbstractTestCase
     public function testXhtml(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_application_xml.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -90,7 +90,7 @@ class EntryContentTest extends AbstractTestCase
     public function testInlineXhtml(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_inline_markup.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -101,7 +101,7 @@ class EntryContentTest extends AbstractTestCase
     public function testInlineXhtmlEscaped(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_inline_markup_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -112,7 +112,7 @@ class EntryContentTest extends AbstractTestCase
     public function testBase64(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_base64.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -123,7 +123,7 @@ class EntryContentTest extends AbstractTestCase
     public function testBase642(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_base64_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -134,7 +134,7 @@ class EntryContentTest extends AbstractTestCase
     public function testHtmlDivEscaped(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_div_escaped_markup.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -145,7 +145,7 @@ class EntryContentTest extends AbstractTestCase
     public function testHtmlEscaped(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_escaped_markup.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -156,7 +156,7 @@ class EntryContentTest extends AbstractTestCase
     public function testSrc(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_content_src.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 

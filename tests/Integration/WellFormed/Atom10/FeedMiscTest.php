@@ -23,7 +23,7 @@ class FeedMiscTest extends AbstractTestCase
     public function testAmpersandInAttr(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/ampersand_in_attr.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('Example <a href="http://example.com/?a=1&amp;b=2">test</a>', (string) $feed->getTitle());
@@ -33,7 +33,7 @@ class FeedMiscTest extends AbstractTestCase
     public function testLinkNoRel(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/atom_with_link_tag_for_url_unmarked.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('http://www.innoq.com/planet/', (string) $feed->getLinks()[1]->getUri());
@@ -43,7 +43,7 @@ class FeedMiscTest extends AbstractTestCase
     public function testMissingQuoteInAttr(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/missing_quote_in_attr.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('<a href=http://example.com/">example</a>', (string) $feed->getTitle());
@@ -54,7 +54,7 @@ class FeedMiscTest extends AbstractTestCase
     {
         // FeedParser.py was wrong on this test.
         $stream = $this->getFeed('/wellformed/atom10/qna.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -65,7 +65,7 @@ class FeedMiscTest extends AbstractTestCase
     public function testQuoteInAttr(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/quote_in_attr.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('<a title="&quot;test&quot;">test</a>', (string) $feed->getTitle());
@@ -75,7 +75,7 @@ class FeedMiscTest extends AbstractTestCase
     public function testTagInAttr(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/tag_in_attr.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals(
@@ -88,7 +88,7 @@ class FeedMiscTest extends AbstractTestCase
     public function testRelativeUri(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/relative_uri.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('http://example.com/test/', (string) $feed->getTitle()->getBase());
@@ -98,7 +98,7 @@ class FeedMiscTest extends AbstractTestCase
     public function testRelativeUriInherit(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/relative_uri_inherit.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('http://example.com/test/', (string) $feed->getTitle()->getBase());
@@ -108,7 +108,7 @@ class FeedMiscTest extends AbstractTestCase
     public function testRelativeUriInherit2(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/relative_uri_inherit_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
 
         $this->assertEquals('http://example.com/test/', (string) $feed->getTitle()->getBase());

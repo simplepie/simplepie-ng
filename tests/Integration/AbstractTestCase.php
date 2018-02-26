@@ -32,7 +32,7 @@ abstract class AbstractTestCase extends TestCase
         $this->simplepie = $this->getSimplePie();
 
         $stream = Psr7\stream_for($this->goodAtom);
-        $parser = $this->simplepie->parseXml($stream, true);
+        $parser = $this->simplepie->parseXmlFromStream($stream, true);
 
         $this->feed = $parser->getFeed();
     }

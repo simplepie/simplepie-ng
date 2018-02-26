@@ -124,7 +124,7 @@ class SimplePie implements C\SetLoggerInterface
     }
 
     /**
-     * Parses content which is known to be valid XML and is encoded as UTF-8.
+     * Parses a PSR-7 stream which is known to be valid XML and is encoded as UTF-8.
      *
      * @param StreamInterface $stream                  A PSR-7 `StreamInterface` which is typically returned by the
      *                                                 `getBody()` method of a `ResponseInterface` class.
@@ -136,7 +136,7 @@ class SimplePie implements C\SetLoggerInterface
      *
      * @return XmlParser
      */
-    public function parseXml(StreamInterface $stream, bool $handleHtmlEntitiesInXml = false): XmlParser
+    public function parseXmlFromStream(StreamInterface $stream, bool $handleHtmlEntitiesInXml = false): XmlParser
     {
         $parser = new XmlParser(
             $stream,

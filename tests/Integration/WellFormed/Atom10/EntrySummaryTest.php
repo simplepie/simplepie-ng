@@ -23,7 +23,7 @@ class EntrySummaryTest extends AbstractTestCase
     public function testSummary(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_summary.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -34,7 +34,7 @@ class EntrySummaryTest extends AbstractTestCase
     public function testBase64(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_summary_base64.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -45,7 +45,7 @@ class EntrySummaryTest extends AbstractTestCase
     public function testBase642(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_summary_base64_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -56,7 +56,7 @@ class EntrySummaryTest extends AbstractTestCase
     public function testEscapedMarkup(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_summary_escaped_markup.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -67,7 +67,7 @@ class EntrySummaryTest extends AbstractTestCase
     public function testInlineMarkup(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_summary_inline_markup.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -78,7 +78,7 @@ class EntrySummaryTest extends AbstractTestCase
     public function testInlineMarkup2(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_summary_inline_markup_2.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
@@ -89,7 +89,7 @@ class EntrySummaryTest extends AbstractTestCase
     public function testTextPlain(): void
     {
         $stream = $this->getFeed('/wellformed/atom10/entry_summary_text_plain.xml');
-        $parser = $this->simplepie->parseXml($stream);
+        $parser = $this->simplepie->parseXmlFromStream($stream);
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 

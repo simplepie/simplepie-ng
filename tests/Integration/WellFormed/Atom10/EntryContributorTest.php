@@ -22,7 +22,7 @@ class EntryContributorTest extends AbstractTestCase
     public function testEmail(): void
     {
         $stream      = $this->getFeed('/wellformed/atom10/entry_contributor_email.xml');
-        $parser      = $this->simplepie->parseXml($stream);
+        $parser      = $this->simplepie->parseXmlFromStream($stream);
         $feed        = $parser->getFeed();
         $entry       = $feed->getEntries()[0];
         $contributor = $entry->getContributors()[0];
@@ -33,7 +33,7 @@ class EntryContributorTest extends AbstractTestCase
     public function testEmails(): void
     {
         $stream       = $this->getFeed('/wellformed/atom10/entry_contributor_multiple.xml');
-        $parser       = $this->simplepie->parseXml($stream);
+        $parser       = $this->simplepie->parseXmlFromStream($stream);
         $feed         = $parser->getFeed();
         $entry        = $feed->getEntries()[0];
         $contributors = $entry->getContributors();
@@ -45,7 +45,7 @@ class EntryContributorTest extends AbstractTestCase
     public function testName(): void
     {
         $stream      = $this->getFeed('/wellformed/atom10/entry_contributor_name.xml');
-        $parser      = $this->simplepie->parseXml($stream);
+        $parser      = $this->simplepie->parseXmlFromStream($stream);
         $feed        = $parser->getFeed();
         $entry       = $feed->getEntries()[0];
         $contributor = $entry->getContributors()[0];
@@ -56,7 +56,7 @@ class EntryContributorTest extends AbstractTestCase
     public function testNames(): void
     {
         $stream       = $this->getFeed('/wellformed/atom10/entry_contributor_multiple.xml');
-        $parser       = $this->simplepie->parseXml($stream);
+        $parser       = $this->simplepie->parseXmlFromStream($stream);
         $feed         = $parser->getFeed();
         $entry        = $feed->getEntries()[0];
         $contributors = $entry->getContributors();
@@ -68,7 +68,7 @@ class EntryContributorTest extends AbstractTestCase
     public function testUri(): void
     {
         $stream      = $this->getFeed('/wellformed/atom10/entry_contributor_uri.xml');
-        $parser      = $this->simplepie->parseXml($stream);
+        $parser      = $this->simplepie->parseXmlFromStream($stream);
         $feed        = $parser->getFeed();
         $entry       = $feed->getEntries()[0];
         $contributor = $entry->getContributors()[0];
@@ -79,7 +79,7 @@ class EntryContributorTest extends AbstractTestCase
     public function testUris(): void
     {
         $stream       = $this->getFeed('/wellformed/atom10/entry_contributor_multiple.xml');
-        $parser       = $this->simplepie->parseXml($stream);
+        $parser       = $this->simplepie->parseXmlFromStream($stream);
         $feed         = $parser->getFeed();
         $entry        = $feed->getEntries()[0];
         $contributors = $entry->getContributors();
@@ -91,7 +91,7 @@ class EntryContributorTest extends AbstractTestCase
     public function testUrl(): void
     {
         $stream      = $this->getFeed('/wellformed/atom10/entry_contributor_url.xml');
-        $parser      = $this->simplepie->parseXml($stream);
+        $parser      = $this->simplepie->parseXmlFromStream($stream);
         $feed        = $parser->getFeed();
         $entry       = $feed->getEntries()[0];
         $contributor = $entry->getContributors()[0];
@@ -102,7 +102,7 @@ class EntryContributorTest extends AbstractTestCase
     public function testUrls(): void
     {
         $stream       = $this->getFeed('/wellformed/atom10/entry_contributor_multiple.xml');
-        $parser       = $this->simplepie->parseXml($stream);
+        $parser       = $this->simplepie->parseXmlFromStream($stream);
         $feed         = $parser->getFeed();
         $entry        = $feed->getEntries()[0];
         $contributors = $entry->getContributors();

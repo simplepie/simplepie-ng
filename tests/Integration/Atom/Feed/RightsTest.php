@@ -31,7 +31,7 @@ class RightsTest extends AbstractTestCase
     public function testRightsWithoutEntities(): void
     {
         $stream = Psr7\stream_for($this->goodAtom);
-        $parser = $this->simplepie->parseXml($stream, false);
+        $parser = $this->simplepie->parseXmlFromStream($stream, false);
         $feed   = $parser->getFeed();
         $rights = $feed->getRights();
 
