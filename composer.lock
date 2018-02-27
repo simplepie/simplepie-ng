@@ -2383,16 +2383,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.0.1",
+            "version": "7.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "316555dbd0ed4097bbdd17c65ab416bf27a472e9"
+                "reference": "e2f8aa21bc54b6ba218bdd4f9e0dac1e9bc3b4e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/316555dbd0ed4097bbdd17c65ab416bf27a472e9",
-                "reference": "316555dbd0ed4097bbdd17c65ab416bf27a472e9",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e2f8aa21bc54b6ba218bdd4f9e0dac1e9bc3b4e9",
+                "reference": "e2f8aa21bc54b6ba218bdd4f9e0dac1e9bc3b4e9",
                 "shasum": ""
             },
             "require": {
@@ -2459,7 +2459,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-02-13T06:08:08+00:00"
+            "time": "2018-02-26T07:03:12+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -3285,12 +3285,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "5f2cdef533ce14dc2d74252b3bbadac05076c1c9"
+                "reference": "e2a3e465b6a6f7cbd50eaa8a6ed5c47dbe5de641"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/5f2cdef533ce14dc2d74252b3bbadac05076c1c9",
-                "reference": "5f2cdef533ce14dc2d74252b3bbadac05076c1c9",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/e2a3e465b6a6f7cbd50eaa8a6ed5c47dbe5de641",
+                "reference": "e2a3e465b6a6f7cbd50eaa8a6ed5c47dbe5de641",
                 "shasum": ""
             },
             "require": {
@@ -3328,7 +3328,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-02-21T00:37:04+00:00"
+            "time": "2018-02-27T04:40:58+00:00"
         },
         {
             "name": "symfony/config",
