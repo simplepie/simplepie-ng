@@ -3285,12 +3285,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "5f2cdef533ce14dc2d74252b3bbadac05076c1c9"
+                "reference": "5c16234d44f6ebbcca9f3fd5a23a7acac168729f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/5f2cdef533ce14dc2d74252b3bbadac05076c1c9",
-                "reference": "5f2cdef533ce14dc2d74252b3bbadac05076c1c9",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/5c16234d44f6ebbcca9f3fd5a23a7acac168729f",
+                "reference": "5c16234d44f6ebbcca9f3fd5a23a7acac168729f",
                 "shasum": ""
             },
             "require": {
@@ -3328,7 +3328,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-02-21T00:37:04+00:00"
+            "time": "2018-03-05T04:49:25+00:00"
         },
         {
             "name": "symfony/config",
@@ -4212,16 +4212,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.4.4",
+            "version": "v2.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "eddb97148ad779f27e670e1e3f19fb323aedafeb"
+                "reference": "d2117ec118c1ff3d28ccddca8212d82787a4809f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/eddb97148ad779f27e670e1e3f19fb323aedafeb",
-                "reference": "eddb97148ad779f27e670e1e3f19fb323aedafeb",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/d2117ec118c1ff3d28ccddca8212d82787a4809f",
+                "reference": "d2117ec118c1ff3d28ccddca8212d82787a4809f",
                 "shasum": ""
             },
             "require": {
@@ -4274,7 +4274,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-09-27T18:10:31+00:00"
+            "time": "2018-03-03T16:23:01+00:00"
         },
         {
             "name": "wapmorgan/php-code-analyzer",
