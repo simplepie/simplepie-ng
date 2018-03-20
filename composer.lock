@@ -1421,7 +1421,7 @@
                     "homepage": "http://blog.astrumfutura.com"
                 },
                 {
-                    "name": "Théo Fidry",
+                    "name": "Théo FIDRY",
                     "email": "theo.fidry@gmail.com"
                 }
             ],
@@ -1475,7 +1475,7 @@
             ],
             "authors": [
                 {
-                    "name": "Padraic Brady",
+                    "name": "Pádraic Brady",
                     "email": "padraic.brady@gmail.com",
                     "homepage": "http://blog.astrumfutura.com"
                 }
@@ -3285,12 +3285,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "5f2cdef533ce14dc2d74252b3bbadac05076c1c9"
+                "reference": "aace22f9e11eacebbac3ccfd5bd2299071a4be3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/5f2cdef533ce14dc2d74252b3bbadac05076c1c9",
-                "reference": "5f2cdef533ce14dc2d74252b3bbadac05076c1c9",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/aace22f9e11eacebbac3ccfd5bd2299071a4be3e",
+                "reference": "aace22f9e11eacebbac3ccfd5bd2299071a4be3e",
                 "shasum": ""
             },
             "require": {
@@ -3328,7 +3328,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-02-21T00:37:04+00:00"
+            "time": "2018-03-20T04:09:28+00:00"
         },
         {
             "name": "symfony/config",
@@ -4212,16 +4212,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.4.4",
+            "version": "v2.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "eddb97148ad779f27e670e1e3f19fb323aedafeb"
+                "reference": "69aacd44dbbaa3199d5afb68605c996d577896fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/eddb97148ad779f27e670e1e3f19fb323aedafeb",
-                "reference": "eddb97148ad779f27e670e1e3f19fb323aedafeb",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/69aacd44dbbaa3199d5afb68605c996d577896fc",
+                "reference": "69aacd44dbbaa3199d5afb68605c996d577896fc",
                 "shasum": ""
             },
             "require": {
@@ -4230,8 +4230,8 @@
             },
             "require-dev": {
                 "psr/container": "^1.0",
-                "symfony/debug": "~2.7",
-                "symfony/phpunit-bridge": "~3.3@dev"
+                "symfony/debug": "^2.7",
+                "symfony/phpunit-bridge": "^3.3"
             },
             "type": "library",
             "extra": {
@@ -4274,7 +4274,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-09-27T18:10:31+00:00"
+            "time": "2018-03-20T04:31:17+00:00"
         },
         {
             "name": "wapmorgan/php-code-analyzer",
