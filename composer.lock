@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "6ad3a0e0e7d9a14f6f3228d0f36dd7ec",
@@ -2066,22 +2066,22 @@
         },
         {
             "name": "phpmetrics/phpmetrics",
-            "version": "v2.3.2",
+            "version": "v2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmetrics/PhpMetrics.git",
-                "reference": "e44f5224d08571ee6ba85c50379560b9ec217b91"
+                "reference": "39095017413805cd6d9ada16cfaf8aaffcb2fec4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmetrics/PhpMetrics/zipball/e44f5224d08571ee6ba85c50379560b9ec217b91",
-                "reference": "e44f5224d08571ee6ba85c50379560b9ec217b91",
+                "url": "https://api.github.com/repos/phpmetrics/PhpMetrics/zipball/39095017413805cd6d9ada16cfaf8aaffcb2fec4",
+                "reference": "39095017413805cd6d9ada16cfaf8aaffcb2fec4",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-tokenizer": "*",
-                "nikic/php-parser": "v3.*",
+                "nikic/php-parser": "^3|^4",
                 "php": ">=5.5"
             },
             "replace": {
@@ -2089,7 +2089,8 @@
                 "halleck45/phpmetrics": "*"
             },
             "require-dev": {
-                "phpunit/phpunit": ">=4.8.27,<=5.7.13"
+                "phpunit/phpunit": ">=4.8.27,<=5.7.13",
+                "sebastian/comparator": ">=1.2.3"
             },
             "bin": [
                 "bin/phpmetrics"
@@ -2123,7 +2124,7 @@
                 "quality",
                 "testing"
             ],
-            "time": "2017-10-13T16:11:30+00:00"
+            "time": "2018-07-10T17:19:33+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -2629,6 +2630,7 @@
                 "github",
                 "test"
             ],
+            "abandoned": "php-coveralls/php-coveralls",
             "time": "2017-12-06T23:17:56+00:00"
         },
         {
@@ -3289,12 +3291,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "25088d9c91a37b2306f12ee4dca5b929f5d80af5"
+                "reference": "239b5703bbddfa185c615ca0bb7fee2853357013"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/25088d9c91a37b2306f12ee4dca5b929f5d80af5",
-                "reference": "25088d9c91a37b2306f12ee4dca5b929f5d80af5",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/239b5703bbddfa185c615ca0bb7fee2853357013",
+                "reference": "239b5703bbddfa185c615ca0bb7fee2853357013",
                 "shasum": ""
             },
             "require": {
@@ -3332,7 +3334,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-06-01T05:50:09+00:00"
+            "time": "2018-07-11T04:34:39+00:00"
         },
         {
             "name": "symfony/config",
