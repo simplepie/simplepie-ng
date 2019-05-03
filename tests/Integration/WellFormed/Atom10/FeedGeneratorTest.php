@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -14,7 +14,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class FeedGeneratorTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -26,7 +26,7 @@ class FeedGeneratorTest extends AbstractTestCase
         $feed      = $parser->getFeed();
         $generator = $feed->getGenerator();
 
-        $this->assertEquals('Example generator 2.65', (string) $generator);
+        static::assertEquals('Example generator 2.65', (string) $generator);
     }
 
     public function testName(): void
@@ -36,7 +36,7 @@ class FeedGeneratorTest extends AbstractTestCase
         $feed      = $parser->getFeed();
         $generator = $feed->getGenerator();
 
-        $this->assertEquals('Example generator', (string) $generator->getName());
+        static::assertEquals('Example generator', (string) $generator->getName());
     }
 
     public function testUrl(): void
@@ -46,8 +46,8 @@ class FeedGeneratorTest extends AbstractTestCase
         $feed      = $parser->getFeed();
         $generator = $feed->getGenerator();
 
-        $this->assertEquals('http://example.com/', (string) $generator->getUrl());
-        $this->assertEquals('http://example.com/', (string) $generator->getUri());
+        static::assertEquals('http://example.com/', (string) $generator->getUrl());
+        static::assertEquals('http://example.com/', (string) $generator->getUri());
     }
 
     public function testVersion(): void
@@ -57,6 +57,6 @@ class FeedGeneratorTest extends AbstractTestCase
         $feed      = $parser->getFeed();
         $generator = $feed->getGenerator();
 
-        $this->assertEquals('2.65', (string) $generator->getVersion());
+        static::assertEquals('2.65', (string) $generator->getVersion());
     }
 }

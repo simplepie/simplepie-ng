@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -15,7 +15,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class EntrySummaryTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -27,8 +27,8 @@ class EntrySummaryTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example Atom', (string) $entry->getSummary());
-        $this->assertEquals(Serialization::TEXT, $entry->getSummary()->getSerialization());
+        static::assertEquals('Example Atom', (string) $entry->getSummary());
+        static::assertEquals(Serialization::TEXT, $entry->getSummary()->getSerialization());
     }
 
     public function testBase64(): void
@@ -38,8 +38,8 @@ class EntrySummaryTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $entry->getSummary());
-        $this->assertEquals(Serialization::TEXT, $entry->getSummary()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $entry->getSummary());
+        static::assertEquals(Serialization::TEXT, $entry->getSummary()->getSerialization());
     }
 
     public function testBase642(): void
@@ -49,8 +49,8 @@ class EntrySummaryTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('<p>History of the &lt;blink&gt; tag</p>', (string) $entry->getSummary());
-        $this->assertEquals(Serialization::TEXT, $entry->getSummary()->getSerialization());
+        static::assertEquals('<p>History of the &lt;blink&gt; tag</p>', (string) $entry->getSummary());
+        static::assertEquals(Serialization::TEXT, $entry->getSummary()->getSerialization());
     }
 
     public function testEscapedMarkup(): void
@@ -60,8 +60,8 @@ class EntrySummaryTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $entry->getSummary());
-        $this->assertEquals(Serialization::HTML, $entry->getSummary()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $entry->getSummary());
+        static::assertEquals(Serialization::HTML, $entry->getSummary()->getSerialization());
     }
 
     public function testInlineMarkup(): void
@@ -71,8 +71,8 @@ class EntrySummaryTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $entry->getSummary());
-        $this->assertEquals(Serialization::XHTML, $entry->getSummary()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $entry->getSummary());
+        static::assertEquals(Serialization::XHTML, $entry->getSummary()->getSerialization());
     }
 
     public function testInlineMarkup2(): void
@@ -82,8 +82,8 @@ class EntrySummaryTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('History of the &lt;blink&gt; tag', (string) $entry->getSummary());
-        $this->assertEquals(Serialization::XHTML, $entry->getSummary()->getSerialization());
+        static::assertEquals('History of the &lt;blink&gt; tag', (string) $entry->getSummary());
+        static::assertEquals(Serialization::XHTML, $entry->getSummary()->getSerialization());
     }
 
     public function testTextPlain(): void
@@ -93,7 +93,7 @@ class EntrySummaryTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example Atom', (string) $entry->getSummary());
-        $this->assertEquals(Serialization::TEXT, $entry->getSummary()->getSerialization());
+        static::assertEquals('Example Atom', (string) $entry->getSummary());
+        static::assertEquals(Serialization::TEXT, $entry->getSummary()->getSerialization());
     }
 }

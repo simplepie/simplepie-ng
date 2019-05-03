@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -21,19 +21,19 @@ class SubtitleTest extends AbstractTestCase
     {
         $subtitle = $this->feed->getSubtitle();
 
-        $this->assertEquals(Node::class, Types::getClassOrType($subtitle));
-        $this->assertEquals('testing subtitles', (string) $subtitle);
-        $this->assertEquals('testing subtitles', $subtitle->getValue());
-        $this->assertEquals(Serialization::TEXT, $subtitle->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($subtitle));
+        static::assertEquals('testing subtitles', (string) $subtitle);
+        static::assertEquals('testing subtitles', $subtitle->getValue());
+        static::assertEquals(Serialization::TEXT, $subtitle->getSerialization());
     }
 
     public function testSubtitleAtom10(): void
     {
         $subtitle = $this->feed->getSubtitle('atom10');
 
-        $this->assertEquals(Node::class, Types::getClassOrType($subtitle));
-        $this->assertEquals('testing subtitles', (string) $subtitle);
-        $this->assertEquals('testing subtitles', $subtitle->getValue());
-        $this->assertEquals(Serialization::TEXT, $subtitle->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($subtitle));
+        static::assertEquals('testing subtitles', (string) $subtitle);
+        static::assertEquals('testing subtitles', $subtitle->getValue());
+        static::assertEquals(Serialization::TEXT, $subtitle->getSerialization());
     }
 }

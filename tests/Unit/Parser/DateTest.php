@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -45,26 +45,24 @@ class DateTest extends AbstractTestCase
 
     /**
      * @dataProvider providerUtc
-     *
-     * @param mixed $date
      */
     public function testUtc($date): void
     {
-        $this->assertEquals('string', Types::getClassOrType($date->getDatestamp()));
-        $this->assertEquals('UTC', $date->getOutputTimezone());
+        static::assertEquals('string', Types::getClassOrType($date->getDatestamp()));
+        static::assertEquals('UTC', $date->getOutputTimezone());
 
         /** @var \DateTime */
         $dateTime = $date->getDateTime();
 
-        $this->assertEquals('1513553361', $dateTime->format('U'));
-        $this->assertEquals('2017-12-17T23:29:21+00:00', $dateTime->format(DateFormat::ATOM));
-        $this->assertEquals('2017-12-17T23:29:21+00:00', $dateTime->format(DateFormat::ISO8601));
-        $this->assertEquals('2017-12-17T23:29:21+00:00', $dateTime->format(DateFormat::RFC3339));
-        $this->assertEquals('Sun, 17 Dec 2017 23:29:21 +0000', $dateTime->format(DateFormat::RSS20));
-        $this->assertEquals('Sun, 17 Dec 2017 23:29:21 +0000', $dateTime->format(DateFormat::RFC2822));
-        $this->assertEquals('Sun, 17 Dec 17 23:29:21 +0000', $dateTime->format(DateFormat::RFC822));
+        static::assertEquals('1513553361', $dateTime->format('U'));
+        static::assertEquals('2017-12-17T23:29:21+00:00', $dateTime->format(DateFormat::ATOM));
+        static::assertEquals('2017-12-17T23:29:21+00:00', $dateTime->format(DateFormat::ISO8601));
+        static::assertEquals('2017-12-17T23:29:21+00:00', $dateTime->format(DateFormat::RFC3339));
+        static::assertEquals('Sun, 17 Dec 2017 23:29:21 +0000', $dateTime->format(DateFormat::RSS20));
+        static::assertEquals('Sun, 17 Dec 2017 23:29:21 +0000', $dateTime->format(DateFormat::RFC2822));
+        static::assertEquals('Sun, 17 Dec 17 23:29:21 +0000', $dateTime->format(DateFormat::RFC822));
 
         $interval = $dateTime->diff(new DateTime('2018-01-01'));
-        $this->assertEquals('14 days', $interval->format('%a days'));
+        static::assertEquals('14 days', $interval->format('%a days'));
     }
 }

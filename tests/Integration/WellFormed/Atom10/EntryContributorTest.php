@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -14,7 +14,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class EntryContributorTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -27,7 +27,7 @@ class EntryContributorTest extends AbstractTestCase
         $entry       = $feed->getEntries()[0];
         $contributor = $entry->getContributors()[0];
 
-        $this->assertEquals('me@example.com', (string) $contributor->getEmail());
+        static::assertEquals('me@example.com', (string) $contributor->getEmail());
     }
 
     public function testEmails(): void
@@ -38,8 +38,8 @@ class EntryContributorTest extends AbstractTestCase
         $entry        = $feed->getEntries()[0];
         $contributors = $entry->getContributors();
 
-        $this->assertEquals('me@example.com', (string) $contributors[0]->getEmail());
-        $this->assertEquals('you@example.com', (string) $contributors[1]->getEmail());
+        static::assertEquals('me@example.com', (string) $contributors[0]->getEmail());
+        static::assertEquals('you@example.com', (string) $contributors[1]->getEmail());
     }
 
     public function testName(): void
@@ -50,7 +50,7 @@ class EntryContributorTest extends AbstractTestCase
         $entry       = $feed->getEntries()[0];
         $contributor = $entry->getContributors()[0];
 
-        $this->assertEquals('Example contributor', (string) $contributor->getName());
+        static::assertEquals('Example contributor', (string) $contributor->getName());
     }
 
     public function testNames(): void
@@ -61,8 +61,8 @@ class EntryContributorTest extends AbstractTestCase
         $entry        = $feed->getEntries()[0];
         $contributors = $entry->getContributors();
 
-        $this->assertEquals('Contributor 1', (string) $contributors[0]->getName());
-        $this->assertEquals('Contributor 2', (string) $contributors[1]->getName());
+        static::assertEquals('Contributor 1', (string) $contributors[0]->getName());
+        static::assertEquals('Contributor 2', (string) $contributors[1]->getName());
     }
 
     public function testUri(): void
@@ -73,7 +73,7 @@ class EntryContributorTest extends AbstractTestCase
         $entry       = $feed->getEntries()[0];
         $contributor = $entry->getContributors()[0];
 
-        $this->assertEquals('http://example.com/', (string) $contributor->getUri());
+        static::assertEquals('http://example.com/', (string) $contributor->getUri());
     }
 
     public function testUris(): void
@@ -84,8 +84,8 @@ class EntryContributorTest extends AbstractTestCase
         $entry        = $feed->getEntries()[0];
         $contributors = $entry->getContributors();
 
-        $this->assertEquals('http://example.com/', (string) $contributors[0]->getUri());
-        $this->assertEquals('http://two.example.com/', (string) $contributors[1]->getUri());
+        static::assertEquals('http://example.com/', (string) $contributors[0]->getUri());
+        static::assertEquals('http://two.example.com/', (string) $contributors[1]->getUri());
     }
 
     public function testUrl(): void
@@ -96,7 +96,7 @@ class EntryContributorTest extends AbstractTestCase
         $entry       = $feed->getEntries()[0];
         $contributor = $entry->getContributors()[0];
 
-        $this->assertEquals('http://example.com/', (string) $contributor->getUrl());
+        static::assertEquals('http://example.com/', (string) $contributor->getUrl());
     }
 
     public function testUrls(): void
@@ -107,7 +107,7 @@ class EntryContributorTest extends AbstractTestCase
         $entry        = $feed->getEntries()[0];
         $contributors = $entry->getContributors();
 
-        $this->assertEquals('http://example.com/', (string) $contributors[0]->getUrl());
-        $this->assertEquals('http://two.example.com/', (string) $contributors[1]->getUrl());
+        static::assertEquals('http://example.com/', (string) $contributors[0]->getUrl());
+        static::assertEquals('http://two.example.com/', (string) $contributors[1]->getUrl());
     }
 }

@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -20,8 +20,6 @@ interface TypeInterface
      *
      * @param string $nodeName The name of the method being called.
      *
-     * @return string
-     *
      * @internal
      */
     public function getAlias(string $nodeName): string;
@@ -33,8 +31,6 @@ interface TypeInterface
      * @param array  $args     The parameters which are passed to the method.
      *
      * @throws SimplePieException
-     *
-     * @return Node
      *
      * @internal
      */

@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -14,7 +14,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class FeedIconLogoTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -26,7 +26,7 @@ class FeedIconLogoTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $icon   = $feed->getIcon();
 
-        $this->assertEquals('http://example.com/favicon.ico', (string) $icon);
+        static::assertEquals('http://example.com/favicon.ico', (string) $icon);
     }
 
     public function testLogo(): void
@@ -36,6 +36,6 @@ class FeedIconLogoTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $logo   = $feed->getLogo();
 
-        $this->assertEquals('http://example.com/logo.jpg', (string) $logo);
+        static::assertEquals('http://example.com/logo.jpg', (string) $logo);
     }
 }

@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -95,8 +95,6 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
 
     /**
      * Converts this object into a string representation.
-     *
-     * @return string
      */
     public function __toString(): string
     {
@@ -105,8 +103,6 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
 
     /**
      * Gets the DOMNode element.
-     *
-     * @return DOMNode|null
      */
     public function getNode(): ?DOMNode
     {
@@ -117,8 +113,6 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
      * Finds the common internal alias for a given method name.
      *
      * @param string $nodeName The name of the method being called.
-     *
-     * @return string
      */
     public function getAlias(string $nodeName): string
     {
@@ -159,8 +153,6 @@ class Entry extends AbstractType implements NodeInterface, BranchInterface, C\Se
      * @param array  $args     Any arguments passed into that method.
      *
      * @throws SimplePieException
-     *
-     * @return mixed
      *
      * @phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
      */

@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -17,7 +17,7 @@ class ErrorMessageTest extends AbstractTestCase
 {
     public function testIntrospectKeys(): void
     {
-        $this->assertSame(ErrorMessage::introspectKeys(), [
+        static::assertSame(ErrorMessage::introspectKeys(), [
             'LOGGER_NOT_PSR3',
             'MIDDLEWARE_NOT_HANDLERSTACK',
             'LIBXML_NOT_INTEGER',

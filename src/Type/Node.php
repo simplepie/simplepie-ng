@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -13,7 +13,6 @@ namespace SimplePie\Type;
 use DOMAttr;
 use DOMNode;
 use DOMText;
-use SimplePie\Enum\CharacterSet;
 use SimplePie\Enum\Serialization;
 use SimplePie\Exception\SimplePieException;
 
@@ -75,7 +74,7 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
             // Set some default values
             $this->handleFallback($fallback);
 
-            if (XML_ELEMENT_NODE === $node->nodeType && $node->attributes->length > 0) {
+            if (\XML_ELEMENT_NODE === $node->nodeType && $node->attributes->length > 0) {
                 foreach ($node->attributes as $attribute) {
                     if ('xml:base' === $attribute->nodeName) {
                         $this->base = $attribute->nodeValue;
@@ -83,32 +82,20 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
                         $this->lang = $attribute->nodeValue;
                     } elseif ('src' === $attribute->name) {
                         $this->handleAsSource($attribute);
-                    } elseif (
-                        'type' === $attribute->name && (
-                            Serialization::TEXT === $attribute->value
-                            || 'text/plain' === $attribute->value
-                        )
+                    } elseif ('type' === $attribute->name && (Serialization::TEXT === $attribute->value
+                        || 'text/plain' === $attribute->value)
                     ) {
                         $this->handleAsText($node, $attribute);
-                    } elseif (
-                        'type' === $attribute->name && (
-                            Serialization::HTML === $attribute->value
-                            || 'text/html' === $attribute->value
-                        )
+                    } elseif ('type' === $attribute->name && (Serialization::HTML === $attribute->value
+                        || 'text/html' === $attribute->value)
                     ) {
                         $this->handleAsHtml($node, $attribute);
-                    } elseif (
-                        'type' === $attribute->name && (
-                            Serialization::XHTML === $attribute->value
-                            || 'application/xhtml+xml' === $attribute->value
-                            || 'application/xml' === $attribute->value
-                        )
+                    } elseif ('type' === $attribute->name && (Serialization::XHTML === $attribute->value
+                        || 'application/xhtml+xml' === $attribute->value
+                        || 'application/xml' === $attribute->value)
                     ) {
                         $this->handleAsXhtml($node, $attribute);
-                    } elseif (
-                        'type' === $attribute->name && (
-                            'application/octet-stream' === $attribute->value
-                        )
+                    } elseif ('type' === $attribute->name && ('application/octet-stream' === $attribute->value)
                     ) {
                         $this->handleAsBase64($node);
                     } else {
@@ -124,8 +111,6 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
 
     /**
      * Casting this Node element to a string with return the _value_ of the Node.
-     *
-     * @return string
      */
     public function __toString(): string
     {
@@ -148,8 +133,6 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
 
     /**
      * Gets the raw `DOMNode` element.
-     *
-     * @return DOMNode|null
      */
     public function getNode(): ?DOMNode
     {
@@ -158,8 +141,6 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
 
     /**
      * Gets the content of the node, serialized appropriately.
-     *
-     * @return string|null
      */
     public function getValue(): ?string
     {
@@ -170,8 +151,6 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
      * Gets the serialization of the content.
      *
      * Will always be one of the enums from `SimplePie\Enum\Serialization`.
-     *
-     * @return string
      */
     public function getSerialization(): string
     {

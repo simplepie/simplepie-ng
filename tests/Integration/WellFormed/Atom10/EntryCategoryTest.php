@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -10,12 +10,11 @@ declare(strict_types=1);
 
 namespace SimplePie\Test\Integration\WellFormed\Atom;
 
-use SimplePie\Middleware\Xml\Atom;
 use SimplePie\Test\Integration\AbstractTestCase;
 
 class EntryCategoryTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -28,7 +27,7 @@ class EntryCategoryTest extends AbstractTestCase
         $entry    = $feed->getEntries()[0];
         $category = $entry->getCategories()[0];
 
-        $this->assertEquals('Atom 1.0 tests', (string) $category->getLabel());
+        static::assertEquals('Atom 1.0 tests', (string) $category->getLabel());
     }
 
     public function testScheme(): void
@@ -39,7 +38,7 @@ class EntryCategoryTest extends AbstractTestCase
         $entry    = $feed->getEntries()[0];
         $category = $entry->getCategories()[0];
 
-        $this->assertEquals('http://feedparser.org/tests/', (string) $category->getScheme());
+        static::assertEquals('http://feedparser.org/tests/', (string) $category->getScheme());
     }
 
     public function testTerm(): void
@@ -50,7 +49,7 @@ class EntryCategoryTest extends AbstractTestCase
         $entry    = $feed->getEntries()[0];
         $category = $entry->getCategories()[0];
 
-        $this->assertEquals('atom10', (string) $category->getTerm());
+        static::assertEquals('atom10', (string) $category->getTerm());
     }
 
     public function testTermNonAscii(): void
@@ -61,6 +60,6 @@ class EntryCategoryTest extends AbstractTestCase
         $entry    = $feed->getEntries()[0];
         $category = $entry->getCategories()[0];
 
-        $this->assertEquals('Freiräume', (string) $category->getTerm());
+        static::assertEquals('Freiräume', (string) $category->getTerm());
     }
 }

@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -40,22 +40,22 @@ class CategoryTest extends AbstractTestCase
     {
         $category = $this->feed->getCategories()[0];
 
-        $this->assertEquals(Category::class, Types::getClassOrType($category));
-        $this->assertEquals('Clueless Recruiters', (string) $category);
+        static::assertEquals(Category::class, Types::getClassOrType($category));
+        static::assertEquals('Clueless Recruiters', (string) $category);
 
-        $this->assertEquals(DOMElement::class, Types::getClassOrType($category->getNode()));
+        static::assertEquals(DOMElement::class, Types::getClassOrType($category->getNode()));
 
-        $this->assertEquals(Node::class, Types::getClassOrType($category->getTerm()));
-        $this->assertEquals('Clueless Recruiters', (string) $category->getTerm());
-        $this->assertEquals(Serialization::TEXT, $category->getTerm()->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($category->getTerm()));
+        static::assertEquals('Clueless Recruiters', (string) $category->getTerm());
+        static::assertEquals(Serialization::TEXT, $category->getTerm()->getSerialization());
 
-        $this->assertEquals(Node::class, Types::getClassOrType($category->getScheme()));
-        $this->assertEquals('http://blog.ryanparman.com', (string) $category->getScheme());
-        $this->assertEquals(Serialization::TEXT, $category->getScheme()->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($category->getScheme()));
+        static::assertEquals('http://blog.ryanparman.com', (string) $category->getScheme());
+        static::assertEquals(Serialization::TEXT, $category->getScheme()->getSerialization());
 
-        $this->assertEquals(Node::class, Types::getClassOrType($category->getLabel()));
-        $this->assertEquals('', (string) $category->getLabel());
-        $this->assertEquals(Serialization::TEXT, $category->getLabel()->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($category->getLabel()));
+        static::assertEquals('', (string) $category->getLabel());
+        static::assertEquals(Serialization::TEXT, $category->getLabel()->getSerialization());
     }
 
     public function testCategories(): void
@@ -63,14 +63,14 @@ class CategoryTest extends AbstractTestCase
         $categories = $this->feed->getCategories();
 
         foreach ($categories as $category) {
-            $this->assertEquals(Category::class, Types::getClassOrType($category));
-            $this->assertEquals(DOMElement::class, Types::getClassOrType($category->getNode()));
-            $this->assertEquals(Node::class, Types::getClassOrType($category->getTerm()));
-            $this->assertEquals(Serialization::TEXT, $category->getTerm()->getSerialization());
-            $this->assertEquals(Node::class, Types::getClassOrType($category->getScheme()));
-            $this->assertEquals(Serialization::TEXT, $category->getScheme()->getSerialization());
-            $this->assertEquals(Node::class, Types::getClassOrType($category->getLabel()));
-            $this->assertEquals(Serialization::TEXT, $category->getLabel()->getSerialization());
+            static::assertEquals(Category::class, Types::getClassOrType($category));
+            static::assertEquals(DOMElement::class, Types::getClassOrType($category->getNode()));
+            static::assertEquals(Node::class, Types::getClassOrType($category->getTerm()));
+            static::assertEquals(Serialization::TEXT, $category->getTerm()->getSerialization());
+            static::assertEquals(Node::class, Types::getClassOrType($category->getScheme()));
+            static::assertEquals(Serialization::TEXT, $category->getScheme()->getSerialization());
+            static::assertEquals(Node::class, Types::getClassOrType($category->getLabel()));
+            static::assertEquals(Serialization::TEXT, $category->getLabel()->getSerialization());
         }
     }
 

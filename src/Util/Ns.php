@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -59,8 +59,6 @@ class Ns
 
     /**
      * Gets the list of document-defined namespace aliases and namespace URIs.
-     *
-     * @return array
      */
     public function getDocNamespaces(): array
     {
@@ -73,8 +71,6 @@ class Ns
      * @param string|null $namespaceUri The namespace URI used inside the XML document. If the value is `null`, then
      *                                  the preferred namespace alias of the root namespace will be returned. The
      *                                  default value is `null`.
-     *
-     * @return string
      */
     public function getPreferredNamespaceAlias(?string $namespaceUri = null): string
     {

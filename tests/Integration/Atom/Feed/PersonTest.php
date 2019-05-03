@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -24,22 +24,22 @@ class PersonTest extends AbstractTestCase
     {
         $person = $this->feed->getAuthors()[0];
 
-        $this->assertEquals(Person::class, Types::getClassOrType($person));
-        $this->assertEquals('Ryan Parman <http://ryanparman.com>', (string) $person);
+        static::assertEquals(Person::class, Types::getClassOrType($person));
+        static::assertEquals('Ryan Parman <http://ryanparman.com>', (string) $person);
 
-        $this->assertEquals(DOMElement::class, Types::getClassOrType($person->getNode()));
+        static::assertEquals(DOMElement::class, Types::getClassOrType($person->getNode()));
 
-        $this->assertEquals(Node::class, Types::getClassOrType($person->getName()));
-        $this->assertEquals('Ryan Parman', (string) $person->getName());
-        $this->assertEquals(Serialization::TEXT, $person->getName()->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($person->getName()));
+        static::assertEquals('Ryan Parman', (string) $person->getName());
+        static::assertEquals(Serialization::TEXT, $person->getName()->getSerialization());
 
-        $this->assertEquals(Node::class, Types::getClassOrType($person->getUrl()));
-        $this->assertEquals('http://ryanparman.com', (string) $person->getUrl());
-        $this->assertEquals(Serialization::TEXT, $person->getUrl()->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($person->getUrl()));
+        static::assertEquals('http://ryanparman.com', (string) $person->getUrl());
+        static::assertEquals(Serialization::TEXT, $person->getUrl()->getSerialization());
 
-        $this->assertEquals(Node::class, Types::getClassOrType($person->getEmail()));
-        $this->assertEquals('ryan@ryanparman.com', (string) $person->getEmail());
-        $this->assertEquals(Serialization::TEXT, $person->getEmail()->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($person->getEmail()));
+        static::assertEquals('ryan@ryanparman.com', (string) $person->getEmail());
+        static::assertEquals(Serialization::TEXT, $person->getEmail()->getSerialization());
     }
 
     public function testPeople(): void
@@ -47,28 +47,28 @@ class PersonTest extends AbstractTestCase
         $people = $this->feed->getContributors();
 
         foreach ($people as $person) {
-            $this->assertEquals(Person::class, Types::getClassOrType($person));
-            $this->assertEquals(DOMElement::class, Types::getClassOrType($person->getNode()));
-            $this->assertEquals(Node::class, Types::getClassOrType($person->getName()));
-            $this->assertEquals(Serialization::TEXT, $person->getName()->getSerialization());
-            $this->assertEquals(Node::class, Types::getClassOrType($person->getUrl()));
-            $this->assertEquals(Serialization::TEXT, $person->getUrl()->getSerialization());
-            $this->assertEquals(Node::class, Types::getClassOrType($person->getEmail()));
-            $this->assertEquals(Serialization::TEXT, $person->getEmail()->getSerialization());
+            static::assertEquals(Person::class, Types::getClassOrType($person));
+            static::assertEquals(DOMElement::class, Types::getClassOrType($person->getNode()));
+            static::assertEquals(Node::class, Types::getClassOrType($person->getName()));
+            static::assertEquals(Serialization::TEXT, $person->getName()->getSerialization());
+            static::assertEquals(Node::class, Types::getClassOrType($person->getUrl()));
+            static::assertEquals(Serialization::TEXT, $person->getUrl()->getSerialization());
+            static::assertEquals(Node::class, Types::getClassOrType($person->getEmail()));
+            static::assertEquals(Serialization::TEXT, $person->getEmail()->getSerialization());
         }
 
-        $this->assertEquals('Eric Baird', (string) $people[0]);
-        $this->assertEquals('Jeff Ringer <jeff@ufks.com>', (string) $people[1]);
-        $this->assertEquals('http://ryanparman.com', (string) $people[2]);
-        $this->assertEquals('ryan@ryanparman.com', (string) $people[3]);
+        static::assertEquals('Eric Baird', (string) $people[0]);
+        static::assertEquals('Jeff Ringer <jeff@ufks.com>', (string) $people[1]);
+        static::assertEquals('http://ryanparman.com', (string) $people[2]);
+        static::assertEquals('ryan@ryanparman.com', (string) $people[3]);
     }
 
     public function testPersonAliases(): void
     {
         $person = $this->feed->getAuthors()[0];
 
-        $this->assertEquals('http://ryanparman.com', (string) $person->getUrl());
-        $this->assertEquals('http://ryanparman.com', (string) $person->getUri());
+        static::assertEquals('http://ryanparman.com', (string) $person->getUrl());
+        static::assertEquals('http://ryanparman.com', (string) $person->getUri());
     }
 
     public function testPersonFail(): void

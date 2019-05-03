@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -17,7 +17,7 @@ class SerializationTest extends AbstractTestCase
 {
     public function testIntrospect(): void
     {
-        $this->assertSame(Serialization::introspect(), [
+        static::assertSame(Serialization::introspect(), [
             'TEXT'  => 'text',
             'HTML'  => 'html',
             'XHTML' => 'xhtml',
@@ -26,7 +26,7 @@ class SerializationTest extends AbstractTestCase
 
     public function testIntrospectKeys(): void
     {
-        $this->assertSame(Serialization::introspectKeys(), [
+        static::assertSame(Serialization::introspectKeys(), [
             'TEXT',
             'HTML',
             'XHTML',
@@ -35,10 +35,10 @@ class SerializationTest extends AbstractTestCase
 
     public function testHasValue(): void
     {
-        $this->assertTrue(Serialization::hasValue(Serialization::TEXT));
-        $this->assertTrue(Serialization::hasValue(Serialization::HTML));
-        $this->assertTrue(Serialization::hasValue(Serialization::XHTML));
+        static::assertTrue(Serialization::hasValue(Serialization::TEXT));
+        static::assertTrue(Serialization::hasValue(Serialization::HTML));
+        static::assertTrue(Serialization::hasValue(Serialization::XHTML));
 
-        $this->assertFalse(Serialization::hasValue('nope'));
+        static::assertFalse(Serialization::hasValue('nope'));
     }
 }

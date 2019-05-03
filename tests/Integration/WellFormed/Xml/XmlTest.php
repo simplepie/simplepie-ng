@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -15,7 +15,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class XmlTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -26,8 +26,8 @@ class XmlTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('it\'s correct', (string) $feed->getTitle());
-        $this->assertEquals(Serialization::HTML, $feed->getTitle()->getSerialization());
+        static::assertEquals('it\'s correct', (string) $feed->getTitle());
+        static::assertEquals(Serialization::HTML, $feed->getTitle()->getSerialization());
     }
 
     public function testHtml(): void
@@ -36,8 +36,8 @@ class XmlTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('it&apos;s correct', (string) $feed->getTitle());
-        $this->assertEquals(Serialization::HTML, $feed->getTitle()->getSerialization());
+        static::assertEquals('it&apos;s correct', (string) $feed->getTitle());
+        static::assertEquals(Serialization::HTML, $feed->getTitle()->getSerialization());
     }
 
     public function testText(): void
@@ -46,8 +46,8 @@ class XmlTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('it&apos;s correct', (string) $feed->getTitle());
-        $this->assertEquals(Serialization::TEXT, $feed->getTitle()->getSerialization());
+        static::assertEquals('it&apos;s correct', (string) $feed->getTitle());
+        static::assertEquals(Serialization::TEXT, $feed->getTitle()->getSerialization());
     }
 
     public function testXhtml(): void
@@ -56,7 +56,7 @@ class XmlTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('it&amp;apos;s correct', (string) $feed->getTitle());
-        $this->assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
+        static::assertEquals('it&amp;apos;s correct', (string) $feed->getTitle());
+        static::assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
     }
 }

@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -15,7 +15,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class Atom10NamespaceTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -37,11 +37,11 @@ class Atom10NamespaceTest extends AbstractTestCase
             '</mrow>' .
         '</math>';
 
-        $this->assertEquals(
+        static::assertEquals(
             \trim($mathml),
             (string) $entry->getContent()
         );
-        $this->assertEquals(Serialization::XHTML, $entry->getContent()->getSerialization());
+        static::assertEquals(Serialization::XHTML, $entry->getContent()->getSerialization());
     }
 
     public function testSvg(): void
@@ -55,11 +55,11 @@ class Atom10NamespaceTest extends AbstractTestCase
             '<svg:circle cx="150px" cy="100px" r="50px" fill="#ff0000" stroke="#000000" stroke-width="5px"/>' .
         '</svg:svg>';
 
-        $this->assertEquals(
+        static::assertEquals(
             \trim($svg),
             (string) $entry->getContent()
         );
-        $this->assertEquals(Serialization::XHTML, $entry->getContent()->getSerialization());
+        static::assertEquals(Serialization::XHTML, $entry->getContent()->getSerialization());
     }
 
     public function testSvgDesc(): void
@@ -78,11 +78,11 @@ class Atom10NamespaceTest extends AbstractTestCase
             '<circle cx="150px" cy="100px" r="50px" fill="#ff0000" stroke="#000000" stroke-width="5px"/>' .
         '</svg>';
 
-        $this->assertEquals(
+        static::assertEquals(
             \trim($svg),
             (string) $entry->getContent()
         );
-        $this->assertEquals(Serialization::XHTML, $entry->getContent()->getSerialization());
+        static::assertEquals(Serialization::XHTML, $entry->getContent()->getSerialization());
     }
 
     public function testSvgTitle(): void
@@ -99,11 +99,11 @@ class Atom10NamespaceTest extends AbstractTestCase
             '<circle cx="150px" cy="100px" r="50px" fill="#ff0000" stroke="#000000" stroke-width="5px"/>' .
         '</svg>';
 
-        $this->assertEquals(
+        static::assertEquals(
             \trim($svg),
             (string) $entry->getContent()
         );
-        $this->assertEquals(Serialization::XHTML, $entry->getContent()->getSerialization());
+        static::assertEquals(Serialization::XHTML, $entry->getContent()->getSerialization());
     }
 
     public function testXlink(): void
@@ -119,11 +119,11 @@ class Atom10NamespaceTest extends AbstractTestCase
             '</svg:a>' .
         '</svg:svg>';
 
-        $this->assertEquals(
+        static::assertEquals(
             \trim($svg),
             (string) $entry->getContent()
         );
-        $this->assertEquals(Serialization::XHTML, $entry->getContent()->getSerialization());
+        static::assertEquals(Serialization::XHTML, $entry->getContent()->getSerialization());
     }
 
     public function testSvgDcTitle(): void
@@ -160,10 +160,10 @@ class Atom10NamespaceTest extends AbstractTestCase
         '</svg>' .
         '<p>After</p>';
 
-        $this->assertEquals(
+        static::assertEquals(
             \trim($svg),
             (string) $entry->getContent()
         );
-        $this->assertEquals(Serialization::XHTML, $entry->getContent()->getSerialization());
+        static::assertEquals(Serialization::XHTML, $entry->getContent()->getSerialization());
     }
 }

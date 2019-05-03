@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -68,8 +68,6 @@ abstract class AbstractMiddleware implements C\SetLoggerInterface
      * @param array  $arr     The associative array to check.
      * @param string $key     The key in the associative array to return the value for.
      * @param mixed  $default The default value to return if there is no value. The default value is `null`.
-     *
-     * @return mixed
      */
     public function get(array $arr, string $key, $default = null)
     {

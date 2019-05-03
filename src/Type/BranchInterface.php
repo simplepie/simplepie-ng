@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -19,8 +19,6 @@ interface BranchInterface
      * Finds the common internal alias for a given method name.
      *
      * @param string $nodeName The name of the method being called.
-     *
-     * @return string
      *
      * @internal
      */

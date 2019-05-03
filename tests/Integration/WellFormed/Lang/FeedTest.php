@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -15,7 +15,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class FeedTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -26,8 +26,8 @@ class FeedTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('en', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('en', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
     }
 
     public function testXmlLang2(): void
@@ -36,8 +36,8 @@ class FeedTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('en_US', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('en_US', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
     }
 
     public function testNotXml(): void
@@ -46,8 +46,8 @@ class FeedTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('en', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('en', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
     }
 
     public function testNotXml2(): void
@@ -56,7 +56,7 @@ class FeedTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
     }
 }

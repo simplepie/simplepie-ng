@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -15,7 +15,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class FeedCopyrightTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -26,11 +26,11 @@ class FeedCopyrightTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
 
-        $this->assertEquals('en', (string) $feed->getRights()->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getRights()->getLang()->getSerialization());
+        static::assertEquals('en', (string) $feed->getRights()->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getRights()->getLang()->getSerialization());
     }
 
     public function testXmlLangBlank(): void
@@ -39,11 +39,11 @@ class FeedCopyrightTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('en', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('en', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
 
-        $this->assertEquals('', (string) $feed->getRights()->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getRights()->getLang()->getSerialization());
+        static::assertEquals('', (string) $feed->getRights()->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getRights()->getLang()->getSerialization());
     }
 
     public function testXmlLangInherit(): void
@@ -52,11 +52,11 @@ class FeedCopyrightTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('en', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('en', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
 
-        $this->assertEquals('en', (string) $feed->getRights()->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getRights()->getLang()->getSerialization());
+        static::assertEquals('en', (string) $feed->getRights()->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getRights()->getLang()->getSerialization());
     }
 
     public function testXmlLangInherit2(): void
@@ -65,11 +65,11 @@ class FeedCopyrightTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('fr', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('fr', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
 
-        $this->assertEquals('en', (string) $feed->getRights()->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getRights()->getLang()->getSerialization());
+        static::assertEquals('en', (string) $feed->getRights()->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getRights()->getLang()->getSerialization());
     }
 
     public function testXmlLangInherit3(): void
@@ -78,10 +78,10 @@ class FeedCopyrightTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('de', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('de', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
 
-        $this->assertEquals('en', (string) $feed->getRights()->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getRights()->getLang()->getSerialization());
+        static::assertEquals('en', (string) $feed->getRights()->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getRights()->getLang()->getSerialization());
     }
 }

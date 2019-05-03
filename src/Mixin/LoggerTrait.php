@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -28,7 +28,7 @@ trait LoggerTrait
     /**
      * Sets the PSR-3 logger.
      *
-     * @param LoggerInterface $logger
+     * @param LoggerInterface $logger A PSR-3 compatible logger.
      *
      * @return self
      */
@@ -48,8 +48,6 @@ trait LoggerTrait
 
     /**
      * Retrieves the PSR-3 logger.
-     *
-     * @return LoggerInterface
      */
     public function getLogger(): LoggerInterface
     {

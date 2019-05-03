@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -11,12 +11,11 @@ declare(strict_types=1);
 namespace SimplePie\Test\Integration\WellFormed\Atom;
 
 use SimplePie\Enum\Serialization;
-use SimplePie\Middleware\Xml\Atom;
 use SimplePie\Test\Integration\AbstractTestCase;
 
 class EntryContentTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -28,8 +27,8 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example Atom', (string) $entry->getContent());
-        $this->assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('Example Atom', (string) $entry->getContent());
+        static::assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
     }
 
     public function testTypeNone2(): void
@@ -39,8 +38,8 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example Atom', (string) $entry->getContent());
-        $this->assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('Example Atom', (string) $entry->getContent());
+        static::assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
     }
 
     public function testTypeText(): void
@@ -50,8 +49,8 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example Atom', (string) $entry->getContent());
-        $this->assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('Example Atom', (string) $entry->getContent());
+        static::assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
     }
 
     public function testText(): void
@@ -61,8 +60,8 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example Atom', (string) $entry->getContent());
-        $this->assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('Example Atom', (string) $entry->getContent());
+        static::assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
     }
 
     public function testTextEntities(): void
@@ -72,8 +71,8 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('History of the <blink> tag', (string) $entry->getContent());
-        $this->assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('History of the <blink> tag', (string) $entry->getContent());
+        static::assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
     }
 
     public function testXhtml(): void
@@ -83,8 +82,8 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $entry->getContent());
-        $this->assertEquals(Serialization::XHTML, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $entry->getContent());
+        static::assertEquals(Serialization::XHTML, (string) $entry->getContent()->getSerialization());
     }
 
     public function testInlineXhtml(): void
@@ -94,8 +93,8 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $entry->getContent());
-        $this->assertEquals(Serialization::XHTML, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $entry->getContent());
+        static::assertEquals(Serialization::XHTML, (string) $entry->getContent()->getSerialization());
     }
 
     public function testInlineXhtmlEscaped(): void
@@ -105,8 +104,8 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('History of the &lt;blink&gt; tag', (string) $entry->getContent());
-        $this->assertEquals(Serialization::XHTML, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('History of the &lt;blink&gt; tag', (string) $entry->getContent());
+        static::assertEquals(Serialization::XHTML, (string) $entry->getContent()->getSerialization());
     }
 
     public function testBase64(): void
@@ -116,8 +115,8 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $entry->getContent());
-        $this->assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $entry->getContent());
+        static::assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
     }
 
     public function testBase642(): void
@@ -127,8 +126,8 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('<p>History of the &lt;blink&gt; tag</p>', (string) $entry->getContent());
-        $this->assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('<p>History of the &lt;blink&gt; tag</p>', (string) $entry->getContent());
+        static::assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
     }
 
     public function testHtmlDivEscaped(): void
@@ -138,8 +137,8 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $entry->getContent());
-        $this->assertEquals(Serialization::HTML, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $entry->getContent());
+        static::assertEquals(Serialization::HTML, (string) $entry->getContent()->getSerialization());
     }
 
     public function testHtmlEscaped(): void
@@ -149,8 +148,8 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $entry->getContent());
-        $this->assertEquals(Serialization::HTML, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $entry->getContent());
+        static::assertEquals(Serialization::HTML, (string) $entry->getContent()->getSerialization());
     }
 
     public function testSrc(): void
@@ -160,7 +159,7 @@ class EntryContentTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('http://example.com/movie.mp4', (string) $entry->getContent());
-        $this->assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
+        static::assertEquals('http://example.com/movie.mp4', (string) $entry->getContent());
+        static::assertEquals(Serialization::TEXT, (string) $entry->getContent()->getSerialization());
     }
 }

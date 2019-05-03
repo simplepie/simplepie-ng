@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -14,7 +14,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class EntryIdTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -26,7 +26,7 @@ class EntryIdTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('http://example.com/', (string) $entry->getId());
+        static::assertEquals('http://example.com/', (string) $entry->getId());
     }
 
     public function testGuid(): void
@@ -36,7 +36,7 @@ class EntryIdTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('http://example.com/', (string) $entry->getGuid());
+        static::assertEquals('http://example.com/', (string) $entry->getGuid());
     }
 
     public function testNoNormalization1(): void
@@ -46,7 +46,7 @@ class EntryIdTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('http://www.example.org/thing', (string) $entry->getId());
+        static::assertEquals('http://www.example.org/thing', (string) $entry->getId());
     }
 
     public function testNoNormalization2(): void
@@ -56,7 +56,7 @@ class EntryIdTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('http://www.example.org/Thing', (string) $entry->getId());
+        static::assertEquals('http://www.example.org/Thing', (string) $entry->getId());
     }
 
     public function testNoNormalization3(): void
@@ -66,7 +66,7 @@ class EntryIdTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('http://www.EXAMPLE.org/thing', (string) $entry->getId());
+        static::assertEquals('http://www.EXAMPLE.org/thing', (string) $entry->getId());
     }
 
     public function testNoNormalization4(): void
@@ -76,7 +76,7 @@ class EntryIdTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('HTTP://www.example.org/thing', (string) $entry->getId());
+        static::assertEquals('HTTP://www.example.org/thing', (string) $entry->getId());
     }
 
     public function testNoNormalization5(): void
@@ -86,7 +86,7 @@ class EntryIdTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('http://www.example.com/~bob', (string) $entry->getId());
+        static::assertEquals('http://www.example.com/~bob', (string) $entry->getId());
     }
 
     public function testNoNormalization6(): void
@@ -96,7 +96,7 @@ class EntryIdTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('http://www.example.com/%7ebob', (string) $entry->getId());
+        static::assertEquals('http://www.example.com/%7ebob', (string) $entry->getId());
     }
 
     public function testNoNormalization7(): void
@@ -106,7 +106,7 @@ class EntryIdTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('http://www.example.com/%7Ebob', (string) $entry->getId());
+        static::assertEquals('http://www.example.com/%7Ebob', (string) $entry->getId());
     }
 
     public function testWithAttr(): void
@@ -116,6 +116,6 @@ class EntryIdTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('right', (string) $entry->getId());
+        static::assertEquals('right', (string) $entry->getId());
     }
 }

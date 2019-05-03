@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -10,7 +10,6 @@ declare(strict_types=1);
 
 namespace SimplePie\Mixin;
 
-use SimplePie\Configuration as C;
 use SimplePie\Type\Node;
 use SimplePie\Type\TypeInterface;
 use Skyzyx\UtilityPack\Types;
@@ -35,8 +34,6 @@ trait DeepTypeTrait
      * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
      *                                    looking at the response from `getRoot()`.
      * @param string|null $namespaceAlias The XML namespace alias to apply.
-     *
-     * @return Node
      *
      * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
@@ -66,8 +63,6 @@ trait DeepTypeTrait
      * @param string      $className      The class name to instantiate when there is not a defined value.
      * @param string|null $namespaceAlias The XML namespace alias to apply.
      *
-     * @return TypeInterface
-     *
      * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getComplexSingleValue(
@@ -95,8 +90,6 @@ trait DeepTypeTrait
      * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
      *                                    looking at the response from `getRoot()`.
      * @param string|null $namespaceAlias The XML namespace alias to apply.
-     *
-     * @return iterable
      *
      * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */

@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -169,8 +169,6 @@ class Xml extends AbstractParser
 
     /**
      * Get the XML namespace handler.
-     *
-     * @return Ns
      */
     public function getNs(): Ns
     {
@@ -179,8 +177,6 @@ class Xml extends AbstractParser
 
     /**
      * Get the preferred namespace alias.
-     *
-     * @return string|null
      */
     public function getNamespaceAlias(): ?string
     {
@@ -218,8 +214,6 @@ class Xml extends AbstractParser
      * pointer to the next node, then the next until it finds a real XML node.
      *
      * @param DOMNode $node The `DOMNode` element to evaluate.
-     *
-     * @return DOMNode
      */
     public function findNextRealNode(DOMNode $node): DOMNode
     {
@@ -234,8 +228,6 @@ class Xml extends AbstractParser
 
     /**
      * Retrieves the object which represents the top-level feed.
-     *
-     * @return Feed
      */
     public function getFeed(): Feed
     {

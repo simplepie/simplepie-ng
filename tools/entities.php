@@ -17,7 +17,7 @@ $twig   = new Twig_Environment($loader, [
 $twig->addExtension(new Twig_Extension_Debug());
 
 $twig->addFunction(new Twig_Function('timestamp', static function () {
-    return \str_replace('+00:00', 'Z', \gmdate(DATE_ATOM));
+    return \str_replace('+00:00', 'Z', \gmdate(\DATE_ATOM));
 }));
 
 //-------------------------------------------------------------------------------
@@ -73,7 +73,7 @@ $longestKey = \mb_strlen(
 );
 
 foreach ($enumerables as &$enum) {
-    $enum->padded_amp = \str_pad("'" . $enum->amp . "'", $longestKey + 2, ' ', STR_PAD_RIGHT);
+    $enum->padded_amp = \str_pad("'" . $enum->amp . "'", $longestKey + 2, ' ', \STR_PAD_RIGHT);
 }
 
 //-------------------------------------------------------------------------------

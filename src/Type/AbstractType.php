@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -21,8 +21,6 @@ abstract class AbstractType
      *
      * @param string $nodeName The name of the method being called.
      * @param array  $args     Any arguments passed into that method.
-     *
-     * @return mixed
      *
      * @internal
      */
@@ -48,8 +46,6 @@ abstract class AbstractType
      * Gets the standard, pre-formatted message for unresolvable method calls.
      *
      * @param string $nodeName The short version of the call (without the `get`).
-     *
-     * @return string
      *
      * @internal
      */

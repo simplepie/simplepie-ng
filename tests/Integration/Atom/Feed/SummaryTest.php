@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -21,19 +21,19 @@ class SummaryTest extends AbstractTestCase
     {
         $summary = $this->feed->getSummary();
 
-        $this->assertEquals(Node::class, Types::getClassOrType($summary));
-        $this->assertEquals('This is a bunch of CDATA! 😀 [&#8230;]', (string) $summary);
-        $this->assertEquals('This is a bunch of CDATA! 😀 [&#8230;]', $summary->getValue());
-        $this->assertEquals(Serialization::HTML, $summary->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($summary));
+        static::assertEquals('This is a bunch of CDATA! 😀 [&#8230;]', (string) $summary);
+        static::assertEquals('This is a bunch of CDATA! 😀 [&#8230;]', $summary->getValue());
+        static::assertEquals(Serialization::HTML, $summary->getSerialization());
     }
 
     public function testSummaryAtom10(): void
     {
         $summary = $this->feed->getSummary('atom10');
 
-        $this->assertEquals(Node::class, Types::getClassOrType($summary));
-        $this->assertEquals('This is a bunch of CDATA! 😀 [&#8230;]', (string) $summary);
-        $this->assertEquals('This is a bunch of CDATA! 😀 [&#8230;]', $summary->getValue());
-        $this->assertEquals(Serialization::HTML, $summary->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($summary));
+        static::assertEquals('This is a bunch of CDATA! 😀 [&#8230;]', (string) $summary);
+        static::assertEquals('This is a bunch of CDATA! 😀 [&#8230;]', $summary->getValue());
+        static::assertEquals(Serialization::HTML, $summary->getSerialization());
     }
 }

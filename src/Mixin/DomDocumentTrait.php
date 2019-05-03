@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -26,8 +26,6 @@ trait DomDocumentTrait
 
     /**
      * Gets the DOMDocument object which is being used to parse the content.
-     *
-     * @return DOMDocument
      */
     public function getDomDocument(): DOMDocument
     {

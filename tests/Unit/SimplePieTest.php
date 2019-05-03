@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -18,17 +18,17 @@ class SimplePieTest extends AbstractTestCase
     {
         $simplepie = (new SimplePie())
             ->setLibxml(
-                LIBXML_HTML_NOIMPLIED
-                | LIBXML_BIGLINES
-                | LIBXML_COMPACT
-                | LIBXML_HTML_NODEFDTD
-                | LIBXML_NOBLANKS
-                | LIBXML_NOENT
-                | LIBXML_NOXMLDECL
-                | LIBXML_NSCLEAN
-                | LIBXML_PARSEHUGE
+                \LIBXML_HTML_NOIMPLIED
+                | \LIBXML_BIGLINES
+                | \LIBXML_COMPACT
+                | \LIBXML_HTML_NODEFDTD
+                | \LIBXML_NOBLANKS
+                | \LIBXML_NOENT
+                | \LIBXML_NOXMLDECL
+                | \LIBXML_NSCLEAN
+                | \LIBXML_PARSEHUGE
             );
 
-        $this->assertEquals(4792582, $simplepie->getLibxml());
+        static::assertEquals(4792582, $simplepie->getLibxml());
     }
 }

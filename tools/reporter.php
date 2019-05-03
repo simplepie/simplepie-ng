@@ -11,7 +11,7 @@ foreach ($files as $f) {
     $xml = \simplexml_load_file($f);
 
     foreach ($xml->file as $file) {
-        echo \str_replace(\dirname(__DIR__), '', (string) $file->attributes()->name) . PHP_EOL;
+        echo \str_replace(\dirname(__DIR__), '', (string) $file->attributes()->name) . \PHP_EOL;
 
         foreach ($file->error as $error) {
             echo \sprintf(
@@ -20,7 +20,7 @@ foreach ($files as $f) {
                 (int) $error->attributes()->column,
                 (string) $error,
                 (string) $error->attributes()->source
-            ) . PHP_EOL;
+            ) . \PHP_EOL;
         }
 
         foreach ($file->warning as $warning) {
@@ -30,9 +30,9 @@ foreach ($files as $f) {
                 (int) $warning->attributes()->column,
                 (string) $warning,
                 (string) $warning->attributes()->source
-            ) . PHP_EOL;
+            ) . \PHP_EOL;
         }
 
-        echo PHP_EOL;
+        echo \PHP_EOL;
     }
 }

@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -171,8 +171,6 @@ class HandlerStack implements HandlerStackInterface
 
     /**
      * Returns information about the HandlerStack that is useful for debugging.
-     *
-     * @return array
      */
     public function debugStack(): array
     {
@@ -212,8 +210,8 @@ class HandlerStack implements HandlerStackInterface
      */
     protected function validateMiddleware(
         callable $middleware,
-        ?string $name = null,
-        ?string $overrideType = null,
+        ?string $name,
+        ?string $overrideType,
         callable $fn
     ): void {
         // @phpcs:enable
@@ -253,8 +251,6 @@ class HandlerStack implements HandlerStackInterface
      *
      * @param callable    $middleware The middleware to add to the stack.
      * @param string|null $name       A name for the middleware. Can be used with `pushBefore()` and `pushAfter()`.
-     *
-     * @return string
      */
     protected function exceptionMessage(callable $middleware, ?string $name = null): string
     {

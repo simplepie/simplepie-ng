@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -116,8 +116,6 @@ class Date
 
     /**
      * Get the input datestamp.
-     *
-     * @return string
      */
     public function getDatestamp(): string
     {
@@ -126,8 +124,6 @@ class Date
 
     /**
      * Get the requested output timezone.
-     *
-     * @return string
      */
     public function getOutputTimezone(): string
     {
@@ -136,8 +132,6 @@ class Date
 
     /**
      * Get the format used to assist date string parsing.
-     *
-     * @return string|null
      */
     public function getCreateFromFormat(): ?string
     {

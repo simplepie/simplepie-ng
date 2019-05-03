@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -10,25 +10,22 @@ declare(strict_types=1);
 
 namespace SimplePie\Test\Integration\WellFormed\Amp;
 
-use SimplePie\Enum\Serialization;
 use SimplePie\Test\Integration\AbstractTestCase;
 
 class AmpTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
 
     /**
      * Data Provider.
-     *
-     * @return iterable
      */
     public function feeds(): iterable
     {
         $pattern = \sprintf('%s/wellformed/amp/*.xml', $this->getFeedDir());
-        $files   = \glob($pattern, GLOB_MARK);
+        $files   = \glob($pattern, \GLOB_MARK);
 
         foreach ($files as $file) {
             yield [\str_replace($this->getFeedDir(), '', $file)];
@@ -37,8 +34,6 @@ class AmpTest extends AbstractTestCase
 
     /**
      * @dataProvider feeds
-     *
-     * @param mixed $feed
      */
     public function testEntities($feed): void
     {
@@ -48,9 +43,13 @@ class AmpTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        \preg_match("/Expect:\\s+not bozo and entries\\[0\\]\\['title_detail'\\]\\['value'\\] == '([^']*)'/", (string) $xq->textContent, $m);
+        \preg_match(
+            "/Expect:\\s+not bozo and entries\\[0\\]\\['title_detail'\\]\\['value'\\] == '([^']*)'/",
+            (string) $xq->textContent,
+            $m
+        );
         $title = $m[1];
 
-        $this->assertEquals($title, $entry->getTitle()->getValue());
+        static::assertEquals($title, $entry->getTitle()->getValue());
     }
 }
