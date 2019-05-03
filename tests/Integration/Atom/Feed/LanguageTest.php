@@ -21,39 +21,39 @@ class LanguageTest extends AbstractTestCase
     {
         $lang = $this->feed->getLang();
 
-        $this->assertEquals(Node::class, Types::getClassOrType($lang));
-        $this->assertEquals('en_US', (string) $lang);
-        $this->assertEquals('en_US', $lang->getValue());
-        $this->assertEquals(Serialization::TEXT, $lang->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($lang));
+        static::assertEquals('en_US', (string) $lang);
+        static::assertEquals('en_US', $lang->getValue());
+        static::assertEquals(Serialization::TEXT, $lang->getSerialization());
     }
 
     public function testLangAtom10(): void
     {
         $lang = $this->feed->getLang('atom10');
 
-        $this->assertEquals(Node::class, Types::getClassOrType($lang));
-        $this->assertEquals('en_US', (string) $lang);
-        $this->assertEquals('en_US', $lang->getValue());
-        $this->assertEquals(Serialization::TEXT, $lang->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($lang));
+        static::assertEquals('en_US', (string) $lang);
+        static::assertEquals('en_US', $lang->getValue());
+        static::assertEquals(Serialization::TEXT, $lang->getSerialization());
     }
 
     public function testLanguage(): void
     {
         $lang = $this->feed->getLanguage();
 
-        $this->assertEquals(Node::class, Types::getClassOrType($lang));
-        $this->assertEquals('en_US', (string) $lang);
-        $this->assertEquals('en_US', $lang->getValue());
-        $this->assertEquals(Serialization::TEXT, $lang->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($lang));
+        static::assertEquals('en_US', (string) $lang);
+        static::assertEquals('en_US', $lang->getValue());
+        static::assertEquals(Serialization::TEXT, $lang->getSerialization());
     }
 
     public function testLanguageAtom10(): void
     {
         $lang = $this->feed->getLanguage('atom10');
 
-        $this->assertEquals(Node::class, Types::getClassOrType($lang));
-        $this->assertEquals('en_US', (string) $lang);
-        $this->assertEquals('en_US', $lang->getValue());
-        $this->assertEquals(Serialization::TEXT, $lang->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($lang));
+        static::assertEquals('en_US', (string) $lang);
+        static::assertEquals('en_US', $lang->getValue());
+        static::assertEquals(Serialization::TEXT, $lang->getSerialization());
     }
 }

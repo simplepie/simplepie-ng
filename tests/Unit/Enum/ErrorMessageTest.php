@@ -17,7 +17,7 @@ class ErrorMessageTest extends AbstractTestCase
 {
     public function testIntrospectKeys(): void
     {
-        $this->assertSame(ErrorMessage::introspectKeys(), [
+        static::assertSame(ErrorMessage::introspectKeys(), [
             'LOGGER_NOT_PSR3',
             'MIDDLEWARE_NOT_HANDLERSTACK',
             'LIBXML_NOT_INTEGER',

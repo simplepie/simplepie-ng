@@ -17,7 +17,7 @@ class FeedTypeTest extends AbstractTestCase
 {
     public function testIntrospect(): void
     {
-        $this->assertSame(FeedType::introspect(), [
+        static::assertSame(FeedType::introspect(), [
             'ALL'  => 'all',
             'JSON' => 'json',
             'HTML' => 'html',
@@ -27,7 +27,7 @@ class FeedTypeTest extends AbstractTestCase
 
     public function testIntrospectKeys(): void
     {
-        $this->assertSame(FeedType::introspectKeys(), [
+        static::assertSame(FeedType::introspectKeys(), [
             'ALL',
             'JSON',
             'HTML',
@@ -37,11 +37,11 @@ class FeedTypeTest extends AbstractTestCase
 
     public function testHasValue(): void
     {
-        $this->assertTrue(FeedType::hasValue(FeedType::ALL));
-        $this->assertTrue(FeedType::hasValue(FeedType::JSON));
-        $this->assertTrue(FeedType::hasValue(FeedType::HTML));
-        $this->assertTrue(FeedType::hasValue(FeedType::XML));
+        static::assertTrue(FeedType::hasValue(FeedType::ALL));
+        static::assertTrue(FeedType::hasValue(FeedType::JSON));
+        static::assertTrue(FeedType::hasValue(FeedType::HTML));
+        static::assertTrue(FeedType::hasValue(FeedType::XML));
 
-        $this->assertFalse(FeedType::hasValue('nope'));
+        static::assertFalse(FeedType::hasValue('nope'));
     }
 }

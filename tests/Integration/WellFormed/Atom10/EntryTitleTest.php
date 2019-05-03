@@ -15,7 +15,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class EntryTitleTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -27,8 +27,8 @@ class EntryTitleTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example Atom', (string) $entry->getTitle());
-        $this->assertEquals(Serialization::TEXT, $entry->getTitle()->getSerialization());
+        static::assertEquals('Example Atom', (string) $entry->getTitle());
+        static::assertEquals(Serialization::TEXT, $entry->getTitle()->getSerialization());
     }
 
     public function testBase64(): void
@@ -38,8 +38,8 @@ class EntryTitleTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $entry->getTitle());
-        $this->assertEquals(Serialization::TEXT, $entry->getTitle()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $entry->getTitle());
+        static::assertEquals(Serialization::TEXT, $entry->getTitle()->getSerialization());
     }
 
     public function testBase642(): void
@@ -49,8 +49,8 @@ class EntryTitleTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('<p>History of the &lt;blink&gt; tag</p>', (string) $entry->getTitle());
-        $this->assertEquals(Serialization::TEXT, $entry->getTitle()->getSerialization());
+        static::assertEquals('<p>History of the &lt;blink&gt; tag</p>', (string) $entry->getTitle());
+        static::assertEquals(Serialization::TEXT, $entry->getTitle()->getSerialization());
     }
 
     public function testEscapedMarkup(): void
@@ -60,8 +60,8 @@ class EntryTitleTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $entry->getTitle());
-        $this->assertEquals(Serialization::HTML, $entry->getTitle()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $entry->getTitle());
+        static::assertEquals(Serialization::HTML, $entry->getTitle()->getSerialization());
     }
 
     public function testInlineMarkup(): void
@@ -71,8 +71,8 @@ class EntryTitleTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $entry->getTitle());
-        $this->assertEquals(Serialization::XHTML, $entry->getTitle()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $entry->getTitle());
+        static::assertEquals(Serialization::XHTML, $entry->getTitle()->getSerialization());
     }
 
     public function testInlineMarkup2(): void
@@ -82,8 +82,8 @@ class EntryTitleTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('History of the &lt;blink&gt; tag', (string) $entry->getTitle());
-        $this->assertEquals(Serialization::XHTML, $entry->getTitle()->getSerialization());
+        static::assertEquals('History of the &lt;blink&gt; tag', (string) $entry->getTitle());
+        static::assertEquals(Serialization::XHTML, $entry->getTitle()->getSerialization());
     }
 
     public function testTextPlain(): void
@@ -93,8 +93,8 @@ class EntryTitleTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Example Atom', (string) $entry->getTitle());
-        $this->assertEquals(Serialization::TEXT, $entry->getTitle()->getSerialization());
+        static::assertEquals('Example Atom', (string) $entry->getTitle());
+        static::assertEquals(Serialization::TEXT, $entry->getTitle()->getSerialization());
     }
 
     public function testTextPlainBrackets(): void
@@ -104,7 +104,7 @@ class EntryTitleTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('History of the <blink> tag', (string) $entry->getTitle());
-        $this->assertEquals(Serialization::TEXT, $entry->getTitle()->getSerialization());
+        static::assertEquals('History of the <blink> tag', (string) $entry->getTitle());
+        static::assertEquals(Serialization::TEXT, $entry->getTitle()->getSerialization());
     }
 }

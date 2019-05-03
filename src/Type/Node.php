@@ -111,8 +111,6 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
 
     /**
      * Casting this Node element to a string with return the _value_ of the Node.
-     *
-     * @return string
      */
     public function __toString(): string
     {
@@ -135,8 +133,6 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
 
     /**
      * Gets the raw `DOMNode` element.
-     *
-     * @return DOMNode|null
      */
     public function getNode(): ?DOMNode
     {
@@ -145,8 +141,6 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
 
     /**
      * Gets the content of the node, serialized appropriately.
-     *
-     * @return string|null
      */
     public function getValue(): ?string
     {
@@ -157,8 +151,6 @@ class Node extends AbstractType implements NodeInterface, TypeInterface
      * Gets the serialization of the content.
      *
      * Will always be one of the enums from `SimplePie\Enum\Serialization`.
-     *
-     * @return string
      */
     public function getSerialization(): string
     {

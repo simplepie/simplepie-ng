@@ -80,8 +80,6 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
 
     /**
      * Finds the default namespace alias for the feed type.
-     *
-     * @return string
      */
     public function getDefaultNs(): string
     {
@@ -92,8 +90,6 @@ class Feed extends AbstractType implements BranchInterface, C\SetLoggerInterface
      * Finds the common internal alias for a given method name.
      *
      * @param string $nodeName The name of the method being called.
-     *
-     * @return string
      *
      * @phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
      */

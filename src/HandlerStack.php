@@ -171,8 +171,6 @@ class HandlerStack implements HandlerStackInterface
 
     /**
      * Returns information about the HandlerStack that is useful for debugging.
-     *
-     * @return array
      */
     public function debugStack(): array
     {
@@ -253,8 +251,6 @@ class HandlerStack implements HandlerStackInterface
      *
      * @param callable    $middleware The middleware to add to the stack.
      * @param string|null $name       A name for the middleware. Can be used with `pushBefore()` and `pushAfter()`.
-     *
-     * @return string
      */
     protected function exceptionMessage(callable $middleware, ?string $name = null): string
     {

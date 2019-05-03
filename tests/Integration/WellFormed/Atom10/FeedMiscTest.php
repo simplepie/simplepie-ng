@@ -15,7 +15,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class FeedMiscTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -26,8 +26,8 @@ class FeedMiscTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('Example <a href="http://example.com/?a=1&amp;b=2">test</a>', (string) $feed->getTitle());
-        $this->assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
+        static::assertEquals('Example <a href="http://example.com/?a=1&amp;b=2">test</a>', (string) $feed->getTitle());
+        static::assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
     }
 
     public function testLinkNoRel(): void
@@ -36,8 +36,8 @@ class FeedMiscTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('http://www.innoq.com/planet/', (string) $feed->getLinks()[1]->getUri());
-        $this->assertEquals('alternate', (string) $feed->getLinks()[1]->getRel());
+        static::assertEquals('http://www.innoq.com/planet/', (string) $feed->getLinks()[1]->getUri());
+        static::assertEquals('alternate', (string) $feed->getLinks()[1]->getRel());
     }
 
     public function testMissingQuoteInAttr(): void
@@ -46,8 +46,8 @@ class FeedMiscTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('<a href=http://example.com/">example</a>', (string) $feed->getTitle());
-        $this->assertEquals(Serialization::HTML, $feed->getTitle()->getSerialization());
+        static::assertEquals('<a href=http://example.com/">example</a>', (string) $feed->getTitle());
+        static::assertEquals(Serialization::HTML, $feed->getTitle()->getSerialization());
     }
 
     public function testQna(): void
@@ -58,8 +58,8 @@ class FeedMiscTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $entry  = $feed->getEntries()[0];
 
-        $this->assertEquals('Q&A session', (string) $entry->getTitle());
-        $this->assertEquals(Serialization::HTML, $entry->getTitle()->getSerialization());
+        static::assertEquals('Q&A session', (string) $entry->getTitle());
+        static::assertEquals(Serialization::HTML, $entry->getTitle()->getSerialization());
     }
 
     public function testQuoteInAttr(): void
@@ -68,8 +68,8 @@ class FeedMiscTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('<a title="&quot;test&quot;">test</a>', (string) $feed->getTitle());
-        $this->assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
+        static::assertEquals('<a title="&quot;test&quot;">test</a>', (string) $feed->getTitle());
+        static::assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
     }
 
     public function testTagInAttr(): void
@@ -78,11 +78,11 @@ class FeedMiscTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals(
+        static::assertEquals(
             '<img src="http://example.com/cat-dog.jpg" alt="cat<br />dog">',
             (string) $feed->getTitle()
         );
-        $this->assertEquals(Serialization::HTML, $feed->getTitle()->getSerialization());
+        static::assertEquals(Serialization::HTML, $feed->getTitle()->getSerialization());
     }
 
     public function testRelativeUri(): void
@@ -91,8 +91,8 @@ class FeedMiscTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('http://example.com/test/', (string) $feed->getTitle()->getBase());
-        $this->assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
+        static::assertEquals('http://example.com/test/', (string) $feed->getTitle()->getBase());
+        static::assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
     }
 
     public function testRelativeUriInherit(): void
@@ -101,8 +101,8 @@ class FeedMiscTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('http://example.com/test/', (string) $feed->getTitle()->getBase());
-        $this->assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
+        static::assertEquals('http://example.com/test/', (string) $feed->getTitle()->getBase());
+        static::assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
     }
 
     public function testRelativeUriInherit2(): void
@@ -111,7 +111,7 @@ class FeedMiscTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('http://example.com/test/', (string) $feed->getTitle()->getBase());
-        $this->assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
+        static::assertEquals('http://example.com/test/', (string) $feed->getTitle()->getBase());
+        static::assertEquals(Serialization::XHTML, $feed->getTitle()->getSerialization());
     }
 }

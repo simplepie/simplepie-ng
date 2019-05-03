@@ -24,8 +24,6 @@ trait RawDocumentTrait
 
     /**
      * Retrieves the raw, unparsed contents of the feed's stream.
-     *
-     * @return string
      */
     public function getRawDocument(): string
     {

@@ -35,8 +35,6 @@ trait DeepTypeTrait
      *                                    looking at the response from `getRoot()`.
      * @param string|null $namespaceAlias The XML namespace alias to apply.
      *
-     * @return Node
-     *
      * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getScalarSingleValue(
@@ -65,8 +63,6 @@ trait DeepTypeTrait
      * @param string      $className      The class name to instantiate when there is not a defined value.
      * @param string|null $namespaceAlias The XML namespace alias to apply.
      *
-     * @return TypeInterface
-     *
      * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */
     protected function getComplexSingleValue(
@@ -94,8 +90,6 @@ trait DeepTypeTrait
      * @param string      $nodeName       The name of the tree node to retrieve. Available tree nodes can be viewed by
      *                                    looking at the response from `getRoot()`.
      * @param string|null $namespaceAlias The XML namespace alias to apply.
-     *
-     * @return iterable
      *
      * @phpcs:disable Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine
      */

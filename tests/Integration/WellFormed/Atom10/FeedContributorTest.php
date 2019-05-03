@@ -14,7 +14,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class FeedContributorTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -26,7 +26,7 @@ class FeedContributorTest extends AbstractTestCase
         $feed        = $parser->getFeed();
         $contributor = $feed->getContributors()[0];
 
-        $this->assertEquals('me@example.com', (string) $contributor->getEmail());
+        static::assertEquals('me@example.com', (string) $contributor->getEmail());
     }
 
     public function testEmails(): void
@@ -36,8 +36,8 @@ class FeedContributorTest extends AbstractTestCase
         $feed         = $parser->getFeed();
         $contributors = $feed->getContributors();
 
-        $this->assertEquals('me@example.com', (string) $contributors[0]->getEmail());
-        $this->assertEquals('you@example.com', (string) $contributors[1]->getEmail());
+        static::assertEquals('me@example.com', (string) $contributors[0]->getEmail());
+        static::assertEquals('you@example.com', (string) $contributors[1]->getEmail());
     }
 
     public function testName(): void
@@ -47,7 +47,7 @@ class FeedContributorTest extends AbstractTestCase
         $feed        = $parser->getFeed();
         $contributor = $feed->getContributors()[0];
 
-        $this->assertEquals('Example contributor', (string) $contributor->getName());
+        static::assertEquals('Example contributor', (string) $contributor->getName());
     }
 
     public function testNames(): void
@@ -57,8 +57,8 @@ class FeedContributorTest extends AbstractTestCase
         $feed         = $parser->getFeed();
         $contributors = $feed->getContributors();
 
-        $this->assertEquals('Contributor 1', (string) $contributors[0]->getName());
-        $this->assertEquals('Contributor 2', (string) $contributors[1]->getName());
+        static::assertEquals('Contributor 1', (string) $contributors[0]->getName());
+        static::assertEquals('Contributor 2', (string) $contributors[1]->getName());
     }
 
     public function testUri(): void
@@ -68,7 +68,7 @@ class FeedContributorTest extends AbstractTestCase
         $feed        = $parser->getFeed();
         $contributor = $feed->getContributors()[0];
 
-        $this->assertEquals('http://example.com/', (string) $contributor->getUri());
+        static::assertEquals('http://example.com/', (string) $contributor->getUri());
     }
 
     public function testUris(): void
@@ -78,8 +78,8 @@ class FeedContributorTest extends AbstractTestCase
         $feed         = $parser->getFeed();
         $contributors = $feed->getContributors();
 
-        $this->assertEquals('http://example.com/', (string) $contributors[0]->getUri());
-        $this->assertEquals('http://two.example.com/', (string) $contributors[1]->getUri());
+        static::assertEquals('http://example.com/', (string) $contributors[0]->getUri());
+        static::assertEquals('http://two.example.com/', (string) $contributors[1]->getUri());
     }
 
     public function testUrl(): void
@@ -89,7 +89,7 @@ class FeedContributorTest extends AbstractTestCase
         $feed        = $parser->getFeed();
         $contributor = $feed->getContributors()[0];
 
-        $this->assertEquals('http://example.com/', (string) $contributor->getUrl());
+        static::assertEquals('http://example.com/', (string) $contributor->getUrl());
     }
 
     public function testUrls(): void
@@ -99,7 +99,7 @@ class FeedContributorTest extends AbstractTestCase
         $feed         = $parser->getFeed();
         $contributors = $feed->getContributors();
 
-        $this->assertEquals('http://example.com/', (string) $contributors[0]->getUrl());
-        $this->assertEquals('http://two.example.com/', (string) $contributors[1]->getUrl());
+        static::assertEquals('http://example.com/', (string) $contributors[0]->getUrl());
+        static::assertEquals('http://two.example.com/', (string) $contributors[1]->getUrl());
     }
 }

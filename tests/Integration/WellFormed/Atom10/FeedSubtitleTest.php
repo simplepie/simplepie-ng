@@ -15,7 +15,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class FeedSubtitleTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -26,8 +26,8 @@ class FeedSubtitleTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('Example Atom', (string) $feed->getSubtitle());
-        $this->assertEquals(Serialization::TEXT, $feed->getSubtitle()->getSerialization());
+        static::assertEquals('Example Atom', (string) $feed->getSubtitle());
+        static::assertEquals(Serialization::TEXT, $feed->getSubtitle()->getSerialization());
     }
 
     public function testBase64(): void
@@ -36,8 +36,8 @@ class FeedSubtitleTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $feed->getSubtitle());
-        $this->assertEquals(Serialization::TEXT, $feed->getSubtitle()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $feed->getSubtitle());
+        static::assertEquals(Serialization::TEXT, $feed->getSubtitle()->getSerialization());
     }
 
     public function testBase642(): void
@@ -46,8 +46,8 @@ class FeedSubtitleTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('<p>History of the &lt;blink&gt; tag</p>', (string) $feed->getSubtitle());
-        $this->assertEquals(Serialization::TEXT, $feed->getSubtitle()->getSerialization());
+        static::assertEquals('<p>History of the &lt;blink&gt; tag</p>', (string) $feed->getSubtitle());
+        static::assertEquals(Serialization::TEXT, $feed->getSubtitle()->getSerialization());
     }
 
     public function testEscapedMarkup(): void
@@ -56,8 +56,8 @@ class FeedSubtitleTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $feed->getSubtitle());
-        $this->assertEquals(Serialization::HTML, $feed->getSubtitle()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $feed->getSubtitle());
+        static::assertEquals(Serialization::HTML, $feed->getSubtitle()->getSerialization());
     }
 
     public function testInlineMarkup(): void
@@ -66,8 +66,8 @@ class FeedSubtitleTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $feed->getSubtitle());
-        $this->assertEquals(Serialization::XHTML, $feed->getSubtitle()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $feed->getSubtitle());
+        static::assertEquals(Serialization::XHTML, $feed->getSubtitle()->getSerialization());
     }
 
     public function testInlineMarkup2(): void
@@ -76,8 +76,8 @@ class FeedSubtitleTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('History of the &lt;blink&gt; tag', (string) $feed->getSubtitle());
-        $this->assertEquals(Serialization::XHTML, $feed->getSubtitle()->getSerialization());
+        static::assertEquals('History of the &lt;blink&gt; tag', (string) $feed->getSubtitle());
+        static::assertEquals(Serialization::XHTML, $feed->getSubtitle()->getSerialization());
     }
 
     public function testTextPlain(): void
@@ -86,7 +86,7 @@ class FeedSubtitleTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('Example Atom', (string) $feed->getSubtitle());
-        $this->assertEquals(Serialization::TEXT, $feed->getSubtitle()->getSerialization());
+        static::assertEquals('Example Atom', (string) $feed->getSubtitle());
+        static::assertEquals(Serialization::TEXT, $feed->getSubtitle()->getSerialization());
     }
 }

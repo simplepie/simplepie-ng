@@ -37,19 +37,19 @@ class IdTest extends AbstractTestCase
     {
         $id = $this->feed->getId();
 
-        $this->assertEquals(Node::class, Types::getClassOrType($id));
-        $this->assertEquals('tag:github.com,2008:https://github.com/skyzyx/signer/releases', (string) $id);
-        $this->assertEquals('tag:github.com,2008:https://github.com/skyzyx/signer/releases', $id->getValue());
-        $this->assertEquals(Serialization::TEXT, $id->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($id));
+        static::assertEquals('tag:github.com,2008:https://github.com/skyzyx/signer/releases', (string) $id);
+        static::assertEquals('tag:github.com,2008:https://github.com/skyzyx/signer/releases', $id->getValue());
+        static::assertEquals(Serialization::TEXT, $id->getSerialization());
     }
 
     public function testIdAtom10(): void
     {
         $id = $this->feed->getId('atom10');
 
-        $this->assertEquals(Node::class, Types::getClassOrType($id));
-        $this->assertEquals('tag:github.com,2008:https://github.com/skyzyx/signer/releases', (string) $id);
-        $this->assertEquals('tag:github.com,2008:https://github.com/skyzyx/signer/releases', $id->getValue());
-        $this->assertEquals(Serialization::TEXT, $id->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($id));
+        static::assertEquals('tag:github.com,2008:https://github.com/skyzyx/signer/releases', (string) $id);
+        static::assertEquals('tag:github.com,2008:https://github.com/skyzyx/signer/releases', $id->getValue());
+        static::assertEquals(Serialization::TEXT, $id->getSerialization());
     }
 }

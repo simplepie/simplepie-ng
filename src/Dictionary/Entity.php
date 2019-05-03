@@ -2255,8 +2255,6 @@ class Entity
      * Utility function converts entities into their real unicode characters.
      *
      * @param string $input The input string.
-     *
-     * @return string
      */
     public static function convertEntitiesToUnicode(string $input): string
     {

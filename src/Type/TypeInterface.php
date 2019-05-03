@@ -20,8 +20,6 @@ interface TypeInterface
      *
      * @param string $nodeName The name of the method being called.
      *
-     * @return string
-     *
      * @internal
      */
     public function getAlias(string $nodeName): string;
@@ -33,8 +31,6 @@ interface TypeInterface
      * @param array  $args     The parameters which are passed to the method.
      *
      * @throws SimplePieException
-     *
-     * @return Node
      *
      * @internal
      */

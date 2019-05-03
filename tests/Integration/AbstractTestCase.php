@@ -26,7 +26,7 @@ abstract class AbstractTestCase extends TestCase
 
     public $feed;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->goodAtom  = \file_get_contents($this->getFeedDir() . '/full/atom10/test.atom');
         $this->simplepie = $this->getSimplePie();

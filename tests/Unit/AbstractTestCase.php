@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 
 abstract class AbstractTestCase extends TestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
     }
 }

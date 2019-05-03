@@ -36,8 +36,6 @@ trait DateTrait
      *
      * @param string $createFromFormat The format of the datestamp in the feed.
      *
-     * @return self
-     *
      * @see http://php.net/manual/en/datetime.createfromformat.php
      */
     public function setDateFormat(string $createFromFormat): self
@@ -59,8 +57,6 @@ trait DateTrait
      *
      * @param string $timezone The timezone identifier to use. Must be compatible with `DateTimeZone`. The default
      *                         value is `UTC`.
-     *
-     * @return self
      */
     public function setOutputTimezone(string $timezone = 'UTC'): self
     {

@@ -22,10 +22,10 @@ class RightsTest extends AbstractTestCase
     {
         $rights = $this->feed->getRights();
 
-        $this->assertEquals(Node::class, Types::getClassOrType($rights));
-        $this->assertEquals('Copyright © 2017 GitHub', (string) $rights);
-        $this->assertEquals('Copyright © 2017 GitHub', $rights->getValue());
-        $this->assertEquals(Serialization::TEXT, $rights->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($rights));
+        static::assertEquals('Copyright © 2017 GitHub', (string) $rights);
+        static::assertEquals('Copyright © 2017 GitHub', $rights->getValue());
+        static::assertEquals(Serialization::TEXT, $rights->getSerialization());
     }
 
     public function testRightsWithoutEntities(): void
@@ -35,9 +35,9 @@ class RightsTest extends AbstractTestCase
         $feed   = $parser->getFeed();
         $rights = $feed->getRights();
 
-        $this->assertEquals(Node::class, Types::getClassOrType($rights));
-        $this->assertEquals('Copyright  2017 GitHub', (string) $rights);
-        $this->assertEquals('Copyright  2017 GitHub', $rights->getValue());
-        $this->assertEquals(Serialization::TEXT, $rights->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($rights));
+        static::assertEquals('Copyright  2017 GitHub', (string) $rights);
+        static::assertEquals('Copyright  2017 GitHub', $rights->getValue());
+        static::assertEquals(Serialization::TEXT, $rights->getSerialization());
     }
 }

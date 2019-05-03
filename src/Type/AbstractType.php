@@ -22,8 +22,6 @@ abstract class AbstractType
      * @param string $nodeName The name of the method being called.
      * @param array  $args     Any arguments passed into that method.
      *
-     * @return mixed
-     *
      * @internal
      */
     public function __call(string $nodeName, array $args)
@@ -48,8 +46,6 @@ abstract class AbstractType
      * Gets the standard, pre-formatted message for unresolvable method calls.
      *
      * @param string $nodeName The short version of the call (without the `get`).
-     *
-     * @return string
      *
      * @internal
      */

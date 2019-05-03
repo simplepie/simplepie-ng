@@ -21,19 +21,19 @@ class TitleTest extends AbstractTestCase
     {
         $title = $this->feed->getTitle();
 
-        $this->assertEquals(Node::class, Types::getClassOrType($title));
-        $this->assertEquals('Release notes from signer', (string) $title);
-        $this->assertEquals('Release notes from signer', $title->getValue());
-        $this->assertEquals(Serialization::TEXT, $title->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($title));
+        static::assertEquals('Release notes from signer', (string) $title);
+        static::assertEquals('Release notes from signer', $title->getValue());
+        static::assertEquals(Serialization::TEXT, $title->getSerialization());
     }
 
     public function testTitleAtom10(): void
     {
         $title = $this->feed->getTitle('atom10');
 
-        $this->assertEquals(Node::class, Types::getClassOrType($title));
-        $this->assertEquals('Release notes from signer', (string) $title);
-        $this->assertEquals('Release notes from signer', $title->getValue());
-        $this->assertEquals(Serialization::TEXT, $title->getSerialization());
+        static::assertEquals(Node::class, Types::getClassOrType($title));
+        static::assertEquals('Release notes from signer', (string) $title);
+        static::assertEquals('Release notes from signer', $title->getValue());
+        static::assertEquals(Serialization::TEXT, $title->getSerialization());
     }
 }

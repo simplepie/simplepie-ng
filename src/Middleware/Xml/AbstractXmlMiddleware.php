@@ -34,8 +34,6 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
      * @param bool $makeInsensitive Whether or not the handling should be made case-insensitive. A value of `true`
      *                              means that the handling should be case-insensitive. A value of `false` means that
      *                              the handling should be case-sensitive. The default value is `true`.
-     *
-     * @return self
      */
     public function setCaseInsensitive(bool $makeInsensitive = true): self
     {
@@ -51,8 +49,6 @@ abstract class AbstractXmlMiddleware extends AbstractMiddleware
      *
      * @param string $query          An XPath query where `%s` is used in-place of the XML namespace alias.
      * @param string $namespaceAlias The XML namespace alias to apply.
-     *
-     * @return string
      */
     public function applyNsToQuery(string $query, string $namespaceAlias): string
     {

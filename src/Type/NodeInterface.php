@@ -19,15 +19,11 @@ interface NodeInterface
 {
     /**
      * Converts this object into a string representation.
-     *
-     * @return string
      */
     public function __toString(): string;
 
     /**
      * Gets the DOMNode element.
-     *
-     * @return DOMNode|null
      */
     public function getNode(): ?DOMNode;
 }

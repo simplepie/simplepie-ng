@@ -40,8 +40,6 @@ interface XmlInterface extends MiddlewareInterface
      *     'http://www.w3.org/2005/Atom' => 'atom10'
      * ];
      * ```
-     *
-     * @return array
      */
     public function getSupportedNamespaces(): array;
 }

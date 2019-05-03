@@ -26,8 +26,6 @@ trait DomDocumentTrait
 
     /**
      * Gets the DOMDocument object which is being used to parse the content.
-     *
-     * @return DOMDocument
      */
     public function getDomDocument(): DOMDocument
     {

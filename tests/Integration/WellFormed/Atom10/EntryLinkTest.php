@@ -14,7 +14,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class EntryLinkTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -27,9 +27,9 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('http://www.example.com/', (string) $link->getHref());
-        $this->assertEquals('http://www.example.com/', (string) $link->getUri());
-        $this->assertEquals('http://www.example.com/', (string) $link->getUrl());
+        static::assertEquals('http://www.example.com/', (string) $link->getHref());
+        static::assertEquals('http://www.example.com/', (string) $link->getUri());
+        static::assertEquals('http://www.example.com/', (string) $link->getUrl());
     }
 
     public function testHref2(): void
@@ -40,9 +40,9 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('http://www.example.com/', (string) $link->getHref());
-        $this->assertEquals('http://www.example.com/', (string) $link->getUri());
-        $this->assertEquals('http://www.example.com/', (string) $link->getUrl());
+        static::assertEquals('http://www.example.com/', (string) $link->getHref());
+        static::assertEquals('http://www.example.com/', (string) $link->getUri());
+        static::assertEquals('http://www.example.com/', (string) $link->getUrl());
     }
 
     public function testHref3(): void
@@ -53,9 +53,9 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks($feed->getDefaultNs(), 'alternate')[0];
 
-        $this->assertEquals('http://www.example.com/alternate', (string) $link->getHref());
-        $this->assertEquals('http://www.example.com/alternate', (string) $link->getUri());
-        $this->assertEquals('http://www.example.com/alternate', (string) $link->getUrl());
+        static::assertEquals('http://www.example.com/alternate', (string) $link->getHref());
+        static::assertEquals('http://www.example.com/alternate', (string) $link->getUri());
+        static::assertEquals('http://www.example.com/alternate', (string) $link->getUrl());
     }
 
     public function testHref4(): void
@@ -66,7 +66,7 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('http://www.example.com/', (string) $link->getHref());
+        static::assertEquals('http://www.example.com/', (string) $link->getHref());
     }
 
     public function testHreflang(): void
@@ -77,9 +77,9 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('en', (string) $link->getHreflang());
-        $this->assertEquals('en', (string) $link->getLang());
-        $this->assertEquals('en', (string) $link->getLanguage());
+        static::assertEquals('en', (string) $link->getHreflang());
+        static::assertEquals('en', (string) $link->getLang());
+        static::assertEquals('en', (string) $link->getLanguage());
     }
 
     public function testLength(): void
@@ -90,7 +90,7 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('42301', (string) $link->getLength());
+        static::assertEquals('42301', (string) $link->getLength());
     }
 
     public function testMultiple(): void
@@ -101,13 +101,13 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks($feed->getDefaultNs(), 'service.post')[0];
 
-        $this->assertEquals('service.post', (string) $link->getRel());
-        $this->assertEquals('service.post', (string) $link->getRelationship());
-        $this->assertEquals('application/atom+xml', (string) $link->getMediaType());
-        $this->assertEquals('application/atom+xml', (string) $link->getType());
-        $this->assertEquals('http://www.example.com/post', (string) $link->getHref());
-        $this->assertEquals('http://www.example.com/post', (string) $link->getUri());
-        $this->assertEquals('http://www.example.com/post', (string) $link->getUrl());
+        static::assertEquals('service.post', (string) $link->getRel());
+        static::assertEquals('service.post', (string) $link->getRelationship());
+        static::assertEquals('application/atom+xml', (string) $link->getMediaType());
+        static::assertEquals('application/atom+xml', (string) $link->getType());
+        static::assertEquals('http://www.example.com/post', (string) $link->getHref());
+        static::assertEquals('http://www.example.com/post', (string) $link->getUri());
+        static::assertEquals('http://www.example.com/post', (string) $link->getUrl());
     }
 
     public function testNoRel(): void
@@ -118,8 +118,8 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('alternate', (string) $link->getRel());
-        $this->assertEquals('alternate', (string) $link->getRelationship());
+        static::assertEquals('alternate', (string) $link->getRel());
+        static::assertEquals('alternate', (string) $link->getRelationship());
     }
 
     public function testRel(): void
@@ -130,8 +130,8 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('alternate', (string) $link->getRel());
-        $this->assertEquals('alternate', (string) $link->getRelationship());
+        static::assertEquals('alternate', (string) $link->getRel());
+        static::assertEquals('alternate', (string) $link->getRelationship());
     }
 
     public function testRelEnclosure(): void
@@ -142,8 +142,8 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('enclosure', (string) $link->getRel());
-        $this->assertEquals('enclosure', (string) $link->getRelationship());
+        static::assertEquals('enclosure', (string) $link->getRel());
+        static::assertEquals('enclosure', (string) $link->getRelationship());
     }
 
     public function testRelEnclosureLength(): void
@@ -154,7 +154,7 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('42301', (string) $link->getLength());
+        static::assertEquals('42301', (string) $link->getLength());
     }
 
     public function testRelEnclosureType(): void
@@ -165,8 +165,8 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('video/mpeg4', (string) $link->getMediaType());
-        $this->assertEquals('video/mpeg4', (string) $link->getType());
+        static::assertEquals('video/mpeg4', (string) $link->getMediaType());
+        static::assertEquals('video/mpeg4', (string) $link->getType());
     }
 
     public function testRelEnclosureUrl(): void
@@ -177,9 +177,9 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('http://www.example.com/movie.mp4', (string) $link->getHref());
-        $this->assertEquals('http://www.example.com/movie.mp4', (string) $link->getUri());
-        $this->assertEquals('http://www.example.com/movie.mp4', (string) $link->getUrl());
+        static::assertEquals('http://www.example.com/movie.mp4', (string) $link->getHref());
+        static::assertEquals('http://www.example.com/movie.mp4', (string) $link->getUri());
+        static::assertEquals('http://www.example.com/movie.mp4', (string) $link->getUrl());
     }
 
     public function testRelLicense(): void
@@ -190,9 +190,9 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('http://www.creativecommons.org/licenses/by-nc/1.0', (string) $link->getHref());
-        $this->assertEquals('http://www.creativecommons.org/licenses/by-nc/1.0', (string) $link->getUri());
-        $this->assertEquals('http://www.creativecommons.org/licenses/by-nc/1.0', (string) $link->getUrl());
+        static::assertEquals('http://www.creativecommons.org/licenses/by-nc/1.0', (string) $link->getHref());
+        static::assertEquals('http://www.creativecommons.org/licenses/by-nc/1.0', (string) $link->getUri());
+        static::assertEquals('http://www.creativecommons.org/licenses/by-nc/1.0', (string) $link->getUrl());
     }
 
     public function testRelOther(): void
@@ -203,8 +203,8 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('http://feedparser.org/rel/test', (string) $link->getRel());
-        $this->assertEquals('http://feedparser.org/rel/test', (string) $link->getRelationship());
+        static::assertEquals('http://feedparser.org/rel/test', (string) $link->getRel());
+        static::assertEquals('http://feedparser.org/rel/test', (string) $link->getRelationship());
     }
 
     public function testRelRelated(): void
@@ -215,8 +215,8 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('related', (string) $link->getRel());
-        $this->assertEquals('related', (string) $link->getRelationship());
+        static::assertEquals('related', (string) $link->getRel());
+        static::assertEquals('related', (string) $link->getRelationship());
     }
 
     public function testRelSelf(): void
@@ -227,8 +227,8 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('self', (string) $link->getRel());
-        $this->assertEquals('self', (string) $link->getRelationship());
+        static::assertEquals('self', (string) $link->getRel());
+        static::assertEquals('self', (string) $link->getRelationship());
     }
 
     public function testRelVia(): void
@@ -239,8 +239,8 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('via', (string) $link->getRel());
-        $this->assertEquals('via', (string) $link->getRelationship());
+        static::assertEquals('via', (string) $link->getRel());
+        static::assertEquals('via', (string) $link->getRelationship());
     }
 
     public function testTitle(): void
@@ -251,7 +251,7 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('Example title', (string) $link->getTitle());
+        static::assertEquals('Example title', (string) $link->getTitle());
     }
 
     public function testType(): void
@@ -262,7 +262,7 @@ class EntryLinkTest extends AbstractTestCase
         $entry  = $feed->getEntries()[0];
         $link   = $entry->getLinks()[0];
 
-        $this->assertEquals('text/html', (string) $link->getMediaType());
-        $this->assertEquals('text/html', (string) $link->getType());
+        static::assertEquals('text/html', (string) $link->getMediaType());
+        static::assertEquals('text/html', (string) $link->getType());
     }
 }

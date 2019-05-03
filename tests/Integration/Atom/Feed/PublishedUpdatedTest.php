@@ -22,79 +22,79 @@ class PublishedUpdatedTest extends AbstractTestCase
     {
         $published = $this->feed->getPublished();
 
-        $this->assertEquals(DateTime::class, Types::getClassOrType($published));
-        $this->assertEquals(1456518612, $published->getTimestamp());
-        $this->assertEquals(0, $published->getOffset());
+        static::assertEquals(DateTime::class, Types::getClassOrType($published));
+        static::assertEquals(1456518612, $published->getTimestamp());
+        static::assertEquals(0, $published->getOffset());
 
-        $this->assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::RFC3339));
-        $this->assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::ISO8601));
-        $this->assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::ATOM));
-        $this->assertEquals('Fri, 26 Feb 16 20:30:12 +0000', $published->format(DateFormat::RFC822));
-        $this->assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RFC2822));
-        $this->assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RSS20));
+        static::assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::RFC3339));
+        static::assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::ISO8601));
+        static::assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::ATOM));
+        static::assertEquals('Fri, 26 Feb 16 20:30:12 +0000', $published->format(DateFormat::RFC822));
+        static::assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RFC2822));
+        static::assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RSS20));
 
-        $this->assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
-        $this->assertEquals('UTC', $published->getTimezone()->getName());
+        static::assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
+        static::assertEquals('UTC', $published->getTimezone()->getName());
     }
 
     public function testPublishedAtom10(): void
     {
         $published = $this->feed->getPublished('atom10');
 
-        $this->assertEquals(DateTime::class, Types::getClassOrType($published));
-        $this->assertEquals(1456518612, $published->getTimestamp());
-        $this->assertEquals(0, $published->getOffset());
+        static::assertEquals(DateTime::class, Types::getClassOrType($published));
+        static::assertEquals(1456518612, $published->getTimestamp());
+        static::assertEquals(0, $published->getOffset());
 
-        $this->assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
-        $this->assertEquals('UTC', $published->getTimezone()->getName());
+        static::assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
+        static::assertEquals('UTC', $published->getTimezone()->getName());
     }
 
     public function testPublishedUsWestCoast(): void
     {
         $published = $this->feed->getPublished()->setTimezone(new \DateTimeZone('America/Los_Angeles'));
 
-        $this->assertEquals(1456518612, $published->getTimestamp());
-        $this->assertEquals(-28800, $published->getOffset());
+        static::assertEquals(1456518612, $published->getTimestamp());
+        static::assertEquals(-28800, $published->getOffset());
 
-        $this->assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
-        $this->assertEquals('America/Los_Angeles', $published->getTimezone()->getName());
+        static::assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
+        static::assertEquals('America/Los_Angeles', $published->getTimezone()->getName());
     }
 
     public function testPubDate(): void
     {
         $published = $this->feed->getPubDate();
 
-        $this->assertEquals(DateTime::class, Types::getClassOrType($published));
-        $this->assertEquals(1456518612, $published->getTimestamp());
-        $this->assertEquals(0, $published->getOffset());
+        static::assertEquals(DateTime::class, Types::getClassOrType($published));
+        static::assertEquals(1456518612, $published->getTimestamp());
+        static::assertEquals(0, $published->getOffset());
 
-        $this->assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::RFC3339));
-        $this->assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::ISO8601));
-        $this->assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::ATOM));
-        $this->assertEquals('Fri, 26 Feb 16 20:30:12 +0000', $published->format(DateFormat::RFC822));
-        $this->assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RFC2822));
-        $this->assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RSS20));
+        static::assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::RFC3339));
+        static::assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::ISO8601));
+        static::assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::ATOM));
+        static::assertEquals('Fri, 26 Feb 16 20:30:12 +0000', $published->format(DateFormat::RFC822));
+        static::assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RFC2822));
+        static::assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RSS20));
 
-        $this->assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
-        $this->assertEquals('UTC', $published->getTimezone()->getName());
+        static::assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
+        static::assertEquals('UTC', $published->getTimezone()->getName());
     }
 
     public function testUpdated(): void
     {
         $published = $this->feed->getUpdated();
 
-        $this->assertEquals(DateTime::class, Types::getClassOrType($published));
-        $this->assertEquals(1456518612, $published->getTimestamp());
-        $this->assertEquals(0, $published->getOffset());
+        static::assertEquals(DateTime::class, Types::getClassOrType($published));
+        static::assertEquals(1456518612, $published->getTimestamp());
+        static::assertEquals(0, $published->getOffset());
 
-        $this->assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::RFC3339));
-        $this->assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::ISO8601));
-        $this->assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::ATOM));
-        $this->assertEquals('Fri, 26 Feb 16 20:30:12 +0000', $published->format(DateFormat::RFC822));
-        $this->assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RFC2822));
-        $this->assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RSS20));
+        static::assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::RFC3339));
+        static::assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::ISO8601));
+        static::assertEquals('2016-02-26T20:30:12+00:00', $published->format(DateFormat::ATOM));
+        static::assertEquals('Fri, 26 Feb 16 20:30:12 +0000', $published->format(DateFormat::RFC822));
+        static::assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RFC2822));
+        static::assertEquals('Fri, 26 Feb 2016 20:30:12 +0000', $published->format(DateFormat::RSS20));
 
-        $this->assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
-        $this->assertEquals('UTC', $published->getTimezone()->getName());
+        static::assertEquals(DateTimeZone::class, Types::getClassOrType($published->getTimezone()));
+        static::assertEquals('UTC', $published->getTimezone()->getName());
     }
 }

@@ -15,7 +15,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class FeedRightsTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -26,7 +26,7 @@ class FeedRightsTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('Example Atom', (string) $feed->getRights());
+        static::assertEquals('Example Atom', (string) $feed->getRights());
     }
 
     public function testEscapedMarkup(): void
@@ -35,8 +35,8 @@ class FeedRightsTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $feed->getRights());
-        $this->assertEquals(Serialization::HTML, $feed->getRights()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $feed->getRights());
+        static::assertEquals(Serialization::HTML, $feed->getRights()->getSerialization());
     }
 
     public function testInlineMarkup(): void
@@ -45,8 +45,8 @@ class FeedRightsTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $feed->getRights());
-        $this->assertEquals(Serialization::XHTML, $feed->getRights()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $feed->getRights());
+        static::assertEquals(Serialization::XHTML, $feed->getRights()->getSerialization());
     }
 
     public function testInlineMarkup2(): void
@@ -55,8 +55,8 @@ class FeedRightsTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('History of the &lt;blink&gt; tag', (string) $feed->getRights());
-        $this->assertEquals(Serialization::XHTML, $feed->getRights()->getSerialization());
+        static::assertEquals('History of the &lt;blink&gt; tag', (string) $feed->getRights());
+        static::assertEquals(Serialization::XHTML, $feed->getRights()->getSerialization());
     }
 
     public function testTextPlain(): void
@@ -65,8 +65,8 @@ class FeedRightsTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('Example Atom', (string) $feed->getRights());
-        $this->assertEquals(Serialization::TEXT, $feed->getRights()->getSerialization());
+        static::assertEquals('Example Atom', (string) $feed->getRights());
+        static::assertEquals(Serialization::TEXT, $feed->getRights()->getSerialization());
     }
 
     public function testBase64(): void
@@ -75,8 +75,8 @@ class FeedRightsTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('Example <b>Atom</b>', (string) $feed->getRights());
-        $this->assertEquals(Serialization::TEXT, $feed->getRights()->getSerialization());
+        static::assertEquals('Example <b>Atom</b>', (string) $feed->getRights());
+        static::assertEquals(Serialization::TEXT, $feed->getRights()->getSerialization());
     }
 
     public function testBase642(): void
@@ -85,7 +85,7 @@ class FeedRightsTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('<p>History of the &lt;blink&gt; tag</p>', (string) $feed->getRights());
-        $this->assertEquals(Serialization::TEXT, $feed->getRights()->getSerialization());
+        static::assertEquals('<p>History of the &lt;blink&gt; tag</p>', (string) $feed->getRights());
+        static::assertEquals(Serialization::TEXT, $feed->getRights()->getSerialization());
     }
 }

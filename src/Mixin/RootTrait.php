@@ -24,8 +24,6 @@ trait RootTrait
 
     /**
      * Retrieve the root-most node in the feed.
-     *
-     * @return object
      */
     public function getRoot(): object
     {

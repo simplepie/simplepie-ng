@@ -15,15 +15,13 @@ use SimplePie\Enum\Serialization;
 
 class EntitiesTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
 
     /**
      * Data Provider.
-     *
-     * @return iterable
      */
     public function feeds(): iterable
     {
@@ -37,8 +35,6 @@ class EntitiesTest extends AbstractTestCase
 
     /**
      * @dataProvider feeds
-     *
-     * @param mixed $feed
      */
     public function testEntities($feed): void
     {
@@ -50,8 +46,8 @@ class EntitiesTest extends AbstractTestCase
         \preg_match("/Expect:\\s+feed\\['title'\\] == '([^']*)'/", (string) $xq->textContent, $m);
         $title = $this->codepointCharacter($m[1]);
 
-        $this->assertEquals($title, (string) $feed->getTitle());
-        $this->assertEquals(Serialization::TEXT, $feed->getTitle()->getSerialization());
+        static::assertEquals($title, (string) $feed->getTitle());
+        static::assertEquals(Serialization::TEXT, $feed->getTitle()->getSerialization());
     }
 
     public function codepointCharacter(string $str): string

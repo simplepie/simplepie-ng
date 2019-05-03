@@ -17,7 +17,7 @@ class CharacterSetTest extends AbstractTestCase
 {
     public function testIntrospect(): void
     {
-        $this->assertSame(CharacterSet::introspect(), [
+        static::assertSame(CharacterSet::introspect(), [
             'ISO_8859_1' => 'iso-8859-1',
             'US_ASCII'   => 'us-ascii',
             'UTF_8'      => 'utf-8',
@@ -27,7 +27,7 @@ class CharacterSetTest extends AbstractTestCase
 
     public function testIntrospectKeys(): void
     {
-        $this->assertSame(CharacterSet::introspectKeys(), [
+        static::assertSame(CharacterSet::introspectKeys(), [
             'ISO_8859_1',
             'US_ASCII',
             'UTF_8',
@@ -37,11 +37,11 @@ class CharacterSetTest extends AbstractTestCase
 
     public function testHasValue(): void
     {
-        $this->assertTrue(CharacterSet::hasValue(CharacterSet::ISO_8859_1));
-        $this->assertTrue(CharacterSet::hasValue(CharacterSet::US_ASCII));
-        $this->assertTrue(CharacterSet::hasValue(CharacterSet::UTF_8));
-        $this->assertTrue(CharacterSet::hasValue(CharacterSet::WIN_1252));
+        static::assertTrue(CharacterSet::hasValue(CharacterSet::ISO_8859_1));
+        static::assertTrue(CharacterSet::hasValue(CharacterSet::US_ASCII));
+        static::assertTrue(CharacterSet::hasValue(CharacterSet::UTF_8));
+        static::assertTrue(CharacterSet::hasValue(CharacterSet::WIN_1252));
 
-        $this->assertFalse(CharacterSet::hasValue('nope'));
+        static::assertFalse(CharacterSet::hasValue('nope'));
     }
 }

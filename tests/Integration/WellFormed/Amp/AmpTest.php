@@ -14,15 +14,13 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class AmpTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
 
     /**
      * Data Provider.
-     *
-     * @return iterable
      */
     public function feeds(): iterable
     {
@@ -36,8 +34,6 @@ class AmpTest extends AbstractTestCase
 
     /**
      * @dataProvider feeds
-     *
-     * @param mixed $feed
      */
     public function testEntities($feed): void
     {
@@ -54,6 +50,6 @@ class AmpTest extends AbstractTestCase
         );
         $title = $m[1];
 
-        $this->assertEquals($title, $entry->getTitle()->getValue());
+        static::assertEquals($title, $entry->getTitle()->getValue());
     }
 }

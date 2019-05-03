@@ -14,7 +14,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class FeedIdTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -25,7 +25,7 @@ class FeedIdTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('http://example.com/', (string) $feed->getId());
-        $this->assertEquals('http://example.com/', (string) $feed->getGuid());
+        static::assertEquals('http://example.com/', (string) $feed->getId());
+        static::assertEquals('http://example.com/', (string) $feed->getGuid());
     }
 }

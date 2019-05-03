@@ -20,8 +20,6 @@ interface BranchInterface
      *
      * @param string $nodeName The name of the method being called.
      *
-     * @return string
-     *
      * @internal
      */
     public function getAlias(string $nodeName): string;

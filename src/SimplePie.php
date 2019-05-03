@@ -68,7 +68,7 @@ class SimplePie implements C\SetLoggerInterface
     /**
      * Sets the libxml value to use for parsing XML.
      *
-     * @param int $libxml
+     * @param int $libxml TODO add a description here.
      *
      * @return int
      */
@@ -90,8 +90,6 @@ class SimplePie implements C\SetLoggerInterface
 
     /**
      * Gets the libxml value to use for parsing XML.
-     *
-     * @return int
      */
     public function getLibxml(): int
     {
@@ -101,7 +99,7 @@ class SimplePie implements C\SetLoggerInterface
     /**
      * Sets the handler stack which contains registered middleware.
      *
-     * @param HandlerStackInterface $handlerStack
+     * @param HandlerStackInterface $handlerStack TODO add a description here.
      *
      * @return self
      */
@@ -115,8 +113,6 @@ class SimplePie implements C\SetLoggerInterface
 
     /**
      * Gets the handler stack which contains registered middleware.
-     *
-     * @return HandlerStackInterface
      */
     public function getMiddlewareStack(): HandlerStackInterface
     {
@@ -133,19 +129,15 @@ class SimplePie implements C\SetLoggerInterface
      *                                                 should inject the entity definitions. A value of `false` means
      *                                                 that SimplePie should NOT inject the entity definitions. The
      *                                                 default value is `false`.
-     *
-     * @return XmlParser
      */
     public function parseXml(StreamInterface $stream, bool $handleHtmlEntitiesInXml = false): XmlParser
     {
-        $parser = new XmlParser(
+        return new XmlParser(
             $stream,
             $this->logger,
             $this->middleware,
             $this->libxml,
             $handleHtmlEntitiesInXml
         );
-
-        return $parser;
     }
 }

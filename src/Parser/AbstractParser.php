@@ -23,8 +23,6 @@ abstract class AbstractParser implements ParserInterface
      *
      * Note: Use of MD5 here is not cryptographically significant.
      *
-     * @return string
-     *
      * @see http://php.net/manual/en/language.oop5.magic.php#object.tostring
      */
     public function __toString(): string

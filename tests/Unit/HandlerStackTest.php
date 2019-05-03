@@ -35,9 +35,9 @@ class HandlerStackTest extends AbstractTestCase
             ->appendClosure(FeedType::XML, static function (): void {
             });
 
-        $this->assertCount(2, $stack->debugStack()['json']);
-        $this->assertCount(2, $stack->debugStack()['html']);
-        $this->assertCount(3, $stack->debugStack()['xml']);
+        static::assertCount(2, $stack->debugStack()['json']);
+        static::assertCount(2, $stack->debugStack()['html']);
+        static::assertCount(3, $stack->debugStack()['xml']);
     }
 
     public function testOrder(): void
@@ -62,7 +62,7 @@ class HandlerStackTest extends AbstractTestCase
 
         foreach ($stack->debugStack()['xml'] as $middleware) {
             $match = \array_shift($order);
-            $this->assertSame(1, \preg_match('/' . $match . '/', $middleware));
+            static::assertSame(1, \preg_match('/' . $match . '/', $middleware));
         }
     }
 

@@ -15,7 +15,7 @@ use SimplePie\Test\Integration\AbstractTestCase;
 
 class EntryContentTest extends AbstractTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->simplepie = $this->getSimplePie();
     }
@@ -26,16 +26,16 @@ class EntryContentTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('en', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('en', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
 
         $entry = $feed->getEntries()[0];
 
-        $this->assertEquals('en', (string) $entry->getLang());
-        $this->assertEquals(Serialization::TEXT, $entry->getLang()->getSerialization());
+        static::assertEquals('en', (string) $entry->getLang());
+        static::assertEquals(Serialization::TEXT, $entry->getLang()->getSerialization());
 
-        $this->assertEquals('en', (string) $entry->getContent()->getLang());
-        $this->assertEquals(Serialization::TEXT, $entry->getContent()->getLang()->getSerialization());
+        static::assertEquals('en', (string) $entry->getContent()->getLang());
+        static::assertEquals(Serialization::TEXT, $entry->getContent()->getLang()->getSerialization());
     }
 
     public function testXmlLangInherit2(): void
@@ -44,16 +44,16 @@ class EntryContentTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('fr', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('fr', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
 
         $entry = $feed->getEntries()[0];
 
-        $this->assertEquals('fr', (string) $entry->getLang());
-        $this->assertEquals(Serialization::TEXT, $entry->getLang()->getSerialization());
+        static::assertEquals('fr', (string) $entry->getLang());
+        static::assertEquals(Serialization::TEXT, $entry->getLang()->getSerialization());
 
-        $this->assertEquals('en', (string) $entry->getContent()->getLang());
-        $this->assertEquals(Serialization::TEXT, $entry->getContent()->getLang()->getSerialization());
+        static::assertEquals('en', (string) $entry->getContent()->getLang());
+        static::assertEquals(Serialization::TEXT, $entry->getContent()->getLang()->getSerialization());
     }
 
     public function testXmlLangInherit3(): void
@@ -62,16 +62,16 @@ class EntryContentTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('fr', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('fr', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
 
         $entry = $feed->getEntries()[0];
 
-        $this->assertEquals('fr', (string) $entry->getLang());
-        $this->assertEquals(Serialization::TEXT, $entry->getLang()->getSerialization());
+        static::assertEquals('fr', (string) $entry->getLang());
+        static::assertEquals(Serialization::TEXT, $entry->getLang()->getSerialization());
 
-        $this->assertEquals('en', (string) $entry->getContent()->getLang());
-        $this->assertEquals(Serialization::TEXT, $entry->getContent()->getLang()->getSerialization());
+        static::assertEquals('en', (string) $entry->getContent()->getLang());
+        static::assertEquals(Serialization::TEXT, $entry->getContent()->getLang()->getSerialization());
     }
 
     public function testXmlLangInherit4(): void
@@ -80,16 +80,16 @@ class EntryContentTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('en', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('en', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
 
         $entry = $feed->getEntries()[0];
 
-        $this->assertEquals('en', (string) $entry->getLang());
-        $this->assertEquals(Serialization::TEXT, $entry->getLang()->getSerialization());
+        static::assertEquals('en', (string) $entry->getLang());
+        static::assertEquals(Serialization::TEXT, $entry->getLang()->getSerialization());
 
-        $this->assertEquals('en', (string) $entry->getContent()->getLang());
-        $this->assertEquals(Serialization::TEXT, $entry->getContent()->getLang()->getSerialization());
+        static::assertEquals('en', (string) $entry->getContent()->getLang());
+        static::assertEquals(Serialization::TEXT, $entry->getContent()->getLang()->getSerialization());
     }
 
     public function testXmlLangUnderscore(): void
@@ -98,15 +98,15 @@ class EntryContentTest extends AbstractTestCase
         $parser = $this->simplepie->parseXml($stream);
         $feed   = $parser->getFeed();
 
-        $this->assertEquals('', (string) $feed->getLang());
-        $this->assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
+        static::assertEquals('', (string) $feed->getLang());
+        static::assertEquals(Serialization::TEXT, $feed->getLang()->getSerialization());
 
         $entry = $feed->getEntries()[0];
 
-        $this->assertEquals('', (string) $entry->getLang());
-        $this->assertEquals(Serialization::TEXT, $entry->getLang()->getSerialization());
+        static::assertEquals('', (string) $entry->getLang());
+        static::assertEquals(Serialization::TEXT, $entry->getLang()->getSerialization());
 
-        $this->assertEquals('en_US', (string) $entry->getContent()->getLang());
-        $this->assertEquals(Serialization::TEXT, $entry->getContent()->getLang()->getSerialization());
+        static::assertEquals('en_US', (string) $entry->getContent()->getLang());
+        static::assertEquals(Serialization::TEXT, $entry->getContent()->getLang()->getSerialization());
     }
 }

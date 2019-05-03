@@ -36,8 +36,6 @@ interface HandlerStackInterface extends C\SetLoggerInterface
      *                                  will be thrown.
      *
      * @throws MiddlewareException
-     *
-     * @return self
      */
     public function append(callable $middleware, ?string $name = null, ?string $overrideType = null): self;
 
@@ -54,8 +52,6 @@ interface HandlerStackInterface extends C\SetLoggerInterface
      * @param string|null $name         A name for the middleware. Can be used with `pushBefore()` and `pushAfter()`.
      *
      * @throws MiddlewareException
-     *
-     * @return self
      */
     public function appendClosure(string $overrideType, callable $middleware, ?string $name = null): self;
 
@@ -72,8 +68,6 @@ interface HandlerStackInterface extends C\SetLoggerInterface
      *                                  will be thrown.
      *
      * @throws MiddlewareException
-     *
-     * @return self
      */
     public function prepend(callable $middleware, ?string $name = null, ?string $overrideType = null): self;
 
@@ -90,8 +84,6 @@ interface HandlerStackInterface extends C\SetLoggerInterface
      * @param string|null $name         A name for the middleware. Can be used with `pushBefore()` and `pushAfter()`.
      *
      * @throws MiddlewareException
-     *
-     * @return self
      */
     public function prependClosure(string $overrideType, callable $middleware, ?string $name = null): self;
 

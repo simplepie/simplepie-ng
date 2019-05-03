@@ -24,11 +24,11 @@ class FeedTest extends AbstractTestCase
 
         $published = $feed->getPublished();
 
-        $this->assertEquals('2016-02-26', $published->format('Y-m-d'));
-        $this->assertEquals('12:30pm', $published->format('g:ia'));
-        $this->assertEquals('PST', $published->format('T'));
-        $this->assertEquals('-0800', $published->format('O'));
-        $this->assertEquals('-08:00', $published->format('P'));
+        static::assertEquals('2016-02-26', $published->format('Y-m-d'));
+        static::assertEquals('12:30pm', $published->format('g:ia'));
+        static::assertEquals('PST', $published->format('T'));
+        static::assertEquals('-0800', $published->format('O'));
+        static::assertEquals('-08:00', $published->format('P'));
     }
 
     public function testFeedFail(): void
