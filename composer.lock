@@ -1249,16 +1249,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.23.0",
+            "version": "1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4"
+                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
-                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
+                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
                 "shasum": ""
             },
             "require": {
@@ -1323,7 +1323,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-06-19T01:22:40+00:00"
+            "time": "2018-11-05T09:00:11+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -3292,12 +3292,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "632c8f395b16bf8ceeaab8b16a500a70fac7473b"
+                "reference": "1d7c6576a578fb57723c8c0fbc716cb88dae4f13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/632c8f395b16bf8ceeaab8b16a500a70fac7473b",
-                "reference": "632c8f395b16bf8ceeaab8b16a500a70fac7473b",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1d7c6576a578fb57723c8c0fbc716cb88dae4f13",
+                "reference": "1d7c6576a578fb57723c8c0fbc716cb88dae4f13",
                 "shasum": ""
             },
             "require": {
@@ -3330,12 +3330,12 @@
                 }
             ],
             "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
-            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
             "keywords": [
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-09-07T15:14:24+00:00"
+            "time": "2019-04-16T03:35:30+00:00"
         },
         {
             "name": "symfony/config",
