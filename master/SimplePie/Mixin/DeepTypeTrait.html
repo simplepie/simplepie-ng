@@ -112,7 +112,7 @@
                     <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getScalarSingleValue">getScalarSingleValue</a>(<abbr title="SimplePie\Mixin\object">object</abbr> $root, string $nodeName, string $namespaceAlias = null)
+                    <a href="#method_getScalarSingleValue">getScalarSingleValue</a>(object $root, string $nodeName, string|null $namespaceAlias = null)
         
                                             <p>Retrieves nodes that are simple scalars, and there is only one allowed value.</p>                </div>
                 <div class="col-md-2"></div>
@@ -122,7 +122,7 @@
                     <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getComplexSingleValue">getComplexSingleValue</a>(<abbr title="SimplePie\Mixin\object">object</abbr> $root, string $nodeName, string $className, string $namespaceAlias = null)
+                    <a href="#method_getComplexSingleValue">getComplexSingleValue</a>(object $root, string $nodeName, string $className, string|null $namespaceAlias = null)
         
                                             <p>Retrieves nodes that are complex types, and there is only one allowed value.</p>                </div>
                 <div class="col-md-2"></div>
@@ -132,7 +132,7 @@
                     <abbr title="SimplePie\Mixin\iterable">iterable</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getComplexMultipleValues">getComplexMultipleValues</a>(<abbr title="SimplePie\Mixin\object">object</abbr> $root, string $nodeName, string $namespaceAlias = null)
+                    <a href="#method_getComplexMultipleValues">getComplexMultipleValues</a>(object $root, string $nodeName, string|null $namespaceAlias = null)
         
                                             <p>Retrieves nodes that are complex types, and there may be are more than one value.</p>                </div>
                 <div class="col-md-2"></div>
@@ -145,9 +145,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_getScalarSingleValue">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DeepTypeTrait.php#L42">line 42</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DeepTypeTrait.php#L40">line 40</a></div>
         <code>            protected        <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
-    <strong>getScalarSingleValue</strong>(<abbr title="SimplePie\Mixin\object">object</abbr> $root, string $nodeName, string $namespaceAlias = null)
+    <strong>getScalarSingleValue</strong>(object $root, string $nodeName, string|null $namespaceAlias = null)
         </code>
     </h3>
     <div class="details">
@@ -161,7 +161,7 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="SimplePie\Mixin\object">object</abbr></td>
+                <td>object</td>
                 <td>$root</td>
                 <td>The root node for performing the lookup. Expected to be either a <code>stdClass</code>
                                    (for <code>Feed</code>), or an <code>SimplePie\Type\Entry</code> instance.</td>
@@ -173,7 +173,7 @@
                                    looking at the response from <code>getRoot()</code>.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$namespaceAlias</td>
                 <td>The XML namespace alias to apply.</td>
             </tr>
@@ -197,9 +197,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getComplexSingleValue">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DeepTypeTrait.php#L72">line 72</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DeepTypeTrait.php#L68">line 68</a></div>
         <code>            protected        <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>
-    <strong>getComplexSingleValue</strong>(<abbr title="SimplePie\Mixin\object">object</abbr> $root, string $nodeName, string $className, string $namespaceAlias = null)
+    <strong>getComplexSingleValue</strong>(object $root, string $nodeName, string $className, string|null $namespaceAlias = null)
         </code>
     </h3>
     <div class="details">
@@ -213,7 +213,7 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="SimplePie\Mixin\object">object</abbr></td>
+                <td>object</td>
                 <td>$root</td>
                 <td>The root node for performing the lookup. Expected to be either a <code>stdClass</code>
                                    (for <code>Feed</code>), or an <code>SimplePie\Type\Entry</code> instance.</td>
@@ -230,7 +230,7 @@
                 <td>The class name to instantiate when there is not a defined value.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$namespaceAlias</td>
                 <td>The XML namespace alias to apply.</td>
             </tr>
@@ -254,9 +254,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getComplexMultipleValues">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DeepTypeTrait.php#L102">line 102</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DeepTypeTrait.php#L96">line 96</a></div>
         <code>            protected        <abbr title="SimplePie\Mixin\iterable">iterable</abbr>
-    <strong>getComplexMultipleValues</strong>(<abbr title="SimplePie\Mixin\object">object</abbr> $root, string $nodeName, string $namespaceAlias = null)
+    <strong>getComplexMultipleValues</strong>(object $root, string $nodeName, string|null $namespaceAlias = null)
         </code>
     </h3>
     <div class="details">
@@ -270,7 +270,7 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="SimplePie\Mixin\object">object</abbr></td>
+                <td>object</td>
                 <td>$root</td>
                 <td>The root node for performing the lookup. Expected to be either a <code>stdClass</code>
                                    (for <code>Feed</code>), or an <code>SimplePie\Type\Entry</code> instance.</td>
@@ -282,7 +282,7 @@
                                    looking at the response from <code>getRoot()</code>.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$namespaceAlias</td>
                 <td>The XML namespace alias to apply.</td>
             </tr>

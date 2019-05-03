@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>SimplePie\Type\NodeInterface | SimplePie NG</title>
+    <title>SimplePie\Dictionary\Entity | SimplePie NG</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:SimplePie_Type_NodeInterface" data-root-path="../../">
+    <body id="class" data-name="class:SimplePie_Dictionary_Entity" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -65,28 +65,28 @@
 
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
-                <li><span class="label label-default">interface</span></li>
-                        <li><a href="../../SimplePie.html">SimplePie</a></li><li class="backslash">\</li><li><a href="../../SimplePie/Type.html">Type</a></li><li class="backslash">\</li><li>NodeInterface</li>
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../SimplePie.html">SimplePie</a></li><li class="backslash">\</li><li><a href="../../SimplePie/Dictionary.html">Dictionary</a></li><li class="backslash">\</li><li>Entity</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            NodeInterface
+            Entity
                 
         </h1>
     </div>
 
-    <p>    interface
-    <strong>NodeInterface</strong>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/NodeInterface.php">View source</a>)
+    <p>    class
+    <strong>Entity</strong>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Dictionary/Entity.php">View source</a>)
 </p>
 
         
     
 
             <div class="description">
-            <p>The interface that all type classes must implement and respond to.</p>                                </div>
+            <p>Pulled from the W3C's official HTML5 entities list.</p>            <p>DO NOT EDIT MANUALLY. This code was automatically generated with <code>make entities</code> at 2019-05-03T07:10:38Z.</p>                    </div>
     
     
     
@@ -96,22 +96,12 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    static&nbsp;string
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___toString">__toString</a>()
+                    <a href="#method_convertEntitiesToUnicode">convertEntitiesToUnicode</a>(string $input)
         
-                                            <p>Converts this object into a string representation.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>|null
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getNode">getNode</a>()
-        
-                                            <p>Gets the DOMNode element.</p>                </div>
+                                            <p>Utility function converts entities into their real unicode characters.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -121,10 +111,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___toString">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/NodeInterface.php#L23">line 23</a></div>
-        <code>                    string
-    <strong>__toString</strong>()
+                    <h3 id="method_convertEntitiesToUnicode">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Dictionary/Entity.php#L2259">line 2259</a></div>
+        <code>        static            string
+    <strong>convertEntitiesToUnicode</strong>(string $input)
         </code>
     </h3>
     <div class="details">
@@ -132,44 +122,24 @@
     
 
                     <div class="method-description">
-                                    <p>Converts this object into a string representation.</p>                                                </div>
+                                    <p>Utility function converts entities into their real unicode characters.</p>                                                </div>
                 <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$input</td>
+                <td>The input string.</td>
+            </tr>
+            </table>
+
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
             <td>string</td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getNode">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/NodeInterface.php#L28">line 28</a></div>
-        <code>                    <a target="_blank" href="http://php.net/DOMNode">DOMNode</a>|null
-    <strong>getNode</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Gets the DOMNode element.</p>                                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><a target="_blank" href="http://php.net/DOMNode">DOMNode</a>|null</td>
             <td></td>
         </tr>
     </table>

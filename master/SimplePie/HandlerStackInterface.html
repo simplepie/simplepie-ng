@@ -111,7 +111,7 @@
                     <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_append">append</a>(callable $middleware, string $name = null, string $overrideType = null)
+                    <a href="#method_append">append</a>(callable $middleware, string|null $name = null, string|null $overrideType = null)
         
                                             <p>Appends a new middleware class onto the end of the stack.</p>                </div>
                 <div class="col-md-2"></div>
@@ -121,7 +121,7 @@
                     <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_appendClosure">appendClosure</a>(string $overrideType, callable $middleware, string $name = null)
+                    <a href="#method_appendClosure">appendClosure</a>(string $overrideType, callable $middleware, string|null $name = null)
         
                                             <p>Appends a new middleware closure onto the end of the stack.</p>                </div>
                 <div class="col-md-2"></div>
@@ -131,7 +131,7 @@
                     <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_prepend">prepend</a>(callable $middleware, string $name = null, string $overrideType = null)
+                    <a href="#method_prepend">prepend</a>(callable $middleware, string|null $name = null, string|null $overrideType = null)
         
                                             <p>Prepends a new middleware class onto the beginning of the stack.</p>                </div>
                 <div class="col-md-2"></div>
@@ -141,24 +141,24 @@
                     <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_prependClosure">prependClosure</a>(string $overrideType, callable $middleware, string $name = null)
+                    <a href="#method_prependClosure">prependClosure</a>(string $overrideType, callable $middleware, string|null $name = null)
         
                                             <p>Prepends a new middleware closure onto the beginning of the stack.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    void
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_invoke">invoke</a>(string $feedType, <a target="_blank" href="http://php.net/stdClass">stdClass</a> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
+                    <a href="#method_invoke">invoke</a>(string $feedType, <a target="_blank" href="http://php.net/stdClass">stdClass</a> $feedRoot, string|null $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
         
                                             <p>Invokes the stack of middleware.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    void
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_registerNamespaces">registerNamespaces</a>(<a href="../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a> $ns)
@@ -174,7 +174,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_setLogger">
-        <div class="location">in <a href="../SimplePie/Configuration/SetLoggerInterface.html#method_setLogger"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration/SetLoggerInterface.php#L16">line 16</a></div>
+        <div class="location">in <a href="../SimplePie/Configuration/SetLoggerInterface.html#method_setLogger"><abbr title="SimplePie\Configuration\SetLoggerInterface">SetLoggerInterface</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Configuration/SetLoggerInterface.php#L17">line 17</a></div>
         <code>                    
     <strong>setLogger</strong>(<a href="../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
         </code>
@@ -203,9 +203,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_append">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L41">line 41</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L40">line 40</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
-    <strong>append</strong>(callable $middleware, string $name = null, string $overrideType = null)
+    <strong>append</strong>(callable $middleware, string|null $name = null, string|null $overrideType = null)
         </code>
     </h3>
     <div class="details">
@@ -224,12 +224,12 @@
                 <td>The middleware to add to the stack.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$name</td>
                 <td>A name for the middleware. Can be used with <code>pushBefore()</code> and <code>pushAfter()</code>.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$overrideType</td>
                 <td>Override our best guess for which stack to apply the middleware to. By default
                                  the appropriate stack will be determined by which
@@ -267,9 +267,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_appendClosure">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L59">line 59</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L56">line 56</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
-    <strong>appendClosure</strong>(string $overrideType, callable $middleware, string $name = null)
+    <strong>appendClosure</strong>(string $overrideType, callable $middleware, string|null $name = null)
         </code>
     </h3>
     <div class="details">
@@ -298,7 +298,7 @@
                 <td>The middleware to add to the stack.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$name</td>
                 <td>A name for the middleware. Can be used with <code>pushBefore()</code> and <code>pushAfter()</code>.</td>
             </tr>
@@ -331,9 +331,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_prepend">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L77">line 77</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L72">line 72</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
-    <strong>prepend</strong>(callable $middleware, string $name = null, string $overrideType = null)
+    <strong>prepend</strong>(callable $middleware, string|null $name = null, string|null $overrideType = null)
         </code>
     </h3>
     <div class="details">
@@ -352,12 +352,12 @@
                 <td>The middleware to add to the stack.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$name</td>
                 <td>A name for the middleware. Can be used with <code>pushBefore()</code> and <code>pushAfter()</code>.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$overrideType</td>
                 <td>Override our best guess for which stack to apply the middleware to. By default
                                  the appropriate stack will be determined by which
@@ -395,9 +395,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_prependClosure">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L95">line 95</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L88">line 88</a></div>
         <code>                    <a href="../SimplePie/HandlerStackInterface.html"><abbr title="SimplePie\HandlerStackInterface">HandlerStackInterface</abbr></a>
-    <strong>prependClosure</strong>(string $overrideType, callable $middleware, string $name = null)
+    <strong>prependClosure</strong>(string $overrideType, callable $middleware, string|null $name = null)
         </code>
     </h3>
     <div class="details">
@@ -426,7 +426,7 @@
                 <td>The middleware to add to the stack.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$name</td>
                 <td>A name for the middleware. Can be used with <code>pushBefore()</code> and <code>pushAfter()</code>.</td>
             </tr>
@@ -459,9 +459,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_invoke">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L107">line 107</a></div>
-        <code>                    
-    <strong>invoke</strong>(string $feedType, <a target="_blank" href="http://php.net/stdClass">stdClass</a> $feedRoot, string $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L100">line 100</a></div>
+        <code>                    void
+    <strong>invoke</strong>(string $feedType, <a target="_blank" href="http://php.net/stdClass">stdClass</a> $feedRoot, string|null $namespaceAlias, <a target="_blank" href="http://php.net/DOMXPath">DOMXPath</a> $xpath)
         </code>
     </h3>
     <div class="details">
@@ -486,7 +486,7 @@
                 <td>The root of the feed. This will be written-to when the parsing middleware runs.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$namespaceAlias</td>
                 <td>The preferred namespace alias for a given XML namespace URI. Should be the result
                                 of a call to <code>SimplePie\Util\Ns</code>.</td>
@@ -499,6 +499,15 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -507,8 +516,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_registerNamespaces">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L116">line 116</a></div>
-        <code>                    
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/HandlerStackInterface.php#L109">line 109</a></div>
+        <code>                    void
     <strong>registerNamespaces</strong>(<a href="../SimplePie/Util/Ns.html"><abbr title="SimplePie\Util\Ns">Ns</abbr></a> $ns)
         </code>
     </h3>
@@ -530,6 +539,15 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>

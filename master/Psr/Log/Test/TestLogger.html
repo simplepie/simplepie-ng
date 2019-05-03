@@ -1,0 +1,2814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Psr\Log\Test\TestLogger | SimplePie NG</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/sami.css">
+        <script src="../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Psr_Log_Test_TestLogger" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">SimplePie NG</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../Psr.html">Psr</a></li><li class="backslash">\</li><li><a href="../../../Psr/Log.html">Log</a></li><li class="backslash">\</li><li><a href="../../../Psr/Log/Test.html">Test</a></li><li class="backslash">\</li><li>TestLogger</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            TestLogger
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>TestLogger</strong>        extends <a href="../../../Psr/Log/AbstractLogger.html"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a>        (<a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php">View source</a>)
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Used for testing purposes.</p>            <p>It records all records and gives you access to them for verification.</p>                    </div>
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_records">
+                                                                                array
+                </td>
+                <td>$records</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_recordsByLevel">
+                                                                                
+                </td>
+                <td>$recordsByLevel</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_emergency">emergency</a>(string $message, array $context = array())
+        
+                                            <p>System is unusable.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Psr/Log/AbstractLogger.html#method_emergency"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_alert">alert</a>(string $message, array $context = array())
+        
+                                            <p>Action must be taken immediately.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Psr/Log/AbstractLogger.html#method_alert"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_critical">critical</a>(string $message, array $context = array())
+        
+                                            <p>Critical conditions.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Psr/Log/AbstractLogger.html#method_critical"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_error">error</a>(string $message, array $context = array())
+        
+                                            <p>Runtime errors that do not require immediate action but should typically
+be logged and monitored.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Psr/Log/AbstractLogger.html#method_error"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_warning">warning</a>(string $message, array $context = array())
+        
+                                            <p>Exceptional occurrences that are not errors.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Psr/Log/AbstractLogger.html#method_warning"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_notice">notice</a>(string $message, array $context = array())
+        
+                                            <p>Normal but significant events.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Psr/Log/AbstractLogger.html#method_notice"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_info">info</a>(string $message, array $context = array())
+        
+                                            <p>Interesting events.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Psr/Log/AbstractLogger.html#method_info"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_debug">debug</a>(string $message, array $context = array())
+        
+                                            <p>Detailed debug information.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Psr/Log/AbstractLogger.html#method_debug"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_log">log</a>(mixed $level, string $message, array $context = [])
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasRecords">hasRecords</a>($level)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasRecord">hasRecord</a>($record, $level)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasRecordThatContains">hasRecordThatContains</a>($message, $level)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasRecordThatMatches">hasRecordThatMatches</a>($regex, $level)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasRecordThatPasses">hasRecordThatPasses</a>(callable $predicate, $level)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___call">__call</a>($method, $args)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_reset">reset</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasEmergency">hasEmergency</a>($record)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasAlert">hasAlert</a>($record)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasCritical">hasCritical</a>($record)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasError">hasError</a>($record)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasWarning">hasWarning</a>($record)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasNotice">hasNotice</a>($record)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasInfo">hasInfo</a>($record)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasDebug">hasDebug</a>($record)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasEmergencyRecords">hasEmergencyRecords</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasAlertRecords">hasAlertRecords</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasCriticalRecords">hasCriticalRecords</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasErrorRecords">hasErrorRecords</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasWarningRecords">hasWarningRecords</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasNoticeRecords">hasNoticeRecords</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasInfoRecords">hasInfoRecords</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasDebugRecords">hasDebugRecords</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasEmergencyThatContains">hasEmergencyThatContains</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasAlertThatContains">hasAlertThatContains</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasCriticalThatContains">hasCriticalThatContains</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasErrorThatContains">hasErrorThatContains</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasWarningThatContains">hasWarningThatContains</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasNoticeThatContains">hasNoticeThatContains</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasInfoThatContains">hasInfoThatContains</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasDebugThatContains">hasDebugThatContains</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasEmergencyThatMatches">hasEmergencyThatMatches</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasAlertThatMatches">hasAlertThatMatches</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasCriticalThatMatches">hasCriticalThatMatches</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasErrorThatMatches">hasErrorThatMatches</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasWarningThatMatches">hasWarningThatMatches</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasNoticeThatMatches">hasNoticeThatMatches</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasInfoThatMatches">hasInfoThatMatches</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasDebugThatMatches">hasDebugThatMatches</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasEmergencyThatPasses">hasEmergencyThatPasses</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasAlertThatPasses">hasAlertThatPasses</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasCriticalThatPasses">hasCriticalThatPasses</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasErrorThatPasses">hasErrorThatPasses</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasWarningThatPasses">hasWarningThatPasses</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasNoticeThatPasses">hasNoticeThatPasses</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasInfoThatPasses">hasInfoThatPasses</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasDebugThatPasses">hasDebugThatPasses</a>($message)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_emergency">
+        <div class="location">in <a href="../../../Psr/Log/AbstractLogger.html#method_emergency"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/AbstractLogger.php#L22">line 22</a></div>
+        <code>                    void
+    <strong>emergency</strong>(string $message, array $context = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>System is unusable.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$context</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_alert">
+        <div class="location">in <a href="../../../Psr/Log/AbstractLogger.html#method_alert"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/AbstractLogger.php#L38">line 38</a></div>
+        <code>                    void
+    <strong>alert</strong>(string $message, array $context = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Action must be taken immediately.</p>                    <p>Example: Entire website down, database unavailable, etc. This should
+trigger the SMS alerts and wake you up.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$context</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_critical">
+        <div class="location">in <a href="../../../Psr/Log/AbstractLogger.html#method_critical"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/AbstractLogger.php#L53">line 53</a></div>
+        <code>                    void
+    <strong>critical</strong>(string $message, array $context = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Critical conditions.</p>                    <p>Example: Application component unavailable, unexpected exception.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$context</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_error">
+        <div class="location">in <a href="../../../Psr/Log/AbstractLogger.html#method_error"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/AbstractLogger.php#L67">line 67</a></div>
+        <code>                    void
+    <strong>error</strong>(string $message, array $context = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Runtime errors that do not require immediate action but should typically
+be logged and monitored.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$context</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_warning">
+        <div class="location">in <a href="../../../Psr/Log/AbstractLogger.html#method_warning"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/AbstractLogger.php#L83">line 83</a></div>
+        <code>                    void
+    <strong>warning</strong>(string $message, array $context = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Exceptional occurrences that are not errors.</p>                    <p>Example: Use of deprecated APIs, poor use of an API, undesirable things
+that are not necessarily wrong.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$context</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_notice">
+        <div class="location">in <a href="../../../Psr/Log/AbstractLogger.html#method_notice"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/AbstractLogger.php#L96">line 96</a></div>
+        <code>                    void
+    <strong>notice</strong>(string $message, array $context = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Normal but significant events.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$context</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_info">
+        <div class="location">in <a href="../../../Psr/Log/AbstractLogger.html#method_info"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/AbstractLogger.php#L111">line 111</a></div>
+        <code>                    void
+    <strong>info</strong>(string $message, array $context = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Interesting events.</p>                    <p>Example: User logs in, SQL logs.</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$context</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_debug">
+        <div class="location">in <a href="../../../Psr/Log/AbstractLogger.html#method_debug"><abbr title="Psr\Log\AbstractLogger">AbstractLogger</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/AbstractLogger.php#L124">line 124</a></div>
+        <code>                    void
+    <strong>debug</strong>(string $message, array $context = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Detailed debug information.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$context</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_log">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L69">line 69</a></div>
+        <code>                    void
+    <strong>log</strong>(mixed $level, string $message, array $context = [])
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>mixed</td>
+                <td>$level</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$context</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasRecords">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L81">line 81</a></div>
+        <code>                    
+    <strong>hasRecords</strong>($level)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$level</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasRecord">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L86">line 86</a></div>
+        <code>                    
+    <strong>hasRecord</strong>($record, $level)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$record</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$level</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasRecordThatContains">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L102">line 102</a></div>
+        <code>                    
+    <strong>hasRecordThatContains</strong>($message, $level)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$level</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasRecordThatMatches">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L109">line 109</a></div>
+        <code>                    
+    <strong>hasRecordThatMatches</strong>($regex, $level)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$regex</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$level</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasRecordThatPasses">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L116">line 116</a></div>
+        <code>                    
+    <strong>hasRecordThatPasses</strong>(callable $predicate, $level)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>callable</td>
+                <td>$predicate</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$level</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___call">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L129">line 129</a></div>
+        <code>                    
+    <strong>__call</strong>($method, $args)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$method</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$args</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_reset">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L142">line 142</a></div>
+        <code>                    
+    <strong>reset</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasEmergency">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasEmergency</strong>($record)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$record</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasAlert">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasAlert</strong>($record)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$record</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasCritical">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasCritical</strong>($record)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$record</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasError">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasError</strong>($record)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$record</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasWarning">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasWarning</strong>($record)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$record</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasNotice">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasNotice</strong>($record)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$record</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasInfo">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasInfo</strong>($record)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$record</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasDebug">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasDebug</strong>($record)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$record</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasEmergencyRecords">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasEmergencyRecords</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasAlertRecords">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasAlertRecords</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasCriticalRecords">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasCriticalRecords</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasErrorRecords">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasErrorRecords</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasWarningRecords">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasWarningRecords</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasNoticeRecords">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasNoticeRecords</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasInfoRecords">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasInfoRecords</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasDebugRecords">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasDebugRecords</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasEmergencyThatContains">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasEmergencyThatContains</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasAlertThatContains">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasAlertThatContains</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasCriticalThatContains">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasCriticalThatContains</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasErrorThatContains">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasErrorThatContains</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasWarningThatContains">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasWarningThatContains</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasNoticeThatContains">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasNoticeThatContains</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasInfoThatContains">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasInfoThatContains</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasDebugThatContains">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasDebugThatContains</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasEmergencyThatMatches">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasEmergencyThatMatches</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasAlertThatMatches">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasAlertThatMatches</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasCriticalThatMatches">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasCriticalThatMatches</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasErrorThatMatches">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasErrorThatMatches</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasWarningThatMatches">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasWarningThatMatches</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasNoticeThatMatches">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasNoticeThatMatches</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasInfoThatMatches">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasInfoThatMatches</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasDebugThatMatches">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasDebugThatMatches</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasEmergencyThatPasses">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasEmergencyThatPasses</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasAlertThatPasses">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasAlertThatPasses</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasCriticalThatPasses">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasCriticalThatPasses</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasErrorThatPasses">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasErrorThatPasses</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasWarningThatPasses">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasWarningThatPasses</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasNoticeThatPasses">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasNoticeThatPasses</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasInfoThatPasses">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasInfoThatPasses</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasDebugThatPasses">
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/vendor/psr/log/Psr/Log/Test/TestLogger.php#L57">line 57</a></div>
+        <code>                    bool
+    <strong>hasDebugThatPasses</strong>($message)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

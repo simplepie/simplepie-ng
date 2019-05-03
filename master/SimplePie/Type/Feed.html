@@ -184,7 +184,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    mixed
+                    
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method___call">__call</a>(string $nodeName, array $args)
@@ -227,7 +227,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
                     <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getScalarSingleValue">getScalarSingleValue</a>(<abbr title="SimplePie\Mixin\object">object</abbr> $root, string $nodeName, string $namespaceAlias = null)
+                    <a href="#method_getScalarSingleValue">getScalarSingleValue</a>(object $root, string $nodeName, string|null $namespaceAlias = null)
         
                                             <p>Retrieves nodes that are simple scalars, and there is only one allowed value.</p>                </div>
                 <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Mixin/DeepTypeTrait.html#method_getScalarSingleValue"><abbr title="SimplePie\Mixin\DeepTypeTrait">DeepTypeTrait</abbr></a></small></div>
@@ -237,7 +237,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
                     <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getComplexSingleValue">getComplexSingleValue</a>(<abbr title="SimplePie\Mixin\object">object</abbr> $root, string $nodeName, string $className, string $namespaceAlias = null)
+                    <a href="#method_getComplexSingleValue">getComplexSingleValue</a>(object $root, string $nodeName, string $className, string|null $namespaceAlias = null)
         
                                             <p>Retrieves nodes that are complex types, and there is only one allowed value.</p>                </div>
                 <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Mixin/DeepTypeTrait.html#method_getComplexSingleValue"><abbr title="SimplePie\Mixin\DeepTypeTrait">DeepTypeTrait</abbr></a></small></div>
@@ -247,7 +247,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
                     <abbr title="SimplePie\Mixin\iterable">iterable</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getComplexMultipleValues">getComplexMultipleValues</a>(<abbr title="SimplePie\Mixin\object">object</abbr> $root, string $nodeName, string $namespaceAlias = null)
+                    <a href="#method_getComplexMultipleValues">getComplexMultipleValues</a>(object $root, string $nodeName, string|null $namespaceAlias = null)
         
                                             <p>Retrieves nodes that are complex types, and there may be are more than one value.</p>                </div>
                 <div class="col-md-2"><small>from&nbsp;<a href="../../SimplePie/Mixin/DeepTypeTrait.html#method_getComplexMultipleValues"><abbr title="SimplePie\Mixin\DeepTypeTrait">DeepTypeTrait</abbr></a></small></div>
@@ -540,8 +540,8 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___call">
-        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method___call"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L28">line 28</a></div>
-        <code>                    mixed
+        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method___call"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L27">line 27</a></div>
+        <code>                    
     <strong>__call</strong>(string $nodeName, array $args)
         </code>
     </h3>
@@ -568,15 +568,6 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </table>
 
             
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>mixed</td>
-            <td></td>
-        </tr>
-    </table>
-
             
             
                     </div>
@@ -585,7 +576,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_getUnresolvableMessage">
-        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method_getUnresolvableMessage"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L55">line 55</a></div>
+        <div class="location">in <a href="../../SimplePie/Type/AbstractType.html#method_getUnresolvableMessage"><abbr title="SimplePie\Type\AbstractType">AbstractType</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/AbstractType.php#L52">line 52</a></div>
         <code>            protected        string
     <strong>getUnresolvableMessage</strong>(string $nodeName)
         </code>
@@ -625,7 +616,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDateFormat">
-        <div class="location">in <a href="../../SimplePie/Mixin/DateTrait.html#method_setDateFormat"><abbr title="SimplePie\Mixin\DateTrait">DateTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DateTrait.php#L42">line 42</a></div>
+        <div class="location">in <a href="../../SimplePie/Mixin/DateTrait.html#method_setDateFormat"><abbr title="SimplePie\Mixin\DateTrait">DateTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DateTrait.php#L41">line 41</a></div>
         <code>                    <a href="../../SimplePie/Mixin/DateTrait.html"><abbr title="SimplePie\Mixin\DateTrait">DateTrait</abbr></a>
     <strong>setDateFormat</strong>(string $createFromFormat)
         </code>
@@ -663,7 +654,9 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>http://php.net/manual/en/datetime.createfromformat.php</td>
+                <td>
+                                            <a href="http://php.net/manual/en/datetime.createfromformat.php">http://php.net/manual/en/datetime.createfromformat.php</a>
+                                    </td>
                 <td></td>
             </tr>
             </table>
@@ -674,7 +667,7 @@ the result of a call to <code>SimplePie\Util\Ns</code>.</td>
             </div>
                     <div class="method-item">
                     <h3 id="method_setOutputTimezone">
-        <div class="location">in <a href="../../SimplePie/Mixin/DateTrait.html#method_setOutputTimezone"><abbr title="SimplePie\Mixin\DateTrait">DateTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DateTrait.php#L64">line 64</a></div>
+        <div class="location">in <a href="../../SimplePie/Mixin/DateTrait.html#method_setOutputTimezone"><abbr title="SimplePie\Mixin\DateTrait">DateTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DateTrait.php#L61">line 61</a></div>
         <code>                    <a href="../../SimplePie/Mixin/DateTrait.html"><abbr title="SimplePie\Mixin\DateTrait">DateTrait</abbr></a>
     <strong>setOutputTimezone</strong>(string $timezone = &#039;UTC&#039;)
         </code>
@@ -723,9 +716,9 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getScalarSingleValue">
-        <div class="location">in <a href="../../SimplePie/Mixin/DeepTypeTrait.html#method_getScalarSingleValue"><abbr title="SimplePie\Mixin\DeepTypeTrait">DeepTypeTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DeepTypeTrait.php#L42">line 42</a></div>
+        <div class="location">in <a href="../../SimplePie/Mixin/DeepTypeTrait.html#method_getScalarSingleValue"><abbr title="SimplePie\Mixin\DeepTypeTrait">DeepTypeTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DeepTypeTrait.php#L40">line 40</a></div>
         <code>            protected        <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
-    <strong>getScalarSingleValue</strong>(<abbr title="SimplePie\Mixin\object">object</abbr> $root, string $nodeName, string $namespaceAlias = null)
+    <strong>getScalarSingleValue</strong>(object $root, string $nodeName, string|null $namespaceAlias = null)
         </code>
     </h3>
     <div class="details">
@@ -739,7 +732,7 @@ calculation include:</p>
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="SimplePie\Mixin\object">object</abbr></td>
+                <td>object</td>
                 <td>$root</td>
                 <td>The root node for performing the lookup. Expected to be either a <code>stdClass</code>
                                    (for <code>Feed</code>), or an <code>SimplePie\Type\Entry</code> instance.</td>
@@ -751,7 +744,7 @@ calculation include:</p>
                                    looking at the response from <code>getRoot()</code>.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$namespaceAlias</td>
                 <td>The XML namespace alias to apply.</td>
             </tr>
@@ -775,9 +768,9 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getComplexSingleValue">
-        <div class="location">in <a href="../../SimplePie/Mixin/DeepTypeTrait.html#method_getComplexSingleValue"><abbr title="SimplePie\Mixin\DeepTypeTrait">DeepTypeTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DeepTypeTrait.php#L72">line 72</a></div>
+        <div class="location">in <a href="../../SimplePie/Mixin/DeepTypeTrait.html#method_getComplexSingleValue"><abbr title="SimplePie\Mixin\DeepTypeTrait">DeepTypeTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DeepTypeTrait.php#L68">line 68</a></div>
         <code>            protected        <a href="../../SimplePie/Type/TypeInterface.html"><abbr title="SimplePie\Type\TypeInterface">TypeInterface</abbr></a>
-    <strong>getComplexSingleValue</strong>(<abbr title="SimplePie\Mixin\object">object</abbr> $root, string $nodeName, string $className, string $namespaceAlias = null)
+    <strong>getComplexSingleValue</strong>(object $root, string $nodeName, string $className, string|null $namespaceAlias = null)
         </code>
     </h3>
     <div class="details">
@@ -791,7 +784,7 @@ calculation include:</p>
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="SimplePie\Mixin\object">object</abbr></td>
+                <td>object</td>
                 <td>$root</td>
                 <td>The root node for performing the lookup. Expected to be either a <code>stdClass</code>
                                    (for <code>Feed</code>), or an <code>SimplePie\Type\Entry</code> instance.</td>
@@ -808,7 +801,7 @@ calculation include:</p>
                 <td>The class name to instantiate when there is not a defined value.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$namespaceAlias</td>
                 <td>The XML namespace alias to apply.</td>
             </tr>
@@ -832,9 +825,9 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getComplexMultipleValues">
-        <div class="location">in <a href="../../SimplePie/Mixin/DeepTypeTrait.html#method_getComplexMultipleValues"><abbr title="SimplePie\Mixin\DeepTypeTrait">DeepTypeTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DeepTypeTrait.php#L102">line 102</a></div>
+        <div class="location">in <a href="../../SimplePie/Mixin/DeepTypeTrait.html#method_getComplexMultipleValues"><abbr title="SimplePie\Mixin\DeepTypeTrait">DeepTypeTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/DeepTypeTrait.php#L96">line 96</a></div>
         <code>            protected        <abbr title="SimplePie\Mixin\iterable">iterable</abbr>
-    <strong>getComplexMultipleValues</strong>(<abbr title="SimplePie\Mixin\object">object</abbr> $root, string $nodeName, string $namespaceAlias = null)
+    <strong>getComplexMultipleValues</strong>(object $root, string $nodeName, string|null $namespaceAlias = null)
         </code>
     </h3>
     <div class="details">
@@ -848,7 +841,7 @@ calculation include:</p>
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="SimplePie\Mixin\object">object</abbr></td>
+                <td>object</td>
                 <td>$root</td>
                 <td>The root node for performing the lookup. Expected to be either a <code>stdClass</code>
                                    (for <code>Feed</code>), or an <code>SimplePie\Type\Entry</code> instance.</td>
@@ -860,7 +853,7 @@ calculation include:</p>
                                    looking at the response from <code>getRoot()</code>.</td>
             </tr>
                     <tr>
-                <td>string</td>
+                <td>string|null</td>
                 <td>$namespaceAlias</td>
                 <td>The XML namespace alias to apply.</td>
             </tr>
@@ -884,7 +877,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_setLogger">
-        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L34">line 34</a></div>
+        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_setLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L35">line 35</a></div>
         <code>                    <a href="../../SimplePie/Mixin/LoggerTrait.html"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a>
     <strong>setLogger</strong>(<a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a> $logger)
         </code>
@@ -902,7 +895,7 @@ calculation include:</p>
                     <tr>
                 <td><a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a></td>
                 <td>$logger</td>
-                <td></td>
+                <td>A PSR-3 compatible logger.</td>
             </tr>
             </table>
 
@@ -924,7 +917,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getLogger">
-        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L53">line 53</a></div>
+        <div class="location">in <a href="../../SimplePie/Mixin/LoggerTrait.html#method_getLogger"><abbr title="SimplePie\Mixin\LoggerTrait">LoggerTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/LoggerTrait.php#L52">line 52</a></div>
         <code>                    <a href="../../Psr/Log/LoggerInterface.html"><abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr></a>
     <strong>getLogger</strong>()
         </code>
@@ -954,7 +947,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getRoot">
-        <div class="location">in <a href="../../SimplePie/Mixin/RootTrait.html#method_getRoot"><abbr title="SimplePie\Mixin\RootTrait">RootTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/RootTrait.php#L29">line 29</a></div>
+        <div class="location">in <a href="../../SimplePie/Mixin/RootTrait.html#method_getRoot"><abbr title="SimplePie\Mixin\RootTrait">RootTrait</abbr></a> at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Mixin/RootTrait.php#L28">line 28</a></div>
         <code>                    object
     <strong>getRoot</strong>()
         </code>
@@ -984,7 +977,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L73">line 73</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L74">line 74</a></div>
         <code>                    
     <strong>__construct</strong>(string $namespaceAlias)
         </code>
@@ -1015,7 +1008,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getDefaultNs">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L85">line 85</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L84">line 84</a></div>
         <code>                    string
     <strong>getDefaultNs</strong>()
         </code>
@@ -1045,7 +1038,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getAlias">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L99">line 99</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L96">line 96</a></div>
         <code>                    string
     <strong>getAlias</strong>(string $nodeName)
         </code>
@@ -1085,7 +1078,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getHandler">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L149">line 149</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L146">line 146</a></div>
         <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getHandler</strong>(string $nodeName, array $args = [])
         </code>
@@ -1139,7 +1132,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getAuthors">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    array
     <strong>getAuthors</strong>(string  $namespaceAlias)
         </code>
@@ -1179,7 +1172,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getCategories">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    array
     <strong>getCategories</strong>(string  $namespaceAlias)
         </code>
@@ -1219,7 +1212,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getContributors">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    array
     <strong>getContributors</strong>(string  $namespaceAlias)
         </code>
@@ -1259,7 +1252,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getCopyright">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getCopyright</strong>(string  $namespaceAlias)
         </code>
@@ -1299,7 +1292,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getEntries">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    array
     <strong>getEntries</strong>(string  $namespaceAlias)
         </code>
@@ -1339,7 +1332,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getGenerator">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a href="../../SimplePie/Type/Generator.html"><abbr title="SimplePie\Type\Generator">Generator</abbr></a>
     <strong>getGenerator</strong>(string  $namespaceAlias)
         </code>
@@ -1379,7 +1372,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getGuid">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getGuid</strong>(string  $namespaceAlias)
         </code>
@@ -1419,7 +1412,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getId">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getId</strong>(string  $namespaceAlias)
         </code>
@@ -1459,7 +1452,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getIcon">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a href="../../SimplePie/Type/Image.html"><abbr title="SimplePie\Type\Image">Image</abbr></a>
     <strong>getIcon</strong>(string  $namespaceAlias)
         </code>
@@ -1499,7 +1492,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getItems">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    array
     <strong>getItems</strong>(string  $namespaceAlias)
         </code>
@@ -1539,7 +1532,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getLang">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getLang</strong>(string  $namespaceAlias)
         </code>
@@ -1579,7 +1572,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getLanguage">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getLanguage</strong>(string  $namespaceAlias)
         </code>
@@ -1619,7 +1612,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getLinks">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    array
     <strong>getLinks</strong>(string  $namespaceAlias, string  $relFilter)
         </code>
@@ -1664,7 +1657,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getLogo">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a href="../../SimplePie/Type/Image.html"><abbr title="SimplePie\Type\Image">Image</abbr></a>
     <strong>getLogo</strong>(string  $namespaceAlias)
         </code>
@@ -1704,7 +1697,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getPubDate">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a target="_blank" href="http://php.net/DateTime">DateTime</a>
     <strong>getPubDate</strong>(string  $namespaceAlias)
         </code>
@@ -1744,7 +1737,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getPublished">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a target="_blank" href="http://php.net/DateTime">DateTime</a>
     <strong>getPublished</strong>(string  $namespaceAlias)
         </code>
@@ -1784,7 +1777,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getRights">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getRights</strong>(string  $namespaceAlias)
         </code>
@@ -1824,7 +1817,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getSubtitle">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getSubtitle</strong>(string  $namespaceAlias)
         </code>
@@ -1864,7 +1857,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getSummary">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getSummary</strong>(string  $namespaceAlias)
         </code>
@@ -1904,7 +1897,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getTitle">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a href="../../SimplePie/Type/Node.html"><abbr title="SimplePie\Type\Node">Node</abbr></a>
     <strong>getTitle</strong>(string  $namespaceAlias)
         </code>
@@ -1944,7 +1937,7 @@ calculation include:</p>
             </div>
                     <div class="method-item">
                     <h3 id="method_getUpdated">
-        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L53">line 53</a></div>
+        <div class="location">at         <a href="https://github.com/simplepie/simplepie-ng/blob/master/src/Type/Feed.php#L54">line 54</a></div>
         <code>                    <a target="_blank" href="http://php.net/DateTime">DateTime</a>
     <strong>getUpdated</strong>(string  $namespaceAlias)
         </code>
