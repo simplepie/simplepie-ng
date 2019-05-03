@@ -2,7 +2,7 @@
 /**
  * Defintions can be looked-up at <http://cs.sensiolabs.org>.
  *
- * Rules current as of https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/v2.10.0/README.rst
+ * Rules current as of https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/2.14/README.rst
  */
 
 use PhpCsFixer\Config;
@@ -15,8 +15,8 @@ $finder = PhpCsFixer\Finder::create()
 ;
 
 $fileHeader = <<<'EOF'
-Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
-Copyright (c) 2017–2018 Contributors.
+Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+Copyright (c) 2017–2019 Contributors.
 
 http://opensource.org/licenses/Apache2.0
 EOF;
@@ -43,16 +43,22 @@ return Config::create()
         'blank_line_before_statement' => [
             'statements' => [
                 'break',
+                'case',
                 'continue',
                 'declare',
+                'default',
+                'die',
                 'do',
+                'exit',
                 'for',
                 'foreach',
                 'if',
                 'return',
+                'switch',
                 'throw',
                 'try',
                 'while',
+                'yield',
             ],
         ],
         'braces' => [
@@ -87,17 +93,26 @@ return Config::create()
             'heredoc_syntax' => true,
             'single_quoted'  => false,
         ],
+        'error_suppression' => [
+            'mute_deprecation_error'         => false,
+            'noise_remaining_usages'         => true,
+            'noise_remaining_usages_exclude' => [],
+        ],
         'final_internal_class' => [
             'annotation-black-list' => [],
             'annotation-white-list' => [
                 '@internal',
             ],
         ],
+        'fopen_flags' => [
+            'b_mode' => true,
+        ],
         'function_declaration' => [
             'closure_function_spacing' => 'one',
         ],
         'function_to_constant' => [
             'functions' => [
+                // 'get_called_class',
                 'get_class',
                 'phpversion',
                 'php_sapi_name',
@@ -129,18 +144,55 @@ return Config::create()
         'method_argument_space' => [
             'ensure_fully_multiline'           => true,
             'keep_multiple_spaces_after_comma' => false,
+            'on_multiline'                     => 'ignore',
         ],
         'multiline_whitespace_before_semicolons' => [
             'strategy' => 'no_multi_line',
         ],
+        'native_constant_invocation' => [
+            'exclude' => [
+                'null',
+                'false',
+                'true',
+            ],
+            'fix_built_in' => true,
+            'include'      => [],
+            'scope'        => 'all',
+        ],
+        'native_function_invocation' => [
+            'exclude' => [],
+            'include' => [
+                '@internal',
+            ],
+            'scope'   => 'all',
+            'strict'  => true,
+        ],
+        'no_alias_functions' => [
+            'sets' => [
+                '@all',
+            ],
+        ],
         'no_break_comment' => [
             'comment_text' => 'no break',
         ],
-        'no_extra_blank_lines' => [
-            'tokens' => [
-                'use',
-            ],
-        ],
+        // 'no_extra_blank_lines' => [
+        //     'tokens' => [
+        //         'break',
+        //         'case',
+        //         'continue',
+        //         'curly_brace_block',
+        //         'default',
+        //         'extra',
+        //         'parenthesis_brace_block',
+        //         'return',
+        //         'square_brace_block',
+        //         'switch',
+        //         'throw',
+        //         'use',
+        //         'useTrait',
+        //         'use_trait',
+        //     ],
+        // ],
         'no_mixed_echo_print' => [
             'use' => 'echo',
         ],
@@ -258,6 +310,7 @@ return Config::create()
         ],
         'single_line_comment_style' => [
             'comment_types' => [
+                'asterisk',
                 'hash',
             ],
         ],
@@ -276,11 +329,13 @@ return Config::create()
         ],
 
         // Enforce
+        'array_indentation'                           => true,
         'backtick_to_shell_exec'                      => true,
         'blank_line_after_namespace'                  => true,
         'blank_line_after_opening_tag'                => true,
         'combine_consecutive_issets'                  => true,
         'combine_consecutive_unsets'                  => true,
+        'combine_nested_dirname'                      => true,
         'compact_nullable_typehint'                   => true,
         'declare_strict_types'                        => true,
         'dir_constant'                                => true,
@@ -289,26 +344,31 @@ return Config::create()
         'ereg_to_preg'                                => true,
         'explicit_indirect_variable'                  => true,
         'explicit_string_variable'                    => true,
+        'fopen_flag_order'                            => true,
         'full_opening_tag'                            => true,
+        'fully_qualified_strict_types'                => true,
         'function_typehint_space'                     => true,
         'heredoc_to_nowdoc'                           => true,
+        'implode_call'                                => true,
         'include'                                     => true,
         'indentation_type'                            => true,
         'line_ending'                                 => true,
         'linebreak_after_opening_tag'                 => true,
+        'logical_operators'                           => true,
         'lowercase_cast'                              => true,
         'lowercase_constants'                         => true,
         'lowercase_keywords'                          => true,
+        'lowercase_static_reference'                  => true,
         'magic_constant_casing'                       => true,
+        'magic_method_casing'                         => true,
         'mb_str_functions'                            => true,
         'method_chaining_indentation'                 => true,
         'modernize_types_casting'                     => true,
         'multiline_comment_opening_closing'           => true,
-        'multiline_whitespace_before_semicolons'      => true,
         'native_function_casing'                      => true,
-        'native_function_invocation'                  => true,
         'new_with_braces'                             => true,
-        'no_alias_functions'                          => true,
+        'no_alternative_syntax'                       => true,
+        'no_binary_string'                            => true,
         'no_blank_lines_after_class_opening'          => true,
         'no_blank_lines_after_phpdoc'                 => true,
         'no_closing_tag'                              => true,
@@ -384,9 +444,12 @@ return Config::create()
 
         // Do not enforce
         'class_keyword_remove'                => false,
+        'comment_to_phpdoc'                   => false,
+        'date_time_immutable'                 => false,
         'doctrine_annotation_braces'          => false,
         'doctrine_annotation_indentation'     => false,
         'doctrine_annotation_spaces'          => false,
+        'heredoc_indentation'                 => false, // @todo 7.3
         'no_blank_lines_before_namespace'     => false,
         'no_short_echo_tag'                   => false,
         'not_operator_with_space'             => false,

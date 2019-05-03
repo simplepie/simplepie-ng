@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -54,15 +54,15 @@ class SimplePie implements C\SetLoggerInterface
         $this->middleware->append(new Atom(), 'atom');
 
         // Default libxml2 settings
-        $this->libxml = LIBXML_HTML_NOIMPLIED // Required, or things crash.
-            | LIBXML_BIGLINES
-            | LIBXML_COMPACT
-            | LIBXML_HTML_NODEFDTD
-            | LIBXML_NOBLANKS
-            | LIBXML_NOENT
-            | LIBXML_NOXMLDECL
-            | LIBXML_NSCLEAN
-            | LIBXML_PARSEHUGE;
+        $this->libxml = \LIBXML_HTML_NOIMPLIED // Required, or things crash.
+            | \LIBXML_BIGLINES
+            | \LIBXML_COMPACT
+            | \LIBXML_HTML_NODEFDTD
+            | \LIBXML_NOBLANKS
+            | \LIBXML_NOENT
+            | \LIBXML_NOXMLDECL
+            | \LIBXML_NSCLEAN
+            | \LIBXML_PARSEHUGE;
     }
 
     /**

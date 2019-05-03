@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright (c) 2017–2018 Ryan Parman <http://ryanparman.com>.
- * Copyright (c) 2017–2018 Contributors.
+ * Copyright (c) 2017–2019 Ryan Parman <http://ryanparman.com>.
+ * Copyright (c) 2017–2019 Contributors.
  *
  * http://opensource.org/licenses/Apache2.0
  */
@@ -35,9 +35,9 @@ class HandlerStackTest extends AbstractTestCase
             ->appendClosure(FeedType::XML, static function (): void {
             });
 
-        $this->assertSame(2, \count($stack->debugStack()['json']));
-        $this->assertSame(2, \count($stack->debugStack()['html']));
-        $this->assertSame(3, \count($stack->debugStack()['xml']));
+        $this->assertCount(2, $stack->debugStack()['json']);
+        $this->assertCount(2, $stack->debugStack()['html']);
+        $this->assertCount(3, $stack->debugStack()['xml']);
     }
 
     public function testOrder(): void
