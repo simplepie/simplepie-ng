@@ -435,7 +435,7 @@ for ($i = 0; $i < ($argv[1] ?? $__times__); $i++) {
     $elseMem = \memory_get_usage() - $elseMemStart;
     echo \sprintf('Everything else memory: %s%s', ($elseMem >= 0 ? '' : '-'), Bytes::format(\abs($elseMem))) . PHP_EOL;
 
-    echo \sprintf('Memory: %s/%s', Bytes::format(\memory_get_usage()), Bytes::format(\memory_get_usage(true)));
+    echo \sprintf('Memory: %s/%s', Bytes::format(\memory_get_usage()), Bytes::format(\memory_get_usage(true))) . PHP_EOL;
     echo ': ' . $i . PHP_EOL;
 }
 

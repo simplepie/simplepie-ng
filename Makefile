@@ -1,7 +1,121 @@
-all:
-	@cat Makefile | grep : | grep -v PHONY | grep -v @ | sed 's/:/ /' | awk '{print $$1}' | sort
+#-------------------------------------------------------------------------------
+# Global variables.
+
+PHP_LAST=7.2
+PHP_CURR=7.3
+PHP_NEXT=7.4
+
+BUILD_DOCKER=docker build --compress --force-rm --squash
+BUILD_COMPOSE=docker-compose build --pull --compress --parallel
+
+COMPOSE_72=tests-72 benchmarks-72 coverage-72
+COMPOSE_73=tests-73 benchmarks-73 coverage-73
+
+TEST_QUICK=tests-72 tests-73
+TEST_COVER=coverage-72 coverage-73
+TEST_BENCH=benchmarks-72 benchmarks-73
+
+IMAGES_72=simplepieng/base:$(PHP_LAST) simplepieng/benchmarks:$(PHP_LAST) simplepieng/test-coverage:$(PHP_LAST) simplepieng/test-runner:$(PHP_LAST)
+IMAGES_73=simplepieng/base:$(PHP_CURR) simplepieng/benchmarks:$(PHP_CURR) simplepieng/test-coverage:$(PHP_CURR) simplepieng/test-runner:$(PHP_CURR)
 
 #-------------------------------------------------------------------------------
+# Running `make` will show the list of subcommands that will run.
+
+all:
+	@cat Makefile | grep "^[a-z]" | sed 's/://' | awk '{print $$1}'
+
+#-------------------------------------------------------------------------------
+# Base Docker images so that we have some repeatability
+
+.PHONY: base-72
+base-72:
+	$(BUILD_DOCKER) --tag simplepieng/base:$(PHP_LAST) --file build/base/Dockerfile-$(PHP_LAST) .
+
+.PHONY: base-73
+base-73:
+	$(BUILD_DOCKER) --tag simplepieng/base:$(PHP_CURR) --file build/base/Dockerfile-$(PHP_CURR) .
+
+.PHONY: base-all
+base-all: base-72 base-73
+
+#-------------------------------------------------------------------------------
+# Build all development focused containers.
+
+.PHONY: build-all
+build-all:
+	$(BUILD_COMPOSE)
+
+.PHONY: build-72
+build-72:
+	$(BUILD_COMPOSE) $(COMPOSE_72)
+
+.PHONY: build-73
+build-73:
+	$(BUILD_COMPOSE) $(COMPOSE_73)
+
+.PHONY: build-test
+build-test:
+	$(BUILD_COMPOSE) tests-72 tests-73
+
+.PHONY: build-coverage
+build-coverage:
+	$(BUILD_COMPOSE) coverage-72 coverage-73
+
+.PHONY: build-benchmarks
+build-benchmarks:
+	$(BUILD_COMPOSE) benchmarks-72 benchmarks-73
+
+#-------------------------------------------------------------------------------
+# Clean Docker containers
+
+.PHONY: dockerfile
+dockerfile:
+	find $$(pwd)/build -type f -name Dockerfile-$(PHP_LAST)* -not -path "*build/base*" | xargs -P $$(nproc) -I% bash -c 'sed -i -r "s/^FROM simplepieng\/base:([^\n]+)/FROM simplepieng\/base:$(PHP_LAST)/" %'
+	find $$(pwd)/build -type f -name Dockerfile-$(PHP_LAST)* -not -path "*build/base*" | xargs -P $$(nproc) -I% bash -c 'cp -fv % $$(echo % | sed -r "s/$(PHP_LAST)/$(PHP_CURR)/g")'
+	find $$(pwd)/build -type f -name Dockerfile-$(PHP_CURR)* -not -path "*build/base*" | xargs -P $$(nproc) -I% bash -c 'sed -i -r "s/^FROM simplepieng\/base:$(PHP_LAST)/FROM simplepieng\/base:$(PHP_CURR)/" %'
+
+.PHONY: push-images
+push-images:
+	docker push simplepieng/base:$(PHP_LAST)
+	docker push simplepieng/base:$(PHP_CURR)
+
+.PHONY: clean-72
+clean-72:
+	docker image rm --force $(IMAGES_72)
+
+.PHONY: clean-73
+clean-73:
+	docker image rm --force $(IMAGES_73)
+
+.PHONY: clean-all
+clean-all: clean-72 clean-73
+
+.PHONY: rmint
+rmint:
+	# Remove the intermediate Docker containers. All Docker image builds will start over from scratch.
+	docker images | grep "<none>" | awk '{print $$3}' | xargs -P 2 -I% docker rmi -f %
+
+#-------------------------------------------------------------------------------
+# Running tests
+
+.PHONY: test
+test:
+	bin/phpunit --testsuite all
+
+.PHONY: test-quick
+test-quick:
+	docker-compose up $(TEST_QUICK)
+
+.PHONY: test-coverage
+test-coverage:
+	docker-compose up $(TEST_COVER)
+
+.PHONY: test-benchmark
+test-benchmark:
+	docker-compose up $(TEST_BENCH)
+
+#-------------------------------------------------------------------------------
+# PHP build process stuff
 
 .PHONY: install-composer
 install-composer:
@@ -14,10 +128,6 @@ install:
 	composer self-update
 	composer install -oa
 
-.PHONY: test
-test:
-	bin/phpunit --testsuite all
-
 .PHONY: dump
 dump:
 	composer dump-autoload -oa
@@ -27,6 +137,9 @@ install-hooks:
 	printf '#!/usr/bin/env bash\nmake lint\nmake test' > .git/hooks/pre-commit
 	chmod +x .git/hooks/pre-commit
 
+#-------------------------------------------------------------------------------
+# Extra Resources
+
 .PHONY: entities
 entities:
 	wget -O resources/entities.json https://www.w3.org/TR/html5/entities.json
@@ -35,6 +148,7 @@ entities:
 	mv resources/entities2.dtd resources/entities.dtd
 
 #-------------------------------------------------------------------------------
+# Documentation tasks
 
 .PHONY: docs
 docs:
@@ -69,6 +183,7 @@ push-travis:
 		git commit -a -m "Automated commit on $$(date)" && git push upstream gh-pages
 
 #-------------------------------------------------------------------------------
+# Linting and Static Analysis
 
 .PHONY: lint
 lint:
@@ -119,6 +234,7 @@ analyze: lint test
 	- curl -sSL -H "Accept: text/plain" https://security.sensiolabs.org/check_lock -F lock=@composer.lock | tee reports/sensiolabs.txt
 
 #-------------------------------------------------------------------------------
+# Git Tasks
 
 .PHONY: tag
 tag:
@@ -145,8 +261,6 @@ tag:
 	git add .
 	git commit -a -m "Preparing the $$(cat ./VERSION) release."
 	chag tag --sign
-
-#-------------------------------------------------------------------------------
 
 .PHONY: version
 version:

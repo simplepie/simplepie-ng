@@ -1,15 +1,16 @@
 # https://docs.travis-ci.com/user/languages/php/
-# https://docs.travis-ci.com/user/reference/trusty/
+# https://docs.travis-ci.com/user/reference/xenial/
 # https://docs.travis-ci.com/user/build-environment-updates/
 # https://docs.travis-ci.com/user/docker/
 # https://docs.travis-ci.com/user/deployment/releases/
 # https://docs.travis-ci.com/user/deployment/pages/
 
 language: php
-dist: trusty
+dist: xenial
 group: edge
 php:
   - 7.2
+  - 7.3
   - nightly
 
 cache:

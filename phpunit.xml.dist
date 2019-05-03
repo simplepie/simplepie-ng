@@ -1,9 +1,8 @@
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
-    addUncoveredFilesFromWhitelist="true"
     bootstrap="tests/bootstrap.php"
-    colors="auto"
+    colors="true"
     convertErrorsToExceptions="true"
     processIsolation="false"
     stopOnError="false"
@@ -55,11 +54,11 @@
     </filter>
 
     <logging>
-        <log charset="UTF-8" highLowerBound="70" highlight="false" lowUpperBound="35" target="tests/report/report" type="coverage-html"/>
+        <log highLowerBound="70" lowUpperBound="35" target="tests/report/report" type="coverage-html"/>
         <log target="tests/report/clover.xml" type="coverage-clover"/>
         <log target="tests/report/coverage.cov" type="coverage-php"/>
         <log target="tests/report/coverage.txt" type="coverage-text"/>
-        <log target="tests/report/logfile.xml" type="junit" logIncompleteSkipped="false"/>
+        <log target="tests/report/logfile.xml" type="junit"/>
         <log target="tests/report/testdox.html" type="testdox-html"/>
         <log target="tests/report/testdox.txt" type="testdox-text"/>
     </logging>
