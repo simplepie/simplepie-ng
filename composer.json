@@ -34,7 +34,7 @@
         "lib-pcre": "*",
         "guzzlehttp/psr7": "^1.5",
         "psr/log": "^1.1",
-        "skyzyx/utility-pack": "^1.0"
+        "skyzyx/utility-pack": "^1.0 || ^2.0"
     },
     "require-dev": {
         "codeclimate/php-test-reporter": "*@dev",
