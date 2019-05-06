@@ -28,7 +28,7 @@ use SimplePie\Mixin as Tr;
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Atom-1.0#424-the-atomgenerator-element
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-RSS-2.0#optional-channel-elements
  */
-class Generator extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
+class Generator extends AbstractType implements C\SetLoggerInterface, NodeInterface, TypeInterface
 {
     use Tr\LoggerTrait;
 

@@ -48,7 +48,7 @@ use SimplePie\Parser\Date as DateParser;
  *
  * @phpcs:enable
  */
-class Entry extends AbstractType implements NodeInterface, BranchInterface, C\SetLoggerInterface
+class Entry extends AbstractType implements BranchInterface, C\SetLoggerInterface, NodeInterface
 {
     use Tr\DateTrait;
     use Tr\DeepTypeTrait;

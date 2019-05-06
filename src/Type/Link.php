@@ -42,7 +42,7 @@ use SimplePie\Mixin as Tr;
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Media-RSS#mediabacklinks
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Media-RSS#mediapeerlink
  */
-class Link extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
+class Link extends AbstractType implements C\SetLoggerInterface, NodeInterface, TypeInterface
 {
     use Tr\LoggerTrait;
 

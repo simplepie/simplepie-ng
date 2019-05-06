@@ -23,7 +23,7 @@ use stdClass;
  * @see https://tools.ietf.org/html/rfc4287
  * @see https://www.w3.org/wiki/Atom
  */
-class Atom extends AbstractXmlMiddleware implements XmlInterface, C\SetLoggerInterface
+class Atom extends AbstractXmlMiddleware implements C\SetLoggerInterface, XmlInterface
 {
     use Tr\LoggerTrait;
 

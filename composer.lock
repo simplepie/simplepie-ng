@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2d5a5db6f0d1ced01816732982a81ec",
+    "content-hash": "c357035b30d8b5e36e8a27ce4db109b1",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -211,41 +211,43 @@
             "time": "2016-02-11T07:05:27+00:00"
         },
         {
-            "name": "skyzyx/utility-pack",
-            "version": "1.1.0",
+            "name": "simplepie/utility-pack",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/skyzyx/utility-pack.git",
-                "reference": "6ef786ac96fcd4cbfff0dca41bdc4c14cc20d9fb"
+                "url": "https://github.com/simplepie/utility-pack.git",
+                "reference": "d3e478b17e264d6d5d4b19e225a3c5d19fa32247"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skyzyx/utility-pack/zipball/6ef786ac96fcd4cbfff0dca41bdc4c14cc20d9fb",
-                "reference": "6ef786ac96fcd4cbfff0dca41bdc4c14cc20d9fb",
+                "url": "https://api.github.com/repos/simplepie/utility-pack/zipball/d3e478b17e264d6d5d4b19e225a3c5d19fa32247",
+                "reference": "d3e478b17e264d6d5d4b19e225a3c5d19fa32247",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1",
+                "php": ">=7.2",
                 "psr/http-message": "^1.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.3",
+                "codeclimate/php-test-reporter": "*@dev",
+                "friendsofphp/php-cs-fixer": "^2.14",
+                "mamuz/php-dependency-analysis": "dev-master",
+                "monolog/monolog": "^1.24",
                 "pdepend/pdepend": "^2.5",
-                "phploc/phploc": "^3.0",
+                "php-coveralls/php-coveralls": "^2.0",
+                "phploc/phploc": "^4.0",
                 "phpmetrics/phpmetrics": "^2.2",
-                "phpunit/phpunit": "^6.1",
-                "qafoo/quality-analyzer": "dev-master",
-                "sebastian/phpcpd": "^3.0",
-                "skyzyx/phpunit-result-printer": "^2.0",
+                "phpunit/phpunit": "^8.1",
+                "sebastian/phpcpd": "^4.0",
                 "slim/slim": "^3.8",
-                "squizlabs/php_codesniffer": "^3.0",
+                "squizlabs/php_codesniffer": "dev-master",
                 "wapmorgan/php-code-analyzer": "^1.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Skyzyx\\UtilityPack\\": "src/",
-                    "Skyzyx\\Test\\": "tests/"
+                    "SimplePie\\UtilityPack\\": "src/",
+                    "SimplePie\\Test\\UtilityPack\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -255,7 +257,7 @@
             "authors": [
                 {
                     "name": "Ryan Parman",
-                    "homepage": "http://ryanparman.com"
+                    "homepage": "https://ryanparman.com"
                 }
             ],
             "description": "A set of small utilities for PHP.",
@@ -266,7 +268,7 @@
                 "types",
                 "url"
             ],
-            "time": "2017-11-30T04:34:36+00:00"
+            "time": "2019-05-06T04:56:19+00:00"
         }
     ],
     "packages-dev": [
@@ -775,16 +777,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.14.2",
+            "version": "v2.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "ff401e58261ffc5934a58f795b3f95b355e276cb"
+                "reference": "adfab51ae979ee8b0fcbc55aa231ec2786cb1f91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/ff401e58261ffc5934a58f795b3f95b355e276cb",
-                "reference": "ff401e58261ffc5934a58f795b3f95b355e276cb",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/adfab51ae979ee8b0fcbc55aa231ec2786cb1f91",
+                "reference": "adfab51ae979ee8b0fcbc55aa231ec2786cb1f91",
                 "shasum": ""
             },
             "require": {
@@ -812,10 +814,10 @@
                 "mikey179/vfsstream": "^1.6",
                 "php-coveralls/php-coveralls": "^2.1",
                 "php-cs-fixer/accessible-object": "^1.0",
-                "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.0.1",
-                "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.0.1",
+                "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.1",
+                "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.1",
                 "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1",
-                "phpunitgoodpractices/traits": "^1.5.1",
+                "phpunitgoodpractices/traits": "^1.8",
                 "symfony/phpunit-bridge": "^4.0"
             },
             "suggest": {
@@ -828,6 +830,11 @@
                 "php-cs-fixer"
             ],
             "type": "application",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.15-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "PhpCsFixer\\": "src/"
@@ -859,7 +866,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2019-02-17T17:44:13+00:00"
+            "time": "2019-05-06T07:13:51+00:00"
         },
         {
             "name": "graphp/algorithms",
@@ -2661,16 +2668,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "4.2.1",
+            "version": "4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "3095910f0f0fb155ac4021fc51a4a7a39ac04e8a"
+                "reference": "f2a2c8e1c97c11ace607a7a667d73d47c19fe404"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/3095910f0f0fb155ac4021fc51a4a7a39ac04e8a",
-                "reference": "3095910f0f0fb155ac4021fc51a4a7a39ac04e8a",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/f2a2c8e1c97c11ace607a7a667d73d47c19fe404",
+                "reference": "f2a2c8e1c97c11ace607a7a667d73d47c19fe404",
                 "shasum": ""
             },
             "require": {
@@ -2710,7 +2717,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2019-04-25T07:55:20+00:00"
+            "time": "2019-05-05T09:05:15+00:00"
         },
         {
             "name": "sebastian/exporter",
@@ -4341,6 +4348,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "simplepie/utility-pack": 20,
         "codeclimate/php-test-reporter": 20,
         "mamuz/php-dependency-analysis": 20,
         "squizlabs/php_codesniffer": 20

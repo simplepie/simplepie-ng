@@ -30,7 +30,7 @@ use SimplePie\Mixin as Tr;
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-iTunes-Podcast-RSS#itunescategory
  * @see https://github.com/simplepie/simplepie-ng/wiki/Spec%3A-Media-RSS#mediacategory
  */
-class Category extends AbstractType implements NodeInterface, TypeInterface, C\SetLoggerInterface
+class Category extends AbstractType implements C\SetLoggerInterface, NodeInterface, TypeInterface
 {
     use Tr\LoggerTrait;
 

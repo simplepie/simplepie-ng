@@ -103,6 +103,7 @@ return Config::create()
             'annotation-white-list' => [
                 '@internal',
             ],
+            'consider-absent-docblock-as-internal-class' => false,
         ],
         'fopen_flags' => [
             'b_mode' => true,
@@ -142,6 +143,7 @@ return Config::create()
             'syntax' => 'short',
         ],
         'method_argument_space' => [
+            'after_heredoc'                    => false,
             'ensure_fully_multiline'           => true,
             'keep_multiple_spaces_after_comma' => false,
             'on_multiline'                     => 'ignore',
@@ -248,6 +250,10 @@ return Config::create()
             'importsOrder'  => null,
             'sortAlgorithm' => 'alpha',
         ],
+        'ordered_interfaces' => [
+            'direction' => 'ascend',
+            'order'     => 'alpha',
+        ],
         'php_unit_construct' => [
             'assertions' => [
                 'assertEquals',
@@ -257,6 +263,9 @@ return Config::create()
             ],
         ],
         'php_unit_dedicate_assert' => [
+            'target' => 'newest',
+        ],
+        'php_unit_dedicate_assert_internal_type' => [
             'target' => 'newest',
         ],
         'php_unit_expectation' => [
@@ -408,6 +417,7 @@ return Config::create()
         'modernize_types_casting'                       => true,
         'multiline_comment_opening_closing'             => true,
         'native_function_casing'                        => true,
+        'native_function_type_declaration_casing'       => true,
         'new_with_braces'                               => true,
         'no_alternative_syntax'                         => true,
         'no_binary_string'                              => true,
@@ -439,12 +449,13 @@ return Config::create()
         'no_unused_imports'                             => true,
         'no_useless_else'                               => true,
         'no_useless_return'                             => true,
-        'no_whitespace_before_comma_in_array'           => true,
+        'no_whitespace_before_comma_in_array'           => true, // @todo review
         'no_whitespace_in_blank_line'                   => true,
         'normalize_index_brace'                         => true,
         'object_operator_without_whitespace'            => true,
         'php_unit_fqcn_annotation'                      => true,
         'php_unit_mock'                                 => true,
+        'php_unit_mock_short_will_return'               => true,
         'php_unit_set_up_tear_down_visibility'          => true,
         'phpdoc_indent'                                 => true,
         'phpdoc_inline_tag'                             => true,
@@ -468,11 +479,13 @@ return Config::create()
         'semicolon_after_instruction'                   => true,
         'set_type_to_cast'                              => true,
         'short_scalar_cast'                             => true,
+        'simple_to_complex_string_variable'             => true,
         'simplified_null_return'                        => true,
         'single_blank_line_at_eof'                      => true,
         'single_blank_line_before_namespace'            => true,
         'single_import_per_statement'                   => true,
         'single_line_after_imports'                     => true,
+        'single_trait_insert_per_statement'             => true,
         'standardize_increment'                         => true,
         'standardize_not_equals'                        => true,
         'static_lambda'                                 => true,
@@ -483,7 +496,7 @@ return Config::create()
         'switch_case_space'                             => true,
         'ternary_operator_spaces'                       => true,
         'ternary_to_null_coalescing'                    => true,
-        'trailing_comma_in_multiline_array'             => true,
+        'trailing_comma_in_multiline_array'             => true, // @todo review
         'trim_array_spaces'                             => true,
         'unary_operator_spaces'                         => true,
         'void_return'                                   => true,
@@ -496,6 +509,7 @@ return Config::create()
         'doctrine_annotation_braces'          => false,
         'doctrine_annotation_indentation'     => false,
         'doctrine_annotation_spaces'          => false,
+        'final_class'                         => false,
         'heredoc_indentation'                 => false, // @todo 7.3
         'no_blank_lines_before_namespace'     => false,
         'no_short_echo_tag'                   => false,
@@ -504,6 +518,7 @@ return Config::create()
         'not_operator_with_successor_space'   => false,
         'php_unit_strict'                     => false,
         'php_unit_test_class_requires_covers' => false,
+        'php_unit_size_class'                 => false,
         'phpdoc_annotation_without_dot'       => false,
         'phpdoc_to_return_type'               => false,
         'protected_to_private'                => false,
