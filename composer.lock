@@ -216,12 +216,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplepie/utility-pack.git",
-                "reference": "d3e478b17e264d6d5d4b19e225a3c5d19fa32247"
+                "reference": "796163fe0bb89b80d55b739acc1a92a5d9f5a11c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplepie/utility-pack/zipball/d3e478b17e264d6d5d4b19e225a3c5d19fa32247",
-                "reference": "d3e478b17e264d6d5d4b19e225a3c5d19fa32247",
+                "url": "https://api.github.com/repos/simplepie/utility-pack/zipball/796163fe0bb89b80d55b739acc1a92a5d9f5a11c",
+                "reference": "796163fe0bb89b80d55b739acc1a92a5d9f5a11c",
                 "shasum": ""
             },
             "require": {
@@ -268,7 +268,7 @@
                 "types",
                 "url"
             ],
-            "time": "2019-05-06T04:56:19+00:00"
+            "time": "2019-05-06T21:57:48+00:00"
         }
     ],
     "packages-dev": [
@@ -2310,16 +2310,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.1.3",
+            "version": "8.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "2a676677982b484ee36b54961f570c02eabbe7e1"
+                "reference": "b534b017daaef2d7f60c6ee61e6aa2e13fdc6910"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2a676677982b484ee36b54961f570c02eabbe7e1",
-                "reference": "2a676677982b484ee36b54961f570c02eabbe7e1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b534b017daaef2d7f60c6ee61e6aa2e13fdc6910",
+                "reference": "b534b017daaef2d7f60c6ee61e6aa2e13fdc6910",
                 "shasum": ""
             },
             "require": {
@@ -2388,7 +2388,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-04-19T15:52:00+00:00"
+            "time": "2019-05-09T05:13:39+00:00"
         },
         {
             "name": "psr/container",
