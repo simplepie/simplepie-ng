@@ -216,12 +216,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplepie/utility-pack.git",
-                "reference": "d3e478b17e264d6d5d4b19e225a3c5d19fa32247"
+                "reference": "796163fe0bb89b80d55b739acc1a92a5d9f5a11c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplepie/utility-pack/zipball/d3e478b17e264d6d5d4b19e225a3c5d19fa32247",
-                "reference": "d3e478b17e264d6d5d4b19e225a3c5d19fa32247",
+                "url": "https://api.github.com/repos/simplepie/utility-pack/zipball/796163fe0bb89b80d55b739acc1a92a5d9f5a11c",
+                "reference": "796163fe0bb89b80d55b739acc1a92a5d9f5a11c",
                 "shasum": ""
             },
             "require": {
@@ -268,7 +268,7 @@
                 "types",
                 "url"
             ],
-            "time": "2019-05-06T04:56:19+00:00"
+            "time": "2019-05-06T21:57:48+00:00"
         }
     ],
     "packages-dev": [
@@ -483,19 +483,20 @@
         },
         {
             "name": "docopt/docopt",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/docopt/docopt.php.git",
-                "reference": "d2ee65c2fe4be78f945a48edd02be45843b39423"
+                "reference": "b5074c51ce5a9c52e586f7a86a0107c8eb899935"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/docopt/docopt.php/zipball/d2ee65c2fe4be78f945a48edd02be45843b39423",
-                "reference": "d2ee65c2fe4be78f945a48edd02be45843b39423",
+                "url": "https://api.github.com/repos/docopt/docopt.php/zipball/b5074c51ce5a9c52e586f7a86a0107c8eb899935",
+                "reference": "b5074c51ce5a9c52e586f7a86a0107c8eb899935",
                 "shasum": ""
             },
             "require": {
+                "hhvm": ">=3.3.0",
                 "php": ">=5.3.0"
             },
             "require-dev": {
@@ -519,13 +520,13 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Port of Python's docopt for PHP 5.3",
+            "description": "Port of Python's docopt for PHP >=5.3",
             "homepage": "http://github.com/docopt/docopt.php",
             "keywords": [
                 "cli",
                 "docs"
             ],
-            "time": "2015-10-30T03:21:23+00:00"
+            "time": "2017-03-28T08:43:36+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -4242,16 +4243,16 @@
         },
         {
             "name": "wapmorgan/php-code-analyzer",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wapmorgan/PhpCodeAnalyzer.git",
-                "reference": "98d33563218ad6757e34da8428fffec38fa6ad9f"
+                "reference": "0efd0ab52cf15518a467f80158be20accc8e86d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wapmorgan/PhpCodeAnalyzer/zipball/98d33563218ad6757e34da8428fffec38fa6ad9f",
-                "reference": "98d33563218ad6757e34da8428fffec38fa6ad9f",
+                "url": "https://api.github.com/repos/wapmorgan/PhpCodeAnalyzer/zipball/0efd0ab52cf15518a467f80158be20accc8e86d7",
+                "reference": "0efd0ab52cf15518a467f80158be20accc8e86d7",
                 "shasum": ""
             },
             "require": {
@@ -4291,7 +4292,7 @@
                 "code analysis",
                 "command-line utility"
             ],
-            "time": "2018-05-01T18:48:48+00:00"
+            "time": "2019-05-09T15:24:55+00:00"
         },
         {
             "name": "webmozart/assert",
