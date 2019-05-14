@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c357035b30d8b5e36e8a27ce4db109b1",
+    "content-hash": "c18f5759d7b74149db2641a0e9674365",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -216,38 +216,43 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplepie/utility-pack.git",
-                "reference": "d3e478b17e264d6d5d4b19e225a3c5d19fa32247"
+                "reference": "608268359440df3c7a20afd207b287b9e13f65e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplepie/utility-pack/zipball/d3e478b17e264d6d5d4b19e225a3c5d19fa32247",
-                "reference": "d3e478b17e264d6d5d4b19e225a3c5d19fa32247",
+                "url": "https://api.github.com/repos/simplepie/utility-pack/zipball/608268359440df3c7a20afd207b287b9e13f65e3",
+                "reference": "608268359440df3c7a20afd207b287b9e13f65e3",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2",
-                "psr/http-message": "^1.0"
+                "psr/http-message": "^1.0",
+                "psr/log": "^1.1",
+                "simplepie/utility-pack": "dev-master"
             },
             "require-dev": {
-                "codeclimate/php-test-reporter": "*@dev",
+                "bramus/monolog-colored-line-formatter": "^3.0",
                 "friendsofphp/php-cs-fixer": "^2.14",
                 "mamuz/php-dependency-analysis": "dev-master",
                 "monolog/monolog": "^1.24",
                 "pdepend/pdepend": "^2.5",
                 "php-coveralls/php-coveralls": "^2.0",
-                "phploc/phploc": "^4.0",
-                "phpmetrics/phpmetrics": "^2.2",
+                "phploc/phploc": "^5.0",
+                "phpmetrics/phpmetrics": "^2.4",
                 "phpunit/phpunit": "^8.1",
                 "sebastian/phpcpd": "^4.0",
                 "slim/slim": "^3.8",
                 "squizlabs/php_codesniffer": "dev-master",
                 "wapmorgan/php-code-analyzer": "^1.0"
             },
+            "suggest": {
+                "bramus/monolog-colored-line-formatter": "Color-codes your Monolog messages by severity.",
+                "monolog/monolog": "A high-quality PSR-3 logging library."
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "SimplePie\\UtilityPack\\": "src/",
-                    "SimplePie\\Test\\UtilityPack\\": "tests/"
+                    "SimplePie\\UtilityPack\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -268,10 +273,92 @@
                 "types",
                 "url"
             ],
-            "time": "2019-05-06T04:56:19+00:00"
+            "time": "2019-05-14T22:49:54+00:00"
         }
     ],
     "packages-dev": [
+        {
+            "name": "bramus/ansi-php",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bramus/ansi-php.git",
+                "reference": "79d30c30651b0c6f23cf85503c779c72ac74ab8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bramus/ansi-php/zipball/79d30c30651b0c6f23cf85503c779c72ac74ab8a",
+                "reference": "79d30c30651b0c6f23cf85503c779c72ac74ab8a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bramus\\Ansi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bramus Van Damme",
+                    "email": "bramus@bram.us",
+                    "homepage": "https://www.bram.us/"
+                }
+            ],
+            "description": "ANSI Control Functions and ANSI Control Sequences (Colors, Erasing, etc.) for PHP CLI Apps",
+            "time": "2019-02-12T15:05:30+00:00"
+        },
+        {
+            "name": "bramus/monolog-colored-line-formatter",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bramus/monolog-colored-line-formatter.git",
+                "reference": "386f6106f566c6cbfe507e8b2b701245557292da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bramus/monolog-colored-line-formatter/zipball/386f6106f566c6cbfe507e8b2b701245557292da",
+                "reference": "386f6106f566c6cbfe507e8b2b701245557292da",
+                "shasum": ""
+            },
+            "require": {
+                "bramus/ansi-php": "~3.0",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "monolog/monolog": "2.x-dev",
+                "phpunit/phpunit": "~7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bramus\\Monolog\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bramus Van Damme",
+                    "email": "bramus@bram.us",
+                    "homepage": "https://www.bram.us/"
+                }
+            ],
+            "description": "Colored Line Formatter for Monolog",
+            "time": "2019-02-12T13:30:46+00:00"
+        },
         {
             "name": "clue/graph",
             "version": "v0.9.0",
@@ -1884,23 +1971,23 @@
         },
         {
             "name": "phploc/phploc",
-            "version": "4.0.1",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phploc.git",
-                "reference": "6a8a9416517b82d6326ac9c2d040ad53c13654eb"
+                "reference": "5b714ccb7cb8ca29ccf9caf6eb1aed0131d3a884"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phploc/zipball/6a8a9416517b82d6326ac9c2d040ad53c13654eb",
-                "reference": "6a8a9416517b82d6326ac9c2d040ad53c13654eb",
+                "url": "https://api.github.com/repos/sebastianbergmann/phploc/zipball/5b714ccb7cb8ca29ccf9caf6eb1aed0131d3a884",
+                "reference": "5b714ccb7cb8ca29ccf9caf6eb1aed0131d3a884",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6 || ^7.0",
+                "php": "^7.2",
                 "sebastian/finder-facade": "^1.1",
                 "sebastian/version": "^2.0",
-                "symfony/console": "^2.7|^3.0|^4.0"
+                "symfony/console": "^4.0"
             },
             "bin": [
                 "phploc"
@@ -1908,7 +1995,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -1929,7 +2016,7 @@
             ],
             "description": "A tool for quickly measuring the size of a PHP project.",
             "homepage": "https://github.com/sebastianbergmann/phploc",
-            "time": "2017-11-18T17:35:43+00:00"
+            "time": "2019-03-16T10:41:19+00:00"
         },
         {
             "name": "phpmetrics/phpmetrics",
@@ -3166,12 +3253,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "1d7c6576a578fb57723c8c0fbc716cb88dae4f13"
+                "reference": "12b87724127ccfbebdf5bf63debf9e9f955bbf22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1d7c6576a578fb57723c8c0fbc716cb88dae4f13",
-                "reference": "1d7c6576a578fb57723c8c0fbc716cb88dae4f13",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/12b87724127ccfbebdf5bf63debf9e9f955bbf22",
+                "reference": "12b87724127ccfbebdf5bf63debf9e9f955bbf22",
                 "shasum": ""
             },
             "require": {
@@ -3209,7 +3296,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-04-16T03:35:30+00:00"
+            "time": "2019-05-14T02:18:38+00:00"
         },
         {
             "name": "symfony/config",
@@ -3348,16 +3435,16 @@
         },
         {
             "name": "symfony/contracts",
-            "version": "v1.0.2",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/contracts.git",
-                "reference": "1aa7ab2429c3d594dd70689604b5cf7421254cdf"
+                "reference": "d3636025e8253c6144358ec0a62773cae588395b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/contracts/zipball/1aa7ab2429c3d594dd70689604b5cf7421254cdf",
-                "reference": "1aa7ab2429c3d594dd70689604b5cf7421254cdf",
+                "url": "https://api.github.com/repos/symfony/contracts/zipball/d3636025e8253c6144358ec0a62773cae588395b",
+                "reference": "d3636025e8253c6144358ec0a62773cae588395b",
                 "shasum": ""
             },
             "require": {
@@ -3365,19 +3452,22 @@
             },
             "require-dev": {
                 "psr/cache": "^1.0",
-                "psr/container": "^1.0"
+                "psr/container": "^1.0",
+                "symfony/polyfill-intl-idn": "^1.10"
             },
             "suggest": {
                 "psr/cache": "When using the Cache contracts",
                 "psr/container": "When using the Service contracts",
                 "symfony/cache-contracts-implementation": "",
+                "symfony/event-dispatcher-implementation": "",
+                "symfony/http-client-contracts-implementation": "",
                 "symfony/service-contracts-implementation": "",
                 "symfony/translation-contracts-implementation": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -3412,7 +3502,7 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2018-12-05T08:06:11+00:00"
+            "time": "2019-04-27T14:29:50+00:00"
         },
         {
             "name": "symfony/dependency-injection",
@@ -4349,7 +4439,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "simplepie/utility-pack": 20,
-        "codeclimate/php-test-reporter": 20,
         "mamuz/php-dependency-analysis": 20,
         "squizlabs/php_codesniffer": 20
     },
