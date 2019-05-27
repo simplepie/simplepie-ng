@@ -2,9 +2,9 @@
 
 ----
 
-**Don't use this yet.**
-
 # SimplePie NG
+
+**Don't use this yet.**
 
 **SimplePie NG** is a modern, _next-generation_ PHP package for working with syndication feeds. It has been written from the ground-up to take advantage of the modern features of PHP 7.2+.
 
@@ -16,8 +16,6 @@ See the [Documentation](https://github.com/simplepie/simplepie-ng/wiki) or the [
 
 ### Health
 
-![PHP Version](https://img.shields.io/packagist/php-v/simplepie/simplepie-ng.svg?style=for-the-badge)
-[![Release](https://img.shields.io/github/release/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/releases/latest)
 [![Open Issues](http://img.shields.io/github/issues/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/pulls)
 [![Contributors](https://img.shields.io/github/contributors/simplepie/simplepie-ng.svg?style=for-the-badge)](https://github.com/simplepie/simplepie-ng/graphs/contributors)
