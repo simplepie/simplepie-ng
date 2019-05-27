@@ -1,0 +1,60 @@
+@@HEADER@@
+
+#-------------------------------------------------------------------------------
+# Global variables.
+
+@@DOCKER_VARS@@
+
+#-------------------------------------------------------------------------------
+# Running `make` will show the list of subcommands that will run.
+
+@@MAKE_ALL@@
+
+#-------------------------------------------------------------------------------
+# Running tests
+
+.PHONY: test
+test:
+	bin/phpunit --testsuite all
+
+.PHONY: test-quick
+test-quick:
+	docker-compose up $(TEST_QUICK)
+
+.PHONY: test-coverage
+test-coverage:
+	docker-compose up $(TEST_COVER)
+
+.PHONY: test-benchmark
+test-benchmark:
+	docker-compose up $(TEST_BENCH)
+
+#-------------------------------------------------------------------------------
+# Extra Resources
+
+.PHONY: entities
+entities:
+	wget -O resources/entities.json https://www.w3.org/TR/html5/entities.json
+	tools/entities.php
+	cat resources/entities.dtd | uniq > resources/entities2.dtd
+	mv resources/entities2.dtd resources/entities.dtd
+
+#-------------------------------------------------------------------------------
+# PHP build process stuff
+
+@@PHP_BUILD_PROCESS@@
+
+#-------------------------------------------------------------------------------
+# Documentation tasks
+
+@@PROJECT_DOCS@@
+
+#-------------------------------------------------------------------------------
+# Linting and Static Analysis
+
+@@LINTING_STATIC_ANALYSIS@@
+
+#-------------------------------------------------------------------------------
+# Git Tasks
+
+@@RELEASE_TASKS@@
