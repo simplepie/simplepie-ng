@@ -1,4 +1,4 @@
-<div align="center"><img src="logo.png" width="500"><br></div>
+<div align="center"><img src="https://raw.githubusercontent.com/simplepie/.github/master/logo.png" width="500"><br></div>
 
 ----
 
