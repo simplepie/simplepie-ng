@@ -2,7 +2,7 @@
 /**
  * Defintions can be looked-up at <http://cs.sensiolabs.org>.
  *
- * Rules current as of https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/2.14/README.rst
+ * Rules current as of https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/2.15/README.rst
  */
 
 use PhpCsFixer\Config;
@@ -527,3 +527,4 @@ return Config::create()
     ->setFinder($finder)
     ->setUsingCache(true)
 ;
+

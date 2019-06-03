@@ -1,0 +1,41 @@
+@@HEADER@@
+
+    <testsuites>
+        <testsuite name="all">
+            <directory phpVersion="@@PHP_VERSION@@" phpVersionOperator=">=" suffix="Test.php">tests</directory>
+        </testsuite>
+        <testsuite name="integration">
+            <directory phpVersion="@@PHP_VERSION@@" phpVersionOperator=">=" suffix="Test.php">tests/Integration</directory>
+        </testsuite>
+        <testsuite name="functional">
+            <directory phpVersion="@@PHP_VERSION@@" phpVersionOperator=">=" suffix="Test.php">tests/Functional</directory>
+        </testsuite>
+        <testsuite name="unit">
+            <directory phpVersion="@@PHP_VERSION@@" phpVersionOperator=">=" suffix="Test.php">tests/Unit</directory>
+        </testsuite>
+        <testsuite name="amp">
+            <directory phpVersion="@@PHP_VERSION@@" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Amp</directory>
+        </testsuite>
+        <testsuite name="atom10">
+            <directory phpVersion="@@PHP_VERSION@@" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Atom10</directory>
+        </testsuite>
+        <testsuite name="base">
+            <directory phpVersion="@@PHP_VERSION@@" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Base</directory>
+        </testsuite>
+        <testsuite name="entities">
+            <file phpVersion="@@PHP_VERSION@@" phpVersionOperator=">=">tests/Integration/EntitiesTest.php</file>
+        </testsuite>
+        <testsuite name="lang">
+            <directory phpVersion="@@PHP_VERSION@@" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Lang</directory>
+        </testsuite>
+        <testsuite name="namespace">
+            <directory phpVersion="@@PHP_VERSION@@" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Ns</directory>
+        </testsuite>
+        <testsuite name="xml">
+            <directory phpVersion="@@PHP_VERSION@@" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Xml</directory>
+        </testsuite>
+    </testsuites>
+
+@@FILTER@@
+
+@@LOGGING@@
