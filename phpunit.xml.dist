@@ -1,66 +1,52 @@
-<phpunit
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
-    bootstrap="tests/bootstrap.php"
-    colors="true"
-    convertErrorsToExceptions="true"
-    processIsolation="false"
-    stopOnError="false"
-    stopOnFailure="false"
-    stopOnIncomplete="false"
-    stopOnSkipped="false"
-    verbose="true">
-
-    <testsuites>
-        <testsuite name="all">
-            <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests</directory>
-        </testsuite>
-        <testsuite name="integration">
-            <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration</directory>
-        </testsuite>
-        <testsuite name="functional">
-            <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Functional</directory>
-        </testsuite>
-        <testsuite name="unit">
-            <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Unit</directory>
-        </testsuite>
-        <testsuite name="amp">
-            <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Amp</directory>
-        </testsuite>
-        <testsuite name="atom10">
-            <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Atom10</directory>
-        </testsuite>
-        <testsuite name="base">
-            <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Base</directory>
-        </testsuite>
-        <testsuite name="entities">
-            <file phpVersion="7.2.0" phpVersionOperator=">=">tests/Integration/EntitiesTest.php</file>
-        </testsuite>
-        <testsuite name="lang">
-            <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Lang</directory>
-        </testsuite>
-        <testsuite name="namespace">
-            <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Ns</directory>
-        </testsuite>
-        <testsuite name="xml">
-            <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Xml</directory>
-        </testsuite>
-    </testsuites>
-
-<filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./src/</directory>
-        </whitelist>
-    </filter>
-
-<logging>
-        <log highLowerBound="70" lowUpperBound="35" target="tests/report/report" type="coverage-html"/>
-        <log target="tests/report/clover.xml" type="coverage-clover"/>
-        <log target="tests/report/coverage.cov" type="coverage-php"/>
-        <log target="tests/report/coverage.txt" type="coverage-text"/>
-        <log target="tests/report/logfile.xml" type="junit"/>
-        <log target="tests/report/testdox.html" type="testdox-html"/>
-        <log target="tests/report/testdox.txt" type="testdox-text"/>
-    </logging>
+<?xml version="1.0"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd" bootstrap="tests/bootstrap.php" colors="true" convertErrorsToExceptions="true" processIsolation="false" stopOnError="false" stopOnFailure="false" stopOnIncomplete="false" stopOnSkipped="false" verbose="true">
+  <testsuites>
+    <testsuite name="all">
+      <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests</directory>
+    </testsuite>
+    <testsuite name="integration">
+      <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration</directory>
+    </testsuite>
+    <testsuite name="functional">
+      <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Functional</directory>
+    </testsuite>
+    <testsuite name="unit">
+      <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Unit</directory>
+    </testsuite>
+    <testsuite name="amp">
+      <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Amp</directory>
+    </testsuite>
+    <testsuite name="atom10">
+      <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Atom10</directory>
+    </testsuite>
+    <testsuite name="base">
+      <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Base</directory>
+    </testsuite>
+    <testsuite name="entities">
+      <file phpVersion="7.2.0" phpVersionOperator=">=">tests/Integration/EntitiesTest.php</file>
+    </testsuite>
+    <testsuite name="lang">
+      <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Lang</directory>
+    </testsuite>
+    <testsuite name="namespace">
+      <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Ns</directory>
+    </testsuite>
+    <testsuite name="xml">
+      <directory phpVersion="7.2.0" phpVersionOperator=">=" suffix="Test.php">tests/Integration/Wellformed/Xml</directory>
+    </testsuite>
+  </testsuites>
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory suffix=".php">./src/</directory>
+    </whitelist>
+  </filter>
+  <logging>
+    <log highLowerBound="70" lowUpperBound="35" target="tests/report/report" type="coverage-html"/>
+    <log target="tests/report/clover.xml" type="coverage-clover"/>
+    <log target="tests/report/coverage.cov" type="coverage-php"/>
+    <log target="tests/report/coverage.txt" type="coverage-text"/>
+    <log target="tests/report/logfile.xml" type="junit"/>
+    <log target="tests/report/testdox.html" type="testdox-html"/>
+    <log target="tests/report/testdox.txt" type="testdox-text"/>
+  </logging>
 </phpunit>
-
