@@ -121,14 +121,18 @@ push-travis:
 #-------------------------------------------------------------------------------
 # Linting and Static Analysis
 
-.PHONY: lint
-lint:
+.PHONY: mkdir
+mkdir:
 	@ mkdir -p reports
 
+.PHONY: phpcsfixer
+phpcsfixer:
 	@ echo " "
 	@ echo "=====> Running PHP CS Fixer..."
 	- bin/php-cs-fixer fix -vvv
 
+.PHONY: phpcs
+phpcs:
 	@ echo " "
 	@ echo "=====> Running PHP Code Sniffer..."
 	- bin/phpcs --report-xml=reports/phpcs-src.xml -p --colors --encoding=utf-8 $$(find src/ -type f -name "*.php" | sort | uniq)
@@ -140,29 +144,53 @@ lint:
 	@ echo " "
 	@ php tools/reporter.php
 
-.PHONY: analyze
-analyze: lint test
+.PHONY: lint
+lint: mkdir phpcsfixer phpcs
+
+.PHONY: xdebug
+xdebug:
+	bin/phpunit --dump-xdebug-filter tests/phpunit-xdebug-coverage.php
+
+.PHONY: phpcpd
+phpcpd:
 	@ echo " "
 	@ echo "=====> Running PHP Copy-Paste Detector..."
 	- bin/phpcpd --names=*.php --log-pmd=$$(pwd)/reports/copy-paste.xml --fuzzy src/
 
+.PHONY: phploc
+phploc:
 	@ echo " "
 	@ echo "=====> Running PHP Lines-of-Code..."
 	- bin/phploc --names=*.php --log-xml=$$(pwd)/reports/phploc-src.xml src/ > $$(pwd)/reports/phploc-src.txt
 	- bin/phploc --names=*.php --log-xml=$$(pwd)/reports/phploc-tests.xml tests/ > $$(pwd)/reports/phploc-tests.txt
 
+.PHONY: phpca
+phpca:
 	@ echo " "
 	@ echo "=====> Running PHP Code Analyzer..."
 	- php bin/phpca src/ --no-progress | tee reports/phpca-src.txt
 	- php bin/phpca tests/ --no-progress | tee reports/phpca-tests.txt
 
+.PHONY: licenses
+licenses:
 	@ echo " "
 	@ echo "=====> Running Open-Source License Check..."
-	- composer licenses | grep -v BSD-.-Clause | grep -v MIT | grep -v Apache-2.0 | tee reports/licenses.txt
+	- composer licenses | grep -v BSD-.-Clause | grep -v MIT | grep -v Apache-2.0 | grep -v ISC | tee reports/licenses.txt
 
+.PHONY: vulns
+vulns:
 	@ echo " "
 	@ echo "=====> Comparing Composer dependencies against the PHP Security Advisories Database..."
 	- curl -sSL -H "Accept: text/plain" https://security.symfony.com/check_lock -F lock=@composer.lock | tee reports/sensiolabs.txt
+
+.PHONY: psalm
+psalm:
+	@ echo " "
+	@ echo "=====> Running Psalm..."
+	- bin/psalm --find-unused-code=always --generate-json-map=./reports/psalm.json --output-format=console --show-info=true --show-snippet=true --stats --threads=$$(nproc) --php-version=7.2
+
+.PHONY: analyze
+analyze: lint test phpcpd phploc phpca licenses vulns
 
 #-------------------------------------------------------------------------------
 # Git Tasks

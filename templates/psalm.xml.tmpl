@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+@@HEADER@@
+
+    <projectFiles>
+        <directory name="src" />
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+
+    <issueHandlers>
+        <LessSpecificReturnType errorLevel="info" />
+
+        <!-- This is a series of classes which are used by other packages, so we want to suppress issues around classes not being used. -->
+        <PossiblyUnusedMethod>
+            <errorLevel type="suppress">
+                <referencedMethod name="SimplePie\UtilityPack\Enum\EnumInterface::introspectKeys" />
+                <referencedMethod name="SimplePie\UtilityPack\Enum\EnumInterface::hasValue" />
+            </errorLevel>
+        </PossiblyUnusedMethod>
+        <UnusedClass>
+            <errorLevel type="suppress">
+                <referencedClass name="SimplePie\UtilityPack\Parser\AbstractParser" />
+                <referencedClass name="SimplePie\UtilityPack\Util\Bytes" />
+                <referencedClass name="SimplePie\UtilityPack\Util\QueryString" />
+                <referencedClass name="SimplePie\UtilityPack\Util\Time" />
+                <referencedClass name="SimplePie\UtilityPack\Util\Types" />
+                <referencedClass name="SimplePie\UtilityPack\Util\Url" />
+            </errorLevel>
+        </UnusedClass>
+
+        @@VENDOR@@
+    </issueHandlers>
+</psalm>

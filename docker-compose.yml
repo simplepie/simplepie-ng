@@ -5,9 +5,6 @@ services:
     # Run the benchmarking test in Alpine Linux
     benchmarks-72:
         image: "simplepieng/benchmarks:7.2"
-        build:
-            context: .
-            dockerfile: build/benchmarks/Dockerfile-7.2
         volumes:
             - ./:/workspace
         ulimits:
@@ -18,9 +15,6 @@ services:
     # Run the test suite in Alpine Linux
     tests-72:
         image: "simplepieng/test-runner:7.2"
-        build:
-            context: .
-            dockerfile: build/tests/Dockerfile-7.2
         volumes:
             - ./:/workspace
         ulimits:
@@ -31,9 +25,6 @@ services:
     # Run the test suite in Alpine Linux with Xdebug enabled for code coverage
     coverage-72:
         image: "simplepieng/test-coverage:7.2"
-        build:
-            context: .
-            dockerfile: build/tests/Dockerfile-7.2-xdebug
         volumes:
             - ./:/workspace
         ulimits:
@@ -46,9 +37,6 @@ services:
     # Run the benchmarking test in Alpine Linux
     benchmarks-73:
         image: "simplepieng/benchmarks:7.3"
-        build:
-            context: .
-            dockerfile: build/benchmarks/Dockerfile-7.3
         volumes:
             - ./:/workspace
         ulimits:
@@ -59,9 +47,6 @@ services:
     # Run the test suite in Alpine Linux
     tests-73:
         image: "simplepieng/test-runner:7.3"
-        build:
-            context: .
-            dockerfile: build/tests/Dockerfile-7.3
         volumes:
             - ./:/workspace
         ulimits:
@@ -72,9 +57,6 @@ services:
     # Run the test suite in Alpine Linux with Xdebug enabled for code coverage
     coverage-73:
         image: "simplepieng/test-coverage:7.3"
-        build:
-            context: .
-            dockerfile: build/tests/Dockerfile-7.3-xdebug
         volumes:
             - ./:/workspace
         ulimits:
