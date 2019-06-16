@@ -12,7 +12,7 @@
         <LessSpecificReturnType errorLevel="info" />
 
         <!-- This is a series of classes which are used by other packages, so we want to suppress issues around classes not being used. -->
-        <PossiblyUnusedMethod>
+<!--         <PossiblyUnusedMethod>
             <errorLevel type="suppress">
                 <referencedMethod name="SimplePie\UtilityPack\Enum\EnumInterface::introspectKeys" />
                 <referencedMethod name="SimplePie\UtilityPack\Enum\EnumInterface::hasValue" />
@@ -28,7 +28,9 @@
                 <referencedClass name="SimplePie\UtilityPack\Util\Url" />
             </errorLevel>
         </UnusedClass>
+ -->
+        <!-- Psalm is broken and doesn't obey ignoring directories at the top level -->
+        <DuplicateClass><errorLevel type="suppress"><directory name="vendor" /></errorLevel></DuplicateClass>
 
-        @@VENDOR@@
     </issueHandlers>
 </psalm>
