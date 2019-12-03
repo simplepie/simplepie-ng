@@ -9,21 +9,25 @@
 
 PHP_LAST=7.2
 PHP_CURR=7.3
+PHP_NEXT=7.4
 
 PHP_LAST_EXT_DATE=20170718
 PHP_CURR_EXT_DATE=20180731
+PHP_NEXT_EXT_DATE=20190902
 
 BUILD_DOCKER=docker build --compress --force-rm --squash
 BUILD_COMPOSE=docker-compose build --pull --compress --parallel
 
 COMPOSE_72=tests-72 coverage-72
 COMPOSE_73=tests-73 coverage-73
+COMPOSE_74=tests-74 coverage-74
 
-TEST_QUICK=tests-72 tests-73
-TEST_COVER=coverage-72 coverage-73
+TEST_QUICK=tests-72 tests-73 tests-74
+TEST_COVER=coverage-72 coverage-73 coverage-74
 
 IMAGES_72=simplepieng/base:$(PHP_LAST) simplepieng/test-coverage:$(PHP_LAST) simplepieng/test-runner:$(PHP_LAST)
 IMAGES_73=simplepieng/base:$(PHP_CURR) simplepieng/test-coverage:$(PHP_CURR) simplepieng/test-runner:$(PHP_CURR)
+IMAGES_74=simplepieng/base:$(PHP_NEXT) simplepieng/test-coverage:$(PHP_NEXT) simplepieng/test-runner:$(PHP_NEXT)
 
 #-------------------------------------------------------------------------------
 # Running `make` will show the list of subcommands that will run.

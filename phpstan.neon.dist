@@ -5,9 +5,11 @@ includes:
 	- vendor/thecodingmachine/phpstan-strict-rules/phpstan-strict-rules.neon
 parameters:
 	ignoreErrors:
-		- message: '/Constant XDEBUG_FILTER_CODE_COVERAGE not found./'
+		-
+			message: '/Constant XDEBUG_FILTER_CODE_COVERAGE not found./'
 			path: %currentWorkingDirectory%/tests/phpunit-xdebug-coverage.php
-		- message: '/Constant XDEBUG_PATH_WHITELIST not found./'
+		-
+			message: '/Constant XDEBUG_PATH_WHITELIST not found./'
 			path: %currentWorkingDirectory%/tests/phpunit-xdebug-coverage.php
 	reportStaticMethodSignatures: true
 	tmpDir: %rootDir%/tmp

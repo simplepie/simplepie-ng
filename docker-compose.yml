@@ -63,3 +63,35 @@ services:
             nofile:
                 soft: 65535
                 hard: 100000
+
+    #---------------------------------------------------------------------------
+
+    # Run the benchmarking test in Alpine Linux
+    benchmarks-74:
+        image: "simplepieng/benchmarks:7.4"
+        volumes:
+            - ./:/workspace
+        ulimits:
+            nofile:
+                soft: 65535
+                hard: 100000
+
+    # Run the test suite in Alpine Linux
+    tests-74:
+        image: "simplepieng/test-runner:7.4"
+        volumes:
+            - ./:/workspace
+        ulimits:
+            nofile:
+                soft: 65535
+                hard: 100000
+
+    # Run the test suite in Alpine Linux with Xdebug enabled for code coverage
+    coverage-74:
+        image: "simplepieng/test-coverage:7.4"
+        volumes:
+            - ./:/workspace
+        ulimits:
+            nofile:
+                soft: 65535
+                hard: 100000
